@@ -14,6 +14,26 @@
          .custom-font {
              font-family: 'ArgosBoldItalic', sans-serif;
          }
+         .iframe-container {
+    position: relative;
+    overflow: hidden;
+    /* Mantieni il rapporto di aspetto 16:9 */
+    padding-top: 56.25%;
+    /* Centra il contenitore */
+    display: flex;
+    justify-content: center;
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
          @font-face {
            font-family: 'Palladio';
            src: url('./P052-Roman.otf') format('truetype');
