@@ -2,25 +2,24 @@ Prossima Sezione<!DOCTYPE html>
 <!-- saved from url=(0061)https://thenetworkstate.com/the-network-state-in-one-sentence -->
 <html lang="en" class="focus-outline-hidden" style=""><head><!-- Google tag (gtag.js) -->
   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      let timeout; // Memorizza il timeout per controllare l'inattività dopo lo scroll
+      const iconsContainer = document.querySelector('.icons-container');
 
-  let timeout; // Memorizza il timeout per controllare l'inattività dopo lo scroll
+      window.addEventListener('scroll', () => {
+        // Imposta l'opacità a 0 (rende le icone trasparenti)
+        iconsContainer.style.opacity = '0';
 
-  window.addEventListener('scroll', () => {
-    // Ottieni il contenitore delle icone
-    const iconsContainer = document.querySelector('.icons-container');
+        // Cancella il timeout precedente se lo scroll continua
+        clearTimeout(timeout);
 
-    // Imposta l'opacità a 0 (rende le icone trasparenti)
-    iconsContainer.style.opacity = '0';
-
-    // Cancella il timeout precedente se lo scroll continua
-    clearTimeout(timeout);
-
-    // Imposta un nuovo timeout per far riapparire le icone dopo 1 secondo di inattività
-    timeout = setTimeout(() => {
-      iconsContainer.style.opacity = '1';
-    }, 1000); // Tempo in millisecondi
-  });
-</script>
+        // Imposta un nuovo timeout per far riapparire le icone dopo 1 secondo di inattività
+        timeout = setTimeout(() => {
+          iconsContainer.style.opacity = '1';
+        }, 1000); // Tempo in millisecondi
+      });
+    });
+  </script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NQ7MQR0VL8"></script>
 <script>
@@ -64,19 +63,20 @@ Prossima Sezione<!DOCTYPE html>
 }
 
 .icons-container {
-  position: fixed; /* Rendi le icone fluttuanti rispetto al viewport */
-  right: 50%; /* Centra le icone a destra; adjusta secondo necessità */
-  top: 50%; /* Posizionamento verticale al centro; adjusta secondo necessità */
+  position: fixed; /* Posizionamento fisso rispetto al viewport */
+  top: 50%; /* Centra verticalmente (adjusta secondo necessità) */
+  right: 50%; /* Centra orizzontalmente (adjusta secondo necessità) */
   transform: translate(50%, -50%); /* Ajusta per centrare esattamente come desideri */
   display: flex;
-  flex-direction: column;
-  align-items: center; /* Allinea le icone al centro */
+  flex-direction: row; /* Imposta le icone in linea orizzontale */
+  align-items: center; /* Allinea le icone al centro verticalmente */
   transition: opacity 0.5s ease; /* Transizione morbida per l'opacità */
+  opacity: 1; /* Assicurati che siano visibili all'inizio */
 }
 
 .icon {
-  font-size: 48px; /* Aumenta la dimensione delle icone */
-  margin: 10px 0; /* Distanza tra le icone */
+  font-size: 48px; /* Dimensione delle icone */
+  margin: 0 10px; /* Distanza orizzontale tra le icone */
   cursor: pointer;
 }
 
