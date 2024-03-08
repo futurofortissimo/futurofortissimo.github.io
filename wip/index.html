@@ -23,6 +23,28 @@
     .lock-icon {
       /* Add your lock icon styling */
     }
+
+    /* CSS Styles */
+.progress-bar {
+  position: relative; /* Aggiunto per posizionare i nuovi elementi all'interno */
+}
+
+.progress-label-left {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 5px; /* Aggiunto uno spazio tra il numero e la barra */
+}
+
+.progress-label-right {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-right: 5px; /* Aggiunto uno spazio tra l'icona e la barra */
+}
+
     .progress-bar {
       /* Add your progress bar styling */
       background: linear-gradient(to right, #00BFFF, #20B2AA);
@@ -1580,7 +1602,8 @@
 
 
  <div class="flex flex-col justify-center m-0 p-0 flex-1 min-h-screen" style="margin-top: 40px;"><main class="flex flex-grow flex-1 overflow-y-scroll flex-col  w-full"><div class="flex flex-grow flex-col items-center justify-between p-4"><div class="__variable_ee7e36 font-valkyrie max-w-[714px] mx-auto px-4 sm:px-6 lg:px-4 book-section">
-<h1 class="chapter-heading " style="overflow: hidden; text-overflow: ellipsis; font-size:300%; font-color:grat-600; font-family:ArgosBoldItalic;border-bottom: 0 !important;margin-top: 0; margin-bottom: 5 !important; font-weight: 600 !important; font-style: normal !important; text-align: center !important;">Work in progress </h1>
+<h1 class="chapter-heading " style="overflow: hidden; text-overflow: ellipsis; font-size:300%; font-color:grat-600; font-family:ArgosBoldItalic;border-bottom: 0 !important;margin-top: 0; margin-bottom: 5 !important; font-weight: 600 !important; font-style: normal !important; text-align: center !important;">Bloccato</h1>
+<div class="lock-icon" style="font-size:200%;font-family:ArgosBoldItalic;">🔒</div>
 
  <hr style="height:2px;border-width:0;color:gray;background-color:black">
  <br>
@@ -1592,15 +1615,16 @@
  <!-- Locked Content Section -->
  <center>
   <section id="locked">
-    <div class="lock-icon" style="font-size:200%;font-family:ArgosBoldItalic;">🔒</div>
     <div class="lock-icon" style="font-size:200%;font-family:ArgosBoldItalic;">Prossimo livello → 🎵</div>
 
-    <p class="lock-text" style="font-family:palladio; font-size:22">Questa sezione è ancora bloccata. Condividi per sbloccare.</p>
+    <p class="lock-text" style="font-family:palladio; font-size:22">futuro fortissimo deve accumulare esperienza</p>
   </center>
 
-    <div class="progress-bar">
-      <div class="progress" style="width: 65%;"></div>
-    </div>
+  <div class="progress-bar">
+    <div class="progress" style="width: 65%;"></div>
+    <span class="progress-label-left">1</span>
+    <span class="progress-label-right">😊</span>
+  </div>
     <center>
 <p class="progress-text" style="font-family:palladio; font-size:22">650/1000</p><br>
     <p class="progress-text" style="font-family:palladio; font-size:22">650/1000</p><br>
