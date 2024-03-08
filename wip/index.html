@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagina in Lavorazione</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f0f0f0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    p {
+      color: #666;
+      font-size: 18px;
+    }
+
+    .progress-bar {
+      width: 300px;
+      height: 20px;
+      background-color: #ddd;
+      margin: 20px auto;
+      position: relative;
+    }
+
+    .progress {
+      height: 100%;
+      background-color: #4CAF50;
+      width: 30%;
+    }
+
+    .referral-link {
+      display: inline-block;
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .referral-link:hover {
+      background-color: #666;
+    }
+
+    .referral-link i {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Pagina in Lavorazione</h1>
+  <p>Questa pagina sarà sbloccata quando raggiungeremo 1000 iscritti alla nostra newsletter.</p>
+
+  <div class="progress-bar">
+    <div class="progress"></div>
+  </div>
+
+  <p>Attualmente abbiamo 300 iscritti.</p>
+
+  <a href="#" class="referral-link"><i class="fas fa-share-alt"></i> Condividi la musica di futuro fortissimo 🔥</a>
+
+  <script>
+    const progressBar = document.querySelector('.progress');
+    const subscribers = 600;
+    const maxSubscribers = 1000;
+    const progress = (subscribers / maxSubscribers) * 100;
+    progressBar.style.width = `${progress}%`;
+  </script>
+</body>
+</html>
