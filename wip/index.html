@@ -6,8 +6,18 @@
   <title>Pagina in Lavorazione</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <style>
+    @font-face {
+      font-family: 'Palladio';
+      src: url('/index_files/P052-Roman.otf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'Palladio-Italics';
+      src: url('/index_files/Palladio_Italic.ttf') format('truetype');
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Palladio', Arial, sans-serif;
       text-align: center;
       background-color: #f0f0f0;
       padding: 20px;
@@ -15,11 +25,13 @@
 
     h1 {
       color: #333;
+      font-family: 'Palladio', Arial, sans-serif;
     }
 
     p {
       color: #666;
       font-size: 18px;
+      font-family: 'Palladio', Arial, sans-serif;
     }
 
     .progress-bar {
@@ -32,8 +44,8 @@
 
     .progress {
       height: 100%;
-      background-color: #4CAF50;
-      width: 30%;
+      background-color: #0000ff; /* Blu */
+      width: 65%; /* 650 iscritti su 1000 */
     }
 
     .referral-link {
@@ -45,6 +57,7 @@
       border-radius: 5px;
       margin-top: 20px;
       transition: background-color 0.3s ease;
+      font-family: 'Palladio-Italics', Arial, sans-serif;
     }
 
     .referral-link:hover {
@@ -57,20 +70,20 @@
   </style>
 </head>
 <body>
-  <h1>Pagina in Lavorazione</h1>
-  <p>Questa pagina sarà sbloccata quando raggiungeremo 1000 iscritti alla nostra newsletter.</p>
+  <h1>Pagina in Lavorazione 🎵</h1>
+  <p>Questa pagina sarà sbloccata quando raggiungeremo 1000 iscritti alla nostra newsletter. 🎼</p>
 
   <div class="progress-bar">
     <div class="progress"></div>
   </div>
 
-  <p>Attualmente abbiamo 300 iscritti.</p>
+  <p>Attualmente abbiamo 650 iscritti. 🎶</p>
 
-  <a href="#" class="referral-link"><i class="fas fa-share-alt"></i> Condividi la musica di futuro fortissimo 🔥</a>
+  <a href="https://fortissimo.substack.com/subscribe" class="referral-link" target="_blank"><i class="fas fa-share-alt"></i> Condividi la musica di futuro fortissimo 🔥</a>
 
   <script>
     const progressBar = document.querySelector('.progress');
-    const subscribers = 600;
+    const subscribers = 650;
     const maxSubscribers = 1000;
     const progress = (subscribers / maxSubscribers) * 100;
     progressBar.style.width = `${progress}%`;
