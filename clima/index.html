@@ -57,7 +57,25 @@ Prossima Sezione<!DOCTYPE html>
     margin-bottom: 10px; /* Spazio tra le icone */
     cursor: pointer;
   }
+  .icons-container {
+    position: fixed;
+    top: 50%; /* Centra verticalmente */
+    right: 10px; /* Distanza dal lato destro dello schermo */
+    transform: translateY(-50%); /* Centra esattamente le icone */
+    display: flex;
+    flex-direction: column;
+  }
 
+  @media (max-width: 600px) {
+    .icon {
+      font-size: 14px; /* Riduci la dimensione delle icone su schermi piccoli */
+    }
+  }h3::before {
+  content: "";
+  display: block;
+  height: 60px; /* Altezza dell'header */
+  margin: -60px 0 0; /* Negativo dell'altezza dell'header */
+}
   @media (max-width: 600px) {
     .icon {
       font-size: 14px; /* Riduci la dimensione delle icone su schermi piccoli */
@@ -1484,21 +1502,15 @@ Prossima Sezione<!DOCTYPE html>
           </div>
         </header>
 
-<div class="flex justify-center items-center mt-[50px]" style="translate: 0px 50px;">
-  <div class="flex flex-col items-center mx-4">
-    <a href="https://www.paypal.me/MicheleMerelli" class="hover:bg-gray-100 rounded-full border border-gray-300 bg-white flex justify-center items-center" style="width: 40px; height: 40px; display: flex; justify-content: center; align-items: center;">
-      <img alt="" src="/index_files/coffe.png" style="width: 30px; height: 30px;">
-    </a>
-    <span class="text-center mt-2">Offri un caffè</span>
-  </div>
-
-  <div class="flex flex-col items-center mx-4">
-    <a href="https://futurofortissimo.github.io/clima/mobilita_natura_en" class="hover:bg-gray-100 rounded-full border border-gray-300 bg-white flex justify-center items-center" style="width: 40px; height: 40px; display: flex; justify-content: center; align-items: center;">
-      <img alt="" src="/index_files/en.png" style="width: 25px; height: 30px;">
-    </a>
-    <span class="text-center mt-2">English Version</span>
-  </div>
+<div class="link-list" style="font-size:140%; font-family:ArgosBoldItalic; line-height: 1.5; padding-bottom: 5px;">
+  <center>
+    <a href="#pubblicazioni" style="color: black; text-decoration: none;">Pubblicazioni</a> ⬤
+    <a href="#libri" style="color: black; text-decoration: none;">Libri</a> ⬤
+    <a href="#podcast" style="color: black; text-decoration: none;">Podcast</a> ⬤
+    <a href="#ipse" style="color: black; text-decoration: none;">Ipse dixit</a> ⬤
+  </center>
 </div>
+
  <div class="flex flex-col justify-center m-0 p-0 flex-1 min-h-screen" style="margin-top: 40px;"><main class="flex flex-grow flex-1 overflow-y-scroll flex-col  w-full"><div class="flex flex-grow flex-col items-center justify-between p-4"><div class="__variable_ee7e36 font-valkyrie max-w-[714px] mx-auto px-4 sm:px-6 lg:px-4 book-section">
  <hr style="height:2px;border-width:0;color:gray;background-color:black">
  <br>
@@ -1509,14 +1521,6 @@ Prossima Sezione<!DOCTYPE html>
 <h1 class="chapter-heading " style="overflow: hidden; text-overflow: ellipsis; font-size:300%; font-color:grat-600; font-family:ArgosBoldItalic;border-bottom: 0 !important;margin-top: 20; margin-bottom: -10 !important; font-weight: 600 !important; font-style: normal !important; text-align: center !important;"> Clima </h1>
 <br>
 
-<div class="link-list" style="font-size:140%; font-family:ArgosBoldItalic; line-height: 1.5; padding-bottom: 5px;">
-  <center>
-    <a href="pubblicazioni" style="color: black; text-decoration: none;">Pubblicazioni</a> ⬤
-    <a href="#libri" style="color: black; text-decoration: none;">Libri</a> ⬤
-    <a href="#podcast" style="color: black; text-decoration: none;">Podcast</a> ⬤
-    <a href="#ipse" style="color: black; text-decoration: none;">Ipse dixit</a> ⬤
-  </center>
-</div>
 
 
 
