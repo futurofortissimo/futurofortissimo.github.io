@@ -37,33 +37,33 @@ Prossima Sezione<!DOCTYPE html>
 }
 
 <style>
-  .icons-container {
-    position: fixed;
-    bottom: 20px;
-    right: 20px; /* Ajusta esta distancia para no superponer tu div principal */
+  .container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px; /* Spazio tra le icone */
-  }
-
-  .icon {
-    font-size: 20px; /* Ridimensiona le icone */
-    cursor: pointer;
-    background: white; /* Aggiunge uno sfondo bianco alle icone */
-    border-radius: 50%; /* Rende lo sfondo delle icone circolare */
-    width: 40px; /* Larghezza dello sfondo delle icone */
-    height: 40px; /* Altezza dello sfondo delle icone */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items: start; /* Allinea i contenitori figlio all'inizio */
+    justify-content: space-between; /* Spazia i figli uniformemente */
   }
 
   .main-content {
-    margin-right: 60px; /* Asegura espacio para el contenedor de iconos */
+    /* Stili per il contenuto principale */
+  }
+
+  .icons-container {
+    display: flex;
+    flex-direction: column; /* Organizza le icone verticalmente */
+    padding-left: 10px; /* Spazio tra il contenuto principale e le icone */
+  }
+
+  .icon {
+    margin-bottom: 10px; /* Spazio tra le icone */
+    cursor: pointer;
+  }
+
+  @media (max-width: 600px) {
+    .icon {
+      font-size: 14px; /* Riduci la dimensione delle icone su schermi piccoli */
+    }
   }
 </style>
-
 <style>
 .link-btn {
   font-family: palladio;
