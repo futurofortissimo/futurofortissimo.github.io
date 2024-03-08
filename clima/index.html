@@ -63,21 +63,32 @@ Prossima Sezione<!DOCTYPE html>
 }
 
 .icons-container {
-  position: fixed; /* Posizionamento fisso rispetto al viewport */
-  top: 50%; /* Centra verticalmente (adjusta secondo necessità) */
-  right: 50%; /* Centra orizzontalmente (adjusta secondo necessità) */
-  transform: translate(50%, -50%); /* Ajusta per centrare esattamente come desideri */
+  position: fixed;
+  bottom: 80px; /* Posiziona le icone in basso */
+  right: 50%; /* Centra orizzontalmente le icone */
+  transform: translateX(50%);
   display: flex;
   flex-direction: row; /* Imposta le icone in linea orizzontale */
-  align-items: center; /* Allinea le icone al centro verticalmente */
-  transition: opacity 0.5s ease; /* Transizione morbida per l'opacità */
-  opacity: 1; /* Assicurati che siano visibili all'inizio */
+  align-items: center;
+  transition: opacity 0.5s ease;
+  opacity: 1;
 }
 
 .icon {
-  font-size: 48px; /* Dimensione delle icone */
-  margin: 0 10px; /* Distanza orizzontale tra le icone */
+  background-color: white; /* Sfondo bianco per il cerchio */
+  border-radius: 50%; /* Rende lo sfondo circolare */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px; /* Dimensione del cerchio */
+  height: 60px; /* Dimensione del cerchio */
+  margin: 0 10px; /* Distanza tra le icone */
   cursor: pointer;
+}
+
+.icon img {
+  max-width: 70%; /* Assicura che l'immagine si adatti al cerchio */
+  max-height: 70%; /* Assicura che l'immagine si adatti al cerchio */
 }
 
   @media (max-width: 600px) {
@@ -1542,6 +1553,8 @@ Prossima Sezione<!DOCTYPE html>
 
 <div class="icons-container">
   <div class="icon" onclick="location.href='#'">🧁</div> <!-- Icona muffin -->
+  <img class="icon" onclick="location.href='#'" src="index_files/en.png" alt="English">
+
   <div class="icon" onclick="location.href='#'">🏴󠁧󠁢󠁥󠁮󠁧󠁿</div> <!-- Icona bandiera inglese -->
   <div class="icon" onclick="scrollToTop()">🏠</div> <!-- Icona casa -->
 </div>
