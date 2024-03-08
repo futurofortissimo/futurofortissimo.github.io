@@ -1,6 +1,25 @@
 Prossima Sezione<!DOCTYPE html>
 <!-- saved from url=(0061)https://thenetworkstate.com/the-network-state-in-one-sentence -->
 <html lang="en" class="focus-outline-hidden" style=""><head><!-- Google tag (gtag.js) -->
+  <script>
+
+  let timeout = null;
+const iconsContainer = document.querySelector('.icons-container');
+
+window.addEventListener('scroll', () => {
+  // Rendi le icone trasparenti durante lo scroll
+  iconsContainer.style.opacity = 0;
+
+  // Cancella il timeout precedente per evitare che si riattivi troppo presto
+  clearTimeout(timeout);
+
+  // Imposta un nuovo timeout per far riapparire le icone dopo 1 secondo di inattività
+  timeout = setTimeout(() => {
+    iconsContainer.style.opacity = 1;
+  }, 1000); // 1000 millisecondi = 1 secondo
+});
+</script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NQ7MQR0VL8"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -37,44 +56,41 @@ Prossima Sezione<!DOCTYPE html>
 }
 
 <style>
-  .container {
-    display: flex;
-    align-items: start; /* Allinea i contenitori figlio all'inizio */
-    justify-content: space-between; /* Spazia i figli uniformemente */
-  }
+.div-container {
+  position: relative; /* Questo permette al .icons-container di posizionarsi relativamente a questo contenitore */
+  /* Altri stili del tuo div-container */
+}
 
-  .main-content {
-    /* Stili per il contenuto principale */
-  }
+.icons-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra le icone nel div */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: opacity 0.5s ease; /* Transizione per fading */
+  opacity: 1; /* Inizialmente visibile */
+}
 
-  .icons-container {
-    display: flex;
-    flex-direction: column; /* Organizza le icone verticalmente */
-    padding-left: 10px; /* Spazio tra il contenuto principale e le icone */
-  }
+.icon {
+  font-size: 48px; /* Dimensione maggiore per le icone */
+  margin: 10px 0; /* Spazio tra le icone */
+  /* Aggiungi qui altri stili se necessario */
+}
 
-  .icon {
-    margin-bottom: 10px; /* Spazio tra le icone */
-    cursor: pointer;
-  }
-  .icons-container {
-    position: fixed;
-    top: 50%; /* Centra verticalmente */
-    right: 10px; /* Distanza dal lato destro dello schermo */
-    transform: translateY(-50%); /* Centra esattamente le icone */
-    display: flex;
-    flex-direction: column;
-  }
 
   @media (max-width: 600px) {
     .icon {
       font-size: 14px; /* Riduci la dimensione delle icone su schermi piccoli */
     }
-  }h3::before {
+  }
+
+  h3::before {
   content: "";
   display: block;
-  height: 60px; /* Altezza dell'header */
-  margin: -60px 0 0; /* Negativo dell'altezza dell'header */
+  height: 75px; /* Altezza dell'header */
+  margin: -75px 0 0; /* Negativo dell'altezza dell'header */
 }
   @media (max-width: 600px) {
     .icon {
