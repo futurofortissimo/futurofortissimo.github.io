@@ -37,27 +37,30 @@ Prossima Sezione<!DOCTYPE html>
 }
 
 <style>
-  .floating-icon {
+  .icons-container {
     position: fixed;
     bottom: 20px;
-    right: 20px;
-    font-size: 24px;
+    right: 20px; /* Ajusta esta distancia para no superponer tu div principal */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Spazio tra le icone */
+  }
+
+  .icon {
+    font-size: 20px; /* Ridimensiona le icone */
     cursor: pointer;
+    background: white; /* Aggiunge uno sfondo bianco alle icone */
+    border-radius: 50%; /* Rende lo sfondo delle icone circolare */
+    width: 40px; /* Larghezza dello sfondo delle icone */
+    height: 40px; /* Altezza dello sfondo delle icone */
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .link-list {
-    font-size: 90%; /* Rendi il testo dei link più piccolo */
-  }
-
-  .link-list a {
-    text-decoration: none;
-    color: black;
-    margin-right: 5px;
-  }
-
-  .link-list a:not(:last-child)::after {
-    content: " \2022 "; /* Codice Unicode per bullet LaTeX */
-    color: black;
+  .main-content {
+    margin-right: 60px; /* Asegura espacio para el contenedor de iconos */
   }
 </style>
 
@@ -1509,10 +1512,17 @@ Prossima Sezione<!DOCTYPE html>
   <!-- Qui verranno inseriti i link agli h3 tramite JavaScript -->
 </div>
 
-<div onclick="scrollToTop()" class="floating-icon">🏠</div>
+
+<div class="icons-container">
+  <div class="icon" onclick="location.href='#'">🧁</div> <!-- Icona muffin -->
+  <div class="icon" onclick="location.href='#'">🏴󠁧󠁢󠁥󠁮󠁧󠁿</div> <!-- Icona bandiera inglese -->
+  <div class="icon" onclick="scrollToTop()">🏠</div> <!-- Icona casa -->
+</div>
+
+
 <hr style="height:2px;border-width:0;color:gray;background-color:black">
 <br>
-<h3 class=" text-xs mb-3 font-palladio" style="font-size:200%;font-family:ArgosBoldItalic;">Pubblicazioni</h3>
+<h3 href="#pubblicazioni" class=" text-xs mb-3 font-palladio" style="font-size:200%;font-family:ArgosBoldItalic;">Pubblicazioni</h3>
 
 </head>
 <body>
@@ -1543,7 +1553,7 @@ Prossima Sezione<!DOCTYPE html>
 
 <hr style="height:2px;border-width:0;color:gray;background-color:black">
 <br>
-<h3 class=" text-xs mb-3 font-palladio" style="font-size:200%;font-family:ArgosBoldItalic;">Libri</h3>
+<h3 href="#libri" class=" text-xs mb-3 font-palladio" style="font-size:200%;font-family:ArgosBoldItalic;">Libri</h3>
 
 <p style="font-family:palladio; font-size:21">
   <a href="https://amzn.to/4c4rqhp" target="_blank">
@@ -1588,7 +1598,7 @@ Prossima Sezione<!DOCTYPE html>
 
 <hr style="height:2px;border-width:0;color:gray;background-color:black">
 <br>
-<h3 class=" text-xs mb-3 font-palladio" style="font-size:200%;font-family:ArgosBoldItalic;">Podcast</h3>
+<h3 href="#podcast" class=" text-xs mb-3 font-palladio" style="font-size:200%;font-family:ArgosBoldItalic;">Podcast</h3>
 <div style="overflow: hidden; padding-top: 56.25%; position: relative;">
     <!-- iframe with 100% width and height scaling -->
     <iframe src="https://www.youtube.com/embed/5Gk9gIpGvSE" title="Climate Change Debate: Bjørn Lomborg and Andrew Revkin | Lex Fridman Podcast #339" style="border: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -1598,7 +1608,7 @@ Prossima Sezione<!DOCTYPE html>
 <hr style="height:2px;border-width:0;color:gray;background-color:black">
 <br>
 
-<h3 class=" text-xs mb-3 font-palladio" style="font-size:200%;font-family:ArgosBoldItalic;">Ipse dixit</h3><br>
+<h3 href="#ipse" class=" text-xs mb-3 font-palladio" style="font-size:200%;font-family:ArgosBoldItalic;">Ipse dixit</h3><br>
 <blockquote style="font-family:palladio-italics; font-size:21">Ci sono due numeri che bisogna internalizzare sul cambiamento climatico. Il primo è 51 miliardi. L'altro è zero. Cinquantuno miliardi sono le tonnellate di CO2-equivalenti che tipicamente emettiamo ogni anno. Dobbiamo arrivare a 0.</blockquote>
 <b style="font-family:palladio; font-size:21">Bill Gates</b><a href="https://fortissimo.substack.com/p/-ff1-clima#§ff-da-miliardi-a-" ><b style="font-family:palladio; font-size:21">📉 ff.1.2 </b></a><br>
 <br>
