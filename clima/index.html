@@ -16,7 +16,7 @@ window.addEventListener('scroll', () => {
   // Imposta un nuovo timeout per far riapparire le icone dopo 1 secondo di inattività
   timeout = setTimeout(() => {
     iconsContainer.style.opacity = 1;
-  }, 1000); // 1000 millisecondi = 1 secondo
+  }, 25); // 1000 millisecondi = 1 secondo
 });
 </script>
 
@@ -62,23 +62,21 @@ window.addEventListener('scroll', () => {
 }
 
 .icons-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Centra le icone nel div */
+  position: fixed; /* Rendi le icone fluttuanti rispetto al viewport */
+  right: 50%; /* Centra le icone a destra; adjusta secondo necessità */
+  top: 50%; /* Posizionamento verticale al centro; adjusta secondo necessità */
+  transform: translate(50%, -50%); /* Ajusta per centrare esattamente come desideri */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  transition: opacity 0.5s ease; /* Transizione per fading */
-  opacity: 1; /* Inizialmente visibile */
+  align-items: center; /* Allinea le icone al centro */
+  transition: opacity 0.5s ease; /* Transizione morbida per l'opacità */
 }
 
 .icon {
-  font-size: 48px; /* Dimensione maggiore per le icone */
-  margin: 10px 0; /* Spazio tra le icone */
-  /* Aggiungi qui altri stili se necessario */
+  font-size: 48px; /* Aumenta la dimensione delle icone */
+  margin: 10px 0; /* Distanza tra le icone */
+  cursor: pointer;
 }
-
 
   @media (max-width: 600px) {
     .icon {
@@ -89,8 +87,8 @@ window.addEventListener('scroll', () => {
   h3::before {
   content: "";
   display: block;
-  height: 75px; /* Altezza dell'header */
-  margin: -75px 0 0; /* Negativo dell'altezza dell'header */
+  height: 85px; /* Altezza dell'header */
+  margin: -85px 0 0; /* Negativo dell'altezza dell'header */
 }
   @media (max-width: 600px) {
     .icon {
