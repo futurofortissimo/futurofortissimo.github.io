@@ -3,21 +3,23 @@ Prossima Sezione<!DOCTYPE html>
 <html lang="en" class="focus-outline-hidden" style=""><head><!-- Google tag (gtag.js) -->
   <script>
 
-  let timeout = null;
-const iconsContainer = document.querySelector('.icons-container');
+  let timeout; // Memorizza il timeout per controllare l'inattività dopo lo scroll
 
-window.addEventListener('scroll', () => {
-  // Rendi le icone trasparenti durante lo scroll
-  iconsContainer.style.opacity = 0;
+  window.addEventListener('scroll', () => {
+    // Ottieni il contenitore delle icone
+    const iconsContainer = document.querySelector('.icons-container');
 
-  // Cancella il timeout precedente per evitare che si riattivi troppo presto
-  clearTimeout(timeout);
+    // Imposta l'opacità a 0 (rende le icone trasparenti)
+    iconsContainer.style.opacity = '0';
 
-  // Imposta un nuovo timeout per far riapparire le icone dopo 1 secondo di inattività
-  timeout = setTimeout(() => {
-    iconsContainer.style.opacity = 1;
-  }, 25); // 1000 millisecondi = 1 secondo
-});
+    // Cancella il timeout precedente se lo scroll continua
+    clearTimeout(timeout);
+
+    // Imposta un nuovo timeout per far riapparire le icone dopo 1 secondo di inattività
+    timeout = setTimeout(() => {
+      iconsContainer.style.opacity = '1';
+    }, 1000); // Tempo in millisecondi
+  });
 </script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NQ7MQR0VL8"></script>
