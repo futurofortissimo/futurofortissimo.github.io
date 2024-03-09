@@ -33,12 +33,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </script>
 
   <script>
+  document.addEventListener('DOMContentLoaded', () => {
   let startX;  // Posizione iniziale del tocco
   let currentSlideIndex = 0; // Indice dello slide corrente
-
   const carousel = document.querySelector('.carousel-slide');
   const slides = document.querySelectorAll(".book");
   const slideWidth = slides[0].clientWidth;
+
+  function moveSlide(step) {
+    currentSlideIndex += step;
+
+    if (currentSlideIndex >= slides.length) {
+      currentSlideIndex = 0;
+    } else if (currentSlideIndex < 0) {
+      currentSlideIndex = slides.length - 1;
+    }
+
+    carousel.style.transform = `translateX(${-slideWidth * currentSlideIndex}px)`;
+    carousel.style.transition = "transform 0.5s ease";
+  }
 
   carousel.addEventListener('touchstart', (e) => {
     startX = e.touches[0].clientX;
@@ -53,28 +66,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     const diffX = startX - moveX;
 
     if (Math.abs(diffX) > 50) { // Soglia del movimento per cambiare slide
-      if (diffX > 0) {
-        // Swipe verso sinistra
-        moveSlide(1);
-      } else {
-        // Swipe verso destra
-        moveSlide(-1);
-      }
+      moveSlide(diffX > 0 ? 1 : -1);
     }
   }, false);
+});
 
-  function moveSlide(step) {
-    currentSlideIndex += step;
-
-    if (currentSlideIndex >= slides.length) {
-      currentSlideIndex = 0;
-    } else if (currentSlideIndex < 0) {
-      currentSlideIndex = slides.length - 1;
-    }
-
-    carousel.style.transform = `translateX(${-slideWidth * currentSlideIndex}px)`;
-    carousel.style.transition = "transform 0.5s ease";
-  }
 </script>
 
 <link rel="manifest" href="/index_files/manifest.json">
@@ -208,21 +204,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 .carousel-container {
+  max-width: 300px; /* Adatta alla larghezza delle immagini dei libri */
+  overflow: hidden; /* Nasconde i libri fuori dal container visibile */
   position: relative;
-  max-width: 300px; /* Adatta alla larghezza dell'immagine */
-  margin: auto;
-  overflow: hidden; /* Nasconde gli elementi che fuoriescono */
-
 }
 
 .carousel-slide {
   display: flex;
-  overflow: hidden;
+  transition: transform 0.5s ease;
 }
 
 .book {
-  min-width: 100%; /* Assicura che ogni libro occupi tutto lo spazio visibile */
-  text-align: left; /* Titolo e autore giustificati a sinistra */
+  flex: 0 0 auto; /* Impedisce ai libri di ridimensionarsi */
+  width: 300px; /* Assicurati che corrisponda alla larghezza del container */
+  text-align: left;
 }
 
 .book img {
