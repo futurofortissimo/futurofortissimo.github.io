@@ -32,6 +32,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     });
   </script>
 
+  <script>
+
+  let slideIndex = 0;
+
+  function moveSlide(step) {
+    const slides = document.querySelectorAll(".book");
+    slideIndex += step;
+
+    if (slideIndex >= slides.length) {
+      slideIndex = 0;
+    } else if (slideIndex < 0) {
+      slideIndex = slides.length - 1;
+    }
+
+    const slideWidth = slides[0].clientWidth;
+    document.querySelector(".carousel-slide").style.transform = `translateX(${-slideWidth * slideIndex}px)`;
+    document.querySelector(".carousel-slide").style.transition = "transform 0.5s ease";
+  }
+</script>
+
 
 
 <html lang="en" class="focus-outline-hidden" style=""><head><!-- Google tag (gtag.js) -->
@@ -159,6 +179,56 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   border: none;
   cursor: pointer;
 }
+
+
+.carousel-container {
+  position: relative;
+  max-width: 300px; /* Adatta alla larghezza dell'immagine */
+  margin: auto;
+}
+
+.carousel-slide {
+  display: flex;
+  overflow: hidden;
+}
+
+.book {
+  min-width: 100%; /* Assicura che ogni libro occupi tutto lo spazio visibile */
+  text-align: left; /* Titolo e autore giustificati a sinistra */
+}
+
+.book img {
+  width: 100%; /* Assicura che l'immagine si adatti al contenitore */
+}
+
+.title {
+  font-size: 21.25px;
+  font-family: palladio;
+}
+
+.author {
+  font-family: palladio-italics;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background-color: lightgrey;
+  border: none;
+}
+
+.prev {
+  left: -40px;
+}
+
+.next {
+  right: -40px;
+}
+
+
+
 
 .clima { background-color: rgba(102, 187, 106, 0.7); }
 .clima:hover { background-color: rgba(102, 187, 106, 0.9); }
@@ -1644,6 +1714,52 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <hr style="height:2px;border-width:0;color:gray;background-color:black">
 <br>
 <h3 id="libri" class=" text-xs mb-3 font-palladio" style="font-size:200%;font-family:ArgosBoldItalic;">Libri</h3>
+
+
+
+<div id="libri" class="carousel-container">
+  <div class="carousel-slide">
+    <!-- Libro 1 -->
+    <div class="book">
+      <img src="/index_files/clima_book.jpg" alt="Clima, come evitare un disastro">
+      <p class="title">Clima, come evitare un disastro<br><span class="author">Bill Gates</span></p>
+    </div>
+
+    <!-- Libro 2 -->
+    <div class="book">
+      <img src="/index_files/impronta_book.jpg" alt="Scopri l'impatto ambientale di ogni cosa.">
+      <p class="title">Scopri l'impatto ambientale di ogni cosa.<br><span class="author">Mike Berners-Lee</span></p>
+    </div>
+
+    <!-- Libro 3 -->
+    <div class="book">
+      <img src="/index_files/dark_green_religion_book.jpg" alt="Dark green religion">
+      <p class="title">Dark green religion<br><span class="author">Bron Taylor</span></p>
+    </div>
+
+    <!-- Libro 4 -->
+    <div class="book">
+      <img src="/index_files/montagne_book.jpg" alt="Le otto montagne">
+      <p class="title">Le otto montagne<br><span class="author">Paolo Cognetti</span></p>
+    </div>
+
+    <!-- Libro 5 -->
+    <div class="book">
+      <img src="/index_files/flying_car_book.jpg" alt="Where is my flying car?">
+      <p class="title">Where is my flying car?<br><span class="author">J. Storrs Hall</span></p>
+    </div>
+
+    <!-- Libro 6 -->
+    <div class="book">
+      <img src="/index_files/numeri_book.jpg" alt="I numeri non mentono">
+      <p class="title">I numeri non mentono<br><span class="author">Vaclav Smil</span></p>
+    </div>
+  </div>
+
+  <button class="prev" onclick="moveSlide(-1)">◀</button>
+  <button class="next" onclick="moveSlide(1)">▶</button>
+</div>
+
 
 <p style="font-family:palladio; font-size:21.25px">
   <a href="https://amzn.to/4c4rqhp" target="_blank">
