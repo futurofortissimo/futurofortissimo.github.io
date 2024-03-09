@@ -41,14 +41,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     slideIndex += step;
 
     if (slideIndex >= slides.length) {
-      slideIndex = 0;
+      slideIndex = 0; // Loop al primo slide
     } else if (slideIndex < 0) {
-      slideIndex = slides.length - 1;
+      slideIndex = slides.length - 1; // Loop all'ultimo slide
     }
 
     const slideWidth = slides[0].clientWidth;
     document.querySelector(".carousel-slide").style.transform = `translateX(${-slideWidth * slideIndex}px)`;
-    document.querySelector(".carousel-slide").style.transition = "transform 0.5s ease";
   }
 </script>
 
@@ -186,6 +185,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   position: relative;
   max-width: 300px; /* Adatta alla larghezza dell'immagine */
   margin: auto;
+  overflow: hidden; /* Nasconde gli elementi che fuoriescono */
+
 }
 
 .carousel-slide {
@@ -1720,7 +1721,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <div id="libri" class="carousel-container">
   <div class="carousel-slide">
-    <!-- Libro 1 -->
+    <!-- Elemento libro 1 -->
     <div class="book">
       <img src="/index_files/clima_book.jpg" alt="Clima, come evitare un disastro">
       <p class="title">Clima, come evitare un disastro<br><span class="author">Bill Gates</span></p>
@@ -1757,8 +1758,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
   </div>
 
-  <button class="prev" onclick="moveSlide(-1)">◀</button>
-  <button class="next" onclick="moveSlide(1)">▶</button>
+  <button class="prev" onclick="moveSlide(-1)">⬅️</button>
+  <button class="next" onclick="moveSlide(1)">➡️</button>
 </div>
 
 
