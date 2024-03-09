@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-<!-- saved from url=(0061)https://thenetworkstate.com/the-network-state-in-one-sentence --><head>
-
+<!DOCTYPE html><head>
+<!-- saved from url=(0061)https://thenetworkstate.com/the-network-state-in-one-sentence -->
 
 <link rel="icon" href="/index_files/ff.webp" type="/index_files/ff.webp">
 <link rel="apple-touch-icon" href="/index_files/ff.webp">
@@ -32,56 +31,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     });
   </script>
 
-  <script>
-  let startX;  // Posizione iniziale del tocco
-let currentSlideIndex = 0; // Indice dello slide corrente
-
-const carousel = document.querySelector('.carousel-slide');
-const slides = document.querySelectorAll(".book");
-const slideWidth = slides[0].clientWidth;
-
-carousel.addEventListener('touchstart', (e) => {
-  startX = e.touches[0].clientX;
-}, false);
-
-carousel.addEventListener('touchmove', (e) => {
-  e.preventDefault(); // Previene lo scroll della pagina durante il swipe
-}, {passive: false});
-
-carousel.addEventListener('touchend', (e) => {
-  const moveX = e.changedTouches[0].clientX;
-  const diffX = startX - moveX;
-
-  if (Math.abs(diffX) > 50) { // Soglia del movimento per cambiare slide
-    if (diffX > 0) {
-      // Swipe verso sinistra
-      moveSlide(1);
-    } else {
-      // Swipe verso destra
-      moveSlide(-1);
-    }
-  }
-}, false);
-
-function moveSlide(step) {
-  currentSlideIndex += step;
-
-  if (currentSlideIndex >= slides.length) {
-    currentSlideIndex = 0;
-  } else if (currentSlideIndex < 0) {
-    currentSlideIndex = slides.length - 1;
-  }
-
-  carousel.style.transform = `translateX(${-slideWidth * currentSlideIndex}px)`;
-  carousel.style.transition = "transform 0.5s ease";
-}
-
-</script>
-
-<link rel="manifest" href="/index_files/manifest.json">
 
 
-<html lang="en" class="focus-outline-hidden" style=""><!-- Google tag (gtag.js) -->
+<html lang="en" class="focus-outline-hidden" style="">
+  <link rel="manifest" href="/index_files/manifest.json">
+
+
+  <!-- Google tag (gtag.js) -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       let timeout; // Memorizza il timeout per controllare l'inattività dopo lo scroll
@@ -147,11 +103,14 @@ function moveSlide(step) {
     border-radius: 12px;
   }
 </style>
+
 <style>
+
 .div-container {
   position: relative; /* Questo permette al .icons-container di posizionarsi relativamente a questo contenitore */
   /* Altri stili del tuo div-container */
 }
+
 
 .icons-container {
   position: fixed;
@@ -206,46 +165,6 @@ function moveSlide(step) {
   border: none;
   cursor: pointer;
 }
-
-
-.carousel-container {
-  position: relative;
-  max-width: 300px; /* Larghezza massima del carosello */
-  margin: auto; /* Centra il carosello orizzontalmente */
-}
-
-.carousel-slide {
-  display: flex;
-  overflow: hidden; /* Nasconde i libri fuori dal viewport del carosello */
-}
-
-.book {
-  flex: 0 0 auto; /* Impedisce ai libri di ridimensionarsi */
-  width: 300px; /* Larghezza di ogni libro */
-  text-align: left; /* Testo allineato a sinistra */
-}
-
-.prev, .next {
-  position: absolute;
-  top: 50%; /* Posiziona i pulsanti verticalmente al centro */
-  transform: translateY(-50%); /* Centra i pulsanti rispetto alla loro altezza */
-  font-size: 24px; /* Dimensione del testo dei pulsanti */
-  cursor: pointer;
-  background-color: rgba(0,0,0,0.5); /* Colore di sfondo con trasparenza */
-  color: white; /* Colore del testo */
-  border: none;
-  padding: 10px; /* Padding intorno al testo */
-}
-
-.prev {
-  left: -40px; /* Posiziona il pulsante "Prev" a sinistra */
-}
-
-.next {
-  right: -40px; /* Posiziona il pulsante "Next" a destra */
-}
-
-
 
 .clima { background-color: rgba(102, 187, 106, 0.7); }
 .clima:hover { background-color: rgba(102, 187, 106, 0.9); }
@@ -1652,8 +1571,8 @@ function moveSlide(step) {
  * Copyright (c) 2014, Jason Chen
  * Copyright (c) 2013, salesforce.com
  */}.apollo-overlay-container,.zp-overlay{width:auto}.extension-quick-actions .zp-button{min-height:26px;line-height:1}.zp-modal{position:fixed;top:0;right:0;bottom:0;left:0;z-index:20000;outline:0;-webkit-overflow-scrolling:touch;display:flex;align-items:center;justify-content:center}.zp-modal-scroll{position:fixed;top:0;right:0;bottom:0;left:0;z-index:20000;overflow-y:auto}.zp-modal-scroll:focus{outline:none}.zp-modal-center{position:fixed;right:0;left:0;z-index:20000;overflow-y:auto;top:50%;transform:translateY(-50%)}.zp-modal-center:focus{outline:none}.zp-modal-content{box-shadow:var(--shadow-2);position:relative;border-radius:var(--border-radius-4);background-clip:padding-box;background-color:#fff;outline:0;--modal-content-margin-top: 30px;--modal-content-margin-bottom: 30px;margin:var(--modal-content-margin-top) auto var(--modal-content-margin-bottom)}.zp-modal-content.narrowWidth{width:325px;min-width:300px}.zp-modal-content.smallWidth{width:500px}.zp-modal-content.mediumWidth{width:656px}.zp-modal-content.wideWidth{width:900px}.zp-modal-content.ultraWideWidth{width:1200px}.zp-modal-content.fullScreenModal{width:100%;height:100%;--modal-content-margin-top: 0px;--modal-content-margin-bottom: 0px;display:flex;flex-flow:column}.zp-modal-content.sidebar{width:1000px;height:100%;margin:0 0 0 auto}@media(max-width: 660px){.zp-modal-content.responsive{--modal-content-margin-top: 0px;--modal-content-margin-bottom: 0px;height:100%;display:flex;flex-flow:column}}.zp-modal-content.responsive.narrowWidth{width:auto;max-width:325px}.zp-modal-content.responsive.smallWidth{width:auto;max-width:500px}.zp-modal-content.responsive.mediumWidth{width:auto;max-width:656px}.zp-modal-content.responsive.wideWidth{width:auto;max-width:900px}.zp-modal-content.responsive.ultraWideWidth{width:auto;max-width:1200px}.zp-modal-content.responsive.sidebarWidth{width:1000px}@media(max-width: 600px){.zp-modal-content{min-width:100%;width:50%;max-width:1000px}}.zp-modal-backdrop{position:fixed;top:0;right:0;bottom:0;left:0;z-index:19999;background-color:var(--color-neutral-70);opacity:.8}.zp-modal-header{position:relative;display:flex;flex-flow:row nowrap;align-items:center;justify-content:space-between;padding:15px 20px;background-color:#fff;z-index:1;border-top-left-radius:4px;border-top-right-radius:4px}.zp-modal-header .zp-modal-title{font-size:16px;font-weight:600;line-height:20px;color:var(--color-text-primary);line-height:24px;margin:0}.zp-modal-body{font-size:12px;font-weight:400;line-height:16px;position:relative;display:flex;flex-flow:column;flex:1;background-color:#fff;padding:20px;color:var(--color-text-labels);line-height:21px}.zp-modal-body .zp-modal-body-bleed-h{padding-left:20px;padding-right:20px;margin-left:-20px;margin-right:-20px}.zp-modal-body.no-padding{padding:0;padding:initial}.zp-modal-body:first-child{border-top-left-radius:4px;border-top-right-radius:4px}.zp-modal-body:last-child{border-bottom-left-radius:4px;border-bottom-right-radius:4px}.zp-modal-footer{position:relative;display:flex;flex-flow:row nowrap;align-items:center;padding:15px 20px;background-color:#fff;border-top:1px solid var(--color-border-light);z-index:1;border-bottom-left-radius:4px;border-bottom-right-radius:4px}.zp-modal-footer .zp-button:first-child:not(:last-child){margin-right:10px}.modalFooterShiftRight{justify-content:flex-end}.secondary .zp-modal-header{background-color:#fff}.secondary .zp-modal-header .zp-modal-title{color:var(--color-text-primary)}.secondary .zp-modal-content,.secondary .zp-modal-body{background-color:var(--color-bg-secondary)}.secondary .zp-modal-footer{background-color:#fff}.closeSideDrawer{cursor:pointer;color:var(--color-text-secondary);line-height:normal}.closeSideDrawer:hover,.closeSideDrawer:focus{color:var(--color-icon-normal)}.close{cursor:pointer;color:var(--color-icon-normal);line-height:normal}.close:hover,.close:active{background-color:var(--color-neutral-20);border-radius:var(--border-radius-2)}.close:hover{color:var(--color-primary-50)}.close:active{color:var(--color-text-links)}.closeTopRight{position:absolute;top:22px;right:22px}.zp-modal-sidebar{display:none}.clampedModal>div{max-height:calc(100vh - var(--modal-content-margin-top) - var(--modal-content-margin-bottom));display:grid;grid-template:"header header" max-content "sidebar body" 1fr "footer footer" max-content/max-content 1fr;justify-items:stretch}.clampedModal.withSeparateSidebar>div{grid-template:"sidebar header" max-content "sidebar body" 1fr "sidebar footer" max-content/max-content 1fr}.clampedModal .zp-modal-header{grid-area:header}.clampedModal .zp-modal-sidebar{grid-area:sidebar;display:block;overflow:auto;width:311px}.clampedModal .zp-modal-body{grid-area:body;overflow:auto}.clampedModal .zp-modal-footer{grid-area:footer}.zp{background-image:none !important}.zp .underline{border-bottom:1px dashed var(--color-border-normal);margin-bottom:2px;cursor:help}[dir="ltr"] .zp .tippy-box[data-theme="tooltip-1.0"] .tippy-content{text-align:left}[dir="rtl"] .zp .tippy-box[data-theme="tooltip-1.0"] .tippy-content{text-align:right}.zp .tippy-box[data-theme="tooltip-1.0"] .tippy-content{font-family:var(--system-ui);font-style:normal;font-weight:normal;letter-spacing:normal;line-break:auto;line-height:1.5;text-decoration:none;text-shadow:none;text-transform:none;white-space:normal;word-break:normal;word-spacing:normal;word-wrap:normal;font-size:12px;font-weight:500;line-height:16px;text-align:center}.zp .tippy-box[data-theme="tooltip-1.0"] .tippy-arrow{color:var(--color-neutral-80) !important}.zp .tooltip{background:var(--color-neutral-80) !important;outline:0 !important}.zp .tooltip{display:inline-flex;align-items:center;justify-content:center;border-radius:var(--border-radius-4);padding:0 6px;max-width:360px}.zp .tooltip,.zp .tooltip>*{white-space:pre-wrap}@media(max-width: 360px){.zp .tooltip{max-width:calc(100% - 20px) !important}.zp .tooltip{margin-left:10px}.zp .tooltip *{word-wrap:break-word !important}.zp .tooltip>div{max-width:100% !important}}.ql-container{box-sizing:border-box;font-size:14px;font-weight:400;line-height:20px;font-feature-settings:none;font-variant-ligatures:none;height:100%;margin:0;position:relative}.ql-container .ql-editor{box-sizing:border-box;cursor:text;line-height:1.42;height:100%;outline:none;overflow-y:auto;padding:12px 15px;-moz-tab-size:4;tab-size:4;text-align:left;white-space:pre-wrap;word-wrap:break-word}.ql-container.ql-disabled .ql-tooltip{visibility:hidden}.ql-container.ql-disabled .ql-editor ul[data-checked]>li::before{pointer-events:none}.ql-clipboard{left:-100000px;height:1px;overflow-y:hidden;position:absolute;top:50%}.ql-clipboard p{margin:0;padding:0}.ql-editor p,.ql-editor ol,.ql-editor ul,.ql-editor pre,.ql-editor blockquote,.ql-editor h1,.ql-editor h2,.ql-editor h3,.ql-editor h4,.ql-editor h5,.ql-editor h6{counter-reset:list-1 list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9}.ql-editor ol,.ql-editor ul{padding-left:1.5em}.ql-editor ol>li,.ql-editor ul>li{list-style-type:none}.ql-editor ul>li::before{content:"•"}.ql-editor ul[data-checked=true],.ql-editor ul[data-checked=false]{pointer-events:none}.ql-editor ul[data-checked=true]>li::before,.ql-editor ul[data-checked=false]>li::before{color:#777;cursor:pointer;pointer-events:all}.ql-editor ul[data-checked=true]>li::before{content:"☑"}.ql-editor ul[data-checked=false]>li::before{content:"☐"}.ql-editor li::before{display:inline-block;margin-right:.3em;text-align:right;white-space:nowrap;width:1.2em}.ql-editor li:not(.ql-direction-rtl)::before{margin-left:-1.5em}.ql-editor ol li,.ql-editor ul li{padding-left:1.5em}.ql-editor ol li{counter-reset:list-1 list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9;counter-increment:list-num}.ql-editor ol li::before{content:counter(list-num, decimal) ". "}.ql-editor ol li.ql-indent-1{counter-increment:list-1}.ql-editor ol li.ql-indent-1::before{content:counter(list-1, lower-alpha) ". "}.ql-editor ol li.ql-indent-1{counter-reset:list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9}.ql-editor ol li.ql-indent-2{counter-increment:list-2}.ql-editor ol li.ql-indent-2::before{content:counter(list-2, lower-roman) ". "}.ql-editor ol li.ql-indent-2{counter-reset:list-3 list-4 list-5 list-6 list-7 list-8 list-9}.ql-editor ol li.ql-indent-3{counter-increment:list-3}.ql-editor ol li.ql-indent-3::before{content:counter(list-3, decimal) ". "}.ql-editor ol li.ql-indent-3{counter-reset:list-4 list-5 list-6 list-7 list-8 list-9}.ql-editor ol li.ql-indent-4{counter-increment:list-4}.ql-editor ol li.ql-indent-4::before{content:counter(list-4, lower-alpha) ". "}.ql-editor ol li.ql-indent-4{counter-reset:list-5 list-6 list-7 list-8 list-9}.ql-editor ol li.ql-indent-5{counter-increment:list-5}.ql-editor ol li.ql-indent-5::before{content:counter(list-5, lower-roman) ". "}.ql-editor ol li.ql-indent-5{counter-reset:list-6 list-7 list-8 list-9}.ql-editor ol li.ql-indent-6{counter-increment:list-6}.ql-editor ol li.ql-indent-6::before{content:counter(list-6, decimal) ". "}.ql-editor ol li.ql-indent-6{counter-reset:list-7 list-8 list-9}.ql-editor ol li.ql-indent-7{counter-increment:list-7}.ql-editor ol li.ql-indent-7::before{content:counter(list-7, lower-alpha) ". "}.ql-editor ol li.ql-indent-7{counter-reset:list-8 list-9}.ql-editor ol li.ql-indent-8{counter-increment:list-8}.ql-editor ol li.ql-indent-8::before{content:counter(list-8, lower-roman) ". "}.ql-editor ol li.ql-indent-8{counter-reset:list-9}.ql-editor ol li.ql-indent-9{counter-increment:list-9}.ql-editor ol li.ql-indent-9::before{content:counter(list-9, decimal) ". "}.ql-editor .ql-indent-1:not(.ql-direction-rtl){padding-left:3em}.ql-editor li.ql-indent-1:not(.ql-direction-rtl){padding-left:4.5em}.ql-editor .ql-indent-1.ql-direction-rtl.ql-align-right{padding-right:3em}.ql-editor li.ql-indent-1.ql-direction-rtl.ql-align-right{padding-right:4.5em}.ql-editor .ql-indent-2:not(.ql-direction-rtl){padding-left:6em}.ql-editor li.ql-indent-2:not(.ql-direction-rtl){padding-left:7.5em}.ql-editor .ql-indent-2.ql-direction-rtl.ql-align-right{padding-right:6em}.ql-editor li.ql-indent-2.ql-direction-rtl.ql-align-right{padding-right:7.5em}.ql-editor .ql-indent-3:not(.ql-direction-rtl){padding-left:9em}.ql-editor li.ql-indent-3:not(.ql-direction-rtl){padding-left:10.5em}.ql-editor .ql-indent-3.ql-direction-rtl.ql-align-right{padding-right:9em}.ql-editor li.ql-indent-3.ql-direction-rtl.ql-align-right{padding-right:10.5em}.ql-editor .ql-indent-4:not(.ql-direction-rtl){padding-left:12em}.ql-editor li.ql-indent-4:not(.ql-direction-rtl){padding-left:13.5em}.ql-editor .ql-indent-4.ql-direction-rtl.ql-align-right{padding-right:12em}.ql-editor li.ql-indent-4.ql-direction-rtl.ql-align-right{padding-right:13.5em}.ql-editor .ql-indent-5:not(.ql-direction-rtl){padding-left:15em}.ql-editor li.ql-indent-5:not(.ql-direction-rtl){padding-left:16.5em}.ql-editor .ql-indent-5.ql-direction-rtl.ql-align-right{padding-right:15em}.ql-editor li.ql-indent-5.ql-direction-rtl.ql-align-right{padding-right:16.5em}.ql-editor .ql-indent-6:not(.ql-direction-rtl){padding-left:18em}.ql-editor li.ql-indent-6:not(.ql-direction-rtl){padding-left:19.5em}.ql-editor .ql-indent-6.ql-direction-rtl.ql-align-right{padding-right:18em}.ql-editor li.ql-indent-6.ql-direction-rtl.ql-align-right{padding-right:19.5em}.ql-editor .ql-indent-7:not(.ql-direction-rtl){padding-left:21em}.ql-editor li.ql-indent-7:not(.ql-direction-rtl){padding-left:22.5em}.ql-editor .ql-indent-7.ql-direction-rtl.ql-align-right{padding-right:21em}.ql-editor li.ql-indent-7.ql-direction-rtl.ql-align-right{padding-right:22.5em}.ql-editor .ql-indent-8:not(.ql-direction-rtl){padding-left:24em}.ql-editor li.ql-indent-8:not(.ql-direction-rtl){padding-left:25.5em}.ql-editor .ql-indent-8.ql-direction-rtl.ql-align-right{padding-right:24em}.ql-editor li.ql-indent-8.ql-direction-rtl.ql-align-right{padding-right:25.5em}.ql-editor .ql-indent-9:not(.ql-direction-rtl){padding-left:27em}.ql-editor li.ql-indent-9:not(.ql-direction-rtl){padding-left:28.5em}.ql-editor .ql-indent-9.ql-direction-rtl.ql-align-right{padding-right:27em}.ql-editor li.ql-indent-9.ql-direction-rtl.ql-align-right{padding-right:28.5em}.ql-editor .ql-video{display:block;max-width:100%}.ql-editor .ql-video.ql-align-center{margin:0 auto}.ql-editor .ql-video.ql-align-right{margin:0 0 0 auto}.ql-editor .ql-bg-black{background-color:#000}.ql-editor .ql-bg-red{background-color:#e60000}.ql-editor .ql-bg-orange{background-color:#f90}.ql-editor .ql-bg-yellow{background-color:#ff0}.ql-editor .ql-bg-green{background-color:#008a00}.ql-editor .ql-bg-blue{background-color:#06c}.ql-editor .ql-bg-purple{background-color:#93f}.ql-editor .ql-color-white{color:#fff}.ql-editor .ql-color-red{color:#e60000}.ql-editor .ql-color-orange{color:#f90}.ql-editor .ql-color-yellow{color:#ff0}.ql-editor .ql-color-green{color:#008a00}.ql-editor .ql-color-blue{color:#06c}.ql-editor .ql-color-water-medium{color:#93f}.ql-editor .ql-font-serif{font-family:var(--system-ui)}.ql-editor .ql-font-monospace{font-family:var(--system-ui)}.ql-editor .ql-size-small{font-size:.75em}.ql-editor .ql-size-large{font-size:1.5em}.ql-editor .ql-size-huge{font-size:2.5em}.ql-editor .ql-direction-rtl{direction:rtl;text-align:inherit}.ql-editor .ql-align-center{text-align:center}.ql-editor .ql-align-justify{text-align:justify}.ql-editor .ql-align-right{text-align:right}.ql-editor.ql-blank::before{font-size:14px;font-weight:500;line-height:20px;content:attr(data-placeholder);pointer-events:none;position:absolute;color:var(--color-neutral-40);font-family:var(--system-ui)}.ql-toolbar{position:relative;height:50px}@media(max-width: 660px){.ql-toolbar{height:auto}}.ql-toolbar .zp-icon:hover{color:var(--color-primary-60)}.ql-toolbar .zp-icon:active{color:var(--color-primary-70)}.ql-snow.ql-toolbar::after{display:none !important}.ql-snow.ql-toolbar button:not(.emailerPrimaryActionButton),.ql-snow .ql-toolbar button:not(.emailerPrimaryActionButton){background:none;cursor:pointer;float:left;padding:9px;height:30px;width:30px}.ql-snow.ql-toolbar button svg,.ql-snow .ql-toolbar button svg{float:left;height:17px;width:17px}.ql-snow.ql-toolbar button:active:hover,.ql-snow .ql-toolbar button:active:hover{outline:none}.ql-snow.ql-toolbar input.ql-image[type=file],.ql-snow .ql-toolbar input.ql-image[type=file]{display:none}.ql-snow.ql-toolbar button:hover:not(.emailerPrimaryActionButton),.ql-snow .ql-toolbar button:hover:not(.emailerPrimaryActionButton),.ql-snow.ql-toolbar button.ql-active,.ql-snow .ql-toolbar button.ql-active,.ql-snow.ql-toolbar .ql-picker-label:hover,.ql-snow .ql-toolbar .ql-picker-label:hover,.ql-snow.ql-toolbar .ql-picker-label.ql-active,.ql-snow .ql-toolbar .ql-picker-label.ql-active,.ql-snow.ql-toolbar .ql-picker-item:hover,.ql-snow .ql-toolbar .ql-picker-item:hover,.ql-snow.ql-toolbar .ql-picker-item.ql-selected,.ql-snow .ql-toolbar .ql-picker-item.ql-selected{color:#06c}.ql-snow.ql-toolbar button:hover .ql-fill,.ql-snow .ql-toolbar button:hover .ql-fill,.ql-snow.ql-toolbar button.ql-active .ql-fill,.ql-snow .ql-toolbar button.ql-active .ql-fill,.ql-snow.ql-toolbar .ql-picker-label:hover .ql-fill,.ql-snow .ql-toolbar .ql-picker-label:hover .ql-fill,.ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-fill,.ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-fill,.ql-snow.ql-toolbar .ql-picker-item:hover .ql-fill,.ql-snow .ql-toolbar .ql-picker-item:hover .ql-fill,.ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-fill,.ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-fill,.ql-snow.ql-toolbar button:hover .ql-stroke.ql-fill,.ql-snow .ql-toolbar button:hover .ql-stroke.ql-fill,.ql-snow.ql-toolbar button.ql-active .ql-stroke.ql-fill,.ql-snow .ql-toolbar button.ql-active .ql-stroke.ql-fill,.ql-snow.ql-toolbar .ql-picker-label:hover .ql-stroke.ql-fill,.ql-snow .ql-toolbar .ql-picker-label:hover .ql-stroke.ql-fill,.ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-stroke.ql-fill,.ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-stroke.ql-fill,.ql-snow.ql-toolbar .ql-picker-item:hover .ql-stroke.ql-fill,.ql-snow .ql-toolbar .ql-picker-item:hover .ql-stroke.ql-fill,.ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-stroke.ql-fill,.ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke.ql-fill{fill:#06c}.ql-snow.ql-toolbar button:hover .ql-stroke,.ql-snow .ql-toolbar button:hover .ql-stroke,.ql-snow.ql-toolbar button.ql-active .ql-stroke,.ql-snow .ql-toolbar button.ql-active .ql-stroke,.ql-snow.ql-toolbar .ql-picker-label:hover .ql-stroke,.ql-snow .ql-toolbar .ql-picker-label:hover .ql-stroke,.ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-stroke,.ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-stroke,.ql-snow.ql-toolbar .ql-picker-item:hover .ql-stroke,.ql-snow .ql-toolbar .ql-picker-item:hover .ql-stroke,.ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-stroke,.ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke,.ql-snow.ql-toolbar button:hover .ql-stroke-miter,.ql-snow .ql-toolbar button:hover .ql-stroke-miter,.ql-snow.ql-toolbar button.ql-active .ql-stroke-miter,.ql-snow .ql-toolbar button.ql-active .ql-stroke-miter,.ql-snow.ql-toolbar .ql-picker-label:hover .ql-stroke-miter,.ql-snow .ql-toolbar .ql-picker-label:hover .ql-stroke-miter,.ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-stroke-miter,.ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-stroke-miter,.ql-snow.ql-toolbar .ql-picker-item:hover .ql-stroke-miter,.ql-snow .ql-toolbar .ql-picker-item:hover .ql-stroke-miter,.ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-stroke-miter,.ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke-miter{stroke:#06c}.ql-snow{box-sizing:border-box}.ql-snow *{box-sizing:border-box}.ql-snow .ql-hidden{display:none}.ql-snow .ql-out-bottom,.ql-snow .ql-out-top{visibility:hidden}.ql-snow .ql-tooltip{position:absolute;transform:translate(0, 5px)}.ql-snow .ql-tooltip a{cursor:pointer;text-decoration:none;margin:8px;vertical-align:middle}.ql-snow .ql-tooltip.ql-flip{transform:translate(-10px, -5px)}.ql-snow .ql-formats{display:inline-flex !important;margin-right:0 !important}.ql-snow .ql-formats{flex-flow:row nowrap;align-items:center;gap:8px}.ql-snow .ql-formats i.mdi{cursor:pointer;font-size:14px}.ql-snow .ql-stroke{fill:none;stroke:#444;stroke-linecap:round;stroke-linejoin:round;stroke-width:2}.ql-snow .ql-stroke-miter{fill:none;stroke:#444;stroke-miterlimit:10;stroke-width:2}.ql-snow .ql-fill,.ql-snow .ql-stroke.ql-fill{fill:#444}.ql-snow .ql-empty{fill:none}.ql-snow .ql-even{fill-rule:evenodd}.ql-snow .ql-thin,.ql-snow .ql-stroke.ql-thin{stroke-width:1}.ql-snow .ql-transparent{opacity:.4}.ql-snow .ql-direction svg:last-child{display:none}.ql-snow .ql-direction.ql-active svg:last-child{display:inline}.ql-snow .ql-direction.ql-active svg:first-child{display:none}.ql-snow .ql-editor h1{font-size:2em}.ql-snow .ql-editor h2{font-size:1.5em}.ql-snow .ql-editor h3{font-size:1.17em}.ql-snow .ql-editor h4{font-size:1em}.ql-snow .ql-editor h5{font-size:.83em}.ql-snow .ql-editor h6{font-size:.67em}.ql-snow .ql-editor a{text-decoration:underline}.ql-snow .ql-editor blockquote{border-left:4px solid #ccc;margin-bottom:5px;margin-top:5px;padding-left:16px}.ql-snow .ql-editor code,.ql-snow .ql-editor pre{background-color:var(--color-neutral-10);border-radius:3px}.ql-snow .ql-editor pre{white-space:pre-wrap;margin-bottom:5px;margin-top:5px;padding:5px 10px}.ql-snow .ql-editor code{font-size:80%;padding-bottom:2px;padding-top:2px}.ql-snow .ql-editor code::before,.ql-snow .ql-editor code::after{content:" ";letter-spacing:-2px}.ql-snow .ql-editor pre.ql-syntax{background-color:transparent;background-color:initial;color:inherit;overflow:visible}.ql-snow .ql-editor img{max-width:100%}.ql-snow .ql-picker{color:#444;display:inline-block;float:left;font-size:14px;font-weight:500;height:24px;position:relative;vertical-align:middle}.ql-snow .ql-picker-label{cursor:pointer;display:inline-block;height:100%;padding-left:8px;padding-right:2px;position:relative;width:100%}.ql-snow .ql-picker-label::before{display:inline-block;line-height:22px}.ql-snow .ql-picker-options{background-color:#fff;display:none;min-width:100%;padding:4px 8px;position:absolute;white-space:nowrap}.ql-snow .ql-picker-options .ql-picker-item{cursor:pointer;display:block;padding-bottom:5px;padding-top:5px}.ql-snow .ql-picker.ql-expanded .ql-picker-label{color:#ccc;z-index:2}.ql-snow .ql-picker.ql-expanded .ql-picker-label .ql-fill{fill:#ccc}.ql-snow .ql-picker.ql-expanded .ql-picker-label .ql-stroke{stroke:#ccc}.ql-snow .ql-picker.ql-expanded .ql-picker-options{display:block;margin-top:-1px;top:100%;z-index:1}.ql-snow .ql-color-picker,.ql-snow .ql-icon-picker{width:28px}.ql-snow .ql-color-picker .ql-picker-label,.ql-snow .ql-icon-picker .ql-picker-label{padding:2px 4px}.ql-snow .ql-color-picker .ql-picker-label svg,.ql-snow .ql-icon-picker .ql-picker-label svg{right:4px}.ql-snow .ql-icon-picker .ql-picker-options{padding:4px 0}.ql-snow .ql-icon-picker .ql-picker-item{height:24px;width:24px;padding:2px 4px}.ql-snow .ql-color-picker .ql-picker-options{padding:3px 5px;width:152px}.ql-snow .ql-color-picker .ql-picker-item{border:1px solid rgba(0,0,0,0);float:left;height:16px;margin:2px;padding:0;width:16px}.ql-snow .ql-picker:not(.ql-color-picker):not(.ql-icon-picker) svg{position:absolute;margin-top:-9px;right:-18px;top:50%;width:18px}.ql-snow .ql-picker.ql-header .ql-picker-label[data-label]:not([data-label=""])::before,.ql-snow .ql-picker.ql-font .ql-picker-label[data-label]:not([data-label=""])::before,.ql-snow .ql-picker.ql-size .ql-picker-label[data-label]:not([data-label=""])::before,.ql-snow .ql-picker.ql-header .ql-picker-item[data-label]:not([data-label=""])::before,.ql-snow .ql-picker.ql-font .ql-picker-item[data-label]:not([data-label=""])::before,.ql-snow .ql-picker.ql-size .ql-picker-item[data-label]:not([data-label=""])::before{content:attr(data-label)}.ql-snow .ql-picker.ql-header{width:98px}.ql-snow .ql-picker.ql-header .ql-picker-label::before,.ql-snow .ql-picker.ql-header .ql-picker-item::before{content:"Normal"}.ql-snow .ql-picker.ql-header .ql-picker-label[data-value="1"]::before,.ql-snow .ql-picker.ql-header .ql-picker-item[data-value="1"]::before{content:"Heading 1"}.ql-snow .ql-picker.ql-header .ql-picker-label[data-value="2"]::before,.ql-snow .ql-picker.ql-header .ql-picker-item[data-value="2"]::before{content:"Heading 2"}.ql-snow .ql-picker.ql-header .ql-picker-label[data-value="3"]::before,.ql-snow .ql-picker.ql-header .ql-picker-item[data-value="3"]::before{content:"Heading 3"}.ql-snow .ql-picker.ql-header .ql-picker-label[data-value="4"]::before,.ql-snow .ql-picker.ql-header .ql-picker-item[data-value="4"]::before{content:"Heading 4"}.ql-snow .ql-picker.ql-header .ql-picker-label[data-value="5"]::before,.ql-snow .ql-picker.ql-header .ql-picker-item[data-value="5"]::before{content:"Heading 5"}.ql-snow .ql-picker.ql-header .ql-picker-label[data-value="6"]::before,.ql-snow .ql-picker.ql-header .ql-picker-item[data-value="6"]::before{content:"Heading 6"}.ql-snow .ql-picker.ql-header .ql-picker-item[data-value="1"]::before{font-size:2em}.ql-snow .ql-picker.ql-header .ql-picker-item[data-value="2"]::before{font-size:1.5em}.ql-snow .ql-picker.ql-header .ql-picker-item[data-value="3"]::before{font-size:1.17em}.ql-snow .ql-picker.ql-header .ql-picker-item[data-value="4"]::before{font-size:1em}.ql-snow .ql-picker.ql-header .ql-picker-item[data-value="5"]::before{font-size:.83em}.ql-snow .ql-picker.ql-header .ql-picker-item[data-value="6"]::before{font-size:.67em}.ql-snow .ql-picker.ql-font{width:-moz-fit-content;width:fit-content;margin-right:10px}.ql-snow .ql-picker.ql-font .ql-picker-label::before,.ql-snow .ql-picker.ql-font .ql-picker-item::before{content:"Sans Serif"}.ql-snow .ql-picker.ql-font .ql-picker-label[data-value=serif]::before,.ql-snow .ql-picker.ql-font .ql-picker-item[data-value=serif]::before{content:"Serif"}.ql-snow .ql-picker.ql-font .ql-picker-label[data-value=monospace]::before,.ql-snow .ql-picker.ql-font .ql-picker-item[data-value=monospace]::before{content:"Monospace"}.ql-snow .ql-picker.ql-font .ql-picker-item[data-value=serif]::before{font-family:var(--system-ui)}.ql-snow .ql-picker.ql-font .ql-picker-item[data-value=monospace]::before{font-family:var(--system-ui)}.ql-snow .ql-picker.ql-size{width:-moz-fit-content;width:fit-content;margin-right:10px}.ql-snow .ql-picker.ql-size .ql-picker-label::before,.ql-snow .ql-picker.ql-size .ql-picker-item::before{content:"Normal"}.ql-snow .ql-picker.ql-size .ql-picker-label[data-value=small]::before,.ql-snow .ql-picker.ql-size .ql-picker-item[data-value=small]::before{content:"Small"}.ql-snow .ql-picker.ql-size .ql-picker-label[data-value=large]::before,.ql-snow .ql-picker.ql-size .ql-picker-item[data-value=large]::before{content:"Large"}.ql-snow .ql-picker.ql-size .ql-picker-label[data-value=huge]::before,.ql-snow .ql-picker.ql-size .ql-picker-item[data-value=huge]::before{content:"Huge"}.ql-snow .ql-picker.ql-size .ql-picker-item[data-value=small]::before{font-size:10px}.ql-snow .ql-picker.ql-size .ql-picker-item[data-value=large]::before{font-size:18px}.ql-snow .ql-picker.ql-size .ql-picker-item[data-value=huge]::before{font-size:32px}.ql-snow .ql-color-picker.ql-background .ql-picker-item{background-color:#fff}.ql-snow .ql-color-picker.ql-color .ql-picker-item{background-color:#000}.ql-toolbar.ql-snow{box-sizing:border-box;font-family:var(--system-ui);display:flex;flex-flow:row nowrap;align-items:center;justify-content:space-between;padding:0 10px}@media(max-width: 720px){.ql-toolbar.ql-snow{display:block}}.ql-toolbar.ql-snow .ql-picker-label{border:1px solid rgba(0,0,0,0)}.ql-toolbar.ql-snow .ql-picker-options{border:1px solid rgba(0,0,0,0);box-shadow:rgba(0,0,0,.2) 0 2px 8px}.ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-label{border-color:var(--color-neutral-30)}.ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-options{border-color:var(--color-neutral-30)}.ql-toolbar.ql-snow .ql-color-picker .ql-picker-item.ql-selected,.ql-toolbar.ql-snow .ql-color-picker .ql-picker-item:hover{border-color:#000}.ql-toolbar.ql-snow+.ql-container.ql-snow{border-top:0}.ql-snow .ql-tooltip{background-color:#fff;border:1px solid var(--color-neutral-30);border-radius:var(--border-radius-4);box-shadow:0 0 5px #ddd;color:#444;white-space:nowrap}.ql-snow .ql-tooltip input[type=text]{display:none;border:1px solid var(--color-neutral-30);font-size:13px;height:26px;margin:0;padding:3px 5px;width:170px}.ql-snow .ql-tooltip{line-height:32px}.ql-snow .ql-tooltip .ql-preview,.ql-snow .ql-tooltip .ql-remove{display:inline-block;width:20px;height:20px;color:rgba(0,0,0,0);background-repeat:no-repeat;background-position:center;background-size:cover}.ql-snow .ql-tooltip .ql-preview:hover::before,.ql-snow .ql-tooltip .ql-remove:hover::before{display:inline-block;transform:translate(-20px, -40px);font-size:12px;font-weight:500;line-height:16px;background:#242d3e;color:var(--color-neutral-0);line-height:16px;padding:4px 8px;border-radius:5px}.ql-snow .ql-tooltip .ql-preview{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAAQlBMVEUAAABVVYBhbXldaIBgaoBfbH1eaoBdan9ea35dan5dan5dan5dan5dan5dan5ean5dan5dan5ean5dan5dan7///+8GEtEAAAAFHRSTlMABhUWGDs8h4i+wsPFy8zS09fl5lTgAWgAAAABYktHRBXl2PmjAAAAfUlEQVQoz62SSQ6AIAxFQVAQcILe/6wG2hoUVupftf91SkCIjwpQNDfAI4Be07AxkDZhmc+Z2mEnYKkdHNYfmkCCsZ5zaEGgWoV+C/J8lW9zd0D1lxg8fQbsB/8AK86vVlLkFyW6oE1/BAmmyp8gcmjgLsPgeo+iaOTLb3ECCaQLJau0+goAAAAASUVORK5CYII=)}.ql-snow .ql-tooltip .ql-preview:hover::before{content:"Open Link"}.ql-snow .ql-tooltip .ql-remove{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAABTVBMVEUAAAAAAACAgIBVVVVmZmZVVYBgYIBddHRiYnZVZndaaXhjY4Bea3lhbXlZb3pcZnpeaHtdbHxaaYBfbXxcaoBaZ3xea4Bfa31ca4BdbIBeaIBda31caoBfbH1eaYBca35faoBda4Bea4BcaYBea35daoBcaH5daX5ca31da31can5eaX1eaX1can1dan1ea31dan5ca31dan5ean5ca35ean1ea35caX5daX5dan5da31ean5daX1ean5eaX9da35ea35caX5dan5daX9dan9dan5dan9da39dan5dan1can5ea31dan5daX1daX5da31can5dan5caX5da35dan5can5ean5da35dan5daX5dan5dan5da35dan5dan5dan5ean5dan5dan5dan5dan5da35dan5ean5dan5dan5dan5dan5dan5dan7///+LxSU7AAAAbXRSTlMAAQIDBQYICw0PERITFRcZGyEiIyQlJisyNDY3OjtERUZKTE5RUlNVVlhZWlxeYGJjZGVnaWp1d3l7fH1+gIWGiIqMj5GanaWora6xsrO4vcHCxMnOz9LV19zf4OHi4+Tl6Onr7O3u8PT7/P3+lC0FgwAAAAFiS0dEbiIPURcAAAEWSURBVBgZncFVVwJRAEbRM4OJ3YGKhYpdGIzY3d3dyv3+/6t3GFn47N783/p1EZZT3+CS5bQUw4G6ga4b6XmIX826KMfTCkwYvb/KDBIoPNMhFVvtjBvNhZyk7kIESndXsUbTmgacR1XxVzytJJb7pBp8myfLjVgbSuGb1Y2D71K6wiqO4JuSiZFREF3ooWunkowZpSfIiX+pDZ+n72Fyhr6VwtekrwFyxtJKklG01knHUkcJGTGjaXytpVhH0mcYy7nWHD5PO1jVqeO9fKxavblYMzIj/FWnFxeYkklgTW6XEXDvNR8KeTIJIrvVbOs8TKBf+viQSYCnRcrO1cuv+IN0GwOiOoNwXx5Zbn2dg1Vwus+//QDsQDd92xrCfQAAAABJRU5ErkJggg==)}.ql-snow .ql-tooltip .ql-remove:hover::before{content:"Remove Link"}.ql-snow .ql-tooltip a.ql-action{--border: 1px solid var(--color-neutral-30);display:inline-block;border-left:var(--border);border-right:var(--border);margin:0}.ql-snow .ql-tooltip a.ql-action::after{content:"Edit Link";margin:0 8px}.ql-snow .ql-tooltip.ql-editing a.ql-preview,.ql-snow .ql-tooltip.ql-editing a.ql-remove{display:none}.ql-snow .ql-tooltip.ql-editing input[type=text]{display:inline-block}.ql-snow .ql-tooltip.ql-editing a.ql-action::after{border-right:0;content:"Save";padding-right:0}.ql-snow .ql-tooltip[data-mode=link]{display:none}.ql-snow .ql-tooltip[data-mode=formula]::before{content:"Enter formula:"}.ql-snow .ql-tooltip[data-mode=video]::before{content:"Enter video:"}.ql-snow a{color:#06c}.ql-container.ql-snow{border:1px solid var(--color-neutral-30);border-radius:var(--border-radius-2)}.quill-editor{position:relative}.zp-throw-row-view-icon{top:2px;display:inline-block;position:relative}.zp-send-later-icon{padding:0 8px}.zp-send-later-icon img{height:16px !important;width:auto !important}.zp-message-view-tracking-icon{top:4px;position:relative}.inboxsdk__size_fixer .aDj,.inboxsdk__size_fixer .aDg{height:auto !important}.inboxsdk__compose_statusbarActive .aDj>.aDh{height:auto !important}.inboxsdk__appButton{background:var(--color-bg-main);border:1px solid #dadce0;border-radius:5em;padding:2px 36px 2px 14px;cursor:pointer}.inboxsdk__appButton:hover{background:#f2f2f2}.inboxsdk__appButton a:hover{text-decoration:none !important}.inboxsdk__appButton__clicked{background:#e4e4e4}.inboxsdk__appButton__clicked:hover{background:#e4e4e4}.inboxsdk__appButton_title{font-size:16px;font-weight:500;line-height:24px;color:var(--color-text-header);font-family:var(--system-ui);position:relative}.inboxsdk__appButton_title::after{content:"";width:0px;height:0px;border-left:5px solid rgba(0,0,0,0);border-right:5px solid rgba(0,0,0,0);border-top:5px solid #606367;position:absolute;bottom:5px;right:-18px;border-radius:var(--border-radius-2)}.zp-fixed{position:fixed}.bkK{position:relative}.inboxsdk__compose_statusbarActive .aDj.aDi{bottom:0 !important;height:auto !important}.inboxsdk__compose_statusbarActive .aDj.aDi .aC3{height:0 !important}.inboxsdk__navItem_name[title=Apollo]{margin-left:5px}[class*=inboxsdk__expando]{background-position:4px !important}[class*=zp-message-view-events-icon-],[class*=zp-message-view-add-to-sequence-icon-]{width:0;height:0}[id=GmailSidebar]{height:100%}[class*=inboxsdk__button_icon]::before{background-color:var(--color-neutral-30) !important}[class*=inboxsdk__button_selectedIndicator]{background-color:#4285f4 !important;border-radius:var(--border-radius-8) 0px 0px var(--border-radius-8) !important}[class*=sidebar_button_container_active] [class*=inboxsdk__button_icon][data-tooltip=Apollo]::before{background-color:var(--color-neutral-40) !important}[class*=sidebar_button_container_active] [class*=inboxsdk__button_icon][data-tooltip=Apollo]::before{opacity:.6}[class*=sidebar_global_iconArea] [class*=inboxsdk__button_icon]{left:-1px !important;top:-1px !important}[class*=sidebar_global_iconArea] [class*=inboxsdk__button_iconImg]{height:22px !important;width:22px !important}[class*=inboxsdk__navItem] [class*=inboxsdk__button_icon]{height:20px;width:20px;vertical-align:middle;background-size:18px;background-repeat:no-repeat;background-position:center}[class*=inboxsdk__navItem] [class*=inboxsdk__button_icon].invert{filter:invert(100%)}[class*=inboxsdk__navItem] [class*=inboxsdk__button_icon].recently-opened{background-image:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE5LjIxIDYuNzgwMDNMMTIgMC43ODAwMjVDMTEuNDc0IDAuMjc5ODc4IDEwLjc3NTkgMC4wMDA5NzY1NjIgMTAuMDUgMC4wMDA5NzY1NjJDOS4zMjQxNSAwLjAwMDk3NjU2MiA4LjYyNjA0IDAuMjc5ODc4IDguMSAwLjc4MDAyNUwwLjg5IDYuNzQwMDNDMC42MTQwODEgNi45ODA4OSAwLjM5MjE2NSA3LjI3NzMzIDAuMjM4NzkgNy42MDk5M0MwLjA4NTQxNDIgNy45NDI1NCAwLjAwNDA0MDY0IDguMzAzNzkgMCA4LjY3MDAzVjE3LjI1QzAuMDEwNTQwNSAxNy45Nzc2IDAuMzA5MDQ0IDE4LjY3MTQgMC44MzAxMTggMTkuMTc5NEMxLjM1MTE5IDE5LjY4NzMgMi4wNTIzNSAxOS45NjggMi43OCAxOS45NkgxNy4yMkMxNy45NDc2IDE5Ljk2OCAxOC42NDg4IDE5LjY4NzMgMTkuMTY5OSAxOS4xNzk0QzE5LjY5MSAxOC42NzE0IDE5Ljk4OTUgMTcuOTc3NiAyMCAxNy4yNVY4LjY3MDAzQzE5Ljk5OTIgOC4zMTg1IDE5LjkyOSA3Ljk3MDU4IDE5Ljc5MzUgNy42NDYyNUMxOS42NTc5IDcuMzIxOTEgMTkuNDU5NiA3LjAyNzU0IDE5LjIxIDYuNzgwMDNaTTkuNDQgMi4yMjAwM0M5LjU5Mjk4IDIuMDgwMTkgOS43OTI3NCAyLjAwMjY0IDEwIDIuMDAyNjRDMTAuMjA3MyAyLjAwMjY0IDEwLjQwNyAyLjA4MDE5IDEwLjU2IDIuMjIwMDNMMTcgNy40NjAwM0wxMC41MyAxMi43OEMxMC4zNzcgMTIuOTE5OSAxMC4xNzczIDEyLjk5NzQgOS45NyAxMi45OTc0QzkuNzYyNzQgMTIuOTk3NCA5LjU2Mjk4IDEyLjkxOTkgOS40MSAxMi43OEwzIDcuNDYwMDNMOS40NCAyLjIyMDAzWk0xOCAxNy4yNUMxNy45ODcxIDE3LjQ0NjMgMTcuODk4NyAxNy42MyAxNy43NTMyIDE3Ljc2MjRDMTcuNjA3OCAxNy44OTQ4IDE3LjQxNjYgMTcuOTY1NiAxNy4yMiAxNy45NkgyLjc4QzIuNTgzMzggMTcuOTY1NiAyLjM5MjI1IDE3Ljg5NDggMi4yNDY3OCAxNy43NjI0QzIuMTAxMzIgMTcuNjMgMi4wMTI4NiAxNy40NDYzIDIgMTcuMjVWOS4zMTAwM0w3LjA1IDEzLjI1TDUuMzkgMTQuODVDNS4yMDM3NSAxNS4wMzc0IDUuMDk5MjEgMTUuMjkwOCA1LjA5OTIxIDE1LjU1NUM1LjA5OTIxIDE1LjgxOTIgNS4yMDM3NSAxNi4wNzI3IDUuMzkgMTYuMjZDNS40ODI5NSAxNi4zNTc1IDUuNTk0NjMgMTYuNDM1MiA1LjcxODM2IDE2LjQ4ODVDNS44NDIwOCAxNi41NDE4IDUuOTc1MyAxNi41Njk1IDYuMTEgMTYuNTdDNi4zNjc0NyAxNi41NjkgNi42MTQ2MiAxNi40Njg3IDYuOCAxNi4yOUw4LjU3IDE0LjU5QzkuMDA5NjEgMTQuODU4NyA5LjUxNDgxIDE1LjAwMDggMTAuMDMgMTUuMDAwOEMxMC41NDUyIDE1LjAwMDggMTEuMDUwNCAxNC44NTg3IDExLjQ5IDE0LjU5TDEzLjI2IDE2LjI5QzEzLjQ0NTQgMTYuNDY4NyAxMy42OTI1IDE2LjU2OSAxMy45NSAxNi41N0MxNC4wODQ3IDE2LjU2OTUgMTQuMjE3OSAxNi41NDE4IDE0LjM0MTYgMTYuNDg4NUMxNC40NjU0IDE2LjQzNTIgMTQuNTc3MSAxNi4zNTc1IDE0LjY3IDE2LjI2QzE0Ljg1NjMgMTYuMDcyNyAxNC45NjA4IDE1LjgxOTIgMTQuOTYwOCAxNS41NTVDMTQuOTYwOCAxNS4yOTA4IDE0Ljg1NjMgMTUuMDM3NCAxNC42NyAxNC44NUwxMyAxMy4yNUwxOCA5LjMxMDAzVjE3LjI1WiIgZmlsbD0iIzI0MkQzRSIvPgo8L3N2Zz4K)}[class*=inboxsdk__navItem] [class*=inboxsdk__button_icon].tracked-mails{background-image:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyMSAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIwLjkxMyA3LjZDMTguODkzNyAyLjkxIDE1LjA5NSAwIDEwLjk5NjUgMEM2Ljg5Nzg5IDAgMy4wOTkyMSAyLjkxIDEuMDc5OTIgNy42QzEuMDI0ODcgNy43MjYxNyAwLjk5NjQ2IDcuODYyMzQgMC45OTY0NiA4QzAuOTk2NDYgOC4xMzc2NiAxLjAyNDg3IDguMjczODMgMS4wNzk5MiA4LjRDMy4wOTkyMSAxMy4wOSA2Ljg5Nzg5IDE2IDEwLjk5NjUgMTZDMTUuMDk1IDE2IDE4Ljg5MzcgMTMuMDkgMjAuOTEzIDguNEMyMC45NjggOC4yNzM4MyAyMC45OTY1IDguMTM3NjYgMjAuOTk2NSA4QzIwLjk5NjUgNy44NjIzNCAyMC45NjggNy43MjYxNyAyMC45MTMgNy42Wk0xMC45OTY1IDE0QzcuODI3NTYgMTQgNC44Mjg2MSAxMS43MSAzLjA5OTIxIDhDNC44Mjg2MSA0LjI5IDcuODI3NTYgMiAxMC45OTY1IDJDMTQuMTY1NCAyIDE3LjE2NDMgNC4yOSAxOC44OTM3IDhDMTcuMTY0MyAxMS43MSAxNC4xNjU0IDE0IDEwLjk5NjUgMTRaTTEwLjk5NjUgNEMxMC4yMDU2IDQgOS40MzI1MiA0LjIzNDYgOC43NzQ5NSA0LjY3NDEyQzguMTE3MzkgNS4xMTM2NSA3LjYwNDg3IDUuNzM4MzYgNy4zMDIyMyA2LjQ2OTI3QzYuOTk5NTggNy4yMDAxNyA2LjkyMDQgOC4wMDQ0NCA3LjA3NDY5IDguNzgwMzZDNy4yMjg5NyA5LjU1NjI4IDcuNjA5OCAxMC4yNjkgOC4xNjkwMiAxMC44Mjg0QzguNzI4MjMgMTEuMzg3OCA5LjQ0MDcyIDExLjc2ODggMTAuMjE2NCAxMS45MjMxQzEwLjk5MiAxMi4wNzc1IDExLjc5NiAxMS45OTgzIDEyLjUyNjcgMTEuNjk1NUMxMy4yNTczIDExLjM5MjggMTMuODgxOCAxMC44ODAxIDE0LjMyMTIgMTAuMjIyM0MxNC43NjA2IDkuNTY0NDggMTQuOTk1MSA4Ljc5MTEzIDE0Ljk5NTEgOEMxNC45OTUxIDYuOTM5MTMgMTQuNTczOCA1LjkyMTcyIDEzLjgyMzkgNS4xNzE1N0MxMy4wNzQgNC40MjE0MyAxMi4wNTcgNCAxMC45OTY1IDRaTTEwLjk5NjUgMTBDMTAuNjAxIDEwIDEwLjIxNDUgOS44ODI3IDkuODg1NzEgOS42NjI5NEM5LjU1NjkyIDkuNDQzMTggOS4zMDA2NyA5LjEzMDgyIDkuMTQ5MzQgOC43NjUzN0M4Ljk5ODAyIDguMzk5OTEgOC45NTg0MyA3Ljk5Nzc4IDkuMDM1NTcgNy42MDk4MkM5LjExMjcyIDcuMjIxODYgOS4zMDMxMyA2Ljg2NTQ5IDkuNTgyNzQgNi41ODU3OUM5Ljg2MjM1IDYuMzA2MDggMTAuMjE4NiA2LjExNTYgMTAuNjA2NCA2LjAzODQzQzEwLjk5NDIgNS45NjEyNiAxMS4zOTYyIDYuMDAwODcgMTEuNzYxNiA2LjE1MjI0QzEyLjEyNjkgNi4zMDM2MiAxMi40MzkxIDYuNTU5OTYgMTIuNjU4OCA2Ljg4ODg2QzEyLjg3ODUgNy4yMTc3NiAxMi45OTU4IDcuNjA0NDQgMTIuOTk1OCA4QzEyLjk5NTggOC41MzA0MyAxMi43ODUxIDkuMDM5MTQgMTIuNDEwMiA5LjQxNDIxQzEyLjAzNTIgOS43ODkyOSAxMS41MjY3IDEwIDEwLjk5NjUgMTBaIiBmaWxsPSIjMjQyRDNFIi8+Cjwvc3ZnPgo=)}[class*=inboxsdk__navItem] [class*=inboxsdk__button_icon].follow-up{background-image:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjIiIHZpZXdCb3g9IjAgMCAyMCAyMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik01LjA1MDMzIDIuMDUwMjVDNi4zNjMwOSAwLjczNzQ5OCA4LjE0MzU2IDAgMTAuMDAwMSAwQzExLjg1NjYgMCAxMy42MzcxIDAuNzM3NDk4IDE0Ljk0OTggMi4wNTAyNUMxNi4yNjI2IDMuMzYzMDEgMTcuMDAwMSA1LjE0MzQ5IDE3LjAwMDEgN0MxNy4wMDAxIDEwLjM1MjcgMTcuNzE3MSAxMi40MzQ2IDE4LjM3OCAxMy42NDYxQzE4LjcwOTggMTQuMjU0NCAxOS4wMzI5IDE0LjY1MzUgMTkuMjU3MyAxNC44OTA0QzE5LjM2OTggMTUuMDA5MSAxOS40NTgxIDE1LjA4NzggMTkuNTExNCAxNS4xMzIyQzE5LjUzOCAxNS4xNTQ0IDE5LjU1NTggMTUuMTY4IDE5LjU2MzUgMTUuMTczN0MxOS41NjQ3IDE1LjE3NDYgMTkuNTY1NyAxNS4xNzUzIDE5LjU2NjQgMTUuMTc1OEMxOS45MjQ5IDE1LjQyMjEgMjAuMDgzNSAxNS44NzI1IDE5Ljk1NzIgMTYuMjg5OEMxOS44Mjk1IDE2LjcxMTUgMTkuNDQwNyAxNyAxOS4wMDAxIDE3SDEuMDAwMDhDMC41NTk0MTEgMTcgMC4xNzA2ODQgMTYuNzExNSAwLjA0Mjk4NTggMTYuMjg5OEMtMC4wODMzNTY4IDE1Ljg3MjUgMC4wNzUyODI0IDE1LjQyMjEgMC40MzM3NjcgMTUuMTc1OEMwLjQzNDQ2OSAxNS4xNzUzIDAuNDM1NDI0IDE1LjE3NDYgMC40MzY2MjUgMTUuMTczN0MwLjQ0NDMyNSAxNS4xNjggMC40NjIxNzggMTUuMTU0NCAwLjQ4ODggMTUuMTMyMkMwLjU0MjAxNiAxNS4wODc4IDAuNjMwNCAxNS4wMDkxIDAuNzQyODc1IDE0Ljg5MDRDMC45NjczMDQgMTQuNjUzNSAxLjI5MDM5IDE0LjI1NDQgMS42MjIxOCAxMy42NDYxQzIuMjgzMDEgMTIuNDM0NiAzLjAwMDA4IDEwLjM1MjcgMy4wMDAwOCA3QzMuMDAwMDggNS4xNDM0OCAzLjczNzU4IDMuMzYzMDEgNS4wNTAzMyAyLjA1MDI1Wk0wLjQ0Mzg3NSAxNS4xNjlDMC40NDM5NTQgMTUuMTY4OSAwLjQ0NDAzMyAxNS4xNjg4IDAuNDQ0MTEyIDE1LjE2ODhDMC40NDQxMDcgMTUuMTY4OCAwLjQ0NDEwMyAxNS4xNjg4IDAuNDQ0MDk5IDE1LjE2ODhMMC40NDM4NzUgMTUuMTY5Wk0zLjE0OTQgMTVIMTYuODUwOEMxNi43NzQ3IDE0Ljg3NTMgMTYuNjk4MyAxNC43NDM0IDE2LjYyMjIgMTQuNjAzOUMxNS43ODMgMTMuMDY1NCAxNS4wMDAxIDEwLjY0NzMgMTUuMDAwMSA3QzE1LjAwMDEgNS42NzM5MiAxNC40NzMzIDQuNDAyMTUgMTMuNTM1NiAzLjQ2NDQ3QzEyLjU5NzkgMi41MjY3OCAxMS4zMjYyIDIgMTAuMDAwMSAyQzguNjc0IDIgNy40MDIyMyAyLjUyNjc4IDYuNDY0NTQgMy40NjQ0N0M1LjUyNjg2IDQuNDAyMTUgNS4wMDAwOCA1LjY3MzkyIDUuMDAwMDggN0M1LjAwMDA4IDEwLjY0NzMgNC4yMTcxNSAxMy4wNjU0IDMuMzc3OTcgMTQuNjAzOUMzLjMwMTg4IDE0Ljc0MzQgMy4yMjU0OSAxNC44NzUzIDMuMTQ5NCAxNVpNNy43NjgzMSAxOS4xMzVDOC4yNDYwMyAxOC44NTc5IDguODU3OTYgMTkuMDIwNSA5LjEzNTA4IDE5LjQ5ODJDOS4yMjI5OCAxOS42NDk4IDkuMzQ5MTYgMTkuNzc1NiA5LjUwMDk3IDE5Ljg2M0M5LjY1Mjc3IDE5Ljk1MDQgOS44MjQ4OSAxOS45OTY1IDEwLjAwMDEgMTkuOTk2NUMxMC4xNzUzIDE5Ljk5NjUgMTAuMzQ3NCAxOS45NTA0IDEwLjQ5OTIgMTkuODYzQzEwLjY1MSAxOS43NzU2IDEwLjc3NzIgMTkuNjQ5OCAxMC44NjUxIDE5LjQ5ODJDMTEuMTQyMiAxOS4wMjA1IDExLjc1NDEgMTguODU3OSAxMi4yMzE4IDE5LjEzNUMxMi43MDk2IDE5LjQxMjEgMTIuODcyMiAyMC4wMjQgMTIuNTk1MSAyMC41MDE4QzEyLjMzMTQgMjAuOTU2NCAxMS45NTI4IDIxLjMzMzcgMTEuNDk3NCAyMS41OTYxQzExLjA0MiAyMS44NTg0IDEwLjUyNTYgMjEuOTk2NSAxMC4wMDAxIDIxLjk5NjVDOS40NzQ1MSAyMS45OTY1IDguOTU4MTYgMjEuODU4NCA4LjUwMjc0IDIxLjU5NjFDOC4wNDczMSAyMS4zMzM3IDcuNjY4NzkgMjAuOTU2NCA3LjQwNTA4IDIwLjUwMThDNy4xMjc5NiAyMC4wMjQgNy4yOTA1OCAxOS40MTIxIDcuNzY4MzEgMTkuMTM1WiIgZmlsbD0iIzI0MkQzRSIvPgo8L3N2Zz4K)}[class*=inboxsdk__navItem] .TO.nZ.aiq .recently-opened{background-image:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE5LjIxIDYuNzgwMDNMMTIgMC43ODAwMjVDMTEuNDc0IDAuMjc5ODc4IDEwLjc3NTkgMC4wMDA5NzY1NjIgMTAuMDUgMC4wMDA5NzY1NjJDOS4zMjQxNSAwLjAwMDk3NjU2MiA4LjYyNjA0IDAuMjc5ODc4IDguMSAwLjc4MDAyNUwwLjg5IDYuNzQwMDNDMC42MTQwODEgNi45ODA4OSAwLjM5MjE2NSA3LjI3NzMzIDAuMjM4NzkgNy42MDk5M0MwLjA4NTQxNDIgNy45NDI1NCAwLjAwNDA0MDY0IDguMzAzNzkgMCA4LjY3MDAzVjE3LjI1QzAuMDEwNTQwNSAxNy45Nzc2IDAuMzA5MDQ0IDE4LjY3MTQgMC44MzAxMTggMTkuMTc5NEMxLjM1MTE5IDE5LjY4NzMgMi4wNTIzNSAxOS45NjggMi43OCAxOS45NkgxNy4yMkMxNy45NDc2IDE5Ljk2OCAxOC42NDg4IDE5LjY4NzMgMTkuMTY5OSAxOS4xNzk0QzE5LjY5MSAxOC42NzE0IDE5Ljk4OTUgMTcuOTc3NiAyMCAxNy4yNVY4LjY3MDAzQzE5Ljk5OTIgOC4zMTg1IDE5LjkyOSA3Ljk3MDU4IDE5Ljc5MzUgNy42NDYyNUMxOS42NTc5IDcuMzIxOTEgMTkuNDU5NiA3LjAyNzU0IDE5LjIxIDYuNzgwMDNaTTkuNDQgMi4yMjAwM0M5LjU5Mjk4IDIuMDgwMTkgOS43OTI3NCAyLjAwMjY0IDEwIDIuMDAyNjRDMTAuMjA3MyAyLjAwMjY0IDEwLjQwNyAyLjA4MDE5IDEwLjU2IDIuMjIwMDNMMTcgNy40NjAwM0wxMC41MyAxMi43OEMxMC4zNzcgMTIuOTE5OSAxMC4xNzczIDEyLjk5NzQgOS45NyAxMi45OTc0QzkuNzYyNzQgMTIuOTk3NCA5LjU2Mjk4IDEyLjkxOTkgOS40MSAxMi43OEwzIDcuNDYwMDNMOS40NCAyLjIyMDAzWiIgZmlsbD0iIzI0MkQzRSIvPgo8L3N2Zz4K)}[class*=inboxsdk__navItem] .TO.nZ.aiq .tracked-mails{background-image:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyMSAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMC45OTY4IDBDMTUuMDk1NCAwIDE4Ljg5NDEgMi45MSAyMC45MTM0IDcuNkMyMC45Njg0IDcuNzI2MTcgMjAuOTk2OCA3Ljg2MjM0IDIwLjk5NjggOEMyMC45OTY4IDguMTM3NjYgMjAuOTY4NCA4LjI3MzgzIDIwLjkxMzQgOC40QzE4Ljg5NDEgMTMuMDkgMTUuMDk1NCAxNiAxMC45OTY4IDE2QzYuODk4MjUgMTYgMy4wOTk1OCAxMy4wOSAxLjA4MDI4IDguNEMxLjAyNTI0IDguMjczODMgMC45OTY4MjYgOC4xMzc2NiAwLjk5NjgyNiA4QzAuOTk2ODI2IDcuODYyMzQgMS4wMjUyNCA3LjcyNjE3IDEuMDgwMjggNy42QzMuMDk5NTggMi45MSA2Ljg5ODI1IDAgMTAuOTk2OCAwWk04Ljc3NTEgNC42NzQxMkM5LjQzMjY3IDQuMjM0NiAxMC4yMDU4IDQgMTAuOTk2NiA0QzEyLjA1NzEgNCAxMy4wNzQyIDQuNDIxNDMgMTMuODI0IDUuMTcxNTdDMTQuNTczOSA1LjkyMTcyIDE0Ljk5NTIgNi45MzkxMyAxNC45OTUyIDhDMTQuOTk1MiA4Ljc5MTEzIDE0Ljc2MDcgOS41NjQ0OCAxNC4zMjEzIDEwLjIyMjNDMTMuODgyIDEwLjg4MDEgMTMuMjU3NSAxMS4zOTI4IDEyLjUyNjggMTEuNjk1NUMxMS43OTYyIDExLjk5ODMgMTAuOTkyMiAxMi4wNzc1IDEwLjIxNjUgMTEuOTIzMUM5LjQ0MDg2IDExLjc2ODggOC43MjgzOCAxMS4zODc4IDguMTY5MTcgMTAuODI4NEM3LjYwOTk1IDEwLjI2OSA3LjIyOTEyIDkuNTU2MjkgNy4wNzQ4MyA4Ljc4MDM2QzYuOTIwNTUgOC4wMDQ0NCA2Ljk5OTczIDcuMjAwMTcgNy4zMDIzOCA2LjQ2OTI3QzcuNjA1MDIgNS43MzgzNiA4LjExNzUzIDUuMTEzNjUgOC43NzUxIDQuNjc0MTJaTTkuODg1ODUgOS42NjI5NEMxMC4yMTQ2IDkuODgyNyAxMC42MDEyIDEwIDEwLjk5NjYgMTBDMTEuNTI2OSAxMCAxMi4wMzU0IDkuNzg5MjkgMTIuNDEwMyA5LjQxNDIxQzEyLjc4NTMgOS4wMzkxNCAxMi45OTU5IDguNTMwNDMgMTIuOTk1OSA4QzEyLjk5NTkgNy42MDQ0NCAxMi44Nzg3IDcuMjE3NzYgMTIuNjU5IDYuODg4ODZDMTIuNDM5MyA2LjU1OTk2IDEyLjEyNyA2LjMwMzYyIDExLjc2MTcgNi4xNTIyNEMxMS4zOTY0IDYuMDAwODcgMTAuOTk0NCA1Ljk2MTI2IDEwLjYwNjYgNi4wMzg0M0MxMC4yMTg3IDYuMTE1NiA5Ljg2MjQ5IDYuMzA2MDggOS41ODI4OSA2LjU4NTc5QzkuMzAzMjggNi44NjU0OSA5LjExMjg2IDcuMjIxODYgOS4wMzU3MiA3LjYwOTgyQzguOTU4NTggNy45OTc3OCA4Ljk5ODE3IDguMzk5OTEgOS4xNDk0OSA4Ljc2NTM3QzkuMzAwODEgOS4xMzA4MiA5LjU1NzA3IDkuNDQzMTggOS44ODU4NSA5LjY2Mjk0WiIgZmlsbD0iIzI0MkQzRSIvPgo8L3N2Zz4K)}[class*=inboxsdk__navItem] .TO.nZ.aiq .follow-up{background-image:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjIiIHZpZXdCb3g9IjAgMCAyMCAyMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUuMDUwMzMgMi4wNTAyNUM2LjM2MzA5IDAuNzM3NDk4IDguMTQzNTYgMCAxMC4wMDAxIDBDMTEuODU2NiAwIDEzLjYzNzEgMC43Mzc0OTggMTQuOTQ5OCAyLjA1MDI1QzE2LjI2MjYgMy4zNjMwMSAxNy4wMDAxIDUuMTQzNDkgMTcuMDAwMSA3QzE3LjAwMDEgMTAuMzUyNyAxNy43MTcxIDEyLjQzNDYgMTguMzc4IDEzLjY0NjFDMTguNzA5OCAxNC4yNTQ0IDE5LjAzMjkgMTQuNjUzNSAxOS4yNTczIDE0Ljg5MDRDMTkuMzY5OCAxNS4wMDkxIDE5LjQ1ODEgMTUuMDg3OCAxOS41MTE0IDE1LjEzMjJDMTkuNTM4IDE1LjE1NDQgMTkuNTU1OCAxNS4xNjggMTkuNTYzNSAxNS4xNzM3TDE5LjU2NjQgMTUuMTc1OEMxOS45MjQ5IDE1LjQyMjEgMjAuMDgzNSAxNS44NzI1IDE5Ljk1NzIgMTYuMjg5OEMxOS44Mjk1IDE2LjcxMTUgMTkuNDQwNyAxNyAxOS4wMDAxIDE3SDEuMDAwMDhDMC41NTk0MTEgMTcgMC4xNzA2ODQgMTYuNzExNSAwLjA0Mjk4NTggMTYuMjg5OEMtMC4wODMzNTY4IDE1Ljg3MjUgMC4wNzUyODI0IDE1LjQyMjEgMC40MzM3NjcgMTUuMTc1OEwwLjQzNjYyNSAxNS4xNzM3QzAuNDQ0MzI1IDE1LjE2OCAwLjQ2MjE3OCAxNS4xNTQ0IDAuNDg4OCAxNS4xMzIyQzAuNTQyMDE2IDE1LjA4NzggMC42MzA0IDE1LjAwOTEgMC43NDI4NzUgMTQuODkwNEMwLjk2NzMwNCAxNC42NTM1IDEuMjkwMzkgMTQuMjU0NCAxLjYyMjE4IDEzLjY0NjFDMi4yODMwMSAxMi40MzQ2IDMuMDAwMDggMTAuMzUyNyAzLjAwMDA4IDdDMy4wMDAwOCA1LjE0MzQ4IDMuNzM3NTggMy4zNjMwMSA1LjA1MDMzIDIuMDUwMjVaIiBmaWxsPSIjMjQyRDNFIi8+CjxwYXRoIGQ9Ik03Ljc2ODMxIDE5LjEzNUM4LjI0NjAzIDE4Ljg1NzkgOC44NTc5NiAxOS4wMjA1IDkuMTM1MDggMTkuNDk4MkM5LjIyMjk4IDE5LjY0OTggOS4zNDkxNiAxOS43NzU2IDkuNTAwOTcgMTkuODYzQzkuNjUyNzcgMTkuOTUwNCA5LjgyNDg5IDE5Ljk5NjUgMTAuMDAwMSAxOS45OTY1QzEwLjE3NTMgMTkuOTk2NSAxMC4zNDc0IDE5Ljk1MDQgMTAuNDk5MiAxOS44NjNDMTAuNjUxIDE5Ljc3NTYgMTAuNzc3MiAxOS42NDk4IDEwLjg2NTEgMTkuNDk4MkMxMS4xNDIyIDE5LjAyMDUgMTEuNzU0MSAxOC44NTc5IDEyLjIzMTggMTkuMTM1QzEyLjcwOTYgMTkuNDEyMSAxMi44NzIyIDIwLjAyNCAxMi41OTUxIDIwLjUwMThDMTIuMzMxNCAyMC45NTY0IDExLjk1MjggMjEuMzMzNyAxMS40OTc0IDIxLjU5NjFDMTEuMDQyIDIxLjg1ODQgMTAuNTI1NiAyMS45OTY1IDEwLjAwMDEgMjEuOTk2NUM5LjQ3NDUxIDIxLjk5NjUgOC45NTgxNiAyMS44NTg0IDguNTAyNzQgMjEuNTk2MUM4LjA0NzMxIDIxLjMzMzcgNy42Njg3OSAyMC45NTY0IDcuNDA1MDggMjAuNTAxOEM3LjEyNzk2IDIwLjAyNCA3LjI5MDU4IDE5LjQxMjEgNy43NjgzMSAxOS4xMzVaIiBmaWxsPSIjMjQyRDNFIi8+Cjwvc3ZnPgo=)}html.zp-iframe-sidebar-is-aside body.sfdcBody #contentWrapper{width:auto;width:initial;margin-right:320px}html.zp-iframe-sidebar-is-aside body.sfdcBody div.s1banner{margin-right:320px}html.zp-iframe-sidebar-is-aside body.desktop .container>.viewport{width:auto;width:initial;margin-right:320px}html.zp-iframe-sidebar-is-aside body.desktop .container>.viewport header.slds-global-header_container{padding-right:320px}html.zp-iframe-sidebar-is-aside body.desktop .container>.viewport div.slds-page-header.s1FixedTop.forceHighlightsStencilDesktop{margin-right:320px}html.zp-iframe-sidebar-is-aside body.desktop #presence_widget.presence_chat_widget{margin-right:320px}html.zp-iframe-sidebar-is-aside body.desktop .bodyDiv{max-width:100%}html.zp-iframe-sidebar-is-aside body.ember-application.icons-loaded.boot-complete nav#extended-nav.extended-nav.nav-main-container{padding-right:352px}html.zp-iframe-sidebar-is-aside.artdeco main#content-main .profile-topcard .container{padding-right:350px}html.zp-iframe-sidebar-is-aside.artdeco main#content-main .profile-body.container{padding-right:350px}html.zp-iframe-sidebar-is-aside[class^=lighthouse-] #body{padding-right:350px}html.zp-iframe-sidebar-is-aside[class^=lighthouse-] #body .spotlights-and-results-container{max-width:720px}html.supported-by-outreach-everywhere .zp-global-sidebar-menu{margin-top:-80px}.inboxsdk__compose_notice{background-color:rgba(0,0,0,0) !important;margin:0 !important;padding:0 !important;border:none !important}body.inboxsdk__gmailv1css .toolbar{border-top:1px solid var(--color-border-light)}body:not(.inboxsdk__gmailv1css) .inboxsdk__compose_statusbar{margin-bottom:0 !important;padding-top:4px !important}body:not(.inboxsdk__gmailv1css) .inboxsdk__compose_statusbar{padding:4px 2px}body:not(.inboxsdk__gmailv1css) table~.inboxsdk__compose_statusbar{margin-bottom:8px !important}body:not(.inboxsdk__gmailv1css) table~.inboxsdk__compose_statusbar .toolbar{border-top:1px solid var(--color-border-light);border-bottom:0}.I5>.iN>tbody>tr{display:grid}.inlineEditWriteVisible:hover .zp-mini-toolbar,.inlineEditWriteHidden:hover .zp-mini-toolbar{right:17px}.is-extension .zp-button-group{box-shadow:none;border:1px solid rgba(0,0,0,.1)}.is-extension .zp-button-group>.zp-button,.is-extension .zp-button-group>span>.zp-button{border:1px solid rgba(0,0,0,0)}.is-extension .zp-button-group>.zp-button:hover,.is-extension .zp-button-group>span>.zp-button:hover{box-shadow:none}.is-extension .zp-button-group>span+span:not(:first-child){border-left:1px solid rgba(0,0,0,.1)}.is-extension .zp-button{box-shadow:none;background-image:linear-gradient(to bottom, var(--color-neutral-10), var(--color-neutral-10));border:1px solid rgba(0,0,0,.1);color:var(--color-text-body)}.is-extension .zp-button .zp-icon{color:var(--color-icon-normal)}.is-extension .zp-button .zp-icon:hover{color:var(--color-icon-hover)}.is-extension .zp-button:hover{border:1px solid var(--color-border-light) !important}.is-extension .zp-button:hover{color:var(--color-text-body)}.is-extension .zp-button:hover .zp-icon{color:var(--color-icon-hover)}body.prevent-external-overrides .zp-modal{z-index:20000 !important}</style><style data-apolloio="true">.x_avldV{padding:50px;display:flex;align-items:center;justify-content:center}.x_Vug7M{overflow:hidden}.x_U13mB{overflow:hidden !important}.x_U13mB{display:flex;flex-direction:column}.x_u3iik{padding:0 25px}.x_caAR6{min-height:0;display:flex}.x_Tk8MB{display:flex;justify-content:space-between;flex-grow:1}.x_kn03c{flex-shrink:0;display:flex}.x_ZxCtK{display:flex;max-width:100%}.x_RrIZk{min-width:400px;min-height:400px;padding:24px}.x_VcdXG{width:100%}.x_InI_W{position:relative;padding:16px 24px}.x_tYUyF{position:relative}.x_VWlZL{padding:0 0 0 34px;width:100%;box-shadow:none}.x_L7oud{position:absolute;top:6px;left:10px;color:var(--color-icon-normal)}.x_xfw2L{min-width:456px;overflow-y:auto}.x_hl4EB{overflow-x:auto}.x_hl4EB>div{width:auto;height:100%;margin:0}.x_hl4EB>div>div:nth-child(2){height:100%}.x_hl4EB>div>div:nth-child(2)>div>table{position:relative}.x_hl4EB>div>div:nth-child(2)>div>table::after{content:" ";display:block;position:absolute;top:0;left:0;width:100%;height:100%;z-index:3}.x_gOjj0{display:flex;flex-direction:column;padding:24px}.x_tYHKZ{display:flex;direction:"column";align-items:center;justify-content:space-between;padding:7px 12px}.x_JYPlt{flex-grow:1;text-align:left;padding-left:10px;color:var(--color-text-primary);font-weight:600}.x_vIGsN{margin-left:5px;font-weight:400}.x_yAQ4t{color:var(--color-icon-normal);transition:transform 200ms ease}.x_yAQ4t.x_k13JP{color:var(--color-icon-normal);transform:rotate(90deg)}.x_puEXX{border:1px solid var(--color-border-normal)}.x_puEXX:not(:first-child){margin-top:8px}.x_puEXX>label{cursor:pointer;align-items:center;padding:7px 12px}.x_puEXX.x_rVb4z{opacity:.5;pointer-events:none}.x_eN8CN{padding:5px 24px}.x_eN8CN>div{border:1px solid var(--color-border-normal) !important}.x_eN8CN>div:not(:first-child){margin-top:8px}.x_ly70d{display:block}.x_ZWKor{display:flex}.x_ZWKor label{padding:7px 12px;display:flex;width:100%;align-items:center}.x_ZWKor label>span{display:flex;align-items:center;flex-grow:1}.x_i3eYN{flex-grow:1}.x_i2ahr i{margin-right:0 !important}.x_i2ahr i{color:var(--color-icon-normal)}.x_i2ahr i:hover{cursor:grabbing}.x_GLOCn{margin-right:0 !important}</style></head><body>   <div id="__next">
+
       <div class="flex flex-col overflow-hidden">
-        <!-- Removed min-h-screen to prevent forcing minimum height equal to the viewport height -->
         <header class="__variable_a64ecd font-sans fixed top-0 w-full h-[70px] bg-white md:border-b border-gray-300 z-10" style="z-index: 1000; display: flex; justify-content: center; align-items: center; padding: 0 1rem; border-bottom: 2px solid black;">
           <!-- Centered title -->
           <div style="text-align: center;">
@@ -1665,21 +1584,21 @@ function moveSlide(step) {
 
 
 
-
- <div class="flex flex-col justify-center m-0 p-0 flex-1 min-h-screen" style="margin-top: 80px;"><main class="flex flex-grow flex-1 overflow-y-scroll flex-col  w-full"><div class="flex flex-grow flex-col items-center justify-between p-4"><div class="__variable_ee7e36 font-valkyrie max-w-[714px] mx-auto px-4 sm:px-6 lg:px-4 book-section">
-<h1 class="chapter-heading " style="overflow: hidden; text-overflow: ellipsis; font-size:35px; font-color:grat-600; font-family:ArgosBoldItalic;border-bottom: 0 !important;margin-top: 0; margin-bottom: 5 !important; font-weight: 600 !important; font-style: normal !important; text-align: center !important;">Clima </h1>
+<div class="flex flex-col justify-center m-0 p-0 flex-1 min-h-screen" style="margin-top: 40px;"><main class="flex flex-grow flex-1 overflow-y-scroll flex-col  w-full"><div class="flex flex-grow flex-col items-center justify-between p-4"><div class="__variable_ee7e36 font-valkyrie max-w-[714px] mx-auto px-4 sm:px-6 lg:px-4 book-section">
+<hr style="height:2px;border-width:0;color:gray;background-color:black">
+<br>
+<h1 class="chapter-heading " style="overflow: hidden; text-overflow: ellipsis; font-size:35px; font-color:grat-600; font-family:ArgosBoldItalic;border-bottom: 0 !important;margin-top: 0; margin-bottom: 5 !important; font-weight: 600 !important; font-style: normal !important; text-align: center !important;">Mobilità e Natura</h1>
 
  <hr style="height:2px;border-width:0;color:gray;background-color:black">
  <br>
 
- <img alt="futuro fortissimo clima e cambiamenti climatici sito internet substack michele merelli" src="/index_files/clima.webp">
+ <img alt="futuro fortissimo clima e cambiamenti climatici sito internet substack michele merelli" src="/index_files/mobilita.webp">
 
  <div class="link-list" style="font-size:130%; font-family:ArgosBoldItalic; line-height: 1.5; padding-bottom: 5px; margin-top: 40px;">
    <center>
-     <a href="#pubblicazioni" style="color: black; text-decoration: none;">Pubblicazioni</a> ⬤
-     <a href="#libri" style="color: black; text-decoration: none;">Libri</a> ⬤
+     <a href="#temi" style="color: black; text-decoration: none;">Temi</a> ⬤
+     <a href="#breve" style="color: black; text-decoration: none;">Breve</a> ⬤
      <a href="#podcast" style="color: black; text-decoration: none;">Podcast</a> ⬤
-     <a href="#ipse" style="color: black; text-decoration: none;">Ipse dixit</a>
    </center>
  </div>
 
@@ -1692,150 +1611,240 @@ function moveSlide(step) {
   <div class="icon" onclick="location.href='https://www.paypal.com/paypalme/michelemerelli'">💙</div> <!-- Icona muffin -->
   <!-- Icona condivisione WhatsApp -->
   <a href="https://api.whatsapp.com/send?text=https://fortissimo.substack.com" class="icon">🤘</a>
-  <div class="icon" onclick="location.href='https://futurofortissimo.github.io/clima/en'">🇬🇧</div> <!-- Icona bandiera -->
+  <div class="icon" onclick="location.href='https://futurofortissimo.github.io/clima/mobilita_natura/'">🇮🇹</div> <!-- Icona bandiera -->
 </div>
 
 
 <hr style="height:2px;border-width:0;color:gray;background-color:black">
+
 <br>
-<h3 id="pubblicazioni" class=" text-xs mb-3 font-palladio" style="font-size:200%;font-family:ArgosBoldItalic;">Pubblicazioni</h3>
+<h3 id="temi" class=" text-xs mb-3 font-palladio" style="font-size:200%;font-family:ArgosBoldItalic;">Temi</h3>
 
-</head>
-<body>
-<center>
-<p style="font-family:palladio; font-size:21px;">
-    <a href="https://fortissimo.substack.com/p/-ff1-clima" class="link-btn clima" style="font-family:palladio; padding: 2px 10px; font-size:80%;">🌍 ff.1 Clima</a>
-    <a href="https://fortissimo.substack.com/p/-ff10-sole-cuore-e-amore" class="link-btn sole" style="font-family:palladio; padding: 2px 10px; font-size:80%">☀️ ff.12 Sole, cuore e amore</a>
-    <a href="https://fortissimo.substack.com/p/ff17-lhambuger-di-hemingway" class="link-btn hamburger" style="font-family:palladio; padding: 2px 10px; font-size:80%">🍔 ff.19 L'Hamburger di Hemingway</a>
-    <a href="https://fortissimo.substack.com/p/-ff20-greta-in-bici" class="link-btn greta" style="font-family:palladio; padding: 2px 10px; font-size:80%">🚴‍♀️ ff.20 Greta in bici?</a>
-    <a href="https://fortissimo.substack.com/p/-ff25-la-fattoria-degli-animali" class="link-btn fattoria" style="font-family:palladio; padding: 2px 10px; font-size:80%">🐖 ff.25 La fattoria degli animali</a>
-    <a href="https://fortissimo.substack.com/p/-ff32-i-numeri-non-mentono" class="link-btn numeri" style="font-family:palladio; padding: 2px 10px; font-size:80%">🔢 ff.32 I numeri non mentono</a>
-    <a href="https://fortissimo.substack.com/p/-ff33-le-piante-ci-salveranno" class="link-btn piante" style="font-family:palladio; padding: 2px 10px; font-size:80%">🌳 ff.33 Le piante ci salveranno?</a>
-    <a href="https://fortissimo.substack.com/p/ff34-ripensare-le-citta" class="link-btn citta" style="font-family:palladio; padding: 2px 10px; font-size:80%">🏙️ ff.34 Ripensare le città</a>
-    <a href="https://fortissimo.substack.com/p/ff39-come-ti-vesti" class="link-btn vesti" style="font-family:palladio; padding: 2px 10px; font-size:80%">👗 ff.39 Come ti vesti?</a>
-    <a href="https://fortissimo.substack.com/p/ff46-elementale-watson" class="link-btn elementale" style="font-family:palladio; padding: 2px 10px; font-size:80%">🔍 ff.46 Elementale, Watson?</a>
-    <a href="https://fortissimo.substack.com/p/ff50-cosa-c-e-successo-nel-1971" class="link-btn tempo" style="font-family:palladio; padding: 2px 10px; font-size:80%">🕰️ ff.50 Cosa c'è successo nel 1971?</a>
-    <a href="https://fortissimo.substack.com/p/ff51-la-religione-del-21esimo-secolo" class="link-btn religione" style="font-family:palladio; padding: 2px 10px; font-size:80%">🛐 ff.51 La religione del 21esimo secolo?</a>
-    <a href="https://fortissimo.substack.com/p/ff56-il-condizionatore-terrestre" class="link-btn condizionatore" style="font-family:palladio; padding: 2px 10px; font-size:80%">❄️ ff.56 Il condizionatore terrestre</a>
-    <a href="https://fortissimo.substack.com/p/ff58-le-banane-inquinano-troppo" class="link-btn banana" style="font-family:palladio; padding: 2px 10px; font-size:80%">🍌 ff.58 Le banane inquinano troppo?</a>
-    <a href="https://fortissimo.substack.com/p/ff61-la-decrescita-felice-e-impossibile" class="link-btn felice" style="font-family:palladio; padding: 2px 10px; font-size:80%">😊 ff.61 La decrescita felice è impossibile?</a>
-    <a href="https://fortissimo.substack.com/p/ff70-il-sole-soluzione-o-morte" class="link-btn sole-soluzione" style="font-family:palladio; padding: 2px 10px; font-size:80%">☀️ ff.70 Il sole: soluzione o morte?</a>
+<div style="font-family:palladio; font-size:21px;">
+
+<p style="margin-bottom:0; font-size:21px;">
+<a href="https://fortissimo.substack.com/p/-ff20-greta-in-bici"><b>🎼 ff.20 Greta in bici?</b></a>
 </p>
+<p style="margin-bottom:0">🚲 Da Isola dei cani di Wes Anderson a Van Moof, la nuova rivoluzione verde dell'e-bike</p>
+<ul>
+<li style="margin-bottom:0">Cosa c'entra Wes Anderson con i ladri di bicicletta?</li>
+<li style="margin-bottom:0">Milano o Parigi? Chi sarà la regina delle piste ciclabili?</li>
+<li style="margin-bottom:0">Da quando a San Francisco si scia?</li>
+</ul>
+<br>
+
+<p style="margin-bottom:0">
+<a href="https://fortissimo.substack.com/p/-ff33-le-piante-ci-salveranno"><b>🎼 ff.33 Le piante ci salveranno?</b></a>
+</p>
+<p style="margin-bottom:0">Inno alle piante, tra algoritmi, cattura di CO2 e problemi da risolvere</p>
+<ul>
+<li style="margin-bottom:0">Piante: da fotosintesi a fonte di conoscenza</li>
+<li style="margin-bottom:0">Foglie in silicone per efficienze maggiori</li>
+<li style="margin-bottom:0">Come modificare la genetica per catturare più CO2</li>
+</ul>
+<br>
+
+<p style="margin-bottom:0">
+<a href="https://fortissimo.substack.com/p/ff51-la-religione-del-21esimo-secolo"><b>🎼 ff.51 La religione del 21esimo secolo?</b></a>
+</p>
+<p style="margin-bottom:0">Il sottile equilibrio tra Greta, Greenpeace e speranza nel futuro</p>
+<ul>
+<li style="margin-bottom:0">La Natura è stata idealizzata?</li>
+<li style="margin-bottom:0">L’ecologia è la religione del 21esimo secolo?</li>
+<li style="margin-bottom:0">Investiamo troppo per i cambiamenti climatici?</li>
+</ul>
+<br>
+
+<a href="https://fortissimo.substack.com/p/ff61-la-decrescita-felice-e-impossibile"><b>🎼 ff.61 La decrescita felice è impossibile?</b></a>
+<p style="margin-bottom:0">I costi di ogni attività per un budget da 10 tonnellate di CO2 annue</p>
+<ul>
+    <li style="margin-bottom:0">Stare nel budget di 10 tonnellate CO2 all’anno</li>
+    <li style="margin-bottom:0">Hamburger che inquinano meno degli asparagi</li>
+    <li style="margin-bottom:0">Un abbonamento, stile Spotify, per vivere il mondo</li>
+</ul>
+
+</div>
 
 
+<hr style="height:2px;border-width:0;color:gray;background-color:black">
+
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- BREVE -->
+
+<h3 id="breve" class="text-xs mb-3 font-palladio" style="font-size:200%;font-family:ArgosBoldItalic;">In breve</h3>
+<div style="font-family:palladio; font-size:21px;justify-content: space-between,align-items: center;text-align: justify">
+  <a href="https://fortissimo.substack.com/p/ff1-clima#§ff-sensibilizzazione-e-arte"><b>🌎 ff.1.1 Sensibilizzazione e arte</b></a><br>
+  Il progetto artistico di COP26 ha rivoluzionato l'identità visiva della conferenza, evidenziando l'importanza dell'arte nel sensibilizzare sul cambiamento climatico.<br><br>
+
+  <a href="https://fortissimo.substack.com/p/ff1-clima#§ff-da-51-miliardi-a-0"><b>📉 ff.1.2 Da 51 miliardi a 0</b></a><br>
+  Da 51 miliardi a 0: la necessità urgente di ridurre a zero le emissioni globali di CO2-equivalenti, attualmente a 51 miliardi di tonnellate all'anno, per combattere il cambiamento climatico.<br><br>
+
+  <a href="https://fortissimo.substack.com/p/ff1-clima#§ff-gli-scooter-elettrici-ci-salveranno"><b>🛴 ff.1.3 Gli scooter elettrici ci salveranno?</b></a><br>
+  L'80% degli spostamenti negli USA sono inferiori ai 16 km, suggerendo un potenziale di trasformazione della mobilità urbana tramite e-bikes e scooter elettrici.<br><br>
+
+  <a href="https://fortissimo.substack.com/p/ff1-clima#§ff-catturare-co2-sarà-importante"><b>🏭 ff.1.4 Catturare CO2 sarà importante</b></a><br>
+  Tecnologie di cattura CO2 potrebbero diventare economicamente accessibili a meno di 100$ per tonnellata, con l'industria del cemento e dell'acciaio come principali target.<br><br>
+
+  <a href="https://fortissimo.substack.com/p/ff1-clima#§ff-il-consumo-energetico-di-bitcoin"><b>🇫🇮 ff.1.5 Il consumo energetico di Bitcoin</b></a><br>
+  Il consumo energetico di Bitcoin equivale a quello dell'intera Finlandia, ma l'utilizzo di energia rinnovabile nel mining potrebbe mitigarne l'impatto ambientale.<br><br>
+
+  <a href="https://fortissimo.substack.com/p/ff1-clima#§ff-fusione-nucleare"><b>⚡ ff.1.6 Fusione Nucleare</b></a><br>
+  La fusione nucleare, un tempo prevista per i primi anni '90, ora mira al 2035 come traguardo per dimostrare un processo di fusione pulito.<br><br>
+
+
+
+  <a href="https://fortissimo.substack.com/p/-ff5-elettrizzante#§ff-non-e-tutto-verde-quello-che-luccica"><b>❓ ff.5.1 Non tutto verde quello che luccica</b></a><br>
+  Utilitaria a benzina meno inquinante di Tesla? Una promettente start-up olandese, Lightyear One, riporta come non sia tutt’oro, o verde, quello che luccica.<br><br>
+
+  <a href="https://fortissimo.substack.com/p/-ff5-elettrizzante#§ff-duracell-no-tesla"><b>🔋 ff.5.2 Duracell? No, Tesla</b></a><br>
+  Non solo auto: Con 3 GWh di capacità Tesla controlla una buona porzione del potenziale di immagazzinamento di energia elettrica nel mondo. E puntano a raggiungere i 1.500 GWh entro il 2030.<br><br>
+
+  <a href="https://fortissimo.substack.com/p/-ff5-elettrizzante#§ff-pedalata-assistita"><b>🚲 ff.5.3 Pedalata assistita</b></a><br>
+  Durante la pandemia, le bici elettriche hanno venduto più delle auto elettriche (500k bici vs 250k auto negli Stati Uniti).<br><br>
+
+  <a href="https://fortissimo.substack.com/p/-ff5-elettrizzante#§ff-la-tesla-delle-biciclette"><b>😎 ff.5.4 La Tesla delle biciclette</b></a><br>
+  Se le bici elettriche sono la prossima frontiera della mobilità, Van Moof è la Tesla delle due ruote.<br><br>
+
+  <a href="https://fortissimo.substack.com/p/-ff5-elettrizzante#§ff-il-muro-di-marchetti"><b>🧱 ff.5.5 Il muro di Marchetti</b></a><br>
+  Un’ora costante universale: il limite di tempo di viaggio che influisce sulle scelte di vita e lavoro.<br><br>
+
+  <a href="https://fortissimo.substack.com/p/-ff5-elettrizzante#§ff-la-pericolosita-del-traffico-nel-mondo"><b>⚰️ ff.5.6 La pericolosità del traffico, nel mondo</b></a><br>
+  E mentre siete nel traffico, occhio alla strada. In Europa guidiamo benissimo (se non per quelli col cappello).<br><br>
+  <center> 🎵 </center> <br><br>
+  <a href="https://fortissimo.substack.com/p/-ff20-greta-in-bici#§ff-la-rivincita-delle-biciclette"><b>🚲 ff.20.1 La rivincita delle biciclette</b></a><br>
+  La pandemia ha aumentato l'uso della bicicletta, con un incremento notevole nelle Filippine e progressi anche in Italia con l'aumento delle piste ciclabili.<br><br>
+
+  <a href="https://fortissimo.substack.com/p/-ff20-greta-in-bici#§ff-lesempio-di-jakarta"><b>🇮🇩 ff.20.2 L'esempio di Jakarta</b></a><br>
+  A Jakarta, l'utilizzo della bicicletta è aumentato di 6 volte, evidenziando un cambiamento significativo verso la mobilità sostenibile.<br><br>
+    La qualità dell'aria a Giacarta è migliorata dopo il COVID (grazie a mobilità sostenibile).<br>
+    <div style="padding: 24px 4px; margin: auto;">
+      <img alt="La qualità dell'aria a Giacarta è migliorata dopo il COVID" class="immagini_finali" src="/index_files/mn2.webp" style="max-width:100%;">
+    </div>
+  <a href="https://fortissimo.substack.com/p/-ff20-greta-in-bici#§ff-san-francisco-come-cortina"><b>⛷️ ff.20.3 San Francisco come Cortina</b></a><br>
+  San Francisco presenta mappe della pericolosità delle strade strade come piste da sci: la pista nera sarebbe Viale Palmanova insomma. <br><br>
+  <div style="padding: 24px 4px; margin: auto;">
+    <img href="https://fortissimo.substack.com/p/-ff20-greta-in-bici#§ff-san-francisco-come-cortina" alt="San Francisco introduce una cartina con pericolosità delle strade per ciclisti con colori come le piste da sci." class="immagini_finali" src="/index_files/mn6.webp" style="max-width:100%;">
+  </div><br>
+
+  <a href="https://fortissimo.substack.com/p/-ff20-greta-in-bici#§ff-simmetrie-di-wes-anderson-contro-i-furti"><b>🚨 ff.20.4 Simmetrie di Wes Anderson contro i furti</b></a><br>
+  Van Moof, azienda olandese di e-bike, sfrutta le simmetrie di Wes Anderson per promuovere la sicurezza delle sue biciclette.
+
+        <div style="padding: 24px 4px; margin: auto;">
+          <img href="https://fortissimo.substack.com/p/-ff20-greta-in-bici#§ff-simmetrie-di-wes-anderson-contro-i-furti" alt="La qualità dell'aria a Giacarta è migliorata dopo il COVID" class="immagini_finali" src="/index_files/mn3.webp" style="max-width:100%;">
+        </div>
+
+    <!-- Piante e CO2 -->
+    <a href="https://fortissimo.substack.com/p/-ff33-le-piante-ci-salveranno#§ff-la-valenza-filosofica-e-conoscitiva-degli-alberi"><b>🧠 ff.33.1 La valenza filosofica e conoscitiva degli alberi</b></a><br>
+    Esplorando la connessione storica e culturale tra umanità e piante, evidenziata dall'ispirazione degli algoritmi di ricerca come il decision tree.<br><br>
+
+    <a href="https://fortissimo.substack.com/p/-ff33-le-piante-ci-salveranno#§ff-raccoglitori-di-co"><b>🍁 ff.33.2 Raccoglitori di CO2</b></a><br>
+    Studio su come le piante catturano e immagazzinano CO2, con focus su efficienze di storage in foreste e torbiere, mostrando l'importanza della biodiversità e delle tecnologie innovative per la semina.<br><br>
+
+    <a href="https://fortissimo.substack.com/p/-ff33-le-piante-ci-salveranno#§ff-piante-modificate-per-catturare-co"><b>🏭 ff.33.3 Piante modificate per catturare CO2</b></a><br>
+    Tecniche genetiche avanzate come CRISPR vengono utilizzate per aumentare la capacità delle piante di convertire CO2 in carbonio stabilizzato, un approccio supportato da importanti investimenti nel campo della genetica vegetale.<br><br>
+
+    <a href="https://fortissimo.substack.com/p/-ff33-le-piante-ci-salveranno#§ff-muffe-computazionali"><b>🧮 ff.33.4 Muffe computazionali</b></a>
+    Discussione sul Plasmodium, una muffa sfruttata per risolvere problemi di ottimizzazione combinatoria come il Traveling Salesman Problem, dimostrando la potenzialità di sistemi biologici nel calcolo e nella progettazione di reti efficienti e resilienti.<br><br>
+    <center>
+    <div style="padding: 24px 4px; margin: auto;">
+      <img href="https://fortissimo.substack.com/p/-ff33-le-piante-ci-salveranno#§ff-muffe-computazionali" alt="Usare le muffe per risolvere problemi logistici di Amazon" class="immagini_finali" src="/index_files/mn1.webp" style="max-width:100%;">
+    </div><br>
+    </center>
+
+    <!-- Ripensare le città -->
+    <a href="https://fortissimo.substack.com/p/ff34-ripensare-le-citta#§ff-sempre-piu-cittadini"><b>🏙 ff.34.1 Sempre più cittadini</b></a><br>
+    Viviamo sempre più in aree urbanizzate, con un aumento percentuale della popolazione che vive in città.<br><br>
+
+    <a href="https://fortissimo.substack.com/p/ff34-ripensare-le-citta#§ff-ripensare-le-citta-mobilita-e-traffico"><b>🚦 ff.34.2 Ripensare le città: mobilità e traffico</b></a><br>
+    Il COVID e lo smart working hanno migliorato la situazione del traffico, ma quanto?<br><br>
+
+    <a href="https://fortissimo.substack.com/p/ff34-ripensare-le-citta#§ff-ripensare-le-citta-spazi-vivibili"><b>🚦 ff.34.3 Ripensare le città: spazi vivibili</b></a><br>
+    Progetti che hanno ridato spazio a verde e canali rendendo le città più vivibili.<br><br>
+
+    <a href="https://fortissimo.substack.com/p/ff34-ripensare-le-citta#§ff-ripensare-le-citta-caldo"><b>🥵 ff.34.4 Ripensare le città: caldo</b></a><br>
+    Le ondate di calore estive mostrano l'importanza di aree verdi in città per mitigare il calore.<br>
+    Immagini ESA di Milano con temperature più basse nelle zone verdi<br>
+
+    <div style="padding: 24px 4px; margin: auto;">
+      <img href="https://fortissimo.substack.com/p/ff34-ripensare-le-citta#§ff-ripensare-le-citta-caldo" alt="Immagini ESA di Milano con temperature più basse nelle zone verdi" class="immagini_finali" src="/index_files/mn4.webp" style="max-width:100%;">
+    </div>
+    <a href="https://fortissimo.substack.com/p/ff34-ripensare-le-citta#§ff-e-tutta-una-monocoltura"><b>🏙 ff.34.5 È tutta una monocultura</b></a><br>
+    Le città come esempio di monocultura e omogeneizzazione, dominati da auto e traffico.<br><br>
+
+    <!-- Ecologia e Religione -->
+    <a href="https://fortissimo.substack.com/p/ff51-la-religione-del-21esimo-secolo#§ff-laffabulazione-per-il-verde"><b>💚 ff.51.1 L’affabulazione per il verde</b></a><br>
+    Riflessioni su come la natura, simbolo di speranza e pace interiore, diventi oggetto di un'affabulazione romantica, che a volte rischia di distorcere la realtà pragmatica della sua esistenza e utilità.<br><br>
+
+    <a href="https://fortissimo.substack.com/p/ff51-la-religione-del-21esimo-secolo#§ff-ecologia-=-religione"><b>🛐 ff.51.2 Ecologia = religione?</b></a><br>
+    Analisi critica sulle possibili somiglianze tra l'approccio moderno all'ecologia e le pratiche religiose, interrogandosi sull'esistenza di una fede verde basata più su convinzioni emotive che su azioni razionali e scientifiche.<br><br>
+
+    <a href="https://fortissimo.substack.com/p/ff51-la-religione-del-21esimo-secolo#§ff-sono-il-tuo-sogno-eretico"><b>🔥 ff.51.3 Sono il tuo sogno eretico</b></a><br>
+    I cambiamenti climatici sono esagerati dai media? Uno spunto per considerare un approccio più equilibrato che includa soluzioni innovative e adattive, anche valutando il ritorno sull'investimento delle politiche climatiche rispetto alla salute pubblica, l'istruzione e la riduzione della povertà.<br><br>
+
+    <center> 🎶 </center> <br>
+
+    <!-- Decrescita felice e impossibile -->
+      <a href="https://fortissimo.substack.com/p/ff61-la-decrescita-felice-e-impossibile#§ff-misurare-linquinamento-in-ore-di-vita"><b>⚖️ ff.61.1 Misurare l’inquinamento in ore di vita</b></a><br>
+      Convertire le emissioni di CO2 in tempo di vita percepibile rende tangibile l'impatto ambientale delle nostre scelte quotidiane.<br><br>
+      10 tonnellate di CO2 annue rappresentano l'obiettivo pro capite globale di emissioni per vivere in modo sostenibile. 27 kg/giorno → 1 kg/h → 20 g/min offre una prospettiva su come suddividere questo budget di CO2 in unità temporali più piccole.<br>
+      <a href="https://fortissimo.substack.com/p/ff61-la-decrescita-felice-e-impossibile#§ff-emissioni-convertite-in-tempo"><b>🕗 ff.61.2 Emissioni convertite in tempo</b></a><br>
+      Analizzando le emissioni attraverso l'equivalenza tempo-CO2, individuiamo attività quotidiane e il loro impatto in ore di vita perse.<br><br>
+
+      <a href="https://fortissimo.substack.com/p/ff61-la-decrescita-felice-e-impossibile#§ff-carne-o-asparagi"><b>🥩 ff.61.3 Carne o asparagi?</b></a><br>
+      La scelta alimentare influisce significativamente sulle emissioni di CO2, con sorprendenti confronti tra diete vegetariane e consumo di carne.<br><br>
+
+      <a href="https://fortissimo.substack.com/p/ff61-la-decrescita-felice-e-impossibile#§ff-un-abbonamento-stile-spotify-per-il-mondo"><b>🎶 ff.61.4 Un abbonamento stile Spotify per il mondo</b></a><br>
+      Considerare l'inquinamento come un servizio in abbonamento può essere un passo verso la compensazione delle proprie emissioni CO2.<br><br>
+
+      <hr style="height:2px;border-width:0;color:gray;background-color:black">
+
+<hr style="height:2px;border-width:0;color:gray;background-color:black">
+<br>
+<h3 id="podcast" class=" text-xs mb-3 font-palladio" style="font-size:200%;font-family:ArgosBoldItalic;">Podcast</h3>
+<center>
+<div style="overflow: hidden; padding-top: 60%; position: relative;">
+    <!-- iframe with 100% width and height scaling -->
+    <iframe src="https://open.spotify.com/embed/episode/37fQReeg5fcKIW9jl3ykmn/video?utm_source=generator" frameBorder="10" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <br><br>
+    <iframe src="https://open.spotify.com/embed/episode/5R1KXWncYzvHnyBkhMVpIs?utm_source=generator" frameBorder="10" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+</div>
 </center>
 
 <br>
 
 
-<hr style="height:2px;border-width:0;color:gray;background-color:black">
-<br>
-<h3 id="libri" class=" text-xs mb-3 font-palladio" style="font-size:200%;font-family:ArgosBoldItalic;">Libri</h3>
-
-
-<p style="font-family:palladio; font-size:21.25px">
-  <a href="https://amzn.to/4c4rqhp" target="_blank">
-    <center><img  src="/index_files/clima_book.jpg" alt="Clima, come evitare un disastro" style="width: 300px;margin-bottom:10px;"></center>
-    <a href="https://amzn.to/4c4rqhp"; style="font-family:palladio; font-size:21.25px">
-    <span style="font-family:palladio-italics; font-size:21px">Clima, come evitare un disastro</span></a>
-    <span style="; font-family:palladio-italics; font-size:21px"></span><br><b style="; font-family:palladio; font-size:21.25px"> Bill Gates</b><br>
-  </a>
-  <a href="https://amzn.to/3VbC4x3" target="_blank">
-    <center><img  src="/index_files/impronta_book.jpg" alt="Scopri l'impatto ambientale di ogni cosa." style="width: 300px;margin-bottom:10px;"></center>
-  </a>
-  <a href="https://amzn.to/3VbC4x3"; style="font-family: palladio;">
-  <span style="; font-family:palladio-italics; font-size:21px">Scopri l'impatto ambientale di ogni cosa.</span></a><br><b style="; font-family:palladio; font-size:21.25px"> Mike Berners-Lee</b><br>
-  <a href="https://amzn.to/3P8enS9" target="_blank">
- <center><img  src="/index_files/dark_green_religion_book.jpg" alt="Dark green religion" style="width: 300px;margin-bottom:10px;"></center>
-  </a> <a href="https://amzn.to/3P8enS9"; style="font-family:palladio; font-size:21.25px">
-  <span style="; font-family:palladio-italics; font-size:21px">Dark green religion</span></a><br><b style="; font-family:palladio; font-size:21.25px"> Bron Taylor</b><br>
-  <a href="https://amzn.to/3V1nWpZ" target="_blank">
-    <center><img  src="/index_files/montagne_book.jpg" alt="Le otto montagne" style="width: 300px;margin-bottom:10px;"></center>
-
-  </a>
-  <a href="https://amzn.to/3V1nWpZ"; style="font-family:palladio; font-size:21.25px">
-  <span style="; font-family:palladio-italics; font-size:21px">Le otto montagne</span></a><br><b style="; font-family:palladio; font-size:21.25px"> Paolo Cognetti</b><br>
-  <a href="https://amzn.to/3IlTFe1" target="_blank">
-    <center><img src="/index_files/flying_car_book.jpg" alt="Where is my flying car?" style="width: 300px;margin-bottom:10px;"></center>
-    <a href="https://amzn.to/3IlTFe1"; style="font-family:palladio; font-size:21.25px">
-    <span style="; font-family:palladio-italics; font-size:21px">Where is my flying car?</span></a><br> <b style="; font-family:palladio; font-size:21.25px">J. Storrs Hall</b><br>
-    <br><br>
-  </a>
-
-  <a href="https://amzn.to/3wIrNhH" target="_blank">
-    <center><img src="/index_files/numeri_book.jpg" alt="I numeri non mentono" style="width: 300px;margin-bottom:10px;"></center>
-    <a href="https://amzn.to/3wIrNhH"; style="font-family:palladio; font-size:21.25px">
-    <span style="font-family:palladio-italics; font-size:21px">I numeri non mentono</span></a><br><b style="; font-family:palladio; font-size:21.25px"> Vaclav Smil</b><br>
-  </p>
-  </a>
-
-  <a href="https://amzn.to/3wOQOru" target="_blank">
-    <center><img src="/index_files/alarm_book.jpg" alt="Falso allarme il cambiamento climatico" style="width: 300px;margin-bottom:10px;"></center>
-    <a href="https://amzn.to/3wOQOru"; style="font-family:palladio; font-size:21.25px">
-    <span style="font-family:palladio-italics; font-size:21px">False Alarm!</span></a><br><b style="; font-family:palladio; font-size:21.25px"> Bjørn Lomborg</b><br>
-  </p>
-  </a>
-
-<hr style="height:2px;border-width:0;color:gray;background-color:black">
-<br>
-<h3 id="podcast" class=" text-xs mb-3 font-palladio" style="font-size:200%;font-family:ArgosBoldItalic;">Podcast</h3>
-<div style="overflow: hidden; padding-top: 56.25%; position: relative;">
-    <!-- iframe with 100% width and height scaling -->
-    <iframe src="https://www.youtube.com/embed/5Gk9gIpGvSE" title="Climate Change Debate: Bjørn Lomborg and Andrew Revkin | Lex Fridman Podcast #339" style="border: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-<br>
-
-<hr style="height:2px;border-width:0;color:gray;background-color:black">
-<br>
-
-<h3 id="ipse" class="text-xs mb-3 font-palladio" style="font-size:200%;font-family:ArgosBoldItalic;">Ipse dixit</h3>
-
-<blockquote style="font-family:palladio-italics; font-size:21px; margin-bottom:3px;">Ci sono due numeri che bisogna internalizzare sul cambiamento climatico. Il primo è 51 miliardi. L'altro è zero. Cinquantuno miliardi sono le tonnellate di CO2-equivalenti che tipicamente emettiamo ogni anno. Dobbiamo arrivare a 0.</blockquote>
-<b style="font-family:palladio; font-size:21.25px">Bill Gates</b> <a href="https://fortissimo.substack.com/p/-ff1-clima#§ff-da-miliardi-a-"><p style="font-family:palladio; font-size:21.25px">📉 ff.1.2</p></a><br><br>
-
-<blockquote style="font-family:palladio-italics; font-size:21px; margin-bottom:3px;">Abbiamo visto che Mike Berners-Lee propone 10 tonnellate di CO2 annue come obiettivo pro capite globale.</blockquote>
-<b style="font-family:palladio; font-size:21.25px">Mike Berners-Lee</b> <a href="https://fortissimo.substack.com/p/ff58-le-banane-inquinano-troppo#§ff-il-costo-di-una-vita-umana"><p style="font-family:palladio; font-size:21.25px">🔟 ff.58.1</p></a><br><br>
-
-<blockquote style="font-family:palladio-italics; font-size:21px; margin-bottom:3px;">Forse, la natura è la religione del 21esimo secolo.</blockquote>
-<b style="font-family:palladio; font-size:21.25px">Bron Taylor</b> <a href="https://fortissimo.substack.com/p/-ff1-clima#§ff-da-miliardi-a-"><p style="font-family:palladio; font-size:21.25px">🛐 ff.51.2</p></a><br><br>
-
-<blockquote style="font-family:palladio-italics; font-size:21px; margin-bottom:3px;">Siete voi di città che la chiamate Natura. È così astratta nella vostra testa che è astratto pure il nome. Noi qui diciamo bosco, pascolo, torrente, roccia, cose che uno può indicare con il dito.</blockquote>
-<b style="font-family:palladio; font-size:21.25px">Paolo Cognetti</b> <a href="https://fortissimo.substack.com/p/ff51-la-religione-del-21esimo-secolo#§ff-laffabulazione-per-il-verde"><p style="font-family:palladio; font-size:21.25px">💚 ff.51.1</p></a><br><br>
-
-<blockquote style="font-family:palladio-italics; font-size:21px; margin-bottom:3px;">"Contrariamente a quanto si crede, gli eventi “estremi” non sono in aumento, siamo più in grado di monitorarli e colpiscono più persone per l’urbanizzazione di zone critiche."</blockquote>
-<b style="font-family:palladio; font-size:21.25px">Episodio di podcast</b> <a href="https://fortissimo.substack.com/p/ff51-la-religione-del-21esimo-secolo#§ff-sono-il-tuo-sogno-eretico"><p style="font-family:palladio; font-size:21.25px">🔥 ff.51.3 Sono il tuo sogno eretico</p></a><br><br>
-
 
 <p style="page-break-before: always; break-before: column; -webkit-column-break-before: always;"></p>
-</div>
-</div>
-</main>
-
-<div href="https://futurofortissimo.github.io/clima/mobilita_natura" class="__variable_a64ecd font-sans border-t border-gray-300 py-6">
-<div class="flex justify-between px-6 max-w-[714px] mx-auto">
-<div>
-<p href="https://futurofortissimo.github.io/clima/mobilita_natura" style="display:flex; justify-content:flex-end; font-size:150%;font-family:ArgosBoldItalic;">🚲 🌳 Mobilità e Natura </p>
-</div>
-<a href="https://futurofortissimo.github.io/clima/mobilita_natura">
-<div class="bg-black text-white px-4 py-2 rounded-full flex justify-center items-center">
-<div class="flex items-center px-1 py-0.5"><div class="text-sm font-bold"></div><div class="caret"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M6.21967 3.21967C6.51256 2.92678 6.98744 2.92678 7.28033 3.21967L11.5303 7.46967C11.8232 7.76256 11.8232 8.23744 11.5303 8.53033L7.28033 12.7803C6.98744 13.0732 6.51256 13.0732 6.21967 12.7803C5.92678 12.4874 5.92678 12.0126 6.21967 11.7197L9.93934 8L6.21967 4.28033C5.92678 3.98744 5.92678 3.51256 6.21967 3.21967Z" fill="white">
-</path>
-</svg>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
+</div></div>
 
 
-<script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"description":"Technology has enabled us to start new companies, new communities, and new currencies. But can we use it to start new cities, or even new countries? This book explains how to build the successor to the nation state, a concept we call the network state.","points":[{"contentSrc":"Text/preamble.xhtml","id":"chapter-1","label":"Quickstart","playOrder":1,"subpoints":[{"contentSrc":"Text/preamble.xhtml","id":"preamble","label":"Energie del Futuro e Decarbonizzazione","playOrder":2,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/the-network-state-in-one-sentence.xhtml","id":"the-network-state-in-one-sentence","label":"Clima","playOrder":3,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/the-network-state-in-one-image.xhtml","id":"the-network-state-in-one-image","label":"Mobilità Sostenibile e Micro-mobilità","playOrder":4,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/the-network-state-in-one-thousand-words.xhtml","id":"the-network-state-in-one-thousand-words","label":"The Network State in One Thousand Words","playOrder":5,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/the-network-state-in-one-essay.xhtml","id":"the-network-state-in-one-essay","label":"The Network State in One Essay","playOrder":6,"class":"subchapter","subpoints":[]}],"class":"chapter"},{"contentSrc":"Text/prologue.xhtml","id":"chapter-2","label":"History as Trajectory","playOrder":7,"subpoints":[{"contentSrc":"Text/prologue.xhtml","id":"prologue","label":"Prologue","playOrder":8,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/microhistory-and-macrohistory.xhtml","id":"microhistory-and-macrohistory","label":"Microhistory and Macrohistory","playOrder":9,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/political-power-and-technological-truth.xhtml","id":"political-power-and-technological-truth","label":"Political Power and Technological Truth","playOrder":10,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/god-state-network.xhtml","id":"god-state-network","label":"God, State, Network","playOrder":11,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/people-of-god-people-of-the-state-people-of-the-network.xhtml","id":"people-of-god-people-of-the-state-people-of-the-network","label":"People of God, People of the State, People of the Network","playOrder":12,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/if-the-news-is-fake-imagine-history.xhtml","id":"if-the-news-is-fake-imagine-history","label":"If the News is Fake, Imagine History","playOrder":13,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/fragmentation-frontier-fourth-turning-future-is-our-past.xhtml","id":"fragmentation-frontier-fourth-turning-future-is-our-past","label":"Fragmentation, Frontier, Fourth Turning, Future Is Our Past","playOrder":14,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/left-is-the-new-right-is-the-new-left.xhtml","id":"left-is-the-new-right-is-the-new-left","label":"Left is the New Right is the New Left","playOrder":15,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/the-one-commandment.xhtml","id":"the-one-commandment","label":"The One Commandment","playOrder":16,"class":"subchapter","subpoints":[]}],"class":"chapter"},{"contentSrc":"Text/nyt-ccp-btc.xhtml","id":"chapter-3","label":"The Tripolar Moment","playOrder":17,"subpoints":[{"contentSrc":"Text/nyt-ccp-btc.xhtml","id":"nyt-ccp-btc","label":"NYT, CCP, BTC","playOrder":18,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/the-dated-and-the-timeless.xhtml","id":"the-dated-and-the-timeless","label":"The Dated and the Timeless","playOrder":19,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/a-bipolar-america-and-a-tripolar-triangle.xhtml","id":"a-bipolar-america-and-a-tripolar-triangle","label":"A Bipolar America and a Tripolar Triangle","playOrder":20,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/moral-power-martial-power-money-power.xhtml","id":"moral-power-martial-power-money-power","label":"Moral Power, Martial Power, Money Power","playOrder":21,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/submission-sympathy-sovereignty.xhtml","id":"submission-sympathy-sovereignty","label":"Submission, Sympathy, Sovereignty","playOrder":22,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/conflicts-and-alliances.xhtml","id":"conflicts-and-alliances","label":"Conflicts and Alliances","playOrder":23,"class":"subchapter","subpoints":[]}],"class":"chapter"},{"contentSrc":"Text/the-possible-futures.xhtml","id":"chapter-4","label":"Decentralization, Recentralization","playOrder":24,"subpoints":[{"contentSrc":"Text/the-possible-futures.xhtml","id":"the-possible-futures","label":"The Possible Futures","playOrder":25,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/sociopolitical-axes.xhtml","id":"sociopolitical-axes","label":"Sociopolitical Axes","playOrder":26,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/technoeconomic-axes.xhtml","id":"technoeconomic-axes","label":"Technoeconomic Axes","playOrder":27,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/foreseeable-futures.xhtml","id":"foreseeable-futures","label":"Foreseeable Futures","playOrder":28,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/american-anarchy-chinese-control-international-intermediate.xhtml","id":"american-anarchy-chinese-control-international-intermediate","label":"American Anarchy, Chinese Control, International Intermediate","playOrder":29,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/victory-conditions-and-surprise-endings.xhtml","id":"victory-conditions-and-surprise-endings","label":"Victory Conditions and Surprise Endings","playOrder":30,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/towards-a-recentralized-center.xhtml","id":"towards-a-recentralized-center","label":"Towards a Recentralized Center","playOrder":31,"class":"subchapter","subpoints":[]}],"class":"chapter"},{"contentSrc":"Text/why-now.xhtml","id":"chapter-5","label":"From Nation States to Network States","playOrder":32,"subpoints":[{"contentSrc":"Text/why-now.xhtml","id":"why-now","label":"Why Now?","playOrder":33,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/on-nation-states.xhtml","id":"on-nation-states","label":"On Nation States","playOrder":34,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/on-network-states.xhtml","id":"on-network-states","label":"On Network States","playOrder":35,"class":"subchapter","subpoints":[]}],"class":"chapter"},{"contentSrc":"Text/acknowledgments.xhtml","id":"chapter-6","label":"Appendix","playOrder":36,"subpoints":[{"contentSrc":"Text/acknowledgments.xhtml","id":"acknowledgments","label":"Acknowledgments","playOrder":37,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/about-1729.xhtml","id":"about-1729","label":"About 1729","playOrder":38,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/footnotes.xhtml","id":"footnotes","label":"Footnotes","playOrder":39,"class":"subchapter","subpoints":[]}],"class":"chapter"}]},"__N_SSG":true},"page":"/","query":{},"buildId":"dGjbMQsxXFoZg8gKHoLwZ","isFallback":false,"gsp":true,"scriptLoader":[]}</script><next-route-announcer><p aria-live="assertive" id="__next-route-announcer__" role="alert" style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; overflow-wrap: normal;">Clima | The Network State</p></next-route-announcer><script src="/index_files/[section]-d66d5935a4c8e7ba.js.download"></script><script src="/index_files/132-9982ff34442fb147.js.download"></script><script src="/index_files/podcast-4887930752e3194c.js.download"></script><div style="position: relative;" id="apollo-root-apollo_everywhere"></div>
-
-<script>
-  function scrollToTop() {
-  window.scrollTo({top: 0, behavior: 'smooth'});
-}
-</script>
-
-</body></html>
+</div></div><div class="__variable_a64ecd font-sans border-t border-gray-300 py-6"><div class="flex justify-between px-6 max-w-[714px] mx-auto">
+  <div><p style="display:flex; justify-content:flex-end; font-size:150%;font-family:ArgosBoldItalic;">💻
+     Tecnologia </p>
+    </div>
+  <a href="https://futurofortissimo.github.io/wip/">
+    <div class="bg-black text-white px-4 py-2 rounded-full flex justify-center items-center"><div class="flex items-center px-1 py-0.5">
+      <div class="text-sm font-bold">Next</div><div class="caret"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.21967 3.21967C6.51256 2.92678 6.98744 2.92678 7.28033 3.21967L11.5303 7.46967C11.8232 7.76256 11.8232 8.23744 11.5303 8.53033L7.28033 12.7803C6.98744 13.0732 6.51256 13.0732 6.21967 12.7803C5.92678 12.4874 5.92678 12.0126 6.21967 11.7197L9.93934 8L6.21967 4.28033C5.92678 3.98744 5.92678 3.51256 6.21967 3.21967Z" fill="white"></path></svg></div></div></div></a></div></div></main></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"description":"Technology has enabled us to start new companies, new communities, and new currencies. But can we use it to start new cities, or even new countries? This book explains how to build the successor to the nation state, a concept we call the network state.","points":[{"contentSrc":"Text/preamble.xhtml","id":"chapter-1","label":"Quickstart","playOrder":1,"subpoints":[{"contentSrc":"Text/preamble.xhtml","id":"preamble","label":"Energie del Futuro e Decarbonizzazione","playOrder":2,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/the-network-state-in-one-sentence.xhtml","id":"the-network-state-in-one-sentence","label":"Clima","playOrder":3,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/the-network-state-in-one-image.xhtml","id":"the-network-state-in-one-image","label":"Mobilità Sostenibile e Micro-mobilità","playOrder":4,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/the-network-state-in-one-thousand-words.xhtml","id":"the-network-state-in-one-thousand-words","label":"The Network State in One Thousand Words","playOrder":5,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/the-network-state-in-one-essay.xhtml","id":"the-network-state-in-one-essay","label":"The Network State in One Essay","playOrder":6,"class":"subchapter","subpoints":[]}],"class":"chapter"},{"contentSrc":"Text/prologue.xhtml","id":"chapter-2","label":"History as Trajectory","playOrder":7,"subpoints":[{"contentSrc":"Text/prologue.xhtml","id":"prologue","label":"Prologue","playOrder":8,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/microhistory-and-macrohistory.xhtml","id":"microhistory-and-macrohistory","label":"Microhistory and Macrohistory","playOrder":9,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/political-power-and-technological-truth.xhtml","id":"political-power-and-technological-truth","label":"Political Power and Technological Truth","playOrder":10,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/god-state-network.xhtml","id":"god-state-network","label":"God, State, Network","playOrder":11,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/people-of-god-people-of-the-state-people-of-the-network.xhtml","id":"people-of-god-people-of-the-state-people-of-the-network","label":"People of God, People of the State, People of the Network","playOrder":12,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/if-the-news-is-fake-imagine-history.xhtml","id":"if-the-news-is-fake-imagine-history","label":"If the News is Fake, Imagine History","playOrder":13,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/fragmentation-frontier-fourth-turning-future-is-our-past.xhtml","id":"fragmentation-frontier-fourth-turning-future-is-our-past","label":"Fragmentation, Frontier, Fourth Turning, Future Is Our Past","playOrder":14,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/left-is-the-new-right-is-the-new-left.xhtml","id":"left-is-the-new-right-is-the-new-left","label":"Left is the New Right is the New Left","playOrder":15,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/the-one-commandment.xhtml","id":"the-one-commandment","label":"The One Commandment","playOrder":16,"class":"subchapter","subpoints":[]}],"class":"chapter"},{"contentSrc":"Text/nyt-ccp-btc.xhtml","id":"chapter-3","label":"The Tripolar Moment","playOrder":17,"subpoints":[{"contentSrc":"Text/nyt-ccp-btc.xhtml","id":"nyt-ccp-btc","label":"NYT, CCP, BTC","playOrder":18,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/the-dated-and-the-timeless.xhtml","id":"the-dated-and-the-timeless","label":"The Dated and the Timeless","playOrder":19,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/a-bipolar-america-and-a-tripolar-triangle.xhtml","id":"a-bipolar-america-and-a-tripolar-triangle","label":"A Bipolar America and a Tripolar Triangle","playOrder":20,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/moral-power-martial-power-money-power.xhtml","id":"moral-power-martial-power-money-power","label":"Moral Power, Martial Power, Money Power","playOrder":21,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/submission-sympathy-sovereignty.xhtml","id":"submission-sympathy-sovereignty","label":"Submission, Sympathy, Sovereignty","playOrder":22,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/conflicts-and-alliances.xhtml","id":"conflicts-and-alliances","label":"Conflicts and Alliances","playOrder":23,"class":"subchapter","subpoints":[]}],"class":"chapter"},{"contentSrc":"Text/the-possible-futures.xhtml","id":"chapter-4","label":"Decentralization, Recentralization","playOrder":24,"subpoints":[{"contentSrc":"Text/the-possible-futures.xhtml","id":"the-possible-futures","label":"The Possible Futures","playOrder":25,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/sociopolitical-axes.xhtml","id":"sociopolitical-axes","label":"Sociopolitical Axes","playOrder":26,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/technoeconomic-axes.xhtml","id":"technoeconomic-axes","label":"Technoeconomic Axes","playOrder":27,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/foreseeable-futures.xhtml","id":"foreseeable-futures","label":"Foreseeable Futures","playOrder":28,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/american-anarchy-chinese-control-international-intermediate.xhtml","id":"american-anarchy-chinese-control-international-intermediate","label":"American Anarchy, Chinese Control, International Intermediate","playOrder":29,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/victory-conditions-and-surprise-endings.xhtml","id":"victory-conditions-and-surprise-endings","label":"Victory Conditions and Surprise Endings","playOrder":30,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/towards-a-recentralized-center.xhtml","id":"towards-a-recentralized-center","label":"Towards a Recentralized Center","playOrder":31,"class":"subchapter","subpoints":[]}],"class":"chapter"},{"contentSrc":"Text/why-now.xhtml","id":"chapter-5","label":"From Nation States to Network States","playOrder":32,"subpoints":[{"contentSrc":"Text/why-now.xhtml","id":"why-now","label":"Why Now?","playOrder":33,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/on-nation-states.xhtml","id":"on-nation-states","label":"On Nation States","playOrder":34,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/on-network-states.xhtml","id":"on-network-states","label":"On Network States","playOrder":35,"class":"subchapter","subpoints":[]}],"class":"chapter"},{"contentSrc":"Text/acknowledgments.xhtml","id":"chapter-6","label":"Appendix","playOrder":36,"subpoints":[{"contentSrc":"Text/acknowledgments.xhtml","id":"acknowledgments","label":"Acknowledgments","playOrder":37,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/about-1729.xhtml","id":"about-1729","label":"About 1729","playOrder":38,"class":"subchapter","subpoints":[]},{"contentSrc":"Text/footnotes.xhtml","id":"footnotes","label":"Footnotes","playOrder":39,"class":"subchapter","subpoints":[]}],"class":"chapter"}]},"__N_SSG":true},"page":"/","query":{},"buildId":"dGjbMQsxXFoZg8gKHoLwZ","isFallback":false,"gsp":true,"scriptLoader":[]}</script><next-route-announcer><p aria-live="assertive" id="__next-route-announcer__" role="alert" style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; overflow-wrap: normal;">Clima | The Network State</p></next-route-announcer><script src="/index_files/[section]-d66d5935a4c8e7ba.js.download"></script><script src="/index_files/132-9982ff34442fb147.js.download"></script><script src="/index_files/podcast-4887930752e3194c.js.download"></script><div style="position: relative;" id="apollo-root-apollo_everywhere"></div></body></html>
+</div>
+</div>
