@@ -204,52 +204,45 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 .carousel-container {
-  max-width: 300px; /* Adatta alla larghezza delle immagini dei libri */
-  overflow: hidden; /* Nasconde i libri fuori dal container visibile */
   position: relative;
+  max-width: 300px; /* Larghezza massima del carosello */
+  margin: auto; /* Centra il carosello orizzontalmente */
+  background-color: lightblue; /* Colore di sfondo azzurro chiaro */
+  border-radius: 15px; /* Angoli arrotondati */
+  overflow: hidden; /* Mantiene il contenuto arrotondato e nasconde gli overflow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombra opzionale per aggiungere profondità */
 }
 
 .carousel-slide {
   display: flex;
-  transition: transform 0.5s ease;
+  overflow: hidden; /* Nasconde i libri fuori dal viewport del carosello */
 }
 
 .book {
   flex: 0 0 auto; /* Impedisce ai libri di ridimensionarsi */
-  width: 300px; /* Assicurati che corrisponda alla larghezza del container */
-  text-align: left;
-}
-
-.book img {
-  width: 100%; /* Assicura che l'immagine si adatti al contenitore */
-}
-
-.title {
-  font-size: 21.25px;
-  font-family: palladio;
-}
-
-.author {
-  font-family: palladio-italics;
+  width: 300px; /* Larghezza di ogni libro */
+  text-align: left; /* Testo allineato a sinistra */
 }
 
 .prev, .next {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 50%; /* Posiziona i pulsanti verticalmente al centro */
+  transform: translateY(-50%); /* Centra i pulsanti rispetto alla loro altezza */
+  font-size: 24px; /* Dimensione del testo dei pulsanti */
   cursor: pointer;
-  background-color: lightgrey;
+  background-color: rgba(0,0,0,0.5); /* Colore di sfondo con trasparenza */
+  color: white; /* Colore del testo */
   border: none;
+  padding: 10px; /* Padding intorno al testo */
 }
 
 .prev {
-  left: -40px;
+  left: -40px; /* Posiziona il pulsante "Prev" a sinistra */
 }
 
 .next {
-  right: -40px;
+  right: -40px; /* Posiziona il pulsante "Next" a destra */
 }
-
 
 
 
@@ -1777,10 +1770,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <img src="/index_files/numeri_book.jpg" alt="I numeri non mentono">
       <p class="title">I numeri non mentono<br><span class="author">Vaclav Smil</span></p>
     </div>
-    <button class="prev" onclick="moveSlide(-1)">⬅️</button>
-    <button class="next" onclick="moveSlide(1)">➡️</button>
   </div>
-
+  <button class="prev" onclick="moveSlide(-1)">⬅️</button>
+  <button class="next" onclick="moveSlide(1)">➡️</button>
 
 </div>
 
