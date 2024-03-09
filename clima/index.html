@@ -33,21 +33,47 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </script>
 
   <script>
+  let startX;  // Posizione iniziale del tocco
+  let currentSlideIndex = 0; // Indice dello slide corrente
 
-  let slideIndex = 0;
+  const carousel = document.querySelector('.carousel-slide');
+  const slides = document.querySelectorAll(".book");
+  const slideWidth = slides[0].clientWidth;
+
+  carousel.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  }, false);
+
+  carousel.addEventListener('touchmove', (e) => {
+    e.preventDefault(); // Previene lo scroll della pagina durante il swipe
+  }, {passive: false});
+
+  carousel.addEventListener('touchend', (e) => {
+    const moveX = e.changedTouches[0].clientX;
+    const diffX = startX - moveX;
+
+    if (Math.abs(diffX) > 50) { // Soglia del movimento per cambiare slide
+      if (diffX > 0) {
+        // Swipe verso sinistra
+        moveSlide(1);
+      } else {
+        // Swipe verso destra
+        moveSlide(-1);
+      }
+    }
+  }, false);
 
   function moveSlide(step) {
-    const slides = document.querySelectorAll(".book");
-    slideIndex += step;
+    currentSlideIndex += step;
 
-    if (slideIndex >= slides.length) {
-      slideIndex = 0; // Loop al primo slide
-    } else if (slideIndex < 0) {
-      slideIndex = slides.length - 1; // Loop all'ultimo slide
+    if (currentSlideIndex >= slides.length) {
+      currentSlideIndex = 0;
+    } else if (currentSlideIndex < 0) {
+      currentSlideIndex = slides.length - 1;
     }
 
-    const slideWidth = slides[0].clientWidth;
-    document.querySelector(".carousel-slide").style.transform = `translateX(${-slideWidth * slideIndex}px)`;
+    carousel.style.transform = `translateX(${-slideWidth * currentSlideIndex}px)`;
+    carousel.style.transition = "transform 0.5s ease";
   }
 </script>
 
@@ -1756,10 +1782,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <img src="/index_files/numeri_book.jpg" alt="I numeri non mentono">
       <p class="title">I numeri non mentono<br><span class="author">Vaclav Smil</span></p>
     </div>
+    <button class="prev" onclick="moveSlide(-1)">⬅️</button>
+    <button class="next" onclick="moveSlide(1)">➡️</button>
   </div>
 
-  <button class="prev" onclick="moveSlide(-1)">⬅️</button>
-  <button class="next" onclick="moveSlide(1)">➡️</button>
+
 </div>
 
 
