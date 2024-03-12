@@ -124,19 +124,13 @@
   padding: 20px;
 }
 
-<style>
-.div-container {
-  position: relative; /* Questo permette al .icons-container di posizionarsi relativamente a questo contenitore */
-  /* Altri stili del tuo div-container */
-}
-
-.icons-container {
+<style>.icons-container {
   position: fixed;
   bottom: 80px; /* Posiziona le icone in basso */
-  right: 50%; /* Centra orizzontalmente le icone */
-  transform: translateX(50%);
+  right: 20px; /* Adegua questa distanza per posizionarle sul lato destro */
+  transform: translateX(0%); /* Nessuna trasformazione necessaria ora */
   display: flex;
-  flex-direction: row; /* Imposta le icone in linea orizzontale */
+  flex-direction: column; /* Imposta le icone in linea verticale */
   align-items: center;
   transition: opacity 0.35s ease;
   opacity: 1;
@@ -151,10 +145,9 @@
   align-items: center;
   width: 45px; /* Dimensione del cerchio */
   height: 45px; /* Dimensione del cerchio */
-  margin: 10px; /* Distanza tra le icone */
+  margin: 10px 0; /* Distanza tra le icone (ora solo verticale) */
   font-size: 25px; /* Dimensione degli emoji */
   cursor: pointer;
-
 }
 
 .icon img {
