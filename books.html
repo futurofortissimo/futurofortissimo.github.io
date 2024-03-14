@@ -1870,7 +1870,19 @@ function moveSlide(step) {
     el: '.swiper-pagination',
     clickable: true,
   },
-
+  // Add your Swiper options here...
+    slidesPerView: 'auto',
+    spaceBetween: 15,
+    centeredSlides: true,
+    on: {
+      init: function () {
+        const slides = document.querySelectorAll('.swiper-slide');
+        slides.forEach(slide => {
+          slide.style.width = '280px'; // Force width for each slide
+        });
+      },
+    },
+  });
   // Risponde ai breakpoint
   breakpoints: {
     // Quando la larghezza della finestra è >= 640px
