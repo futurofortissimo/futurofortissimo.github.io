@@ -38,6 +38,35 @@ html {
     height: 100%;
     border: none;
 }
+
+
+.icons-container {
+  position: fixed;
+  bottom: 80px; /* Posiziona le icone in basso */
+  right: 20px; /* Adegua questa distanza per posizionarle sul lato destro */
+  transform: translateX(0%); /* Nessuna trasformazione necessaria ora */
+  display: flex;
+  flex-direction: column; /* Imposta le icone in linea verticale */
+  align-items: center;
+  transition: opacity 0.35s ease;
+  opacity: 1;
+}
+
+.icon {
+  background-color: white; /* Sfondo bianco per il cerchio */
+  border: 2px solid black; /* Aggiunge un bordo nero */
+  border-radius: 50%; /* Rende lo sfondo circolare */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px; /* Dimensione del cerchio */
+  height: 45px; /* Dimensione del cerchio */
+  margin: 10px 0; /* Distanza tra le icone (ora solo verticale) */
+  font-size: 25px; /* Dimensione degli emoji */
+  cursor: pointer;
+}
+
+
          @font-face {
            font-family: 'Palladio';
            src: url('./P052-Roman.otf') format('truetype');
