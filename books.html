@@ -1708,7 +1708,7 @@ function moveSlide(step) {
 
 <div class="flex flex-col justify-center m-0 p-0 flex-1 min-h-screen" style="margin-top: 80px;"><main class="flex flex-grow flex-1 overflow-y-scroll flex-col  w-full"><div class="flex flex-grow flex-col items-center justify-between p-4"><div class="__variable_ee7e36 font-valkyrie max-w-[714px] mx-auto px-4 sm:px-6 lg:px-4 book-section">
   <img alt="futuro fortissimo clima e cambiamenti climatici sito internet substack michele merelli" src="/index_files/clima.webp">
-
+</head>
   <hr style="height:2px;border-width:0;color:gray;background-color:black">
   <br>
   <br>
@@ -1809,51 +1809,51 @@ function moveSlide(step) {
 
  <!-- Initialize Swiper JS -->
  <style>
- .book-image-container {
-   background-color: #f0f0f0; /* Grigio chiaro */
-   border-radius: 20px; /* Bordi arrotondati */
-   overflow: hidden; /* Nasconde tutto ciò che è fuori dal bordo arrotondato */
-   display: flex;
-   justify-content: center; /* Centra orizzontalmente l'immagine */
-   align-items: center; /* Centra verticalmente l'immagine */
-   height: 50vw; /* Altezza basata sulla larghezza dello schermo */
-   max-height: 300px; /* Altezza massima per evitare immagini troppo grandi */
-   width: 50vw; /* Larghezza basata sulla larghezza dello schermo */
-   max-width: 300px; /* Larghezza massima */
-   margin-bottom: 16px;
- }
+.book-image-container {
+  background-color: #f0f0f0; /* Grigio chiaro */
+  border-radius: 20px; /* Bordi arrotondati */
+  overflow: hidden; /* Nasconde tutto ciò che è fuori dal bordo arrotondato */
+  display: flex;
+  justify-content: center; /* Centra orizzontalmente l'immagine */
+  align-items: center; /* Centra verticalmente l'immagine */
+  width: 75vw; /* Larghezza basata sulla larghezza dello schermo per schermi piccoli */
+  max-width: 300px; /* Larghezza massima */
+  height: 50vw; /* Altezza basata sulla larghezza dello schermo */
+  max-height: 300px; /* Altezza massima per evitare immagini troppo grandi */
+  margin-bottom: 16px;
+}
 
- .book-image {
-   max-height: 100%;
-   max-width: 100%;
- }
+.book-info-container {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: left; /* Testi giustificati a sinistra */
+  display: flex;
+  align-items: center; /* Centra il testo verticalmente */
+  justify-content: center;
+  height: 20vw; /* Altezza minore basata sulla larghezza dello schermo */
+  max-height: 120px; /* Altezza massima per evitare container troppo alti */
+  width: 75vw; /* Larghezza basata sulla larghezza dello schermo per schermi piccoli */
+  max-width: 300px; /* Larghezza massima */
+}
 
- .book-info-container {
-   background-color: #f0f0f0;
-   border-radius: 8px;
-   padding: 16px;
-   text-align: center; /* Centra il testo */
-   width: 50vw; /* Larghezza basata sulla larghezza dello schermo */
-   max-width: 300px; /* Larghezza massima */
- }
+.book-title, .book-author {
+  margin: 0; /* Rimuove lo spazio aggiuntivo */
+}
 
- .book-title {
-   font-weight: bold;
-   display: block; /* Occupa l'intera larghezza per il line break */
- }
+@media (min-width: 768px) {
+  .book-image-container, .book-info-container {
+    height: 300px; /* Altezza fissa per schermi più grandi */
+    width: auto; /* Larghezza automatica per schermi più grandi */
+  }
 
- .book-author {
-   display: block;
-   margin-top: 8px; /* Spazio dal titolo */
- }
-
- @media (min-width: 768px) {
-   .book-image-container, .book-info-container {
-     height: 300px;
-     width: auto;
-   }
- }
- </style>
+  .book-info-container {
+    padding: 8px 16px; /* Riduce il padding per il container del testo */
+    text-align: center; /* Centra il testo per schermi più grandi */
+    justify-content: center; /* Centra il contenuto */
+  }
+}
+</style>
 
  <!-- Initialize Swiper -->
  <script>
