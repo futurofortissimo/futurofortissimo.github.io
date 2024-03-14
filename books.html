@@ -1806,7 +1806,8 @@ function moveSlide(step) {
 
 
 
- <!-- Styles (aggiungi nel tuo CSS o nel tag <style> dell'HTML) -->
+ 
+ <!-- Initialize Swiper JS -->
  <style>
  .book-image-container {
    background-color: #f0f0f0; /* Grigio chiaro */
@@ -1815,7 +1816,10 @@ function moveSlide(step) {
    display: flex;
    justify-content: center; /* Centra orizzontalmente l'immagine */
    align-items: center; /* Centra verticalmente l'immagine */
-   height: 300px; /* Altezza fissa */
+   height: 50vw; /* Altezza basata sulla larghezza dello schermo */
+   max-height: 300px; /* Altezza massima per evitare immagini troppo grandi */
+   width: 50vw; /* Larghezza basata sulla larghezza dello schermo */
+   max-width: 300px; /* Larghezza massima */
    margin-bottom: 16px;
  }
 
@@ -1829,6 +1833,8 @@ function moveSlide(step) {
    border-radius: 8px;
    padding: 16px;
    text-align: center; /* Centra il testo */
+   width: 50vw; /* Larghezza basata sulla larghezza dello schermo */
+   max-width: 300px; /* Larghezza massima */
  }
 
  .book-title {
@@ -1840,10 +1846,14 @@ function moveSlide(step) {
    display: block;
    margin-top: 8px; /* Spazio dal titolo */
  }
+
+ @media (min-width: 768px) {
+   .book-image-container, .book-info-container {
+     height: 300px;
+     width: auto;
+   }
+ }
  </style>
-
- <!-- Initialize Swiper JS -->
-
 
  <!-- Initialize Swiper -->
  <script>
