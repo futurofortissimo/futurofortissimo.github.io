@@ -1746,43 +1746,12 @@ function moveSlide(step) {
        <!-- ... Additional slides ... -->
      </div>
      <!-- Pagination, Navigation buttons -->
-     <div class="swiper-pagination"></div>
-     <div class="swiper-button-prev"></div>
-     <div class="swiper-button-next"></div>
+
   </div>
 
   <br>
   <br>
   <br>
-
-<h3 id="clima" class=" text-xs mb-3 font-palladio" style="font-size:200%;font-family:ArgosBoldItalic;">Clima</h3>
-<br>
- <!-- Swiper -->
- <div class="swiper mySwiper w-full">
-   <div class="swiper-wrapper">
-     <!-- Slides -->
-     <div class="swiper-slide">
-       <a href="https://amzn.to/4c4rqhp" target="_blank">
-         <center><img src="/index_files/clima_book.jpg" alt="Clima, come evitare un disastro" style="height: 500px; width: auto; margin-bottom: 10px;"></center>
-         <span style="font-family:palladio-italics; font-size:21px">Clima, come evitare un disastro</span><br>
-         <b style="font-family:palladio; font-size:21.25px">Bill Gates</b>
-       </a>
-     </div>
-     <!-- Repeat for each slide, ensuring the <img> tag has height: 500px; width: auto; -->
-     <div class="swiper-slide">
-       <a href="https://amzn.to/3VbC4x3" target="_blank">
-         <center><img src="/index_files/impronta_book.jpg" alt="Scopri l'impatto ambientale di ogni cosa." style="height: 500px; width: auto; margin-bottom: 10px;"></center>
-         <span style="font-family:palladio-italics; font-size:21px">Scopri l'impatto ambientale di ogni cosa.</span><br>
-         <b style="font-family:palladio; font-size:21.25px">Mike Berners-Lee</b>
-       </a>
-     </div>
-     <!-- ... Additional slides ... -->
-   </div>
-   <!-- Pagination, Navigation buttons -->
-   <div class="swiper-pagination"></div>
-   <div class="swiper-button-prev"></div>
-   <div class="swiper-button-next"></div>
-</div>
 
  <br>
  <hr style="height:2px;border-width:0;color:gray;background-color:black">
@@ -1836,12 +1805,12 @@ function moveSlide(step) {
  <style>
  .book-image-container {
    background-color: #f0f0f0; /* Grigio chiaro */
-   border-radius: 8px; /* Bordi arrotondati */
+   border-radius: 20px; /* Bordi arrotondati */
    overflow: hidden; /* Nasconde tutto ciò che è fuori dal bordo arrotondato */
    display: flex;
    justify-content: center; /* Centra orizzontalmente l'immagine */
    align-items: center; /* Centra verticalmente l'immagine */
-   height: 500px; /* Altezza fissa */
+   height: 400px; /* Altezza fissa */
    margin-bottom: 16px;
  }
 
@@ -1869,28 +1838,7 @@ function moveSlide(step) {
  </style>
 
  <!-- Initialize Swiper JS -->
- <script>
-   var mySwiper = new Swiper('.mySwiper', {
-     slidesPerView: 1,
-     spaceBetween: 10,
-     breakpoints: {
-       // when window width is >= 640px
-       640: {
-         slidesPerView: 2,
-         spaceBetween: 20
-       }
-     },
-     pagination: {
-       el: '.swiper-pagination',
-       clickable: true,
-     },
-     navigation: {
-       nextEl: '.swiper-button-next',
-       prevEl: '.swiper-button-prev',
-     },
-     // Add more Swiper parameters here if needed
-   });
- </script>
+
 
  <!-- Initialize Swiper -->
  <script>
@@ -1898,8 +1846,8 @@ function moveSlide(step) {
   // Parametri opzionali
   loop: true,
   speed: 500, // Durata della transizione in millisecondi
-  autoHeight: 300, // Altezza automatica in base ai contenuti
-  width: 400, // Larghezza del viewport
+  autoHeight: 500, // Altezza automatica in base ai contenuti
+  width: 300, // Larghezza del viewport
   centeredSlides: true,
   spaceBetween: 30, // Distanza tra gli slide
 
@@ -1909,11 +1857,6 @@ function moveSlide(step) {
   grabCursor: true,
   slideToClickedSlide: true,
 
-  // Abilita la navigazione
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
 
   // Abilita la paginazione
   pagination: {
@@ -1924,8 +1867,8 @@ function moveSlide(step) {
   // Risponde ai breakpoint
   breakpoints: {
     // Quando la larghezza della finestra è >= 640px
-    640: {
-      slidesPerView: 2,
+    500: {
+      slidesPerView: 1,
     },
     // Quando la larghezza della finestra è >= 768px
     768: {
