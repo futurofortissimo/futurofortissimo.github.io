@@ -1690,7 +1690,7 @@ function moveSlide(step) {
 
 
  <!-- Swiper -->
- <div class="swiper mySwiper">
+ <div class="swiper mySwiper w-full">
    <div class="swiper-wrapper">
      <!-- Slides -->
      <div class="swiper-slide">
@@ -1728,51 +1728,46 @@ function moveSlide(step) {
 
  <!-- Initialize Swiper -->
  <script>
-   var mySwiper = new Swiper('.mySwiper', {
-     // Optional parameters
-     direction: 'horizontal',
-     loop: true,
+var mySwiper = new Swiper('.mySwiper', {
+  // Parametri opzionali
+  loop: true,
+  speed: 500, // Durata della transizione in millisecondi
+  autoHeight: true, // Altezza automatica in base ai contenuti
+  width: window.innerWidth, // Larghezza del viewport
+  centeredSlides: true,
+  spaceBetween: 30, // Distanza tra gli slide
 
-     // If you want to enable Pagination
-     pagination: {
-       el: '.swiper-pagination',
-     },
+  // Abilita il touch e il mouse drag
+  simulateTouch: true,
+  touchRatio: 1,
+  grabCursor: true,
+  slideToClickedSlide: true,
 
-     // Navigation arrows
-     navigation: {
-       nextEl: '.swiper-button-next',
-       prevEl: '.swiper-button-prev',
-     },
+  // Abilita la navigazione
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
 
-     // And if you want to enable swiping with mouse/trackpad:
-     mousewheel: true,
-     keyboard: true,
+  // Abilita la paginazione
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
 
-     // Enable smooth transitions
-     speed: 500, // transition duration in ms
-
-     // Enable touch drag/click and mouse drag
-     simulateTouch: true,
-     touchRatio: 1,
-     grabCursor: true,
-     slideToClickedSlide: true,
-
-     // Responsive breakpoints
-     breakpoints: {
-       // when window width is >= 640px
-       640: {
-         slidesPerView: 2,
-         spaceBetween: 20
-       },
-       // when window width is >= 768px
-       768: {
-         slidesPerView: 3,
-         spaceBetween: 40
-       }
-     }
-   });
- </script>
-
+  // Risponde ai breakpoint
+  breakpoints: {
+    // Quando la larghezza della finestra è >= 640px
+    640: {
+      slidesPerView: 2,
+    },
+    // Quando la larghezza della finestra è >= 768px
+    768: {
+      slidesPerView: 3,
+    },
+  }
+});
+</script>
  <h3 id="clima" class=" text-xs mb-3 font-palladio" style="font-size:200%;font-family:ArgosBoldItalic;">Libri</h3>
 
  <div class="icons-container" style="opacity: 1; display: flex; align-items: center; justify-content: center; gap: 10px;">
