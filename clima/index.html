@@ -1730,7 +1730,85 @@ function moveSlide(step) {
 <br>
 <h3 id="libri" class=" text-xs mb-3 font-palladio" style="font-size:200%;font-family:ArgosBoldItalic;">Libri</h3>
 
+<!-- Swiper -->
+<div class="swiper mySwiper w-full">
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide">
+      <a href="https://amzn.to/4c4rqhp" target="_blank">
+        <center><img  src="/index_files/clima_book.jpg" alt="Clima, come evitare un disastro" style="width: 300px;margin-bottom:10px;"></center>
+        <a href="https://amzn.to/4c4rqhp"; style="font-family:palladio; font-size:21.25px">
+        <span style="font-family:palladio-italics; font-size:21px">Clima, come evitare un disastro</span></a>
+        <span style="; font-family:palladio-italics; font-size:21px"></span><br><b style="; font-family:palladio; font-size:21.25px"> Bill Gates</b>
+      </a>
+    </div>
+    <div class="swiper-slide">
+      <a href="https://amzn.to/4c4rqhp" target="_blank">
+        <center><img  src="/index_files/clima_book.jpg" alt="Clima, come evitare un disastro" style="width: 300px;margin-bottom:10px;"></center>
+        <a href="https://amzn.to/4c4rqhp"; style="font-family:palladio; font-size:21.25px">
+        <span style="font-family:palladio-italics; font-size:21px">Clima, come evitare un disastro</span></a>
+        <span style="; font-family:palladio-italics; font-size:21px"></span><br><b style="; font-family:palladio; font-size:21.25px"> Bill Gates</b>
+      </a>
+    </div>
+    <div class="swiper-slide">
+      <a href="https://amzn.to/4c4rqhp" target="_blank">
+        <center><img  src="/index_files/clima_book.jpg" alt="Clima, come evitare un disastro" style="width: 300px;margin-bottom:10px;"></center>
+        <a href="https://amzn.to/4c4rqhp"; style="font-family:palladio; font-size:21.25px">
+        <span style="font-family:palladio-italics; font-size:21px">Clima, come evitare un disastro</span></a>
+        <span style="; font-family:palladio-italics; font-size:21px"></span><br><b style="; font-family:palladio; font-size:21.25px"> Bill Gates</b>
+      </a>
+    </div>
+  </div>
+  <!-- If you want to add Pagination -->
+  <div class="swiper-pagination"></div>
 
+  <!-- If you want to add Navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
+
+<!-- Initialize Swiper -->
+<script>
+var mySwiper = new Swiper('.mySwiper', {
+ // Parametri opzionali
+ loop: true,
+ speed: 500, // Durata della transizione in millisecondi
+ autoHeight: true, // Altezza automatica in base ai contenuti
+ width: window.innerWidth, // Larghezza del viewport
+ centeredSlides: true,
+ spaceBetween: 30, // Distanza tra gli slide
+
+ // Abilita il touch e il mouse drag
+ simulateTouch: true,
+ touchRatio: 1,
+ grabCursor: true,
+ slideToClickedSlide: true,
+
+ // Abilita la navigazione
+ navigation: {
+   nextEl: '.swiper-button-next',
+   prevEl: '.swiper-button-prev',
+ },
+
+ // Abilita la paginazione
+ pagination: {
+   el: '.swiper-pagination',
+   clickable: true,
+ },
+
+ // Risponde ai breakpoint
+ breakpoints: {
+   // Quando la larghezza della finestra è >= 640px
+   640: {
+     slidesPerView: 2,
+   },
+   // Quando la larghezza della finestra è >= 768px
+   768: {
+     slidesPerView: 3,
+   },
+ }
+});
+</script>
 <p style="font-family:palladio; font-size:21.25px">
   <a href="https://amzn.to/4c4rqhp" target="_blank">
     <center><img  src="/index_files/clima_book.jpg" alt="Clima, come evitare un disastro" style="width: 300px;margin-bottom:10px;"></center>
