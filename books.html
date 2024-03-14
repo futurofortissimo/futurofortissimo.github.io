@@ -1669,6 +1669,88 @@ function moveSlide(step) {
         </header>
 
 
+        <div class="swiper mySwiper w-full">
+           <div class="swiper-wrapper">
+             <!-- Slide 1 -->
+             <div class="swiper-slide">
+               <div class="book-image-container">
+                 <a href="https://amzn.to/4c4rqhp" target="_blank">
+                   <img src="/index_files/clima_book.jpg" alt="Clima, come evitare un disastro" class="book-image">
+                 </a>
+               </div>
+               <div class="book-info-container">
+                 <span class="book-title">Clima, come evitare un disastro</span><br>
+                 <span class="book-author">Bill Gates</span>
+               </div>
+             </div>
+             <!-- ... Additional slides ... -->
+           </div>
+           <!-- Pagination, Navigation buttons -->
+           <div class="swiper-pagination"></div>
+           <div class="swiper-button-prev"></div>
+           <div class="swiper-button-next"></div>
+        </div>
+
+        <!-- Styles (aggiungi nel tuo CSS o nel tag <style> dell'HTML) -->
+        <style>
+        .book-image-container {
+          background-color: #f0f0f0; /* Grigio chiaro */
+          border-radius: 8px; /* Bordi arrotondati */
+          overflow: hidden; /* Nasconde tutto ciò che è fuori dal bordo arrotondato */
+          display: flex;
+          justify-content: center; /* Centra orizzontalmente l'immagine */
+          align-items: center; /* Centra verticalmente l'immagine */
+          height: 500px; /* Altezza fissa */
+          margin-bottom: 16px;
+        }
+
+        .book-image {
+          max-height: 100%;
+          max-width: 100%;
+        }
+
+        .book-info-container {
+          background-color: #f0f0f0;
+          border-radius: 8px;
+          padding: 16px;
+          text-align: center; /* Centra il testo */
+        }
+
+        .book-title {
+          font-weight: bold;
+          display: block; /* Occupa l'intera larghezza per il line break */
+        }
+
+        .book-author {
+          display: block;
+          margin-top: 8px; /* Spazio dal titolo */
+        }
+        </style>
+
+        <!-- Initialize Swiper JS -->
+        <script>
+          var mySwiper = new Swiper('.mySwiper', {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            breakpoints: {
+              // when window width is >= 640px
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20
+              }
+            },
+            pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+            },
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+            // Add more Swiper parameters here if needed
+          });
+        </script>
+
 
 
 <div class="flex flex-col justify-center m-0 p-0 flex-1 min-h-screen" style="margin-top: 80px;"><main class="flex flex-grow flex-1 overflow-y-scroll flex-col  w-full"><div class="flex flex-grow flex-col items-center justify-between p-4"><div class="__variable_ee7e36 font-valkyrie max-w-[714px] mx-auto px-4 sm:px-6 lg:px-4 book-section">
