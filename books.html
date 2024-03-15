@@ -1797,7 +1797,8 @@ function moveSlide(step) {
  <!-- Initialize Swiper JS -->
  <style>
 .book-image-container {
-  background-color: #f0f0f0; /* Grigio chiaro */
+  background-color: transparent; /* Adjust if you want a different background */
+  border: 2px solid black; /* Black border */
   border-radius: 20px; /* Bordi arrotondati */
   overflow: hidden; /* Nasconde tutto ciò che è fuori dal bordo arrotondato */
   display: flex;
@@ -1810,18 +1811,18 @@ function moveSlide(step) {
   margin-bottom: 16px;
 }
 
+
 .book-info-container {
-  background-color: #f0f0f0;
-  border-radius: 8px;
-  padding: 8px;
-  text-align: left; /* Testi giustificati a sinistra */
-  display: flex;
-  align-items: center; /* Centra il testo verticalmente */
-  justify-content: left;
-  height: 35vw; /* Altezza minore basata sulla larghezza dello schermo */
-  max-height: 200px; /* Altezza massima per evitare container troppo alti */
-  width: 55vw; /* Larghezza basata sulla larghezza dello schermo per schermi piccoli */
-  max-width: 250px; /* Larghezza massima */
+  background-color: transparent; /* Adjust if you want a different background */
+  border: 2px solid black; /* Black border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 8px; /* Padding inside the container */
+  display: flex; /* Use flexbox for alignment */
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center content vertically */
+  text-align: left; /* Adjust text alignment as needed */
+  width: 55vw; /* Width based on viewport width */
+  max-width: 250px; /* Maximum width */
 }
 
 .book-title, .book-author {
@@ -1841,6 +1842,13 @@ function moveSlide(step) {
     height: 200px; /* Altezza fissa per schermi più grandi */
 
   }
+}
+.parent-book-container {
+  display: flex;
+  flex-direction: column; /* Use if the items are supposed to stack vertically */
+  justify-content: center; /* This will center the child vertically */
+  align-items: center; /* This will center the child horizontally if needed */
+  height: 100%; /* Ensure it has a defined height */
 }
 </style>
 
