@@ -206,41 +206,82 @@
        <button onclick="checkEmail()">Submit</button>
      </div>
   <script>
-      let data = [];
-      document.addEventListener('DOMContentLoaded', function() {
-        fetch('/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo.csv')
-          .then(response => response.text())
-          .then(csvText => {
-            data = csvText.split('\n').map(row => row.split(','));
-            updateTable(data);
-          });
+    let data = []; // Dichiarare data fuori dalle funzioni per renderla globale
 
-        const searchInput = document.getElementById('csv-search-input');
-        searchInput.addEventListener('keyup', function() {
-          const searchText = this.value.toLowerCase();
-          const filteredData = data.filter(row => row.some(cell => cell.toLowerCase().includes(searchText)));
-          updateTable(filteredData);
-        });
+  document.addEventListener('DOMContentLoaded', function() {
+    fetch('/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo.csv')
+      .then(response => response.text())
+      .then(csvText => {
+        data = csvText.split('\n').map(row => row.split(','));
+        updateTable(data); // Aggiorna la tabella al caricamento iniziale della pagina
       });
 
-      function updateTable(data) {
-        const tableBody = document.getElementById('csv-table').getElementsByTagName('tbody')[0];
-        tableBody.innerHTML = ''; // Clear existing table data
-        data.forEach(row => {
-          const tr = document.createElement('tr');
+    const searchInput = document.getElementById('csv-search-input');
+    searchInput.addEventListener('keyup', function() {
+      const searchText = this.value.toLowerCase();
+      const filteredData = data.filter(row => row.some(cell => cell.toLowerCase().includes(searchText)));
+      updateTable(filteredData); // Aggiorna la tabella dopo ogni ricerca
+    });
+  });
 
-          // Colonna "In Breve" come link cliccabile
-          const tdSummary = document.createElement('td');
-          const aSummary = document.createElement('a');
-          aSummary.className = 'summary-link';
-          aSummary.href = row[2]; // Assicurati che l'URL sia nella giusta colonna del tuo CSV
-          aSummary.textContent = row[1];
-          tdSummary.appendChild(aSummary);
-          tr.appendChild(tdSummary);
+  function updateTable(data) {
+    const tableBody = document.getElementById('csv-table').getElementsByTagName('tbody')[0];
+    tableBody.innerHTML = ''; // Pulisce i dati della tabella esistenti
+    data.forEach(row => {
+      const tr = document.createElement('tr');
 
-          tableBody.appendChild(tr);
-        });
-      }
+      // Aggiungi qui il resto della tua logica per popolare la tabella
+      // In base alla struttura del tuo CSV e alle colonne che vuoi visualizzare
+    });
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+  fetch('/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo.csv')
+    .then(response => response.text())
+    .then(csvText => {
+      const data = csvText.split('\n').map(row => row.split(','));
+      updateTable(data);
+    });
+
+  const searchInput = document.getElementById('csv-search-input');
+  searchInput.addEventListener('keyup', function() {
+    const searchText = this.value.toLowerCase();
+    const filteredData = data.filter(row => row.some(cell => cell.toLowerCase().includes(searchText)));
+    updateTable(filteredData);
+  });
+});
+
+function updateTable(data) {
+  const tableBody = document.getElementById('csv-table').getElementsByTagName('tbody')[0];
+  tableBody.innerHTML = ''; // Clear existing table data
+  data.forEach(row => {
+    const tr = document.createElement('tr');
+
+    // Crea e aggiungi i tag alla colonna "Tags"
+    const tdTags = document.createElement('td');
+    // Assumi che i tag siano separati da virgole nella prima colonna del CSV
+    const tags = row[0].split(';').map(tag => tag.trim()); // Usa il separatore corretto se diverso da ';'
+    tags.forEach(tag => {
+      const spanTag = document.createElement('span');
+      spanTag.className = 'tag';
+      spanTag.textContent = tag;
+      tdTags.appendChild(spanTag);
+      tdTags.appendChild(document.createTextNode(" ")); // Aggiunge spazio tra i tag
+    });
+    tr.appendChild(tdTags);
+
+    // Colonna "Summary" come link cliccabile
+    const tdSummary = document.createElement('td');
+    const aSummary = document.createElement('a');
+    aSummary.className = 'summary-link';
+    aSummary.href = row[2]; // Assicurati che l'URL sia nella giusta colonna del tuo CSV
+    aSummary.textContent = row[1];
+    tdSummary.appendChild(aSummary);
+    tr.appendChild(tdSummary);
+
+    tableBody.appendChild(tr);
+      });
+    }
+
     </script>
           <script>
           async function installApp() {
@@ -298,6 +339,25 @@
 
 
 <style>
+
+.tag {
+  display: inline-block;
+  background-color: #4CAF50; /* Colore di sfondo */
+  color: white; /* Colore del testo */
+  padding: 5px 10px;
+  margin: 2px;
+  border-radius: 15px;
+  font-size: 14px;
+}
+
+.summary-link {
+  color: #2196F3; /* Colore del link */
+  text-decoration: none; /* Nessuna sottolineatura */
+}
+.summary-link:hover {
+  text-decoration: underline; /* Sottolineatura al hover */
+}
+
   .tag-container {
     display: inline-block;
     padding: 5px 10px;
