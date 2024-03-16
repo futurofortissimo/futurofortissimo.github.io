@@ -173,8 +173,38 @@
 
 
      </body>
+     <script>
 
+     document.addEventListener('DOMContentLoaded', function() {
+       // Mostra il modal all'avvio
+       document.getElementById('emailModal').style.display = 'block';
 
+       // Funzione per controllare l'email
+       function checkEmail() {
+         const inputEmail = document.getElementById('emailInput').value;
+         fetch('path/to/your/emails.csv')
+           .then(response => response.text())
+           .then(data => {
+             const emails = data.split('\n'); // Assumi che ogni email sia in una nuova riga
+             if (emails.includes(inputEmail)) {
+               // Email trovata: nasconde il modal e mostra il contenuto
+               document.getElementById('emailModal').style.display = 'none';
+             } else {
+               // Email non trovata: mostra un messaggio di errore
+               alert('Email not authorized.');
+             }
+           });
+       }
+
+       // Esponi la funzione checkEmail al contesto globale per usarla nell'HTML
+       window.checkEmail = checkEmail;
+     });
+     </script>
+     <div id="emailModal" style="display:none;">
+       <p>Please enter your email to access:</p>
+       <input type="email" id="emailInput">
+       <button onclick="checkEmail()">Submit</button>
+     </div>
   <script>
       let data = [];
       document.addEventListener('DOMContentLoaded', function() {
