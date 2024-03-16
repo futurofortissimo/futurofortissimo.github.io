@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', function() {
           // Modifica questa condizione per cercare in più colonne
           row.some((cell, index) =>
             // Includi tutte le colonne che vuoi nel filtro
-            (index === 0 || index === 1 || index === 2) && cell.toLowerCase().includes(searchText)
+            (index === 2 || index === 3 || index === 4 || index === 5) && cell.toLowerCase().includes(searchText)
           )
         );
         updateTable(filteredData);
