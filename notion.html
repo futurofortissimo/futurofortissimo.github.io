@@ -132,7 +132,6 @@
                     <div class="h-full w-full sm:w-[1100px] max-w-auto sm:max-w-[1100px] flex flex-col items-center justify-start sm:justify-space-between py-0 px-6 sm:p-0">
                        <div class="h-full w-full sm:min-w-[744px] max-w-auto sm:max-w-[910px] flex flex-col sm:flex-row justify-start sm:justify-space-between py-0 sm:p-0">
                          <div class="flex box-content justify-center flex-col items-center p-0 sm:px-2 w-full sm:w-[450px]">
-                            <a><span><img alt="Book Cover" loading="lazy" width="189" height="252" decoding="async" data-nimg="1" class="cursor-pointer shadow-lg border-gray-200" style="color:transparent" srcset="/index_files/ff.png" src="/index_files/ff.png"></span></a>
                             <br>
                          </div>
                          <!-- Your table structure here -->
@@ -173,115 +172,82 @@
 
      </body>
      <script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Mostra il modal all'avvio se necessario
+  document.getElementById('emailModal').style.display = 'block';
 
-     document.addEventListener('DOMContentLoaded', function() {
-       // Mostra il modal all'avvio
-       document.getElementById('emailModal').style.display = 'block';
-
-       // Funzione per controllare l'email
-       function checkEmail() {
-         const inputEmail = document.getElementById('emailInput').value;
-         fetch('path/to/your/emails.csv')
-           .then(response => response.text())
-           .then(data => {
-             const emails = data.split('\n'); // Assumi che ogni email sia in una nuova riga
-             if (emails.includes(inputEmail)) {
-               // Email trovata: nasconde il modal e mostra il contenuto
-               document.getElementById('emailModal').style.display = 'none';
-             } else {
-               // Email non trovata: mostra un messaggio di errore
-               alert('Email not authorized.');
-             }
-           });
-       }
-
-       // Esponi la funzione checkEmail al contesto globale per usarla nell'HTML
-       window.checkEmail = checkEmail;
-     });
-     </script>
-     <div id="emailModal" style="display:none;">
-       <p>Please enter your email to access:</p>
-       <input type="email" id="emailInput">
-       <button onclick="checkEmail()">Submit</button>
-     </div>
-  <script>
-    let data = []; // Dichiarare data fuori dalle funzioni per renderla globale
-
-  document.addEventListener('DOMContentLoaded', function() {
+  // Carica i dati del CSV subito dopo il controllo dell'email
+  function loadData() {
     fetch('/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo.csv')
       .then(response => response.text())
       .then(csvText => {
-        data = csvText.split('\n').map(row => row.split(','));
-        updateTable(data); // Aggiorna la tabella al caricamento iniziale della pagina
+        const data = csvText.split('\n').map(row => row.split(','));
+        updateTable(data); // Aggiorna la tabella con i dati del CSV
       });
+  }
 
-    const searchInput = document.getElementById('csv-search-input');
-    searchInput.addEventListener('keyup', function() {
-      const searchText = this.value.toLowerCase();
-      const filteredData = data.filter(row => row.some(cell => cell.toLowerCase().includes(searchText)));
-      updateTable(filteredData); // Aggiorna la tabella dopo ogni ricerca
-    });
-  });
+  // Funzione per controllare l'email
+  function checkEmail() {
+    const inputEmail = document.getElementById('emailInput').value;
+    fetch('path/to/your/emails.csv')
+      .then(response => response.text())
+      .then(emailsCSV => {
+        const emails = emailsCSV.split('\n'); // Assumi che ogni email sia in una nuova riga
+        if (emails.includes(inputEmail)) {
+          document.getElementById('emailModal').style.display = 'none'; // Nasconde il modal
+          loadData(); // Carica i dati solo se l'email è autorizzata
+        } else {
+          alert('Email not authorized.');
+        }
+      });
+  }
 
+  window.checkEmail = checkEmail; // Rende la funzione accessibile globalmente per l'uso nell'HTML
+
+  // Funzione per aggiornare la tabella
   function updateTable(data) {
     const tableBody = document.getElementById('csv-table').getElementsByTagName('tbody')[0];
     tableBody.innerHTML = ''; // Pulisce i dati della tabella esistenti
     data.forEach(row => {
       const tr = document.createElement('tr');
 
-      // Aggiungi qui il resto della tua logica per popolare la tabella
-      // In base alla struttura del tuo CSV e alle colonne che vuoi visualizzare
+      const tdTags = document.createElement('td');
+      const tags = row[0].split(';').map(tag => `<span class="tag">${tag.trim()}</span>`).join(" ");
+      tdTags.innerHTML = tags;
+      tr.appendChild(tdTags);
+
+      const tdSummary = document.createElement('td');
+      const aSummary = document.createElement('a');
+      aSummary.href = row[2]; // Assumi che l'URL sia nella terza colonna del tuo CSV
+      aSummary.textContent = row[1];
+      tdSummary.appendChild(aSummary);
+      tr.appendChild(tdSummary);
+
+      tableBody.appendChild(tr);
     });
   }
-  document.addEventListener('DOMContentLoaded', function() {
-  fetch('/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo.csv')
-    .then(response => response.text())
-    .then(csvText => {
-      const data = csvText.split('\n').map(row => row.split(','));
-      updateTable(data);
-    });
 
+  // Listener per la ricerca
   const searchInput = document.getElementById('csv-search-input');
   searchInput.addEventListener('keyup', function() {
     const searchText = this.value.toLowerCase();
-    const filteredData = data.filter(row => row.some(cell => cell.toLowerCase().includes(searchText)));
-    updateTable(filteredData);
-  });
-});
-
-function updateTable(data) {
-  const tableBody = document.getElementById('csv-table').getElementsByTagName('tbody')[0];
-  tableBody.innerHTML = ''; // Clear existing table data
-  data.forEach(row => {
-    const tr = document.createElement('tr');
-
-    // Crea e aggiungi i tag alla colonna "Tags"
-    const tdTags = document.createElement('td');
-    // Assumi che i tag siano separati da virgole nella prima colonna del CSV
-    const tags = row[0].split(';').map(tag => tag.trim()); // Usa il separatore corretto se diverso da ';'
-    tags.forEach(tag => {
-      const spanTag = document.createElement('span');
-      spanTag.className = 'tag';
-      spanTag.textContent = tag;
-      tdTags.appendChild(spanTag);
-      tdTags.appendChild(document.createTextNode(" ")); // Aggiunge spazio tra i tag
-    });
-    tr.appendChild(tdTags);
-
-    // Colonna "Summary" come link cliccabile
-    const tdSummary = document.createElement('td');
-    const aSummary = document.createElement('a');
-    aSummary.className = 'summary-link';
-    aSummary.href = row[2]; // Assicurati che l'URL sia nella giusta colonna del tuo CSV
-    aSummary.textContent = row[1];
-    tdSummary.appendChild(aSummary);
-    tr.appendChild(tdSummary);
-
-    tableBody.appendChild(tr);
+    fetch('/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo.csv')
+      .then(response => response.text())
+      .then(csvText => {
+        const allData = csvText.split('\n').map(row => row.split(','));
+        const filteredData = allData.filter(row => row.some(cell => cell.toLowerCase().includes(searchText)));
+        updateTable(filteredData);
       });
-    }
+  });
 
-    </script>
+});
+</script>
+
+<div id="emailModal" style="display:none;">
+  <p>Please enter your email to access:</p>
+  <input type="email" id="emailInput">
+  <button onclick="checkEmail()">Submit</button>
+</div>
           <script>
           async function installApp() {
             if (!deferredPrompt) return;
