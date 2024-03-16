@@ -207,7 +207,13 @@ document.addEventListener('DOMContentLoaded', function() {
       .then(response => response.text())
       .then(csvText => {
         const allData = csvText.split('\n').map(row => row.split(','));
-        const filteredData = allData.filter(row => row.some(cell => cell.toLowerCase().includes(searchText)));
+        const filteredData = allData.filter(row =>
+          // Modifica questa condizione per cercare in più colonne
+          row.some((cell, index) =>
+            // Includi tutte le colonne che vuoi nel filtro
+            (index === 0 || index === 1 || index === 2) && cell.toLowerCase().includes(searchText)
+          )
+        );
         updateTable(filteredData);
       });
   });
