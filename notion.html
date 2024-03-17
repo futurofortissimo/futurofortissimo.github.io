@@ -111,6 +111,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
  <img alt="futuro fortissimo clima e cambiamenti climatici sito internet substack michele merelli" src="/index_files/futuro_scuola.webp">
 
+ <div id="paywallModal" class="modal">
+   <div class="modal-content">
+     <span class="close">&times;</span>
+     <p>Per accedere a questa pagina, inserisci la tua email:</p>
+     <input type="email" id="emailInput">
+     <button id="submitEmail">Verifica</button>
+   </div>
+ </div>
 
 <br>
 <div id="csv-container" style="font-family:palladio; font-size:16px;">
@@ -147,6 +155,46 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
  </body>
+
+<style>
+.modal {
+  display: none; /* Nascosto per default */
+  position: fixed; /* Rimane in posizione fissa */
+  z-index: 1; /* Sopra tutto */
+  left: 0;
+  top: 0;
+  width: 100%; /* Larghezza piena */
+  height: 100%; /* Altezza piena */
+  overflow: auto; /* Abilita lo scroll se necessario */
+  background-color: rgb(0,0,0); /* Colore sfondo */
+  background-color: rgba(0,0,0,0.4); /* Colore sfondo con opacità */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% dal top e centrato orizzontalmente */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Puoi regolare questa larghezza */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+
+
+
  <style>
     .tag {
         display: inline-block;
@@ -221,6 +269,47 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 <script>
+document.addEventListener('DOMContentLoaded', function() {
+  var modal = document.getElementById("paywallModal");
+  var span = document.getElementsByClassName("close")[0];
+
+  // Mostra il modal
+  modal.style.display = "block";
+
+  // Quando l'utente clicca su (x), chiude il modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  // Quando l'utente clicca da qualche parte fuori dal modal, lo chiude
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
+  // Aggiungi listener per il bottone di verifica
+  document.getElementById('submitEmail').addEventListener('click', function() {
+    var email = document.getElementById('emailInput').value;
+    // Qui dovrai implementare la verifica dell'email
+    checkEmail(email);
+  });
+});
+
+function checkEmail(inputEmail) {
+  // Qui implementa la logica per verificare l'email
+  fetch('path/to/your/emails.csv')
+    .then(response => response.text())
+    .then(data => {
+      const emails = data.split('\n');
+      if (emails.includes(inputEmail)) {
+        document.getElementById('paywallModal').style.display = 'none'; // Nasconde il modal se l'email è autorizzata
+      } else {
+        window.location.href = 'invite_to_subscribe_page.html'; // Redirect se l'email non è autorizzata
+      }
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     let allData = [];
     const paroleEscluse = ['perchè',
