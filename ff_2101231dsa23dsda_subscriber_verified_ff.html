@@ -118,19 +118,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <input style="font-family:palladio; font-size:21px; margin-top: 10px; border-color:black; border-radius:21px;background-color:transparent; width=75%" type="text" id="csv-search-input" placeholder="Cosa vuoi sapere dal futuro? 🎵" />
       <button id="csv-search-button">🔍</button> <!-- Bottone di ricerca -->
   </div>
-  <div>
+  <div id="csv-container" style="font-family:palladio; font-size:16px;">
     <input type="checkbox" id="filter-books" class="filter-checkbox" value="books">
     <label for="filter-books">Libri</label>
     <input type="checkbox" id="filter-podcasts" class="filter-checkbox" value="podcasts">
     <label for="filter-podcasts">Podcast</label>
     <input type="checkbox" id="filter-futuro-fortissimo" class="filter-checkbox" value="futuro-fortissimo">
-    <label for="filter-futuro-fortissimo">Futuro Fortissimo</label>
+    <label for="filter-futuro-fortissimo"><i>ff<i></label>
 </div>
 
 <div>
-    <select id="theme-dropdown" multiple>
-        <!-- Opzioni del dropdown per i temi -->
-    </select>
+    <button id="theme-dropdown-button">Seleziona Temi</button>
+    <div id="theme-dropdown-menu" style="display: none;">
+        <label><input type="checkbox" value="Society"> Society 🏙️</label><br>
+        <label><input type="checkbox" value="Crypto"> Crypto 💰</label><br>
+        <label><input type="checkbox" value="Robot"> Robot 🤖</label><br>
+        <label><input type="checkbox" value="Sport"> Sport ⚽</label><br>
+        <!-- Aggiungi altri temi qui -->
+    </div>
 </div>
     <table style="font-family:palladio; font-size:21px; margin-top: 10px; border-color:black; border-radius:21px; width=85%" id="csv-table">
         <thead>
@@ -275,6 +280,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+    const dropdownButton = document.getElementById('theme-dropdown-button');
+    const dropdownMenu = document.getElementById('theme-dropdown-menu');
+
+    dropdownButton.addEventListener('click', function() {
+        dropdownMenu.style.display = dropdownMenu.style.display === 'none' ? 'block' : 'none';
+    });
+
+    // Aggiungi event listener per gestire la selezione dei temi
+    const checkboxes = dropdownMenu.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(function(checkbox) {
+        checkbox.addEventListener('change', function() {
+            const selectedThemes = Array.from(checkboxes)
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => checkbox.value);
+
+            // Aggiorna l'input select con i temi selezionati
+            const selectElement = document.getElementById('theme-dropdown');
+            selectElement.innerHTML = '';
+            selectedThemes.forEach(function(theme) {
+                const option = document.createElement('option');
+                option.value = theme;
+                option.textContent = theme;
+                selectElement.appendChild(option);
+            });
+        });
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
   var modal = document.getElementById("emailModal");
   var span = document.getElementsByClassName("close")[0];
 
@@ -357,19 +392,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('csv-search-input');
 
     function performSearch() {
-        const searchText = searchInput.value.toLowerCase().split(' ').filter(parola => !paroleEscluse.includes(parola) && parola.trim() !== '');
-        if (searchText.length > 0) {
-            let filteredData = allData.filter(row =>
-                searchText.some(parola =>
-                    row.some(cell => cell.toLowerCase().includes(parola))
-                )
-            );
-            updateTable(filteredData);
-        } else {
-            updateTable(allData);
-        }
-    }
+      function performSearch() {
+          const searchText = searchInput.value.toLowerCase().split(' ').filter(parola => !paroleEscluse.includes(parola) && parola.trim() !== '');
+          const selectedFilters = Array.from(document.querySelectorAll('.filter-checkbox:checked')).map(checkbox => checkbox.value);
+          const selectedThemes = Array.from(document.getElementById('theme-dropdown').selectedOptions).map(option => option.value);
 
+          let filteredData = allData.filter(row => {
+              // Verifica se la riga soddisfa i criteri di ricerca
+              const matchesSearch = searchText.length === 0 || searchText.some(parola => row.some(cell => cell.toLowerCase().includes(parola)));
+              const matchesFilters = selectedFilters.length === 0 || selectedFilters.includes(row[0]);
+              const matchesFilters = selectedFilters.length === 0 || selectedFilters.includes(row[2]);
+
+              const matchesThemes = selectedThemes.length === 0 || selectedThemes.every(theme => row[0].toLowerCase().includes(theme.toLowerCase()));
+              return matchesSearch && matchesFilters && matchesThemes;
+          });
+
+          updateTable(filteredData);
+      }
     // Gestione click sul bottone di ricerca
     searchButton.addEventListener('click', performSearch);
 
