@@ -172,19 +172,45 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 </style>
      <script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Mostra il modal all'avvio se necessario
-  document.getElementById('emailModal').style.display = 'block';
+     document.addEventListener('DOMContentLoaded', function() {
+       let allData = [];
+       // Lista di parole da escludere dalla ricerca
+       const paroleEscluse = ['perché', 'quando', 'e', 'ma', 'se', 'perché', 'come'];
 
-  // Carica i dati del CSV subito dopo il controllo dell'email
-  function loadData() {
-    fetch('/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo.csv')
-      .then(response => response.text())
-      .then(csvText => {
-        const data = csvText.split('\n').map(row => row.split(','));
-        updateTable(data); // Aggiorna la tabella con i dati del CSV
-      });
-  }
+       fetch('/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo.csv')
+         .then(response => response.text())
+         .then(csvText => {
+           allData = csvText.split('\n').map(row => row.split(','));
+           updateTable(allData); // Visualizza tutti i dati inizialmente
+         });
+
+       function updateTable(data) {
+         const tableBody = document.getElementById('csv-table').getElementsByTagName('tbody')[0];
+         tableBody.innerHTML = '';
+         data.forEach(row => {
+           const tr = document.createElement('tr');
+           // Logica di popolamento della tabella
+         });
+       }
+
+       const searchInput = document.getElementById('csv-search-input');
+       searchInput.addEventListener('keyup', function() {
+         const searchText = this.value.toLowerCase().split(' ');
+         let paroleSignificative = searchText.filter(parola => !paroleEscluse.includes(parola));
+
+         // Evita l'aggiornamento della tabella fino alla presenza di almeno una parola significativa
+         if (paroleSignificative.length > 0) {
+           let filteredData = allData.filter(row =>
+             paroleSignificative.some(parola =>
+               row.some((cell, index) =>
+                 (index === 2 || index === 3 || index === 4 || index === 5) && cell.toLowerCase().includes(parola)
+               )
+             )
+           );
+           updateTable(filteredData);
+         }
+       });
+     });
 
   // Funzione per controllare l'email
   function checkEmail() {
@@ -226,38 +252,6 @@ document.addEventListener('DOMContentLoaded', function() {
       tableBody.appendChild(tr);
     });
   }
-
-  // Listener per la ricerca
-  const searchInput = document.getElementById('csv-search-input');
-  searchInput.addEventListener('keyup', function() {
-    const searchText = this.value.toLowerCase();
-    fetch('/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo.csv')
-    .then(response => response.text())
-    .then(csvText => {
-      allData = csvText.split('\n').map(row => row.split(','));
-      updateTable(allData); // Visualizza tutti i dati inizialmente
-    });
-
-  const searchInput = document.getElementById('csv-search-input');
-  searchInput.addEventListener('keyup', function() {
-    const searchText = this.value.toLowerCase().split(' ');
-    let filteredData = [];
-
-    // Cicla sulle parole della ricerca fino a trovare un match
-    for (let i = 0; i < searchText.length; i++) {
-      const searchWord = searchText[i];
-      filteredData = allData.filter(row =>
-        row.some(cell => cell.toLowerCase().includes(searchWord))
-      );
-
-      // Se ci sono risultati, interrompi il ciclo
-      if (filteredData.length > 0) {
-        break;
-      }
-    }
-
-    updateTable(filteredData);
-      });
   });
 
 });
