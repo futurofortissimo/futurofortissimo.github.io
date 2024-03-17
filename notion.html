@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Funzione per controllare l'email
   function checkEmail() {
     const inputEmail = document.getElementById('emailInput').value;
-    fetch('path/to/your/emails.csv')
+    fetch('/index_files/verif_emails.csv')
       .then(response => response.text())
       .then(emailsCSV => {
         const emails = emailsCSV.split('\n'); // Assumi che ogni email sia in una nuova riga
@@ -232,17 +232,31 @@ document.addEventListener('DOMContentLoaded', function() {
   searchInput.addEventListener('keyup', function() {
     const searchText = this.value.toLowerCase();
     fetch('/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo.csv')
-      .then(response => response.text())
-      .then(csvText => {
-        const allData = csvText.split('\n').map(row => row.split(','));
-        const filteredData = allData.filter(row =>
-          // Modifica questa condizione per cercare in più colonne
-          row.some((cell, index) =>
-            // Includi tutte le colonne che vuoi nel filtro
-            (index === 2 || index === 3 || index === 4 || index === 5) && cell.toLowerCase().includes(searchText)
-          )
-        );
-        updateTable(filteredData);
+    .then(response => response.text())
+    .then(csvText => {
+      allData = csvText.split('\n').map(row => row.split(','));
+      updateTable(allData); // Visualizza tutti i dati inizialmente
+    });
+
+  const searchInput = document.getElementById('csv-search-input');
+  searchInput.addEventListener('keyup', function() {
+    const searchText = this.value.toLowerCase().split(' ');
+    let filteredData = [];
+
+    // Cicla sulle parole della ricerca fino a trovare un match
+    for (let i = 0; i < searchText.length; i++) {
+      const searchWord = searchText[i];
+      filteredData = allData.filter(row =>
+        row.some(cell => cell.toLowerCase().includes(searchWord))
+      );
+
+      // Se ci sono risultati, interrompi il ciclo
+      if (filteredData.length > 0) {
+        break;
+      }
+    }
+
+    updateTable(filteredData);
       });
   });
 
