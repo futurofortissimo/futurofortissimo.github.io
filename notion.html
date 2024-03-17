@@ -178,9 +178,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script>
 document.addEventListener('DOMContentLoaded', function() {
 let allData = [];
-const paroleEscluse = [
-'perché', 'quando', 'e', 'ma', 'se', 'come', 'con', 'su', 'per', 'tra', 'fra',
-// Lista continuata...
+const paroleEscluse = const paroleEscluse = [
+  'perché', 'quando', 'e', 'ma', 'se', 'come', 'con', 'su', 'per', 'tra', 'fra',
+  'nel', 'nello', 'nella', 'nei', 'nelle', 'al', 'allo', 'alla', 'ai', 'agli', 'alle',
+  'dal', 'dallo', 'dalla', 'dai', 'dagli', 'dalle', 'del', 'dello', 'della', 'dei', 'degli', 'delle',
+  'sul', 'sullo', 'sulla', 'sui', 'sugli', 'sulle', 'un', 'uno', 'una', 'gli', 'le',
+  'di', 'da', 'in', 'a', 'da', 'che', 'chi', 'cosa', 'quale', 'quanto', 'quanta', 'quanti', 'quante',
+  'dove', 'come', 'quando', 'perché', 'anche', 'solo', 'qui', 'lì', 'là', 'dunque', 'quindi', 'perciò',
+  'anche', 'ancora', 'già', 'mai', 'sempre', 'poi', 'prima', 'dopo', 'sopra', 'sotto', 'contro',
+  'molto', 'poco', 'troppo', 'più', 'meno', 'bene', 'male', 'meglio', 'peggio', 'quasi', 'circa',
+  'appena', 'solo', 'tanto', 'così', 'pure', 'anche', 'neanche', 'nemmeno', 'quasi', 'sia', 'anche'
 ];
 
 fetch('/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo.csv')
@@ -191,19 +198,23 @@ fetch('/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo.csv')
 });
 
 function updateTable(data) {
-const tableBody = document.getElementById('csv-table').getElementsByTagName('tbody')[0];
-tableBody.innerHTML = ''; // Svuota la tabella prima di aggiornare i dati
-data.forEach(row => {
- const tr = document.createElement('tr');
- row.forEach((cell, index) => {
-   if (index === 1 || index === 0) { // Supponiamo di voler mostrare solo le prime due colonne
-     const td = document.createElement('td');
-     td.textContent = cell;
-     tr.appendChild(td);
-   }
- });
- tableBody.appendChild(tr);
-});
+  const tableBody = document.getElementById('csv-table').getElementsByTagName('tbody')[0];
+  tableBody.innerHTML = ''; // Svuota la tabella prima di aggiornare i dati
+  data.forEach(row => {
+    const tr = document.createElement('tr');
+    row.forEach((cell, index) => {
+      if (index === 1 || index === 0) { // Supponiamo di voler mostrare solo le prime due colonne
+        const td = document.createElement('td');
+        td.textContent = cell;
+        tr.appendChild(td);
+      }
+    });
+    if (tableBody.firstChild) {
+      tableBody.insertBefore(tr, tableBody.firstChild); // Inserisce la riga all'inizio del tbody se già contiene elementi
+    } else {
+      tableBody.appendChild(tr); // Se il tbody è vuoto, funziona come appendChild
+    }
+  });
 }
 
 const searchButton = document.getElementById('csv-search-button');
