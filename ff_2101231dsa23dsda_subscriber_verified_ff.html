@@ -113,29 +113,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 <br>
-<div id="csv-container" style="font-family:palladio; font-size:16px;">
+<div id="csv-container" style="font-family: palladio; font-size: 16px;">
   <div style="display: flex; align-items: center; gap: 3px; width: 100%;">
-      <input style="font-family:palladio; font-size:21px; margin-top: 10px; border-color:black; border-radius:21px;background-color:transparent; width=75%" type="text" id="csv-search-input" placeholder="Cosa vuoi sapere dal futuro? 🎵" />
-      <button id="csv-search-button">🔍</button> <!-- Bottone di ricerca -->
+    <input style="font-family: palladio; font-size: 21px; margin-top: 10px; border-color: black; border-radius: 21px; background-color: transparent; width: 75%" type="text" id="csv-search-input" placeholder="Cosa vuoi sapere dal futuro? 🎵" />
+    <button id="csv-search-button" style="border: none; background-color: transparent;">🔍</button> <!-- Bottone di ricerca -->
   </div>
-  <div id="csv-container" style="font-family:palladio; font-size:16px;">
-    <input type="checkbox" id="filter-books" class="filter-checkbox" value="books">
-    <label for="filter-books">Libri</label>
-    <input type="checkbox" id="filter-podcasts" class="filter-checkbox" value="podcasts">
-    <label for="filter-podcasts">Podcast</label>
-    <input type="checkbox" id="filter-futuro-fortissimo" class="filter-checkbox" value="futuro-fortissimo">
-    <label for="filter-futuro-fortissimo"><i>ff<i></label>
-</div>
-
-<div>
-    <button id="theme-dropdown-button">Seleziona Temi</button>
-    <div id="theme-dropdown-menu" style="display: none;">
-        <label><input type="checkbox" value="Society"> Society 🏙️</label><br>
-        <label><input type="checkbox" value="Crypto"> Crypto 💰</label><br>
-        <label><input type="checkbox" value="Robot"> Robot 🤖</label><br>
-        <label><input type="checkbox" value="Sport"> Sport ⚽</label><br>
-        <!-- Aggiungi altri temi qui -->
-    </div>
+  <div id="csv-filters" style="margin-top: 10px;">
+    <button class="filter-button" style="background-color: #add8e6;">Libri 📚</button>
+    <button class="filter-button" style="background-color: #ffffff;">Quotes 💬</button>
+    <button class="filter-button" style="background-color: #00ff00;">FF #️⃣</button>
+  </div>
+  <div id="csv-filters-2" style="margin-top: 10px;">
+    <button class="filter-button" style="background-color: #008000;">Natura 🌿</button>
+    <button class="filter-button" style="background-color: #ffff00;">Tecnologia 💡</button>
+    <button class="filter-button" style="background-color: #c0c0c0;">Società 👥</button>
+  </div>
+  <div id="csv-filters-3" style="margin-top: 10px;">
+    <button class="filter-button" style="background-color: #808080;">Tech 🛠️</button>
+    <button class="filter-button" style="background-color: #b8860b;">Crypto 🪙</button>
+    <button class="filter-button" style="background-color: #ff4500;">Sport 🏀</button>
+    <button class="filter-button" style="background-color: #008000;">Diet 🍏</button>
+  </div>
+  <div id="csv-filters-4" style="margin-top: 10px;">
+    <button class="filter-button" style="background-color: #ffd700;">Electric ⚡</button>
+    <button class="filter-button" style="background-color: #ff69b4;">Wellbeing 🧘</button>
+  </div>
 </div>
     <table style="font-family:palladio; font-size:21px; margin-top: 10px; border-color:black; border-radius:21px; width=85%" id="csv-table">
         <thead>
