@@ -130,7 +130,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <thead>
             <tr>
                 <th>In breve</th>
-                <th>Tags</th>
+                <th></th>
 
             </tr>
         </thead>
@@ -380,7 +380,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 <div id="emailModal" style="display:none;">
-  <p>Please enter your email to access:</p>
+  <p>Inserisci la tua mail per accedere:</p>
   <input type="email" id="emailInput">
   <button onclick="checkEmail()">Submit</button>
 </div>
@@ -426,6 +426,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
           installButton.addEventListener('click', installApp);
         }
+        const paywall = document.getElementById('paywall');
+
+// Funzione per bloccare la pagina
+function bloccaPagina() {
+  // Puoi aggiungere uno sfondo scuro trasparente per enfatizzare il blocco
+  paywall.style.display = 'block';
+  document.body.style.overflow = 'hidden'; // Impedisce lo scroll della pagina
+}
+
+// Funzione per sbloccare la pagina
+function sbloccaPagina() {
+  paywall.style.display = 'none';
+  document.body.style.overflow = 'auto'; // Ripristina lo scroll
+}
+
+// Esempio di controllo input utente (sostituisci questo con la tua logica specifica)
+paywall.querySelector('input[type="button"]').addEventListener('click', function() {
+  const userInput = paywall.querySelector('input[type="text"]').value;
+  // Supponendo che 'verificaInput' sia una tua funzione che ritorna true se l'input è valido
+  if (verificaInput(userInput)) {
+    sbloccaPagina();
+  } else {
+    alert('Input non valido, riprova.');
+  }
+});
+
+// Inizialmente blocca la pagina
+bloccaPagina();
           </script>
 
 
@@ -439,6 +467,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 <style>
+
+#emailModal {
+  position: fixed; /* Rende il paywall sempre visibile al centro dello schermo */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px; /* o la larghezza che preferisci */
+  height: auto; /* in base al contenuto */
+  border-radius: 10px; /* Angoli arrotondati */
+  z-index: 1000; /* Assicura che il paywall sia sopra gli altri contenuti */
+  background-color: white; /* o qualsiasi altro colore di sfondo */
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Ombra opzionale per un effetto "sollevato" */
+}
+
 
 .tag {
   display: inline-block;
