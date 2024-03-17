@@ -120,8 +120,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <table id="csv-table">
         <thead>
             <tr>
-                <th>Tags</th>
                 <th>In breve</th>
+                <th>Tags</th>
+
             </tr>
         </thead>
         <tbody>
@@ -175,64 +176,65 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </style>
      <script>
      document.addEventListener('DOMContentLoaded', function() {
-       let allData = [];
-       // Lista di parole da escludere dalla ricerca
-       const paroleEscluse = [
-         'perché', 'quando', 'e', 'ma', 'se', 'come', 'con', 'su', 'per', 'tra', 'fra',
-         'nel', 'nello', 'nella', 'nei', 'nelle', 'al', 'allo', 'alla', 'ai', 'agli', 'alle',
-         'dal', 'dallo', 'dalla', 'dai', 'dagli', 'dalle', 'del', 'dello', 'della', 'dei', 'degli', 'delle',
-         'sul', 'sullo', 'sulla', 'sui', 'sugli', 'sulle', 'un', 'uno', 'una', 'gli', 'le',
-         'di', 'da', 'in', 'a', 'da', 'che', 'chi', 'cosa', 'quale', 'quanto', 'quanta', 'quanti', 'quante',
-         'dove', 'come', 'quando', 'perché', 'anche', 'solo', 'qui', 'lì', 'là', 'dunque', 'quindi', 'perciò',
-         'anche', 'ancora', 'già', 'mai', 'sempre', 'poi', 'prima', 'dopo', 'sopra', 'sotto', 'contro',
-         'molto', 'poco', 'troppo', 'più', 'meno', 'bene', 'male', 'meglio', 'peggio', 'quasi', 'circa',
-         'appena', 'solo', 'tanto', 'così', 'pure', 'anche', 'neanche', 'nemmeno', 'quasi', 'sia', 'anche'
-       ];
-       // Carica i dati dal CSV
-       fetch('/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo.csv')
-         .then(response => response.text())
-         .then(csvText => {
-           allData = csvText.split('\n').map(row => row.split(','));
-           updateTable(allData); // Visualizza tutti i dati inizialmente
-         });
+    let allData = [];
+    const paroleEscluse =  [
+      'perché', 'quando', 'e', 'ma', 'se', 'come', 'con', 'su', 'per', 'tra', 'fra',
+      'nel', 'nello', 'nella', 'nei', 'nelle', 'al', 'allo', 'alla', 'ai', 'agli', 'alle',
+      'dal', 'dallo', 'dalla', 'dai', 'dagli', 'dalle', 'del', 'dello', 'della', 'dei', 'degli', 'delle',
+      'sul', 'sullo', 'sulla', 'sui', 'sugli', 'sulle', 'un', 'uno', 'una', 'gli', 'le',
+      'di', 'da', 'in', 'a', 'da', 'che', 'chi', 'cosa', 'quale', 'quanto', 'quanta', 'quanti', 'quante',
+      'dove', 'come', 'quando', 'perché', 'anche', 'solo', 'qui', 'lì', 'là', 'dunque', 'quindi', 'perciò',
+      'anche', 'ancora', 'già', 'mai', 'sempre', 'poi', 'prima', 'dopo', 'sopra', 'sotto', 'contro',
+      'molto', 'poco', 'troppo', 'più', 'meno', 'bene', 'male', 'meglio', 'peggio', 'quasi', 'circa',
+      'appena', 'solo', 'tanto', 'così', 'pure', 'anche', 'neanche', 'nemmeno', 'quasi', 'sia', 'anche'
+    ];
 
-       function updateTable(data) {
-         const tableBody = document.getElementById('csv-table').getElementsByTagName('tbody')[0];
-         tableBody.innerHTML = '';
-         data.forEach(row => {
-           const tr = document.createElement('tr');
-           // Logica di popolamento della tabella, esemplificata qui sotto
-           // ...
-         });
-       }
+    fetch('/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo.csv')
+      .then(response => response.text())
+      .then(csvText => {
+        allData = csvText.split('\n').map(row => row.split(','));
+        updateTable(allData); // Visualizza tutti i dati inizialmente
+      });
 
+    function updateTable(data) {
+      const tableBody = document.getElementById('csv-table').getElementsByTagName('tbody')[0];
+      tableBody.innerHTML = '';
+      data.forEach(row => {
+        const tr = document.createElement('tr');
+        // Aggiungi qui la tua logica per popolare la tabella
+      });
+    }
 
-       // Gestione click sul bottone di ricerca
-       searchButton.addEventListener('click', function() {
-         const searchText = document.getElementById('csv-search-input').value.toLowerCase().split(' ');
-         let paroleSignificative = searchText.filter(parola => !paroleEscluse.includes(parola) && parola.trim() !== '');
+    const searchButton = document.getElementById('csv-search-button');
+    const searchInput = document.getElementById('csv-search-input');
 
-         if (paroleSignificative.length > 0) {
-           let filteredData = allData.filter(row =>
-             paroleSignificative.some(parola =>
-               row.some((cell, index) =>
-                 [2, 3, 4, 5].includes(index) && cell.toLowerCase().includes(parola) // Cerca nelle colonne specificate
-               )
-             )
-           );
-           updateTable(filteredData);
-         } else {
-           // Se non ci sono parole significative, mostra tutti i dati
-           updateTable(allData);
-         }
-        // Gestisci anche l'evento "Enter" sulla tastiera
-        searchInput.addEventListener('keypress', function(e) {
-          if (e.key === 'Enter') {
-            performSearch();
-          }
-        });
-       });
-     });
+    function performSearch() {
+      const searchText = searchInput.value.toLowerCase().split(' ');
+      let paroleSignificative = searchText.filter(parola => !paroleEscluse.includes(parola) && parola.trim() !== '');
+
+      if (paroleSignificative.length > 0) {
+        let filteredData = allData.filter(row =>
+          paroleSignificative.some(parola =>
+            row.some(cell => cell.toLowerCase().includes(parola))
+          )
+        );
+        updateTable(filteredData);
+      } else {
+        updateTable(allData);
+      }
+    }
+
+    // Gestione click sul bottone di ricerca
+    searchButton.addEventListener('click', performSearch);
+
+    // Gestisci anche l'evento "Enter" sulla tastiera per la ricerca
+    searchInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault(); // Previene l'invio del form, se presente
+        performSearch();
+      }
+    });
+});
 </script>
 
 <div id="emailModal" style="display:none;">
