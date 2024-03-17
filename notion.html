@@ -202,13 +202,16 @@ function updateTable(data) {
   tableBody.innerHTML = ''; // Svuota la tabella prima di aggiornare i dati
   data.forEach(row => {
     const tr = document.createElement('tr');
-    row.forEach((cell, index) => {
-      if (index === 1 || index === 0) { // Supponiamo di voler mostrare solo le prime due colonne
-        const td = document.createElement('td');
-        td.textContent = cell;
-        tr.appendChild(td);
-      }
-    });
+    const td = document.createElement('td');
+
+    // Supponiamo che il testo "In breve" sia nella colonna 1 (index 0) e il link nella colonna 3 (index 2)
+    const a = document.createElement('a');
+    a.href = row[2]; // Imposta il link
+    a.textContent = row[1]; // Imposta il testo
+    a.className = 'summary-link'; // Aggiungi una classe per eventuali stili
+    td.appendChild(a);
+
+    tr.appendChild(td);
     if (tableBody.firstChild) {
       tableBody.insertBefore(tr, tableBody.firstChild); // Inserisce la riga all'inizio del tbody se già contiene elementi
     } else {
