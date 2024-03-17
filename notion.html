@@ -111,7 +111,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
  <img alt="futuro fortissimo clima e cambiamenti climatici sito internet substack michele merelli" src="/index_files/futuro_scuola.webp">
 
- <div id="paywallModal" class="modal">
+ <div id="emailModal" class="modal">
    <div class="modal-content">
      <span class="close">&times;</span>
      <p>Per accedere a questa pagina, inserisci la tua email:</p>
@@ -270,7 +270,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  var modal = document.getElementById("paywallModal");
+  var modal = document.getElementById("emailModal");
   var span = document.getElementsByClassName("close")[0];
 
   // Mostra il modal
@@ -303,7 +303,7 @@ function checkEmail(inputEmail) {
     .then(data => {
       const emails = data.split('\n');
       if (emails.includes(inputEmail)) {
-        document.getElementById('paywallModal').style.display = 'none'; // Nasconde il modal se l'email è autorizzata
+        document.getElementById('emailModal').style.display = 'none'; // Nasconde il modal se l'email è autorizzata
       } else {
         window.location.href = 'invite_to_subscribe_page.html'; // Redirect se l'email non è autorizzata
       }
