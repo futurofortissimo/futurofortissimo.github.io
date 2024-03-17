@@ -118,10 +118,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <input style="font-family: palladio; font-size: 21px; margin-top: 10px; border-color: black; border-radius: 21px; background-color: transparent; width: 75%" type="text" id="csv-search-input" placeholder="Cosa vuoi sapere dal futuro? 🎵" />
     <button id="csv-search-button" style="border: none; background-color: transparent;">🔍</button> <!-- Bottone di ricerca -->
   </div>
-  <div id="csv-filters" style="margin-top: 10px;">
-    <button class="filter-button" style="background-color: #add8e6;">Libri 📚</button>
-    <button class="filter-button" style="background-color: #ffffff;">Quotes 💬</button>
-    <button class="filter-button" style="background-color: #00ff00;">FF #️⃣</button>
+  <div id="csv-filters-2" style="margin-top: 10px;">
+    <button class="filter-button" style="background-color: rgba(0, 128, 0, 0.8);">Natura 🌿</button>
+    <button class="filter-button" style="background-color: rgba(255, 255, 0, 0.8);">Tecnologia 💡</button>
+    <button class="filter-button" style="background-color: rgba(192, 192, 192, 0.8);">Società 👥</button>
   </div>
   <div id="csv-filters-2" style="margin-top: 10px;">
     <button class="filter-button" style="background-color: #008000;">Natura 🌿</button>
@@ -277,6 +277,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         padding: 8px; /* Padding per le celle */
         text-align: left; /* Allineamento testo */
     }
+      /* Stili base per i bottoni */
+  .filter-button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 21px; /* Bordi arrotondati */
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s;
+    opacity: 0.8; /* Leggera trasparenza */
+  }
+
+  /* Stile per il bottone selezionato */
+  .filter-button.selected {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    opacity: 1; /* Nessuna trasparenza per il bottone selezionato */
+  }
 </style>
 
 
@@ -421,6 +438,13 @@ document.addEventListener('DOMContentLoaded', function() {
             performSearch();
         }
     });
+});
+// Script per commutare la classe 'selected' sui bottoni
+document.querySelectorAll('.filter-button').forEach(button => {
+  button.addEventListener('click', () => {
+    button.classList.toggle('selected');
+    // Aggiorna i risultati di ricerca qui...
+  });
 });
 </script>
 
