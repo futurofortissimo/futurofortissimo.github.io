@@ -298,7 +298,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function checkEmail(inputEmail) {
   // Qui implementa la logica per verificare l'email
-  fetch('path/to/your/emails.csv')
+  fetch('/index_files/emails_verified.csv')
     .then(response => response.text())
     .then(data => {
       const emails = data.split('\n');
