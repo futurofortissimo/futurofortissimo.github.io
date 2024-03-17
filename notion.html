@@ -177,8 +177,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
      document.addEventListener('DOMContentLoaded', function() {
        let allData = [];
        // Lista di parole da escludere dalla ricerca
-       const paroleEscluse = ['perché', 'quando', 'e', 'ma', 'se', 'perché', 'come', /* ...altre parole escluse... */];
-
+       const paroleEscluse = [
+         'perché', 'quando', 'e', 'ma', 'se', 'come', 'con', 'su', 'per', 'tra', 'fra',
+         'nel', 'nello', 'nella', 'nei', 'nelle', 'al', 'allo', 'alla', 'ai', 'agli', 'alle',
+         'dal', 'dallo', 'dalla', 'dai', 'dagli', 'dalle', 'del', 'dello', 'della', 'dei', 'degli', 'delle',
+         'sul', 'sullo', 'sulla', 'sui', 'sugli', 'sulle', 'un', 'uno', 'una', 'gli', 'le',
+         'di', 'da', 'in', 'a', 'da', 'che', 'chi', 'cosa', 'quale', 'quanto', 'quanta', 'quanti', 'quante',
+         'dove', 'come', 'quando', 'perché', 'anche', 'solo', 'qui', 'lì', 'là', 'dunque', 'quindi', 'perciò',
+         'anche', 'ancora', 'già', 'mai', 'sempre', 'poi', 'prima', 'dopo', 'sopra', 'sotto', 'contro',
+         'molto', 'poco', 'troppo', 'più', 'meno', 'bene', 'male', 'meglio', 'peggio', 'quasi', 'circa',
+         'appena', 'solo', 'tanto', 'così', 'pure', 'anche', 'neanche', 'nemmeno', 'quasi', 'sia', 'anche'
+       ];
        // Carica i dati dal CSV
        fetch('/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo.csv')
          .then(response => response.text())
