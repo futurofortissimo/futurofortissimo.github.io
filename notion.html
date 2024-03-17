@@ -115,6 +115,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <br>
 <div id="csv-container" style="font-family:palladio; font-size:16px;">
     <input type="text" id="csv-search-input" placeholder="Cosa vuoi sapere dal futuro? 🎵" />
+    <button id="csv-search-button">🔍</button> <!-- Bottone di ricerca -->
+
     <table id="csv-table">
         <thead>
             <tr>
@@ -195,10 +197,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
          });
        }
 
-       // Aggiungi il bottone di ricerca accanto all'input
-       const searchButton = document.createElement('button');
-       searchButton.innerHTML = '🔍'; // Emoji lente di ingrandimento come bottone di ricerca
-       document.getElementById('csv-search-container').appendChild(searchButton); // Assumi che esista un elemento con ID 'csv-search-container' per contenere l'input e il bottone
 
        // Gestione click sul bottone di ricerca
        searchButton.addEventListener('click', function() {
@@ -218,6 +216,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
            // Se non ci sono parole significative, mostra tutti i dati
            updateTable(allData);
          }
+        // Gestisci anche l'evento "Enter" sulla tastiera
+        searchInput.addEventListener('keypress', function(e) {
+          if (e.key === 'Enter') {
+            performSearch();
+          }
+        });
        });
      });
 </script>
