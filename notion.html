@@ -177,6 +177,49 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
     }
 </style>
+
+
+<style>
+    #csv-search-input, #csv-search-button, #csv-table {
+        border: 2px solid black; /* Bordo nero */
+        border-radius: 10px; /* Bordi arrotondati */
+    }
+
+    #csv-search-input, #csv-search-button {
+        padding: 5px; /* Un po' di padding per input e bottone */
+    }
+
+    #csv-search-button {
+        cursor: pointer; /* Cambia il cursore in una manina quando si passa sopra al bottone */
+        background-color: white; /* Colore di sfondo bianco per il bottone */
+    }
+
+    #csv-search-input:focus, #csv-search-button:focus, #csv-table:focus {
+        outline: none; /* Rimuove l'outline al focus */
+    }
+
+    #csv-container {
+        display: flex;
+        flex-direction: column; /* Organizza verticalmente i contenuti */
+        align-items: center; /* Centra i contenuti */
+        gap: 10px; /* Spazio tra gli elementi */
+        margin-bottom: 20px; /* Margine inferiore per separare dalla tabella */
+    }
+
+    /* Stili aggiuntivi per la tabella */
+    #csv-table {
+        border-collapse: collapse; /* Rimuove gli spazi tra i bordi delle celle */
+        margin-top: 20px; /* Margine superiore per distanziarla dalla search bar */
+    }
+
+    #csv-table th, #csv-table td {
+        border: 1px solid black; /* Bordo nero per le celle */
+        padding: 8px; /* Padding per le celle */
+        text-align: left; /* Allineamento testo */
+    }
+</style>
+
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     let allData = [];
