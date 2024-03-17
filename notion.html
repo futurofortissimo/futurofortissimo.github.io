@@ -113,9 +113,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
  <div id="emailModal" class="modal">
      <span class="close">&times;</span>
-     <p>Per accedere a questa pagina, inserisci la tua email:</p>
+     <p>Verifica iscrizione a newsletter:</p>
      <input type="email" id="emailInput">
-     <button id="submitEmail">Verifica</button>
+     <button id="submitEmail">➡️</button>
  </div>
 
 <div style="font-family:ArgosBoldItalic; font-size:16px; position: fixed; bottom: 0; left: 0; right: 0; background-color: #fff; border-top: 2px solid black; z-index: 1000; margin-bottom: 5px;">
@@ -280,9 +280,9 @@ function checkEmail(inputEmail) {
     .then(data => {
       const emails = data.split('\n');
       if (emails.includes(inputEmail)) {
-        document.getElementById('emailModal').style.display = 'none'; // Nasconde il modal se l'email è autorizzata
+        window.location.href = 'https://futurofortissimo.github.io/ff_2101231dsa23dsda_subscriber_verified_ff.html'; // Redirect se l'email non è autorizzata
       } else {
-        window.location.href = 'invite_to_subscribe_page.html'; // Redirect se l'email non è autorizzata
+        window.location.href = 'https://fortissimo.substack.com/subscribe'; // Redirect se l'email non è autorizzata
       }
     });
 }
@@ -356,11 +356,6 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 
-<div id="emailModal" style="display:none;">
-  <p>Inserisci la tua mail per accedere:</p>
-  <input type="email" id="emailInput">
-  <button onclick="checkEmail()">Submit</button>
-</div>
           <script>
           async function installApp() {
             if (!deferredPrompt) return;
