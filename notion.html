@@ -175,8 +175,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
      document.addEventListener('DOMContentLoaded', function() {
        let allData = [];
        // Lista di parole da escludere dalla ricerca
-       const paroleEscluse = ['perché', 'quando', 'e', 'ma', 'se', 'perché', 'come'];
+       const paroleEscluse = ['perché', 'quando', 'e', 'ma', 'se', 'perché', 'come', /* ...altre parole escluse... */];
 
+       // Carica i dati dal CSV
        fetch('/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo.csv')
          .then(response => response.text())
          .then(csvText => {
@@ -189,72 +190,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
          tableBody.innerHTML = '';
          data.forEach(row => {
            const tr = document.createElement('tr');
-           // Logica di popolamento della tabella
+           // Logica di popolamento della tabella, esemplificata qui sotto
+           // ...
          });
        }
 
-       const searchInput = document.getElementById('csv-search-input');
-       searchInput.addEventListener('keyup', function() {
-         const searchText = this.value.toLowerCase().split(' ');
-         let paroleSignificative = searchText.filter(parola => !paroleEscluse.includes(parola));
+       // Aggiungi il bottone di ricerca accanto all'input
+       const searchButton = document.createElement('button');
+       searchButton.innerHTML = '🔍'; // Emoji lente di ingrandimento come bottone di ricerca
+       document.getElementById('csv-search-container').appendChild(searchButton); // Assumi che esista un elemento con ID 'csv-search-container' per contenere l'input e il bottone
 
-         // Evita l'aggiornamento della tabella fino alla presenza di almeno una parola significativa
+       // Gestione click sul bottone di ricerca
+       searchButton.addEventListener('click', function() {
+         const searchText = document.getElementById('csv-search-input').value.toLowerCase().split(' ');
+         let paroleSignificative = searchText.filter(parola => !paroleEscluse.includes(parola) && parola.trim() !== '');
+
          if (paroleSignificative.length > 0) {
            let filteredData = allData.filter(row =>
              paroleSignificative.some(parola =>
                row.some((cell, index) =>
-                 (index === 2 || index === 3 || index === 4 || index === 5) && cell.toLowerCase().includes(parola)
+                 [2, 3, 4, 5].includes(index) && cell.toLowerCase().includes(parola) // Cerca nelle colonne specificate
                )
              )
            );
            updateTable(filteredData);
+         } else {
+           // Se non ci sono parole significative, mostra tutti i dati
+           updateTable(allData);
          }
        });
      });
-
-  // Funzione per controllare l'email
-  function checkEmail() {
-    const inputEmail = document.getElementById('emailInput').value;
-    fetch('/index_files/verif_emails.csv')
-      .then(response => response.text())
-      .then(emailsCSV => {
-        const emails = emailsCSV.split('\n'); // Assumi che ogni email sia in una nuova riga
-        if (emails.includes(inputEmail)) {
-          document.getElementById('emailModal').style.display = 'none'; // Nasconde il modal
-          loadData(); // Carica i dati solo se l'email è autorizzata
-        } else {
-          alert('Email not authorized.');
-        }
-      });
-  }
-
-  window.checkEmail = checkEmail; // Rende la funzione accessibile globalmente per l'uso nell'HTML
-
-  // Funzione per aggiornare la tabella
-  function updateTable(data) {
-    const tableBody = document.getElementById('csv-table').getElementsByTagName('tbody')[0];
-    tableBody.innerHTML = ''; // Pulisce i dati della tabella esistenti
-    data.forEach(row => {
-      const tr = document.createElement('tr');
-
-      const tdTags = document.createElement('td');
-      const tags = row[0].split(';').map(tag => `<span class="tag">${tag.trim()}</span>`).join(" ");
-      tdTags.innerHTML = tags;
-      tr.appendChild(tdTags);
-
-      const tdSummary = document.createElement('td');
-      const aSummary = document.createElement('a');
-      aSummary.href = row[2]; // Assumi che l'URL sia nella terza colonna del tuo CSV
-      aSummary.textContent = row[1];
-      tdSummary.appendChild(aSummary);
-      tr.appendChild(tdSummary);
-
-      tableBody.appendChild(tr);
-    });
-  }
-  });
-
-});
 </script>
 
 <div id="emailModal" style="display:none;">
