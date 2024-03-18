@@ -216,7 +216,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 
     .filter-button.selected {
-        background-color: #f0f0f0; /* Cambia a seconda delle preferenze */
+        opacity: 0.1; /* Nessuna trasparenza per il bottone selezionato */
+        border: 2px solid #000; /* Bordo nero per evidenziare la selezione */
     }
 
     #csv-search-input, #csv-search-button, .filter-button {
@@ -296,23 +297,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         padding: 8px; /* Padding per le celle */
         text-align: left; /* Allineamento testo */
     }
-      /* Stili base per i bottoni */
-  .filter-button {
-    padding: 10px 20px;
-    margin: 5px;
-    border: none;
-    border-radius: 21px; /* Bordi arrotondati */
-    cursor: pointer;
-    outline: none;
-    transition: background-color 0.3s;
-    opacity: 0.8; /* Leggera trasparenza */
-  }
 
-  /* Stile per il bottone selezionato */
-  .filter-button.selected {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    opacity: 1; /* Nessuna trasparenza per il bottone selezionato */
-  }
 </style>
 
 <script>
