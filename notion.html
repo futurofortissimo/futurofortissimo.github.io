@@ -111,14 +111,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
  <img alt="futuro fortissimo clima e cambiamenti climatici sito internet substack michele merelli" src="/index_files/futuro_scuola.webp">
  <div style="font-size: 16px; font-family: 'Palladio'; text-align: center;">
-   <section id="locked">
-     <div id="emailModal">
-     <p style="font-family:palladio; font-size:21px; margin-top: 10px; margin-bottom: 3px; border-color:black; border-radius:21px;background-color:transparent; width=75%"><b>Verifica iscrizione a newsletter:</b></p>
-     <input class="button-futuro-parla" style="font-family:palladio; margin-bottom: 3px; font-size:21px; margin-top: 10px; border-radius:21px; width=75%" type="email" id="emailInput" placeholder="Inserisci la tua mail">
-     <button style="font-family:palladio; margin-bottom: 3px; font-size:21px; margin-top: 10px; border-color:black; border-radius:21px;background-color:transparent; width=20%" id="submitEmail">➡️</button>
-    </div>
-   </section>
- </div>
+    <section id="locked">
+      <div id="emailModal">
+      <p style="font-family:palladio; font-size:21px; margin-top: 10px; margin-bottom: 3px; border-color:black; border-radius:21px;background-color:transparent; width=75%"><b>Verifica iscrizione a newsletter:</b></p>
+      <input class="button-futuro-parla" style="font-family:palladio; margin-bottom: 3px; font-size:21px; margin-top: 10px; border-radius:21px; width=75%" type="email" id="emailInput" placeholder="Inserisci la tua mail">
+      <button style="font-family:palladio; margin-bottom: 3px; font-size:21px; margin-top: 10px; border-color:black; border-radius:21px;background-color:transparent; width=20%" id="submitEmail">➡️</button>
+     </div>
+    </section>
+  </div>
 
 
 <div style="font-family:ArgosBoldItalic; font-size:16px; position: fixed; bottom: 0; left: 0; right: 0; background-color: #fff; border-top: 2px solid black; z-index: 1000; margin-bottom: 5px;">
@@ -137,49 +137,44 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
  </body>
 
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  var modal = document.getElementById("emailModal");
-  var span = document.getElementsByClassName("close")[0];
+ <script>
+ document.addEventListener('DOMContentLoaded', function() {
+   var modal = document.getElementById("emailModal");
 
-  // Mostra il modal
-  modal.style.display = "block";
+   // Mostra il modal
+   modal.style.display = "block";
 
-  // Quando l'utente clicca su (x), chiude il modal
-  span.onclick = function() {
-    modal.style.display = "none";
-  }
+   // Aggiungi listener per il bottone di verifica
+   document.getElementById('submitEmail').addEventListener('click', function() {
+     var email = document.getElementById('emailInput').value;
+     checkEmail(email);
+   });
 
-  // Quando l'utente clicca da qualche parte fuori dal modal, lo chiude
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
+   // Aggiungi listener per invio con tasto "Enter"
+   document.getElementById('emailInput').addEventListener('keypress', function(event) {
+     if (event.key === 'Enter') {
+       event.preventDefault(); // Impedisce l'invio del form se presente
+       var email = document.getElementById('emailInput').value;
+       checkEmail(email);
+     }
+   });
+ });
 
-  // Aggiungi listener per il bottone di verifica
-  document.getElementById('submitEmail').addEventListener('click', function() {
-    var email = document.getElementById('emailInput').value;
-    // Qui dovrai implementare la verifica dell'email
-    checkEmail(email);
-  });
-});
+ function checkEmail(inputEmail) {
+   // Qui implementa la logica per verificare l'email
+   fetch('/index_files/emails_verified.csv')
+     .then(response => response.text())
+     .then(data => {
+       const emails = data.split('\n');
+       if (emails.includes(inputEmail)) {
+         window.location.href = 'https://futurofortissimo.github.io/ff_2101231dsa23dsda_subscriber_verified_ff.html'; // Redirect se l'email è verificata
+       } else {
+         window.location.href = 'https://fortissimo.substack.com/subscribe'; // Redirect se l'email non è verificata
+       }
+     });
+ }
 
-function checkEmail(inputEmail) {
-  // Qui implementa la logica per verificare l'email
-  fetch('/index_files/emails_verified.csv')
-    .then(response => response.text())
-    .then(data => {
-      const emails = data.split('\n');
-      if (emails.includes(inputEmail)) {
-        window.location.href = 'https://futurofortissimo.github.io/ff_2101231dsa23dsda_subscriber_verified_ff.html'; // Redirect se l'email non è autorizzata
-      } else {
-        window.location.href = 'https://fortissimo.substack.com/subscribe'; // Redirect se l'email non è autorizzata
-      }
-    });
-}
-
-</script>
+ </script>
 
 <style>
 
