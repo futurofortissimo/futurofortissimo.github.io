@@ -293,139 +293,89 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 <script>
-
 document.addEventListener('DOMContentLoaded', function() {
     let allData = [];
-    const paroleEscluse = ['perchè',
-        'perché', 'quando', 'e', 'ma', 'se', 'come', 'con', 'su', 'per', 'tra', 'fra',
+    const paroleEscluse = [
+        'perchè', 'perché', 'quando', 'e', 'ma', 'se', 'come', 'con', 'su', 'per', 'tra', 'fra',
         'nel', 'nello', 'nella', 'nei', 'nelle', 'al', 'allo', 'alla', 'ai', 'agli', 'alle',
         'dal', 'dallo', 'dalla', 'dai', 'dagli', 'dalle', 'del', 'dello', 'della', 'dei', 'degli', 'delle',
         'sul', 'sullo', 'sulla', 'sui', 'sugli', 'sulle', 'un', 'uno', 'una', 'gli', 'le',
-        'di', 'da', 'in', 'a', 'da', 'che', 'chi', 'cosa', 'quale', 'quanto', 'quanta', 'quanti', 'quante',
+        'di', 'da', 'in', 'a', 'che', 'chi', 'cosa', 'quale', 'quanto', 'quanta', 'quanti', 'quante',
         'dove', 'come', 'quando', 'perché', 'anche', 'solo', 'qui', 'lì', 'là', 'dunque', 'quindi', 'perciò',
-        'anche', 'ancora', 'già', 'mai', 'sempre', 'poi', 'prima', 'dopo', 'sopra', 'sotto', 'contro',
+        'ancora', 'già', 'mai', 'sempre', 'poi', 'prima', 'dopo', 'sopra', 'sotto', 'contro',
         'molto', 'poco', 'troppo', 'più', 'meno', 'bene', 'male', 'meglio', 'peggio', 'quasi', 'circa',
         'appena', 'solo', 'tanto', 'così', 'pure', 'anche', 'neanche', 'nemmeno', 'quasi', 'sia', 'anche'
     ];
 
-    // Carica i dati dal CSV
     fetch('/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo.csv')
         .then(response => response.text())
         .then(csvText => {
             allData = csvText.split('\n').map(row => row.split(','));
-            updateTable(allData); // Visualizza tutti i dati inizialmente
+            performSearch(); // Aggiornamento iniziale con tutti i dati
         });
 
     function selectRandomEntries(data, count) {
-        // Crea un array di indici unici
         let indices = new Set();
-        while(indices.size < count && indices.size < data.length) {
-            const randomIndex = Math.floor(Math.random() * data.length);
-            indices.add(randomIndex);
+        while (indices.size < count && indices.size < data.length) {
+            indices.add(Math.floor(Math.random() * data.length));
         }
-        // Restituisce le entrate corrispondenti agli indici selezionati
         return Array.from(indices).map(index => data[index]);
     }
 
     function updateTable(data) {
         const tableBody = document.getElementById('csv-table').getElementsByTagName('tbody')[0];
-        tableBody.innerHTML = ''; // Svuota la tabella
+        tableBody.innerHTML = '';
 
-        data.forEach((row, index) => {
-            if (index < 10) { // Assicura di inserire solo 10 entries
-                const tr = document.createElement('tr');
-                const tdTopic = document.createElement('td');
-                const tdLink = document.createElement('td');
+        const entriesToShow = data.length > 10 ? selectRandomEntries(data, 10) : data;
 
-                // Imposta il topic
-                tdTopic.textContent = row[0]; // Supponendo che il topic sia nella prima colonna del CSV
-                tdTopic.style.width = "20%"; // Occupa il 20% della larghezza
+        entriesToShow.forEach(row => {
+            const tr = document.createElement('tr');
+            const tdTopic = document.createElement('td');
+            tdTopic.textContent = row[0];
+            tdTopic.style.width = "20%";
+            tdTopic.style.height = "80px";
 
-                // Imposta il link
-                const a = document.createElement('a');
-                a.href = row[2];
-                a.textContent = row[1];
-                a.className = 'summary-link';
-                tdLink.appendChild(a);
-                tdLink.style.width = "80%"; // Occupa l'80% della larghezza
+            const tdLink = document.createElement('td');
+            const a = document.createElement('a');
+            a.href = row[2];
+            a.textContent = row[1];
+            a.className = 'summary-link';
+            tdLink.appendChild(a);
+            tdLink.style.width = "80%";
+            tdLink.style.height = "80px";
 
-                // Aggiungi stile per altezza delle celle
-                tdTopic.style.height = "80px";
-                tdLink.style.height = "80px";
-
-                tr.appendChild(tdTopic);
-                tr.appendChild(tdLink);
-                tableBody.appendChild(tr);
-            }
+            tr.appendChild(tdTopic);
+            tr.appendChild(tdLink);
+            tableBody.appendChild(tr);
         });
     }
 
-    const searchButton = document.getElementById('csv-search-button');
-    const searchInput = document.getElementById('csv-search-input');
-    const checkbox = document.getElementById('csv-checkbox'); // Riferimento corretto al checkbox
-    const checkboxLibri = document.getElementById('csv-checkbox-libri'); // Questo diventa ora un vero checkbox
-    const checkboxFF = document.getElementById('csv-checkbox-ff'); // Questo diventa ora un vero checkbox
-    const checkboxAlimentazione = document.getElementById('csv-checkbox-alimentazione'); // Questo diventa ora un vero checkbox
-
-
     function performSearch() {
-      let filteredData = allData; // Inizia con tutti i dati
-      const searchText = searchInput.value.toLowerCase().split(' ').filter(parola => !paroleEscluse.includes(parola) && parola.trim() !== '');
-      // Ottieni lo stato checked dei checkbox (true o false)
-      const isLibriChecked = document.getElementById('csv-checkbox-libri').checked;
-      const isFuturoChecked = document.getElementById('csv-checkbox-futuro').checked;
-      const isAlimentazioneChecked = document.getElementById('csv-checkbox-futuro').checked;
-      // Filtro basato sul testo di ricerca
-      if (searchText.length > 0) {
-          filteredData = filteredData.filter(row =>
-              searchText.some(parola =>
-                  row.some(cell => cell.toLowerCase().includes(parola))
-              )
-          );
-      }
+        const searchText = document.getElementById('csv-search-input').value.toLowerCase().split(' ').filter(parola => !paroleEscluse.includes(parola) && parola.trim() !== '');
+        let filteredData = allData.filter(row => searchText.some(parola => row.some(cell => cell.toLowerCase().includes(parola))));
 
-      // Filtro basato sul checkbox
-      if (isLibriChecked) {
-          const checkboxText = "book"; // Aggiusta questo testo secondo il tuo bisogno
-          filteredData = filteredData.filter(row =>
-              row.some(cell => cell.toLowerCase().includes(checkboxText))
-          );
-      }
-      if (isFuturoChecked) {
-          const checkboxText = "#ff"; // Aggiusta questo testo secondo il tuo bisogno
-          filteredData = filteredData.filter(row =>
-              row.some(cell => cell.toLowerCase().includes(checkboxText))
-          );
-      }
-      if (isAlimentazioneChecked) {
-          // Assumi che il testo del filtro per "Alimentazione" sia definito qui
-          const checkboxText = "diet"; // Aggiusta questo testo secondo il tuo bisogno
-          filteredData = filteredData.filter(row => row.some(cell => cell.toLowerCase().includes(checkboxText)));
-      }
+        ['libri', 'ff', 'alimentazione', 'futuro'].forEach(topic => {
+            const checkbox = document.getElementById(`csv-checkbox-${topic}`);
+            if (checkbox && checkbox.checked) {
+                filteredData = filteredData.filter(row => row.some(cell => cell.toLowerCase().includes(checkbox.dataset.filter)));
+            }
+        });
 
-
-
-      // Aggiorna la tabella con i dati filtrati
-      updateTable(filteredData);
+        updateTable(filteredData);
     }
-    const divSearch = document.getElementById('div_search');
-    divSearch.addEventListener('click', performSearch);
 
-
-    // Assegna l'event listener ai checkbox per aggiornare la ricerca al loro cambio di stato
-    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-        checkbox.addEventListener('change', performSearch);
+    ['csv-search-button', 'csv-checkbox-libri', 'csv-checkbox-ff', 'csv-checkbox-alimentazione', 'csv-checkbox-futuro'].forEach(id => {
+        const element = document.getElementById(id);
+        if (element) {
+            const eventType = id.startsWith('csv-checkbox') ? 'change' : 'click';
+            element.addEventListener(eventType, performSearch);
+        }
     });
+    document.getElementById('div_search').addEventListener('click', performSearch)
 
-    // Gestione click sul bottone di ricerca
-    searchButton.addEventListener('click', performSearch);
-    checkbox.addEventListener('change', performSearch);
-    checkboxLibri.addEventListener('change', performSearch); // Ora usi 'change' invece di 'click'
-    document.getElementById('csv-checkbox-futuro').addEventListener('change', performSearch);
-    // Gestisci anche l'evento "Enter" sulla tastiera per la ricerca
-    searchInput.addEventListener('keypress', function(e) {
+    document.getElementById('csv-search-input').addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
-            e.preventDefault(); // Previene l'invio del form, se presente
+            e.preventDefault();
             performSearch();
         }
     });
