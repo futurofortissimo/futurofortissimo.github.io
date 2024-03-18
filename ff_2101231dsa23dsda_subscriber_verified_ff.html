@@ -315,9 +315,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 </style>
 
-
 <script>
+fetch('/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo.csv')
+    .then(response => response.text())
+    .then(csvText => {
+        allData = csvText.split('\n').map(row => row.split(','));
+        updateTable(allData); // Visualizza tutti i dati inizialmente
+    });
 
+function updateTable(data) {
+    const tableBody = document.getElementById('csv-table').getElementsByTagName('tbody')[0];
+    tableBody.innerHTML = ''; // Svuota la tabella prima di aggiornare i dati
+    data.forEach(row => {
+        const tr = document.createElement('tr');
+        const td = document.createElement('td');
+        const a = document.createElement('a');
+        a.href = row[2]; // Imposta il link
+        a.textContent = row[1]; // Imposta il testo
+        a.className = 'summary-link';
+        td.appendChild(a);
+        tr.appendChild(td);
+        tableBody.insertBefore(tr, tableBody.firstChild); // Inserisce la riga all'inizio del tbody
+    });
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     let allData = [];
@@ -333,89 +353,65 @@ document.addEventListener('DOMContentLoaded', function() {
         'appena', 'solo', 'tanto', 'così', 'pure', 'anche', 'neanche', 'nemmeno', 'quasi', 'sia', 'anche'
     ];
 
-    // Carica i dati dal CSV
-    fetch('/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo.csv')
-        .then(response => response.text())
-        .then(csvText => {
-            allData = csvText.split('\n').map(row => row.split(','));
-            updateTable(allData); // Visualizza tutti i dati inizialmente
-        });
+
+    const searchButton = document.getElementById('csv-search-button');
+    const searchInput = document.getElementById('csv-search-input');
 
     function updateTable(data) {
         const tableBody = document.getElementById('csv-table').getElementsByTagName('tbody')[0];
-        tableBody.innerHTML = ''; // Svuota la tabella prima di aggiornare i dati
+        tableBody.innerHTML = ''; // Pulisce la tabella prima di aggiungere le righe
         data.forEach(row => {
             const tr = document.createElement('tr');
             const td = document.createElement('td');
-            const a = document.createElement('a');
-            a.href = row[2]; // Imposta il link
-            a.textContent = row[1]; // Imposta il testo
-            a.className = 'summary-link';
-            td.appendChild(a);
+            td.textContent = row[1]; // Prendiamo solo la descrizione per semplicità
             tr.appendChild(td);
-            tableBody.insertBefore(tr, tableBody.firstChild); // Inserisce la riga all'inizio del tbody
+            tableBody.appendChild(tr);
         });
     }
+
+    // Caricamento iniziale dei dati
+    updateTable(allData);
+
+    const filterButtons = document.querySelectorAll('.filter-button');
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            this.classList.toggle('selected');
+            performSearch(); // Ricerca ogni volta che cambia lo stato di selezione
+        });
+    });
 
     const searchButton = document.getElementById('csv-search-button');
     const searchInput = document.getElementById('csv-search-input');
 
     function performSearch() {
-      function performSearch() {
-          const searchText = searchInput.value.toLowerCase().split(' ').filter(parola => !paroleEscluse.includes(parola) && parola.trim() !== '');
-          const selectedFilters = Array.from(document.querySelectorAll('.filter-checkbox:checked')).map(checkbox => checkbox.value);
-          const selectedThemes = Array.from(document.getElementById('theme-dropdown').selectedOptions).map(option => option.value);
+        const searchText = searchInput.value.toLowerCase().split(' ').filter(parola => !paroleEscluse.includes(parola) && parola.trim() !== '');
+        const selectedTopics = Array.from(filterButtons)
+                                    .filter(button => button.classList.contains('selected'))
+                                    .map(button => button.getAttribute('data-topic'));
 
-          let filteredData = allData.filter(row => {
-              // Verifica se la riga soddisfa i criteri di ricerca
-              const matchesSearch = searchText.length === 0 || searchText.some(parola => row.some(cell => cell.toLowerCase().includes(parola)));
-              const matchesFilters = selectedFilters.length === 0 || selectedFilters.includes(row[0]);
-              const matchesFilters = selectedFilters.length === 0 || selectedFilters.includes(row[2]);
+        let filteredData = allData.filter(row => {
+            const textMatch = !searchText || row[1].toLowerCase().includes(searchText);
+            const topicMatch = !selectedTopics.length || selectedTopics.includes(row[0]);
+            return textMatch && topicMatch;
+        });
 
-              const matchesThemes = selectedThemes.length === 0 || selectedThemes.every(theme => row[0].toLowerCase().includes(theme.toLowerCase()));
-              return matchesSearch && matchesFilters && matchesThemes;
-          });
+        updateTable(filteredData);
+    }
 
-          updateTable(filteredData);
-      }
-    // Gestione click sul bottone di ricerca
+    // Ricerca al click sul bottone
     searchButton.addEventListener('click', performSearch);
 
-    // Gestisci anche l'evento "Enter" sulla tastiera per la ricerca
+    // Ricerca con il tasto Enter
     searchInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
-            e.preventDefault(); // Previene l'invio del form, se presente
+            e.preventDefault(); // Previene il comportamento di default
             performSearch();
         }
     });
 });
-const updateTable = () => {
-        const table = document.getElementById('csv-table');
-        table.innerHTML = ''; // Pulisce la tabella
 
-        // Filtra e mostra i dati basati sulla ricerca e sui topic selezionati
-        allData.forEach(item => {
-            if (selectedTopics.size === 0 || selectedTopics.has(item[0])) {
-                const row = `<tr><td>${item[1]} - <a href="${item[2]}">Link</a></td></tr>`;
-                table.insertAdjacentHTML('beforeend', row);
-            }
-        });
-    };
 
-// Gestione della selezione dei bottoni dei topic
-document.querySelectorAll('.filter-button').forEach(button => {
-    button.addEventListener('click', function() {
-        const topic = this.getAttribute('data-topic');
-        if (selectedTopics.has(topic)) {
-            selectedTopics.delete(topic);
-            this.classList.remove('selected');
-        } else {
-            selectedTopics.add(topic);
-            this.classList.add('selected');
-        }
-        updateTable(); // Aggiorna la tabella ogni volta che un filtro viene cambiato
-    });
-});
+
 </script>
 
 
