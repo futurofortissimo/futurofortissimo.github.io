@@ -216,11 +216,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 
     .filter-button.selected {
-        opacity: 0.1; /* Nessuna trasparenza per il bottone selezionato */
-        border: 2px solid #000; /* Bordo nero per evidenziare la selezione */
+        opacity: 1; /* Rendi completamente opaco il bottone selezionato */
+        background-color: #555; /* Cambia colore per indicare la selezione */
+        color: white; /* Cambia il colore del testo per migliorare la leggibilità */
     }
 
-    #csv-search-input, #csv-search-button, .filter-button {
+    #csv-search-input, #csv-search-button {
         font-family: "Palladio", sans-serif;
     }
 
@@ -301,30 +302,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </style>
 
 <script>
-fetch('/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo.csv')
-    .then(response => response.text())
-    .then(csvText => {
-        allData = csvText.split('\n').map(row => row.split(','));
-        updateTable(allData); // Visualizza tutti i dati inizialmente
-    });
 
-function updateTable(data) {
-    const tableBody = document.getElementById('csv-table').getElementsByTagName('tbody')[0];
-    tableBody.innerHTML = ''; // Svuota la tabella prima di aggiornare i dati
-    data.forEach(row => {
-        const tr = document.createElement('tr');
-        const td = document.createElement('td');
-        const a = document.createElement('a');
-        a.href = row[2]; // Imposta il link
-        a.textContent = row[1]; // Imposta il testo
-        a.className = 'summary-link';
-        td.appendChild(a);
-        tr.appendChild(td);
-        tableBody.insertBefore(tr, tableBody.firstChild); // Inserisce la riga all'inizio del tbody
-    });
-}
 
 document.addEventListener('DOMContentLoaded', function() {
+    fetch('/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo.csv')
+        .then(response => response.text())
+        .then(csvText => {
+            allData = csvText.split('\n').map(row => row.split(','));
+            updateTable(allData); // Visualizza tutti i dati inizialmente
+        });
+
+
+    // Carica i dati nel momento in cui la pagina è completamente caricata
+    function updateTable(data) {
+        const tableBody = document.getElementById('csv-table').getElementsByTagName('tbody')[0];
+        tableBody.innerHTML = ''; // Pulisce la tabella prima di aggiungere nuove righe
+        data.forEach(row => {
+            const tr = document.createElement('tr');
+            const td = document.createElement('td');
+            const a = document.createElement('a');
+            a.href = row[2]; // Imposta l'URL
+            a.textContent = `${row[0]} - ${row[1]}`; // Imposta il testo del link
+            td.appendChild(a);
+            tr.appendChild(td);
+            tableBody.appendChild(tr);
+        });
+    }
+
+
     let allData = [];
     const paroleEscluse = ['perchè',
         'perché', 'quando', 'e', 'ma', 'se', 'come', 'con', 'su', 'per', 'tra', 'fra',
