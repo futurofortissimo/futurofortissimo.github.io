@@ -352,26 +352,30 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('csv-search-input');
 
     function performSearch() {
-        const searchText = searchInput.value.toLowerCase().split(' ').filter(parola => !paroleEscluse.includes(parola) && parola.trim() !== '');
-        const isCheckboxChecked = document.getElementById('csv-checkbox').checked;
-        if (searchText.length > 0) {
-            let filteredData = allData.filter(row =>
-                searchText.some(parola =>
-                    row.some(cell => cell.toLowerCase().includes(parola))
-                )
-            );
-            updateTable(filteredData);
-        } else {
-            updateTable(allData);
-        }
-        if (isCheckboxChecked) {
-        // Assumi che tu voglia filtrare per righe che contengono la parola "futuro"
-        const checkboxText = "Book"; // Aggiungi qui il testo specifico del filtro del checkbox se variabile
-        filteredData = filteredData.filter(row =>
-            row.some(cell => cell.toLowerCase().includes(checkboxText))
-        );
-    }
-    }
+      let filteredData = allData; // Inizia con tutti i dati
+      const searchText = searchInput.value.toLowerCase().split(' ').filter(parola => !paroleEscluse.includes(parola) && parola.trim() !== '');
+      const isCheckboxChecked = document.getElementById('csv-checkbox').checked;
+
+      // Filtro basato sul testo di ricerca
+      if (searchText.length > 0) {
+          filteredData = filteredData.filter(row =>
+              searchText.some(parola =>
+                  row.some(cell => cell.toLowerCase().includes(parola))
+              )
+          );
+      }
+
+      // Filtro basato sul checkbox
+      if (isCheckboxChecked) {
+          const checkboxText = "book"; // Aggiusta questo testo secondo il tuo bisogno
+          filteredData = filteredData.filter(row =>
+              row.some(cell => cell.toLowerCase().includes(checkboxText))
+          );
+      }
+
+      // Aggiorna la tabella con i dati filtrati
+      updateTable(filteredData);
+  }
 
     // Gestione click sul bottone di ricerca
     searchButton.addEventListener('click', performSearch);
