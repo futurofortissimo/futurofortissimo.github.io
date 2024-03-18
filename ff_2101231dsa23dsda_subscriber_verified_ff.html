@@ -111,22 +111,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <button style="border-radius:42px" id="csv-search-button">🔍</button> <!-- Bottone di ricerca -->
 </div>
 <!-- Checkbox aggiunto qui sotto -->
-<div style="display: flex; justify-content: center; gap: 5px; padding: 5px 0;" id="div_search_1">
-  <!-- Checkbox "Libri" -->
-  <input type="checkbox" id="csv-checkbox-clima" style="display: none;" />
-  <label style="font-size:21px; font-family:Palladio; border-radius:42px;" class="button-parla-futuro" for="csv-checkbox-clima">Clima</label>
-
-  <!-- Checkbox "ff" -->
-  <input type="checkbox" id="csv-checkbox-tecnologia" style="display: none;" />
-  <label style="font-size:21px; font-family:Palladio;border-radius:42px;" class="button-parla-futuro-verde-acqua" for="csv-checkbox-tecnologia">Tecnologia</label>
-
-  <!-- Checkbox "ff" -->
-  <input type="checkbox" id="csv-checkbox-uomo" style="display: none;" />
-  <label style="font-size:21px; font-family:Palladio;border-radius:42px;" class="button-parla-futuro-verde-acqua" for="csv-checkbox-uomo">Uomo</label>
-
-  <!-- Aggiungi qui ulteriori checkbox per Natura, Tecnologia, Società seguendo lo stesso schema -->
-</div>
-<div style="display: flex; justify-content: center; gap: 5px; padding: 5px 0;" id="div_search_2">
+<div style="display: flex; justify-content: center; gap: 5px; padding: 5px 0;" id="div_search">
   <!-- Checkbox "Libri" -->
   <input type="checkbox" id="csv-checkbox-libri" style="display: none;" />
   <label style="font-size:21px; font-family:Palladio; border-radius:42px;" class="button-parla-futuro" for="csv-checkbox-libri">Libri</label>
@@ -138,6 +123,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <!-- Aggiungi qui ulteriori checkbox per Natura, Tecnologia, Società seguendo lo stesso schema -->
 </div>
 
+<!-- Seconda linea di filtri: Crypto, Sport, Clima, Salute, Metaverso, Dieta -->
+<div style="display: flex; justify-content: center; gap: 5px; padding: 5px 0;" id="div_search">
+  <!-- Checkbox "Crypto" -->
+  <input type="checkbox" id="csv-checkbox-crypto" style="display: none;" />
+  <label style="font-size:21px; font-family:Palladio;border-radius:42px;" class="button-parla-futuro-verde-acqua" for="csv-checkbox-crypto">Crypto</label>
+  <input type="checkbox" id="csv-checkbox-sport" style="display: none;" />
+  <label style="font-size:21px; font-family:Palladio;border-radius:42px;" class="button-parla-futuro-verde-acqua" for="csv-checkbox-crypto">Sport</label>
+  <input type="checkbox" id="csv-checkbox-alimentazione" style="display: none;" />
+  <label style="font-size:21px; font-family:Palladio;border-radius:42px;" class="button-parla-futuro-verde-acqua" for="csv-checkbox-crypto">Alimentazione</label>
+  <input type="checkbox" id="csv-checkbox-intelligenza-artificiale" style="display: none;" />
+  <label style="font-size:21px; font-family:Palladio;border-radius:42px;" class="button-parla-futuro-verde-acqua" for="csv-checkbox-crypto">Intelligenza Artificiale</label>
+  <input type="checkbox" id="csv-checkbox-salute" style="display: none;" />
+  <label style="font-size:21px; font-family:Palladio;border-radius:42px;" class="button-parla-futuro-verde-acqua" for="csv-checkbox-crypto">Salute</label>
+  <!-- Aggiungi qui ulteriori checkbox per Sport, Clima, Salute, Metaverso, Dieta seguendo lo stesso schema -->
+</div>
 
     <table id="csv-table" style="margin-top:0px; font-family:palladio; font-size:16px; border-radius:42px;">
         <tbody style="border-radius:42px;">
@@ -276,18 +276,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         padding: 8px; /* Padding per le celle */
         text-align: left; /* Allineamento testo */
     }
-    #csv-table td {
-    height: 50px;
-    overflow: hidden; /* Previene il sovrapporsi di testo */
-}
-
-#csv-table tr td:first-child {
-    width: 20%;
-}
-
-#csv-table tr td:last-child {
-    width: 80%;
-}
 </style>
 
 
@@ -328,34 +316,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateTable(data) {
       const tableBody = document.getElementById('csv-table').getElementsByTagName('tbody')[0];
-      tableBody.innerHTML = ''; // Svuota la tabella
+      tableBody.innerHTML = ''; // Svuota la tabella prima di aggiornare i dati
 
-      data.forEach((row, index) => {
-          if (index < 10) { // Assicura di inserire solo 10 entries
-              const tr = document.createElement('tr');
-              const tdTopic = document.createElement('td');
-              const tdLink = document.createElement('td');
+      // Filtra le entrate per lunghezza del testo >= 3
+      const filteredData = data.filter(row => row[1] && row[1].length >= 3);
 
-              // Imposta il topic
-              tdTopic.textContent = row[0]; // Supponendo che il topic sia nella prima colonna del CSV
-              tdTopic.style.width = "20%"; // Occupa il 20% della larghezza
+      // Seleziona casualmente fino a 10 entrate dalle filtrate
+      const randomData = filteredData.length <= 10 ? filteredData : selectRandomEntries(filteredData, 10);
 
-              // Imposta il link
-              const a = document.createElement('a');
-              a.href = row[2];
-              a.textContent = row[1];
-              a.className = 'summary-link';
-              tdLink.appendChild(a);
-              tdLink.style.width = "80%"; // Occupa l'80% della larghezza
-
-              // Aggiungi stile per altezza delle celle
-              tdTopic.style.height = "80px";
-              tdLink.style.height = "80px";
-
-              tr.appendChild(tdTopic);
-              tr.appendChild(tdLink);
-              tableBody.appendChild(tr);
-          }
+      randomData.forEach(row => {
+          const tr = document.createElement('tr');
+          const td = document.createElement('td');
+          const a = document.createElement('a');
+          a.href = row[2]; // Imposta il link
+          a.textContent = row[1]; // Imposta il testo
+          a.className = 'summary-link';
+          td.appendChild(a);
+          tr.appendChild(td);
+          tableBody.appendChild(tr); // Aggiunge la riga alla fine del tbody
       });
   }
 
@@ -364,7 +342,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const checkbox = document.getElementById('csv-checkbox'); // Riferimento corretto al checkbox
     const checkboxLibri = document.getElementById('csv-checkbox-libri'); // Questo diventa ora un vero checkbox
     const isFuturoChecked = document.getElementById('csv-checkbox-futuro'); // Riferimento corretto al checkbox
-    const isClimaChecked = document.getElementById('csv-checkbox-clima'); // Riferimento corretto al checkbox
 
     function performSearch() {
       let filteredData = allData; // Inizia con tutti i dati
@@ -372,9 +349,6 @@ document.addEventListener('DOMContentLoaded', function() {
       // Ottieni lo stato checked dei checkbox (true o false)
       const isLibriChecked = document.getElementById('csv-checkbox-libri').checked;
       const isFuturoChecked = document.getElementById('csv-checkbox-futuro').checked;
-      const isClimaChecked = document.getElementById('csv-checkbox-clima').checked;
-      const isUomoChecked = document.getElementById('csv-checkbox-uomo').checked;
-      const isTecnologiaChecked = document.getElementById('csv-checkbox-tecnologia').checked;
 
       // Filtro basato sul testo di ricerca
       if (searchText.length > 0) {
@@ -386,24 +360,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       // Filtro basato sul checkbox
-      if (isTecnologiaChecked) {
-          const checkboxText = "Tecnologia"; // Aggiusta questo testo secondo il tuo bisogno
-          filteredData = filteredData.filter(row =>
-              row.some(cell => cell.toLowerCase().includes(checkboxText))
-          );
-      }
-      if (isUomoChecked) {
-          const checkboxText = "Society"; // Aggiusta questo testo secondo il tuo bisogno
-          filteredData = filteredData.filter(row =>
-              row.some(cell => cell.toLowerCase().includes(checkboxText))
-          );
-      }
-      if (isClimaChecked) {
-          const checkboxText = "Clima"; // Aggiusta questo testo secondo il tuo bisogno
-          filteredData = filteredData.filter(row =>
-              row.some(cell => cell.toLowerCase().includes(checkboxText))
-          );
-      }
       if (isLibriChecked) {
           const checkboxText = "book"; // Aggiusta questo testo secondo il tuo bisogno
           filteredData = filteredData.filter(row =>
@@ -420,15 +376,20 @@ document.addEventListener('DOMContentLoaded', function() {
       // Aggiorna la tabella con i dati filtrati
       updateTable(filteredData);
   }
-    const divSearch_1 = document.getElementById('div_search_1');
-    const divSearch_2 = document.getElementById('div_search_2');
+    const divSearch = document.getElementById('div_search');
+    divSearch.addEventListener('click', performSearch);
 
-    divSearch_1.addEventListener('click', performSearch);
-    divSearch_2.addEventListener('click', performSearch);
 
+    // Assegna l'event listener ai checkbox per aggiornare la ricerca al loro cambio di stato
+    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+        checkbox.addEventListener('change', performSearch);
+    });
 
     // Gestione click sul bottone di ricerca
     searchButton.addEventListener('click', performSearch);
+    checkbox.addEventListener('change', performSearch);
+    checkboxLibri.addEventListener('change', performSearch); // Ora usi 'change' invece di 'click'
+    document.getElementById('csv-checkbox-futuro').addEventListener('change', performSearch);
     // Gestisci anche l'evento "Enter" sulla tastiera per la ricerca
     searchInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
