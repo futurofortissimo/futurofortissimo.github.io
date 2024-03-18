@@ -111,7 +111,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <button style="border-radius:42px" id="csv-search-button">🔍</button> <!-- Bottone di ricerca -->
 </div>
 <!-- Checkbox aggiunto qui sotto -->
-<div style="display: flex; justify-content: center; gap: 5px; padding: 5px 0;" id="div_search">
+<div style="display: flex; justify-content: center; gap: 5px; padding: 5px 0;" id="div_search_1">
   <!-- Checkbox "Libri" -->
   <input type="checkbox" id="csv-checkbox-clima" style="display: none;" />
   <label style="font-size:21px; font-family:Palladio; border-radius:42px;" class="button-parla-futuro" for="csv-checkbox-clima">Clima</label>
@@ -126,7 +126,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <!-- Aggiungi qui ulteriori checkbox per Natura, Tecnologia, Società seguendo lo stesso schema -->
 </div>
-<div style="display: flex; justify-content: center; gap: 5px; padding: 5px 0;" id="div_search">
+<div style="display: flex; justify-content: center; gap: 5px; padding: 5px 0;" id="div_search_2">
   <!-- Checkbox "Libri" -->
   <input type="checkbox" id="csv-checkbox-libri" style="display: none;" />
   <label style="font-size:21px; font-family:Palladio; border-radius:42px;" class="button-parla-futuro" for="csv-checkbox-libri">Libri</label>
@@ -364,6 +364,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const checkbox = document.getElementById('csv-checkbox'); // Riferimento corretto al checkbox
     const checkboxLibri = document.getElementById('csv-checkbox-libri'); // Questo diventa ora un vero checkbox
     const isFuturoChecked = document.getElementById('csv-checkbox-futuro'); // Riferimento corretto al checkbox
+    const isClimaChecked = document.getElementById('csv-checkbox-clima'); // Riferimento corretto al checkbox
 
     function performSearch() {
       let filteredData = allData; // Inizia con tutti i dati
@@ -385,8 +386,8 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       // Filtro basato sul checkbox
-      if (isLibriChecked) {
-          const isTecnologiaChecked = "Tecnologia"; // Aggiusta questo testo secondo il tuo bisogno
+      if (isTecnologiaChecked) {
+          const checkboxText = "Tecnologia"; // Aggiusta questo testo secondo il tuo bisogno
           filteredData = filteredData.filter(row =>
               row.some(cell => cell.toLowerCase().includes(checkboxText))
           );
@@ -419,20 +420,15 @@ document.addEventListener('DOMContentLoaded', function() {
       // Aggiorna la tabella con i dati filtrati
       updateTable(filteredData);
   }
-    const divSearch = document.getElementById('div_search');
-    divSearch.addEventListener('click', performSearch);
+    const divSearch_1 = document.getElementById('div_search_1');
+    const divSearch_2 = document.getElementById('div_search_2');
 
+    divSearch_1.addEventListener('click', performSearch);
+    divSearch_2.addEventListener('click', performSearch);
 
-    // Assegna l'event listener ai checkbox per aggiornare la ricerca al loro cambio di stato
-    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-        checkbox.addEventListener('change', performSearch);
-    });
 
     // Gestione click sul bottone di ricerca
     searchButton.addEventListener('click', performSearch);
-    checkbox.addEventListener('change', performSearch);
-    checkboxLibri.addEventListener('change', performSearch); // Ora usi 'change' invece di 'click'
-    document.getElementById('csv-checkbox-futuro').addEventListener('change', performSearch);
     // Gestisci anche l'evento "Enter" sulla tastiera per la ricerca
     searchInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
