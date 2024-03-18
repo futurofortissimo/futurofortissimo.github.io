@@ -205,7 +205,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 </style>
 
+<style>
+    .filter-button {
+        padding: 10px 20px;
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
 
+    .filter-button.selected {
+        background-color: #f0f0f0; /* Cambia a seconda delle preferenze */
+    }
+
+    #csv-search-input, #csv-search-button, .filter-button {
+        font-family: "Palladio", sans-serif;
+    }
+
+    /* Altri stili come necessario */
+</style>
 
  <style>
     .tag {
@@ -439,12 +458,32 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-// Script per commutare la classe 'selected' sui bottoni
+const updateTable = () => {
+        const table = document.getElementById('csv-table');
+        table.innerHTML = ''; // Pulisce la tabella
+
+        // Filtra e mostra i dati basati sulla ricerca e sui topic selezionati
+        allData.forEach(item => {
+            if (selectedTopics.size === 0 || selectedTopics.has(item[0])) {
+                const row = `<tr><td>${item[1]} - <a href="${item[2]}">Link</a></td></tr>`;
+                table.insertAdjacentHTML('beforeend', row);
+            }
+        });
+    };
+
+// Gestione della selezione dei bottoni dei topic
 document.querySelectorAll('.filter-button').forEach(button => {
-  button.addEventListener('click', () => {
-    button.classList.toggle('selected');
-    // Aggiorna i risultati di ricerca qui...
-  });
+    button.addEventListener('click', function() {
+        const topic = this.getAttribute('data-topic');
+        if (selectedTopics.has(topic)) {
+            selectedTopics.delete(topic);
+            this.classList.remove('selected');
+        } else {
+            selectedTopics.add(topic);
+            this.classList.add('selected');
+        }
+        updateTable(); // Aggiorna la tabella ogni volta che un filtro viene cambiato
+    });
 });
 </script>
 
