@@ -112,9 +112,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 <!-- Checkbox aggiunto qui sotto -->
 <div style="display: flex; justify-content: center; gap: 5px; padding: 5px 0;">
-  <!-- Checkbox "Libri" -->
-  <button type="checkbox" id="csv-checkbox-libri" style="font-size:21px; font-family:Palladio;border-radius:42px;"class="button-parla-futuro" for="csv-checkbox-libri">Libri</button>
-
+  <input type="checkbox" id="csv-checkbox-libri" style="display: none;" />
+  <label style="font-size:21px; font-family:Palladio; border-radius:42px;" class="button-parla-futuro" for="csv-checkbox-libri">Libri</label>
   <!-- Checkbox "Futuro" -->
   <input type="checkbox" id="csv-checkbox-futuro" style="display: none;" />
   <label style="font-size:21px; font-family:Palladio;border-radius:42px;" class="button-parla-futuro-verde-acqua" for="csv-checkbox-futuro">Futuro</label>
@@ -262,46 +261,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  var modal = document.getElementById("emailModal");
-  var span = document.getElementsByClassName("close")[0];
-
-  // Mostra il modal
-  modal.style.display = "block";
-
-  // Quando l'utente clicca su (x), chiude il modal
-  span.onclick = function() {
-    modal.style.display = "none";
-  }
-
-  // Quando l'utente clicca da qualche parte fuori dal modal, lo chiude
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
-
-  // Aggiungi listener per il bottone di verifica
-  document.getElementById('submitEmail').addEventListener('click', function() {
-    var email = document.getElementById('emailInput').value;
-    // Qui dovrai implementare la verifica dell'email
-    checkEmail(email);
-  });
-});
-
-function checkEmail(inputEmail) {
-  // Qui implementa la logica per verificare l'email
-  fetch('/index_files/emails_verified.csv')
-    .then(response => response.text())
-    .then(data => {
-      const emails = data.split('\n');
-      if (emails.includes(inputEmail)) {
-        document.getElementById('emailModal').style.display = 'none'; // Nasconde il modal se l'email è autorizzata
-      } else {
-        window.location.href = 'invite_to_subscribe_page.html'; // Redirect se l'email non è autorizzata
-      }
-    });
-}
 
 document.addEventListener('DOMContentLoaded', function() {
     let allData = [];
@@ -344,7 +303,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchButton = document.getElementById('csv-search-button');
     const searchInput = document.getElementById('csv-search-input');
     const checkbox = document.getElementById('csv-checkbox'); // Riferimento corretto al checkbox
-    const checkboxLibri= document.getElementById('csv-checkbox-libri'); // Riferimento corretto al checkbox
+    const checkboxLibri = document.getElementById('csv-checkbox-libri'); // Questo diventa ora un vero checkbox
     const isFuturoChecked = document.getElementById('csv-checkbox-futuro'); // Riferimento corretto al checkbox
 
     function performSearch() {
@@ -384,7 +343,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Gestione click sul bottone di ricerca
     searchButton.addEventListener('click', performSearch);
     checkbox.addEventListener('change', performSearch);
-    checkboxLibri.addEventListener('click', performSearch);
+    checkboxLibri.addEventListener('change', performSearch); // Ora usi 'change' invece di 'click'
     document.getElementById('csv-checkbox-futuro').addEventListener('change', performSearch);
     // Gestisci anche l'evento "Enter" sulla tastiera per la ricerca
     searchInput.addEventListener('keypress', function(e) {
