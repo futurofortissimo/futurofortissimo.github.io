@@ -113,6 +113,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- Checkbox aggiunto qui sotto -->
 <div style="display: flex; justify-content: center; gap: 5px; padding: 5px 0;" id="div_search">
   <!-- Checkbox "Libri" -->
+  <input type="checkbox" id="csv-checkbox-clima" style="display: none;" />
+  <label style="font-size:21px; font-family:Palladio; border-radius:42px;" class="button-parla-futuro" for="csv-checkbox-clima">Clima</label>
+
+  <!-- Checkbox "ff" -->
+  <input type="checkbox" id="csv-checkbox-tecnologia" style="display: none;" />
+  <label style="font-size:21px; font-family:Palladio;border-radius:42px;" class="button-parla-futuro-verde-acqua" for="csv-checkbox-tecnologia">Tecnologia</label>
+
+  <!-- Checkbox "ff" -->
+  <input type="checkbox" id="csv-checkbox-uomo" style="display: none;" />
+  <label style="font-size:21px; font-family:Palladio;border-radius:42px;" class="button-parla-futuro-verde-acqua" for="csv-checkbox-uomo">Uomo</label>
+
+  <!-- Aggiungi qui ulteriori checkbox per Natura, Tecnologia, Società seguendo lo stesso schema -->
+</div>
+<div style="display: flex; justify-content: center; gap: 5px; padding: 5px 0;" id="div_search">
+  <!-- Checkbox "Libri" -->
   <input type="checkbox" id="csv-checkbox-libri" style="display: none;" />
   <label style="font-size:21px; font-family:Palladio; border-radius:42px;" class="button-parla-futuro" for="csv-checkbox-libri">Libri</label>
 
@@ -123,21 +138,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <!-- Aggiungi qui ulteriori checkbox per Natura, Tecnologia, Società seguendo lo stesso schema -->
 </div>
 
-<!-- Seconda linea di filtri: Crypto, Sport, Clima, Salute, Metaverso, Dieta -->
-<div style="display: flex; justify-content: center; gap: 5px; padding: 5px 0;" id="div_search">
-  <!-- Checkbox "Crypto" -->
-  <input type="checkbox" id="csv-checkbox-crypto" style="display: none;" />
-  <label style="font-size:21px; font-family:Palladio;border-radius:42px;" class="button-parla-futuro-verde-acqua" for="csv-checkbox-crypto">Crypto</label>
-  <input type="checkbox" id="csv-checkbox-sport" style="display: none;" />
-  <label style="font-size:21px; font-family:Palladio;border-radius:42px;" class="button-parla-futuro-verde-acqua" for="csv-checkbox-crypto">Sport</label>
-  <input type="checkbox" id="csv-checkbox-alimentazione" style="display: none;" />
-  <label style="font-size:21px; font-family:Palladio;border-radius:42px;" class="button-parla-futuro-verde-acqua" for="csv-checkbox-crypto">Alimentazione</label>
-  <input type="checkbox" id="csv-checkbox-intelligenza-artificiale" style="display: none;" />
-  <label style="font-size:21px; font-family:Palladio;border-radius:42px;" class="button-parla-futuro-verde-acqua" for="csv-checkbox-crypto">Intelligenza Artificiale</label>
-  <input type="checkbox" id="csv-checkbox-salute" style="display: none;" />
-  <label style="font-size:21px; font-family:Palladio;border-radius:42px;" class="button-parla-futuro-verde-acqua" for="csv-checkbox-crypto">Salute</label>
-  <!-- Aggiungi qui ulteriori checkbox per Sport, Clima, Salute, Metaverso, Dieta seguendo lo stesso schema -->
-</div>
 
     <table id="csv-table" style="margin-top:0px; font-family:palladio; font-size:16px; border-radius:42px;">
         <tbody style="border-radius:42px;">
@@ -349,6 +349,9 @@ document.addEventListener('DOMContentLoaded', function() {
       // Ottieni lo stato checked dei checkbox (true o false)
       const isLibriChecked = document.getElementById('csv-checkbox-libri').checked;
       const isFuturoChecked = document.getElementById('csv-checkbox-futuro').checked;
+      const isClimaChecked = document.getElementById('csv-checkbox-clima').checked;
+      const isUomoChecked = document.getElementById('csv-checkbox-uomo').checked;
+      const isTecnologiaChecked = document.getElementById('csv-checkbox-tecnologia').checked;
 
       // Filtro basato sul testo di ricerca
       if (searchText.length > 0) {
@@ -360,6 +363,24 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       // Filtro basato sul checkbox
+      if (isLibriChecked) {
+          const isTecnologiaChecked = "Tecnologia"; // Aggiusta questo testo secondo il tuo bisogno
+          filteredData = filteredData.filter(row =>
+              row.some(cell => cell.toLowerCase().includes(checkboxText))
+          );
+      }
+      if (isUomoChecked) {
+          const checkboxText = "Society"; // Aggiusta questo testo secondo il tuo bisogno
+          filteredData = filteredData.filter(row =>
+              row.some(cell => cell.toLowerCase().includes(checkboxText))
+          );
+      }
+      if (isClimaChecked) {
+          const checkboxText = "Clima"; // Aggiusta questo testo secondo il tuo bisogno
+          filteredData = filteredData.filter(row =>
+              row.some(cell => cell.toLowerCase().includes(checkboxText))
+          );
+      }
       if (isLibriChecked) {
           const checkboxText = "book"; // Aggiusta questo testo secondo il tuo bisogno
           filteredData = filteredData.filter(row =>
