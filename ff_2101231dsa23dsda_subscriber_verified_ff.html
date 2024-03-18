@@ -118,6 +118,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <input type="text" id="csv-search-input" placeholder="Cosa chiedi al futuro? 🎵" style="width:100%; border-radius:16px" />
       <button style="border-radius:16px" id="csv-search-button">🔍</button> <!-- Bottone di ricerca -->
   </div>
+  <!-- Checkbox aggiunto qui sotto -->
+  <div style="width:100%; padding: 10px 0;">
+      <input type="checkbox" id="csv-checkbox" />
+      <label for="csv-checkbox">Libri</label>
+  </div>
 </div>
 
     <table id="csv-table" style="margin-top:0px; font-family:palladio; font-size:16px; border:none">
@@ -348,6 +353,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function performSearch() {
         const searchText = searchInput.value.toLowerCase().split(' ').filter(parola => !paroleEscluse.includes(parola) && parola.trim() !== '');
+        const isCheckboxChecked = document.getElementById('csv-checkbox').checked;
         if (searchText.length > 0) {
             let filteredData = allData.filter(row =>
                 searchText.some(parola =>
@@ -358,6 +364,13 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             updateTable(allData);
         }
+        if (isCheckboxChecked) {
+        // Assumi che tu voglia filtrare per righe che contengono la parola "futuro"
+        const checkboxText = "Book"; // Aggiungi qui il testo specifico del filtro del checkbox se variabile
+        filteredData = filteredData.filter(row =>
+            row.some(cell => cell.toLowerCase().includes(checkboxText))
+        );
+    }
     }
 
     // Gestione click sul bottone di ricerca
