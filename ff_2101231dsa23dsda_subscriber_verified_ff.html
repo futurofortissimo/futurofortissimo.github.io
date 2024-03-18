@@ -357,13 +357,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchButton = document.getElementById('csv-search-button');
     const searchInput = document.getElementById('csv-search-input');
     const checkbox = document.getElementById('csv-checkbox'); // Riferimento corretto al checkbox
-    const isLibriChecked = document.getElementById('csv-checkbox'); // Riferimento corretto al checkbox
+    const isLibriChecked = document.getElementById('csv-checkbox-libri'); // Riferimento corretto al checkbox
     const isFuturoChecked = document.getElementById('csv-checkbox-futuro'); // Riferimento corretto al checkbox
 
     function performSearch() {
       let filteredData = allData; // Inizia con tutti i dati
       const searchText = searchInput.value.toLowerCase().split(' ').filter(parola => !paroleEscluse.includes(parola) && parola.trim() !== '');
-
+      const isLibriChecked = document.getElementById('csv-checkbox-libri'); // Riferimento corretto al checkbox
+      const isFuturoChecked = document.getElementById('csv-checkbox-futuro'); // Riferimento corretto al checkbox
       // Filtro basato sul testo di ricerca
       if (searchText.length > 0) {
           filteredData = filteredData.filter(row =>
