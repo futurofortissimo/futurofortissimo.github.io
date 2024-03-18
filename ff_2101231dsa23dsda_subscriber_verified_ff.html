@@ -111,7 +111,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <button style="border-radius:42px" id="csv-search-button">🔍</button> <!-- Bottone di ricerca -->
 </div>
 <!-- Checkbox aggiunto qui sotto -->
-<div style="display: flex; justify-content: center; gap: 5px; padding: 5px 0;">
+<div style="display: flex; justify-content: center; gap: 5px; padding: 5px 0;" id="div_search">
   <input type="checkbox" id="csv-checkbox-libri" style="display: none;" />
   <label style="font-size:21px; font-family:Palladio; border-radius:42px;" class="button-parla-futuro" for="csv-checkbox-libri">Libri</label>
   <!-- Checkbox "Futuro" -->
@@ -284,21 +284,39 @@ document.addEventListener('DOMContentLoaded', function() {
             updateTable(allData); // Visualizza tutti i dati inizialmente
         });
 
-    function updateTable(data) {
-        const tableBody = document.getElementById('csv-table').getElementsByTagName('tbody')[0];
-        tableBody.innerHTML = ''; // Svuota la tabella prima di aggiornare i dati
-        data.forEach(row => {
-            const tr = document.createElement('tr');
-            const td = document.createElement('td');
-            const a = document.createElement('a');
-            a.href = row[2]; // Imposta il link
-            a.textContent = row[1]; // Imposta il testo
-            a.className = 'summary-link';
-            td.appendChild(a);
-            tr.appendChild(td);
-            tableBody.insertBefore(tr, tableBody.firstChild); // Inserisce la riga all'inizio del tbody
-        });
+    function selectRandomEntries(data, count) {
+        // Crea un array di indici unici
+        let indices = new Set();
+        while(indices.size < count && indices.size < data.length) {
+            const randomIndex = Math.floor(Math.random() * data.length);
+            indices.add(randomIndex);
+        }
+        // Restituisce le entrate corrispondenti agli indici selezionati
+        return Array.from(indices).map(index => data[index]);
     }
+
+    function updateTable(data) {
+      const tableBody = document.getElementById('csv-table').getElementsByTagName('tbody')[0];
+      tableBody.innerHTML = ''; // Svuota la tabella prima di aggiornare i dati
+
+      // Filtra le entrate per lunghezza del testo >= 3
+      const filteredData = data.filter(row => row[1] && row[1].length >= 3);
+
+      // Seleziona casualmente fino a 10 entrate dalle filtrate
+      const randomData = filteredData.length <= 10 ? filteredData : selectRandomEntries(filteredData, 10);
+
+      randomData.forEach(row => {
+          const tr = document.createElement('tr');
+          const td = document.createElement('td');
+          const a = document.createElement('a');
+          a.href = row[2]; // Imposta il link
+          a.textContent = row[1]; // Imposta il testo
+          a.className = 'summary-link';
+          td.appendChild(a);
+          tr.appendChild(td);
+          tableBody.appendChild(tr); // Aggiunge la riga alla fine del tbody
+      });
+  }
 
     const searchButton = document.getElementById('csv-search-button');
     const searchInput = document.getElementById('csv-search-input');
@@ -339,7 +357,8 @@ document.addEventListener('DOMContentLoaded', function() {
       // Aggiorna la tabella con i dati filtrati
       updateTable(filteredData);
   }
-
+    const divSearch = document.getElementById('div_search');
+    divSearch.addEventListener('click', performSearch);
     // Gestione click sul bottone di ricerca
     searchButton.addEventListener('click', performSearch);
     checkbox.addEventListener('change', performSearch);
