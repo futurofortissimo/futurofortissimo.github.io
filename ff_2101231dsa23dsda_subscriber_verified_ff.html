@@ -115,12 +115,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <br>
 <div id="csv-container" style="font-family:palladio; font-size:16px; border-radius:16px">
   <div style="display: flex; align-items: center; gap: 3px;">
-      <input type="text" id="csv-search-input" placeholder="Cosa chiedi al futuro? 🎵" style="width:75%; border-radius:16px" />
+      <input type="text" id="csv-search-input" placeholder="Cosa chiedi al futuro? 🎵" style="width:100%; border-radius:16px" />
       <button style="border-radius:16px" id="csv-search-button">🔍</button> <!-- Bottone di ricerca -->
   </div>
     <table id="csv-table" style="font-family:palladio; font-size:16px; border-radius:16px">
         <thead>
-        <td> </td>
+        <td></td>
         </thead>
         <tbody>
             <!-- Rows will be inserted here by JavaScript -->
@@ -200,7 +200,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .summary-link:hover {
         text-decoration: underline;
     }
+    .csv-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Webkit browsers */
+    }
     #csv-container {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+        overflow-y: scroll; /* Keep vertical scrolling */
         width: 100%;
         overflow-x: auto;
         border: none; /* Rimuove i bordi */
