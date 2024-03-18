@@ -121,7 +121,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <!-- Checkbox aggiunto qui sotto -->
   <div style="width:100%; padding: 10px 0;">
       <input type="checkbox" id="csv-checkbox" />
-      <label for="csv-checkbox">Libri</label>
+      <label class="button-parla-futuro-blu-bluscuro" for="csv-checkbox">Libri</label>
+  </div>
+  <div style="width:100%; padding: 10px 0;">
+      <input type="checkbox" id="csv-checkbox" />
+      <label for="csv-checkbox">futuro</label>
   </div>
 </div>
 
@@ -355,7 +359,7 @@ document.addEventListener('DOMContentLoaded', function() {
       let filteredData = allData; // Inizia con tutti i dati
       const searchText = searchInput.value.toLowerCase().split(' ').filter(parola => !paroleEscluse.includes(parola) && parola.trim() !== '');
       const isCheckboxChecked = document.getElementById('csv-checkbox').checked;
-
+      const checkbox = document.getElementById('csv-checkbox'); // Riferimento corretto al checkbox
       // Filtro basato sul testo di ricerca
       if (searchText.length > 0) {
           filteredData = filteredData.filter(row =>
