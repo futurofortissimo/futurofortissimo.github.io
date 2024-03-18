@@ -106,19 +106,38 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <hr style="height:2px;border-width:0;color:gray;background-color:black">
 <br>
 
-<div style="width:100%; margin-top:5px; display: flex; align-items: center; gap: 5px;font-size:21px; font-family:Palladio;border-radius:42px;">
-    <input type="text" id="csv-search-input" placeholder="Cosa chiedi al futuro? 🎵" style="width:100%;  margin:5px" />
+<div style="width:100%; margin-top:5px; display: flex; align-items: center; gap: 5px;font-size:21px; font-family:Palladio;">
+    <input type="text" id="csv-search-input" placeholder="  Cosa chiedi al futuro? 🎵" style="width:100%;  margin:5px;border-radius:42px;" />
     <button style="border-radius:42px" id="csv-search-button">🔍</button> <!-- Bottone di ricerca -->
 </div>
 <!-- Checkbox aggiunto qui sotto -->
 <div style="display: flex; justify-content: center; gap: 5px; padding: 5px 0;" id="div_search">
+  <!-- Checkbox "Libri" -->
   <input type="checkbox" id="csv-checkbox-libri" style="display: none;" />
   <label style="font-size:21px; font-family:Palladio; border-radius:42px;" class="button-parla-futuro" for="csv-checkbox-libri">Libri</label>
-  <!-- Checkbox "Futuro" -->
-  <input type="checkbox" id="csv-checkbox-futuro" style="display: none;" />
-  <label style="font-size:21px; font-family:Palladio;border-radius:42px;" class="button-parla-futuro-verde-acqua" for="csv-checkbox-futuro">Futuro</label>
+
+  <!-- Checkbox "ff" -->
+  <input type="checkbox" id="csv-checkbox-ff" style="display: none;" />
+  <label style="font-size:21px; font-family:Palladio;border-radius:42px;" class="button-parla-futuro-verde-acqua" for="csv-checkbox-ff">#ff</label>
+
+  <!-- Aggiungi qui ulteriori checkbox per Natura, Tecnologia, Società seguendo lo stesso schema -->
 </div>
 
+<!-- Seconda linea di filtri: Crypto, Sport, Clima, Salute, Metaverso, Dieta -->
+<div style="display: flex; justify-content: center; gap: 5px; padding: 5px 0;" id="div_search">
+  <!-- Checkbox "Crypto" -->
+  <input type="checkbox" id="csv-checkbox-crypto" style="display: none;" />
+  <label style="font-size:21px; font-family:Palladio;border-radius:42px;" class="button-parla-futuro-verde-acqua" for="csv-checkbox-crypto">Crypto</label>
+  <input type="checkbox" id="csv-checkbox-sport" style="display: none;" />
+  <label style="font-size:21px; font-family:Palladio;border-radius:42px;" class="button-parla-futuro-verde-acqua" for="csv-checkbox-crypto">Sport</label>
+  <input type="checkbox" id="csv-checkbox-alimentazione" style="display: none;" />
+  <label style="font-size:21px; font-family:Palladio;border-radius:42px;" class="button-parla-futuro-verde-acqua" for="csv-checkbox-crypto">Alimentazione</label>
+  <input type="checkbox" id="csv-checkbox-intelligenza-artificiale" style="display: none;" />
+  <label style="font-size:21px; font-family:Palladio;border-radius:42px;" class="button-parla-futuro-verde-acqua" for="csv-checkbox-crypto">Intelligenza Artificiale</label>
+  <input type="checkbox" id="csv-checkbox-salute" style="display: none;" />
+  <label style="font-size:21px; font-family:Palladio;border-radius:42px;" class="button-parla-futuro-verde-acqua" for="csv-checkbox-crypto">Salute</label>
+  <!-- Aggiungi qui ulteriori checkbox per Sport, Clima, Salute, Metaverso, Dieta seguendo lo stesso schema -->
+</div>
 
     <table id="csv-table" style="margin-top:0px; font-family:palladio; font-size:16px; border-radius:42px;">
         <tbody style="border-radius:42px;">
@@ -359,6 +378,13 @@ document.addEventListener('DOMContentLoaded', function() {
   }
     const divSearch = document.getElementById('div_search');
     divSearch.addEventListener('click', performSearch);
+
+
+    // Assegna l'event listener ai checkbox per aggiornare la ricerca al loro cambio di stato
+    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+        checkbox.addEventListener('change', performSearch);
+    });
+
     // Gestione click sul bottone di ricerca
     searchButton.addEventListener('click', performSearch);
     checkbox.addEventListener('change', performSearch);
