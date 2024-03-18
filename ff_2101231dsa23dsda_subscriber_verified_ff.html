@@ -276,6 +276,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         padding: 8px; /* Padding per le celle */
         text-align: left; /* Allineamento testo */
     }
+
+    #csv-table td {
+    height: 50px;
+    overflow: hidden; /* Previene il sovrapporsi di testo */
+}
+
+#csv-table tr td:first-child {
+    width: 20%;
+}
+
+#csv-table tr td:last-child {
+    width: 80%;
+}
 </style>
 
 
@@ -315,27 +328,37 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function updateTable(data) {
-      const tableBody = document.getElementById('csv-table').getElementsByTagName('tbody')[0];
-      tableBody.innerHTML = ''; // Svuota la tabella prima di aggiornare i dati
+        const tableBody = document.getElementById('csv-table').getElementsByTagName('tbody')[0];
+        tableBody.innerHTML = ''; // Svuota la tabella
 
-      // Filtra le entrate per lunghezza del testo >= 3
-      const filteredData = data.filter(row => row[1] && row[1].length >= 3);
+        data.forEach((row, index) => {
+            if (index < 10) { // Assicura di inserire solo 10 entries
+                const tr = document.createElement('tr');
+                const tdTopic = document.createElement('td');
+                const tdLink = document.createElement('td');
 
-      // Seleziona casualmente fino a 10 entrate dalle filtrate
-      const randomData = filteredData.length <= 10 ? filteredData : selectRandomEntries(filteredData, 10);
+                // Imposta il topic
+                tdTopic.textContent = row[0]; // Supponendo che il topic sia nella prima colonna del CSV
+                tdTopic.style.width = "20%"; // Occupa il 20% della larghezza
 
-      randomData.forEach(row => {
-          const tr = document.createElement('tr');
-          const td = document.createElement('td');
-          const a = document.createElement('a');
-          a.href = row[2]; // Imposta il link
-          a.textContent = row[1]; // Imposta il testo
-          a.className = 'summary-link';
-          td.appendChild(a);
-          tr.appendChild(td);
-          tableBody.appendChild(tr); // Aggiunge la riga alla fine del tbody
-      });
-  }
+                // Imposta il link
+                const a = document.createElement('a');
+                a.href = row[2];
+                a.textContent = row[1];
+                a.className = 'summary-link';
+                tdLink.appendChild(a);
+                tdLink.style.width = "80%"; // Occupa l'80% della larghezza
+
+                // Aggiungi stile per altezza delle celle
+                tdTopic.style.height = "50px";
+                tdLink.style.height = "50px";
+
+                tr.appendChild(tdTopic);
+                tr.appendChild(tdLink);
+                tableBody.appendChild(tr);
+            }
+        });
+    }
 
     const searchButton = document.getElementById('csv-search-button');
     const searchInput = document.getElementById('csv-search-input');
