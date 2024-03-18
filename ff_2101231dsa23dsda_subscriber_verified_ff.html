@@ -117,11 +117,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div style="display: flex; align-items: center; gap: 3px;">
       <input type="text" id="csv-search-input" placeholder="Cosa chiedi al futuro? 🎵" style="width:75%; border-radius:16px" />
       <button style="border-radius:16px" id="csv-search-button">🔍</button> <!-- Bottone di ricerca -->
-  <div id="csv-filters-2" style="margin-top: 10px;">
-    <button class="filter-button" style="background-color: #008000;">Natura 🌿</button>
-    <button class="filter-button" style="background-color: #ffff00;">Tecnologia 💡</button>
-    <button class="filter-button" style="background-color: #c0c0c0;">Società 👥</button>
-  </div>
   </div>
     <table id="csv-table" style="font-family:palladio; font-size:16px; border-radius:16px">
         <thead>
@@ -305,7 +300,6 @@ function checkEmail(inputEmail) {
 
 document.addEventListener('DOMContentLoaded', function() {
     let allData = [];
-    let selectedFilter = ""
     const paroleEscluse = ['perchè',
         'perché', 'quando', 'e', 'ma', 'se', 'come', 'con', 'su', 'per', 'tra', 'fra',
         'nel', 'nello', 'nella', 'nei', 'nelle', 'al', 'allo', 'alla', 'ai', 'agli', 'alle',
@@ -326,59 +320,41 @@ document.addEventListener('DOMContentLoaded', function() {
             updateTable(allData); // Visualizza tutti i dati inizialmente
         });
 
-    // Function to update the table based on search input and selected filter
     function updateTable(data) {
         const tableBody = document.getElementById('csv-table').getElementsByTagName('tbody')[0];
-        tableBody.innerHTML = ''; // Clear the table before updating
+        tableBody.innerHTML = ''; // Svuota la tabella prima di aggiornare i dati
         data.forEach(row => {
             const tr = document.createElement('tr');
             const td = document.createElement('td');
             const a = document.createElement('a');
-            a.href = row[2];
-            a.textContent = row[1];
+            a.href = row[2]; // Imposta il link
+            a.textContent = row[1]; // Imposta il testo
             a.className = 'summary-link';
             td.appendChild(a);
             tr.appendChild(td);
-            tableBody.insertBefore(tr, tableBody.firstChild);
+            tableBody.insertBefore(tr, tableBody.firstChild); // Inserisce la riga all'inizio del tbody
         });
     }
+
     const searchButton = document.getElementById('csv-search-button');
     const searchInput = document.getElementById('csv-search-input');
 
-    // Function to perform the search
     function performSearch() {
         const searchText = searchInput.value.toLowerCase().split(' ').filter(parola => !paroleEscluse.includes(parola) && parola.trim() !== '');
-        let filteredData = allData.filter(row => {
-            const textCondition = searchText.length === 0 || searchText.some(parola => row.some(cell => cell.toLowerCase().includes(parola)));
-            const filterCondition = !selectedFilter || row.some(cell => cell.toLowerCase().includes(selectedFilter.toLowerCase()));
-            return textCondition && filterCondition; // AND logical condition between text search and filter
-        });
-        updateTable(filteredData);
+        if (searchText.length > 0) {
+            let filteredData = allData.filter(row =>
+                searchText.some(parola =>
+                    row.some(cell => cell.toLowerCase().includes(parola))
+                )
+            );
+            updateTable(filteredData);
+        } else {
+            updateTable(allData);
+        }
     }
 
-    const searchButton = document.getElementById('csv-search-button');
-    const searchInput = document.getElementById('csv-search-input');
-
-    // Event listener for the search button
+    // Gestione click sul bottone di ricerca
     searchButton.addEventListener('click', performSearch);
-
-    // Event listener for pressing "Enter" in the search input
-    searchInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            e.preventDefault();
-            performSearch();
-        }
-    });
-
-    // Event listeners for filter buttons
-    document.querySelectorAll('.filter-button').forEach(button => {
-        button.addEventListener('click', function() {
-            document.querySelectorAll('.filter-button').forEach(btn => btn.classList.remove('selected')); // Remove the 'selected' class from all buttons
-            this.classList.add('selected'); // Add the 'selected' class to the clicked button
-            selectedFilter = this.textContent; // Update the selectedFilter variable
-            performSearch(); // Perform the search with the new filter
-        });
-    });
 
     // Gestisci anche l'evento "Enter" sulla tastiera per la ricerca
     searchInput.addEventListener('keypress', function(e) {
