@@ -379,7 +379,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Gestione click sul bottone di ricerca
     searchButton.addEventListener('click', performSearch);
-
+    checkbox.addEventListener('change', performSearch);
     // Gestisci anche l'evento "Enter" sulla tastiera per la ricerca
     searchInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
