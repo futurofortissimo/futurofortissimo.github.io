@@ -364,7 +364,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('csv-search-input');
     const checkbox = document.getElementById('csv-checkbox'); // Riferimento corretto al checkbox
     const checkboxLibri = document.getElementById('csv-checkbox-libri'); // Questo diventa ora un vero checkbox
-    const isFuturoChecked = document.getElementById('csv-checkbox-futuro'); // Riferimento corretto al checkbox
+    const checkboxFF = document.getElementById('csv-checkbox-ff'); // Questo diventa ora un vero checkbox
+    const checkboxAlimentazione = document.getElementById('csv-checkbox-alimentazione'); // Questo diventa ora un vero checkbox
+
 
     function performSearch() {
       let filteredData = allData; // Inizia con tutti i dati
@@ -372,7 +374,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // Ottieni lo stato checked dei checkbox (true o false)
       const isLibriChecked = document.getElementById('csv-checkbox-libri').checked;
       const isFuturoChecked = document.getElementById('csv-checkbox-futuro').checked;
-
+      const isAlimentazioneChecked = document.getElementById('csv-checkbox-futuro').checked;
       // Filtro basato sul testo di ricerca
       if (searchText.length > 0) {
           filteredData = filteredData.filter(row =>
@@ -395,10 +397,17 @@ document.addEventListener('DOMContentLoaded', function() {
               row.some(cell => cell.toLowerCase().includes(checkboxText))
           );
       }
+      if (isAlimentazioneChecked) {
+          // Assumi che il testo del filtro per "Alimentazione" sia definito qui
+          const checkboxText = "diet"; // Aggiusta questo testo secondo il tuo bisogno
+          filteredData = filteredData.filter(row => row.some(cell => cell.toLowerCase().includes(checkboxText)));
+      }
+
+
 
       // Aggiorna la tabella con i dati filtrati
       updateTable(filteredData);
-  }
+    }
     const divSearch = document.getElementById('div_search');
     divSearch.addEventListener('click', performSearch);
 
