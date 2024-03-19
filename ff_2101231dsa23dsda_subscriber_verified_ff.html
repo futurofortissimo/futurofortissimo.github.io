@@ -311,7 +311,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Imposta il topic
                 tdTopic.textContent = row[0]; // Supponendo che il topic sia nella prima colonna del CSV
-                tdTopic.style.width = "20%"; // Occupa il 20% della larghezza
+                tdTopic.style.width = "13%"; // Occupa il 20% della larghezza
 
                 // Imposta il link
                 const a = document.createElement('a');
@@ -319,11 +319,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 a.textContent = row[1];
                 a.className = 'summary-link';
                 tdLink.appendChild(a);
-                tdLink.style.width = "80%"; // Occupa l'80% della larghezza
+                tdLink.style.width = "87%"; // Occupa l'80% della larghezza
 
                 // Aggiungi stile per altezza delle celle
-                tdTopic.style.height = "80px";
-                tdLink.style.height = "80px";
+                tdTopic.style.height = "65px";
+                tdLink.style.height = "65px";
 
                 tr.appendChild(tdTopic);
                 tr.appendChild(tdLink);
