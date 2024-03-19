@@ -1756,12 +1756,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('csv-checkbox-futuro').addEventListener('change', performSearch);
     // Gestisci anche l'evento "Enter" sulla tastiera per la ricerca
 
-    searchInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            e.preventDefault(); // Previene l'invio del form, se presente
-            performSearch();
-        }
-    });
+    searchInput.addEventListener('keypress', performSearch);
 });
 
 </script>
