@@ -1460,11 +1460,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <input type="checkbox" id="csv-checkbox-libri" style="display: none;">
   <label style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 30px; font-family: 'ArgosBoldItalic', sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:42px;" class="button-parla-futuro" for="csv-checkbox-libri">📚</label>
 
+
+
   <input type="checkbox" id="csv-checkbox-clima" style="display: none;">
   <label style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 30px; font-family: 'ArgosBoldItalic', sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:42px;" class="button-parla-futuro-clima" for="csv-checkbox-clima">🍃</label>
   <!-- Checkbox "ff" -->
   <input type="checkbox" id="csv-checkbox-futuro" style="display: none;">
   <label style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 30px; font-family: 'ArgosBoldItalic', sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:42px;" class="button-parla-futuro-verde-acqua" for="csv-checkbox-futuro">🎼</label>
+
+  <button id="csv-refresh-button" style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 30px; font-family: 'ArgosBoldItalic', sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:42px;" id="csv-refresh-button">🔄</button> <!-- Bottone di ricerca -->
 
   <!-- Aggiungi qui ulteriori checkbox per Natura, Tecnologia, Società seguendo lo stesso schema -->
 </div>
@@ -1679,6 +1683,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     const searchButton = document.getElementById('csv-search-button');
+    const refreshButton = document.getElementById('csv-refresh-button');
+
     const searchInput = document.getElementById('csv-search-input');
     const checkbox = document.getElementById('csv-checkbox'); // Riferimento corretto al checkbox
     const checkboxLibri = document.getElementById('csv-checkbox-libri'); // Questo diventa ora un vero checkbox
@@ -1738,6 +1744,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Gestione click sul bottone di ricerca
     searchButton.addEventListener('click', performSearch);
+    refreshButton.addEventListener('click', performSearch);
+
     checkbox.addEventListener('change', performSearch);
     checkboxLibri.addEventListener('change', performSearch); // Ora usi 'change' invece di 'click'
     document.getElementById('csv-checkbox-futuro').addEventListener('change', performSearch);
