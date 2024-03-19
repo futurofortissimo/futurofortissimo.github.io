@@ -1468,7 +1468,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <input type="checkbox" id="csv-checkbox-futuro" style="display: none;">
   <label style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 30px; font-family: 'ArgosBoldItalic', sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:42px;" class="button-parla-futuro-verde-acqua" for="csv-checkbox-futuro">🎼</label>
 
-  <button id="csv-refresh-button" style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 30px; font-family: 'ArgosBoldItalic', sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:42px;" id="csv-refresh-button">🔄</button> <!-- Bottone di ricerca -->
 
   <!-- Aggiungi qui ulteriori checkbox per Natura, Tecnologia, Società seguendo lo stesso schema -->
 </div>
@@ -1652,7 +1651,7 @@ document.addEventListener('DOMContentLoaded', function() {
         tableBody.innerHTML = ''; // Svuota la tabella prima di popolarla nuovamente
 
         data.forEach((row, index) => {
-            if (index < 5) { // Assicura di inserire solo 10 entries
+            if (index < 25) { // Assicura di inserire solo 10 entries
                 const tr = document.createElement('tr');
                 tr.style.borderRadius = '42px'; // Imposta i bordi arrotondati per ogni riga
                 tr.style.width = '100%'; // Assicura che la riga occupi la larghezza intera della schermata
@@ -1764,6 +1763,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
 </script>
 
 
