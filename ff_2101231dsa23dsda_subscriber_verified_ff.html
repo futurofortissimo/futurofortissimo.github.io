@@ -1648,7 +1648,7 @@ document.addEventListener('DOMContentLoaded', function() {
         tableBody.innerHTML = ''; // Svuota la tabella prima di popolarla nuovamente
 
         data.forEach((row, index) => {
-            if (index < 10) { // Assicura di inserire solo 10 entries
+            if (index < 5) { // Assicura di inserire solo 10 entries
                 const tr = document.createElement('tr');
                 tr.style.borderRadius = '42px'; // Imposta i bordi arrotondati per ogni riga
                 tr.style.width = '100%'; // Assicura che la riga occupi la larghezza intera della schermata
@@ -1657,7 +1657,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const tdTopic = document.createElement('td');
                 tdTopic.textContent = row[0]; // Supponendo che il topic sia nella prima colonna del CSV
                 tdTopic.style.width = "13%"; // Occupa il 13% della larghezza
-                tdTopic.style.height = "65px"; // Imposta l'altezza della cella
+                tdTopic.style.height = "70px"; // Occupa il 13% della larghezza
 
                 const tdLink = document.createElement('td');
                 const a = document.createElement('a');
@@ -1666,7 +1666,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 a.className = 'summary-link';
                 tdLink.appendChild(a);
                 tdLink.style.width = "87%"; // Occupa l'87% della larghezza
-                tdLink.style.height = "65px"; // Imposta l'altezza della cella
+                tdLink.style.height = "70px"; // Occupa il 13% della larghezza
 
                 // Aggiunge prima il link e poi il topic per rispettare l'ordine richiesto
                 tr.appendChild(tdLink);
