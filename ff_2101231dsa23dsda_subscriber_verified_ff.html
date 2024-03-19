@@ -1744,18 +1744,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Gestione click sul bottone di ricerca
     searchButton.addEventListener('click', performSearch);
-    refreshButton.addEventListener('click', performSearch);
+    function refreshTable() {
+        const selectedData = selectRandomEntries(allData, 5); // Seleziona 5 voci casuali
+        updateTable(selectedData); // Aggiorna la tabella con le nuove voci selezionate
+    }
+
+    // Al click di 'refreshButton', invoca 'refreshTable' invece di 'performSearch'
+    refreshButton.addEventListener('click', refreshTable);
 
     checkbox.addEventListener('change', performSearch);
     checkboxLibri.addEventListener('change', performSearch); // Ora usi 'change' invece di 'click'
     document.getElementById('csv-checkbox-futuro').addEventListener('change', performSearch);
     // Gestisci anche l'evento "Enter" sulla tastiera per la ricerca
-
-    element.addEventListener(eventType, event => {
-        if (event.type === 'keypress' && event.key !== 'Enter') return;
-        event.preventDefault();
-        performSearch();
-    });
 
     searchInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
