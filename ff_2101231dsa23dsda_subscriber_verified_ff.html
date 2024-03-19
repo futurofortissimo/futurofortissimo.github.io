@@ -114,11 +114,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div style="display: flex; justify-content: center; gap: 5px; padding: 5px 0;" id="div_search">
   <!-- Checkbox "Libri" -->
   <input type="checkbox" id="csv-checkbox-libri" style="display: none;" />
-  <label style="font-size:21px; font-family:Palladio; border-radius:42px;" class="button-parla-futuro" for="csv-checkbox-libri">Libri</label>
+  <label style="font-size:21px; font-family:Palladio; border-radius:42px;" class="button-parla-futuro" for="csv-checkbox-libri">📚</label>
 
+  <input type="checkbox" id="csv-checkbox-clima" style="display: none;" />
+  <label style="font-size:21px; font-family:Palladio; border-radius:42px;" class="button-parla-futuro" for="csv-checkbox-clima">📚</label>
   <!-- Checkbox "ff" -->
   <input type="checkbox" id="csv-checkbox-futuro" style="display: none;" />
-  <label style="font-size:21px; font-family:Palladio;border-radius:42px;" class="button-parla-futuro-verde-acqua" for="csv-checkbox-futuro">#ff</label>
+  <label style="font-size:21px; font-family:Palladio;border-radius:42px;" class="button-parla-futuro-verde-acqua" for="csv-checkbox-futuro">🎼</label>
 
   <!-- Aggiungi qui ulteriori checkbox per Natura, Tecnologia, Società seguendo lo stesso schema -->
 </div>
@@ -338,6 +340,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('csv-search-input');
     const checkbox = document.getElementById('csv-checkbox'); // Riferimento corretto al checkbox
     const checkboxLibri = document.getElementById('csv-checkbox-libri'); // Questo diventa ora un vero checkbox
+    const checkboxClima = document.getElementById('csv-checkbox-clima'); // Questo diventa ora un vero checkbox
+
     const isFuturoChecked = document.getElementById('csv-checkbox-futuro'); // Riferimento corretto al checkbox
 
     function performSearch() {
@@ -345,6 +349,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const searchText = searchInput.value.toLowerCase().split(' ').filter(parola => !paroleEscluse.includes(parola) && parola.trim() !== '');
       // Ottieni lo stato checked dei checkbox (true o false)
       const isLibriChecked = document.getElementById('csv-checkbox-libri').checked;
+      const isClimaChecked = document.getElementById('csv-checkbox-clima').checked;
+
       const isFuturoChecked = document.getElementById('csv-checkbox-futuro').checked;
 
       // Filtro basato sul testo di ricerca
@@ -359,6 +365,12 @@ document.addEventListener('DOMContentLoaded', function() {
       // Filtro basato sul checkbox
       if (isLibriChecked) {
           const checkboxText = "book"; // Aggiusta questo testo secondo il tuo bisogno
+          filteredData = filteredData.filter(row =>
+              row.some(cell => cell.toLowerCase().includes(checkboxText))
+          );
+      }
+      if (isClimaChecked) {
+          const checkboxText = "clima"; // Aggiusta questo testo secondo il tuo bisogno
           filteredData = filteredData.filter(row =>
               row.some(cell => cell.toLowerCase().includes(checkboxText))
           );
