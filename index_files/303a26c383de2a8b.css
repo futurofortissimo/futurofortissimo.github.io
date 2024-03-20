@@ -93,6 +93,29 @@
   opacity: 0.3;
 }
 
+/* Stile specifico per ogni categoria quando non è selezionata */
+#csv-checkbox-criptovalute + .button-parla-futuro { background: linear-gradient(to right, #ff9900, #ff6600); }
+#csv-checkbox-sport + .button-parla-futuro { background: linear-gradient(to right, #00dbde, #fc00ff); }
+#csv-checkbox-alimentazione + .button-parla-futuro { background: linear-gradient(to right, #7b920a, #add100); }
+#csv-checkbox-intelligenza + .button-parla-futuro { background: linear-gradient(to right, #005bea, #00c6fb); }
+#csv-checkbox-salute + .button-parla-futuro { background: linear-gradient(to right, #ed213a, #93291e); }
+#csv-checkbox-wellbeing + .button-parla-futuro { background: linear-gradient(to right, #36d1dc, #5b86e5); }
+
+/* Stile quando il checkbox è selezionato: riduzione dell'opacità */
+#csv-checkbox-criptovalute:checked + .button-parla-futuro,
+#csv-checkbox-sport:checked + .button-parla-futuro,
+#csv-checkbox-alimentazione:checked + .button-parla-futuro,
+#csv-checkbox-intelligenza:checked + .button-parla-futuro,
+#csv-checkbox-salute:checked + .button-parla-futuro,
+#csv-checkbox-wellbeing:checked + .button-parla-futuro {
+  opacity: 0.5;
+}
+
+/* Effetto hover per aggiungere interattività */
+.button-parla-futuro:hover {
+  opacity: 0.8;
+}
+
 .button-parla-futuro-arancione-rosso:hover {
   background: linear-gradient(to top right, rgba(255, 165, 0, 0.7), rgba(255, 0, 0, 0.7)); /* Arancione verso Rosso (hover) */
 }
