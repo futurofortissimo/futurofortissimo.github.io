@@ -1523,6 +1523,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <label style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 25px; font-family: 'ArgosBoldItalic',
    sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:42px;" class="button-parla-futuro-verde-acqua" for="csv-checkbox-futuro">🎼</label>
 
+<div id="content-area"></div> <!-- Contenitore per i div dei contenuti -->
+
 
   <!-- Aggiungi qui ulteriori checkbox per Natura, Tecnologia, Società seguendo lo stesso schema -->
 </div>
@@ -1567,6 +1569,38 @@ document.addEventListener('DOMContentLoaded', function() {
             allData = csvText.split('\n').map(row => row.split(','));
             updateTable(allData); // Visualizza tutti i dati inizialmente
         });
+
+
+    function updateContent(data) {
+        const contentArea = document.getElementById('content-area');
+        contentArea.innerHTML = ''; // Svuota il contenitore prima di popolarlo nuovamente
+
+        data.forEach((row, index) => {
+            if (index < 25) { // Limita il numero di entries
+                const contentDiv = document.createElement('div');
+                contentDiv.style.borderRadius = '10px'; // Imposta i bordi arrotondati
+                contentDiv.style.padding = '10px'; // Spazio interno
+                contentDiv.style.marginBottom = '20px'; // Spazio tra i div
+                contentDiv.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)'; // Ombra leggera (opzionale)
+                contentDiv.style.backgroundColor = '#f9f9f9'; // Colore di sfondo
+
+                const textDiv = document.createElement('div'); // Div per il testo
+                textDiv.textContent = row[1]; // Testo (supponendo che sia nella seconda colonna del CSV)
+                textDiv.style.marginBottom = '10px'; // Spazio tra il testo e i topics
+
+                const topicsDiv = document.createElement('div'); // Div per i topics
+                topicsDiv.textContent = `Topics: ${row[0]}`; // Topics (supponendo che siano nella prima colonna del CSV)
+                topicsDiv.style.textAlign = 'left'; // Allinea i topics a sinistra
+
+                // Assembla il contenuto
+                contentDiv.appendChild(textDiv);
+                contentDiv.appendChild(topicsDiv);
+
+                // Aggiunge il div assemblato al contenitore principale
+                contentArea.appendChild(contentDiv);
+            }
+        });
+    }
 
     function selectRandomEntries(data, count) {
         // Crea un array di indici unici
