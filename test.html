@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fetch and Extract Element</title>
+</head>
+<body>
+    <script>
+        window.addEventListener('load', () => {
+            fetch('https://fortissimo.substack.com/posts')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const firstElement = doc.querySelector('.pencraft.pc-display-flex.pc-flexDirection-column.pc-padding-8.pc-reset.pc-borderRadius-sm._container_1uybr_1');
+                    console.log(firstElement.innerHTML);
+                    // You can then display this content on your page or manipulate it as needed.
+                })
+                .catch(error => console.error('Error fetching or parsing:', error));
+        });
+    </script>
+</body>
+</html>
