@@ -1664,6 +1664,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const isFuturoChecked = document.getElementById('csv-checkbox-futuro'); // Riferimento corretto al checkbox
 
+    // Gestisci anche l'evento "Enter" sulla tastiera per la ricerca
+    document.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            performSearch();
+        }
+    });
+
     function performSearch() {
       let filteredData = allData; // Inizia con tutti i dati
       const searchText = searchInput.value.toLowerCase().split(' ').filter(parola => !paroleEscluse.includes(parola) && parola.trim() !== '');
@@ -1816,12 +1823,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('csv-checkbox-tecnologia').addEventListener('change', performSearch);
     document.getElementById('csv-checkbox-podcast').addEventListener('change', performSearch);
 
-    // Gestisci anche l'evento "Enter" sulla tastiera per la ricerca
-    document.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            performSearch();
-        }
-    });
+
 });
 
 </script>
