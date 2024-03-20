@@ -85,13 +85,6 @@
   transition: opacity 0.3s ease;
 }
 
-/* Stile quando il checkbox è selezionato */
-#csv-checkbox-libri:checked + .button-parla-futuro,
-#csv-checkbox-clima:checked + .button-parla-futuro-clima,
-
-#csv-checkbox-futuro:checked + .button-parla-futuro-verde-acqua {
-  opacity: 0.3;
-}
 
 /* Stile specifico per ogni categoria quando non è selezionata */
 #csv-checkbox-criptovalute + .button-parla-futuro { background: linear-gradient(to right, #ff9900, #ff6600); }
@@ -100,8 +93,6 @@
 #csv-checkbox-intelligenza + .button-parla-futuro { background: linear-gradient(to right, #005bea, #00c6fb); }
 #csv-checkbox-salute + .button-parla-futuro { background: linear-gradient(to right, #ed213a, #93291e); }
 #csv-checkbox-wellbeing + .button-parla-futuro { background: linear-gradient(to right, #36d1dc, #5b86e5); }
-#csv-checkbox-uomo + .button-parla-futuro { background: linear-gradient(to right, #ff5f6d, #ffc371); }
-#csv-checkbox-tecnologia + .button-parla-futuro { background: linear-gradient(to right, #00f260, #0575e6); }
 
 /* Stile quando il checkbox è selezionato: riduzione dell'opacità */
 /* Stile quando il checkbox è selezionato: riduzione dell'opacità per le nuove categorie */
@@ -117,6 +108,50 @@
 #csv-checkbox-salute:checked + .button-parla-futuro,
 #csv-checkbox-wellbeing:checked + .button-parla-futuro {
   opacity: 0.5;
+}
+
+/* Stili specifici per categorie con background grigio leggero */
+#csv-checkbox-libri + .button-parla-futuro,
+#csv-checkbox-podcast + .button-parla-futuro-clima,
+#csv-checkbox-futuro + .button-parla-futuro-verde-acqua {
+  background-color: #f0f0f0; /* Grigio molto leggero */
+  color: black; /* Cambia il colore del testo per garantire leggibilità */
+  border: 1px solid #ddd; /* Bordo leggermente più scuro per definizione */
+}
+
+/* Modifica l'opacità per l'effetto selezionato */
+#csv-checkbox-libri:checked + .button-parla-futuro,
+#csv-checkbox-podcast:checked + .button-parla-futuro-clima,
+#csv-checkbox-futuro:checked + .button-parla-futuro-verde-acqua {
+  opacity: 0.6;
+}
+
+/* Stile per hover per aggiungere interattività */
+#csv-checkbox-libri + .button-parla-futuro:hover,
+#csv-checkbox-podcast + .button-parla-futuro-clima:hover,
+#csv-checkbox-futuro + .button-parla-futuro-verde-acqua:hover {
+  background-color: #e6e6e6; /* Un grigio leggermente più scuro per l'hover */
+}
+
+/* Tecnologia con sfondo grigio sfumato */
+#csv-checkbox-tecnologia + .button-parla-futuro {
+  background: linear-gradient(to right, #bdc3c7, #2c3e50); /* Grigio sfumato */
+  color: white; /* Per garantire la leggibilità del testo */
+}
+
+/* Uomo con sfondo rosso sfumato */
+#csv-checkbox-uomo + .button-parla-futuro-verde-acqua {
+  background: linear-gradient(to right, #e52d27, #b31217); /* Rosso sfumato */
+  color: white; /* Per garantire la leggibilità del testo */
+}
+
+/* Effetto hover per Tecnologia e Uomo */
+#csv-checkbox-tecnologia + .button-parla-futuro:hover {
+  background: linear-gradient(to right, #a4b0be, #34495e); /* Grigio più scuro per hover */
+}
+
+#csv-checkbox-uomo + .button-parla-futuro-verde-acqua:hover {
+  background: linear-gradient(to right, #c0392b, #8e44ad); /* Rosso più scuro per hover */
 }
 
 /* Effetto hover per aggiungere interattività */
