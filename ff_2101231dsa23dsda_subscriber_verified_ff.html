@@ -1582,29 +1582,13 @@ document.addEventListener('DOMContentLoaded', function() {
         data.forEach((row, index) => {
             if (index < 25) { // Limita il numero di entries
                 const contentDiv = document.createElement('div');
-                // Aggiungi un listener per l'hover
-                contentDiv.onmouseover = function() {
-                    this.style.backgroundColor = '#eee'; // Cambia il colore di sfondo all'hover
-                };
+                contentDiv.style.borderRadius = '10px'; // Imposta i bordi arrotondati
+                contentDiv.style.padding = '10px'; // Spazio interno
+                contentDiv.style.marginBottom = '20px'; // Spazio tra i div
+                contentDiv.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)'; // Ombra leggera (opzionale)
+                contentDiv.style.backgroundColor = '#f9f9f9'; // Colore di sfondo
 
-                contentDiv.onmouseout = function() {
-                    this.style.backgroundColor = '#f9f9f9'; // Ripristina il colore di sfondo
-                };
-
-                // Crea un elemento per l'angolo sfumato
-                const gradientDiv = document.createElement('div');
-                gradientDiv.style.position = 'absolute';
-                gradientDiv.style.bottom = '0';
-                gradientDiv.style.right = '0';
-                gradientDiv.style.width = '100%'; // Occupa tutta la larghezza
-                gradientDiv.style.height = '50px'; // Altezza dell'effetto sfumato
-                gradientDiv.style.background = 'linear-gradient(to bottom right, rgba(255,255,255,0), rgba(146,112,216,0.3))'; // Sfumatura da trasparente a viola
-                gradientDiv.style.pointerEvents = 'none'; // Assicura che l'elemento sfumato non interferisca con il click
-
-                // Appendi l'elemento sfumato al contentDiv
-                contentDiv.appendChild(gradientDiv);
-
-
+                const textDiv = document.createElement('div'); // Div per il testo
                 textDiv.textContent = row[1]; // Testo (supponendo che sia nella seconda colonna del CSV)
                 textDiv.style.marginBottom = '10px'; // Spazio tra il testo e i topics
 
