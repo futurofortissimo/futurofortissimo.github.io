@@ -1618,7 +1618,7 @@ document.addEventListener('DOMContentLoaded', function() {
         tableBody.innerHTML = ''; // Svuota la tabella prima di popolarla nuovamente
 
         data.forEach((row, index) => {
-            if (index < 25) { // Assicura di inserire solo 10 entries
+            if (index < 10) { // Assicura di inserire solo 10 entries
                 const tr = document.createElement('tr');
                 tr.style.borderRadius = '42px'; // Imposta i bordi arrotondati per ogni riga
                 tr.style.width = '100%'; // Assicura che la riga occupi la larghezza intera della schermata
@@ -1762,9 +1762,9 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
 
-
+      updateContent(filteredData);
       // Aggiorna la tabella con i dati filtrati
-      updateTable(filteredData);
+      // updateTable(filteredData);
   }
     const divSearch = document.getElementById('div_search');
     divSearch.addEventListener('click', performSearch);
