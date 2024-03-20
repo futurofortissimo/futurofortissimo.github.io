@@ -1541,7 +1541,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 </div>
 
-<div style="font-family:palladio; font-size:21px;" id="content-area"></div> <!-- Contenitore per i div dei contenuti -->
+<div style="font-family:palladio; font-size:21px;" id="content-area" class="div-contenitore"></div> <!-- Contenitore per i div dei contenuti -->
 
     <br>
 <div style="font-family:ArgosBoldItalic; font-size:16px; position: fixed; bottom: 0; left: 0; right: 0; background-color: #fff; border-top: 2px solid black; z-index: 1000; margin-bottom: 5px;">
@@ -1602,6 +1602,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 contentDiv.addEventListener('click', () => {
                     window.open(row[2], '_blank'); // Usa row[2] per l'URL
                 });
+                contentDiv.class = "div-contenitore"
                 // Aggiunge il div assemblato al contenitore principale
                 contentArea.appendChild(contentDiv);
             }
