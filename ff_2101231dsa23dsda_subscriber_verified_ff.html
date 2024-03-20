@@ -1586,14 +1586,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 contentDiv.style.padding = '10px'; // Spazio interno
                 contentDiv.style.marginBottom = '20px'; // Spazio tra i div
                 contentDiv.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)'; // Ombra leggera (opzionale)
-                contentDiv.style.backgroundColor = linear-gradient(to bottom right, rgba(249, 249, 249, 0), rgba(249, 249, 249, 0), #C8A2C8);  // Colore di sfondo
-                contentDiv.style.cursor = pointer; // Colore di sfondo
 
 
 
                 const textDiv = document.createElement('div'); // Div per il testo
                 textDiv.textContent = row[1]; // Testo (supponendo che sia nella seconda colonna del CSV)
                 textDiv.style.marginBottom = '10px'; // Spazio tra il testo e i topics
+                textDiv.style.backgroundColor = linear-gradient(to top right, rgba(148, 87, 235, 0.7), rgba(87, 87, 235, 0.7));
+                textDiv.style.cursor = pointer; // Colore di sfondo
 
                 const topicsDiv = document.createElement('div'); // Div per i topics
                 topicsDiv.textContent = `${row[0]}`; // Topics (supponendo che siano nella prima colonna del CSV)
