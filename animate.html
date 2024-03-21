@@ -5,7 +5,7 @@
 </head>
 <body bgcolor="“#000000”"></>
 
-<div class="container-animate">
+<div class="container">
   <div class="text"></div>
 </div>
 
@@ -20,7 +20,7 @@ body {
   background: #212121;
   height: 100%;
 }
-.container-animate {
+.container {
   height: 100%;
   width: 100%;
   justify-content: center;
@@ -102,7 +102,7 @@ const phrases = [
   'potrai usare keywords',
   'selezionare temi: 🍃 = clima',
   'e cercare tra pubblicazioni fortissime 🎼',
-  'se ti piace questo progetto, puoi condividerlo 💗',
+  'se ti piace questo progetto, condividi o supporta 💗',
   'Buona fortissima lettura!',
 ]
 
@@ -112,23 +112,10 @@ const fx = new TextScramble(el)
 let counter = 0
 const next = () => {
   fx.setText(phrases[counter]).then(() => {
-    if (counter < phrases.length * 2 - 1) { // Run for two full iterations
-      setTimeout(next, 1250)
-    } else {
-      // After two iterations, fade out the container
-      fadeOut(document.querySelector('.container-animate'))
-    }
+    setTimeout(next, 1250)
   })
-  counter = (counter + 1)
+  counter = (counter + 1) % phrases.length
 }
 
 next()
-
-function fadeOut(element) {
-  element.style.opacity = 0
-  setTimeout(() => {
-    element.style.display = 'none'
-    // Reveal main HTML content here, if it's hidden
-  }, 1000) // Match the transition duration
-}
 </script>
