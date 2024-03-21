@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latest RSS Post Display</title>
-    <style>
+<title>Latest RSS Post Display</title>
+    <style data-fullcalendar=""></style><style>
         @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap'); /* Palladio-like font */
         @import url('https://fonts.googleapis.com/css2?family=Argos:ital,wght@1,700&display=swap'); /* Similar to 'ArgosBoldItalic' */
 
@@ -26,6 +21,8 @@
             border-radius: 10px;
             background-image: url('https://substack-post-media.s3.amazonaws.com/public/images/d34c7b5d-0c03-4b87-a314-58c0fcdb0dd9_936x526.jpeg');
             background-size: cover;
+            font-family:palladio;
+
             background-position: center;
             background-repeat: no-repeat;
             color: #333;
@@ -36,6 +33,9 @@
             top: 0;
             left: 0;
             right: 0;
+            font-family:palladio;
+            font-size: 30px;
+
             bottom: 0;
             background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text readability */
             border-radius: 10px;
@@ -44,13 +44,23 @@
         .post-title, .post-subtitle, .post-link, ul {
             position: relative; /* Ensure the text appears above the overlay */
             z-index: 1;
+            color: white;
+
         }
         .post-title {
             font-size: 100%;
+            color: white;
+            font-family:palladio;
+            font-size: 30px;
+
             margin-bottom: 10px;
         }
         .post-subtitle {
             font-size: 100%;
+            color: white;
+            font-family:palladio;
+            font-size: 20px;
+
             margin-bottom: 20px;
         }
         .post-link {
@@ -61,8 +71,8 @@
             border: 1px solid white;
             padding: 10px;
             font-size: 30px;
-            font-family: 'Argos', sans-serif; /* ArgosBoldItalic */
-            background-color: transparent;
+            font-family:palladio;
+            background-color: lightblue;
             text-align: center;
             width: auto;
             text-decoration: none; /* Remove underline from links */
@@ -73,18 +83,21 @@
         ul {
             list-style-type: none;
             padding: 0;
+            font-family:palladio;
+
+            font-size: 15px;
+
         }
         li {
             margin-bottom: 10px;
         }
     </style>
-</head>
-<body>
+    <body>
 
 <div class="post-container">
     <div class="post-title">🎼 ff.88 Singolarità nel 2029?</div>
     <div class="post-subtitle">L'accelerazione robotica grazie a ChatGPT e OpenAI</div>
-    <a href="https://fortissimo.substack.com/p/ff88-singolarita-nel-2029" class="post-link">Parla al futuro 🔮</a>
+    <a href="https://fortissimo.substack.com/p/ff88-singolarita-nel-2029" class="post-link">Leggi ora</a>
     <ul>
         <li>🔗💬 <a href="https://futurofortissimo.github.io/" style="color: white;">Visita il sito di futuro fortissimo</a></li>
         <li>🔗🤖 <a href="https://www.youtube.com/watch?v=K1TOFzMpArs" style="color: white;">Salti dei cani di Boston Dynamics</a></li>
@@ -93,5 +106,6 @@
     </ul>
 </div>
 
-</body>
-</html>
+
+
+<div style="position: relative;" id="apollo-root-apollo_everywhere"></div></body></html>
