@@ -13,7 +13,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: 'Libre Baskerville', serif;
+            font-family:palladio;
             background-color: #f0f0f0;
         }
         .post-container {
@@ -21,8 +21,8 @@
             max-width: 80%;
             min-width: 300px;
             padding: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+            background-color: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
             background-image: url('https://substack-post-media.s3.amazonaws.com/public/images/d34c7b5d-0c03-4b87-a314-58c0fcdb0dd9_936x526.jpeg');
             background-size: cover;
@@ -44,21 +44,28 @@
         .post-title, .post-subtitle, .post-link, ul, .redirect-button {
             position: relative;
             z-index: 1;
+            font-family:palladio;
+
         }
         .post-title {
             font-size: 30px;
             margin-bottom: 10px;
+            font-family:palladio;
+
         }
         .post-subtitle {
             font-size: 20px;
+            font-family:palladio;
+
             margin-bottom: 20px;
         }
         .post-link {
             margin: 5px;
             display: inline-block;
-            border-radius: 20px;
-            border: 1px solid white;
+            border-radius: 40px;
             padding: 10px;
+            font-family:palladio;
+
             font-size: 20px;
             background-color: #00bef8;
             text-align: center;
@@ -82,12 +89,13 @@
             text-decoration: underline;
         }
         .redirect-button {
-            font-size: 16px;
+            font-size: 15px;
             padding: 10px 20px;
-            background-color: #4CAF50; /* Green */
+            background-color: #00bef8;
             color: white;
             border: none;
-            border-radius: 5px;
+            font-family:palladio;
+            border-radius: 40px;
             cursor: pointer;
             text-align: center;
             display: inline-block;
@@ -100,12 +108,14 @@
 <div class="post-container">
     <div class="post-title">🎼 ff.88 Singolarità nel 2029?</div>
     <div class="post-subtitle">L'accelerazione robotica grazie a ChatGPT e OpenAI</div>
-    <a href="https://fortissimo.substack.com/p/ff88-singolarita-nel-2029" class="post-link">Leggi ora</a>
+    <br> <br>
     <ul>
         <li>🤖 <a href="https://www.youtube.com/watch?v=K1TOFzMpArs">Salti dei cani di Boston Dynamics</a></li>
         <li>🧠 <a href="https://twitter.com/ylecun/status/1766498677751787723?s=20">Yann LeCun su dati visivi vs dati di lettura</a></li>
         <!-- Add more links as needed -->
     </ul>
+    <a href="https://fortissimo.substack.com/p/ff88-singolarita-nel-2029" class="post-link">Leggi ora</a>
+
     <button class="redirect-button" onclick="window.location.href='https://futurofortissimo.github.io/';">Vai al sito fortissimo</button>
 </div>
 
