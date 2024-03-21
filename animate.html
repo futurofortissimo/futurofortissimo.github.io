@@ -2,12 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text Display</title>
     <link rel="stylesheet" href="/index_files/303a26c383de2a8b.css">
     <style>
-
         html, body {
             margin: 0;
             padding: 0;
@@ -19,20 +17,20 @@
             background-color: #212121;
             font-family: 'ArgosBoldItalic';
             color: #fafafa;
-            font-size: 20px; /* Adjusted for better readability across devices */
+            font-size: 20px;
         }
 
         .container {
             display: flex;
             justify-content: center;
             align-items: center;
-            text-align: center; /* Ensures text within the container is centered */
+            text-align: center;
         }
 
         .text {
             font-weight: 100;
             color: #fafafa;
-            white-space: pre-wrap; /* Ensures text respects line breaks */
+            white-space: pre-wrap;
         }
 
         .dud {
@@ -40,68 +38,64 @@
         }
     </style>
 </head>
-
-
-
 <body onclick="redirectToLink()">
     <div class="container">
         <div class="text">Your dynamic text will appear here.</div>
     </div>
-
     <script>
-    class TextScramble {
-        constructor(el) {
-            this.el = el;
-            this.chars = '!<>-_\\/[]{}—=+*^?#________';
-            this.update = this.update.bind(this);
-        }
-        setText(newText) {
-            const oldText = this.el.innerText;
-            const length = Math.max(oldText.length, newText.length);
-            const promise = new Promise((resolve) => (this.resolve = resolve));
-            this.queue = [];
-            for (let i = 0; i < length; i++) {
-                const from = oldText[i] || '';
-                const to = newText[i] || '';
-                const start = Math.floor(Math.random() * 40);
-                const end = start + Math.floor(Math.random() * 40);
-                this.queue.push({ from, to, start, end });
+        class TextScramble {
+            constructor(el) {
+                this.el = el;
+                this.chars = '!<>-_\\/[]{}—=+*^?#________';
+                this.update = this.update.bind(this);
             }
-            cancelAnimationFrame(this.frameRequest);
-            this.frame = 0;
-            this.update();
-            return promise;
-        }
-        update() {
-            let output = '';
-            let complete = 0;
-            for (let i = 0, n = this.queue.length; i < n; i++) {
-                let { from, to, start, end, char } = this.queue[i];
-                if (this.frame >= end) {
-                    complete++;
-                    output += to;
-                } else if (this.frame >= start) {
-                    if (!char || Math.random() < 0.28) {
-                        char = this.randomChar();
-                        this.queue[i].char = char;
+            setText(newText) {
+                const oldText = this.el.innerText;
+                const length = Math.max(oldText.length, newText.length);
+                const promise = new Promise((resolve) => (this.resolve = resolve));
+                this.queue = [];
+                for (let i = 0; i < length; i++) {
+                    const from = oldText[i] || '';
+                    const to = newText[i] || '';
+                    const start = Math.floor(Math.random() * 40);
+                    const end = start + Math.floor(Math.random() * 40);
+                    this.queue.push({ from, to, start, end });
+                }
+                cancelAnimationFrame(this.frameRequest);
+                this.frame = 0;
+                this.update();
+                return promise;
+            }
+            update() {
+                let output = '';
+                let complete = 0;
+                for (let i = 0, n = this.queue.length; i < n; i++) {
+                    let { from, to, start, end, char } = this.queue[i];
+                    if (this.frame >= end) {
+                        complete++;
+                        output += to;
+                    } else if (this.frame >= start) {
+                        if (!char || Math.random() < 0.28) {
+                            char = this.randomChar();
+                            this.queue[i].char = char;
+                        }
+                        output += `<span class="dud">${char}</span>`;
+                    } else {
+                        output += from;
                     }
-                    output += `<span class="dud">${char}</span>`;
+                }
+                this.el.innerHTML = output;
+                if (complete === this.queue.length) {
+                    this.resolve();
                 } else {
-                    output += from;
+                    this.frameRequest = requestAnimationFrame(this.update);
+                    this.frame++;
                 }
             }
-            this.el.innerHTML = output;
-            if (complete === this.queue.length) {
-                this.resolve();
-            } else {
-                this.frameRequest = requestAnimationFrame(this.update);
-                this.frame++;
+            randomChar() {
+                return this.chars[Math.floor(Math.random() * this.chars.length)];
             }
         }
-        randomChar() {
-            return this.chars[Math.floor(Math.random() * this.chars.length)];
-        }
-    }
 
         const phrases = [
             'Stai per parlare al futuro',
@@ -117,10 +111,6 @@
 
         let counter = 0;
         const next = () => {
-            /* next function code remains unchanged */
-        };
-
-        const next = () => {
             fx.setText(phrases[counter]).then(() => {
                 setTimeout(next, 800); // Wait a bit before showing the next phrase
             });
@@ -129,7 +119,7 @@
         next();
 
         function redirectToLink() {
-            window.location.href = 'https://futurofortissimo.github.io/ff_2101231dsa23dsda_subscriber_verified_ff.html'; // Replace 'https://your-link.com' with your desired URL
+            window.location.href = 'https://futurofortissimo.github.io/ff_2101231dsa23dsda_subscriber_verified_ff.html';
         }
 
         setTimeout(() => {
