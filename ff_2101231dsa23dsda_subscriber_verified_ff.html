@@ -1488,13 +1488,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- Aggiungi qui ulteriori checkbox per Natura, Tecnologia, Società seguendo lo stesso schema -->
   </div>
 </div>
-<div style="width:100%; margin-top:5px; display: flex; align-items: center; gap: 5px;font-size:21px; font-family:Palladio;" id="div_search_4">
+<div style="width:100%; margin-top:5px; display: flex; align-items: center; gap: 5px;font-size:21px; font-family:Palladio;" id="div_search_2">
     <input type="text" id="csv-search-input" placeholder="  Cosa chiedi al futuro? 🎵" style="width:100%;  margin:5px;border-radius:42px;">
     <button style="border-radius:42px" id="csv-search-button">🔍</button> <!-- Bottone di ricerca -->
 </div>
 <!-- Checkbox aggiunto qui sotto -->
 
-<div style="display: flex; justify-content: center; gap: 3px; padding: 3px 0;" id="div_search_2">
+<div style="display: flex; justify-content: center; gap: 3px; padding: 3px 0;" id="div_search_3">
   <!-- Checkbox "Libri" -->
   <input type="checkbox" id="csv-checkbox-criptovalute" style="display: none;">
   <label style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 23px; font-family: 'ArgosBoldItalic',
@@ -1520,7 +1520,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 </div>
 
-<div style="display: flex; justify-content: center; gap: 3px; padding: 3px 0;" id="div_search_3">
+<div style="display: flex; justify-content: center; gap: 3px; padding: 3px 0;" id="div_search_4">
 
 
   <input type="checkbox" id="csv-checkbox-wellbeing" style="display: none;">
@@ -1547,7 +1547,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
-<div style="display: flex; justify-content: center; gap: 5px; padding: 5px 0;" id="div_search_4">
+<div style="display: flex; justify-content: center; gap: 5px; padding: 5px 0;" id="div_search_5">
   <!-- Checkbox "Libri" -->
   <input type="checkbox" id="csv-checkbox-libri" style="display: none;">
   <label style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 25px; font-family: 'ArgosBoldItalic',
@@ -1836,7 +1836,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       if (isMobilitybeingChecked) {
-          const checkboxText = "🎨"; // Aggiusta questo testo secondo il tuo bisogno
+          const checkboxText = "🚕"; // Aggiusta questo testo secondo il tuo bisogno
           filteredData = filteredData.filter(row =>
               row.some(cell => cell.toLowerCase().includes(checkboxText))
           );
@@ -1867,9 +1867,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const divSearch_5 = document.getElementById('div_search_5');
     divSearch_5.addEventListener('click', performSearch);
-
-    const divSearch_6 = document.getElementById('div_search_6');
-    divSearch_6.addEventListener('click', performSearch);
 
     // Assegna l'event listener ai checkbox per aggiornare la ricerca al loro cambio di stato
     document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
