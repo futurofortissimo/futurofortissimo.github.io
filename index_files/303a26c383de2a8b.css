@@ -132,15 +132,12 @@ label {
 /* Stili per lo span che conterrà il testo nascosto */
 .hover-info {
   position: absolute; /* Posizionamento assoluto all'interno del label */
-  top: 50%; /* Centrato verticalmente */
-  left: 50%; /* Centrato orizzontalmente */
-  transform: translate(-50%, -50%); /* Sposta lo span indietro di metà della sua larghezza e altezza per centrarlo esattamente */
+  top: 100%; /* Posiziona lo span subito sotto il label */
+  left: 50%; /* Centrato orizzontalmente rispetto al label */
+  transform: translateX(-50%); /* Sposta lo span indietro di metà della sua larghezza per centrarlo orizzontalmente */
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s, opacity 0.5s linear;
-  /* Aggiungi una proprietà transition per la sfocatura se desideri che compaia gradualmente */
-  transition: visibility 0s, opacity 0.5s linear, filter 0.5s linear;
-  filter: blur(5px); /* Inizia con una sfocatura */
   white-space: nowrap; /* Impedisci al testo di andare a capo */
 }
 
