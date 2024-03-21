@@ -409,30 +409,51 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     /* ... your existing styles ... */
 
     /* Overlay styles */
-    #overlay {
-        position: fixed; /* Position the overlay fixed full screen */
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-        z-index: 1000; /* High z-index to make it on top */
-        display: flex; /* To center the post container */
-        justify-content: center;
-        align-items: center;
-        opacity: 1;
-        transition: opacity 0.5s ease; /* Transition for the fade effect */
-    }
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+  z-index: 9999; /* high z-index */
+  /* rest of your styles */
+}
 
-    /* Close button styles */
-    #close-overlay {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        cursor: pointer;
-        font-size: 30px;
-        color: white;
-    }
+.close-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background-color: #00bef8; /* blue background */
+  border-radius: 50%; /* circular shape */
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+}
+
+#overlay .post-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* rest of your styles */
+}
+
+#__next {
+  position: relative;
+  z-index: 1; /* lower z-index */
+  background-color: white; /* ensure white background */
+}
+
+/* Ensure the footer is at the bottom */
+footer {
+  position: relative;
+  /* rest of your styles */
+}
 </style>
 
 
