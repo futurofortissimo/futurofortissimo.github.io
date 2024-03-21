@@ -1520,7 +1520,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 </div>
 
-<div style="display: flex; justify-content: center; gap: 3px; padding: 3px 0;" id="div_search_6">
+<div style="display: flex; justify-content: center; gap: 3px; padding: 3px 0;" id="div_search_3">
 
 
   <input type="checkbox" id="csv-checkbox-wellbeing" style="display: none;">
@@ -1529,13 +1529,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <input type="checkbox" id="csv-checkbox-art" style="display: none;">
   <label style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 23px; font-family: 'ArgosBoldItalic',
-  sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:20px;" class="button-parla-futuro" for="csv-checkbox-art">💆</label>
+  sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:20px;" class="button-parla-futuro" for="csv-checkbox-art">🎨</label>
+
+  <input type="checkbox" id="csv-checkbox-metaverse" style="display: none;">
+  <label style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 23px; font-family: 'ArgosBoldItalic',
+  sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:20px;" class="button-parla-futuro" for="csv-checkbox-metaverse">🥽</label>
+
+  <input type="checkbox" id="csv-checkbox-society" style="display: none;">
+  <label style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 23px; font-family: 'ArgosBoldItalic',
+  sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:20px;" class="button-parla-futuro" for="csv-checkbox-society">👥</label>
+
+  <input type="checkbox" id="csv-checkbox-mobility" style="display: none;">
+  <label style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 23px; font-family: 'ArgosBoldItalic',
+  sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:20px;" class="button-parla-futuro" for="csv-checkbox-mobility">🚕</label>
 
 </div>
 
 
 
-<div style="display: flex; justify-content: center; gap: 5px; padding: 5px 0;" id="div_search_3">
+<div style="display: flex; justify-content: center; gap: 5px; padding: 5px 0;" id="div_search_4">
   <!-- Checkbox "Libri" -->
   <input type="checkbox" id="csv-checkbox-libri" style="display: none;">
   <label style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 25px; font-family: 'ArgosBoldItalic',
@@ -1721,6 +1733,9 @@ document.addEventListener('DOMContentLoaded', function() {
       const isSaluteChecked = document.getElementById('csv-checkbox-salute').checked;
       const isWellbeingChecked = document.getElementById('csv-checkbox-wellbeing').checked;
       const isArtChecked = document.getElementById('csv-checkbox-art').checked;
+      const isMetaverseChecked = document.getElementById('csv-checkbox-metaverse').checked;
+      const isSocietyChecked = document.getElementById('csv-checkbox-society').checked;
+      const isMobilitybeingChecked = document.getElementById('csv-checkbox-mobility').checked;
 
       // Filtro basato sul testo di ricerca
       if (searchText.length > 0) {
@@ -1812,6 +1827,28 @@ document.addEventListener('DOMContentLoaded', function() {
               row.some(cell => cell.toLowerCase().includes(checkboxText))
           );
       }
+
+      if (isMetaverseChecked) {
+          const checkboxText = "🥽"; // Aggiusta questo testo secondo il tuo bisogno
+          filteredData = filteredData.filter(row =>
+              row.some(cell => cell.toLowerCase().includes(checkboxText))
+          );
+      }
+
+      if (isMobilitybeingChecked) {
+          const checkboxText = "🎨"; // Aggiusta questo testo secondo il tuo bisogno
+          filteredData = filteredData.filter(row =>
+              row.some(cell => cell.toLowerCase().includes(checkboxText))
+          );
+      }
+
+      if (isSocietyChecked) {
+          const checkboxText = "👥"; // Aggiusta questo testo secondo il tuo bisogno
+          filteredData = filteredData.filter(row =>
+              row.some(cell => cell.toLowerCase().includes(checkboxText))
+          );
+      }
+
       updateContent(filteredData);
       // Aggiorna la tabella con i dati filtrati
       // updateTable(filteredData);
@@ -1861,6 +1898,10 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('csv-checkbox-uomo').addEventListener('change', performSearch);
     document.getElementById('csv-checkbox-tecnologia').addEventListener('change', performSearch);
     document.getElementById('csv-checkbox-podcast').addEventListener('change', performSearch);
+    document.getElementById('csv-checkbox-art').addEventListener('change', performSearch);
+    document.getElementById('csv-checkbox-metaverse').addEventListener('change', performSearch);
+    document.getElementById('csv-checkbox-mobility').addEventListener('change', performSearch);
+    document.getElementById('csv-checkbox-society').addEventListener('change', performSearch);
 
 
 });
