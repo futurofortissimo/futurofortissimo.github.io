@@ -124,25 +124,32 @@
   transition: opacity 0.3s ease;
 }
 
-<style>
-  .hover-info {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear, filter 0.5s linear;
-    filter: blur(5px);
-  }
+label {
+  position: relative; /* Imposta il label come contenitore di riferimento per il posizionamento assoluto dello span */
+  /* Altri stili preesistenti per il label */
+}
 
-  label:hover .hover-info {
-    visibility: visible;
-    opacity: 1;
-    filter: blur(0);
-  }
+/* Stili per lo span che conterrà il testo nascosto */
+.hover-info {
+  position: absolute; /* Posizionamento assoluto all'interno del label */
+  top: 50%; /* Centrato verticalmente */
+  left: 50%; /* Centrato orizzontalmente */
+  transform: translate(-50%, -50%); /* Sposta lo span indietro di metà della sua larghezza e altezza per centrarlo esattamente */
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+  /* Aggiungi una proprietà transition per la sfocatura se desideri che compaia gradualmente */
+  transition: visibility 0s, opacity 0.5s linear, filter 0.5s linear;
+  filter: blur(5px); /* Inizia con una sfocatura */
+  white-space: nowrap; /* Impedisci al testo di andare a capo */
+}
 
-  /* Your existing styles for labels */
-  label {
-    margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 25px; font-family: 'ArgosBoldItalic', sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:42px;
-  }
-</style>
+/* Quando il label è in hover, mostra lo span e rimuovi la sfocatura */
+label:hover .hover-info {
+  visibility: visible;
+  opacity: 1;
+  filter: blur(0);
+}
 
 /* Stile specifico per ogni categoria quando non è selezionata */
 #csv-checkbox-criptovalute + .button-parla-futuro { background: linear-gradient(to right, #36d1dc, #5b86e5); }
