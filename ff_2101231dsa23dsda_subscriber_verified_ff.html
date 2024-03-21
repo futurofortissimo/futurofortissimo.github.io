@@ -1516,12 +1516,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <label style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 23px; font-family: 'ArgosBoldItalic',
   sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:20px;" class="button-parla-futuro" for="csv-checkbox-salute">💊</label>
 
+
+
+</div>
+
+<div style="display: flex; justify-content: center; gap: 3px; padding: 3px 0;" id="div_search_6">
+
+
   <input type="checkbox" id="csv-checkbox-wellbeing" style="display: none;">
   <label style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 23px; font-family: 'ArgosBoldItalic',
   sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:20px;" class="button-parla-futuro" for="csv-checkbox-wellbeing">💆</label>
 
+  <input type="checkbox" id="csv-checkbox-art" style="display: none;">
+  <label style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 23px; font-family: 'ArgosBoldItalic',
+  sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:20px;" class="button-parla-futuro" for="csv-checkbox-art">💆</label>
 
 </div>
+
 
 
 <div style="display: flex; justify-content: center; gap: 5px; padding: 5px 0;" id="div_search_3">
@@ -1709,6 +1720,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const isIntelligenzaChecked = document.getElementById('csv-checkbox-intelligenza').checked;
       const isSaluteChecked = document.getElementById('csv-checkbox-salute').checked;
       const isWellbeingChecked = document.getElementById('csv-checkbox-wellbeing').checked;
+      const isArtChecked = document.getElementById('csv-checkbox-art').checked;
 
       // Filtro basato sul testo di ricerca
       if (searchText.length > 0) {
@@ -1794,7 +1806,12 @@ document.addEventListener('DOMContentLoaded', function() {
           );
       }
 
-
+      if (isArtChecked) {
+          const checkboxText = "🎨"; // Aggiusta questo testo secondo il tuo bisogno
+          filteredData = filteredData.filter(row =>
+              row.some(cell => cell.toLowerCase().includes(checkboxText))
+          );
+      }
       updateContent(filteredData);
       // Aggiorna la tabella con i dati filtrati
       // updateTable(filteredData);
@@ -1814,6 +1831,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const divSearch_5 = document.getElementById('div_search_5');
     divSearch_5.addEventListener('click', performSearch);
 
+    const divSearch_6 = document.getElementById('div_search_6');
+    divSearch_6.addEventListener('click', performSearch);
 
     // Assegna l'event listener ai checkbox per aggiornare la ricerca al loro cambio di stato
     document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
