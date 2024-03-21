@@ -11,8 +11,6 @@
         fetch('pubs.json?' + new Date().getTime())
             .then(response => response.json())
             .then(data => {
-            .then(response => response.json())
-            .then(data => {
                 const randomEntry = data[Math.floor(Math.random() * data.length)];
                 document.querySelector('.post-container').style.backgroundImage = `url('${randomEntry.img}')`;
                 document.querySelector('.post-title').innerHTML = randomEntry.title;
@@ -34,9 +32,7 @@
             })
             .catch(error => console.error('Error loading the JSON file:', error));
     });
-    }
     </script>
-
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
 
