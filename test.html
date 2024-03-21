@@ -3,44 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latest Post from RSS Feed</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/rss-parser/3.9.0/rss-parser.min.js"></script>
+    <title>Latest RSS Post Display</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+        .post-container {
+            position: relative;
+            width: 60%;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+        }
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+            border-radius: 10px;
+        }
+        .post-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .post-subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .post-link {
+            display: inline-block;
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .post-link:hover {
+            background-color: #0056b3;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .link-description {
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
-    <div id="latest-post">
-        <!-- The latest post will be displayed here -->
-    </div>
 
-    <script>
-        // Function to fetch and display the latest post
-        async function fetchAndDisplayLatestPost() {
-            const CORS_PROXY = "https://cors-anywhere.herokuapp.com/"; // Using a CORS proxy to avoid CORS policy issue
-            const FEED_URL = "https://fortissimo.substack.com/feed";
-            let parser = new RSSParser();
+<div class="post-container">
+    <img src="https://substack-post-media.s3.amazonaws.com/public/images/d34c7b5d-0c03-4b87-a314-58c0fcdb0dd9_936x526.jpeg" class="background-image" alt="Post Background">
+    <div class="post-title">🎼 ff.88 Singolarità nel 2029?</div>
+    <div class="post-subtitle">L'accelerazione robotica grazie a ChatGPT e OpenAI</div>
+    <a href="https://fortissimo.substack.com/p/ff88-singolarita-nel-2029" class="post-link">Read Post</a>
+    <ul>
+        <li>🔗💬 <a href="https://futurofortissimo.github.io/">Visita il sito di futuro fortissimo</a></li>
+        <li>🔗🤖 <a href="https://www.youtube.com/watch?v=K1TOFzMpArs">Salti dei cani di Boston Dynamics</a></li>
+        <li>🔗🧠 <a href="https://twitter.com/ylecun/status/1766498677751787723?s=20">Yann LeCun su dati visivi vs dati di lettura</a></li>
+        <!-- Add more links as needed -->
+    </ul>
+</div>
 
-            try {
-                const feed = await parser.parseURL(CORS_PROXY + FEED_URL);
-                const latestPost = feed.items[0]; // Assuming the first item is the latest post
-
-                // Constructing HTML content for the latest post
-                let content = `
-                    <h2>${latestPost.title}</h2>
-                    <a href="${latestPost.link}">Read more</a>
-                    <img src="${latestPost.enclosure.url}" alt="Post Image" style="max-width: 100%; height: auto;">
-                    <ul>
-                        ${latestPost.contentSnippet.split('\n').map(item => `<li>${item}</li>`).join('')}
-                    </ul>
-                `;
-
-                // Displaying the latest post in the div
-                document.getElementById('latest-post').innerHTML = content;
-            } catch (error) {
-                console.error("Failed to fetch the latest post:", error);
-            }
-        }
-
-        // Call the function when the page loads
-        fetchAndDisplayLatestPost();
-    </script>
 </body>
 </html>
