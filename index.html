@@ -8,7 +8,9 @@
     <title>futuro fortissimo | michele merelli </title>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        fetch('pubs.json')
+        fetch('pubs.json?' + new Date().getTime())
+            .then(response => response.json())
+            .then(data => {
             .then(response => response.json())
             .then(data => {
                 const randomEntry = data[Math.floor(Math.random() * data.length)];
