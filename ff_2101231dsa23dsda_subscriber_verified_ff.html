@@ -40,7 +40,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     background: #212121;
     height: 100%;
   }
-  .container {
+  .container-animate {
     height: 100%;
     width: 100%;
     justify-content: center;
@@ -136,7 +136,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         setTimeout(next, 1250)
       } else {
         // After two iterations, fade out the container
-        fadeOut(document.querySelector('.container'))
+        fadeOut(document.querySelector('.container-animate'))
       }
     })
     counter = (counter + 1)
@@ -152,7 +152,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }, 1000) // Match the transition duration
   }
   </script>
-
 
 
   <link rel="manifest" href="/index_files/manifest.json">
@@ -1565,14 +1564,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </div>
         </header>
 
-        <div class="container">
-          <div class="text"></div>
-        </div>
+
 
 <div class="flex flex-col justify-center m-0 p-0 flex-1 min-h-screen" style="margin-top: 40px;"><main class="flex flex-grow flex-1 overflow-y-scroll flex-col  w-full"><div class="flex flex-grow flex-col items-center justify-between p-4"><div class="__variable_ee7e36 font-valkyrie max-w-[714px] mx-auto px-4 sm:px-6 lg:px-4 book-section">
 <hr style="height:2px;border-width:0;color:gray;background-color:black">
 <br>
 
+<div class="container">
+  <div class="text"></div>
+</div>
 
 <div style="width:100%; margin-top:5px; align-items: center; justify-content: center; display: flex; align-items: center; gap: 5px;font-size:21px; font-family:Palladio;">
   <div style="display: flex; justify-content: center; gap: 5px; padding: 5px 0;" id="support">
@@ -1671,37 +1671,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 </div>
-<style>
-    @import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';
-    body {
-      font-family: ArgosBoldItalic;
-      background: #212121;
-      height: 100%;
-      margin: 0; /* Added to reset default margin */
-    }
-    .container {
-      position: fixed; /* Make the container fixed */
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #212121; /* Set background color */
-      z-index: 1000; /* Set z-index to be on top */
-      transition: opacity 1s ease; /* Transition for fading out */
-    }
-    .text {
-      font-weight: 100;
-      font-size: 30px;
-      color: #fafafa;
-    }
-    .dud {
-      color: #757575;
-    }
-    /* Rest of your styles */
-  </style>
+
 
 <script>
 

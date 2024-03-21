@@ -5,7 +5,7 @@
 </head>
 <body bgcolor="“#000000”"></>
 
-<div class="container">
+<div class="container-animate">
   <div class="text"></div>
 </div>
 
@@ -20,7 +20,7 @@ body {
   background: #212121;
   height: 100%;
 }
-.container {
+.container-animate {
   height: 100%;
   width: 100%;
   justify-content: center;
@@ -116,7 +116,7 @@ const next = () => {
       setTimeout(next, 1250)
     } else {
       // After two iterations, fade out the container
-      fadeOut(document.querySelector('.container'))
+      fadeOut(document.querySelector('.container-animate'))
     }
   })
   counter = (counter + 1)
