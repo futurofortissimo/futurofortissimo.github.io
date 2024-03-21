@@ -1,22 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Fetch and Extract Element</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Post from RSS Feed</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rss-parser/3.9.0/rss-parser.min.js"></script>
 </head>
 <body>
+    <div id="latest-post">
+        <!-- The latest post will be displayed here -->
+    </div>
+
     <script>
-        window.addEventListener('load', () => {
-            fetch('https://fortissimo.substack.com/posts')
-                .then(response => response.text())
-                .then(html => {
-                    const parser = new DOMParser();
-                    const doc = parser.parseFromString(html, 'text/html');
-                    const firstElement = doc.querySelector('.pencraft.pc-display-flex.pc-flexDirection-column.pc-padding-8.pc-reset.pc-borderRadius-sm._container_1uybr_1');
-                    console.log(firstElement.innerHTML);
-                    // You can then display this content on your page or manipulate it as needed.
-                })
-                .catch(error => console.error('Error fetching or parsing:', error));
-        });
+        // Function to fetch and display the latest post
+        async function fetchAndDisplayLatestPost() {
+            const CORS_PROXY = "https://cors-anywhere.herokuapp.com/"; // Using a CORS proxy to avoid CORS policy issue
+            const FEED_URL = "https://fortissimo.substack.com/feed";
+            let parser = new RSSParser();
+
+            try {
+                const feed = await parser.parseURL(CORS_PROXY + FEED_URL);
+                const latestPost = feed.items[0]; // Assuming the first item is the latest post
+
+                // Constructing HTML content for the latest post
+                let content = `
+                    <h2>${latestPost.title}</h2>
+                    <a href="${latestPost.link}">Read more</a>
+                    <img src="${latestPost.enclosure.url}" alt="Post Image" style="max-width: 100%; height: auto;">
+                    <ul>
+                        ${latestPost.contentSnippet.split('\n').map(item => `<li>${item}</li>`).join('')}
+                    </ul>
+                `;
+
+                // Displaying the latest post in the div
+                document.getElementById('latest-post').innerHTML = content;
+            } catch (error) {
+                console.error("Failed to fetch the latest post:", error);
+            }
+        }
+
+        // Call the function when the page loads
+        fetchAndDisplayLatestPost();
     </script>
 </body>
 </html>
