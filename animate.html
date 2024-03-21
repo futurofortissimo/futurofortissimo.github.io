@@ -120,6 +120,12 @@
             /* next function code remains unchanged */
         };
 
+        const next = () => {
+            fx.setText(phrases[counter]).then(() => {
+                setTimeout(next, 800); // Wait a bit before showing the next phrase
+            });
+            counter = (counter + 1) % phrases.length; // Loop back to the first phrase after the last one
+        };
         next();
 
         function redirectToLink() {
