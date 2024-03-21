@@ -5,7 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preload" href="/index_files/303a26c383de2a8b.css" as="style"><link rel="stylesheet" href="/index_files/303a26c383de2a8b.css" data-n-g="">
 
-    <title>Latest RSS Post Display</title>
+    <title>futuro fortissimo | michele merelli </title>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('pubs.json')
+            .then(response => response.json())
+            .then(data => {
+                const randomEntry = data[Math.floor(Math.random() * data.length)];
+                document.querySelector('.post-container').style.backgroundImage = `url('${randomEntry.img}')`;
+                document.querySelector('.post-title').innerHTML = randomEntry.title;
+                document.querySelector('.post-subtitle').innerHTML = randomEntry.subtitle;
+
+                // Update the 'Leggi ora' button link
+                const readMoreButton = document.querySelector('.redirect-button');
+                readMoreButton.href = randomEntry.readMoreUrl;
+
+                // Update links in the list
+                const linksContainer = document.querySelector('ul');
+                linksContainer.innerHTML = ''; // Clear previous links
+                randomEntry.links.forEach(link => {
+                    const li = document.createElement('li');
+                    li.className = 'post-subtitle'; // Added class for consistent styling
+                    li.innerHTML = `<a href="${link.url}">${link.text}</a>`;
+                    linksContainer.appendChild(li);
+                });
+            })
+            .catch(error => console.error('Error loading the JSON file:', error));
+    });
+    </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
 
