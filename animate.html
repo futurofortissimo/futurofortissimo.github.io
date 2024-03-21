@@ -100,8 +100,9 @@ class TextScramble {
 const phrases = [
   'Stai per parlare al futuro',
   'potrai usare keywords',
-  'selezionare temi: 🍃 = clima,',
+  'selezionare temi: 🍃 = clima',
   'e cercare tra pubblicazioni fortissime 🎼',
+  'se ti piace questo progetto, puoi condividerlo 💗',
   'Buona fortissima lettura!',
 ]
 
@@ -111,10 +112,23 @@ const fx = new TextScramble(el)
 let counter = 0
 const next = () => {
   fx.setText(phrases[counter]).then(() => {
-    setTimeout(next, 1250)
+    if (counter < phrases.length * 2 - 1) { // Run for two full iterations
+      setTimeout(next, 1250)
+    } else {
+      // After two iterations, fade out the container
+      fadeOut(document.querySelector('.container'))
+    }
   })
-  counter = (counter + 1) % phrases.length
+  counter = (counter + 1)
 }
 
 next()
+
+function fadeOut(element) {
+  element.style.opacity = 0
+  setTimeout(() => {
+    element.style.display = 'none'
+    // Reveal main HTML content here, if it's hidden
+  }, 1000) // Match the transition duration
+}
 </script>
