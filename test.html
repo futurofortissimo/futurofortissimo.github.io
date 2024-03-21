@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Latest RSS Post Display</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap'); /* Palladio-like font */
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
 
         body, html {
             height: 100%;
@@ -13,13 +13,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: 'Libre Baskerville', serif; /* Palladio-like font */
+            font-family: 'Libre Baskerville', serif;
             background-color: #f0f0f0;
         }
         .post-container {
             position: relative;
-            max-width: 80%; /* Changed from width to max-width to control the expansion */
-            min-width: 300px; /* Minimum width to ensure readability */
+            max-width: 80%;
+            min-width: 300px;
             padding: 20px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             background-color: rgba(255, 255, 255, 0.8);
@@ -28,7 +28,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            color: white; /* Changed text color to white for readability */
+            color: white;
         }
         .post-container::before {
             content: '';
@@ -37,20 +37,20 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text readability */
+            background: rgba(0, 0, 0, 0.5);
             border-radius: 10px;
             z-index: 0;
         }
-        .post-title, .post-subtitle, .post-link, ul {
-            position: relative; /* Ensure the text appears above the overlay */
+        .post-title, .post-subtitle, .post-link, ul, .redirect-button {
+            position: relative;
             z-index: 1;
         }
         .post-title {
-            font-size: 30px; /* Adjusted title font size */
+            font-size: 30px;
             margin-bottom: 10px;
         }
         .post-subtitle {
-            font-size: 20px; /* Adjusted subtitle font size */
+            font-size: 20px;
             margin-bottom: 20px;
         }
         .post-link {
@@ -59,120 +59,55 @@
             border-radius: 20px;
             border: 1px solid white;
             padding: 10px;
-            font-size: 20px; /* Adjusted button font size */
+            font-size: 20px;
             background-color: #00bef8;
             text-align: center;
             width: auto;
-            text-decoration: none; /* Remove underline from links */
+            text-decoration: none;
         }
 
         ul {
             list-style-type: none;
             padding: 0;
-            font-size: 15px; /* Adjusted font size for list */
+            font-size: 15px;
         }
         li {
             margin-bottom: 10px;
         }
         a {
-            color: white; /* Ensure all links are white */
-            text-decoration: none; /* Remove underline from all links */
+            color: white;
+            text-decoration: none;
         }
         a:hover {
-            text-decoration: underline; /* Add underline on hover for better UX */
+            text-decoration: underline;
         }
-        #fullPageClickable {
-  position: fixed; /* or 'absolute' depending on use case */
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 999; /* Ensure it's above other content; adjust as necessary */
-  cursor: pointer; /* Change cursor to indicate it's clickable */
-}
+        .redirect-button {
+            font-size: 16px;
+            padding: 10px 20px;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            display: inline-block;
+            margin: 20px 0;
+        }
     </style>
 </head>
 <body>
 
-  <!-- Overlay content -->
-  <div id="overlay">
-      <div id="close-overlay">X</div> <!-- Close button -->
-      <!-- Overlay post container -->
-      <div class="post-container">
-          <div class="post-title">🎼 ff.88 Singolarità nel 2029?</div>
-          <div class="post-subtitle">L'accelerazione robotica grazie a ChatGPT e OpenAI</div>
-          <a href="https://fortissimo.substack.com/p/ff88-singolarita-nel-2029" class="post-link">Leggi ora</a>
-          <ul>
-              <li>🤖 <a href="https://www.youtube.com/watch?v=K1TOFzMpArs">Salti dei cani di Boston Dynamics</a></li>
-              <li>🧠 <a href="https://twitter.com/ylecun/status/1766498677751787723?s=20">Yann LeCun su dati visivi vs dati di lettura</a></li>
-              <!-- Add more links as needed -->
-          </ul>
-  </div>
-  </div>
-  <div id="fullPageClickable"></div>
-
+<div class="post-container">
+    <div class="post-title">🎼 ff.88 Singolarità nel 2029?</div>
+    <div class="post-subtitle">L'accelerazione robotica grazie a ChatGPT e OpenAI</div>
+    <a href="https://fortissimo.substack.com/p/ff88-singolarita-nel-2029" class="post-link">Leggi ora</a>
+    <ul>
+        <li>🤖 <a href="https://www.youtube.com/watch?v=K1TOFzMpArs">Salti dei cani di Boston Dynamics</a></li>
+        <li>🧠 <a href="https://twitter.com/ylecun/status/1766498677751787723?s=20">Yann LeCun su dati visivi vs dati di lettura</a></li>
+        <!-- Add more links as needed -->
+    </ul>
+    <button class="redirect-button" onclick="window.location.href='https://futurofortissimo.github.io/';">Vai al sito fortissimo</button>
 </div>
-
-<script>
-document.getElementById('fullPageClickable').addEventListener('click', function() {
-  window.location.href = 'https://futurofortissimo.github.io/';
-});
-</script>
-<script>
-    // Function to close/hide the overlay
-    function closeOverlay() {
-        var overlay = document.getElementById('overlay');
-        overlay.style.opacity = '0'; // Trigger fade out
-        setTimeout(function() {
-            overlay.style.display = 'none'; // Hide after transition
-        }, 500); // 500ms to match the CSS transition
-    }
-
-    // Close button event
-    document.getElementById('close-overlay').onclick = closeOverlay;
-
-    // Fade out overlay on user interaction
-    //document.addEventListener('keydown', closeOverlay); // Keyboard press
-    //document.addEventListener('mousemove', closeOverlay); // Mouse move
-    document.addEventListener('click', closeOverlay); // Mouse click
-
-    // You may want to remove these event listeners once the overlay is closed to stop listening for the actions.
-    // This can be done inside the closeOverlay function after setting display to 'none'
-</script>
-
-
-<style>
-    /* ... your existing styles ... */
-
-    /* Overlay styles */
-    #overlay {
-        position: fixed; /* Position the overlay fixed full screen */
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0); /* Semi-transparent background */
-        z-index: 1000; /* High z-index to make it on top */
-        display: flex; /* To center the post container */
-        justify-content: center;
-        align-items: center;
-        opacity: 1;
-        transition: opacity 0.5s ease; /* Transition for the fade effect */
-    }
-
-    /* Close button styles */
-    #close-overlay {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        cursor: pointer;
-        font-size: 30px;
-        color: white;
-    }
-</style>
-
-</body>
-</html>
 
 </body>
 </html>
