@@ -1,7 +1,11 @@
-<title>Latest RSS Post Display</title>
-    <style data-fullcalendar=""></style><style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest RSS Post Display</title>
+    <style>
         @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap'); /* Palladio-like font */
-        @import url('https://fonts.googleapis.com/css2?family=Argos:ital,wght@1,700&display=swap'); /* Similar to 'ArgosBoldItalic' */
 
         body, html {
             height: 100%;
@@ -14,18 +18,17 @@
         }
         .post-container {
             position: relative;
-            width: 60%;
+            max-width: 80%; /* Changed from width to max-width to control the expansion */
+            min-width: 300px; /* Minimum width to ensure readability */
             padding: 20px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             background-color: rgba(255, 255, 255, 0.8);
             border-radius: 10px;
             background-image: url('https://substack-post-media.s3.amazonaws.com/public/images/d34c7b5d-0c03-4b87-a314-58c0fcdb0dd9_936x526.jpeg');
             background-size: cover;
-            font-family:palladio;
-
             background-position: center;
             background-repeat: no-repeat;
-            color: #333;
+            color: white; /* Changed text color to white for readability */
         }
         .post-container::before {
             content: '';
@@ -33,9 +36,6 @@
             top: 0;
             left: 0;
             right: 0;
-            font-family:palladio;
-            font-size: 30px;
-
             bottom: 0;
             background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text readability */
             border-radius: 10px;
@@ -44,35 +44,23 @@
         .post-title, .post-subtitle, .post-link, ul {
             position: relative; /* Ensure the text appears above the overlay */
             z-index: 1;
-            color: white;
-
         }
         .post-title {
-            font-size: 100%;
-            color: white;
-            font-family:palladio;
-            font-size: 30px;
-
+            font-size: 30px; /* Adjusted title font size */
             margin-bottom: 10px;
         }
         .post-subtitle {
-            font-size: 100%;
-            color: white;
-            font-family:palladio;
-            font-size: 20px;
-
+            font-size: 20px; /* Adjusted subtitle font size */
             margin-bottom: 20px;
         }
         .post-link {
             margin: 5px;
             display: inline-block;
             border-radius: 20px;
-            color: white;
             border: 1px solid white;
             padding: 10px;
-            font-size: 30px;
-            font-family:palladio;
-            background-color:#00bef8;
+            font-size: 20px; /* Adjusted button font size */
+            background-color: #00bef8;
             text-align: center;
             width: auto;
             text-decoration: none; /* Remove underline from links */
@@ -83,28 +71,93 @@
         ul {
             list-style-type: none;
             padding: 0;
-            font-family:palladio;
-
-            font-size: 15px;
-
+            font-size: 15px; /* Adjusted font size for list */
         }
         li {
             margin-bottom: 10px;
         }
+        a {
+            color: white; /* Ensure all links are white */
+            text-decoration: none; /* Remove underline from all links */
+        }
+        a:hover {
+            text-decoration: underline; /* Add underline on hover for better UX */
+        }
     </style>
-    <body>
+</head>
+<body>
 
-<div class="post-container">
-    <div class="post-title">🎼 ff.88 Singolarità nel 2029?</div>
-    <div class="post-subtitle">L'accelerazione robotica grazie a ChatGPT e OpenAI</div>
-    <a href="https://fortissimo.substack.com/p/ff88-singolarita-nel-2029" class="post-link">Leggi ora</a>
-    <ul>
-        <li>🤖 <a href="https://www.youtube.com/watch?v=K1TOFzMpArs" style="color: white;">Salti dei cani di Boston Dynamics</a></li>
-        <li>🧠 <a href="https://twitter.com/ylecun/status/1766498677751787723?s=20" style="color: white;">Yann LeCun su dati visivi vs dati di lettura</a></li>
-        <!-- Add more links as needed -->
-    </ul>
+  <!-- Overlay content -->
+  <div id="overlay">
+      <div id="close-overlay">X</div> <!-- Close button -->
+      <!-- Overlay post container -->
+      <div class="post-container">
+          <div class="post-title">🎼 ff.88 Singolarità nel 2029?</div>
+          <div class="post-subtitle">L'accelerazione robotica grazie a ChatGPT e OpenAI</div>
+          <a href="https://fortissimo.substack.com/p/ff88-singolarita-nel-2029" class="post-link">Leggi ora</a>
+          <ul>
+              <li>🤖 <a href="https://www.youtube.com/watch?v=K1TOFzMpArs">Salti dei cani di Boston Dynamics</a></li>
+              <li>🧠 <a href="https://twitter.com/ylecun/status/1766498677751787723?s=20">Yann LeCun su dati visivi vs dati di lettura</a></li>
+              <!-- Add more links as needed -->
+          </ul>
+  </div>
+  </div>
 </div>
+<script>
+    // Function to close/hide the overlay
+    function closeOverlay() {
+        var overlay = document.getElementById('overlay');
+        overlay.style.opacity = '0'; // Trigger fade out
+        setTimeout(function() {
+            overlay.style.display = 'none'; // Hide after transition
+        }, 500); // 500ms to match the CSS transition
+    }
+
+    // Close button event
+    document.getElementById('close-overlay').onclick = closeOverlay;
+
+    // Fade out overlay on user interaction
+    //document.addEventListener('keydown', closeOverlay); // Keyboard press
+    //document.addEventListener('mousemove', closeOverlay); // Mouse move
+    document.addEventListener('click', closeOverlay); // Mouse click
+
+    // You may want to remove these event listeners once the overlay is closed to stop listening for the actions.
+    // This can be done inside the closeOverlay function after setting display to 'none'
+</script>
 
 
+<style>
+    /* ... your existing styles ... */
 
-<div style="position: relative;" id="apollo-root-apollo_everywhere"></div></body></html>
+    /* Overlay styles */
+    #overlay {
+        position: fixed; /* Position the overlay fixed full screen */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+        z-index: 1000; /* High z-index to make it on top */
+        display: flex; /* To center the post container */
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        transition: opacity 0.5s ease; /* Transition for the fade effect */
+    }
+
+    /* Close button styles */
+    #close-overlay {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        font-size: 30px;
+        color: white;
+    }
+</style>
+
+</body>
+</html>
+
+</body>
+</html>
