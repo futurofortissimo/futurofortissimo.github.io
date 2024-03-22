@@ -115,6 +115,37 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         });
     </script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const emojisContainer = document.querySelector('.emojis');
+            const mainContainer = document.querySelector('.post-container');
+
+            function getRandomPosition() {
+                const mainRect = mainContainer.getBoundingClientRect();
+                const x = mainRect.left + Math.random() * mainRect.width;
+                const y = mainRect.top + mainRect.height + Math.random() * 50; // Adjust maximum offset from bottom
+                return { x, y };
+            }
+
+            function createEmoji(imgSrc) {
+                const emoji = document.createElement('img');
+                emoji.src = imgSrc;
+                emoji.style.width = '50px';
+                emoji.style.height = 'auto';
+                const { x, y } = getRandomPosition();
+                emoji.style.left = `${x}px`;
+                emoji.style.top = `${y}px`;
+                emojisContainer.appendChild(emoji);
+            }
+
+            // Add emojis below main container
+            createEmoji('/index_files/music_emoji_1.JPG');
+            createEmoji('/index_files/music_emoji_2.png');
+            // Add more emojis here
+
+        });
+    </script>
+
 </head>
 
     <style>
@@ -155,7 +186,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         .emojis {
             position: absolute;
-            bottom: 0;
+            bottom: 20px; /* Adjust distance from the bottom */
             left: 50%;
             transform: translateX(-50%);
         }
@@ -165,7 +196,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             height: auto;
             margin: 10px; /* Adjust the spacing between emojis */
             filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4)); /* Add a drop shadow */
+            position: absolute;
         }
+
         .post-container::before {
            content: '';
            position: absolute;
