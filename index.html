@@ -129,30 +129,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             background:white;
         }
         .post-container {
-            position: relative;
-            max-width: 80%;
-            min-width: 300px;
-            padding: 20px;
-            box-shadow: 0 6px 8px rgba(0,0,0,0.2);
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            background-image: url('https://substack-post-media.s3.amazonaws.com/public/images/49671110-dee0-4711-a32a-703347fe6b0a_887x559.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: white;
-        }
-        .post-container::before {
-           content: '';
-           position: absolute;
-           top: 0;
-           left: 0;
-           right: 0;
-           bottom: 0;
-           background: rgba(0, 0, 0, 0.5);
-           border-radius: 10px;
-           z-index: 0;
-       }
+         max-width: 600px;
+         height: 370px;
+         background-size: auto 100%; /* Maintain aspect ratio and fit vertically */
+      }
+
+      /* Add media query for small screens */
+      @media (max-width: 600px) {
+         .post-container {
+             max-width: 100%;
+             height: auto;
+             background-size: cover; /* For small screens, cover the container */
+         }
+      }
+
+      /* Create a new container for the buttons */
+      .button-container {
+         display: flex;
+         justify-content: flex-start; /* Align buttons to the left */
+         margin-top: 10px; /* Add some spacing */
+      }
        .post-title, .post-subtitle, .post-link, ul, .redirect-button {
            position: relative;
            z-index: 1;
@@ -202,7 +198,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <br><br>
           <p class="post-subtitle" style="margin:0px">Due link per te:</p>
           <ul style="margin:0px"></ul>
-          <div>
+          <div "button-container">
               <a class="post-title redirect-button" href="#" style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 25px; font-family: 'ArgosBoldItalic'; background-color: transparent; text-align: center; width: auto;">Leggi ora</a>
               <a class="post-title" href="https://futurofortissimo.github.io/home.html" style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 25px; font-family: 'ArgosBoldItalic'; background-color: transparent; text-align: center; width: auto;">Vai al sito</a>
           </div>
