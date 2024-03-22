@@ -160,7 +160,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         // Function to place a random emoji on the page
         function placeRandomEmoji() {
-            const emojiImages = ['/index_files/coffe.png', '/index_files/muffin.png', /* ...more emoji paths */];
+            const emojiImages = ['/index_files/coffe.png', '/index_files/muffin.png', '/index_files/pay.png' /* ...more emoji paths */];
             const emojiIndex = Math.floor(Math.random() * emojiImages.length);
             const emoji = document.createElement('img');
             emoji.src = emojiImages[emojiIndex];
@@ -189,24 +189,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     });
 </script>
 
-    <script>
-         // Your existing JavaScript code
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+          function floatEmoji(emoji) {
+              const keyframes = [
+                  { transform: 'translateY(0px)' },
+                  { transform: 'translateY(-20px)' },
+                  { transform: 'translateY(0px)' }
+              ];
+              const timing = {
+                  duration: 3000, // 3 seconds for one cycle of floating
+                  iterations: Infinity // Repeat forever
+              };
+              // Start the animation
+              emoji.animate(keyframes, timing);
+          }
 
-         // Add code to animate the emoji to "float"
-         function floatEmoji(emoji) {
-             // Keyframes for floating effect
-             const keyframes = [
-                 { transform: 'translateY(0px)' },
-                 { transform: 'translateY(-20px)' },
-                 { transform: 'translateY(0px)' }
-             ];
-             const timing = {
-                 duration: 3000, // 3 seconds for one cycle of floating
-                 iterations: Infinity // Repeat forever
-             };
-             // Start the animation
-             emoji.animate(keyframes, timing);
-         }
+          function createEmoji(imgSrc) {
+              const emoji = document.createElement('img');
+              emoji.src = imgSrc;
+              emoji.style.width = '50px';
+              emoji.style.position = 'absolute'; // Ensure this is positioned correctly
+              document.querySelector('.emojis').appendChild(emoji); // Adjust the selector as necessary
+              floatEmoji(emoji); // Call the function to start the floating effect
+          }
 
          // Modify the createEmoji function to call floatEmoji
          function createEmoji(imgSrc) {
@@ -264,19 +270,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         .emojis {
             position: absolute;
-            bottom: 20px; /* Adjust distance from the bottom */
-            left: 50%;
-            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Prevents the emojis from interfering with mouse events */
         }
 
         .emojis img {
+            position: absolute;
+            bottom: 20px; /* Adjust as needed */
+            left: 50%;
+            transform: translateX(-50%);
             width: 50px; /* Adjust the size of emojis */
             height: auto;
-            margin: 10px; /* Adjust the spacing between emojis */
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4)); /* Add a drop shadow */
-            position: absolute;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.6); /* Shadow for floating effect */
+            animation: float 6s ease-in-out infinite;
         }
-
+        .content-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         .post-container::before {
            content: '';
            position: absolute;
@@ -331,7 +347,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </style>
     </head>
     <body>
-      <div class="post-container">
+      <div class="content-wrapper">
+        <div class="post-container">
           <div class="post-title"></div>
           <div class="post-subtitle"></div>
           <br><br>
@@ -348,6 +365,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <!-- Add more emoji images here -->
       </div>
 
-
+    </div>
     </body>
     </html>
