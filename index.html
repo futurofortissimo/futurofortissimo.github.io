@@ -156,11 +156,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         // Function to place a random emoji on the page
         function placeRandomEmoji() {
-            const emojiImages = ['/index_files/coffe.png', '/index_files/muffin.png', '/index_files/pay.png' /* ...more emoji paths */];
+            const emojiImages = ['/index_files/music.png', '/index_files/music.png', '/index_files/music.png' /* ...more emoji paths */];
             const emojiIndex = Math.floor(Math.random() * emojiImages.length);
             const emoji = document.createElement('img');
             emoji.src = emojiImages[emojiIndex];
             emoji.classList.add('emoji');
+            emoji.style.boxShadow = '0 6px 8px rgba(0,0,0,0.25)';
 
             // Set random dimensions and rotation
             const dimension = 60 + Math.random() * 100; // Random dimension between 30 and 50
@@ -170,8 +171,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             emoji.style.transform = `rotate(${rotation}deg)`;
 
             // Random position within the container
-            emoji.style.top = `${Math.random() * 100-70}%`;
-            emoji.style.left = `${3 * Math.random() * 100-50}%`;
+            emoji.style.top = `${Math.random() * 100-70/2}%`;
+            emoji.style.left = `${3 * Math.random() * 100-40}%`;
 
             // Add the emoji to the container
             document.body.appendChild(emoji);
@@ -206,7 +207,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             max-width: 80%;
             min-width: 300px;
             padding: 20px;
-            box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.25);
             background-color: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
             background-image: url('https://substack-post-media.s3.amazonaws.com/public/images/49671110-dee0-4711-a32a-703347fe6b0a_887x559.png');
