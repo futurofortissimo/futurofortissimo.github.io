@@ -138,10 +138,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 emojisContainer.appendChild(emoji);
             }
 
-            // Add emojis below main container
-            createEmoji('/index_files/music_emoji_1.JPG');
-            createEmoji('/index_files/music_emoji_2.png');
-            // Add more emojis here
 
         });
     </script>
@@ -167,15 +163,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             emoji.classList.add('emoji');
 
             // Set random dimensions and rotation
-            const dimension = 30 + Math.random() * 20; // Random dimension between 30 and 50
+            const dimension = 60 + Math.random() * 100; // Random dimension between 30 and 50
             const rotation = Math.random() * 360; // Random rotation from 0 to 360 degrees
             emoji.style.width = `${dimension}px`;
             emoji.style.height = `${dimension}px`;
             emoji.style.transform = `rotate(${rotation}deg)`;
 
             // Random position within the container
-            emoji.style.top = `${Math.random() * 100}%`;
-            emoji.style.left = `${Math.random() * 100}%`;
+            emoji.style.top = `${Math.random() * 100-50}%`;
+            emoji.style.left = `${Math.random() * 100-50}%`;
 
             // Add the emoji to the container
             document.body.appendChild(emoji);
@@ -189,50 +185,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     });
 </script>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-          function floatEmoji(emoji) {
-              const keyframes = [
-                  { transform: 'translateY(0px)' },
-                  { transform: 'translateY(-20px)' },
-                  { transform: 'translateY(0px)' }
-              ];
-              const timing = {
-                  duration: 3000, // 3 seconds for one cycle of floating
-                  iterations: Infinity // Repeat forever
-              };
-              // Start the animation
-              emoji.animate(keyframes, timing);
-            }
-          }
-          function createEmoji(imgSrc) {
-              const emoji = document.createElement('img');
-              emoji.src = imgSrc;
-              emoji.style.width = '50px';
-              emoji.style.position = 'absolute'; // Ensure this is positioned correctly
-              document.querySelector('.emojis').appendChild(emoji); // Adjust the selector as necessary
-              floatEmoji(emoji); // Call the function to start the floating effect
-          }
 
-         // Modify the createEmoji function to call floatEmoji
-         function createEmoji(imgSrc) {
-             const emoji = document.createElement('img');
-             emoji.src = imgSrc;
-             emoji.style.width = '50px';
-             emoji.style.position = 'absolute'; // Ensure this is positioned correctly within `.emojis`
-             document.querySelector('.emojis').appendChild(emoji); // Adjust the selector as necessary
-             floatEmoji(emoji); // Call the function to start the floating effect
-         }
-
-         // Ensure new content is loaded on each page refresh
-         function loadNewContent() {
-             // Code to load new content from JSON
-             // ...
-         }
-
-         window.addEventListener('load', loadNewContent); // Load new content on page load
-         window.addEventListener('beforeunload', loadNewContent); // Prepare new content for next page load
-</script>
 </head>
 
     <style>
