@@ -170,8 +170,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             emoji.style.transform = `rotate(${rotation}deg)`;
 
             // Random position within the container
-            emoji.style.top = `${Math.random() * 100-50}%`;
-            emoji.style.left = `${Math.random() * 100-50}%`;
+            emoji.style.top = `${Math.random() * 100-70}%`;
+            emoji.style.left = `${3 * Math.random() * 100-50}%`;
 
             // Add the emoji to the container
             document.body.appendChild(emoji);
@@ -306,7 +306,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <div class="content-wrapper">
         <div class="post-container">
           <div class="post-title"></div>
-          <div class="post-subtitle"></div>
+          <div class="emojis">
+              <img src="/index_files/music_emoji_1.JPG" alt="Emoji 1">
+              <img src="/index_files/music_emoji_2.png" alt="Emoji 2">
+              <!-- Add more emoji images here -->
+          </div>
+          <div style="z-index:-1" class="post-subtitle"></div>
           <br><br>
           <p class="post-subtitle" style="margin:0px">Due link per te:</p>
           <ul style="margin:0px"></ul>
@@ -315,12 +320,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               <a class="post-title" href="https://futurofortissimo.github.io/home.html" style="margin:5px; display: inline-block; border-radius: 40px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic'; background-color: transparent; text-align: center; width: auto;">Vai al sito</a>
           </div>
       </div>
-      <div class="emojis">
-          <img src="/index_files/music_emoji_1.JPG" alt="Emoji 1">
-          <img src="/index_files/music_emoji_2.png" alt="Emoji 2">
-          <!-- Add more emoji images here -->
-      </div>
-
     </div>
     </body>
     </html>
