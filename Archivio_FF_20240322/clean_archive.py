@@ -10,19 +10,30 @@ def scrape_links_from_url(url):
         # Extract all links from the page
         links = [link['href'] for link in soup.find_all('a', href=True)]
         # Extract all image sources
-        img_urls = [img['src'] for img in soup.find_all('img', src=True)]
+
+        #img_urls = [img['src'] for img in soup.find_all('img', src=True)]
+
         # Concatenate all paragraph texts
         texts = ' '.join([paragraph.text for paragraph in soup.find_all('p')])
-        # Extract all <h4> texts
-        h4_texts = [h4.text for h4 in soup.find_all('h4')]
+
+        # Extract <h4> texts and their corresponding section links
+        h4_texts_links = []
+        for h4 in soup.find_all('h4', class_='header-with-anchor-widget'):
+            text = ''.join(h4.stripped_strings)
+            link = h4.find('div', class_='header-anchor-widget-button')
+            if link and 'href' in link.attrs:
+                section_link = link['href']
+            else:
+                section_link = None
+            h4_texts_links.append({'text': text, 'link': section_link})
 
         return {
             "title": soup.title.text if soup.title else "No title found",
             "link": url,
             "links": links,
-            "img_urls": img_urls,
+            #"img_urls": img_urls,
             "texts": texts,
-            "h4_texts": h4_texts
+            "h4_texts_links": h4_texts_links
         }
     except requests.exceptions.RequestException as e:
         print(f"Request error for {url}: {e}")
