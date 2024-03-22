@@ -88,7 +88,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="twitter:url" content="https://linktr.ee/micmer"><meta name="next-head-count" content="23"><link rel="preload" href="https://futurofortissimo.github.io/index_files/ff.png" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"><link rel="preload" href="https://futurofortissimo.github.io/index_files/futuro_scuola.webp" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"><style data-fullcalendar=""></style><link rel="preload" href="/index_files/303a26c383de2a8b.css" as="style"><link rel="stylesheet" href="/index_files/303a26c383de2a8b.css" data-n-g="">
 
 
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -115,78 +114,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         });
     </script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const emojisContainer = document.querySelector('.emojis');
-            const mainContainer = document.querySelector('.post-container');
-
-            function getRandomPosition() {
-                const mainRect = mainContainer.getBoundingClientRect();
-                const x = mainRect.left + Math.random() * mainRect.width;
-                const y = mainRect.top + mainRect.height + Math.random() * 50; // Adjust maximum offset from bottom
-                return { x, y };
-            }
-
-            function createEmoji(imgSrc) {
-                const emoji = document.createElement('img');
-                emoji.src = imgSrc;
-                emoji.style.width = '50px';
-                emoji.style.height = 'auto';
-                const { x, y } = getRandomPosition();
-                emoji.style.left = `${x}px`;
-                emoji.style.top = `${y}px`;
-                emojisContainer.appendChild(emoji);
-            }
-
-
-        });
-    </script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Function to fetch and display a random post
-        function displayRandomPost() {
-            // Fetch and display code here
-        }
-
-        // Fetch and display a random post
-        displayRandomPost();
-
-        // Reload a different post on page refresh
-        window.onbeforeunload = displayRandomPost;
-
-        // Function to place a random emoji on the page
-        function placeRandomEmoji() {
-            const emojiImages = ['/index_files/music.png', '/index_files/music.png', '/index_files/music.png' /* ...more emoji paths */];
-            const emojiIndex = Math.floor(Math.random() * emojiImages.length);
-            const emoji = document.createElement('img');
-            emoji.src = emojiImages[emojiIndex];
-            emoji.classList.add('emoji');
-            emoji.style.boxShadow = '0 6px 8px rgba(0,0,0,0.25)';
-
-            // Set random dimensions and rotation
-            const dimension = 60 + Math.random() * 100; // Random dimension between 30 and 50
-            const rotation = Math.random() * 360; // Random rotation from 0 to 360 degrees
-            emoji.style.width = `${dimension}px`;
-            emoji.style.height = `${dimension}px`;
-            emoji.style.transform = `rotate(${rotation}deg)`;
-
-            // Random position within the container
-            emoji.style.top = `${Math.random() * 100-70/2}%`;
-            emoji.style.left = `${3 * Math.random() * 100-40}%`;
-
-            // Add the emoji to the container
-            document.body.appendChild(emoji);
-        }
-
-        // Place a random emoji
-        //placeRandomEmoji();
-
-        // Re-position the emoji every time the page is refreshed
-        window.onbeforeunload = placeRandomEmoji;
-    });
-</script>
-
-
 </head>
 
     <style>
@@ -198,16 +125,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: palladio;
-            background: linear-gradient(to top, #dcdcdc, white); /* Background gradient from light gray to white */
+            font-family:palladio;
+            background:white;
         }
-
         .post-container {
             position: relative;
             max-width: 80%;
             min-width: 300px;
             padding: 20px;
-            box-shadow: 0 6px 8px rgba(0,0,0,0.25);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.2);
             background-color: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
             background-image: url('https://substack-post-media.s3.amazonaws.com/public/images/49671110-dee0-4711-a32a-703347fe6b0a_887x559.png');
@@ -215,40 +141,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             background-position: center;
             background-repeat: no-repeat;
             color: white;
-        }
-        .main {
-            z-index: 1; /* Ensure main content is on top of emojis */
-            position: relative;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a shadow to the main content */
-        }
-
-        .emojis {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            pointer-events: none; /* Prevents the emojis from interfering with mouse events */
-        }
-
-        .emojis img {
-            position: absolute;
-            bottom: 20px; /* Adjust as needed */
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px; /* Adjust the size of emojis */
-            height: auto;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.6); /* Shadow for floating effect */
-            animation: float 6s ease-in-out infinite;
-        }
-        .content-wrapper {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
         .post-container::before {
            content: '';
@@ -304,21 +196,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </style>
     </head>
     <body>
-      <div class="content-wrapper">
-        <div class="post-container">
+      <div class="post-container">
           <div class="post-title"></div>
-          <div class="emojis">
-              <!-- Add more emoji images here -->
-          </div>
-          <div style="z-index:-1" class="post-subtitle"></div>
+          <div class="post-subtitle"></div>
           <br><br>
           <p class="post-subtitle" style="margin:0px">Due link per te:</p>
           <ul style="margin:0px"></ul>
           <div>
-              <a class="post-title redirect-button" href="#" style="margin:5px; display: inline-block; border-radius: 40px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic'; background-color: transparent; text-align: center; width: auto;">Leggi ora</a>
-              <a class="post-title" href="https://futurofortissimo.github.io/home.html" style="margin:5px; display: inline-block; border-radius: 40px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic'; background-color: transparent; text-align: center; width: auto;">Vai al sito</a>
+              <a class="post-title redirect-button" href="#" style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 25px; font-family: 'ArgosBoldItalic'; background-color: transparent; text-align: center; width: auto;">Leggi ora</a>
+              <a class="post-title" href="https://futurofortissimo.github.io/home.html" style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 25px; font-family: 'ArgosBoldItalic'; background-color: transparent; text-align: center; width: auto;">Vai al sito</a>
           </div>
       </div>
-    </div>
     </body>
     </html>
