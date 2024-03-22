@@ -11,15 +11,15 @@
                 .then(data => {
                     const randomEntry = data[Math.floor(Math.random() * data.length)];
                     document.querySelector('.post-container').style.backgroundImage = `url('${randomEntry.img}')`;
-                    document.querySelector('.post-title').textContent = randomEntry.title;
-                    document.querySelector('.post-subtitle').textContent = randomEntry.subtitle;
+                    document.querySelector('.post-title').innerHTML = `<div style="font-size: 25px; font-family: 'ArgosBoldItalic';">${randomEntry.title}</div>`;
+                    document.querySelector('.post-subtitle').innerHTML = randomEntry.subtitle;
 
                     // Update the 'Leggi ora' button link
                     const readMoreButton = document.querySelector('.redirect-button');
                     readMoreButton.href = randomEntry.readMoreUrl;
 
                     // Update links in the list
-                    const linksHTML = randomEntry.links.map(link => `<li class="post-subtitle"><a href="${link.url}">${link.text}</a></li>`).join('');
+                    const linksHTML = randomEntry.links.map(link => `<li class="post-subtitle"><a class="post-subtitle" href="${link.url}">${link.text}</a></li>`).join('');
                     document.querySelector('ul').innerHTML = linksHTML;
                 })
                 .catch(error => console.error('Error loading the JSON file:', error));
@@ -108,15 +108,16 @@
     </style>
     </head>
     <body>
-        <div class="post-container">
-            <div class="post-title"></div>
-            <div class="post-subtitle"></div>
-            <br><br>
-            <p class="post-subtitle" style="margin:0px">Due link per te:</p>
-            <ul style="margin:0px"></ul>
-            <div>
-                <a class="redirect-button" href="#" style="margin:5px;">Leggi ora</a>
-            </div>
-        </div>
+      <div class="post-container">
+          <div class="post-title"></div>
+          <div class="post-subtitle"></div>
+          <br><br>
+          <p class="post-subtitle" style="margin:0px">Due link per te:</p>
+          <ul style="margin:0px"></ul>
+          <div>
+              <a class="post-title redirect-button" href="#" style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 25px; font-family: 'ArgosBoldItalic'; background-color: transparent; text-align: center; width: auto;">Leggi ora</a>
+              <a class="post-title" href="https://futurofortissimo.github.io/home.html" style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 25px; font-family: 'ArgosBoldItalic'; background-color: transparent; text-align: center; width: auto;">Vai al sito</a>
+          </div>
+      </div>
     </body>
     </html>
