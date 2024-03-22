@@ -157,131 +157,117 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(to top, #dcdcdc, white);
+            font-family: palladio;
+            background: linear-gradient(to top, #dcdcdc, white); /* Background gradient from light gray to white */
         }
 
         .post-container {
             position: relative;
-            width: 300px; /* Fixed size */
-            height: 300px; /* Fixed size */
-            overflow: hidden;
+            max-width: 80%;
+            min-width: 300px;
+            padding: 20px;
+            box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+            background-color: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
-            background-image: url('/index_files/your-default-image.png'); /* Placeholder image */
+            background-image: url('https://substack-post-media.s3.amazonaws.com/public/images/49671110-dee0-4711-a32a-703347fe6b0a_887x559.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            color: white;
         }
-
-        .post-content {
+        .main {
+            z-index: 1; /* Ensure main content is on top of emojis */
             position: relative;
-            z-index: 2; /* Above the overlay */
-            color: white;
+            background: white;
             padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a shadow to the main content */
         }
 
-        .post-overlay {
+        .emojis {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1; /* Above the background, below content */
+            bottom: 20px; /* Adjust distance from the bottom */
+            left: 50%;
+            transform: translateX(-50%);
         }
 
-        .emoji {
+        .emojis img {
+            width: 50px; /* Adjust the size of emojis */
+            height: auto;
+            margin: 10px; /* Adjust the spacing between emojis */
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4)); /* Add a drop shadow */
             position: absolute;
-            /* Random dimensions and rotation will be set via JavaScript */
         }
 
-        .button {
-            display: block;
-            width: fit-content;
-            padding: 10px;
-            margin: 5px 0;
-            text-decoration: none;
-            font-size: 18px;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            text-align: center;
-            background: linear-gradient(135deg, purple, lightblue);
-            color: white;
-            outline: none;
-        }
-
-        .button-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+        .post-container::before {
+           content: '';
+           position: absolute;
+           top: 0;
+           left: 0;
+           right: 0;
+           bottom: 0;
+           background: rgba(0, 0, 0, 0.5);
+           border-radius: 10px;
+           z-index: 0;
+       }
+       .post-title, .post-subtitle, .post-link, ul, .redirect-button {
+           position: relative;
+           z-index: 1;
+       }
+       .post-title {
+           font-size: 30px;
+           margin-bottom: 10px;
+       }
+       .post-subtitle {
+           font-size: 20px;
+           margin-bottom: 5px; /* Reduced space */
+       }
+       ul {
+           list-style-type: none;
+           padding: 0;
+           margin-top: 0; /* Align links directly above the buttons */
+       }
+       li {
+           margin-bottom: 5px; /* Reduced space */
+       }
+       a {
+           color: white;
+           text-decoration: none;
+           font-size: 20px; /* Adjusted for consistency */
+       }
+       a:hover {
+           text-decoration: underline;
+       }
+       .redirect-button {
+           font-size: 18px;
+           padding: 10px;
+           background-color: #00bef8; /* No transparency */
+           color: white;
+           border: none;
+           border-radius: 20px;
+           cursor: pointer;
+           text-decoration: none; /* Ensure it's clickable */
+           display: inline-block;
+           margin: 5px 0; /* Adjusted spacing */
+       }
     </style>
     </head>
     <body>
       <div class="post-container">
-          <div class="post-overlay"></div>
-          <div class="post-content">
-              <!-- Content will be loaded here -->
+          <div class="post-title"></div>
+          <div class="post-subtitle"></div>
+          <br><br>
+          <p class="post-subtitle" style="margin:0px">Due link per te:</p>
+          <ul style="margin:0px"></ul>
+          <div>
+              <a class="post-title redirect-button" href="#" style="margin:5px; display: inline-block; border-radius: 40px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic'; background-color: transparent; text-align: center; width: auto;">Leggi ora</a>
+              <a class="post-title" href="https://futurofortissimo.github.io/home.html" style="margin:5px; display: inline-block; border-radius: 40px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic'; background-color: transparent; text-align: center; width: auto;">Vai al sito</a>
           </div>
       </div>
-
-      <div class="emoji-container">
-          <!-- Emojis will be loaded here -->
+      <div class="emojis">
+          <img src="/index_files/music_emoji_1.JPG" alt="Emoji 1">
+          <img src="/index_files/music_emoji_2.png" alt="Emoji 2">
+          <!-- Add more emoji images here -->
       </div>
-
-      <div class="button-container">
-          <a href="#" class="button" id="readMoreButton">Leggi ora</a>
-          <a href="https://futurofortissimo.github.io/home.html" class="button">Vai al sito</a>
-      </div>
-
-      <script>
-          document.addEventListener('DOMContentLoaded', function() {
-              // Function to fetch and display a random post
-              function displayRandomPost() {
-                  // Fetch and display code here
-              }
-
-              // Fetch and display a random post
-              displayRandomPost();
-
-              // Reload a different post on page refresh
-              window.onbeforeunload = displayRandomPost;
-
-              // Function to place a random emoji on the page
-              function placeRandomEmoji() {
-                  const emojiImages = ['/index_files/coffe.png', '/index_files/muffin.png', /* ...more emoji paths */];
-                  const emojiIndex = Math.floor(Math.random() * emojiImages.length);
-                  const emoji = document.createElement('img');
-                  emoji.src = emojiImages[emojiIndex];
-                  emoji.classList.add('emoji');
-
-                  // Set random dimensions and rotation
-                  const dimension = 30 + Math.random() * 20; // Random dimension between 30 and 50
-                  const rotation = Math.random() * 360; // Random rotation from 0 to 360 degrees
-                  emoji.style.width = `${dimension}px`;
-                  emoji.style.height = `${dimension}px`;
-                  emoji.style.transform = `rotate(${rotation}deg)`;
-
-                  // Random position within the container
-                  emoji.style.top = `${Math.random() * 100}%`;
-                  emoji.style.left = `${Math.random() * 100}%`;
-
-                  // Add the emoji to the container
-                  document.body.appendChild(emoji);
-              }
-
-              // Place a random emoji
-              placeRandomEmoji();
-
-              // Re-position the emoji every time the page is refreshed
-              window.onbeforeunload = placeRandomEmoji;
-          });
-      </script>
-
     </body>
-
-
-
-
-
     </html>
