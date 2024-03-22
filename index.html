@@ -126,9 +126,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family:palladio;
-            background:white;
+            font-family: palladio;
+            background: linear-gradient(to top, #dcdcdc, white); /* Background gradient from light gray to white */
         }
+
         .post-container {
             position: relative;
             max-width: 80%;
@@ -142,6 +143,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             background-position: center;
             background-repeat: no-repeat;
             color: white;
+        }
+        .main {
+            z-index: 1; /* Ensure main content is on top of emojis */
+            position: relative;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a shadow to the main content */
+        }
+
+        .emojis {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .emojis img {
+            width: 50px; /* Adjust the size of emojis */
+            height: auto;
+            margin: 10px; /* Adjust the spacing between emojis */
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4)); /* Add a drop shadow */
         }
         .post-container::before {
            content: '';
@@ -207,6 +230,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               <a class="post-title redirect-button" href="#" style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 25px; font-family: 'ArgosBoldItalic'; background-color: transparent; text-align: center; width: auto;">Leggi ora</a>
               <a class="post-title" href="https://futurofortissimo.github.io/home.html" style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 25px; font-family: 'ArgosBoldItalic'; background-color: transparent; text-align: center; width: auto;">Vai al sito</a>
           </div>
+      </div>
+      <div class="emojis">
+          <img src="/index/music_emoji_1.png" alt="Emoji 1">
+          <img src="/index/music_emoji_2.png" alt="Emoji 2">
+          <!-- Add more emoji images here -->
       </div>
     </body>
     </html>
