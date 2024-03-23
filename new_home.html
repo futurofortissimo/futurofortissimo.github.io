@@ -73,54 +73,58 @@ function adjustImageBoxWidth() {
 
 
 <style>
-  .container {
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-  }
 
-  .dynamic-content {
-      color: #FFF; /* Assuming white text for visibility against the dark gradient */
-      text-align: center;
-      padding: 20px;
-      position: relative; /* Needed for z-index to work */
-      z-index: 2; /* Ensures text appears above the gradient */
-  }
+// Initial adjustment
+adjustImageBoxWidth();
 
-  .image-box {
-      position: relative; /* For the overlay positioning */
-      width: 80%; /* Adjust based on preference */
-      max-width: 600px; /* Maximum width */
-      height: 400px;
-      margin: 20px auto; /* Added margin for spacing */
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Floating effect */
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center; /* Vertically centers the image */
-  }
+// Adjust on window resize
+window.addEventListener('resize', adjustImageBoxWidth);
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to top right, #888, #eee); /* Adjust gradient colors */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
 
-  .image-box::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 100%);
-      border-radius: 15px; /* Matches the .image-box border-radius */
-      z-index: 1; /* Ensures overlay is above the image but below the text */
-  }
+.container {
+    text-align: center;
+}
 
-  .responsive-image {
-      width: auto; /* Adjust width automatically */
-      max-width: 100%; /* Ensures image does not overflow its container */
-      height: 100%; /* Fixed height to fill the container */
-      object-fit: cover; /* Adjusts the image size to cover the container without losing aspect ratio */
-      z-index: 0; /* Ensures image stays below the overlay */
+.image-box {
+    width: 80%; /* Adjust based on your preference */
+    max-width: 600px; /* Maximum width */
+    height: 400px;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Floating effect */
+    overflow: hidden;
+}
 
+.responsive-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Adjust as needed */
+}
+
+.button-group {
+    margin-top: 20px;
+}
+
+.button {
+    text-decoration: none;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    background-color: #555; /* Button background */
+    color: white; /* Button text color */
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #777; /* Hover effect */
+}
 </style>
