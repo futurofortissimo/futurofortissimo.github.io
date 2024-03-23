@@ -99,10 +99,8 @@
 
         const phrases = [
             '🎼 futuro fortissimo <br> raccoglie',
-            'Note 🎵',
-            'Strumenti 🎸',
-            'su',
-            '🍃 Natura, <br> 💻 Tecnologia, <br> ❤️ Uomo.',
+            'Note 🎵 e Strumenti 🎸 ',
+            'su <br> 🍃 Natura, <br> 💻 Tecnologia, <br> ❤️ Uomo.',
             'per aiutarti a capire <br> la musica del futuro',
         ];
 
@@ -112,7 +110,7 @@
         let counter = 0;
         const next = () => {
             fx.setText(phrases[counter]).then(() => {
-                setTimeout(next, 800); // Wait a bit before showing the next phrase
+                setTimeout(next, 1200); // Wait a bit before showing the next phrase
             });
             counter = (counter + 1) % phrases.length; // Loop back to the first phrase after the last one
         };
@@ -124,7 +122,7 @@
 
         setTimeout(() => {
             redirectToLink();
-        }, 14000); // Redirects after 10 seconds
+        }, 1200*4); // Redirects after 10 seconds
     </script>
 </body>
 </html>
