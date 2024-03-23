@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="/index_files/303a26c383de2a8b.css" as="style"><link rel="stylesheet" href="/index_files/303a26c383de2a8b.css" data-n-g="">
+
+</head>
+<body>
+    <div class="container">
+      <div class="button-group">
+          <a style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic';background-color: transparent; text-align: center; width: auto;"
+          class="button-parla-futuro text-black no-underline cursor-pointer flex flex-row items-center font-inter text-sm box-border w-full py-2 px-3 m-0 first:rounded-t-xl last:rounded-b-xl hover:bg-gray-50 active:bg-gray-100"
+          href="https://www.paypal.com/paypalme/michelemerelli">Supporta</a>
+          <a style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic';background-color: transparent; text-align: center; width: auto;"
+          class="button-parla-futuro text-black no-underline cursor-pointer flex flex-row items-center font-inter text-sm box-border w-full py-2 px-3 m-0 first:rounded-t-xl last:rounded-b-xl hover:bg-gray-50 active:bg-gray-100"
+          href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io" class="button">Condividi</a>
+      </div>
+        <div style="margin:5px; font-size: 25px; font-family:palladio; color:white" class="image-box">
+            <div class="post-title"></div>
+            <div class="post-subtitle"></div>
+            <ul></ul>
+
+        </div>
+        <div class="button-group">
+            <a class="button button-parla-futuro-blu-bluscuro redirect-button" style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic';background-color: transparent; text-align: center; width: auto;"
+            class="button-parla-futuro-verde-acqua text-black no-underline cursor-pointer flex flex-row items-center font-inter text-sm box-border w-full py-2 px-3 m-0 first:rounded-t-xl last:rounded-b-xl hover:bg-gray-50 active:bg-gray-100"
+            href="link3.html">L'ultima uscita</a>
+            <a style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic';background-color: transparent; text-align: center; width: auto;"
+            class="button-parla-futuro-blu-bluscuro  text-black no-underline cursor-pointer flex flex-row items-center font-inter text-sm box-border w-full py-2 px-3 m-0 first:rounded-t-xl last:rounded-b-xl hover:bg-gray-50 active:bg-gray-100"
+            href="https://futurofortissimo.github.io/ff_2101231dsa23dsda_subscriber_verified_ff.html" class="button">Parla al futuro</a>
+            <a style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic';background-color: transparent; text-align: center; width: auto;"
+            class="button-parla-futuro text-black no-underline cursor-pointer flex flex-row items-center font-inter text-sm box-border w-full py-2 px-3 m-0 first:rounded-t-xl last:rounded-b-xl hover:bg-gray-50 active:bg-gray-100"
+            href="https://futurofortissimo.github.io/home.html" class="button">Leggi il passato</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<script>
+function adjustImageBoxWidth() {
+    const imageBox = document.querySelector('.image-box');
+    if (window.innerWidth < 600) {
+        // Adjust according to your preference for smaller screens
+        imageBox.style.width = '100%';
+    } else {
+        // Default width
+        imageBox.style.width = '80%';
+    }
+}
+
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('pubs.json?' + new Date().getTime())
+            .then(response => response.json())
+            .then(data => {
+                const randomEntry = data[Math.floor(Math.random() * data.length)];
+                document.querySelector('.image-box').style.backgroundImage = `url('${randomEntry.img}')`;
+                document.querySelector('.post-title').innerHTML = `<div style="font-size: 25px; font-family: 'ArgosBoldItalic';">${randomEntry.title}</div>`;
+                document.querySelector('.post-subtitle').innerHTML = randomEntry.subtitle;
+
+                // Update the 'Leggi ora' button link
+                const readMoreButton = document.querySelector('.redirect-button');
+                readMoreButton.href = randomEntry.readMoreUrl;
+
+                // Update links in the list
+                const linksHTML = randomEntry.links.map(link => `<li class="post-subtitle"><a class="post-subtitle" href="${link.url}">${link.text}</a></li>`).join('');
+                document.querySelector('ul').innerHTML = linksHTML;
+            })
+            .catch(error => console.error('Error loading the JSON file:', error));
+    });
+</script>
+
+
+
+
+<style>
+
+// Initial adjustment
+adjustImageBoxWidth();
+
+// Adjust on window resize
+window.addEventListener('resize', adjustImageBoxWidth);
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to top right, #888, #eee); /* Adjust gradient colors */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-box {
+    background-size: cover;
+    background-position: center;
+    width: 80%; /* Adjust based on your preference */
+    max-width: 600px; /* Maximum width */
+    height: 400px;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Floating effect */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+
+.responsive-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Adjust as needed */
+}
+
+.button-group {
+    margin-top: 20px;
+}
+
+.button {
+    text-decoration: none;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    background-color: #555; /* Button background */
+    color: white; /* Button text color */
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #777; /* Hover effect */
+}
+</style>
