@@ -12,11 +12,13 @@
         <div class="image-box">
             <div class="post-title"></div>
             <div class="post-subtitle"></div>
+            <ul style="margin:0px"></ul>
+
         </div>
         <div class="button-group">
             <a href="link3.html" class="button redirect-button">L'ultima uscita</a>
-            <a href="link1.html" class="button">Parla al futuro</a>
-            <a href="link2.html" class="button">Leggi il passato 2</a>
+            <a href="https://futurofortissimo.github.io/animate.html" class="button">Parla al futuro</a>
+            <a href="https://futurofortissimo.github.io/home.html" class="button">Leggi il passato</a>
         </div>
     </div>
     <script src="script.js"></script>
@@ -43,7 +45,7 @@ function adjustImageBoxWidth() {
             .then(response => response.json())
             .then(data => {
                 const randomEntry = data[Math.floor(Math.random() * data.length)];
-                document.querySelector('.container').style.backgroundImage = `url('${randomEntry.img}')`;
+                document.querySelector('.image-box').style.backgroundImage = `url('${randomEntry.img}')`;
                 document.querySelector('.post-title').innerHTML = `<div style="font-size: 25px; font-family: 'ArgosBoldItalic';">${randomEntry.title}</div>`;
                 document.querySelector('.post-subtitle').innerHTML = randomEntry.subtitle;
 
