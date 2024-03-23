@@ -26,9 +26,9 @@
 
         </div>
         <div class="button-group">
-            <a class="button button-parla-futuro-blu-bluscuro redirect-button"
+            <a class="button redirect-button"
             style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic';background-color: transparent; text-align: center; width: auto;"
-            class="button-parla-futuro-verde-acqua text-black no-underline cursor-pointer flex flex-row items-center font-inter text-sm box-border w-full py-2 px-3 m-0 first:rounded-t-xl last:rounded-b-xl hover:bg-gray-50 active:bg-gray-100"
+            class="button-parla-futuro text-black no-underline cursor-pointer flex flex-row items-center font-inter text-sm box-border w-full py-2 px-3 m-0 first:rounded-t-xl last:rounded-b-xl hover:bg-gray-50 active:bg-gray-100"
             href="link3.html">L'ultima uscita</a>
             <a style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic';background-color: transparent; text-align: center; width: auto;"
             class="button-parla-futuro-blu-bluscuro  text-black no-underline cursor-pointer flex flex-row items-center font-inter text-sm box-border w-full py-2 px-3 m-0 first:rounded-t-xl last:rounded-b-xl hover:bg-gray-50 active:bg-gray-100"
@@ -62,7 +62,7 @@ function adjustImageBoxWidth() {
             .then(response => response.json())
             .then(data => {
                 const randomEntry = data[Math.floor(Math.random() * data.length)];
-                document.querySelector('.image-box').style.backgroundImage = `linear-gradient(to top right, rgba(0, 0, 139, 0.2), rgba(128, 0, 128, 0.2)), url('${randomEntry.img}')`;
+                document.querySelector('.image-box').style.backgroundImage = `linear-gradient(to top right, rgba(0, 0, 139, 0.5), rgba(128, 0, 128, 0.5)), url('${randomEntry.img}')`;
                 document.querySelector('.post-title').innerHTML = `<div style="font-size: 25px; font-family: 'ArgosBoldItalic';">${randomEntry.title}</div>`;
                 document.querySelector('.post-subtitle').innerHTML = randomEntry.subtitle;
 
