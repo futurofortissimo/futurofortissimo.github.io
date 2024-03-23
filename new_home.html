@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="image-box">
+            <img src="your-image-here.jpg" alt="Your Image" class="responsive-image">
+            <div class="post-title"></div>
+            <div class="post-subtitle"></div>
+        </div>
+        <div class="button-group">
+            <a href="link3.html" class="button">L'ultima uscita</a>
+            <a href="link1.html" class="button">Parla al futuro</a>
+            <a href="link2.html" class="button">Leggi il passato 2</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<script>
+function adjustImageBoxWidth() {
+    const imageBox = document.querySelector('.image-box');
+    if (window.innerWidth < 600) {
+        // Adjust according to your preference for smaller screens
+        imageBox.style.width = '100%';
+    } else {
+        // Default width
+        imageBox.style.width = '80%';
+    }
+}
+
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('pubs.json?' + new Date().getTime())
+            .then(response => response.json())
+            .then(data => {
+                const randomEntry = data[Math.floor(Math.random() * data.length)];
+                document.querySelector('.container').style.backgroundImage = `url('${randomEntry.img}')`;
+                document.querySelector('.post-title').innerHTML = `<div style="font-size: 25px; font-family: 'ArgosBoldItalic';">${randomEntry.title}</div>`;
+                document.querySelector('.post-subtitle').innerHTML = randomEntry.subtitle;
+
+                // Update the 'Leggi ora' button link
+                const readMoreButton = document.querySelector('.redirect-button');
+                readMoreButton.href = randomEntry.readMoreUrl;
+
+                // Update links in the list
+                const linksHTML = randomEntry.links.map(link => `<li class="post-subtitle"><a class="post-subtitle" href="${link.url}">${link.text}</a></li>`).join('');
+                document.querySelector('ul').innerHTML = linksHTML;
+            })
+            .catch(error => console.error('Error loading the JSON file:', error));
+    });
+</script>
+
+
+<style>
+
+// Initial adjustment
+adjustImageBoxWidth();
+
+// Adjust on window resize
+window.addEventListener('resize', adjustImageBoxWidth);
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to top right, #888, #eee); /* Adjust gradient colors */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+.image-box {
+    width: 80%; /* Adjust based on your preference */
+    max-width: 600px; /* Maximum width */
+    height: 400px;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Floating effect */
+    overflow: hidden;
+}
+
+.responsive-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Adjust as needed */
+}
+
+.button-group {
+    margin-top: 20px;
+}
+
+.button {
+    text-decoration: none;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    background-color: #555; /* Button background */
+    color: white; /* Button text color */
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #777; /* Hover effect */
+}
+</style>
