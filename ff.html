@@ -10,8 +10,7 @@
 
 </head>
 <body>
-    <div class="container"><div class="image-overlay">
-
+    <div class="container">
       <div class="button-group">
           <a style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic';background-color: transparent; text-align: center; width: auto;"
           class="button-parla-futuro text-black no-underline cursor-pointer flex flex-row items-center font-inter text-sm box-border w-full py-2 px-3 m-0 first:rounded-t-xl last:rounded-b-xl hover:bg-gray-50 active:bg-gray-100"
@@ -37,7 +36,6 @@
             class="button-parla-futuro text-black no-underline cursor-pointer flex flex-row items-center font-inter text-sm box-border w-full py-2 px-3 m-0 first:rounded-t-xl last:rounded-b-xl hover:bg-gray-50 active:bg-gray-100"
             href="https://futurofortissimo.github.io/home.html" class="button">Leggi il passato</a>
         </div>
-    </div>
     </div>
     <script src="script.js"></script>
 </body>
@@ -83,16 +81,12 @@ function adjustImageBoxWidth() {
 
 
 <style>
-.image-overlay {
-    width: 300px; /* Set to your image's width */
-    height: 200px; /* Set to your image's height */
-    background-image:
-        linear-gradient(to top right, rgba(0, 0, 139, 0.7), rgba(128, 0, 128, 0.7)), /* Gradient overlay */
-        url('your-image-url.jpg'); /* Your image */
-    background-size: cover; /* Ensure the image covers the div */
-    background-position: center; /* Center the background image */
-}
 
+// Initial adjustment
+adjustImageBoxWidth();
+
+// Adjust on window resize
+window.addEventListener('resize', adjustImageBoxWidth);
 body {
     margin: 0;
     padding: 0;
