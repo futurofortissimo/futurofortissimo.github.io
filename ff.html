@@ -19,10 +19,17 @@
           class="button-parla-futuro text-black no-underline cursor-pointer flex flex-row items-center font-inter text-sm box-border w-full py-2 px-3 m-0 first:rounded-t-xl last:rounded-b-xl hover:bg-gray-50 active:bg-gray-100"
           href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io" class="button">Condividi</a>
       </div>
-        <div style="margin:5px; font-size: 21px; font-family:palladio; color:white; text-align:left" class="image-box">
-            <div class="post-title"></div>
-            <div class="post-subtitle"></div>
-            <ul></ul>
+        <div style="margin:5px; font-size: 21px; margin-left:3px; font-family:palladio; color:white; text-align:left" class="image-box">
+
+            <div class="my-text-container">
+            <div class="part1">
+              <div class="post-title"></div>
+              <div class="post-subtitle"></div>
+            </div>
+            <div class="part2">
+              <ul></ul>
+            </div>
+            </div>
 
         </div>
         <div class="button-group">
@@ -38,12 +45,7 @@
             href="https://futurofortissimo.github.io/home.html" class="button">Leggi il passato</a>
         </div>
     </div>
-    <div class="app-footer">
-        <a href="home.html" class="footer-icon"><i class="fas fa-home"></i></a>
-        <a href="search.html" class="footer-icon"><i class="fas fa-search"></i></a>
-        <a href="page3.html" class="footer-icon"><i class="fas fa-heart"></i></a> <!-- Example icon -->
-        <a href="page4.html" class="footer-icon"><i class="fas fa-user"></i></a> <!-- Example icon -->
-    </div>
+
 </body>
 </html>
 
@@ -114,15 +116,17 @@ adjustImageBoxWidth();
 
 // Adjust on window resize
 window.addEventListener('resize', adjustImageBoxWidth);
-body {
+body, html {
     margin: 0;
     padding: 0;
-    background: linear-gradient(to top right, #888, #eee); /* Adjust gradient colors */
+    height: 100%; /* Ensure the full height is used */
+    width: 100%; /* Ensure the full width is used */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background: linear-gradient(to top right, #888, #eee); /* Your existing gradient */
 }
+
 
 .container {
     text-align: center;
@@ -130,6 +134,14 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.my-text-container {
+    display: flex; /* Enables Flexbox layout */
+    flex-direction: column; /* Stacks child elements vertically */
+    justify-content: space-between; /* Positions one child at the top and the other at the bottom */
+    padding: 5px; /* Adds 5 pixels of space all around the content */
+    height: 200px; /* Example fixed height; adjust as needed */
 }
 
 .image-box {
