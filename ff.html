@@ -76,7 +76,8 @@
 
 </head>
 <body>
-    <div class="container">
+  <a href="#" id="image-box-link">
+    <div class="container" onclick="openLink('https://example.com')">
       <a href="redirect-button">
 
       <div class="button-group">
@@ -112,9 +113,8 @@
             class="button-parla-futuro text-black no-underline cursor-pointer flex flex-row items-center font-inter text-sm box-border w-full py-2 px-3 m-0 first:rounded-t-xl last:rounded-b-xl hover:bg-gray-50 active:bg-gray-100"
             href="https://futurofortissimo.github.io/home.html" class="button">Leggi il passato</a>
         </div>
-      <a>
     </div>
-
+  </a>
 </body>
 </html>
 
@@ -145,6 +145,10 @@ function adjustImageBoxWidth() {
                 // Update the 'Leggi ora' button link
                 const readMoreButton = document.querySelector('.redirect-button');
                 readMoreButton.href = randomEntry.readMoreUrl;
+
+                // Update the link for the .image-box div
+                const imageBoxLink = document.querySelector('#image-box-link');
+                imageBoxLink.href = readMoreButton.href;
 
                 // Update links in the list
                 const linksHTML = randomEntry.links.map(link => `<li class="post-subtitle"><a class="post-subtitle" href="${link.url}">${link.text}</a></li>`).join('');
