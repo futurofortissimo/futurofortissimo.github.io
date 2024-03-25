@@ -38,7 +38,12 @@
             href="https://futurofortissimo.github.io/home.html" class="button">Leggi il passato</a>
         </div>
     </div>
-    <script src="script.js"></script>
+    <div class="app-footer">
+        <a href="home.html" class="footer-icon"><i class="fas fa-home"></i></a>
+        <a href="search.html" class="footer-icon"><i class="fas fa-search"></i></a>
+        <a href="page3.html" class="footer-icon"><i class="fas fa-heart"></i></a> <!-- Example icon -->
+        <a href="page4.html" class="footer-icon"><i class="fas fa-user"></i></a> <!-- Example icon -->
+    </div>
 </body>
 </html>
 
@@ -82,6 +87,27 @@ function adjustImageBoxWidth() {
 
 
 <style>
+.app-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background: #333;
+    padding: 10px 0;
+}
+
+.footer-icon {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.footer-icon i {
+    margin: 0 auto;
+    display: block;
+}
 
 // Initial adjustment
 adjustImageBoxWidth();

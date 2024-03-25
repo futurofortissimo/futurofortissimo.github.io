@@ -46,7 +46,7 @@
         class TextScramble {
             constructor(el) {
                 this.el = el;
-                this.chars = '!<>-_\\/[]{}—=+*^?#________';
+                this.chars = '!<>-_🎷\/🎵]{}🥁—=+*🎺?#________';
                 this.update = this.update.bind(this);
             }
             setText(newText) {
@@ -57,8 +57,8 @@
                 for (let i = 0; i < length; i++) {
                     const from = oldText[i] || '';
                     const to = newText[i] || '';
-                    const start = Math.floor(Math.random() * 40);
-                    const end = start + Math.floor(Math.random() * 40);
+                    const start = Math.floor(Math.random() * 30);
+                    const end = start + Math.floor(Math.random() * 30);
                     this.queue.push({ from, to, start, end });
                 }
                 cancelAnimationFrame(this.frameRequest);
@@ -100,7 +100,7 @@
         const phrases = [
             '🎼 futuro fortissimo raccoglie',
             'Note 🎵 e Strumenti 🎸',
-            'su <br> 🍃 Natura <br> 💻 Tecnologia <br> ❤️ Uomo',
+            'su 🍃 Natura, 💻 Tecnologia, ❤️ Uomo',
             'e aiuta a capire la musica del futuro',
         ];
 
