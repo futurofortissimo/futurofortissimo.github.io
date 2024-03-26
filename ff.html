@@ -91,7 +91,7 @@
 
         <div style="margin-top:50px; font-size: 21px; margin-left:auto; font-family:palladio; color:white; text-align:left" class="image-box">
 
-            <div class="my-text-container" style="padding:10px; margin-top:20; margin-bottom:20" onclick="">
+            <div class="my-text-container" style="padding:10px; margin-top:20; margin-bottom:20">
             <div class="part1">
               <div class="post-title"></div>
               <div class="post-subtitle"></div>
@@ -139,6 +139,12 @@ function adjustImageBoxWidth() {
     }
 }
 
+function redirectToLink() {
+          window.location.href = 'https://futurofortissimo.github.io/notion.html';
+      }
+
+
+
 </script>
 
 <script>
@@ -158,6 +164,12 @@ function adjustImageBoxWidth() {
                 // Update the link for the .image-box div
                 const imageBoxLink = document.querySelector('#image-box-link');
                 imageBoxLink.href = readMoreButton.href;
+
+                myTextContainer.addEventListener('click', (e) => {
+                                e.preventDefault(); // Prevent default behavior if needed
+                                redirectToLink(randomEntry.readMoreUrl); // Redirect function
+                            });
+
 
                 // Update links in the list
                 const linksHTML = randomEntry.links.map(link => `<li class="post-subtitle"><a class="post-subtitle" href="${link.url}">${link.text}</a></li>`).join('');
