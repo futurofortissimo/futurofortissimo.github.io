@@ -140,7 +140,7 @@ function adjustImageBoxWidth() {
             .then(response => response.json())
             .then(data => {
                 const randomEntry = data[Math.floor(Math.random() * data.length)];
-                document.querySelector('.image-box').style.backgroundImage = `linear-gradient(rgba(0, 0, 139, 0.62), rgba(0, 0, 139, 0.22) 30%, rgba(128, 0, 128, 0.62) 70%, rgba(128, 0, 128, 0.62)), url('${randomEntry.img}')`;
+                document.querySelector('.image-box').style.backgroundImage = `linear-gradient(rgba(0, 0, 139, 0.62), rgba(0, 0, 139, 0.22) 30%, rgba(128, 0, 128, 0.22) 70%, rgba(128, 0, 128, 0.62)), url('${randomEntry.img}')`;
                 document.querySelector('.post-title').innerHTML = `<div style="font-size: 25px; font-family: 'ArgosBoldItalic';">${randomEntry.title}</div>`;
                 document.querySelector('.post-subtitle').innerHTML = randomEntry.subtitle;
 
