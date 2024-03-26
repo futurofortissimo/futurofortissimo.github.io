@@ -20,6 +20,19 @@
     color: #555; /* Colore del testo per i topics */
 }
 
+.highlight-on-hover {
+    transition: background-color 0.5s ease, box-shadow 0.5s ease; /* Smooth transition for background and box-shadow */
+    cursor: pointer; /* Optional: changes the cursor to a pointer to indicate it's clickable or interactive */
+    display: inline-block; /* Allows the div to size according to its content */
+    margin-bottom: 10px; /* Your existing style */
+}
+
+.highlight-on-hover:hover {
+    text-decoration: underline; /* Underlines text on hover */
+    background-image: linear-gradient(135deg, violet 0%, transparent 50%, violet 100%); /* Gradient with violet corners */
+    border-radius: 5px; /* Rounds the corners */
+    box-shadow: 0 0 8px violet; /* Adds a subtle glow effect */
+}
 
 /* This media query applies styles for screens that are 600px wide or less */
 @media (max-width: 600px) {
