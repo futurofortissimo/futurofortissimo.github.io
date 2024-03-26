@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>futuro fortissimo michele merelli</title>
+    <link rel="preload" href="/index_files/303a26c383de2a8b.css" as="style"><link rel="stylesheet" href="/index_files/303a26c383de2a8b.css" data-n-g="">
+
     <style>
         body, html {
             margin: 0;
@@ -13,7 +15,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(to top right, #888, #eee);
         }
 
         .container {
@@ -83,7 +84,7 @@
             display: block;
             margin: 0 auto;
             padding: 30px;
-            max-width: 80%;
+            max-width: 500px;
             height: auto;
         }
     </style>
@@ -101,7 +102,6 @@
         <div class="image-box">
             <div class="my-text-container">
               <a href="#" class="image-box-link">
-
                 <div class="part1">
                     <div class="post-title"></div>
                     <div class="post-subtitle"></div>
@@ -149,7 +149,7 @@
                 .then(data => {
                     const randomEntry = data[Math.floor(Math.random() * data.length)];
                     document.querySelector('.image-box').style.backgroundImage = `linear-gradient(rgba(0, 0, 139, 0.62), rgba(0, 0, 139, 0.22) 30%, rgba(128, 0, 128, 0.62) 70%, rgba(128, 0, 128, 0.62)), url('${randomEntry.img}')`;
-                    document.querySelector('.post-title').innerHTML = `<div style="font-size: 25px; font-family: 'ArgosBoldItalic';">${randomEntry.title}</div>`;
+                    document.querySelector('.post-title').innerHTML = `<div class="image-box-link" style="font-size: 25px; font-family: 'ArgosBoldItalic';text-decoration:underline">${randomEntry.title}</div>`;
                     document.querySelector('.post-subtitle').innerHTML = randomEntry.subtitle;
 
                     const readMoreButton = document.querySelector('.image-box-link');
