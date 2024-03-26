@@ -203,6 +203,7 @@
 
 <div style="width:100%; margin-top:5px; display: flex; align-items: center; gap: 2px;font-size:21px; font-family:Palladio;" id="div_search_2">
     <input type="text" id="csv-search-input" placeholder="  Cosa chiedi al futuro? 🎵" style="width:100%;  margin:2px;border-radius:42px;">
+    <button style="border-radius:42px" id="refreshButton">🔄</button> <!-- Bottone di ricerca -->
     <button style="border-radius:42px" id="csv-search-button">🔍</button> <!-- Bottone di ricerca -->
 </div>
 
@@ -539,6 +540,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </script>
 
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Function to reset all checkboxes
+    function resetCheckboxes() {
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      checkboxes.forEach(checkbox => {
+        checkbox.checked = false;
+      });
+    }
+
+    // Attach event listener to the refresh button
+    const refreshButton = document.getElementById('refreshButton');
+    refreshButton.addEventListener('click', resetCheckboxes);
+  });
+</script>
 
 <style>
 
