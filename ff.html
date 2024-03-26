@@ -119,7 +119,7 @@
             <a style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic';background-color: transparent; text-align: center; width: auto;"
             class="button-parla-futuro text-black no-underline cursor-pointer flex flex-row items-center font-inter text-sm box-border w-full py-2 px-3 m-0 first:rounded-t-xl last:rounded-b-xl hover:bg-gray-50 active:bg-gray-100"
             href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io" class="button">Condividi</a> <br>
-            <img src="/index_files/app.png" id="installButton" style="cursor:pointer; display: block; margin: 0 auto; padding:30px; margin:auto; width:80%" alt="Install App">
+            <img class="image-ff" src="/index_files/app.png" id="installButton" style="cursor:pointer; display: block; margin: 0 auto; padding:30px; margin:auto; width:80%" alt="Install App">
 
         </div>
 
@@ -139,11 +139,19 @@ function adjustImageBoxWidth() {
     }
 }
 
-function redirectToLink() {
-          window.location.href = 'https://futurofortissimo.github.io/notion.html';
-      }
+</script>
 
-
+<script>
+function adjustImageffWidth() {
+    const imageBoxff = document.querySelector('.image-ff');
+    if (window.innerWidth < 600) {
+        // Adjust according to your preference for smaller screens
+        imageBoxff.style.width = '100%';
+    } else {
+        // Default width
+        imageBoxff.style.width = '50%';
+    }
+}
 
 </script>
 
