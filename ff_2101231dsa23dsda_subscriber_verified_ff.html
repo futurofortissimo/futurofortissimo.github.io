@@ -269,12 +269,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         displayData.forEach((row) => {
             const contentDiv = document.createElement('div');
+            contentDiv.classList.add('highlight-on-hover'); // Add this line to add the class
             contentDiv.style.borderRadius = '10px'; // Sets rounded borders
             contentDiv.style.padding = '10px'; // Internal spacing
             contentDiv.style.marginBottom = '20px'; // Space between divs
             contentDiv.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)'; // Light shadow (optional)
             contentDiv.style.backgroundColor = '#f9f9f9'; // Background color
-            contentDiv.classList.add('highlight-on-hover'); // Add this line to add the class
 
 
             const textDiv = document.createElement('div'); // Div for text
