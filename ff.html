@@ -86,6 +86,15 @@
           </div>
         </header>
 
+        <div class="slider-container">
+          <div class="slider">
+            <button class="button-parla-futuro slider-btn" data-key="FF.85">ff.85</button>
+            <button class="button-parla-futuro slider-btn" data-key="FF.31">ff.31</button>
+            <button class="button-parla-futuro slider-btn" data-key="FF.42">ff.42</button>
+            <!-- Add more buttons here -->
+          </div>
+        </div>
+
         <a href="#" id="image-box-link"  style="cursor: pointer;margin-top:50px; font-size: 21px; margin-left:auto; font-family:palladio; color:white; text-align:left" class="image-box">
           <div class="my-text-container" style="padding:15px">
             <div class="part1">
@@ -134,7 +143,46 @@ function adjustImageBoxWidth() {
     }
 }
 
+
+document.addEventListener('DOMContentLoaded', function() {
+  fetch('pubs.json?' + new Date().getTime())
+    .then(response => response.json())
+    .then(data => {
+      const buttons = document.querySelectorAll('.slider-btn');
+      buttons.forEach(button => {
+        button.addEventListener('click', () => {
+          const key = button.getAttribute('data-key');
+          const entry = data.find(item => item.title.includes(key));
+          if (entry) {
+            updatePage(entry);
+          } else {
+            console.error(`Entry not found for key: ${key}`);
+          }
+        });
+      });
+    })
+    .catch(error => console.error('Error loading the JSON file:', error));
+});
+
+function updatePage(entry) {
+  document.querySelector('.image-box').style.backgroundImage = `linear-gradient(rgba(0, 0, 139, 0.62), rgba(0, 0, 139, 0.22) 30%, rgba(128, 0, 128, 0.22) 70%, rgba(128, 0, 128, 0.62)), url('${entry.img}')`;
+  document.querySelector('.post-title').innerHTML = `<div style="font-size: 25px; font-family: 'ArgosBoldItalic';">${entry.title}</div>`;
+  document.querySelector('.post-subtitle').innerHTML = entry.subtitle;
+
+  const readMoreButton = document.querySelector('.redirect-button');
+  readMoreButton.href = entry.readMoreUrl;
+
+  const imageBoxLink = document.querySelector('#image-box-link');
+  imageBoxLink.href = readMoreButton.href;
+
+  const linksHTML = entry.links.map(link => `<li class="post-subtitle"><a class="post-subtitle" href="${link.url}">${link.text}</a></li>`).join('');
+  document.querySelector('ul').innerHTML = linksHTML;
+}
+
 </script>
+
+
+
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -172,6 +220,29 @@ function adjustImageBoxWidth() {
     #installButton {
         width: 100%; /* Width on small screens */
     }
+}
+
+
+.slider-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px;
+}
+
+.slider {
+  display: inline-block;
+}
+
+.slider-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  margin-right: 10px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .app-footer {
