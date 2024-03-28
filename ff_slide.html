@@ -134,22 +134,6 @@
     </div>
 
 
-<script>
-function adjustImageBoxWidth() {
-    const imageBox = document.querySelector('.image-box');
-    if (window.innerWidth < 600) {
-        // Adjust according to your preference for smaller screens
-        imageBox.style.width = '100%';
-    } else {
-        // Default width
-        imageBox.style.width = '80%';
-    }
-};
-
-
-
-
-</script>
 
 
 
@@ -176,7 +160,7 @@ function adjustImageBoxWidth() {
                 document.querySelector('ul').innerHTML = linksHTML;
             })
             .catch(error => console.error('Error loading the JSON file:', error));
-    });
+    };
 
 
 
@@ -196,6 +180,18 @@ function adjustImageBoxWidth() {
     }
 </script>
 
+<script>
+function adjustImageBoxWidth() {
+    const imageBox = document.querySelector('.image-box');
+    if (window.innerWidth < 600) {
+        // Adjust according to your preference for smaller screens
+        imageBox.style.width = '100%';
+    } else {
+        // Default width
+        imageBox.style.width = '80%';
+    }
+}
+</script>
 
 
 
@@ -206,18 +202,6 @@ function adjustImageBoxWidth() {
     #installButton {
         width: 100%; /* Width on small screens */
     }
-}
-
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  padding: 20px;
-  background: #eee;
-  user-select: none;
 }
 
 [type=radio] {
@@ -297,8 +281,6 @@ body {
   text-align: center;
   width: auto;
 }
-
-
 
 .app-footer {
     position: fixed;
