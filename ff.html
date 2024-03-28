@@ -86,6 +86,25 @@
           </div>
         </header>
 
+
+        <div class="carousel-container">
+          <button class="carousel-prev">Prev</button>
+          <div class="carousel-slider">
+            <div class="carousel-slide">
+              <button class="button-parla-futuro" data-key="ff.65">ff.65</button>
+              <button class="button-parla-futuro" data-key="ff.66">ff.66</button>
+              <button class="button-parla-futuro" data-key="ff.67">ff.67</button>
+            </div>
+            <div class="carousel-slide">
+              <button class="button-parla-futuro" data-key="ff.68">ff.68</button>
+              <button class="button-parla-futuro" data-key="ff.69">ff.69</button>
+              <button class="button-parla-futuro" data-key="ff.70">ff.70</button>
+            </div>
+            <!-- Add more slides here -->
+          </div>
+          <button class="carousel-next">Next</button>
+        </div>
+
         <div class="slider-container" style="margin-top:50px">
           <div class="slider">
             <button class="button-parla-futuro slider-btn" style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic';background-color: transparent; text-align: center; width: auto;"
@@ -211,6 +230,32 @@ function updatePage(entry) {
             })
             .catch(error => console.error('Error loading the JSON file:', error));
     });
+
+    const carouselSlider = document.querySelector('.carousel-slider');
+    const carouselSlides = document.querySelectorAll('.carousel-slide');
+    const prevButton = document.querySelector('.carousel-prev');
+    const nextButton = document.querySelector('.carousel-next');
+    let currentSlide = 0;
+
+    function showSlide(n) {
+      carouselSlider.style.transform = `translateX(-${n * 100}%)`;
+    }
+
+    showSlide(currentSlide);
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % carouselSlides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + carouselSlides.length) % carouselSlides.length;
+      showSlide(currentSlide);
+    }
+
+    prevButton.addEventListener('click', prevSlide);
+    nextButton.addEventListener('click', nextSlide);
+
 </script>
 
 
@@ -225,6 +270,26 @@ function updatePage(entry) {
     }
 }
 
+.carousel-prev,
+.carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  padding: 8px 16px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.carousel-prev {
+  left: 10px;
+}
+
+.carousel-next {
+  right: 10px;
+}
 
 .slider-container {
   overflow-x: auto;
