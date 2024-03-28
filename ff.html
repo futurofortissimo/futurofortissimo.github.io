@@ -297,11 +297,19 @@ function updatePage(entry) {
     }
 }
 .carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* If you want vertical centering as well */
   width: 100%;
   overflow: hidden;
-  position: relative;
 }
 
+@media (max-width: 600px) {
+  .carousel-slide {
+    width: 90%; /* Adjust based on preference */
+    margin: 0 auto; /* Center the slide */
+  }
+}
 .carousel-wrapper {
   display: flex;
   align-items: center;
