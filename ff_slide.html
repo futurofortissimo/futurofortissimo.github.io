@@ -193,39 +193,7 @@ function adjustImageBoxWidth() {
         width: 100%; /* Width on small screens */
     }
 }
-.carousel-container {
-  display: flex;
-  justify-content: center;
-  align-items: center; /* If you want vertical centering as well */
-  width: 100%;
-  overflow: hidden;
-}
 
-@media (max-width: 600px) {
-  .carousel-slide {
-    width: 90%; /* Adjust based on preference */
-    margin: 0 auto; /* Center the slide */
-  }
-}
-.carousel-wrapper {
-  display: flex;
-  align-items: center;
-  max-width:650px
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.carousel-slider {
-  display: flex;
-  transition: transform 0.5s ease;
-}
-
-.carousel-slide {
-  flex: 0 0 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .button-parla-futuro {
   margin: 5px;
@@ -243,44 +211,6 @@ function adjustImageBoxWidth() {
 }
 
 
-.carousel-prev,
-.carousel-next {
-  font-size: 24px;
-  padding: 8px 16px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.carousel-prev {
-  left: 10px;
-}
-
-.carousel-next {
-  right: 10px;
-}
-.slider-container {
-  overflow-x: auto;
-  white-space: nowrap;
-  padding: 10px;
-}
-
-.slider {
-  display: inline-block;
-}
-
-.slider-btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  border-radius: 20px;
-  margin-right: 10px;
-  font-size: 16px;
-  cursor: pointer;
-}
 
 .app-footer {
     position: fixed;
@@ -304,11 +234,6 @@ function adjustImageBoxWidth() {
     display: block;
 }
 
-// Initial adjustment
-adjustImageBoxWidth();
-
-// Adjust on window resize
-window.addEventListener('resize', adjustImageBoxWidth);
 body, html {
     margin: 0;
     padding: 0;
