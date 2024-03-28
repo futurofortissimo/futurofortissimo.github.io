@@ -242,45 +242,52 @@ function updatePage(entry) {
                 document.querySelector('ul').innerHTML = linksHTML;
             })
             .catch(error => console.error('Error loading the JSON file:', error));
-    });
-
-
-    const carouselSlides = document.querySelectorAll('.carousel-slide');
-    const prevButton = document.querySelector('.carousel-prev');
-    const nextButton = document.querySelector('.carousel-next');
-    let currentSlide = 0;
-
-    function showSlide(n) {
-      carouselSlides.forEach((slide, index) => {
-        slide.style.transform = `translateX(-${n * 100}%)`;
-        if (index === n) {
-          slide.style.visibility = 'visible';
-        } else {
-          slide.style.visibility = 'hidden';
-        }
-      });
     };
 
-    function nextSlide() {
-      carouselSlides[currentSlide].style.visibility = 'hidden';
-      currentSlide = (currentSlide + 1) % carouselSlides.length;
-      showSlide(currentSlide);
-    }
 
-    function prevSlide() {
-      carouselSlides[currentSlide].style.visibility = 'hidden';
-      currentSlide = (currentSlide - 1 + carouselSlides.length) % carouselSlides.length;
-      showSlide(currentSlide);
-    }
 
-    prevButton.addEventListener('click', prevSlide);
-    nextButton.addEventListener('click', nextSlide);
-    showSlide(currentSlide);
+      const carouselSlides = document.querySelectorAll('.carousel-slide');
+      const prevButtons = [document.querySelector('.carousel-prev'), document.querySelector('.carousel-prev_2'), document.querySelector('.carousel-prev_3')];
+      const nextButtons = [document.querySelector('.carousel-next'), document.querySelector('.carousel-next_2'), document.querySelector('.carousel-next_3')];
+      let currentSlide = 0;
+
+      function showSlide(n) {
+          carouselSlides.forEach((slide, index) => {
+              slide.style.transform = `translateX(-${n * 100}%)`;
+              slide.style.visibility = index === n ? 'visible' : 'hidden';
+          });
+      };
+
+      function nextSlide() {
+          currentSlide = (currentSlide + 1) % carouselSlides.length;
+          showSlide(currentSlide);
+      }
+
+      function prevSlide() {
+          currentSlide = (currentSlide - 1 + carouselSlides.length) % carouselSlides.length;
+          showSlide(currentSlide);
+      }
+
+      // Setup event listeners for all previous buttons
+      prevButtons.forEach(button => {
+          if (button) { // Check if the button exists
+              button.addEventListener('click', prevSlide);
+          }
+      });
+
+      // Setup event listeners for all next buttons
+      nextButtons.forEach(button => {
+          if (button) { // Check if the button exists
+              button.addEventListener('click', nextSlide);
+          }
+      });
+
+      // Initially display the first slide
+      showSlide(currentSlide);
+  })
+
 
 </script>
-
-
-
 
 <style>
 
