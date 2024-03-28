@@ -179,26 +179,6 @@ function adjustImageBoxWidth() {
 };
 
 
-document.addEventListener('DOMContentLoaded', function() {
-  fetch('pubs.json?' + new Date().getTime())
-    .then(response => response.json())
-    .then(data => {
-      const buttons = document.querySelectorAll('.slider-btn');
-      buttons.forEach(button => {
-        button.addEventListener('click', () => {
-          const key = button.getAttribute('data-key');
-          const entry = data.find(item => item.title.includes(key));
-          if (entry) {
-            updatePage(entry);
-          } else {
-            console.error(`Entry not found for key: ${key}`);
-          }
-        });
-      });
-    })
-    .catch(error => console.error('Error loading the JSON file:', error));
-});
-
 function updatePage(entry) {
   document.querySelector('.image-box').style.backgroundImage = `linear-gradient(rgba(0, 0, 139, 0.62), rgba(0, 0, 139, 0.22) 30%, rgba(128, 0, 128, 0.22) 70%, rgba(128, 0, 128, 0.62)), url('${entry.img}')`;
   document.querySelector('.post-title').innerHTML = `<div style="font-size: 25px; font-family: 'ArgosBoldItalic';">${entry.title}</div>`;
@@ -220,68 +200,86 @@ function updatePage(entry) {
 
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        fetch('pubs.json?' + new Date().getTime())
-            .then(response => response.json())
-            .then(data => {
-                const randomEntry = data[Math.floor(Math.random() * data.length)];
-                document.querySelector('.image-box').style.backgroundImage = `linear-gradient(rgba(0, 0, 139, 0.62), rgba(0, 0, 139, 0.22) 30%, rgba(128, 0, 128, 0.22) 70%, rgba(128, 0, 128, 0.62)), url('${randomEntry.img}')`;
-                document.querySelector('.post-title').innerHTML = `<div style="font-size: 25px; font-family: 'ArgosBoldItalic';">${randomEntry.title}</div>`;
-                document.querySelector('.post-subtitle').innerHTML = randomEntry.subtitle;
-
-                // Update the 'Leggi ora' button link
-                const readMoreButton = document.querySelector('.redirect-button');
-                readMoreButton.href = randomEntry.readMoreUrl;
-
-                // Update the link for the .image-box div
-                const imageBoxLink = document.querySelector('#image-box-link');
-                imageBoxLink.href = readMoreButton.href;
-
-                // Update links in the list
-                const linksHTML = randomEntry.links.map(link => `<li class="post-subtitle"><a class="post-subtitle" href="${link.url}">${link.text}</a></li>`).join('');
-                document.querySelector('ul').innerHTML = linksHTML;
-            })
-            .catch(error => console.error('Error loading the JSON file:', error));
+  document.addEventListener('DOMContentLoaded', function() {
+    fetch('pubs.json?' + new Date().getTime())
+      .then(response => response.json())
+      .then(data => {
+        const buttons = document.querySelectorAll('.slider-btn');
+        buttons.forEach(button => {
+          button.addEventListener('click', () => {
+            const key = button.getAttribute('data-key');
+            const entry = data.find(item => item.title.includes(key));
+            if (entry) {
+              updatePage(entry);
+            } else {
+              console.error(`Entry not found for key: ${key}`);
+            }
+          });
+        });
+      })
+      .catch(error => console.error('Error loading the JSON file:', error));
     });
+    fetch('pubs.json?' + new Date().getTime())
+        .then(response => response.json())
+        .then(data => {
+            const randomEntry = data[Math.floor(Math.random() * data.length)];
+            document.querySelector('.image-box').style.backgroundImage = `linear-gradient(rgba(0, 0, 139, 0.62), rgba(0, 0, 139, 0.22) 30%, rgba(128, 0, 128, 0.22) 70%, rgba(128, 0, 128, 0.62)), url('${randomEntry.img}')`;
+            document.querySelector('.post-title').innerHTML = `<div style="font-size: 25px; font-family: 'ArgosBoldItalic';">${randomEntry.title}</div>`;
+            document.querySelector('.post-subtitle').innerHTML = randomEntry.subtitle;
+
+            // Update the 'Leggi ora' button link
+            const readMoreButton = document.querySelector('.redirect-button');
+            readMoreButton.href = randomEntry.readMoreUrl;
+
+            // Update the link for the .image-box div
+            const imageBoxLink = document.querySelector('#image-box-link');
+            imageBoxLink.href = readMoreButton.href;
+
+            // Update links in the list
+            const linksHTML = randomEntry.links.map(link => `<li class="post-subtitle"><a class="post-subtitle" href="${link.url}">${link.text}</a></li>`).join('');
+            document.querySelector('ul').innerHTML = linksHTML;
+        })
+        .catch(error => console.error('Error loading the JSON file:', error));
+  });
 
 
-    const carouselSlides = document.querySelectorAll('.carousel-slide');
-    const prevButton = document.querySelector('.carousel-prev');
-    const prevButton_2 = document.querySelector('.carousel-prev_');
-    const prevButton_3 = document.querySelector('.carousel-prev_3');
+const carouselSlides = document.querySelectorAll('.carousel-slide');
+const prevButton = document.querySelector('.carousel-prev');
+const prevButton_2 = document.querySelector('.carousel-prev_');
+const prevButton_3 = document.querySelector('.carousel-prev_3');
 
-    const nextButton = document.querySelector('.carousel-next');
-    const nextButton_2 = document.querySelector('.carousel-next_2');
-    const nextButton_3 = document.querySelector('.carousel-next_3');
+const nextButton = document.querySelector('.carousel-next');
+const nextButton_2 = document.querySelector('.carousel-next_2');
+const nextButton_3 = document.querySelector('.carousel-next_3');
 
-    let currentSlide = 0;
+let currentSlide = 0;
 
-    function showSlide(n) {
-      carouselSlides.forEach((slide, index) => {
-        slide.style.transform = `translateX(-${n * 100}%)`;
-        if (index === n) {
-          slide.style.visibility = 'visible';
-        } else {
-          slide.style.visibility = 'hidden';
-        }
-      });
-    };
-
-    function nextSlide() {
-      carouselSlides[currentSlide].style.visibility = 'hidden';
-      currentSlide = (currentSlide + 1) % carouselSlides.length;
-      showSlide(currentSlide);
+function showSlide(n) {
+  carouselSlides.forEach((slide, index) => {
+    slide.style.transform = `translateX(-${n * 100}%)`;
+    if (index === n) {
+      slide.style.visibility = 'visible';
+    } else {
+      slide.style.visibility = 'hidden';
     }
+  });
+};
 
-    function prevSlide() {
-      carouselSlides[currentSlide].style.visibility = 'hidden';
-      currentSlide = (currentSlide - 1 + carouselSlides.length) % carouselSlides.length;
-      showSlide(currentSlide);
-    }
+function nextSlide() {
+  carouselSlides[currentSlide].style.visibility = 'hidden';
+  currentSlide = (currentSlide + 1) % carouselSlides.length;
+  showSlide(currentSlide);
+}
 
-    prevButton.addEventListener('click', prevSlide);
-    nextButton.addEventListener('click', nextSlide);
-    showSlide(currentSlide);
+function prevSlide() {
+  carouselSlides[currentSlide].style.visibility = 'hidden';
+  currentSlide = (currentSlide - 1 + carouselSlides.length) % carouselSlides.length;
+  showSlide(currentSlide);
+}
+
+prevButton.addEventListener('click', prevSlide);
+nextButton.addEventListener('click', nextSlide);
+showSlide(currentSlide);
 
 </script>
 
