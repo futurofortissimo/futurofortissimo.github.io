@@ -90,17 +90,6 @@
         <section id="slider">
           <input type="radio" name="slider" id="s1">
           <input type="radio" name="slider" id="s2">
-          <a href="#" id="image-box-link"  style="cursor: pointer; font-size: 21px; margin-left:auto; font-family:palladio; color:white; text-align:left" class="image-box">
-            <div class="my-text-container" style="padding:15px">
-              <div class="part1">
-                <div class="post-title"></div>
-                <div class="post-subtitle"></div>
-              </div>
-              <div class="part2">
-                <ul style="text-decoration: underline;"></ul>
-              </div>
-            </div>
-          </a>
           <input type="radio" name="slider" id="s3" checked>
           <input type="radio" name="slider" id="s4">
           <input type="radio" name="slider" id="s5">
@@ -138,46 +127,50 @@
 
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        fetch('pubs.json?' + new Date().getTime())
-            .then(response => response.json())
-            .then(data => {
-                const randomEntry = data[Math.floor(Math.random() * data.length)];
-                document.querySelector('.image-box').style.backgroundImage = `linear-gradient(rgba(0, 0, 139, 0.62), rgba(0, 0, 139, 0.22) 30%, rgba(128, 0, 128, 0.22) 70%, rgba(128, 0, 128, 0.62)), url('${randomEntry.img}')`;
-                document.querySelector('.post-title').innerHTML = `<div style="font-size: 25px; font-family: 'ArgosBoldItalic';">${randomEntry.title}</div>`;
-                document.querySelector('.post-subtitle').innerHTML = randomEntry.subtitle;
+document.addEventListener('DOMContentLoaded', function() {
+  fetch('pubs.json?' + new Date().getTime())
+      .then(response => response.json())
+      .then(data => {
+          const slider = document.getElementById('slider');
+          data.forEach((entry, index) => {
+              // Create slide input (radio button)
+              const slideInput = document.createElement('input');
+              slideInput.type = 'radio';
+              slideInput.name = 'slider';
+              slideInput.id = `s${index + 1}`;
+              if (index === 0) slideInput.checked = true;
 
-                // Update the 'Leggi ora' button link
-                const readMoreButton = document.querySelector('.redirect-button');
-                readMoreButton.href = randomEntry.readMoreUrl;
+              // Create slide label (visual representation)
+              const slideLabel = document.createElement('label');
+              slideLabel.htmlFor = `s${index + 1}`;
+              slideLabel.id = `slide${index + 1}`;
+              slideLabel.style.backgroundImage = `url('${entry.img}')`;
 
-                // Update the link for the .image-box div
-                const imageBoxLink = document.querySelector('#image-box-link');
-                imageBoxLink.href = readMoreButton.href;
+              // Append elements to the slider
+              slider.appendChild(slideInput);
+              slider.appendChild(slideLabel);
 
-                // Update links in the list
-                const linksHTML = randomEntry.links.map(link => `<li class="post-subtitle"><a class="post-subtitle" href="${link.url}">${link.text}</a></li>`).join('');
-                document.querySelector('ul').innerHTML = linksHTML;
-            })
-            .catch(error => console.error('Error loading the JSON file:', error));
-    };
+              // Optionally, add click event to each label to update main display area
+              slideLabel.addEventListener('click', () => updatePage(entry));
+          });
 
+          // Update the display area with the first item's details
+          updatePage(data[0]);
+      })
+      .catch(error => console.error('Error loading the JSON file:', error));
+});
 
+function updatePage(entry) {
+  document.querySelector('.image-box').style.backgroundImage = `linear-gradient(rgba(0, 0, 139, 0.62), rgba(0, 0, 139, 0.22) 30%, rgba(128, 0, 128, 0.22) 70%, rgba(128, 0, 128, 0.62)), url('${entry.img}')`;
+  document.querySelector('.post-title').innerHTML = `<div style="font-size: 25px; font-family: 'ArgosBoldItalic';">${entry.title}</div>`;
+  document.querySelector('.post-subtitle').innerHTML = entry.subtitle;
 
-    function updatePage(entry) {
-      document.querySelector('.image-box').style.backgroundImage = `linear-gradient(rgba(0, 0, 139, 0.62), rgba(0, 0, 139, 0.22) 30%, rgba(128, 0, 128, 0.22) 70%, rgba(128, 0, 128, 0.62)), url('${entry.img}')`;
-      document.querySelector('.post-title').innerHTML = `<div style="font-size: 25px; font-family: 'ArgosBoldItalic';">${entry.title}</div>`;
-      document.querySelector('.post-subtitle').innerHTML = entry.subtitle;
+  const imageBoxLink = document.querySelector('#image-box-link');
+  imageBoxLink.href = entry.readMoreUrl;
 
-      const readMoreButton = document.querySelector('.redirect-button');
-      readMoreButton.href = entry.readMoreUrl;
-
-      const imageBoxLink = document.querySelector('#image-box-link');
-      imageBoxLink.href = readMoreButton.href;
-
-      const linksHTML = entry.links.map(link => `<li class="post-subtitle"><a class="post-subtitle" href="${link.url}">${link.text}</a></li>`).join('');
-      document.querySelector('ul').innerHTML = linksHTML;
-    }
+  const linksHTML = entry.links.map(link => `<li class="post-subtitle"><a class="post-subtitle" href="${link.url}">${link.text}</a></li>`).join('');
+  document.querySelector('.my-text-container ul').innerHTML = linksHTML;
+}
 </script>
 
 <script>
