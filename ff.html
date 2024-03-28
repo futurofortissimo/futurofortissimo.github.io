@@ -88,31 +88,38 @@
 
 
         <div class="carousel-container">
-          <button class="carousel-prev">Prev</button>
+          <div class="carousel-wrapper">
+
+          <button class="carousel-prev">&#8249;</button>
           <div class="carousel-slider">
             <div class="carousel-slide">
-              <button class="button-parla-futuro" data-key="ff.65">ff.65</button>
-              <button class="button-parla-futuro" data-key="ff.66">ff.66</button>
-              <button class="button-parla-futuro" data-key="ff.67">ff.67</button>
+              <p> Clima </p>
+              <button class="button-parla-futuro slider-btn" style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic';background-color: transparent; text-align: center; width: auto;"
+               data-key="ff.1">ff.1</button>
+              <button class="button-parla-futuro slider-btn" style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic';background-color: transparent; text-align: center; width: auto;"
+              data-key="ff.65">ff.65</button>
+              <button class="button-parla-futuro slider-btn" style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic';background-color: transparent; text-align: center; width: auto;"
+              data-key="ff.65">ff.65</button>
             </div>
             <div class="carousel-slide">
-              <button class="button-parla-futuro" data-key="ff.68">ff.68</button>
-              <button class="button-parla-futuro" data-key="ff.69">ff.69</button>
-              <button class="button-parla-futuro" data-key="ff.70">ff.70</button>
+              <p> Clima </p>
+              <button class="button-parla-futuro slider-btn" style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic';background-color: transparent; text-align: center; width: auto;"
+               data-key="ff.1">ff.1</button>
+              <button class="button-parla-futuro slider-btn" style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic';background-color: transparent; text-align: center; width: auto;"
+              data-key="ff.65">ff.65</button>
+              <button class="button-parla-futuro slider-btn" style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic';background-color: transparent; text-align: center; width: auto;"
+              data-key="ff.87">ff.87</button>
             </div>
             <!-- Add more slides here -->
           </div>
-          <button class="carousel-next">Next</button>
+          <button class="carousel-next">&#8250;</button>
+          </div>
+
         </div>
 
         <div class="slider-container" style="margin-top:50px">
           <div class="slider">
-            <button class="button-parla-futuro slider-btn" style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic';background-color: transparent; text-align: center; width: auto;"
-             data-key="ff.65">ff.65</button>
-            <button class="button-parla-futuro slider-btn" style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic';background-color: transparent; text-align: center; width: auto;"
-            data-key="ff.65">ff.65</button>
-            <button class="button-parla-futuro slider-btn" style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic';background-color: transparent; text-align: center; width: auto;"
-            data-key="ff.65">ff.65</button>
+
             <!-- Add more buttons here -->
           </div>
         </div>
@@ -269,6 +276,10 @@ function updatePage(entry) {
         width: 100%; /* Width on small screens */
     }
 }
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+}
 
 .carousel-container {
   width: 100%;
@@ -305,9 +316,6 @@ function updatePage(entry) {
 
 .carousel-prev,
 .carousel-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   font-size: 24px;
   padding: 8px 16px;
   background-color: rgba(0, 0, 0, 0.5);
