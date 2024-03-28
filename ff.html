@@ -48,7 +48,8 @@
       gtag('js', new Date());
 
       gtag('config', 'G-NQ7MQR0VL8');
-    </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="color-scheme" content="light only">
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="color-scheme" content="light only">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>futuro fortissimo michele merelli</title>
     <meta name="description" content="Exploring the potential of technology and sustainability to build a greener future. Discover how innovative solutions in climate change can pave the way for new communities and even new nation states. Esplorando il potenziale della tecnologia e della sostenibilità per costruire un futuro più verde. Scopri come le soluzioni innovative nel cambiamento climatico possono aprire la strada a nuove comunità e persino a nuovi stati nazione.">
@@ -176,6 +177,24 @@ function adjustImageBoxWidth() {
 }
 
 
+function updatePage(entry) {
+  document.querySelector('.image-box').style.backgroundImage = `linear-gradient(rgba(0, 0, 139, 0.62), rgba(0, 0, 139, 0.22) 30%, rgba(128, 0, 128, 0.22) 70%, rgba(128, 0, 128, 0.62)), url('${entry.img}')`;
+  document.querySelector('.post-title').innerHTML = `<div style="font-size: 25px; font-family: 'ArgosBoldItalic';">${entry.title}</div>`;
+  document.querySelector('.post-subtitle').innerHTML = entry.subtitle;
+
+  const readMoreButton = document.querySelector('.redirect-button');
+  readMoreButton.href = entry.readMoreUrl;
+
+  const imageBoxLink = document.querySelector('#image-box-link');
+  imageBoxLink.href = readMoreButton.href;
+
+  const linksHTML = entry.links.map(link => `<li class="post-subtitle"><a class="post-subtitle" href="${link.url}">${link.text}</a></li>`).join('');
+  document.querySelector('ul').innerHTML = linksHTML;
+}
+</script>
+
+<script>
+
 document.addEventListener('DOMContentLoaded', function() {
   fetch('pubs.json?' + new Date().getTime())
     .then(response => response.json())
@@ -195,21 +214,6 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .catch(error => console.error('Error loading the JSON file:', error));
 });
-
-function updatePage(entry) {
-  document.querySelector('.image-box').style.backgroundImage = `linear-gradient(rgba(0, 0, 139, 0.62), rgba(0, 0, 139, 0.22) 30%, rgba(128, 0, 128, 0.22) 70%, rgba(128, 0, 128, 0.62)), url('${entry.img}')`;
-  document.querySelector('.post-title').innerHTML = `<div style="font-size: 25px; font-family: 'ArgosBoldItalic';">${entry.title}</div>`;
-  document.querySelector('.post-subtitle').innerHTML = entry.subtitle;
-
-  const readMoreButton = document.querySelector('.redirect-button');
-  readMoreButton.href = entry.readMoreUrl;
-
-  const imageBoxLink = document.querySelector('#image-box-link');
-  imageBoxLink.href = readMoreButton.href;
-
-  const linksHTML = entry.links.map(link => `<li class="post-subtitle"><a class="post-subtitle" href="${link.url}">${link.text}</a></li>`).join('');
-  document.querySelector('ul').innerHTML = linksHTML;
-}
 
 </script>
 
@@ -242,42 +246,43 @@ function updatePage(entry) {
     });
 
 
-    const carouselSlides = document.querySelectorAll('.carousel-slide');
-    const prevButton = document.querySelector('.carousel-prev');
-    const nextButton = document.querySelector('.carousel-next');
-    let currentSlide = 0;
-
-    function showSlide(n) {
-      carouselSlides.forEach((slide, index) => {
-        slide.style.transform = `translateX(-${n * 100}%)`;
-        if (index === n) {
-          slide.style.visibility = 'visible';
-        } else {
-          slide.style.visibility = 'hidden';
-        }
-      });
-    }
-
-
-    showSlide(currentSlide);
-
-    function nextSlide() {
-      carouselSlides[currentSlide].style.visibility = 'hidden';
-      currentSlide = (currentSlide + 1) % carouselSlides.length;
-      showSlide(currentSlide);
-    }
-
-    function prevSlide() {
-      carouselSlides[currentSlide].style.visibility = 'hidden';
-      currentSlide = (currentSlide - 1 + carouselSlides.length) % carouselSlides.length;
-      showSlide(currentSlide);
-    }
-
-    prevButton.addEventListener('click', prevSlide);
-    nextButton.addEventListener('click', nextSlide);
-
 </script>
 
+<script>
+const carouselSlides = document.querySelectorAll('.carousel-slide');
+const prevButton = document.querySelector('.carousel-prev');
+const nextButton = document.querySelector('.carousel-next');
+let currentSlide = 0;
+
+function showSlide(n) {
+  carouselSlides.forEach((slide, index) => {
+    slide.style.transform = `translateX(-${n * 100}%)`;
+    if (index === n) {
+      slide.style.visibility = 'visible';
+    } else {
+      slide.style.visibility = 'hidden';
+    }
+  });
+}
+
+
+showSlide(currentSlide);
+
+function nextSlide() {
+  carouselSlides[currentSlide].style.visibility = 'hidden';
+  currentSlide = (currentSlide + 1) % carouselSlides.length;
+  showSlide(currentSlide);
+}
+
+function prevSlide() {
+  carouselSlides[currentSlide].style.visibility = 'hidden';
+  currentSlide = (currentSlide - 1 + carouselSlides.length) % carouselSlides.length;
+  showSlide(currentSlide);
+}
+
+prevButton.addEventListener('click', prevSlide);
+nextButton.addEventListener('click', nextSlide);
+</script>
 
 
 
@@ -289,39 +294,56 @@ function updatePage(entry) {
         width: 100%; /* Width on small screens */
     }
 }
-.carousel-container {
-  display: flex;
-  justify-content: center;
-  align-items: center; /* If you want vertical centering as well */
-  width: 100%;
-  overflow: hidden;
-}
 
-@media (max-width: 600px) {
-  .carousel-slide {
-    width: 90%; /* Adjust based on preference */
-    margin: 0 auto; /* Center the slide */
-  }
-}
-.carousel-wrapper {
-  display: flex;
-  align-items: center;
-  max-width:650px
-  justify-content: center;
-  margin-bottom: 20px;
-}
+<style>
+    /* Inline styles moved here for clarity, consider moving to an external stylesheet */
+    .carousel-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      overflow: hidden;
+    }
 
-.carousel-slider {
-  display: flex;
-  transition: transform 0.5s ease;
-}
+    .carousel-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
 
-.carousel-slide {
-  flex: 0 0 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+    .carousel-slider {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-slide {
+      flex: 0 0 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden; /* Ensure slides are initially hidden */
+    }
+
+    .carousel-slide.active {
+      visibility: visible; /* Only the active slide is visible */
+    }
+
+    /* Ensure the prev and next buttons are visible and functional */
+    .carousel-prev,
+    .carousel-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      cursor: pointer;
+      z-index: 100;
+    }
+
+    .carousel-prev { left: 10px; }
+    .carousel-next { right: 10px; }
 
 .button-parla-futuro {
   margin: 5px;
@@ -338,33 +360,6 @@ function updatePage(entry) {
   width: auto;
 }
 
-
-.carousel-prev,
-.carousel-next {
-  font-size: 24px;
-  padding: 8px 16px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.carousel-prev {
-  left: 10px;
-}
-
-.carousel-next {
-  right: 10px;
-}
-.slider-container {
-  overflow-x: auto;
-  white-space: nowrap;
-  padding: 10px;
-}
-
-.slider {
-  display: inline-block;
-}
 
 .slider-btn {
   display: inline-block;
@@ -400,11 +395,7 @@ function updatePage(entry) {
     display: block;
 }
 
-// Initial adjustment
-adjustImageBoxWidth();
 
-// Adjust on window resize
-window.addEventListener('resize', adjustImageBoxWidth);
 body, html {
     margin: 0;
     padding: 0;
