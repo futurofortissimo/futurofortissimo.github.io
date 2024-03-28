@@ -243,6 +243,31 @@ function updatePage(entry) {
       currentSlide = (currentSlide - 1 + carouselSlides.length) % carouselSlides.length;
       showSlide(currentSlide);
     }
+
+    const carouselSlider = document.querySelector('.carousel-slider');
+    const carouselSlides = document.querySelectorAll('.carousel-slide');
+    const prevButton = document.querySelector('.carousel-prev');
+    const nextButton = document.querySelector('.carousel-next');
+    let currentSlide = 0;
+
+    function showSlide(n) {
+      carouselSlider.style.transform = `translateX(-${n * 100}%)`;
+    }
+
+    showSlide(currentSlide);
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % carouselSlides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + carouselSlides.length) % carouselSlides.length;
+      showSlide(currentSlide);
+    }
+
+    prevButton.addEventListener('click', prevSlide);
+    nextButton.addEventListener('click', nextSlide);
 </script>
 
 
@@ -274,6 +299,27 @@ function updatePage(entry) {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.carousel-prev,
+.carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  padding: 8px 16px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.carousel-prev {
+  left: 10px;
+}
+
+.carousel-next {
+  right: 10px;
 }
 
 .slide {
