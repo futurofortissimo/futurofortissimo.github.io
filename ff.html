@@ -250,6 +250,7 @@ function updatePage(entry) {
 
     function showSlide(n) {
       carouselSlides.forEach((slide, index) => {
+        carouselSlider.style.transform = `translateX(-${n * 100}%)`;
         if (index === n) {
           slide.style.visibility = 'visible';
         } else {
@@ -257,6 +258,7 @@ function updatePage(entry) {
         }
       });
     }
+
 
     showSlide(currentSlide);
 
