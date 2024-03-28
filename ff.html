@@ -86,28 +86,23 @@
           </div>
         </header>
 
-
-        <div class="carousel-container">
-          <div class="carousel-slider">
-            <div class="carousel-slide">
-              <button class="button-parla-futuro slider-btn" data-key="ff.44">ff.44</button>
-              <button class="button-parla-futuro slider-btn" data-key="ff.65">ff.65</button>
-              <button class="button-parla-futuro slider-btn"  data-key="ff.77">ff.77</button>
-            </div>
-            <div class="carousel-slide">
-              <button class="button-parla-futuro slider-btn" data-key="ff.1">ff.1</button>
-              <button class="button-parla-futuro slider-btn" data-key="ff.73">ff.73</button>
-              <button class="button-parla-futuro slider-btn" data-key="ff.88">ff.88</button>
-            </div>
-            <div class="carousel-slide">
-              <button class="button-parla-futuro slider-btn" data-key="ff.1">ff.1</button>
-              <button class="button-parla-futuro slider-btn" data-key="ff.34">ff.34</button>
-              <button class="button-parla-futuro slider-btn" data-key="ff.54">ff.54</button>
-            </div>
-            <!-- Add more slides here -->
+        <div class="slider-container" style="margin-top:50px">
+          <div class="slider">
+            <button class="button-parla-futuro slider-btn" data-key="ff.44">ff.44</button>
+            <button class="button-parla-futuro slider-btn" data-key="ff.65">ff.65</button>
+            <button class="button-parla-futuro slider-btn"  data-key="ff.77">ff.77</button>
           </div>
+          <div class="slide">
+             <button class="button-parla-futuro slider-btn" data-key="ff.1">ff.1</button>
+             <button class="button-parla-futuro slider-btn" data-key="ff.73">ff.73</button>
+             <button class="button-parla-futuro slider-btn" data-key="ff.88">ff.88</button>
+           </div>
+          <div class="slide">
+             <button class="button-parla-futuro slider-btn" data-key="ff.1">ff.1</button>
+             <button class="button-parla-futuro slider-btn" data-key="ff.34">ff.34</button>
+             <button class="button-parla-futuro slider-btn" data-key="ff.54">ff.54</button>
+           </div>
         </div>
-
 
         <a href="#" id="image-box-link"  style="cursor: pointer; font-size: 21px; margin-left:auto; font-family:palladio; color:white; text-align:left" class="image-box">
           <div class="my-text-container" style="padding:15px">
@@ -222,27 +217,6 @@ function updatePage(entry) {
             })
             .catch(error => console.error('Error loading the JSON file:', error));
     });
-
-
-    const carouselSlider = document.querySelector('.carousel-slider');
-    const carouselSlides = document.querySelectorAll('.carousel-slide');
-    let currentSlide = 0;
-
-    function showSlide(n) {
-      carouselSlider.style.transform = `translateX(-${n * 100}%)`;
-    }
-
-    showSlide(currentSlide);
-
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % carouselSlides.length;
-      showSlide(currentSlide);
-    }
-
-    function prevSlide() {
-      currentSlide = (currentSlide - 1 + carouselSlides.length) % carouselSlides.length;
-      showSlide(currentSlide);
-    }
 </script>
 
 
@@ -258,22 +232,26 @@ function updatePage(entry) {
 }
 
 
-.carousel-container {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
+.slider-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px;
 }
 
-.carousel-slider {
-  display: flex;
-  transition: transform 0.5s ease;
+.slider {
+  display: inline-block;
 }
 
-.carousel-slide {
-  flex: 0 0 100%;
+.slider-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px;
+  -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+}
+
+.slider {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  scroll-behavior: smooth; /* For smooth scrolling */
 }
 
 .slide {
