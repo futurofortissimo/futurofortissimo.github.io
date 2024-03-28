@@ -237,7 +237,6 @@ function updatePage(entry) {
             })
             .catch(error => console.error('Error loading the JSON file:', error));
     });
-
     const carouselSlider = document.querySelector('.carousel-slider');
     const carouselSlides = document.querySelectorAll('.carousel-slide');
     const prevButton = document.querySelector('.carousel-prev');
@@ -245,6 +244,13 @@ function updatePage(entry) {
     let currentSlide = 0;
 
     function showSlide(n) {
+      carouselSlides.forEach((slide, index) => {
+        if (index === n) {
+          slide.style.display = 'flex';
+        } else {
+          slide.style.display = 'none';
+        }
+      });
       carouselSlider.style.transform = `translateX(-${n * 100}%)`;
     }
 
@@ -276,20 +282,18 @@ function updatePage(entry) {
         width: 100%; /* Width on small screens */
     }
 }
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
 .carousel-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80%; /* Adjust based on your preference */
-  max-width: 620px; /* Maximum width */
-  margin-bottom: 20px; /* Add some spacing between the carousel and image */
+  margin-bottom: 20px;
 }
-
-
-.carousel-container {
-  width: 100%;
-  overflow: hidden;
-  position: relat}
 
 .carousel-slider {
   display: flex;
