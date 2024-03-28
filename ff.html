@@ -164,8 +164,7 @@
         <img src="/index_files/app.png" id="installButton" style="max-width:400px; cursor:pointer; display: block; margin: 0 auto; padding:30px; margin:auto;" alt="Install App">
 
     </div>
-</body>
-</html>
+
 
 <script>
 function adjustImageBoxWidth() {
@@ -177,7 +176,7 @@ function adjustImageBoxWidth() {
         // Default width
         imageBox.style.width = '80%';
     }
-}
+};
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -260,10 +259,7 @@ function updatePage(entry) {
           slide.style.visibility = 'hidden';
         }
       });
-    }
-
-
-    showSlide(currentSlide);
+    };
 
     function nextSlide() {
       carouselSlides[currentSlide].style.visibility = 'hidden';
@@ -279,6 +275,7 @@ function updatePage(entry) {
 
     prevButton.addEventListener('click', prevSlide);
     nextButton.addEventListener('click', nextSlide);
+    showSlide(currentSlide);
 
 </script>
 
@@ -481,3 +478,6 @@ body, html {
     background-color: #777; /* Hover effect */
 }
 </style>
+
+</body>
+</html>
