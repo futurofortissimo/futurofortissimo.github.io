@@ -92,7 +92,7 @@
           <div class="carousel-slider">
             <div class="carousel-slide">
               <button class="button-parla-futuro carousel-prev">⬅️</button>
-              <p class="button-parla-futuro">🍃 Clima </p>
+              <button class="button-parla-futuro" href="https://futurofortissimo.github.io/clima">🍃 </button>
               <button class="button-parla-futuro slider-btn" style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic';background-color: transparent; text-align: center; width: auto;"
                data-key="ff.1">ff.1</button>
               <button class="button-parla-futuro slider-btn" style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic';background-color: transparent; text-align: center; width: auto;"
@@ -103,27 +103,27 @@
 
             </div>
             <div class="carousel-slide">
-              <button class="button-parla-futuro carousel-prev">⬅️</button>
-              <p class="button-parla-futuro"> 💻 Tecnologia </p>
+              <button class="button-parla-futuro carousel-prev-2">⬅️</button>
+              <button class="button-parla-futuro" href="https://futurofortissimo.github.io/wip"> 💻 </button>
               <button class="button-parla-futuro slider-btn" style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic';background-color: transparent; text-align: center; width: auto;"
                data-key="ff.52">ff.52</button>
               <button class="button-parla-futuro slider-btn" style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic';background-color: transparent; text-align: center; width: auto;"
               data-key="ff.75">ff.75</button>
               <button class="button-parla-futuro slider-btn" style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic';background-color: transparent; text-align: center; width: auto;"
               data-key="ff.85">ff.85</button>
-              <button class="button-parla-futuro carousel-next">➡️</button>
+              <button class="button-parla-futuro carousel-next-2">➡️</button>
 
             </div>
             <div class="carousel-slide">
-              <button class="button-parla-futuro carousel-prev">⬅️</button>
-              <p class="button-parla-futuro"> ❤️ Uomo </p>
+              <button class="button-parla-futuro carousel-prev-3">⬅️</button>
+              <button class="button-parla-futuro" href="https://futurofortissimo.github.io/wip"> ❤️ </button>
               <button class="button-parla-futuro slider-btn" style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic';background-color: transparent; text-align: center; width: auto;"
                data-key="ff.44">ff.45</button>
               <button class="button-parla-futuro slider-btn" style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic';background-color: transparent; text-align: center; width: auto;"
               data-key="ff.65">ff.65</button>
               <button class="button-parla-futuro slider-btn" style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic';background-color: transparent; text-align: center; width: auto;"
               data-key="ff.77">ff.77</button>
-              <button class="button-parla-futuro carousel-next">➡️</button>
+              <button class="button-parla-futuro carousel-next-3">➡️</button>
 
             </div>
             <!-- Add more slides here -->
@@ -210,6 +210,8 @@
       const carouselSlides = document.querySelectorAll('.carousel-slide');
       const prevButton = document.querySelector('.carousel-prev');
       const nextButton = document.querySelector('.carousel-next');
+      const prevButton_2 = document.querySelector('.carousel-prev-2');
+      const nextButton_2 = document.querySelector('.carousel-next-2');
       let currentSlide = 0;
 
       // Shows the slide corresponding to the currentSlide index
@@ -234,6 +236,9 @@
 
       prevButton.addEventListener('click', prevSlide);
       nextButton.addEventListener('click', nextSlide);
+      prevButton_2.addEventListener('click', prevSlide);
+      nextButton_2.addEventListener('click', prevSlide);
+
       showSlide(currentSlide); // Initialize the carousel to show the first slide
     });
     </script>
