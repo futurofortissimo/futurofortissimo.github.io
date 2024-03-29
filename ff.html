@@ -212,6 +212,8 @@
       const nextButton = document.querySelector('.carousel-next');
       const prevButton_2 = document.querySelector('.carousel-prev-2');
       const nextButton_2 = document.querySelector('.carousel-next-2');
+      const prevButton_3 = document.querySelector('.carousel-prev-3');
+      const nextButton_3 = document.querySelector('.carousel-next-3');
       let currentSlide = 0;
 
       // Shows the slide corresponding to the currentSlide index
@@ -238,7 +240,8 @@
       nextButton.addEventListener('click', nextSlide);
       prevButton_2.addEventListener('click', prevSlide);
       nextButton_2.addEventListener('click', prevSlide);
-
+      prevButton_3.addEventListener('click', prevSlide);
+      nextButton_3.addEventListener('click', prevSlide);
       showSlide(currentSlide); // Initialize the carousel to show the first slide
     });
     </script>
