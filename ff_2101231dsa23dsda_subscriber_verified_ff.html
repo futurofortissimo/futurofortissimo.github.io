@@ -254,57 +254,52 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
         function updateContent(data) {
-        const contentArea = document.getElementById('content-area');
-        contentArea.innerHTML = ''; // Clears the container before repopulating
+          const contentArea = document.getElementById('content-area');
+          contentArea.innerHTML = ''; // Clears the container before repopulating
 
-        // Shuffle data and then limit to 5 entries if there are more than 5
-        let displayData = data.sort(() => 0.5 - Math.random()).slice(0, Math.min(data.length, 5));
+          // Shuffle data and then limit to 5 entries if there are more than 5
+          let displayData = data.sort(() => 0.5 - Math.random()).slice(0, Math.min(data.length, 5));
 
-        displayData.forEach((row) => {
-            const contentDiv = document.createElement('div');
-            contentDiv.classList.add('highlight-on-hover');
-            contentDiv.style.borderRadius = '10px'; // Sets rounded borders
-            contentDiv.style.padding = '10px'; // Internal spacing
-            contentDiv.style.marginBottom = '20px'; // Space between divs
-            contentDiv.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)'; // Light shadow (optional)
-            contentDiv.style.backgroundColor = '#f9f9f9'; // Background color
+          displayData.forEach((row, index) => {
+              const contentDiv = document.createElement('div');
+              contentDiv.classList.add('highlight-on-hover');
+              contentDiv.style.borderRadius = '10px';
+              contentDiv.style.padding = '10px';
+              contentDiv.style.marginBottom = '20px';
+              contentDiv.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+              contentDiv.style.backgroundColor = '#f9f9f9';
+              contentDiv.style.position = 'relative'; // To position the domain in the bottom right
 
+              // Line number in front of main text
+              const lineNumber = document.createElement('div');
+              lineNumber.textContent = `Line ${index + 1}: ${row[1]}`;
+              lineNumber.style.marginBottom = '10px';
 
-            const textDiv = document.createElement('div'); // Div for text
-            textDiv.textContent = row[1]; // Text (assuming it's in the second column of the CSV)
-            textDiv.style.marginBottom = '10px'; // Space between the text and topics
+              const topicsDiv = document.createElement('div');
+              topicsDiv.textContent = `${row[0]}`;
+              topicsDiv.style.textAlign = 'left';
 
-            const topicsDiv = document.createElement('div'); // Div for topics
-            topicsDiv.textContent = `${row[0]}`; // Topics (assuming they're in the first column of the CSV)
-            topicsDiv.style.textAlign = 'left'; // Align topics to the left
+              // Extract and display the domain of the link
+              const url = new URL(row[2]);
+              const domainDiv = document.createElement('div');
+              domainDiv.textContent = url.hostname; // Extracts the domain from the URL
+              domainDiv.style.position = 'absolute';
+              domainDiv.style.bottom = '5px';
+              domainDiv.style.right = '10px';
+              domainDiv.style.fontSize = '12px';
+              domainDiv.style.color = '#777';
 
-
-            // Line number in front of main text
-            const lineNumber = document.createElement('div');
-            lineNumber.textContent = `Line ${index + 1}: ${row[1]}`;
-            lineNumber.style.marginBottom = '10px';
-
-
-            // Extract and display the domain of the link
-            const url = new URL(row[2]);
-            const domainDiv = document.createElement('div');
-            domainDiv.textContent = url.hostname; // Extracts the domain from the URL
-            domainDiv.style.position = 'absolute';
-            domainDiv.style.bottom = '5px';
-            domainDiv.style.right = '10px';
-            domainDiv.style.fontSize = '12px';
-            domainDiv.style.color = '#777';
-
-            // Assemble the content
-            contentDiv.appendChild(textDiv);
-            contentDiv.appendChild(topicsDiv);
-            contentDiv.addEventListener('click', () => {
-                window.open(row[2], '_blank'); // Use row[2] for the URL
-            });
-            // Add the assembled div to the main container
-            contentArea.appendChild(contentDiv);
-        });
-    }
+              // Assemble the content
+              contentDiv.appendChild(lineNumber);
+              contentDiv.appendChild(topicsDiv);
+              contentDiv.appendChild(domainDiv); // Add domain display
+              contentDiv.addEventListener('click', () => {
+                  window.open(row[2], '_blank'); // Open the link in a new tab
+              });
+              // Add the assembled div to the main container
+              contentArea.appendChild(contentDiv);
+          });
+      }
 
 
     function selectRandomEntries(data, count) {
