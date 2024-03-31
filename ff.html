@@ -284,15 +284,7 @@
    bottom:80px;
 }
 
-/* This media query applies styles for screens that are 600px wide or less */
-@media (max-width: 550px) {
-    #installButton {
-        width: 75%; /* Width on small screens */
-    }
-    #languageSwitch {
-        width: 75%; /* Width on small screens */
-    }
-  }
+
 
 .carousel-container {
   display: flex;
@@ -308,11 +300,20 @@
     margin: 0 auto; /* Center the slide */
   }
 }
+
+
 .carousel-wrapper {
   display: flex;
   align-items: center;
   max-width:650px
   justify-content: center;
+}
+
+@media (max-width: 550px) {
+  .carousel-wrapper {
+    width: 80%; /* Adjust based on preference */
+    margin: 0 auto; /* Center the slide */
+  }
 }
 
 .carousel-slider {
