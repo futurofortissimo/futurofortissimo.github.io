@@ -123,7 +123,7 @@
 
 <!-- Checkbox aggiunto qui sotto -->
 <!-- Swiper -->
-<div class="swiper mySwiper">
+<div class="swiper mySwiper" style="width:350px">
   <div class="swiper-wrapper"  id="div_search_4">
     <!-- Slides -->
 
@@ -209,11 +209,11 @@
     <button style="border-radius:42px" id="csv-search-button">🔍</button> <!-- Bottone di ricerca -->
 </div>
 
-<div style="font-family:palladio; width:60%; font-size:21px; margin-bottom:50px; margin:auto" id="content-area"></div> <!-- Contenitore per i div dei contenuti -->
+<div style="font-family:palladio; width:60%; font-size:21px; margin-bottom:60px; margin:auto" id="content-area"></div> <!-- Contenitore per i div dei contenuti -->
 
 <div style="font-family:ArgosBoldItalic; font-size:16px; position: fixed; bottom: 0; left: 0; right: 0; background-color: #fff; border-top: 2px solid black; z-index: 1000; margin-bottom: 5px;">
 
-<div style="width:80%; margin-top:5px; align-items: center; justify-content: center; display: flex; align-items: center; gap: 2px;font-size:21px; font-family:Palladio;">
+<div style="margin-top:5px; align-items: center; justify-content: center; display: flex; align-items: center; gap: 2px;font-size:21px; font-family:Palladio;">
   <div style="display: flex; justify-content: center; gap: 2px; padding: 2px 0;" id="support">
     <a style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic';background-color: transparent; text-align: center; width: auto;"
     class="button-parla-futuro text-black no-underline cursor-pointer flex flex-row items-center font-inter text-sm box-border w-full py-2 px-3 m-0 first:rounded-t-xl last:rounded-b-xl hover:bg-gray-50 active:bg-gray-100"
@@ -277,6 +277,23 @@ document.addEventListener('DOMContentLoaded', function() {
             const topicsDiv = document.createElement('div'); // Div for topics
             topicsDiv.textContent = `${row[0]}`; // Topics (assuming they're in the first column of the CSV)
             topicsDiv.style.textAlign = 'left'; // Align topics to the left
+
+
+            // Line number in front of main text
+            const lineNumber = document.createElement('div');
+            lineNumber.textContent = `Line ${index + 1}: ${row[1]}`;
+            lineNumber.style.marginBottom = '10px';
+
+
+            // Extract and display the domain of the link
+            const url = new URL(row[2]);
+            const domainDiv = document.createElement('div');
+            domainDiv.textContent = url.hostname; // Extracts the domain from the URL
+            domainDiv.style.position = 'absolute';
+            domainDiv.style.bottom = '5px';
+            domainDiv.style.right = '10px';
+            domainDiv.style.fontSize = '12px';
+            domainDiv.style.color = '#777';
 
             // Assemble the content
             contentDiv.appendChild(textDiv);
@@ -742,6 +759,13 @@ display: none; /* Hide scrollbar for Webkit browsers */
 @media (min-width: 1200px) {
     #csv-container {
         width: 80%;
+        margin: auto;
+    }
+}
+
+@media (min-width: 1000px) {
+    #div_search_2 {
+        width: 50%;
         margin: auto;
     }
 }
