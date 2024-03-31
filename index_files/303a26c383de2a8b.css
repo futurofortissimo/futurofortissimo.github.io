@@ -165,7 +165,10 @@ label {
 /* Quando il label è in hover, mostra lo span e rimuovi la sfocatura */
 label:hover .hover-info {
   visibility: visible;
+  z-index:1000;
   opacity: 1;
+  top: 90%; /* Posiziona lo span subito sotto il label */
+
   filter: blur(0);
 }
 
