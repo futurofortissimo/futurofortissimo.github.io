@@ -148,55 +148,76 @@
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-      fetch('pubs.json?' + new Date().getTime())
-        .then(response => response.json())
-        .then(data => {
-          const swiperWrapper = document.querySelector('.swiper-wrapper');
-          const randomEntries = getRandomEntries(data, 5);
+    fetch('pubs.json?' + new Date().getTime())
+      .then(response => response.json())
+      .then(data => {
+        const swiperWrapper = document.querySelector('.swiper-wrapper');
+        const randomEntries = getRandomEntries(data, 5);
 
-          randomEntries.forEach(entry => {
-            const slide = document.createElement('div');
-            slide.classList.add('swiper-slide');
+        randomEntries.forEach(entry => {
+          const slide = document.createElement('div');
+          slide.classList.add('swiper-slide');
 
-            // Create HTML elements and populate with data from the JSON entry
-            const postTitle = document.createElement('div');
-            postTitle.classList.add('post-title');
-            postTitle.textContent = entry.title;
+          // Create HTML elements and populate with data from the JSON entry
+          const postTitle = document.createElement('div');
+          postTitle.classList.add('post-title');
+          postTitle.textContent = entry.title;
 
-            const postSubtitle = document.createElement('div');
-            postSubtitle.classList.add('post-subtitle');
-            postSubtitle.textContent = entry.subtitle;
+          const postSubtitle = document.createElement('div');
+          postSubtitle.classList.add('post-subtitle');
+          postSubtitle.textContent = entry.subtitle;
 
-            const list = document.createElement('ul');
-            entry.links.forEach(link => {
-              const listItem = document.createElement('li');
-              listItem.textContent = link.text;
-              list.appendChild(listItem);
-            });
-
-            slide.appendChild(postTitle);
-            slide.appendChild(postSubtitle);
-            slide.appendChild(list);
-
-            swiperWrapper.appendChild(slide);
+          const list = document.createElement('ul');
+          entry.links.forEach(link => {
+            const listItem = document.createElement('li');
+            listItem.textContent = link.text;
+            list.appendChild(listItem);
           });
 
-          // Initialize Swiper
-          const swiper = new Swiper('.swiper-container', {
-            loop: true,
-            pagination: {
-              el: '.swiper-pagination',
-              clickable: true,
+          slide.appendChild(postTitle);
+          slide.appendChild(postSubtitle);
+          slide.appendChild(list);
+
+          swiperWrapper.appendChild(slide);
+        });
+
+        // Initialize Swiper
+        var mySwiper = new Swiper('.mySwiper', {
+          slidesPerView: 7,
+          spaceBetween: 1,
+          freeMode: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          mousewheel: {
+            invert: false,
+          },
+          on: {
+            init: function() {
+              const swiper = this;
+              swiper.slides.each((index, slide) => {
+                slide.addEventListener('mouseenter', () => {
+                  swiper.zoom.in();
+                });
+                slide.addEventListener('mouseleave', () => {
+                  swiper.zoom.out();
+                });
+              });
             },
-          });
-        })
-        .catch(error => console.error('Error loading the JSON file:', error));
-    });
+          },
+          zoom: {
+            maxRatio: 1.1,
+          },
+        });
+      })
+      .catch(error => console.error('Error loading the JSON file:', error));
+  });
 
-    function getRandomEntries(data, count) {
-      const shuffledData = data.slice().sort(() => 0.5 - Math.random());
-      return shuffledData.slice(0, count);
-    }
+  function getRandomEntries(data, count) {
+    const shuffledData = data.slice().sort(() => 0.5 - Math.random());
+    return shuffledData.slice(0, count);
+  }
     </script>
 
 
