@@ -156,6 +156,13 @@
         imageBox.style.width = '80%';
       }
     };
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // ES6 array destructuring
+      }
+      return array;
+    };
 
     // Updates the page with the data from the selected entry
     function createSwiperSlides(entries) {
@@ -165,7 +172,7 @@
       entries.forEach(entry => {
         const slideEl = document.createElement('div');
         slideEl.classList.add('swiper-slide');
-        slideEl.innerHTML = '
+        slideEl.innerHTML = `
           <a href="${entry.readMoreUrl}" id="image-box-link" style="cursor: pointer; font-size: 21px; margin-left:auto; margin-top:50px; font-family:palladio; color:white; text-align:left" class="image-box">
             <div class="my-text-container" style="padding:15px">
               <div class="part1">
@@ -179,7 +186,7 @@
               </div>
             </div>
           </a>
-        ';
+        `;
 
         // Set background image with linear-gradient
         slideEl.querySelector('.image-box').style.backgroundImage = `linear-gradient(rgba(0, 0, 139, 1), rgba(0, 0, 139, 0.2) 30%, rgba(128, 0, 128, 0.2) 70%, rgba(128, 0, 128, 1)), url('${entry.img}')`;
