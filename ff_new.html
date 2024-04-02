@@ -198,6 +198,37 @@
       // new Swiper('.swiper-container', { /* options */ });
       // or for an existing instance: mySwiper.update();
     };
+    var mySwiper = new Swiper('.mySwiper', {
+      slidesPerView: 5,
+      spaceBetween: 1, // Adjust the space between slides
+      freeMode: true, // Enables the free mode
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      // Enable smooth scrolling
+      mousewheel: {
+        invert: false,
+      },
+      // Bubbly effect on hover
+      on: {
+        init: function() {
+          const swiper = this;
+          swiper.slides.each((index, slide) => {
+            slide.addEventListener('mouseenter', () => {
+              swiper.zoom.in();
+            });
+            slide.addEventListener('mouseleave', () => {
+              swiper.zoom.out();
+            });
+          });
+        },
+      },
+      // Enable zooming for the bubbly effect
+      zoom: {
+        maxRatio: 1.1, // Adjust the scale ratio
+      },
+    });
 
     // Main function to fetch data and initialize the page
     document.addEventListener('DOMContentLoaded', function() {
