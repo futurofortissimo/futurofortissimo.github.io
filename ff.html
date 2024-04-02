@@ -131,7 +131,7 @@
 
         </div>
 
-
+        <div style="padding:20px">
         <a href="#" id="image-box-link"  style="cursor: pointer; font-size: 21px; margin-left:auto; font-family:palladio; color:white; text-align:left" class="image-box">
           <div class="my-text-container" style="padding:15px">
             <div class="part1">
@@ -143,6 +143,7 @@
             </div>
           </div>
         </a>
+      </div>
 
         <div class="button-group" style="margin-top:20px">
             <a style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 20px; font-family: 'ArgosBoldItalic';background-color: transparent; text-align: center; width: auto;"
@@ -187,7 +188,7 @@
 
     // Updates the page with the data from the selected entry
     function updatePage(entry) {
-      document.querySelector('.image-box').style.backgroundImage = `linear-gradient(rgba(0, 0, 139, 0.62), rgba(0, 0, 139, 0.22) 30%, rgba(128, 0, 128, 0.22) 70%, rgba(128, 0, 128, 0.62)), url('${entry.img}')`;
+      document.querySelector('.image-box').style.backgroundImage = `linear-gradient(rgba(0, 0, 139, 1), rgba(0, 0, 139, 0.22) 20%, rgba(128, 0, 128, 0.22) 80%, rgba(128, 0, 128, 1)), url('${entry.img}')`;
       document.querySelector('.post-title').innerHTML = `<div style="font-size: 25px; font-family: 'ArgosBoldItalic';">${entry.title}</div>`;
       document.querySelector('.post-subtitle').innerHTML = entry.subtitle;
 
