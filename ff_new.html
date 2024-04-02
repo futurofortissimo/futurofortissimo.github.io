@@ -147,11 +147,15 @@
     </div>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
+  const swiperContainer = document.querySelector('.swiper-container');
+
+  if (swiperContainer) {
+    const swiperWrapper = swiperContainer.querySelector('.swiper-wrapper');
+
     fetch('pubs.json?' + new Date().getTime())
       .then(response => response.json())
       .then(data => {
-        const swiperWrapper = document.querySelector('.swiper-wrapper');
         const randomEntries = getRandomEntries(data, 5);
 
         randomEntries.forEach(entry => {
@@ -191,12 +195,15 @@
         });
       })
       .catch(error => console.error('Error loading the JSON file:', error));
-  });
-
-  function getRandomEntries(data, count) {
-    const shuffledData = data.slice().sort(() => 0.5 - Math.random());
-    return shuffledData.slice(0, count);
+  } else {
+    console.error('Swiper container not found on the page.');
   }
+});
+
+function getRandomEntries(data, count) {
+  const shuffledData = data.slice().sort(() => 0.5 - Math.random());
+  return shuffledData.slice(0, count);
+}
     </script>
 
 
