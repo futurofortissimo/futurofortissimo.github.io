@@ -147,63 +147,56 @@
     </div>
 
     <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const swiperContainer = document.querySelector('.swiper-container');
+    document.addEventListener('DOMContentLoaded', function() {
+      fetch('pubs.json?' + new Date().getTime())
+        .then(response => response.json())
+        .then(data => {
+          const swiperWrapper = document.querySelector('.swiper-wrapper');
+          const randomEntries = getRandomEntries(data, 5);
 
-  if (swiperContainer) {
-    const swiperWrapper = swiperContainer.querySelector('.swiper-wrapper');
+          randomEntries.forEach(entry => {
+            const slide = document.createElement('div');
+            slide.classList.add('swiper-slide');
 
-    fetch('pubs.json?' + new Date().getTime())
-      .then(response => response.json())
-      .then(data => {
-        const randomEntries = getRandomEntries(data, 5);
+            // Create HTML elements and populate with data from the JSON entry
+            const postTitle = document.createElement('div');
+            postTitle.classList.add('post-title');
+            postTitle.textContent = entry.title;
 
-        randomEntries.forEach(entry => {
-          const slide = document.createElement('div');
-          slide.classList.add('swiper-slide');
+            const postSubtitle = document.createElement('div');
+            postSubtitle.classList.add('post-subtitle');
+            postSubtitle.textContent = entry.subtitle;
 
-          // Create HTML elements and populate with data from the JSON entry
-          const postTitle = document.createElement('div');
-          postTitle.classList.add('post-title');
-          postTitle.textContent = entry.title;
+            const list = document.createElement('ul');
+            entry.links.forEach(link => {
+              const listItem = document.createElement('li');
+              listItem.textContent = link.text;
+              list.appendChild(listItem);
+            });
 
-          const postSubtitle = document.createElement('div');
-          postSubtitle.classList.add('post-subtitle');
-          postSubtitle.textContent = entry.subtitle;
+            slide.appendChild(postTitle);
+            slide.appendChild(postSubtitle);
+            slide.appendChild(list);
 
-          const list = document.createElement('ul');
-          entry.items.forEach(item => {
-            const listItem = document.createElement('li');
-            listItem.textContent = item;
-            list.appendChild(listItem);
+            swiperWrapper.appendChild(slide);
           });
 
-          slide.appendChild(postTitle);
-          slide.appendChild(postSubtitle);
-          slide.appendChild(list);
+          // Initialize Swiper
+          const swiper = new Swiper('.swiper-container', {
+            loop: true,
+            pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+            },
+          });
+        })
+        .catch(error => console.error('Error loading the JSON file:', error));
+    });
 
-          swiperWrapper.appendChild(slide);
-        });
-
-        // Initialize Swiper
-        const swiper = new Swiper('.swiper-container', {
-          loop: true,
-          pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-          },
-        });
-      })
-      .catch(error => console.error('Error loading the JSON file:', error));
-  } else {
-    console.error('Swiper container not found on the page.');
-  }
-});
-
-function getRandomEntries(data, count) {
-  const shuffledData = data.slice().sort(() => 0.5 - Math.random());
-  return shuffledData.slice(0, count);
-}
+    function getRandomEntries(data, count) {
+      const shuffledData = data.slice().sort(() => 0.5 - Math.random());
+      return shuffledData.slice(0, count);
+    }
     </script>
 
 
