@@ -192,6 +192,8 @@
         slideEl.querySelector('.image-box').style.backgroundImage = `linear-gradient(rgba(0, 0, 139, 1), rgba(0, 0, 139, 0.2) 30%, rgba(128, 0, 128, 0.2) 70%, rgba(128, 0, 128, 1)), url('${entry.img}')`;
 
         swiperWrapper.appendChild(slideEl);
+        swiper.update();
+
       });
 
       // Optionally, if you're using SwiperJS, you may need to reinitialize or update your swiper here
