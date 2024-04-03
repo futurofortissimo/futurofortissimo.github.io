@@ -147,11 +147,11 @@
 
     </div>
 
-    <script>
-    function getRandomEntries(data, count) {
+<script>
+  function getRandomEntries(data, count) {
   const shuffled = data.sort(() => 0.5 - Math.random());
   return shuffled.slice(0, count);
-};
+  };
 
 document.addEventListener('DOMContentLoaded', function() {
   fetch('pubs.json?' + new Date().getTime())
@@ -160,71 +160,61 @@ document.addEventListener('DOMContentLoaded', function() {
       const swiperWrapper = document.querySelector('.swiper-wrapper');
       const randomEntries = getRandomEntries(data, 5); // Get 5 random entries
       randomEntries.forEach(entry => {
-            const slide = document.createElement('div');
-            slide.classList.add('swiper-slide');
+    const slide = document.createElement('div');
+    slide.classList.add('swiper-slide');
 
-            // Create HTML elements and populate with data from the JSON entry
-            const container = document.createElement('a');
-            container.id = 'image-box-link';
-            container.style.cursor = 'pointer';
-            container.style.fontSize = '21px';
-            container.style.marginLeft = 'auto';
-            container.style.marginTop = '50px';
-            container.style.fontFamily = 'palladio';
-            container.style.color = 'white';
-            container.style.textAlign = 'left';
-            container.classList.add('image-box');
-            container.style.maxWidth = '570px'; // Set maximum width
+    const container = document.createElement('a');
+    container.id = 'image-box-link';
+    container.style.cursor = 'pointer';
+    container.style.fontSize = '21px';
+    container.style.marginLeft = 'auto';
+    container.style.marginTop = '50px';
+    container.style.fontFamily = 'palladio';
+    container.style.color = 'white';
+    container.style.textAlign = 'left';
+    container.classList.add('image-box');
+    container.style.maxWidth = '570px'; // Set maximum width
 
-            // Set the background image for the container
-            container.style.backgroundImage = `linear-gradient(rgba(0, 0, 139, 1), rgba(0, 0, 139, 0.2) 30%, rgba(128, 0, 128, 0.2) 70%, rgba(128, 0, 128, 1)), url('${randomEntry.img}')`;
+    // Use 'entry' instead of 'randomEntry'
+    container.style.backgroundImage = `linear-gradient(rgba(0, 0, 139, 1), rgba(0, 0, 139, 0.2) 30%, rgba(128, 0, 128, 0.2) 70%, rgba(128, 0, 128, 1)), url('${entry.img}')`;
 
-            // Create a text container
-            const textContainer = document.createElement('div');
-            textContainer.classList.add('my-text-container');
-            textContainer.style.padding = '15px';
+    const textContainer = document.createElement('div');
+    textContainer.classList.add('my-text-container');
+    textContainer.style.padding = '15px';
 
-            // Create part1 container
-            const part1 = document.createElement('div');
-            part1.classList.add('part1');
+    const part1 = document.createElement('div');
+    part1.classList.add('part1');
 
-            // Create post-title element
-            const postTitle = document.createElement('div');
-            postTitle.classList.add('post-title');
-            postTitle.innerHTML = `<div style="font-size: 25px; font-family: 'ArgosBoldItalic';">${randomEntry.title}</div>`;
+    const postTitle = document.createElement('div');
+    postTitle.classList.add('post-title');
+    postTitle.innerHTML = `<div style="font-size: 25px; font-family: 'ArgosBoldItalic';">${entry.title}</div>`;
 
-            // Create post-subtitle element
-            const postSubtitle = document.createElement('div');
-            postSubtitle.classList.add('post-subtitle');
-            postSubtitle.innerHTML = randomEntry.subtitle;
+    const postSubtitle = document.createElement('div');
+    postSubtitle.classList.add('post-subtitle');
+    postSubtitle.innerHTML = entry.subtitle;
 
-            // Append post-title and post-subtitle to part1
-            part1.appendChild(postTitle);
-            part1.appendChild(postSubtitle);
+    part1.appendChild(postTitle);
+    part1.appendChild(postSubtitle);
 
-            // Create part2 container
-            const part2 = document.createElement('div');
-            part2.classList.add('part2');
+    const part2 = document.createElement('div');
+    part2.classList.add('part2');
 
-            // Create unordered list
-            const ul = document.createElement('ul');
-            const linksHTML = randomEntry.links.map(link => `<li class="post-subtitle"><a class="post-subtitle" href="${link.url}">${link.text}</a></li>`).join('');
-            ul.innerHTML = linksHTML;
+    const ul = document.createElement('ul');
+    // Ensure entry.links exists and is an array
+    const linksHTML = entry.links && Array.isArray(entry.links) ? entry.links.map(link => `<li class="post-subtitle"><a class="post-subtitle" href="${link.url}">${link.text}</a></li>`).join('') : '';
+    ul.innerHTML = linksHTML;
 
-            // Append part1 and part2 to text container
-            textContainer.appendChild(part1);
-            textContainer.appendChild(part2);
-            part2.appendChild(ul);
+    textContainer.appendChild(part1);
+    textContainer.appendChild(part2);
+    part2.appendChild(ul);
 
-            // Append text container to the main container
-            container.appendChild(textContainer);
+    container.appendChild(textContainer);
+    // Again, using 'entry' instead of 'randomEntry'
+    container.href = entry.readMoreUrl;
 
-            // Set the link for the container
-            container.href = randomEntry.readMoreUrl;
-
-            slide.appendChild(container);
-            swiperWrapper.appendChild(slide);
-          });
+    slide.appendChild(container);
+    swiperWrapper.appendChild(slide);
+});
 
 
       // Initialize Swiper
