@@ -89,26 +89,24 @@
 
 
         <div style="width:100%; margin-top:30px; align-items: center; justify-content: center; display: flex; align-items: center; gap: 2px;font-size:21px; font-family:Palladio;">
-          <div style="display: flex; justify-content: center; gap: 2px; padding: 5px 0;" id="div_search">
-            <!-- Checkbox "Libri" -->
+        <div style="display: flex; justify-content: center; gap: 2px; padding: 5px 0;" id="div_search">
+          <input type="checkbox" id="csv-checkbox-clima" style="display: none;">
+          <a href="https://futurofortissimo.github.io/clima/" style="text-decoration: none;">
+            <label style="margin:2px; display: inline-block; border-radius: 42px; color: white; border: 1px solid white; padding: 5px; font-size: 35px; font-family: 'ArgosBoldItalic', sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:42px;" class="button-parla-futuro-clima" for="csv-checkbox-clima">🍃</label>
+          </a>
 
-            <input type="checkbox" id="csv-checkbox-clima" style="display: none;">
-            <label style="margin:2px; display: inline-block; border-radius: 42px; color: white; border: 1px solid white; padding: 5px; font-size: 35px; font-family: 'ArgosBoldItalic',
-             sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:42px;" class="button-parla-futuro-clima" for="csv-checkbox-clima">🍃</label>
+          <input type="checkbox" id="csv-checkbox-tecnologia" style="display: none;">
+          <a href="https://futurofortissimo.github.io/wip" style="text-decoration: none;">
+            <label style="margin:2px; display: inline-block; border-radius: 42px; color: white; border: 1px solid white; padding: 5px; font-size: 35px; font-family: 'ArgosBoldItalic', sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:42px;" class="button-parla-futuro" for="csv-checkbox-tecnologia">💻</label>
+          </a>
 
-             <input type="checkbox" id="csv-checkbox-tecnologia" style="display: none;">
-             <label style="margin:2px; display: inline-block; border-radius: 42px; color: white; border: 1px solid white; padding: 5px; font-size: 35px; font-family: 'ArgosBoldItalic',
-              sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:42px;" class="button-parla-futuro" for="csv-checkbox-tecnologia">💻</label>
-
-            <!-- Checkbox "ff" -->
-            <input type="checkbox" id="csv-checkbox-uomo" style="display: none;">
-            <label style="margin:2px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 5px; font-size: 35px; font-family: 'ArgosBoldItalic',
-             sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:42px;" class="button-parla-futuro-verde-acqua" for="csv-checkbox-uomo">❤️</label>
-
-
-            <!-- Aggiungi qui ulteriori checkbox per Natura, Tecnologia, Società seguendo lo stesso schema -->
-          </div>
+          <input type="checkbox" id="csv-checkbox-uomo" style="display: none;">
+          <a href="https://futurofortissimo.github.io/wip" style="text-decoration: none;">
+            <label style="margin:2px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 5px; font-size: 35px; font-family: 'ArgosBoldItalic', sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:42px;" class="button-parla-futuro-verde-acqua" for="csv-checkbox-uomo">❤️</label>
+          </a>
         </div>
+      </div>
+
 
         <div class="swiper mySwiper" style="width:450px">
         <div class="swiper-wrapper">
@@ -127,9 +125,8 @@
             href="https://futurofortissimo.github.io/strumenti.html" class="button">🎸 Strumenti</a>
         </div>
 
-    <div style="font-family:ArgosBoldItalic; font-size:16px; position: fixed; bottom: 0; left: 0; right: 0; background-color: #fff; border-top: 2px solid black; z-index: 1000; margin-bottom: 5px;">
 
-    <div style="width:100%; margin-top:5px; align-items: center; justify-content: center; display: flex; align-items: center; gap: 2px;font-size:21px; font-family:Palladio;">
+    <div style="width:100%; align-items: center; justify-content: center; display: flex; align-items: center; gap: 2px;font-size:21px; font-family:Palladio;">
 
       <a style="margin:5px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 10px; font-size: 25px; font-family: 'ArgosBoldItalic';background-color: transparent; text-align: center; width: auto;"
       class="button-parla-futuro text-black no-underline cursor-pointer flex flex-row items-center font-inter text-sm box-border w-full py-2 px-3 m-0 first:rounded-t-xl last:rounded-b-xl hover:bg-gray-50 active:bg-gray-100"
@@ -160,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
       randomEntries.forEach(entry => {
     const slide = document.createElement('div');
     slide.classList.add('swiper-slide');
-    slide.style.width = '450px'; // Set maximum width
+    slide.style.width = '430px'; // Set maximum width
 
     const container = document.createElement('a');
     container.id = 'image-box-link';
