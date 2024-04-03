@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <style>
 
 .swiper-slide {
-    /*width: 415px; /* Fixed width for each slide */
+    width: 415px; /* Fixed width for each slide */
     /* Additional styling for your slides */
 }
 
@@ -239,8 +239,22 @@ document.addEventListener('DOMContentLoaded', function() {
     overflow: hidden; /* Ensures overflow slides are not visible */
 }
 
+@media (min-width: 650px) {
+    .image-box {
+        width: 650px; /* Wider on larger screens */
+    };
+    .swiper-slide {
+        width: 650px; /* Wider on larger screens */
+    };
+}
 
 
+@media (max-width: 550px) {
+  .carousel-wrapper-2 {
+    width: 80%; /* Adjust based on preference */
+    margin: 0 auto; /* Center the slide */
+  }
+}
 
 @media (max-width: 550px) {
   .carousel-wrapper-2 {
