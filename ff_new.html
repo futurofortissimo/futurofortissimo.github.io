@@ -110,11 +110,13 @@
           </div>
         </div>
 
+        <div class="swiper mySwiper" style="width:350px; margin-bottom:10px">
         <div class="swiper-container">
         <div class="swiper-wrapper">
           <!-- Slides will be dynamically added here -->
         </div>
         <div class="swiper-pagination"></div>
+        </div>
         </div>
 
 
@@ -226,19 +228,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // Initialize Swiper
       var mySwiper = new Swiper('.mySwiper', {
-        slidesPerView: 1,
-        spaceBetween: 0,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-        mousewheel: {
-          invert: false,
-        },
-        zoom: {
-          maxRatio: 1.1,
-        },
-      });
+          slidesPerView: 'auto',
+          centeredSlides: true,
+          spaceBetween: 30,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          mousewheel: true,
+      });;
     })
     .catch(error => console.error('Error loading the JSON file:', error));
 });
