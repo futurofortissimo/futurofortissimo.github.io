@@ -205,7 +205,7 @@
 </div>
 
 <div style="max-width:625px; margin-top:5px; display: flex; align-items: center; gap: 2px;font-size:21px; font-family:Palladio; margin:auto" class="main_content" id="div_search_2">
-    <input type="text" id="csv-search-input" placeholder=" Cerca 🎵 (futuro fortissimo, CO2, Muscoli...) " style="width:100%;  margin:2px;border-radius:42px;">
+    <input type="text" id="csv-search-input" placeholder=" Cerca 🎵 (es. futuro fortissimo, CO2, Muscoli...) " style="width:100%;  margin:2px;border-radius:42px;">
     <button style="border-radius:42px" id="csv-search-button">🔍</button> <!-- Bottone di ricerca -->
     <button style="border-radius:42px" id="refreshButton">🔄</button> <!-- Bottone di ricerca -->
 
@@ -264,46 +264,58 @@ document.addEventListener('DOMContentLoaded', function() {
           let displayData = data.sort(() => 0.5 - Math.random()).slice(0, Math.min(data.length, 5));
 
           displayData.forEach((row, index) => {
-              const contentDiv = document.createElement('div');
-              contentDiv.classList.add('highlight-on-hover');
-              contentDiv.style.borderRadius = '10px';
-              contentDiv.style.padding = '10px';
-              contentDiv.style.marginBottom = '20px';
-              contentDiv.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
-              contentDiv.style.backgroundColor = '#f9f9f9';
-              contentDiv.style.position = 'relative'; // To position the domain in the bottom right
+    const contentDiv = document.createElement('div');
+    contentDiv.classList.add('highlight-on-hover');
+    contentDiv.style.borderRadius = '10px';
+    contentDiv.style.padding = '10px';
+    contentDiv.style.marginBottom = '20px';
+    contentDiv.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+    contentDiv.style.backgroundColor = '#f9f9f9';
+    contentDiv.style.position = 'relative'; // To position elements absolutely within
 
+    const hashtagSpan = document.createElement('span');
+    hashtagSpan.textContent = row[row.length - 1]; // Assuming the hashtag is the last element
+    hashtagSpan.style.position = 'absolute';
+    hashtagSpan.style.top = '10px';
+    hashtagSpan.style.right = '10px';
+    hashtagSpan.style.borderRadius = '50%';
+    hashtagSpan.style.backgroundColor = '#e0e0e0'; // A light gray background for visibility
+    hashtagSpan.style.padding = '5px 10px';
+    hashtagSpan.style.color = '#333'; // Darker text color for contrast
+    hashtagSpan.style.fontSize = '12px';
+    // Ensure it doesn't overlap with the domain information, adjust as necessary
+    hashtagSpan.style.zIndex = '10';
 
+    const topicsDiv = document.createElement('div');
+    topicsDiv.textContent = `${row[0]}`;
+    topicsDiv.style.textAlign = 'left';
 
-              const topicsDiv = document.createElement('div');
-              topicsDiv.textContent = `${row[0]}`;
-              topicsDiv.style.textAlign = 'left';
+    const url = new URL(row[2]);
+    const domainDiv = document.createElement('div');
+    domainDiv.textContent = url.hostname; // Extracts the domain from the URL
+    domainDiv.style.position = 'absolute';
+    domainDiv.style.bottom = '5px';
+    domainDiv.style.right = '10px';
+    domainDiv.style.fontSize = '12px';
+    domainDiv.style.color = '#777';
 
-              // Extract and display the domain of the link
-              const url = new URL(row[2]);
-              const domainDiv = document.createElement('div');
-              domainDiv.textContent = url.hostname; // Extracts the domain from the URL
-              domainDiv.style.position = 'absolute';
-              domainDiv.style.bottom = '5px';
-              domainDiv.style.right = '10px';
-              domainDiv.style.fontSize = '12px';
-              domainDiv.style.color = '#777';
+    const textDiv = document.createElement('div'); // Div for text
+    textDiv.textContent = row[1]; // Text (assuming it's in the second column of the CSV)
+    textDiv.style.marginBottom = '10px'; // Space between the text and topics
 
-              const textDiv = document.createElement('div'); // Div for text
-              textDiv.textContent = row[1]; // Text (assuming it's in the second column of the CSV)
-              textDiv.style.marginBottom = '10px'; // Space between the text and topics
+    // Assemble the content
+    contentDiv.appendChild(hashtagSpan); // Include the hashtag span
+    contentDiv.appendChild(textDiv);
+    contentDiv.appendChild(topicsDiv);
+    contentDiv.appendChild(domainDiv); // Add domain display
+    contentDiv.addEventListener('click', () => {
+        window.open(row[2], '_blank'); // Open the link in a new tab
+    });
 
+    // Add the assembled div to the main container
+    contentArea.appendChild(contentDiv);
+});
 
-              // Assemble the content
-              contentDiv.appendChild(textDiv);
-              contentDiv.appendChild(topicsDiv);
-              contentDiv.appendChild(domainDiv); // Add domain display
-              contentDiv.addEventListener('click', () => {
-                  window.open(row[2], '_blank'); // Open the link in a new tab
-              });
-              // Add the assembled div to the main container
-              contentArea.appendChild(contentDiv);
-          });
       }
 
 
@@ -341,19 +353,6 @@ document.addEventListener('DOMContentLoaded', function() {
           tdTopic.textContent = row[0]; // Assuming the topic is in the first column of the CSV
           tdTopic.style.width = "13%"; // Takes up 13% of the width
           tdTopic.style.height = "70px"; // Takes up space
-
-
-          // Crea e stila l'elemento span per l'hashtag
-          const hashtag = document.createElement('span');
-          hashtag.textContent = row[row.length - 1]; // Assumendo che l'hashtag sia l'ultimo elemento di ogni riga
-          hashtag.style.position = 'absolute';
-          hashtag.style.top = '0';
-          hashtag.style.right = '0';
-          hashtag.style.borderRadius = '50%';
-          hashtag.style.backgroundColor = '#f0f0f0'; // Sfondo grigio chiaro per il cerchio
-          hashtag.style.padding = '5px 10px'; // Spaziatura interna per dare forma al cerchio
-          hashtag.style.margin = '5px'; // Margini per non attaccare ai bordi
-
 
           const tdLink = document.createElement('td');
           const a = document.createElement('a');
