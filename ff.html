@@ -229,25 +229,27 @@ document.addEventListener('DOMContentLoaded', function() {
 <style>
 
 .swiper-slide {
-    width: 415px; /* Fixed width for each slide */
+    width: 410px; /* Fixed width for each slide */
     /* Additional styling for your slides */
 }
 
-.swiper-container, .swiper-slide {
+.swiper-container {
     max-width: 650px; /* Maximum width for larger screens */
     margin: 0 auto; /* Center the container horizontally */
     overflow: hidden; /* Ensures overflow slides are not visible */
 }
 
-@media (min-width: 650px) {
+@media (max-width: 650px) {
     .image-box {
         width: 650px; /* Wider on larger screens */
-    };
-    .swiper-slide {
-        width: 650px; /* Wider on larger screens */
-    };
+    }
 }
 
+@media (min-width: 650px) {
+    .swiper-slide {
+        width: 650px; /* Wider on larger screens */
+    }
+}
 
 @media (max-width: 550px) {
   .carousel-wrapper-2 {
