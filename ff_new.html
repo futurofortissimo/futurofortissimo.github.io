@@ -218,15 +218,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // Initialize Swiper
       var mySwiper = new Swiper('.mySwiper', {
-          slidesPerView: 5,
-          centeredSlides: true,
-          spaceBetween: 0,
+          slidesPerView: 'auto',
+          spaceBetween: 0, // Adjust based on your design needs
+          centeredSlides: false, // true if you want the initial slide to be centered
           pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
+              el: '.swiper-pagination',
+              clickable: true,
           },
           mousewheel: true,
-      });;
+      });
     })
     .catch(error => console.error('Error loading the JSON file:', error));
 });
@@ -237,6 +237,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 <style>
+
+.swiper-slide {
+    width: 570px; /* Fixed width for each slide */
+    /* Additional styling for your slides */
+}
+
+.swiper-container {
+    overflow: hidden; /* Ensures overflow slides are not visible */
+    /* Ensure it has a defined width or max-width if needed */
+}
+
 
 #footer {
    position:absolute;
