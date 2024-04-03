@@ -204,13 +204,14 @@
 
 </div>
 
-<div style="max-width:650px; margin-top:5px; display: flex; align-items: center; gap: 2px;font-size:21px; font-family:Palladio; margin:auto" class="main_content" id="div_search_2">
-    <button style="border-radius:42px" id="refreshButton">🔄</button> <!-- Bottone di ricerca -->
-    <input type="text" id="csv-search-input" placeholder=" Chiavi di lettura (futuro fortissimo, CO2, Muscoli...) 🎵" style="width:100%;  margin:2px;border-radius:42px;">
+<div style="max-width:625px; margin-top:5px; display: flex; align-items: center; gap: 2px;font-size:21px; font-family:Palladio; margin:auto" class="main_content" id="div_search_2">
+    <input type="text" id="csv-search-input" placeholder=" Cerca 🎵 (futuro fortissimo, CO2, Muscoli...) " style="width:100%;  margin:2px;border-radius:42px;">
     <button style="border-radius:42px" id="csv-search-button">🔍</button> <!-- Bottone di ricerca -->
+    <button style="border-radius:42px" id="refreshButton">🔄</button> <!-- Bottone di ricerca -->
+
 </div>
 
-<div style="font-family:palladio; max-width:650px; font-size:21px; margin-bottom:60px; margin:auto" class="main_content" id="content-area"></div> <!-- Contenitore per i div dei contenuti -->
+<div style="font-family:palladio; max-width:625px; font-size:21px; margin-bottom:60px; margin:auto" class="main_content" id="content-area"></div> <!-- Contenitore per i div dei contenuti -->
 <br>
 <br>
 <div style="font-family:ArgosBoldItalic; font-size:16px; position: fixed; bottom: 0; left: 0; right: 0; background-color: #fff; border-top: 2px solid black; z-index: 1000; margin-bottom: 5px;">
@@ -340,6 +341,19 @@ document.addEventListener('DOMContentLoaded', function() {
           tdTopic.textContent = row[0]; // Assuming the topic is in the first column of the CSV
           tdTopic.style.width = "13%"; // Takes up 13% of the width
           tdTopic.style.height = "70px"; // Takes up space
+
+
+          // Crea e stila l'elemento span per l'hashtag
+          const hashtag = document.createElement('span');
+          hashtag.textContent = row[row.length - 1]; // Assumendo che l'hashtag sia l'ultimo elemento di ogni riga
+          hashtag.style.position = 'absolute';
+          hashtag.style.top = '0';
+          hashtag.style.right = '0';
+          hashtag.style.borderRadius = '50%';
+          hashtag.style.backgroundColor = '#f0f0f0'; // Sfondo grigio chiaro per il cerchio
+          hashtag.style.padding = '5px 10px'; // Spaziatura interna per dare forma al cerchio
+          hashtag.style.margin = '5px'; // Margini per non attaccare ai bordi
+
 
           const tdLink = document.createElement('td');
           const a = document.createElement('a');
