@@ -110,7 +110,7 @@
           </div>
         </div>
 
-        <div class="swiper mySwiper">
+        <div class="swiper mySwiper" style="width:570px">
         <div class="swiper-wrapper">
           <!-- Slides will be dynamically added here -->
         </div>
@@ -160,6 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
       randomEntries.forEach(entry => {
     const slide = document.createElement('div');
     slide.classList.add('swiper-slide');
+    slide.style.width = '570px'; // Set maximum width
 
     const container = document.createElement('a');
     container.id = 'image-box-link';
