@@ -172,6 +172,7 @@ document.addEventListener('DOMContentLoaded', function() {
     container.style.textAlign = 'left';
     container.classList.add('image-box');
     container.style.maxWidth = '570px'; // Set maximum width
+    container.style.width = '570px'; // Set maximum width
 
     // Use 'entry' instead of 'randomEntry'
     container.style.backgroundImage = `linear-gradient(rgba(0, 0, 139, 1), rgba(0, 0, 139, 0.2) 30%, rgba(128, 0, 128, 0.2) 70%, rgba(128, 0, 128, 1)), url('${entry.img}')`;
@@ -217,7 +218,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // Initialize Swiper
       var mySwiper = new Swiper('.mySwiper', {
-          slidesPerView: 7,
+          slidesPerView: 5,
           centeredSlides: true,
           spaceBetween: 30,
           pagination: {
