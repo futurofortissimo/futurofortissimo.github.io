@@ -271,38 +271,58 @@ document.addEventListener('DOMContentLoaded', function() {
     contentDiv.style.marginBottom = '20px';
     contentDiv.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
     contentDiv.style.backgroundColor = '#f9f9f9';
-    contentDiv.style.position = 'relative'; // To position elements absolutely within
+    contentDiv.style.position = 'relative';
 
     const topicsDiv = document.createElement('div');
-    topicsDiv.textContent = `${row[0]}`;
+    topicsDiv.textContent = row[0]; // Assuming topic is in the first column
     topicsDiv.style.textAlign = 'left';
 
     const url = new URL(row[2]);
     const domainDiv = document.createElement('div');
-    domainDiv.textContent = url.hostname; // Extracts the domain from the URL
     domainDiv.style.position = 'absolute';
     domainDiv.style.bottom = '5px';
     domainDiv.style.right = '10px';
     domainDiv.style.fontSize = '12px';
     domainDiv.style.color = '#777';
 
-    const textDiv = document.createElement('div'); // Div for text
-    textDiv.textContent = row[1]; // Text (assuming it's in the second column of the CSV)
-    textDiv.style.marginBottom = '10px'; // Space between the text and topics
+    // Creating a container for domain and note
+    const domainNoteContainer = document.createElement('div');
+    domainNoteContainer.style.display = 'flex';
+    domainNoteContainer.style.alignItems = 'center'; // Aligns items vertically in the center
 
-    // Extracting the note number and removing the '#' prefix
+    const domainText = document.createElement('span');
+    domainText.textContent = url.hostname; // Extracts the domain from the URL
+
+    // Extract the note number (removing '#') and create the note span with emoji
     const noteNumber = row[row.length - 1].replace('#', '');
-
-    // Creating a span for the note emoji and the note number
     const noteSpan = document.createElement('span');
     noteSpan.textContent = ` 🎵 ${noteNumber}`;
-    noteSpan.style.marginLeft = '5px'; // Ensure there's some space between the link and the note
+    noteSpan.style.marginLeft = '5px'; // Space between domain and note
 
-    // Adding an event listener to the textDiv to open the link, instead of wrapping with <a> for simplicity
+    // Assemble the domain and note inside the container
+    domainNoteContainer.appendChild(domainText);
+    domainNoteContainer.appendChild(noteSpan);
+
+    // Now, append the container instead of just the domainText
+    domainDiv.appendChild(domainNoteContainer);
+
+    const textDiv = document.createElement('div');
+    textDiv.textContent = row[1]; // Assuming the text/content is in the second column
+    textDiv.style.marginBottom = '10px';
+
     textDiv.style.cursor = 'pointer';
     textDiv.addEventListener('click', () => {
-        window.open(row[2], '_blank'); // Open the link in a new tab
+        window.open(row[2], '_blank'); // Open link in new tab
     });
+
+    // Assembling the content
+    contentDiv.appendChild(textDiv);
+    contentDiv.appendChild(topicsDiv);
+    contentDiv.appendChild(domainDiv); // Adding the domain (with note) display
+
+    // Add the assembled div to the main container
+    contentArea.appendChild(contentDiv);
+});
 
     // Append the noteSpan to the textDiv to show the note emoji and number next to the link text
     textDiv.appendChild(noteSpan);
