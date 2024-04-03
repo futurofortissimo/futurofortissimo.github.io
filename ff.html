@@ -229,15 +229,15 @@ document.addEventListener('DOMContentLoaded', function() {
 <style>
 
 .swiper-slide {
-    width: 415px; /* Fixed width for each slide */
+    /*width: 415px; /* Fixed width for each slide */
     /* Additional styling for your slides */
 }
 
 .swiper-container {
+    max-width: 650px; /* Maximum width for larger screens */
+    margin: 0 auto; /* Center the container horizontally */
     overflow: hidden; /* Ensures overflow slides are not visible */
-    /* Ensure it has a defined width or max-width if needed */
 }
-
 
 #footer {
    position:absolute;
@@ -382,22 +382,25 @@ body, html {
 }
 
 .image-box {
-    background-size: cover;
-    background-position: center;
-    width: 80%; /* Adjust based on your preference */
+    width: 90%; /* Small screens */
     max-width: 575px; /* Maximum width */
     height: 450px;
     margin: 0 auto;
     border-radius: 15px;
-    box-shadow: 0 6px 9px rgba(0, 0, 0, 0.2); /* Floating effect */
+    box-shadow: 0 6px 9px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     color: white;
-    padding:10px;
-    background-image: linear-gradient(to top right, rgba(0, 0, 139, 0.8), rgba(128, 0, 128, 0.8)); /* Dark blue to purple gradient with opacity */
+    padding: 10px;
+    background-image: linear-gradient(to top right, rgba(0, 0, 139, 0.8), rgba(128, 0, 128, 0.8));
+}
 
+@media (min-width: 650px) {
+    .image-box {
+        width: 650px; /* Wider on larger screens */
+    }
 }
 
 .responsive-image {
