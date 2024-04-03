@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
     container.style.color = 'white';
     container.style.textAlign = 'left';
     container.classList.add('image-box');
-    container.style.maxWidth = '570px'; // Set maximum width
+    // container.style.maxWidth = '570px'; // Set maximum width
 
     // Use 'entry' instead of 'randomEntry'
     container.style.backgroundImage = `linear-gradient(rgba(0, 0, 139, 1), rgba(0, 0, 139, 0.2) 30%, rgba(128, 0, 128, 0.2) 70%, rgba(128, 0, 128, 1)), url('${entry.img}')`;
@@ -246,32 +246,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-.carousel-container {
-  display: flex;
-  justify-content: center;
-  align-items: center; /* If you want vertical centering as well */
-  width: 100%;
-  overflow: hidden;
-}
-
-@media (max-width: 550px) {
-  .carousel-slide {
-    width: 90%; /* Adjust based on preference */
-    margin: 0 auto; /* Center the slide */
-  };
-  .swiper-slide  {
-    width: 570px; /* Adjust based on preference */
-    margin: 0 auto; /* Center the slide */
-  }
-}
-
-
-.carousel-wrapper {
-  display: flex;
-  align-items: center;
-  max-width:650px
-  justify-content: center;
-}
 
 @media (max-width: 550px) {
   .carousel-wrapper-2 {
