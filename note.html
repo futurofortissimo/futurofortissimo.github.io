@@ -344,12 +344,12 @@ document.addEventListener('DOMContentLoaded', function() {
       tableBody.innerHTML = ''; // Clears the table before populating it again
 
       // First, ensure we have at most 10 entries to avoid showing too much data
-      let displayData = data.length > 10 ? data.slice(0, 10) : data;
+      let displayData = data.length > 50 ? data.slice(0, 50) : data;
 
       // If there are more than 5 entries, randomly select 5 to display
-      if (displayData.length > 5) {
+      if (displayData.length > 50) {
           let shuffled = displayData.sort(() => 0.5 - Math.random());
-          displayData = shuffled.slice(0, 5);
+          displayData = shuffled.slice(0, 50);
       }
 
       displayData.forEach((row) => {
