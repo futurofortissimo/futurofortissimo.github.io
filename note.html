@@ -82,7 +82,7 @@
                 </div>
               </div>
             </a>
-            
+
     <div class="flex flex-col justify-center m-0 p-0 flex-1 min-h-screen" style="margin-top: 40px;">
       <main class="flex flex-grow flex-1 overflow-y-scroll flex-col w-full">
         <div>
@@ -353,7 +353,104 @@
               });
             });
           </script>
+          <script>
+          // Adjusts the width of the image box based on the window size
+          function adjustImageBoxWidth() {
+            const imageBox = document.querySelector('.image-box');
+            if (window.innerWidth < 600) {
+              // Adjust according to your preference for smaller screens
+              imageBox.style.width = '90%';
+            } else {
+              // Default width for larger screens
+              imageBox.style.width = '80%';
+            }
+          }
 
+          // Updates the page with the data from the selected entry
+          function updatePage(entry) {
+            document.querySelector('.image-box').style.backgroundImage = `linear-gradient(rgba(0, 0, 139, 0.62), rgba(0, 0, 139, 0.22) 30%, rgba(128, 0, 128, 0.22) 70%, rgba(128, 0, 128, 0.62)), url('${entry.img}')`;
+            document.querySelector('.post-title').innerHTML = `<div style="font-size: 25px; font-family: 'ArgosBoldItalic';">${entry.title}</div>`;
+            document.querySelector('.post-subtitle').innerHTML = entry.subtitle;
+
+            const imageBoxLink = document.querySelector('#image-box-link');
+            imageBoxLink.href = entry.readMoreUrl;
+
+            const linksHTML = entry.links.map(link => `<li class="post-subtitle"><a class="post-subtitle" href="${link.url}">${link.text}</a></li>`).join('');
+            document.querySelector('ul').innerHTML = linksHTML;
+          }
+
+          // Main function to fetch data and initialize the page
+          document.addEventListener('DOMContentLoaded', function() {
+            adjustImageBoxWidth(); // Call to adjust the image box width on page load
+
+            // Fetch data from 'pubs_en.json' and initialize the page
+            fetch('pubs_en.json?' + new Date().getTime())
+              .then(response => response.json())
+              .then(data => {
+                const randomEntryIndex = Math.floor(Math.random() * data.length);
+                const randomEntry = data[randomEntryIndex];
+                updatePage(randomEntry); // Update page with a random entry
+              })
+              .catch(error => console.error('Error loading the JSON file:', error));
+
+
+              fetch('pubs_en.json?' + new Date().getTime())
+                  .then(response => response.json())
+                  .then(data => {
+                    const buttons = document.querySelectorAll('.slider-btn');
+                    buttons.forEach(button => {
+                      button.addEventListener('click', () => {
+                        const key = button.getAttribute('data-key');
+                        const entry = data.find(item => item.title.includes(key));
+                        if (entry) {
+                          updatePage(entry);
+                        } else {
+                          console.error(`Entry not found for key: ${key}`);
+                        }
+                      });
+                    });
+                  })
+                  .catch(error => console.error('Error loading the JSON file:', error));
+
+            // Carousel functionality
+            const carouselSlides = document.querySelectorAll('.carousel-slide');
+            const prevButton = document.querySelector('.carousel-prev');
+            const nextButton = document.querySelector('.carousel-next');
+            const prevButton_2 = document.querySelector('.carousel-prev-2');
+            const nextButton_2 = document.querySelector('.carousel-next-2');
+            const prevButton_3 = document.querySelector('.carousel-prev-3');
+            const nextButton_3 = document.querySelector('.carousel-next-3');
+            let currentSlide = 0;
+
+            // Shows the slide corresponding to the currentSlide index
+            function showSlide(n) {
+              carouselSlides.forEach((slide, index) => {
+                slide.style.transform = `translateX(-${n * 100}%)`;
+                slide.style.visibility = (index === n) ? 'visible' : 'hidden';
+              });
+            }
+
+            // Moves to the next slide
+            function nextSlide() {
+              currentSlide = (currentSlide + 1) % carouselSlides.length;
+              showSlide(currentSlide);
+            }
+
+            // Moves to the previous slide
+            function prevSlide() {
+              currentSlide = (currentSlide - 1 + carouselSlides.length) % carouselSlides.length;
+              showSlide(currentSlide);
+            }
+
+            prevButton.addEventListener('click', prevSlide);
+            nextButton.addEventListener('click', nextSlide);
+            prevButton_2.addEventListener('click', prevSlide);
+            nextButton_2.addEventListener('click', prevSlide);
+            prevButton_3.addEventListener('click', prevSlide);
+            nextButton_3.addEventListener('click', prevSlide);
+            showSlide(currentSlide); // Initialize the carousel to show the first slide
+          });
+          </script>
           <script>
             var mySwiper = new Swiper('.mySwiper', {
               slidesPerView: 7,
