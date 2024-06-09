@@ -214,7 +214,7 @@
     adjustImageBoxWidth(); // Call to adjust the image box width on page load
 
     // Fetch data from 'pubs_en.json' and initialize the page
-    fetch('pubs_en.json?' + new Date().getTime())
+    fetch('pubs.json?' + new Date().getTime())
       .then(response => response.json())
       .then(data => {
         const randomEntryIndex = Math.floor(Math.random() * data.length);
