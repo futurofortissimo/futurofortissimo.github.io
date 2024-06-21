@@ -37,6 +37,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Titolo App">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://futurofortissimo.github.io/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:title" content="futuro fortissimo future michele merelli">
@@ -213,7 +215,7 @@
     adjustImageBoxWidth(); // Call to adjust the image box width on page load
 
     // Fetch data from 'pubs_en.json' and initialize the page
-    fetch('pubs.json?' + new Date().getTime())
+    fetch('index_files/pubs.json?' + new Date().getTime())
       .then(response => response.json())
       .then(data => {
         const randomEntryIndex = Math.floor(Math.random() * data.length);
