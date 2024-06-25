@@ -12,7 +12,7 @@
     <link rel="manifest" href="/index_files/manifest.json">
     <link rel="icon" href="/index_files/ff.webp" type="/index_files/ff.webp">
     <link rel="apple-touch-icon" href="/index_files/ff.webp">
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -184,6 +184,54 @@
               </div>
             </div>
           </div>
+          <h2>FAQs on Nature, Humanity, and Technology</h2>
+
+<button class="accordion">Natura</button>
+<div class="panel">
+  <h3>1. How has philosophy during the lockdown made us reflect on our relationship with Earth?</h3>
+  <p>Philosophy of Bruno Latour during the lockdown invites reflection on our connection with Earth, highlighting existential questions about our place in the world.</p>
+
+  <h3>2. What are the benefits and challenges of remote working accelerated by the pandemic?</h3>
+  <p>The pandemic has underscored both the benefits such as flexibility and challenges like isolation in remote working scenarios.</p>
+
+  <!-- Add more FAQs here -->
+</div>
+
+<button class="accordion">Uomo</button>
+<div class="panel">
+  <h3>1. How does the demographic crisis challenge societal values and policies?</h3>
+  <p>The demographic crisis prompts societies to rethink family values and support policies to bolster birth rates amidst aging populations.</p>
+
+  <h3>2. What are the primary causes of the demographic crisis beyond economic implications?</h3>
+  <p>Key factors include increased individualism and socioeconomic challenges, impacting family planning decisions across societies.</p>
+
+  <!-- Add more FAQs here -->
+</div>
+
+<button class="accordion">Tecnologia</button>
+<div class="panel">
+  <h3>1. How do technological advancements influence societal shifts?</h3>
+  <p>Technological innovations drive significant shifts in how societies operate, from economic models to daily human interactions.</p>
+
+  <h3>2. What role does AI play in shaping future technologies?</h3>
+  <p>AI is pivotal in driving forward new innovations in sectors such as healthcare, finance, and autonomous driving, shaping the future landscape of technology.</p>
+
+  <!-- Add more FAQs here -->
+</div>
+
+<script>
+$(document).ready(function() {
+  $(".accordion").click(function() {
+    $(this).toggleClass("active");
+    var panel = $(this).next();
+    if (panel.css('display') === "none") {
+      panel.slideDown(200);
+    } else {
+      panel.slideUp(200);
+    }
+  });
+});
+</script>
           <script>
   // Adjusts the width of the image box based on the window size
   function adjustImageBoxWidth() {
@@ -448,7 +496,25 @@
               zoom: { maxRatio: 1.1 },
             });
           </script>
+          <style>
+            .accordion {
+              cursor: pointer;
+              padding: 18px;
+              width: 100%;
+              border: none;
+              text-align: left;
+              outline: none;
+              font-size: 15px;
+              transition: 0.4s;
+            }
 
+            .panel {
+              padding: 0 18px;
+              background-color: white;
+              display: none;
+              overflow: hidden;
+            }
+          </style>
           <style>
             .swiper-slide {
               display: flex;
