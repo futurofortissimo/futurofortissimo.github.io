@@ -12,44 +12,91 @@
             background-color: #f0f0f0;
         }
         header {
-            background-color: #333;
-            color: white;
+            background-color: white;
             padding: 20px;
-            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         h1 {
+            font-style: italic;
             margin: 0;
             font-size: 24px;
         }
         .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: #f0f0f0;
+            padding: 10px;
             margin-top: 10px;
         }
         .search-bar input {
-            width: 80%;
-            padding: 5px;
+            flex-grow: 1;
+            border: none;
+            background: transparent;
+            margin-left: 10px;
         }
-        .article-container {
+        .filters {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            padding: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .filter-btn {
+            margin: 0 10px;
+            padding: 5px 10px;
+            border: none;
+            background-color: #ddd;
+            cursor: pointer;
+        }
+        .filter-btn.active {
+            background-color: #007bff;
+            color: white;
+        }
+        .slider-container {
+            max-width: 600px;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .slide {
+            flex: 0 0 100%;
+            padding: 15px;
+            box-sizing: border-box;
         }
         .article-card {
             background-color: white;
-            margin: 10px;
+            margin-bottom: 10px;
             padding: 15px;
-            width: calc(33.33% - 20px);
-            box-sizing: border-box;
             border-radius: 5px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .article-card:nth-child(even) {
+            background-color: #e6e6fa;
         }
         .article-title {
             margin: 0 0 10px 0;
             font-size: 18px;
         }
         .article-meta {
+            display: flex;
+            justify-content: space-between;
             font-size: 14px;
             color: #666;
+        }
+        .fullscreen-box {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-size: cover;
+            color: white;
+        }
+        .fullscreen-content {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -57,82 +104,110 @@
     <header>
         <h1>futuro fortissimo</h1>
         <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="Cerca una Nota">
+            <span>🎵</span>
+            <input type="text" placeholder="Cerca una Nota">
+            <span>🔍</span>
+            <span>↻</span>
+        </div>
+        <div class="filters">
+            <button class="filter-btn active" data-theme="all">Tutti</button>
+            <button class="filter-btn" data-theme="clima">Clima 🍃</button>
+            <button class="filter-btn" data-theme="tecnologia">Tecnologia 🖥️</button>
+            <button class="filter-btn" data-theme="societa">Società ❤️</button>
         </div>
     </header>
 
-    <div class="article-container" id="articleContainer"></div>
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide" data-theme="tecnologia">
+                <div class="article-card">
+                    <h2 class="article-title">KineStop app crea orizzonte artificiale contro mal d'auto</h2>
+                    <div class="article-meta">
+                        <span>🖥️🚗</span>
+                        <span>x.com 🎵 724</span>
+                    </div>
+                </div>
+                <div class="article-card">
+                    <h2 class="article-title">Rilevazione di problemi cardiaci attraverso l'analisi dei dati ECG con AI</h2>
+                    <div class="article-meta">
+                        <span>🖥️❤️</span>
+                        <span>semafor.com 🎵 389</span>
+                    </div>
+                </div>
+            </div>
+            <div class="slide" data-theme="societa">
+                <div class="article-card">
+                    <h2 class="article-title">AlphaFold 3 CRISPR occhi geni orecchio MDMA collasso sociale</h2>
+                    <div class="article-meta">
+                        <span>🧬❤️</span>
+                        <span>www.notboring.co 🎵 548</span>
+                    </div>
+                </div>
+            </div>
+            <div class="slide" data-theme="clima">
+                <div class="article-card">
+                    <h2 class="article-title">Ingegneri trovano un nuovo modo per convertire l'anidride carbonica in prodotti utili</h2>
+                    <div class="article-meta">
+                        <span>🍃🧪</span>
+                        <span>news.mit.edu 🎵 487</span>
+                    </div>
+                </div>
+            </div>
+            <div class="slide fullscreen-box" style="background-image: url('/api/placeholder/800/600');">
+                <div class="fullscreen-content">
+                    <h2>Libro del Mese</h2>
+                    <h3>Il Futuro dell'Intelligenza Artificiale</h3>
+                    <p>di Maria Rossi</p>
+                    <a href="#" style="color: white;">Leggi di più</a>
+                </div>
+            </div>
+            <div class="slide fullscreen-box" style="background-image: url('/api/placeholder/800/600');">
+                <div class="fullscreen-content">
+                    <h2>Ultima Pubblicazione</h2>
+                    <h3>Innovazioni Tecnologiche 2024</h3>
+                    <p>Temi principali: AI, Robotica, Energia Pulita</p>
+                    <a href="#" style="color: white;">Leggi la pubblicazione</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
-        // Function to fetch and display random articles
-        function fetchRandomArticles() {
-            fetch('index_files/pubs.json?' + new Date().getTime())
-                .then(response => response.json())
-                .then(data => {
-                    const articleContainer = document.getElementById('articleContainer');
-                    articleContainer.innerHTML = ''; // Clear existing articles
+        const slider = document.querySelector('.slider');
+        const slides = document.querySelectorAll('.slide');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        let currentIndex = 0;
 
-                    const themes = ['clima', 'tecnologia', 'societa'];
-                    themes.forEach(theme => {
-                        const themeArticles = data.filter(article => article.theme === theme);
-                        const randomArticles = getRandomArticles(themeArticles, 10);
-
-                        randomArticles.forEach(article => {
-                            const articleCard = createArticleCard(article);
-                            articleContainer.appendChild(articleCard);
-                        });
-                    });
-                })
-                .catch(error => console.error('Error loading the JSON file:', error));
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateSlider();
         }
 
-        // Function to get random articles from an array
-        function getRandomArticles(articles, count) {
-            const shuffled = articles.sort(() => 0.5 - Math.random());
-            return shuffled.slice(0, count);
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
         }
 
-        // Function to create an article card element
-        function createArticleCard(article) {
-            const card = document.createElement('div');
-            card.className = 'article-card';
-            card.innerHTML = `
-                <h2 class="article-title">${article.title}</h2>
-                <div class="article-meta">
-                    <span>${getThemeEmoji(article.theme)}</span>
-                    <span>${article.source} 🎵 ${article.resonance}</span>
-                </div>
-            `;
-            return card;
-        }
-
-        // Function to get emoji for theme
-        function getThemeEmoji(theme) {
-            switch (theme) {
-                case 'clima': return '🍃';
-                case 'tecnologia': return '🖥️';
-                case 'societa': return '❤️';
-                default: return '';
-            }
-        }
-
-        // Search functionality
-        document.getElementById('searchInput').addEventListener('input', function(e) {
-            const searchTerm = e.target.value.toLowerCase();
-            const articles = document.getElementsByClassName('article-card');
-
-            Array.from(articles).forEach(article => {
-                const title = article.querySelector('.article-title').textContent.toLowerCase();
-                if (title.includes(searchTerm)) {
-                    article.style.display = '';
+        function filterSlides(theme) {
+            slides.forEach(slide => {
+                if (theme === 'all' || slide.dataset.theme === theme) {
+                    slide.style.display = 'block';
                 } else {
-                    article.style.display = 'none';
+                    slide.style.display = 'none';
                 }
+            });
+            currentIndex = 0;
+            updateSlider();
+        }
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                filterSlides(btn.dataset.theme);
             });
         });
 
-        // Initial load of random articles
-        fetchRandomArticles();
+        setInterval(nextSlide, 5000);
     </script>
 </body>
 </html>
