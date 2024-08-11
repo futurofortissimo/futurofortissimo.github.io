@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>futuro fortissimo</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .search-bar {
+            margin-top: 10px;
+        }
+        .search-bar input {
+            width: 80%;
+            padding: 5px;
+        }
+        .article-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .article-card {
+            background-color: white;
+            margin: 10px;
+            padding: 15px;
+            width: calc(33.33% - 20px);
+            box-sizing: border-box;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .article-title {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+        }
+        .article-meta {
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>futuro fortissimo</h1>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Cerca una Nota">
+        </div>
+    </header>
+
+    <div class="article-container" id="articleContainer"></div>
+
+    <script>
+        // Function to fetch and display random articles
+        function fetchRandomArticles() {
+            fetch('index_files/pubs.json?' + new Date().getTime())
+                .then(response => response.json())
+                .then(data => {
+                    const articleContainer = document.getElementById('articleContainer');
+                    articleContainer.innerHTML = ''; // Clear existing articles
+
+                    const themes = ['clima', 'tecnologia', 'societa'];
+                    themes.forEach(theme => {
+                        const themeArticles = data.filter(article => article.theme === theme);
+                        const randomArticles = getRandomArticles(themeArticles, 10);
+
+                        randomArticles.forEach(article => {
+                            const articleCard = createArticleCard(article);
+                            articleContainer.appendChild(articleCard);
+                        });
+                    });
+                })
+                .catch(error => console.error('Error loading the JSON file:', error));
+        }
+
+        // Function to get random articles from an array
+        function getRandomArticles(articles, count) {
+            const shuffled = articles.sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, count);
+        }
+
+        // Function to create an article card element
+        function createArticleCard(article) {
+            const card = document.createElement('div');
+            card.className = 'article-card';
+            card.innerHTML = `
+                <h2 class="article-title">${article.title}</h2>
+                <div class="article-meta">
+                    <span>${getThemeEmoji(article.theme)}</span>
+                    <span>${article.source} 🎵 ${article.resonance}</span>
+                </div>
+            `;
+            return card;
+        }
+
+        // Function to get emoji for theme
+        function getThemeEmoji(theme) {
+            switch (theme) {
+                case 'clima': return '🍃';
+                case 'tecnologia': return '🖥️';
+                case 'societa': return '❤️';
+                default: return '';
+            }
+        }
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const articles = document.getElementsByClassName('article-card');
+
+            Array.from(articles).forEach(article => {
+                const title = article.querySelector('.article-title').textContent.toLowerCase();
+                if (title.includes(searchTerm)) {
+                    article.style.display = '';
+                } else {
+                    article.style.display = 'none';
+                }
+            });
+        });
+
+        // Initial load of random articles
+        fetchRandomArticles();
+    </script>
+</body>
+</html>
