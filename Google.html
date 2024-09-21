@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Match Player Ratings</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Juventus vs Napoli</h1>
+      <p>0 - 0 <span>75'</span></p>
+    </header>
+    
+    <!-- Player Ratings Section -->
+    <section class="player-ratings">
+      <h2>Top stars to rate players</h2>
+      
+      <div class="ratings-slider">
+        <!-- Juventus Player -->
+        <div class="player-card">
+          <img src="path/to/bremer-image.jpg" alt="Bremer">
+          <h3>G. Bremer</h3>
+          <p>Defender #3</p>
+          <div class="stars">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+        </div>
+        
+        <!-- Napoli Player -->
+        <div class="player-card">
+          <img src="path/to/locatelli-image.jpg" alt="Locatelli">
+          <h3>M. Locatelli</h3>
+          <p>Midfielder #5</p>
+          <div class="stars">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Bottom Section -->
+    <section class="top-ratings">
+      <h2>Top Ratings in This Match</h2>
+      <div class="top-player">
+        <img src="path/to/neres-image.jpg" alt="D. Neres">
+        <h3>D. Neres</h3>
+        <p>4 mins, 0 goals, 0 assists, 0 shots</p>
+        <div class="rating-score">
+          <span>4.5★</span>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+
+<style>
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 24px;
+  color: #ffffff;
+}
+
+header p {
+  font-size: 18px;
+  color: #9e9e9e;
+}
+
+/* Player Ratings Section */
+.player-ratings {
+  margin: 20px 0;
+}
+
+.player-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1e1e1e;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.player-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.player-card h3 {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+}
+
+.stars span {
+  font-size: 24px;
+  color: #ffd700;
+  margin: 0 2px;
+}
+
+.ratings-slider {
+  display: flex;
+  overflow-x: scroll;
+  padding: 10px 0;
+}
+
+/* Top Ratings Section */
+.top-ratings {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.top-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.top-player img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.rating-score {
+  font-size: 24px;
+  color: #ffd700;
+}
+</style>
+
+<script>
+// script.js
+
+// Functionality for clicking stars to rate players
+document.querySelectorAll('.stars span').forEach((star, index) => {
+  star.addEventListener('click', () => {
+    const stars = star.parentNode.children;
+    for (let i = 0; i < stars.length; i++) {
+      stars[i].textContent = i <= index ? '★' : '☆';  // Change filled stars
+    }
+  });
+});
+
+// Add slider functionality if needed (optional) for the ratings slider
+
+</script>
+</html>
