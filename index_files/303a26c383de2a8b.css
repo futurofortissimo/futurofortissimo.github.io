@@ -11,31 +11,19 @@
   /* Altri stili del tuo div-container */
 }
 
-
-.my-text-container {
-    display: flex; /* Enables Flexbox layout */
-    flex-direction: column; /* Stacks child elements vertically */
-    justify-content: space-between; /* Positions one child at the top and the other at the bottom */
-    padding: 5px; /* Adds 5 pixels of space all around the content */
-    max-width: 550px; /* Maximum width */
-    height: 525px; /* Example fixed height; adjust as needed */
+.image-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 90%;
+  /* Limita la larghezza massima per i dispositivi mobili */
 }
 
-.image-box {
-    background-size: cover;
-    background-position: center;
-    width: 80%; /* Adjust based on your preference */
-    max-width: 575px; /* Maximum width */
-    height: 400px;
-    margin: 0 auto;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Floating effect */
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: white;
-    background-image: linear-gradient(to top right, rgba(0, 0, 139, 0.8), rgba(128, 0, 128, 0.8)); /* Dark blue to purple gradient with opacity */
+.my-text-container {
+  padding: 15px;
+  text-align: center;
+  /* Centra il testo all'interno del contenitore */
 }
 
 #content-area div div:first-child {
@@ -60,14 +48,24 @@
     border-radius: 5px; /* Rounds the corners */
     box-shadow: 0 0 8px violet; /* Adds a subtle glow effect */
 }
-
-/* This media query applies styles for screens that are 600px wide or less */
-@media (max-width: 600px) {
-    #installButton {
-        width: 60%; /* Width on small screens */
-    }
+#image-box-link img {
+  max-width: 100%;
+  /* Assicura che l'immagine non superi la larghezza del contenitore */
+  height: auto;
+  /* Mantiene le proporzioni dell'immagine */
 }
 
+@media (max-width: 768px) {
+  .my-text-container {
+    font-size: 16px;
+    /* Dimensione del font per dispositivi mobili */
+  }
+
+  #image-box-link {
+    font-size: 20px;
+    /* Dimensione del font per il link */
+  }
+}
 .button-parla-futuro {
   display: flex;
   justify-content: center;
