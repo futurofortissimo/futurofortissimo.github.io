@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat Musicale</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .chat-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            max-width: 90%;
+        }
+        .chat-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .chat-header h2 {
+            margin: 0;
+            color: #333333;
+        }
+        .chat-body {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+        .message {
+            margin-bottom: 15px;
+        }
+        .user-message {
+            text-align: right;
+            color: #007BFF;
+        }
+        .bot-message {
+            text-align: left;
+            color: #333333;
+        }
+        .input-container {
+            display: flex;
+        }
+        .input-container input {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+            outline: none;
+            font-size: 16px;
+        }
+        .input-container button {
+            padding: 10px 15px;
+            margin-left: 10px;
+            border: none;
+            background-color: #007BFF;
+            color: #ffffff;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .input-container button:hover {
+            background-color: #0056b3;
+        }
+        .link-container a {
+            display: block;
+            color: #007BFF;
+            text-decoration: none;
+            margin: 5px 0;
+            transition: color 0.3s;
+        }
+        .link-container a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="chat-container">
+    <div class="chat-header">
+        <h2>Chat Musicale 🎵</h2>
+    </div>
+    <div class="chat-body" id="chatBody">
+        <!-- Messaggi appariranno qui -->
+    </div>
+    <div class="input-container">
+        <input type="text" id="userInput" placeholder="Inserisci una domanda con emoji musicale..." />
+        <button onclick="handleUserInput()">Invia</button>
+    </div>
+</div>
+
+<script>
+    // Simulazione dei dati CSV come array di oggetti
+    const responses = [
+        {
+            phrase: "🎸 La musica rock ha rivoluzionato il panorama culturale. 🎤 Ecco alcuni articoli interessanti:",
+            articles: [
+                { title: "Storia del Rock", link: "https://esempio.com/storia-rock", emoji: "🎸" },
+                { title: "Icone del Rock", link: "https://esempio.com/iconi-rock", emoji: "🎤" },
+                { title: "Rock Oggi", link: "https://esempio.com/rock-oggi", emoji: "🤘" }
+            ]
+        },
+        {
+            phrase: "🎹 La musica classica offre un'esperienza unica. 🎻 Dai un'occhiata a questi articoli:",
+            articles: [
+                { title: "Compositori Famosi", link: "https://esempio.com/compositori", emoji: "🎼" },
+                { title: "Strumenti Classici", link: "https://esempio.com/strumenti", emoji: "🎻" },
+                { title: "Concerti Moderni", link: "https://esempio.com/concerti", emoji: "🎹" }
+            ]
+        },
+        // Aggiungi qui altre risposte fino a 100
+    ];
+
+    // Funzione per gestire l'input dell'utente
+    function handleUserInput() {
+        const input = document.getElementById('userInput').value.trim();
+        if (input === "") return;
+
+        addMessage(input, 'user-message');
+        document.getElementById('userInput').value = '';
+
+        // Simulazione della ricerca della risposta più affine
+        // In questo esempio, selezioniamo una risposta casuale
+        const response = responses[Math.floor(Math.random() * responses.length)];
+        displayBotResponse(response);
+    }
+
+    // Funzione per aggiungere un messaggio alla chat
+    function addMessage(text, className) {
+        const chatBody = document.getElementById('chatBody');
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${className}`;
+        messageDiv.textContent = text;
+        chatBody.appendChild(messageDiv);
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    // Funzione per visualizzare la risposta del bot con animazione
+    function displayBotResponse(response) {
+        const chatBody = document.getElementById('chatBody');
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'message bot-message';
+        chatBody.appendChild(messageDiv);
+        chatBody.scrollTop = chatBody.scrollHeight;
+
+        const text = response.phrase;
+        let index = 0;
+
+        function typeText() {
+            if (index < text.length) {
+                messageDiv.textContent += text.charAt(index);
+                index++;
+                setTimeout(typeText, 30); // Velocità dell'animazione
+            } else {
+                // Dopo aver completato la frase, aggiungi i link
+                addLinks(response.articles, messageDiv);
+            }
+        }
+
+        typeText();
+    }
+
+    // Funzione per aggiungere i link dopo la frase
+    function addLinks(articles, messageDiv) {
+        const linkContainer = document.createElement('div');
+        linkContainer.className = 'link-container';
+        articles.forEach(article => {
+            const link = document.createElement('a');
+            link.href = article.link;
+            link.target = "_blank";
+            link.textContent = `${article.emoji} ${article.title}`;
+            linkContainer.appendChild(link);
+        });
+        messageDiv.appendChild(linkContainer);
+    }
+</script>
+
+</body>
+</html>
