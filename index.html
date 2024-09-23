@@ -96,65 +96,105 @@
       <!-- Additional items will be appended here -->
     </div>
 
+    <div class="notes-container" style="margin-top: 20px;">
+      <div class="notes-display" id="notes-display"></div>
+      <div class="swiper mySwiper" style="margin-top: 10px;">
+        <div class="swiper-wrapper" id="notes-slider"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
 
-
-<div class="button-container mb-3 font-palladio" style="text-align: center; font-size: 21px; margin-top: 20px;"> <!-- Added margin-top -->
-  <a href="https://www.paypal.com/paypalme/michelemerelli"
-    style="color: black; text-decoration: none; font-weight: bold; margin: 0 10px; border: 2px solid black; padding: 10px 20px; border-radius: 25px;">Supporta
-    🍩</a>
-  <a href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io"
-    style="color: black; text-decoration: none; font-weight: bold; margin: 0 10px; border: 2px solid black; padding: 10px 20px; border-radius: 25px;">Condividi
-    📧</a>
-</div>
+    <div class="button-container mb-3 font-palladio" style="text-align: center; font-size: 21px; margin-top: 20px;"> <!-- Added margin-top -->
+      <a href="https://www.paypal.com/paypalme/michelemerelli"
+        style="color: black; text-decoration: none; font-weight: bold; margin: 0 10px; border: 2px solid black; padding: 10px 20px; border-radius: 25px;">Supporta
+        🍩</a>
+      <a href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io"
+        style="color: black; text-decoration: none; font-weight: bold; margin: 0 10px; border: 2px solid black; padding: 10px 20px; border-radius: 25px;">Condividi
+        📧</a>
+    </div>
 
     <script src="script.js"></script>
+    <script>
+      // Fetch and display notes
+      function loadNotes() {
+        fetch('index_files/pubs.json')
+          .then(response => response.json())
+          .then(data => {
+            const notesDisplay = document.getElementById('notes-display');
+            const notesSlider = document.getElementById('notes-slider');
 
-          <style>
-            .accordion {
-              cursor: pointer;
-              padding: 18px;
-              width: 100%;
-              border: none;
-              text-align: left;
-              outline: none;
-              font-size: 15px;
-              transition: 0.4s;
-            }
+            // Display the first 2 notes
+            const firstTwoNotes = data.slice(0, 2);
+            firstTwoNotes.forEach(note => {
+              notesDisplay.innerHTML += `<div>${note.title}: ${note.subtitle}</div>`;
+            });
 
-            .panel {
-              padding: 0 18px;
-              background-color: white;
-              display: none;
-              overflow: hidden;
-            }
-          </style>
-          <style>
-            .swiper-slide {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              margin-bottom: 20px;
-              transition: transform 0.3s;
-            }
-            .swiper-slide:hover {
-              transform: scale(1.1);
-            }
-            .highlight-on-hover {
-              cursor: pointer;
-              display: inline-block;
-              margin-bottom: 10px;
-              width: 100%;
-            }
-            .highlight-on-hover:hover {
-              text-decoration: underline;
-              background-image: linear-gradient(to top right, rgba(0, 0, 139, 0.3), rgba(128, 0, 128, 0.3));
-              border-radius: 5px;
-              box-shadow: 0 0 8px violet;
-            }
-          </style>
-        </div>
-      </main>
-    </div>
+            // Create slider for additional notes
+            const additionalNotes = data.slice(2);
+            additionalNotes.forEach(note => {
+              const slide = document.createElement('div');
+              slide.classList.add('swiper-slide');
+              slide.innerHTML = `<div>${note.title}: ${note.subtitle}</div>`;
+              notesSlider.appendChild(slide);
+            });
+
+            // Initialize Swiper
+            var mySwiper = new Swiper('.mySwiper', {
+              slidesPerView: 1,
+              spaceBetween: 10,
+              pagination: { el: '.swiper-pagination', clickable: true },
+            });
+          })
+          .catch(error => console.error('Error loading notes:', error));
+      }
+
+      // Call loadNotes on page load
+      document.addEventListener('DOMContentLoaded', loadNotes);
+    </script>
+
+    <style>
+      .accordion {
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        transition: 0.4s;
+      }
+
+      .panel {
+        padding: 0 18px;
+        background-color: white;
+        display: none;
+        overflow: hidden;
+      }
+    </style>
+    <style>
+      .swiper-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        transition: transform 0.3s;
+      }
+      .swiper-slide:hover {
+        transform: scale(1.1);
+      }
+      .highlight-on-hover {
+        cursor: pointer;
+        display: inline-block;
+        margin-bottom: 10px;
+        width: 100%;
+      }
+      .highlight-on-hover:hover {
+        text-decoration: underline;
+        background-image: linear-gradient(to top right, rgba(0, 0, 139, 0.3), rgba(128, 0, 128, 0.3));
+        border-radius: 5px;
+        box-shadow: 0 0 8px violet;
+      }
+    </style>
   </div>
 </div>
 </body>
