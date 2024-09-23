@@ -1,4 +1,42 @@
+  document.addEventListener('DOMContentLoaded', function() {
+    const sliderContainer = document.querySelector('.slider-container');
 
+  // Example data for 5 items
+  const items = [
+  {title: 'Item 1', subtitle: 'Subtitle 1', links: [] },
+  {title: 'Item 2', subtitle: 'Subtitle 2', links: [] },
+  {title: 'Item 3', subtitle: 'Subtitle 3', links: [] },
+  {title: 'Item 4', subtitle: 'Subtitle 4', links: [] },
+  {title: 'Item 5', subtitle: 'Subtitle 5', links: [] },
+  ];
+
+    items.forEach(item => {
+      const itemElement = document.createElement('a');
+  itemElement.href = '#';
+  itemElement.className = 'image-box';
+  itemElement.style.cursor = 'pointer';
+  itemElement.style.fontSize = '21px';
+  itemElement.style.fontFamily = 'palladio';
+  itemElement.style.color = 'white';
+  itemElement.style.textAlign = 'left';
+  itemElement.style.display = 'inline-block';
+  itemElement.style.width = '100%';
+
+  itemElement.innerHTML = `
+  <div class="my-text-container" style="padding:15px;">
+    <div class="part1">
+      <div class="post-title">${item.title}</div>
+      <div class="post-subtitle">${item.subtitle}</div>
+    </div>
+    <div class="part2">
+      <ul>${item.links.map(link => `<li>${link}</li>`).join('')}</ul>
+    </div>
+  </div>
+      `;
+
+      sliderContainer.appendChild(itemElement);
+    });
+  });
 $(document).ready(function() {
   $(".accordion").click(function() {
     $(this).toggleClass("active");
