@@ -3,155 +3,498 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preload" href="/index_files/303a26c383de2a8b.css" as="style">
-    <link rel="stylesheet" href="/index_files/303a26c383de2a8b.css" data-n-g="">
-    <link rel="stylesheet" href="/index_files/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <title>Futuro Fortissimo</title>
+    <!-- Google Fonts for Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Swiper CSS for Sliders -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- Custom CSS -->
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f8f2; /* Off-white background */
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 70px;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        header a {
+            font-size: 24px;
+            font-family: 'Playfair Display', serif;
+            color: #333;
+        }
+
+        /* Main Container */
+        .container {
+            padding-top: 80px; /* Space for fixed header */
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Theme Slider */
+        .theme-slider {
+            margin-bottom: 20px;
+        }
+
+        .theme-slider .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .theme-slider .swiper-slide button {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .theme-slider .swiper-slide button.active {
+            color: #007BFF; /* Highlight active theme */
+        }
+
+        /* Sub-Themes Slider */
+        .subtheme-slider {
+            margin-bottom: 20px;
+        }
+
+        .subtheme-slider .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .subtheme-slider .swiper-slide button {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .subtheme-slider .swiper-slide button.active {
+            color: #007BFF;
+        }
+
+        /* Search Section */
+        .search-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 10px;
+        }
+
+        .search-section input[type="text"] {
+            width: 100%;
+            max-width: 500px;
+            padding: 10px 15px;
+            border: 2px solid #ccc;
+            border-radius: 42px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .search-section input[type="text"]:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+
+        .search-section button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #007BFF;
+            color: #fff;
+            border-radius: 42px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-section button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Content Area */
+        #content-area {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .note-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .note-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .note-card .topic {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .note-card .content {
+            margin-bottom: 10px;
+        }
+
+        .note-card .domain-note {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 12px;
+            color: #777;
+            display: flex;
+            align-items: center;
+        }
+
+        .note-card .domain-note span {
+            margin-left: 5px;
+        }
+
+        /* Swiper Pagination */
+        .swiper-pagination-bullet-active {
+            background-color: #007BFF;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .theme-slider .swiper-slide button {
+                font-size: 20px;
+            }
+
+            .subtheme-slider .swiper-slide button {
+                font-size: 16px;
+            }
+
+            .search-section input[type="text"] {
+                max-width: 100%;
+            }
+        }
+    </style>
+    <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <link rel="manifest" href="/index_files/manifest.json">
-    <link rel="icon" href="/index_files/ff.webp" type="/index_files/ff.webp">
-    <link rel="apple-touch-icon" href="/index_files/ff.webp">
+    <!-- jQuery (Optional if needed) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l; j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-NFZJWGL2');</script>
-    <!-- End Google Tag Manager -->
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NQ7MQR0VL8"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-NQ7MQR0VL8');
-    </script>
-
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="color-scheme" content="light only">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>futuro fortissimo michele merelli</title>
-    <meta name="description" content="Exploring the potential of technology and sustainability to build a greener future. Discover how innovative solutions in climate change can pave the way for new communities and even new nation states.">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Titolo App">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://futurofortissimo.github.io/">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="futuro fortissimo future michele merelli">
-    <meta property="og:description" content="Exploring the potential of technology and sustainability to build a greener future.">
-    <meta property="og:url" content="https://futurofortissimo.github.io">
-    <meta property="og:image" content="https://futurofortissimo.github.io/index_files/clima.webp">
-    <meta property="og:site_name" content="futuro fortissimo future michele merelli">
-    <meta property="og:type" content="website">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="futuro fortissimo future michele merelli">
-    <meta name="twitter:description" content="Exploring the potential of technology and sustainability to build a greener future.">
-    <meta name="twitter:image" content="https://futurofortissimo.github.io/index_files/clima.webp">
-    <meta name="twitter:url" content="https://linktr.ee/micmer">
-    <meta name="next-head-count" content="23">
-    <link rel="preload" href="https://futurofortissimo.github.io/index_files/clima.webp" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust">
-    <link rel="preload" href="https://futurofortissimo.github.io/index_files/clima.webp" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust">
-    <style data-fullcalendar=""></style>
-    <link rel="preload" href="/index_files/303a26c383de2a8b.css" as="style">
-    <link rel="stylesheet" href="/index_files/303a26c383de2a8b.css" data-n-g="">
 </head>
 <body>
-<div id="__next">
-  <div class="flex flex-col overflow-hidden">
-    <header class="__variable_a64ecd font-sans fixed top-0 w-full h-[70px] bg-white md:border-b border-gray-300 z-10" style="z-index: 1000; display: flex; justify-content: center; align-items: center; padding: 0 1rem; border-bottom: 2px solid black;">
-      <!-- Centered title -->
-      <div style="text-align: center;">
-        <a href="https://futurofortissimo.github.io/" style="font-size: 35px; font-family: 'ArgosBoldItalic';">futuro fortissimo</a>
-      </div>
+
+    <header>
+        <a href="https://futurofortissimo.github.io/">futuro fortissimo</a>
     </header>
-    <a href="#" id="image-box-link" style="cursor: pointer; font-size: 21px; margin-top: 100px; margin-left:auto; font-family:palladio; color:white; text-align:left" class="image-box">
-        <div class="my-text-container" style="padding:15px">
-            <div class="part1">
-                <div class="post-title"></div>
-                <div class="post-subtitle"></div>
-            </div>
-            <div class="part2 ">
-                <ul></ul>
+
+    <div class="container">
+        <!-- Main Themes Slider -->
+        <div class="theme-slider">
+            <div class="swiper mySwiperTheme">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <button class="theme-btn active" data-theme="Natura">🌿<span>Natura</span></button>
+                    </div>
+                    <div class="swiper-slide">
+                        <button class="theme-btn" data-theme="Tecnologia">💻<span>Tecnologia</span></button>
+                    </div>
+                    <div class="swiper-slide">
+                        <button class="theme-btn" data-theme="Società">👥<span>Società</span></button>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
-    </a>
-    
-<div class="button-container mb-3 font-palladio" style="text-align: center; font-size: 21px; margin-top: 20px;"> <!-- Added margin-top -->
-  <a href="https://www.notion.so/micmer/39914179f6d14c54b7a5b56e06da272a?v=b269619d858443dc9d52050b02ada0ed"
-    style="color: black; text-decoration: none; font-weight: bold; margin: 0 10px; border: 2px solid black; padding: 10px 20px; border-radius: 25px;">Libri
-    📚</a>
-  <a href="https://futurofortissimo.github.io/strumenti.html"
-    style="color: black; text-decoration: none; font-weight: bold; margin: 0 10px; border: 2px solid black; padding: 10px 20px; border-radius: 25px;">Strumenti
-    🛠️</a>
-  <a href="https://futurofortissimo.github.io/note.html"
-    style="color: black; text-decoration: none; font-weight: bold; margin: 0 10px; border: 2px solid black; padding: 10px 20px; border-radius: 25px;">Note
-    🎵</a>
-</div>
 
-<div class="button-container mb-3 font-palladio" style="text-align: center; font-size: 21px; margin-top: 20px;"> <!-- Added margin-top -->
-  <a href="https://www.paypal.com/paypalme/michelemerelli"
-    style="color: black; text-decoration: none; font-weight: bold; margin: 0 10px; border: 2px solid black; padding: 10px 20px; border-radius: 25px;">Supporta
-    🍩</a>
-  <a href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io"
-    style="color: black; text-decoration: none; font-weight: bold; margin: 0 10px; border: 2px solid black; padding: 10px 20px; border-radius: 25px;">Condividi
-    📧</a>
-</div>
-
-    <script src="script.js"></script>
-
-          <style>
-            .accordion {
-              cursor: pointer;
-              padding: 18px;
-              width: 100%;
-              border: none;
-              text-align: left;
-              outline: none;
-              font-size: 15px;
-              transition: 0.4s;
-            }
-
-            .panel {
-              padding: 0 18px;
-              background-color: white;
-              display: none;
-              overflow: hidden;
-            }
-          </style>
-          <style>
-            .swiper-slide {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              margin-bottom: 20px;
-              transition: transform 0.3s;
-            }
-            .swiper-slide:hover {
-              transform: scale(1.1);
-            }
-            .highlight-on-hover {
-              cursor: pointer;
-              display: inline-block;
-              margin-bottom: 10px;
-              width: 100%;
-            }
-            .highlight-on-hover:hover {
-              text-decoration: underline;
-              background-image: linear-gradient(to top right, rgba(0, 0, 139, 0.3), rgba(128, 0, 128, 0.3));
-              border-radius: 5px;
-              box-shadow: 0 0 8px violet;
-            }
-          </style>
+        <!-- Sub-Themes Slider -->
+        <div class="subtheme-slider">
+            <div class="swiper mySwiperSubTheme">
+                <div class="swiper-wrapper" id="subtheme-container">
+                    <!-- Dynamically populated based on selected main theme -->
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
         </div>
-      </main>
+
+        <!-- Search Section -->
+        <div class="search-section">
+            <input type="text" id="csv-search-input" placeholder="Cerca una Nota 🎵">
+            <button id="csv-search-button">🔍</button>
+            <button id="refreshButton">🔄</button>
+        </div>
+
+        <!-- Content Area -->
+        <div id="content-area">
+            <!-- Notes will be dynamically inserted here -->
+        </div>
     </div>
-  </div>
-</div>
+
+    <!-- Custom JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Theme Swiper
+            var themeSwiper = new Swiper('.mySwiperTheme', {
+                slidesPerView: 3,
+                spaceBetween: 10,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+
+            // Initialize SubTheme Swiper
+            var subThemeSwiper = new Swiper('.mySwiperSubTheme', {
+                slidesPerView: 'auto',
+                spaceBetween: 10,
+                freeMode: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+
+            const mainThemes = {
+                'Natura': ['Ambiente', 'Clima', 'Biodiversità'],
+                'Tecnologia': ['AI', 'Robotica', 'Blockchain'],
+                'Società': ['Educazione', 'Salute', 'Economia']
+            };
+
+            const subthemeContainer = document.getElementById('subtheme-container');
+
+            // Function to populate sub-themes based on selected main theme
+            function populateSubThemes(theme) {
+                subthemeContainer.innerHTML = '';
+                mainThemes[theme].forEach(sub => {
+                    const slide = document.createElement('div');
+                    slide.classList.add('swiper-slide');
+                    const button = document.createElement('button');
+                    button.classList.add('subtheme-btn');
+                    button.textContent = sub;
+                    button.dataset.subtheme = sub;
+                    slide.appendChild(button);
+                    subthemeContainer.appendChild(slide);
+                });
+                subThemeSwiper.update(); // Update swiper after adding slides
+            }
+
+            // Initial population of sub-themes for the first theme
+            populateSubThemes('Natura');
+
+            // Handle main theme button clicks
+            document.querySelectorAll('.theme-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all theme buttons
+                    document.querySelectorAll('.theme-btn').forEach(btn => btn.classList.remove('active'));
+                    // Add active class to the clicked button
+                    this.classList.add('active');
+                    // Populate sub-themes based on selected theme
+                    const selectedTheme = this.dataset.theme;
+                    populateSubThemes(selectedTheme);
+                    // Perform search/filter based on theme
+                    performSearch();
+                });
+            });
+
+            // Fetch CSV Data
+            let allData = [];
+            fetch('/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo.csv')
+                .then(response => response.text())
+                .then(csvText => {
+                    allData = parseCSV(csvText);
+                    updateContent(allData.slice(0, 10)); // Display first 10 notes initially
+                })
+                .catch(error => console.error('Error loading the CSV file:', error));
+
+            // Parse CSV into array of objects
+            function parseCSV(csvText) {
+                const lines = csvText.trim().split('\n');
+                const headers = lines[0].split(',');
+                return lines.slice(1).map(line => {
+                    const values = line.split(',');
+                    let obj = {};
+                    headers.forEach((header, index) => {
+                        obj[header.trim()] = values[index].trim();
+                    });
+                    return obj;
+                });
+            }
+
+            // Update Content Area with Notes
+            function updateContent(data) {
+                const contentArea = document.getElementById('content-area');
+                contentArea.innerHTML = ''; // Clear existing content
+
+                data.forEach(row => {
+                    const noteCard = document.createElement('div');
+                    noteCard.classList.add('note-card');
+
+                    // Topic
+                    const topicDiv = document.createElement('div');
+                    topicDiv.classList.add('topic');
+                    topicDiv.textContent = row['Topic']; // Assuming 'Topic' column exists
+                    noteCard.appendChild(topicDiv);
+
+                    // Content
+                    const contentDiv = document.createElement('div');
+                    contentDiv.classList.add('content');
+                    contentDiv.textContent = row['Content']; // Assuming 'Content' column exists
+                    noteCard.appendChild(contentDiv);
+
+                    // Domain and Note
+                    const domainNoteDiv = document.createElement('div');
+                    domainNoteDiv.classList.add('domain-note');
+
+                    const url = new URL(row['URL']); // Assuming 'URL' column exists
+                    const domainSpan = document.createElement('span');
+                    domainSpan.textContent = url.hostname;
+                    domainNoteDiv.appendChild(domainSpan);
+
+                    const noteSpan = document.createElement('span');
+                    noteSpan.textContent = `🎵 ${row['Note']}`; // Assuming 'Note' column exists
+                    domainNoteDiv.appendChild(noteSpan);
+
+                    noteCard.appendChild(domainNoteDiv);
+
+                    // Click to open URL
+                    noteCard.addEventListener('click', () => {
+                        window.open(row['URL'], '_blank');
+                    });
+
+                    contentArea.appendChild(noteCard);
+                });
+            }
+
+            // Search Logic
+            const searchInput = document.getElementById('csv-search-input');
+            const searchButton = document.getElementById('csv-search-button');
+            const refreshButton = document.getElementById('refreshButton');
+
+            // List of excluded words
+            const paroleEscluse = ['perchè', 'perché', 'quando', 'e', 'ma', 'se', 'come', 'con', 'su', 'per', 'tra', 'fra', 'nel', 'nello', 'nella', 'nei', 'nelle', 'al', 'allo', 'alla', 'ai', 'agli', 'alle', 'dal', 'dallo', 'dalla', 'dai', 'dagli', 'dalle', 'del', 'dello', 'della', 'dei', 'degli', 'delle', 'sul', 'sullo', 'sulla', 'sui', 'sugli', 'sulle', 'un', 'uno', 'una', 'gli', 'le', 'di', 'da', 'in', 'a', 'da', 'che', 'chi', 'cosa', 'quale', 'quanto', 'quanta', 'quanti', 'quante', 'dove', 'come', 'quando', 'perché', 'anche', 'solo', 'qui', 'lì', 'là', 'dunque', 'quindi', 'perciò', 'anche', 'ancora', 'già', 'mai', 'sempre', 'poi', 'prima', 'dopo', 'sopra', 'sotto', 'contro', 'molto', 'poco', 'troppo', 'più', 'meno', 'bene', 'male', 'meglio', 'peggio', 'quasi', 'circa', 'appena', 'solo', 'tanto', 'così', 'pure', 'anche', 'neanche', 'nemmeno', 'quasi', 'sia', 'anche'];
+
+            function performSearch() {
+                let filteredData = allData; // Start with all data
+                const searchText = searchInput.value.toLowerCase().split(' ').filter(parola => !paroleEscluse.includes(parola) && parola.trim() !== '');
+
+                // Get selected main theme
+                const selectedTheme = document.querySelector('.theme-btn.active').dataset.theme;
+
+                // Get selected sub-themes
+                const selectedSubThemes = Array.from(document.querySelectorAll('.subtheme-btn.active')).map(btn => btn.dataset.subtheme);
+
+                // Filter based on search text
+                if (searchText.length > 0) {
+                    filteredData = filteredData.filter(row =>
+                        searchText.some(parola =>
+                            row['Content'].toLowerCase().includes(parola)
+                        )
+                    );
+                }
+
+                // Filter based on main theme
+                if (selectedTheme) {
+                    filteredData = filteredData.filter(row => row['Topic'] === selectedTheme);
+                }
+
+                // Filter based on sub-themes
+                if (selectedSubThemes.length > 0) {
+                    filteredData = filteredData.filter(row => selectedSubThemes.includes(row['SubTheme']));
+                }
+
+                // Limit to 10 notes
+                filteredData = filteredData.slice(0, 10);
+
+                updateContent(filteredData);
+            }
+
+            // Event Listeners for Search and Refresh
+            searchButton.addEventListener('click', performSearch);
+            refreshButton.addEventListener('click', function() {
+                resetFilters();
+                updateContent(allData.slice(0, 10));
+            });
+
+            // Handle Enter key for search
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') performSearch();
+            });
+
+            // Function to reset all filters
+            function resetFilters() {
+                searchInput.value = '';
+                document.querySelectorAll('.theme-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelector('.theme-btn').classList.add('active'); // Activate first theme
+                populateSubThemes('Natura');
+                document.querySelectorAll('.subtheme-btn').forEach(btn => btn.classList.remove('active'));
+            }
+
+            // Handle SubTheme button clicks
+            document.addEventListener('click', function(e) {
+                if (e.target && e.target.matches('.subtheme-btn')) {
+                    e.target.classList.toggle('active');
+                    performSearch();
+                }
+            });
+
+            // Handle Theme button clicks
+            document.addEventListener('click', function(e) {
+                if (e.target && e.target.matches('.theme-btn')) {
+                    document.querySelectorAll('.theme-btn').forEach(btn => btn.classList.remove('active'));
+                    e.target.classList.add('active');
+                    const selectedTheme = e.target.dataset.theme;
+                    populateSubThemes(selectedTheme);
+                    performSearch();
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>
