@@ -21,6 +21,37 @@ $(document).ready(function() {
       imageBox.style.width = '80%';
     }
   }
+  document.addEventListener('DOMContentLoaded', function () {
+      var swiper = new Swiper('.swiper-container', {
+          slidesPerView: 3, // Adjust based on design
+          spaceBetween: 10, // Space between slides
+          loop: false, // Set to true if you want looping
+          pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+          },
+          navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+          },
+          breakpoints: {
+              // Responsive breakpoints
+              640: {
+                  slidesPerView: 2,
+                  spaceBetween: 20,
+              },
+              768: {
+                  slidesPerView: 3,
+                  spaceBetween: 30,
+              },
+              1024: {
+                  slidesPerView: 4,
+                  spaceBetween: 40,
+              },
+          },
+      });
+  });
+
 
   // Updates the page with the data from the selected entry
   function updatePage(entry) {
