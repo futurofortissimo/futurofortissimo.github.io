@@ -66,24 +66,37 @@
         <h1>Libri - Futuro Fortissimo</h1>
         <p>Esplora la nostra collezione di libri.</p>
     </header>
-
     <div class="book-section">
-        <div class="book-card">
-            <div class="book-title">Titolo del Libro 1</div>
-            <div class="book-author">Autore 1</div>
-            <a href="link_to_book_1.html" class="book-link">Scopri di più</a>
-        </div>
-        <div class="book-card">
-            <div class="book-title">Titolo del Libro 2</div>
-            <div class="book-author">Autore 2</div>
-            <a href="link_to_book_2.html" class="book-link">Scopri di più</a>
-        </div>
-        <div class="book-card">
-            <div class="book-title">Titolo del Libro 3</div>
-            <div class="book-author">Autore 3</div>
-            <a href="link_to_book_3.html" class="book-link">Scopri di più</a>
-        </div>
-        <!-- Add more book cards as needed -->
+        <script>
+            fetch('books.json')
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(book => {
+                        const bookCard = document.createElement('div');
+                        bookCard.className = 'book-card';
+
+                        const bookTitle = document.createElement('div');
+                        bookTitle.className = 'book-title';
+                        bookTitle.textContent = book.title;
+
+                        const bookAuthor = document.createElement('div');
+                        bookAuthor.className = 'book-author';
+                        bookAuthor.textContent = book.author;
+
+                        const bookLink = document.createElement('a');
+                        bookLink.className = 'book-link';
+                        bookLink.href = book.link;
+                        bookLink.textContent = 'Scopri di più';
+
+                        bookCard.appendChild(bookTitle);
+                        bookCard.appendChild(bookAuthor);
+                        bookCard.appendChild(bookLink);
+
+                        document.querySelector('.book-section').appendChild(bookCard);
+                    });
+                })
+                .catch(error => console.error('Error loading the JSON file:', error));
+        </script>
     </div>
 
 </body>
