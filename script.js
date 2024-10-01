@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
   $(".accordion").click(function() {
     $(this).toggleClass("active");
@@ -43,12 +42,14 @@ $(document).ready(function() {
     fetch('index_files/pubs.json?' + new Date().getTime())
       .then(response => response.json())
       .then(data => {
-        const randomEntryIndex = Math.floor(Math.random() * data.length);
-        const randomEntry = data[randomEntryIndex];
-        updatePage(randomEntry); // Update page with a random entry
+        const randomEntries = [];
+        for (let i = 0; i < 5; i++) { // Load 5 random entries
+          const randomEntryIndex = Math.floor(Math.random() * data.length);
+          randomEntries.push(data[randomEntryIndex]);
+        }
+        updateCarousel(randomEntries); // Update carousel with random entries
       })
       .catch(error => console.error('Error loading the JSON file:', error));
-
 
     fetch('pubs_en.json?' + new Date().getTime())
       .then(response => response.json())
@@ -266,3 +267,21 @@ $(document).ready(function() {
               },
               zoom: { maxRatio: 1.1 },
             });
+
+// Function to update the carousel with multiple entries
+function updateCarousel(entries) {
+    const carouselContainer = document.querySelector('.carousel-container');
+    carouselContainer.innerHTML = ''; // Clear existing content
+
+    entries.forEach(entry => {
+        const itemDiv = document.createElement('div');
+        itemDiv.classList.add('carousel-item');
+        itemDiv.innerHTML = `
+            <div class="image-box" style="background-image: url('${entry.img}');">
+                <div class="post-title">${entry.title}</div>
+                <div class="post-subtitle">${entry.subtitle}</div>
+            </div>
+        `;
+        carouselContainer.appendChild(itemDiv);
+    });
+}
