@@ -75,6 +75,12 @@
                         const bookCard = document.createElement('div');
                         bookCard.className = 'book-card';
 
+                        const bookImage = document.createElement('img');
+                        bookImage.src = book.image; // Fetch the image
+                        bookImage.alt = book.title; // Set alt text
+                        bookImage.style.width = '100%'; // Optional: Set width to fit the card
+                        bookCard.appendChild(bookImage); // Append image to the card
+
                         const bookTitle = document.createElement('div');
                         bookTitle.className = 'book-title';
                         bookTitle.textContent = book.title;
@@ -86,7 +92,7 @@
                         const bookLink = document.createElement('a');
                         bookLink.className = 'book-link';
                         bookLink.href = book.link;
-                        bookLink.textContent = 'Scopri di più';
+                        bookLink.textContent = 'Riassunto fortissimo';
 
                         bookCard.appendChild(bookTitle);
                         bookCard.appendChild(bookAuthor);
