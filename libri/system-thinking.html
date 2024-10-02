@@ -5,116 +5,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thinking in Systems - Sommario</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap'); /* Sostituto per Palladio */
-
+        /* Stili generali */
         body {
             margin: 0;
-            font-family: 'Libre Baskerville', serif; /* Fallback a serif se Palladio non disponibile */
+            font-family: 'Palladio', serif;
+            font-size: 21px;
             background-color: #f5f5f5;
             color: #333;
         }
+
+        /* Stili per l'header principale */
         header {
+            font-family: 'ArgosBoldItalic', sans-serif;
+            font-size: 21px;
+            color: black;
+            font-weight: bold;
             display: flex;
-            flex-wrap: wrap;
-            background-color: #00bef8;
+            justify-content: center;
+            align-items: center;
+            padding: 0 1rem;
+            border-bottom: 2px solid black;
+            background-color: white;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 70px;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        /* Stili per i titoli delle sezioni */
+        h2 {
+            font-family: 'ArgosBoldItalic', sans-serif;
+            font-size: 15px;
+            color: black;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* Stili per i paragrafi */
+        p {
+            font-family: 'Palladio', serif;
+            font-size: 21px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        /* Stili per le liste */
+        ul {
+            font-family: 'Palladio', serif;
+            font-size: 21px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+            padding-left: 10px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Stili per i blockquote */
+        blockquote {
+            font-family: 'Palladio', serif;
+            font-size: 21px;
+            line-height: 1.5;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: #6ad7fef0;
+            border-left: 5px solid #38acff;
+        }
+
+        /* Stili per il footer */
+        footer {
+            font-family: 'ArgosBoldItalic', sans-serif;
+            font-size: 15px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #fff;
+            border-top: 2px solid black;
+            z-index: 1000;
+            margin-bottom: 3px;
+        }
+
+        footer a {
+            color: black;
+            text-decoration: none;
+        }
+
+        footer .cta-button {
+            background-color: black;
             color: white;
-            padding: 20px;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            display: flex;
+            justify-content: center;
             align-items: center;
         }
-        .book-image {
-            flex: 1 1 150px;
-            max-width: 150px;
-            margin-right: 20px;
+
+        /* Stili per i link nella lista */
+        .link-list a {
+            color: black;
+            text-decoration: none;
+            font-family: 'ArgosBoldItalic', sans-serif;
+            font-size: 15px;
+            margin: 0 8px;
         }
-        .book-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
+
+        .link-list a::after {
+            content: '';
         }
-        .book-info {
-            flex: 2 1 300px;
-        }
-        .book-info h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-        .book-info h2 {
-            margin: 5px 0;
-            font-size: 18px;
-            font-weight: normal;
-        }
-        .book-info a {
-            color: #ffffff;
-            text-decoration: underline;
-        }
-        nav {
-            background-color: #00bef8;
-            padding: 10px 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .nav-button {
-            background-color: white;
-            color: #00bef8;
-            border: none;
-            padding: 10px 15px;
-            margin: 5px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .nav-button:hover {
-            background-color: #00bef8;
-            color: white;
-            border: 1px solid white;
-        }
-        main {
-            padding: 20px;
-        }
-        section {
-            margin-bottom: 40px;
-        }
-        h2 {
-            color: #00bef8;
-            border-bottom: 2px solid #00bef8;
-            padding-bottom: 5px;
-        }
-        h3 {
-            margin-top: 20px;
-            color: #333;
-        }
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-        blockquote {
-            font-style: italic;
-            color: #555;
-            margin: 10px 20px;
-            padding-left: 10px;
-            border-left: 3px solid #00bef8;
-        }
-        @media (max-width: 600px) {
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .book-image {
-                margin-right: 0;
-                margin-bottom: 15px;
-            }
-            .book-info h1 {
-                font-size: 20px;
-            }
-            .book-info h2 {
-                font-size: 16px;
-            }
-            .nav-button {
-                flex: 1 1 100%;
-                text-align: center;
-            }
+
+        .link-list a:last-child::after {
+            content: '';
         }
     </style>
 </head>
