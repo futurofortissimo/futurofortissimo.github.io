@@ -386,6 +386,25 @@ cardsWrapper.appendChild(card);
 cards.push(card);
 }
 
+function createContentBlock(type, contents) {
+    const div = document.createElement('div');
+    div.className = `content-block ${type}`;
+
+    if (type === 'subsectionTitle') {
+        const h3 = document.createElement('h3');
+        h3.textContent = contents[0];
+        h3.className = 'subsection-title';
+        div.appendChild(h3);
+    } else {
+        contents.forEach(item => {
+            const p = document.createElement('p');
+            p.textContent = item;
+            div.appendChild(p);
+        });
+    }
+
+    return div;
+}
         // Function to create the book details card
         function createBookCard(bookDetails) {
             const card = document.createElement('div');
