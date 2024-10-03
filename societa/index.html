@@ -18,17 +18,6 @@
             --quote-color: #4FC3F7; /* Darker blue */
             --progress-bar-color: #4CAF50; /* Green */
         }
-        .credits {
-    text-align: center;
-    font-size: 14px;
-    padding: 10px;
-    background-color: #f0f0f0;
-}
-
-.credits a {
-    color: #00bef8;
-    text-decoration: none;
-}
 
         /* Basic styles */
         body {
@@ -49,8 +38,21 @@
         }
 
         /* Header with logo, buttons, and language switch */
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: var(--theme-color);
+            padding: 10px;
+            flex-shrink: 0;
+            flex-wrap: nowrap;
+        }
 
-
+        .logo {
+            height: 40px;
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-right: 10px;
+        }
 
         .language-switch {
             background-color: transparent;
@@ -177,57 +179,18 @@
             background-color: #7ec0ee; /* Slightly darker blue */
         }
 
-        /* Header */
-        .header {
-            display: flex;
-            align-items: center;
-            background-color: var(--theme-color);
-            padding: 10px;
-            flex-shrink: 0;
-            flex-wrap: nowrap;
-            justify-content: center; /* Center the logo */
-        }
-
-        /* Logo */
-        .logo {
-            height: 40px;
-            cursor: pointer;
-            flex-shrink: 0;
-            margin: 0 auto;
-        }
-
         /* Footer */
         footer {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--theme-color);
+            text-align: center;
+            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
             padding: 10px;
-            flex-shrink: 0;
-            flex-wrap: wrap;
+            background-color: #f0f0f0;
         }
 
-        /* Buttons container inside footer */
-        footer .buttons-container {
-            display: flex;
-            overflow-x: auto;
-            flex-grow: 1;
-            justify-content: center;
-            margin-bottom: 10px;
-        }
-
-        footer .buttons-container::-webkit-scrollbar {
-            display: none; /* Hide scrollbar */
-        }
-
-        /* Language switch inside footer */
-        footer .language-switch {
-            background-color: transparent;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            flex-shrink: 0;
-            margin-left: 10px;
+        footer a {
+            color: #00bef8;
+            text-decoration: none;
         }
         /* Content block for darker paragraphs */
       .darkerParagraphs {
@@ -249,11 +212,16 @@
 </head>
 <body>
     <div class="app-container">
-        <!-- Header with logo -->
+        <!-- Header with logo, buttons, and language switch -->
         <div class="header">
             <a href="https://futurofortissimo.github.io/">
                 <img src="/index_files/ff.webp" alt="Logo" class="logo">
             </a>
+            <!-- Buttons inside header -->
+            <div class="buttons-container" id="buttons-container">
+                <!-- Buttons will be dynamically inserted here -->
+            </div>
+            <button class="language-switch" id="language-switch">🇬🇧</button>
         </div>
 
         <!-- Progress bar -->
@@ -265,25 +233,12 @@
                 <!-- Cards will be dynamically inserted here -->
             </div>
         </div>
-
-        <!-- Credits below the cards -->
-        <div class="credits">
-            <p>Created by <a href="https://linktr.ee/micmer">michele merelli</a></p>
-        </div>
-
     </div>
 
-    <!-- Footer with buttons and language switch -->
     <footer>
-        <!-- Buttons inside footer -->
-        <div class="buttons-container" id="buttons-container">
-            <!-- Buttons will be dynamically inserted here -->
-        </div>
-        <button class="language-switch" id="language-switch">🇬🇧</button>
+        <p><a href="https://linktr.ee/micmer">michele merelli</a> per
+        <a href="https://fortissimo.substack.com/">futuro fortissimo</a></p>
     </footer>
-
-    <!-- JavaScript code -->
-</body>
 
     <script>
     let startX = 0;
@@ -980,4 +935,5 @@ function touchEnd(evt) {
             initializeApp();
         });
     </script>
+</body>
 </html>
