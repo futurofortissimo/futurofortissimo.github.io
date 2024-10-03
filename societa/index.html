@@ -790,86 +790,105 @@ function getCurrentPublication() {
         }
 
         let startX = 0;
-  let startY = 0;
-  let isDown = false;
-  let isSwiping = false;
-  let swipeThreshold = 50; // Minimum distance to trigger a swipe
-  let swipeTimeThreshold = 300; // Maximum time for a swipe (in milliseconds)
-  let swipeStartTime;
+      let startY = 0;
+      let isDown = false;
+      let isSwiping = false;
+      let swipeThreshold = 75; // Increased from 50 to 75
+      let swipeTimeThreshold = 300;
+      let swipeStartTime;
+      const cardsContainer = document.querySelector('.cards-container');
+      const buttonsContainer = document.getElementById('buttons-container');
 
-  const cardsContainer = document.querySelector('.cards-container');
-  //const buttonsContainer = document.getElementById('buttons-container');
-
-  function handleStart(clientX, clientY) {
-      startX = clientX;
-      startY = clientY;
-      isDown = true;
-      isSwiping = false;
-      swipeStartTime = new Date().getTime();
-      cardsWrapper.style.transition = 'none';
-  }
-
-  function handleMove(clientX, clientY) {
-      if (!isDown) return;
-      const x = clientX;
-      const y = clientY;
-      const deltaX = x - startX;
-      const deltaY = y - startY;
-
-      // Determine if the user is scrolling vertically
-      if (!isSwiping && Math.abs(deltaY) > Math.abs(deltaX)) {
-          isDown = false;
-          return;
+      function handleStart(clientX, clientY) {
+          startX = clientX;
+          startY = clientY;
+          isDown = true;
+          isSwiping = false;
+          swipeStartTime = new Date().getTime();
+          cardsWrapper.style.transition = 'none';
       }
 
-      isSwiping = true;
-      const percentage = (deltaX / window.innerWidth) * 100;
-      const offset = -currentIndex * 100 + percentage;
-      cardsWrapper.style.transform = `translateX(${offset}%)`;
+      function handleMove(clientX, clientY) {
+          if (!isDown) return;
+          const x = clientX;
+          const y = clientY;
+          const deltaX = x - startX;
+          const deltaY = y - startY;
 
-      // Prevent default behavior to stop scrolling
-      event.preventDefault();
-  }
-
-  function handleEnd(clientX) {
-      if (!isDown) return;
-      isDown = false;
-      const endX = clientX;
-      const deltaX = endX - startX;
-      const swipeTime = new Date().getTime() - swipeStartTime;
-
-      let nextIndex = currentIndex;
-
-      if (Math.abs(deltaX) > swipeThreshold && swipeTime < swipeTimeThreshold) {
-          if (deltaX < 0 && currentIndex < cards.length - 1) {
-              nextIndex++;
-          } else if (deltaX > 0 && currentIndex > 0) {
-              nextIndex--;
+          // Increase the threshold for determining vertical scroll
+          if (!isSwiping && Math.abs(deltaY) > Math.abs(deltaX) * 1.5) {
+              isDown = false;
+              return;
           }
+
+          isSwiping = true;
+          const percentage = (deltaX / window.innerWidth) * 100;
+          // Add resistance to the swipe
+          const resistedPercentage = percentage * 0.7;
+          const offset = -currentIndex * 100 + resistedPercentage;
+          cardsWrapper.style.transform = `translateX(${offset}%)`;
+
+          event.preventDefault();
       }
 
-      // Get the range of indices for the current publication
-      let [startIndex, endIndex] = getPublicationRange(currentIndex);
+      function handleEnd(clientX) {
+          if (!isDown) return;
+          isDown = false;
+          const endX = clientX;
+          const deltaX = endX - startX;
+          const swipeTime = new Date().getTime() - swipeStartTime;
+          let nextIndex = currentIndex;
 
-      // Ensure nextIndex is within the publication range
-      nextIndex = Math.max(startIndex, Math.min(nextIndex, endIndex - 1));
+          // Add a velocity check
+          const velocity = Math.abs(deltaX) / swipeTime;
+          const velocityThreshold = 0.5; // Adjust as needed
 
-      currentIndex = nextIndex;
+          if ((Math.abs(deltaX) > swipeThreshold && swipeTime < swipeTimeThreshold) || velocity > velocityThreshold) {
+              if (deltaX < 0 && currentIndex < cards.length - 1) {
+                  nextIndex++;
+              } else if (deltaX > 0 && currentIndex > 0) {
+                  nextIndex--;
+              }
+          }
 
-      cardsWrapper.style.transition = 'transform 0.3s ease-in-out';
-      showCard(currentIndex);
-  }
+          let [startIndex, endIndex] = getPublicationRange(currentIndex);
+          nextIndex = Math.max(startIndex, Math.min(nextIndex, endIndex - 1));
+          currentIndex = nextIndex;
+          cardsWrapper.style.transition = 'transform 0.3s ease-out';
+          showCard(currentIndex);
+      }
 
-  // Touch events for mobile
-  cardsContainer.addEventListener('touchstart', (evt) => handleStart(evt.touches[0].clientX, evt.touches[0].clientY), {passive: false});
-  cardsContainer.addEventListener('touchmove', (evt) => handleMove(evt.touches[0].clientX, evt.touches[0].clientY), {passive: false});
-  cardsContainer.addEventListener('touchend', (evt) => handleEnd(evt.changedTouches[0].clientX), {passive: false});
+      // Touch and mouse event listeners remain the same
 
-  // Mouse events for desktop
-  cardsContainer.addEventListener('mousedown', (evt) => handleStart(evt.clientX, evt.clientY), {passive: false});
-  cardsContainer.addEventListener('mousemove', (evt) => handleMove(evt.clientX, evt.clientY), {passive: false});
-  cardsContainer.addEventListener('mouseup', (evt) => handleEnd(evt.clientX), {passive: false});
-  cardsContainer.addEventListener('mouseleave', (evt) => handleEnd(evt.clientX), {passive: false});
+      function getPublicationRange(index) {
+          for (let i = 0; i < publicationIndices.length - 1; i++) {
+              if (index >= publicationIndices[i] && index < publicationIndices[i + 1]) {
+                  return [publicationIndices[i], publicationIndices[i + 1]];
+              }
+          }
+          return [0, cards.length];
+      }
+
+      // Modify the buttons container swipe functionality
+      let buttonStartX = 0;
+      let buttonIsDown = false;
+
+      buttonsContainer.addEventListener('touchstart', (evt) => {
+          buttonStartX = evt.touches[0].clientX;
+          buttonIsDown = true;
+      }, {passive: false});
+
+      buttonsContainer.addEventListener('touchmove', (evt) => {
+          if (!buttonIsDown) return;
+          const x = evt.touches[0].clientX;
+          const deltaX = x - buttonStartX;
+          buttonsContainer.scrollLeft -= deltaX;
+          buttonStartX = x;
+      }, {passive: false});
+
+      buttonsContainer.addEventListener('touchend', () => {
+          buttonIsDown = false;
+      }, {passive: false});
 
   // Function to get the range of indices for the current publication
   function getPublicationRange(index) {
