@@ -789,80 +789,106 @@ function getCurrentPublication() {
             progressBar.style.width = `${progress}%`;
         }
 
-        // Swipe functionality
         let startX = 0;
-        let isDown = false;
+  let startY = 0;
+  let isDown = false;
+  let isSwiping = false;
+  let swipeThreshold = 50; // Minimum distance to trigger a swipe
+  let swipeTimeThreshold = 300; // Maximum time for a swipe (in milliseconds)
+  let swipeStartTime;
 
-        const cardsContainer = document.querySelector('.cards-container');
+  const cardsContainer = document.querySelector('.cards-container');
+  const buttonsContainer = document.getElementById('buttons-container');
 
-        // Touch events for mobile
-        cardsContainer.addEventListener('touchstart', touchStart, false);
-        cardsContainer.addEventListener('touchmove', touchMove, false);
-        cardsContainer.addEventListener('touchend', touchEnd, false);
+  function handleStart(clientX, clientY) {
+      startX = clientX;
+      startY = clientY;
+      isDown = true;
+      isSwiping = false;
+      swipeStartTime = new Date().getTime();
+      cardsWrapper.style.transition = 'none';
+  }
 
-        function touchStart(evt) {
-            startX = evt.touches[0].clientX;
-            isDown = true;
-            cardsWrapper.style.transition = 'none';
-        }
+  function handleMove(clientX, clientY) {
+      if (!isDown) return;
+      const x = clientX;
+      const y = clientY;
+      const deltaX = x - startX;
+      const deltaY = y - startY;
 
-        function touchMove(evt) {
-            if (!isDown) return;
-            const x = evt.touches[0].clientX;
-            const deltaX = x - startX;
-            const percentage = (deltaX / window.innerWidth) * 100;
-            const offset = -currentIndex * 100 + percentage;
-            cardsWrapper.style.transform = `translateX(${offset}%)`;
-        }
+      // Determine if the user is scrolling vertically
+      if (!isSwiping && Math.abs(deltaY) > Math.abs(deltaX)) {
+          isDown = false;
+          return;
+      }
 
-        function touchEnd(evt) {
-            if (!isDown) return;
-            isDown = false;
-            const endX = evt.changedTouches[0].clientX;
-            const deltaX = endX - startX;
-            if (deltaX < -50 && currentIndex < cards.length - 1) {
-                currentIndex++;
-            } else if (deltaX > 50 && currentIndex > 0) {
-                currentIndex--;
-            }
-            cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
-            showCard(currentIndex);
-        }
+      isSwiping = true;
+      const percentage = (deltaX / window.innerWidth) * 100;
+      const offset = -currentIndex * 100 + percentage;
+      cardsWrapper.style.transform = `translateX(${offset}%)`;
 
-        // Mouse events for desktop
-        cardsContainer.addEventListener('mousedown', mouseDown, false);
-        cardsContainer.addEventListener('mousemove', mouseMove, false);
-        cardsContainer.addEventListener('mouseup', mouseUp, false);
-        cardsContainer.addEventListener('mouseleave', mouseUp, false);
+      // Prevent default behavior to stop scrolling
+      event.preventDefault();
+  }
 
-        function mouseDown(evt) {
-            startX = evt.clientX;
-            isDown = true;
-            cardsWrapper.style.transition = 'none';
-        }
+  function handleEnd(clientX) {
+      if (!isDown) return;
+      isDown = false;
+      const endX = clientX;
+      const deltaX = endX - startX;
+      const swipeTime = new Date().getTime() - swipeStartTime;
 
-        function mouseMove(evt) {
-            if (!isDown) return;
-            const x = evt.clientX;
-            const deltaX = x - startX;
-            const percentage = (deltaX / window.innerWidth) * 100;
-            const offset = -currentIndex * 100 + percentage;
-            cardsWrapper.style.transform = `translateX(${offset}%)`;
-        }
+      let nextIndex = currentIndex;
 
-        function mouseUp(evt) {
-            if (!isDown) return;
-            isDown = false;
-            const endX = evt.clientX;
-            const deltaX = endX - startX;
-            if (deltaX < -50 && currentIndex < cards.length - 1) {
-                currentIndex++;
-            } else if (deltaX > 50 && currentIndex > 0) {
-                currentIndex--;
-            }
-            cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
-            showCard(currentIndex);
-        }
+      if (Math.abs(deltaX) > swipeThreshold && swipeTime < swipeTimeThreshold) {
+          if (deltaX < 0 && currentIndex < cards.length - 1) {
+              nextIndex++;
+          } else if (deltaX > 0 && currentIndex > 0) {
+              nextIndex--;
+          }
+      }
+
+      // Get the range of indices for the current publication
+      let [startIndex, endIndex] = getPublicationRange(currentIndex);
+
+      // Ensure nextIndex is within the publication range
+      nextIndex = Math.max(startIndex, Math.min(nextIndex, endIndex - 1));
+
+      currentIndex = nextIndex;
+
+      cardsWrapper.style.transition = 'transform 0.3s ease-in-out';
+      showCard(currentIndex);
+  }
+
+  // Touch events for mobile
+  cardsContainer.addEventListener('touchstart', (evt) => handleStart(evt.touches[0].clientX, evt.touches[0].clientY), {passive: false});
+  cardsContainer.addEventListener('touchmove', (evt) => handleMove(evt.touches[0].clientX, evt.touches[0].clientY), {passive: false});
+  cardsContainer.addEventListener('touchend', (evt) => handleEnd(evt.changedTouches[0].clientX), {passive: false});
+
+  // Mouse events for desktop
+  cardsContainer.addEventListener('mousedown', (evt) => handleStart(evt.clientX, evt.clientY), {passive: false});
+  cardsContainer.addEventListener('mousemove', (evt) => handleMove(evt.clientX, evt.clientY), {passive: false});
+  cardsContainer.addEventListener('mouseup', (evt) => handleEnd(evt.clientX), {passive: false});
+  cardsContainer.addEventListener('mouseleave', (evt) => handleEnd(evt.clientX), {passive: false});
+
+  // Function to get the range of indices for the current publication
+  function getPublicationRange(index) {
+      for (let i = 0; i < publicationIndices.length - 1; i++) {
+          if (index >= publicationIndices[i] && index < publicationIndices[i + 1]) {
+              return [publicationIndices[i], publicationIndices[i + 1]];
+          }
+      }
+      return [0, cards.length]; // Fallback to full range
+  }
+
+  // Add swipe functionality to buttons container
+  buttonsContainer.addEventListener('touchstart', (evt) => handleStart(evt.touches[0].clientX, evt.touches[0].clientY), {passive: false});
+  buttonsContainer.addEventListener('touchmove', (evt) => {
+      handleMove(evt.touches[0].clientX, evt.touches[0].clientY);
+      // Scroll buttons container
+      buttonsContainer.scrollLeft -= evt.touches[0].clientX - startX;
+  }, {passive: false});
+  buttonsContainer.addEventListener('touchend', (evt) => handleEnd(evt.changedTouches[0].clientX), {passive: false});
 
         // Language switch functionality
         languageSwitch.addEventListener('click', () => {
