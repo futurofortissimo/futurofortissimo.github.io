@@ -714,13 +714,9 @@ function createContentBlock(type, contents) {
 }
 function generateLink(title) {
     const baseUrl = 'https://fortissimo.substack.com/p/';
-    // Get the current publication's slug
     const publication = getCurrentPublication();
-    const slug = publication.urlSlug || '';
-
-    // Generate the fragment identifier from the title
+    const slug = publication && publication.urlSlug ? publication.urlSlug : '';
     const fragment = '§' + sanitizeTitle(title);
-
     return baseUrl + slug + '#' + fragment;
 }
 
@@ -743,7 +739,8 @@ function getCurrentPublication() {
             return publications[i];
         }
     }
-    return null;
+    // If no matching publication is found, return the first publication
+    return publications[0];
 }
 
         // Function to create the book details card
