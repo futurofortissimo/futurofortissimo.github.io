@@ -383,28 +383,7 @@
 
         let cards = [];
 
-        function initializeApp() {
-            buttonsContainer.innerHTML = '';
-            cardsWrapper.innerHTML = '';
-            cards = [];
-            currentIndex = 0;
 
-            const { chapters, bookDetails } = content[currentLanguage];
-
-            // Create buttons and cards for chapters
-            chapters.forEach((chapter, index) => {
-                createButton(chapter.buttonLabel, index);
-                createCard(chapter);
-            });
-
-            // Create "Book Details" button and card
-            const detailsLabel = currentLanguage === 'it' ? '📖 Dettagli' : '📖 Details';
-            createButton(detailsLabel, chapters.length);
-            createBookCard(bookDetails);
-
-            // Initialize to show the first card
-            showCard(0);
-        }
 
         // Function to create a button
         function createButton(label, index) {
@@ -459,6 +438,29 @@
 
     // Initialize to show the first card
     showCard(0);
+}
+
+function createCard(cardData) {
+    const card = document.createElement('div');
+    card.className = 'card';
+
+    const cardContent = document.createElement('div');
+    cardContent.className = 'card-content';
+
+    const title = document.createElement('h2');
+    title.className = 'section-title';
+    title.textContent = cardData.title;
+    cardContent.appendChild(title);
+
+    cardData.contentBlocks.forEach(block => {
+        const contentBlock = createContentBlock(block.type, block.content);
+        cardContent.appendChild(contentBlock);
+    });
+
+    card.appendChild(cardContent);
+
+    cardsWrapper.appendChild(card);
+    cards.push(card); // Ensure the card is added to the cards array
 }
 
         // Function to create the book details card
