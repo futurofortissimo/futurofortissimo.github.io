@@ -716,7 +716,7 @@ function generateLink(title) {
     const baseUrl = 'https://fortissimo.substack.com/p/';
     // Get the current publication's slug
     const publication = getCurrentPublication();
-    const slug = publication.urlSlug || '';
+    const slug = publications.urlSlug || '';
 
     // Generate the fragment identifier from the title
     const fragment = '§' + sanitizeTitle(title);
@@ -785,6 +785,7 @@ function getCurrentPublication() {
         }
 
         // Swipe functionality
+        let startX = 0;
         let isDown = false;
 
         const cardsContainer = document.querySelector('.cards-container');
