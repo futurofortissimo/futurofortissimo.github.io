@@ -1,470 +1,670 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
-    <link rel="icon" href="/index_files/ff.webp" type="/index_files/ff.webp">
-    <link rel="apple-touch-icon" href="/index_files/ff.webp">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="color-scheme" content="light only">
+    <meta charset="UTF-8">
+    <title>Exercised - Riepilogo del Libro</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Riepilogo del Libro | Exercised</title>
-    <meta name="description" content="Riepilogo del libro con esplorazione dei temi principali.">
-    <link rel="stylesheet" href="/index_files/303a26c383de2a8b.css" data-n-g="">
-    <link rel="stylesheet" href="style.css" data-n-g="">
+    <!-- Import Montserrat font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="/index_files/ff.webp" type="image/webp">
+    <link rel="apple-touch-icon" href="/index_files/ff.webp">
+    <style>
+        /* Root variables */
+        :root {
+            --theme-color: #ADD8E6; /* Light blue */
+            --question-color: #B3E5FC; /* Lighter blue */
+            --data-color: #81D4FA; /* Medium blue */
+            --quote-color: #4FC3F7; /* Darker blue */
+            --progress-bar-color: #4CAF50; /* Green */
+        }
 
-    </head>
+        /* Basic styles */
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fff;
+            color: #333;
+            overflow: hidden; /* Prevent scrolling on body */
+        }
 
-    <body>
-        <div id="__next">
-            <div class="flex flex-col overflow-hidden">
-                <header>
-                    <div style="text-align: center;">
-                        <a href="https://futurofortissimo.github.io/" class="text-black font-bold">
-                            <h1>futuro fortissimo | Exercised</h1>
-                        </a>
-                    </div>
-                </header>
+        /* App container */
+        .app-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
 
-                <div class="flex flex-col justify-center m-0 p-0 flex-1 min-h-screen" style="margin-top: 70px;">
-                    <main class="flex flex-grow flex-1 overflow-y-scroll flex-col w-full">
-                        <div class="flex flex-grow flex-col items-center justify-between p-4">
-                            <div
-                                class="__variable_ee7e36 font-valkyrie max-w-[714px] mx-auto px-4 sm:px-6 lg:px-4 book-section">
-                                <div class="link-list" style="padding-bottom: 5px;">
-                                        <a href="#prospettiva-evolutiva-sull-esercizio">1. Prospettiva evolutiva sull'esercizio</a>
-                                        <br>
-                                        <a href="#sfatare-il-mito-del-sedere-come-il-nuovo-fumo">2. Sfatare il mito del sedere come il nuovo fumo</a>
-                                        <br>
-                                        <a href="#sonno-la-squadra-di-pulizia-del-cervello">3. Sonno: la squadra di pulizia del cervello</a>
-                                        <br>
-                                        <a href="#la-necessita-della-velocita-comprendere-le-capacita-umanas-di-corsa">4. La necessità della velocità: comprendere le capacità umane di corsa</a>
-                                        <br>
-                                        <a href="#il-potere-della-forza-costruire-muscoli-e-i-suoi-benefici">5. Il potere della forza: costruire muscoli e i suoi benefici</a>
-                                        <br>
-                                        <a href="#l-equazione-energetica-come-i-nostri-corpi-gestiscono-le-calorie">6. L'equazione energetica: come i nostri corpi gestiscono le calorie</a>
-                                        <br>
-                                        <a href="#il-vantaggio-della-resistenza-esplorare-i-limiti-del-potenziale-umano">7. Il vantaggio della resistenza: esplorare i limiti del potenziale umano</a>
-                                        <br>
-                                        <a href="#l-atleta-anziano-come-l-esercizio-influenza-la-longevita-e-la-salute">8. L'atleta anziano: come l'esercizio influenza la longevità e la salute</a>
-                                        <br>
-                                        <a href="#il-paradosso-dell-esercizio-perche-lo-evitiamo-e-come-superare-l-inerzia">9. Il paradosso dell'esercizio: perché lo evitiamo e come superare l'inerzia</a>
-                                        <br>
-                                        <a href="#conclusioni-e-riflessioni-finali">10. Conclusioni e riflessioni finali</a>
-                                </div>
-                                <br>
-                                <hr style="height:2px;border-width:0;color:gray;background-color:black">
-                                <br>
+        /* Header with logo, buttons, and language switch */
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: var(--theme-color);
+            padding: 10px;
+            flex-shrink: 0;
+            flex-wrap: nowrap;
+        }
 
-                                <section id="prospettiva-evolutiva-sull-esercizio">
-                                    <h2>Prospettiva Evolutiva sull'Esercizio</h2>
-                                    <ul>
-                                        <li>Come si è evoluta la definizione di esercizio nel corso della storia?</li>
-                                        <li>Cosa possiamo imparare sull'esercizio studiando popolazioni non occidentali e il
-                                            nostro passato evolutivo?</li>
-                                        <li>L'esercizio è veramente un comportamento unicamente umano o esistono precedenti
-                                            evolutivi nel regno animale?</li>
-                                    </ul>
-                                    <p>Questo capitolo esplora il contesto storico ed evolutivo dell'esercizio. Sfida la
-                                        nozione moderna di esercizio come attività deliberata e sostiene che per la maggior
-                                        parte della storia umana, l'attività fisica era intrecciata con la vita quotidiana.
-                                        L'autore evidenzia i limiti dello studio solo delle popolazioni occidentali e
-                                        propone una prospettiva più ampia esaminando società di cacciatori-raccoglitori come
-                                        gli Hadza.</p>
-                                    <ul>
-                                        <li>Gli occidentali rappresentano solo il 12% della popolazione globale e potrebbero
-                                            non rappresentare accuratamente il nostro passato evolutivo.</li>
-                                        <li>I cacciatori-raccoglitori, nonostante siano altamente attivi, si dedicano a
-                                            sostanziali periodi di riposo e attività a bassa intensità.</li>
-                                        <li>Il concetto di esercizio come categoria distinta di attività è emerso
-                                            relativamente di recente nella storia umana.</li>
-                                        <li>Studi suggeriscono che anche piccole dosi di esercizio, come camminare, possono
-                                            richiedere mesi o anni per portare a una significativa perdita di peso.</li>
-                                        <li>La ricerca indica che il dispendio energetico totale potrebbe essere limitato,
-                                            implicando che il corpo adatta l'uso dell'energia in altre aree per compensare
-                                            l'aumento dell'attività fisica.</li>
-                                    </ul>
-                                    <blockquote>“Adattato dal verbo latino exerceo (lavorare, allenarsi o praticare), la
-                                        parola inglese 'exercise' è stata usata per la prima volta nel Medioevo per
-                                        connotare lavori ardui come arare un campo.” (Pagina 12)</blockquote>
-                                    <blockquote>“Per la maggior parte della mia vita, anch'io, sono stato 'esercitato'
-                                        sull'esercizio.” (Pagina 14)</blockquote>
-                                    <blockquote>“La mia opinione è che mentre molti animali sono guidati da profondi istinti
-                                        di movimento, talvolta causando piacere, l'esercizio come lo definiamo noi —
-                                        attività fisica discrezionale e pianificata per il miglioramento fisico — è un
-                                        comportamento unicamente umano.” (Pagina 42)</blockquote>
-                                </section>
+        .logo {
+            height: 40px;
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-right: 10px;
+        }
 
-                                <section id="sfatare-il-mito-del-sedere-come-il-nuovo-fumo">
-                                    <h2>Sfatare il Mito del Sedere Come il Nuovo Fumo</h2>
-                                    <ul>
-                                        <li>Quanto tempo sedersi è troppo e quali sono i rischi specifici per la salute
-                                            associati al sedersi prolungato?</li>
-                                        <li>Sedere in piedi tutto il giorno è una soluzione pratica ed efficace ai problemi
-                                            del sedersi?</li>
-                                        <li>Qual è il ruolo dell'attività fisica a bassa intensità nel mitigare gli effetti
-                                            negativi del sedersi e come può questa conoscenza essere applicata agli stili di
-                                            vita moderni?</li>
-                                    </ul>
-                                    <p>Questo capitolo affronta l'idea diffusa che "sedersi è il nuovo fumo". Analizza
-                                        l'affermazione secondo cui sedersi per lunghi periodi è intrinsecamente dannoso,
-                                        anche quando bilanciato con esercizio regolare. Il capitolo esplora le sfumature
-                                        delle abitudini sedentarie, evidenziando le variazioni culturali nella postura e
-                                        l'impatto fisiologico dell'inattività prolungata. Sottolinea inoltre l'importanza di
-                                        frequenti pause e movimenti a bassa intensità durante la giornata.</p>
-                                    <ul>
-                                        <li>Semplicemente stare in piedi invece di sedersi brucia solo circa l'8-10% in più
-                                            di calorie.</li>
-                                        <li>Studi suggeriscono che pause frequenti, anche per brevi periodi, possono ridurre
-                                            significativamente l'infiammazione associata al sedersi prolungato.</li>
-                                        <li>Il corpo umano è sorprendentemente adattabile a varie posture sedentarie, come
-                                            dimostrato dalla ricerca antropologica sulle culture non occidentali.</li>
-                                        <li>Pur avendo conseguenze negative per la salute, l'impatto del sedersi prolungato
-                                            non dovrebbe essere equiparato ai pericoli ben consolidati del fumo.</li>
-                                        <li>Le attività fisiche a bassa intensità, quando incorporate durante la giornata,
-                                            possono efficacemente compensare alcuni dei rischi associati al sedersi.</li>
-                                    </ul>
-                                    <blockquote>“Un medico di spicco ha dichiarato che le sedie sono 'fuori per prenderci,
-                                        farci del male, ucciderci' e che 'sedersi è il nuovo fumo.'” (Pagina 74)
-                                    </blockquote>
-                                    <blockquote>“Se siamo evoluti per evitare attività fisica non necessaria (cioè,
-                                        esercizio), come può il sedersi essere così mortale?” (Pagina 75)</blockquote>
-                                    <blockquote>“Impegnandomi semplicemente in attività fisiche a bassa intensità, 'non
-                                        esercizio', per cinque ore al giorno, potrei spendere tanta energia quanto se avessi
-                                        corso per un'ora.” (Pagina 87)</blockquote>
-                                </section>
+        .language-switch {
+            background-color: transparent;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-left: 10px;
+        }
 
-                                <section id="capitolo3-corrected">
-                                    <h2>Sonno: La Squadra di Pulizia del Cervello</h2>
-                                    <ul>
-                                        <li>Quali sono le funzioni principali del sonno e come si collegano alla nostra
-                                            storia evolutiva?</li>
-                                        <li>Le otto ore di sonno raccomandate per notte sono una necessità biologica o una
-                                            costruzione culturale?</li>
-                                        <li>Come influisce l'esercizio sui pattern del sonno e quali sono le implicazioni
-                                            per migliorare la qualità del sonno?</li>
-                                    </ul>
-                                    <p>Questo capitolo si concentra sulla scienza del sonno, andando oltre il suo ruolo nel
-                                        riposo e evidenziando la sua funzione critica nella salute del cervello. Esamina i
-                                        meccanismi dei cicli del sonno, spiegando come il cervello utilizza il sonno per
-                                        eliminare i rifiuti metabolici e consolidare i ricordi. Sfida la nozione fissa di un
-                                        requisito di sonno di otto ore e esamina i pattern del sonno in diverse culture e
-                                        specie.</p>
-                                    <ul>
-                                        <li>Il cervello si affida al sonno per eliminare i rifiuti metabolici attraverso un
-                                            sistema di drenaggio unico che coinvolge il liquido cerebrospinale.</li>
-                                        <li>La raccomandazione di otto ore di sonno è in gran parte arbitraria e manca di
-                                            chiara base scientifica.</li>
-                                        <li>La durata del sonno varia ampiamente tra le specie, suggerendo che le esigenze
-                                            di sonno sono influenzate da fattori oltre la dimensione corporea e il tasso
-                                            metabolico.</li>
-                                        <li>Studi sulle società preindustriali mostrano che spesso dormono meno rispetto
-                                            alle persone nelle nazioni industrializzate, suggerendo che fattori come la luce
-                                            artificiale e lo stress possono influenzare la durata del sonno.</li>
-                                        <li>L'attività fisica regolare può migliorare la qualità del sonno aumentando la
-                                            pressione del sonno e riducendo lo stress cronico.</li>
-                                    </ul>
-                                    <blockquote>“Ma in realtà non abbiamo bisogno di dormire per risparmiare energia,
-                                        riparare i tessuti e altrimenti recuperare; potremmo semplicemente stare fermi.”
-                                        (Pagina 104)</blockquote>
-                                    <blockquote>“Per ogni ora passata svegli a immagazzinare ricordi e accumulare rifiuti,
-                                        abbiamo bisogno di circa quindici minuti di sonno per elaborare quei ricordi e
-                                        pulire.” (Pagina 106)</blockquote>
-                                    <blockquote>“Nessuna di queste popolazioni ha luci elettriche, per non parlare di
-                                        orologi o accesso a internet. Eppure, con stupore di Siegel, dormivano meno di
-                                        quanto facevano le persone industrializzate.” (Pagina 109)</blockquote>
-                                </section>
+        /* Buttons container inside header */
+        .buttons-container {
+            display: flex;
+            overflow-x: auto;
+            flex-grow: 1;
+        }
 
-                                <section id="capitolo4">
-                                    <h2>La Necessità della Velocità: Comprendere le Capacità Umanas di Corsa</h2>
-                                    <ul>
-                                        <li>Perché gli esseri umani sono corridori relativamente lenti rispetto a molti
-                                            altri animali, specialmente su brevi distanze?</li>
-                                        <li>Quali sono i vantaggi evolutivi della corsa di resistenza e come hanno plasmato
-                                            la fisiologia umana?</li>
-                                        <li>Quali adattamenti fisiologici permettono agli esseri umani di eccellere nella
-                                            corsa di resistenza, distinguendoci da altri animali?</li>
-                                    </ul>
-                                    <p>Questo capitolo esamina le basi fisiologiche delle prestazioni di corsa umane, in
-                                        particolare la nostra capacità di corsa di resistenza. Affronta il paradosso della
-                                        nostra relativa lentezza rispetto ad altri animali su brevi distanze, enfatizzando
-                                        però la nostra unica abilità di superare molte specie a lungo raggio. Evidenzia
-                                        adattamenti chiave come la sudorazione, la termoregolazione e l'uso efficiente
-                                        dell'energia che ci hanno permesso di prosperare come cacciatori di persistenza.</p>
-                                    <ul>
-                                        <li>Gli esseri umani, nonostante siano bipedi, possiedono notevoli capacità di corsa
-                                            di resistenza, superando molti animali quadrupedi su lunghe distanze.</li>
-                                        <li>La capacità di correre su lunghe distanze si ipotizza abbia giocato un ruolo
-                                            cruciale nell'evoluzione umana precoce, permettendo la caccia di persistenza e
-                                            la scoria.</li>
-                                        <li>Il nostro efficiente meccanismo di sudorazione, insieme ad adattamenti nel passo
-                                            e nella termoregolazione, ci permette di mantenere una temperatura corporea più
-                                            bassa durante la corsa prolungata rispetto a molti altri mammiferi.</li>
-                                        <li>Gli esseri umani hanno una maggiore proporzione di fibre muscolari a contrazione
-                                            lenta, resistenti alla fatica e ben adatte per attività di resistenza.</li>
-                                        <li>L'evoluzione di un gluteo massimo ingrandito contribuisce alla stabilità e
-                                            all'efficienza nella corsa, evidenziando la sua importanza oltre il suo ruolo
-                                            nel camminare eretto.</li>
-                                    </ul>
-                                    <blockquote>“Perché gli esseri umani sono così relativamente lenti?” (Pagina 135)
-                                    </blockquote>
-                                    <blockquote>“Quindi, mentre cavalli, cani, zebre e gazzelle possono galoppare più
-                                        velocemente di qualsiasi umano possa sprintare (le barre grigie), non possono
-                                        galoppare per più di qualche miglio prima di dover rallentare a una camminata o un
-                                        trotto, specialmente quando fa caldo.” (Pagina 246)</blockquote>
-                                    <blockquote>“Oltre alle nostre gambe ad alte prestazioni, l'adattamento più vitale e
-                                        unico che permette agli esseri umani di andare oltre un miglio extra è la nostra
-                                        capacità di sudare abbondantemente.” (Pagina 248)</blockquote>
-                                </section>
+        .buttons-container::-webkit-scrollbar {
+            display: none; /* Hide scrollbar */
+        }
 
-                                <section id="capitolo5">
-                                    <h2>Il Potere della Forza: Costruire Muscoli e i Suoi Benefici</h2>
-                                    <ul>
-                                        <li>Quali sono i diversi tipi di fibre muscolari e come contribuiscono a varie
-                                            attività atletiche?</li>
-                                        <li>Quali sono i metodi di allenamento più efficaci per aumentare la massa muscolare
-                                            e la forza?</li>
-                                        <li>Qual è il ruolo della genetica nel determinare il potenziale atletico e come
-                                            interagisce con fattori ambientali come l'allenamento?</li>
-                                    </ul>
-                                    <p>Questo capitolo esplora la scienza della costruzione muscolare e il suo impatto sulla
-                                        salute generale e sulle prestazioni atletiche. Discute i diversi tipi di fibre
-                                        muscolari (a contrazione lenta e a contrazione rapida) e i loro rispettivi ruoli
-                                        nelle attività di resistenza rispetto a quelle di potenza. Approfondisce la
-                                        fisiologia della crescita muscolare, spiegando come le fibre muscolari rispondono
-                                        allo stress e si riparano per diventare più forti.</p>
-                                    <ul>
-                                        <li>Contrariamente alla credenza che il danneggiamento muscolare sia necessario per
-                                            la crescita, gli studi suggeriscono che anche senza un danno muscolare
-                                            significativo, l'allenamento può comunque stimolare la sintesi proteica
-                                            muscolare e portare all'ipertrofia (crescita muscolare).</li>
-                                        <li>La crescita muscolare può essere stimolata attraverso vari metodi di
-                                            allenamento, e l'approccio più efficace dipende dagli obiettivi individuali,
-                                            dalla genetica e dall'esperienza di allenamento.</li>
-                                        <li>Sebbene la genetica giochi senza dubbio un ruolo nel potenziale atletico, non è
-                                            l'unico determinante, e fattori di allenamento e ambientali influenzano
-                                            significativamente le abilità atletiche di un individuo.</li>
-                                        <li>L'allenamento di resistenza ad alta intensità, caratterizzato da pesi pesanti e
-                                            ripetizioni più basse, è generalmente più efficace per massimizzare i guadagni
-                                            di forza.</li>
-                                        <li>Per guadagni di resistenza e forza moderata, pesi più leggeri con ripetizioni
-                                            più alte e periodi di riposo più brevi sono generalmente più efficaci.</li>
-                                    </ul>
-                                    <blockquote>“Questo perché i muscoli si sono evoluti più di 600 milioni di anni fa per
-                                        generare forza contrarre, e la loro struttura e funzione di base non sono cambiate
-                                        molto da allora.” (Pagina 144)</blockquote>
-                                    <blockquote>“Le contrazioni concentriche sono critiche per il movimento, ma come Charles
-                                        Atlas presumibilmente intuì allo Zoo di Brooklyn, sono generalmente meno potenti per
-                                        costruire muscoli rispetto alle azioni muscolari eccentriche e isometriche.” (Pagina
-                                        171)</blockquote>
-                                    <blockquote>“I muscoli beneficiano di tutte le attività fisiche, ma rispondono più
-                                        fortemente alle attività a carico che richiedono di contrarsi in modo vigoroso senza
-                                        cambiare lunghezza (contrazioni isometriche) o mentre si allungano (contrazioni
-                                        eccentriche).” (Pagina 379)</blockquote>
-                                </section>
+        /* Buttons */
+        .button {
+            flex: 0 0 auto;
+            margin: 0 5px;
+            padding: 8px 12px;
+            background-color: #fff;
+            color: #333;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 14px;
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+        }
 
-                                <section id="capitolo6">
-                                    <h2>L'Equazione Energetica: Come i Nostri Corpi Gestiscono le Calorie</h2>
-                                    <ul>
-                                        <li>Come regola il corpo l'equilibrio energetico e quali fattori influenzano
-                                            l'aumento o la perdita di peso?</li>
-                                        <li>L'esercizio porta costantemente ad un aumento dell'appetito e del consumo di
-                                            calorie, rendendo difficile perdere peso solo attraverso l'attività fisica?</li>
-                                        <li>Come sfida il concetto di dispendio energetico totale limitato le visioni
-                                            tradizionali sulla gestione del peso?</li>
-                                    </ul>
-                                    <p>Questo capitolo si concentra sulla relazione complessa tra esercizio, dispendio
-                                        calorico e gestione del peso. Sfida la nozione semplicistica di "calorie in, calorie
-                                        out", spiegando come il corpo regola l'equilibrio energetico attraverso un complesso
-                                        interplay di metabolismo, ormoni e adattamenti comportamentali. Esamina il concetto
-                                        di dispendio energetico totale limitato, suggerendo che il corpo potrebbe compensare
-                                        l'aumento dell'attività fisica riducendo il dispendio energetico in altre aree.</p>
-                                    <ul>
-                                        <li>Pur bruciando calorie, l'esercizio potrebbe non sempre portare a una perdita di
-                                            peso prevedibile, poiché il corpo può adattare il dispendio energetico in altri
-                                            modi per compensare.</li>
-                                        <li>Il corpo sembra prioritizzare la riproduzione e la sopravvivenza, e deficit
-                                            energetici estremi derivanti da diete o esercizio eccessivo possono disturbare
-                                            l'equilibrio ormonale e la funzione riproduttiva, particolarmente nelle donne.
-                                        </li>
-                                        <li>Il concetto di dispendio energetico totale limitato suggerisce che potrebbe
-                                            esserci un limite superiore a quanto il corpo è disposto a spendere energia,
-                                            anche con un aumento dell'attività fisica.</li>
-                                        <li>Studi indicano che le persone che perdono peso significativo spesso sperimentano
-                                            una diminuzione del tasso metabolico a riposo, rendendo più difficile mantenere
-                                            la perdita di peso nel tempo.</li>
-                                        <li>Concentrarsi esclusivamente sulla restrizione calorica per la perdita di peso
-                                            può essere controproducente, poiché può portare alla perdita di muscoli e ad
-                                            adattamenti metabolici che rendono più facile riprendere peso.</li>
-                                    </ul>
-                                    <blockquote>“Perché la selezione naturale favorisce alla fine coloro che possono
-                                        allocare quanta più energia possibile alla riproduzione, la nostra fisiologia è
-                                        stata messa a punto nel corso di milioni di generazioni per accumulare energia,
-                                        specialmente grasso.” (Pagina 228)</blockquote>
-                                    <blockquote>“Gli studi a breve termine pongono un problema, tuttavia: poiché camminare è
-                                        così efficiente energeticamente, ci vogliono mesi o anni perché piccole dosi di
-                                        esercizio si sommino a perdite di peso sostanziali.” (Pagina 231)</blockquote>
-                                    <blockquote>“Come potrebbe qualcuno che ha speso cinquecento calorie extra al giorno
-                                        facendo esercizio non avere un budget energetico totale di cinquecento calorie più
-                                        alto?” (Pagina 231)</blockquote>
-                                </section>
+        /* Progress bar */
+        .progress-bar {
+            height: 5px;
+            background-color: var(--progress-bar-color);
+            width: 0%;
+            transition: width 0.5s ease-in-out;
+            flex-shrink: 0;
+        }
 
-                                <section id="capitolo7">
-                                    <h2>Il Vantaggio della Resistenza: Esplorare i Limiti del Potenziale Umano</h2>
-                                    <ul>
-                                        <li>Quali sono i benefici e le limitazioni dell'utilizzo dei passi come misura
-                                            dell'attività fisica?</li>
-                                        <li>Come l'allenamento di resistenza influisce sulla fisiologia del corpo, in
-                                            particolare sui sistemi cardiovascolare e muscoloscheletrico?</li>
-                                        <li>Quali sono le conseguenze a lungo termine dell'allenamento di resistenza e ci
-                                            sono rischi associati a livelli estremi di esercizio di resistenza?</li>
-                                    </ul>
-                                    <p>Questo capitolo esplora il mondo affascinante degli sport di resistenza e le
-                                        adattamenti fisiologici che permettono agli esseri umani di spingere i confini dei
-                                        limiti fisici. Esamina la popolarità dell'utilizzo dei contatori di passi per
-                                        tracciare l'attività fisica, discutendo i suoi meriti e le limitazioni nel catturare
-                                        l'intensità e il tipo di movimento. Il capitolo approfondisce inoltre i benefici per
-                                        la salute e i potenziali rischi associati all'allenamento di resistenza.</p>
-                                    <ul>
-                                        <li>Pur essendo utile come strumento per promuovere l'attività fisica, il conteggio
-                                            dei passi non tiene conto delle variazioni nell'intensità o nel tipo di
-                                            movimento, che possono influenzare i benefici per la salute ottenuti.</li>
-                                        <li>L'allenamento di resistenza porta ad adattamenti nel sistema cardiovascolare,
-                                            aumentando il volume sistolico (la quantità di sangue pompata per battito) e
-                                            migliorando l'efficienza dell'utilizzo dell'ossigeno da parte dei muscoli.</li>
-                                        <li>Pur migliorando generalmente la salute cardiovascolare, alcuni studi
-                                            suggeriscono un'associazione potenziale tra esercizio di resistenza estrema e un
-                                            aumento del rischio di certe condizioni cardiache, anche se le prove non sono
-                                            del tutto conclusive e sono necessarie ulteriori ricerche.</li>
-                                        <li>Il benchmark di 10.000 passi al giorno, sebbene ampiamente promosso, manca di
-                                            una solida base scientifica e potrebbe non essere raggiungibile o appropriato
-                                            per tutti.</li>
-                                        <li>Impegnarsi in una varietà di attività fisiche, inclusi esercizi di resistenza e
-                                            di costruzione della forza, è probabilmente più benefico per la salute generale
-                                            che concentrarsi esclusivamente sull'accumulo di passi.</li>
-                                    </ul>
-                                    <blockquote>“Negli anni '60, una compagnia giapponese, Yamasa Tokei, ha inventato un
-                                        pedometro semplice ed economico che misura quanti passi fai. L'azienda ha deciso di
-                                        chiamare il gadget Manpo-kei, che significa 'metro a diecimila passi.'” (Pagina 233)
-                                    </blockquote>
-                                    <blockquote>“I chimpanzei e i cacciatori-raccoglitori spendono circa il 10% del loro
-                                        budget energetico totale nella locomozione, ma gli occidentali moderni spendono solo
-                                        circa il 2%.” (Pagina 235)</blockquote>
-                                    <blockquote>“Il cuore di un corridore tipico pompa da venti a ventiquattro litri al
-                                        minuto, e quello di un corridore d'élite può raggiungere un impressionante
-                                        trentacinque litri al minuto.” (Pagina 250)</blockquote>
-                                </section>
+        /* Cards container */
+        .cards-container {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
 
-                                <section id="capitolo8">
-                                    <h2>L'Atleta Anziano: Come l'Esercizio Influenza la Longevità e la Salute</h2>
-                                    <ul>
-                                        <li>L'esercizio estende la durata della vita o migliora principalmente la salute
-                                            riducendo il rischio di malattie legate all'età?</li>
-                                        <li>Quali sono i meccanismi fisiologici attraverso cui l'esercizio combatte il
-                                            processo di invecchiamento?</li>
-                                        <li>Esistono "dosaggi" ottimali di esercizio per massimizzare la longevità e la
-                                            salute, o ci sono rischi associati all'attività fisica eccessiva?</li>
-                                    </ul>
-                                    <p>Questo capitolo esplora l'impatto profondo dell'esercizio sull'invecchiamento,
-                                        esaminando il suo ruolo nell'estensione sia della durata della vita che della
-                                        salute. Sfida l'idea che l'invecchiamento porti inevitabilmente al declino,
-                                        presentando prove che l'attività fisica regolare può rallentare il processo di
-                                        invecchiamento e ridurre il rischio di malattie legate all'età. Il capitolo
-                                        evidenzia l'importanza di distinguere tra durata della vita, che è il numero totale
-                                        di anni vissuti, e salute, il numero di anni vissuti in buona salute.</p>
-                                    <ul>
-                                        <li>Studi sulle popolazioni di cacciatori-raccoglitori suggeriscono che mantenere
-                                            alti livelli di attività fisica durante tutta la vita può contribuire a un
-                                            periodo di morbidità compressa, il che significa che gli individui sperimentano
-                                            un periodo più breve di declino legato all'età prima della morte.</li>
-                                        <li>L'esercizio, particolarmente l'allenamento di resistenza, sembra avere un
-                                            impatto maggiore sull'aumento della salute ritardando o prevenendo le malattie
-                                            legate all'età piuttosto che estendere significativamente la durata della vita.
-                                        </li>
-                                        <li>Il concetto di "esercizio come medicina" è enfatizzato, suggerendo che
-                                            l'attività fisica può essere efficace quanto, se non di più, di molteplici
-                                            interventi farmacologici nella prevenzione e nella gestione delle malattie
-                                            croniche.</li>
-                                        <li>Pur alcuni studi suggeriscono una potenziale relazione a forma di U tra dose di
-                                            esercizio e mortalità, con livelli estremamente alti potenzialmente avere
-                                            effetti avversi, la maggior parte delle ricerche supporta una curva lineare o a
-                                            J, indicando che più esercizio porta generalmente a migliori risultati di
-                                            salute, entro ragione.</li>
-                                        <li>Le risposte individuali all'esercizio variano, e fattori come la genetica, lo
-                                            stile di vita e le condizioni di salute preesistenti possono influenzare il
-                                            "dosaggio" ottimale di esercizio per massimizzare i benefici per la salute.</li>
-                                    </ul>
-                                    <blockquote>“Le legioni crescenti di anziani evidentemente sani che evitano l'esercizio
-                                        suggeriscono che i benefici a lungo termine dell'attività fisica potrebbero essere
-                                        esagerati?” (Pagina 291)</blockquote>
-                                    <blockquote>“dieci volte più probabile di morire di infezioni come la polmonite” (Pagina
-                                        295)</blockquote>
-                                    <blockquote>“Un certo numero di studi ha trovato che gli atleti d'élite, specialmente
-                                        quelli che praticano sport di resistenza, vivono più a lungo e necessitano di meno
-                                        cure mediche rispetto ai non-atleti.” (Pagina 336)</blockquote>
-                                </section>
+        /* Cards wrapper for sliding effect */
+        .cards-wrapper {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
 
-                                <section id="capitolo9">
-                                    <h2>Il Paradosso dell'Esercizio: Perché Lo Evitiamo e Come Superare l'Inerzia</h2>
-                                    <ul>
-                                        <li>Perché gli esseri umani, nonostante i ben documentati benefici, faticano spesso
-                                            a mantenere routine di esercizio costanti?</li>
-                                        <li>Quali fattori psicologici e sociali influenzano la motivazione all'esercizio e
-                                            come possono essere sfruttati per promuovere l'attività fisica?</li>
-                                        <li>Quali sono alcune strategie efficaci per rendere l'esercizio più attraente e
-                                            sostenibile come abitudine a lungo termine?</li>
-                                    </ul>
-                                    <p>Questo capitolo esplora il paradosso intrigante del perché gli esseri umani, pur
-                                        essendo consapevoli dei numerosi vantaggi per la salute dell'esercizio, faticano
-                                        spesso a farlo parte costante delle loro vite. Esamina le radici evolutive della
-                                        nostra innata spinta a conservare energia, evidenziando il conflitto tra la nostra
-                                        predisposizione biologica al riposo e la necessità moderna di attività fisica
-                                        regolare. Analizza il ruolo della motivazione, dell'influenza sociale e dei fattori
-                                        ambientali nel plasmare il comportamento di esercizio.</p>
-                                    <ul>
-                                        <li>L'esercizio, da una prospettiva evolutiva, rappresenta spesso una spesa
-                                            energetica inutile che i nostri antenati erano predisposti ad evitare.</li>
-                                        <li>La motivazione per l'esercizio è influenzata da un complesso interplay di
-                                            fattori psicologici, inclusa la percezione dello sforzo, il piacere e
-                                            l'auto-efficacia.</li>
-                                        <li>Il supporto sociale e gli ambienti di esercizio di gruppo possono migliorare
-                                            significativamente la motivazione e l'aderenza alle routine di esercizio.</li>
-                                        <li>Rendere l'esercizio un'attività sociale, incorporarlo nelle routine quotidiane e
-                                            fissare obiettivi realistici può renderlo più sostenibile.</li>
-                                        <li>Inquadrare l'esercizio come parte necessaria e piacevole della vita, piuttosto
-                                            che come un dovere, può portare a una maggiore aderenza a lungo termine.</li>
-                                    </ul>
-                                    <blockquote>“Ironstrength Workout, guidato dal Dr. Jordan Metzl, un sostenitore alto,
-                                        snello e instancabile dell'esercizio che partecipa a triathlon Ironman nel suo tempo
-                                        libero.” (Pagina 301)</blockquote>
-                                    <blockquote>“I livelli di dopamina aumentano solo mentre ci esercitiamo. Quindi non ci
-                                        spingono fuori dal divano. Peggio ancora, i recettori della dopamina nel cervello
-                                        sono meno attivi nelle persone che non hanno fatto esercizio rispetto alle persone
-                                        in forma che sono regolarmente attive.” (Pagina 315)</blockquote>
-                                    <blockquote>“Alla fine dei conti, l'esercizio — nonostante i suoi molteplici benefici —
-                                        richiede di superare istinti profondi e naturali. Quindi, invece di vergognare e
-                                        incolpare le persone che evitano lo sforzo, dovremmo aiutarci a vicenda a scegliere
-                                        di esercitarci.” (Pagina 394)</blockquote>
-                                </section>
+        /* Individual card */
+        .card {
+            flex: 0 0 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #fff;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
 
-                                <section id="capitolo10">
-                                    <h2>Conclusioni e Riflessioni Finali</h2>
-                                    <p>In questo capitolo finale, si riassumono i temi principali trattati nel libro e si
-                                        riflette sull'importanza dell'esercizio fisico nella vita quotidiana. Si sottolinea
-                                        come l'integrazione di attività fisica possa migliorare non solo la salute fisica,
-                                        ma anche il benessere mentale e sociale.</p>
-                                </section>
-                            </div>
-                        </div>
-                    </main>
-                </div>
+        /* Card content */
+        .card-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px 20px 30px 20px; /* Adjusted padding */
+            box-sizing: border-box;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
+        /* Section styles */
+        .section-title {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Content block */
+        .content-block {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 10px;
+            word-wrap: break-word; /* Prevent overflow of long words */
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .questions {
+            background-color: var(--question-color);
+        }
+
+        .data {
+            background-color: var(--data-color);
+        }
+
+        .quotes {
+            background-color: var(--quote-color);
+        }
+
+        /* Hide scrollbars on card content */
+        .card-content::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        /* "Action" buttons */
+        .action-button {
+            display: block;
+            margin: 10px 0 0;
+            padding: 10px 20px;
+            background-color: var(--theme-color);
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        /* Book details styles */
+        .book-details p {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        .book-details img {
+            margin-bottom: 10px;
+        }
+
+        .book-details h2 {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+
+        footer a {
+            color: #00bef8;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header with logo, buttons, and language switch -->
+        <div class="header">
+            <a href="https://futurofortissimo.github.io/">
+                <img src="/index_files/ff.webp" alt="Logo" class="logo">
+            </a>
+            <!-- Buttons inside header -->
+            <div class="buttons-container" id="buttons-container">
+                <!-- Buttons will be dynamically inserted here -->
+            </div>
+            <!-- Language switch (not applicable as content is in Italian) -->
+        </div>
+
+        <!-- Progress bar -->
+        <div class="progress-bar"></div>
+
+        <!-- Cards -->
+        <div class="cards-container">
+            <div class="cards-wrapper" id="cards-wrapper">
+                <!-- Cards will be dynamically inserted here -->
             </div>
         </div>
-        <footer style="text-align: center; font-size: 16px; font-family: 'Palladio';">
-            <p><a href="https://linktr.ee/micmer" style="color: #00bef8; text-decoration: none;">michele merelli</a> per
-            <a href="https://fortissimo.substack.com/" style="color: #00bef8; text-decoration: none;">futuro fortissimo</a></p>
-        </footer>
+    </div>
 
+    <footer>
+        <p><a href="https://linktr.ee/micmer">michele merelli</a> per
+        <a href="https://fortissimo.substack.com/">futuro fortissimo</a></p>
+    </footer>
 
+    <script>
+        // Content data
+        const content = {
+            chapters: [
+                {
+                    title: "Prospettiva Evolutiva sull'Esercizio",
+                    buttonLabel: '🏃 Evoluzione',
+                    contentBlocks: [
+                        {
+                            type: 'questions',
+                            content: [
+                                "Come si è evoluta la definizione di esercizio nel corso della storia?",
+                                "Cosa possiamo imparare sull'esercizio studiando popolazioni non occidentali e il nostro passato evolutivo?",
+                                "L'esercizio è veramente un comportamento unicamente umano o esistono precedenti evolutivi nel regno animale?"
+                            ]
+                        },
+                        {
+                            type: 'data',
+                            content: [
+                                "Gli occidentali rappresentano solo il 12% della popolazione globale e potrebbero non rappresentare accuratamente il nostro passato evolutivo.",
+                                "I cacciatori-raccoglitori, nonostante siano altamente attivi, si dedicano a sostanziali periodi di riposo e attività a bassa intensità.",
+                                "Il concetto di esercizio come categoria distinta di attività è emerso relativamente di recente nella storia umana."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title: "Sfatare il Mito del Sedere Come il Nuovo Fumo",
+                    buttonLabel: '💺 Sedentarietà',
+                    contentBlocks: [
+                        {
+                            type: 'questions',
+                            content: [
+                                "Quanto tempo sedersi è troppo e quali sono i rischi specifici per la salute associati al sedersi prolungato?",
+                                "Sedere in piedi tutto il giorno è una soluzione pratica ed efficace ai problemi del sedersi?",
+                                "Qual è il ruolo dell'attività fisica a bassa intensità nel mitigare gli effetti negativi del sedersi e come può questa conoscenza essere applicata agli stili di vita moderni?"
+                            ]
+                        },
+                        {
+                            type: 'data',
+                            content: [
+                                "Stare in piedi invece di sedersi brucia solo circa l'8-10% in più di calorie.",
+                                "Pause frequenti, anche brevi, possono ridurre significativamente l'infiammazione associata al sedersi prolungato.",
+                                "Le attività fisiche a bassa intensità possono compensare alcuni dei rischi associati al sedersi."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title: "Sonno: La Squadra di Pulizia del Cervello",
+                    buttonLabel: '😴 Sonno',
+                    contentBlocks: [
+                        {
+                            type: 'questions',
+                            content: [
+                                "Quali sono le funzioni principali del sonno e come si collegano alla nostra storia evolutiva?",
+                                "Le otto ore di sonno raccomandate per notte sono una necessità biologica o una costruzione culturale?",
+                                "Come influisce l'esercizio sui pattern del sonno e quali sono le implicazioni per migliorare la qualità del sonno?"
+                            ]
+                        },
+                        {
+                            type: 'data',
+                            content: [
+                                "Il cervello utilizza il sonno per eliminare i rifiuti metabolici attraverso un sistema di drenaggio unico.",
+                                "La durata del sonno varia ampiamente tra le specie e le culture, influenzata da vari fattori.",
+                                "L'attività fisica regolare può migliorare la qualità del sonno aumentando la pressione del sonno e riducendo lo stress."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title: "La Necessità della Velocità: Comprendere le Capacità Umane di Corsa",
+                    buttonLabel: '🏃‍♂️ Corsa',
+                    contentBlocks: [
+                        {
+                            type: 'questions',
+                            content: [
+                                "Perché gli esseri umani sono corridori relativamente lenti rispetto a molti altri animali, specialmente su brevi distanze?",
+                                "Quali sono i vantaggi evolutivi della corsa di resistenza e come hanno plasmato la fisiologia umana?",
+                                "Quali adattamenti fisiologici permettono agli esseri umani di eccellere nella corsa di resistenza?"
+                            ]
+                        },
+                        {
+                            type: 'data',
+                            content: [
+                                "Gli esseri umani possiedono notevoli capacità di corsa di resistenza, superando molti animali su lunghe distanze.",
+                                "La capacità di correre su lunghe distanze ha giocato un ruolo cruciale nell'evoluzione umana precoce.",
+                                "Adattamenti come la sudorazione efficiente e la termoregolazione ci permettono di mantenere la temperatura corporea durante la corsa prolungata."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title: "Il Potere della Forza: Costruire Muscoli e i Suoi Benefici",
+                    buttonLabel: '💪 Forza',
+                    contentBlocks: [
+                        {
+                            type: 'questions',
+                            content: [
+                                "Quali sono i diversi tipi di fibre muscolari e come contribuiscono a varie attività atletiche?",
+                                "Quali sono i metodi di allenamento più efficaci per aumentare la massa muscolare e la forza?",
+                                "Qual è il ruolo della genetica nel determinare il potenziale atletico e come interagisce con fattori ambientali come l'allenamento?"
+                            ]
+                        },
+                        {
+                            type: 'data',
+                            content: [
+                                "Contrazioni muscolari eccentriche e isometriche sono potenti per costruire muscoli.",
+                                "La crescita muscolare può essere stimolata attraverso vari metodi di allenamento.",
+                                "La genetica influenza il potenziale atletico, ma l'allenamento e l'ambiente sono fondamentali."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title: "L'Equazione Energetica: Come i Nostri Corpi Gestiscono le Calorie",
+                    buttonLabel: '🔥 Calorie',
+                    contentBlocks: [
+                        {
+                            type: 'questions',
+                            content: [
+                                "Come regola il corpo l'equilibrio energetico e quali fattori influenzano l'aumento o la perdita di peso?",
+                                "L'esercizio porta costantemente a un aumento dell'appetito e del consumo di calorie?",
+                                "Come sfida il concetto di dispendio energetico totale limitato le visioni tradizionali sulla gestione del peso?"
+                            ]
+                        },
+                        {
+                            type: 'data',
+                            content: [
+                                "Il corpo può adattare il dispendio energetico per compensare l'aumento dell'attività fisica.",
+                                "Deficit energetici estremi possono disturbare l'equilibrio ormonale e la funzione riproduttiva.",
+                                "La restrizione calorica può portare alla perdita di muscoli e adattamenti metabolici."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title: "Il Vantaggio della Resistenza: Esplorare i Limiti del Potenziale Umano",
+                    buttonLabel: '⏱️ Resistenza',
+                    contentBlocks: [
+                        {
+                            type: 'questions',
+                            content: [
+                                "Quali sono i benefici e le limitazioni dell'utilizzo dei passi come misura dell'attività fisica?",
+                                "Come l'allenamento di resistenza influisce sulla fisiologia del corpo?",
+                                "Quali sono le conseguenze a lungo termine dell'allenamento di resistenza?"
+                            ]
+                        },
+                        {
+                            type: 'data',
+                            content: [
+                                "Il conteggio dei passi non tiene conto dell'intensità o del tipo di movimento.",
+                                "L'allenamento di resistenza porta ad adattamenti nel sistema cardiovascolare.",
+                                "Attività fisica varia è più benefica che concentrarsi solo sui passi."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title: "L'Atleta Anziano: Come l'Esercizio Influenza la Longevità e la Salute",
+                    buttonLabel: '👴 Longevità',
+                    contentBlocks: [
+                        {
+                            type: 'questions',
+                            content: [
+                                "L'esercizio estende la durata della vita o migliora principalmente la salute riducendo il rischio di malattie legate all'età?",
+                                "Quali sono i meccanismi fisiologici attraverso cui l'esercizio combatte il processo di invecchiamento?",
+                                "Esistono 'dosaggi' ottimali di esercizio per massimizzare la longevità e la salute?"
+                            ]
+                        },
+                        {
+                            type: 'data',
+                            content: [
+                                "Mantenere alti livelli di attività fisica può contribuire a un periodo di morbilità compressa.",
+                                "L'esercizio ritarda o previene malattie legate all'età più che estendere la durata della vita.",
+                                "Le risposte individuali all'esercizio variano; la genetica e lo stile di vita influenzano il dosaggio ottimale."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title: "Il Paradosso dell'Esercizio: Perché Lo Evitiamo e Come Superare l'Inerzia",
+                    buttonLabel: '🤔 Motivazione',
+                    contentBlocks: [
+                        {
+                            type: 'questions',
+                            content: [
+                                "Perché gli esseri umani faticano spesso a mantenere routine di esercizio costanti?",
+                                "Quali fattori psicologici e sociali influenzano la motivazione all'esercizio?",
+                                "Quali sono alcune strategie efficaci per rendere l'esercizio più attraente e sostenibile?"
+                            ]
+                        },
+                        {
+                            type: 'data',
+                            content: [
+                                "L'esercizio rappresenta una spesa energetica che i nostri antenati evitavano.",
+                                "La motivazione è influenzata da fattori psicologici come il piacere e l'auto-efficacia.",
+                                "Il supporto sociale può migliorare la motivazione e l'aderenza all'esercizio."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title: "Conclusioni e Riflessioni Finali",
+                    buttonLabel: '📖 Conclusioni',
+                    contentBlocks: [
+                        {
+                            type: 'paragraphs',
+                            content: [
+                                "Si riassumono i temi principali trattati nel libro e si riflette sull'importanza dell'esercizio fisico nella vita quotidiana. L'integrazione di attività fisica può migliorare non solo la salute fisica, ma anche il benessere mentale e sociale."
+                            ]
+                        }
+                    ]
+                }
+            ],
+            bookDetails: {
+                image: '/index_files/ff.webp', // Replace with your actual image path
+                title: 'Exercised',
+                author: 'Daniel Lieberman',
+                year: '2020',
+                pages: '464',
+                link: 'https://example.com/buy', // Replace with your actual link
+                offerCoffeeLink: 'https://example.com/coffee' // Replace with your actual link
+            }
+        };
+
+        // Since the content is in Italian, we can set the language to 'it' by default
+        let currentLanguage = 'it';
+
+        // Get DOM elements
+        const buttonsContainer = document.getElementById('buttons-container');
+        const cardsWrapper = document.getElementById('cards-wrapper');
+        const progressBar = document.querySelector('.progress-bar');
+
+        let cards = [];
+        let currentIndex = 0;
+
+        function initializeApp() {
+            buttonsContainer.innerHTML = '';
+            cardsWrapper.innerHTML = '';
+            cards = [];
+            currentIndex = 0;
+
+            const { chapters, bookDetails } = content;
+
+            // Create buttons and cards for chapters
+            chapters.forEach((chapter, index) => {
+                createButton(chapter.buttonLabel, index);
+                createCard(chapter);
+            });
+
+            // Create "Book Details" button and card
+            createButton('📖 Dettagli', chapters.length);
+            createBookCard(bookDetails);
+
+            // Initialize to show the first card
+            showCard(0);
+        }
+
+        // Function to create a button
+        function createButton(label, index) {
+            const button = document.createElement('div');
+            button.className = 'button';
+            button.textContent = label;
+            button.addEventListener('click', () => {
+                showCard(index);
+            });
+            buttonsContainer.appendChild(button);
+        }
+
+        // Function to create a content block
+        function createContentBlock(type, contents) {
+            const div = document.createElement('div');
+            div.className = `content-block ${type}`;
+
+            contents.forEach(item => {
+                const p = document.createElement('p');
+                p.textContent = item;
+                div.appendChild(p);
+            });
+
+            return div;
+        }
+
+        // Function to create a card
+        function createCard(chapter) {
+            const card = document.createElement('div');
+            card.className = 'card';
+
+            const cardContent = document.createElement('div');
+            cardContent.className = 'card-content';
+
+            const title = document.createElement('h2');
+            title.className = 'section-title';
+            title.textContent = chapter.title;
+            cardContent.appendChild(title);
+
+            chapter.contentBlocks.forEach(block => {
+                const contentBlock = createContentBlock(block.type, block.content);
+                cardContent.appendChild(contentBlock);
+            });
+
+            card.appendChild(cardContent);
+
+            cardsWrapper.appendChild(card);
+            cards.push(card);
+        }
+
+        // Function to create the book details card
+        function createBookCard(bookDetails) {
+            const card = document.createElement('div');
+            card.className = 'card';
+
+            const cardContent = document.createElement('div');
+            cardContent.className = 'card-content book-details';
+
+            cardContent.innerHTML = `
+                <img src="${bookDetails.image}" alt="Book Cover" style="width:100%; height:auto; border-radius: 10px;">
+                <h2>${bookDetails.title}</h2>
+                <p>Autore: ${bookDetails.author}</p>
+                <p>Anno: ${bookDetails.year}</p>
+                <p>Pagine: ${bookDetails.pages}</p>
+                <button class="action-button" onclick="window.open('${bookDetails.link}', '_blank')">📖 Acquista il libro</button>
+                <button class="action-button" onclick="window.open('${bookDetails.offerCoffeeLink}', '_blank')">☕ Offrimi un caffè</button>
+            `;
+
+            card.appendChild(cardContent);
+
+            cardsWrapper.appendChild(card);
+            cards.push(card);
+        }
+
+        // Function to display a specific card
+        function showCard(index) {
+            currentIndex = index;
+            cardsWrapper.style.transform = `translateX(-${index * 100}%)`;
+            const progress = ((index + 1) / cards.length) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+
+        // Swipe functionality
+        let startX = 0;
+        let isDown = false;
+
+        const cardsContainer = document.querySelector('.cards-container');
+
+        // Touch events for mobile
+        cardsContainer.addEventListener('touchstart', touchStart, false);
+        cardsContainer.addEventListener('touchmove', touchMove, false);
+        cardsContainer.addEventListener('touchend', touchEnd, false);
+
+        function touchStart(evt) {
+            startX = evt.touches[0].clientX;
+            isDown = true;
+            cardsWrapper.style.transition = 'none';
+        }
+
+        function touchMove(evt) {
+            if (!isDown) return;
+            const x = evt.touches[0].clientX;
+            const deltaX = x - startX;
+            const percentage = (deltaX / window.innerWidth) * 100;
+            const offset = -currentIndex * 100 + percentage;
+            cardsWrapper.style.transform = `translateX(${offset}%)`;
+        }
+
+        function touchEnd(evt) {
+            if (!isDown) return;
+            isDown = false;
+            const endX = evt.changedTouches[0].clientX;
+            const deltaX = endX - startX;
+            if (deltaX < -50 && currentIndex < cards.length - 1) {
+                currentIndex++;
+            } else if (deltaX > 50 && currentIndex > 0) {
+                currentIndex--;
+            }
+            cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
+            showCard(currentIndex);
+        }
+
+        // Mouse events for desktop
+        cardsContainer.addEventListener('mousedown', mouseDown, false);
+        cardsContainer.addEventListener('mousemove', mouseMove, false);
+        cardsContainer.addEventListener('mouseup', mouseUp, false);
+        cardsContainer.addEventListener('mouseleave', mouseUp, false);
+
+        function mouseDown(evt) {
+            startX = evt.clientX;
+            isDown = true;
+            cardsWrapper.style.transition = 'none';
+        }
+
+        function mouseMove(evt) {
+            if (!isDown) return;
+            const x = evt.clientX;
+            const deltaX = x - startX;
+            const percentage = (deltaX / window.innerWidth) * 100;
+            const offset = -currentIndex * 100 + percentage;
+            cardsWrapper.style.transform = `translateX(${offset}%)`;
+        }
+
+        function mouseUp(evt) {
+            if (!isDown) return;
+            isDown = false;
+            const endX = evt.clientX;
+            const deltaX = endX - startX;
+            if (deltaX < -50 && currentIndex < cards.length - 1) {
+                currentIndex++;
+            } else if (deltaX > 50 && currentIndex > 0) {
+                currentIndex--;
+            }
+            cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
+            showCard(currentIndex);
+        }
+
+        // Initialize the app after the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeApp();
+        });
+    </script>
 </body>
-
 </html>
