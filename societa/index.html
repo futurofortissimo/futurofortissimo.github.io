@@ -241,10 +241,7 @@
     </footer>
 
     <script>
-    let startX = 0;
-    let startY = 0;
-    let isSwiping = false;
-    let isMoving = false;
+
         // Content data in Italian
         const content = {
      it: {
@@ -793,6 +790,7 @@ function getCurrentPublication() {
         }
 
         // Swipe functionality
+        let startX = 0;
         let isDown = false;
 
         const cardsContainer = document.querySelector('.cards-container');
@@ -803,130 +801,65 @@ function getCurrentPublication() {
         cardsContainer.addEventListener('touchend', touchEnd, false);
 
         function touchStart(evt) {
-    startX = evt.touches[0].clientX;
-    startY = evt.touches[0].clientY;
-    isDown = true;
-    isSwiping = false;
-    isMoving = false;
-    cardsWrapper.style.transition = 'none';
-}
-
-function touchMove(evt) {
-    if (!isDown) return;
-
-    const x = evt.touches[0].clientX;
-    const y = evt.touches[0].clientY;
-    const deltaX = x - startX;
-    const deltaY = y - startY;
-
-    if (!isMoving) {
-        // Determine if the movement is more horizontal or vertical
-        if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 10) {
-            isSwiping = true;
-        } else if (Math.abs(deltaY) > Math.abs(deltaX)) {
-            isDown = false; // User is scrolling vertically, do not swipe
-            return;
+            startX = evt.touches[0].clientX;
+            isDown = true;
+            cardsWrapper.style.transition = 'none';
         }
-        isMoving = true;
-    }
 
-    if (isSwiping) {
-        const percentage = (deltaX / window.innerWidth) * 100;
-        const offset = -currentIndex * 100 + percentage;
-        cardsWrapper.style.transform = `translateX(${offset}%)`;
-        evt.preventDefault(); // Prevent vertical scrolling when swiping
-    }
-}
-function touchEnd(evt) {
-    if (!isDown || !isSwiping) return;
-    isDown = false;
-    isSwiping = false;
-    const endX = evt.changedTouches[0].clientX;
-    const deltaX = endX - startX;
+        function touchMove(evt) {
+            if (!isDown) return;
+            const x = evt.touches[0].clientX;
+            const deltaX = x - startX;
+            const percentage = (deltaX / window.innerWidth) * 100;
+            const offset = -currentIndex * 100 + percentage;
+            cardsWrapper.style.transform = `translateX(${offset}%)`;
+        }
 
-    let nextIndex = currentIndex;
-
-    if (deltaX < -50) {
-        nextIndex++;
-    } else if (deltaX > 50) {
-        nextIndex--;
-    }
-
-    // Get the range of indices for the current publication
-    let [startIndex, endIndex] = getPublicationRange(currentIndex);
-
-    // Ensure nextIndex is within the publication range
-    nextIndex = Math.max(startIndex, Math.min(nextIndex, endIndex - 1));
-
-    currentIndex = nextIndex;
-
-    cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
-    showCard(currentIndex);
-}
+        function touchEnd(evt) {
+            if (!isDown) return;
+            isDown = false;
+            const endX = evt.changedTouches[0].clientX;
+            const deltaX = endX - startX;
+            if (deltaX < -50 && currentIndex < cards.length - 1) {
+                currentIndex++;
+            } else if (deltaX > 50 && currentIndex > 0) {
+                currentIndex--;
+            }
+            cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
+            showCard(currentIndex);
+        }
 
         // Mouse events for desktop
         cardsContainer.addEventListener('mousedown', mouseDown, false);
         cardsContainer.addEventListener('mousemove', mouseMove, false);
         cardsContainer.addEventListener('mouseup', mouseUp, false);
         cardsContainer.addEventListener('mouseleave', mouseUp, false);
+
         function mouseDown(evt) {
             startX = evt.clientX;
-            startY = evt.clientY;
             isDown = true;
-            isSwiping = false;
-            isMoving = false;
             cardsWrapper.style.transition = 'none';
         }
+
         function mouseMove(evt) {
             if (!isDown) return;
-
             const x = evt.clientX;
-            const y = evt.clientY;
             const deltaX = x - startX;
-            const deltaY = y - startY;
-
-            if (!isMoving) {
-                // Determine if the movement is more horizontal or vertical
-                if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 10) {
-                    isSwiping = true;
-                } else if (Math.abs(deltaY) > Math.abs(deltaX)) {
-                    isDown = false; // User is scrolling vertically, do not swipe
-                    return;
-                }
-                isMoving = true;
-            }
-
-            if (isSwiping) {
-                const percentage = (deltaX / window.innerWidth) * 100;
-                const offset = -currentIndex * 100 + percentage;
-                cardsWrapper.style.transform = `translateX(${offset}%)`;
-                evt.preventDefault(); // Prevent vertical scrolling when swiping
-            }
+            const percentage = (deltaX / window.innerWidth) * 100;
+            const offset = -currentIndex * 100 + percentage;
+            cardsWrapper.style.transform = `translateX(${offset}%)`;
         }
 
         function mouseUp(evt) {
-            if (!isDown || !isSwiping) return;
+            if (!isDown) return;
             isDown = false;
-            isSwiping = false;
             const endX = evt.clientX;
             const deltaX = endX - startX;
-
-            let nextIndex = currentIndex;
-
-            if (deltaX < -50) {
-                nextIndex++;
-            } else if (deltaX > 50) {
-                nextIndex--;
+            if (deltaX < -50 && currentIndex < cards.length - 1) {
+                currentIndex++;
+            } else if (deltaX > 50 && currentIndex > 0) {
+                currentIndex--;
             }
-
-            // Get the range of indices for the current publication
-            let [startIndex, endIndex] = getPublicationRange(currentIndex);
-
-            // Ensure nextIndex is within the publication range
-            nextIndex = Math.max(startIndex, Math.min(nextIndex, endIndex - 1));
-
-            currentIndex = nextIndex;
-
             cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
             showCard(currentIndex);
         }
