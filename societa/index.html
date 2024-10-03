@@ -716,18 +716,30 @@ function generateLink(title) {
     const baseUrl = 'https://fortissimo.substack.com/p/';
     const publication = getCurrentPublication();
     const slug = publication && publication.urlSlug ? publication.urlSlug : '';
-    const fragment = '§' + sanitizeTitle(title);
-    return baseUrl + slug + '#' + fragment;
+
+    // Extract the ff number and title from the content
+    const ffMatch = title.match(/ff\.(\d+)\.(\d+)\s(.+)/);
+
+    if (ffMatch) {
+        const [, pubNumber, sectionNumber, sectionTitle] = ffMatch;
+        const sanitizedSectionTitle = sanitizeTitle(sectionTitle);
+        const fragment = `§ff-${sanitizedSectionTitle}`;
+        return `${baseUrl}${slug}#${encodeURIComponent(fragment)}`;
+    } else {
+        // Fallback to the previous behavior if the title doesn't match the expected format
+        const fragment = '§' + sanitizeTitle(title);
+        return baseUrl + slug + '#' + encodeURIComponent(fragment);
+    }
 }
 
 function sanitizeTitle(title) {
-    // Remove emojis and special characters
-    let sanitized = title.replace(/[^a-zA-Z0-9\s]/g, '');
-
+    // Remove emojis and special characters, keep spaces
+    let sanitized = title.replace(/[^\w\s-]/g, '');
+    // Trim whitespace and convert to lowercase
+    sanitized = sanitized.trim().toLowerCase();
     // Replace spaces with hyphens
-    sanitized = sanitized.trim().toLowerCase().replace(/\s+/g, '-');
-
-    return encodeURIComponent(sanitized);
+    sanitized = sanitized.replace(/\s+/g, '-');
+    return sanitized;
 }
 
 function getCurrentPublication() {
