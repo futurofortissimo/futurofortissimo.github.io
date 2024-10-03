@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Food-Mood Connection - Riepilogo del Libro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Import Montserrat font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="/index_files/ff.webp" type="image/webp">
+    <link rel="apple-touch-icon" href="/index_files/ff.webp">
+    <style>
+        /* Root variables */
+        :root {
+            --theme-color: #ADD8E6; /* Light blue */
+            --question-color: #B3E5FC; /* Lighter blue */
+            --data-color: #81D4FA; /* Medium blue */
+            --quote-color: #4FC3F7; /* Darker blue */
+            --progress-bar-color: #4CAF50; /* Green */
+        }
+
+        /* Basic styles */
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fff;
+            color: #333;
+            overflow: hidden; /* Prevent scrolling on body */
+        }
+
+        /* App container */
+        .app-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Header with logo, buttons, and language switch */
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: var(--theme-color);
+            padding: 10px;
+            flex-shrink: 0;
+            flex-wrap: nowrap;
+        }
+
+        .logo {
+            height: 40px;
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-right: 10px;
+        }
+
+        .language-switch {
+            background-color: transparent;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-left: 10px;
+        }
+
+        /* Buttons container inside header */
+        .buttons-container {
+            display: flex;
+            overflow-x: auto;
+            flex-grow: 1;
+        }
+
+        .buttons-container::-webkit-scrollbar {
+            display: none; /* Hide scrollbar */
+        }
+
+        /* Buttons */
+        .button {
+            flex: 0 0 auto;
+            margin: 0 5px;
+            padding: 8px 12px;
+            background-color: #fff;
+            color: #333;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 14px;
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+        }
+
+        /* Progress bar */
+        .progress-bar {
+            height: 5px;
+            background-color: var(--progress-bar-color);
+            width: 0%;
+            transition: width 0.5s ease-in-out;
+            flex-shrink: 0;
+        }
+
+        /* Cards container */
+        .cards-container {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Cards wrapper for sliding effect */
+        .cards-wrapper {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        /* Individual card */
+        .card {
+            flex: 0 0 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #fff;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Card content */
+        .card-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px 20px 30px 20px; /* Adjusted padding */
+            box-sizing: border-box;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
+        /* Section styles */
+        .section-title {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Content block */
+        .content-block {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 10px;
+            word-wrap: break-word; /* Prevent overflow of long words */
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .questions {
+            background-color: var(--question-color);
+        }
+
+        .data {
+            background-color: var(--data-color);
+        }
+
+        .quotes {
+            background-color: var(--quote-color);
+        }
+
+        .paragraphs {
+            background-color: #e0f7fa; /* Light cyan */
+            font-weight: normal;
+        }
+
+        /* Hide scrollbars on card content */
+        .card-content::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        /* Action button styles */
+        .action-button {
+            padding: 10px 20px;
+            margin: 5px 0;
+            background-color: var(--theme-color);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .action-button:hover {
+            background-color: #7ec0ee; /* Slightly darker blue */
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+
+        footer a {
+            color: #00bef8;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header with logo, buttons, and language switch -->
+        <div class="header">
+            <a href="https://futurofortissimo.github.io/">
+                <img src="/index_files/ff.webp" alt="Logo" class="logo">
+            </a>
+            <!-- Buttons inside header -->
+            <div class="buttons-container" id="buttons-container">
+                <!-- Buttons will be dynamically inserted here -->
+            </div>
+            <button class="language-switch" id="language-switch">🇬🇧</button>
+        </div>
+
+        <!-- Progress bar -->
+        <div class="progress-bar"></div>
+
+        <!-- Cards -->
+        <div class="cards-container">
+            <div class="cards-wrapper" id="cards-wrapper">
+                <!-- Cards will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p><a href="https://linktr.ee/micmer">michele merelli</a> per
+        <a href="https://fortissimo.substack.com/">futuro fortissimo</a></p>
+    </footer>
+
+    <script>
+        // Content data in Italian and English
+        const content = {
+            it: {
+                chapters: [
+                    {
+                        title: "L'Arte e la Scienza Perdute del Respiro",
+                        buttonLabel: '🌬️ Respiro: Arte & Scienza',
+                        contentBlocks: [
+                            {
+                                type: 'paragraphs',
+                                content: [
+                                    "Le storiche tecniche di respirazione affondano le loro radici in antiche pratiche culturali e spirituali. Diverse civiltà, come gli Hindu e i Taoisti, hanno sviluppato metodi di respirazione elaborati per bilanciare il respiro e preservare la salute fisica e mentale.",
+                                    "Oggi, è emerso che il 90% delle persone respira in modo errato, portando a malattie croniche. Questo deterioramento del respiro ha radici nell'evoluzione umana, dove i nostri antenati avevano aperture nasali più grandi e una capacità polmonare superiore rispetto agli esseri umani moderni."
+                                ]
+                            },
+                            {
+                                type: 'questions',
+                                content: [
+                                    "Quali sono le radici storiche delle tecniche di respirazione?",
+                                    "Quale percentuale di persone respira in modo errato e quali sono le conseguenze?",
+                                    "Come è cambiato il respiro nel corso dell'evoluzione umana?"
+                                ]
+                            },
+                            {
+                                type: 'data',
+                                content: [
+                                    "Il 90% delle persone respira in modo errato, portando a malattie croniche.",
+                                    "Il 40% della popolazione soffre di ostruzione nasale cronica.",
+                                    "Quasi la metà della popolazione respira abitualmente con la bocca.",
+                                    "La respirazione con la bocca causa al corpo di perdere il 40% in più di acqua.",
+                                    "Gli esseri umani antichi avevano aperture nasali doppie rispetto a quelle degli umani moderni.",
+                                    "La capacità polmonare diminuisce di circa il 12% ogni due decenni dopo i 30 anni.",
+                                    "Entro gli 80 anni, la capacità polmonare diminuisce del 30% rispetto a quella dei 20 anni."
+                                ]
+                            },
+                            {
+                                type: 'quotes',
+                                content: [
+                                    "Raccontavano storie pazze su come respiravano in modi che espandevano la dimensione dei loro polmoni del 30 percento o più.",
+                                    "Gli Hindu consideravano respiro e spirito la stessa cosa e descrivevano pratiche elaborate destinate a bilanciare la respirazione e preservare la salute fisica e mentale.",
+                                    "Scoprivano che il 90 percento di noi—molto probabilmente me, te e quasi tutti quelli che conosci—sta respirando in modo errato e che questo fallimento sta causando o aggravando una lunga lista di malattie croniche.",
+                                    "Sapremo come la nostra capacità di respirare si è deteriorata nel corso dei secoli e perché i nostri antenati cavernicoli non russavano."
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        title: "Il Potere del Respiro Lento e Minore",
+                        buttonLabel: '🍃 Respiro Lento & Minore',
+                        contentBlocks: [
+                            {
+                                type: 'paragraphs',
+                                content: [
+                                    "Il corpo ha cambiato il suo meccanismo da respirazione anaerobica a aerobica. Quando respiriamo aerobicamente con ossigeno, guadagniamo una efficienza energetica circa 16 volte superiore rispetto alla respirazione anaerobica.",
+                                    "Maffetone ha personalizzato il suo allenamento concentrandosi sulla metrica più soggettiva delle frequenze cardiache, assicurando che i suoi atleti rimanessero all'interno di una zona aerobica definita. Questo ha permesso loro di bruciare più grassi, recuperare più rapidamente e tornare il giorno successivo—e l'anno successivo—per farlo di nuovo.",
+                                    "È importante chiarire che respirare meno non è la stessa cosa che respirare lentamente. I polmoni adulti medi possono contenere circa quattro-sei litri d'aria. Ciò significa che, anche se pratichiamo la respirazione lenta a 5,5 respiri al minuto, potremmo comunque inalare facilmente il doppio dell'aria di cui abbiamo bisogno."
+                                ]
+                            },
+                            {
+                                type: 'questions',
+                                content: [
+                                    "Qual è la frequenza respiratoria ottimale per gli esseri umani?",
+                                    "Come influenza la respirazione la performance atletica e la resistenza?",
+                                    "Che cos'è il Metodo Buteyko e quali sono i suoi benefici?"
+                                ]
+                            },
+                            {
+                                type: 'data',
+                                content: [
+                                    "La frequenza respiratoria ottimale è di 5,5 respiri al minuto.",
+                                    "Questa frequenza rispecchia il ritmo delle preghiere Hindu, Taoiste e Native American.",
+                                    "Respirare a questa frequenza aumenta il flusso sanguigno al cervello e crea coerenza tra i sistemi corporei.",
+                                    "L'americano medio respira 12-20 volte al minuto, il doppio rispetto al passato.",
+                                    "La respirazione con la bocca può aumentare la frequenza respiratoria a 47 respiri al minuto, mentre la respirazione nasale durante l'esercizio la riduce a 14 respiri al minuto.",
+                                    "La respirazione aerobica è 16 volte più efficiente energeticamente rispetto alla respirazione anaerobica.",
+                                    "I pazienti sani nello studio di Buteyko avevano frequenze cardiache a riposo di 48-55 bpm e livelli di anidride carbonica del 6,5-7,5%."
+                                ]
+                            },
+                            {
+                                type: 'quotes',
+                                content: [
+                                    "Il corpo ha cambiato da respirazione anaerobica a aerobica. Quando respiriamo aerobiamente con ossigeno, guadagniamo circa 16 volte più efficienza energetica rispetto alla respirazione anaerobica.",
+                                    "Maffetone ha personalizzato il suo allenamento concentrandosi sulla metrica più soggettiva delle frequenze cardiache, assicurando che i suoi atleti rimanessero all'interno di una zona aerobica definita.",
+                                    "Respirare meno non è la stessa cosa che respirare lentamente. Anche praticando la respirazione lenta a 5,5 respiri al minuto, possiamo comunque inalare facilmente il doppio dell'aria di cui abbiamo bisogno."
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        title: "L'Impatto della Respirazione sulla Salute Fisica e Mentale",
+                        buttonLabel: '💪 Salute & Respirazione',
+                        contentBlocks: [
+                            {
+                                type: 'paragraphs',
+                                content: [
+                                    "La respirazione con la bocca, si scopre, altera la struttura fisica e trasforma le vie aeree, peggiorando la salute generale. I milioni di americani che soffrono di disturbi cronici del sonno e che, in questo momento, come me, fissano le finestre della camera da letto, i televisori, i telefoni o i soffitti, non riescono a dormire perché non riescono a respirare.",
+                                    "Negli decenni successivi all'inizio dell'allenamento dei pazienti alla respirazione meno di Buteyko, l'asma è diventata un'epidemia globale. Quando le persone iperventilano, succede qualcosa di molto strano. In sostanza, stanno prendendo troppo aria. Ma la sensazione che provano è di mancanza d'aria, soffocamento, fame d'aria, come se non stessero ottenendo abbastanza aria. È quasi come un errore del sistema biologico.",
+                                    "L'asma colpisce 25 milioni di americani (8% della popolazione), un aumento di quattro volte rispetto al 1980. Il mercato globale per le terapie dell'asma è di 20 miliardi di dollari all'anno."
+                                ]
+                            },
+                            {
+                                type: 'questions',
+                                content: [
+                                    "Come influenza la respirazione la struttura facciale e il sonno?",
+                                    "Qual è il legame tra respirazione e malattie croniche come l'asma?",
+                                    "Cambiare le abitudini respiratorie può migliorare i sintomi di ansia e disturbi da panico?"
+                                ]
+                            },
+                            {
+                                type: 'data',
+                                content: [
+                                    "Il 25% degli americani soffre di apnea del sonno.",
+                                    "Entro i 60 anni, le donne possono perdere oltre un terzo della loro massa ossea.",
+                                    "Dal 1850 al 1960, il BMI medio americano era di 20-22, rispetto a 29 oggi (un aumento del 38%).",
+                                    "L'asma colpisce 25 milioni di americani (8% della popolazione), un aumento di quattro volte rispetto al 1980.",
+                                    "Il mercato globale per le terapie dell'asma è di 20 miliardi di dollari all'anno.",
+                                    "Fino all'80% dei lavoratori d'ufficio sperimenta attenzione parziale continua, influenzando i modelli respiratori.",
+                                    "Il 18% degli americani soffre di disturbi d'ansia o panico."
+                                ]
+                            },
+                            {
+                                type: 'quotes',
+                                content: [
+                                    "I respiratori abituali con la bocca perdono il 40% in più di acqua rispetto a quelli che respirano dal naso.",
+                                    "I respiratori con la bocca alterano la struttura facciale e trasformano le vie aeree in modi dannosi.",
+                                    "Negli ultimi decenni, l'asma è diventata un'epidemia globale, con milioni di persone che soffrono di questa condizione cronica."
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        title: "Il Sistema Nervoso Autonomo e il Potere del Respiro",
+                        buttonLabel: '🧠 Sistema Nervoso & Respiro',
+                        contentBlocks: [
+                            {
+                                type: 'paragraphs',
+                                content: [
+                                    "Le decine di miliardi di molecole che portiamo nel nostro corpo con ogni respiro servono anche a un ruolo più sottile, ma altrettanto importante. Influenzano quasi ogni organo interno, dicendo loro quando accendersi e spegnersi.",
+                                    "Le persone si sono evolute per trascorrere la maggior parte delle ore di veglia—e tutte le ore di sonno—in questo stato di recupero e rilassamento. Rilassarsi ha aiutato a renderci umani. Questo alternarsi—respirando intensamente, poi non respirando affatto, raffreddandosi e poi riscaldandosi di nuovo—è la chiave della magia del Tummo.",
+                                    "Non possiamo separare la vita dalla materia vivente. Studiare la materia vivente e le sue reazioni significa inevitabilmente studiare la vita stessa."
+                                ]
+                            },
+                            {
+                                type: 'questions',
+                                content: [
+                                    "Come influenza la respirazione il sistema nervoso autonomo?",
+                                    "Che cos'è la respirazione Tummo e quali sono i suoi effetti presunti?",
+                                    "Le tecniche di respirazione possono indurre stati alterati di coscienza?"
+                                ]
+                            },
+                            {
+                                type: 'data',
+                                content: [
+                                    "La respirazione Tummo può aumentare la temperatura nelle estremità di 17 gradi Fahrenheit.",
+                                    "Il cervello riceve 750 millilitri di flusso sanguigno al minuto.",
+                                    "L'iperventilazione può diminuire il flusso sanguigno cerebrale del 40%.",
+                                    "I monaci che praticano la respirazione yogica possono ridurre i loro tassi metabolici del 64%.",
+                                    "Swami Rama ha dimostrato una frequenza cardiaca di 0 bpm per 30 secondi, successivamente chiarita come 300 bpm.",
+                                    "Gli antichi yogi miravano a controllare le funzioni corporee, inclusi il battito cardiaco, il sudore e la temperatura.",
+                                    "La civiltà Indus-Sarasvati, una delle più grandi e avanzate civiltà antiche, si estendeva su 300.000 miglia quadrate."
+                                ]
+                            },
+                            {
+                                type: 'quotes',
+                                content: [
+                                    "Le decine di miliardi di molecole che portiamo nel nostro corpo con ogni respiro influenzano quasi ogni organo interno, dicendo loro quando accendersi e spegnersi.",
+                                    "Il corpo ha cambiato da respirazione anaerobica a aerobica. Quando respiriamo aerobiamente con ossigeno, guadagniamo circa 16 volte più efficienza energetica rispetto alla respirazione anaerobica.",
+                                    "Non possiamo separare la vita dalla materia vivente. Studiare la materia vivente e le sue reazioni significa inevitabilmente studiare la vita stessa."
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        title: "L'Importanza del Respiro Adeguato per una Vita Sana",
+                        buttonLabel: '🌟 Respiro & Vita Sana',
+                        contentBlocks: [
+                            {
+                                type: 'paragraphs',
+                                content: [
+                                    "La dieta moderna ha avuto un impatto significativo sul nostro modo di respirare. L'aumento del consumo di cibi trasformati e zuccheri ha contribuito a problemi respiratori come l'asma e l'apnea del sonno.",
+                                    "C'è un legame diretto tra la respirazione e la paura. Quando siamo spaventati, tendiamo a respirare più rapidamente e superficialmente, il che può portare a un ciclo di ansia e panico.",
+                                    "Tuttavia, è importante riconoscere che le tecniche di respirazione non sono una panacea. Sebbene possano migliorare significativamente la salute fisica e mentale, non possono risolvere tutti i problemi da sole."
+                                ]
+                            },
+                            {
+                                type: 'questions',
+                                content: [
+                                    "Come ha influenzato la dieta moderna il nostro modo di respirare?",
+                                    "Qual è la connessione tra respirazione e paura?",
+                                    "Quali sono i limiti delle tecniche di respirazione come rimedio universale?"
+                                ]
+                            },
+                            {
+                                type: 'data',
+                                content: [
+                                    "9 su 10 delle principali cause di morte sono legate a fattori di stile di vita, non solo alla genetica.",
+                                    "La pressione sanguigna dell'autore è diminuita di 10 punti in media attraverso la respirazione nasale e le espirazioni complete.",
+                                    "La respirazione prolungata con la bocca può portare a un'infezione da Corynebacterium diphtheroide nel naso.",
+                                    "L'autore ha sperimentato un significativo aumento delle performance atletiche, ciclando quasi un miglio in più con lo stesso dispendio energetico praticando tecniche di respirazione lenta."
+                                ]
+                            },
+                            {
+                                type: 'quotes',
+                                content: [
+                                    "Le cause di morte principali sono legate a fattori di stile di vita, non solo alla genetica.",
+                                    "La respirazione nasale e le espirazioni complete hanno ridotto la pressione sanguigna dell'autore di 10 punti in media.",
+                                    "La respirazione prolungata con la bocca può portare a infezioni nel naso.",
+                                    "Praticando tecniche di respirazione lenta, l'autore ha migliorato significativamente le sue performance atletiche."
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                bookDetails: {
+                    image: '/libri/the-creative-act.png', // Replace with your actual image path
+                    title: 'L\'Atto Creativo',
+                    author: 'Apollo',
+                    year: '2023',
+                    pages: '300', // Replace with actual number of pages if different
+                    link: 'https://example.com/buy-the-creative-act', // Replace with your actual link
+                    offerCoffeeLink: 'https://example.com/coffee' // Replace with your actual link
+                }
+            },
+            en: {
+                chapters: [
+                    {
+                        title: "Part 1: The Lost Art and Science of Breathing",
+                        buttonLabel: '🌬️ Breathing: Art & Science',
+                        contentBlocks: [
+                            {
+                                type: 'paragraphs',
+                                content: [
+                                    "They told crazy stories about how they’d breathed in ways that expanded the size of their lungs by 30 percent or more. Even earlier, Hindus considered breath and spirit the same thing, and described elaborate practices that were meant to balance breathing and preserve both physical and mental health.",
+                                    "They discovered that 90 percent of us—very likely me, you, and almost everyone you know—is breathing incorrectly and that this failure is either causing or aggravating a laundry list of chronic diseases. You’ll know how our ability to breathe has deteriorated over the ages, and why our cavemen ancestors didn’t snore."
+                                ]
+                            },
+                            {
+                                type: 'questions',
+                                content: [
+                                    "What are the historical roots of breathing techniques?",
+                                    "What percentage of people breathe incorrectly, and what are the consequences?",
+                                    "How has breathing changed over human evolution?"
+                                ]
+                            },
+                            {
+                                type: 'data',
+                                content: [
+                                    "90% of people breathe incorrectly, leading to chronic diseases.",
+                                    "40% of the population suffers from chronic nasal obstruction.",
+                                    "Nearly half of the population are habitual mouthbreathers.",
+                                    "Mouthbreathing causes the body to lose 40% more water.",
+                                    "Ancient humans had larger nasal apertures, twice the size of modern humans.",
+                                    "Lung capacity decreases by about 12% every two decades after age 30.",
+                                    "By age 80, lung capacity decreases by 30% from what it was at age 20."
+                                ]
+                            },
+                            {
+                                type: 'quotes',
+                                content: [
+                                    "They told crazy stories about how they’d breathed in ways that expanded the size of their lungs by 30 percent or more.",
+                                    "Even earlier, Hindus considered breath and spirit the same thing, and described elaborate practices that were meant to balance breathing and preserve both physical and mental health.",
+                                    "They discovered that 90 percent of us—very likely me, you, and almost everyone you know—is breathing incorrectly and that this failure is either causing or aggravating a laundry list of chronic diseases."
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        title: "Part 2: The Power of Slow and Less Breathing",
+                        buttonLabel: '🍃 Slow & Less Breathing',
+                        contentBlocks: [
+                            {
+                                type: 'paragraphs',
+                                content: [
+                                    "The body has switched from anaerobic to aerobic respiration. When we run our cells aerobically with oxygen, we gain some 16 times more energy efficiency over anaerobic respiration.",
+                                    "Maffetone personalized his training to focus on the more subjective metric of heart rates, which ensured that his athletes stayed inside a defined aerobic zone, and that they burned more fat, recovered faster, and came back the next day—and the next year—to do it again.",
+                                    "To be clear, breathing less is not the same as breathing slowly. Average adult lungs can hold about four to six liters of air. This means that, even if we practice slow breathing at 5.5 breaths per minute, we could still be easily taking in twice the air we need."
+                                ]
+                            },
+                            {
+                                type: 'questions',
+                                content: [
+                                    "What is the optimal breathing rate for humans?",
+                                    "How does breathing affect athletic performance and endurance?",
+                                    "What is the Buteyko Method, and what are its benefits?"
+                                ]
+                            },
+                            {
+                                type: 'data',
+                                content: [
+                                    "The optimal breathing rate is 5.5 breaths per minute.",
+                                    "This rate mirrors the pace of Hindu, Taoist, and Native American prayers.",
+                                    "Breathing at this rate increases blood flow to the brain and creates coherence between bodily systems.",
+                                    "The average American breathes 12-20 times per minute, twice as much as in the past.",
+                                    "Mouthbreathing can increase breathing rate to 47 breaths per minute, while nasal breathing during exercise reduces it to 14 breaths per minute.",
+                                    "Aerobic respiration is 16 times more energy-efficient than anaerobic respiration.",
+                                    "Healthy patients in Buteyko's study had resting heart rates of 48-55 bpm and 6.5-7.5% carbon dioxide levels."
+                                ]
+                            },
+                            {
+                                type: 'quotes',
+                                content: [
+                                    "The body has switched from anaerobic to aerobic respiration. When we run our cells aerobically with oxygen, we gain some 16 times more energy efficiency over anaerobic respiration.",
+                                    "Maffetone personalized his training to focus on the more subjective metric of heart rates, which ensured that his athletes stayed inside a defined aerobic zone.",
+                                    "Breathing less is not the same as breathing slowly. Even practicing slow breathing at 5.5 breaths per minute, we could still be easily taking in twice the air we need."
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        title: "Part 3: The Impact of Breathing on Physical and Mental Health",
+                        buttonLabel: '💪 Breathing & Health',
+                        contentBlocks: [
+                            {
+                                type: 'paragraphs',
+                                content: [
+                                    "Mouthbreathing, it turns out, changes the physical body and transforms airways, all for the worse. The millions of Americans who have a chronic insomnia disorder and who are, right now, like me, staring out bedroom windows, or at TVs, phones, or ceilings, can’t sleep because they can’t breathe.",
+                                    "In the decades since Buteyko first started training patients to breathe less, asthma has become a global epidemic. When people hyperventilate, there is something very strange happening. 'In essence they are taking in too much air. But the sensation that they get is shortness of breath, choking, air hunger, as if they’re not getting enough air. It’s almost like a biological system error,' Meuret wrote."
+                                ]
+                            },
+                            {
+                                type: 'questions',
+                                content: [
+                                    "How does mouthbreathing affect facial structure and sleep?",
+                                    "What is the link between breathing and chronic diseases like asthma?",
+                                    "Can changing breathing habits improve symptoms of anxiety and panic disorders?"
+                                ]
+                            },
+                            {
+                                type: 'data',
+                                content: [
+                                    "25% of Americans suffer from sleep apnea.",
+                                    "By age 60, women can lose more than one-third of their bone mass.",
+                                    "From 1850 to 1960, the average American BMI was 20-22, compared to 29 today (a 38% increase).",
+                                    "Asthma affects 25 million Americans (8% of the population), a fourfold increase since 1980.",
+                                    "The global market for asthma therapies is $20 billion annually.",
+                                    "Up to 80% of office workers experience continuous partial attention, impacting breathing patterns.",
+                                    "18% of Americans suffer from anxiety or panic disorders."
+                                ]
+                            },
+                            {
+                                type: 'quotes',
+                                content: [
+                                    "Mouthbreathing, it turns out, changes the physical body and transforms airways, all for the worse.",
+                                    "In the decades since Buteyko first started training patients to breathe less, asthma has become a global epidemic.",
+                                    "When people hyperventilate, there is something very strange happening. It’s almost like a biological system error."
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        title: "Part 4: The Autonomic Nervous System and The Power of the Breath",
+                        buttonLabel: '🧠 Autonomic Nervous System & Breath',
+                        contentBlocks: [
+                            {
+                                type: 'paragraphs',
+                                content: [
+                                    "The tens of billions of molecules we bring into our bodies with every breath also serve a more subtle, but equally important role. They influence nearly every internal organ, telling them when to turn on and off.",
+                                    "People have evolved to spend the majority of waking hours—and all of our sleeping hours—in this state of recovery and relaxation. Chilling out helped make us human. This flip-flopping—breathing all-out, then not at all, getting really cold and then hot again—is the key to Tummo’s magic.",
+                                    "We cannot separate life from living matter. Studying living matter and its reactions means inevitably studying life itself."
+                                ]
+                            },
+                            {
+                                type: 'questions',
+                                content: [
+                                    "How does breathing influence the autonomic nervous system?",
+                                    "What is Tummo breathing, and what are its purported effects?",
+                                    "Can breathing techniques induce altered states of consciousness?"
+                                ]
+                            },
+                            {
+                                type: 'data',
+                                content: [
+                                    "Tummo breathing can increase the temperature in extremities by 17 degrees Fahrenheit.",
+                                    "The brain receives 750 milliliters of blood flow per minute.",
+                                    "Overbreathing can decrease brain blood flow by 40%.",
+                                    "Monks practicing yogic breathing can reduce their metabolic rates by 64%.",
+                                    "Swami Rama demonstrated a heart rate of 0 bpm for 30 seconds, later clarified as 300 bpm.",
+                                    "Ancient yogis aimed to control bodily functions, including heart rate, sweat, and temperature.",
+                                    "The Indus-Sarasvati civilization, one of the largest and most advanced ancient civilizations, spanned 300,000 square miles."
+                                ]
+                            },
+                            {
+                                type: 'quotes',
+                                content: [
+                                    "The tens of billions of molecules we bring into our bodies with every breath influence nearly every internal organ, telling them when to turn on and off.",
+                                    "People have evolved to spend the majority of waking hours—and all of our sleeping hours—in this state of recovery and relaxation.",
+                                    "We cannot separate life from living matter. Studying living matter and its reactions means inevitably studying life itself."
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        title: "Part 5: The Importance of Proper Breathing for a Healthy Life",
+                        buttonLabel: '🌟 Proper Breathing & Health',
+                        contentBlocks: [
+                            {
+                                type: 'paragraphs',
+                                content: [
+                                    "Modern diets have significantly impacted our breathing patterns. Increased consumption of processed foods and sugars has contributed to respiratory problems like asthma and sleep apnea.",
+                                    "There is a direct link between breathing and fear. When we are scared, we tend to breathe more rapidly and shallowly, which can lead to a cycle of anxiety and panic.",
+                                    "However, it is important to recognize that breathing techniques are not a cure-all. While they can significantly improve physical and mental health, they cannot solve all problems on their own."
+                                ]
+                            },
+                            {
+                                type: 'questions',
+                                content: [
+                                    "How has the modern diet impacted our breathing?",
+                                    "What is the connection between breathing and fear?",
+                                    "What are the limitations of breathing techniques as a cure-all?"
+                                ]
+                            },
+                            {
+                                type: 'data',
+                                content: [
+                                    "9 out of 10 leading causes of death are linked to lifestyle factors, not just genetics.",
+                                    "The author's blood pressure decreased by 10 points on average through nasal breathing and full exhalations.",
+                                    "Prolonged mouth breathing can lead to a diphtheroid Corynebacterium infection in the nose.",
+                                    "The author experienced a significant increase in athletic performance, cycling almost a full mile longer with the same energy expenditure by practicing slow breathing techniques."
+                                ]
+                            },
+                            {
+                                type: 'quotes',
+                                content: [
+                                    "The leading causes of death are linked to lifestyle factors, not just genetics.",
+                                    "Through nasal breathing and full exhalations, the author's blood pressure decreased by 10 points on average.",
+                                    "Prolonged mouth breathing can lead to infections in the nose.",
+                                    "By practicing slow breathing techniques, the author significantly improved athletic performance."
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                bookDetails: {
+                    image: '/libri/the-creative-act.png', // Replace with your actual image path
+                    title: 'The Creative Act',
+                    author: 'Apollo',
+                    year: '2023',
+                    pages: '300', // Replace with actual number of pages if different
+                    link: 'https://example.com/buy-the-creative-act', // Replace with your actual link
+                    offerCoffeeLink: 'https://example.com/coffee' // Replace with your actual link
+                }
+            }
+        };
+
+
+
+        let currentLanguage = 'it';
+
+        // Initialize the app
+        let currentIndex = 0;
+
+        // Get DOM elements
+        const buttonsContainer = document.getElementById('buttons-container');
+        const cardsWrapper = document.getElementById('cards-wrapper');
+        const progressBar = document.querySelector('.progress-bar');
+        const languageSwitch = document.getElementById('language-switch');
+
+        let cards = [];
+
+        function initializeApp() {
+            buttonsContainer.innerHTML = '';
+            cardsWrapper.innerHTML = '';
+            cards = [];
+            currentIndex = 0;
+
+            const { chapters, bookDetails } = content[currentLanguage];
+
+            // Create buttons and cards for chapters
+            chapters.forEach((chapter, index) => {
+                createButton(chapter.buttonLabel, index);
+                createCard(chapter);
+            });
+
+            // Create "Book Details" button and card
+            const detailsLabel = currentLanguage === 'it' ? '📖 Dettagli' : '📖 Details';
+            createButton(detailsLabel, chapters.length);
+            createBookCard(bookDetails);
+
+            // Initialize to show the first card
+            showCard(0);
+        }
+
+        // Function to create a button
+        function createButton(label, index) {
+            const button = document.createElement('div');
+            button.className = 'button';
+            button.textContent = label;
+            button.addEventListener('click', () => {
+                showCard(index);
+            });
+            buttonsContainer.appendChild(button);
+        }
+
+        // Function to create a content block
+        function createContentBlock(type, contents) {
+            const div = document.createElement('div');
+            div.className = `content-block ${type}`;
+
+            contents.forEach(item => {
+                const p = document.createElement('p');
+                p.textContent = item;
+                div.appendChild(p);
+            });
+
+            return div;
+        }
+
+        // Function to create a card
+        function createCard(chapter) {
+            const card = document.createElement('div');
+            card.className = 'card';
+
+            const cardContent = document.createElement('div');
+            cardContent.className = 'card-content';
+
+            const title = document.createElement('h2');
+            title.className = 'section-title';
+            title.textContent = chapter.title;
+            cardContent.appendChild(title);
+
+            chapter.contentBlocks.forEach(block => {
+                const contentBlock = createContentBlock(block.type, block.content);
+                cardContent.appendChild(contentBlock);
+            });
+
+            card.appendChild(cardContent);
+
+            cardsWrapper.appendChild(card);
+            cards.push(card);
+        }
+
+        // Function to create the book details card
+        function createBookCard(bookDetails) {
+            const card = document.createElement('div');
+            card.className = 'card';
+
+            const cardContent = document.createElement('div');
+            cardContent.className = 'card-content book-details';
+
+            const buyText = currentLanguage === 'it' ? '📖 Acquista il libro' : '📖 Buy this book';
+            const coffeeText = currentLanguage === 'it' ? '☕ Offrimi un caffè' : '☕ Buy me a coffee';
+            const authorText = currentLanguage === 'it' ? 'Autore' : 'Author';
+            const yearText = currentLanguage === 'it' ? 'Anno' : 'Year';
+            const pagesText = currentLanguage === 'it' ? 'Pagine' : 'Pages';
+
+            cardContent.innerHTML = `
+                <img src="${bookDetails.image}" alt="Book Cover" style="width:100%; height:auto; border-radius: 10px;">
+                <h2>${bookDetails.title}</h2>
+                <p>${authorText}: ${bookDetails.author}</p>
+                <p>${yearText}: ${bookDetails.year}</p>
+                <p>${pagesText}: ${bookDetails.pages}</p>
+                <button class="action-button" onclick="window.open('${bookDetails.link}', '_blank')">${buyText}</button>
+                <button class="action-button" onclick="window.open('${bookDetails.offerCoffeeLink}', '_blank')">${coffeeText}</button>
+            `;
+
+            card.appendChild(cardContent);
+
+            cardsWrapper.appendChild(card);
+            cards.push(card);
+        }
+
+        // Function to display a specific card
+        function showCard(index) {
+            currentIndex = index;
+            cardsWrapper.style.transform = `translateX(-${index * 100}%)`;
+            const progress = ((index + 1) / cards.length) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+
+        // Swipe functionality
+        let startX = 0;
+        let isDown = false;
+
+        const cardsContainer = document.querySelector('.cards-container');
+
+        // Touch events for mobile
+        cardsContainer.addEventListener('touchstart', touchStart, false);
+        cardsContainer.addEventListener('touchmove', touchMove, false);
+        cardsContainer.addEventListener('touchend', touchEnd, false);
+
+        function touchStart(evt) {
+            startX = evt.touches[0].clientX;
+            isDown = true;
+            cardsWrapper.style.transition = 'none';
+        }
+
+        function touchMove(evt) {
+            if (!isDown) return;
+            const x = evt.touches[0].clientX;
+            const deltaX = x - startX;
+            const percentage = (deltaX / window.innerWidth) * 100;
+            const offset = -currentIndex * 100 + percentage;
+            cardsWrapper.style.transform = `translateX(${offset}%)`;
+        }
+
+        function touchEnd(evt) {
+            if (!isDown) return;
+            isDown = false;
+            const endX = evt.changedTouches[0].clientX;
+            const deltaX = endX - startX;
+            if (deltaX < -50 && currentIndex < cards.length - 1) {
+                currentIndex++;
+            } else if (deltaX > 50 && currentIndex > 0) {
+                currentIndex--;
+            }
+            cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
+            showCard(currentIndex);
+        }
+
+        // Mouse events for desktop
+        cardsContainer.addEventListener('mousedown', mouseDown, false);
+        cardsContainer.addEventListener('mousemove', mouseMove, false);
+        cardsContainer.addEventListener('mouseup', mouseUp, false);
+        cardsContainer.addEventListener('mouseleave', mouseUp, false);
+
+        function mouseDown(evt) {
+            startX = evt.clientX;
+            isDown = true;
+            cardsWrapper.style.transition = 'none';
+        }
+
+        function mouseMove(evt) {
+            if (!isDown) return;
+            const x = evt.clientX;
+            const deltaX = x - startX;
+            const percentage = (deltaX / window.innerWidth) * 100;
+            const offset = -currentIndex * 100 + percentage;
+            cardsWrapper.style.transform = `translateX(${offset}%)`;
+        }
+
+        function mouseUp(evt) {
+            if (!isDown) return;
+            isDown = false;
+            const endX = evt.clientX;
+            const deltaX = endX - startX;
+            if (deltaX < -50 && currentIndex < cards.length - 1) {
+                currentIndex++;
+            } else if (deltaX > 50 && currentIndex > 0) {
+                currentIndex--;
+            }
+            cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
+            showCard(currentIndex);
+        }
+
+        // Language switch functionality
+        languageSwitch.addEventListener('click', () => {
+            currentLanguage = currentLanguage === 'it' ? 'en' : 'it';
+            languageSwitch.textContent = currentLanguage === 'it' ? '🇬🇧' : '🇮🇹';
+            initializeApp();
+        });
+
+        // Initialize the app after the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeApp();
+        });
+    </script>
+</body>
+</html>
