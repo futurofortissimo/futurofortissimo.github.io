@@ -192,6 +192,22 @@
             color: #00bef8;
             text-decoration: none;
         }
+        /* Content block for darker paragraphs */
+      .darkerParagraphs {
+          background-color: #b2ebf2; /* Slightly darker cyan */
+          font-weight: normal;
+          padding: 10px;
+          border-radius: 10px;
+          margin-bottom: 15px;
+      }
+
+      /* Subsection title */
+      .subsection-title {
+          margin-top: 20px;
+          margin-bottom: 10px;
+          font-size: 18px;
+          font-weight: bold;
+      }
     </style>
 </head>
 <body>
@@ -227,240 +243,147 @@
     <script>
         // Content data in Italian
         const content = {
-    it: {
-        publications: [
-            {
-                buttonLabel: '🍃 ff.1 Clima',
-                cards: [
-                    // First Card for Publication 1
-                    {
-                        title: "🍃 COP26, The Big Greta Is Watching You e le strategie per net-zero",
-                        contentBlocks: [
-                            {
-                                type: 'paragraphs',
-                                content: [
-                                    "COP26, energie rinnovabili",
-                                    "Bill Gates e il suo librozzo",
-                                    "Quanto inquinano le criptovalute?"
-                                ]
-                            }
-                        ]
-                    },
-                    // Second Card for Publication 1
-                    {
-                        title: "In breve - ff.1",
-                        contentBlocks: [
-                            {
-                                type: 'paragraphs',
-                                content: [
-                                    "🌎 ff.1.1 Sensibilizzazione e arte\nIl progetto artistico di COP26 ha rivoluzionato l'identità visiva della conferenza, evidenziando l'importanza dell'arte nel sensibilizzare sul cambiamento climatico.",
-                                    "📉 ff.1.2 Da 51 miliardi a 0\nDa 51 miliardi a 0: la necessità urgente di ridurre a zero le emissioni globali di CO2-equivalenti...",
-                                    "🛴 ff.1.3 Gli scooter elettrici ci salveranno?\nL'80% degli spostamenti negli USA sono inferiori ai 16 km..."
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                buttonLabel: '🔌 ff.5 Elettrizzante',
-                cards: [
-                    // First Card for Publication 2
-                    {
-                        title: "🔌 Tesla, Van Moof, Duracell? Chi vincerà la sfida della mobilità sostenibile?",
-                        contentBlocks: [
-                            {
-                                type: 'paragraphs',
-                                content: [
-                                    "VanMoof: la Tesla olandese per le e-bike",
-                                    "Quanto inquina una Tesla rispetto alla Panda?",
-                                    "Noi come quelli a cavallo: il muro di Marchetti"
-                                ]
-                            }
-                        ]
-                    },
-                    // Second Card for Publication 2
-                    {
-                        title: "In breve - ff.5",
-                        contentBlocks: [
-                            {
-                                type: 'paragraphs',
-                                content: [
-                                    "❓ ff.5.1 Non tutto verde quello che luccica\nUtilitaria a benzina meno inquinante di Tesla? Una promettente start-up olandese...",
-                                    "🔋 ff.5.2 Duracell? No, Tesla\nNon solo auto: Con 3 GWh di capacità Tesla controlla una buona porzione...",
-                                    "🚲 ff.5.3 Pedalata assistita\nDurante la pandemia, le bici elettriche hanno venduto più delle auto elettriche..."
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-    en: {
-        publications: [
-            {
-                buttonLabel: '🍃 ff.1 Climate',
-                cards: [
-                    // First Card for Publication 1
-                    {
-                        title: "🍃 COP26, The Big Greta Is Watching You and strategies for net-zero",
-                        contentBlocks: [
-                            {
-                                type: 'paragraphs',
-                                content: [
-                                    "COP26, renewable energies",
-                                    "Bill Gates and his big book",
-                                    "How much do cryptocurrencies pollute?"
-                                ]
-                            }
-                        ]
-                    },
-                    // Second Card for Publication 1
-                    {
-                        title: "In brief - ff.1",
-                        contentBlocks: [
-                            {
-                                type: 'paragraphs',
-                                content: [
-                                    "🌎 ff.1.1 Awareness and Art\nThe artistic project of COP26 revolutionized the visual identity of the conference...",
-                                    "📉 ff.1.2 From 51 billion to 0\nFrom 51 billion to 0: the urgent need to reduce global CO2-equivalent emissions...",
-                                    "🛴 ff.1.3 Will electric scooters save us?\n80% of trips in the USA are under 16 km..."
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                buttonLabel: '🔌 ff.5 Electrifying',
-                cards: [
-                    // First Card for Publication 2
-                    {
-                        title: "🔌 Tesla, Van Moof, Duracell? Who will win the sustainable mobility challenge?",
-                        contentBlocks: [
-                            {
-                                type: 'paragraphs',
-                                content: [
-                                    "VanMoof: the Dutch Tesla for e-bikes",
-                                    "How much does a Tesla pollute compared to a Panda?",
-                                    "We like those on horseback: Marchetti's wall"
-                                ]
-                            }
-                        ]
-                    },
-                    // Second Card for Publication 2
-                    {
-                        title: "In brief - ff.5",
-                        contentBlocks: [
-                            {
-                                type: 'paragraphs',
-                                content: [
-                                    "❓ ff.5.1 Not all that glitters is green\nGasoline small cars less polluting than Tesla? A promising Dutch start-up...",
-                                    "🔋 ff.5.2 Duracell? No, Tesla\nNot just cars: With 3 GWh of capacity, Tesla controls a good portion...",
-                                    "🚲 ff.5.3 Assisted pedaling\nDuring the pandemic, electric bikes outsold electric cars..."
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    }
-};
-
-
-        let currentLanguage = 'it';
-
-        // Initialize the app
-        let currentIndex = 0;
-
-        // Get DOM elements
-        const buttonsContainer = document.getElementById('buttons-container');
-        const cardsWrapper = document.getElementById('cards-wrapper');
-        const progressBar = document.querySelector('.progress-bar');
-        const languageSwitch = document.getElementById('language-switch');
-
-        let cards = [];
-
-
-
-        // Function to create a button
-        function createButton(label, index) {
-            const button = document.createElement('div');
-            button.className = 'button';
-            button.textContent = label;
-            button.addEventListener('click', () => {
-                showCard(index);
-            });
-            buttonsContainer.appendChild(button);
+        it: {
+            publications: [
+                {
+                    buttonLabel: '🍃 ff.1 Clima',
+                    cards: [
+                        {
+                            title: "🍃 COP26, The Big Greta Is Watching You e le strategie per net-zero",
+                            contentBlocks: [
+                                {
+                                    type: 'paragraphs', // Main content
+                                    content: [
+                                        "COP26, energie rinnovabili",
+                                        "Bill Gates e il suo librozzo",
+                                        "Quanto inquinano le criptovalute?"
+                                    ]
+                                },
+                                {
+                                    type: 'subsectionTitle',
+                                    content: ["In breve - ff.1"]
+                                },
+                                {
+                                    type: 'darkerParagraphs', // "In breve" content
+                                    content: [
+                                        "🌎 ff.1.1 Sensibilizzazione e arte\nIl progetto artistico di COP26 ha rivoluzionato l'identità visiva della conferenza...",
+                                        "📉 ff.1.2 Da 51 miliardi a 0\nDa 51 miliardi a 0: la necessità urgente...",
+                                        "🛴 ff.1.3 Gli scooter elettrici ci salveranno?\nL'80% degli spostamenti negli USA..."
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                // Add other publications similarly...
+            ]
+        },
+        en: {
+            publications: [
+                {
+                    buttonLabel: '🍃 ff.1 Climate',
+                    cards: [
+                        {
+                            title: "🍃 COP26, The Big Greta Is Watching You and strategies for net-zero",
+                            contentBlocks: [
+                                {
+                                    type: 'paragraphs', // Main content
+                                    content: [
+                                        "COP26, renewable energies",
+                                        "Bill Gates and his big book",
+                                        "How much do cryptocurrencies pollute?"
+                                    ]
+                                },
+                                {
+                                    type: 'subsectionTitle',
+                                    content: ["In brief - ff.1"]
+                                },
+                                {
+                                    type: 'darkerParagraphs', // "In brief" content
+                                    content: [
+                                        "🌎 ff.1.1 Awareness and Art\nThe artistic project of COP26 revolutionized the visual identity...",
+                                        "📉 ff.1.2 From 51 billion to 0\nFrom 51 billion to 0: the urgent need to reduce global CO2-equivalent emissions...",
+                                        "🛴 ff.1.3 Will electric scooters save us?\n80% of trips in the USA are under 16 km..."
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                // Add other publications similarly...
+            ]
         }
+    };
 
 
-        // Function to create a content block
-        function createContentBlock(type, contents) {
-            const div = document.createElement('div');
-            div.className = `content-block ${type}`;
+    let currentLanguage = 'it';
+let currentIndex = 0;
+let publicationIndices = [];
 
-            contents.forEach(item => {
-                const p = document.createElement('p');
-                p.textContent = item;
-                div.appendChild(p);
-            });
+const buttonsContainer = document.getElementById('buttons-container');
+const cardsWrapper = document.getElementById('cards-wrapper');
+const progressBar = document.querySelector('.progress-bar');
+const languageSwitch = document.getElementById('language-switch');
 
-            return div;
-        }
+let cards = [];
 
-        // Function to create a card
-        function initializeApp() {
-    buttonsContainer.innerHTML = '';
-    cardsWrapper.innerHTML = '';
-    cards = [];
-    currentIndex = 0;
+function initializeApp() {
+buttonsContainer.innerHTML = '';
+cardsWrapper.innerHTML = '';
+cards = [];
+currentIndex = 0;
 
-    const { publications } = content[currentLanguage];
+const { publications } = content[currentLanguage];
 
-    // Flatten cards array to keep track of total cards
-    let totalCards = [];
-    let cardIndex = 0;
-    publicationIndices = []; // To keep track of starting index of each publication
+let cardIndex = 0;
+publicationIndices = [];
 
-    // Create buttons and cards for each publication
-    publications.forEach((publication, pubIndex) => {
-        createButton(publication.buttonLabel, cardIndex);
-        publicationIndices.push(cardIndex);
-        publication.cards.forEach(cardData => {
-            createCard(cardData);
-            totalCards.push(cardData);
-            cardIndex++;
-        });
+publications.forEach((publication) => {
+    createButton(publication.buttonLabel, cardIndex);
+    publicationIndices.push(cardIndex);
+    publication.cards.forEach(cardData => {
+        createCard(cardData);
+        cardIndex++;
     });
+});
 
-    // Initialize to show the first card
-    showCard(0);
+// Add a sentinel value for the end
+publicationIndices.push(cardIndex);
+
+showCard(0);
+}
+
+function createButton(label, index) {
+const button = document.createElement('div');
+button.className = 'button';
+button.textContent = label;
+button.addEventListener('click', () => {
+    showCard(index);
+});
+buttonsContainer.appendChild(button);
 }
 
 function createCard(cardData) {
-    const card = document.createElement('div');
-    card.className = 'card';
+const card = document.createElement('div');
+card.className = 'card';
 
-    const cardContent = document.createElement('div');
-    cardContent.className = 'card-content';
+const cardContent = document.createElement('div');
+cardContent.className = 'card-content';
 
-    const title = document.createElement('h2');
-    title.className = 'section-title';
-    title.textContent = cardData.title;
-    cardContent.appendChild(title);
+const title = document.createElement('h2');
+title.className = 'section-title';
+title.textContent = cardData.title;
+cardContent.appendChild(title);
 
-    cardData.contentBlocks.forEach(block => {
-        const contentBlock = createContentBlock(block.type, block.content);
-        cardContent.appendChild(contentBlock);
-    });
+cardData.contentBlocks.forEach(block => {
+    const contentBlock = createContentBlock(block.type, block.content);
+    cardContent.appendChild(contentBlock);
+});
 
-    card.appendChild(cardContent);
+card.appendChild(cardContent);
 
-    cardsWrapper.appendChild(card);
-    cards.push(card); // Ensure the card is added to the cards array
+cardsWrapper.appendChild(card);
+cards.push(card);
 }
 
         // Function to create the book details card
