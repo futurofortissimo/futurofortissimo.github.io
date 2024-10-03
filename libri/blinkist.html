@@ -530,6 +530,7 @@
 };
 
 
+
         let currentLanguage = 'en';
 
         // Get DOM elements
@@ -547,12 +548,12 @@
             cards = [];
             currentIndex = 0;
 
-            const { sections, bookDetails } = content[currentLanguage];
+            const { chapters, bookDetails } = content[currentLanguage];
 
             // Create buttons and cards for sections
-            sections.forEach((section, index) => {
-                createButton(section.buttonLabel, index);
-                createCard(section);
+            chapters.forEach((chapter, index) => {
+                createButton(chapter.buttonLabel, index);
+                createCard(chapter.title, chapter.contentBlocks);
             });
 
             // Create "Book Details" button and card
