@@ -1,367 +1,590 @@
 <!DOCTYPE html>
-<html lang="it">
-
+<html lang="en">
 <head>
-    <link rel="icon" href="/index_files/ff.webp" type="/index_files/ff.webp">
-    <link rel="apple-touch-icon" href="/index_files/ff.webp">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="color-scheme" content="light only">
+    <meta charset="UTF-8">
+    <title>Blinkist-like App - Updated Version</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Riepilogo del Libro | Exercised</title>
-    <link rel="stylesheet" href="/index_files/303a26c383de2a8b.css" data-n-g="">
-    <meta name="description" content="Riepilogo del libro con esplorazione dei temi principali.">
+    <!-- Import Montserrat font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <style>
-        /* Stili generali */
+        /* Root variables */
+        :root {
+            --theme-color: #ADD8E6; /* Light blue */
+            --question-color: #B3E5FC; /* Lighter blue */
+            --data-color: #81D4FA; /* Medium blue */
+            --quote-color: #4FC3F7; /* Darker blue */
+            --progress-bar-color: #4CAF50; /* Green */
+        }
+
+        /* Basic styles */
         body {
             margin: 0;
-            font-family: 'Palladio', serif;
-            font-size: 21px;
-            background-color: #f5f5f5;
-            color: #333;
-        }
-
-        /* Stili per l'header principale */
-        header {
-            font-family: 'ArgosBoldItalic', sans-serif;
-            font-size: 21px;
-            color: black;
-            font-weight: bold;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0 1rem;
-            border-bottom: 2px solid black;
-            background-color: white;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            height: 70px;
-            z-index: 1000;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-
-        /* Stili per i titoli delle sezioni */
-        h2 {
-            font-family: 'ArgosBoldItalic', sans-serif;
-            font-size: 15px;
-            color: black;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-
-        /* Stili per i paragrafi */
-        p {
-            font-family: 'Palladio', serif;
-            font-size: 21px;
-            line-height: 1.5;
-            margin-bottom: 10px;
-        }
-
-        /* Stili per le liste */
-        ul {
-            font-family: 'Palladio', serif;
-            font-size: 21px;
-            line-height: 1.5;
-            margin-bottom: 10px;
-            padding-left: 10px;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        /* Stili per i blockquote */
-        blockquote {
-            font-family: 'Palladio', serif;
-            font-size: 21px;
-            line-height: 1.5;
-            margin: 20px 0;
-            padding: 10px 20px;
-            background-color: #6ad7fef0;
-            border-left: 5px solid #38acff;
-        }
-
-        /* Stili per il footer */
-        footer {
-            font-family: 'ArgosBoldItalic', sans-serif;
-            font-size: 15px;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
+            font-family: 'Montserrat', sans-serif;
             background-color: #fff;
-            border-top: 2px solid black;
-            z-index: 1000;
-            margin-bottom: 3px;
+            color: #333;
+            overflow: hidden; /* Prevent scrolling on body */
         }
 
-        footer a {
-            color: black;
-            text-decoration: none;
-        }
-
-        footer .cta-button {
-            background-color: black;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 9999px;
+        /* App container */
+        .app-container {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Header with logo, buttons, and language switch */
+        .header {
+            display: flex;
             align-items: center;
+            background-color: var(--theme-color);
+            padding: 10px;
+            flex-shrink: 0;
+            flex-wrap: nowrap;
         }
 
-        /* Stili per i link nella lista */
-        .link-list a {
-            color: black;
-            text-decoration: none;
-            font-family: 'ArgosBoldItalic', sans-serif;
-            font-size: 25px;
-            margin: 0 8px;
+        .logo {
+            height: 40px;
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-right: 10px;
         }
 
-        .link-list a::after {
-            content: '';
+        .language-switch {
+            background-color: transparent;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-left: 10px;
         }
 
-        .link-list a:last-child::after {
-            content: '';
+        /* Buttons container inside header */
+        .buttons-container {
+            display: flex;
+            overflow-x: auto;
+            flex-grow: 1;
         }
 
-        /* Increase font size for first 5 elements and set font-family */
-        h3 {
-            font-family: 'Palladio', serif; /* Change to Palladio */
-            font-size: 18px; /* Increase font size */
-            color: #00bef8;
-
+        .buttons-container::-webkit-scrollbar {
+            display: none; /* Hide scrollbar */
         }
 
-
-
-        /* Remove footer */
-        footer {
-            display: none; /* Hide footer */
+        /* Buttons */
+        .button {
+            flex: 0 0 auto;
+            margin: 0 5px;
+            padding: 8px 12px;
+            background-color: #fff;
+            color: #333;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 14px;
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
         }
 
-        /* Remove bullet points and reduce padding */
-        ul {
-            padding-left: 0; /* Set lateral padding to 0 */
-            margin-bottom: 5px; /* Reduce spacing */
+        /* Progress bar */
+        .progress-bar {
+            height: 5px;
+            background-color: var(--progress-bar-color);
+            width: 0%;
+            transition: width 0.5s ease-in-out;
+            flex-shrink: 0;
         }
 
-        /* Remove bullet points for specific list items */
-        ul {
-            list-style-type: none; /* Remove bullet points */
+        /* Cards container */
+        .cards-container {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
         }
 
-        /* Reduce overall spacing between elements */
-        h2, h3, p, ul {
-            margin-top: 5px; /* Reduce vertical spacing */
-            margin-bottom: 5px; /* Reduce vertical spacing */
+        /* Cards wrapper for sliding effect */
+        .cards-wrapper {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        /* Individual card */
+        .card {
+            flex: 0 0 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #fff;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Card content */
+        .card-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px 20px 30px 20px; /* Adjusted padding */
+            box-sizing: border-box;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
+        /* Section styles */
+        .section-title {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Content block */
+        .content-block {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 10px;
+            word-wrap: break-word; /* Prevent overflow of long words */
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .questions {
+            background-color: var(--question-color);
+        }
+
+        .data {
+            background-color: var(--data-color);
+        }
+
+        .quotes {
+            background-color: var(--quote-color);
+        }
+
+        /* Hide scrollbars on card content */
+        .card-content::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        /* "Action" buttons */
+        .action-button {
+            display: block;
+            margin: 10px 0 0;
+            padding: 10px 20px;
+            background-color: var(--theme-color);
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        /* Book details styles */
+        .book-details p {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        .book-details img {
+            margin-bottom: 10px;
+        }
+
+        .book-details h2 {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
         }
     </style>
-    </head>
-
-
-
-
-
+</head>
 <body>
+    <div class="app-container">
+        <!-- Header with logo, buttons, and language switch -->
+        <div class="header">
+            <a href="https://futurofortissimo.github.io/">
+                <img src="/index_files/ff.png" alt="Logo" class="logo">
+            </a>
+            <!-- Buttons inside header -->
+            <div class="buttons-container" id="buttons-container">
+                <!-- Buttons will be dynamically inserted here -->
+            </div>
+            <button class="language-switch" id="language-switch">🇮🇹</button>
+        </div>
 
-<div class="flex flex-col justify-center m-0 p-0 flex-1 min-h-screen" style="margin-top: 70px;">
-    <main class="flex flex-grow flex-1 overflow-y-scroll flex-col w-full">
-        <div class="flex flex-grow flex-col items-center justify-between p-4">
-            <div
-                class="__variable_ee7e36 font-valkyrie max-w-[714px] mx-auto px-4 sm:px-6 lg:px-4 book-section">
+        <!-- Progress bar -->
+        <div class="progress-bar"></div>
 
-                <div class="link-list" style="padding-bottom: 5px;">
-                    <a href="#section-1-the-gut-brain-axis">1. The Gut-Brain Axis</a>
-                    <br>
-                    <a href="#section-2-depression-and-dietary-interventions">2. Depression and Dietary Interventions</a>
-                    <br>
-                    <a href="#section-3-anxiety-and-the-impact-of-diet">3. Anxiety and the Impact of Diet</a>
-                    <br>
-                    <a href="#section-4-impact-of-diet-on-ptsd-and-cognitive-function">4. Impact of Diet on PTSD and Cognitive Function</a>
-                    <br>
-                    <a href="#section-5-dietary-approaches-for-managing-insomnia-fatigue-and-severe-mental-illnesses">5. Dietary Approaches for Managing Insomnia, Fatigue, and Severe Mental Illnesses</a>
-                </div>
-                <br>
-                <hr style="height:2px;border-width:0;color:gray;background-color:black">
-                <br>
-
-                <h2>In-Depth Summary of "The Food Mood Connection"</h2>
-
-                <section id="section-1-the-gut-brain-axis">
-                    <h3>Section 1: The Gut-Brain Axis</h3>
-                    <ul>
-                        <li><strong>Questions Addressed:</strong>
-                            <ul>
-                                <li>How are the gut and brain connected?</li>
-                                <li>What role does the vagus nerve play in this connection?</li>
-                                <li>How does the gut influence mental health?</li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <p>The gut and brain are physically connected by the <strong>vagus nerve</strong>, which originates in the brainstem and extends to the gut. This nerve plays a critical role in regulating mood and emotion by facilitating communication between the gut and the brain. More than <strong>90% of serotonin receptors</strong>, a chemical often deficient in individuals with depression and anxiety, are found in the gut. The gut microbiome, comprising trillions of bacteria, significantly impacts mental health by influencing the production of essential brain chemicals. For example, certain gut bacteria can boost gamma-aminobutyric acid (GABA) levels, potentially alleviating depression and other mental health conditions.</p>
-                    <h4>Quantitative Data and Studies:</h4>
-                    <ul>
-                        <li>Over <strong>90%</strong> of serotonin receptors are located in the gut.</li>
-                        <li>The human gut microbiome contains up to <strong>1,000 different bacterial species</strong>.</li>
-                        <li><strong>Firmicutes</strong> and <strong>Bacteroides</strong> constitute approximately <strong>75%</strong> of the gut microbiome.</li>
-                        <li>Only <strong>50-60%</strong> of people respond to traditional anxiety treatments.</li>
-                        <li>Just <strong>25%</strong> of patients experience complete anxiety symptom resolution with medication and therapy.</li>
-                        <li>High-fat diets in mothers led to increased anxiety in rat offspring.</li>
-                        <li>Caffeine consumption exceeding <strong>400 mg/day</strong> is linked to increased anxiety.</li>
-                    </ul>
-                    <h4>Quotes:</h4>
-                    <ul>
-                        <li>"While your gut and brain are housed in different parts of your body, they maintain more than just a historical connection. They remain physically connected too."</li>
-                        <li>"Serotonin, a key chemical deficient in the brains of depressed and anxious people, plays a major role in regulating the gut-brain axis."</li>
-                        <li>"The food you eat can have just as profound an effect on your brain as the drugs you take."</li>
-                        <li>"Certain species of gut bacteria have the ability to boost levels of brain chemicals such as gamma-aminobutyric acid, which may speed relief from depression and other mental health conditions."</li>
-                    </ul>
-                </section>
-
-                <section id="section-2-depression-and-dietary-interventions">
-                    <h3>Section 2: Depression and Dietary Interventions</h3>
-                    <ul>
-                        <li><strong>Questions Addressed:</strong>
-                            <ul>
-                                <li>What dietary factors contribute to depression?</li>
-                                <li>How do omega-3 fatty acids impact depression?</li>
-                                <li>What is the role of the Mediterranean diet in managing depression?</li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <p>High sugar intake is strongly correlated with depression. A 2002 study by Westover and Marangell highlighted a significant link between sugar consumption and depression. The brain requires only <strong>62 grams of glucose</strong> daily, and excessive blood glucose levels are associated with lower brain-derived neurotrophic factor (BDNF) in rats. Consuming whole grains, high-fiber foods, and those with a low glycemic index (GI) are associated with a reduced risk of depression. A study by Sánchez-Villegas et al. investigated the relationship between fats and depression, emphasizing the benefits of olive oil consumption.</p>
-                    <h4>Quantitative Data and Studies:</h4>
-                    <ul>
-                        <li>The brain needs <strong>62 grams</strong> of glucose per day.</li>
-                        <li>Higher blood glucose levels are linked to lower BDNF levels in rats.</li>
-                        <li>In patients with folate deficiency, <strong>depression is the most common symptom</strong>.</li>
-                        <li>Studies show a correlation between higher folate levels and lower depression levels.</li>
-                        <li>Case studies indicate rapid recovery from major depression, often within a week, with <strong>125-300 mg</strong> of magnesium supplementation.</li>
-                        <li>Zinc supplements have been linked to reduced depressive symptoms.</li>
-                        <li>A meta-analysis of <strong>17 studies</strong> found lower blood zinc concentrations in depressed individuals compared to controls.</li>
-                    </ul>
-                    <h4>Quotes:</h4>
-                    <ul>
-                        <li>"The more sugar you eat, the more likely you are to be depressed."</li>
-                        <li>"'Better-quality' carbohydrates were defined as whole grains, foods high in fibre and those ranked low on the glycaemic index (GI)."</li>
-                        <li>"In patients with folate deficiency, depression is the most common symptom."</li>
-                        <li>"Zinc probably helps because it reduces brain inflammation."</li>
-                    </ul>
-                </section>
-
-                <section id="section-3-anxiety-and-the-impact-of-diet">
-                    <h3>Section 3: Anxiety and the Impact of Diet</h3>
-                    <ul>
-                        <li><strong>Questions Addressed:</strong>
-                            <ul>
-                                <li>How does caffeine affect anxiety?</li>
-                                <li>What is the relationship between gluten and anxiety?</li>
-                                <li>How does tryptophan influence anxiety, and what is the myth surrounding it?</li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <p>Caffeine activates the midbrain periaqueductal grey matter, a brain area triggered during a perceived threat, potentially exacerbating anxiety. Consuming over <strong>400 mg</strong> of caffeine daily is associated with a significant increase in anxiety. Gluten, a protein found in wheat, barley, and rye, can contribute to anxiety in sensitive individuals, particularly those with celiac disease.</p>
-                    <p>While tryptophan is a precursor to serotonin, consuming tryptophan-rich foods does not necessarily increase serotonin levels in the brain. This is because tryptophan competes with other amino acids for transport to the brain. However, consuming carbohydrates with protein can enhance tryptophan's availability to the brain.</p>
-                    <h4>Quantitative Data and Studies:</h4>
-                    <ul>
-                        <li>A Nespresso capsule contains <strong>50-80 mg</strong> of caffeine.</li>
-                        <li>Dietary fiber intake may reduce the risk of depression, anxiety, and stress.</li>
-                        <li>Omega-3 fatty acids suppress the interleukin-1 induced increase in dopamine in the nucleus accumbens.</li>
-                        <li>Tryptophan is the <strong>least abundant amino acid</strong> in protein.</li>
-                        <li>Dietary intake of magnesium is inadequate in <strong>68%</strong> of Americans.</li>
-                        <li><strong>72%</strong> of middle-aged French adults consume insufficient magnesium.</li>
-                    </ul>
-                    <h4>Quotes:</h4>
-                    <ul>
-                        <li>"They found that caffeine activated the midbrain periaqueductal grey matter, a brain region that is typically activated when a predator is closing in on you."</li>
-                        <li>"Every one of those foods has gluten in it. I referred him to a gastroenterologist, and within a few weeks, he was diagnosed with coeliac disease."</li>
-                        <li>"Although purified TRP increases brain serotonin, foods containing TRP do not."</li>
-                        <li>"Carbohydrates along with protein can increase the TRP available to the brain."</li>
-                    </ul>
-                </section>
-
-                <section id="section-4-impact-of-diet-on-ptsd-and-cognitive-function">
-                    <h3>Section 4: Impact of Diet on PTSD and Cognitive Function</h3>
-                    <ul>
-                        <li><strong>Questions Addressed:</strong>
-                            <ul>
-                                <li>What dietary choices can exacerbate PTSD symptoms?</li>
-                                <li>How do blueberries and "old friends" bacteria benefit individuals with PTSD?</li>
-                                <li>Which foods and dietary patterns support cognitive function and memory?</li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <p>High-fat diets can worsen PTSD symptoms, as demonstrated by Kalyan-Masih et al.'s study where mice on a high-fat diet displayed heightened anxiety after exposure to cat odor. Monosodium glutamate (MSG), commonly used to enhance umami flavor, can be detrimental to PTSD patients due to their sensitivity to excess glutamates, leading to brain inflammation and cell damage.</p>
-                    <p>Blueberries, rich in antioxidants, are known to alleviate PTSD symptoms. Similarly, exposure to "old friends" bacteria, found in soil and fermented foods, may help regulate the immune system and reduce PTSD-related inflammation.</p>
-                    <p>Rosemary, rich in antioxidants and anti-inflammatory compounds, is traditionally linked to memory enhancement. A study found that calorie restriction (<strong>35%</strong>) improved memory in healthy elderly individuals after three months. The MIND diet, a blend of the Mediterranean and DASH diets, emphasizes consuming brain-healthy foods like leafy greens, berries, and olive oil. This diet has been associated with a slower rate of cognitive decline.</p>
-                    <h4>Quantitative Data and Studies:</h4>
-                    <ul>
-                        <li>A large fast-food meal with fries and a diet soda can contain around <strong>1,000 calories</strong>.</li>
-                        <li>Adding cooked rice to a meal can reduce the GI of white rice by <strong>20-40%</strong>.</li>
-                        <li>Recommended consumption of <strong>3 tablespoons</strong> of olive oil per day.</li>
-                        <li>Sweets, refined grains, fried food, fast food, processed meats, and sugary drinks should be limited to no more than <strong>3 servings per week</strong>.</li>
-                        <li>London taxi drivers, who memorize complex routes, have larger hippocampi.</li>
-                        <li>High saturated fat intake in male rats interfered with hippocampal insulin signaling, affecting memory.</li>
-                    </ul>
-                    <h4>Quotes:</h4>
-                    <ul>
-                        <li>"When you don’t have trauma to deal with, you have enough brain capacity to take the time to make healthy choices."</li>
-                        <li>"Though glutamates naturally occur in many foods, the most common way to impart an umami flavour in a dish is to cook with the additive monosodium glutamate (MSG)."</li>
-                        <li>"Think of Ophelia in Hamlet saying, 'There’s rosemary, that’s for remembrance.'"</li>
-                        <li>"The MIND diet is a combination of two diets, the Mediterranean diet and the DASH diet."</li>
-                    </ul>
-                </section>
-
-                <section id="section-5-dietary-approaches-for-managing-insomnia-fatigue-and-severe-mental-illnesses">
-                    <h3>Section 5: Dietary Approaches for Managing Insomnia, Fatigue, and Severe Mental Illnesses</h3>
-                    <ul>
-                        <li><strong>Questions Addressed:</strong>
-                            <ul>
-                                <li>How does diet impact sleep quality and fatigue levels?</li>
-                                <li>What are the dietary recommendations for managing bipolar disorder and schizophrenia?</li>
-                                <li>What are some general "brain foods" to incorporate into one's diet?</li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <p>Maintaining a balanced gut microbiome is crucial for healthy sleep. Studies reveal that sleep deprivation alters metabolite levels, including serotonin and tryptophan. Disrupted sleep patterns in mice are linked to changes in gut bacteria. High-glycemic-index meals might induce faster sleep onset but less restful sleep. High protein intake (over <strong>19%</strong>) is associated with sleep maintenance difficulties.</p>
-                    <p>The ketogenic diet, high in fat and low in carbohydrates, is suggested to have mood-stabilizing effects for those with bipolar disorder. Limiting caffeine is crucial, as excessive consumption can worsen manic symptoms.</p>
-                    <p>Individuals with schizophrenia often have altered gut microbiomes, contributing to their symptoms. Ensuring adequate intake of antioxidants like glutathione is essential, as it's often low in these individuals.</p>
-                    <p>Incorporating a variety of colorful fruits and vegetables, particularly berries, beans, and leafy greens, is crucial for overall brain health. These foods are abundant in antioxidants, fiber, and essential nutrients that support cognitive function and mental well-being.</p>
-                    <h4>Quantitative Data and Studies:</h4>
-                    <ul>
-                        <li>Nearly <strong>33%</strong> of the global population experiences sleep problems.</li>
-                        <li><strong>33%</strong> of Americans sleep less than 6 hours per night.</li>
-                        <li>A 2010 study gave <strong>400 mg</strong> of caffeine to three groups at different times before sleep.</li>
-                        <li>Alcohol disrupts the normal sleep cycle shortly after consumption.</li>
-                        <li>Omega-3s are suggested to decrease inflammation and normalize sleep in animals.</li>
-                        <li><strong>1-3 cups</strong> (250 ml per cup) of chamomile tea per day is recommended.</li>
-                        <li><strong>2-3 grams</strong> of combined EPA and DHA from omega-3 fatty acids are recommended daily to combat fatigue.</li>
-                        <li><strong>10-20%</strong> of bipolar patients experience binge-eating disorder.</li>
-                    </ul>
-                    <h4>Quotes:</h4>
-                    <ul>
-                        <li>"Close to a third of the world’s population has trouble sleeping."</li>
-                        <li>"Maintaining the delicate balance of bacteria in your gut is crucial for healthy sleep."</li>
-                        <li>"Alcohol is a sedative, so in theory it will put you to sleep faster. However, soon after you go to sleep, it disrupts the normal sleep cycle."</li>
-                        <li>"BRAIN FOODS: B: Berries and beans R: Rainbow colours of fruits and vegetables."</li>
-                    </ul>
-                </section>
-
+        <!-- Cards -->
+        <div class="cards-container">
+            <div class="cards-wrapper" id="cards-wrapper">
+                <!-- Cards will be dynamically inserted here -->
             </div>
         </div>
-    </main>
-</div>
-
-<footer>
-    <div style="text-align: center; padding: 1rem;">
-        <p>&copy; 2023 futuro fortissimo</p>
     </div>
-</footer>
-</div>
-</div>
+
+    <script>
+        // Content data in English and Italian
+        const content = {
+                 chapters: [
+                     {
+                         title: "The Intertwined Relationship Between Diet and Mental Health",
+                         buttonLabel: '🧠 Diet & Mental Health',
+                         contentBlocks: [
+                             {
+                                 type: 'paragraphs',
+                                 content: [
+                                     "This section explores the connection between diet and mental health, focusing on the gut-brain axis and its historical and physiological contexts."
+                                 ]
+                             },
+                             {
+                                 type: 'questions',
+                                 content: [
+                                     "How are diet and mental health connected?",
+                                     "What is the historical context of the gut-brain connection?",
+                                     "How does the gut communicate with the brain?"
+                                 ]
+                             },
+                             {
+                                 type: 'data',
+                                 content: [
+                                     "More than 90% of serotonin receptors, which are crucial for mood regulation, are located in the gut.",
+                                     "The gut plays a significant role in the fight-or-flight response by regulating adrenaline and noradrenaline.",
+                                     "Firmicutes and Bacteroides constitute approximately 75% of the entire microbiome.",
+                                     "Mood changes are linked to altered bacterial populations in conditions like IBS and IBD.",
+                                     "A study by Westover and Marangell (2002) revealed a significant correlation between sugar consumption and depression."
+                                 ]
+                             }
+                         ]
+                     },
+                     {
+                         title: "The Impact of Diet on Depression",
+                         buttonLabel: '😞 Depression & Diet',
+                         contentBlocks: [
+                             {
+                                 type: 'paragraphs',
+                                 content: [
+                                     "This section examines how diet influences depression and the role of the microbiome in managing depressive symptoms."
+                                 ]
+                             },
+                             {
+                                 type: 'questions',
+                                 content: [
+                                     "How does diet influence depression?",
+                                     "What is the role of the microbiome in depression?",
+                                     "What are some dietary recommendations for managing depression?"
+                                 ]
+                             },
+                             {
+                                 type: 'data',
+                                 content: [
+                                     "A study found that individuals with higher folate levels experienced lower levels of depression.",
+                                     "Consuming 125-300mg of magnesium has been linked to a reduction in major depression symptoms within a week.",
+                                     "Zinc supplements have been shown to alleviate depressive symptoms by reducing brain inflammation.",
+                                     "Omega-3 fatty acids, abundant in fatty fish, play a vital role in brain health and may help alleviate depressive symptoms."
+                                 ]
+                             }
+                         ]
+                     },
+                     {
+                         title: "Dietary Strategies for Managing Anxiety",
+                         buttonLabel: '😟 Anxiety & Diet',
+                         contentBlocks: [
+                             {
+                                 type: 'paragraphs',
+                                 content: [
+                                     "This section explores how specific dietary choices can help alleviate anxiety and the connection between the gut-brain axis and anxiety."
+                                 ]
+                             },
+                             {
+                                 type: 'questions',
+                                 content: [
+                                     "What is the connection between anxiety and the gut-brain axis?",
+                                     "How can specific food choices help alleviate anxiety symptoms?",
+                                     "What are some common dietary triggers for anxiety?"
+                                 ]
+                             },
+                             {
+                                 type: 'data',
+                                 content: [
+                                     "Dietary fiber may help reduce the risk of depression, anxiety, and stress.",
+                                     "Omega-3s can suppress anxiety-inducing effects of inflammatory markers in the brain.",
+                                     "High-fat diets, especially those rich in saturated fats, have been linked to increased anxiety.",
+                                     "Caffeine, particularly above 400mg per day, can worsen anxiety in some individuals."
+                                 ]
+                             }
+                         ]
+                     },
+                     {
+                         title: "The Influence of Diet on PTSD and Cognitive Function",
+                         buttonLabel: '🧠 PTSD & Cognition',
+                         contentBlocks: [
+                             {
+                                 type: 'paragraphs',
+                                 content: [
+                                     "This section discusses how diet impacts PTSD and cognitive function, emphasizing the role of a healthy gut microbiome in memory and mental resilience."
+                                 ]
+                             },
+                             {
+                                 type: 'questions',
+                                 content: [
+                                     "How does diet impact individuals experiencing PTSD?",
+                                     "What dietary factors can positively or negatively influence cognitive function?",
+                                     "What dietary patterns support brain health and memory?"
+                                 ]
+                             },
+                             {
+                                 type: 'data',
+                                 content: [
+                                     "High saturated fat intake has been linked to impaired hippocampal function and memory.",
+                                     "Restricting calories by 35% showed improvements in memory among healthy elderly individuals after three months.",
+                                     "Omega-3 fatty acids and antioxidants can protect the brain from oxidative stress, improving cognitive function."
+                                 ]
+                             }
+                         ]
+                     },
+                     {
+                         title: "Diet's Role in Sleep, Fatigue, Bipolar Disorder, and Schizophrenia",
+                         buttonLabel: '💤 Sleep & Mental Health',
+                         contentBlocks: [
+                             {
+                                 type: 'paragraphs',
+                                 content: [
+                                     "This section examines the connection between diet and mental health disorders like bipolar disorder and schizophrenia, as well as the role of diet in sleep quality and fatigue."
+                                 ]
+                             },
+                             {
+                                 type: 'questions',
+                                 content: [
+                                     "How does diet impact sleep quality and fatigue levels?",
+                                     "What dietary interventions are recommended for managing bipolar disorder and schizophrenia?",
+                                     "How does caffeine consumption influence mental health conditions?"
+                                 ]
+                             },
+                             {
+                                 type: 'data',
+                                 content: [
+                                     "33% of Americans sleep less than 6 hours per night.",
+                                     "Consuming 400mg of caffeine close to bedtime disrupts sleep quality.",
+                                     "Omega-3 fatty acids have been shown to reduce inflammation and improve sleep quality in animal studies.",
+                                     "Some fatty acids contribute to melatonin production, which regulates the sleep-wake cycle."
+                                 ]
+                             }
+                         ]
+                     }
+                 ],
+                 bookDetails: {
+                     image: '/index_files/ff.webp', // Replace with your actual image path
+                     title: 'Gut-Brain Revolution',
+                     author: 'Daniel Lieberman',
+                     year: '2023',
+                     pages: '512',
+                     link: 'https://example.com/buy', // Replace with your actual link
+                     offerCoffeeLink: 'https://example.com/coffee' // Replace with your actual link
+                 }
+             };
+
+        let currentLanguage = 'en';
+
+        // Get DOM elements
+        const buttonsContainer = document.getElementById('buttons-container');
+        const cardsWrapper = document.getElementById('cards-wrapper');
+        const progressBar = document.querySelector('.progress-bar');
+        const languageSwitch = document.getElementById('language-switch');
+
+        let cards = [];
+        let currentIndex = 0;
+
+        function initializeApp() {
+            buttonsContainer.innerHTML = '';
+            cardsWrapper.innerHTML = '';
+            cards = [];
+            currentIndex = 0;
+
+            const { chapters, bookDetails } = content[currentLanguage];
+
+            // Create buttons and cards for chapters
+            chapters.forEach((chapter, index) => {
+                createButton(chapter.buttonLabel, index);
+                createCard(chapter);
+            });
+
+            // Create "Book Details" button and card
+            createButton('📖 Details', chapters.length);
+            createBookCard(bookDetails);
+
+            // Initialize to show the first card
+            showCard(0);
+        }
+
+        // Function to create a button
+        function createButton(label, index) {
+            const button = document.createElement('div');
+            button.className = 'button';
+            button.textContent = label;
+            button.addEventListener('click', () => {
+                showCard(index);
+            });
+            buttonsContainer.appendChild(button);
+        }
+
+        // Function to create a content block
+        function createContentBlock(type, contents) {
+            const div = document.createElement('div');
+            div.className = `content-block ${type}`;
+
+            contents.forEach(item => {
+                const p = document.createElement('p');
+                p.textContent = item;
+                div.appendChild(p);
+            });
+
+            return div;
+        }
+
+        // Function to create a card
+        function createCard(chapter) {
+            const card = document.createElement('div');
+            card.className = 'card';
+
+            const cardContent = document.createElement('div');
+            cardContent.className = 'card-content';
+
+            const title = document.createElement('h2');
+            title.className = 'section-title';
+            title.textContent = chapter.title;
+            cardContent.appendChild(title);
+
+            chapter.contentBlocks.forEach(block => {
+                const contentBlock = createContentBlock(block.type, block.content);
+                cardContent.appendChild(contentBlock);
+            });
+
+            card.appendChild(cardContent);
+
+            cardsWrapper.appendChild(card);
+            cards.push(card);
+        }
+
+        // Function to create the book details card
+        function createBookCard(bookDetails) {
+            const card = document.createElement('div');
+            card.className = 'card';
+
+            const cardContent = document.createElement('div');
+            cardContent.className = 'card-content book-details';
+
+            cardContent.innerHTML = `
+                <img src="${bookDetails.image}" alt="Book Cover" style="width:100%; height:auto; border-radius: 10px;">
+                <h2>${bookDetails.title}</h2>
+                <p>${currentLanguage === 'en' ? 'Author' : 'Autore'}: ${bookDetails.author}</p>
+                <p>${currentLanguage === 'en' ? 'Year' : 'Anno'}: ${bookDetails.year}</p>
+                <p>${currentLanguage === 'en' ? 'Pages' : 'Pagine'}: ${bookDetails.pages}</p>
+                <button class="action-button" onclick="window.open('${bookDetails.link}', '_blank')">${currentLanguage === 'en' ? '📖 Buy this book' : '📖 Acquista il libro'}</button>
+                <button class="action-button" onclick="window.open('${bookDetails.offerCoffeeLink}', '_blank')">${currentLanguage === 'en' ? '☕ Offer me a coffee' : '☕ Offrimi un caffè'}</button>
+            `;
+
+            card.appendChild(cardContent);
+
+            cardsWrapper.appendChild(card);
+            cards.push(card);
+        }
+
+        // Function to display a specific card
+        function showCard(index) {
+            currentIndex = index;
+            cardsWrapper.style.transform = `translateX(-${index * 100}%)`;
+            const progress = ((index + 1) / cards.length) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+
+        // Swipe functionality
+        let startX = 0;
+        let isDown = false;
+
+        const cardsContainer = document.querySelector('.cards-container');
+
+        // Touch events for mobile
+        cardsContainer.addEventListener('touchstart', touchStart, false);
+        cardsContainer.addEventListener('touchmove', touchMove, false);
+        cardsContainer.addEventListener('touchend', touchEnd, false);
+
+        function touchStart(evt) {
+            startX = evt.touches[0].clientX;
+            isDown = true;
+            cardsWrapper.style.transition = 'none';
+        }
+
+        function touchMove(evt) {
+            if (!isDown) return;
+            const x = evt.touches[0].clientX;
+            const deltaX = x - startX;
+            const percentage = (deltaX / window.innerWidth) * 100;
+            const offset = -currentIndex * 100 + percentage;
+            cardsWrapper.style.transform = `translateX(${offset}%)`;
+        }
+
+        function touchEnd(evt) {
+            if (!isDown) return;
+            isDown = false;
+            const endX = evt.changedTouches[0].clientX;
+            const deltaX = endX - startX;
+            if (deltaX < -50 && currentIndex < cards.length - 1) {
+                currentIndex++;
+            } else if (deltaX > 50 && currentIndex > 0) {
+                currentIndex--;
+            }
+            cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
+            showCard(currentIndex);
+        }
+
+        // Mouse events for desktop
+        cardsContainer.addEventListener('mousedown', mouseDown, false);
+        cardsContainer.addEventListener('mousemove', mouseMove, false);
+        cardsContainer.addEventListener('mouseup', mouseUp, false);
+        cardsContainer.addEventListener('mouseleave', mouseUp, false);
+
+        function mouseDown(evt) {
+            startX = evt.clientX;
+            isDown = true;
+            cardsWrapper.style.transition = 'none';
+        }
+
+        function mouseMove(evt) {
+            if (!isDown) return;
+            const x = evt.clientX;
+            const deltaX = x - startX;
+            const percentage = (deltaX / window.innerWidth) * 100;
+            const offset = -currentIndex * 100 + percentage;
+            cardsWrapper.style.transform = `translateX(${offset}%)`;
+        }
+
+        function mouseUp(evt) {
+            if (!isDown) return;
+            isDown = false;
+            const endX = evt.clientX;
+            const deltaX = endX - startX;
+            if (deltaX < -50 && currentIndex < cards.length - 1) {
+                currentIndex++;
+            } else if (deltaX > 50 && currentIndex > 0) {
+                currentIndex--;
+            }
+            cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
+            showCard(currentIndex);
+        }
+
+        // Language switch functionality
+        languageSwitch.addEventListener('click', () => {
+            currentLanguage = currentLanguage === 'en' ? 'it' : 'en';
+            languageSwitch.textContent = currentLanguage === 'en' ? '🇮🇹' : '🇬🇧';
+            initializeApp();
+        });
+
+        // Initialize the app after the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeApp();
+        });
+    </script>
+</body>
+</html>
