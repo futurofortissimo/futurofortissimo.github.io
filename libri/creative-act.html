@@ -1,288 +1,942 @@
-
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
-    <link rel="icon" href="/index_files/ff.webp" type="/index_files/ff.webp">
-    <link rel="apple-touch-icon" href="/index_files/ff.webp">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="color-scheme" content="light only">
+    <meta charset="UTF-8">
+    <title>Food-Mood Connection - Riepilogo del Libro</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Riepilogo del Libro | Exercised</title>
-    <meta name="description" content="Riepilogo del libro con esplorazione dei temi principali.">
-    <link rel="stylesheet" href="/index_files/303a26c383de2a8b.css" data-n-g="">
+    <!-- Import Montserrat font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="/index_files/ff.webp" type="image/webp">
+    <link rel="apple-touch-icon" href="/index_files/ff.webp">
     <style>
-        /* Stili generali */
+        /* Root variables */
+        :root {
+            --theme-color: #ADD8E6; /* Light blue */
+            --question-color: #B3E5FC; /* Lighter blue */
+            --data-color: #81D4FA; /* Medium blue */
+            --quote-color: #4FC3F7; /* Darker blue */
+            --progress-bar-color: #4CAF50; /* Green */
+        }
+
+        /* Basic styles */
         body {
             margin: 0;
-            font-family: 'Palladio', serif;
-            font-size: 21px;
-            background-color: #f5f5f5;
-            color: #333;
-        }
-    
-        /* Stili per l'header principale */
-        header {
-            font-family: 'ArgosBoldItalic', sans-serif;
-            font-size: 21px;
-            color: black;
-            font-weight: bold;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0 1rem;
-            border-bottom: 2px solid black;
-            background-color: white;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            height: 70px;
-            z-index: 1000;
-        }
-    
-        header h1 {
-            margin: 0;
-        }
-    
-        /* Stili per i titoli delle sezioni */
-        h2 {
-            font-family: 'ArgosBoldItalic', sans-serif;
-            font-size: 15px;
-            color: black;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-    
-        /* Stili per i paragrafi */
-        p {
-            font-family: 'Palladio', serif;
-            font-size: 21px;
-            line-height: 1.5;
-            margin-bottom: 10px;
-        }
-    
-        /* Stili per le liste */
-        ul {
-            font-family: 'Palladio', serif;
-            font-size: 21px;
-            line-height: 1.5;
-            margin-bottom: 10px;
-            padding-left: 10px;
-        }
-    
-        li {
-            margin-bottom: 10px;
-        }
-    
-        /* Stili per i blockquote */
-        blockquote {
-            font-family: 'Palladio', serif;
-            font-size: 21px;
-            line-height: 1.5;
-            margin: 20px 0;
-            padding: 10px 20px;
-            background-color: #6ad7fef0;
-            border-left: 5px solid #38acff;
-        }
-    
-        /* Stili per il footer */
-        footer {
-            font-family: 'ArgosBoldItalic', sans-serif;
-            font-size: 15px;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
+            font-family: 'Montserrat', sans-serif;
             background-color: #fff;
-            border-top: 2px solid black;
-            z-index: 1000;
-            margin-bottom: 3px;
+            color: #333;
+            overflow: hidden; /* Prevent scrolling on body */
         }
-    
-        footer a {
-            color: black;
-            text-decoration: none;
-        }
-    
-        footer .cta-button {
-            background-color: black;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 9999px;
+
+        /* App container */
+        .app-container {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Header with logo, buttons, and language switch */
+        .header {
+            display: flex;
             align-items: center;
+            background-color: var(--theme-color);
+            padding: 10px;
+            flex-shrink: 0;
+            flex-wrap: nowrap;
         }
-    
-        /* Stili per i link nella lista */
-        .link-list a {
-            color: black;
+
+        .logo {
+            height: 40px;
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-right: 10px;
+        }
+
+        .language-switch {
+            background-color: transparent;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-left: 10px;
+        }
+
+        /* Buttons container inside header */
+        .buttons-container {
+            display: flex;
+            overflow-x: auto;
+            flex-grow: 1;
+        }
+
+        .buttons-container::-webkit-scrollbar {
+            display: none; /* Hide scrollbar */
+        }
+
+        /* Buttons */
+        .button {
+            flex: 0 0 auto;
+            margin: 0 5px;
+            padding: 8px 12px;
+            background-color: #fff;
+            color: #333;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 14px;
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+        }
+
+        /* Progress bar */
+        .progress-bar {
+            height: 5px;
+            background-color: var(--progress-bar-color);
+            width: 0%;
+            transition: width 0.5s ease-in-out;
+            flex-shrink: 0;
+        }
+
+        /* Cards container */
+        .cards-container {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Cards wrapper for sliding effect */
+        .cards-wrapper {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        /* Individual card */
+        .card {
+            flex: 0 0 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #fff;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Card content */
+        .card-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px 20px 30px 20px; /* Adjusted padding */
+            box-sizing: border-box;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
+        /* Section styles */
+        .section-title {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Content block */
+        .content-block {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 10px;
+            word-wrap: break-word; /* Prevent overflow of long words */
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .questions {
+            background-color: var(--question-color);
+        }
+
+        .data {
+            background-color: var(--data-color);
+        }
+
+        .quotes {
+            background-color: var(--quote-color);
+        }
+
+        .paragraphs {
+            background-color: #e0f7fa; /* Light cyan */
+            font-weight: normal;
+        }
+
+        /* Hide scrollbars on card content */
+        .card-content::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        /* Action button styles */
+        .action-button {
+            padding: 10px 20px;
+            margin: 5px 0;
+            background-color: var(--theme-color);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .action-button:hover {
+            background-color: #7ec0ee; /* Slightly darker blue */
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+
+        footer a {
+            color: #00bef8;
             text-decoration: none;
-            font-family: 'ArgosBoldItalic', sans-serif;
-            font-size: 15px;
-            margin: 0 8px;
-        }
-    
-        .link-list a::after {
-            content: '';
-        }
-    
-        .link-list a:last-child::after {
-            content: '';
         }
     </style>
-    </head><body>
-    <div id="__next">
-        <div class="flex flex-col overflow-hidden">
-            <header>
-                <div style="text-align: center;">
-                    <a href="https://futurofortissimo.github.io/" class="text-black font-bold">
-                        <h1>futuro fortissimo | The Creative Act</h1>
-                    </a>
-                </div>
-            </header><div class="flex flex-col justify-center m-0 p-0 flex-1 min-h-screen" style="margin-top: 70px;">
-            <main class="flex flex-grow flex-1 overflow-y-scroll flex-col w-full">
-                <div class="flex flex-grow flex-col items-center justify-between p-4">
-                    <div
-                        class="__variable_ee7e36 font-valkyrie max-w-[714px] mx-auto px-4 sm:px-6 lg:px-4 book-section">
-                        
-                        <div class="link-list" style="padding-bottom: 5px;">
-                            <a href="#section-1-the-nature-of-creativity-and-awareness">1. The Nature of Creativity and Awareness</a>
-                            <br>
-                            <a href="#section-2-cultivating-inspiration-and-overcoming-self-doubt">2. Cultivating Inspiration and Overcoming Self-Doubt</a>
-                            <br>
-                            <a href="#section-3-experimentation-and-embracing-constraints">3. Experimentation and Embracing Constraints</a>
-                            <br>
-                            <a href="#section-4-the-importance-of-process-and-completion">4. The Importance of Process and Completion</a>
-                            <br>
-                            <a href="#section-5-embracing-collaboration-and-feedback">5. Embracing Collaboration and Feedback</a>
-                        </div>
-                        <br>
-                        <hr style="height:2px;border-width:0;color:gray;background-color:black">
-                        <br>
-
-                        <h2>The Creative Act: A Summary</h2>
-                        
-                        <section id="section-1-the-nature-of-creativity-and-awareness">
-                            <h3>Section 1: The Nature of Creativity and Awareness</h3>
-                            <ul>
-                                <li><strong>Questions Addressed:</strong>
-                                    <ul>
-                                        <li>What are the different ways we engage in creative acts daily?</li>
-                                        <li>How does awareness influence the creative process?</li>
-                                        <li>Why is labeling counterproductive to the creative process?</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <p><strong>Creativity extends beyond the realm of traditional art, manifesting in everyday actions such as conversations, problem-solving, and even rearranging furniture.</strong> It is an inherent human act that involves bringing something new into existence. This act is not limited to grand gestures and can be found in the smallest of interactions.</p>
-                            <p><strong>Cultivating awareness is crucial for the creative process. It involves shifting from being the "doer" to the "witness," passively observing the world around us without attempting to control or categorize it.</strong> The act of labeling, while seemingly innocuous, shifts our focus from experiencing to analyzing, hindering our ability to perceive the raw essence of our experiences.</p>
-                            <h4>Quotes</h4>
-                            <ul>
-                                <li>"Creativity doesn’t exclusively relate to making art. We all engage in this act on a daily basis."</li>
-                                <li>"In most of our daily activities we choose the agenda and develop a strategy to achieve the goal at hand. Awareness moves differently. The program is happening around us. The world is the doer and we are the witness. We have little or no control over the content."</li>
-                                <li>"As soon as you label an aspect of Source, you’re no longer noticing, you’re studying."</li>
-                            </ul>
-                        </section>
-                        
-                        <section id="section-2-cultivating-inspiration-and-overcoming-self-doubt">
-                            <h3>Section 2: Cultivating Inspiration and Overcoming Self-Doubt</h3>
-                            <ul>
-                                <li><strong>Questions Addressed:</strong>
-                                    <ul>
-                                        <li>How do we access inspiration in our everyday lives?</li>
-                                        <li>What role does the subconscious play in the creative process?</li>
-                                        <li>How can we reframe self-doubt to serve us?</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <p><strong>Inspiration, a key ingredient in the creative process, can be found in unexpected places, often revealing itself in subtle moments that evoke a sense of awe.</strong> It is not something that can be forced, but rather something we cultivate by approaching life with curiosity and an openness to new experiences.</p>
-                            <p><strong>Our subconscious holds a reservoir of untapped creative potential.</strong> Tapping into this reservoir can be achieved through practices such as dream recall, meditation, and engaging in activities that allow the mind to wander freely.</p>
-                            <p><strong>Self-doubt, an inevitable companion to the creative process, serves as a reminder of our humanity.</strong> Instead of viewing self-doubt as a hindrance, embrace it as an opportunity for growth and authenticity.</p>
-                            <h4>Quotes</h4>
-                            <ul>
-                                <li>"Pay particular attention to the moments that take your breath away."</li>
-                                <li>"There’s an abundant reservoir of high-quality information in our subconscious, and finding ways to access it can spark new material to draw from."</li>
-                                <li>"Self-doubt lives in all of us. And while we may wish it gone, it is there to serve us. Flaws are human, and the attraction of art is the humanity held in it."</li>
-                            </ul>
-                        </section>
-                        
-                        <section id="section-3-experimentation-and-embracing-constraints">
-                            <h3>Section 3: Experimentation and Embracing Constraints</h3>
-                            <ul>
-                                <li><strong>Questions Addressed:</strong>
-                                    <ul>
-                                        <li>How do rules and expectations limit artistic expression?</li>
-                                        <li>What is the importance of experimentation in the creative process?</li>
-                                        <li>What benefits can arise from imposing limitations on creative work?</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <p><strong>Artistic expression can be stifled by rigid adherence to pre-existing rules and formats.</strong> The creative process flourishes when we challenge these conventions, exploring new possibilities and pushing the boundaries of our chosen mediums.</p>
-                            <p><strong>Experimentation is the cornerstone of the creative journey.</strong> It involves embracing uncertainty, testing different approaches, and allowing the work to evolve organically. Through this process of trial and error, we gain invaluable insights that shape the final outcome.</p>
-                            <p><strong>Constraints, while seemingly counterintuitive, can actually foster creativity.</strong> By imposing limitations on our work—whether it be a limited color palette or a specific structural rule—we force ourselves to think outside the box and discover innovative solutions.</p>
-                            <h4>Quotes</h4>
-                            <ul>
-                                <li>"Embedded in each medium, there are sets of norms that restrain our work before we’ve even begun."</li>
-                                <li>"We now enter the second stage, the Experimentation phase. Fueled by the initial hit of excitement at discovering a starting point, we play with different combinations and possibilities to see if any of them reveal how the seed wants to develop."</li>
-                                <li>"The only way to truly know if any idea works is to test it. And if you’re looking for the best idea, test everything."</li>
-                            </ul>
-                        </section>
-                        
-                        <section id="section-4-the-importance-of-process-and-completion">
-                            <h3>Section 4: The Importance of Process and Completion</h3>
-                            <ul>
-                                <li><strong>Questions Addressed:</strong>
-                                    <ul>
-                                        <li>Why is focusing on the process more important than the outcome?</li>
-                                        <li>How do we maintain momentum and overcome creative blocks?</li>
-                                        <li>What is the significance of finishing a creative project?</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <p><strong>Fixating on the end product can be paralyzing, hindering the organic flow of creativity. Instead, shift the focus to the journey, embracing the inherent joy and discovery in the creative process.</strong> Each step, regardless of its perceived significance, contributes to the richness of the final work.</p>
-                            <p><strong>Maintaining momentum is vital for bringing a creative project to fruition.</strong> Strategies for overcoming creative blocks include setting deadlines, breaking down tasks into smaller, manageable steps, and seeking feedback from trusted sources.</p>
-                            <p><strong>Completing a project, regardless of its perceived flaws, is essential for artistic growth.</strong> The act of finishing instills a sense of accomplishment, builds confidence, and provides valuable lessons for future endeavors.</p>
-                            <h4>Quotes</h4>
-                            <ul>
-                                <li>"It’s to move things forward and create a sense of progression. Growth over superiority."</li>
-                                <li>"From here, we advance into the final movement of the creative process. In the Completion phase, we leave behind discovery and building."</li>
-                                <li>"Knowledge we gain from finishing the other pieces becomes a key to overcoming earlier obstacles."</li>
-                            </ul>
-                        </section>
-                        
-                        <section id="section-5-embracing-collaboration-and-feedback">
-                            <h3>Section 5: Embracing Collaboration and Feedback</h3>
-                            <ul>
-                                <li><strong>Questions Addressed:</strong>
-                                    <ul>
-                                        <li>How does collaboration enhance the creative process?</li>
-                                        <li>What are the benefits of seeking external feedback?</li>
-                                        <li>How can we cultivate a mindset of continuous improvement?</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <p><strong>Collaboration injects fresh perspectives and sparks unexpected ideas, enriching the creative process beyond individual capabilities.</strong> It fosters a dynamic exchange of energy, pushing the boundaries of what is possible through collective inspiration and shared vision.</p>
-                            <p><strong>Seeking feedback from trusted sources provides invaluable insights, highlighting areas for improvement and refining the final product.</strong> It requires a willingness to be vulnerable, setting aside ego to receive constructive criticism that ultimately strengthens the work.</p>
-                            <p><strong>The creative journey is an ongoing process of learning and refinement.</strong> Cultivating a mindset of continuous improvement entails embracing feedback, experimenting with new techniques, and constantly seeking ways to elevate artistic endeavors.</p>
-                            <h4>Quotes</h4>
-                            <ul>
-                                <li>"In time, almost every artist finds themselves too close to the things they make. After endlessly working on the same piece, perspective is lost. We develop a kind of blindness."</li>
-                                <li>"The best results are found when we’re impartial and detached from our own strategies. We all benefit when the best idea is chosen, regardless of whether it’s ours or not."</li>
-                                <li>"Being an artist means to be continually asking, 'How can it be better?' whatever it is. It may be your art, and it may be your life."</li>
-                            </ul>
-                        </section>
-
-                    </div>
-                </div>
-            </main>
-        </div>
-        
-        <footer>
-            <div style="text-align: center; padding: 1rem;">
-                <p>&copy; 2023 futuro fortissimo</p>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header with logo, buttons, and language switch -->
+        <div class="header">
+            <a href="https://futurofortissimo.github.io/">
+                <img src="/index_files/ff.webp" alt="Logo" class="logo">
+            </a>
+            <!-- Buttons inside header -->
+            <div class="buttons-container" id="buttons-container">
+                <!-- Buttons will be dynamically inserted here -->
             </div>
-        </footer>
-    </div>
-</div>
+            <button class="language-switch" id="language-switch">🇬🇧</button>
+        </div>
 
+        <!-- Progress bar -->
+        <div class="progress-bar"></div>
+
+        <!-- Cards -->
+        <div class="cards-container">
+            <div class="cards-wrapper" id="cards-wrapper">
+                <!-- Cards will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p><a href="https://linktr.ee/micmer">michele merelli</a> per
+        <a href="https://fortissimo.substack.com/">futuro fortissimo</a></p>
+    </footer>
+
+    <script>
+        // Content data in Italian and English
+        const content = {
+    it: {
+        chapters: [
+            {
+                title: "La Natura della Creatività e della Consapevolezza",
+                buttonLabel: '🎨 Creatività & Consapevolezza',
+                contentBlocks: [
+                    {
+                        type: 'paragraphs',
+                        content: [
+                            "La creatività va oltre il regno delle arti tradizionali, manifestandosi in azioni quotidiane come conversazioni, risoluzione di problemi e persino il riordinare i mobili. È un atto umano intrinseco che comporta la creazione di qualcosa di nuovo. Questo atto non è limitato a gesti grandiosi e può essere trovato nelle più piccole interazioni.",
+                            "Coltivare la consapevolezza è cruciale per il processo creativo. Comporta il passare da essere il 'fatto' al 'testimone', osservando passivamente il mondo che ci circonda senza tentare di controllarlo o catalogarlo. L'atto di etichettare, sebbene apparentemente innocuo, sposta la nostra attenzione dall'esperienza all'analisi, ostacolando la nostra capacità di percepire l'essenza grezza delle nostre esperienze."
+                        ]
+                    },
+                    {
+                        type: 'questions',
+                        content: [
+                            "In quali modi diversi ci impegniamo in atti creativi quotidianamente?",
+                            "Come influenza la consapevolezza il processo creativo?",
+                            "Perché etichettare è controproducente per il processo creativo?"
+                        ]
+                    },
+                    {
+                        type: 'quotes',
+                        content: [
+                            "La creatività non riguarda esclusivamente la creazione di arte. Tutti noi ci impegniamo in questo atto quotidianamente.",
+                            "Nella maggior parte delle nostre attività quotidiane scegliamo l'agenda e sviluppiamo una strategia per raggiungere l'obiettivo. La consapevolezza si muove diversamente. Il programma sta accadendo intorno a noi. Il mondo è il fattore e noi siamo i testimoni. Abbiamo poco o nessun controllo sul contenuto.",
+                            "Appena etichetti un aspetto della Fonte, non stai più notando, stai studiando."
+                        ]
+                    }
+                ]
+            },
+            {
+                title: "Coltivare Ispirazione e Superare l'Auto-Dubbio",
+                buttonLabel: '✨ Ispirazione & Auto-Dubbio',
+                contentBlocks: [
+                    {
+                        type: 'paragraphs',
+                        content: [
+                            "L'ispirazione, un ingrediente chiave nel processo creativo, può essere trovata in luoghi inaspettati, spesso rivelandosi in momenti sottili che evocano un senso di meraviglia. Non è qualcosa che può essere forzato, ma piuttosto qualcosa che coltiviamo affrontando la vita con curiosità e apertura verso nuove esperienze.",
+                            "Il nostro subconscio detiene un serbatoio di potenziale creativo inesplorato. Attrarre questo serbatoio può essere raggiunto attraverso pratiche come il richiamo dei sogni, la meditazione e l'impegno in attività che permettono alla mente di vagare liberamente.",
+                            "L'auto-dubbio, un compagno inevitabile del processo creativo, serve come promemoria della nostra umanità. Invece di vedere l'auto-dubbio come un ostacolo, abbraccialo come un'opportunità di crescita e autenticità."
+                        ]
+                    },
+                    {
+                        type: 'questions',
+                        content: [
+                            "Come accediamo all'ispirazione nella nostra vita quotidiana?",
+                            "Che ruolo gioca il subconscio nel processo creativo?",
+                            "Come possiamo riformulare l'auto-dubbio per servirci?"
+                        ]
+                    },
+                    {
+                        type: 'quotes',
+                        content: [
+                            "Presta particolare attenzione ai momenti che ti tolgono il respiro.",
+                            "C'è un serbatoio abbondante di informazioni di alta qualità nel nostro subconscio, e trovare modi per accedervi può innescare nuovo materiale da cui attingere.",
+                            "L'auto-dubbio vive in tutti noi. E mentre potremmo desiderare che sparisca, è lì per servirci. I difetti sono umani, e l'attrazione dell'arte è l'umanità che essa contiene."
+                        ]
+                    }
+                ]
+            },
+            {
+                title: "Sperimentazione e Accettazione delle Costrizioni",
+                buttonLabel: '🔍 Sperimentazione & Costrizioni',
+                contentBlocks: [
+                    {
+                        type: 'paragraphs',
+                        content: [
+                            "L'espressione artistica può essere soffocata dall'adesione rigida a regole e formati preesistenti. Il processo creativo fiorisce quando sfidiamo queste convenzioni, esplorando nuove possibilità e spingendo i confini dei nostri mezzi scelti.",
+                            "La sperimentazione è la pietra angolare del viaggio creativo. Comporta l'accettare l'incertezza, testando diversi approcci e permettendo al lavoro di evolversi organicamente. Attraverso questo processo di prova ed errore, otteniamo intuizioni inestimabili che plasmano il risultato finale.",
+                            "Le costrizioni, sebbene apparentemente controintuitive, possono in realtà favorire la creatività. Imponendo limitazioni sul nostro lavoro—sia esso una palette di colori limitata o una regola strutturale specifica—ci costringiamo a pensare fuori dagli schemi e a scoprire soluzioni innovative."
+                        ]
+                    },
+                    {
+                        type: 'questions',
+                        content: [
+                            "Come limitano regole e aspettative l'espressione artistica?",
+                            "Qual è l'importanza della sperimentazione nel processo creativo?",
+                            "Quali benefici possono derivare dall'imporre limitazioni al lavoro creativo?"
+                        ]
+                    },
+                    {
+                        type: 'quotes',
+                        content: [
+                            "In ogni mezzo, ci sono insiemi di norme che restriggono il nostro lavoro prima ancora di aver iniziato.",
+                            "Entriamo ora nella seconda fase, la fase di Sperimentazione. Alimentati dall'iniziale scossa di eccitazione alla scoperta di un punto di partenza, giochiamo con diverse combinazioni e possibilità per vedere se qualcuna di esse rivela come il seme vuole svilupparsi.",
+                            "L'unico modo per sapere veramente se un'idea funziona è testarla. E se stai cercando la migliore idea, testa tutto."
+                        ]
+                    }
+                ]
+            },
+            {
+                title: "L'Importanza del Processo e della Completazione",
+                buttonLabel: '🛠️ Processo & Completamento',
+                contentBlocks: [
+                    {
+                        type: 'paragraphs',
+                        content: [
+                            "Fissarsi sul prodotto finale può essere paralizzante, ostacolando il flusso organico della creatività. Invece, sposta l'attenzione sul viaggio, abbracciando la gioia e la scoperta intrinseche nel processo creativo. Ogni passo, indipendentemente dalla sua percepita importanza, contribuisce alla ricchezza del lavoro finale.",
+                            "Mantenere il momentum è vitale per portare a termine un progetto creativo. Strategie per superare i blocchi creativi includono stabilire scadenze, suddividere i compiti in passi più piccoli e gestibili, e cercare feedback da fonti fidate.",
+                            "Completare un progetto, indipendentemente dai suoi difetti percepiti, è essenziale per la crescita artistica. L'atto di finire instilla un senso di realizzazione, costruisce fiducia e fornisce lezioni preziose per future imprese."
+                        ]
+                    },
+                    {
+                        type: 'questions',
+                        content: [
+                            "Perché focalizzarsi sul processo è più importante che sul risultato?",
+                            "Come mantenere il momentum e superare i blocchi creativi?",
+                            "Qual è il significato di completare un progetto creativo?"
+                        ]
+                    },
+                    {
+                        type: 'quotes',
+                        content: [
+                            "È per far avanzare le cose e creare un senso di progressione. Crescita sopra superiorità.",
+                            "Da qui, avanzamo nel movimento finale del processo creativo. Nella fase di Completamento, lasciamo indietro scoperta e costruzione.",
+                            "La conoscenza che otteniamo dal completare gli altri pezzi diventa una chiave per superare gli ostacoli precedenti."
+                        ]
+                    }
+                ]
+            },
+            {
+                title: "Accettare la Collaborazione e il Feedback",
+                buttonLabel: '🤝 Collaborazione & Feedback',
+                contentBlocks: [
+                    {
+                        type: 'paragraphs',
+                        content: [
+                            "La collaborazione inietta prospettive fresche e accende idee inaspettate, arricchendo il processo creativo oltre le capacità individuali. Favorisce uno scambio dinamico di energia, spingendo i confini di ciò che è possibile attraverso l'ispirazione collettiva e la visione condivisa.",
+                            "Cercare feedback da fonti fidate fornisce intuizioni inestimabili, evidenziando aree di miglioramento e raffinando il prodotto finale. Richiede la volontà di essere vulnerabili, mettendo da parte l'ego per ricevere critiche costruttive che alla fine rafforzano il lavoro.",
+                            "Il viaggio creativo è un processo continuo di apprendimento e raffinamento. Coltivare una mentalità di miglioramento continuo comporta abbracciare il feedback, sperimentare nuove tecniche e cercare costantemente modi per elevare gli sforzi artistici."
+                        ]
+                    },
+                    {
+                        type: 'questions',
+                        content: [
+                            "Come la collaborazione arricchisce il processo creativo?",
+                            "Quali sono i benefici di cercare feedback esterni?",
+                            "Come possiamo coltivare una mentalità di miglioramento continuo?"
+                        ]
+                    },
+                    {
+                        type: 'quotes',
+                        content: [
+                            "Col tempo, quasi ogni artista si ritrova troppo vicino alle cose che crea. Dopo aver lavorato indefinitamente sullo stesso pezzo, la prospettiva si perde. Sviluppiamo una sorta di cecità.",
+                            "I migliori risultati si trovano quando siamo imparziali e distaccati dalle nostre stesse strategie. Tutti beneficiamo quando l'idea migliore viene scelta, indipendentemente dal fatto che sia nostra o meno.",
+                            "Essere un artista significa continuamente chiedersi, 'Come può essere migliore?' qualunque cosa sia. Può essere la tua arte, e può essere la tua vita."
+                        ]
+                    }
+                ]
+            }
+        ],
+        bookDetails: {
+            image: '/libri/the-creative-act.png', // Replace with your actual image path
+            title: 'L\'Atto Creativo',
+            author: 'Apollo',
+            year: '2023',
+            pages: '300', // Replace with actual number of pages if different
+            link: 'https://example.com/buy-the-creative-act', // Replace with your actual link
+            offerCoffeeLink: 'https://example.com/coffee' // Replace with your actual link
+        }
+    },
+    en: {
+        chapters: [
+            {
+                title: "The Nature of Creativity and Awareness",
+                buttonLabel: '🎨 Creativity & Awareness',
+                contentBlocks: [
+                    {
+                        type: 'paragraphs',
+                        content: [
+                            "Creativity extends beyond the realm of traditional art, manifesting in everyday actions such as conversations, problem-solving, and even rearranging furniture. It is an inherent human act that involves bringing something new into existence. This act is not limited to grand gestures and can be found in the smallest of interactions.",
+                            "Cultivating awareness is crucial for the creative process. It involves shifting from being the 'doer' to the 'witness,' passively observing the world around us without attempting to control or categorize it. The act of labeling, while seemingly innocuous, shifts our focus from experiencing to analyzing, hindering our ability to perceive the raw essence of our experiences."
+                        ]
+                    },
+                    {
+                        type: 'questions',
+                        content: [
+                            "What are the different ways we engage in creative acts daily?",
+                            "How does awareness influence the creative process?",
+                            "Why is labeling counterproductive to the creative process?"
+                        ]
+                    },
+                    {
+                        type: 'quotes',
+                        content: [
+                            "Creativity doesn’t exclusively relate to making art. We all engage in this act on a daily basis.",
+                            "In most of our daily activities we choose the agenda and develop a strategy to achieve the goal at hand. Awareness moves differently. The program is happening around us. The world is the doer and we are the witness. We have little or no control over the content.",
+                            "As soon as you label an aspect of Source, you’re no longer noticing, you’re studying."
+                        ]
+                    }
+                ]
+            },
+            {
+                title: "Cultivating Inspiration and Overcoming Self-Doubt",
+                buttonLabel: '✨ Inspiration & Self-Doubt',
+                contentBlocks: [
+                    {
+                        type: 'paragraphs',
+                        content: [
+                            "Inspiration, a key ingredient in the creative process, can be found in unexpected places, often revealing itself in subtle moments that evoke a sense of awe. It is not something that can be forced, but rather something we cultivate by approaching life with curiosity and an openness to new experiences.",
+                            "Our subconscious holds a reservoir of untapped creative potential. Tapping into this reservoir can be achieved through practices such as dream recall, meditation, and engaging in activities that allow the mind to wander freely.",
+                            "Self-doubt, an inevitable companion to the creative process, serves as a reminder of our humanity. Instead of viewing self-doubt as a hindrance, embrace it as an opportunity for growth and authenticity."
+                        ]
+                    },
+                    {
+                        type: 'questions',
+                        content: [
+                            "How do we access inspiration in our everyday lives?",
+                            "What role does the subconscious play in the creative process?",
+                            "How can we reframe self-doubt to serve us?"
+                        ]
+                    },
+                    {
+                        type: 'quotes',
+                        content: [
+                            "Pay particular attention to the moments that take your breath away.",
+                            "There’s an abundant reservoir of high-quality information in our subconscious, and finding ways to access it can spark new material to draw from.",
+                            "Self-doubt lives in all of us. And while we may wish it gone, it is there to serve us. Flaws are human, and the attraction of art is the humanity held in it."
+                        ]
+                    }
+                ]
+            },
+            {
+                title: "Experimentation and Embracing Constraints",
+                buttonLabel: '🔍 Experimentation & Constraints',
+                contentBlocks: [
+                    {
+                        type: 'paragraphs',
+                        content: [
+                            "Artistic expression can be stifled by rigid adherence to pre-existing rules and formats. The creative process flourishes when we challenge these conventions, exploring new possibilities and pushing the boundaries of our chosen mediums.",
+                            "Experimentation is the cornerstone of the creative journey. It involves embracing uncertainty, testing different approaches, and allowing the work to evolve organically. Through this process of trial and error, we gain invaluable insights that shape the final outcome.",
+                            "Constraints, while seemingly counterintuitive, can actually foster creativity. By imposing limitations on our work—whether it be a limited color palette or a specific structural rule—we force ourselves to think outside the box and discover innovative solutions."
+                        ]
+                    },
+                    {
+                        type: 'questions',
+                        content: [
+                            "How do rules and expectations limit artistic expression?",
+                            "What is the importance of experimentation in the creative process?",
+                            "What benefits can arise from imposing limitations on creative work?"
+                        ]
+                    },
+                    {
+                        type: 'quotes',
+                        content: [
+                            "Embedded in each medium, there are sets of norms that restrain our work before we’ve even begun.",
+                            "We now enter the second stage, the Experimentation phase. Fueled by the initial hit of excitement at discovering a starting point, we play with different combinations and possibilities to see if any of them reveal how the seed wants to develop.",
+                            "The only way to truly know if any idea works is to test it. And if you’re looking for the best idea, test everything."
+                        ]
+                    }
+                ]
+            },
+            {
+                title: "The Importance of Process and Completion",
+                buttonLabel: '🛠️ Process & Completion',
+                contentBlocks: [
+                    {
+                        type: 'paragraphs',
+                        content: [
+                            "Fixating on the end product can be paralyzing, hindering the organic flow of creativity. Instead, shift the focus to the journey, embracing the inherent joy and discovery in the creative process. Each step, regardless of its perceived significance, contributes to the richness of the final work.",
+                            "Maintaining momentum is vital for bringing a creative project to fruition. Strategies for overcoming creative blocks include setting deadlines, breaking down tasks into smaller, manageable steps, and seeking feedback from trusted sources.",
+                            "Completing a project, regardless of its perceived flaws, is essential for artistic growth. The act of finishing instills a sense of accomplishment, builds confidence, and provides valuable lessons for future endeavors."
+                        ]
+                    },
+                    {
+                        type: 'questions',
+                        content: [
+                            "Why is focusing on the process more important than the outcome?",
+                            "How do we maintain momentum and overcome creative blocks?",
+                            "What is the significance of finishing a creative project?"
+                        ]
+                    },
+                    {
+                        type: 'quotes',
+                        content: [
+                            "It’s to move things forward and create a sense of progression. Growth over superiority.",
+                            "From here, we advance into the final movement of the creative process. In the Completion phase, we leave behind discovery and building.",
+                            "Knowledge we gain from finishing the other pieces becomes a key to overcoming earlier obstacles."
+                        ]
+                    }
+                ]
+            },
+            {
+                title: "Embracing Collaboration and Feedback",
+                buttonLabel: '🤝 Collaboration & Feedback',
+                contentBlocks: [
+                    {
+                        type: 'paragraphs',
+                        content: [
+                            "Collaboration injects fresh perspectives and sparks unexpected ideas, enriching the creative process beyond individual capabilities. It fosters a dynamic exchange of energy, pushing the boundaries of what is possible through collective inspiration and shared vision.",
+                            "Seeking feedback from trusted sources provides invaluable insights, highlighting areas for improvement and refining the final product. It requires a willingness to be vulnerable, setting aside ego to receive constructive criticism that ultimately strengthens the work.",
+                            "The creative journey is an ongoing process of learning and refinement. Cultivating a mindset of continuous improvement entails embracing feedback, experimenting with new techniques, and constantly seeking ways to elevate artistic endeavors."
+                        ]
+                    },
+                    {
+                        type: 'questions',
+                        content: [
+                            "How does collaboration enhance the creative process?",
+                            "What are the benefits of seeking external feedback?",
+                            "How can we cultivate a mindset of continuous improvement?"
+                        ]
+                    },
+                    {
+                        type: 'quotes',
+                        content: [
+                            "In time, almost every artist finds themselves too close to the things they make. After endlessly working on the same piece, perspective is lost. We develop a kind of blindness.",
+                            "The best results are found when we’re impartial and detached from our own strategies. We all benefit when the best idea is chosen, regardless of whether it’s ours or not.",
+                            "Being an artist means to be continually asking, 'How can it be better?' whatever it is. It may be your art, and it may be your life."
+                        ]
+                    }
+                ]
+            }
+        ],
+        bookDetails: {
+            image: '/libri/the-creative-act.png', // Replace with your actual image path
+            title: 'L\'Atto Creativo',
+            author: 'Apollo',
+            year: '2023',
+            pages: '300', // Replace with actual number of pages if different
+            link: 'https://example.com/buy-the-creative-act', // Replace with your actual link
+            offerCoffeeLink: 'https://example.com/coffee' // Replace with your actual link
+        }
+    },
+    en: {
+        chapters: [
+            {
+                title: "The Nature of Creativity and Awareness",
+                buttonLabel: '🎨 Creativity & Awareness',
+                contentBlocks: [
+                    {
+                        type: 'paragraphs',
+                        content: [
+                            "Creativity extends beyond the realm of traditional art, manifesting in everyday actions such as conversations, problem-solving, and even rearranging furniture. It is an inherent human act that involves bringing something new into existence. This act is not limited to grand gestures and can be found in the smallest of interactions.",
+                            "Cultivating awareness is crucial for the creative process. It involves shifting from being the 'doer' to the 'witness,' passively observing the world around us without attempting to control or categorize it. The act of labeling, while seemingly innocuous, shifts our focus from experiencing to analyzing, hindering our ability to perceive the raw essence of our experiences."
+                        ]
+                    },
+                    {
+                        type: 'questions',
+                        content: [
+                            "What are the different ways we engage in creative acts daily?",
+                            "How does awareness influence the creative process?",
+                            "Why is labeling counterproductive to the creative process?"
+                        ]
+                    },
+                    {
+                        type: 'quotes',
+                        content: [
+                            "Creativity doesn’t exclusively relate to making art. We all engage in this act on a daily basis.",
+                            "In most of our daily activities we choose the agenda and develop a strategy to achieve the goal at hand. Awareness moves differently. The program is happening around us. The world is the doer and we are the witness. We have little or no control over the content.",
+                            "As soon as you label an aspect of Source, you’re no longer noticing, you’re studying."
+                        ]
+                    }
+                ]
+            },
+            {
+                title: "Cultivating Inspiration and Overcoming Self-Doubt",
+                buttonLabel: '✨ Inspiration & Self-Doubt',
+                contentBlocks: [
+                    {
+                        type: 'paragraphs',
+                        content: [
+                            "Inspiration, a key ingredient in the creative process, can be found in unexpected places, often revealing itself in subtle moments that evoke a sense of awe. It is not something that can be forced, but rather something we cultivate by approaching life with curiosity and an openness to new experiences.",
+                            "Our subconscious holds a reservoir of untapped creative potential. Tapping into this reservoir can be achieved through practices such as dream recall, meditation, and engaging in activities that allow the mind to wander freely.",
+                            "Self-doubt, an inevitable companion to the creative process, serves as a reminder of our humanity. Instead of viewing self-doubt as a hindrance, embrace it as an opportunity for growth and authenticity."
+                        ]
+                    },
+                    {
+                        type: 'questions',
+                        content: [
+                            "How do we access inspiration in our everyday lives?",
+                            "What role does the subconscious play in the creative process?",
+                            "How can we reframe self-doubt to serve us?"
+                        ]
+                    },
+                    {
+                        type: 'quotes',
+                        content: [
+                            "Pay particular attention to the moments that take your breath away.",
+                            "There’s an abundant reservoir of high-quality information in our subconscious, and finding ways to access it can spark new material to draw from.",
+                            "Self-doubt lives in all of us. And while we may wish it gone, it is there to serve us. Flaws are human, and the attraction of art is the humanity held in it."
+                        ]
+                    }
+                ]
+            },
+            {
+                title: "Experimentation and Embracing Constraints",
+                buttonLabel: '🔍 Experimentation & Constraints',
+                contentBlocks: [
+                    {
+                        type: 'paragraphs',
+                        content: [
+                            "Artistic expression can be stifled by rigid adherence to pre-existing rules and formats. The creative process flourishes when we challenge these conventions, exploring new possibilities and pushing the boundaries of our chosen mediums.",
+                            "Experimentation is the cornerstone of the creative journey. It involves embracing uncertainty, testing different approaches, and allowing the work to evolve organically. Through this process of trial and error, we gain invaluable insights that shape the final outcome.",
+                            "Constraints, while seemingly counterintuitive, can actually foster creativity. By imposing limitations on our work—whether it be a limited color palette or a specific structural rule—we force ourselves to think outside the box and discover innovative solutions."
+                        ]
+                    },
+                    {
+                        type: 'questions',
+                        content: [
+                            "How do rules and expectations limit artistic expression?",
+                            "What is the importance of experimentation in the creative process?",
+                            "What benefits can arise from imposing limitations on creative work?"
+                        ]
+                    },
+                    {
+                        type: 'quotes',
+                        content: [
+                            "Embedded in each medium, there are sets of norms that restrain our work before we’ve even begun.",
+                            "We now enter the second stage, the Experimentation phase. Fueled by the initial hit of excitement at discovering a starting point, we play with different combinations and possibilities to see if any of them reveal how the seed wants to develop.",
+                            "The only way to truly know if any idea works is to test it. And if you’re looking for the best idea, test everything."
+                        ]
+                    }
+                ]
+            },
+            {
+                title: "The Importance of Process and Completion",
+                buttonLabel: '🛠️ Process & Completion',
+                contentBlocks: [
+                    {
+                        type: 'paragraphs',
+                        content: [
+                            "Fixating on the end product can be paralyzing, hindering the organic flow of creativity. Instead, shift the focus to the journey, embracing the inherent joy and discovery in the creative process. Each step, regardless of its perceived significance, contributes to the richness of the final work.",
+                            "Maintaining momentum is vital for bringing a creative project to fruition. Strategies for overcoming creative blocks include setting deadlines, breaking down tasks into smaller, manageable steps, and seeking feedback from trusted sources.",
+                            "Completing a project, regardless of its perceived flaws, is essential for artistic growth. The act of finishing instills a sense of accomplishment, builds confidence, and provides valuable lessons for future endeavors."
+                        ]
+                    },
+                    {
+                        type: 'questions',
+                        content: [
+                            "Why is focusing on the process more important than the outcome?",
+                            "How do we maintain momentum and overcome creative blocks?",
+                            "What is the significance of finishing a creative project?"
+                        ]
+                    },
+                    {
+                        type: 'quotes',
+                        content: [
+                            "It’s to move things forward and create a sense of progression. Growth over superiority.",
+                            "From here, we advance into the final movement of the creative process. In the Completion phase, we leave behind discovery and building.",
+                            "Knowledge we gain from finishing the other pieces becomes a key to overcoming earlier obstacles."
+                        ]
+                    }
+                ]
+            },
+            {
+                title: "Embracing Collaboration and Feedback",
+                buttonLabel: '🤝 Collaboration & Feedback',
+                contentBlocks: [
+                    {
+                        type: 'paragraphs',
+                        content: [
+                            "Collaboration injects fresh perspectives and sparks unexpected ideas, enriching the creative process beyond individual capabilities. It fosters a dynamic exchange of energy, pushing the boundaries of what is possible through collective inspiration and shared vision.",
+                            "Seeking feedback from trusted sources provides invaluable insights, highlighting areas for improvement and refining the final product. It requires a willingness to be vulnerable, setting aside ego to receive constructive criticism that ultimately strengthens the work.",
+                            "The creative journey is an ongoing process of learning and refinement. Cultivating a mindset of continuous improvement entails embracing feedback, experimenting with new techniques, and constantly seeking ways to elevate artistic endeavors."
+                        ]
+                    },
+                    {
+                        type: 'questions',
+                        content: [
+                            "How does collaboration enhance the creative process?",
+                            "What are the benefits of seeking external feedback?",
+                            "How can we cultivate a mindset of continuous improvement?"
+                        ]
+                    },
+                    {
+                        type: 'quotes',
+                        content: [
+                            "In time, almost every artist finds themselves too close to the things they make. After endlessly working on the same piece, perspective is lost. We develop a kind of blindness.",
+                            "The best results are found when we’re impartial and detached from our own strategies. We all benefit when the best idea is chosen, regardless of whether it’s ours or not.",
+                            "Being an artist means to be continually asking, 'How can it be better?' whatever it is. It may be your art, and it may be your life."
+                        ]
+                    }
+                ]
+            }
+        ],
+        bookDetails: {
+            image: '/libri/the-creative-act.png', // Replace with your actual image path
+            title: 'The Creative Act',
+            author: 'Apollo',
+            year: '2023',
+            pages: '300', // Replace with actual number of pages if different
+            link: 'https://example.com/buy-the-creative-act', // Replace with your actual link
+            offerCoffeeLink: 'https://example.com/coffee' // Replace with your actual link
+        }
+    }
+};
+
+
+        let currentLanguage = 'it';
+
+        // Initialize the app
+        let currentIndex = 0;
+
+        // Get DOM elements
+        const buttonsContainer = document.getElementById('buttons-container');
+        const cardsWrapper = document.getElementById('cards-wrapper');
+        const progressBar = document.querySelector('.progress-bar');
+        const languageSwitch = document.getElementById('language-switch');
+
+        let cards = [];
+
+        function initializeApp() {
+            buttonsContainer.innerHTML = '';
+            cardsWrapper.innerHTML = '';
+            cards = [];
+            currentIndex = 0;
+
+            const { chapters, bookDetails } = content[currentLanguage];
+
+            // Create buttons and cards for chapters
+            chapters.forEach((chapter, index) => {
+                createButton(chapter.buttonLabel, index);
+                createCard(chapter);
+            });
+
+            // Create "Book Details" button and card
+            const detailsLabel = currentLanguage === 'it' ? '📖 Dettagli' : '📖 Details';
+            createButton(detailsLabel, chapters.length);
+            createBookCard(bookDetails);
+
+            // Initialize to show the first card
+            showCard(0);
+        }
+
+        // Function to create a button
+        function createButton(label, index) {
+            const button = document.createElement('div');
+            button.className = 'button';
+            button.textContent = label;
+            button.addEventListener('click', () => {
+                showCard(index);
+            });
+            buttonsContainer.appendChild(button);
+        }
+
+        // Function to create a content block
+        function createContentBlock(type, contents) {
+            const div = document.createElement('div');
+            div.className = `content-block ${type}`;
+
+            contents.forEach(item => {
+                const p = document.createElement('p');
+                p.textContent = item;
+                div.appendChild(p);
+            });
+
+            return div;
+        }
+
+        // Function to create a card
+        function createCard(chapter) {
+            const card = document.createElement('div');
+            card.className = 'card';
+
+            const cardContent = document.createElement('div');
+            cardContent.className = 'card-content';
+
+            const title = document.createElement('h2');
+            title.className = 'section-title';
+            title.textContent = chapter.title;
+            cardContent.appendChild(title);
+
+            chapter.contentBlocks.forEach(block => {
+                const contentBlock = createContentBlock(block.type, block.content);
+                cardContent.appendChild(contentBlock);
+            });
+
+            card.appendChild(cardContent);
+
+            cardsWrapper.appendChild(card);
+            cards.push(card);
+        }
+
+        // Function to create the book details card
+        function createBookCard(bookDetails) {
+            const card = document.createElement('div');
+            card.className = 'card';
+
+            const cardContent = document.createElement('div');
+            cardContent.className = 'card-content book-details';
+
+            const buyText = currentLanguage === 'it' ? '📖 Acquista il libro' : '📖 Buy this book';
+            const coffeeText = currentLanguage === 'it' ? '☕ Offrimi un caffè' : '☕ Buy me a coffee';
+            const authorText = currentLanguage === 'it' ? 'Autore' : 'Author';
+            const yearText = currentLanguage === 'it' ? 'Anno' : 'Year';
+            const pagesText = currentLanguage === 'it' ? 'Pagine' : 'Pages';
+
+            cardContent.innerHTML = `
+                <img src="${bookDetails.image}" alt="Book Cover" style="width:100%; height:auto; border-radius: 10px;">
+                <h2>${bookDetails.title}</h2>
+                <p>${authorText}: ${bookDetails.author}</p>
+                <p>${yearText}: ${bookDetails.year}</p>
+                <p>${pagesText}: ${bookDetails.pages}</p>
+                <button class="action-button" onclick="window.open('${bookDetails.link}', '_blank')">${buyText}</button>
+                <button class="action-button" onclick="window.open('${bookDetails.offerCoffeeLink}', '_blank')">${coffeeText}</button>
+            `;
+
+            card.appendChild(cardContent);
+
+            cardsWrapper.appendChild(card);
+            cards.push(card);
+        }
+
+        // Function to display a specific card
+        function showCard(index) {
+            currentIndex = index;
+            cardsWrapper.style.transform = `translateX(-${index * 100}%)`;
+            const progress = ((index + 1) / cards.length) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+
+        // Swipe functionality
+        let startX = 0;
+        let isDown = false;
+
+        const cardsContainer = document.querySelector('.cards-container');
+
+        // Touch events for mobile
+        cardsContainer.addEventListener('touchstart', touchStart, false);
+        cardsContainer.addEventListener('touchmove', touchMove, false);
+        cardsContainer.addEventListener('touchend', touchEnd, false);
+
+        function touchStart(evt) {
+            startX = evt.touches[0].clientX;
+            isDown = true;
+            cardsWrapper.style.transition = 'none';
+        }
+
+        function touchMove(evt) {
+            if (!isDown) return;
+            const x = evt.touches[0].clientX;
+            const deltaX = x - startX;
+            const percentage = (deltaX / window.innerWidth) * 100;
+            const offset = -currentIndex * 100 + percentage;
+            cardsWrapper.style.transform = `translateX(${offset}%)`;
+        }
+
+        function touchEnd(evt) {
+            if (!isDown) return;
+            isDown = false;
+            const endX = evt.changedTouches[0].clientX;
+            const deltaX = endX - startX;
+            if (deltaX < -50 && currentIndex < cards.length - 1) {
+                currentIndex++;
+            } else if (deltaX > 50 && currentIndex > 0) {
+                currentIndex--;
+            }
+            cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
+            showCard(currentIndex);
+        }
+
+        // Mouse events for desktop
+        cardsContainer.addEventListener('mousedown', mouseDown, false);
+        cardsContainer.addEventListener('mousemove', mouseMove, false);
+        cardsContainer.addEventListener('mouseup', mouseUp, false);
+        cardsContainer.addEventListener('mouseleave', mouseUp, false);
+
+        function mouseDown(evt) {
+            startX = evt.clientX;
+            isDown = true;
+            cardsWrapper.style.transition = 'none';
+        }
+
+        function mouseMove(evt) {
+            if (!isDown) return;
+            const x = evt.clientX;
+            const deltaX = x - startX;
+            const percentage = (deltaX / window.innerWidth) * 100;
+            const offset = -currentIndex * 100 + percentage;
+            cardsWrapper.style.transform = `translateX(${offset}%)`;
+        }
+
+        function mouseUp(evt) {
+            if (!isDown) return;
+            isDown = false;
+            const endX = evt.clientX;
+            const deltaX = endX - startX;
+            if (deltaX < -50 && currentIndex < cards.length - 1) {
+                currentIndex++;
+            } else if (deltaX > 50 && currentIndex > 0) {
+                currentIndex--;
+            }
+            cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
+            showCard(currentIndex);
+        }
+
+        // Language switch functionality
+        languageSwitch.addEventListener('click', () => {
+            currentLanguage = currentLanguage === 'it' ? 'en' : 'it';
+            languageSwitch.textContent = currentLanguage === 'it' ? '🇬🇧' : '🇮🇹';
+            initializeApp();
+        });
+
+        // Initialize the app after the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeApp();
+        });
+    </script>
 </body>
+</html>
