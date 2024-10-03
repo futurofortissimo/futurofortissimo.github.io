@@ -241,348 +241,363 @@
     </footer>
 
     <script>
+    let startX = 0;
+    let startY = 0;
+    let isSwiping = false;
+    let isMoving = false;
         // Content data in Italian
         const content = {
-          it: {
-              publications: [
-                  {
-                      buttonLabel: '🎼 ff.1 Clima',
-                      cards: [
-                          {
-                              title: '🍃 COP26, The Big Greta Is Watching You e le strategie per net-zero',
-                              contentBlocks: [
-                                  {
-                                      type: 'paragraphs',
-                                      content: [
-                                          'COP26, energie rinnovabili',
-                                          'Bill Gates e il suo librozzo',
-                                          'Quanto inquinano le criptovalute?'
-                                      ]
-                                  },
-                                  {
-                                      type: 'darkerParagraphs',
-                                      content: [
-                                          '🌎 ff.1.1 Sensibilizzazione e arte\nIl progetto artistico di COP26 ha rivoluzionato l\'identità visiva della conferenza, evidenziando l\'importanza dell\'arte nel sensibilizzare sul cambiamento climatico.',
-                                          '📉 ff.1.2 Da 51 miliardi a 0\nDa 51 miliardi a 0: la necessità urgente di ridurre a zero le emissioni globali di CO2-equivalenti, attualmente a 51 miliardi di tonnellate all\'anno, per combattere il cambiamento climatico.',
-                                          '🛴 ff.1.3 Gli scooter elettrici ci salveranno?\nL\'80% degli spostamenti negli USA sono inferiori ai 16 km, suggerendo un potenziale di trasformazione della mobilità urbana tramite e-bikes e scooter elettrici.',
-                                          '🏭 ff.1.4 Catturare CO2 sarà importante\nTecnologie di cattura CO2 potrebbero diventare economicamente accessibili a meno di 100$ per tonnellata, con l\'industria del cemento e dell\'acciaio come principali target.',
-                                          '🇫🇮 ff.1.5 Il consumo energetico di Bitcoin\nIl consumo energetico di Bitcoin equivale a quello dell\'intera Finlandia, ma l\'utilizzo di energia rinnovabile nel mining potrebbe mitigarne l\'impatto ambientale.',
-                                          '⚡ ff.1.6 Fusione Nucleare\nLa fusione nucleare, un tempo prevista per i primi anni \'90, ora mira al 2035 come traguardo per dimostrare un processo di fusione pulito.'
-                                      ]
-                                  }
-                              ]
-                          }
-                      ]
-                  },
-                  {
-                      buttonLabel: '🎼 ff.5 Elettrizzante',
-                      cards: [
-                          {
-                              title: '🔌 Tesla, Van Moof, Duracell? Chi vincerà la sfida della mobilità sostenibile?',
-                              contentBlocks: [
-                                  {
-                                      type: 'paragraphs',
-                                      content: [
-                                          'VanMoof: la Tesla olandese per le e-bike',
-                                          'Quanto inquina una Tesla rispetto alla Panda?',
-                                          'Noi come quelli a cavallo: il muro di Marchetti'
-                                      ]
-                                  },
-                                  {
-                                      type: 'darkerParagraphs',
-                                      content: [
-                                          '❓ ff.5.1 Non tutto verde quello che luccica\nUtilitaria a benzina meno inquinante di Tesla? Una promettente start-up olandese, Lightyear One, riporta come non sia tutt’oro, o verde, quello che luccica.',
-                                          '🔋 ff.5.2 Duracell? No, Tesla\nNon solo auto: con 3 GWh di capacità, Tesla controlla una buona porzione del potenziale di immagazzinamento di energia elettrica nel mondo. E punta a raggiungere i 1.500 GWh entro il 2030.',
-                                          '🚲 ff.5.3 Pedalata assistita\nDurante la pandemia, le bici elettriche hanno venduto più delle auto elettriche (500k bici vs 250k auto negli Stati Uniti).',
-                                          '😎 ff.5.4 La Tesla delle biciclette\nSe le bici elettriche sono la prossima frontiera della mobilità, Van Moof è la Tesla delle due ruote.',
-                                          '🧱 ff.5.5 Il muro di Marchetti\nUn’ora costante universale: il limite di tempo di viaggio che influisce sulle scelte di vita e lavoro.',
-                                          '⚰️ ff.5.6 La pericolosità del traffico, nel mondo\nE mentre siete nel traffico, occhio alla strada. In Europa guidiamo benissimo (tranne per quelli col cappello).'
-                                      ]
-                                  }
-                              ]
-                          }
-                      ]
-                  },
-                  {
-                      buttonLabel: '🎼 ff.20 Greta in bici?',
-                      cards: [
-                          {
-                              title: '🚲 Da "Isola dei cani" di Wes Anderson a Van Moof, la nuova rivoluzione verde dell\'e-bike',
-                              contentBlocks: [
-                                  {
-                                      type: 'paragraphs',
-                                      content: [
-                                          'Cosa c\'entra Wes Anderson con i ladri di bicicletta?',
-                                          'Milano o Parigi? Chi sarà la regina delle piste ciclabili?',
-                                          'Da quando a San Francisco si scia?'
-                                      ]
-                                  },
-                                  {
-                                      type: 'darkerParagraphs',
-                                      content: [
-                                          '🚲 ff.20.1 La rivincita delle biciclette\nLa pandemia ha aumentato l\'uso della bicicletta, con un incremento notevole nelle Filippine e progressi anche in Italia con l\'aumento delle piste ciclabili.',
-                                          '🇮🇩 ff.20.2 L\'esempio di Jakarta\nA Jakarta, l\'utilizzo della bicicletta è aumentato di 6 volte, evidenziando un cambiamento significativo verso la mobilità sostenibile.',
-                                          '⛷️ ff.20.3 San Francisco come Cortina\nSan Francisco presenta mappe della pericolosità delle strade come piste da sci: la pista nera sarebbe Viale Palmanova, insomma.',
-                                          '🚨 ff.20.4 Simmetrie di Wes Anderson contro i furti\nVan Moof, azienda olandese di e-bike, sfrutta le simmetrie di Wes Anderson per promuovere la sicurezza delle sue biciclette.'
-                                      ]
-                                  }
-                              ]
-                          }
-                      ]
-                  },
-                  {
-                      buttonLabel: '🎼 ff.33 Le piante ci salveranno?',
-                      cards: [
-                          {
-                              title: 'Inno alle piante, tra algoritmi, cattura di CO2 e problemi da risolvere',
-                              contentBlocks: [
-                                  {
-                                      type: 'paragraphs',
-                                      content: [
-                                          'Piante: da fotosintesi a fonte di conoscenza',
-                                          'Foglie in silicone per efficienze maggiori',
-                                          'Come modificare la genetica per catturare più CO2'
-                                      ]
-                                  },
-                                  {
-                                      type: 'darkerParagraphs',
-                                      content: [
-                                          '🧠 ff.33.1 La valenza filosofica e conoscitiva degli alberi\nEsplorando la connessione storica e culturale tra umanità e piante, evidenziata dall\'ispirazione degli algoritmi di ricerca come il decision tree.',
-                                          '🍁 ff.33.2 Raccoglitori di CO2\nStudio su come le piante catturano e immagazzinano CO2, con focus su efficienze di storage in foreste e torbiere, mostrando l\'importanza della biodiversità e delle tecnologie innovative per la semina.',
-                                          '🏭 ff.33.3 Piante modificate per catturare CO2\nTecniche genetiche avanzate come CRISPR vengono utilizzate per aumentare la capacità delle piante di convertire CO2 in carbonio stabilizzato, un approccio supportato da importanti investimenti nel campo della genetica vegetale.',
-                                          '🧮 ff.33.4 Muffe computazionali\nIl Plasmodium, una muffa sfruttata per risolvere problemi di ottimizzazione combinatoria come il Traveling Salesman Problem, dimostrando la potenzialità di sistemi biologici nel calcolo e nella progettazione di reti efficienti e resilienti.'
-                                      ]
-                                  }
-                              ]
-                          }
-                      ]
-                  },
-                  {
-                      buttonLabel: '🎼 ff.51 La religione del 21esimo secolo?',
-                      cards: [
-                          {
-                              title: 'Il sottile equilibrio tra Greta, Greenpeace e speranza nel futuro',
-                              contentBlocks: [
-                                  {
-                                      type: 'paragraphs',
-                                      content: [
-                                          'La Natura è stata idealizzata?',
-                                          'L’ecologia è la religione del 21esimo secolo?',
-                                          'Investiamo troppo per i cambiamenti climatici?'
-                                      ]
-                                  },
-
-                                  {
-                                      type: 'darkerParagraphs',
-                                      content: [
-                                          '💚 ff.51.1 L’affabulazione per il verde\nRiflessioni su come la natura, simbolo di speranza e pace interiore, diventi oggetto di un\'affabulazione romantica, che a volte rischia di distorcere la realtà pragmatica della sua esistenza e utilità.',
-                                          '🛐 ff.51.2 Ecologia = religione?\nAnalisi critica sulle possibili somiglianze tra l\'approccio moderno all\'ecologia e le pratiche religiose, interrogandosi sull\'esistenza di una fede verde basata più su convinzioni emotive che su azioni razionali e scientifiche.',
-                                          '🔥 ff.51.3 Sono il tuo sogno eretico\nI cambiamenti climatici sono esagerati dai media? Uno spunto per considerare un approccio più equilibrato che includa soluzioni innovative e adattive, anche valutando il ritorno sull\'investimento delle politiche climatiche rispetto alla salute pubblica, l\'istruzione e la riduzione della povertà.'
-                                      ]
-                                  }
-                              ]
-                          }
-                      ]
-                  },
-                  {
-                      buttonLabel: '🎼 ff.61 La decrescita felice è impossibile?',
-                      cards: [
-                          {
-                              title: 'I costi di ogni attività per un budget da 10 tonnellate di CO2 annue',
-                              contentBlocks: [
-                                  {
-                                      type: 'paragraphs',
-                                      content: [
-                                          'Stare nel budget di 10 tonnellate CO2 all’anno',
-                                          'Hamburger che inquinano meno degli asparagi',
-                                          'Un abbonamento, stile Spotify, per vivere il mondo'
-                                      ]
-                                  },
-                                  {
-                                      type: 'darkerParagraphs',
-                                      content: [
-                                          '⚖️ ff.61.1 Misurare l’inquinamento in ore di vita\nConvertire le emissioni di CO2 in tempo di vita percepibile rende tangibile l\'impatto ambientale delle nostre scelte quotidiane.',
-                                          '🕗 ff.61.2 Emissioni convertite in tempo\nAnalizzando le emissioni attraverso l\'equivalenza tempo-CO2, individuiamo attività quotidiane e il loro impatto in ore di vita perse.',
-                                          '🥩 ff.61.3 Carne o asparagi?\nLa scelta alimentare influisce significativamente sulle emissioni di CO2, con sorprendenti confronti tra diete vegetariane e consumo di carne.',
-                                          '🎶 ff.61.4 Un abbonamento stile Spotify per il mondo\nConsiderare l\'inquinamento come un servizio in abbonamento può essere un passo verso la compensazione delle proprie emissioni CO2.'
-                                      ]
-                                  }
-                              ]
-                          }
-                      ]
-                  }
-              ]
-          },
-          en: {
-              publications: [
-                  {
-                      buttonLabel: '🎼 ff.1 Climate',
-                      cards: [
-                          {
-                              title: '🍃 COP26, The Big Greta Is Watching You and strategies for net-zero',
-                              contentBlocks: [
-                                  {
-                                      type: 'paragraphs',
-                                      content: [
-                                          'COP26, renewable energies',
-                                          'Bill Gates and his big book',
-                                          'How much do cryptocurrencies pollute?'
-                                      ]
-                                  },
-                                  {
-                                      type: 'darkerParagraphs',
-                                      content: [
-                                          '🌎 ff.1.1 Awareness and Art\nThe artistic project of COP26 revolutionized the visual identity of the conference, highlighting the importance of art in raising awareness about climate change.',
-                                          '📉 ff.1.2 From 51 billion to 0\nFrom 51 billion to 0: the urgent need to reduce global CO2-equivalent emissions, currently at 51 billion tons per year, to combat climate change.',
-                                          '🛴 ff.1.3 Will electric scooters save us?\n80% of trips in the USA are under 16 km, suggesting potential for transforming urban mobility through e-bikes and electric scooters.',
-                                          '🏭 ff.1.4 Capturing CO2 will be important\nCO2 capture technologies could become economically accessible at less than $100 per ton, with the cement and steel industries as main targets.',
-                                          '🇫🇮 ff.1.5 The energy consumption of Bitcoin\nBitcoin\'s energy consumption is equivalent to that of Finland, but using renewable energy in mining could mitigate its environmental impact.',
-                                          '⚡ ff.1.6 Nuclear Fusion\nNuclear fusion, once expected by the early 90s, now aims for 2035 as a milestone to demonstrate a clean fusion process.'
-                                      ]
-                                  }
-                              ]
-                          }
-                      ]
-                  },
-                  {
-                      buttonLabel: '🎼 ff.5 Electrifying',
-                      cards: [
-                          {
-                              title: '🔌 Tesla, Van Moof, Duracell? Who will win the sustainable mobility challenge?',
-                              contentBlocks: [
-                                  {
-                                      type: 'paragraphs',
-                                      content: [
-                                          'VanMoof: the Dutch Tesla for e-bikes',
-                                          'How much does a Tesla pollute compared to a Panda?',
-                                          'We are like those on horseback: Marchetti\'s wall'
-                                      ]
-                                  },
-                                  {
-                                      type: 'darkerParagraphs',
-                                      content: [
-                                          '❓ ff.5.1 Not all that glitters is green\nGasoline small cars less polluting than Tesla? A promising Dutch start-up, Lightyear One, reports that not everything that glitters, or is green, is gold.',
-                                          '🔋 ff.5.2 Duracell? No, Tesla\nNot just cars: with 3 GWh of capacity, Tesla controls a good portion of the world\'s electrical energy storage potential and aims to reach 1,500 GWh by 2030.',
-                                          '🚲 ff.5.3 Assisted pedaling\nDuring the pandemic, electric bikes outsold electric cars (500k bikes vs 250k cars in the United States).',
-                                          '😎 ff.5.4 The Tesla of bicycles\nIf electric bikes are the next frontier of mobility, Van Moof is the Tesla of two wheels.',
-                                          '🧱 ff.5.5 Marchetti\'s wall\nA universal constant one-hour travel time: the limit that influences life and work choices.',
-                                          '⚰️ ff.5.6 The danger of traffic worldwide\nAnd while you\'re in traffic, watch the road. In Europe, we drive very well (except for those with hats).'
-                                      ]
-                                  }
-                              ]
-                          }
-                      ]
-                  },
-                  {
-                      buttonLabel: '🎼 ff.20 Greta on a bike?',
-                      cards: [
-                          {
-                              title: '🚲 From Wes Anderson\'s "Isle of Dogs" to Van Moof, the new green revolution of e-bikes',
-                              contentBlocks: [
-                                  {
-                                      type: 'paragraphs',
-                                      content: [
-                                          'What does Wes Anderson have to do with bicycle thieves?',
-                                          'Milan or Paris? Who will be the queen of bike lanes?',
-                                          'Since when do we ski in San Francisco?'
-                                      ]
-                                  },
-                                  {
-                                      type: 'darkerParagraphs',
-                                      content: [
-                                          '🚲 ff.20.1 The revenge of bicycles\nThe pandemic has increased bicycle use, with a notable rise in the Philippines and progress in Italy with more bike lanes.',
-                                          '🇮🇩 ff.20.2 The example of Jakarta\nIn Jakarta, bicycle use increased sixfold, highlighting a significant shift towards sustainable mobility.',
-                                          '⛷️ ff.20.3 San Francisco like Cortina\nSan Francisco presents danger maps of streets like ski slopes: the black run would be akin to Viale Palmanova.',
-                                          '🚨 ff.20.4 Wes Anderson\'s symmetries against theft\nVan Moof, a Dutch e-bike company, leverages Wes Anderson\'s symmetries to promote the security of its bicycles.'
-                                      ]
-                                  }
-                              ]
-                          }
-                      ]
-                  },
-                  {
-                      buttonLabel: '🎼 ff.33 Will plants save us?',
-                      cards: [
-                          {
-                              title: 'An ode to plants, among algorithms, CO2 capture, and problems to solve',
-                              contentBlocks: [
-                                  {
-                                      type: 'paragraphs',
-                                      content: [
-                                          'Plants: from photosynthesis to a source of knowledge',
-                                          'Silicone leaves for greater efficiencies',
-                                          'How to modify genetics to capture more CO2'
-                                      ]
-                                  },
-                                  {
-                                      type: 'darkerParagraphs',
-                                      content: [
-                                          '🧠 ff.33.1 The philosophical and cognitive value of trees\nExploring the historical and cultural connection between humanity and plants, highlighted by the inspiration of search algorithms like the decision tree.',
-                                          '🍁 ff.33.2 CO2 collectors\nStudy on how plants capture and store CO2, focusing on storage efficiencies in forests and peatlands, showing the importance of biodiversity and innovative seeding technologies.',
-                                          '🏭 ff.33.3 Plants modified to capture CO2\nAdvanced genetic techniques like CRISPR are used to increase plants\' ability to convert CO2 into stabilized carbon, an approach supported by significant investments in plant genetics.',
-                                          '🧮 ff.33.4 Computational molds\nPlasmodium, a mold exploited to solve combinatorial optimization problems like the Traveling Salesman Problem, demonstrating the potential of biological systems in computing and designing efficient and resilient networks.'
-                                      ]
-                                  }
-                              ]
-                          }
-                      ]
-                  },
-                  {
-                      buttonLabel: '🎼 ff.51 The religion of the 21st century?',
-                      cards: [
-                          {
-                              title: 'The subtle balance between Greta, Greenpeace, and hope for the future',
-                              contentBlocks: [
-                                  {
-                                      type: 'paragraphs',
-                                      content: [
-                                          'Has Nature been idealized?',
-                                          'Is ecology the religion of the 21st century?',
-                                          'Are we investing too much in climate change?'
-                                      ]
-                                  },
-                                  {
-                                      type: 'darkerParagraphs',
-                                      content: [
-                                          '💚 ff.51.1 The storytelling for green\nReflections on how nature, a symbol of hope and inner peace, becomes the object of romantic storytelling, which sometimes risks distorting the pragmatic reality of its existence and utility.',
-                                          '🛐 ff.51.2 Ecology = religion?\nCritical analysis of the possible similarities between the modern approach to ecology and religious practices, questioning the existence of a green faith based more on emotional convictions than rational and scientific actions.',
-                                          '🔥 ff.51.3 I am your heretical dream\nAre climate changes exaggerated by the media? A cue to consider a more balanced approach that includes innovative and adaptive solutions, also evaluating the return on investment of climate policies compared to public health, education, and poverty reduction.'
-                                      ]
-                                  }
-                              ]
-                          }
-                      ]
-                  },
-                  {
-                      buttonLabel: '🎼 ff.61 Is happy degrowth impossible?',
-                      cards: [
-                          {
-                              title: 'The costs of every activity for a budget of 10 tons of CO2 per year',
-                              contentBlocks: [
-                                  {
-                                      type: 'paragraphs',
-                                      content: [
-                                          'Staying within a budget of 10 tons of CO2 per year',
-                                          'Hamburgers that pollute less than asparagus',
-                                          'A Spotify-style subscription to experience the world'
-                                      ]
-                                  },
-                                  {
-                                      type: 'darkerParagraphs',
-                                      content: [
-                                          '⚖️ ff.61.1 Measuring pollution in hours of life\nConverting CO2 emissions into perceivable life time makes the environmental impact of our daily choices tangible.',
-                                          '🕗 ff.61.2 Emissions converted into time\nAnalyzing emissions through the time-CO2 equivalence, we identify daily activities and their impact in hours of life lost.',
-                                          '🥩 ff.61.3 Meat or asparagus?\nFood choices significantly affect CO2 emissions, with surprising comparisons between vegetarian diets and meat consumption.',
-                                          '🎶 ff.61.4 A Spotify-style subscription for the world\nConsidering pollution as a subscription service can be a step towards offsetting one\'s CO2 emissions.'
-                                      ]
-                                  }
-                              ]
-                          }
-                      ]
-                  }
-              ]
-          }
-      };
+     it: {
+         publications: [
+             {
+                 buttonLabel: '🎼 ff.1 Clima',
+                 urlSlug: '-ff1-clima',
+                 cards: [
+                     {
+                         title: '🍃 COP26, The Big Greta Is Watching You e le strategie per net-zero',
+                         contentBlocks: [
+                             {
+                                 type: 'paragraphs',
+                                 content: [
+                                     'COP26, energie rinnovabili',
+                                     'Bill Gates e il suo librozzo',
+                                     'Quanto inquinano le criptovalute?'
+                                 ]
+                             },
+                             {
+                                 type: 'darkerParagraphs',
+                                 content: [
+                                     '🌎 ff.1.1 Sensibilizzazione e arte\nIl progetto artistico di COP26 ha rivoluzionato l\'identità visiva della conferenza, evidenziando l\'importanza dell\'arte nel sensibilizzare sul cambiamento climatico.',
+                                     '📉 ff.1.2 Da 51 miliardi a 0\nDa 51 miliardi a 0: la necessità urgente di ridurre a zero le emissioni globali di CO2-equivalenti, attualmente a 51 miliardi di tonnellate all\'anno, per combattere il cambiamento climatico.',
+                                     '🛴 ff.1.3 Gli scooter elettrici ci salveranno?\nL\'80% degli spostamenti negli USA sono inferiori ai 16 km, suggerendo un potenziale di trasformazione della mobilità urbana tramite e-bikes e scooter elettrici.',
+                                     '🏭 ff.1.4 Catturare CO2 sarà importante\nTecnologie di cattura CO2 potrebbero diventare economicamente accessibili a meno di 100$ per tonnellata, con l\'industria del cemento e dell\'acciaio come principali target.',
+                                     '🇫🇮 ff.1.5 Il consumo energetico di Bitcoin\nIl consumo energetico di Bitcoin equivale a quello dell\'intera Finlandia, ma l\'utilizzo di energia rinnovabile nel mining potrebbe mitigarne l\'impatto ambientale.',
+                                     '⚡ ff.1.6 Fusione Nucleare\nLa fusione nucleare, un tempo prevista per i primi anni \'90, ora mira al 2035 come traguardo per dimostrare un processo di fusione pulito.'
+                                 ]
+                             }
+                         ]
+                     }
+                 ]
+             },
+             {
+                 buttonLabel: '🎼 ff.5 Elettrizzante',
+                 urlSlug: '-ff5-elettrizzante',
+                 cards: [
+                     {
+                         title: '🔌 Tesla, Van Moof, Duracell? Chi vincerà la sfida della mobilità sostenibile?',
+                         contentBlocks: [
+                             {
+                                 type: 'paragraphs',
+                                 content: [
+                                     'VanMoof: la Tesla olandese per le e-bike',
+                                     'Quanto inquina una Tesla rispetto alla Panda?',
+                                     'Noi come quelli a cavallo: il muro di Marchetti'
+                                 ]
+                             },
+                             {
+                                 type: 'darkerParagraphs',
+                                 content: [
+                                     '❓ ff.5.1 Non tutto verde quello che luccica\nUtilitaria a benzina meno inquinante di Tesla? Una promettente start-up olandese, Lightyear One, riporta come non sia tutt’oro, o verde, quello che luccica.',
+                                     '🔋 ff.5.2 Duracell? No, Tesla\nNon solo auto: con 3 GWh di capacità, Tesla controlla una buona porzione del potenziale di immagazzinamento di energia elettrica nel mondo. E punta a raggiungere i 1.500 GWh entro il 2030.',
+                                     '🚲 ff.5.3 Pedalata assistita\nDurante la pandemia, le bici elettriche hanno venduto più delle auto elettriche (500k bici vs 250k auto negli Stati Uniti).',
+                                     '😎 ff.5.4 La Tesla delle biciclette\nSe le bici elettriche sono la prossima frontiera della mobilità, Van Moof è la Tesla delle due ruote.',
+                                     '🧱 ff.5.5 Il muro di Marchetti\nUn’ora costante universale: il limite di tempo di viaggio che influisce sulle scelte di vita e lavoro.',
+                                     '⚰️ ff.5.6 La pericolosità del traffico, nel mondo\nE mentre siete nel traffico, occhio alla strada. In Europa guidiamo benissimo (tranne per quelli col cappello).'
+                                 ]
+                             }
+                         ]
+                     }
+                 ]
+             },
+             {
+                 buttonLabel: '🎼 ff.20 Greta in bici?',
+                 urlSlug: '-ff20-greta-in-bici',
+                 cards: [
+                     {
+                         title: '🚲 Da "Isola dei cani" di Wes Anderson a Van Moof, la nuova rivoluzione verde dell\'e-bike',
+                         contentBlocks: [
+                             {
+                                 type: 'paragraphs',
+                                 content: [
+                                     'Cosa c\'entra Wes Anderson con i ladri di bicicletta?',
+                                     'Milano o Parigi? Chi sarà la regina delle piste ciclabili?',
+                                     'Da quando a San Francisco si scia?'
+                                 ]
+                             },
+                             {
+                                 type: 'darkerParagraphs',
+                                 content: [
+                                     '🚲 ff.20.1 La rivincita delle biciclette\nLa pandemia ha aumentato l\'uso della bicicletta, con un incremento notevole nelle Filippine e progressi anche in Italia con l\'aumento delle piste ciclabili.',
+                                     '🇮🇩 ff.20.2 L\'esempio di Jakarta\nA Jakarta, l\'utilizzo della bicicletta è aumentato di 6 volte, evidenziando un cambiamento significativo verso la mobilità sostenibile.',
+                                     '⛷️ ff.20.3 San Francisco come Cortina\nSan Francisco presenta mappe della pericolosità delle strade come piste da sci: la pista nera sarebbe Viale Palmanova, insomma.',
+                                     '🚨 ff.20.4 Simmetrie di Wes Anderson contro i furti\nVan Moof, azienda olandese di e-bike, sfrutta le simmetrie di Wes Anderson per promuovere la sicurezza delle sue biciclette.'
+                                 ]
+                             }
+                         ]
+                     }
+                 ]
+             },
+             {
+                 buttonLabel: '🎼 ff.33 Le piante ci salveranno?',
+                 urlSlug: '-ff33-le-piante-ci-salveranno',
+                 cards: [
+                     {
+                         title: 'Inno alle piante, tra algoritmi, cattura di CO2 e problemi da risolvere',
+                         contentBlocks: [
+                             {
+                                 type: 'paragraphs',
+                                 content: [
+                                     'Piante: da fotosintesi a fonte di conoscenza',
+                                     'Foglie in silicone per efficienze maggiori',
+                                     'Come modificare la genetica per catturare più CO2'
+                                 ]
+                             },
+                             {
+                                 type: 'darkerParagraphs',
+                                 content: [
+                                     '🧠 ff.33.1 La valenza filosofica e conoscitiva degli alberi\nEsplorando la connessione storica e culturale tra umanità e piante, evidenziata dall\'ispirazione degli algoritmi di ricerca come il decision tree.',
+                                     '🍁 ff.33.2 Raccoglitori di CO2\nStudio su come le piante catturano e immagazzinano CO2, con focus su efficienze di storage in foreste e torbiere, mostrando l\'importanza della biodiversità e delle tecnologie innovative per la semina.',
+                                     '🏭 ff.33.3 Piante modificate per catturare CO2\nTecniche genetiche avanzate come CRISPR vengono utilizzate per aumentare la capacità delle piante di convertire CO2 in carbonio stabilizzato, un approccio supportato da importanti investimenti nel campo della genetica vegetale.',
+                                     '🧮 ff.33.4 Muffe computazionali\nIl Plasmodium, una muffa sfruttata per risolvere problemi di ottimizzazione combinatoria come il Traveling Salesman Problem, dimostrando la potenzialità di sistemi biologici nel calcolo e nella progettazione di reti efficienti e resilienti.'
+                                 ]
+                             }
+                         ]
+                     }
+                 ]
+             },
+             {
+                 buttonLabel: '🎼 ff.51 La religione del 21esimo secolo?',
+                 urlSlug: '-ff51-la-religione-del-21esimo-secolo',
+                 cards: [
+                     {
+                         title: 'Il sottile equilibrio tra Greta, Greenpeace e speranza nel futuro',
+                         contentBlocks: [
+                             {
+                                 type: 'paragraphs',
+                                 content: [
+                                     'La Natura è stata idealizzata?',
+                                     'L’ecologia è la religione del 21esimo secolo?',
+                                     'Investiamo troppo per i cambiamenti climatici?'
+                                 ]
+                             },
+                             {
+                                 type: 'darkerParagraphs',
+                                 content: [
+                                     '💚 ff.51.1 L’affabulazione per il verde\nRiflessioni su come la natura, simbolo di speranza e pace interiore, diventi oggetto di un\'affabulazione romantica, che a volte rischia di distorcere la realtà pragmatica della sua esistenza e utilità.',
+                                     '🛐 ff.51.2 Ecologia = religione?\nAnalisi critica sulle possibili somiglianze tra l\'approccio moderno all\'ecologia e le pratiche religiose, interrogandosi sull\'esistenza di una fede verde basata più su convinzioni emotive che su azioni razionali e scientifiche.',
+                                     '🔥 ff.51.3 Sono il tuo sogno eretico\nI cambiamenti climatici sono esagerati dai media? Uno spunto per considerare un approccio più equilibrato che includa soluzioni innovative e adattive, anche valutando il ritorno sull\'investimento delle politiche climatiche rispetto alla salute pubblica, l\'istruzione e la riduzione della povertà.'
+                                 ]
+                             }
+                         ]
+                     }
+                 ]
+             },
+             {
+                 buttonLabel: '🎼 ff.61 La decrescita felice è impossibile?',
+                 urlSlug: '-ff61-la-decrescita-felice-e-impossibile',
+                 cards: [
+                     {
+                         title: 'I costi di ogni attività per un budget da 10 tonnellate di CO2 annue',
+                         contentBlocks: [
+                             {
+                                 type: 'paragraphs',
+                                 content: [
+                                     'Stare nel budget di 10 tonnellate CO2 all’anno',
+                                     'Hamburger che inquinano meno degli asparagi',
+                                     'Un abbonamento, stile Spotify, per vivere il mondo'
+                                 ]
+                             },
+                             {
+                                 type: 'darkerParagraphs',
+                                 content: [
+                                     '⚖️ ff.61.1 Misurare l’inquinamento in ore di vita\nConvertire le emissioni di CO2 in tempo di vita percepibile rende tangibile l\'impatto ambientale delle nostre scelte quotidiane.',
+                                     '🕗 ff.61.2 Emissioni convertite in tempo\nAnalizzando le emissioni attraverso l\'equivalenza tempo-CO2, individuiamo attività quotidiane e il loro impatto in ore di vita perse.',
+                                     '🥩 ff.61.3 Carne o asparagi?\nLa scelta alimentare influisce significativamente sulle emissioni di CO2, con sorprendenti confronti tra diete vegetariane e consumo di carne.',
+                                     '🎶 ff.61.4 Un abbonamento stile Spotify per il mondo\nConsiderare l\'inquinamento come un servizio in abbonamento può essere un passo verso la compensazione delle proprie emissioni CO2.'
+                                 ]
+                             }
+                         ]
+                     }
+                 ]
+             }
+         ]
+     },
+     en: {
+         publications: [
+             {
+                 buttonLabel: '🎼 ff.1 Climate',
+                 urlSlug: '-ff1-climate',
+                 cards: [
+                     {
+                         title: '🍃 COP26, The Big Greta Is Watching You and strategies for net-zero',
+                         contentBlocks: [
+                             {
+                                 type: 'paragraphs',
+                                 content: [
+                                     'COP26, renewable energies',
+                                     'Bill Gates and his big book',
+                                     'How much do cryptocurrencies pollute?'
+                                 ]
+                             },
+                             {
+                                 type: 'darkerParagraphs',
+                                 content: [
+                                     '🌎 ff.1.1 Awareness and Art\nThe artistic project of COP26 revolutionized the visual identity of the conference, highlighting the importance of art in raising awareness about climate change.',
+                                     '📉 ff.1.2 From 51 billion to 0\nFrom 51 billion to 0: the urgent need to reduce global CO2-equivalent emissions, currently at 51 billion tons per year, to combat climate change.',
+                                     '🛴 ff.1.3 Will electric scooters save us?\n80% of trips in the USA are under 16 km, suggesting potential for transforming urban mobility through e-bikes and electric scooters.',
+                                     '🏭 ff.1.4 Capturing CO2 will be important\nCO2 capture technologies could become economically accessible at less than $100 per ton, with the cement and steel industries as main targets.',
+                                     '🇫🇮 ff.1.5 The energy consumption of Bitcoin\nBitcoin\'s energy consumption is equivalent to that of Finland, but using renewable energy in mining could mitigate its environmental impact.',
+                                     '⚡ ff.1.6 Nuclear Fusion\nNuclear fusion, once expected by the early 90s, now aims for 2035 as a milestone to demonstrate a clean fusion process.'
+                                 ]
+                             }
+                         ]
+                     }
+                 ]
+             },
+             {
+                 buttonLabel: '🎼 ff.5 Electrifying',
+                 urlSlug: '-ff5-electrifying',
+                 cards: [
+                     {
+                         title: '🔌 Tesla, Van Moof, Duracell? Who will win the sustainable mobility challenge?',
+                         contentBlocks: [
+                             {
+                                 type: 'paragraphs',
+                                 content: [
+                                     'VanMoof: the Dutch Tesla for e-bikes',
+                                     'How much does a Tesla pollute compared to a Panda?',
+                                     'We are like those on horseback: Marchetti\'s wall'
+                                 ]
+                             },
+                             {
+                                 type: 'darkerParagraphs',
+                                 content: [
+                                     '❓ ff.5.1 Not all that glitters is green\nGasoline small cars less polluting than Tesla? A promising Dutch start-up, Lightyear One, reports that not everything that glitters, or is green, is gold.',
+                                     '🔋 ff.5.2 Duracell? No, Tesla\nNot just cars: with 3 GWh of capacity, Tesla controls a good portion of the world\'s electrical energy storage potential and aims to reach 1,500 GWh by 2030.',
+                                     '🚲 ff.5.3 Assisted pedaling\nDuring the pandemic, electric bikes outsold electric cars (500k bikes vs 250k cars in the United States).',
+                                     '😎 ff.5.4 The Tesla of bicycles\nIf electric bikes are the next frontier of mobility, Van Moof is the Tesla of two wheels.',
+                                     '🧱 ff.5.5 Marchetti\'s wall\nA universal constant one-hour travel time: the limit that influences life and work choices.',
+                                     '⚰️ ff.5.6 The danger of traffic worldwide\nAnd while you\'re in traffic, watch the road. In Europe, we drive very well (except for those with hats).'
+                                 ]
+                             }
+                         ]
+                     }
+                 ]
+             },
+             {
+                 buttonLabel: '🎼 ff.20 Greta on a bike?',
+                 urlSlug: '-ff20-greta-on-a-bike',
+                 cards: [
+                     {
+                         title: '🚲 From Wes Anderson\'s "Isle of Dogs" to Van Moof, the new green revolution of e-bikes',
+                         contentBlocks: [
+                             {
+                                 type: 'paragraphs',
+                                 content: [
+                                     'What does Wes Anderson have to do with bicycle thieves?',
+                                     'Milan or Paris? Who will be the queen of bike lanes?',
+                                     'Since when do we ski in San Francisco?'
+                                 ]
+                             },
+                             {
+                                 type: 'darkerParagraphs',
+                                 content: [
+                                     '🚲 ff.20.1 The revenge of bicycles\nThe pandemic has increased bicycle use, with a notable rise in the Philippines and progress in Italy with more bike lanes.',
+                                     '🇮🇩 ff.20.2 The example of Jakarta\nIn Jakarta, bicycle use increased sixfold, highlighting a significant shift towards sustainable mobility.',
+                                     '⛷️ ff.20.3 San Francisco like Cortina\nSan Francisco presents danger maps of streets like ski slopes: the black run would be akin to Viale Palmanova.',
+                                     '🚨 ff.20.4 Wes Anderson\'s symmetries against theft\nVan Moof, a Dutch e-bike company, leverages Wes Anderson\'s symmetries to promote the security of its bicycles.'
+                                 ]
+                             }
+                         ]
+                     }
+                 ]
+             },
+             {
+                 buttonLabel: '🎼 ff.33 Will plants save us?',
+                 urlSlug: '-ff33-will-plants-save-us',
+                 cards: [
+                     {
+                         title: 'An ode to plants, among algorithms, CO2 capture, and problems to solve',
+                         contentBlocks: [
+                             {
+                                 type: 'paragraphs',
+                                 content: [
+                                     'Plants: from photosynthesis to a source of knowledge',
+                                     'Silicone leaves for greater efficiencies',
+                                     'How to modify genetics to capture more CO2'
+                                 ]
+                             },
+                             {
+                                 type: 'darkerParagraphs',
+                                 content: [
+                                     '🧠 ff.33.1 The philosophical and cognitive value of trees\nExploring the historical and cultural connection between humanity and plants, highlighted by the inspiration of search algorithms like the decision tree.',
+                                     '🍁 ff.33.2 CO2 collectors\nStudy on how plants capture and store CO2, focusing on storage efficiencies in forests and peatlands, showing the importance of biodiversity and innovative seeding technologies.',
+                                     '🏭 ff.33.3 Plants modified to capture CO2\nAdvanced genetic techniques like CRISPR are used to increase plants\' ability to convert CO2 into stabilized carbon, an approach supported by significant investments in plant genetics.',
+                                     '🧮 ff.33.4 Computational molds\nPlasmodium, a mold exploited to solve combinatorial optimization problems like the Traveling Salesman Problem, demonstrating the potential of biological systems in computing and designing efficient and resilient networks.'
+                                 ]
+                             }
+                         ]
+                     }
+                 ]
+             },
+             {
+                 buttonLabel: '🎼 ff.51 The religion of the 21st century?',
+                 urlSlug: '-ff51-the-religion-of-the-21st-century',
+                 cards: [
+                     {
+                         title: 'The subtle balance between Greta, Greenpeace, and hope for the future',
+                         contentBlocks: [
+                             {
+                                 type: 'paragraphs',
+                                 content: [
+                                     'Has Nature been idealized?',
+                                     'Is ecology the religion of the 21st century?',
+                                     'Are we investing too much in climate change?'
+                                 ]
+                             },
+                             {
+                                 type: 'darkerParagraphs',
+                                 content: [
+                                     '💚 ff.51.1 The storytelling for green\nReflections on how nature, a symbol of hope and inner peace, becomes the object of romantic storytelling, which sometimes risks distorting the pragmatic reality of its existence and utility.',
+                                     '🛐 ff.51.2 Ecology = religion?\nCritical analysis of the possible similarities between the modern approach to ecology and religious practices, questioning the existence of a green faith based more on emotional convictions than rational and scientific actions.',
+                                     '🔥 ff.51.3 I am your heretical dream\nAre climate changes exaggerated by the media? A cue to consider a more balanced approach that includes innovative and adaptive solutions, also evaluating the return on investment of climate policies compared to public health, education, and poverty reduction.'
+                                 ]
+                             }
+                         ]
+                     }
+                 ]
+             },
+             {
+                 buttonLabel: '🎼 ff.61 Is happy degrowth impossible?',
+                 urlSlug: '-ff61-is-happy-degrowth-impossible',
+                 cards: [
+                     {
+                         title: 'The costs of every activity for a budget of 10 tons of CO2 per year',
+                         contentBlocks: [
+                             {
+                                 type: 'paragraphs',
+                                 content: [
+                                     'Staying within a budget of 10 tons of CO2 per year',
+                                     'Hamburgers that pollute less than asparagus',
+                                     'A Spotify-style subscription to experience the world'
+                                 ]
+                             },
+                             {
+                                 type: 'darkerParagraphs',
+                                 content: [
+                                     '⚖️ ff.61.1 Measuring pollution in hours of life\nConverting CO2 emissions into perceivable life time makes the environmental impact of our daily choices tangible.',
+                                     '🕗 ff.61.2 Emissions converted into time\nAnalyzing emissions through the time-CO2 equivalence, we identify daily activities and their impact in hours of life lost.',
+                                     '🥩 ff.61.3 Meat or asparagus?\nFood choices significantly affect CO2 emissions, with surprising comparisons between vegetarian diets and meat consumption.',
+                                     '🎶 ff.61.4 A Spotify-style subscription for the world\nConsidering pollution as a subscription service can be a step towards offsetting one\'s CO2 emissions.'
+                                 ]
+                             }
+                         ]
+                     }
+                 ]
+             }
+         ]
+     }
+ };
 
 
     let currentLanguage = 'it';
@@ -666,12 +681,22 @@ function createContentBlock(type, contents) {
 
         const p = document.createElement('p');
 
+        // Create an anchor element for the title
+        const link = document.createElement('a');
+        link.href = generateLink(title);
+        link.target = '_blank'; // Open link in new tab (optional)
+        link.style.textDecoration = 'none'; // Optional: Remove underline
+
         // Create a bold element for the title
         const boldTitle = document.createElement('strong');
         boldTitle.textContent = title.trim();
+        boldTitle.style.color = '#333'; // Optional: Match text color
 
-        // Append the bold title to the paragraph
-        p.appendChild(boldTitle);
+        // Append the bold title to the link
+        link.appendChild(boldTitle);
+
+        // Append the link to the paragraph
+        p.appendChild(link);
 
         if (contentText) {
             // Add a line break
@@ -687,6 +712,40 @@ function createContentBlock(type, contents) {
 
     return div;
 }
+function generateLink(title) {
+    const baseUrl = 'https://fortissimo.substack.com/p/';
+    // Get the current publication's slug
+    const publication = getCurrentPublication();
+    const slug = publication.urlSlug || '';
+
+    // Generate the fragment identifier from the title
+    const fragment = '§' + sanitizeTitle(title);
+
+    return baseUrl + slug + '#' + fragment;
+}
+
+function sanitizeTitle(title) {
+    // Remove emojis and special characters
+    let sanitized = title.replace(/[^a-zA-Z0-9\s]/g, '');
+
+    // Replace spaces with hyphens
+    sanitized = sanitized.trim().toLowerCase().replace(/\s+/g, '-');
+
+    return encodeURIComponent(sanitized);
+}
+
+function getCurrentPublication() {
+    const { publications } = content[currentLanguage];
+    for (let i = 0; i < publicationIndices.length - 1; i++) {
+        const startIndex = publicationIndices[i];
+        const endIndex = publicationIndices[i + 1];
+        if (currentIndex >= startIndex && currentIndex < endIndex) {
+            return publications[i];
+        }
+    }
+    return null;
+}
+
         // Function to create the book details card
         function createBookCard(bookDetails) {
             const card = document.createElement('div');
@@ -737,65 +796,130 @@ function createContentBlock(type, contents) {
         cardsContainer.addEventListener('touchend', touchEnd, false);
 
         function touchStart(evt) {
-            startX = evt.touches[0].clientX;
-            isDown = true;
-            cardsWrapper.style.transition = 'none';
-        }
+    startX = evt.touches[0].clientX;
+    startY = evt.touches[0].clientY;
+    isDown = true;
+    isSwiping = false;
+    isMoving = false;
+    cardsWrapper.style.transition = 'none';
+}
 
-        function touchMove(evt) {
-            if (!isDown) return;
-            const x = evt.touches[0].clientX;
-            const deltaX = x - startX;
-            const percentage = (deltaX / window.innerWidth) * 100;
-            const offset = -currentIndex * 100 + percentage;
-            cardsWrapper.style.transform = `translateX(${offset}%)`;
-        }
+function touchMove(evt) {
+    if (!isDown) return;
 
-        function touchEnd(evt) {
-            if (!isDown) return;
-            isDown = false;
-            const endX = evt.changedTouches[0].clientX;
-            const deltaX = endX - startX;
-            if (deltaX < -50 && currentIndex < cards.length - 1) {
-                currentIndex++;
-            } else if (deltaX > 50 && currentIndex > 0) {
-                currentIndex--;
-            }
-            cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
-            showCard(currentIndex);
+    const x = evt.touches[0].clientX;
+    const y = evt.touches[0].clientY;
+    const deltaX = x - startX;
+    const deltaY = y - startY;
+
+    if (!isMoving) {
+        // Determine if the movement is more horizontal or vertical
+        if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 10) {
+            isSwiping = true;
+        } else if (Math.abs(deltaY) > Math.abs(deltaX)) {
+            isDown = false; // User is scrolling vertically, do not swipe
+            return;
         }
+        isMoving = true;
+    }
+
+    if (isSwiping) {
+        const percentage = (deltaX / window.innerWidth) * 100;
+        const offset = -currentIndex * 100 + percentage;
+        cardsWrapper.style.transform = `translateX(${offset}%)`;
+        evt.preventDefault(); // Prevent vertical scrolling when swiping
+    }
+}
+function touchEnd(evt) {
+    if (!isDown || !isSwiping) return;
+    isDown = false;
+    isSwiping = false;
+    const endX = evt.changedTouches[0].clientX;
+    const deltaX = endX - startX;
+
+    let nextIndex = currentIndex;
+
+    if (deltaX < -50) {
+        nextIndex++;
+    } else if (deltaX > 50) {
+        nextIndex--;
+    }
+
+    // Get the range of indices for the current publication
+    let [startIndex, endIndex] = getPublicationRange(currentIndex);
+
+    // Ensure nextIndex is within the publication range
+    nextIndex = Math.max(startIndex, Math.min(nextIndex, endIndex - 1));
+
+    currentIndex = nextIndex;
+
+    cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
+    showCard(currentIndex);
+}
 
         // Mouse events for desktop
         cardsContainer.addEventListener('mousedown', mouseDown, false);
         cardsContainer.addEventListener('mousemove', mouseMove, false);
         cardsContainer.addEventListener('mouseup', mouseUp, false);
         cardsContainer.addEventListener('mouseleave', mouseUp, false);
-
         function mouseDown(evt) {
             startX = evt.clientX;
+            startY = evt.clientY;
             isDown = true;
+            isSwiping = false;
+            isMoving = false;
             cardsWrapper.style.transition = 'none';
         }
-
         function mouseMove(evt) {
             if (!isDown) return;
+
             const x = evt.clientX;
+            const y = evt.clientY;
             const deltaX = x - startX;
-            const percentage = (deltaX / window.innerWidth) * 100;
-            const offset = -currentIndex * 100 + percentage;
-            cardsWrapper.style.transform = `translateX(${offset}%)`;
+            const deltaY = y - startY;
+
+            if (!isMoving) {
+                // Determine if the movement is more horizontal or vertical
+                if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 10) {
+                    isSwiping = true;
+                } else if (Math.abs(deltaY) > Math.abs(deltaX)) {
+                    isDown = false; // User is scrolling vertically, do not swipe
+                    return;
+                }
+                isMoving = true;
+            }
+
+            if (isSwiping) {
+                const percentage = (deltaX / window.innerWidth) * 100;
+                const offset = -currentIndex * 100 + percentage;
+                cardsWrapper.style.transform = `translateX(${offset}%)`;
+                evt.preventDefault(); // Prevent vertical scrolling when swiping
+            }
         }
 
         function mouseUp(evt) {
-            if (!isDown) return;
+            if (!isDown || !isSwiping) return;
             isDown = false;
+            isSwiping = false;
             const endX = evt.clientX;
             const deltaX = endX - startX;
-            if (deltaX < -50 && currentIndex < cards.length - 1) {
-                currentIndex++;
-            } else if (deltaX > 50 && currentIndex > 0) {
-                currentIndex--;
+
+            let nextIndex = currentIndex;
+
+            if (deltaX < -50) {
+                nextIndex++;
+            } else if (deltaX > 50) {
+                nextIndex--;
             }
+
+            // Get the range of indices for the current publication
+            let [startIndex, endIndex] = getPublicationRange(currentIndex);
+
+            // Ensure nextIndex is within the publication range
+            nextIndex = Math.max(startIndex, Math.min(nextIndex, endIndex - 1));
+
+            currentIndex = nextIndex;
+
             cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
             showCard(currentIndex);
         }
