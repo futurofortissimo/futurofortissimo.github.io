@@ -163,42 +163,15 @@
             background-color: var(--quote-color);
         }
 
+        .paragraphs {
+            background-color: #e0f7fa; /* Light cyan */
+            font-weight: normal;
+        }
+
         /* Hide scrollbars on card content */
         .card-content::-webkit-scrollbar {
             width: 0px;
             background: transparent;
-        }
-
-        /* "Action" buttons */
-        .action-button {
-            display: block;
-            margin: 10px 0 0;
-            padding: 10px 20px;
-            background-color: var(--theme-color);
-            color: #fff;
-            border: none;
-            border-radius: 20px;
-            font-size: 16px;
-            cursor: pointer;
-            text-align: left;
-            font-weight: bold;
-        }
-
-        /* Book details styles */
-        .book-details p {
-            font-size: 16px;
-            font-weight: bold;
-            margin: 5px 0;
-        }
-
-        .book-details img {
-            margin-bottom: 10px;
-        }
-
-        .book-details h2 {
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 10px;
         }
 
         /* Footer */
@@ -218,7 +191,7 @@
 </head>
 <body>
     <div class="app-container">
-        <!-- Header with logo, buttons, and language switch -->
+        <!-- Header with logo and buttons -->
         <div class="header">
             <a href="https://futurofortissimo.github.io/">
                 <img src="/index_files/ff.webp" alt="Logo" class="logo">
@@ -227,7 +200,6 @@
             <div class="buttons-container" id="buttons-container">
                 <!-- Buttons will be dynamically inserted here -->
             </div>
-            <!-- Language switch (not applicable as content is in Italian) -->
         </div>
 
         <!-- Progress bar -->
@@ -251,211 +223,149 @@
         const content = {
             chapters: [
                 {
-                    title: "Prospettiva Evolutiva sull'Esercizio",
-                    buttonLabel: '🏃 Evoluzione',
-                    contentBlocks: [
-                        {
-                            type: 'questions',
-                            content: [
-                                "Come si è evoluta la definizione di esercizio nel corso della storia?",
-                                "Cosa possiamo imparare sull'esercizio studiando popolazioni non occidentali e il nostro passato evolutivo?",
-                                "L'esercizio è veramente un comportamento unicamente umano o esistono precedenti evolutivi nel regno animale?"
-                            ]
-                        },
-                        {
-                            type: 'data',
-                            content: [
-                                "Gli occidentali rappresentano solo il 12% della popolazione globale e potrebbero non rappresentare accuratamente il nostro passato evolutivo.",
-                                "I cacciatori-raccoglitori, nonostante siano altamente attivi, si dedicano a sostanziali periodi di riposo e attività a bassa intensità.",
-                                "Il concetto di esercizio come categoria distinta di attività è emerso relativamente di recente nella storia umana."
-                            ]
-                        }
-                    ]
-                },
-                {
-                    title: "Sfatare il Mito del Sedere Come il Nuovo Fumo",
-                    buttonLabel: '💺 Sedentarietà',
-                    contentBlocks: [
-                        {
-                            type: 'questions',
-                            content: [
-                                "Quanto tempo sedersi è troppo e quali sono i rischi specifici per la salute associati al sedersi prolungato?",
-                                "Sedere in piedi tutto il giorno è una soluzione pratica ed efficace ai problemi del sedersi?",
-                                "Qual è il ruolo dell'attività fisica a bassa intensità nel mitigare gli effetti negativi del sedersi e come può questa conoscenza essere applicata agli stili di vita moderni?"
-                            ]
-                        },
-                        {
-                            type: 'data',
-                            content: [
-                                "Stare in piedi invece di sedersi brucia solo circa l'8-10% in più di calorie.",
-                                "Pause frequenti, anche brevi, possono ridurre significativamente l'infiammazione associata al sedersi prolungato.",
-                                "Le attività fisiche a bassa intensità possono compensare alcuni dei rischi associati al sedersi."
-                            ]
-                        }
-                    ]
-                },
-                {
-                    title: "Sonno: La Squadra di Pulizia del Cervello",
-                    buttonLabel: '😴 Sonno',
-                    contentBlocks: [
-                        {
-                            type: 'questions',
-                            content: [
-                                "Quali sono le funzioni principali del sonno e come si collegano alla nostra storia evolutiva?",
-                                "Le otto ore di sonno raccomandate per notte sono una necessità biologica o una costruzione culturale?",
-                                "Come influisce l'esercizio sui pattern del sonno e quali sono le implicazioni per migliorare la qualità del sonno?"
-                            ]
-                        },
-                        {
-                            type: 'data',
-                            content: [
-                                "Il cervello utilizza il sonno per eliminare i rifiuti metabolici attraverso un sistema di drenaggio unico.",
-                                "La durata del sonno varia ampiamente tra le specie e le culture, influenzata da vari fattori.",
-                                "L'attività fisica regolare può migliorare la qualità del sonno aumentando la pressione del sonno e riducendo lo stress."
-                            ]
-                        }
-                    ]
-                },
-                {
-                    title: "La Necessità della Velocità: Comprendere le Capacità Umane di Corsa",
-                    buttonLabel: '🏃‍♂️ Corsa',
-                    contentBlocks: [
-                        {
-                            type: 'questions',
-                            content: [
-                                "Perché gli esseri umani sono corridori relativamente lenti rispetto a molti altri animali, specialmente su brevi distanze?",
-                                "Quali sono i vantaggi evolutivi della corsa di resistenza e come hanno plasmato la fisiologia umana?",
-                                "Quali adattamenti fisiologici permettono agli esseri umani di eccellere nella corsa di resistenza?"
-                            ]
-                        },
-                        {
-                            type: 'data',
-                            content: [
-                                "Gli esseri umani possiedono notevoli capacità di corsa di resistenza, superando molti animali su lunghe distanze.",
-                                "La capacità di correre su lunghe distanze ha giocato un ruolo cruciale nell'evoluzione umana precoce.",
-                                "Adattamenti come la sudorazione efficiente e la termoregolazione ci permettono di mantenere la temperatura corporea durante la corsa prolungata."
-                            ]
-                        }
-                    ]
-                },
-                {
-                    title: "Il Potere della Forza: Costruire Muscoli e i Suoi Benefici",
-                    buttonLabel: '💪 Forza',
-                    contentBlocks: [
-                        {
-                            type: 'questions',
-                            content: [
-                                "Quali sono i diversi tipi di fibre muscolari e come contribuiscono a varie attività atletiche?",
-                                "Quali sono i metodi di allenamento più efficaci per aumentare la massa muscolare e la forza?",
-                                "Qual è il ruolo della genetica nel determinare il potenziale atletico e come interagisce con fattori ambientali come l'allenamento?"
-                            ]
-                        },
-                        {
-                            type: 'data',
-                            content: [
-                                "Contrazioni muscolari eccentriche e isometriche sono potenti per costruire muscoli.",
-                                "La crescita muscolare può essere stimolata attraverso vari metodi di allenamento.",
-                                "La genetica influenza il potenziale atletico, ma l'allenamento e l'ambiente sono fondamentali."
-                            ]
-                        }
-                    ]
-                },
-                {
-                    title: "L'Equazione Energetica: Come i Nostri Corpi Gestiscono le Calorie",
-                    buttonLabel: '🔥 Calorie',
-                    contentBlocks: [
-                        {
-                            type: 'questions',
-                            content: [
-                                "Come regola il corpo l'equilibrio energetico e quali fattori influenzano l'aumento o la perdita di peso?",
-                                "L'esercizio porta costantemente a un aumento dell'appetito e del consumo di calorie?",
-                                "Come sfida il concetto di dispendio energetico totale limitato le visioni tradizionali sulla gestione del peso?"
-                            ]
-                        },
-                        {
-                            type: 'data',
-                            content: [
-                                "Il corpo può adattare il dispendio energetico per compensare l'aumento dell'attività fisica.",
-                                "Deficit energetici estremi possono disturbare l'equilibrio ormonale e la funzione riproduttiva.",
-                                "La restrizione calorica può portare alla perdita di muscoli e adattamenti metabolici."
-                            ]
-                        }
-                    ]
-                },
-                {
-                    title: "Il Vantaggio della Resistenza: Esplorare i Limiti del Potenziale Umano",
-                    buttonLabel: '⏱️ Resistenza',
-                    contentBlocks: [
-                        {
-                            type: 'questions',
-                            content: [
-                                "Quali sono i benefici e le limitazioni dell'utilizzo dei passi come misura dell'attività fisica?",
-                                "Come l'allenamento di resistenza influisce sulla fisiologia del corpo?",
-                                "Quali sono le conseguenze a lungo termine dell'allenamento di resistenza?"
-                            ]
-                        },
-                        {
-                            type: 'data',
-                            content: [
-                                "Il conteggio dei passi non tiene conto dell'intensità o del tipo di movimento.",
-                                "L'allenamento di resistenza porta ad adattamenti nel sistema cardiovascolare.",
-                                "Attività fisica varia è più benefica che concentrarsi solo sui passi."
-                            ]
-                        }
-                    ]
-                },
-                {
-                    title: "L'Atleta Anziano: Come l'Esercizio Influenza la Longevità e la Salute",
-                    buttonLabel: '👴 Longevità',
-                    contentBlocks: [
-                        {
-                            type: 'questions',
-                            content: [
-                                "L'esercizio estende la durata della vita o migliora principalmente la salute riducendo il rischio di malattie legate all'età?",
-                                "Quali sono i meccanismi fisiologici attraverso cui l'esercizio combatte il processo di invecchiamento?",
-                                "Esistono 'dosaggi' ottimali di esercizio per massimizzare la longevità e la salute?"
-                            ]
-                        },
-                        {
-                            type: 'data',
-                            content: [
-                                "Mantenere alti livelli di attività fisica può contribuire a un periodo di morbilità compressa.",
-                                "L'esercizio ritarda o previene malattie legate all'età più che estendere la durata della vita.",
-                                "Le risposte individuali all'esercizio variano; la genetica e lo stile di vita influenzano il dosaggio ottimale."
-                            ]
-                        }
-                    ]
-                },
-                {
-                    title: "Il Paradosso dell'Esercizio: Perché Lo Evitiamo e Come Superare l'Inerzia",
-                    buttonLabel: '🤔 Motivazione',
-                    contentBlocks: [
-                        {
-                            type: 'questions',
-                            content: [
-                                "Perché gli esseri umani faticano spesso a mantenere routine di esercizio costanti?",
-                                "Quali fattori psicologici e sociali influenzano la motivazione all'esercizio?",
-                                "Quali sono alcune strategie efficaci per rendere l'esercizio più attraente e sostenibile?"
-                            ]
-                        },
-                        {
-                            type: 'data',
-                            content: [
-                                "L'esercizio rappresenta una spesa energetica che i nostri antenati evitavano.",
-                                "La motivazione è influenzata da fattori psicologici come il piacere e l'auto-efficacia.",
-                                "Il supporto sociale può migliorare la motivazione e l'aderenza all'esercizio."
-                            ]
-                        }
-                    ]
-                },
-                {
-                    title: "Conclusioni e Riflessioni Finali",
-                    buttonLabel: '📖 Conclusioni',
+                    title: "Riformulare l'Esercizio",
+                    buttonLabel: '🏃 Esercizio',
                     contentBlocks: [
                         {
                             type: 'paragraphs',
                             content: [
-                                "Si riassumono i temi principali trattati nel libro e si riflette sull'importanza dell'esercizio fisico nella vita quotidiana. L'integrazione di attività fisica può migliorare non solo la salute fisica, ma anche il benessere mentale e sociale."
+                                "Questa sezione esplora le potenziali discrepanze tra le percezioni moderne dell'esercizio e la nostra storia evolutiva, esaminando il ruolo dell'attività fisica nell'evoluzione umana."
+                            ]
+                        },
+                        {
+                            type: 'questions',
+                            content: [
+                                "Come la prospettiva occidentale sull'esercizio differisce dal nostro passato evolutivo?",
+                                "Qual è la storia evolutiva dell'attività fisica negli esseri umani?",
+                                "Quali sono i limiti della ricerca attuale sull'esercizio?"
+                            ]
+                        },
+                        {
+                            type: 'data',
+                            content: [
+                                "Solo il 12% della popolazione globale è costituito da occidentali, che spesso non rappresentano accuratamente il nostro passato evolutivo.",
+                                "La spesa globale per fitness e abbigliamento sportivo ammonta a trilioni di dollari ogni anno.",
+                                "Una persona sedentaria consuma circa 70 calorie all'ora riposando su una sedia.",
+                                "Gli uomini e le donne Hadza hanno il 40% in meno di grasso corporeo rispetto agli occidentali medi.",
+                                "Il consumo alimentare umano rappresenta oltre 20 trilioni di calorie al giorno."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title: "Sfatare il Mito del 'Sedersi è il Nuovo Fumo'",
+                    buttonLabel: '💺 Sedersi',
+                    contentBlocks: [
+                        {
+                            type: 'paragraphs',
+                            content: [
+                                "Questa sezione esamina l'affermazione secondo cui sedersi è dannoso per la salute, analizzando il suo contesto evolutivo e il potenziale esagerazione."
+                            ]
+                        },
+                        {
+                            type: 'questions',
+                            content: [
+                                "Come influisce sedersi per lunghi periodi sulla nostra salute?",
+                                "L'affermazione che 'sedersi è il nuovo fumo' è accurata?",
+                                "Come il livello di attività degli esseri umani moderni si confronta con quello dei cacciatori-raccoglitori?"
+                            ]
+                        },
+                        {
+                            type: 'data',
+                            content: [
+                                "Solo il 7% di 151 individui osservati ha scelto le scale invece delle scale mobili.",
+                                "L'americano medio si siede per circa 13 ore al giorno.",
+                                "Si stima che sedersi per più di 3 ore al giorno sia responsabile di quasi il 4% delle morti globali.",
+                                "Stare in piedi consuma l'8-10% in più di calorie rispetto a sedersi su una sedia."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title: "Mettere in Discussione il Paradigma delle 'Otto Ore di Sonno'",
+                    buttonLabel: '😴 Sonno',
+                    contentBlocks: [
+                        {
+                            type: 'paragraphs',
+                            content: [
+                                "Questa sezione mette in discussione la nozione ampiamente accettata che otto ore di sonno siano essenziali per tutti, esaminando i pattern del sonno attraverso culture e specie."
+                            ]
+                        },
+                        {
+                            type: 'questions',
+                            content: [
+                                "Esiste una durata del sonno universalmente ottimale per gli esseri umani?",
+                                "Come variano i pattern del sonno tra le culture?",
+                                "Qual è la storia evolutiva del sonno negli esseri umani?"
+                            ]
+                        },
+                        {
+                            type: 'data',
+                            content: [
+                                "La privazione del sonno colpisce presumibilmente una persona su tre nelle nazioni industrializzate.",
+                                "Il tasso metabolico diminuisce del 10-15% durante il sonno.",
+                                "Durante il sonno NREM, le cellule cerebrali specializzate espandono gli spazi tra i neuroni del 60%.",
+                                "La durata del sonno nei mammiferi varia da 2 ore (asini) a 20 ore (armadilli).",
+                                "La maggior parte dei primati dorme tra 9 e 13 ore al giorno."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title: "La Scienza della Velocità, Forza e Resistenza",
+                    buttonLabel: '💪 Performance',
+                    contentBlocks: [
+                        {
+                            type: 'paragraphs',
+                            content: [
+                                "Questa sezione esplora le basi fisiologiche delle prestazioni atletiche, concentrandosi sull'evoluzione della velocità e della corsa di resistenza umana."
+                            ]
+                        },
+                        {
+                            type: 'questions',
+                            content: [
+                                "Quali sono i fattori fisiologici che limitano la velocità umana?",
+                                "Come si è evoluta la corsa di resistenza negli esseri umani?",
+                                "Quali sono i benefici e le limitazioni dei diversi tipi di esercizio?"
+                            ]
+                        },
+                        {
+                            type: 'data',
+                            content: [
+                                "Usain Bolt ha fatto 40 passi in una gara di 100 metri, rispetto ai 45 passi di altri corridori.",
+                                "Un essere umano in forma può immagazzinare abbastanza zucchero per correre circa 15 miglia.",
+                                "La respirazione aerobica genera 18 volte più ATP dallo zucchero rispetto alla glicolisi.",
+                                "I maschi hanno in media il 61% di massa muscolare in più rispetto alle femmine.",
+                                "Camminare un miglio brucia circa 50 calorie in più rispetto a guidare la stessa distanza."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title: "Il Paradosso della Longevità: Esercizio e Invecchiamento",
+                    buttonLabel: '👴 Invecchiamento',
+                    contentBlocks: [
+                        {
+                            type: 'paragraphs',
+                            content: [
+                                "Questa sezione esamina la relazione tra esercizio, invecchiamento e longevità, esplorando se l'esercizio estremo sia benefico o dannoso."
+                            ]
+                        },
+                        {
+                            type: 'questions',
+                            content: [
+                                "Come influisce l'esercizio sul processo di invecchiamento?",
+                                "Esiste un 'dosaggio' ottimale di esercizio per la longevità?",
+                                "Quali sono i potenziali rischi dell'esercizio eccessivo?"
+                            ]
+                        },
+                        {
+                            type: 'data',
+                            content: [
+                                "Tre settimane di riposo a letto possono portare a una riduzione del 10% della massa muscolare delle gambe.",
+                                "Gli astronauti possono perdere il 20% della loro massa muscolare in 1-2 settimane nello spazio.",
+                                "Lo studio dei corridori di Stanford ha seguito corridori e non corridori per oltre due decenni, trovando che i corridori avevano tassi di sopravvivenza del 20% più alti.",
+                                "I non corridori nello studio di Stanford avevano il doppio delle probabilità di morire di malattie cardiache e cancro."
                             ]
                         }
                     ]
@@ -472,8 +382,8 @@
             }
         };
 
-        // Since the content is in Italian, we can set the language to 'it' by default
-        let currentLanguage = 'it';
+        // Initialize the app
+        let currentIndex = 0;
 
         // Get DOM elements
         const buttonsContainer = document.getElementById('buttons-container');
@@ -481,7 +391,6 @@
         const progressBar = document.querySelector('.progress-bar');
 
         let cards = [];
-        let currentIndex = 0;
 
         function initializeApp() {
             buttonsContainer.innerHTML = '';
