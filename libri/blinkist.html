@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blinkist-like App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Root variables */
+        :root {
+            --theme-color: #ADD8E6; /* Light blue */
+        }
+
+        /* Basic styles */
+        body {
+            margin: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #fff;
+            color: #333;
+        }
+
+        /* App container */
+        .app-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Buttons container */
+        .buttons-container {
+            display: flex;
+            flex-wrap: wrap;
+            overflow-x: scroll;
+            background-color: var(--theme-color);
+            padding: 10px;
+        }
+
+        .buttons-container::-webkit-scrollbar {
+            display: none; /* Hide scrollbar */
+        }
+
+        /* Buttons */
+        .button {
+            flex: 0 0 auto;
+            margin: 5px;
+            padding: 10px 15px;
+            background-color: #fff;
+            color: #333;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 14px;
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+        }
+
+        /* Cards container */
+        .cards-container {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Cards wrapper for sliding effect */
+        .cards-wrapper {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        /* Individual card */
+        .card {
+            flex: 0 0 100%;
+            overflow-y: auto;
+            background-color: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Progress bar */
+        .progress-bar {
+            height: 5px;
+            background-color: var(--theme-color);
+            width: 0%;
+            transition: width 0.5s ease-in-out;
+        }
+
+        /* Hide scrollbars on cards */
+        .card::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Buttons -->
+        <div class="buttons-container">
+            <!-- Buttons will be dynamically inserted here -->
+        </div>
+
+        <!-- Cards -->
+        <div class="cards-container">
+            <div class="cards-wrapper">
+                <!-- Cards will be dynamically inserted here -->
+            </div>
+        </div>
+
+        <!-- Progress bar -->
+        <div class="progress-bar"></div>
+    </div>
+
+    <script>
+        // Sample data for chapters and book details
+        const chapters = [
+            { title: 'Introduction', content: 'This is the introduction content.' },
+            { title: 'Chapter 1', content: 'Content of Chapter 1.' },
+            { title: 'Chapter 2', content: 'Content of Chapter 2.' },
+            { title: 'Chapter 3', content: 'Content of Chapter 3.' },
+            { title: 'Chapter 4', content: 'Content of Chapter 4.' },
+            { title: 'Chapter 5', content: 'Content of Chapter 5.' },
+            { title: 'Conclusion', content: 'This is the conclusion content.' },
+        ];
+
+        const bookDetails = {
+            image: 'https://via.placeholder.com/150', // Placeholder image
+            title: 'Book Title',
+            author: 'Author Name',
+            year: '2023',
+            pages: '200',
+            link: 'https://example.com/buy'
+        };
+
+        // Get DOM elements
+        const buttonsContainer = document.querySelector('.buttons-container');
+        const cardsContainer = document.querySelector('.cards-container');
+        const cardsWrapper = document.querySelector('.cards-wrapper');
+        const progressBar = document.querySelector('.progress-bar');
+
+        const cards = [];
+        let currentIndex = 0;
+
+        // Function to create a button
+        function createButton(title, index) {
+            const button = document.createElement('div');
+            button.className = 'button';
+            button.textContent = title;
+            button.addEventListener('click', () => {
+                showCard(index);
+            });
+            buttonsContainer.appendChild(button);
+        }
+
+        // Function to create a card
+        function createCard(content) {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = content;
+            cardsWrapper.appendChild(card);
+            cards.push(card);
+        }
+
+        // Function to display a specific card
+        function showCard(index) {
+            currentIndex = index;
+            cardsWrapper.style.transform = `translateX(-${index * 100}%)`;
+            const progress = ((index + 1) / cards.length) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+
+        // Create buttons and cards for chapters
+        chapters.forEach((chapter, index) => {
+            createButton(chapter.title, index);
+            createCard(`<h2>${chapter.title}</h2><p>${chapter.content}</p>`);
+        });
+
+        // Create "Book Details" button and card
+        createButton('Book Details', chapters.length);
+        const bookCardContent = `
+            <img src="${bookDetails.image}" alt="Book Cover" style="width:100%; height:auto;">
+            <h2>${bookDetails.title}</h2>
+            <p><strong>Author:</strong> ${bookDetails.author}</p>
+            <p><strong>Year:</strong> ${bookDetails.year}</p>
+            <p><strong>Pages:</strong> ${bookDetails.pages}</p>
+            <p><a href="${bookDetails.link}" target="_blank">Buy this book</a></p>
+        `;
+        createCard(bookCardContent);
+
+        // Initialize to show the first card
+        showCard(0);
+
+        // Swipe functionality
+        let startX = 0;
+        let currentX = 0;
+        let isDragging = false;
+
+        cardsContainer.addEventListener('touchstart', touchStart, false);
+        cardsContainer.addEventListener('touchmove', touchMove, false);
+        cardsContainer.addEventListener('touchend', touchEnd, false);
+
+        function touchStart(evt) {
+            startX = evt.touches[0].clientX;
+            isDragging = true;
+        }
+
+        function touchMove(evt) {
+            if (!isDragging) return;
+            currentX = evt.touches[0].clientX;
+            const deltaX = currentX - startX;
+            cardsWrapper.style.transition = 'none';
+            cardsWrapper.style.transform = `translateX(${ -currentIndex * window.innerWidth + deltaX }px)`;
+        }
+
+        function touchEnd(evt) {
+            if (!isDragging) return;
+            isDragging = false;
+            const deltaX = currentX - startX;
+            if (deltaX < -50 && currentIndex < cards.length - 1) {
+                currentIndex++;
+            } else if (deltaX > 50 && currentIndex > 0) {
+                currentIndex--;
+            }
+            cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
+            showCard(currentIndex);
+        }
+    </script>
+</body>
+</html>
