@@ -1,4 +1,202 @@
-<script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blinkist-like App - Updated Version</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Import Montserrat font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+        /* Root variables */
+        :root {
+            --theme-color: #ADD8E6; /* Light blue */
+            --question-color: #B3E5FC; /* Lighter blue */
+            --data-color: #81D4FA; /* Medium blue */
+            --quote-color: #4FC3F7; /* Darker blue */
+            --progress-bar-color: #4CAF50; /* Green */
+        }
+
+        /* Basic styles */
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fff;
+            color: #333;
+        }
+
+        /* App container */
+        .app-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Header with logo and language switch */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: var(--theme-color);
+            padding: 10px;
+        }
+
+        .logo {
+            height: 40px;
+            cursor: pointer;
+        }
+
+        .language-switch {
+            background-color: transparent;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Buttons container */
+        .buttons-container {
+            display: flex;
+            overflow-x: auto;
+            background-color: var(--theme-color);
+            padding: 10px;
+        }
+
+        .buttons-container::-webkit-scrollbar {
+            display: none; /* Hide scrollbar */
+        }
+
+        /* Buttons */
+        .button {
+            flex: 0 0 auto;
+            margin: 5px;
+            padding: 10px 15px;
+            background-color: #fff;
+            color: #333;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 14px;
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+        }
+
+        /* Cards container */
+        .cards-container {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Cards wrapper for sliding effect */
+        .cards-wrapper {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        /* Individual card */
+        .card {
+            flex: 0 0 100%;
+            overflow-y: auto;
+            background-color: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Section styles */
+        .section-title {
+            margin-bottom: 10px;
+        }
+
+        .content-block {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .questions {
+            background-color: var(--question-color);
+        }
+
+        .data {
+            background-color: var(--data-color);
+        }
+
+        .quotes {
+            background-color: var(--quote-color);
+        }
+
+        /* Progress bar */
+        .progress-bar {
+            height: 5px;
+            background-color: var(--progress-bar-color);
+            width: 0%;
+            transition: width 0.5s ease-in-out;
+        }
+
+        /* Hide scrollbars on cards */
+        .card::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        /* "Offer me a coffee" button */
+        .coffee-button {
+            display: block;
+            margin: 20px auto 0;
+            padding: 10px 20px;
+            background-color: var(--theme-color);
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 600px) {
+            /* For larger screens, show partial cards */
+            .card {
+                flex: 0 0 80%;
+                margin: 0 10px;
+            }
+
+            .cards-wrapper {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header with logo and language switch -->
+        <div class="header">
+            <a href="main_page.html">
+                <img src="/index_files/ff.png" alt="Logo" class="logo">
+            </a>
+            <button class="language-switch" id="language-switch">🇮🇹</button>
+        </div>
+
+        <!-- Buttons -->
+        <div class="buttons-container" id="buttons-container">
+            <!-- Buttons will be dynamically inserted here -->
+        </div>
+
+        <!-- Progress bar -->
+        <div class="progress-bar"></div>
+
+        <!-- Cards -->
+        <div class="cards-container">
+            <div class="cards-wrapper" id="cards-wrapper">
+                <!-- Cards will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
     // Content data in English and Italian
     const content = {
         en: {
@@ -298,3 +496,5 @@
     // Initialize the app
     initializeApp();
 </script>
+</body>
+</html>
