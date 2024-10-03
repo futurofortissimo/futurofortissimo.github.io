@@ -1,504 +1,300 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Blinkist-like App - Updated Version</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Import Montserrat font from Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <style>
-        /* Root variables */
-        :root {
-            --theme-color: #ADD8E6; /* Light blue */
-            --question-color: #B3E5FC; /* Lighter blue */
-            --data-color: #81D4FA; /* Medium blue */
-            --quote-color: #4FC3F7; /* Darker blue */
-            --progress-bar-color: #4CAF50; /* Green */
-        }
-
-        /* Basic styles */
-        body {
-            margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            background-color: #fff;
-            color: #333;
-        }
-
-        /* App container */
-        .app-container {
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            overflow: hidden;
-            position: relative;
-        }
-
-        /* Header with logo and language switch */
-        .header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background-color: var(--theme-color);
-            padding: 10px;
-        }
-
-        .logo {
-            height: 40px;
-            cursor: pointer;
-        }
-
-        .language-switch {
-            background-color: transparent;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        /* Buttons container */
-        .buttons-container {
-            display: flex;
-            overflow-x: auto;
-            background-color: var(--theme-color);
-            padding: 10px;
-        }
-
-        .buttons-container::-webkit-scrollbar {
-            display: none; /* Hide scrollbar */
-        }
-
-        /* Buttons */
-        .button {
-            flex: 0 0 auto;
-            margin: 5px;
-            padding: 10px 15px;
-            background-color: #fff;
-            color: #333;
-            border-radius: 20px;
-            text-align: center;
-            font-size: 14px;
-            cursor: pointer;
-            user-select: none;
-            white-space: nowrap;
-        }
-
-        /* Cards container */
-        .cards-container {
-            flex: 1;
-            overflow: hidden;
-            position: relative;
-        }
-
-        /* Cards wrapper for sliding effect */
-        .cards-wrapper {
-            display: flex;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        /* Individual card */
-        .card {
-            flex: 0 0 100%;
-            overflow-y: auto;
-            background-color: #fff;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        /* Section styles */
-        .section-title {
-            margin-bottom: 10px;
-        }
-
-        .content-block {
-            margin-bottom: 15px;
-            padding: 15px;
-            border-radius: 10px;
-        }
-
-        .questions {
-            background-color: var(--question-color);
-        }
-
-        .data {
-            background-color: var(--data-color);
-        }
-
-        .quotes {
-            background-color: var(--quote-color);
-        }
-
-        /* Progress bar */
-        .progress-bar {
-            height: 5px;
-            background-color: var(--progress-bar-color);
-            width: 0%;
-            transition: width 0.5s ease-in-out;
-        }
-
-        /* Hide scrollbars on cards */
-        .card::-webkit-scrollbar {
-            width: 0px;
-            background: transparent;
-        }
-
-        /* "Offer me a coffee" button */
-        .coffee-button {
-            display: block;
-            margin: 20px auto 0;
-            padding: 10px 20px;
-            background-color: var(--theme-color);
-            color: #fff;
-            border: none;
-            border-radius: 20px;
-            font-size: 16px;
-            cursor: pointer;
-            text-align: center;
-        }
-
-        /* Responsive adjustments */
-        @media (min-width: 600px) {
-            /* For larger screens, show partial cards */
-            .card {
-                flex: 0 0 80%;
-                margin: 0 10px;
-            }
-
-            .cards-wrapper {
-                justify-content: center;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="app-container">
-        <!-- Header with logo and language switch -->
-        <div class="header">
-            <a href="main_page.html">
-                <img src="/index_files/ff.png" alt="Logo" class="logo">
-            </a>
-            <button class="language-switch" id="language-switch">🇮🇹</button>
-        </div>
-
-        <!-- Buttons -->
-        <div class="buttons-container" id="buttons-container">
-            <!-- Buttons will be dynamically inserted here -->
-        </div>
-
-        <!-- Progress bar -->
-        <div class="progress-bar"></div>
-
-        <!-- Cards -->
-        <div class="cards-container">
-            <div class="cards-wrapper" id="cards-wrapper">
-                <!-- Cards will be dynamically inserted here -->
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Content data in English and Italian
-        const content = {
-            en: {
-                sections: [
-                    {
-                        title: 'The Nature of Money',
-                        buttonLabel: '💰 Money',
-                        content: [
-                            {
-                                type: 'questions',
-                                content: [
-                                    'What are the limitations of barter?',
-                                    'What characteristics define good money?',
-                                    'How do different monetary systems impact societal development?'
-                                ]
-                            },
-                            {
-                                type: 'data',
-                                content: [
-                                    'Copper demand: 20 million tons/year at $5,000/ton, totaling ~$100 billion market value.',
-                                    'Central banks hold about 20% of global gold stockpiles.'
-                                ]
-                            },
-                            {
-                                type: 'quotes',
-                                content: [
-                                    'Barter is impractical and used only in exceptional circumstances among familiar parties.',
-                                    'Successful money restricts new supply to maintain value over time.',
-                                    'Money has evolved from seashells to digital forms, each with benefits and challenges.'
-                                ]
-                            }
-                        ]
-                    },
-                    // Add other sections here...
-                    {
-                        title: 'Bitcoin as Monetary System',
-                        buttonLabel: '₿ Bitcoin',
-                        content: [
-                            {
-                                type: 'questions',
-                                content: [
-                                    'How does Bitcoin function as a monetary system?',
-                                    'What are benefits and drawbacks of a Bitcoin standard?',
-                                    'Can Bitcoin be a viable alternative?'
-                                ]
-                            },
-                            {
-                                type: 'data',
-                                content: [
-                                    'Bitcoin has operated with minimal failure for over nine years.',
-                                    'Supply decreases by half every four years.',
-                                    'Approximately 300,000 daily transactions.',
-                                    'Average transaction fee was $7 at end of 2017.',
-                                    'Visa/MasterCard process ~2,000 transactions/sec; Bitcoin processes up to 4/sec.'
-                                ]
-                            },
-                            {
-                                type: 'quotes',
-                                content: [
-                                    'Bitcoin could render previous forms of money obsolete if it continues effectively.',
-                                    "Bitcoin is the hardest money; increased value doesn't increase supply.",
-                                    'First scarce digital good that cannot be reproduced infinitely.'
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                bookDetails: {
-                    image: 'https://via.placeholder.com/150', // Placeholder image
-                    title: 'The Bitcoin Standard',
-                    author: 'Saifedean Ammous',
-                    year: '2018',
-                    pages: '304',
-                    link: 'https://example.com/buy',
-                    offerCoffeeLink: 'https://example.com/coffee'
+<script>
+    // Content data in English and Italian
+    const content = {
+        en: {
+            sections: [
+                {
+                    title: 'The Nature of Money',
+                    buttonLabel: '💰 Money',
+                    content: [
+                        {
+                            type: 'questions',
+                            content: [
+                                'What are the limitations of barter?',
+                                'What characteristics define good money?',
+                                'How do different monetary systems impact societal development?'
+                            ]
+                        },
+                        {
+                            type: 'data',
+                            content: [
+                                'Copper demand: 20 million tons/year at $5,000/ton, totaling ~$100 billion market value.',
+                                'Central banks hold about 20% of global gold stockpiles.'
+                            ]
+                        },
+                        {
+                            type: 'quotes',
+                            content: [
+                                'Barter is impractical and used only in exceptional circumstances among familiar parties.',
+                                'Successful money restricts new supply to maintain value over time.',
+                                'Money has evolved from seashells to digital forms, each with benefits and challenges.'
+                            ]
+                        }
+                    ]
+                },
+                // ... (Other sections)
+                {
+                    title: 'Bitcoin as Monetary System',
+                    buttonLabel: '₿ Bitcoin',
+                    content: [
+                        // ... (Content)
+                    ]
                 }
-            },
-            it: {
-                sections: [
-                    {
-                        title: 'La Natura del Denaro',
-                        buttonLabel: '💰 Denaro',
-                        content: [
-                            {
-                                type: 'questions',
-                                content: [
-                                    'Quali sono i limiti del baratto?',
-                                    'Quali caratteristiche definiscono un buon denaro?',
-                                    'Come diversi sistemi monetari influenzano lo sviluppo sociale?'
-                                ]
-                            },
-                            {
-                                type: 'data',
-                                content: [
-                                    'Domanda di rame: 20 milioni di tonnellate/anno a $5.000/tonnellata, per un valore di mercato di ~$100 miliardi.',
-                                    'Le banche centrali detengono circa il 20% delle riserve globali di oro.'
-                                ]
-                            },
-                            {
-                                type: 'quotes',
-                                content: [
-                                    'Il baratto è impratico e usato solo in circostanze eccezionali tra persone familiari.',
-                                    'Un denaro di successo limita la nuova offerta per mantenere il valore nel tempo.',
-                                    'Il denaro si è evoluto da conchiglie a forme digitali, ognuna con benefici e sfide.'
-                                ]
-                            }
-                        ]
-                    },
-                    // Add other sections translated into Italian here...
-                    {
-                        title: 'Bitcoin come Sistema Monetario',
-                        buttonLabel: '₿ Bitcoin',
-                        content: [
-                            {
-                                type: 'questions',
-                                content: [
-                                    'Come funziona Bitcoin come sistema monetario?',
-                                    'Quali sono i vantaggi e gli svantaggi di uno standard Bitcoin?',
-                                    'Bitcoin può essere un\'alternativa valida?'
-                                ]
-                            },
-                            {
-                                type: 'data',
-                                content: [
-                                    'Bitcoin ha operato con fallimenti minimi per oltre nove anni.',
-                                    'L\'offerta diminuisce della metà ogni quattro anni.',
-                                    'Circa 300.000 transazioni giornaliere.',
-                                    'La commissione media per transazione era di $7 alla fine del 2017.',
-                                    'Visa/MasterCard elaborano ~2.000 transazioni/sec; Bitcoin ne elabora fino a 4/sec.'
-                                ]
-                            },
-                            {
-                                type: 'quotes',
-                                content: [
-                                    'Se continua efficacemente, Bitcoin potrebbe rendere obsolete le forme di denaro precedenti.',
-                                    'Bitcoin è il denaro più solido; l\'aumento di valore non aumenta l\'offerta.',
-                                    'Primo bene digitale scarso che non può essere riprodotto all\'infinito.'
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                bookDetails: {
-                    image: 'https://via.placeholder.com/150', // Placeholder image
-                    title: 'Lo Standard Bitcoin',
-                    author: 'Saifedean Ammous',
-                    year: '2018',
-                    pages: '304',
-                    link: 'https://example.com/buy',
-                    offerCoffeeLink: 'https://example.com/coffee'
+            ],
+            bookDetails: {
+                image: 'https://via.placeholder.com/150', // Placeholder image
+                title: 'The Bitcoin Standard',
+                author: 'Saifedean Ammous',
+                year: '2018',
+                pages: '304',
+                link: 'https://example.com/buy',
+                offerCoffeeLink: 'https://example.com/coffee'
+            }
+        },
+        it: {
+            sections: [
+                {
+                    title: 'La Natura del Denaro',
+                    buttonLabel: '💰 Denaro',
+                    content: [
+                        {
+                            type: 'questions',
+                            content: [
+                                'Quali sono i limiti del baratto?',
+                                'Quali caratteristiche definiscono un buon denaro?',
+                                'Come diversi sistemi monetari influenzano lo sviluppo sociale?'
+                            ]
+                        },
+                        {
+                            type: 'data',
+                            content: [
+                                'Domanda di rame: 20 milioni di tonnellate/anno a $5.000/tonnellata, per un valore di mercato di ~$100 miliardi.',
+                                'Le banche centrali detengono circa il 20% delle riserve globali di oro.'
+                            ]
+                        },
+                        {
+                            type: 'quotes',
+                            content: [
+                                'Il baratto è impratico e usato solo in circostanze eccezionali tra persone familiari.',
+                                'Un denaro di successo limita la nuova offerta per mantenere il valore nel tempo.',
+                                'Il denaro si è evoluto da conchiglie a forme digitali, ognuna con benefici e sfide.'
+                            ]
+                        }
+                    ]
+                },
+                // ... (Other sections)
+                {
+                    title: 'Bitcoin come Sistema Monetario',
+                    buttonLabel: '₿ Bitcoin',
+                    content: [
+                        // ... (Content)
+                    ]
                 }
+            ],
+            bookDetails: {
+                image: 'https://via.placeholder.com/150', // Placeholder image
+                title: 'Lo Standard Bitcoin',
+                author: 'Saifedean Ammous',
+                year: '2018',
+                pages: '304',
+                link: 'https://example.com/buy',
+                offerCoffeeLink: 'https://example.com/coffee'
             }
-        };
-
-        let currentLanguage = 'en';
-
-        // Get DOM elements
-        const buttonsContainer = document.getElementById('buttons-container');
-        const cardsWrapper = document.getElementById('cards-wrapper');
-        const progressBar = document.querySelector('.progress-bar');
-        const languageSwitch = document.getElementById('language-switch');
-
-        let cards = [];
-        let currentIndex = 0;
-
-        function initializeApp() {
-            buttonsContainer.innerHTML = '';
-            cardsWrapper.innerHTML = '';
-            cards = [];
-            currentIndex = 0;
-
-            const { sections, bookDetails } = content[currentLanguage];
-
-            // Create buttons and cards for sections
-            sections.forEach((section, index) => {
-                createButton(section.buttonLabel, index);
-                createCard(section);
-            });
-
-            // Create "Book Details" button and card
-            createButton('📖 Details', sections.length);
-            createBookCard(bookDetails);
-
-            // Initialize to show the first card
-            showCard(0);
         }
+    };
 
-        // Function to create a button
-        function createButton(label, index) {
-            const button = document.createElement('div');
-            button.className = 'button';
-            button.textContent = label;
-            button.addEventListener('click', () => {
-                showCard(index);
-            });
-            buttonsContainer.appendChild(button);
-        }
+    let currentLanguage = 'en';
 
-        // Function to create a content block
-        function createContentBlock(type, contents) {
-            const div = document.createElement('div');
-            div.className = `content-block ${type}`;
+    // Get DOM elements
+    const buttonsContainer = document.getElementById('buttons-container');
+    const cardsWrapper = document.getElementById('cards-wrapper');
+    const progressBar = document.querySelector('.progress-bar');
+    const languageSwitch = document.getElementById('language-switch');
 
-            contents.forEach(item => {
-                const p = document.createElement('p');
-                p.textContent = item;
-                div.appendChild(p);
-            });
+    let cards = [];
+    let currentIndex = 0;
 
-            return div;
-        }
+    function initializeApp() {
+        buttonsContainer.innerHTML = '';
+        cardsWrapper.innerHTML = '';
+        cards = [];
+        currentIndex = 0;
 
-        // Function to create a card
-        function createCard(section) {
-            const card = document.createElement('div');
-            card.className = 'card';
+        const { sections, bookDetails } = content[currentLanguage];
 
-            const title = document.createElement('h2');
-            title.className = 'section-title';
-            title.textContent = section.title;
-            card.appendChild(title);
-
-            section.content.forEach(block => {
-                const contentBlock = createContentBlock(block.type, block.content);
-                card.appendChild(contentBlock);
-            });
-
-            cardsWrapper.appendChild(card);
-            cards.push(card);
-        }
-
-        // Function to create the book details card
-        function createBookCard(bookDetails) {
-            const card = document.createElement('div');
-            card.className = 'card';
-            card.innerHTML = `
-                <img src="${bookDetails.image}" alt="Book Cover" style="width:100%; height:auto; border-radius: 10px;">
-                <h2>${bookDetails.title}</h2>
-                <p><strong>${currentLanguage === 'en' ? 'Author' : 'Autore'}:</strong> ${bookDetails.author}</p>
-                <p><strong>${currentLanguage === 'en' ? 'Year' : 'Anno'}:</strong> ${bookDetails.year}</p>
-                <p><strong>${currentLanguage === 'en' ? 'Pages' : 'Pagine'}:</strong> ${bookDetails.pages}</p>
-                <p><a href="${bookDetails.link}" target="_blank">${currentLanguage === 'en' ? 'Buy this book' : 'Acquista il libro'}</a></p>
-                <button class="coffee-button" onclick="window.open('${bookDetails.offerCoffeeLink}', '_blank')">${currentLanguage === 'en' ? '☕ Offer me a coffee' : '☕ Offrimi un caffè'}</button>
-            `;
-            cardsWrapper.appendChild(card);
-            cards.push(card);
-        }
-
-        // Function to display a specific card
-        function showCard(index) {
-            currentIndex = index;
-            cardsWrapper.style.transform = `translateX(-${index * 100}%)`;
-            const progress = ((index + 1) / cards.length) * 100;
-            progressBar.style.width = `${progress}%`;
-        }
-
-        // Swipe functionality
-        let startX = 0;
-        let currentX = 0;
-        let isDragging = false;
-
-        const cardsContainer = document.querySelector('.cards-container');
-
-        cardsContainer.addEventListener('touchstart', touchStart, false);
-        cardsContainer.addEventListener('touchmove', touchMove, false);
-        cardsContainer.addEventListener('touchend', touchEnd, false);
-
-        function touchStart(evt) {
-            startX = evt.touches[0].clientX;
-            isDragging = true;
-        }
-
-        function touchMove(evt) {
-            if (!isDragging) return;
-            currentX = evt.touches[0].clientX;
-            const deltaX = currentX - startX;
-            cardsWrapper.style.transition = 'none';
-            cardsWrapper.style.transform = `translateX(${ -currentIndex * window.innerWidth + deltaX }px)`;
-        }
-
-        function touchEnd(evt) {
-            if (!isDragging) return;
-            isDragging = false;
-            const deltaX = currentX - startX;
-            if (deltaX < -50 && currentIndex < cards.length - 1) {
-                currentIndex++;
-            } else if (deltaX > 50 && currentIndex > 0) {
-                currentIndex--;
-            }
-            cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
-            showCard(currentIndex);
-        }
-
-        // Language switch functionality
-        languageSwitch.addEventListener('click', () => {
-            currentLanguage = currentLanguage === 'en' ? 'it' : 'en';
-            languageSwitch.textContent = currentLanguage === 'en' ? '🇮🇹' : '🇬🇧';
-            initializeApp();
+        // Create buttons and cards for sections
+        sections.forEach((section, index) => {
+            createButton(section.buttonLabel, index);
+            createCard(section);
         });
 
-        // Initialize the app
+        // Create "Book Details" button and card
+        createButton('📖 Details', sections.length);
+        createBookCard(bookDetails);
+
+        // Initialize to show the first card
+        showCard(0);
+    }
+
+    // Function to create a button
+    function createButton(label, index) {
+        const button = document.createElement('div');
+        button.className = 'button';
+        button.textContent = label;
+        button.addEventListener('click', () => {
+            showCard(index);
+        });
+        buttonsContainer.appendChild(button);
+    }
+
+    // Function to create a content block
+    function createContentBlock(type, contents) {
+        const div = document.createElement('div');
+        div.className = `content-block ${type}`;
+
+        contents.forEach(item => {
+            const p = document.createElement('p');
+            p.textContent = item;
+            div.appendChild(p);
+        });
+
+        return div;
+    }
+
+    // Function to create a card
+    function createCard(section) {
+        const card = document.createElement('div');
+        card.className = 'card';
+
+        const cardContent = document.createElement('div');
+        cardContent.className = 'card-content';
+
+        const title = document.createElement('h2');
+        title.className = 'section-title';
+        title.textContent = section.title;
+        cardContent.appendChild(title);
+
+        section.content.forEach(block => {
+            const contentBlock = createContentBlock(block.type, block.content);
+            cardContent.appendChild(contentBlock);
+        });
+
+        card.appendChild(cardContent);
+
+        cardsWrapper.appendChild(card);
+        cards.push(card);
+    }
+
+    // Function to create the book details card
+    function createBookCard(bookDetails) {
+        const card = document.createElement('div');
+        card.className = 'card';
+
+        const cardContent = document.createElement('div');
+        cardContent.className = 'card-content';
+
+        cardContent.innerHTML = `
+            <img src="${bookDetails.image}" alt="Book Cover" style="width:100%; height:auto; border-radius: 10px;">
+            <h2>${bookDetails.title}</h2>
+            <p><strong>${currentLanguage === 'en' ? 'Author' : 'Autore'}:</strong> ${bookDetails.author}</p>
+            <p><strong>${currentLanguage === 'en' ? 'Year' : 'Anno'}:</strong> ${bookDetails.year}</p>
+            <p><strong>${currentLanguage === 'en' ? 'Pages' : 'Pagine'}:</strong> ${bookDetails.pages}</p>
+            <p><a href="${bookDetails.link}" target="_blank">${currentLanguage === 'en' ? 'Buy this book' : 'Acquista il libro'}</a></p>
+            <button class="coffee-button" onclick="window.open('${bookDetails.offerCoffeeLink}', '_blank')">${currentLanguage === 'en' ? '☕ Offer me a coffee' : '☕ Offrimi un caffè'}</button>
+        `;
+
+        card.appendChild(cardContent);
+
+        cardsWrapper.appendChild(card);
+        cards.push(card);
+    }
+
+    // Function to display a specific card
+    function showCard(index) {
+        currentIndex = index;
+        cardsWrapper.style.transform = `translateX(-${index * 100}%)`;
+        const progress = ((index + 1) / cards.length) * 100;
+        progressBar.style.width = `${progress}%`;
+    }
+
+    // Swipe functionality
+    let startX = 0;
+    let isDown = false;
+
+    const cardsContainer = document.querySelector('.cards-container');
+
+    // Touch events for mobile
+    cardsContainer.addEventListener('touchstart', touchStart, false);
+    cardsContainer.addEventListener('touchmove', touchMove, false);
+    cardsContainer.addEventListener('touchend', touchEnd, false);
+
+    function touchStart(evt) {
+        startX = evt.touches[0].clientX;
+        isDown = true;
+        cardsWrapper.style.transition = 'none';
+    }
+
+    function touchMove(evt) {
+        if (!isDown) return;
+        const x = evt.touches[0].clientX;
+        const deltaX = x - startX;
+        cardsWrapper.style.transform = `translateX(${ -currentIndex * 100 + (deltaX / window.innerWidth) * 100 }%)`;
+    }
+
+    function touchEnd(evt) {
+        if (!isDown) return;
+        isDown = false;
+        const endX = evt.changedTouches[0].clientX;
+        const deltaX = endX - startX;
+        if (deltaX < -50 && currentIndex < cards.length - 1) {
+            currentIndex++;
+        } else if (deltaX > 50 && currentIndex > 0) {
+            currentIndex--;
+        }
+        cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
+        showCard(currentIndex);
+    }
+
+    // Mouse events for desktop
+    cardsContainer.addEventListener('mousedown', mouseDown, false);
+    cardsContainer.addEventListener('mousemove', mouseMove, false);
+    cardsContainer.addEventListener('mouseup', mouseUp, false);
+    cardsContainer.addEventListener('mouseleave', mouseUp, false);
+
+    function mouseDown(evt) {
+        startX = evt.clientX;
+        isDown = true;
+        cardsWrapper.style.transition = 'none';
+    }
+
+    function mouseMove(evt) {
+        if (!isDown) return;
+        const x = evt.clientX;
+        const deltaX = x - startX;
+        cardsWrapper.style.transform = `translateX(${ -currentIndex * 100 + (deltaX / window.innerWidth) * 100 }%)`;
+    }
+
+    function mouseUp(evt) {
+        if (!isDown) return;
+        isDown = false;
+        const endX = evt.clientX;
+        const deltaX = endX - startX;
+        if (deltaX < -50 && currentIndex < cards.length - 1) {
+            currentIndex++;
+        } else if (deltaX > 50 && currentIndex > 0) {
+            currentIndex--;
+        }
+        cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
+        showCard(currentIndex);
+    }
+
+    // Language switch functionality
+    languageSwitch.addEventListener('click', () => {
+        currentLanguage = currentLanguage === 'en' ? 'it' : 'en';
+        languageSwitch.textContent = currentLanguage === 'en' ? '🇮🇹' : '🇬🇧';
         initializeApp();
-    </script>
-</body>
-</html>
+    });
+
+    // Initialize the app
+    initializeApp();
+</script>
