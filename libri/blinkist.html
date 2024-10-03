@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Blinkist-like App</title>
+    <title>Blinkist-like App - Personalized Content</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Import Montserrat font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -10,6 +10,9 @@
         /* Root variables */
         :root {
             --theme-color: #ADD8E6; /* Light blue */
+            --question-color: #E0F7FA;
+            --data-color: #FFF3E0;
+            --quote-color: #EDE7F6;
         }
 
         /* Basic styles */
@@ -89,6 +92,29 @@
             position: relative;
         }
 
+        /* Section styles */
+        .section-title {
+            margin-bottom: 10px;
+        }
+
+        .content-block {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .questions {
+            background-color: var(--question-color);
+        }
+
+        .data {
+            background-color: var(--data-color);
+        }
+
+        .quotes {
+            background-color: var(--quote-color);
+        }
+
         /* Progress bar */
         .progress-bar {
             height: 5px;
@@ -136,23 +162,162 @@
     </div>
 
     <script>
-        // Sample data for chapters and book details
-        const chapters = [
-            { title: 'Introduction', content: 'This is the introduction content.' },
-            { title: 'Chapter 1', content: 'Content of Chapter 1.' },
-            { title: 'Chapter 2', content: 'Content of Chapter 2.' },
-            { title: 'Chapter 3', content: 'Content of Chapter 3.' },
-            { title: 'Chapter 4', content: 'Content of Chapter 4.' },
-            { title: 'Chapter 5', content: 'Content of Chapter 5.' },
-            { title: 'Conclusion', content: 'This is the conclusion content.' },
+        // Content data
+        const sections = [
+            {
+                title: 'Section 1: The Nature of Money',
+                content: [
+                    {
+                        type: 'questions',
+                        content: [
+                            'What are the limitations of barter?',
+                            'What characteristics define good money?',
+                            'How do different monetary systems impact societal development?'
+                        ]
+                    },
+                    {
+                        type: 'data',
+                        content: [
+                            'Market demand for copper is around 20 million tons per year at approximately $5,000 per ton, totaling a market value of about $100 billion.',
+                            'Central banks hold roughly 20% of global gold stockpiles.'
+                        ]
+                    },
+                    {
+                        type: 'quotes',
+                        content: [
+                            'Barter exists but is impractical and typically used only among people with extensive familiarity.',
+                            'Successful money often has mechanisms that restrict new supply, maintaining its value over time.',
+                            'Technological advances have evolved money from seashells to digital forms, each with benefits and pitfalls.'
+                        ]
+                    }
+                ]
+            },
+            {
+                title: 'Section 2: The Rise and Fall of Primitive and Metal Moneys',
+                content: [
+                    {
+                        type: 'questions',
+                        content: [
+                            'What were some examples of early forms of money?',
+                            'How did societies transition from primitive to more sophisticated monetary systems?',
+                            'What lessons can we learn from the failures of past monies?'
+                        ]
+                    },
+                    {
+                        type: 'data',
+                        content: [
+                            'Historically, the ratio between silver and gold was between 12 and 15 ounces of silver to one ounce of gold.',
+                            "China's silver-based currency lost 78% of its value from the mid-1800s to 1935.",
+                            'The British colonial government in India had to increase taxes due to the declining value of the rupee against gold-based currencies.'
+                        ]
+                    },
+                    {
+                        type: 'quotes',
+                        content: [
+                            'Bitcoin resembles the ancient Rai stones system on Yap Island.',
+                            "Villagers rejected stones gathered too easily, deeming them less valuable.",
+                            'European traders imported mass quantities of beads to West Africa, affecting their value.'
+                        ]
+                    }
+                ]
+            },
+            {
+                title: 'Section 3: Government Money and Its Consequences',
+                content: [
+                    {
+                        type: 'questions',
+                        content: [
+                            'How do government-controlled monetary systems differ from market-driven ones?',
+                            'What are the historical consequences of governments controlling money?',
+                            'How has the shift from gold-backed to fiat currency impacted economic and social structures?'
+                        ]
+                    },
+                    {
+                        type: 'data',
+                        content: [
+                            'No specific quantitative data provided in this section.'
+                        ]
+                    },
+                    {
+                        type: 'quotes',
+                        content: [
+                            'There is a significant difference between government money redeemable in gold and irredeemable government money.',
+                            'Governments cannot control the supply of gold, and people can use gold in various forms for transactions.',
+                            'The earliest example of fiat money was the jiaozi in China, which eventually collapsed due to overissuance.'
+                        ]
+                    }
+                ]
+            },
+            {
+                title: 'Section 4: Sound Money, Time Preference, and Societal Impact',
+                content: [
+                    {
+                        type: 'questions',
+                        content: [
+                            'How does sound money influence individual time preference?',
+                            'What are the long-term societal impacts of sound versus unsound money?',
+                            'Has there been a decline in innovation after moving away from the gold standard?'
+                        ]
+                    },
+                    {
+                        type: 'data',
+                        content: [
+                            'A study examines gold’s purchasing power in England from 1560 to 1976.',
+                            'Bunch and Hellemans compiled 8,583 significant inventions in history.',
+                            'Innovations per capita peaked in the 19th century.',
+                            "Thomas Philippon's study shows the financial sector's size over 150 years.",
+                            'U.S. M2 money supply grew from around $600 billion in 1971 to over $12 trillion today, averaging 7% annual growth.'
+                        ]
+                    },
+                    {
+                        type: 'quotes',
+                        content: [
+                            'Sound money significantly affects how individuals value the present compared to the future.',
+                            'National debt impacts future generations, not just the current one.',
+                            'Unsound money contributes to the breakdown of traditional family structures.'
+                        ]
+                    }
+                ]
+            },
+            {
+                title: 'Section 5: Bitcoin as a Monetary System',
+                content: [
+                    {
+                        type: 'questions',
+                        content: [
+                            'How does Bitcoin function as a monetary system?',
+                            'What are the potential benefits and drawbacks of a Bitcoin standard?',
+                            'Can Bitcoin function as a viable alternative to existing systems?'
+                        ]
+                    },
+                    {
+                        type: 'data',
+                        content: [
+                            'Bitcoin has operated with minimal failure for over nine years.',
+                            'The Bitcoin supply decreases by half every four years.',
+                            'Approximately 300,000 daily Bitcoin transactions occur.',
+                            'At the end of 2017, the average Bitcoin transaction fee was $7.',
+                            'Visa and MasterCard process about 2,000 transactions per second; Bitcoin processes up to four.'
+                        ]
+                    },
+                    {
+                        type: 'quotes',
+                        content: [
+                            'Bitcoin could render previous forms of money obsolete if it continues to operate effectively.',
+                            'Bitcoin is the hardest form of money ever invented; increased value doesn't lead to increased supply.',
+                            'Bitcoin is the first scarce digital good that cannot be reproduced infinitely.'
+                        ]
+                    }
+                ]
+            }
         ];
 
         const bookDetails = {
             image: 'https://via.placeholder.com/150', // Placeholder image
-            title: 'Book Title',
-            author: 'Author Name',
-            year: '2023',
-            pages: '200',
+            title: 'The Bitcoin Standard',
+            author: 'Saifedean Ammous',
+            year: '2018',
+            pages: '304',
             link: 'https://example.com/buy'
         };
 
@@ -176,11 +341,45 @@
             buttonsContainer.appendChild(button);
         }
 
+        // Function to create a content block
+        function createContentBlock(type, contents) {
+            const div = document.createElement('div');
+            div.className = `content-block ${type}`;
+
+            if (type === 'questions' || type === 'data') {
+                const ul = document.createElement('ul');
+                contents.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = item;
+                    ul.appendChild(li);
+                });
+                div.appendChild(ul);
+            } else if (type === 'quotes') {
+                contents.forEach(item => {
+                    const p = document.createElement('p');
+                    p.textContent = `"${item}"`;
+                    div.appendChild(p);
+                });
+            }
+
+            return div;
+        }
+
         // Function to create a card
-        function createCard(content) {
+        function createCard(section) {
             const card = document.createElement('div');
             card.className = 'card';
-            card.innerHTML = content;
+
+            const title = document.createElement('h2');
+            title.className = 'section-title';
+            title.textContent = section.title;
+            card.appendChild(title);
+
+            section.content.forEach(block => {
+                const contentBlock = createContentBlock(block.type, block.content);
+                card.appendChild(contentBlock);
+            });
+
             cardsWrapper.appendChild(card);
             cards.push(card);
         }
@@ -188,20 +387,23 @@
         // Function to display a specific card
         function showCard(index) {
             currentIndex = index;
-            cardsWrapper.style.transform = `translateX(-${index * (cardsWrapper.children[0].offsetWidth + 20)}px)`;
+            const cardWidth = cardsWrapper.children[0].offsetWidth + 20; // card width + margin
+            cardsWrapper.style.transform = `translateX(-${index * cardWidth}px)`;
             const progress = ((index + 1) / cards.length) * 100;
             progressBar.style.width = `${progress}%`;
         }
 
-        // Create buttons and cards for chapters
-        chapters.forEach((chapter, index) => {
-            createButton(chapter.title, index);
-            createCard(`<h2>${chapter.title}</h2><p>${chapter.content}</p>`);
+        // Create buttons and cards for sections
+        sections.forEach((section, index) => {
+            createButton(`Section ${index + 1}`, index);
+            createCard(section);
         });
 
         // Create "Book Details" button and card
-        createButton('Book Details', chapters.length);
-        const bookCardContent = `
+        createButton('Book Details', sections.length);
+        const bookCard = document.createElement('div');
+        bookCard.className = 'card';
+        bookCard.innerHTML = `
             <img src="${bookDetails.image}" alt="Book Cover" style="width:100%; height:auto; border-radius: 10px;">
             <h2>${bookDetails.title}</h2>
             <p><strong>Author:</strong> ${bookDetails.author}</p>
@@ -209,7 +411,8 @@
             <p><strong>Pages:</strong> ${bookDetails.pages}</p>
             <p><a href="${bookDetails.link}" target="_blank">Buy this book</a></p>
         `;
-        createCard(bookCardContent);
+        cardsWrapper.appendChild(bookCard);
+        cards.push(bookCard);
 
         // Initialize to show the first card
         showCard(0);
@@ -232,8 +435,9 @@
             if (!isDragging) return;
             currentX = evt.touches[0].clientX;
             const deltaX = currentX - startX;
+            const cardWidth = cardsWrapper.children[0].offsetWidth + 20; // card width + margin
             cardsWrapper.style.transition = 'none';
-            cardsWrapper.style.transform = `translateX(${ -currentIndex * (cardsWrapper.children[0].offsetWidth + 20) + deltaX }px)`;
+            cardsWrapper.style.transform = `translateX(${ -currentIndex * cardWidth + deltaX }px)`;
         }
 
         function touchEnd(evt) {
