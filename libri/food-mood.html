@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Blinkist-like App - Updated Version</title>
+    <title>Exercised - Riepilogo del Libro</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Import Montserrat font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="/index_files/ff.webp" type="image/webp">
+    <link rel="apple-touch-icon" href="/index_files/ff.webp">
     <style>
         /* Root variables */
         :root {
@@ -160,57 +163,43 @@
             background-color: var(--quote-color);
         }
 
+        .paragraphs {
+            background-color: #e0f7fa; /* Light cyan */
+            font-weight: normal;
+        }
+
         /* Hide scrollbars on card content */
         .card-content::-webkit-scrollbar {
             width: 0px;
             background: transparent;
         }
 
-        /* "Action" buttons */
-        .action-button {
-            display: block;
-            margin: 10px 0 0;
-            padding: 10px 20px;
-            background-color: var(--theme-color);
-            color: #fff;
-            border: none;
-            border-radius: 20px;
+        /* Footer */
+        footer {
+            text-align: center;
             font-size: 16px;
-            cursor: pointer;
-            text-align: left;
-            font-weight: bold;
+            font-family: 'Montserrat', sans-serif;
+            padding: 10px;
+            background-color: #f0f0f0;
         }
 
-        /* Book details styles */
-        .book-details p {
-            font-size: 16px;
-            font-weight: bold;
-            margin: 5px 0;
-        }
-
-        .book-details img {
-            margin-bottom: 10px;
-        }
-
-        .book-details h2 {
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 10px;
+        footer a {
+            color: #00bef8;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
     <div class="app-container">
-        <!-- Header with logo, buttons, and language switch -->
+        <!-- Header with logo and buttons -->
         <div class="header">
             <a href="https://futurofortissimo.github.io/">
-                <img src="/index_files/ff.png" alt="Logo" class="logo">
+                <img src="/index_files/ff.webp" alt="Logo" class="logo">
             </a>
             <!-- Buttons inside header -->
             <div class="buttons-container" id="buttons-container">
                 <!-- Buttons will be dynamically inserted here -->
             </div>
-            <button class="language-switch" id="language-switch">🇮🇹</button>
         </div>
 
         <!-- Progress bar -->
@@ -224,8 +213,13 @@
         </div>
     </div>
 
+    <footer>
+        <p><a href="https://linktr.ee/micmer">michele merelli</a> per
+        <a href="https://fortissimo.substack.com/">futuro fortissimo</a></p>
+    </footer>
+
     <script>
-        // Content data in English and Italian
+        // Content data
         const content = {
                  chapters: [
                      {
@@ -385,16 +379,15 @@
                  }
              };
 
-        let currentLanguage = 'en';
+        // Initialize the app
+        let currentIndex = 0;
 
         // Get DOM elements
         const buttonsContainer = document.getElementById('buttons-container');
         const cardsWrapper = document.getElementById('cards-wrapper');
         const progressBar = document.querySelector('.progress-bar');
-        const languageSwitch = document.getElementById('language-switch');
 
         let cards = [];
-        let currentIndex = 0;
 
         function initializeApp() {
             buttonsContainer.innerHTML = '';
@@ -402,7 +395,7 @@
             cards = [];
             currentIndex = 0;
 
-            const { chapters, bookDetails } = content[currentLanguage];
+            const { chapters, bookDetails } = content;
 
             // Create buttons and cards for chapters
             chapters.forEach((chapter, index) => {
@@ -411,7 +404,7 @@
             });
 
             // Create "Book Details" button and card
-            createButton('📖 Details', chapters.length);
+            createButton('📖 Dettagli', chapters.length);
             createBookCard(bookDetails);
 
             // Initialize to show the first card
@@ -478,11 +471,11 @@
             cardContent.innerHTML = `
                 <img src="${bookDetails.image}" alt="Book Cover" style="width:100%; height:auto; border-radius: 10px;">
                 <h2>${bookDetails.title}</h2>
-                <p>${currentLanguage === 'en' ? 'Author' : 'Autore'}: ${bookDetails.author}</p>
-                <p>${currentLanguage === 'en' ? 'Year' : 'Anno'}: ${bookDetails.year}</p>
-                <p>${currentLanguage === 'en' ? 'Pages' : 'Pagine'}: ${bookDetails.pages}</p>
-                <button class="action-button" onclick="window.open('${bookDetails.link}', '_blank')">${currentLanguage === 'en' ? '📖 Buy this book' : '📖 Acquista il libro'}</button>
-                <button class="action-button" onclick="window.open('${bookDetails.offerCoffeeLink}', '_blank')">${currentLanguage === 'en' ? '☕ Offer me a coffee' : '☕ Offrimi un caffè'}</button>
+                <p>Autore: ${bookDetails.author}</p>
+                <p>Anno: ${bookDetails.year}</p>
+                <p>Pagine: ${bookDetails.pages}</p>
+                <button class="action-button" onclick="window.open('${bookDetails.link}', '_blank')">📖 Acquista il libro</button>
+                <button class="action-button" onclick="window.open('${bookDetails.offerCoffeeLink}', '_blank')">☕ Offrimi un caffè</button>
             `;
 
             card.appendChild(cardContent);
@@ -573,13 +566,6 @@
             cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
             showCard(currentIndex);
         }
-
-        // Language switch functionality
-        languageSwitch.addEventListener('click', () => {
-            currentLanguage = currentLanguage === 'en' ? 'it' : 'en';
-            languageSwitch.textContent = currentLanguage === 'en' ? '🇮🇹' : '🇬🇧';
-            initializeApp();
-        });
 
         // Initialize the app after the DOM is fully loaded
         document.addEventListener('DOMContentLoaded', () => {
