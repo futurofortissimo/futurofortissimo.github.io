@@ -260,10 +260,6 @@
                                       ]
                                   },
                                   {
-                                      type: 'subsectionTitle',
-                                      content: ['In breve - ff.1']
-                                  },
-                                  {
                                       type: 'darkerParagraphs',
                                       content: [
                                           '🌎 ff.1.1 Sensibilizzazione e arte\nIl progetto artistico di COP26 ha rivoluzionato l\'identità visiva della conferenza, evidenziando l\'importanza dell\'arte nel sensibilizzare sul cambiamento climatico.',
@@ -291,10 +287,6 @@
                                           'Quanto inquina una Tesla rispetto alla Panda?',
                                           'Noi come quelli a cavallo: il muro di Marchetti'
                                       ]
-                                  },
-                                  {
-                                      type: 'subsectionTitle',
-                                      content: ['In breve - ff.5']
                                   },
                                   {
                                       type: 'darkerParagraphs',
@@ -326,10 +318,6 @@
                                       ]
                                   },
                                   {
-                                      type: 'subsectionTitle',
-                                      content: ['In breve - ff.20']
-                                  },
-                                  {
                                       type: 'darkerParagraphs',
                                       content: [
                                           '🚲 ff.20.1 La rivincita delle biciclette\nLa pandemia ha aumentato l\'uso della bicicletta, con un incremento notevole nelle Filippine e progressi anche in Italia con l\'aumento delle piste ciclabili.',
@@ -355,10 +343,6 @@
                                           'Foglie in silicone per efficienze maggiori',
                                           'Come modificare la genetica per catturare più CO2'
                                       ]
-                                  },
-                                  {
-                                      type: 'subsectionTitle',
-                                      content: ['In breve - ff.33']
                                   },
                                   {
                                       type: 'darkerParagraphs',
@@ -387,10 +371,7 @@
                                           'Investiamo troppo per i cambiamenti climatici?'
                                       ]
                                   },
-                                  {
-                                      type: 'subsectionTitle',
-                                      content: ['In breve - ff.51']
-                                  },
+
                                   {
                                       type: 'darkerParagraphs',
                                       content: [
@@ -416,10 +397,6 @@
                                           'Hamburger che inquinano meno degli asparagi',
                                           'Un abbonamento, stile Spotify, per vivere il mondo'
                                       ]
-                                  },
-                                  {
-                                      type: 'subsectionTitle',
-                                      content: ['In breve - ff.61']
                                   },
                                   {
                                       type: 'darkerParagraphs',
@@ -453,10 +430,6 @@
                                       ]
                                   },
                                   {
-                                      type: 'subsectionTitle',
-                                      content: ['In brief - ff.1']
-                                  },
-                                  {
                                       type: 'darkerParagraphs',
                                       content: [
                                           '🌎 ff.1.1 Awareness and Art\nThe artistic project of COP26 revolutionized the visual identity of the conference, highlighting the importance of art in raising awareness about climate change.',
@@ -484,10 +457,6 @@
                                           'How much does a Tesla pollute compared to a Panda?',
                                           'We are like those on horseback: Marchetti\'s wall'
                                       ]
-                                  },
-                                  {
-                                      type: 'subsectionTitle',
-                                      content: ['In brief - ff.5']
                                   },
                                   {
                                       type: 'darkerParagraphs',
@@ -519,10 +488,6 @@
                                       ]
                                   },
                                   {
-                                      type: 'subsectionTitle',
-                                      content: ['In brief - ff.20']
-                                  },
-                                  {
                                       type: 'darkerParagraphs',
                                       content: [
                                           '🚲 ff.20.1 The revenge of bicycles\nThe pandemic has increased bicycle use, with a notable rise in the Philippines and progress in Italy with more bike lanes.',
@@ -548,10 +513,6 @@
                                           'Silicone leaves for greater efficiencies',
                                           'How to modify genetics to capture more CO2'
                                       ]
-                                  },
-                                  {
-                                      type: 'subsectionTitle',
-                                      content: ['In brief - ff.33']
                                   },
                                   {
                                       type: 'darkerParagraphs',
@@ -581,10 +542,6 @@
                                       ]
                                   },
                                   {
-                                      type: 'subsectionTitle',
-                                      content: ['In brief - ff.51']
-                                  },
-                                  {
                                       type: 'darkerParagraphs',
                                       content: [
                                           '💚 ff.51.1 The storytelling for green\nReflections on how nature, a symbol of hope and inner peace, becomes the object of romantic storytelling, which sometimes risks distorting the pragmatic reality of its existence and utility.',
@@ -609,10 +566,6 @@
                                           'Hamburgers that pollute less than asparagus',
                                           'A Spotify-style subscription to experience the world'
                                       ]
-                                  },
-                                  {
-                                      type: 'subsectionTitle',
-                                      content: ['In brief - ff.61']
                                   },
                                   {
                                       type: 'darkerParagraphs',
@@ -706,18 +659,31 @@ function createContentBlock(type, contents) {
     const div = document.createElement('div');
     div.className = `content-block ${type}`;
 
-    if (type === 'subsectionTitle') {
-        const h3 = document.createElement('h3');
-        h3.textContent = contents[0];
-        h3.className = 'subsection-title';
-        div.appendChild(h3);
-    } else {
-        contents.forEach(item => {
-            const p = document.createElement('p');
-            p.textContent = item;
-            div.appendChild(p);
-        });
-    }
+    contents.forEach(item => {
+        // Split the item into title and content at the first newline
+        const [title, ...rest] = item.split('\n');
+        const contentText = rest.join('\n').trim();
+
+        const p = document.createElement('p');
+
+        // Create a bold element for the title
+        const boldTitle = document.createElement('strong');
+        boldTitle.textContent = title.trim();
+
+        // Append the bold title to the paragraph
+        p.appendChild(boldTitle);
+
+        if (contentText) {
+            // Add a line break
+            p.appendChild(document.createElement('br'));
+
+            // Create a text node for the content
+            const contentNode = document.createTextNode(contentText);
+            p.appendChild(contentNode);
+        }
+
+        div.appendChild(p);
+    });
 
     return div;
 }
