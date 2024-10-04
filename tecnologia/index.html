@@ -87,6 +87,24 @@
             cursor: pointer;
             user-select: none;
             white-space: nowrap;
+            font-family: 'Montserrat', sans-serif; /* Ensure same font */
+        }
+
+        /* Substack Buttons */
+        .substack-button {
+            text-align: left; /* Justify to left */
+            border-radius: 5px; /* Optional: Slightly rounded corners */
+            background-color: var(--theme-color); /* Consistent background */
+            color: #fff;
+            padding: 10px 15px;
+            margin-bottom: 10px; /* Add spacing below */
+            font-size: 16px;
+            cursor: pointer;
+            width: auto; /* Adjust width as needed */
+        }
+
+        .substack-button:hover {
+            background-color: #7ec0ee; /* Slightly darker blue */
         }
 
         /* Progress bar */
@@ -241,13 +259,8 @@
     </footer>
 
     <script>
-        // Content data in Italian
-
-
         // Content data in Italian and English
-        // Content data in Italian
 
-        // Updated content object with substackLink for each publication
         const content = {
             it: {
                 publications: [
@@ -255,6 +268,7 @@
                         buttonLabel: '🎼 ff.88 Singolarità nel 2029?',
                         substackLink: 'https://fortissimo.substack.com/p/ff88-singolarita-nel-2029',
                         urlSlug: '-ff88-singolarita-nel-2029',
+                        title: '🎼 ff.88 Singolarità nel 2029?',
                         cards: [
                             {
                                 title: '🎨 Singolarità nel 2029?',
@@ -285,6 +299,7 @@
                         buttonLabel: '🎼 ff.87 Siamo quello che respiriamo',
                         substackLink: 'https://fortissimo.substack.com/p/ff87-siamo-quello-che-respiriamo',
                         urlSlug: '-ff87-siamo-quello-che-respiriamo',
+                        title: '🎼 ff.87 Siamo quello che respiriamo',
                         cards: [
                             {
                                 title: '🧠 Siamo quello che respiriamo',
@@ -312,11 +327,11 @@
                         ]
                     },
                     // ... Continue adding all other publications similarly
-                    // For brevity, only a few publications are shown here. You should add all 88 publications following the same structure.
                     {
                         buttonLabel: '🎼 ff.86 Bruciare ossigeno è vita',
                         substackLink: 'https://fortissimo.substack.com/p/ff85-bruciare-ossigeno-e-vita',
                         urlSlug: '-ff85-bruciare-ossigeno-e-vita',
+                        title: '🎼 ff.86 Bruciare ossigeno è vita',
                         cards: [
                             {
                                 title: '🔥 Bruciare ossigeno è vita',
@@ -352,6 +367,7 @@
                         buttonLabel: '🎼 ff.18 Between digital art and AI',
                         substackLink: 'https://fortissimo.substack.com/p/ff18-digital-art-and-ai',
                         urlSlug: '-ff18-digital-art-and-ai',
+                        title: '🎼 ff.18 Between digital art and AI',
                         cards: [
                             {
                                 title: '🎨 Can AI be more creative than humans?',
@@ -382,6 +398,7 @@
                         buttonLabel: '🎼 ff.10 Measuring intelligence',
                         substackLink: 'https://fortissimo.substack.com/p/ff10-measuring-intelligence',
                         urlSlug: '-ff10-measuring-intelligence',
+                        title: '🎼 ff.10 Measuring intelligence',
                         cards: [
                             {
                                 title: '🧠 Intelligence, consciousness, and evolving brains',
@@ -413,218 +430,235 @@
             }
         };
 
+        let currentLanguage = 'it';
+        let currentIndex = 0;
+        let publicationIndices = [];
 
-let currentLanguage = 'it';
-  let currentIndex = 0;
-  let publicationIndices = [];
+        const buttonsContainer = document.getElementById('buttons-container');
+        const cardsWrapper = document.getElementById('cards-wrapper');
+        const progressBar = document.querySelector('.progress-bar');
+        const languageSwitch = document.getElementById('language-switch');
 
-  const buttonsContainer = document.getElementById('buttons-container');
-  const cardsWrapper = document.getElementById('cards-wrapper');
-  const progressBar = document.querySelector('.progress-bar');
-  const languageSwitch = document.getElementById('language-switch');
+        let cards = [];
 
-  let cards = [];
+        // Function to transform Substack URL for English using Google Translate
+        function getTranslatedSubstackLink(originalLink) {
+            if (currentLanguage === 'it') {
+                return originalLink;
+            } else if (currentLanguage === 'en') {
+                // Parse the original URL
+                try {
+                    const url = new URL(originalLink);
+                    const originalDomain = url.hostname; // e.g., fortissimo.substack.com
+                    const translatedDomain = originalDomain.replace(/\./g, '-') + '.translate.goog';
+                    const translatedURL = `https://${translatedDomain}${url.pathname}?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=it&_x_tr_hist=true`;
+                    return translatedURL;
+                } catch (error) {
+                    console.error('Invalid URL:', originalLink);
+                    return originalLink; // Fallback to original link if invalid
+                }
+            }
+            return originalLink; // Default fallback
+        }
 
-  function initializeApp() {
-    buttonsContainer.innerHTML = '';
-    cardsWrapper.innerHTML = '';
-    cards = [];
-    currentIndex = 0;
+        function initializeApp() {
+            buttonsContainer.innerHTML = '';
+            cardsWrapper.innerHTML = '';
+            cards = [];
+            currentIndex = 0;
 
-    const { publications } = content[currentLanguage];
+            const { publications } = content[currentLanguage];
 
-    let cardIndex = 0;
-    publicationIndices = [];
+            let cardIndex = 0;
+            publicationIndices = [];
 
-    publications.forEach((publication) => {
-      createButton(publication.buttonLabel, cardIndex);
-      publicationIndices.push(cardIndex);
-      publication.cards.forEach(cardData => {
-        createCard(publication, cardData); // Pass publication to createCard
-        cardIndex++;
-      });
-    });
+            publications.forEach((publication) => {
+                createButton(publication.buttonLabel, cardIndex);
+                publicationIndices.push(cardIndex);
+                publication.cards.forEach(cardData => {
+                    createCard(publication, cardData); // Pass publication to createCard
+                    cardIndex++;
+                });
+            });
 
-    // Add a sentinel value for the end
-    publicationIndices.push(cardIndex);
+            // Add a sentinel value for the end
+            publicationIndices.push(cardIndex);
 
-    showCard(0);
-  }
+            showCard(0);
+        }
 
-  function createButton(label, index) {
-    const button = document.createElement('div');
-    button.className = 'button';
-    button.textContent = label;
-    button.addEventListener('click', () => {
-      showCard(index);
-    });
-    buttonsContainer.appendChild(button);
-  }
+        function createButton(label, index) {
+            const button = document.createElement('div');
+            button.className = 'button';
+            button.textContent = label;
+            button.addEventListener('click', () => {
+                showCard(index);
+            });
+            buttonsContainer.appendChild(button);
+        }
 
-  function createCard(publication, cardData) {
-    const card = document.createElement('div');
-    card.className = 'card';
+        function createCard(publication, cardData) {
+            const card = document.createElement('div');
+            card.className = 'card';
 
-    const cardContent = document.createElement('div');
-    cardContent.className = 'card-content';
+            const cardContent = document.createElement('div');
+            cardContent.className = 'card-content';
 
-    // Create the Substack button
+            // Create the Substack button with publication title
+            const substackButton = document.createElement('button');
+            substackButton.className = 'substack-button';
+            substackButton.textContent = publication.title; // Use publication title
+            substackButton.addEventListener('click', () => {
+                const translatedLink = getTranslatedSubstackLink(publication.substackLink);
+                window.open(translatedLink, '_blank');
+            });
 
-    const substackButton = document.createElement('div');
-    substackButton.className = 'button substack-button';
-    substackButton.textContent = '🔗 Leggi su Substack'; // You can customize this text
-    substackButton.style.cursor = 'pointer';
-    substackButton.style.marginBottom = '10px'; // Add some spacing
-    substackButton.addEventListener('click', () => {
-      window.open(publication.substackLink, '_blank');
-    });
+            cardContent.appendChild(substackButton);
 
-    cardContent.appendChild(substackButton);
+            // Create the title
+            const title = document.createElement('h2');
+            title.className = 'section-title';
+            title.textContent = cardData.title;
+            cardContent.appendChild(title);
 
-    // Create the title
-    const title = document.createElement('h2');
-    title.className = 'section-title';
-    title.textContent = cardData.title;
-    cardContent.appendChild(title);
+            // Add content blocks
+            cardData.contentBlocks.forEach(block => {
+                const contentBlock = createContentBlock(block.type, block.content);
+                cardContent.appendChild(contentBlock);
+            });
 
-    // Add content blocks
-    cardData.contentBlocks.forEach(block => {
-      const contentBlock = createContentBlock(block.type, block.content);
-      cardContent.appendChild(contentBlock);
-    });
+            card.appendChild(cardContent);
+            cardsWrapper.appendChild(card);
+            cards.push(card);
+        }
 
-    card.appendChild(cardContent);
-    cardsWrapper.appendChild(card);
-    cards.push(card);
-  }
+        function createContentBlock(type, contents) {
+            const div = document.createElement('div');
+            div.className = `content-block ${type}`;
 
-  function createContentBlock(type, contents) {
-    const div = document.createElement('div');
-    div.className = `content-block ${type}`;
+            contents.forEach(item => {
+                // Split the item into title and content at the first newline
+                const [title, ...rest] = item.split('\n');
+                const contentText = rest.join('\n').trim();
 
-    contents.forEach(item => {
-      // Split the item into title and content at the first newline
-      const [title, ...rest] = item.split('\n');
-      const contentText = rest.join('\n').trim();
+                const p = document.createElement('p');
 
-      const p = document.createElement('p');
+                // Create a bold element for the title
+                const boldTitle = document.createElement('strong');
+                boldTitle.textContent = title.trim();
 
-      // Create a bold element for the title
-      const boldTitle = document.createElement('strong');
-      boldTitle.textContent = title.trim();
+                // Append the bold title to the paragraph
+                p.appendChild(boldTitle);
 
-      // Append the bold title to the paragraph
-      p.appendChild(boldTitle);
+                if (contentText) {
+                    // Add a line break
+                    p.appendChild(document.createElement('br'));
 
-      if (contentText) {
-        // Add a line break
-        p.appendChild(document.createElement('br'));
+                    // Create a text node for the content
+                    const contentNode = document.createTextNode(contentText);
+                    p.appendChild(contentNode);
+                }
 
-        // Create a text node for the content
-        const contentNode = document.createTextNode(contentText);
-        p.appendChild(contentNode);
-      }
+                div.appendChild(p);
+            });
 
-      div.appendChild(p);
-    });
+            return div;
+        }
 
-    return div;
-  }
+        // Function to display a specific card
+        function showCard(index) {
+            currentIndex = index;
+            cardsWrapper.style.transform = `translateX(-${index * 100}%)`;
+            const progress = ((index + 1) / cards.length) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
 
-  // Function to display a specific card
-  function showCard(index) {
-    currentIndex = index;
-    cardsWrapper.style.transform = `translateX(-${index * 100}%)`;
-    const progress = ((index + 1) / cards.length) * 100;
-    progressBar.style.width = `${progress}%`;
-  }
+        // Swipe functionality (unchanged)
+        let startX = 0;
+        let isDown = false;
 
-  // Swipe functionality (unchanged)
-  let startX = 0;
-  let isDown = false;
+        const cardsContainer = document.querySelector('.cards-container');
 
-  const cardsContainer = document.querySelector('.cards-container');
+        // Touch events for mobile
+        cardsContainer.addEventListener('touchstart', touchStart, false);
+        cardsContainer.addEventListener('touchmove', touchMove, false);
+        cardsContainer.addEventListener('touchend', touchEnd, false);
 
-  // Touch events for mobile
-  cardsContainer.addEventListener('touchstart', touchStart, false);
-  cardsContainer.addEventListener('touchmove', touchMove, false);
-  cardsContainer.addEventListener('touchend', touchEnd, false);
+        function touchStart(evt) {
+            startX = evt.touches[0].clientX;
+            isDown = true;
+            cardsWrapper.style.transition = 'none';
+        }
 
-  function touchStart(evt) {
-    startX = evt.touches[0].clientX;
-    isDown = true;
-    cardsWrapper.style.transition = 'none';
-  }
+        function touchMove(evt) {
+            if (!isDown) return;
+            const x = evt.touches[0].clientX;
+            const deltaX = x - startX;
+            const percentage = (deltaX / window.innerWidth) * 100;
+            const offset = -currentIndex * 100 + percentage;
+            cardsWrapper.style.transform = `translateX(${offset}%)`;
+        }
 
-  function touchMove(evt) {
-    if (!isDown) return;
-    const x = evt.touches[0].clientX;
-    const deltaX = x - startX;
-    const percentage = (deltaX / window.innerWidth) * 100;
-    const offset = -currentIndex * 100 + percentage;
-    cardsWrapper.style.transform = `translateX(${offset}%)`;
-  }
+        function touchEnd(evt) {
+            if (!isDown) return;
+            isDown = false;
+            const endX = evt.changedTouches[0].clientX;
+            const deltaX = endX - startX;
+            if (deltaX < -50 && currentIndex < cards.length - 1) {
+                currentIndex++;
+            } else if (deltaX > 50 && currentIndex > 0) {
+                currentIndex--;
+            }
+            cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
+            showCard(currentIndex);
+        }
 
-  function touchEnd(evt) {
-    if (!isDown) return;
-    isDown = false;
-    const endX = evt.changedTouches[0].clientX;
-    const deltaX = endX - startX;
-    if (deltaX < -50 && currentIndex < cards.length - 1) {
-      currentIndex++;
-    } else if (deltaX > 50 && currentIndex > 0) {
-      currentIndex--;
-    }
-    cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
-    showCard(currentIndex);
-  }
+        // Mouse events for desktop
+        cardsContainer.addEventListener('mousedown', mouseDown, false);
+        cardsContainer.addEventListener('mousemove', mouseMove, false);
+        cardsContainer.addEventListener('mouseup', mouseUp, false);
+        cardsContainer.addEventListener('mouseleave', mouseUp, false);
 
-  // Mouse events for desktop
-  cardsContainer.addEventListener('mousedown', mouseDown, false);
-  cardsContainer.addEventListener('mousemove', mouseMove, false);
-  cardsContainer.addEventListener('mouseup', mouseUp, false);
-  cardsContainer.addEventListener('mouseleave', mouseUp, false);
+        function mouseDown(evt) {
+            startX = evt.clientX;
+            isDown = true;
+            cardsWrapper.style.transition = 'none';
+        }
 
-  function mouseDown(evt) {
-    startX = evt.clientX;
-    isDown = true;
-    cardsWrapper.style.transition = 'none';
-  }
+        function mouseMove(evt) {
+            if (!isDown) return;
+            const x = evt.clientX;
+            const deltaX = x - startX;
+            const percentage = (deltaX / window.innerWidth) * 100;
+            const offset = -currentIndex * 100 + percentage;
+            cardsWrapper.style.transform = `translateX(${offset}%)`;
+        }
 
-  function mouseMove(evt) {
-    if (!isDown) return;
-    const x = evt.clientX;
-    const deltaX = x - startX;
-    const percentage = (deltaX / window.innerWidth) * 100;
-    const offset = -currentIndex * 100 + percentage;
-    cardsWrapper.style.transform = `translateX(${offset}%)`;
-  }
+        function mouseUp(evt) {
+            if (!isDown) return;
+            isDown = false;
+            const endX = evt.clientX;
+            const deltaX = endX - startX;
+            if (deltaX < -50 && currentIndex < cards.length - 1) {
+                currentIndex++;
+            } else if (deltaX > 50 && currentIndex > 0) {
+                currentIndex--;
+            }
+            cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
+            showCard(currentIndex);
+        }
 
-  function mouseUp(evt) {
-    if (!isDown) return;
-    isDown = false;
-    const endX = evt.clientX;
-    const deltaX = endX - startX;
-    if (deltaX < -50 && currentIndex < cards.length - 1) {
-      currentIndex++;
-    } else if (deltaX > 50 && currentIndex > 0) {
-      currentIndex--;
-    }
-    cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
-    showCard(currentIndex);
-  }
+        // Language switch functionality
+        languageSwitch.addEventListener('click', () => {
+            currentLanguage = currentLanguage === 'it' ? 'en' : 'it';
+            languageSwitch.textContent = currentLanguage === 'it' ? '🇬🇧' : '🇮🇹';
+            initializeApp();
+        });
 
-  // Language switch functionality
-  languageSwitch.addEventListener('click', () => {
-    currentLanguage = currentLanguage === 'it' ? 'en' : 'it';
-    languageSwitch.textContent = currentLanguage === 'it' ? '🇬🇧' : '🇮🇹';
-    initializeApp();
-  });
-
-  // Initialize the app after the DOM is fully loaded
-  document.addEventListener('DOMContentLoaded', () => {
-    initializeApp();
-  });
+        // Initialize the app after the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeApp();
+        });
     </script>
 </body>
 </html>
