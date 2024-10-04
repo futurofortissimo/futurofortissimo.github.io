@@ -245,182 +245,134 @@
 
 
         // Content data in Italian and English
-        const content = {
-            it: {
-                publications: [
-                    {
-                        buttonLabel: '🎼 ff.20 Greta in bici?',
-                        urlSlug: '-ff20-greta-in-bici',
-                        cards: [
-                            {
-                                title: '🎼 ff.20 Greta in bici?',
-                                contentBlocks: [
-                                    {
-                                        type: 'paragraphs',
-                                        content: [
-                                            '21 metri a testa. Filippine a parte, la buona notizia è che anche in Italia si sta muovendo qualcosa. Le ciclabili stanno aumentando in modo lineare. Anche se il dato non è aggiornato, si vede che in media nel 2016 ogni persona aveva i suoi 21.1 metri di pista ciclabile pro capite (rispetto ai 13 del 2008). Per quello che la quantità “metri-di-pista ciclabile-pro-capite” possa voler dire.'
-                                        ]
-                                    },
-                                    {
-                                        type: 'darkerParagraphs',
-                                        content: [
-                                            '🚲 ff.20.1 La rivincita delle biciclette\nNon so se ve ne siete accorti, ma pare che la pandemia ci ha portato più biciclette. Almeno nelle Filippine. Infatti, solo la bici ha visto un incremento nel numero di utenti secondo un sondaggio di World Bank.',
-                                            '🇮🇩 ff.20.2 L’esempio di Jakarta\nSi può pensare che interventi di rivalorizzazione urbanistici per favorire mobilità più sostenibile siano fattibili solo su scale ridotte e in città “con carta bianca” e poche infrastrutture legate a mezzi di trasporto più tradizionali. Nel 2015, Jakarta aveva circa 3.5 milioni di persone. Ora ne ha più di 10. Quasi nessuno nel 2015 aveva una macchina e solo il 10% della popolazione si muoveva in bici. Nonostante ciò, la città aveva il peggiore tra traffic del mondo (Roma li-mortacci-tua solo settima). Anche l’aria non era proprio pulitissima. Eppure grazie a una serie di scelte volte a favorire un trasporto pubblico e sostenibile, complice anche il COVID.',
-                                            '⛷️ ff.20.3 San Francisco come Cortina\nUn tema degli spostamenti su due ruote è la sicurezza, che spaventa molte persone privandole della libertà di scegliere la bicicletta. Questa simpatica mappa di San Francisco riporta, come fossero piste da sci di Cortina, il grado di difficoltà (= pericolosità) delle sue strade. Parlando di “strade sicure”, la startup Cowboy ha presentato le sue mappe bike-friendly, andando oltre quelle di Google, spesso poco attente alle esigenze della micromobilità.',
-                                            '🚨 ff.20.4 Simmetrie di Wes Anderson contro i furti\nVi ricordate Van Moof, l’azienda olandese che fa bici elettriche con un design “alla Tesla”? Ne ho parlato in 🎼 ff.5 Elettrizzante. L’animator di Isle of Dogs, film di Wes Anderson, ha firmato l’ultimo spot dell’azienda, che punta tutto sulla sicurezza delle sue bici. È fortissimo!'
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        buttonLabel: '🎼 ff.5 Elettrizzante!',
-                        urlSlug: '-ff5-elettrizzante',
-                        cards: [
-                            {
-                                title: '🎼 ff.5 Elettrizzante!',
-                                contentBlocks: [
-                                    {
-                                        type: 'paragraphs',
-                                        content: [
-                                            'Utilitaria a benzina meno inquinante di Tesla? Una promettente start-up olandese, Lightyear One, riporta come non sia tutt’oro, o verde, quello che luccica. Infatti, piccole utilitarie con motori tradizionali inquinano meno di una Tesla model S, considerando l’intero ciclo di vita.'
-                                        ]
-                                    },
-                                    {
-                                        type: 'darkerParagraphs',
-                                        content: [
-                                            '❓ ff.5.1 Non è tutto verde quello che luccica\nUtilitaria a benzina meno inquinante di Tesla? Una promettente start-up olandese, Lightyear One, riporta come non sia tutt’oro, o verde, quello che luccica. Infatti, piccole utilitarie con motori tradizionali inquinano meno di una Tesla model S, considerando l’intero ciclo di vita. Lightyear One, va detto, sta spingendo l’ingegneria all’estremo, per aumentare efficienze e distanze di percorrenza. Se prendiamo la media delle efficienze (percorrenze, costi, ecc…) ARK stima che Tesla sia comunque in vantaggio di 3 anni, rispetto ai competitors nella mobilità elettrica.',
-                                            '🔋 ff.5.2 Duracell? No, Tesla\nNon solo auto: Con 3 GWh di capacità (il 25% del totale) Tesla controlla una buona porzione del potenziale di immagazzinamento di energia elettrica nel mondo. E puntano a raggiungere i 1.500 GWh (500x) entro il 2030. Per arrivare a questi numeri ci vorrà tanto litio. Che poi dovremo smaltire. L’anno scorso, 17.6 GWh di batterie elettriche sono arrivate a fine vita. In 15 anni, queste saranno 10 volte tanto. Più o meno 200 piscine olimpiche (solo considerando le batterie nei veicoli elettrici).',
-                                            '🚲 ff.5.3 Pedalata assistita\nDurante la pandemia, le bici elettriche hanno venduto più delle auto elettriche (500k bici vs 250k auto negli Stati Uniti). 130 milioni in 3 anni: Un report di Deloitte prevede che tra il 2020 e il 2023 verranno vendute in tutto il mondo 130 milioni di bici elettriche. Con una bici elettrica si pedala il doppio. La percentuale di spostamenti effettuati su due ruote aumenta dal 19 al 50%, se la bici è elettrica. Un incremento - sostengono gli autori - slegato all’elemento di novità.',
-                                            '😎 ff.5.4 La Tesla delle biciclette\nSe le bici elettriche sono la prossima frontiera della mobilità, Van Moof è la Tesla delle due ruote. Qui sotto il modello V, che raggiungerà i 50 km/h e costerà 3500€:',
-                                            '🧱 ff.5.5 Il muro di Marchetti\nAvete visto Squid Game? No? Se passate almeno 30 minuti al giorno per andare/tornare dal lavoro, avreste potuto farlo 15 volte solo quest’anno. O guardare 80 film. In media negli Stati Uniti (ma penso che a Milano non sia troppo diversa la situazione), la durata dei viaggi è in realtà più lunga: un’ora (un anno e due mesi di vita seduti in macchina). Un’ora costante universale: Nel 1994, il fisico italiano Cesare Marchetti ha osservato che sin dall’antica Roma proprio un’ora è il limite massimo sopportabile, per viaggio, prima di cambiare lavoro o trasferirsi più vicino. Zoo di 105 o meno, in duemila anni l’ora di traffico è rimasta tale.',
-                                            '⚰️ ff.5.6 La pericolosità del traffico, nel mondo\nE mentre siete nel traffico, occhio alla strada. Riportati sotto i tassi di mortalità suddivisi per regioni nel mondo. A quanto pare in Europa guidiamo benissimo (se non per quelli col cappello). Sapevatelo: Morire in un incidente automobilistico in Asia o in Africa è 3 o 4 volte più probabile che in Europa.'
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    }
+        // Content data in Italian
+const content = {
+  it: {
+    publications: [
+      {
+        buttonLabel: '🎼 ff.18 Tra arte digitale e AI',
+        urlSlug: '-ff18-arte-digitale-e-ai',
+        cards: [
+          {
+            title: '🎨 L’arte può essere più creativa dell’uomo?',
+            contentBlocks: [
+              {
+                type: 'paragraphs',
+                content: [
+                  'Arte, intelligenza artificiale e creatività umana',
+                  'Van Gogh: reinterpretazioni moderne grazie all’IA',
+                  'Come l’arte ci aiuta a staccare dalla frenesia della vita moderna'
                 ]
-            },
-            en: {
-                publications: [
-                    {
-                        buttonLabel: '🎼 ff.20 Greta on Bikes?',
-                        urlSlug: '-ff20-greta-on-bikes',
-                        cards: [
-                            {
-                                title: '🎼 ff.20 Greta on Bikes?',
-                                contentBlocks: [
-                                    {
-                                        type: 'paragraphs',
-                                        content: [
-                                            '21 meters per person. Aside from the Philippines, the good news is that something is also happening in Italy. Bike lanes are increasing linearly. Even if the data is not updated, it shows that on average in 2016 each person had 21.1 meters of bike lane per capita (compared to 13 in 2008). For what the quantity “meters-of-bike-lane-per-capita” may mean.'
-                                        ]
-                                    },
-                                    {
-                                        type: 'darkerParagraphs',
-                                        content: [
-                                            '🚲 ff.20.1 The Revenge of Bicycles\nI don’t know if you noticed, but it seems the pandemic brought us more bicycles. At least in the Philippines. In fact, only bikes saw an increase in the number of users according to a World Bank survey.',
-                                            '🇮🇩 ff.20.2 The Example of Jakarta\nOne might think that urban revitalization efforts to promote more sustainable mobility are only feasible on a small scale and in cities with “blank slates” and few infrastructures tied to more traditional means of transport. In 2015, Jakarta had about 3.5 million people. Now it has over 10 million. Almost no one in 2015 owned a car and only 10% of the population commuted by bike. Despite this, the city had the worst traffic in the world (Rome ranked only seventh). Even the air quality was not very clean. Yet, thanks to a series of choices aimed at promoting public and sustainable transport, partly due to COVID.',
-                                            '⛷️ ff.20.3 San Francisco as Cortina\nA topic regarding two-wheeled transportation is safety, which scares many people away from choosing bicycles. This nice map of San Francisco shows, as if they were ski slopes in Cortina, the level of difficulty (= danger) of its streets. Speaking of “safe streets”, the startup Cowboy has presented its bike-friendly maps, going beyond those of Google, often not attentive to the needs of micromobility.',
-                                            '🚨 ff.20.4 Wes Anderson’s Symmetries Against Theft\nDo you remember Van Moof, the Dutch company that makes electric bikes with a “Tesla-like” design? I talked about them in 🎼 ff.5 Electrifying! The animator of Isle of Dogs, a Wes Anderson film, signed the company’s latest ad, which focuses entirely on the safety of its bikes. It’s awesome!'
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        buttonLabel: '🎼 ff.5 Electrifying!',
-                        urlSlug: '-ff5-electrifying',
-                        cards: [
-                            {
-                                title: '🎼 ff.5 Electrifying!',
-                                contentBlocks: [
-                                    {
-                                        type: 'paragraphs',
-                                        content: [
-                                            'Gasoline-powered small cars less polluting than Tesla? A promising Dutch start-up, Lightyear One, reports that not everything that glitters, or is green, is gold. In fact, small utilitarian cars with traditional engines pollute less than a Tesla Model S when considering the entire life cycle.'
-                                        ]
-                                    },
-                                    {
-                                        type: 'darkerParagraphs',
-                                        content: [
-                                            '❓ ff.5.1 Not All That Glitters Is Green\nGasoline-powered small cars less polluting than Tesla? A promising Dutch start-up, Lightyear One, reports that not everything that glitters, or is green, is gold. In fact, small utilitarian cars with traditional engines pollute less than a Tesla Model S when considering the entire life cycle. It must be said that Lightyear One is pushing engineering to the extreme to increase efficiencies and driving ranges. If we take the average efficiencies (range, costs, etc.), ARK estimates that Tesla is still 3 years ahead compared to competitors in electric mobility.',
-                                            '🔋 ff.5.2 Duracell? No, Tesla\nNot just cars: With 3 GWh of capacity (25% of the total), Tesla controls a good portion of the world’s electrical energy storage potential. They aim to reach 1,500 GWh (500x) by 2030. Achieving these numbers will require a lot of lithium. Which we will then have to dispose of. Last year, 17.6 GWh of electric batteries reached end-of-life. In 15 years, this will be 10 times as much. Approximately 200 Olympic pools (considering only batteries in electric vehicles).',
-                                            '🚲 ff.5.3 Assisted Pedaling\nDuring the pandemic, electric bikes sold more than electric cars (500k bikes vs. 250k cars in the United States). 130 million in 3 years: A Deloitte report predicts that between 2020 and 2023, 130 million electric bikes will be sold worldwide. With an electric bike, you pedal twice as much. The percentage of trips made on two wheels increases from 19% to 50% if the bike is electric. An increase – the authors argue – unrelated to the element of novelty.',
-                                            '😎 ff.5.4 The Tesla of Bicycles\nIf electric bikes are the next frontier of mobility, Van Moof is the Tesla of two wheels. Below is the V model, which will reach 50 km/h and cost €3,500:',
-                                            '🧱 ff.5.5 Marchetti’s Wall\nHave you seen Squid Game? No? If you spend at least 30 minutes a day commuting to/from work, you could have done it 15 times just this year. Or watched 80 movies. On average in the United States (but I think the situation in Milan is not too different), the duration of trips is actually longer: one hour (one year and two months of life sitting in a car). A universal constant one-hour limit: In 1994, Italian physicist Cesare Marchetti observed that since ancient Rome, one hour has been the maximum tolerable travel time before changing jobs or moving closer. For over two thousand years, the one-hour traffic limit has remained the same.',
-                                            '⚰️ ff.5.6 The Danger of Traffic Worldwide\nAnd while you’re in traffic, watch the road. Below are mortality rates divided by regions worldwide. Apparently, in Europe we drive very well (except for those with hats). Know this: Dying in a car accident in Asia or Africa is 3 or 4 times more likely than in Europe.'
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    }
+              },
+              {
+                type: 'darkerParagraphs',
+                content: [
+                  '😲 ff.18.1 L’importanza di staccare il cervello\nUno studio su Human Brain Mapping rivela come l’arte, ispirando stupore, ci permette di distaccarci dal nostro “io”, offrendo un momento di leggerezza dalle preoccupazioni quotidiane.',
+                  '🚽 ff.18.2 Cessi artistici\nL’ironia nell’arte contemporanea: il collettivo inglese Rankin trasforma i WC in opere d’arte per sensibilizzare sull’igiene globale attraverso la campagna Best Seat in the House di WaterAid.',
+                  '🖼️ ff.18.3 Arte e AI: sinergie creative\nNel libro "The Artist in the Machine", Arthur I. Miller esplora come l’intelligenza artificiale può assistere il processo creativo umano, creando nuove sinergie tra uomo e macchina.',
+                  '♟️ ff.18.4 Chess(i) artistici: il re degli scacchi\nIl progresso dell’intelligenza artificiale nei giochi creativi come il Go, dove Alpha Go ha battuto i campioni umani con mosse inaspettate e “creative”.',
+                  '🎭 ff.18.5 Dipinti ricreati dall’IA\nEsempi di intelligenza artificiale che riproduce ritratti storici e li porta ai giorni nostri: da Vincent Van Gogh a Freddie Mercury, fino a George Washington e personaggi dei cartoni animati.'
                 ]
-            },
-            en: {
-                publications: [
-                    {
-                        buttonLabel: '🎼 ff.20 Greta on Bikes?',
-                        urlSlug: '-ff20-greta-on-bikes',
-                        cards: [
-                            {
-                                title: '🎼 ff.20 Greta on Bikes?',
-                                contentBlocks: [
-                                    {
-                                        type: 'paragraphs',
-                                        content: [
-                                            '21 meters per person. Aside from the Philippines, the good news is that something is also happening in Italy. Bike lanes are increasing linearly. Even if the data is not updated, it shows that on average in 2016 each person had 21.1 meters of bike lane per capita (compared to 13 in 2008). For what the quantity “meters-of-bike-lane-per-capita” may mean.'
-                                        ]
-                                    },
-                                    {
-                                        type: 'darkerParagraphs',
-                                        content: [
-                                            '🚲 ff.20.1 The Revenge of Bicycles\nI don’t know if you noticed, but it seems the pandemic brought us more bicycles. At least in the Philippines. In fact, only bikes saw an increase in the number of users according to a World Bank survey.',
-                                            '🇮🇩 ff.20.2 The Example of Jakarta\nOne might think that urban revitalization efforts to promote more sustainable mobility are only feasible on a small scale and in cities with “blank slates” and few infrastructures tied to more traditional means of transport. In 2015, Jakarta had about 3.5 million people. Now it has over 10 million. Almost no one in 2015 owned a car and only 10% of the population commuted by bike. Despite this, the city had the worst traffic in the world (Rome ranked only seventh). Even the air quality was not very clean. Yet, thanks to a series of choices aimed at promoting public and sustainable transport, partly due to COVID.',
-                                            '⛷️ ff.20.3 San Francisco as Cortina\nA topic regarding two-wheeled transportation is safety, which scares many people away from choosing bicycles. This nice map of San Francisco shows, as if they were ski slopes in Cortina, the level of difficulty (= danger) of its streets. Speaking of “safe streets”, the startup Cowboy has presented its bike-friendly maps, going beyond those of Google, often not attentive to the needs of micromobility.',
-                                            '🚨 ff.20.4 Wes Anderson’s Symmetries Against Theft\nDo you remember Van Moof, the Dutch company that makes electric bikes with a “Tesla-like” design? I talked about them in 🎼 ff.5 Electrifying! The animator of Isle of Dogs, a Wes Anderson film, signed the company’s latest ad, which focuses entirely on the safety of its bikes. It’s awesome!'
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        buttonLabel: '🎼 ff.5 Electrifying!',
-                        urlSlug: '-ff5-electrifying',
-                        cards: [
-                            {
-                                title: '🎼 ff.5 Electrifying!',
-                                contentBlocks: [
-                                    {
-                                        type: 'paragraphs',
-                                        content: [
-                                            'Gasoline-powered small cars less polluting than Tesla? A promising Dutch start-up, Lightyear One, reports that not everything that glitters, or is green, is gold. In fact, small utilitarian cars with traditional engines pollute less than a Tesla Model S when considering the entire life cycle.'
-                                        ]
-                                    },
-                                    {
-                                        type: 'darkerParagraphs',
-                                        content: [
-                                            '❓ ff.5.1 Not All That Glitters Is Green\nGasoline-powered small cars less polluting than Tesla? A promising Dutch start-up, Lightyear One, reports that not everything that glitters, or is green, is gold. In fact, small utilitarian cars with traditional engines pollute less than a Tesla Model S when considering the entire life cycle. It must be said that Lightyear One is pushing engineering to the extreme to increase efficiencies and driving ranges. If we take the average efficiencies (range, costs, etc.), ARK estimates that Tesla is still 3 years ahead compared to competitors in electric mobility.',
-                                            '🔋 ff.5.2 Duracell? No, Tesla\nNot just cars: With 3 GWh of capacity (25% of the total), Tesla controls a good portion of the world’s electrical energy storage potential. They aim to reach 1,500 GWh (500x) by 2030. Achieving these numbers will require a lot of lithium. Which we will then have to dispose of. Last year, 17.6 GWh of electric batteries reached end-of-life. In 15 years, this will be 10 times as much. Approximately 200 Olympic pools (considering only batteries in electric vehicles).',
-                                            '🚲 ff.5.3 Assisted Pedaling\nDuring the pandemic, electric bikes sold more than electric cars (500k bikes vs. 250k cars in the United States). 130 million in 3 years: A Deloitte report predicts that between 2020 and 2023, 130 million electric bikes will be sold worldwide. With an electric bike, you pedal twice as much. The percentage of trips made on two wheels increases from 19% to 50% if the bike is electric. An increase – the authors argue – unrelated to the element of novelty.',
-                                            '😎 ff.5.4 The Tesla of Bicycles\nIf electric bikes are the next frontier of mobility, Van Moof is the Tesla of two wheels. Below is the V model, which will reach 50 km/h and cost €3,500:',
-                                            '🧱 ff.5.5 Marchetti’s Wall\nHave you seen Squid Game? No? If you spend at least 30 minutes a day commuting to/from work, you could have done it 15 times just this year. Or watched 80 movies. On average in the United States (but I think the situation in Milan is not too different), the duration of trips is actually longer: one hour (one year and two months of life sitting in a car). A universal constant one-hour limit: In 1994, Italian physicist Cesare Marchetti observed that since ancient Rome, one hour has been the maximum tolerable travel time before changing jobs or moving closer. For over two thousand years, the one-hour traffic limit has remained the same.',
-                                            '⚰️ ff.5.6 The Danger of Traffic Worldwide\nAnd while you’re in traffic, watch the road. Below are mortality rates divided by regions worldwide. Apparently, in Europe we drive very well (except for those with hats). Know this: Dying in a car accident in Asia or Africa is 3 or 4 times more likely than in Europe.'
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        buttonLabel: '🎼 ff.10 Misurare l’intelligenza',
+        urlSlug: '-ff10-misurare-intelligenza',
+        cards: [
+          {
+            title: '🧠 Intelligenza, coscienza e cervelli in evoluzione',
+            contentBlocks: [
+              {
+                type: 'paragraphs',
+                content: [
+                  'Come misurare l’intelligenza e il suo declino negli ultimi millenni',
+                  'Homo sapiens vs Neanderthal: perché abbiamo avuto la meglio?',
+                  'Cervelli in fuga: come la società potrebbe farci perdere capacità cognitive'
                 ]
-            }
-        };
+              },
+              {
+                type: 'darkerParagraphs',
+                content: [
+                  '🐒 ff.12.1 Homo Sapiens vs Neanderthal\nLa convivenza di 8000 anni tra Homo sapiens e Neanderthal ha visto il primo prevalere grazie a un’esplosione culturale e linguistica che ha dato a Sapiens un grande vantaggio culturale, secondo Harari in "Sapiens".',
+                  '🧠 ff.12.2 Cervelli in fuga\nIl declino della capacità cognitiva di Homo sapiens negli ultimi 3000 anni sembra essere legato alle strutture sociali complesse che raccolgono e condividono informazioni, piuttosto che a cambiamenti nella dieta o nella massa corporea.',
+                  '👁️ ff.12.3 Coscienza e intelligenza\nAnil Seth, in "Being You: A New Science of Consciousness", esplora la complessa relazione tra coscienza e intelligenza, affermando che la coscienza è il risultato di una spinta biologica verso l’integrità fisiologica.',
+                  '👘 ff.12.4 Siamo davvero così intelligenti?\nLe illusioni ottiche e i bias cognitivi sono solo alcuni esempi di come il nostro cervello cerca continuamente di interpretare e dare un senso alla realtà, spesso ingannandoci.',
+                  '🚭 ff.12.5 Cervelli in fumo\nPer concludere, un tocco artistico: un bellissimo poster di una band che ci ricorda di staccare e rilassarci, tornando con i piedi per terra o volando ancora più in alto.'
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  en: {
+    publications: [
+      {
+        buttonLabel: '🎼 ff.18 Between digital art and AI',
+        urlSlug: '-ff18-digital-art-and-ai',
+        cards: [
+          {
+            title: '🎨 Can AI be more creative than humans?',
+            contentBlocks: [
+              {
+                type: 'paragraphs',
+                content: [
+                  'Art, artificial intelligence, and human creativity',
+                  'Van Gogh: modern reinterpretations thanks to AI',
+                  'How art helps us disconnect from the rush of modern life'
+                ]
+              },
+              {
+                type: 'darkerParagraphs',
+                content: [
+                  '😲 ff.18.1 The importance of switching off your brain\nA study on Human Brain Mapping reveals how art, by inspiring awe, allows us to detach from our “self”, offering a moment of relief from everyday worries.',
+                  '🚽 ff.18.2 Artistic toilets\nThe irony in contemporary art: the British collective Rankin transforms toilets into works of art to raise awareness of global hygiene through the WaterAid Best Seat in the House campaign.',
+                  '🖼️ ff.18.3 Art and AI: creative synergies\nIn the book "The Artist in the Machine", Arthur I. Miller explores how artificial intelligence can assist the human creative process, forging new synergies between humans and machines.',
+                  '♟️ ff.18.4 Artistic Chess: the king of the board\nThe progress of artificial intelligence in creative games like Go, where Alpha Go beat human champions with unexpected and “creative” moves.',
+                  '🎭 ff.18.5 AI-recreated paintings\nExamples of artificial intelligence reproducing historical portraits and bringing them to modern times: from Vincent Van Gogh to Freddie Mercury, George Washington, and even cartoon characters.'
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        buttonLabel: '🎼 ff.10 Measuring intelligence',
+        urlSlug: '-ff10-measuring-intelligence',
+        cards: [
+          {
+            title: '🧠 Intelligence, consciousness, and evolving brains',
+            contentBlocks: [
+              {
+                type: 'paragraphs',
+                content: [
+                  'How to measure intelligence and its decline over millennia',
+                  'Homo sapiens vs Neanderthal: why did we prevail?',
+                  'Brains on the run: how society might be making us lose cognitive abilities'
+                ]
+              },
+              {
+                type: 'darkerParagraphs',
+                content: [
+                  '🐒 ff.12.1 Homo Sapiens vs Neanderthal\nThe 8000-year coexistence of Homo sapiens and Neanderthal saw the former prevail due to a cultural and linguistic explosion, according to Harari in "Sapiens".',
+                  '🧠 ff.12.2 Brains on the run\nThe cognitive capacity of Homo sapiens has been declining over the last 3000 years, a result of complex social structures that gather and share knowledge, rather than changes in diet or body mass.',
+                  '👁️ ff.12.3 Consciousness and intelligence\nAnil Seth, in "Being You: A New Science of Consciousness", explores the complex relationship between consciousness and intelligence, arguing that consciousness arises from a biological drive towards physiological integrity.',
+                  '👘 ff.12.4 Are we really that smart?\nOptical illusions and cognitive biases are just a few examples of how our brain constantly tries to interpret and make sense of reality, often deceiving us.',
+                  '🚭 ff.12.5 Minds blown\nTo wrap things up, an artistic touch: a beautiful poster from a band that reminds us to relax and unwind, either by grounding ourselves or soaring even higher.'
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+};
+
 
 
 
