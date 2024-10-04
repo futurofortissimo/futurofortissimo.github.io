@@ -11,7 +11,34 @@
     <meta name="description" content="Tutti i riassunti fortissimi di libri sul futuro letti da Michele Merelli micmer.">
     <link rel="stylesheet" href="/index_files/303a26c383de2a8b.css">
     <style>
-        body {
+
+        /* Header with only the logo */
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ADD8E6; /* Light blue background */
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #333; /* Adds a border at the bottom of the header */
+        }
+
+        .logo {
+            height: 60px;
+            cursor: pointer;
+        }
+
+        /* Content section starts below header */
+        .content {
+            margin-top: 100px; /* Adds space to prevent content being under header */
+            padding: 20px;
+        }
+    </style>
+    <style>
+    body {
             font-family: 'Palladio', serif;
             background-color: #f5f5f5;
             color: #333;
@@ -66,11 +93,9 @@
 <body>
 
   <header>
-      <div style="text-align: center;">
-          <a href="https://futurofortissimo.github.io/" class="text-black font-bold">
-              <h1>futuro fortissimo</h1>
-          </a>
-      </div>
+      <a href="https://futurofortissimo.github.io/">
+          <img src="/index_files/ff.png" alt="Logo" class="logo">
+      </a>
   </header>
 
   <div class="book-section">
