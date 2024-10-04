@@ -26,13 +26,16 @@
             background-color: #fff;
             color: #333;
             overflow: hidden; /* Prevent scrolling on body */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         /* App container */
         .app-container {
             display: flex;
             flex-direction: column;
-            height: 100vh;
+            flex: 1;
             overflow: hidden;
             position: relative;
         }
@@ -87,6 +90,27 @@
             cursor: pointer;
             user-select: none;
             white-space: nowrap;
+            font-family: 'Montserrat', sans-serif; /* Ensure same font */
+        }
+
+        .substackButton {
+            flex: 0 0 auto;
+            margin: 0 5px;
+            padding: 8px 12px;
+            background-color: #fff;
+            color: #333;
+            border: 2px solid #000; /* Optional black border */
+            border-radius: 35px;
+            text-align: center;
+            font-size: 18px;
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+            font-family: 'Montserrat', sans-serif; /* Ensure same font */
+        }
+
+        .button:hover {
+            background-color: #f0f0f0; /* Slightly darker on hover */
         }
 
         /* Progress bar */
@@ -121,7 +145,9 @@
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
+            cursor: pointer; /* Indicates the card is clickable */
         }
+
 
         /* Card content */
         .card-content {
@@ -186,28 +212,75 @@
             font-family: 'Montserrat', sans-serif;
             padding: 10px;
             background-color: #f0f0f0;
+            flex-shrink: 0;
         }
 
         footer a {
             color: #00bef8;
             text-decoration: none;
         }
-        /* Content block for darker paragraphs */
-      .darkerParagraphs {
-          background-color: #b2ebf2; /* Slightly darker cyan */
-          font-weight: normal;
-          padding: 10px;
-          border-radius: 10px;
-          margin-bottom: 15px;
-      }
 
-      /* Subsection title */
-      .subsection-title {
-          margin-top: 20px;
-          margin-bottom: 10px;
-          font-size: 18px;
-          font-weight: bold;
-      }
+        /* Content block for darker paragraphs */
+        .darkerParagraphs {
+            background-color: #b2ebf2; /* Slightly darker cyan */
+            font-weight: normal;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* Subsection title */
+        .subsection-title {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Responsive Design: Adjust Footer Behavior */
+        @media (max-width: 600px) {
+            .header {
+                flex-direction: row;
+                justify-content: space-between; /* Distribute space between logo and language switch */
+                padding: 10px;
+            }
+
+            .language-switch {
+                margin-left: 0; /* Remove left margin */
+                margin-right: 10px; /* Add right margin */
+                font-size: 20px; /* Reduce font size if necessary */
+            }
+
+            /* Ensure the buttons-container doesn't push the language switch off-screen */
+            .buttons-container {
+                flex-grow: 1;
+                margin: 0 10px; /* Add horizontal margins */
+            }
+        }
+
+        /* Optional: Adjustments for Very Small Screens */
+        @media (max-width: 400px) {
+            .language-switch {
+                font-size: 18px; /* Further reduce font size */
+            }
+
+            .logo {
+                height: 35px; /* Reduce logo size */
+            }
+        }
+        @media (min-width: 601px) {
+            footer {
+                display: block;
+            }
+
+            .header {
+                position: relative; /* Reset positioning to default */
+            }
+
+            .cards-container {
+                padding-bottom: 0; /* Remove padding adjustment */
+            }
+        }
     </style>
 </head>
 <body>
@@ -241,480 +314,185 @@
     </footer>
 
     <script>
-        // Content data in Italian
-        const content = {
-          it: {
-              publications: [
-                  {
-                      buttonLabel: '🎼 ff.1 Clima',
-                      cards: [
-                          {
-                              title: '🍃 COP26, The Big Greta Is Watching You e le strategie per net-zero',
-                              contentBlocks: [
-                                  {
-                                      type: 'paragraphs',
-                                      content: [
-                                          'COP26, energie rinnovabili',
-                                          'Bill Gates e il suo librozzo',
-                                          'Quanto inquinano le criptovalute?'
-                                      ]
-                                  },
-                                  {
-                                      type: 'darkerParagraphs',
-                                      content: [
-                                          '🌎 ff.1.1 Sensibilizzazione e arte\nIl progetto artistico di COP26 ha rivoluzionato l\'identità visiva della conferenza, evidenziando l\'importanza dell\'arte nel sensibilizzare sul cambiamento climatico.',
-                                          '📉 ff.1.2 Da 51 miliardi a 0\nDa 51 miliardi a 0: la necessità urgente di ridurre a zero le emissioni globali di CO2-equivalenti, attualmente a 51 miliardi di tonnellate all\'anno, per combattere il cambiamento climatico.',
-                                          '🛴 ff.1.3 Gli scooter elettrici ci salveranno?\nL\'80% degli spostamenti negli USA sono inferiori ai 16 km, suggerendo un potenziale di trasformazione della mobilità urbana tramite e-bikes e scooter elettrici.',
-                                          '🏭 ff.1.4 Catturare CO2 sarà importante\nTecnologie di cattura CO2 potrebbero diventare economicamente accessibili a meno di 100$ per tonnellata, con l\'industria del cemento e dell\'acciaio come principali target.',
-                                          '🇫🇮 ff.1.5 Il consumo energetico di Bitcoin\nIl consumo energetico di Bitcoin equivale a quello dell\'intera Finlandia, ma l\'utilizzo di energia rinnovabile nel mining potrebbe mitigarne l\'impatto ambientale.',
-                                          '⚡ ff.1.6 Fusione Nucleare\nLa fusione nucleare, un tempo prevista per i primi anni \'90, ora mira al 2035 come traguardo per dimostrare un processo di fusione pulito.'
-                                      ]
-                                  }
-                              ]
-                          }
-                      ]
-                  },
-                  {
-                      buttonLabel: '🎼 ff.5 Elettrizzante',
-                      cards: [
-                          {
-                              title: '🔌 Tesla, Van Moof, Duracell? Chi vincerà la sfida della mobilità sostenibile?',
-                              contentBlocks: [
-                                  {
-                                      type: 'paragraphs',
-                                      content: [
-                                          'VanMoof: la Tesla olandese per le e-bike',
-                                          'Quanto inquina una Tesla rispetto alla Panda?',
-                                          'Noi come quelli a cavallo: il muro di Marchetti'
-                                      ]
-                                  },
-                                  {
-                                      type: 'darkerParagraphs',
-                                      content: [
-                                          '❓ ff.5.1 Non tutto verde quello che luccica\nUtilitaria a benzina meno inquinante di Tesla? Una promettente start-up olandese, Lightyear One, riporta come non sia tutt’oro, o verde, quello che luccica.',
-                                          '🔋 ff.5.2 Duracell? No, Tesla\nNon solo auto: con 3 GWh di capacità, Tesla controlla una buona porzione del potenziale di immagazzinamento di energia elettrica nel mondo. E punta a raggiungere i 1.500 GWh entro il 2030.',
-                                          '🚲 ff.5.3 Pedalata assistita\nDurante la pandemia, le bici elettriche hanno venduto più delle auto elettriche (500k bici vs 250k auto negli Stati Uniti).',
-                                          '😎 ff.5.4 La Tesla delle biciclette\nSe le bici elettriche sono la prossima frontiera della mobilità, Van Moof è la Tesla delle due ruote.',
-                                          '🧱 ff.5.5 Il muro di Marchetti\nUn’ora costante universale: il limite di tempo di viaggio che influisce sulle scelte di vita e lavoro.',
-                                          '⚰️ ff.5.6 La pericolosità del traffico, nel mondo\nE mentre siete nel traffico, occhio alla strada. In Europa guidiamo benissimo (tranne per quelli col cappello).'
-                                      ]
-                                  }
-                              ]
-                          }
-                      ]
-                  },
-                  {
-                      buttonLabel: '🎼 ff.20 Greta in bici?',
-                      cards: [
-                          {
-                              title: '🚲 Da "Isola dei cani" di Wes Anderson a Van Moof, la nuova rivoluzione verde dell\'e-bike',
-                              contentBlocks: [
-                                  {
-                                      type: 'paragraphs',
-                                      content: [
-                                          'Cosa c\'entra Wes Anderson con i ladri di bicicletta?',
-                                          'Milano o Parigi? Chi sarà la regina delle piste ciclabili?',
-                                          'Da quando a San Francisco si scia?'
-                                      ]
-                                  },
-                                  {
-                                      type: 'darkerParagraphs',
-                                      content: [
-                                          '🚲 ff.20.1 La rivincita delle biciclette\nLa pandemia ha aumentato l\'uso della bicicletta, con un incremento notevole nelle Filippine e progressi anche in Italia con l\'aumento delle piste ciclabili.',
-                                          '🇮🇩 ff.20.2 L\'esempio di Jakarta\nA Jakarta, l\'utilizzo della bicicletta è aumentato di 6 volte, evidenziando un cambiamento significativo verso la mobilità sostenibile.',
-                                          '⛷️ ff.20.3 San Francisco come Cortina\nSan Francisco presenta mappe della pericolosità delle strade come piste da sci: la pista nera sarebbe Viale Palmanova, insomma.',
-                                          '🚨 ff.20.4 Simmetrie di Wes Anderson contro i furti\nVan Moof, azienda olandese di e-bike, sfrutta le simmetrie di Wes Anderson per promuovere la sicurezza delle sue biciclette.'
-                                      ]
-                                  }
-                              ]
-                          }
-                      ]
-                  },
-                  {
-                      buttonLabel: '🎼 ff.33 Le piante ci salveranno?',
-                      cards: [
-                          {
-                              title: 'Inno alle piante, tra algoritmi, cattura di CO2 e problemi da risolvere',
-                              contentBlocks: [
-                                  {
-                                      type: 'paragraphs',
-                                      content: [
-                                          'Piante: da fotosintesi a fonte di conoscenza',
-                                          'Foglie in silicone per efficienze maggiori',
-                                          'Come modificare la genetica per catturare più CO2'
-                                      ]
-                                  },
-                                  {
-                                      type: 'darkerParagraphs',
-                                      content: [
-                                          '🧠 ff.33.1 La valenza filosofica e conoscitiva degli alberi\nEsplorando la connessione storica e culturale tra umanità e piante, evidenziata dall\'ispirazione degli algoritmi di ricerca come il decision tree.',
-                                          '🍁 ff.33.2 Raccoglitori di CO2\nStudio su come le piante catturano e immagazzinano CO2, con focus su efficienze di storage in foreste e torbiere, mostrando l\'importanza della biodiversità e delle tecnologie innovative per la semina.',
-                                          '🏭 ff.33.3 Piante modificate per catturare CO2\nTecniche genetiche avanzate come CRISPR vengono utilizzate per aumentare la capacità delle piante di convertire CO2 in carbonio stabilizzato, un approccio supportato da importanti investimenti nel campo della genetica vegetale.',
-                                          '🧮 ff.33.4 Muffe computazionali\nIl Plasmodium, una muffa sfruttata per risolvere problemi di ottimizzazione combinatoria come il Traveling Salesman Problem, dimostrando la potenzialità di sistemi biologici nel calcolo e nella progettazione di reti efficienti e resilienti.'
-                                      ]
-                                  }
-                              ]
-                          }
-                      ]
-                  },
-                  {
-                      buttonLabel: '🎼 ff.51 La religione del 21esimo secolo?',
-                      cards: [
-                          {
-                              title: 'Il sottile equilibrio tra Greta, Greenpeace e speranza nel futuro',
-                              contentBlocks: [
-                                  {
-                                      type: 'paragraphs',
-                                      content: [
-                                          'La Natura è stata idealizzata?',
-                                          'L’ecologia è la religione del 21esimo secolo?',
-                                          'Investiamo troppo per i cambiamenti climatici?'
-                                      ]
-                                  },
+        let currentLanguage = 'it';
+        let currentIndex = 0;
+        let publicationIndices = [];
 
-                                  {
-                                      type: 'darkerParagraphs',
-                                      content: [
-                                          '💚 ff.51.1 L’affabulazione per il verde\nRiflessioni su come la natura, simbolo di speranza e pace interiore, diventi oggetto di un\'affabulazione romantica, che a volte rischia di distorcere la realtà pragmatica della sua esistenza e utilità.',
-                                          '🛐 ff.51.2 Ecologia = religione?\nAnalisi critica sulle possibili somiglianze tra l\'approccio moderno all\'ecologia e le pratiche religiose, interrogandosi sull\'esistenza di una fede verde basata più su convinzioni emotive che su azioni razionali e scientifiche.',
-                                          '🔥 ff.51.3 Sono il tuo sogno eretico\nI cambiamenti climatici sono esagerati dai media? Uno spunto per considerare un approccio più equilibrato che includa soluzioni innovative e adattive, anche valutando il ritorno sull\'investimento delle politiche climatiche rispetto alla salute pubblica, l\'istruzione e la riduzione della povertà.'
-                                      ]
-                                  }
-                              ]
-                          }
-                      ]
-                  },
-                  {
-                      buttonLabel: '🎼 ff.61 La decrescita felice è impossibile?',
-                      cards: [
-                          {
-                              title: 'I costi di ogni attività per un budget da 10 tonnellate di CO2 annue',
-                              contentBlocks: [
-                                  {
-                                      type: 'paragraphs',
-                                      content: [
-                                          'Stare nel budget di 10 tonnellate CO2 all’anno',
-                                          'Hamburger che inquinano meno degli asparagi',
-                                          'Un abbonamento, stile Spotify, per vivere il mondo'
-                                      ]
-                                  },
-                                  {
-                                      type: 'darkerParagraphs',
-                                      content: [
-                                          '⚖️ ff.61.1 Misurare l’inquinamento in ore di vita\nConvertire le emissioni di CO2 in tempo di vita percepibile rende tangibile l\'impatto ambientale delle nostre scelte quotidiane.',
-                                          '🕗 ff.61.2 Emissioni convertite in tempo\nAnalizzando le emissioni attraverso l\'equivalenza tempo-CO2, individuiamo attività quotidiane e il loro impatto in ore di vita perse.',
-                                          '🥩 ff.61.3 Carne o asparagi?\nLa scelta alimentare influisce significativamente sulle emissioni di CO2, con sorprendenti confronti tra diete vegetariane e consumo di carne.',
-                                          '🎶 ff.61.4 Un abbonamento stile Spotify per il mondo\nConsiderare l\'inquinamento come un servizio in abbonamento può essere un passo verso la compensazione delle proprie emissioni CO2.'
-                                      ]
-                                  }
-                              ]
-                          }
-                      ]
-                  }
-              ]
-          },
-          en: {
-              publications: [
-                  {
-                      buttonLabel: '🎼 ff.1 Climate',
-                      cards: [
-                          {
-                              title: '🍃 COP26, The Big Greta Is Watching You and strategies for net-zero',
-                              contentBlocks: [
-                                  {
-                                      type: 'paragraphs',
-                                      content: [
-                                          'COP26, renewable energies',
-                                          'Bill Gates and his big book',
-                                          'How much do cryptocurrencies pollute?'
-                                      ]
-                                  },
-                                  {
-                                      type: 'darkerParagraphs',
-                                      content: [
-                                          '🌎 ff.1.1 Awareness and Art\nThe artistic project of COP26 revolutionized the visual identity of the conference, highlighting the importance of art in raising awareness about climate change.',
-                                          '📉 ff.1.2 From 51 billion to 0\nFrom 51 billion to 0: the urgent need to reduce global CO2-equivalent emissions, currently at 51 billion tons per year, to combat climate change.',
-                                          '🛴 ff.1.3 Will electric scooters save us?\n80% of trips in the USA are under 16 km, suggesting potential for transforming urban mobility through e-bikes and electric scooters.',
-                                          '🏭 ff.1.4 Capturing CO2 will be important\nCO2 capture technologies could become economically accessible at less than $100 per ton, with the cement and steel industries as main targets.',
-                                          '🇫🇮 ff.1.5 The energy consumption of Bitcoin\nBitcoin\'s energy consumption is equivalent to that of Finland, but using renewable energy in mining could mitigate its environmental impact.',
-                                          '⚡ ff.1.6 Nuclear Fusion\nNuclear fusion, once expected by the early 90s, now aims for 2035 as a milestone to demonstrate a clean fusion process.'
-                                      ]
-                                  }
-                              ]
-                          }
-                      ]
-                  },
-                  {
-                      buttonLabel: '🎼 ff.5 Electrifying',
-                      cards: [
-                          {
-                              title: '🔌 Tesla, Van Moof, Duracell? Who will win the sustainable mobility challenge?',
-                              contentBlocks: [
-                                  {
-                                      type: 'paragraphs',
-                                      content: [
-                                          'VanMoof: the Dutch Tesla for e-bikes',
-                                          'How much does a Tesla pollute compared to a Panda?',
-                                          'We are like those on horseback: Marchetti\'s wall'
-                                      ]
-                                  },
-                                  {
-                                      type: 'darkerParagraphs',
-                                      content: [
-                                          '❓ ff.5.1 Not all that glitters is green\nGasoline small cars less polluting than Tesla? A promising Dutch start-up, Lightyear One, reports that not everything that glitters, or is green, is gold.',
-                                          '🔋 ff.5.2 Duracell? No, Tesla\nNot just cars: with 3 GWh of capacity, Tesla controls a good portion of the world\'s electrical energy storage potential and aims to reach 1,500 GWh by 2030.',
-                                          '🚲 ff.5.3 Assisted pedaling\nDuring the pandemic, electric bikes outsold electric cars (500k bikes vs 250k cars in the United States).',
-                                          '😎 ff.5.4 The Tesla of bicycles\nIf electric bikes are the next frontier of mobility, Van Moof is the Tesla of two wheels.',
-                                          '🧱 ff.5.5 Marchetti\'s wall\nA universal constant one-hour travel time: the limit that influences life and work choices.',
-                                          '⚰️ ff.5.6 The danger of traffic worldwide\nAnd while you\'re in traffic, watch the road. In Europe, we drive very well (except for those with hats).'
-                                      ]
-                                  }
-                              ]
-                          }
-                      ]
-                  },
-                  {
-                      buttonLabel: '🎼 ff.20 Greta on a bike?',
-                      cards: [
-                          {
-                              title: '🚲 From Wes Anderson\'s "Isle of Dogs" to Van Moof, the new green revolution of e-bikes',
-                              contentBlocks: [
-                                  {
-                                      type: 'paragraphs',
-                                      content: [
-                                          'What does Wes Anderson have to do with bicycle thieves?',
-                                          'Milan or Paris? Who will be the queen of bike lanes?',
-                                          'Since when do we ski in San Francisco?'
-                                      ]
-                                  },
-                                  {
-                                      type: 'darkerParagraphs',
-                                      content: [
-                                          '🚲 ff.20.1 The revenge of bicycles\nThe pandemic has increased bicycle use, with a notable rise in the Philippines and progress in Italy with more bike lanes.',
-                                          '🇮🇩 ff.20.2 The example of Jakarta\nIn Jakarta, bicycle use increased sixfold, highlighting a significant shift towards sustainable mobility.',
-                                          '⛷️ ff.20.3 San Francisco like Cortina\nSan Francisco presents danger maps of streets like ski slopes: the black run would be akin to Viale Palmanova.',
-                                          '🚨 ff.20.4 Wes Anderson\'s symmetries against theft\nVan Moof, a Dutch e-bike company, leverages Wes Anderson\'s symmetries to promote the security of its bicycles.'
-                                      ]
-                                  }
-                              ]
-                          }
-                      ]
-                  },
-                  {
-                      buttonLabel: '🎼 ff.33 Will plants save us?',
-                      cards: [
-                          {
-                              title: 'An ode to plants, among algorithms, CO2 capture, and problems to solve',
-                              contentBlocks: [
-                                  {
-                                      type: 'paragraphs',
-                                      content: [
-                                          'Plants: from photosynthesis to a source of knowledge',
-                                          'Silicone leaves for greater efficiencies',
-                                          'How to modify genetics to capture more CO2'
-                                      ]
-                                  },
-                                  {
-                                      type: 'darkerParagraphs',
-                                      content: [
-                                          '🧠 ff.33.1 The philosophical and cognitive value of trees\nExploring the historical and cultural connection between humanity and plants, highlighted by the inspiration of search algorithms like the decision tree.',
-                                          '🍁 ff.33.2 CO2 collectors\nStudy on how plants capture and store CO2, focusing on storage efficiencies in forests and peatlands, showing the importance of biodiversity and innovative seeding technologies.',
-                                          '🏭 ff.33.3 Plants modified to capture CO2\nAdvanced genetic techniques like CRISPR are used to increase plants\' ability to convert CO2 into stabilized carbon, an approach supported by significant investments in plant genetics.',
-                                          '🧮 ff.33.4 Computational molds\nPlasmodium, a mold exploited to solve combinatorial optimization problems like the Traveling Salesman Problem, demonstrating the potential of biological systems in computing and designing efficient and resilient networks.'
-                                      ]
-                                  }
-                              ]
-                          }
-                      ]
-                  },
-                  {
-                      buttonLabel: '🎼 ff.51 The religion of the 21st century?',
-                      cards: [
-                          {
-                              title: 'The subtle balance between Greta, Greenpeace, and hope for the future',
-                              contentBlocks: [
-                                  {
-                                      type: 'paragraphs',
-                                      content: [
-                                          'Has Nature been idealized?',
-                                          'Is ecology the religion of the 21st century?',
-                                          'Are we investing too much in climate change?'
-                                      ]
-                                  },
-                                  {
-                                      type: 'darkerParagraphs',
-                                      content: [
-                                          '💚 ff.51.1 The storytelling for green\nReflections on how nature, a symbol of hope and inner peace, becomes the object of romantic storytelling, which sometimes risks distorting the pragmatic reality of its existence and utility.',
-                                          '🛐 ff.51.2 Ecology = religion?\nCritical analysis of the possible similarities between the modern approach to ecology and religious practices, questioning the existence of a green faith based more on emotional convictions than rational and scientific actions.',
-                                          '🔥 ff.51.3 I am your heretical dream\nAre climate changes exaggerated by the media? A cue to consider a more balanced approach that includes innovative and adaptive solutions, also evaluating the return on investment of climate policies compared to public health, education, and poverty reduction.'
-                                      ]
-                                  }
-                              ]
-                          }
-                      ]
-                  },
-                  {
-                      buttonLabel: '🎼 ff.61 Is happy degrowth impossible?',
-                      cards: [
-                          {
-                              title: 'The costs of every activity for a budget of 10 tons of CO2 per year',
-                              contentBlocks: [
-                                  {
-                                      type: 'paragraphs',
-                                      content: [
-                                          'Staying within a budget of 10 tons of CO2 per year',
-                                          'Hamburgers that pollute less than asparagus',
-                                          'A Spotify-style subscription to experience the world'
-                                      ]
-                                  },
-                                  {
-                                      type: 'darkerParagraphs',
-                                      content: [
-                                          '⚖️ ff.61.1 Measuring pollution in hours of life\nConverting CO2 emissions into perceivable life time makes the environmental impact of our daily choices tangible.',
-                                          '🕗 ff.61.2 Emissions converted into time\nAnalyzing emissions through the time-CO2 equivalence, we identify daily activities and their impact in hours of life lost.',
-                                          '🥩 ff.61.3 Meat or asparagus?\nFood choices significantly affect CO2 emissions, with surprising comparisons between vegetarian diets and meat consumption.',
-                                          '🎶 ff.61.4 A Spotify-style subscription for the world\nConsidering pollution as a subscription service can be a step towards offsetting one\'s CO2 emissions.'
-                                      ]
-                                  }
-                              ]
-                          }
-                      ]
-                  }
-              ]
-          }
-      };
+        const buttonsContainer = document.getElementById('buttons-container');
+        const cardsWrapper = document.getElementById('cards-wrapper');
+        const progressBar = document.querySelector('.progress-bar');
+        const languageSwitch = document.getElementById('language-switch');
 
+        let cards = [];
 
-    let currentLanguage = 'it';
-let currentIndex = 0;
-let publicationIndices = [];
-
-const buttonsContainer = document.getElementById('buttons-container');
-const cardsWrapper = document.getElementById('cards-wrapper');
-const progressBar = document.querySelector('.progress-bar');
-const languageSwitch = document.getElementById('language-switch');
-
-let cards = [];
-
-function initializeApp() {
-buttonsContainer.innerHTML = '';
-cardsWrapper.innerHTML = '';
-cards = [];
-currentIndex = 0;
-
-const { publications } = content[currentLanguage];
-
-let cardIndex = 0;
-publicationIndices = [];
-
-publications.forEach((publication) => {
-    createButton(publication.buttonLabel, cardIndex);
-    publicationIndices.push(cardIndex);
-    publication.cards.forEach(cardData => {
-        createCard(cardData);
-        cardIndex++;
-    });
-});
-
-// Add a sentinel value for the end
-publicationIndices.push(cardIndex);
-
-showCard(0);
-}
-
-function createButton(label, index) {
-const button = document.createElement('div');
-button.className = 'button';
-button.textContent = label;
-button.addEventListener('click', () => {
-    showCard(index);
-});
-buttonsContainer.appendChild(button);
-}
-
-function createCard(cardData) {
-const card = document.createElement('div');
-card.className = 'card';
-
-const cardContent = document.createElement('div');
-cardContent.className = 'card-content';
-
-const title = document.createElement('h2');
-title.className = 'section-title';
-title.textContent = cardData.title;
-cardContent.appendChild(title);
-
-cardData.contentBlocks.forEach(block => {
-    const contentBlock = createContentBlock(block.type, block.content);
-    cardContent.appendChild(contentBlock);
-});
-
-card.appendChild(cardContent);
-
-cardsWrapper.appendChild(card);
-cards.push(card);
-}
-
-function createContentBlock(type, contents) {
-    const div = document.createElement('div');
-    div.className = `content-block ${type}`;
-
-    contents.forEach(item => {
-        // Split the item into title and content at the first newline
-        const [title, ...rest] = item.split('\n');
-        const contentText = rest.join('\n').trim();
-
-        const p = document.createElement('p');
-
-        // Create a bold element for the title
-        const boldTitle = document.createElement('strong');
-        boldTitle.textContent = title.trim();
-
-        // Append the bold title to the paragraph
-        p.appendChild(boldTitle);
-
-        if (contentText) {
-            // Add a line break
-            p.appendChild(document.createElement('br'));
-
-            // Create a text node for the content
-            const contentNode = document.createTextNode(contentText);
-            p.appendChild(contentNode);
+        // Function to transform Substack URL for English using Google Translate (if needed)
+        function getTranslatedSubstackLink(originalLink) {
+            if (currentLanguage === 'it') {
+                return originalLink;
+            } else if (currentLanguage === 'en') {
+                // Parse the original URL
+                try {
+                    const url = new URL(originalLink);
+                    const originalDomain = url.hostname; // e.g., fortissimo.substack.com
+                    const translatedDomain = originalDomain.replace(/\./g, '-') + '.translate.goog';
+                    const translatedURL = `https://${translatedDomain}${url.pathname}?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=it&_x_tr_hist=true`;
+                    return translatedURL;
+                } catch (error) {
+                    console.error('Invalid URL:', originalLink);
+                    return originalLink; // Fallback to original link if invalid
+                }
+            }
+            return originalLink; // Default fallback
         }
 
-        div.appendChild(p);
-    });
+        // Function to initialize the app
+        async function initializeApp() {
+            buttonsContainer.innerHTML = '';
+            cardsWrapper.innerHTML = '';
+            cards = [];
+            currentIndex = 0;
 
-    return div;
-}
-        // Function to create the book details card
-        function createBookCard(bookDetails) {
+            // Fetch content based on current language
+            let contentURL = '';
+            if (currentLanguage === 'it') {
+                contentURL = 'content_it.json';
+                languageSwitch.textContent = '🇬🇧';
+            } else if (currentLanguage === 'en') {
+                contentURL = 'content_en.json';
+                languageSwitch.textContent = '🇮🇹';
+            }
+
+            try {
+                const response = await fetch(contentURL);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const content = await response.json();
+                let { publications } = content;
+
+                // Sort publications based on ff.xxxx numerically
+                publications.sort((a, b) => {
+                    const numA = parseInt(a.buttonLabel.match(/ff\.(\d+)/)[1], 10);
+                    const numB = parseInt(b.buttonLabel.match(/ff\.(\d+)/)[1], 10);
+                    return numA - numB;
+                });
+
+                // Prepare buttons and cards
+                let cardIndex = 0;
+                publicationIndices = [];
+
+                publications.forEach((publication) => {
+                    createButton(publication.buttonLabel, cardIndex);
+                    publicationIndices.push(cardIndex);
+                    // Sort cards within publication based on ff.xxxx
+                    publication.cards.sort((a, b) => {
+                        const numA = parseInt(a.title.match(/ff\.(\d+)/)[1], 10);
+                        const numB = parseInt(b.title.match(/ff\.(\d+)/)[1], 10);
+                        return numA - numB;
+                    });
+                    publication.cards.forEach(cardData => {
+                        createCard(publication, cardData); // Pass publication to createCard
+                        cardIndex++;
+                    });
+                });
+
+                // Add a sentinel value for the end
+                publicationIndices.push(cardIndex);
+
+                showCard(0);
+            } catch (error) {
+                console.error('Error fetching content:', error);
+                buttonsContainer.innerHTML = '<p>Errore nel caricamento del contenuto.</p>';
+            }
+        }
+
+        // Function to create a button
+        function createButton(label, index) {
+            const button = document.createElement('div');
+            button.className = 'button';
+            button.textContent = label;
+            button.addEventListener('click', () => {
+                showCard(index);
+            });
+            buttonsContainer.appendChild(button);
+        }
+
+        // Function to create a card
+        function createCard(publication, cardData) {
             const card = document.createElement('div');
             card.className = 'card';
 
             const cardContent = document.createElement('div');
-            cardContent.className = 'card-content book-details';
+            cardContent.className = 'card-content';
 
-            const buyText = currentLanguage === 'it' ? '📖 Acquista il libro' : '📖 Buy this book';
-            const coffeeText = currentLanguage === 'it' ? '☕ Offrimi un caffè' : '☕ Buy me a coffee';
-            const authorText = currentLanguage === 'it' ? 'Autore' : 'Author';
-            const yearText = currentLanguage === 'it' ? 'Anno' : 'Year';
-            const pagesText = currentLanguage === 'it' ? 'Pagine' : 'Pages';
+            // Create the Substack button using the existing 'substackButton' class
+            const substackButton = document.createElement('div');
+            substackButton.className = 'substackButton';
+            substackButton.textContent = publication.title; // Use publication title
+            substackButton.style.cursor = 'pointer';
+            substackButton.style.marginBottom = '10px'; // Add some spacing
+            substackButton.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent the card click event
+                const translatedLink = getTranslatedSubstackLink(publication.substackLink);
+                window.open(translatedLink, '_blank');
+            });
 
-            cardContent.innerHTML = `
-                <img src="${bookDetails.image}" alt="Book Cover" style="width:100%; height:auto; border-radius: 10px;">
-                <h2>${bookDetails.title}</h2>
-                <p>${authorText}: ${bookDetails.author}</p>
-                <p>${yearText}: ${bookDetails.year}</p>
-                <p>${pagesText}: ${bookDetails.pages}</p>
-                <button class="action-button" onclick="window.open('${bookDetails.link}', '_blank')">${buyText}</button>
-                <button class="action-button" onclick="window.open('${bookDetails.offerCoffeeLink}', '_blank')">${coffeeText}</button>
-            `;
+            cardContent.appendChild(substackButton);
+
+            // Create the title
+            const title = document.createElement('h2');
+            title.className = 'section-title';
+            title.textContent = cardData.title;
+            cardContent.appendChild(title);
+
+            // Add content blocks
+            cardData.contentBlocks.forEach(block => {
+                const contentBlock = createContentBlock(block.type, block.content);
+                cardContent.appendChild(contentBlock);
+            });
 
             card.appendChild(cardContent);
-
             cardsWrapper.appendChild(card);
             cards.push(card);
+
+            // Add click event to the entire card
+            card.addEventListener('click', () => {
+                const translatedLink = getTranslatedSubstackLink(publication.substackLink);
+                window.open(translatedLink, '_blank');
+            });
+        }
+        // Function to create a content block
+        function createContentBlock(type, contents) {
+            const div = document.createElement('div');
+            div.className = `content-block ${type}`;
+
+            contents.forEach(item => {
+                // Split the item into title and content at the first newline
+                const [title, ...rest] = item.split('\n');
+                const contentText = rest.join('\n').trim();
+
+                const p = document.createElement('p');
+
+                // Create a bold element for the title
+                const boldTitle = document.createElement('strong');
+                boldTitle.textContent = title.trim();
+
+                // Append the bold title to the paragraph
+                p.appendChild(boldTitle);
+
+                if (contentText) {
+                    // Add a line break
+                    p.appendChild(document.createElement('br'));
+
+                    // Create a text node for the content
+                    const contentNode = document.createTextNode(contentText);
+                    p.appendChild(contentNode);
+                }
+
+                div.appendChild(p);
+            });
+
+            return div;
         }
 
         // Function to display a specific card
@@ -725,7 +503,7 @@ function createContentBlock(type, contents) {
             progressBar.style.width = `${progress}%`;
         }
 
-        // Swipe functionality
+        // Swipe functionality (unchanged)
         let startX = 0;
         let isDown = false;
 
@@ -803,7 +581,6 @@ function createContentBlock(type, contents) {
         // Language switch functionality
         languageSwitch.addEventListener('click', () => {
             currentLanguage = currentLanguage === 'it' ? 'en' : 'it';
-            languageSwitch.textContent = currentLanguage === 'it' ? '🇬🇧' : '🇮🇹';
             initializeApp();
         });
 

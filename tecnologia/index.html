@@ -239,29 +239,33 @@
 
         /* Responsive Design: Adjust Footer Behavior */
         @media (max-width: 600px) {
-            .app-container {
-                flex-direction: column;
-            }
-
-            /* Reposition header to fixed bottom */
             .header {
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                z-index: 1000; /* Ensure it appears above other content */
-                background-color: var(--theme-color); /* Maintain background color */
-                box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
+                flex-direction: row;
+                justify-content: space-between; /* Distribute space between logo and language switch */
+                padding: 10px;
             }
 
-            /* Hide the existing footer */
-            footer {
-                display: none;
+            .language-switch {
+                margin-left: 0; /* Remove left margin */
+                margin-right: 10px; /* Add right margin */
+                font-size: 20px; /* Reduce font size if necessary */
             }
 
-            /* Adjust cards container's padding to prevent content from being hidden behind the fixed header */
-            .cards-container {
-                padding-bottom: 60px; /* Adjust this value based on the height of your header */
+            /* Ensure the buttons-container doesn't push the language switch off-screen */
+            .buttons-container {
+                flex-grow: 1;
+                margin: 0 10px; /* Add horizontal margins */
+            }
+        }
+
+        /* Optional: Adjustments for Very Small Screens */
+        @media (max-width: 400px) {
+            .language-switch {
+                font-size: 18px; /* Further reduce font size */
+            }
+
+            .logo {
+                height: 35px; /* Reduce logo size */
             }
         }
         @media (min-width: 601px) {
