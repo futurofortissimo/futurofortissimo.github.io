@@ -26,13 +26,16 @@
             background-color: #fff;
             color: #333;
             overflow: hidden; /* Prevent scrolling on body */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         /* App container */
         .app-container {
             display: flex;
             flex-direction: column;
-            height: 100vh;
+            flex: 1;
             overflow: hidden;
             position: relative;
         }
@@ -45,7 +48,6 @@
             padding: 10px;
             flex-shrink: 0;
             flex-wrap: nowrap;
-            order: 1; /* Default order */
         }
 
         .logo {
@@ -143,6 +145,11 @@
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
+            cursor: pointer; /* Indicates the card is clickable */
+        }
+
+        .card:hover {
+            background-color: #f9f9f9; /* Optional: Slight background change on hover */
         }
 
         /* Card content */
@@ -208,7 +215,7 @@
             font-family: 'Montserrat', sans-serif;
             padding: 10px;
             background-color: #f0f0f0;
-            order: 2; /* Default order */
+            flex-shrink: 0;
         }
 
         footer a {
@@ -233,18 +240,42 @@
             font-weight: bold;
         }
 
-        /* Responsive Design: Reorder Header and Footer on Mobile */
+        /* Responsive Design: Adjust Footer Behavior */
         @media (max-width: 600px) {
+            /* Ensure header remains at the top */
             .app-container {
                 flex-direction: column;
             }
 
+            /* No need to change order; keep header at top and footer at bottom */
             .header {
-                order: 2; /* Move header to the end */
+                order: 1; /* Ensure header stays first */
             }
 
             footer {
-                order: 1; /* Move footer to the start */
+                order: 2; /* Ensure footer stays last */
+            }
+
+            /* Optional: Make footer fixed at the bottom */
+            footer {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+            }
+
+            /* Adjust cards container height to account for fixed footer */
+            .cards-container {
+                padding-bottom: 50px; /* Height of the footer */
+            }
+        }
+
+        @media (min-width: 601px) {
+            /* On larger screens, footer can act as header or remain as footer */
+            /* If you want footer to act as header on large screens, you can hide the actual header */
+            /* Example: Hide footer and use header normally */
+            footer {
+                display: none; /* Hide footer on large screens */
             }
         }
     </style>
@@ -392,12 +423,13 @@
             cardContent.className = 'card-content';
 
             // Create the Substack button using the existing 'substackButton' class
-            const substackButton = document.createElement('div'); // Changed to 'div' to maintain structure
-            substackButton.className = 'substackButton'; // Use the same 'button' class
+            const substackButton = document.createElement('div');
+            substackButton.className = 'substackButton';
             substackButton.textContent = publication.title; // Use publication title
             substackButton.style.cursor = 'pointer';
             substackButton.style.marginBottom = '10px'; // Add some spacing
-            substackButton.addEventListener('click', () => {
+            substackButton.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent the card click event
                 const translatedLink = getTranslatedSubstackLink(publication.substackLink);
                 window.open(translatedLink, '_blank');
             });
@@ -419,8 +451,13 @@
             card.appendChild(cardContent);
             cardsWrapper.appendChild(card);
             cards.push(card);
-        }
 
+            // Add click event to the entire card
+            card.addEventListener('click', () => {
+                const translatedLink = getTranslatedSubstackLink(publication.substackLink);
+                window.open(translatedLink, '_blank');
+            });
+        }
         // Function to create a content block
         function createContentBlock(type, contents) {
             const div = document.createElement('div');
