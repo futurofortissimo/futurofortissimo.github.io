@@ -90,21 +90,8 @@
             font-family: 'Montserrat', sans-serif; /* Ensure same font */
         }
 
-        /* Substack Buttons */
-        .substack-button {
-            text-align: left; /* Justify to left */
-            border-radius: 5px; /* Optional: Slightly rounded corners */
-            background-color: var(--theme-color); /* Consistent background */
-            color: #fff;
-            padding: 10px 15px;
-            margin-bottom: 10px; /* Add spacing below */
-            font-size: 16px;
-            cursor: pointer;
-            width: auto; /* Adjust width as needed */
-        }
-
-        .substack-button:hover {
-            background-color: #7ec0ee; /* Slightly darker blue */
+        .button:hover {
+            background-color: #f0f0f0; /* Slightly darker on hover */
         }
 
         /* Progress bar */
@@ -365,7 +352,7 @@
                 publications: [
                     {
                         buttonLabel: '🎼 ff.18 Between digital art and AI',
-                        substackLink: 'https://fortissimo.substack.com/p/ff18-digital-art-and-ai',
+                        substackLink: 'https://fortissimo.substack.com/p/-ff17-tra-arte-digitale-e-ai',
                         urlSlug: '-ff18-digital-art-and-ai',
                         title: '🎼 ff.18 Between digital art and AI',
                         cards: [
@@ -396,7 +383,7 @@
                     },
                     {
                         buttonLabel: '🎼 ff.10 Measuring intelligence',
-                        substackLink: 'https://fortissimo.substack.com/p/ff10-measuring-intelligence',
+                        substackLink: 'https://fortissimo.substack.com/p/-ff12-misurare-lintelligenza',
                         urlSlug: '-ff10-measuring-intelligence',
                         title: '🎼 ff.10 Measuring intelligence',
                         cards: [
@@ -504,10 +491,12 @@
             const cardContent = document.createElement('div');
             cardContent.className = 'card-content';
 
-            // Create the Substack button with publication title
-            const substackButton = document.createElement('button');
-            substackButton.className = 'substack-button';
+            // Create the Substack button using the existing 'button' class
+            const substackButton = document.createElement('div'); // Changed to 'div' to maintain structure
+            substackButton.className = 'button'; // Use the same 'button' class
             substackButton.textContent = publication.title; // Use publication title
+            substackButton.style.cursor = 'pointer';
+            substackButton.style.marginBottom = '10px'; // Add some spacing
             substackButton.addEventListener('click', () => {
                 const translatedLink = getTranslatedSubstackLink(publication.substackLink);
                 window.open(translatedLink, '_blank');
