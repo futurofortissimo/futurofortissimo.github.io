@@ -231,17 +231,52 @@
 
         /* Footer */
         footer {
-            text-align: center;
-            font-size: 16px;
-            font-family: 'Montserrat', sans-serif;
+            background-color: var(--theme-color);
             padding: 10px;
-            background-color: #f0f0f0;
             flex-shrink: 0;
         }
 
-        footer a {
-            color: #00bef8;
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-content a,
+        .footer-content img,
+        .footer-content button {
+            margin: 5px 15px;
+            display: flex;
+            align-items: center;
             text-decoration: none;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .footer-content a img {
+            height: 30px;
+            width: auto;
+        }
+
+        .footer-content .donut-link img {
+            height: 30px;
+            width: auto;
+        }
+
+        .footer-content .share-button {
+            background-color: #fff;
+            color: #333;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 12px;
+            font-size: 14px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .footer-content .share-button:hover {
+            background-color: #f0f0f0;
         }
 
         /* Content block for darker paragraphs */
@@ -280,6 +315,16 @@
                 flex-grow: 1;
                 margin: 0 10px; /* Add horizontal margins */
             }
+
+            .footer-content {
+                flex-direction: column;
+            }
+
+            .footer-content a,
+            .footer-content img,
+            .footer-content button {
+                margin: 10px 0;
+            }
         }
 
         /* Optional: Adjustments for Very Small Screens */
@@ -290,6 +335,16 @@
 
             .logo {
                 height: 35px; /* Reduce logo size */
+            }
+
+            .footer-content a img,
+            .footer-content .donut-link img {
+                height: 25px;
+            }
+
+            .footer-content .share-button {
+                font-size: 12px;
+                padding: 6px 10px;
             }
         }
         @media (min-width: 601px) {
@@ -333,8 +388,20 @@
     </div>
 
     <footer>
-        <p><a href="https://linktr.ee/micmer">michele merelli</a> per
-        <a href="https://fortissimo.substack.com/">futuro fortissimo</a></p>
+        <div class="footer-content">
+            <!-- Logo -->
+            <a href="https://futurofortissimo.github.io/">
+                <img src="/index_files/ff.png" alt="Logo" class="logo">
+            </a>
+            <!-- English Language Icon -->
+            <img src="/path/to/english-flag.png" alt="English" class="language-icon">
+            <!-- Donut Link to PayPal -->
+            <a href="https://www.paypal.com/donate?hosted_button_id=YOUR_PAYPAL_ID" target="_blank" class="donut-link">
+                <img src="/path/to/donut.png" alt="Donate">
+            </a>
+            <!-- Share Button -->
+            <button class="share-button" id="share-button">Share</button>
+        </div>
     </footer>
 
     <script>
@@ -346,6 +413,7 @@
     const cardsWrapper = document.getElementById('cards-wrapper');
     const progressBar = document.querySelector('.progress-bar');
     const languageSwitch = document.getElementById('language-switch');
+    const shareButton = document.getElementById('share-button');
 
     let cards = [];
 
@@ -636,8 +704,33 @@
         initializeApp();
     });
 
+    // Share button functionality
+    shareButton.addEventListener('click', () => {
+        const pageURL = window.location.href;
+        const pageTitle = document.title;
+
+        if (navigator.share) {
+            navigator.share({
+                title: pageTitle,
+                url: pageURL
+            }).then(() => {
+                console.log('Thanks for sharing!');
+            })
+            .catch(console.error);
+        } else {
+            // Fallback: Copy to clipboard
+            navigator.clipboard.writeText(pageURL).then(() => {
+                alert('URL copiato negli appunti!');
+            }, (err) => {
+                console.error('Could not copy text: ', err);
+            });
+        }
+    });
+
     // Initialize the app after the DOM is fully loaded
     document.addEventListener('DOMContentLoaded', () => {
         initializeApp();
     });
-</script>
+    </script>
+</body>
+</html>
