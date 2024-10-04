@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
-    <link rel="icon" href="/index_files/ff.webp" type="/index_files/ff.webp">
-    <link rel="apple-touch-icon" href="/index_files/ff.webp">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="color-scheme" content="light only">
+    <meta charset="UTF-8">
+    <title>Libri Futuro Fortissimo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Libri - Futuro Fortissimo</title>
-    <meta name="description" content="Tutti i riassunti fortissimi di libri sul futuro letti da Michele Merelli micmer.">
-    <link rel="stylesheet" href="/index_files/303a26c383de2a8b.css">
+    <link rel="icon" href="/index_files/ff.webp" type="image/webp">
+    <link rel="apple-touch-icon" href="/index_files/ff.webp">
     <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
 
         /* Header with only the logo */
         header {
@@ -36,105 +39,110 @@
             margin-top: 100px; /* Adds space to prevent content being under header */
             padding: 20px;
         }
-    </style>
-    <style>
-    body {
-            font-family: 'Palladio', serif;
-            background-color: #f5f5f5;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
 
         .book-section {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
-            margin-top: 50px; /* Adjusts margin for better spacing */
+            margin-top: 20px; /* Reduced space */
         }
 
         .book-card {
             background-color: white;
-            border: 2px solid #00bef8;
+            border: 2px solid black;
             border-radius: 10px;
             padding: 15px;
             width: 250px;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
         }
 
         .book-card img {
             width: 100%;
             border-radius: 10px;
-            cursor: pointer; /* Cursor changes to pointer when hovering over the image */
+            cursor: pointer;
+        }
+
+        .book-title, .book-author {
+            text-align: left;
         }
 
         .book-title {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
-            margin: 15px 0 10px; /* More consistent spacing */
+            margin: 8px 0 4px; /* Reduced space */
         }
 
         .book-author {
-            font-size: 16px;
+            font-size: 14px;
             color: #555;
-            margin-bottom: 15px; /* Consistent spacing for author */
+            margin-bottom: 8px; /* Reduced space */
         }
 
+        .text-container {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
     </style>
 </head>
 
 <body>
 
-  <header>
-      <a href="https://futurofortissimo.github.io/">
-          <img src="/index_files/ff.png" alt="Logo" class="logo">
-      </a>
-  </header>
+<header>
+    <a href="https://futurofortissimo.github.io/">
+        <img src="/index_files/ff.png" alt="Logo" class="logo">
+    </a>
+</header>
 
-  <div class="book-section">
-    <script>
-        fetch('books.json')
-            .then(response => response.json())
-            .then(data => {
-                data.forEach(book => {
-                    const bookCard = document.createElement('div');
-                    bookCard.className = 'book-card';
+<div class="content">
+    <!-- Book Section -->
+    <div class="book-section">
+        <script>
+            fetch('books.json')
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(book => {
+                        const bookCard = document.createElement('div');
+                        bookCard.className = 'book-card';
 
-                    const bookLink = document.createElement('a');
-                    bookLink.href = book.link; // Make the image clickable and link to the book URL
+                        const bookLink = document.createElement('a');
+                        bookLink.href = book.link; // Make the image clickable and link to the book URL
 
-                    const bookImage = document.createElement('img');
-                    bookImage.src = book.image; // Fetch the image
-                    bookImage.alt = book.title; // Set alt text
+                        const bookImage = document.createElement('img');
+                        bookImage.src = book.image; // Fetch the image
+                        bookImage.alt = book.title; // Set alt text
 
-                    bookLink.appendChild(bookImage); // Append image inside the link
-                    bookCard.appendChild(bookLink); // Append the link (with image) to the card
+                        bookLink.appendChild(bookImage); // Append image inside the link
+                        bookCard.appendChild(bookLink); // Append the link (with image) to the card
 
-                    const bookTitle = document.createElement('div');
-                    bookTitle.className = 'book-title';
-                    bookTitle.textContent = book.title;
+                        const textContainer = document.createElement('div');
+                        textContainer.className = 'text-container';
 
-                    const bookAuthor = document.createElement('div');
-                    bookAuthor.className = 'book-author';
-                    bookAuthor.textContent = book.author;
+                        const bookTitle = document.createElement('div');
+                        bookTitle.className = 'book-title';
+                        bookTitle.textContent = book.title;
 
-                    bookCard.appendChild(bookTitle);
-                    bookCard.appendChild(bookAuthor);
+                        const bookAuthor = document.createElement('div');
+                        bookAuthor.className = 'book-author';
+                        bookAuthor.textContent = book.author;
 
-                    document.querySelector('.book-section').appendChild(bookCard);
-                });
-            })
-            .catch(error => console.error('Error loading the JSON file:', error));
-    </script>
-  </div>
+                        textContainer.appendChild(bookTitle);
+                        textContainer.appendChild(bookAuthor);
+
+                        bookCard.appendChild(textContainer);
+                        document.querySelector('.book-section').appendChild(bookCard);
+                    });
+                })
+                .catch(error => console.error('Error loading the JSON file:', error));
+        </script>
+    </div>
+</div>
 
 </body>
-
 </html>
