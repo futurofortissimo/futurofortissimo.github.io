@@ -388,29 +388,33 @@ const languageSwitch = document.getElementById('language-switch');
 let cards = [];
 
 function initializeApp() {
-buttonsContainer.innerHTML = '';
-cardsWrapper.innerHTML = '';
-cards = [];
-currentIndex = 0;
+    buttonsContainer.innerHTML = '';
+    cardsWrapper.innerHTML = '';
+    cards = [];
+    currentIndex = 0;
 
-const { publications } = content[currentLanguage];
+    const { publications } = content[currentLanguage];
 
-let cardIndex = 0;
-publicationIndices = [];
+    let cardIndex = 0;
+    publicationIndices = [];
 
-publications.forEach((publication) => {
-    createButton(publication.buttonLabel, cardIndex);
-    publicationIndices.push(cardIndex);
-    publication.cards.forEach(cardData => {
-        createCard(cardData);
-        cardIndex++;
+    publications.forEach((publication) => {
+        createButton(publication.buttonLabel, cardIndex);
+        publicationIndices.push(cardIndex);
+
+        // Add the Substack button before the cards for each publication
+        createSubstackButton(publication);
+
+        publication.cards.forEach(cardData => {
+            createCard(cardData);
+            cardIndex++;
+        });
     });
-});
 
-// Add a sentinel value for the end
-publicationIndices.push(cardIndex);
+    // Add a sentinel value for the end
+    publicationIndices.push(cardIndex);
 
-showCard(0);
+    showCard(0);
 }
 
 function createButton(label, index) {
@@ -477,6 +481,18 @@ function createContentBlock(type, contents) {
     });
 
     return div;
+}
+
+function createSubstackButton(publication) {
+    const substackButton = document.createElement('button');
+    substackButton.className = 'action-button';
+    substackButton.textContent = `Go to ${publication.buttonLabel} on Substack`;
+    substackButton.style.marginBottom = '10px'; // Add some space below the button
+    substackButton.addEventListener('click', () => {
+        window.open(`https://fortissimo.substack.com/p${publication.urlSlug}`, '_blank');
+    });
+
+    cardsWrapper.appendChild(substackButton);
 }
         // Function to create the book details card
         function createBookCard(bookDetails) {
