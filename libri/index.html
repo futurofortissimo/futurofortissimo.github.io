@@ -7,22 +7,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="color-scheme" content="light only">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>libri futuro fortissimo</title>
-    <meta name="description" content="Tutti i riassunti fortissimi di libri sul futuro letti da Michele Merelli micmer.">
-    <link rel="stylesheet" href="/index_files/303a26c383de2a8b.css" data-n-g="">
-    <link rel="stylesheet" href="style.css" data-n-g="">
-
-    </head>
-
-    <body>
-        <div id="__next">
-            <div class="flex flex-col overflow-hidden">
-
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libri - Futuro Fortissimo</title>
+    <meta name="description" content="Tutti i riassunti fortissimi di libri sul futuro letti da Michele Merelli micmer.">
     <link rel="stylesheet" href="/index_files/303a26c383de2a8b.css">
     <style>
         body {
@@ -43,6 +29,7 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
+            margin-top: 50px; /* Adjusts margin for better spacing */
         }
 
         .book-card {
@@ -55,26 +42,24 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
+        .book-card img {
+            width: 100%;
+            border-radius: 10px;
+            cursor: pointer; /* Cursor changes to pointer when hovering over the image */
+        }
+
         .book-title {
             font-size: 18px;
             font-weight: bold;
-            margin: 10px 0;
+            margin: 15px 0 10px; /* More consistent spacing */
         }
 
         .book-author {
             font-size: 16px;
             color: #555;
+            margin-bottom: 15px; /* Consistent spacing for author */
         }
 
-        .book-link {
-            text-decoration: none;
-            color: #00bef8;
-            font-weight: bold;
-        }
-
-        .book-link:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 
@@ -87,44 +72,43 @@
           </a>
       </div>
   </header>
-<div class="book-section" style="margin-top: 80px">
-            <script>
-            fetch('books.json')
-                .then(response => response.json())
-                .then(data => {
-                    data.forEach(book => {
-                        const bookCard = document.createElement('div');
-                        bookCard.className = 'book-card';
 
-                        const bookImage = document.createElement('img');
-                        bookImage.src = book.image; // Fetch the image
-                        bookImage.alt = book.title; // Set alt text
-                        bookImage.style.width = '100%'; // Optional: Set width to fit the card
-                        bookCard.appendChild(bookImage); // Append image to the card
+  <div class="book-section">
+    <script>
+        fetch('books.json')
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(book => {
+                    const bookCard = document.createElement('div');
+                    bookCard.className = 'book-card';
 
-                        const bookTitle = document.createElement('div');
-                        bookTitle.className = 'book-title';
-                        bookTitle.textContent = book.title;
+                    const bookLink = document.createElement('a');
+                    bookLink.href = book.link; // Make the image clickable and link to the book URL
 
-                        const bookAuthor = document.createElement('div');
-                        bookAuthor.className = 'book-author';
-                        bookAuthor.textContent = book.author;
+                    const bookImage = document.createElement('img');
+                    bookImage.src = book.image; // Fetch the image
+                    bookImage.alt = book.title; // Set alt text
 
-                        const bookLink = document.createElement('a');
-                        bookLink.className = 'book-link';
-                        bookLink.href = book.link;
-                        bookLink.textContent = 'Riassunto fortissimo';
+                    bookLink.appendChild(bookImage); // Append image inside the link
+                    bookCard.appendChild(bookLink); // Append the link (with image) to the card
 
-                        bookCard.appendChild(bookTitle);
-                        bookCard.appendChild(bookAuthor);
-                        bookCard.appendChild(bookLink);
+                    const bookTitle = document.createElement('div');
+                    bookTitle.className = 'book-title';
+                    bookTitle.textContent = book.title;
 
-                        document.querySelector('.book-section').appendChild(bookCard);
-                    });
-                })
-                .catch(error => console.error('Error loading the JSON file:', error));
-        </script>
-    </div>
+                    const bookAuthor = document.createElement('div');
+                    bookAuthor.className = 'book-author';
+                    bookAuthor.textContent = book.author;
+
+                    bookCard.appendChild(bookTitle);
+                    bookCard.appendChild(bookAuthor);
+
+                    document.querySelector('.book-section').appendChild(bookCard);
+                });
+            })
+            .catch(error => console.error('Error loading the JSON file:', error));
+    </script>
+  </div>
 
 </body>
 
