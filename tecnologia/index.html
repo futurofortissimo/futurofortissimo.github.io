@@ -242,40 +242,42 @@
 
         /* Responsive Design: Adjust Footer Behavior */
         @media (max-width: 600px) {
-            /* Ensure header remains at the top */
             .app-container {
                 flex-direction: column;
             }
 
-            /* No need to change order; keep header at top and footer at bottom */
+            /* Reposition header to fixed bottom */
             .header {
-                order: 1; /* Ensure header stays first */
-            }
-
-            footer {
-                order: 2; /* Ensure footer stays last */
-            }
-
-            /* Optional: Make footer fixed at the bottom */
-            footer {
                 position: fixed;
                 bottom: 0;
                 left: 0;
                 width: 100%;
+                z-index: 1000; /* Ensure it appears above other content */
+                background-color: var(--theme-color); /* Maintain background color */
+                box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
             }
 
-            /* Adjust cards container height to account for fixed footer */
+            /* Hide the existing footer */
+            footer {
+                display: none;
+            }
+
+            /* Adjust cards container's padding to prevent content from being hidden behind the fixed header */
             .cards-container {
-                padding-bottom: 50px; /* Height of the footer */
+                padding-bottom: 60px; /* Adjust this value based on the height of your header */
             }
         }
-
         @media (min-width: 601px) {
-            /* On larger screens, footer can act as header or remain as footer */
-            /* If you want footer to act as header on large screens, you can hide the actual header */
-            /* Example: Hide footer and use header normally */
             footer {
-                display: none; /* Hide footer on large screens */
+                display: block;
+            }
+
+            .header {
+                position: relative; /* Reset positioning to default */
+            }
+
+            .cards-container {
+                padding-bottom: 0; /* Remove padding adjustment */
             }
         }
     </style>
