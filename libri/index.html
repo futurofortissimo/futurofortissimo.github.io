@@ -20,6 +20,7 @@
             --button-border-color: #000000; /* Black border for buttons */
             --card-border-color: #000000; /* Black border for cards */
             --progress-bar-color: #4CAF50; /* Green */
+            --header-height: 70px; /* Approximate header height */
         }
 
         /* Basic styles */
@@ -28,10 +29,10 @@
             font-family: 'Montserrat', sans-serif;
             background-color: #fff;
             color: #333;
-            overflow-y: auto; /* Allow vertical scrolling */
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            overflow: hidden; /* Prevent body scroll */
         }
 
         /* App container */
@@ -51,13 +52,14 @@
             background-color: var(--theme-color);
             padding: 10px 20px;
             flex-shrink: 0;
-            flex-wrap: nowrap;
             justify-content: space-between;
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            height: var(--header-height);
+            box-sizing: border-box;
         }
 
         .logo {
@@ -72,6 +74,8 @@
             flex-grow: 1;
             justify-content: center;
             overflow-x: auto;
+            padding: 0 10px;
+            box-sizing: border-box;
         }
 
         /* Unified Button Styles */
@@ -85,6 +89,7 @@
             cursor: pointer;
             font-family: 'Montserrat', sans-serif;
             white-space: nowrap;
+            border: none; /* Default to no border */
         }
 
         /* Book Button Styles */
@@ -119,7 +124,7 @@
             transition: width 0.5s ease-in-out;
             flex-shrink: 0;
             position: fixed;
-            top: 70px; /* Adjust based on header height */
+            top: calc(var(--header-height) + 10px); /* Adjust based on header height */
             left: 0;
             z-index: 999;
         }
@@ -127,14 +132,14 @@
         /* Cards container */
         .cards-container {
             flex: 1;
-            overflow: hidden; /* Prevent overflow to maintain slider effect */
+            overflow: hidden; /* Prevent vertical scrolling to maintain slider effect */
             position: relative;
-            padding-top: 80px; /* Adjust padding to account for fixed header and progress bar */
+            padding-top: calc(var(--header-height) + 20px); /* Adjust padding to account for fixed header and progress bar */
             padding-bottom: 20px;
             box-sizing: border-box;
             display: flex;
             justify-content: center; /* Center the cards horizontally */
-            align-items: center; /* Center the cards vertically if possible */
+            align-items: center; /* Center the cards vertically */
         }
 
         /* Cards wrapper for sliding effect */
@@ -142,12 +147,14 @@
             display: flex;
             transition: transform 0.5s ease-in-out;
             width: 100%;
+            height: 100%;
         }
 
         /* Individual card */
         .card {
-            flex: 0 0 400px; /* Fixed width for smaller cards */
-            height: 600px; /* Fixed height for consistency */
+            flex: 0 0 100%;
+            max-width: 400px; /* Smaller width for cards */
+            height: auto; /* Automatic height based on content */
             overflow: hidden;
             background-color: #fff;
             box-sizing: border-box;
@@ -155,10 +162,10 @@
             flex-direction: column;
             align-items: center;
             padding: 20px;
-            margin: 0 auto; /* Center the card */
+            margin: 0 10px; /* Small margin to prevent edges from touching */
             border: 2px solid var(--card-border-color);
-            border-radius: 10px; /* Match TEMPLATE_HMTL card styles */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Match TEMPLATE_HMTL card styles */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         /* Book Cover Image */
@@ -176,10 +183,10 @@
             width: 100%;
             text-align: center;
             margin-bottom: 15px;
-            flex-grow: 1; /* Ensure details take up space */
             display: flex;
             flex-direction: column;
             justify-content: center;
+            flex-grow: 1;
         }
 
         .book-title {
@@ -260,6 +267,7 @@
             .header {
                 flex-direction: column;
                 align-items: flex-start;
+                height: auto; /* Allow height to adjust based on content */
             }
 
             .buttons-container {
@@ -272,7 +280,7 @@
             .card {
                 padding: 10px;
                 max-width: 100%; /* Allow full width on small screens */
-                height: auto; /* Adjust height based on content */
+                margin: 0 5px; /* Reduce margin for smaller screens */
             }
 
             .book-buttons {
@@ -564,6 +572,7 @@
         function mouseDown(evt) {
             startX = evt.clientX;
             isDown = true;
+            isScrolling = false;
             cardsWrapper.style.transition = 'none';
         }
 
