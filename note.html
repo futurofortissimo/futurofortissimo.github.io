@@ -388,12 +388,16 @@
     <footer>
         <div class="footer-content">
             <!-- Logo as a clickable link -->
+            <a href="https://futurofortissimo.github.io/">
+                <img src="/index_files/ff.png" alt="Logo" class="logo">
+            </a>
+
             <!-- Share Button as a link -->
             <a href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io/" class="button share-button" id="share-button">Share</a>
             <!-- Support Button as a link -->
             <a href="https://www.paypal.com/paypalme/michelemerelli" class="button support-button" id="support-button">Support</a>
             <!-- Language Toggle Button -->
-            <button class="button language-button" id="language-button">English</button>
+            <button class="button language-button" id="language-button">English 🇬🇧</button>
         </div>
     </footer>
 
@@ -637,7 +641,7 @@
             // Language switch functionality
             languageButton.addEventListener('click', () => {
                 currentLanguage = currentLanguage === 'it' ? 'en' : 'it';
-                languageButton.textContent = currentLanguage === 'it' ? 'English' : 'Italian';
+                languageButton.textContent = currentLanguage === 'it' ? 'English 🇬🇧' : 'Italian 🇮🇹';
                 initializeApp();
             });
 
