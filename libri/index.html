@@ -13,14 +13,11 @@
         /* Root variables */
         :root {
             --theme-color: #ADD8E6; /* Light blue */
-            --button-hover-scale: 1.05; /* Scale factor for hover effect */
-            --button-transition: transform 0.2s ease-in-out;
+            --progress-bar-color: #4CAF50; /* Green */
             --button-bg-color: #FFFFFF; /* White background for buttons */
             --button-text-color: #000000; /* Black text for buttons */
             --button-border-color: #000000; /* Black border for buttons */
             --card-border-color: #000000; /* Black border for cards */
-            --progress-bar-color: #4CAF50; /* Green */
-            --header-height: 70px; /* Approximate header height */
         }
 
         /* Basic styles */
@@ -32,7 +29,7 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            overflow: hidden; /* Prevent body scroll */
+            overflow: hidden; /* Prevent body scrolling */
         }
 
         /* App container */
@@ -40,7 +37,7 @@
             display: flex;
             flex-direction: column;
             flex: 1;
-            overflow: hidden;
+            overflow: hidden; /* Prevent overflow to maintain slider effect */
             position: relative;
             padding-bottom: 60px; /* Space for fixed footer */
         }
@@ -52,19 +49,24 @@
             background-color: var(--theme-color);
             padding: 10px 20px;
             flex-shrink: 0;
+            flex-wrap: nowrap;
             justify-content: space-between;
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            height: var(--header-height);
-            box-sizing: border-box;
         }
 
         .logo {
             height: 50px;
             cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        /* Hide language-switch in header as it's moved to footer */
+        .language-switch {
+            display: none;
         }
 
         /* Buttons container inside header */
@@ -74,8 +76,11 @@
             flex-grow: 1;
             justify-content: center;
             overflow-x: auto;
-            padding: 0 10px;
-            box-sizing: border-box;
+            padding: 0 10px; /* Adjusted padding to prevent buttons from touching edges */
+        }
+
+        .buttons-container::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for WebKit browsers */
         }
 
         /* Unified Button Styles */
@@ -83,37 +88,38 @@
             padding: 8px 16px;
             background-color: var(--button-bg-color);
             color: var(--button-text-color);
+            border: none; /* Removed border for uniformity */
             border-radius: 20px;
             text-align: center;
             font-size: 14px;
             cursor: pointer;
             font-family: 'Montserrat', sans-serif;
             white-space: nowrap;
-            border: none; /* Default to no border */
+            transition: none; /* Removed transition for non-hover buttons */
         }
 
-        /* Book Button Styles */
+        /* Book Buttons Specific Styles */
         .book-button {
-            border: 2px solid var(--button-border-color);
+            border: 2px solid var(--button-border-color); /* Only book buttons have borders */
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
 
         .book-button:hover {
-            transform: scale(var(--button-hover-scale));
+            transform: scale(1.05); /* Hover scale effect */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             background-color: #f0f0f0; /* Slight background change on hover */
         }
 
         /* Header and Footer Buttons - No Border and No Hover Effects */
         .header-button, .footer-button {
-            border: none;
-            transition: none;
+            border: none; /* Remove borders */
+            transition: none; /* Remove hover transitions */
         }
 
         .header-button:hover, .footer-button:hover {
-            transform: none;
-            box-shadow: none;
-            background-color: var(--button-bg-color); /* No change on hover */
+            transform: none; /* No scaling */
+            box-shadow: none; /* No shadow */
+            background-color: var(--button-bg-color); /* No background change */
         }
 
         /* Progress bar */
@@ -122,9 +128,8 @@
             background-color: var(--progress-bar-color);
             width: 0%;
             transition: width 0.5s ease-in-out;
-            flex-shrink: 0;
             position: fixed;
-            top: calc(var(--header-height) + 10px); /* Adjust based on header height */
+            top: 60px; /* Adjusted based on header height */
             left: 0;
             z-index: 999;
         }
@@ -132,14 +137,14 @@
         /* Cards container */
         .cards-container {
             flex: 1;
-            overflow: hidden; /* Prevent vertical scrolling to maintain slider effect */
+            overflow: hidden; /* Prevent overflow to maintain slider effect */
             position: relative;
-            padding-top: calc(var(--header-height) + 20px); /* Adjust padding to account for fixed header and progress bar */
+            padding-top: 80px; /* Adjust padding to account for fixed header and progress bar */
             padding-bottom: 20px;
             box-sizing: border-box;
             display: flex;
             justify-content: center; /* Center the cards horizontally */
-            align-items: center; /* Center the cards vertically */
+            align-items: center; /* Center the cards vertically if possible */
         }
 
         /* Cards wrapper for sliding effect */
@@ -147,14 +152,13 @@
             display: flex;
             transition: transform 0.5s ease-in-out;
             width: 100%;
-            height: 100%;
         }
 
         /* Individual card */
         .card {
-            flex: 0 0 100%;
-            max-width: 400px; /* Smaller width for cards */
-            height: auto; /* Automatic height based on content */
+            flex: 0 0 auto; /* Prevent flex from shrinking or growing */
+            width: 400px; /* Fixed smaller width */
+            height: 600px; /* Fixed height for consistency */
             overflow: hidden;
             background-color: #fff;
             box-sizing: border-box;
@@ -162,7 +166,7 @@
             flex-direction: column;
             align-items: center;
             padding: 20px;
-            margin: 0 10px; /* Small margin to prevent edges from touching */
+            margin: 0 20px; /* Horizontal margin to center the card */
             border: 2px solid var(--card-border-color);
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -183,10 +187,10 @@
             width: 100%;
             text-align: center;
             margin-bottom: 15px;
+            flex-grow: 1; /* Ensure details take up space */
             display: flex;
             flex-direction: column;
             justify-content: center;
-            flex-grow: 1;
         }
 
         .book-title {
@@ -218,6 +222,10 @@
             font-size: 16px;
             border-radius: 20px; /* Match unified button style */
             cursor: pointer;
+            background-color: var(--button-bg-color);
+            color: var(--button-text-color);
+            border: 2px solid var(--button-border-color);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
 
         /* Footer */
@@ -244,30 +252,15 @@
         /* Ensure footer buttons also use the unified .button class */
         .footer-content a,
         .footer-content button {
-            /* Assign both 'button' and 'footer-button' classes */
-            /* This is already handled in HTML by assigning both classes */
+            /* Classes applied in HTML */
         }
 
         /* Responsive Design */
         @media (max-width: 600px) {
-            .footer-content {
-                flex-wrap: nowrap; /* Keep buttons on the same line */
-                justify-content: center; /* Centers items horizontally */
-                overflow-x: auto;
-                gap: 10px;
-            }
-
-            .footer-content a,
-            .footer-content button {
-                flex: 0 0 auto;
-                white-space: nowrap;
-            }
-
-            /* Adjust header if necessary */
             .header {
                 flex-direction: column;
                 align-items: flex-start;
-                height: auto; /* Allow height to adjust based on content */
+                padding: 10px 15px;
             }
 
             .buttons-container {
@@ -277,10 +270,15 @@
                 overflow-x: auto;
             }
 
+            .cards-container {
+                padding-top: 100px; /* Increased padding for taller headers */
+            }
+
             .card {
-                padding: 10px;
-                max-width: 100%; /* Allow full width on small screens */
-                margin: 0 5px; /* Reduce margin for smaller screens */
+                width: 90%; /* Responsive width */
+                height: auto; /* Allow height to adjust based on content */
+                padding: 15px;
+                margin: 0 auto; /* Center the card */
             }
 
             .book-buttons {
@@ -361,10 +359,13 @@
         const progressBar = document.getElementById('progress-bar');
         const languageButton = document.getElementById('language-button');
 
+        let cards = [];
+
         // Function to initialize the app
         async function initializeApp() {
             buttonsContainer.innerHTML = '';
             cardsWrapper.innerHTML = '';
+            cards = [];
             currentIndex = 0;
 
             // Fetch content based on current language
@@ -406,7 +407,7 @@
         // Function to create a button in the header
         function createButton(label, index) {
             const button = document.createElement('button');
-            button.className = 'button header-button';
+            button.className = 'button header-button'; // Combined classes
             button.textContent = label;
             button.addEventListener('click', () => {
                 showCard(index);
@@ -422,7 +423,7 @@
 
             // Book Cover Image
             const bookImage = document.createElement('img');
-            bookImage.src = book.coverImage;
+            bookImage.src = `/images/${book.coverImage}`; // Ensure correct path
             bookImage.alt = book.title;
             bookImage.addEventListener('click', () => {
                 window.open(book.readMoreLink, '_blank');
@@ -445,15 +446,15 @@
 
             const bookAuthor = document.createElement('div');
             bookAuthor.className = 'book-author';
-            bookAuthor.textContent = `Autore: ${book.author}`;
+            bookAuthor.textContent = `Author: ${book.author}`; // Translated to English
 
             const bookYear = document.createElement('div');
             bookYear.className = 'book-year';
-            bookYear.textContent = `Anno: ${book.year}`;
+            bookYear.textContent = `Year: ${book.year}`; // Translated to English
 
             const bookPages = document.createElement('div');
             bookPages.className = 'book-pages';
-            bookPages.textContent = `Pagine: ${book.pages}`;
+            bookPages.textContent = `Pages: ${book.pages}`; // Translated to English
 
             bookDetails.appendChild(bookTitle);
             bookDetails.appendChild(bookAuthor);
@@ -486,13 +487,15 @@
             card.appendChild(bookButtons);
 
             cardsWrapper.appendChild(card);
+            cards.push(card);
         }
 
         // Function to display a specific card
         function showCard(index) {
             currentIndex = index;
-            cardsWrapper.style.transform = `translateX(-${index * 100}%)`;
-            const progress = ((index + 1) / document.querySelectorAll('.card').length) * 100;
+            const cardWidth = cards[index].offsetWidth + 40; // Card width + margin
+            cardsWrapper.style.transform = `translateX(-${index * cardWidth}px)`;
+            const progress = ((index + 1) / cards.length) * 100;
             progressBar.style.width = `${progress}%`;
             scrollButtonIntoView(index);
         }
@@ -542,8 +545,8 @@
             if (!isScrolling) {
                 evt.preventDefault(); // Prevent default scrolling
                 const percentage = (deltaX / window.innerWidth) * 100;
-                const offset = -currentIndex * 100 + percentage;
-                cardsWrapper.style.transform = `translateX(${offset}%)`;
+                const offset = -currentIndex * (cards[currentIndex].offsetWidth + 40) + (percentage * (cards[currentIndex].offsetWidth + 40)) / 100;
+                cardsWrapper.style.transform = `translateX(${offset}px)`;
             }
         }
 
@@ -553,7 +556,7 @@
             if (!isScrolling) {
                 const endX = evt.changedTouches[0].clientX;
                 const deltaX = endX - startX;
-                if (deltaX < -50 && currentIndex < document.querySelectorAll('.card').length - 1) {
+                if (deltaX < -50 && currentIndex < cards.length - 1) {
                     currentIndex++;
                 } else if (deltaX > 50 && currentIndex > 0) {
                     currentIndex--;
@@ -571,6 +574,7 @@
 
         function mouseDown(evt) {
             startX = evt.clientX;
+            startY = evt.clientY;
             isDown = true;
             isScrolling = false;
             cardsWrapper.style.transition = 'none';
@@ -579,24 +583,38 @@
         function mouseMove(evt) {
             if (!isDown) return;
             const x = evt.clientX;
+            const y = evt.clientY;
             const deltaX = x - startX;
-            const percentage = (deltaX / window.innerWidth) * 100;
-            const offset = -currentIndex * 100 + percentage;
-            cardsWrapper.style.transform = `translateX(${offset}%)`;
+            const deltaY = y - startY;
+
+            // Determine if the user is scrolling vertically
+            if (!isScrolling) {
+                isScrolling = Math.abs(deltaY) > Math.abs(deltaX);
+            }
+
+            // Only allow horizontal swiping if not scrolling vertically
+            if (!isScrolling) {
+                evt.preventDefault(); // Prevent default actions
+                const percentage = (deltaX / window.innerWidth) * 100;
+                const offset = -currentIndex * (cards[currentIndex].offsetWidth + 40) + (percentage * (cards[currentIndex].offsetWidth + 40)) / 100;
+                cardsWrapper.style.transform = `translateX(${offset}px)`;
+            }
         }
 
         function mouseUp(evt) {
             if (!isDown) return;
             isDown = false;
-            const endX = evt.clientX;
-            const deltaX = endX - startX;
-            if (deltaX < -50 && currentIndex < document.querySelectorAll('.card').length - 1) {
-                currentIndex++;
-            } else if (deltaX > 50 && currentIndex > 0) {
-                currentIndex--;
+            if (!isScrolling) {
+                const endX = evt.clientX;
+                const deltaX = endX - startX;
+                if (deltaX < -50 && currentIndex < cards.length - 1) {
+                    currentIndex++;
+                } else if (deltaX > 50 && currentIndex > 0) {
+                    currentIndex--;
+                }
+                cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
+                showCard(currentIndex);
             }
-            cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
-            showCard(currentIndex);
         }
 
         // Language switch functionality
