@@ -129,15 +129,20 @@
     <div class="slider-container" style="overflow-x: auto; white-space: nowrap;">
 
       <a href="#" id="image-box-link" style="cursor: pointer; font-size: 21px; font-family: 'Montserrat', sans-serif;; color:white; text-align:left; display: flex; flex-direction: column; width: 100%;" class="image-box">
-        <div class="my-text-container" style="padding:15px; width: 100%; position: relative;">
+        <div class="my-text-container" style="padding:15px; width: 100%; position: relative; box-sizing: border-box;">
           <div class="part1" style="margin-bottom: 15px;"> <!-- Added margin for spacing -->
-            <div class="post-title"></div>
+            <div class="post-title">
+            </div>
           </div>
-          <div class="part2" style="padding: 15px; position: absolute; bottom: 15px;"> <!-- Positioned at the bottom with padding on sides -->
-            <ul></ul>
+          <div class="part2" style="padding: 15px; position: relative; margin-top: auto; box-sizing: border-box;"> <!-- Removed absolute positioning -->
+            <ul>
+            </ul>
           </div>
         </div>
       </a>
+
+
+
 
       <!-- Additional items will be appended here -->
     </div>
