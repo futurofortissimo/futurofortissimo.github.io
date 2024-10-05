@@ -88,7 +88,7 @@
             padding: 8px 12px;
             background-color: #fff;
             color: #333;
-            magin:12px;
+            margin: 12px; /* Corrected typo from 'magin' to 'margin' */
             border-radius: 20px;
             text-align: center;
             font-size: 14px;
@@ -346,7 +346,9 @@
     <div class="app-container">
         <!-- Header with logo and buttons -->
         <div class="header">
-
+            <a href="https://futurofortissimo.github.io/">
+                <img src="/index_files/ff.png" alt="Logo" class="logo">
+            </a>
             <!-- Buttons inside header -->
             <div class="buttons-container" id="buttons-container">
                 <!-- Buttons will be dynamically inserted here -->
@@ -367,13 +369,18 @@
     </div>
 
     <footer>
-      <a href="https://futurofortissimo.github.io/">
-          <img src="/index_files/ff.png" alt="Logo" class="logo">
-      </a>
-      <button href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io/" class="button " id="language-button">Share</button>
-      <button href="https://www.paypal.com/paypalme/michelemerelli" class="button " id="language-button">Support</button>
-      <button class="button" id="language-button">English 🇬🇧</button>
-      
+        <div class="footer-content">
+            <!-- Logo as a button -->
+            <a href="https://futurofortissimo.github.io/" class="button logo-button">
+                <img src="/index_files/ff.png" alt="Logo" class="logo">
+            </a>
+            <!-- Share Button as a link -->
+            <a href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io/" class="button share-button">Share</a>
+            <!-- Support Button as a link -->
+            <a href="https://www.paypal.com/paypalme/michelemerelli" class="button support-button">Support</a>
+            <!-- English Language Button -->
+            <button class="button language-button" id="language-button">English 🇬🇧</button>
+        </div>
     </footer>
 
     <script>
@@ -385,8 +392,7 @@
     const cardsWrapper = document.getElementById('cards-wrapper');
     const progressBar = document.querySelector('.progress-bar');
     const languageButton = document.getElementById('language-button');
-    const supportButton = document.getElementById('support-button');
-    // Removed 'share-button' as it's now an <a> element
+    // Removed 'share-button' and 'support-button' references as they are now <a> elements without ids
 
     let cards = [];
 
@@ -677,13 +683,7 @@
         initializeApp();
     });
 
-    // Support button functionality
-    supportButton.addEventListener('click', () => {
-        // Define what the support button does. Example: open support email
-        window.location.href = 'mailto:support@futurofortissimo.com';
-    });
-
-    // Share button functionality is handled via <a> link
+    // Removed event listeners for 'share-button' and 'support-button' as they are now <a> elements without ids
 
     // Initialize the app after the DOM is fully loaded
     document.addEventListener('DOMContentLoaded', () => {
