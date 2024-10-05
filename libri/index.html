@@ -15,10 +15,11 @@
             --theme-color: #ADD8E6; /* Light blue */
             --button-hover-scale: 1.05; /* Scale factor for hover effect */
             --button-transition: transform 0.2s ease-in-out;
-            --card-border-color: #000;
-            --button-bg-color: #ADD8E6;
-            --button-text-color: #fff;
-            --button-hover-bg-color: #7ec0ee;
+            --button-bg-color: #FFFFFF; /* White background for buttons */
+            --button-text-color: #000000; /* Black text for buttons */
+            --button-border-color: #000000; /* Black border for buttons */
+            --card-border-color: #000000; /* Black border for cards */
+            --progress-bar-color: #4CAF50; /* Green */
         }
 
         /* Basic styles */
@@ -70,6 +71,7 @@
             gap: 10px;
             flex-grow: 1;
             justify-content: center;
+            overflow-x: auto;
         }
 
         /* Buttons */
@@ -77,30 +79,31 @@
             padding: 8px 16px;
             background-color: var(--button-bg-color);
             color: var(--button-text-color);
-            border: none;
+            border: 2px solid var(--button-border-color);
             border-radius: 20px;
             text-align: center;
             font-size: 14px;
             cursor: pointer;
-            transition: transform 0.2s ease-in-out, background-color 0.2s;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
             font-family: 'Montserrat', sans-serif;
+            white-space: nowrap;
         }
 
         .button:hover {
             transform: scale(var(--button-hover-scale));
-            background-color: var(--button-hover-bg-color);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: #f0f0f0; /* Slight background change on hover */
         }
 
         /* Progress bar */
         .progress-bar {
             height: 5px;
-            background-color: #4CAF50; /* Green */
+            background-color: var(--progress-bar-color);
             width: 0%;
             transition: width 0.5s ease-in-out;
             flex-shrink: 0;
             position: fixed;
-            top: 60px; /* Adjust based on header height */
+            top: 70px; /* Adjust based on header height */
             left: 0;
             z-index: 999;
         }
@@ -109,26 +112,34 @@
         .cards-container {
             flex: 1;
             overflow: auto; /* Allow vertical scrolling */
-            padding: 80px 20px 20px; /* Adjust padding to account for fixed header */
+            position: relative;
+            padding-top: 80px; /* Adjust padding to account for fixed header and progress bar */
+            padding-bottom: 20px;
             box-sizing: border-box;
         }
 
-        /* Individual book card */
-        .book-card {
-            background-color: #fff;
-            border: 2px solid var(--card-border-color);
-            border-radius: 10px;
-            padding: 15px;
+        /* Cards wrapper for sliding effect */
+        .cards-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
             width: 100%;
-            max-width: 600px;
-            margin: 20px auto;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Individual card */
+        .card {
+            flex: 0 0 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #fff;
+            box-sizing: border-box;
             display: flex;
             flex-direction: column;
             align-items: center;
+            padding: 20px;
         }
 
-        .book-card img {
+        /* Book Cover Image */
+        .card img {
             width: 100%;
             max-width: 200px;
             height: auto;
@@ -137,9 +148,10 @@
             margin-bottom: 15px;
         }
 
+        /* Book Details */
         .book-details {
             width: 100%;
-            text-align: left;
+            text-align: center;
             margin-bottom: 15px;
         }
 
@@ -157,17 +169,30 @@
             color: #555;
         }
 
+        /* Book Buttons */
         .book-buttons {
             display: flex;
             gap: 10px;
             width: 100%;
-            justify-content: flex-end;
+            justify-content: center;
         }
 
         .book-buttons .button {
             flex: 1;
             padding: 10px 0;
             font-size: 16px;
+            border: 2px solid var(--button-border-color);
+            background-color: var(--button-bg-color);
+            color: var(--button-text-color);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .book-buttons .button:hover {
+            transform: scale(var(--button-hover-scale));
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: #f0f0f0; /* Slight background change on hover */
         }
 
         /* Footer */
@@ -247,8 +272,7 @@
                 overflow-x: auto;
             }
 
-            .book-card {
-                width: 100%;
+            .card {
                 padding: 10px;
             }
 
@@ -294,14 +318,18 @@
             <div class="buttons-container" id="buttons-container">
                 <!-- Buttons will be dynamically inserted here -->
             </div>
+            <!-- Hidden language switch in header -->
+            <button class="language-switch" id="language-switch" style="display:none;">🇬🇧</button>
         </div>
 
         <!-- Progress bar -->
         <div class="progress-bar" id="progress-bar"></div>
 
         <!-- Cards -->
-        <div class="cards-container" id="cards-container">
-            <!-- Book cards will be dynamically inserted here -->
+        <div class="cards-container">
+            <div class="cards-wrapper" id="cards-wrapper">
+                <!-- Book cards will be dynamically inserted here -->
+            </div>
         </div>
     </div>
 
@@ -318,16 +346,18 @@
 
     <script>
         let currentLanguage = 'it';
+        let currentIndex = 0;
 
         const buttonsContainer = document.getElementById('buttons-container');
-        const cardsContainer = document.getElementById('cards-container');
+        const cardsWrapper = document.getElementById('cards-wrapper');
         const progressBar = document.getElementById('progress-bar');
         const languageButton = document.getElementById('language-button');
 
         // Function to initialize the app
         async function initializeApp() {
             buttonsContainer.innerHTML = '';
-            cardsContainer.innerHTML = '';
+            cardsWrapper.innerHTML = '';
+            currentIndex = 0;
 
             // Fetch content based on current language
             let contentURL = '';
@@ -356,7 +386,11 @@
                     createBookCard(book, index);
                 });
 
+                // Update progress bar
                 updateProgressBar();
+
+                // Show the first card
+                showCard(0);
 
             } catch (error) {
                 console.error('Error fetching content:', error);
@@ -370,16 +404,16 @@
             button.className = 'button';
             button.textContent = label;
             button.addEventListener('click', () => {
-                scrollToBook(index);
+                showCard(index);
             });
             buttonsContainer.appendChild(button);
         }
 
         // Function to create a book card
         function createBookCard(book, index) {
-            const bookCard = document.createElement('div');
-            bookCard.className = 'book-card';
-            bookCard.id = `book-${index}`;
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.id = `card-${index}`;
 
             // Book Cover Image
             const bookImage = document.createElement('img');
@@ -389,7 +423,7 @@
                 window.open(book.readMoreLink, '_blank');
             });
 
-            bookCard.appendChild(bookImage);
+            card.appendChild(bookImage);
 
             // Book Details
             const bookDetails = document.createElement('div');
@@ -416,7 +450,7 @@
             bookDetails.appendChild(bookYear);
             bookDetails.appendChild(bookPages);
 
-            bookCard.appendChild(bookDetails);
+            card.appendChild(bookDetails);
 
             // Book Buttons
             const bookButtons = document.createElement('div');
@@ -439,41 +473,119 @@
             bookButtons.appendChild(buyButton);
             bookButtons.appendChild(readMoreButton);
 
-            bookCard.appendChild(bookButtons);
+            card.appendChild(bookButtons);
 
-            cardsContainer.appendChild(bookCard);
+            cardsWrapper.appendChild(card);
         }
 
-        // Function to scroll to a specific book
-        function scrollToBook(index) {
-            const bookElement = document.getElementById(`book-${index}`);
-            if (bookElement) {
-                bookElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                updateProgressBarForBook(bookElement);
+        // Function to display a specific card
+        function showCard(index) {
+            currentIndex = index;
+            cardsWrapper.style.transform = `translateX(-${index * 100}%)`;
+            const progress = ((index + 1) / document.querySelectorAll('.card').length) * 100;
+            progressBar.style.width = `${progress}%`;
+            scrollButtonIntoView(index);
+        }
+
+        // Function to scroll buttons into view
+        function scrollButtonIntoView(index) {
+            const button = buttonsContainer.children[index];
+            if (button) {
+                button.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
             }
         }
 
-        // Function to update the progress bar based on scroll position
-        function updateProgressBar() {
-            const totalBooks = document.querySelectorAll('.book-card').length;
-            const update = () => {
-                const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                const scrollFraction = scrollTop / scrollHeight;
-                const progress = scrollFraction * 100;
-                progressBar.style.width = `${progress}%`;
-            };
+        // Swipe functionality
+        let startX = 0;
+        let startY = 0;
+        let isDown = false;
+        let isScrolling = false;
 
-            window.addEventListener('scroll', update);
-            update();
+        const cardsContainer = document.querySelector('.cards-container');
+
+        // Touch events for mobile
+        cardsContainer.addEventListener('touchstart', touchStart, false);
+        cardsContainer.addEventListener('touchmove', touchMove, false);
+        cardsContainer.addEventListener('touchend', touchEnd, false);
+
+        function touchStart(evt) {
+            startX = evt.touches[0].clientX;
+            startY = evt.touches[0].clientY;
+            isDown = true;
+            isScrolling = false;
+            cardsWrapper.style.transition = 'none';
         }
 
-        // Function to update progress bar for a specific book
-        function updateProgressBarForBook(bookElement) {
-            const rect = bookElement.getBoundingClientRect();
-            const windowHeight = window.innerHeight;
-            const progress = Math.min(Math.max((windowHeight - rect.top) / windowHeight, 0), 1) * 100;
-            progressBar.style.width = `${progress}%`;
+        function touchMove(evt) {
+            if (!isDown) return;
+            const x = evt.touches[0].clientX;
+            const y = evt.touches[0].clientY;
+            const deltaX = x - startX;
+            const deltaY = y - startY;
+
+            // Determine if the user is scrolling vertically
+            if (!isScrolling) {
+                isScrolling = Math.abs(deltaY) > Math.abs(deltaX);
+            }
+
+            // Only allow horizontal swiping if not scrolling vertically
+            if (!isScrolling) {
+                evt.preventDefault(); // Prevent default scrolling
+                const percentage = (deltaX / window.innerWidth) * 100;
+                const offset = -currentIndex * 100 + percentage;
+                cardsWrapper.style.transform = `translateX(${offset}%)`;
+            }
+        }
+
+        function touchEnd(evt) {
+            if (!isDown) return;
+            isDown = false;
+            if (!isScrolling) {
+                const endX = evt.changedTouches[0].clientX;
+                const deltaX = endX - startX;
+                if (deltaX < -50 && currentIndex < document.querySelectorAll('.card').length - 1) {
+                    currentIndex++;
+                } else if (deltaX > 50 && currentIndex > 0) {
+                    currentIndex--;
+                }
+                cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
+                showCard(currentIndex);
+            }
+        }
+
+        // Mouse events for desktop
+        cardsContainer.addEventListener('mousedown', mouseDown, false);
+        cardsContainer.addEventListener('mousemove', mouseMove, false);
+        cardsContainer.addEventListener('mouseup', mouseUp, false);
+        cardsContainer.addEventListener('mouseleave', mouseUp, false);
+
+        function mouseDown(evt) {
+            startX = evt.clientX;
+            isDown = true;
+            cardsWrapper.style.transition = 'none';
+        }
+
+        function mouseMove(evt) {
+            if (!isDown) return;
+            const x = evt.clientX;
+            const deltaX = x - startX;
+            const percentage = (deltaX / window.innerWidth) * 100;
+            const offset = -currentIndex * 100 + percentage;
+            cardsWrapper.style.transform = `translateX(${offset}%)`;
+        }
+
+        function mouseUp(evt) {
+            if (!isDown) return;
+            isDown = false;
+            const endX = evt.clientX;
+            const deltaX = endX - startX;
+            if (deltaX < -50 && currentIndex < document.querySelectorAll('.card').length - 1) {
+                currentIndex++;
+            } else if (deltaX > 50 && currentIndex > 0) {
+                currentIndex--;
+            }
+            cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
+            showCard(currentIndex);
         }
 
         // Language switch functionality
