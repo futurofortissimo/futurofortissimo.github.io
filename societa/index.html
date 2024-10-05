@@ -25,7 +25,7 @@
             font-family: 'Montserrat', sans-serif;
             background-color: #fff;
             color: #333;
-            overflow: hidden; /* Prevent body scrolling */
+            overflow-y: auto;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
@@ -38,21 +38,24 @@
             flex: 1;
             overflow: hidden;
             position: relative;
-            padding-bottom: 60px; /* Space for fixed footer */
         }
 
-        /* Header without logo */
+        /* Header with logo, buttons, and language switch */
         .header {
             display: flex;
             align-items: center;
             background-color: var(--theme-color);
-            padding: 10px 20px; /* Adjusted padding */
+            padding: 10px;
             flex-shrink: 0;
             flex-wrap: nowrap;
-            justify-content: space-between; /* Space between buttons and language switch */
         }
 
-        /* Removed .logo from header */
+        .logo {
+            height: 40px;
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-right: 10px;
+        }
 
         .language-switch {
             background-color: transparent;
@@ -131,8 +134,7 @@
             font-family: 'Montserrat', sans-serif; /* Ensure same font */
         }
 
-        .button:hover,
-        .substackButton:hover {
+        .button:hover {
             background-color: #f0f0f0; /* Slightly darker on hover */
         }
 
@@ -147,14 +149,9 @@
 
         /* Cards container */
         .cards-container {
-            height: 100vw; /* Match height to viewport width */
-            overflow: auto;
-            padding: 20px 20px; /* Top and bottom padding */
-            box-sizing: border-box;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #f9f9f9; /* Optional background for visibility */
+            flex: 1;
+            overflow: hidden;
+            position: relative;
         }
 
         /* Cards wrapper for sliding effect */
@@ -162,7 +159,6 @@
             display: flex;
             height: 100%;
             transition: transform 0.5s ease-in-out;
-            width: 100%;
         }
 
         /* Individual card */
@@ -175,8 +171,6 @@
             display: flex;
             flex-direction: column;
             cursor: pointer; /* Indicates the card is clickable */
-            padding: 0; /* Remove padding to ensure full clickable area */
-            margin: 0; /* Remove margin to prevent gaps */
         }
 
         /* Card content */
@@ -237,15 +231,9 @@
 
         /* Footer */
         footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
             background-color: var(--theme-color);
             padding: 10px;
             flex-shrink: 0;
-            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-            z-index: 1000; /* Ensure it stays on top */
         }
 
         .footer-content {
@@ -312,8 +300,8 @@
         @media (max-width: 600px) {
             .header {
                 flex-direction: row;
-                justify-content: space-between; /* Distribute space between buttons and language switch */
-                padding: 10px 15px; /* Adjusted padding */
+                justify-content: space-between; /* Distribute space between logo and language switch */
+                padding: 10px;
             }
 
             .language-switch {
@@ -345,7 +333,9 @@
                 font-size: 18px; /* Further reduce font size */
             }
 
-            /* Removed logo adjustments as logo is no longer in header */
+            .logo {
+                height: 35px; /* Reduce logo size */
+            }
 
             .footer-content a img,
             .footer-content .donut-link img {
@@ -357,10 +347,9 @@
                 padding: 6px 10px;
             }
         }
-
         @media (min-width: 601px) {
             footer {
-                display: flex;
+                display: block;
             }
 
             .header {
@@ -368,15 +357,18 @@
             }
 
             .cards-container {
-                padding-bottom: 20px; /* Adjusted padding to accommodate footer */
+                padding-bottom: 0; /* Remove padding adjustment */
             }
         }
     </style>
 </head>
 <body>
     <div class="app-container">
-        <!-- Header without logo -->
+        <!-- Header with logo, buttons, and language switch -->
         <div class="header">
+            <a href="https://futurofortissimo.github.io/">
+                <img src="/index_files/ff.png" alt="Logo" class="logo">
+            </a>
             <!-- Buttons inside header -->
             <div class="buttons-container" id="buttons-container">
                 <!-- Buttons will be dynamically inserted here -->
@@ -397,14 +389,14 @@
 
     <footer>
         <div class="footer-content">
-            <!-- Logo in footer -->
+            <!-- Logo -->
             <a href="https://futurofortissimo.github.io/">
                 <img src="/index_files/ff.png" alt="Logo" class="logo">
             </a>
             <!-- English Language Icon -->
-            <img src="/index_files/en_3.png" alt="English" class="language-icon">
+            <img src="/path/to/english-flag.png" alt="English" class="language-icon">
             <!-- Donut Link to PayPal -->
-            <a href="https://www.paypal.com/paypalme/michelemerelli" target="_blank" class="donut-link">
+            <a href="https://www.paypal.com/donate?hosted_button_id=YOUR_PAYPAL_ID" target="_blank" class="donut-link">
                 <img src="/path/to/donut.png" alt="Donate">
             </a>
             <!-- Share Button -->
