@@ -74,7 +74,7 @@
             overflow-x: auto;
         }
 
-        /* Buttons */
+        /* Unified Button Styles */
         .button {
             padding: 8px 16px;
             background-color: var(--button-bg-color);
@@ -136,6 +136,11 @@
             flex-direction: column;
             align-items: center;
             padding: 20px;
+            max-width: 800px; /* Adjust based on your EXAMPLE */
+            margin: 0 auto; /* Center the card */
+            border: 2px solid var(--card-border-color);
+            border-radius: 10px; /* Match TEMPLATE_HMTL card styles */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Match TEMPLATE_HMTL card styles */
         }
 
         /* Book Cover Image */
@@ -177,6 +182,7 @@
             justify-content: center;
         }
 
+        /* Ensure book buttons use the unified .button class */
         .book-buttons .button {
             flex: 1;
             padding: 10px 0;
@@ -184,7 +190,7 @@
             border: 2px solid var(--button-border-color);
             background-color: var(--button-bg-color);
             color: var(--button-text-color);
-            border-radius: 5px;
+            border-radius: 20px; /* Match unified button style */
             cursor: pointer;
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
@@ -216,6 +222,7 @@
             gap: 15px; /* Space between buttons */
         }
 
+        /* Ensure footer buttons also use the unified .button class */
         .footer-content a,
         .footer-content button {
             display: flex;
@@ -223,12 +230,13 @@
             text-decoration: none;
             color: #333;
             cursor: pointer;
-            background-color: #fff;
+            background-color: var(--button-bg-color);
             padding: 8px 12px;
-            border: none;
+            border: 2px solid var(--button-border-color);
             border-radius: 20px;
             font-family: 'Montserrat', sans-serif;
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* For hover animation */
+            white-space: nowrap;
         }
 
         .footer-content a img {
@@ -242,6 +250,7 @@
         .footer-content button:hover {
             transform: scale(var(--button-hover-scale));
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: #f0f0f0; /* Slight background change on hover */
         }
 
         /* Responsive Design */
@@ -274,6 +283,7 @@
 
             .card {
                 padding: 10px;
+                max-width: 100%; /* Allow full width on small screens */
             }
 
             .book-buttons {
@@ -284,6 +294,7 @@
             .book-buttons .button {
                 flex: none;
                 width: 100%;
+                border-radius: 20px; /* Maintain border-radius on small screens */
             }
         }
 
@@ -336,11 +347,11 @@
     <footer>
         <div class="footer-content">
             <!-- Share Button as a link -->
-            <a href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io/" style="border-radius:20px" class="share-button">Share</a>
+            <a href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io/" class="share-button">Share</a>
             <!-- Support Button as a link -->
-            <a href="https://www.paypal.com/paypalme/michelemerelli" style="border-radius:20px" class="support-button">Support</a>
+            <a href="https://www.paypal.com/paypalme/michelemerelli" class="support-button">Support</a>
             <!-- English Language Button -->
-            <a class="language-button" id="language-button" style="border-radius:20px">English</a>
+            <a class="language-button" id="language-button">English</a>
         </div>
     </footer>
 
@@ -386,9 +397,6 @@
                     createBookCard(book, index);
                 });
 
-                // Remove or comment out the following line
-                // updateProgressBar();
-
                 // Show the first card
                 showCard(0);
 
@@ -422,6 +430,11 @@
             bookImage.addEventListener('click', () => {
                 window.open(book.readMoreLink, '_blank');
             });
+
+            // Handle image load error
+            bookImage.onerror = function() {
+                this.src = '/images/default_cover.jpg'; // Fallback image
+            };
 
             card.appendChild(bookImage);
 
