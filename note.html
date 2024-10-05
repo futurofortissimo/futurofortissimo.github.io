@@ -16,8 +16,8 @@
             --progress-bar-color: #4CAF50; /* Green */
             --button-hover-scale: 1.05; /* Scale factor for hover effect */
             --footer-height: 60px;
-            --card-padding: 20px;
-            --card-margin: 20px 0;
+            --card-padding: 15px; /* Reduced padding */
+            --card-margin: 10px 0; /* Reduced margin */
             --card-border-radius: 10px;
             --card-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             --button-transition: transform 0.2s ease-in-out;
@@ -154,14 +154,18 @@
             position: relative;
             padding: 20px;
             background-color: var(--background-color);
+            display: flex;
+            justify-content: center; /* Center the cards */
         }
 
         /* Cards wrapper */
         .cards-wrapper {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
             gap: 20px;
+            max-width: 1200px; /* To limit overall width */
             width: 100%;
+            justify-content: center; /* Center the cards */
         }
 
         /* Individual card */
@@ -172,6 +176,11 @@
             box-shadow: var(--card-box-shadow);
             transition: background-color 0.3s ease;
             cursor: pointer;
+            max-width: 400px; /* Max width as per request */
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .card:hover {
@@ -182,7 +191,7 @@
         .card-content {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 5px; /* Less vertical spacing */
         }
 
         .section-title {
@@ -190,31 +199,36 @@
             font-size: 20px;
             font-weight: bold;
             color: var(--text-color);
+            /* Same style as question */
         }
 
         .question {
-            font-size: 16px;
+            font-size: 20px; /* Same as title */
+            font-weight: bold;
             color: var(--text-color);
+            margin-bottom: 5px; /* Less spacing */
         }
 
         .hashtags {
             font-size: 14px;
             color: var(--hashtag-color);
+            margin: 0;
+        }
+
+        .emojis-and-note {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .emojis {
+            font-size: 20px;
         }
 
         .note-number {
-            font-size: 12px;
+            font-size: 14px;
             color: var(--note-color);
-        }
-
-        .read-more {
-            font-size: 16px;
-            color: var(--link-color);
-            text-decoration: none;
-        }
-
-        .read-more:hover {
-            text-decoration: underline;
         }
 
         /* Footer */
@@ -402,8 +416,8 @@
 
             let allEntries = []; // To store all CSV entries
 
-            // Define a color palette for alternating card colors
-            const colorPalette = ['#ADD8E6', '#B3E5FC', '#81D4FA', '#4FC3F7', '#FFB6C1', '#90EE90'];
+            // Define a color palette for alternating card colors (only blues)
+            const colorPalette = ['#ADD8E6', '#B3E5FC', '#81D4FA', '#4FC3F7', '#2196F3', '#1E90FF'];
 
             // Function to transform Substack URL for English using Google Translate (if needed)
             function getTranslatedSubstackLink(originalLink) {
@@ -479,6 +493,11 @@
 
             // Function to display random cards
             function displayRandomCards(count) {
+                if (allEntries.length === 0) {
+                    cardsWrapper.innerHTML = '<p style="text-align:center;">Nessun contenuto disponibile.</p>';
+                    progressBar.style.width = '0%';
+                    return;
+                }
                 // Shuffle the array
                 const shuffled = allEntries.sort(() => 0.5 - Math.random());
                 // Select first 'count' entries
@@ -490,6 +509,11 @@
             function displayFilteredCards(category, count) {
                 // Filter entries that include the category emoji
                 const filtered = allEntries.filter(entry => entry.emojis.includes(category));
+                if (filtered.length === 0) {
+                    cardsWrapper.innerHTML = '<p style="text-align:center;">Nessun contenuto disponibile per questa categoria.</p>';
+                    progressBar.style.width = '0%';
+                    return;
+                }
                 // Shuffle the filtered array
                 const shuffled = filtered.sort(() => 0.5 - Math.random());
                 // Select first 'count' entries
@@ -502,52 +526,50 @@
                 // Clear existing cards
                 cardsWrapper.innerHTML = '';
 
-                if (entries.length === 0) {
-                    cardsWrapper.innerHTML = '<p style="text-align:center;">Nessun contenuto disponibile per questa categoria.</p>';
-                    progressBar.style.width = '0%';
-                    return;
-                }
-
                 // Iterate over the entries and create card elements
                 entries.forEach((entry, index) => {
                     const cardDiv = document.createElement('div');
                     cardDiv.className = 'card';
                     cardDiv.style.backgroundColor = colorPalette[index % colorPalette.length];
+                    cardDiv.style.maxWidth = '400px';
 
                     const cardContent = document.createElement('div');
                     cardContent.className = 'card-content';
 
-                    // Add Description
-                    const description = document.createElement('h2');
-                    description.className = 'section-title';
-                    description.textContent = entry.description;
-                    cardContent.appendChild(description);
-
-                    // Add Question
+                    // Add Question above title
                     const question = document.createElement('p');
                     question.className = 'question';
                     question.textContent = entry.question;
                     cardContent.appendChild(question);
 
-                    // Add Hashtags
+                    // Add Description as title
+                    const description = document.createElement('h2');
+                    description.className = 'section-title';
+                    description.textContent = entry.description;
+                    cardContent.appendChild(description);
+
+                    // Add Hashtags without #
                     const hashtags = document.createElement('p');
                     hashtags.className = 'hashtags';
-                    hashtags.textContent = entry.hashtags;
+                    hashtags.textContent = entry.hashtags.replace(/#/g, ''); // Remove #
                     cardContent.appendChild(hashtags);
 
-                    // Add Note Number
-                    const noteNumber = document.createElement('p');
-                    noteNumber.className = 'note-number';
-                    noteNumber.textContent = `Note #${entry.number}`;
-                    cardContent.appendChild(noteNumber);
+                    // Add Emojis at bottom left and note number at bottom right
+                    const emojisAndNote = document.createElement('div');
+                    emojisAndNote.className = 'emojis-and-note';
 
-                    // Add Read More Link
-                    const readMore = document.createElement('a');
-                    readMore.className = 'read-more';
-                    readMore.href = entry.url;
-                    readMore.textContent = 'Read More';
-                    readMore.target = '_blank';
-                    cardContent.appendChild(readMore);
+                    const emojis = document.createElement('div');
+                    emojis.className = 'emojis';
+                    emojis.textContent = entry.emojis; // Display emojis
+
+                    const noteNumber = document.createElement('div');
+                    noteNumber.className = 'note-number';
+                    noteNumber.textContent = `Note ${entry.number}`; // No #
+
+                    emojisAndNote.appendChild(emojis);
+                    emojisAndNote.appendChild(noteNumber);
+
+                    cardContent.appendChild(emojisAndNote);
 
                     cardDiv.appendChild(cardContent);
                     cardsWrapper.appendChild(cardDiv);
@@ -589,6 +611,12 @@
                     const combinedText = `${entry.description} ${entry.question}`.toLowerCase();
                     return searchWords.some(word => combinedText.includes(word));
                 });
+
+                if (filtered.length === 0) {
+                    cardsWrapper.innerHTML = '<p style="text-align:center;">Nessun contenuto trovato per la tua ricerca.</p>';
+                    progressBar.style.width = '0%';
+                    return;
+                }
 
                 // Shuffle and select up to 10
                 const shuffled = filtered.sort(() => 0.5 - Math.random());
