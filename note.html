@@ -13,17 +13,19 @@
         /* Root variables */
         :root {
             --theme-color: #ADD8E6; /* Light blue */
-            --question-color: #B3E5FC; /* Lighter blue */
-            --data-color: #81D4FA; /* Medium blue */
-            --quote-color: #4FC3F7; /* Darker blue */
             --progress-bar-color: #4CAF50; /* Green */
             --button-hover-scale: 1.05; /* Scale factor for hover effect */
-            --button-transition: transform 0.2s ease-in-out;
             --footer-height: 60px;
             --card-padding: 20px;
             --card-margin: 20px 0;
             --card-border-radius: 10px;
             --card-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            --button-transition: transform 0.2s ease-in-out;
+            --background-color: #f9f9f9;
+            --text-color: #333;
+            --link-color: #1E90FF;
+            --hashtag-color: #555;
+            --note-color: #777;
         }
 
         /* Basic styles */
@@ -31,7 +33,7 @@
             margin: 0;
             font-family: 'Montserrat', sans-serif;
             background-color: #fff;
-            color: #333;
+            color: var(--text-color);
             overflow-y: auto; /* Allow vertical scrolling */
             display: flex;
             flex-direction: column;
@@ -92,7 +94,7 @@
         }
 
         .emoji-button:hover {
-            transform: scale(1.2);
+            transform: scale(var(--button-hover-scale));
         }
 
         /* Progress bar */
@@ -110,9 +112,10 @@
             overflow: auto; /* Allow vertical scrolling */
             position: relative;
             padding: 20px;
+            background-color: var(--background-color);
         }
 
-        /* Cards wrapper for sliding effect */
+        /* Cards wrapper */
         .cards-wrapper {
             display: flex;
             flex-direction: column;
@@ -122,42 +125,55 @@
 
         /* Individual card */
         .card {
-            background-color: #f0f8ff;
+            background-color: #fff;
             border-radius: var(--card-border-radius);
             padding: var(--card-padding);
             box-shadow: var(--card-box-shadow);
             transition: background-color 0.3s ease;
+            cursor: pointer;
         }
 
+        .card:hover {
+            background-color: #f0f8ff;
+        }
+
+        /* Card content */
         .card-content {
-            cursor: pointer; /* Make card-content clickable */
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
 
         .section-title {
-            margin-top: 10px;
-            margin-bottom: 10px;
+            margin: 0;
             font-size: 20px;
             font-weight: bold;
+            color: var(--text-color);
         }
 
-        .content-block {
-            margin-bottom: 15px;
-            padding: 10px;
-            border-radius: 10px;
-            word-wrap: break-word; /* Prevent overflow of long words */
+        .question {
             font-size: 16px;
-            font-weight: bold;
+            color: var(--text-color);
         }
 
-        .paragraphs {
-            background-color: #e0f7fa; /* Light cyan */
-            font-weight: normal;
+        .hashtags {
+            font-size: 14px;
+            color: var(--hashtag-color);
         }
 
-        /* Hide scrollbars on card content */
-        .card-content::-webkit-scrollbar {
-            width: 0px;
-            background: transparent;
+        .note-number {
+            font-size: 12px;
+            color: var(--note-color);
+        }
+
+        .read-more {
+            font-size: 16px;
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
         }
 
         /* Footer */
@@ -187,7 +203,7 @@
             display: flex;
             align-items: center;
             text-decoration: none;
-            color: #333;
+            color: var(--text-color);
             cursor: pointer;
             background-color: #fff;
             padding: 8px 12px;
@@ -260,55 +276,50 @@
     <div class="app-container">
         <!-- Header with logo and emoji buttons -->
         <div class="header">
-            <a href="https://futurofortissimo.github.io/">
-                <img src="/index_files/ff.png" alt="Logo" class="logo">
-            </a>
+
             <!-- Emoji Buttons inside header -->
             <div class="buttons-container" id="buttons-container">
                 <!-- Emoji Buttons with data-category attributes -->
-                <button class="emoji-button" data-category="clima" aria-label="Clima">🍃</button>
-                <button class="emoji-button" data-category="tecnologia" aria-label="Tecnologia">💻</button>
-                <button class="emoji-button" data-category="uomo" aria-label="Uomo">❤️</button>
-                <button class="emoji-button" data-category="criptovalute" aria-label="Criptovalute">💸</button>
-                <button class="emoji-button" data-category="sport" aria-label="Sport">⚽</button>
-                <button class="emoji-button" data-category="alimentazione" aria-label="Alimentazione">🍽️</button>
-                <button class="emoji-button" data-category="intelligenza" aria-label="Intelligenza Artificiale">🧠</button>
-                <button class="emoji-button" data-category="salute" aria-label="Salute">💊</button>
-                <button class="emoji-button" data-category="podcast" aria-label="Podcast">🎙️</button>
-                <button class="emoji-button" data-category="art" aria-label="Arte">🎨</button>
+                <button class="emoji-button" data-category="💻" aria-label="Tecnologia">💻</button>
+                <button class="emoji-button" data-category="🎼" aria-label="Futuro">🎼</button>
+                <button class="emoji-button" data-category="👥" aria-label="Società">👥</button>
+                <button class="emoji-button" data-category="💬" aria-label="Comunicazione">💬</button>
+                <button class="emoji-button" data-category="💊" aria-label="Salute">💊</button>
+                <button class="emoji-button" data-category="❤️" aria-label="Uomo">❤️</button>
+                <button class="emoji-button" data-category="🧠" aria-label="Intelligenza Artificiale">🧠</button>
+                <button class="emoji-button" data-category="🍃" aria-label="Clima">🍃</button>
+                <button class="emoji-button" data-category="💸" aria-label="Criptovalute">💸</button>
+                <button class="emoji-button" data-category="⚽" aria-label="Sport">⚽</button>
                 <!-- Add more emoji buttons as needed -->
             </div>
-            <!-- Hidden language switch in header -->
-            <button class="language-switch" id="language-switch" style="display:none;">🇬🇧</button>
         </div>
 
         <!-- Progress bar -->
-        <div class="progress-bar"></div>
+        <div class="progress-bar" id="progress-bar"></div>
 
         <!-- Cards -->
         <div class="cards-container">
             <div class="cards-wrapper" id="cards-wrapper">
                 <!-- Cards will be dynamically inserted here -->
-                <p style="text-align:center;">Seleziona una categoria con le emoji sopra per visualizzare i contenuti.</p>
+                <!-- Initially, 10 random cards will be loaded via JavaScript -->
             </div>
         </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <!-- Logo as a clickable link -->
-            <a href="https://futurofortissimo.github.io/">
-                <img src="/index_files/ff.png" alt="Logo" class="logo">
-            </a>
+      <a href="https://futurofortissimo.github.io/">
+          <img src="/index_files/ff.png" alt="Logo" class="logo">
+      </a>
+            <!-- Logo as a button -->
+
 
             <!-- Share Button as a link -->
-            <a href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io/" class="button share-button" id="share-button">Share</a>
+            <a href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io/" style="border-radius:20px" class="share-button">Share</a>
             <!-- Support Button as a link -->
-            <a href="https://www.paypal.com/paypalme/michelemerelli" class="button support-button" id="support-button">Support</a>
-            <!-- English Language Button as a button -->
-            <button class="button language-button" id="language-button">English 🇬🇧</button>
-        </div>
+            <a href="https://www.paypal.com/paypalme/michelemerelli" style="border-radius:20px" class="support-button">Support</a>
+            <!-- English Language Button -->
+            <a class="language-button" id="language-button" style="border-radius:20px">English</a>
     </footer>
 
     <!-- JavaScript -->
@@ -320,7 +331,9 @@
             const shareButton = document.getElementById('share-button');
             const buttonsContainer = document.getElementById('buttons-container');
             const cardsWrapper = document.getElementById('cards-wrapper');
-            const progressBar = document.querySelector('.progress-bar');
+            const progressBar = document.getElementById('progress-bar');
+
+            let allEntries = []; // To store all CSV entries
 
             // Define a color palette for alternating card colors
             const colorPalette = ['#ADD8E6', '#B3E5FC', '#81D4FA', '#4FC3F7', '#FFB6C1', '#90EE90'];
@@ -364,7 +377,7 @@
             }
 
             // Function to fetch and parse CSV
-            async function fetchCSV(url) {
+            async function fetchAndParseCSV(url) {
                 try {
                     const response = await fetch(url);
                     if (!response.ok) {
@@ -380,32 +393,43 @@
 
             // Function to initialize the app
             async function initializeApp() {
-                // Clear existing cards and show prompt
-                cardsWrapper.innerHTML = '<p style="text-align:center;">Seleziona una categoria con le emoji sopra per visualizzare i contenuti.</p>';
+                // Clear existing cards and progress bar
+                cardsWrapper.innerHTML = '';
                 progressBar.style.width = '0%';
-            }
 
-            // Function to fetch and display cards based on category
-            async function fetchAndDisplayCards(category) {
                 // Determine the CSV file based on current language
                 const csvFile = currentLanguage === 'it' ?
                     '/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo.csv' :
-                    '/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo_en.csv';
+                    '/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo_eng.csv';
 
                 // Fetch and parse CSV
-                const data = await fetchCSV(csvFile);
+                allEntries = await fetchAndParseCSV(csvFile);
 
-                // Filter entries that include the selected emoji
-                const filteredEntries = data.filter(entry => entry.emojis.includes(category));
-
-                // Limit to 10 entries
-                const selectedEntries = filteredEntries.slice(0, 10);
-
-                // Display the cards
-                displayCards(selectedEntries);
+                // Initialize with 10 random cards
+                displayRandomCards(10);
             }
 
-            // Function to display the cards
+            // Function to display random cards
+            function displayRandomCards(count) {
+                // Shuffle the array
+                const shuffled = allEntries.sort(() => 0.5 - Math.random());
+                // Select first 'count' entries
+                const selected = shuffled.slice(0, count);
+                displayCards(selected);
+            }
+
+            // Function to display filtered cards based on category
+            function displayFilteredCards(category, count) {
+                // Filter entries that include the category emoji
+                const filtered = allEntries.filter(entry => entry.emojis.includes(category));
+                // Shuffle the filtered array
+                const shuffled = filtered.sort(() => 0.5 - Math.random());
+                // Select first 'count' entries
+                const selected = shuffled.slice(0, count);
+                displayCards(selected);
+            }
+
+            // Function to display cards
             function displayCards(entries) {
                 // Clear existing cards
                 cardsWrapper.innerHTML = '';
@@ -425,66 +449,46 @@
                     const cardContent = document.createElement('div');
                     cardContent.className = 'card-content';
 
-                    // Add Substack Button
-                    const substackButton = document.createElement('div');
-                    substackButton.className = 'substackButton';
-                    substackButton.textContent = 'Read on Substack';
-                    substackButton.style.cursor = 'pointer';
-                    substackButton.style.marginBottom = '10px';
-                    substackButton.addEventListener('click', (e) => {
-                        e.stopPropagation(); // Prevent card click event
-                        window.open(entry.url, '_blank');
-                    });
-                    cardContent.appendChild(substackButton);
+                    // Add Description
+                    const description = document.createElement('h2');
+                    description.className = 'section-title';
+                    description.textContent = entry.description;
+                    cardContent.appendChild(description);
 
-                    // Add title
-                    const title = document.createElement('h2');
-                    title.className = 'section-title';
-                    title.textContent = entry.description;
-                    cardContent.appendChild(title);
-
-                    // Add question
+                    // Add Question
                     const question = document.createElement('p');
+                    question.className = 'question';
                     question.textContent = entry.question;
                     cardContent.appendChild(question);
 
-                    // Add hashtags
+                    // Add Hashtags
                     const hashtags = document.createElement('p');
+                    hashtags.className = 'hashtags';
                     hashtags.textContent = entry.hashtags;
-                    hashtags.style.color = '#555';
-                    hashtags.style.fontSize = '14px';
                     cardContent.appendChild(hashtags);
 
-                    // Add note number
+                    // Add Note Number
                     const noteNumber = document.createElement('p');
+                    noteNumber.className = 'note-number';
                     noteNumber.textContent = `Note #${entry.number}`;
-                    noteNumber.style.color = '#777';
-                    noteNumber.style.fontSize = '12px';
                     cardContent.appendChild(noteNumber);
 
-                    // Add link
-                    const link = document.createElement('a');
-                    link.href = entry.url;
-                    link.textContent = 'Read More';
-                    link.target = '_blank';
-                    link.style.display = 'block';
-                    link.style.marginTop = '10px';
-                    link.style.color = '#1E90FF';
-                    cardContent.appendChild(link);
+                    // Add Read More Link
+                    const readMore = document.createElement('a');
+                    readMore.className = 'read-more';
+                    readMore.href = entry.url;
+                    readMore.textContent = 'Read More';
+                    readMore.target = '_blank';
+                    cardContent.appendChild(readMore);
 
                     cardDiv.appendChild(cardContent);
                     cardsWrapper.appendChild(cardDiv);
-
-                    // Add click event to the card-content only
-                    cardContent.addEventListener('click', () => {
-                        const translatedLink = getTranslatedSubstackLink(entry.url);
-                        window.open(translatedLink, '_blank');
-                    });
                 });
 
                 // Update progress bar
-                const totalCards = entries.length;
-                progressBar.style.width = `${(totalCards / 10) * 100}%`;
+                const totalDisplayed = entries.length;
+                const progress = (totalDisplayed / 10) * 100;
+                progressBar.style.width = `${progress > 100 ? 100 : progress}%`;
             }
 
             // Language switch functionality
@@ -526,7 +530,7 @@
             document.querySelectorAll('.emoji-button').forEach(button => {
                 button.addEventListener('click', () => {
                     const category = button.getAttribute('data-category');
-                    fetchAndDisplayCards(category);
+                    displayFilteredCards(category, 10);
                 });
             });
 
