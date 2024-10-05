@@ -79,20 +79,36 @@
             padding: 8px 16px;
             background-color: var(--button-bg-color);
             color: var(--button-text-color);
-            border: 2px solid var(--button-border-color);
             border-radius: 20px;
             text-align: center;
             font-size: 14px;
             cursor: pointer;
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
             font-family: 'Montserrat', sans-serif;
             white-space: nowrap;
         }
 
-        .button:hover {
+        /* Book Button Styles */
+        .book-button {
+            border: 2px solid var(--button-border-color);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .book-button:hover {
             transform: scale(var(--button-hover-scale));
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             background-color: #f0f0f0; /* Slight background change on hover */
+        }
+
+        /* Header and Footer Buttons - No Border and No Hover Effects */
+        .header-button, .footer-button {
+            border: none;
+            transition: none;
+        }
+
+        .header-button:hover, .footer-button:hover {
+            transform: none;
+            box-shadow: none;
+            background-color: var(--button-bg-color); /* No change on hover */
         }
 
         /* Progress bar */
@@ -111,11 +127,14 @@
         /* Cards container */
         .cards-container {
             flex: 1;
-            overflow: auto; /* Allow vertical scrolling */
+            overflow: hidden; /* Prevent overflow to maintain slider effect */
             position: relative;
             padding-top: 80px; /* Adjust padding to account for fixed header and progress bar */
             padding-bottom: 20px;
             box-sizing: border-box;
+            display: flex;
+            justify-content: center; /* Center the cards horizontally */
+            align-items: center; /* Center the cards vertically if possible */
         }
 
         /* Cards wrapper for sliding effect */
@@ -127,8 +146,8 @@
 
         /* Individual card */
         .card {
-            flex: 0 0 100%;
-            height: 100%;
+            flex: 0 0 400px; /* Fixed width for smaller cards */
+            height: 600px; /* Fixed height for consistency */
             overflow: hidden;
             background-color: #fff;
             box-sizing: border-box;
@@ -136,7 +155,6 @@
             flex-direction: column;
             align-items: center;
             padding: 20px;
-            max-width: 800px; /* Adjust based on your EXAMPLE */
             margin: 0 auto; /* Center the card */
             border: 2px solid var(--card-border-color);
             border-radius: 10px; /* Match TEMPLATE_HMTL card styles */
@@ -158,6 +176,10 @@
             width: 100%;
             text-align: center;
             margin-bottom: 15px;
+            flex-grow: 1; /* Ensure details take up space */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .book-title {
@@ -182,23 +204,13 @@
             justify-content: center;
         }
 
-        /* Ensure book buttons use the unified .button class */
+        /* Ensure book buttons use the unified .book-button class */
         .book-buttons .button {
             flex: 1;
             padding: 10px 0;
             font-size: 16px;
-            border: 2px solid var(--button-border-color);
-            background-color: var(--button-bg-color);
-            color: var(--button-text-color);
             border-radius: 20px; /* Match unified button style */
             cursor: pointer;
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-        }
-
-        .book-buttons .button:hover {
-            transform: scale(var(--button-hover-scale));
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            background-color: #f0f0f0; /* Slight background change on hover */
         }
 
         /* Footer */
@@ -225,32 +237,8 @@
         /* Ensure footer buttons also use the unified .button class */
         .footer-content a,
         .footer-content button {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: #333;
-            cursor: pointer;
-            background-color: var(--button-bg-color);
-            padding: 8px 12px;
-            border: 2px solid var(--button-border-color);
-            border-radius: 20px;
-            font-family: 'Montserrat', sans-serif;
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* For hover animation */
-            white-space: nowrap;
-        }
-
-        .footer-content a img {
-            height: 24px;
-            width: auto;
-            margin-right: 8px; /* Space between icon and text */
-        }
-
-        /* Hover "pop-up" animation */
-        .footer-content a:hover,
-        .footer-content button:hover {
-            transform: scale(var(--button-hover-scale));
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            background-color: #f0f0f0; /* Slight background change on hover */
+            /* Assign both 'button' and 'footer-button' classes */
+            /* This is already handled in HTML by assigning both classes */
         }
 
         /* Responsive Design */
@@ -284,6 +272,7 @@
             .card {
                 padding: 10px;
                 max-width: 100%; /* Allow full width on small screens */
+                height: auto; /* Adjust height based on content */
             }
 
             .book-buttons {
@@ -347,11 +336,11 @@
     <footer>
         <div class="footer-content">
             <!-- Share Button as a link -->
-            <a href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io/" class="share-button">Share</a>
+            <a href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io/" class="button footer-button">Share</a>
             <!-- Support Button as a link -->
-            <a href="https://www.paypal.com/paypalme/michelemerelli" class="support-button">Support</a>
+            <a href="https://www.paypal.com/paypalme/michelemerelli" class="button footer-button">Support</a>
             <!-- English Language Button -->
-            <a class="language-button" id="language-button">English</a>
+            <a class="button footer-button" id="language-button">English</a>
         </div>
     </footer>
 
@@ -409,7 +398,7 @@
         // Function to create a button in the header
         function createButton(label, index) {
             const button = document.createElement('button');
-            button.className = 'button';
+            button.className = 'button header-button';
             button.textContent = label;
             button.addEventListener('click', () => {
                 showCard(index);
@@ -470,14 +459,14 @@
             bookButtons.className = 'book-buttons';
 
             const buyButton = document.createElement('button');
-            buyButton.className = 'button';
+            buyButton.className = 'button book-button';
             buyButton.textContent = 'Buy';
             buyButton.addEventListener('click', () => {
                 window.open(book.buyLink, '_blank');
             });
 
             const readMoreButton = document.createElement('button');
-            readMoreButton.className = 'button';
+            readMoreButton.className = 'button book-button';
             readMoreButton.textContent = 'Read more';
             readMoreButton.addEventListener('click', () => {
                 window.open(book.readMoreLink, '_blank');
