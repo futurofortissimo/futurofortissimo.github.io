@@ -13,11 +13,10 @@
         /* Root variables */
         :root {
             --theme-color: #ADD8E6; /* Light blue */
+            --button-hover-scale: 1.05; /* Scale factor for hover effect */
             --progress-bar-color: #4CAF50; /* Green */
             --button-bg-color: #FFFFFF; /* White background for buttons */
             --button-text-color: #000000; /* Black text for buttons */
-            --button-border-color: #000000; /* Black border for buttons */
-            --card-border-color: #000000; /* Black border for cards */
         }
 
         /* Basic styles */
@@ -26,10 +25,10 @@
             font-family: 'Montserrat', sans-serif;
             background-color: #fff;
             color: #333;
+            overflow-y: auto;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            overflow: hidden; /* Prevent body scrolling */
         }
 
         /* App container */
@@ -37,7 +36,7 @@
             display: flex;
             flex-direction: column;
             flex: 1;
-            overflow: hidden; /* Prevent overflow to maintain slider effect */
+            overflow: hidden;
             position: relative;
             padding-bottom: 60px; /* Space for fixed footer */
         }
@@ -64,11 +63,6 @@
             flex-shrink: 0;
         }
 
-        /* Hide language-switch in header as it's moved to footer */
-        .language-switch {
-            display: none;
-        }
-
         /* Buttons container inside header */
         .buttons-container {
             display: flex;
@@ -76,11 +70,16 @@
             flex-grow: 1;
             justify-content: center;
             overflow-x: auto;
-            padding: 0 10px; /* Adjusted padding to prevent buttons from touching edges */
+            padding: 0 10px; /* Added padding for better spacing */
         }
 
         .buttons-container::-webkit-scrollbar {
-            display: none; /* Hide scrollbar for WebKit browsers */
+            display: none; /* Hide scrollbar */
+        }
+
+        .buttons-container {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
         }
 
         /* Unified Button Styles */
@@ -88,38 +87,37 @@
             padding: 8px 16px;
             background-color: var(--button-bg-color);
             color: var(--button-text-color);
-            border: none; /* Removed border for uniformity */
             border-radius: 20px;
             text-align: center;
             font-size: 14px;
             cursor: pointer;
             font-family: 'Montserrat', sans-serif;
             white-space: nowrap;
-            transition: none; /* Removed transition for non-hover buttons */
+            border: none; /* Remove border for header and footer buttons */
         }
 
-        /* Book Buttons Specific Styles */
+        /* Book Button Styles */
         .book-button {
-            border: 2px solid var(--button-border-color); /* Only book buttons have borders */
+            border: 2px solid var(--button-text-color);
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
 
         .book-button:hover {
-            transform: scale(1.05); /* Hover scale effect */
+            transform: scale(var(--button-hover-scale));
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            background-color: #f0f0f0; /* Slight background change on hover */
+            background-color: #f0f0f0;
         }
 
-        /* Header and Footer Buttons - No Border and No Hover Effects */
+        /* Header and Footer Buttons - No Hover Effects */
         .header-button, .footer-button {
-            border: none; /* Remove borders */
-            transition: none; /* Remove hover transitions */
+            transition: none;
+            /* No scaling or shadow on hover */
         }
 
         .header-button:hover, .footer-button:hover {
-            transform: none; /* No scaling */
-            box-shadow: none; /* No shadow */
-            background-color: var(--button-bg-color); /* No background change */
+            transform: none;
+            box-shadow: none;
+            background-color: var(--button-bg-color); /* No change on hover */
         }
 
         /* Progress bar */
@@ -128,8 +126,9 @@
             background-color: var(--progress-bar-color);
             width: 0%;
             transition: width 0.5s ease-in-out;
+            flex-shrink: 0;
             position: fixed;
-            top: 60px; /* Adjusted based on header height */
+            top: 70px; /* Below the header */
             left: 0;
             z-index: 999;
         }
@@ -137,14 +136,14 @@
         /* Cards container */
         .cards-container {
             flex: 1;
-            overflow: hidden; /* Prevent overflow to maintain slider effect */
+            overflow: hidden; /* Prevent vertical scrolling to keep one card visible */
             position: relative;
-            padding-top: 80px; /* Adjust padding to account for fixed header and progress bar */
+            padding-top: 80px; /* Padding to prevent card being under header */
             padding-bottom: 20px;
             box-sizing: border-box;
             display: flex;
-            justify-content: center; /* Center the cards horizontally */
-            align-items: center; /* Center the cards vertically if possible */
+            justify-content: center; /* Center the card horizontally */
+            align-items: center; /* Center the card vertically if possible */
         }
 
         /* Cards wrapper for sliding effect */
@@ -156,8 +155,7 @@
 
         /* Individual card */
         .card {
-            flex: 0 0 auto; /* Prevent flex from shrinking or growing */
-            width: 400px; /* Fixed smaller width */
+            flex: 0 0 400px; /* Fixed width for smaller cards */
             height: 600px; /* Fixed height for consistency */
             overflow: hidden;
             background-color: #fff;
@@ -166,10 +164,11 @@
             flex-direction: column;
             align-items: center;
             padding: 20px;
-            margin: 0 20px; /* Horizontal margin to center the card */
-            border: 2px solid var(--card-border-color);
+            margin: 0 auto; /* Center the card horizontally */
+            border: 2px solid var(--button-text-color); /* Black border */
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
 
         /* Book Cover Image */
@@ -224,8 +223,6 @@
             cursor: pointer;
             background-color: var(--button-bg-color);
             color: var(--button-text-color);
-            border: 2px solid var(--button-border-color);
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
 
         /* Footer */
@@ -238,47 +235,66 @@
             padding: 10px 20px;
             flex-shrink: 0;
             box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-            z-index: 1000; /* Ensure it stays on top */
+            z-index: 1000;
         }
 
         .footer-content {
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-wrap: nowrap; /* Prevent wrapping on small screens */
-            gap: 15px; /* Space between buttons */
+            flex-wrap: nowrap;
+            gap: 15px;
         }
 
         /* Ensure footer buttons also use the unified .button class */
         .footer-content a,
         .footer-content button {
-            /* Classes applied in HTML */
+            /* Assign both 'button' and 'footer-button' classes in HTML */
+        }
+
+        /* Remove borders and hover effects from footer buttons */
+        .footer-button {
+            border: none;
+            transition: none;
+        }
+
+        .footer-button:hover {
+            transform: none;
+            box-shadow: none;
+            background-color: var(--button-bg-color);
         }
 
         /* Responsive Design */
         @media (max-width: 600px) {
+            .footer-content {
+                flex-wrap: nowrap;
+                justify-content: center;
+                overflow-x: auto;
+                gap: 10px;
+            }
+
+            .footer-content a,
+            .footer-content button {
+                flex: 0 0 auto;
+                white-space: nowrap;
+            }
+
+            /* Adjust header padding and alignment */
             .header {
-                flex-direction: column;
-                align-items: flex-start;
+                flex-direction: row;
+                justify-content: space-between;
                 padding: 10px 15px;
             }
 
             .buttons-container {
-                justify-content: flex-start;
-                margin-top: 10px;
-                width: 100%;
-                overflow-x: auto;
-            }
-
-            .cards-container {
-                padding-top: 100px; /* Increased padding for taller headers */
+                flex-grow: 1;
+                margin: 0 10px;
             }
 
             .card {
-                width: 90%; /* Responsive width */
-                height: auto; /* Allow height to adjust based on content */
-                padding: 15px;
-                margin: 0 auto; /* Center the card */
+                padding: 10px;
+                max-width: 100%;
+                height: auto; /* Adjust height based on content */
             }
 
             .book-buttons {
@@ -289,7 +305,7 @@
             .book-buttons .button {
                 flex: none;
                 width: 100%;
-                border-radius: 20px; /* Maintain border-radius on small screens */
+                border-radius: 20px;
             }
         }
 
@@ -308,7 +324,21 @@
             }
 
             .logo {
-                height: 35px; /* Reduce logo size */
+                height: 35px;
+            }
+        }
+
+        @media (min-width: 601px) {
+            footer {
+                display: flex;
+            }
+
+            .header {
+                position: fixed;
+            }
+
+            .cards-container {
+                padding-bottom: 0; /* Remove padding adjustment */
             }
         }
     </style>
@@ -334,7 +364,7 @@
         <!-- Cards -->
         <div class="cards-container">
             <div class="cards-wrapper" id="cards-wrapper">
-                <!-- Book cards will be dynamically inserted here -->
+                <!-- Cards will be dynamically inserted here -->
             </div>
         </div>
     </div>
@@ -353,13 +383,12 @@
     <script>
         let currentLanguage = 'it';
         let currentIndex = 0;
+        let cards = [];
 
         const buttonsContainer = document.getElementById('buttons-container');
         const cardsWrapper = document.getElementById('cards-wrapper');
         const progressBar = document.getElementById('progress-bar');
         const languageButton = document.getElementById('language-button');
-
-        let cards = [];
 
         // Function to initialize the app
         async function initializeApp() {
@@ -397,7 +426,6 @@
 
                 // Show the first card
                 showCard(0);
-
             } catch (error) {
                 console.error('Error fetching content:', error);
                 buttonsContainer.innerHTML = '<p>Errore nel caricamento del contenuto.</p>';
@@ -407,7 +435,7 @@
         // Function to create a button in the header
         function createButton(label, index) {
             const button = document.createElement('button');
-            button.className = 'button header-button'; // Combined classes
+            button.className = 'button header-button';
             button.textContent = label;
             button.addEventListener('click', () => {
                 showCard(index);
@@ -423,7 +451,7 @@
 
             // Book Cover Image
             const bookImage = document.createElement('img');
-            bookImage.src = `/images/${book.coverImage}`; // Ensure correct path
+            bookImage.src = book.coverImage;
             bookImage.alt = book.title;
             bookImage.addEventListener('click', () => {
                 window.open(book.readMoreLink, '_blank');
@@ -446,15 +474,15 @@
 
             const bookAuthor = document.createElement('div');
             bookAuthor.className = 'book-author';
-            bookAuthor.textContent = `Author: ${book.author}`; // Translated to English
+            bookAuthor.textContent = `Author: ${book.author}`;
 
             const bookYear = document.createElement('div');
             bookYear.className = 'book-year';
-            bookYear.textContent = `Year: ${book.year}`; // Translated to English
+            bookYear.textContent = `Year: ${book.year}`;
 
             const bookPages = document.createElement('div');
             bookPages.className = 'book-pages';
-            bookPages.textContent = `Pages: ${book.pages}`; // Translated to English
+            bookPages.textContent = `Pages: ${book.pages}`;
 
             bookDetails.appendChild(bookTitle);
             bookDetails.appendChild(bookAuthor);
@@ -493,8 +521,8 @@
         // Function to display a specific card
         function showCard(index) {
             currentIndex = index;
-            const cardWidth = cards[index].offsetWidth + 40; // Card width + margin
-            cardsWrapper.style.transform = `translateX(-${index * cardWidth}px)`;
+            const translateX = -index * 100;
+            cardsWrapper.style.transform = `translateX(${translateX}%)`;
             const progress = ((index + 1) / cards.length) * 100;
             progressBar.style.width = `${progress}%`;
             scrollButtonIntoView(index);
@@ -545,8 +573,8 @@
             if (!isScrolling) {
                 evt.preventDefault(); // Prevent default scrolling
                 const percentage = (deltaX / window.innerWidth) * 100;
-                const offset = -currentIndex * (cards[currentIndex].offsetWidth + 40) + (percentage * (cards[currentIndex].offsetWidth + 40)) / 100;
-                cardsWrapper.style.transform = `translateX(${offset}px)`;
+                const offset = -currentIndex * 100 + percentage;
+                cardsWrapper.style.transform = `translateX(${offset}%)`;
             }
         }
 
@@ -574,47 +602,31 @@
 
         function mouseDown(evt) {
             startX = evt.clientX;
-            startY = evt.clientY;
             isDown = true;
-            isScrolling = false;
             cardsWrapper.style.transition = 'none';
         }
 
         function mouseMove(evt) {
             if (!isDown) return;
             const x = evt.clientX;
-            const y = evt.clientY;
             const deltaX = x - startX;
-            const deltaY = y - startY;
-
-            // Determine if the user is scrolling vertically
-            if (!isScrolling) {
-                isScrolling = Math.abs(deltaY) > Math.abs(deltaX);
-            }
-
-            // Only allow horizontal swiping if not scrolling vertically
-            if (!isScrolling) {
-                evt.preventDefault(); // Prevent default actions
-                const percentage = (deltaX / window.innerWidth) * 100;
-                const offset = -currentIndex * (cards[currentIndex].offsetWidth + 40) + (percentage * (cards[currentIndex].offsetWidth + 40)) / 100;
-                cardsWrapper.style.transform = `translateX(${offset}px)`;
-            }
+            const percentage = (deltaX / window.innerWidth) * 100;
+            const offset = -currentIndex * 100 + percentage;
+            cardsWrapper.style.transform = `translateX(${offset}%)`;
         }
 
         function mouseUp(evt) {
             if (!isDown) return;
             isDown = false;
-            if (!isScrolling) {
-                const endX = evt.clientX;
-                const deltaX = endX - startX;
-                if (deltaX < -50 && currentIndex < cards.length - 1) {
-                    currentIndex++;
-                } else if (deltaX > 50 && currentIndex > 0) {
-                    currentIndex--;
-                }
-                cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
-                showCard(currentIndex);
+            const endX = evt.clientX;
+            const deltaX = endX - startX;
+            if (deltaX < -50 && currentIndex < cards.length - 1) {
+                currentIndex++;
+            } else if (deltaX > 50 && currentIndex > 0) {
+                currentIndex--;
             }
+            cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
+            showCard(currentIndex);
         }
 
         // Language switch functionality
