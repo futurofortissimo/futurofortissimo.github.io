@@ -17,6 +17,8 @@
             --data-color: #81D4FA; /* Medium blue */
             --quote-color: #4FC3F7; /* Darker blue */
             --progress-bar-color: #4CAF50; /* Green */
+            --button-hover-scale: 1.05; /* Scale factor for hover effect */
+            --button-transition: transform 0.2s ease-in-out;
         }
 
         /* Basic styles */
@@ -25,7 +27,7 @@
             font-family: 'Montserrat', sans-serif;
             background-color: #fff;
             color: #333;
-            overflow-y: auto;
+            overflow: hidden; /* Prevent body scrolling */
             display: flex;
             flex-direction: column;
             min-height: 100vh;
@@ -38,16 +40,18 @@
             flex: 1;
             overflow: hidden;
             position: relative;
+            padding-bottom: 60px; /* Space for fixed footer */
         }
 
-        /* Header with logo, buttons, and language switch */
+        /* Header with logo and buttons */
         .header {
             display: flex;
             align-items: center;
             background-color: var(--theme-color);
-            padding: 10px;
+            padding: 10px 20px;
             flex-shrink: 0;
             flex-wrap: nowrap;
+            justify-content: space-between;
         }
 
         .logo {
@@ -57,13 +61,9 @@
             margin-right: 10px;
         }
 
+        /* Hide language-switch in header as it's moved to footer */
         .language-switch {
-            background-color: transparent;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            flex-shrink: 0;
-            margin-left: 10px;
+            display: none;
         }
 
         /* Buttons container inside header */
@@ -81,27 +81,6 @@
             display: none; /* WebKit */
         }
 
-        /* Fade effect for buttons */
-        .buttons-container::before,
-        .buttons-container::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 20px;
-            pointer-events: none;
-        }
-
-        .buttons-container::before {
-            left: 0;
-            background: linear-gradient(to right, var(--theme-color), transparent);
-        }
-
-        .buttons-container::after {
-            right: 0;
-            background: linear-gradient(to left, var(--theme-color), transparent);
-        }
-
         /* Buttons */
         .button {
             flex: 0 0 auto;
@@ -116,6 +95,7 @@
             user-select: none;
             white-space: nowrap;
             font-family: 'Montserrat', sans-serif; /* Ensure same font */
+            transition: transform 0.2s ease-in-out; /* For hover animation */
         }
 
         .substackButton {
@@ -132,10 +112,13 @@
             user-select: none;
             white-space: nowrap;
             font-family: 'Montserrat', sans-serif; /* Ensure same font */
+            transition: transform 0.2s ease-in-out; /* For hover animation */
         }
 
-        .button:hover {
-            background-color: #f0f0f0; /* Slightly darker on hover */
+        .button:hover,
+        .substackButton:hover {
+            transform: scale(var(--button-hover-scale));
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         /* Progress bar */
@@ -159,6 +142,7 @@
             display: flex;
             height: 100%;
             transition: transform 0.5s ease-in-out;
+            width: 100%;
         }
 
         /* Individual card */
@@ -170,7 +154,7 @@
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
-            cursor: pointer; /* Indicates the card is clickable */
+            /* Removed cursor pointer from card */
         }
 
         /* Card content */
@@ -181,6 +165,7 @@
             box-sizing: border-box;
             max-width: 450px;
             margin: 0 auto;
+            cursor: pointer; /* Make card-content clickable */
         }
 
         /* Section styles */
@@ -231,52 +216,58 @@
 
         /* Footer */
         footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
             background-color: var(--theme-color);
-            padding: 10px;
+            padding: 10px 20px;
             flex-shrink: 0;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+            z-index: 1000; /* Ensure it stays on top */
         }
 
         .footer-content {
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-wrap: wrap;
+            flex-wrap: nowrap; /* Prevent wrapping on small screens */
+            gap: 15px; /* Space between buttons */
         }
 
         .footer-content a,
-        .footer-content img,
         .footer-content button {
-            margin: 5px 15px;
             display: flex;
             align-items: center;
             text-decoration: none;
             color: #333;
             cursor: pointer;
+            background-color: #fff;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* For hover animation */
         }
 
         .footer-content a img {
-            height: 30px;
+            height: 24px;
             width: auto;
+            margin-right: 8px; /* Space between icon and text */
         }
 
-        .footer-content .donut-link img {
-            height: 30px;
-            width: auto;
+        /* Share, Support, English buttons */
+        .footer-content .share-button,
+        .footer-content .support-button,
+        .footer-content .language-button {
+            /* Same styles as above */
         }
 
-        .footer-content .share-button {
-            background-color: #fff;
-            color: #333;
-            border: none;
-            border-radius: 20px;
-            padding: 8px 12px;
-            font-size: 14px;
-            cursor: pointer;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .footer-content .share-button:hover {
-            background-color: #f0f0f0;
+        /* Hover "pop-up" animation */
+        .footer-content a:hover,
+        .footer-content button:hover {
+            transform: scale(var(--button-hover-scale));
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         /* Content block for darker paragraphs */
@@ -296,60 +287,55 @@
             font-weight: bold;
         }
 
-        /* Responsive Design: Adjust Footer Behavior */
+        /* Responsive Design */
         @media (max-width: 600px) {
-            .header {
-                flex-direction: row;
-                justify-content: space-between; /* Distribute space between logo and language switch */
-                padding: 10px;
-            }
-
-            .language-switch {
-                margin-left: 0; /* Remove left margin */
-                margin-right: 10px; /* Add right margin */
-                font-size: 20px; /* Reduce font size if necessary */
-            }
-
-            /* Ensure the buttons-container doesn't push the language switch off-screen */
-            .buttons-container {
-                flex-grow: 1;
-                margin: 0 10px; /* Add horizontal margins */
-            }
-
             .footer-content {
-                flex-direction: column;
+                flex-wrap: nowrap; /* Keep buttons on the same line */
+                overflow-x: auto;
+                gap: 10px;
             }
 
             .footer-content a,
-            .footer-content img,
             .footer-content button {
-                margin: 10px 0;
+                flex: 0 0 auto;
+                white-space: nowrap;
+            }
+
+            /* Adjust header if necessary */
+            .header {
+                flex-direction: row;
+                justify-content: space-between; /* Distribute space between logo and buttons */
+                padding: 10px 15px;
+            }
+
+            .buttons-container {
+                flex-grow: 1;
+                margin: 0 10px;
             }
         }
 
         /* Optional: Adjustments for Very Small Screens */
         @media (max-width: 400px) {
-            .language-switch {
-                font-size: 18px; /* Further reduce font size */
+            .footer-content a img,
+            .footer-content .donut-link img {
+                height: 20px;
+            }
+
+            .footer-content .share-button,
+            .footer-content .support-button,
+            .footer-content .language-button {
+                font-size: 12px;
+                padding: 6px 10px;
             }
 
             .logo {
                 height: 35px; /* Reduce logo size */
             }
-
-            .footer-content a img,
-            .footer-content .donut-link img {
-                height: 25px;
-            }
-
-            .footer-content .share-button {
-                font-size: 12px;
-                padding: 6px 10px;
-            }
         }
+
         @media (min-width: 601px) {
             footer {
-                display: block;
+                display: flex;
             }
 
             .header {
@@ -364,7 +350,7 @@
 </head>
 <body>
     <div class="app-container">
-        <!-- Header with logo, buttons, and language switch -->
+        <!-- Header with logo and buttons -->
         <div class="header">
             <a href="https://futurofortissimo.github.io/">
                 <img src="/index_files/ff.png" alt="Logo" class="logo">
@@ -373,6 +359,8 @@
             <div class="buttons-container" id="buttons-container">
                 <!-- Buttons will be dynamically inserted here -->
             </div>
+            <!-- Hidden language switch in header -->
+            <button class="language-switch" id="language-switch" style="display:none;">🇬🇧</button>
         </div>
 
         <!-- Progress bar -->
@@ -389,18 +377,15 @@
     <footer>
         <div class="footer-content">
             <!-- Logo -->
-            <a href="https://futurofortissimo.github.io/">
+            <a href="https://futurofortissimo.github.io/" class="logo-link">
                 <img src="/index_files/ff.png" alt="Logo" class="logo">
-            </a>
-            <!-- English Language Icon -->
-            <button class="language-switch" id="language-switch">🇬🇧</button>
-            <!-- Donut Link to PayPal -->
-            <a href="https://www.paypal.com/paypalme/michelemerelli" target="_blank" class="donut-link">
-                <button class="share-button" id="share-button">Support</button>
-
             </a>
             <!-- Share Button -->
             <button class="share-button" id="share-button">Share</button>
+            <!-- Support Button -->
+            <button class="support-button" id="support-button">Support</button>
+            <!-- English Language Button -->
+            <button class="language-button" id="language-button">English 🇬🇧</button>
         </div>
     </footer>
 
@@ -412,7 +397,8 @@
     const buttonsContainer = document.getElementById('buttons-container');
     const cardsWrapper = document.getElementById('cards-wrapper');
     const progressBar = document.querySelector('.progress-bar');
-    const languageSwitch = document.getElementById('language-switch');
+    const languageButton = document.getElementById('language-button');
+    const supportButton = document.getElementById('support-button');
     const shareButton = document.getElementById('share-button');
 
     let cards = [];
@@ -448,10 +434,10 @@
         let contentURL = '';
         if (currentLanguage === 'it') {
             contentURL = 'content_it.json';
-            languageSwitch.textContent = '🇬🇧';
+            languageButton.textContent = 'English 🇬🇧';
         } else if (currentLanguage === 'en') {
             contentURL = 'content_en.json';
-            languageSwitch.textContent = '🇮🇹';
+            languageButton.textContent = 'Italian 🇮🇹';
         }
 
         try {
@@ -547,8 +533,8 @@
         cardsWrapper.appendChild(card);
         cards.push(card);
 
-        // Add click event to the entire card
-        card.addEventListener('click', () => {
+        // Add click event to the card-content only
+        cardContent.addEventListener('click', () => {
             const translatedLink = getTranslatedSubstackLink(publication.substackLink);
             window.open(translatedLink, '_blank');
         });
@@ -597,7 +583,7 @@
         scrollButtonIntoView(index);
     }
 
-    // New function to scroll buttons into view
+    // Function to scroll buttons into view
     function scrollButtonIntoView(index) {
         const button = buttonsContainer.children[index];
         if (button) {
@@ -699,9 +685,15 @@
     }
 
     // Language switch functionality
-    languageSwitch.addEventListener('click', () => {
+    languageButton.addEventListener('click', () => {
         currentLanguage = currentLanguage === 'it' ? 'en' : 'it';
         initializeApp();
+    });
+
+    // Support button functionality
+    supportButton.addEventListener('click', () => {
+        // Define what the support button does. Example: open support email
+        window.location.href = 'mailto:support@futurofortissimo.com';
     });
 
     // Share button functionality
