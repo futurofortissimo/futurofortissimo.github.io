@@ -444,15 +444,22 @@
                 const lines = data.trim().split('\n');
                 const result = [];
                 const headers = ['emojis', 'description', 'url', 'question', 'hashtags', 'number'];
-                lines.forEach(line => {
+                lines.forEach((line, lineNumber) => {
                     // Handle commas inside quoted fields
-                    const values = line.match(/(?:[^,"]+|"[^"]*")+/g).map(val => val.replace(/^"|"$/g, '').trim());
-                    if (values.length >= 6) {
-                        const entry = {};
-                        headers.forEach((header, index) => {
-                            entry[header] = values[index];
-                        });
-                        result.push(entry);
+                    const matches = line.match(/(?:[^,"]+|"[^"]*")+/g);
+                    if (matches) {
+                        const values = matches.map(val => val.replace(/^"|"$/g, '').trim());
+                        if (values.length >= 6) {
+                            const entry = {};
+                            headers.forEach((header, index) => {
+                                entry[header] = values[index];
+                            });
+                            result.push(entry);
+                        } else {
+                            console.warn(`Line ${lineNumber + 1} is malformed:`, line);
+                        }
+                    } else {
+                        console.warn(`No matches found for line ${lineNumber + 1}:`, line);
                     }
                 });
                 return result;
