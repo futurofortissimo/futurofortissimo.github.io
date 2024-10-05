@@ -20,6 +20,10 @@
             --button-hover-scale: 1.05; /* Scale factor for hover effect */
             --button-transition: transform 0.2s ease-in-out;
             --footer-height: 60px;
+            --card-padding: 20px;
+            --card-margin: 20px 0;
+            --card-border-radius: 10px;
+            --card-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         /* Basic styles */
@@ -44,7 +48,7 @@
             padding-bottom: var(--footer-height); /* Space for fixed footer */
         }
 
-        /* Header with logo and buttons */
+        /* Header with logo and emoji buttons */
         .header {
             display: flex;
             align-items: center;
@@ -60,11 +64,6 @@
             cursor: pointer;
             flex-shrink: 0;
             margin-right: 10px;
-        }
-
-        /* Hide language-switch in header as it's moved to footer */
-        .language-switch {
-            display: none;
         }
 
         /* Buttons container inside header */
@@ -96,46 +95,6 @@
             transform: scale(1.2);
         }
 
-        /* Buttons */
-        .button {
-            flex: 0 0 auto;
-            padding: 8px 12px;
-            background-color: #fff;
-            color: #333;
-            margin: 9px; /* Corrected typo from 'magin' to 'margin' */
-            border-radius: 20px;
-            text-align: center;
-            font-size: 14px;
-            cursor: pointer;
-            user-select: none;
-            white-space: nowrap;
-            font-family: 'Montserrat', sans-serif; /* Ensure same font */
-            transition: transform 0.2s ease-in-out; /* For hover animation */
-        }
-
-        .substackButton {
-            flex: 0 0 auto;
-            margin: 0 5px;
-            padding: 8px 12px;
-            background-color: #fff;
-            color: #333;
-            border: 2px solid #000; /* Optional black border */
-            border-radius: 35px;
-            text-align: center;
-            font-size: 18px;
-            cursor: pointer;
-            user-select: none;
-            white-space: nowrap;
-            font-family: 'Montserrat', sans-serif; /* Ensure same font */
-            transition: transform 0.2s ease-in-out; /* For hover animation */
-        }
-
-        .button:hover,
-        .substackButton:hover {
-            transform: scale(var(--button-hover-scale));
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
         /* Progress bar */
         .progress-bar {
             height: 5px;
@@ -164,9 +123,9 @@
         /* Individual card */
         .card {
             background-color: #f0f8ff;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: var(--card-border-radius);
+            padding: var(--card-padding);
+            box-shadow: var(--card-box-shadow);
             transition: background-color 0.3s ease;
         }
 
@@ -199,23 +158,6 @@
         .card-content::-webkit-scrollbar {
             width: 0px;
             background: transparent;
-        }
-
-        /* Action button styles */
-        .action-button {
-            padding: 10px 20px;
-            margin: 5px 0;
-            background-color: var(--theme-color);
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            width: 100%;
-        }
-
-        .action-button:hover {
-            background-color: #7ec0ee; /* Slightly darker blue */
         }
 
         /* Footer */
@@ -347,6 +289,7 @@
         <div class="cards-container">
             <div class="cards-wrapper" id="cards-wrapper">
                 <!-- Cards will be dynamically inserted here -->
+                <p style="text-align:center;">Seleziona una categoria con le emoji sopra per visualizzare i contenuti.</p>
             </div>
         </div>
     </div>
@@ -370,226 +313,224 @@
 
     <!-- JavaScript -->
     <script>
-        let currentLanguage = 'it';
-        let currentIndex = 0;
-        let publicationIndices = [];
+        document.addEventListener('DOMContentLoaded', () => {
+            let currentLanguage = 'it'; // Default language
+            const languageButton = document.getElementById('language-button');
+            const supportButton = document.getElementById('support-button');
+            const shareButton = document.getElementById('share-button');
+            const buttonsContainer = document.getElementById('buttons-container');
+            const cardsWrapper = document.getElementById('cards-wrapper');
+            const progressBar = document.querySelector('.progress-bar');
 
-        const buttonsContainer = document.getElementById('buttons-container');
-        const cardsWrapper = document.getElementById('cards-wrapper');
-        const progressBar = document.querySelector('.progress-bar');
-        const languageButton = document.getElementById('language-button');
-        const supportButton = document.getElementById('support-button');
-        const shareButton = document.getElementById('share-button');
+            // Define a color palette for alternating card colors
+            const colorPalette = ['#ADD8E6', '#B3E5FC', '#81D4FA', '#4FC3F7', '#FFB6C1', '#90EE90'];
 
-        // Define a color palette for alternating card colors
-        const colorPalette = ['#ADD8E6', '#B3E5FC', '#81D4FA', '#4FC3F7', '#FFB6C1', '#90EE90'];
+            // Function to transform Substack URL for English using Google Translate (if needed)
+            function getTranslatedSubstackLink(originalLink) {
+                if (currentLanguage === 'it') {
+                    return originalLink;
+                } else if (currentLanguage === 'en') {
+                    // Parse the original URL
+                    try {
+                        const url = new URL(originalLink);
+                        const originalDomain = url.hostname; // e.g., fortissimo.substack.com
+                        const translatedDomain = originalDomain.replace(/\./g, '-') + '.translate.goog';
+                        const translatedURL = `https://${translatedDomain}${url.pathname}?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=it&_x_tr_hist=true`;
+                        return translatedURL;
+                    } catch (error) {
+                        console.error('Invalid URL:', originalLink);
+                        return originalLink; // Fallback to original link if invalid
+                    }
+                }
+                return originalLink; // Default fallback
+            }
 
-        // Function to transform Substack URL for English using Google Translate (if needed)
-        function getTranslatedSubstackLink(originalLink) {
-            if (currentLanguage === 'it') {
-                return originalLink;
-            } else if (currentLanguage === 'en') {
-                // Parse the original URL
+            // Function to parse CSV data
+            function parseCSV(data) {
+                const lines = data.trim().split('\n');
+                const result = [];
+                const headers = ['emojis', 'description', 'url', 'question', 'hashtags', 'number'];
+                lines.forEach(line => {
+                    const values = line.split(',').map(val => val.trim());
+                    if (values.length >= 6) {
+                        const entry = {};
+                        headers.forEach((header, index) => {
+                            entry[header] = values[index];
+                        });
+                        result.push(entry);
+                    }
+                });
+                return result;
+            }
+
+            // Function to fetch and parse CSV
+            async function fetchCSV(url) {
                 try {
-                    const url = new URL(originalLink);
-                    const originalDomain = url.hostname; // e.g., fortissimo.substack.com
-                    const translatedDomain = originalDomain.replace(/\./g, '-') + '.translate.goog';
-                    const translatedURL = `https://${translatedDomain}${url.pathname}?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=it&_x_tr_hist=true`;
-                    return translatedURL;
+                    const response = await fetch(url);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    const text = await response.text();
+                    return parseCSV(text);
                 } catch (error) {
-                    console.error('Invalid URL:', originalLink);
-                    return originalLink; // Fallback to original link if invalid
+                    console.error('Error fetching CSV:', error);
+                    return [];
                 }
             }
-            return originalLink; // Default fallback
-        }
 
-        // Function to initialize the app
-        async function initializeApp() {
-            buttonsContainer.innerHTML = '';
-            cardsWrapper.innerHTML = '';
-            currentIndex = 0;
-
-            // Fetch content based on current language
-            let contentURL = '';
-            if (currentLanguage === 'it') {
-                contentURL = 'content_it.json';
-                languageButton.textContent = 'English 🇬🇧';
-            } else if (currentLanguage === 'en') {
-                contentURL = 'content_en.json';
-                languageButton.textContent = 'Italian 🇮🇹';
-            }
-
-            try {
-                const response = await fetch(contentURL);
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                const content = await response.json();
-                let { publications } = content;
-
-                // No need to sort publications here unless required
-
-                // Prepare buttons and cards
-                // Since emoji buttons are already in the header, we don't need to create header buttons dynamically
-
-                // Initially, display all categories or a default category
-                // For this example, let's display a default message
+            // Function to initialize the app
+            async function initializeApp() {
+                // Clear existing cards and show prompt
                 cardsWrapper.innerHTML = '<p style="text-align:center;">Seleziona una categoria con le emoji sopra per visualizzare i contenuti.</p>';
                 progressBar.style.width = '0%';
-            } catch (error) {
-                console.error('Error fetching content:', error);
-                buttonsContainer.innerHTML = '<p>Errore nel caricamento del contenuto.</p>';
-            }
-        }
-
-        // Function to fetch and display cards based on category
-        async function fetchAndDisplayCards(category) {
-            // Fetch content based on current language
-            let contentURL = '';
-            if (currentLanguage === 'it') {
-                contentURL = 'content_it.json';
-            } else if (currentLanguage === 'en') {
-                contentURL = 'content_en.json';
             }
 
-            try {
-                const response = await fetch(contentURL);
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
+            // Function to fetch and display cards based on category
+            async function fetchAndDisplayCards(category) {
+                // Determine the CSV file based on current language
+                const csvFile = currentLanguage === 'it' ?
+                    '/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo.csv' :
+                    '/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo_en.csv';
+
+                // Fetch and parse CSV
+                const data = await fetchCSV(csvFile);
+
+                // Filter entries that include the selected emoji
+                const filteredEntries = data.filter(entry => entry.emojis.includes(category));
+
+                // Limit to 10 entries
+                const selectedEntries = filteredEntries.slice(0, 10);
+
+                // Display the cards
+                displayCards(selectedEntries);
+            }
+
+            // Function to display the cards
+            function displayCards(entries) {
+                // Clear existing cards
+                cardsWrapper.innerHTML = '';
+
+                if (entries.length === 0) {
+                    cardsWrapper.innerHTML = '<p style="text-align:center;">Nessun contenuto disponibile per questa categoria.</p>';
+                    progressBar.style.width = '0%';
+                    return;
                 }
-                const content = await response.json();
-                let { publications } = content;
 
-                // Filter publications based on the selected category
-                const filteredPublications = publications.filter(pub => pub.category === category);
+                // Iterate over the entries and create card elements
+                entries.forEach((entry, index) => {
+                    const cardDiv = document.createElement('div');
+                    cardDiv.className = 'card';
+                    cardDiv.style.backgroundColor = colorPalette[index % colorPalette.length];
 
-                // Select the first 10 publications
-                const selectedCards = filteredPublications.slice(0, 10);
+                    const cardContent = document.createElement('div');
+                    cardContent.className = 'card-content';
 
-                displayCards(selectedCards);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-                cardsWrapper.innerHTML = '<p style="text-align:center;">Errore nel caricamento dei contenuti.</p>';
-            }
-        }
+                    // Add Substack Button
+                    const substackButton = document.createElement('div');
+                    substackButton.className = 'substackButton';
+                    substackButton.textContent = 'Read on Substack';
+                    substackButton.style.cursor = 'pointer';
+                    substackButton.style.marginBottom = '10px';
+                    substackButton.addEventListener('click', (e) => {
+                        e.stopPropagation(); // Prevent card click event
+                        window.open(entry.url, '_blank');
+                    });
+                    cardContent.appendChild(substackButton);
 
-        // Function to display the cards
-        function displayCards(cards) {
-            // Clear existing cards
-            cardsWrapper.innerHTML = '';
+                    // Add title
+                    const title = document.createElement('h2');
+                    title.className = 'section-title';
+                    title.textContent = entry.description;
+                    cardContent.appendChild(title);
 
-            if (cards.length === 0) {
-                cardsWrapper.innerHTML = '<p style="text-align:center;">Nessun contenuto disponibile per questa categoria.</p>';
-                progressBar.style.width = '0%';
-                return;
-            }
+                    // Add question
+                    const question = document.createElement('p');
+                    question.textContent = entry.question;
+                    cardContent.appendChild(question);
 
-            // Iterate over the cards and create elements
-            cards.forEach((card, index) => {
-                const cardDiv = document.createElement('div');
-                cardDiv.className = 'card';
-                cardDiv.style.backgroundColor = colorPalette[index % colorPalette.length];
+                    // Add hashtags
+                    const hashtags = document.createElement('p');
+                    hashtags.textContent = entry.hashtags;
+                    hashtags.style.color = '#555';
+                    hashtags.style.fontSize = '14px';
+                    cardContent.appendChild(hashtags);
 
-                const cardContent = document.createElement('div');
-                cardContent.className = 'card-content';
+                    // Add note number
+                    const noteNumber = document.createElement('p');
+                    noteNumber.textContent = `Note #${entry.number}`;
+                    noteNumber.style.color = '#777';
+                    noteNumber.style.fontSize = '12px';
+                    cardContent.appendChild(noteNumber);
 
-                // Add Substack Button
-                const substackButton = document.createElement('div');
-                substackButton.className = 'substackButton';
-                substackButton.textContent = 'Read on Substack';
-                substackButton.style.cursor = 'pointer';
-                substackButton.style.marginBottom = '10px';
-                substackButton.addEventListener('click', (e) => {
-                    e.stopPropagation(); // Prevent card click event
-                    window.open(card.substackLink, '_blank');
+                    // Add link
+                    const link = document.createElement('a');
+                    link.href = entry.url;
+                    link.textContent = 'Read More';
+                    link.target = '_blank';
+                    link.style.display = 'block';
+                    link.style.marginTop = '10px';
+                    link.style.color = '#1E90FF';
+                    cardContent.appendChild(link);
+
+                    cardDiv.appendChild(cardContent);
+                    cardsWrapper.appendChild(cardDiv);
+
+                    // Add click event to the card-content only
+                    cardContent.addEventListener('click', () => {
+                        const translatedLink = getTranslatedSubstackLink(entry.url);
+                        window.open(translatedLink, '_blank');
+                    });
                 });
-                cardContent.appendChild(substackButton);
 
-                // Add title
-                const title = document.createElement('h2');
-                title.className = 'section-title';
-                title.textContent = card.title;
-                cardContent.appendChild(title);
+                // Update progress bar
+                const totalCards = entries.length;
+                progressBar.style.width = `${(totalCards / 10) * 100}%`;
+            }
 
-                // Add content
-                const content = document.createElement('p');
-                content.textContent = card.content;
-                cardContent.appendChild(content);
+            // Language switch functionality
+            languageButton.addEventListener('click', () => {
+                currentLanguage = currentLanguage === 'it' ? 'en' : 'it';
+                languageButton.textContent = currentLanguage === 'it' ? 'English 🇬🇧' : 'Italian 🇮🇹';
+                initializeApp();
+            });
 
-                // Add link
-                const link = document.createElement('a');
-                link.href = card.link;
-                link.textContent = 'Read More';
-                link.target = '_blank';
-                cardContent.appendChild(link);
+            // Support button functionality
+            supportButton.addEventListener('click', () => {
+                window.location.href = 'mailto:support@futurofortissimo.com';
+            });
 
-                cardDiv.appendChild(cardContent);
-                cardsWrapper.appendChild(cardDiv);
+            // Share button functionality
+            shareButton.addEventListener('click', () => {
+                const pageURL = window.location.href;
+                const pageTitle = document.title;
 
-                // Add click event to the card-content only
-                cardContent.addEventListener('click', () => {
-                    const translatedLink = getTranslatedSubstackLink(card.substackLink);
-                    window.open(translatedLink, '_blank');
+                if (navigator.share) {
+                    navigator.share({
+                        title: pageTitle,
+                        url: pageURL
+                    }).then(() => {
+                        console.log('Thanks for sharing!');
+                    })
+                    .catch(console.error);
+                } else {
+                    // Fallback: Copy to clipboard
+                    navigator.clipboard.writeText(pageURL).then(() => {
+                        alert('URL copiato negli appunti!');
+                    }, (err) => {
+                        console.error('Could not copy text: ', err);
+                    });
+                }
+            });
+
+            // Add event listeners to emoji buttons
+            document.querySelectorAll('.emoji-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    const category = button.getAttribute('data-category');
+                    fetchAndDisplayCards(category);
                 });
             });
 
-            // Update progress bar
-            showCard(0);
-        }
-
-        // Function to display the progress bar
-        function showCard(index) {
-            currentIndex = index;
-            const totalCards = cardsWrapper.children.length;
-            const progress = ((index + 1) / totalCards) * 100;
-            progressBar.style.width = `${progress}%`;
-        }
-
-        // Language switch functionality
-        languageButton.addEventListener('click', () => {
-            currentLanguage = currentLanguage === 'it' ? 'en' : 'it';
-            initializeApp();
-        });
-
-        // Support button functionality
-        supportButton.addEventListener('click', () => {
-            window.location.href = 'mailto:support@futurofortissimo.com';
-        });
-
-        // Share button functionality
-        shareButton.addEventListener('click', () => {
-            const pageURL = window.location.href;
-            const pageTitle = document.title;
-
-            if (navigator.share) {
-                navigator.share({
-                    title: pageTitle,
-                    url: pageURL
-                }).then(() => {
-                    console.log('Thanks for sharing!');
-                })
-                .catch(console.error);
-            } else {
-                // Fallback: Copy to clipboard
-                navigator.clipboard.writeText(pageURL).then(() => {
-                    alert('URL copiato negli appunti!');
-                }, (err) => {
-                    console.error('Could not copy text: ', err);
-                });
-            }
-        });
-
-        // Add event listeners to emoji buttons
-        document.querySelectorAll('.emoji-button').forEach(button => {
-            button.addEventListener('click', () => {
-                const category = button.getAttribute('data-category');
-                fetchAndDisplayCards(category);
-            });
-        });
-
-        // Initialize the app after the DOM is fully loaded
-        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize the app on page load
             initializeApp();
         });
     </script>
