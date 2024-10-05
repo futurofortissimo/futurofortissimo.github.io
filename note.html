@@ -1,179 +1,597 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
+    <title>Futuro Fortissimo - Riepilogo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preload" href="/index_files/303a26c383de2a8b.css" as="style">
-    <link rel="stylesheet" href="/index_files/303a26c383de2a8b.css" data-n-g="">
-    <link rel="stylesheet" href="/index_files/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <link rel="manifest" href="/index_files/manifest.json">
-    <link rel="icon" href="/index_files/ff.webp" type="/index_files/ff.webp">
+    <!-- Import Montserrat font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="/index_files/ff.webp" type="image/webp">
     <link rel="apple-touch-icon" href="/index_files/ff.webp">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Ricerca</title>
-    <link rel="preload" href="/index_files/303a26c383de2a8b.css" as="style">
-    <link rel="stylesheet" href="/index_files/303a26c383de2a8b.css" data-n-g="">
+    <style>
+        /* Root variables */
+        :root {
+            --theme-color: #ADD8E6; /* Light blue */
+            --question-color: #B3E5FC; /* Lighter blue */
+            --data-color: #81D4FA; /* Medium blue */
+            --quote-color: #4FC3F7; /* Darker blue */
+            --progress-bar-color: #4CAF50; /* Green */
+            --button-hover-scale: 1.05; /* Scale factor for hover effect */
+            --button-transition: transform 0.2s ease-in-out;
+            --footer-height: 60px;
+        }
+
+        /* Basic styles */
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fff;
+            color: #333;
+            overflow-y: auto; /* Allow vertical scrolling */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* App container */
+        .app-container {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+            padding-bottom: var(--footer-height); /* Space for fixed footer */
+        }
+
+        /* Header with logo and buttons */
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: var(--theme-color);
+            padding: 10px 20px;
+            flex-shrink: 0;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+        }
+
+        .logo {
+            height: 40px;
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-right: 10px;
+        }
+
+        /* Hide language-switch in header as it's moved to footer */
+        .language-switch {
+            display: none;
+        }
+
+        /* Buttons container inside header */
+        .buttons-container {
+            display: flex;
+            overflow-x: auto;
+            flex-grow: 1;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+            position: relative;
+            padding: 0 20px; /* Add padding for fade effect */
+            gap: 10px;
+        }
+
+        .buttons-container::-webkit-scrollbar {
+            display: none; /* WebKit */
+        }
+
+        /* Emoji Buttons */
+        .emoji-button {
+            font-size: 30px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .emoji-button:hover {
+            transform: scale(1.2);
+        }
+
+        /* Buttons */
+        .button {
+            flex: 0 0 auto;
+            padding: 8px 12px;
+            background-color: #fff;
+            color: #333;
+            margin: 9px; /* Corrected typo from 'magin' to 'margin' */
+            border-radius: 20px;
+            text-align: center;
+            font-size: 14px;
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+            font-family: 'Montserrat', sans-serif; /* Ensure same font */
+            transition: transform 0.2s ease-in-out; /* For hover animation */
+        }
+
+        .substackButton {
+            flex: 0 0 auto;
+            margin: 0 5px;
+            padding: 8px 12px;
+            background-color: #fff;
+            color: #333;
+            border: 2px solid #000; /* Optional black border */
+            border-radius: 35px;
+            text-align: center;
+            font-size: 18px;
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+            font-family: 'Montserrat', sans-serif; /* Ensure same font */
+            transition: transform 0.2s ease-in-out; /* For hover animation */
+        }
+
+        .button:hover,
+        .substackButton:hover {
+            transform: scale(var(--button-hover-scale));
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Progress bar */
+        .progress-bar {
+            height: 5px;
+            background-color: var(--progress-bar-color);
+            width: 0%;
+            transition: width 0.5s ease-in-out;
+            flex-shrink: 0;
+        }
+
+        /* Cards container */
+        .cards-container {
+            flex: 1;
+            overflow: auto; /* Allow vertical scrolling */
+            position: relative;
+            padding: 20px;
+        }
+
+        /* Cards wrapper for sliding effect */
+        .cards-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+        }
+
+        /* Individual card */
+        .card {
+            background-color: #f0f8ff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .card-content {
+            cursor: pointer; /* Make card-content clickable */
+        }
+
+        .section-title {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .content-block {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 10px;
+            word-wrap: break-word; /* Prevent overflow of long words */
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .paragraphs {
+            background-color: #e0f7fa; /* Light cyan */
+            font-weight: normal;
+        }
+
+        /* Hide scrollbars on card content */
+        .card-content::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        /* Action button styles */
+        .action-button {
+            padding: 10px 20px;
+            margin: 5px 0;
+            background-color: var(--theme-color);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .action-button:hover {
+            background-color: #7ec0ee; /* Slightly darker blue */
+        }
+
+        /* Footer */
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--theme-color);
+            padding: 10px 20px;
+            flex-shrink: 0;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+            z-index: 1000; /* Ensure it stays on top */
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: center; /* Horizontally centers the items */
+            align-items: center;     /* Vertically centers the items */
+            gap: 15px;               /* Space between footer items */
+            width: 100%;             /* Ensure the footer spans the full width */
+            box-sizing: border-box;  /* Include padding in the width */
+        }
+
+        .footer-content a,
+        .footer-content button {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+            cursor: pointer;
+            background-color: #fff;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* For hover animation */
+        }
+
+        .footer-content a img {
+            height: 24px;
+            width: auto;
+            margin-right: 8px; /* Space between icon and text */
+        }
+
+        /* Hover "pop-up" animation */
+        .footer-content a:hover,
+        .footer-content button:hover {
+            transform: scale(var(--button-hover-scale));
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .footer-content {
+                gap: 10px;
+            }
+
+            .footer-content a,
+            .footer-content button {
+                padding: 6px 10px;
+                font-size: 12px;
+            }
+
+            .logo {
+                height: 35px; /* Reduce logo size on small screens */
+            }
+
+            .buttons-container {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .emoji-button {
+                font-size: 24px;
+            }
+        }
+
+        /* Optional: Adjustments for Very Small Screens */
+        @media (max-width: 400px) {
+            .footer-content a img {
+                height: 20px;
+            }
+
+            .footer-content .share-button,
+            .footer-content .support-button,
+            .footer-content .language-button {
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+
+            .logo {
+                height: 30px; /* Further reduce logo size */
+            }
+        }
+    </style>
 </head>
 <body>
-
-<div id="__next">
-    <div class="flex flex-col overflow-hidden">
-        <header
-            class="__variable_a64ecd font-sans fixed top-0 w-full h-[70px] bg-white md:border-b border-gray-300 z-10"
-            style="z-index: 1000; display: flex; justify-content: center; align-items: center; padding: 0 1rem; border-bottom: 2px solid black;">
-            <!-- Centered title -->
-            <div style="text-align: center;">
-                <a href="https://futurofortissimo.github.io/"
-                    style="font-size: 35px; font-family: 'ArgosBoldItalic';">futuro fortissimo</a>
+    <div class="app-container">
+        <!-- Header with logo and emoji buttons -->
+        <div class="header">
+            <a href="https://futurofortissimo.github.io/">
+                <img src="/index_files/ff.png" alt="Logo" class="logo">
+            </a>
+            <!-- Emoji Buttons inside header -->
+            <div class="buttons-container" id="buttons-container">
+                <!-- Emoji Buttons with data-category attributes -->
+                <button class="emoji-button" data-category="clima" aria-label="Clima">🍃</button>
+                <button class="emoji-button" data-category="tecnologia" aria-label="Tecnologia">💻</button>
+                <button class="emoji-button" data-category="uomo" aria-label="Uomo">❤️</button>
+                <button class="emoji-button" data-category="criptovalute" aria-label="Criptovalute">💸</button>
+                <button class="emoji-button" data-category="sport" aria-label="Sport">⚽</button>
+                <button class="emoji-button" data-category="alimentazione" aria-label="Alimentazione">🍽️</button>
+                <button class="emoji-button" data-category="intelligenza" aria-label="Intelligenza Artificiale">🧠</button>
+                <button class="emoji-button" data-category="salute" aria-label="Salute">💊</button>
+                <button class="emoji-button" data-category="podcast" aria-label="Podcast">🎙️</button>
+                <button class="emoji-button" data-category="art" aria-label="Arte">🎨</button>
+                <!-- Add more emoji buttons as needed -->
             </div>
-        </header>
+            <!-- Hidden language switch in header -->
+            <button class="language-switch" id="language-switch" style="display:none;">🇬🇧</button>
+        </div>
 
-        <div class="flex flex-col justify-center m-0 p-0 flex-1 min-h-screen">
-            <!-- Add margin-top to the main element to create space below the header -->
-            <main class="flex flex-grow flex-1 overflow-y-scroll flex-col w-full" style="margin-top: 70px;">
-                <div>
-                    <div
-                        class="__variable_ee7e36 font-valkyrie max-w-[714px] mx-auto px-4 sm:px-6 lg:px-4 book-section">
-                        <div
-                            style="width:100%; margin-top:5px; align-items: center; justify-content: center; display: flex; align-items: center; gap: 2px; font-size:21px; font-family:Palladio;">
-                            <div style="display: flex; justify-content: center; gap: 2px; padding: 5px 0;"
-                                id="div_search">
-                                <input type="checkbox" id="csv-checkbox-clima" style="display: none;">
-                                <label style="margin:2px; display: inline-block; border-radius: 42px; color: white; border: 1px solid white; padding: 5px; font-size: 35px; font-family: 'ArgosBoldItalic',
-                 sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:42px;"
-                                    class="button-parla-futuro-clima" for="csv-checkbox-clima">🍃</label>
-                                <input type="checkbox" id="csv-checkbox-tecnologia" style="display: none;">
-                                <label style="margin:2px; display: inline-block; border-radius: 42px; color: white; border: 1px solid white; padding: 5px; font-size: 35px; font-family: 'ArgosBoldItalic',
-                  sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:42px;"
-                                    class="button-parla-futuro" for="csv-checkbox-tecnologia">💻</label>
-                                <input type="checkbox" id="csv-checkbox-uomo" style="display: none;">
-                                <label style="margin:2px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 5px; font-size: 35px; font-family: 'ArgosBoldItalic',
-                 sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:42px;"
-                                    class="button-parla-futuro-verde-acqua" for="csv-checkbox-uomo">❤️</label>
-                            </div>
-                        </div>
-                        <div class="swiper mySwiper" style="width:350px; margin-bottom:10px">
-                            <div class="swiper-wrapper" style="margin-bottom:25px" id="div_search_4">
-                                <div class="swiper-slide" style="margin-bottom:10px">
-                                    <input type="checkbox" id="csv-checkbox-criptovalute" style="display: none;">
-                                    <label style="margin:2px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 2px; font-size: 26px; font-family: 'ArgosBoldItalic',
-                  sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:42px;"
-                                        class="button-parla-futuro" for="csv-checkbox-criptovalute">💸<span
-                                            class="hover-info"
-                                            style="font-size: 15px; font-family: 'ArgosBoldItalic'; color:black">Finanza</span></label>
-                                </div>
-                                <div class="swiper-slide">
-                                    <input type="checkbox" id="csv-checkbox-sport" style="display: none;">
-                                    <label style="margin:2px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 2px; font-size: 26px; font-family: 'ArgosBoldItalic',
-                  sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:42px;"
-                                        class="button-parla-futuro" for="csv-checkbox-sport">⚽<span class="hover-info"
-                                            style="font-size: 15px; font-family: 'ArgosBoldItalic'; color:black">Sport</span></label>
-                                </div>
-                                <div class="swiper-slide">
-                                    <input type="checkbox" id="csv-checkbox-alimentazione" style="display: none;">
-                                    <label style="margin:2px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 2px; font-size: 26px; font-family: 'ArgosBoldItalic',
-                  sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:42px;"
-                                        class="button-parla-futuro" for="csv-checkbox-alimentazione">🍽<span
-                                            class="hover-info"
-                                            style="font-size: 15px; font-family: 'ArgosBoldItalic'; color:black">Alimentazione<span>️</label>
-                                </div>
-                                <div class="swiper-slide">
-                                    <input type="checkbox" id="csv-checkbox-intelligenza" style="display: none;">
-                                    <label style="margin:2px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 2px; font-size: 26px; font-family: 'ArgosBoldItalic',
-                  sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:42px;"
-                                        class="button-parla-futuro" for="csv-checkbox-intelligenza">🧠<span
-                                            class="hover-info"
-                                            style="font-size: 15px; font-family: 'ArgosBoldItalic'; color:black">Intelligenza
-                                            Artificiale</span></label>
-                                </div>
-                                <div class="swiper-slide">
-                                    <input type="checkbox" id="csv-checkbox-salute" style="display: none;">
-                                    <label style="margin:2px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 2px; font-size: 26px; font-family: 'ArgosBoldItalic',
-                  sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:42px;"
-                                        class="button-parla-futuro" for="csv-checkbox-salute">💊<span class="hover-info"
-                                            style="font-size: 15px; font-family: 'ArgosBoldItalic'; color:black">Medicina</span></label>
-                                </div>
-                                <div class="swiper-slide">
-                                    <input type="checkbox" id="csv-checkbox-art" style="display: none;">
-                                    <label style="margin:2px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 2px; font-size: 26px; font-family: 'ArgosBoldItalic',
-                  sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:42px;"
-                                        class="button-parla-futuro" for="csv-checkbox-art">🎨<span class="hover-info"
-                                            style="font-size: 15px; font-family: 'ArgosBoldItalic'; color:black">Arte</span></label>
-                                </div>
-                                <div class="swiper-slide">
-                                    <input type="checkbox" id="csv-checkbox-mobility" style="display: none;">
-                                    <label style="margin:2px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 2px; font-size: 26px; font-family: 'ArgosBoldItalic',
-                  sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:42px;"
-                                        class="button-parla-futuro" for="csv-checkbox-mobility">🚕<span
-                                            class="hover-info"
-                                            style="font-size: 15px; font-family: 'ArgosBoldItalic'; color:black">Mobilità</span></label>
-                                </div>
-                                <div class="swiper-slide">
-                                    <input type="checkbox" id="csv-checkbox-metaverse" style="display: none;">
-                                    <label style="margin:2px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 2px; font-size: 26px; font-family: 'ArgosBoldItalic',
-                  sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:42px;"
-                                        class="button-parla-futuro" for="csv-checkbox-metaverse">🥽<span
-                                            class="hover-info"
-                                            style="font-size: 15px; font-family: 'ArgosBoldItalic'; color:black">Metaverso</span></label>
-                                </div>
-                                <div class="swiper-slide">
-                                    <input type="checkbox" id="csv-checkbox-society" style="display: none;">
-                                    <label style="margin:2px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 2px; font-size: 26px; font-family: 'ArgosBoldItalic',
-                  sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:42px;"
-                                        class="button-parla-futuro" for="csv-checkbox-society">👥<span
-                                            class="hover-info"
-                                            style="font-size: 15px; font-family: 'ArgosBoldItalic'; color:black">Società</span></label>
-                                </div>
-                                <div class="swiper-slide">
-                                    <input type="checkbox" id="csv-checkbox-wellbeing" style="display: none;">
-                                    <label style="margin:2px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 2px; font-size: 26px; font-family: 'ArgosBoldItalic',
-                  sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:42px;"
-                                        class="button-parla-futuro" for="csv-checkbox-wellbeing">💆<span
-                                            class="hover-info"
-                                            style="font-size: 15px; font-family: 'ArgosBoldItalic'; color:black">Wellbeing</span></label>
-                                </div>
-                            </div>
-                            <div class="swiper-pagination" style="margin-top:5px; transform: translateY(12px)"></div>
-                        </div>
-                    </div>
-                    <div style="display: flex; justify-content: center; gap: 2px; padding: 5px 0;" id="div_search_5">
-                        <input type="checkbox" id="csv-checkbox-libri" style="display: none;">
-                        <label style="margin:2px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 2px; font-size: 26px; font-family: 'ArgosBoldItalic',
-             sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:42px;"
-                            class="button-parla-futuro-verde-acqua" for="csv-checkbox-libri">📚</label>
-                        <input type="checkbox" id="csv-checkbox-podcast" style="display: none;">
-                        <label style="margin:2px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 2px; font-size: 26px; font-family: 'ArgosBoldItalic',
-             sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:42px;"
-                            class="button-parla-futuro-verde-acqua" for="csv-checkbox-podcast">🎙️</label>
-                        <input type="checkbox" id="csv-checkbox-futuro" style="display: none;">
-                        <label style="margin:2px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 2px; font-size: 26px; font-family: 'ArgosBoldItalic',
-             sans-serif; background-color: transparent; text-align: center; width: auto; border-radius:42px;"
-                            class="button-parla-futuro-verde-acqua" for="csv-checkbox-futuro">🎼</label>
-                    </div>
-                    <div style="max-width:625px; margin-top:5px; display: flex; align-items: center; gap: 2px; font-size:21px; font-family:Palladio; margin:auto"
-                        class="main_content" id="div_search_2">
-                        <input type="text" id="csv-search-input" placeholder=" Cerca una Nota 🎵"
-                            style="width:100%;  margin:2px;border-radius:42px;">
-                        <button style="border-radius:42px" id="csv-search-button">🔍</button>
-                        <button style="border-radius:42px" id="refreshButton">🔄</button>
-                    </div>
-                    <div style="font-family:palladio; max-width:625px; font-size:21px; margin-bottom:60px; margin:auto"
-                        class="main_content" id="content-area"></div>
-                    <br><br>
-            </main>
+        <!-- Progress bar -->
+        <div class="progress-bar"></div>
+
+        <!-- Cards -->
+        <div class="cards-container">
+            <div class="cards-wrapper" id="cards-wrapper">
+                <!-- Cards will be dynamically inserted here -->
+            </div>
         </div>
     </div>
-    <script src="script.js"></script>
-    <style src="style.css"></style>
 
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <!-- Logo as a clickable link -->
+            <a href="https://futurofortissimo.github.io/">
+                <img src="/index_files/ff.png" alt="Logo" class="logo">
+            </a>
+
+            <!-- Share Button as a link -->
+            <a href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io/" class="button share-button" id="share-button">Share</a>
+            <!-- Support Button as a link -->
+            <a href="https://www.paypal.com/paypalme/michelemerelli" class="button support-button" id="support-button">Support</a>
+            <!-- English Language Button as a button -->
+            <button class="button language-button" id="language-button">English 🇬🇧</button>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        let currentLanguage = 'it';
+        let currentIndex = 0;
+        let publicationIndices = [];
+
+        const buttonsContainer = document.getElementById('buttons-container');
+        const cardsWrapper = document.getElementById('cards-wrapper');
+        const progressBar = document.querySelector('.progress-bar');
+        const languageButton = document.getElementById('language-button');
+        const supportButton = document.getElementById('support-button');
+        const shareButton = document.getElementById('share-button');
+
+        // Define a color palette for alternating card colors
+        const colorPalette = ['#ADD8E6', '#B3E5FC', '#81D4FA', '#4FC3F7', '#FFB6C1', '#90EE90'];
+
+        // Function to transform Substack URL for English using Google Translate (if needed)
+        function getTranslatedSubstackLink(originalLink) {
+            if (currentLanguage === 'it') {
+                return originalLink;
+            } else if (currentLanguage === 'en') {
+                // Parse the original URL
+                try {
+                    const url = new URL(originalLink);
+                    const originalDomain = url.hostname; // e.g., fortissimo.substack.com
+                    const translatedDomain = originalDomain.replace(/\./g, '-') + '.translate.goog';
+                    const translatedURL = `https://${translatedDomain}${url.pathname}?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=it&_x_tr_hist=true`;
+                    return translatedURL;
+                } catch (error) {
+                    console.error('Invalid URL:', originalLink);
+                    return originalLink; // Fallback to original link if invalid
+                }
+            }
+            return originalLink; // Default fallback
+        }
+
+        // Function to initialize the app
+        async function initializeApp() {
+            buttonsContainer.innerHTML = '';
+            cardsWrapper.innerHTML = '';
+            currentIndex = 0;
+
+            // Fetch content based on current language
+            let contentURL = '';
+            if (currentLanguage === 'it') {
+                contentURL = 'content_it.json';
+                languageButton.textContent = 'English 🇬🇧';
+            } else if (currentLanguage === 'en') {
+                contentURL = 'content_en.json';
+                languageButton.textContent = 'Italian 🇮🇹';
+            }
+
+            try {
+                const response = await fetch(contentURL);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const content = await response.json();
+                let { publications } = content;
+
+                // No need to sort publications here unless required
+
+                // Prepare buttons and cards
+                // Since emoji buttons are already in the header, we don't need to create header buttons dynamically
+
+                // Initially, display all categories or a default category
+                // For this example, let's display a default message
+                cardsWrapper.innerHTML = '<p style="text-align:center;">Seleziona una categoria con le emoji sopra per visualizzare i contenuti.</p>';
+                progressBar.style.width = '0%';
+            } catch (error) {
+                console.error('Error fetching content:', error);
+                buttonsContainer.innerHTML = '<p>Errore nel caricamento del contenuto.</p>';
+            }
+        }
+
+        // Function to fetch and display cards based on category
+        async function fetchAndDisplayCards(category) {
+            // Fetch content based on current language
+            let contentURL = '';
+            if (currentLanguage === 'it') {
+                contentURL = 'content_it.json';
+            } else if (currentLanguage === 'en') {
+                contentURL = 'content_en.json';
+            }
+
+            try {
+                const response = await fetch(contentURL);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const content = await response.json();
+                let { publications } = content;
+
+                // Filter publications based on the selected category
+                const filteredPublications = publications.filter(pub => pub.category === category);
+
+                // Select the first 10 publications
+                const selectedCards = filteredPublications.slice(0, 10);
+
+                displayCards(selectedCards);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                cardsWrapper.innerHTML = '<p style="text-align:center;">Errore nel caricamento dei contenuti.</p>';
+            }
+        }
+
+        // Function to display the cards
+        function displayCards(cards) {
+            // Clear existing cards
+            cardsWrapper.innerHTML = '';
+
+            if (cards.length === 0) {
+                cardsWrapper.innerHTML = '<p style="text-align:center;">Nessun contenuto disponibile per questa categoria.</p>';
+                progressBar.style.width = '0%';
+                return;
+            }
+
+            // Iterate over the cards and create elements
+            cards.forEach((card, index) => {
+                const cardDiv = document.createElement('div');
+                cardDiv.className = 'card';
+                cardDiv.style.backgroundColor = colorPalette[index % colorPalette.length];
+
+                const cardContent = document.createElement('div');
+                cardContent.className = 'card-content';
+
+                // Add Substack Button
+                const substackButton = document.createElement('div');
+                substackButton.className = 'substackButton';
+                substackButton.textContent = 'Read on Substack';
+                substackButton.style.cursor = 'pointer';
+                substackButton.style.marginBottom = '10px';
+                substackButton.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Prevent card click event
+                    window.open(card.substackLink, '_blank');
+                });
+                cardContent.appendChild(substackButton);
+
+                // Add title
+                const title = document.createElement('h2');
+                title.className = 'section-title';
+                title.textContent = card.title;
+                cardContent.appendChild(title);
+
+                // Add content
+                const content = document.createElement('p');
+                content.textContent = card.content;
+                cardContent.appendChild(content);
+
+                // Add link
+                const link = document.createElement('a');
+                link.href = card.link;
+                link.textContent = 'Read More';
+                link.target = '_blank';
+                cardContent.appendChild(link);
+
+                cardDiv.appendChild(cardContent);
+                cardsWrapper.appendChild(cardDiv);
+
+                // Add click event to the card-content only
+                cardContent.addEventListener('click', () => {
+                    const translatedLink = getTranslatedSubstackLink(card.substackLink);
+                    window.open(translatedLink, '_blank');
+                });
+            });
+
+            // Update progress bar
+            showCard(0);
+        }
+
+        // Function to display the progress bar
+        function showCard(index) {
+            currentIndex = index;
+            const totalCards = cardsWrapper.children.length;
+            const progress = ((index + 1) / totalCards) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+
+        // Language switch functionality
+        languageButton.addEventListener('click', () => {
+            currentLanguage = currentLanguage === 'it' ? 'en' : 'it';
+            initializeApp();
+        });
+
+        // Support button functionality
+        supportButton.addEventListener('click', () => {
+            window.location.href = 'mailto:support@futurofortissimo.com';
+        });
+
+        // Share button functionality
+        shareButton.addEventListener('click', () => {
+            const pageURL = window.location.href;
+            const pageTitle = document.title;
+
+            if (navigator.share) {
+                navigator.share({
+                    title: pageTitle,
+                    url: pageURL
+                }).then(() => {
+                    console.log('Thanks for sharing!');
+                })
+                .catch(console.error);
+            } else {
+                // Fallback: Copy to clipboard
+                navigator.clipboard.writeText(pageURL).then(() => {
+                    alert('URL copiato negli appunti!');
+                }, (err) => {
+                    console.error('Could not copy text: ', err);
+                });
+            }
+        });
+
+        // Add event listeners to emoji buttons
+        document.querySelectorAll('.emoji-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.getAttribute('data-category');
+                fetchAndDisplayCards(category);
+            });
+        });
+
+        // Initialize the app after the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeApp();
+        });
+    </script>
 </body>
-
-
 </html>
-
