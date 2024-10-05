@@ -653,14 +653,23 @@
             div.className = `content-block ${type}`;
 
             contents.forEach(item => {
-                const p = document.createElement('p');
-                p.textContent = item;
+                let p;
+                if (type === 'questions') {
+                    p = document.createElement('p');
+                    p.textContent = `${item}`;  // Prefix "Q" for clarity
+                    p.style.fontWeight = 'bold';  // Styling questions
+                } else if (type === 'quotes') {
+                    p = document.createElement('blockquote');  // Use blockquote for quotes
+                    p.textContent = item;
+                } else {
+                    p = document.createElement('p');
+                    p.textContent = item;
+                }
                 div.appendChild(p);
             });
 
             return div;
         }
-
         // Function to create a card
         function createCard(chapter) {
             const card = document.createElement('div');
