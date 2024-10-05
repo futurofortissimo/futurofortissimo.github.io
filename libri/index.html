@@ -2,158 +2,490 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Libri Futuro Fortissimo</title>
+    <title>Futuro Fortissimo - Libri</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Import Montserrat font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <!-- Favicon -->
     <link rel="icon" href="/index_files/ff.webp" type="image/webp">
     <link rel="apple-touch-icon" href="/index_files/ff.webp">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-
     <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
-            margin: 0;
-            padding: 0;
+        /* Root variables */
+        :root {
+            --theme-color: #ADD8E6; /* Light blue */
+            --button-hover-scale: 1.05; /* Scale factor for hover effect */
+            --button-transition: transform 0.2s ease-in-out;
+            --card-border-color: #000;
+            --button-bg-color: #ADD8E6;
+            --button-text-color: #fff;
+            --button-hover-bg-color: #7ec0ee;
         }
 
-        /* Header with only the logo */
-        header {
+        /* Basic styles */
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fff;
+            color: #333;
+            overflow-y: auto; /* Allow vertical scrolling */
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* App container */
+        .app-container {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+            padding-bottom: 60px; /* Space for fixed footer */
+        }
+
+        /* Header with logo and buttons */
+        .header {
+            display: flex;
             align-items: center;
-            background-color: #ADD8E6; /* Light blue background */
-            padding: 15px;
+            background-color: var(--theme-color);
+            padding: 10px 20px;
+            flex-shrink: 0;
+            flex-wrap: nowrap;
+            justify-content: space-between;
             position: fixed;
-            width: 100%;
             top: 0;
+            width: 100%;
             z-index: 1000;
-            border-bottom: 2px solid #333; /* Adds a border at the bottom of the header */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .logo {
-            height: 60px;
+            height: 50px;
             cursor: pointer;
         }
 
-        /* Content section starts below header */
-        .content {
-            font-family: 'Montserrat', sans-serif;
-
-            margin-top: 100px; /* Adds space to prevent content being under header */
-            padding: 20px;
-        }
-
-        .book-section {
-            font-family: 'Montserrat', sans-serif;
-
+        /* Buttons container inside header */
+        .buttons-container {
             display: flex;
-            flex-wrap: wrap;
+            gap: 10px;
+            flex-grow: 1;
             justify-content: center;
-            gap: 20px;
-            margin-top: 20px; /* Reduced space */
         }
 
-        .book-card {
+        /* Buttons */
+        .button {
+            padding: 8px 16px;
+            background-color: var(--button-bg-color);
+            color: var(--button-text-color);
+            border: none;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 14px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out, background-color 0.2s;
             font-family: 'Montserrat', sans-serif;
-            background-color: white;
-            border: 2px solid black;
+        }
+
+        .button:hover {
+            transform: scale(var(--button-hover-scale));
+            background-color: var(--button-hover-bg-color);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Progress bar */
+        .progress-bar {
+            height: 5px;
+            background-color: #4CAF50; /* Green */
+            width: 0%;
+            transition: width 0.5s ease-in-out;
+            flex-shrink: 0;
+            position: fixed;
+            top: 60px; /* Adjust based on header height */
+            left: 0;
+            z-index: 999;
+        }
+
+        /* Cards container */
+        .cards-container {
+            flex: 1;
+            overflow: auto; /* Allow vertical scrolling */
+            padding: 80px 20px 20px; /* Adjust padding to account for fixed header */
+            box-sizing: border-box;
+        }
+
+        /* Individual book card */
+        .book-card {
+            background-color: #fff;
+            border: 2px solid var(--card-border-color);
             border-radius: 10px;
             padding: 15px;
-            width: 250px;
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: left;
+            align-items: center;
         }
 
         .book-card img {
             width: 100%;
+            max-width: 200px;
+            height: auto;
             border-radius: 10px;
             cursor: pointer;
+            margin-bottom: 15px;
         }
 
-        .book-title, .book-author {
+        .book-details {
+            width: 100%;
             text-align: left;
+            margin-bottom: 15px;
         }
 
         .book-title {
-            font-family: 'Montserrat', sans-serif;
-
-            font-size: 16px;
+            font-size: 20px;
             font-weight: bold;
-            margin: 8px 0 4px; /* Reduced space */
+            margin-bottom: 8px;
         }
 
-        .book-author {
-            font-family: 'Montserrat', sans-serif;
-
-            font-size: 14px;
+        .book-author,
+        .book-year,
+        .book-pages {
+            font-size: 16px;
+            margin-bottom: 4px;
             color: #555;
-            margin-bottom: 8px; /* Reduced space */
         }
 
-        .text-container {
-            flex-grow: 1;
+        .book-buttons {
             display: flex;
-            flex-direction: column;
+            gap: 10px;
+            width: 100%;
             justify-content: flex-end;
+        }
+
+        .book-buttons .button {
+            flex: 1;
+            padding: 10px 0;
+            font-size: 16px;
+        }
+
+        /* Footer */
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--theme-color);
+            padding: 10px 20px;
+            flex-shrink: 0;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+            z-index: 1000; /* Ensure it stays on top */
+        }
+
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: nowrap; /* Prevent wrapping on small screens */
+            gap: 15px; /* Space between buttons */
+        }
+
+        .footer-content a,
+        .footer-content button {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+            cursor: pointer;
+            background-color: #fff;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 20px;
+            font-family: 'Montserrat', sans-serif;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* For hover animation */
+        }
+
+        .footer-content a img {
+            height: 24px;
+            width: auto;
+            margin-right: 8px; /* Space between icon and text */
+        }
+
+        /* Hover "pop-up" animation */
+        .footer-content a:hover,
+        .footer-content button:hover {
+            transform: scale(var(--button-hover-scale));
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .footer-content {
+                flex-wrap: nowrap; /* Keep buttons on the same line */
+                justify-content: center; /* Centers items horizontally */
+                overflow-x: auto;
+                gap: 10px;
+            }
+
+            .footer-content a,
+            .footer-content button {
+                flex: 0 0 auto;
+                white-space: nowrap;
+            }
+
+            /* Adjust header if necessary */
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .buttons-container {
+                justify-content: flex-start;
+                margin-top: 10px;
+                width: 100%;
+                overflow-x: auto;
+            }
+
+            .book-card {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .book-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .book-buttons .button {
+                flex: none;
+                width: 100%;
+            }
+        }
+
+        /* Optional: Adjustments for Very Small Screens */
+        @media (max-width: 400px) {
+            .footer-content a img,
+            .footer-content .donut-link img {
+                height: 20px;
+            }
+
+            .footer-content .share-button,
+            .footer-content .support-button,
+            .footer-content .language-button {
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+
+            .logo {
+                height: 35px; /* Reduce logo size */
+            }
         }
     </style>
 </head>
-
 <body>
+    <div class="app-container">
+        <!-- Header with logo and buttons -->
+        <div class="header">
+            <a href="https://futurofortissimo.github.io/">
+                <img src="/index_files/ff.png" alt="Logo" class="logo">
+            </a>
+            <!-- Buttons inside header -->
+            <div class="buttons-container" id="buttons-container">
+                <!-- Buttons will be dynamically inserted here -->
+            </div>
+        </div>
 
-<header>
-    <a href="https://futurofortissimo.github.io/">
-        <img src="/index_files/ff.png" alt="Logo" class="logo">
-    </a>
-</header>
+        <!-- Progress bar -->
+        <div class="progress-bar" id="progress-bar"></div>
 
-<div class="content">
-    <!-- Book Section -->
-    <div class="book-section">
-        <script>
-            fetch('books.json')
-                .then(response => response.json())
-                .then(data => {
-                    data.forEach(book => {
-                        const bookCard = document.createElement('div');
-                        bookCard.className = 'book-card';
-
-                        const bookLink = document.createElement('a');
-                        bookLink.href = book.link; // Make the image clickable and link to the book URL
-
-                        const bookImage = document.createElement('img');
-                        bookImage.src = book.image; // Fetch the image
-                        bookImage.alt = book.title; // Set alt text
-
-                        bookLink.appendChild(bookImage); // Append image inside the link
-                        bookCard.appendChild(bookLink); // Append the link (with image) to the card
-
-                        const textContainer = document.createElement('div');
-                        textContainer.className = 'text-container';
-
-                        const bookTitle = document.createElement('div');
-                        bookTitle.className = 'book-title';
-                        bookTitle.textContent = book.title;
-
-                        const bookAuthor = document.createElement('div');
-                        bookAuthor.className = 'book-author';
-                        bookAuthor.textContent = book.author;
-
-                        textContainer.appendChild(bookTitle);
-                        textContainer.appendChild(bookAuthor);
-
-                        bookCard.appendChild(textContainer);
-                        document.querySelector('.book-section').appendChild(bookCard);
-                    });
-                })
-                .catch(error => console.error('Error loading the JSON file:', error));
-        </script>
+        <!-- Cards -->
+        <div class="cards-container" id="cards-container">
+            <!-- Book cards will be dynamically inserted here -->
+        </div>
     </div>
-</div>
 
+    <footer>
+        <div class="footer-content">
+            <!-- Share Button as a link -->
+            <a href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io/" style="border-radius:20px" class="share-button">Share</a>
+            <!-- Support Button as a link -->
+            <a href="https://www.paypal.com/paypalme/michelemerelli" style="border-radius:20px" class="support-button">Support</a>
+            <!-- English Language Button -->
+            <a class="language-button" id="language-button" style="border-radius:20px">English</a>
+        </div>
+    </footer>
+
+    <script>
+        let currentLanguage = 'it';
+
+        const buttonsContainer = document.getElementById('buttons-container');
+        const cardsContainer = document.getElementById('cards-container');
+        const progressBar = document.getElementById('progress-bar');
+        const languageButton = document.getElementById('language-button');
+
+        // Function to initialize the app
+        async function initializeApp() {
+            buttonsContainer.innerHTML = '';
+            cardsContainer.innerHTML = '';
+
+            // Fetch content based on current language
+            let contentURL = '';
+            if (currentLanguage === 'it') {
+                contentURL = 'books_it.json';
+                languageButton.textContent = 'English';
+            } else if (currentLanguage === 'en') {
+                contentURL = 'books_en.json';
+                languageButton.textContent = 'Italian';
+            }
+
+            try {
+                const response = await fetch(contentURL);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const content = await response.json();
+                let { books } = content;
+
+                // Sort books alphabetically by title
+                books.sort((a, b) => a.title.localeCompare(b.title));
+
+                // Prepare buttons and cards
+                books.forEach((book, index) => {
+                    createButton(book.title, index);
+                    createBookCard(book, index);
+                });
+
+                updateProgressBar();
+
+            } catch (error) {
+                console.error('Error fetching content:', error);
+                buttonsContainer.innerHTML = '<p>Errore nel caricamento del contenuto.</p>';
+            }
+        }
+
+        // Function to create a button in the header
+        function createButton(label, index) {
+            const button = document.createElement('button');
+            button.className = 'button';
+            button.textContent = label;
+            button.addEventListener('click', () => {
+                scrollToBook(index);
+            });
+            buttonsContainer.appendChild(button);
+        }
+
+        // Function to create a book card
+        function createBookCard(book, index) {
+            const bookCard = document.createElement('div');
+            bookCard.className = 'book-card';
+            bookCard.id = `book-${index}`;
+
+            // Book Cover Image
+            const bookImage = document.createElement('img');
+            bookImage.src = book.coverImage;
+            bookImage.alt = book.title;
+            bookImage.addEventListener('click', () => {
+                window.open(book.readMoreLink, '_blank');
+            });
+
+            bookCard.appendChild(bookImage);
+
+            // Book Details
+            const bookDetails = document.createElement('div');
+            bookDetails.className = 'book-details';
+
+            const bookTitle = document.createElement('div');
+            bookTitle.className = 'book-title';
+            bookTitle.textContent = book.title;
+
+            const bookAuthor = document.createElement('div');
+            bookAuthor.className = 'book-author';
+            bookAuthor.textContent = `Autore: ${book.author}`;
+
+            const bookYear = document.createElement('div');
+            bookYear.className = 'book-year';
+            bookYear.textContent = `Anno: ${book.year}`;
+
+            const bookPages = document.createElement('div');
+            bookPages.className = 'book-pages';
+            bookPages.textContent = `Pagine: ${book.pages}`;
+
+            bookDetails.appendChild(bookTitle);
+            bookDetails.appendChild(bookAuthor);
+            bookDetails.appendChild(bookYear);
+            bookDetails.appendChild(bookPages);
+
+            bookCard.appendChild(bookDetails);
+
+            // Book Buttons
+            const bookButtons = document.createElement('div');
+            bookButtons.className = 'book-buttons';
+
+            const buyButton = document.createElement('button');
+            buyButton.className = 'button';
+            buyButton.textContent = 'Buy';
+            buyButton.addEventListener('click', () => {
+                window.open(book.buyLink, '_blank');
+            });
+
+            const readMoreButton = document.createElement('button');
+            readMoreButton.className = 'button';
+            readMoreButton.textContent = 'Read more';
+            readMoreButton.addEventListener('click', () => {
+                window.open(book.readMoreLink, '_blank');
+            });
+
+            bookButtons.appendChild(buyButton);
+            bookButtons.appendChild(readMoreButton);
+
+            bookCard.appendChild(bookButtons);
+
+            cardsContainer.appendChild(bookCard);
+        }
+
+        // Function to scroll to a specific book
+        function scrollToBook(index) {
+            const bookElement = document.getElementById(`book-${index}`);
+            if (bookElement) {
+                bookElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                updateProgressBarForBook(bookElement);
+            }
+        }
+
+        // Function to update the progress bar based on scroll position
+        function updateProgressBar() {
+            const totalBooks = document.querySelectorAll('.book-card').length;
+            const update = () => {
+                const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrollFraction = scrollTop / scrollHeight;
+                const progress = scrollFraction * 100;
+                progressBar.style.width = `${progress}%`;
+            };
+
+            window.addEventListener('scroll', update);
+            update();
+        }
+
+        // Function to update progress bar for a specific book
+        function updateProgressBarForBook(bookElement) {
+            const rect = bookElement.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            const progress = Math.min(Math.max((windowHeight - rect.top) / windowHeight, 0), 1) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+
+        // Language switch functionality
+        languageButton.addEventListener('click', () => {
+            currentLanguage = currentLanguage === 'it' ? 'en' : 'it';
+            initializeApp();
+        });
+
+        // Initialize the app after the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeApp();
+        });
+    </script>
 </body>
 </html>
