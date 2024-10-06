@@ -232,7 +232,6 @@
         }
 
         /* Footer */
-        /* Footer */
         footer {
             position: fixed;
             bottom: 0;
@@ -263,9 +262,10 @@
             background-color: #fff;
             padding: 8px 12px;
             border: none;
-            border-radius: 5px;
+            border-radius: 20px;
             font-family: 'Montserrat', sans-serif;
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* For hover animation */
+            font-size: 14px;
         }
 
         .footer-content a img {
@@ -279,65 +279,6 @@
         .footer-content button:hover {
             transform: scale(var(--button-hover-scale));
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-
-        /* Responsive Design */
-        @media (max-width: 600px) {
-            .footer-content {
-                gap: 10px;
-            }
-
-            .footer-content a,
-            .footer-content button {
-                padding: 6px 10px;
-                font-size: 12px;
-            }
-
-            .logo {
-                height: 35px; /* Reduce logo size on small screens */
-            }
-
-            .buttons-container {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
-            }
-
-            .emoji-button {
-                font-size: 24px;
-            }
-
-            .search-refresh-container input[type="text"] {
-                width: 50%;
-            }
-
-            .search-refresh-container button {
-                font-size: 14px;
-                padding: 6px 12px;
-            }
-        }
-
-        /* Optional: Adjustments for Very Small Screens */
-        @media (max-width: 400px) {
-            .footer-content a img {
-                height: 20px;
-            }
-
-            .footer-content .share-button,
-            .footer-content .support-button,
-            .footer-content .language-button {
-                font-size: 12px;
-                padding: 6px 10px;
-            }
-
-            .logo {
-                height: 30px; /* Further reduce logo size */
-            }
-
-            .search-refresh-container input[type="text"] {
-                width: 60%;
-            }
         }
     </style>
 </head>
