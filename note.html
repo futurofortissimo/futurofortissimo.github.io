@@ -271,7 +271,6 @@
         .footer-content a img {
             height: 24px;
             width: auto;
-            margin-right: 8px; /* Space between icon and text */
         }
 
         /* Hover "pop-up" animation */
@@ -280,15 +279,26 @@
             transform: scale(var(--button-hover-scale));
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
+        @media (min-width: 601px) {
+            footer {
+                display: flex;
+            }
+
+            .header {
+                position: relative; /* Reset positioning to default */
+            }
+
+            .cards-container {
+                padding-bottom: 0; /* Remove padding adjustment */
+            }
+        }
     </style>
 </head>
 <body>
     <div class="app-container">
         <!-- Header with logo and emoji buttons -->
         <div class="header">
-            <a href="https://futurofortissimo.github.io/">
-                <img src="/index_files/ff.png" alt="Logo" class="logo">
-            </a>
             <!-- Emoji Buttons inside header -->
             <div class="buttons-container" id="buttons-container">
                 <!-- Emoji Buttons with data-category attributes -->
