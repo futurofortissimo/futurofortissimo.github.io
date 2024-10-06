@@ -323,8 +323,6 @@
             <button id="refreshButton">🔄</button>
         </div>
 
-        <!-- Progress bar -->
-        <div class="progress-bar" id="progress-bar"></div>
 
         <!-- Cards -->
         <div class="cards-container">
@@ -448,7 +446,7 @@
                 allEntries = await fetchAndParseCSV(csvFile);
 
                 // Initialize with 10 random cards
-                displayRandomCards(10);
+                displayRandomCards(20);
             }
 
             // Function to display random cards
@@ -551,7 +549,7 @@
             function performSearch() {
                 const searchText = searchInput.value.toLowerCase().trim();
                 if (searchText === '') {
-                    displayRandomCards(10);
+                    displayRandomCards(20);
                     return;
                 }
 
@@ -562,7 +560,7 @@
                 const searchWords = searchText.split(' ').filter(word => !paroleEscluse.includes(word) && word !== '');
 
                 if (searchWords.length === 0) {
-                    displayRandomCards(10);
+                    displayRandomCards(20);
                     return;
                 }
 
@@ -580,14 +578,14 @@
 
                 // Shuffle and select up to 10
                 const shuffled = filtered.sort(() => 0.5 - Math.random());
-                const selected = shuffled.slice(0, 10);
+                const selected = shuffled.slice(0, 20);
                 displayCards(selected);
             }
 
             // Function to reset all filters and display random cards
             function resetFilters() {
                 searchInput.value = '';
-                displayRandomCards(10);
+                displayRandomCards(20);
             }
 
             // Language switch functionality
@@ -629,7 +627,7 @@
             document.querySelectorAll('.emoji-button').forEach(button => {
                 button.addEventListener('click', () => {
                     const category = button.getAttribute('data-category');
-                    displayFilteredCards(category, 10);
+                    displayFilteredCards(category, 20);
                 });
             });
 
