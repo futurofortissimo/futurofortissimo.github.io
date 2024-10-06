@@ -48,7 +48,7 @@
             display: flex;
             align-items: center;
             background-color: var(--theme-color);
-            padding: 10px 20px;
+            padding: 5px 5px;
             flex-shrink: 0;
             flex-wrap: nowrap;
             justify-content: space-between;
@@ -58,7 +58,7 @@
             height: 40px;
             cursor: pointer;
             flex-shrink: 0;
-            margin-right: 20px;
+            margin-right: 0px;
         }
 
         /* Title with emoji */
@@ -69,6 +69,7 @@
             align-items: center;
             gap: 10px;
             flex-grow: 1;
+            margin-left: 10px;
         }
 
         /* Hide language-switch in header as it's moved to footer */
@@ -95,10 +96,11 @@
         /* Buttons */
         .button {
             flex: 0 0 auto;
+            margin: 0 5px;
             padding: 8px 12px;
             background-color: #fff;
             color: #333;
-            border: none;
+            margin: 9px; /* Corrected typo from 'magin' to 'margin' */
             border-radius: 20px;
             text-align: center;
             font-size: 14px;
@@ -126,81 +128,86 @@
         /* Cards container */
         .cards-container {
             flex: 1;
-            overflow: auto; /* Allow vertical scrolling */
+            overflow: hidden; /* Hide scrollbars to enable sliding */
             position: relative;
-            padding: 20px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        /* Cards wrapper for sliding effect */
+        .cards-wrapper {
             display: flex;
-            justify-content: center;
-            align-items: flex-start;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
         }
 
         /* Individual card */
         .card {
-            max-width: 600px;
-            width: 100%;
-            background-color: #fff;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            border-radius: 10px;
+            flex: 0 0 100%;
+            height: 100%;
             overflow: hidden;
+            background-color: #fff;
+            box-sizing: border-box;
             display: flex;
             flex-direction: column;
+            /* Maintain existing styles */
         }
 
-        /* Card header */
-        .card-header {
-            display: flex;
-            align-items: center;
-            padding: 15px;
-            background-color: var(--theme-color);
+        /* Card content */
+        .card-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px 20px 30px 20px; /* Adjusted padding */
+            box-sizing: border-box;
+            max-width: 450px;
+            margin: 0 auto;
+            cursor: pointer; /* Make card-content clickable */
         }
 
-        .card-header img {
-            height: 100px;
-            width: auto;
-            margin-right: 20px;
-            border-radius: 5px;
-        }
-
-        .card-header .book-title {
+        /* Section styles */
+        .section-title {
+            margin-top: 10px;
+            margin-bottom: 10px;
             font-size: 20px;
             font-weight: bold;
-            flex-grow: 1;
         }
 
-        /* Card body */
-        .card-body {
-            padding: 15px 20px;
+        /* Content block */
+        .content-block {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 10px;
+            word-wrap: break-word; /* Prevent overflow of long words */
+            font-size: 16px;
+            font-weight: bold;
         }
 
-        .card-body p {
-            margin: 10px 0;
-            line-height: 1.6;
+        .paragraphs {
+            background-color: #e0f7fa; /* Light cyan */
+            font-weight: normal;
         }
 
-        .card-body .author {
-            font-style: italic;
-            color: #555;
+        /* Hide scrollbars on card content */
+        .card-content::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
         }
 
-        /* Action buttons */
-        .card-footer {
-            display: flex;
-            justify-content: space-between;
-            padding: 15px 20px;
-            background-color: #f9f9f9;
-        }
-
-        .card-footer a {
-            text-decoration: none;
-            padding: 10px 15px;
+        /* Action button styles */
+        .action-button {
+            padding: 10px 20px;
+            margin: 5px 0;
             background-color: var(--theme-color);
             color: #fff;
+            border: none;
             border-radius: 5px;
-            transition: background-color 0.2s ease-in-out;
-            font-size: 14px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
         }
 
-        .card-footer a:hover {
+        .action-button:hover {
             background-color: #7ec0ee; /* Slightly darker blue */
         }
 
@@ -254,37 +261,85 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
+        /* Content block for darker paragraphs */
+        .darkerParagraphs {
+            background-color: #b2ebf2; /* Slightly darker cyan */
+            font-weight: normal;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* Subsection title */
+        .subsection-title {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
         /* Responsive Design */
         @media (max-width: 600px) {
-            .header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .header-title {
-                margin-bottom: 10px;
-            }
-
-            .buttons-container {
-                flex-wrap: nowrap;
+            .footer-content {
+                flex-wrap: nowrap; /* Keep buttons on the same line */
+                justify-content: center; /* Centers items horizontally */
                 overflow-x: auto;
                 gap: 10px;
             }
 
-            .card-header {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
+            .footer-content a,
+            .footer-content button {
+                flex: 0 0 auto;
+                white-space: nowrap;
             }
 
-            .card-header img {
-                margin-right: 0;
-                margin-bottom: 10px;
+            /* Adjust header if necessary */
+            .header {
+                flex-direction: row;
+                justify-content: space-between; /* Distribute space between logo and buttons */
+                padding: 10px 15px;
             }
 
-            .card-footer {
-                flex-direction: column;
-                gap: 10px;
+            .buttons-container {
+                flex-grow: 1;
+                margin: 0 10px;
+            }
+
+            .header-title {
+                display: none; /* Hide title on small screens if needed */
+            }
+        }
+
+        /* Optional: Adjustments for Very Small Screens */
+        @media (max-width: 400px) {
+            .footer-content a img,
+            .footer-content .donut-link img {
+                height: 20px;
+            }
+
+            .footer-content .share-button,
+            .footer-content .support-button,
+            .footer-content .language-button {
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+
+            .logo {
+                height: 35px; /* Reduce logo size */
+            }
+        }
+
+        @media (min-width: 601px) {
+            footer {
+                display: flex;
+            }
+
+            .header {
+                position: relative; /* Reset positioning to default */
+            }
+
+            .cards-container {
+                padding-bottom: 0; /* Remove padding adjustment */
             }
         }
     </style>
@@ -297,7 +352,7 @@
                 <img src="/index_files/ff.png" alt="Logo" class="logo">
             </a>
             <div class="header-title" id="header-title">
-                <!-- Title with emoji will be inserted here -->
+                <!-- Title with emoji will be inserted here dynamically -->
             </div>
             <!-- Buttons inside header -->
             <div class="buttons-container" id="buttons-container">
@@ -325,7 +380,7 @@
             <!-- Support Button as a link -->
             <a href="https://www.paypal.com/paypalme/michelemerelli" style="border-radius:20px" class="support-button">Support</a>
             <!-- English Language Button -->
-            <a class="language-button" id="language-button" style="border-radius:20px">English</a>
+            <button class="language-button" id="language-button" style="border-radius:20px">English</button>
         </div>
     </footer>
 
@@ -334,22 +389,23 @@
     let currentLanguage = 'it';
     const buttonsContainer = document.getElementById('buttons-container');
     const headerTitle = document.getElementById('header-title');
-    const cardsContainer = document.querySelector('.cards-container');
+    const cardsWrapper = document.getElementById('cards-wrapper');
+    const progressBar = document.querySelector('.progress-bar');
     const languageButton = document.getElementById('language-button');
 
     let booksData = [];
     let currentIndex = 0;
 
-    // Function to fetch JSON data
+    // Function to fetch JSON data based on language
     async function fetchBooks() {
         try {
-            const response = await fetch('books_it.json'); // Adjust path if necessary
+            const response = await fetch(`books_${currentLanguage}.json`); // Load based on language
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
             const data = await response.json();
             booksData = data.books;
-            headerTitle.textContent = data.title;
+            headerTitle.textContent = data.title; // Set header title with emoji
             createButtons();
             createCards();
             showCard(0);
@@ -359,13 +415,13 @@
         }
     }
 
-    // Function to create header buttons
+    // Function to create header buttons with emoji titles
     function createButtons() {
         buttonsContainer.innerHTML = ''; // Clear existing buttons
         booksData.forEach((book, index) => {
             const button = document.createElement('button');
             button.className = 'button';
-            button.textContent = book.title;
+            button.textContent = `${book.emoji} ${book.title}`;
             button.addEventListener('click', () => {
                 showCard(index);
             });
@@ -375,69 +431,68 @@
 
     // Function to create cards for each book
     function createCards() {
-        const cardsWrapper = document.getElementById('cards-wrapper');
         cardsWrapper.innerHTML = ''; // Clear existing cards
 
         booksData.forEach((book) => {
             const card = document.createElement('div');
             card.className = 'card';
 
-            // Card Header with Cover Image and Title
-            const cardHeader = document.createElement('div');
-            cardHeader.className = 'card-header';
+            const cardContent = document.createElement('div');
+            cardContent.className = 'card-content';
 
-            const coverImg = document.createElement('img');
-            coverImg.src = book.coverImage;
-            coverImg.alt=`Copertina di ${book.title} via futuro fortissimo michele merelli`;
+            // Book Title
+            const title = document.createElement('h2');
+            title.className = 'section-title';
+            title.textContent = book.title;
+            cardContent.appendChild(title);
 
-            const bookTitle = document.createElement('div');
-            bookTitle.className = 'book-title';
-            bookTitle.textContent = book.title;
-
-            cardHeader.appendChild(coverImg);
-            cardHeader.appendChild(bookTitle);
-
-            // Card Body with Author, Year, Pages
-            const cardBody = document.createElement('div');
-            cardBody.className = 'card-body';
-
-            const author = document.createElement('p');
-            author.className = 'author';
+            // Author
+            const author = document.createElement('div');
+            author.className = 'content-block paragraphs';
             author.textContent = `Autore: ${book.author}`;
+            cardContent.appendChild(author);
 
-            const year = document.createElement('p');
+            // Year
+            const year = document.createElement('div');
+            year.className = 'content-block paragraphs';
             year.textContent = `Anno di Pubblicazione: ${book.year}`;
+            cardContent.appendChild(year);
 
-            const pages = document.createElement('p');
+            // Pages
+            const pages = document.createElement('div');
+            pages.className = 'content-block paragraphs';
             pages.textContent = `Pagine: ${book.pages}`;
+            cardContent.appendChild(pages);
 
-            cardBody.appendChild(author);
-            cardBody.appendChild(year);
-            cardBody.appendChild(pages);
+            // Cover Image
+            const coverImage = document.createElement('img');
+            coverImage.src = book.coverImage;
+            coverImage.alt={`Copertina di ${book.title}`;
+            coverImage.style.width = '100%';
+            coverImage.style.borderRadius = '10px';
+            coverImage.style.marginTop = '15px';
+            cardContent.appendChild(coverImage);
 
-            // Card Footer with Buy and Read More Links
-            const cardFooter = document.createElement('div');
-            cardFooter.className = 'card-footer';
+            // Action Buttons
+            const buyButton = document.createElement('a');
+            buyButton.href = book.buyLink;
+            buyButton.target = '_blank';
+            buyButton.className = 'action-button';
+            buyButton.textContent = currentLanguage === 'it' ? 'Acquista' : 'Buy';
 
-            const buyLink = document.createElement('a');
-            buyLink.href = book.buyLink;
-            buyLink.target = '_blank';
-            buyLink.textContent = 'Acquista';
+            const readMoreButton = document.createElement('a');
+            readMoreButton.href = book.readMoreLink;
+            readMoreButton.target = '_blank';
+            readMoreButton.className = 'action-button';
+            readMoreButton.textContent = currentLanguage === 'it' ? 'Leggi di più' : 'Read More';
 
-            const readMoreLink = document.createElement('a');
-            readMoreLink.href = book.readMoreLink;
-            readMoreLink.target = '_blank';
-            readMoreLink.textContent = 'Leggi di più';
+            cardContent.appendChild(buyButton);
+            cardContent.appendChild(readMoreButton);
 
-            cardFooter.appendChild(buyLink);
-            cardFooter.appendChild(readMoreLink);
+            // Append card content to card
+            card.appendChild(cardContent);
 
-            // Assemble Card
-            card.appendChild(cardHeader);
-            card.appendChild(cardBody);
-            card.appendChild(cardFooter);
-
-            // Append Card to Wrapper
+            // Append card to wrapper
             cardsWrapper.appendChild(card);
         });
     }
@@ -445,18 +500,10 @@
     // Function to display a specific card
     function showCard(index) {
         currentIndex = index;
-        const cardsWrapper = document.getElementById('cards-wrapper');
-        const cardWidth = cardsContainer.clientWidth;
-        cardsWrapper.style.transform = `translateX(-${index * cardWidth}px)`;
-        updateProgressBar();
-        scrollButtonIntoView(index);
-    }
-
-    // Function to update progress bar
-    function updateProgressBar() {
-        const progressBar = document.querySelector('.progress-bar');
-        const progress = ((currentIndex + 1) / booksData.length) * 100;
+        cardsWrapper.style.transform = `translateX(-${index * 100}%)`;
+        const progress = ((index + 1) / booksData.length) * 100;
         progressBar.style.width = `${progress}%`;
+        scrollButtonIntoView(index);
     }
 
     // Function to scroll the active button into view
@@ -467,10 +514,14 @@
         }
     }
 
-    // Swipe functionality for mobile and desktop
+    // Swipe functionality
     let startX = 0;
     let isDown = false;
+    let isScrolling = false;
 
+    const cardsContainer = document.querySelector('.cards-container');
+
+    // Touch events for mobile
     cardsContainer.addEventListener('touchstart', touchStart, false);
     cardsContainer.addEventListener('touchmove', touchMove, false);
     cardsContainer.addEventListener('touchend', touchEnd, false);
@@ -478,6 +529,8 @@
     function touchStart(evt) {
         startX = evt.touches[0].clientX;
         isDown = true;
+        isScrolling = false;
+        cardsWrapper.style.transition = 'none';
     }
 
     function touchMove(evt) {
@@ -485,61 +538,95 @@
         const x = evt.touches[0].clientX;
         const deltaX = x - startX;
 
-        // Threshold for swipe
-        if (deltaX > 50 && currentIndex > 0) {
-            showCard(currentIndex - 1);
-            isDown = false;
-        } else if (deltaX < -50 && currentIndex < booksData.length - 1) {
-            showCard(currentIndex + 1);
-            isDown = false;
+        // Determine if the user is scrolling vertically
+        if (!isScrolling) {
+            const y = evt.touches[0].clientY;
+            const deltaY = Math.abs(y - evt.touches[0].clientY);
+            isScrolling = Math.abs(deltaY) > Math.abs(deltaX);
+        }
+
+        // Only allow horizontal swiping if not scrolling vertically
+        if (!isScrolling) {
+            evt.preventDefault(); // Prevent default scrolling
+            const percentage = (deltaX / window.innerWidth) * 100;
+            const offset = -currentIndex * 100 + percentage;
+            cardsWrapper.style.transform = `translateX(${offset}%)`;
         }
     }
 
     function touchEnd(evt) {
+        if (!isDown) return;
         isDown = false;
+        if (!isScrolling) {
+            const endX = evt.changedTouches[0].clientX;
+            const deltaX = endX - startX;
+            if (deltaX < -50 && currentIndex < booksData.length - 1) {
+                currentIndex++;
+            } else if (deltaX > 50 && currentIndex > 0) {
+                currentIndex--;
+            }
+            cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
+            showCard(currentIndex);
+        }
     }
 
     // Mouse events for desktop
-    let mouseDownFlag = false;
-    let mouseStartX = 0;
-
     cardsContainer.addEventListener('mousedown', mouseDown, false);
     cardsContainer.addEventListener('mousemove', mouseMove, false);
     cardsContainer.addEventListener('mouseup', mouseUp, false);
-    cardsContainer.addEventListener('mouseleave', mouseLeave, false);
+    cardsContainer.addEventListener('mouseleave', mouseUp, false);
 
     function mouseDown(evt) {
-        mouseDownFlag = true;
-        mouseStartX = evt.clientX;
+        startX = evt.clientX;
+        isDown = true;
+        isScrolling = false;
+        cardsWrapper.style.transition = 'none';
     }
 
     function mouseMove(evt) {
-        if (!mouseDownFlag) return;
+        if (!isDown) return;
         const x = evt.clientX;
-        const deltaX = x - mouseStartX;
+        const deltaX = x - startX;
 
-        // Threshold for swipe
-        if (deltaX > 50 && currentIndex > 0) {
-            showCard(currentIndex - 1);
-            mouseDownFlag = false;
-        } else if (deltaX < -50 && currentIndex < booksData.length - 1) {
-            showCard(currentIndex + 1);
-            mouseDownFlag = false;
+        // Determine if the user is scrolling vertically
+        if (!isScrolling) {
+            const y = evt.clientY;
+            const deltaY = Math.abs(y - evt.clientY);
+            isScrolling = Math.abs(deltaY) > Math.abs(deltaX);
+        }
+
+        // Only allow horizontal swiping if not scrolling vertically
+        if (!isScrolling) {
+            evt.preventDefault(); // Prevent default scrolling
+            const percentage = (deltaX / window.innerWidth) * 100;
+            const offset = -currentIndex * 100 + percentage;
+            cardsWrapper.style.transform = `translateX(${offset}%)`;
         }
     }
 
     function mouseUp(evt) {
-        mouseDownFlag = false;
+        if (!isDown) return;
+        isDown = false;
+        if (!isScrolling) {
+            const endX = evt.clientX;
+            const deltaX = endX - startX;
+            if (deltaX < -50 && currentIndex < booksData.length - 1) {
+                currentIndex++;
+            } else if (deltaX > 50 && currentIndex > 0) {
+                currentIndex--;
+            }
+            cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
+            showCard(currentIndex);
+        }
     }
 
-    function mouseLeave(evt) {
-        mouseDownFlag = false;
-    }
-
-    // Language switch functionality (if needed in future)
+    // Language switch functionality
     languageButton.addEventListener('click', () => {
-        // Implement language switch logic if multilingual support is desired
-        alert('Funzionalità di cambio lingua non implementata.');
+        currentLanguage = currentLanguage === 'it' ? 'en' : 'it';
+        // Update language button text
+        languageButton.textContent = currentLanguage === 'it' ? 'English' : 'Italiano';
+        // Fetch and reload books
+        fetchBooks();
     });
 
     // Initialize the app after the DOM is fully loaded
