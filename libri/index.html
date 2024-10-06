@@ -48,7 +48,7 @@
             display: flex;
             align-items: center;
             background-color: var(--theme-color);
-            padding: 5px 5px;
+            padding: 10px 20px;
             flex-shrink: 0;
             flex-wrap: nowrap;
             justify-content: space-between;
@@ -58,7 +58,7 @@
             height: 40px;
             cursor: pointer;
             flex-shrink: 0;
-            margin-right: 0px;
+            margin-right: 20px;
         }
 
         /* Title with emoji */
@@ -96,11 +96,10 @@
         /* Buttons */
         .button {
             flex: 0 0 auto;
-            margin: 0 5px;
             padding: 8px 12px;
             background-color: #fff;
             color: #333;
-            margin: 9px; /* Corrected typo from 'magin' to 'margin' */
+            border: none;
             border-radius: 20px;
             text-align: center;
             font-size: 14px;
@@ -205,6 +204,9 @@
             cursor: pointer;
             font-size: 16px;
             width: 100%;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
         }
 
         .action-button:hover {
@@ -379,7 +381,7 @@
             <a href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io/" style="border-radius:20px" class="share-button">Share</a>
             <!-- Support Button as a link -->
             <a href="https://www.paypal.com/paypalme/michelemerelli" style="border-radius:20px" class="support-button">Support</a>
-            <!-- English Language Button -->
+            <!-- Language Switch Button -->
             <button class="language-button" id="language-button" style="border-radius:20px">English</button>
         </div>
     </footer>
@@ -449,25 +451,25 @@
             // Author
             const author = document.createElement('div');
             author.className = 'content-block paragraphs';
-            author.textContent = `Autore: ${book.author}`;
+            author.textContent = currentLanguage === 'it' ? `Autore: ${book.author}` : `Author: ${book.author}`;
             cardContent.appendChild(author);
 
             // Year
             const year = document.createElement('div');
             year.className = 'content-block paragraphs';
-            year.textContent = `Anno di Pubblicazione: ${book.year}`;
+            year.textContent = currentLanguage === 'it' ? `Anno di Pubblicazione: ${book.year}` : `Publication Year: ${book.year}`;
             cardContent.appendChild(year);
 
             // Pages
             const pages = document.createElement('div');
             pages.className = 'content-block paragraphs';
-            pages.textContent = `Pagine: ${book.pages}`;
+            pages.textContent = currentLanguage === 'it' ? `Pagine: ${book.pages}` : `Pages: ${book.pages}`;
             cardContent.appendChild(pages);
 
             // Cover Image
             const coverImage = document.createElement('img');
             coverImage.src = book.coverImage;
-            coverImage.alt=`Copertina di ${book.title}`;
+            coverImage.alt = currentLanguage === 'it' ? `Copertina di ${book.title}` : `Cover of ${book.title}`;
             coverImage.style.width = '100%';
             coverImage.style.borderRadius = '10px';
             coverImage.style.marginTop = '15px';
@@ -627,11 +629,28 @@
         languageButton.textContent = currentLanguage === 'it' ? 'English' : 'Italiano';
         // Fetch and reload books
         fetchBooks();
+        // Update footer buttons' text
+        updateFooterButtons();
     });
+
+    // Function to update footer buttons' text based on language
+    function updateFooterButtons() {
+        const shareButton = document.querySelector('.share-button');
+        const supportButton = document.querySelector('.support-button');
+
+        if (currentLanguage === 'it') {
+            shareButton.textContent = 'Condividi';
+            supportButton.textContent = 'Supporta';
+        } else {
+            shareButton.textContent = 'Share';
+            supportButton.textContent = 'Support';
+        }
+    }
 
     // Initialize the app after the DOM is fully loaded
     document.addEventListener('DOMContentLoaded', () => {
         fetchBooks();
+        updateFooterButtons(); // Initialize footer buttons' text
     });
     </script>
 </body>
