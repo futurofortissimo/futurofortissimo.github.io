@@ -33,6 +33,11 @@
             min-height: 100vh;
         }
 
+        .content-block.darkerParagraphs {
+            font-weight: bold; /* Ensures all text inside is bold */
+            background-color: #e0f7fa; /* Optional: Maintain existing background */
+        }
+
         /* App container */
         .app-container {
             display: flex;
@@ -490,9 +495,16 @@
                 // Add a line break
                 p.appendChild(document.createElement('br'));
 
-                // Create a text node for the content
-                const contentNode = document.createTextNode(contentText);
-                p.appendChild(contentNode);
+                if (type === 'darkerParagraphs') {
+                    // Wrap contentText in <strong> for bold text
+                    const contentBold = document.createElement('strong');
+                    contentBold.textContent = contentText;
+                    p.appendChild(contentBold);
+                } else {
+                    // Regular text
+                    const contentNode = document.createTextNode(contentText);
+                    p.appendChild(contentNode);
+                }
             }
 
             div.appendChild(p);
@@ -500,6 +512,7 @@
 
         return div;
     }
+
 
     // Function to display a specific card
     function showCard(index) {
