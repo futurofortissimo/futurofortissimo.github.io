@@ -13,19 +13,15 @@
         /* Root variables */
         :root {
             --theme-color: #ADD8E6; /* Light blue */
+            --question-color: #B3E5FC; /* Lighter blue */
+            --data-color: #81D4FA; /* Medium blue */
+            --quote-color: #4FC3F7; /* Darker blue */
             --progress-bar-color: #4CAF50; /* Green */
             --button-hover-scale: 1.05; /* Scale factor for hover effect */
-            --footer-height: 60px;
-            --card-padding: 15px; /* Reduced padding */
-            --card-margin: 10px 0; /* Reduced margin */
-            --card-border-radius: 10px;
-            --card-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             --button-transition: transform 0.2s ease-in-out;
-            --background-color: #f9f9f9;
-            --text-color: #333;
-            --link-color: #1E90FF;
-            --hashtag-color: #555;
-            --note-color: #777;
+            --card-padding: 10px 15px; /* Reduced padding for compactness */
+            --card-margin: 10px; /* Reduced margin */
+            --book-title-color: #ADD8E6; /* Light blue for book title */
         }
 
         /* Basic styles */
@@ -33,7 +29,7 @@
             margin: 0;
             font-family: 'Montserrat', sans-serif;
             background-color: #fff;
-            color: var(--text-color);
+            color: #333;
             overflow-y: auto; /* Allow vertical scrolling */
             display: flex;
             flex-direction: column;
@@ -47,10 +43,10 @@
             flex: 1;
             overflow: hidden;
             position: relative;
-            padding-bottom: var(--footer-height); /* Space for fixed footer */
+            padding-bottom: 60px; /* Space for fixed footer */
         }
 
-        /* Header with logo and emoji buttons */
+        /* Header with logo and buttons */
         .header {
             display: flex;
             align-items: center;
@@ -65,7 +61,23 @@
             height: 40px;
             cursor: pointer;
             flex-shrink: 0;
-            margin-right: 10px;
+            margin-right: 20px;
+        }
+
+        /* Title with emoji */
+        .header-title {
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-grow: 1;
+            margin-left: 10px;
+        }
+
+        /* Hide language-switch in header as it's moved to footer */
+        .language-switch {
+            display: none;
         }
 
         /* Buttons container inside header */
@@ -84,58 +96,26 @@
             display: none; /* WebKit */
         }
 
-        /* Emoji Buttons */
-        .emoji-button {
-            font-size: 30px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.2s ease-in-out;
-        }
-
-        .emoji-button:hover {
-            transform: scale(var(--button-hover-scale));
-        }
-
-        /* Search and Refresh Container */
-        .search-refresh-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            padding: 10px 20px;
-            background-color: #f0f8ff;
-            border-bottom: 1px solid #ccc;
-            flex-shrink: 0;
-        }
-
-        .search-refresh-container input[type="text"] {
-            width: 60%;
+        /* Buttons */
+        .button {
+            flex: 0 0 auto;
             padding: 8px 12px;
-            border: 2px solid #ccc;
-            border-radius: 20px;
-            font-size: 16px;
-            outline: none;
-            transition: border-color 0.3s ease;
-        }
-
-        .search-refresh-container input[type="text"]:focus {
-            border-color: #4CAF50;
-        }
-
-        .search-refresh-container button {
-            padding: 8px 16px;
-            background-color: #4CAF50;
-            color: #fff;
+            background-color: #fff;
+            color: #333;
             border: none;
             border-radius: 20px;
+            text-align: center;
+            font-size: 14px;
             cursor: pointer;
-            font-size: 16px;
-            transition: transform 0.2s ease-in-out;
+            user-select: none;
+            white-space: nowrap;
+            font-family: 'Montserrat', sans-serif; /* Ensure same font */
+            transition: transform 0.2s ease-in-out; /* For hover animation */
         }
 
-        .search-refresh-container button:hover {
+        .button:hover {
             transform: scale(var(--button-hover-scale));
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         /* Progress bar */
@@ -150,85 +130,116 @@
         /* Cards container */
         .cards-container {
             flex: 1;
-            overflow: auto; /* Allow vertical scrolling */
+            overflow: hidden; /* Hide scrollbars to enable sliding */
             position: relative;
-            padding: 20px;
-            background-color: var(--background-color);
-            display: flex;
-            justify-content: center; /* Center the cards */
+            padding-top: 20px;
+            padding-bottom: 20px;
         }
 
-        /* Cards wrapper */
+        /* Cards wrapper for sliding effect */
         .cards-wrapper {
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            max-width: 1200px; /* To limit overall width */
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
             width: 100%;
-            justify-content: center; /* Center the cards */
         }
 
         /* Individual card */
         .card {
+            flex: 0 0 100%;
+            height: 100%;
+            overflow: hidden;
             background-color: #fff;
-            border-radius: var(--card-border-radius);
-            padding: var(--card-padding);
-            box-shadow: var(--card-box-shadow);
-            transition: background-color 0.3s ease;
-            cursor: pointer;
-            max-width: 400px; /* Max width as per request */
-            width: 100%;
+            box-sizing: border-box;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card:hover {
-            background-color: #f0f8ff;
+            padding: var(--card-padding);
+            margin: var(--card-margin) 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         /* Card content */
         .card-content {
+            flex: 1;
+            overflow-y: auto;
+            box-sizing: border-box;
+            max-width: 450px;
+            margin: 0 auto;
+            cursor: pointer; /* Make card-content clickable */
             display: flex;
             flex-direction: column;
-            gap: 5px; /* Less vertical spacing */
+            align-items: center; /* Center content horizontally */
+            background-color: #fff; /* White background */
+            padding: 10px; /* Adjusted padding */
+            border-radius: 10px;
         }
 
+        /* Book Cover Image */
+        .card-content img {
+            width: 100%;
+            max-width: 200px; /* Adjust as needed */
+            border-radius: 10px;
+            margin-bottom: 10px; /* Reduced margin */
+            background-color: #fff; /* Ensure white background */
+        }
+
+        /* Book Title */
         .section-title {
-            margin: 0;
+            margin: 5px 0; /* Reduced margins */
             font-size: 20px;
             font-weight: bold;
-            color: var(--text-color);
-            /* Same style as question */
+            color: var(--book-title-color); /* Light blue color */
+            text-align: center;
         }
 
-        .question {
-            font-size: 20px; /* Same as title */
+        /* Content block */
+        .content-block {
+            margin-bottom: 8px; /* Reduced margin */
+            padding: 5px 10px; /* Reduced padding */
+            border-radius: 5px;
+            word-wrap: break-word; /* Prevent overflow of long words */
+            font-size: 14px; /* Reduced font size */
             font-weight: bold;
-            color: var(--text-color);
-            margin-bottom: 5px; /* Less spacing */
+            width: 100%; /* Full width */
+            background-color: #e0f7fa; /* Light cyan */
+            text-align: center; /* Center text */
         }
 
-        .hashtags {
+        .paragraphs {
+            background-color: #e0f7fa; /* Light cyan */
+            font-weight: normal;
+        }
+
+        /* Hide scrollbars on card content */
+        .card-content::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        /* Action buttons styled like header buttons */
+        .action-button {
+            flex: 0 0 auto;
+            padding: 8px 12px;
+            background-color: #fff;
+            color: #333;
+            border: none;
+            border-radius: 20px;
+            text-align: center;
             font-size: 14px;
-            color: var(--hashtag-color);
-            margin: 0;
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+            font-family: 'Montserrat', sans-serif; /* Ensure same font */
+            transition: transform 0.2s ease-in-out; /* For hover animation */
+            margin: 5px 0; /* Spacing between buttons */
+            width: 100%; /* Full width for consistency */
         }
 
-        .emojis-and-note {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 10px;
-        }
-
-        .emojis {
-            font-size: 20px;
-        }
-
-        .note-number {
-            font-size: 14px;
-            color: var(--note-color);
+        .action-button:hover {
+            transform: scale(var(--button-hover-scale));
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: #f0f0f0; /* Slight background change on hover */
         }
 
         /* Footer */
@@ -279,6 +290,88 @@
         .footer-content button:hover {
             transform: scale(var(--button-hover-scale));
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Content block for darker paragraphs */
+        .darkerParagraphs {
+            background-color: #b2ebf2; /* Slightly darker cyan */
+            font-weight: normal;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* Subsection title */
+        .subsection-title {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .footer-content {
+                flex-wrap: nowrap; /* Keep buttons on the same line */
+                justify-content: center; /* Centers items horizontally */
+                overflow-x: auto;
+                gap: 10px;
+            }
+
+            .footer-content a,
+            .footer-content button {
+                flex: 0 0 auto;
+                white-space: nowrap;
+            }
+
+            /* Adjust header if necessary */
+            .header {
+                flex-direction: row;
+                justify-content: space-between; /* Distribute space between logo and buttons */
+                padding: 10px 15px;
+            }
+
+            .buttons-container {
+                flex-grow: 1;
+                margin: 0 10px;
+            }
+
+            .header-title {
+                display: none; /* Hide title on small screens if needed */
+            }
+        }
+
+        /* Optional: Adjustments for Very Small Screens */
+        @media (max-width: 400px) {
+            .footer-content a img,
+            .footer-content .donut-link img {
+                height: 20px;
+            }
+
+            .footer-content .share-button,
+            .footer-content .support-button,
+            .footer-content .language-button {
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+
+            .logo {
+                height: 35px; /* Reduce logo size */
+            }
+        }
+
+        @media (min-width: 601px) {
+            footer {
+                display: flex;
+            }
+
+            .header {
+                position: relative; /* Reset positioning to default */
+            }
+
+            .cards-container {
+                padding-bottom: 0; /* Remove padding adjustment */
+            }
         }
     </style>
 </head>
