@@ -246,9 +246,10 @@
             background-color: #fff;
             padding: 8px 12px;
             border: none;
-            border-radius: 5px;
+            border-radius: 20px;
             font-family: 'Montserrat', sans-serif;
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* For hover animation */
+            font-size: 14px;
         }
 
         .footer-content a img {
@@ -263,93 +264,12 @@
             transform: scale(var(--button-hover-scale));
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-
-        /* Content block for darker paragraphs */
-        .darkerParagraphs {
-            background-color: #b2ebf2; /* Slightly darker cyan */
-            font-weight: normal;
-            padding: 10px;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
-
-        /* Subsection title */
-        .subsection-title {
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 600px) {
-            .footer-content {
-                flex-wrap: nowrap; /* Keep buttons on the same line */
-                justify-content: center; /* Centers items horizontally */
-                overflow-x: auto;
-                gap: 10px;
-            }
-
-            .footer-content a,
-            .footer-content button {
-                flex: 0 0 auto;
-                white-space: nowrap;
-            }
-
-            /* Adjust header if necessary */
-            .header {
-                flex-direction: row;
-                justify-content: space-between; /* Distribute space between logo and buttons */
-                padding: 10px 15px;
-            }
-
-            .buttons-container {
-                flex-grow: 1;
-                margin: 0 10px;
-            }
-        }
-
-        /* Optional: Adjustments for Very Small Screens */
-        @media (max-width: 400px) {
-            .footer-content a img,
-            .footer-content .donut-link img {
-                height: 20px;
-            }
-
-            .footer-content .share-button,
-            .footer-content .support-button,
-            .footer-content .language-button {
-                font-size: 12px;
-                padding: 6px 10px;
-            }
-
-            .logo {
-                height: 35px; /* Reduce logo size */
-            }
-        }
-
-        @media (min-width: 601px) {
-            footer {
-                display: flex;
-            }
-
-            .header {
-                position: relative; /* Reset positioning to default */
-            }
-
-            .cards-container {
-                padding-bottom: 0; /* Remove padding adjustment */
-            }
-        }
     </style>
 </head>
 <body>
     <div class="app-container">
         <!-- Header with logo and buttons -->
         <div class="header">
-          <a href="https://futurofortissimo.github.io/">
-              <img src="/index_files/ff.png" alt="Logo" class="logo">
-          </a>
             <!-- Buttons inside header -->
             <div class="buttons-container" id="buttons-container">
                 <!-- Buttons will be dynamically inserted here -->
@@ -372,6 +292,9 @@
     <footer>
 
         <div class="footer-content">
+          <a href="https://futurofortissimo.github.io/">
+              <img src="/index_files/ff.png" alt="Logo" class="logo">
+          </a>
             <!-- Share Button as a link -->
             <a href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io/" style="border-radius:20px" class="share-button">Share</a>
             <!-- Support Button as a link -->
