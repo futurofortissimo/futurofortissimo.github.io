@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Futuro Fortissimo - Libri</title>
+    <title>Futuro Fortissimo - Riepilogo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Import Montserrat font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -13,10 +13,12 @@
         /* Root variables */
         :root {
             --theme-color: #ADD8E6; /* Light blue */
-            --button-hover-scale: 1.05; /* Scale factor for hover effect */
+            --question-color: #B3E5FC; /* Lighter blue */
+            --data-color: #81D4FA; /* Medium blue */
+            --quote-color: #4FC3F7; /* Darker blue */
             --progress-bar-color: #4CAF50; /* Green */
-            --button-bg-color: #FFFFFF; /* White background for buttons */
-            --button-text-color: #000000; /* Black text for buttons */
+            --button-hover-scale: 1.05; /* Scale factor for hover effect */
+            --button-transition: transform 0.2s ease-in-out;
         }
 
         /* Basic styles */
@@ -25,7 +27,7 @@
             font-family: 'Montserrat', sans-serif;
             background-color: #fff;
             color: #333;
-            overflow-y: auto;
+            overflow-y: auto; /* Allow vertical scrolling */
             display: flex;
             flex-direction: column;
             min-height: 100vh;
@@ -50,74 +52,66 @@
             flex-shrink: 0;
             flex-wrap: nowrap;
             justify-content: space-between;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .logo {
-            height: 50px;
+            height: 40px;
             cursor: pointer;
             flex-shrink: 0;
+            margin-right: 20px;
+        }
+
+        /* Title with emoji */
+        .header-title {
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-grow: 1;
+        }
+
+        /* Hide language-switch in header as it's moved to footer */
+        .language-switch {
+            display: none;
         }
 
         /* Buttons container inside header */
         .buttons-container {
             display: flex;
-            gap: 10px;
-            flex-grow: 1;
-            justify-content: center;
             overflow-x: auto;
-            padding: 0 10px; /* Added padding for better spacing */
+            flex-grow: 1;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+            position: relative;
+            padding: 0 20px; /* Add padding for fade effect */
+            gap: 10px;
         }
 
         .buttons-container::-webkit-scrollbar {
-            display: none; /* Hide scrollbar */
+            display: none; /* WebKit */
         }
 
-        .buttons-container {
-            -ms-overflow-style: none; /* IE and Edge */
-            scrollbar-width: none; /* Firefox */
-        }
-
-        /* Unified Button Styles */
+        /* Buttons */
         .button {
-            padding: 8px 16px;
-            background-color: var(--button-bg-color);
-            color: var(--button-text-color);
+            flex: 0 0 auto;
+            padding: 8px 12px;
+            background-color: #fff;
+            color: #333;
+            border: none;
             border-radius: 20px;
             text-align: center;
             font-size: 14px;
             cursor: pointer;
-            font-family: 'Montserrat', sans-serif;
+            user-select: none;
             white-space: nowrap;
-            border: none; /* Remove border for header and footer buttons */
+            font-family: 'Montserrat', sans-serif; /* Ensure same font */
+            transition: transform 0.2s ease-in-out; /* For hover animation */
         }
 
-        /* Book Button Styles */
-        .book-button {
-            border: 2px solid var(--button-text-color);
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-        }
-
-        .book-button:hover {
+        .button:hover {
             transform: scale(var(--button-hover-scale));
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            background-color: #f0f0f0;
-        }
-
-        /* Header and Footer Buttons - No Hover Effects */
-        .header-button, .footer-button {
-            transition: none;
-            /* No scaling or shadow on hover */
-        }
-
-        .header-button:hover, .footer-button:hover {
-            transform: none;
-            box-shadow: none;
-            background-color: var(--button-bg-color); /* No change on hover */
         }
 
         /* Progress bar */
@@ -127,102 +121,87 @@
             width: 0%;
             transition: width 0.5s ease-in-out;
             flex-shrink: 0;
-            position: fixed;
-            top: 70px; /* Below the header */
-            left: 0;
-            z-index: 999;
         }
 
         /* Cards container */
         .cards-container {
             flex: 1;
-            overflow: hidden; /* Prevent vertical scrolling to keep one card visible */
+            overflow: auto; /* Allow vertical scrolling */
             position: relative;
-            padding-top: 80px; /* Padding to prevent card being under header */
-            padding-bottom: 20px;
-            box-sizing: border-box;
+            padding: 20px;
             display: flex;
-            justify-content: center; /* Center the card horizontally */
-            align-items: center; /* Center the card vertically if possible */
-        }
-
-        /* Cards wrapper for sliding effect */
-        .cards-wrapper {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-            width: 100%;
+            justify-content: center;
+            align-items: flex-start;
         }
 
         /* Individual card */
         .card {
-            flex: 0 0 400px; /* Fixed width for smaller cards */
-            height: 600px; /* Fixed height for consistency */
-            overflow: hidden;
+            max-width: 600px;
+            width: 100%;
             background-color: #fff;
-            box-sizing: border-box;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
+        }
+
+        /* Card header */
+        .card-header {
+            display: flex;
             align-items: center;
-            padding: 20px;
-            margin: 0 auto; /* Center the card horizontally */
-            border: 2px solid var(--button-text-color); /* Black border */
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            position: relative;
+            padding: 15px;
+            background-color: var(--theme-color);
         }
 
-        /* Book Cover Image */
-        .card img {
-            width: 100%;
-            max-width: 200px;
-            height: auto;
-            border-radius: 10px;
-            cursor: pointer;
-            margin-bottom: 15px;
+        .card-header img {
+            height: 100px;
+            width: auto;
+            margin-right: 20px;
+            border-radius: 5px;
         }
 
-        /* Book Details */
-        .book-details {
-            width: 100%;
-            text-align: center;
-            margin-bottom: 15px;
-            flex-grow: 1; /* Ensure details take up space */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .book-title {
+        .card-header .book-title {
             font-size: 20px;
             font-weight: bold;
-            margin-bottom: 8px;
+            flex-grow: 1;
         }
 
-        .book-author,
-        .book-year,
-        .book-pages {
-            font-size: 16px;
-            margin-bottom: 4px;
+        /* Card body */
+        .card-body {
+            padding: 15px 20px;
+        }
+
+        .card-body p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        .card-body .author {
+            font-style: italic;
             color: #555;
         }
 
-        /* Book Buttons */
-        .book-buttons {
+        /* Action buttons */
+        .card-footer {
             display: flex;
-            gap: 10px;
-            width: 100%;
-            justify-content: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+            background-color: #f9f9f9;
         }
 
-        /* Ensure book buttons use the unified .book-button class */
-        .book-buttons .button {
-            flex: 1;
-            padding: 10px 0;
-            font-size: 16px;
-            border-radius: 20px; /* Match unified button style */
-            cursor: pointer;
-            background-color: var(--button-bg-color);
-            color: var(--button-text-color);
+        .card-footer a {
+            text-decoration: none;
+            padding: 10px 15px;
+            background-color: var(--theme-color);
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.2s ease-in-out;
+            font-size: 14px;
+        }
+
+        .card-footer a:hover {
+            background-color: #7ec0ee; /* Slightly darker blue */
         }
 
         /* Footer */
@@ -235,110 +214,77 @@
             padding: 10px 20px;
             flex-shrink: 0;
             box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-            z-index: 1000;
+            z-index: 1000; /* Ensure it stays on top */
         }
 
         .footer-content {
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-wrap: nowrap;
-            gap: 15px;
+            flex-wrap: nowrap; /* Prevent wrapping on small screens */
+            gap: 15px; /* Space between buttons */
         }
 
-        /* Ensure footer buttons also use the unified .button class */
         .footer-content a,
         .footer-content button {
-            /* Assign both 'button' and 'footer-button' classes in HTML */
-        }
-
-        /* Remove borders and hover effects from footer buttons */
-        .footer-button {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+            cursor: pointer;
+            background-color: #fff;
+            padding: 8px 12px;
             border: none;
-            transition: none;
+            border-radius: 20px;
+            font-family: 'Montserrat', sans-serif;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* For hover animation */
+            font-size: 14px;
         }
 
-        .footer-button:hover {
-            transform: none;
-            box-shadow: none;
-            background-color: var(--button-bg-color);
+        .footer-content a img {
+            height: 24px;
+            width: auto;
+            margin-right: 8px; /* Space between icon and text */
+        }
+
+        /* Hover "pop-up" animation */
+        .footer-content a:hover,
+        .footer-content button:hover {
+            transform: scale(var(--button-hover-scale));
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         /* Responsive Design */
         @media (max-width: 600px) {
-            .footer-content {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .header-title {
+                margin-bottom: 10px;
+            }
+
+            .buttons-container {
                 flex-wrap: nowrap;
-                justify-content: center;
                 overflow-x: auto;
                 gap: 10px;
             }
 
-            .footer-content a,
-            .footer-content button {
-                flex: 0 0 auto;
-                white-space: nowrap;
-            }
-
-            /* Adjust header padding and alignment */
-            .header {
-                flex-direction: row;
-                justify-content: space-between;
-                padding: 10px 15px;
-            }
-
-            .buttons-container {
-                flex-grow: 1;
-                margin: 0 10px;
-            }
-
-            .card {
-                padding: 10px;
-                max-width: 100%;
-                height: auto; /* Adjust height based on content */
-            }
-
-            .book-buttons {
+            .card-header {
                 flex-direction: column;
-                align-items: stretch;
+                align-items: center;
+                text-align: center;
             }
 
-            .book-buttons .button {
-                flex: none;
-                width: 100%;
-                border-radius: 20px;
-            }
-        }
-
-        /* Optional: Adjustments for Very Small Screens */
-        @media (max-width: 400px) {
-            .footer-content a img,
-            .footer-content .donut-link img {
-                height: 20px;
+            .card-header img {
+                margin-right: 0;
+                margin-bottom: 10px;
             }
 
-            .footer-content .share-button,
-            .footer-content .support-button,
-            .footer-content .language-button {
-                font-size: 12px;
-                padding: 6px 10px;
-            }
-
-            .logo {
-                height: 35px;
-            }
-        }
-
-        @media (min-width: 601px) {
-            footer {
-                display: flex;
-            }
-
-            .header {
-                position: fixed;
-            }
-
-            .cards-container {
-                padding-bottom: 0; /* Remove padding adjustment */
+            .card-footer {
+                flex-direction: column;
+                gap: 10px;
             }
         }
     </style>
@@ -350,6 +296,9 @@
             <a href="https://futurofortissimo.github.io/">
                 <img src="/index_files/ff.png" alt="Logo" class="logo">
             </a>
+            <div class="header-title" id="header-title">
+                <!-- Title with emoji will be inserted here -->
+            </div>
             <!-- Buttons inside header -->
             <div class="buttons-container" id="buttons-container">
                 <!-- Buttons will be dynamically inserted here -->
@@ -359,7 +308,7 @@
         </div>
 
         <!-- Progress bar -->
-        <div class="progress-bar" id="progress-bar"></div>
+        <div class="progress-bar"></div>
 
         <!-- Cards -->
         <div class="cards-container">
@@ -372,273 +321,231 @@
     <footer>
         <div class="footer-content">
             <!-- Share Button as a link -->
-            <a href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io/" class="button footer-button">Share</a>
+            <a href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io/" style="border-radius:20px" class="share-button">Share</a>
             <!-- Support Button as a link -->
-            <a href="https://www.paypal.com/paypalme/michelemerelli" class="button footer-button">Support</a>
+            <a href="https://www.paypal.com/paypalme/michelemerelli" style="border-radius:20px" class="support-button">Support</a>
             <!-- English Language Button -->
-            <a class="button footer-button" id="language-button">English</a>
+            <a class="language-button" id="language-button" style="border-radius:20px">English</a>
         </div>
     </footer>
 
     <script>
-        let currentLanguage = 'it';
-        let currentIndex = 0;
-        let cards = [];
+    // Initialize variables
+    let currentLanguage = 'it';
+    const buttonsContainer = document.getElementById('buttons-container');
+    const headerTitle = document.getElementById('header-title');
+    const cardsContainer = document.querySelector('.cards-container');
+    const languageButton = document.getElementById('language-button');
 
-        const buttonsContainer = document.getElementById('buttons-container');
-        const cardsWrapper = document.getElementById('cards-wrapper');
-        const progressBar = document.getElementById('progress-bar');
-        const languageButton = document.getElementById('language-button');
+    let booksData = [];
+    let currentIndex = 0;
 
-        // Function to initialize the app
-        async function initializeApp() {
-            buttonsContainer.innerHTML = '';
-            cardsWrapper.innerHTML = '';
-            cards = [];
-            currentIndex = 0;
-
-            // Fetch content based on current language
-            let contentURL = '';
-            if (currentLanguage === 'it') {
-                contentURL = 'books_it.json';
-                languageButton.textContent = 'English';
-            } else if (currentLanguage === 'en') {
-                contentURL = 'books_en.json';
-                languageButton.textContent = 'Italian';
+    // Function to fetch JSON data
+    async function fetchBooks() {
+        try {
+            const response = await fetch('books.json'); // Adjust path if necessary
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
             }
-
-            try {
-                const response = await fetch(contentURL);
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                const content = await response.json();
-                let { books } = content;
-
-                // Sort books alphabetically by title
-                books.sort((a, b) => a.title.localeCompare(b.title));
-
-                // Prepare buttons and cards
-                books.forEach((book, index) => {
-                    createButton(book.title, index);
-                    createBookCard(book, index);
-                });
-
-                // Show the first card
-                showCard(0);
-            } catch (error) {
-                console.error('Error fetching content:', error);
-                buttonsContainer.innerHTML = '<p>Errore nel caricamento del contenuto.</p>';
-            }
+            const data = await response.json();
+            booksData = data.books;
+            headerTitle.textContent = data.title;
+            createButtons();
+            createCards();
+            showCard(0);
+        } catch (error) {
+            console.error('Error fetching books:', error);
+            buttonsContainer.innerHTML = '<p>Errore nel caricamento dei libri.</p>';
         }
+    }
 
-        // Function to create a button in the header
-        function createButton(label, index) {
+    // Function to create header buttons
+    function createButtons() {
+        buttonsContainer.innerHTML = ''; // Clear existing buttons
+        booksData.forEach((book, index) => {
             const button = document.createElement('button');
-            button.className = 'button header-button';
-            button.textContent = label;
+            button.className = 'button';
+            button.textContent = book.title;
             button.addEventListener('click', () => {
                 showCard(index);
             });
             buttonsContainer.appendChild(button);
-        }
+        });
+    }
 
-        // Function to create a book card
-        function createBookCard(book, index) {
+    // Function to create cards for each book
+    function createCards() {
+        const cardsWrapper = document.getElementById('cards-wrapper');
+        cardsWrapper.innerHTML = ''; // Clear existing cards
+
+        booksData.forEach((book) => {
             const card = document.createElement('div');
             card.className = 'card';
-            card.id = `card-${index}`;
 
-            // Book Cover Image
-            const bookImage = document.createElement('img');
-            bookImage.src = book.coverImage;
-            bookImage.alt = book.title;
-            bookImage.addEventListener('click', () => {
-                window.open(book.readMoreLink, '_blank');
-            });
+            // Card Header with Cover Image and Title
+            const cardHeader = document.createElement('div');
+            cardHeader.className = 'card-header';
 
-            // Handle image load error
-            bookImage.onerror = function() {
-                this.src = '/images/default_cover.jpg'; // Fallback image
-            };
-
-            card.appendChild(bookImage);
-
-            // Book Details
-            const bookDetails = document.createElement('div');
-            bookDetails.className = 'book-details';
+            const coverImg = document.createElement('img');
+            coverImg.src = book.coverImage;
+            coverImg.alt={`Copertina di ${book.title}`;
 
             const bookTitle = document.createElement('div');
             bookTitle.className = 'book-title';
             bookTitle.textContent = book.title;
 
-            const bookAuthor = document.createElement('div');
-            bookAuthor.className = 'book-author';
-            bookAuthor.textContent = `Author: ${book.author}`;
+            cardHeader.appendChild(coverImg);
+            cardHeader.appendChild(bookTitle);
 
-            const bookYear = document.createElement('div');
-            bookYear.className = 'book-year';
-            bookYear.textContent = `Year: ${book.year}`;
+            // Card Body with Author, Year, Pages
+            const cardBody = document.createElement('div');
+            cardBody.className = 'card-body';
 
-            const bookPages = document.createElement('div');
-            bookPages.className = 'book-pages';
-            bookPages.textContent = `Pages: ${book.pages}`;
+            const author = document.createElement('p');
+            author.className = 'author';
+            author.textContent = `Autore: ${book.author}`;
 
-            bookDetails.appendChild(bookTitle);
-            bookDetails.appendChild(bookAuthor);
-            bookDetails.appendChild(bookYear);
-            bookDetails.appendChild(bookPages);
+            const year = document.createElement('p');
+            year.textContent = `Anno di Pubblicazione: ${book.year}`;
 
-            card.appendChild(bookDetails);
+            const pages = document.createElement('p');
+            pages.textContent = `Pagine: ${book.pages}`;
 
-            // Book Buttons
-            const bookButtons = document.createElement('div');
-            bookButtons.className = 'book-buttons';
+            cardBody.appendChild(author);
+            cardBody.appendChild(year);
+            cardBody.appendChild(pages);
 
-            const buyButton = document.createElement('button');
-            buyButton.className = 'button book-button';
-            buyButton.textContent = 'Buy';
-            buyButton.addEventListener('click', () => {
-                window.open(book.buyLink, '_blank');
-            });
+            // Card Footer with Buy and Read More Links
+            const cardFooter = document.createElement('div');
+            cardFooter.className = 'card-footer';
 
-            const readMoreButton = document.createElement('button');
-            readMoreButton.className = 'button book-button';
-            readMoreButton.textContent = 'Read more';
-            readMoreButton.addEventListener('click', () => {
-                window.open(book.readMoreLink, '_blank');
-            });
+            const buyLink = document.createElement('a');
+            buyLink.href = book.buyLink;
+            buyLink.target = '_blank';
+            buyLink.textContent = 'Acquista';
 
-            bookButtons.appendChild(buyButton);
-            bookButtons.appendChild(readMoreButton);
+            const readMoreLink = document.createElement('a');
+            readMoreLink.href = book.readMoreLink;
+            readMoreLink.target = '_blank';
+            readMoreLink.textContent = 'Leggi di più';
 
-            card.appendChild(bookButtons);
+            cardFooter.appendChild(buyLink);
+            cardFooter.appendChild(readMoreLink);
 
+            // Assemble Card
+            card.appendChild(cardHeader);
+            card.appendChild(cardBody);
+            card.appendChild(cardFooter);
+
+            // Append Card to Wrapper
             cardsWrapper.appendChild(card);
-            cards.push(card);
-        }
-
-        // Function to display a specific card
-        function showCard(index) {
-            currentIndex = index;
-            const translateX = -index * 100;
-            cardsWrapper.style.transform = `translateX(${translateX}%)`;
-            const progress = ((index + 1) / cards.length) * 100;
-            progressBar.style.width = `${progress}%`;
-            scrollButtonIntoView(index);
-        }
-
-        // Function to scroll buttons into view
-        function scrollButtonIntoView(index) {
-            const button = buttonsContainer.children[index];
-            if (button) {
-                button.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-            }
-        }
-
-        // Swipe functionality
-        let startX = 0;
-        let startY = 0;
-        let isDown = false;
-        let isScrolling = false;
-
-        const cardsContainer = document.querySelector('.cards-container');
-
-        // Touch events for mobile
-        cardsContainer.addEventListener('touchstart', touchStart, false);
-        cardsContainer.addEventListener('touchmove', touchMove, false);
-        cardsContainer.addEventListener('touchend', touchEnd, false);
-
-        function touchStart(evt) {
-            startX = evt.touches[0].clientX;
-            startY = evt.touches[0].clientY;
-            isDown = true;
-            isScrolling = false;
-            cardsWrapper.style.transition = 'none';
-        }
-
-        function touchMove(evt) {
-            if (!isDown) return;
-            const x = evt.touches[0].clientX;
-            const y = evt.touches[0].clientY;
-            const deltaX = x - startX;
-            const deltaY = y - startY;
-
-            // Determine if the user is scrolling vertically
-            if (!isScrolling) {
-                isScrolling = Math.abs(deltaY) > Math.abs(deltaX);
-            }
-
-            // Only allow horizontal swiping if not scrolling vertically
-            if (!isScrolling) {
-                evt.preventDefault(); // Prevent default scrolling
-                const percentage = (deltaX / window.innerWidth) * 100;
-                const offset = -currentIndex * 100 + percentage;
-                cardsWrapper.style.transform = `translateX(${offset}%)`;
-            }
-        }
-
-        function touchEnd(evt) {
-            if (!isDown) return;
-            isDown = false;
-            if (!isScrolling) {
-                const endX = evt.changedTouches[0].clientX;
-                const deltaX = endX - startX;
-                if (deltaX < -50 && currentIndex < cards.length - 1) {
-                    currentIndex++;
-                } else if (deltaX > 50 && currentIndex > 0) {
-                    currentIndex--;
-                }
-                cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
-                showCard(currentIndex);
-            }
-        }
-
-        // Mouse events for desktop
-        cardsContainer.addEventListener('mousedown', mouseDown, false);
-        cardsContainer.addEventListener('mousemove', mouseMove, false);
-        cardsContainer.addEventListener('mouseup', mouseUp, false);
-        cardsContainer.addEventListener('mouseleave', mouseUp, false);
-
-        function mouseDown(evt) {
-            startX = evt.clientX;
-            isDown = true;
-            cardsWrapper.style.transition = 'none';
-        }
-
-        function mouseMove(evt) {
-            if (!isDown) return;
-            const x = evt.clientX;
-            const deltaX = x - startX;
-            const percentage = (deltaX / window.innerWidth) * 100;
-            const offset = -currentIndex * 100 + percentage;
-            cardsWrapper.style.transform = `translateX(${offset}%)`;
-        }
-
-        function mouseUp(evt) {
-            if (!isDown) return;
-            isDown = false;
-            const endX = evt.clientX;
-            const deltaX = endX - startX;
-            if (deltaX < -50 && currentIndex < cards.length - 1) {
-                currentIndex++;
-            } else if (deltaX > 50 && currentIndex > 0) {
-                currentIndex--;
-            }
-            cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
-            showCard(currentIndex);
-        }
-
-        // Language switch functionality
-        languageButton.addEventListener('click', () => {
-            currentLanguage = currentLanguage === 'it' ? 'en' : 'it';
-            initializeApp();
         });
+    }
 
-        // Initialize the app after the DOM is fully loaded
-        document.addEventListener('DOMContentLoaded', () => {
-            initializeApp();
-        });
+    // Function to display a specific card
+    function showCard(index) {
+        currentIndex = index;
+        const cardsWrapper = document.getElementById('cards-wrapper');
+        const cardWidth = cardsContainer.clientWidth;
+        cardsWrapper.style.transform = `translateX(-${index * cardWidth}px)`;
+        updateProgressBar();
+        scrollButtonIntoView(index);
+    }
+
+    // Function to update progress bar
+    function updateProgressBar() {
+        const progressBar = document.querySelector('.progress-bar');
+        const progress = ((currentIndex + 1) / booksData.length) * 100;
+        progressBar.style.width = `${progress}%`;
+    }
+
+    // Function to scroll the active button into view
+    function scrollButtonIntoView(index) {
+        const button = buttonsContainer.children[index];
+        if (button) {
+            button.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+    }
+
+    // Swipe functionality for mobile and desktop
+    let startX = 0;
+    let isDown = false;
+
+    cardsContainer.addEventListener('touchstart', touchStart, false);
+    cardsContainer.addEventListener('touchmove', touchMove, false);
+    cardsContainer.addEventListener('touchend', touchEnd, false);
+
+    function touchStart(evt) {
+        startX = evt.touches[0].clientX;
+        isDown = true;
+    }
+
+    function touchMove(evt) {
+        if (!isDown) return;
+        const x = evt.touches[0].clientX;
+        const deltaX = x - startX;
+
+        // Threshold for swipe
+        if (deltaX > 50 && currentIndex > 0) {
+            showCard(currentIndex - 1);
+            isDown = false;
+        } else if (deltaX < -50 && currentIndex < booksData.length - 1) {
+            showCard(currentIndex + 1);
+            isDown = false;
+        }
+    }
+
+    function touchEnd(evt) {
+        isDown = false;
+    }
+
+    // Mouse events for desktop
+    let mouseDownFlag = false;
+    let mouseStartX = 0;
+
+    cardsContainer.addEventListener('mousedown', mouseDown, false);
+    cardsContainer.addEventListener('mousemove', mouseMove, false);
+    cardsContainer.addEventListener('mouseup', mouseUp, false);
+    cardsContainer.addEventListener('mouseleave', mouseLeave, false);
+
+    function mouseDown(evt) {
+        mouseDownFlag = true;
+        mouseStartX = evt.clientX;
+    }
+
+    function mouseMove(evt) {
+        if (!mouseDownFlag) return;
+        const x = evt.clientX;
+        const deltaX = x - mouseStartX;
+
+        // Threshold for swipe
+        if (deltaX > 50 && currentIndex > 0) {
+            showCard(currentIndex - 1);
+            mouseDownFlag = false;
+        } else if (deltaX < -50 && currentIndex < booksData.length - 1) {
+            showCard(currentIndex + 1);
+            mouseDownFlag = false;
+        }
+    }
+
+    function mouseUp(evt) {
+        mouseDownFlag = false;
+    }
+
+    function mouseLeave(evt) {
+        mouseDownFlag = false;
+    }
+
+    // Language switch functionality (if needed in future)
+    languageButton.addEventListener('click', () => {
+        // Implement language switch logic if multilingual support is desired
+        alert('Funzionalità di cambio lingua non implementata.');
+    });
+
+    // Initialize the app after the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', () => {
+        fetchBooks();
+    });
     </script>
 </body>
 </html>
