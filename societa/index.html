@@ -21,6 +21,9 @@
             --button-transition: transform 0.2s ease-in-out;
         }
 
+        .not-bold {font-weight:normal !important;}
+
+
         /* Basic styles */
         body {
             margin: 0;
@@ -490,10 +493,17 @@
                 // Add a line break
                 p.appendChild(document.createElement('br'));
 
-                // Create a text node for the content
-                const contentNode = document.createTextNode(contentText);
-                p.appendChild(contentNode);
+                // Create a span element to wrap the contentText
+                const contentSpan = document.createElement('span');
+                contentSpan.textContent = contentText;
+
+                // Apply the desired style with !important
+                contentSpan.style.setProperty('font-weight', 'normal', 'important');
+
+                // Append the styled span to the paragraph
+                p.appendChild(contentSpan);
             }
+
 
             div.appendChild(p);
         });
