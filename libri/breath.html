@@ -210,9 +210,9 @@
             <a href="https://futurofortissimo.github.io/">
                 <img src="/index_files/ff.png" alt="Logo" class="logo">
             </a>
-            <!-- Buttons inside header -->
+            <!-- Buttons inside header with Emojis -->
             <div class="buttons-container" id="buttons-container">
-                <!-- Buttons will be dynamically inserted here -->
+                <!-- Buttons will be dynamically inserted here with emojis -->
             </div>
             <button class="language-switch" id="language-switch">🇬🇧</button>
         </div>
@@ -234,51 +234,58 @@
     </footer>
 
     <script>
-        // Content data in Italian and English
+        // Content data in Italian and English with updated explanations
         const content = {
             "en": {
                 "topics": [
                     {
                         "topic": "Evolution of Breathing",
+                        "emoji": "🔍",
                         "question": "How did the evolution of breathing affect early humans?",
-                        "answer": "Early humans' breathing changed as their faces and heads evolved. Their nasal passages, throats, and airways shrunk while their brains expanded. This resulted in humans being the only animals that could easily choke on food. As humans began to resemble modern humans, their larger brains needed more space, leading to changes in their facial structure. Notably, these ancestors had straight teeth despite never brushing or flossing. Breathing adaptations also occurred based on climate, with noses growing narrower and longer in colder environments to warm the air before it reached the lungs.",
-                        "quote": "And, bizarrely, even though none of the ancient people ever flossed, or brushed, or saw a dentist, they all had straight teeth."
+                        "answer": "Early humans' breathing changed as their faces and heads evolved. Their nasal passages, throats, and airways shrunk while their brains expanded.\n\n**This led humans to be the only animals that could easily choke on food.** As the brain size increased, modifications to the facial structure occurred.\n\nInterestingly, these ancestors had straight teeth despite never brushing or flossing. Breathing adaptations also varied based on climate, with noses growing narrower and longer in colder environments to warm the air before it reached the lungs.",
+                        "quote": "\"And, bizarrely, even though none of the ancient people ever flossed, or brushed, or saw a dentist, they all had straight teeth.\""
                     },
                     {
                         "topic": "Importance of Nasal Breathing",
+                        "emoji": "👃",
                         "question": "Why is nasal breathing superior to mouth breathing?",
-                        "answer": "Nasal breathing is more beneficial than mouth breathing because the nose filters, warms, and humidifies the air we inhale, unlike the mouth. Around half of the population are habitual mouth breathers, leading to various problems like chronic nasal obstruction, which affects 40% of people. Mouth breathing can negatively affect brain function; a study revealed that rats that were forced to mouth breathe developed fewer brain cells and exhibited slower cognitive performance compared to nasal-breathing rats.",
-                        "quote": "Forty percent of today’s population suffers from chronic nasal obstruction, and around half of us are habitual mouthbreathers, with females and children suffering the most."
+                        "answer": "Nasal breathing is more beneficial than mouth breathing because the nose filters, warms, and humidifies the air we inhale, unlike the mouth.\n\n**About half of the population are habitual mouth breathers, leading to various problems like chronic nasal obstruction affecting 40% of people.** Mouth breathing can negatively impact brain function; a study revealed that rats forced to mouth breathe developed fewer brain cells and exhibited slower cognitive performance compared to nasal-breathing rats.\n\nThis emphasizes the critical role of nasal breathing in maintaining optimal brain health and overall physiological functions.",
+                        "quote": "\"Forty percent of today’s population suffers from chronic nasal obstruction, and around half of us are habitual mouthbreathers, with females and children suffering the most.\""
                     },
                     {
                         "topic": "Lung Capacity",
+                        "emoji": "💨",
                         "question": "What is the most significant factor influencing lifespan?",
-                        "answer": "The most crucial factor for longevity is lung capacity, more so than genetics, diet, or exercise. This finding emerged from a study that analyzed two decades of data from over 5,200 participants. As we age, our lung capacity declines, decreasing by about 12% between the ages of 30 and 50, and declining even faster afterward. This age-related decrease necessitates faster and more labored breathing, potentially causing chronic health issues like high blood pressure, immune system problems, and anxiety.",
-                        "quote": "They gathered two decades of data from 5,200 subjects, crunched the numbers, and discovered that the greatest indicator of life span wasn’t genetics, diet, or the amount of daily exercise, as many had suspected. It was lung capacity."
+                        "answer": "The most crucial factor for longevity is lung capacity, more so than genetics, diet, or exercise.\n\n**A study analyzing two decades of data from over 5,200 participants found that lung capacity was the greatest indicator of lifespan.** As we age, our lung capacity declines, decreasing by about 12% between the ages of 30 and 50, and declining even faster afterward.\n\nThis age-related decrease necessitates faster and more labored breathing, potentially causing chronic health issues like high blood pressure, immune system problems, and anxiety.",
+                        "quote": "\"They gathered two decades of data from 5,200 subjects, crunched the numbers, and discovered that the greatest indicator of life span wasn’t genetics, diet, or the amount of daily exercise, as many had suspected. It was lung capacity.\""
                     },
                     {
                         "topic": "Role of Carbon Dioxide (CO2)",
+                        "emoji": "💨",
                         "question": "What is the role of carbon dioxide in breathing?",
-                        "answer": "Contrary to popular belief, carbon dioxide is not just a waste product; it's crucial for efficient oxygen utilization in our bodies. Overbreathing, common in modern society, depletes CO2 levels. Lower CO2 levels decrease the body's ability to deliver oxygen, leading to feelings of breathlessness, similar to what's experienced during panic attacks or altitude sickness.",
-                        "quote": "Carbon dioxide is, in fact, a more fundamental component of living matter than is oxygen."
+                        "answer": "Contrary to popular belief, carbon dioxide is not just a waste product; it's crucial for efficient oxygen utilization in our bodies.\n\n**Overbreathing, common in modern society, depletes CO2 levels, decreasing the body's ability to deliver oxygen.** This leads to feelings of breathlessness, similar to what's experienced during panic attacks or altitude sickness.\n\nMaintaining optimal CO2 levels is essential for respiratory efficiency and overall metabolic processes.",
+                        "quote": "\"Carbon dioxide is, in fact, a more fundamental component of living matter than is oxygen.\""
                     },
                     {
                         "topic": "Impact of Diet on Breathing",
+                        "emoji": "🥦",
                         "question": "How does diet impact breathing?",
-                        "answer": "Consuming processed foods, which became prevalent during the Industrial Revolution, negatively impacts our breathing. These foods require less chewing, leading to underdeveloped jaws and obstructed airways. The shift to soft, processed foods resulted in a significant increase in cavities, crooked teeth, and breathing problems in modern societies. Research comparing modern palates with those of ancient skulls reveals a noticeable shrinkage, suggesting a link between diet and breathing issues.",
-                        "quote": "In these societies, for the first time in history, humans could spend their entire lives eating nothing but processed food—nothing fresh, nothing raw, nothing natural. Millions did."
+                        "answer": "Consuming processed foods, which became prevalent during the Industrial Revolution, negatively impacts our breathing.\n\n**These foods require less chewing, leading to underdeveloped jaws and obstructed airways.** The shift to soft, processed foods resulted in a significant increase in cavities, crooked teeth, and breathing problems in modern societies.\n\nResearch comparing modern palates with those of ancient skulls reveals a noticeable shrinkage, suggesting a link between diet and breathing issues.",
+                        "quote": "\"In these societies, for the first time in history, humans could spend their entire lives eating nothing but processed food—nothing fresh, nothing raw, nothing natural. Millions did.\""
                     },
                     {
                         "topic": "Control of Autonomic Nervous System",
+                        "emoji": "🧘‍♂️",
                         "question": "How can we control our autonomic nervous system with breathing?",
-                        "answer": "We can consciously regulate our autonomic nervous system, which controls involuntary bodily functions, by changing how we breathe. By practicing specific breathing techniques, like those used in Tummo breathing, we can influence our heart rate, digestion, moods, and even trigger the release of hormones like serotonin and oxytocin. The ability to consciously manipulate our breath to achieve specific physiological states has been documented in practices like Tummo breathing, where monks can raise their body temperature significantly in freezing conditions.",
-                        "quote": "The tens of billions of molecules we bring into our bodies with every breath also serve a more subtle, but equally important role. They influence nearly every internal organ, telling them when to turn on and off."
+                        "answer": "We can consciously regulate our autonomic nervous system, which controls involuntary bodily functions, by changing how we breathe.\n\n**By practicing specific breathing techniques, like those used in Tummo breathing, we can influence our heart rate, digestion, moods, and even trigger the release of hormones like serotonin and oxytocin.**\n\nThe ability to consciously manipulate our breath to achieve specific physiological states has been documented in practices like Tummo breathing, where monks can raise their body temperature significantly in freezing conditions.",
+                        "quote": "\"The tens of billions of molecules we bring into our bodies with every breath also serve a more subtle, but equally important role. They influence nearly every internal organ, telling them when to turn on and off.\""
                     },
                     {
                         "topic": "Addressing Anxiety and Panic",
+                        "emoji": "😰",
                         "question": "Can breathing exercises help alleviate anxiety and panic?",
-                        "answer": "Breathing exercises can be a potential treatment for anxiety and panic, affecting 18% of Americans. These conditions often stem from a heightened sensitivity to carbon dioxide levels, leading to feelings of suffocation and fear, even when oxygen levels are normal. By retraining our chemoreceptors, which are responsible for monitoring CO2 levels, to be more adaptable, we can potentially reduce anxiety and panic attacks. Controlled exposure to high CO2 levels, as practiced in some therapeutic settings, can help desensitize individuals and make them less reactive to CO2 fluctuations.",
-                        "quote": "All these people have trained their chemoreceptors to withstand extreme fluctuations in carbon dioxide without panic."
+                        "answer": "Breathing exercises can be a potential treatment for anxiety and panic, affecting 18% of Americans.\n\n**These conditions often stem from a heightened sensitivity to carbon dioxide levels, leading to feelings of suffocation and fear, even when oxygen levels are normal.** By retraining our chemoreceptors, which are responsible for monitoring CO2 levels, to be more adaptable, we can potentially reduce anxiety and panic attacks.\n\nControlled exposure to high CO2 levels, as practiced in some therapeutic settings, can help desensitize individuals and make them less reactive to CO2 fluctuations.",
+                        "quote": "\"All these people have trained their chemoreceptors to withstand extreme fluctuations in carbon dioxide without panic.\""
                     }
                 ]
             },
@@ -286,45 +293,52 @@
                 "topics": [
                     {
                         "topic": "Evoluzione della Respirazione",
+                        "emoji": "🔍",
                         "question": "Come ha influenzato l'evoluzione della respirazione i primi esseri umani?",
-                        "answer": "La respirazione dei primi esseri umani è cambiata con l'evoluzione del volto e della testa. I loro passaggi nasali, le gole e le vie respiratorie si sono ristretti mentre i loro cervelli si sono espansi. Ciò ha portato gli esseri umani a essere gli unici animali in grado di soffocare facilmente con il cibo. Con l'aumento delle dimensioni del cervello, si sono verificate modifiche alla struttura facciale. Curiosamente, questi antenati avevano denti dritti nonostante non si lavassero mai i denti. Le adattazioni respiratorie variavano anche in base al clima, con nasi che si allungavano e si restringevano per riscaldare l'aria in ambienti più freddi.",
-                        "quote": "E, stranamente, anche se nessuna delle antiche persone si lavava i denti o andava dal dentista, avevano tutti denti dritti."
+                        "answer": "La respirazione dei primi esseri umani è cambiata con l'evoluzione del volto e della testa. I loro passaggi nasali, le gole e le vie respiratorie si sono ristretti mentre i loro cervelli si sono espansi.\n\n**Ciò ha portato gli esseri umani a essere gli unici animali in grado di soffocare facilmente con il cibo.** Con l'aumento delle dimensioni del cervello, si sono verificate modifiche alla struttura facciale.\n\nCuriosamente, questi antenati avevano denti dritti nonostante non si lavassero mai i denti. Le adattazioni respiratorie variavano anche in base al clima, con nasi che si allungavano e si restringevano per riscaldare l'aria in ambienti più freddi.",
+                        "quote": "\"E, stranamente, anche se nessuna delle antiche persone si lavava i denti o andava dal dentista, avevano tutti denti dritti.\""
                     },
                     {
                         "topic": "Importanza della Respirazione Nasale",
+                        "emoji": "👃",
                         "question": "Perché la respirazione nasale è superiore a quella orale?",
-                        "answer": "La respirazione nasale è più benefica rispetto a quella orale perché il naso filtra, riscalda e umidifica l'aria che inaliamo, al contrario della bocca. Circa metà della popolazione respira abitualmente con la bocca, il che porta a vari problemi come l'ostruzione nasale cronica, che colpisce il 40% delle persone. La respirazione orale può avere effetti negativi sul funzionamento del cervello; uno studio ha rivelato che i ratti costretti a respirare con la bocca sviluppavano meno cellule cerebrali e mostravano prestazioni cognitive più lente rispetto ai ratti che respiravano attraverso il naso.",
-                        "quote": "Il quaranta percento della popolazione soffre di ostruzione nasale cronica, e circa la metà di noi respira abitualmente con la bocca, con le donne e i bambini che ne soffrono di più."
+                        "answer": "La respirazione nasale è più benefica rispetto a quella orale perché il naso filtra, riscalda e umidifica l'aria che inaliamo, al contrario della bocca.\n\n**Circa metà della popolazione respira abitualmente con la bocca, il che porta a vari problemi come l'ostruzione nasale cronica, che colpisce il 40% delle persone.** La respirazione orale può avere effetti negativi sul funzionamento del cervello; uno studio ha rivelato che i ratti costretti a respirare con la bocca sviluppavano meno cellule cerebrali e mostravano prestazioni cognitive più lente rispetto ai ratti che respiravano attraverso il naso.\n\nQuesto sottolinea il ruolo critico della respirazione nasale nel mantenimento della salute cerebrale ottimale e delle funzioni fisiologiche generali.",
+                        "quote": "\"Il quaranta percento della popolazione soffre di ostruzione nasale cronica, e circa la metà di noi respira abitualmente con la bocca, con le donne e i bambini che ne soffrono di più.\""
                     },
                     {
                         "topic": "Capacità Polmonare",
+                        "emoji": "💨",
                         "question": "Qual è il fattore più significativo che influenza la longevità?",
-                        "answer": "Il fattore più cruciale per la longevità è la capacità polmonare, più della genetica, della dieta o dell'esercizio fisico. Questa scoperta è emersa da uno studio che ha analizzato due decenni di dati di oltre 5.200 partecipanti. Con l'invecchiamento, la nostra capacità polmonare diminuisce, calando di circa il 12% tra i 30 e i 50 anni e diminuendo ancora più rapidamente dopo. Questo declino richiede una respirazione più rapida e faticosa, potenzialmente causando problemi di salute cronici come la pressione alta, problemi al sistema immunitario e ansia.",
-                        "quote": "Hanno raccolto due decenni di dati da 5.200 soggetti e hanno scoperto che il più grande indicatore di longevità non era la genetica, la dieta o l'esercizio quotidiano, ma la capacità polmonare."
+                        "answer": "Il fattore più cruciale per la longevità è la capacità polmonare, più della genetica, della dieta o dell'esercizio fisico.\n\n**Uno studio che ha analizzato due decenni di dati di oltre 5.200 partecipanti ha scoperto che la capacità polmonare era il più grande indicatore di longevità.** Con l'invecchiamento, la nostra capacità polmonare diminuisce, calando di circa il 12% tra i 30 e i 50 anni e diminuendo ancora più rapidamente dopo.\n\nQuesto declino legato all'età richiede una respirazione più rapida e faticosa, potenzialmente causando problemi di salute cronici come la pressione alta, problemi al sistema immunitario e ansia.",
+                        "quote": "\"Hanno raccolto due decenni di dati da 5.200 soggetti e hanno scoperto che il più grande indicatore di longevità non era la genetica, la dieta o l'esercizio quotidiano, ma la capacità polmonare.\""
                     },
                     {
                         "topic": "Ruolo del Biossido di Carbonio (CO2)",
+                        "emoji": "💨",
                         "question": "Qual è il ruolo del biossido di carbonio nella respirazione?",
-                        "answer": "Contrariamente a quanto si crede, il biossido di carbonio non è solo un prodotto di scarto; è cruciale per l'utilizzo efficiente dell'ossigeno nel nostro corpo. L'iperrespirazione, comune nella società moderna, riduce i livelli di CO2. Livelli più bassi di CO2 diminuiscono la capacità del corpo di distribuire ossigeno, causando sensazioni di mancanza di respiro, simili a quelle sperimentate durante attacchi di panico o mal di montagna.",
-                        "quote": "Il biossido di carbonio è, in effetti, un componente più fondamentale della materia vivente rispetto all'ossigeno."
+                        "answer": "Contrariamente a quanto si crede, il biossido di carbonio non è solo un prodotto di scarto; è cruciale per l'utilizzo efficiente dell'ossigeno nel nostro corpo.\n\n**L'iperrespirazione, comune nella società moderna, riduce i livelli di CO2, diminuendo la capacità del corpo di distribuire ossigeno.** Questo porta a sensazioni di mancanza di respiro, simili a quelle sperimentate durante attacchi di panico o mal di montagna.\n\nMantenere livelli ottimali di CO2 è essenziale per l'efficienza respiratoria e i processi metabolici generali.",
+                        "quote": "\"Il biossido di carbonio è, in effetti, un componente più fondamentale della materia vivente rispetto all'ossigeno.\""
                     },
                     {
                         "topic": "Impatto della Dieta sulla Respirazione",
+                        "emoji": "🥦",
                         "question": "Come influisce la dieta sulla respirazione?",
-                        "answer": "Il consumo di cibi trasformati, che è diventato comune durante la Rivoluzione Industriale, ha un impatto negativo sulla nostra respirazione. Questi cibi richiedono meno masticazione, portando a mascelle poco sviluppate e vie respiratorie ostruite. Il passaggio ai cibi morbidi e trasformati ha comportato un aumento significativo di carie, denti storti e problemi respiratori nelle società moderne. La ricerca comparativa tra palati moderni e quelli degli antichi teschi rivela una contrazione evidente, suggerendo un legame tra dieta e problemi respiratori.",
-                        "quote": "In queste società, per la prima volta nella storia, gli esseri umani potevano passare tutta la vita mangiando solo cibo trasformato: niente di fresco, niente di crudo, niente di naturale. Milioni lo fecero."
+                        "answer": "Il consumo di cibi trasformati, che è diventato comune durante la Rivoluzione Industriale, ha un impatto negativo sulla nostra respirazione.\n\n**Questi cibi richiedono meno masticazione, portando a mascelle poco sviluppate e vie respiratorie ostruite.** Il passaggio ai cibi morbidi e trasformati ha comportato un aumento significativo di carie, denti storti e problemi respiratori nelle società moderne.\n\nLa ricerca comparativa tra palati moderni e quelli degli antichi teschi rivela una contrazione evidente, suggerendo un legame tra dieta e problemi respiratori.",
+                        "quote": "\"In queste società, per la prima volta nella storia, gli esseri umani potevano passare tutta la vita mangiando solo cibo trasformato: niente di fresco, niente di crudo, niente di naturale. Milioni lo fecero.\""
                     },
                     {
                         "topic": "Controllo del Sistema Nervoso Autonomo",
+                        "emoji": "🧘‍♂️",
                         "question": "Come possiamo controllare il nostro sistema nervoso autonomo con la respirazione?",
-                        "answer": "Possiamo regolare consapevolmente il nostro sistema nervoso autonomo, che controlla le funzioni corporee involontarie, cambiando il modo in cui respiriamo. Praticando tecniche di respirazione specifiche, come quelle utilizzate nella respirazione Tummo, possiamo influenzare la frequenza cardiaca, la digestione, l'umore e persino stimolare il rilascio di ormoni come la serotonina e l'ossitocina. La capacità di manipolare consapevolmente il respiro per raggiungere stati fisiologici specifici è documentata in pratiche come la respirazione Tummo, in cui i monaci possono aumentare significativamente la temperatura corporea in condizioni di freddo estremo.",
-                        "quote": "Le decine di miliardi di molecole che portiamo nel nostro corpo con ogni respiro influenzano quasi ogni organo interno, dicendo loro quando accendersi e spegnersi."
+                        "answer": "Possiamo regolare consapevolmente il nostro sistema nervoso autonomo, che controlla le funzioni corporee involontarie, cambiando il modo in cui respiriamo.\n\n**Praticando tecniche di respirazione specifiche, come quelle utilizzate nella respirazione Tummo, possiamo influenzare la frequenza cardiaca, la digestione, l'umore e persino stimolare il rilascio di ormoni come la serotonina e l'ossitocina.**\n\nLa capacità di manipolare consapevolmente il respiro per raggiungere stati fisiologici specifici è documentata in pratiche come la respirazione Tummo, in cui i monaci possono aumentare significativamente la temperatura corporea in condizioni di freddo estremo.",
+                        "quote": "\"Le decine di miliardi di molecole che portiamo nel nostro corpo con ogni respiro influenzano quasi ogni organo interno, dicendo loro quando accendersi e spegnersi.\""
                     },
                     {
                         "topic": "Affrontare Ansia e Panico",
+                        "emoji": "😰",
                         "question": "Gli esercizi di respirazione possono aiutare ad alleviare ansia e panico?",
-                        "answer": "Gli esercizi di respirazione possono essere un trattamento potenziale per l'ansia e il panico, che colpiscono il 18% degli americani. Queste condizioni spesso derivano da una maggiore sensibilità ai livelli di biossido di carbonio, che porta a sensazioni di soffocamento e paura, anche quando i livelli di ossigeno sono normali. Rieducando i nostri chemorecettori, responsabili del monitoraggio dei livelli di CO2, a essere più adattabili, possiamo potenzialmente ridurre ansia e attacchi di panico. L'esposizione controllata a livelli elevati di CO2, come praticato in alcuni contesti terapeutici, può aiutare a desensibilizzare gli individui e renderli meno reattivi alle fluttuazioni di CO2.",
-                        "quote": "Tutte queste persone hanno allenato i loro chemorecettori a sopportare estreme fluttuazioni di biossido di carbonio senza panico."
+                        "answer": "Gli esercizi di respirazione possono essere un trattamento potenziale per l'ansia e il panico, che colpiscono il 18% degli americani.\n\n**Queste condizioni spesso derivano da una maggiore sensibilità ai livelli di biossido di carbonio, che porta a sensazioni di soffocamento e paura, anche quando i livelli di ossigeno sono normali.** Rieducando i nostri chemorecettori, responsabili del monitoraggio dei livelli di CO2, a essere più adattabili, possiamo potenzialmente ridurre ansia e attacchi di panico.\n\nL'esposizione controllata a livelli elevati di CO2, come praticato in alcuni contesti terapeutici, può aiutare a desensibilizzare gli individui e renderli meno reattivi alle fluttuazioni di CO2.",
+                        "quote": "\"Tutte queste persone hanno allenato i loro chemorecettori a sopportare estreme fluttuazioni di biossido di carbonio senza panico.\""
                     }
                 ]
             }
@@ -353,7 +367,7 @@
 
             // Create buttons and cards for topics
             topics.forEach((topic, index) => {
-                createButton(topic.topic, index); // Each topic corresponds to one card
+                createButton(topic.topic, index);
                 createCard(topic);
             });
 
@@ -361,11 +375,11 @@
             showCard(0);
         }
 
-        // Function to create a button
+        // Function to create a button with emoji
         function createButton(label, index) {
             const button = document.createElement('div');
             button.className = 'button';
-            button.textContent = label;
+            button.innerHTML = `${content[currentLanguage].topics[index].emoji} ${label}`;
             button.addEventListener('click', () => {
                 showCard(index);
             });
@@ -377,9 +391,19 @@
             const div = document.createElement('div');
             div.className = `content-block ${type}`;
 
-            const p = document.createElement('p');
-            p.textContent = contentText;
-            div.appendChild(p);
+            // Replace **text** with <strong>text</strong> for highlighting
+            const formattedText = contentText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            // Replace escaped quotes \"text\" with proper quotes
+            const finalText = formattedText.replace(/\\\"/g, '"').replace(/\\'/g, "'");
+
+            // Split the content by newline characters to create paragraphs
+            const paragraphs = finalText.split('\n\n');
+
+            paragraphs.forEach(paragraph => {
+                const p = document.createElement('p');
+                p.innerHTML = paragraph;
+                div.appendChild(p);
+            });
 
             return div;
         }
@@ -392,37 +416,16 @@
             const cardContent = document.createElement('div');
             cardContent.className = 'card-content';
 
-            // Title of the topic
-            const title = document.createElement('h2');
-            title.className = 'section-title';
-            title.textContent = topic.topic;
-            cardContent.appendChild(title);
-
-            // Question
-            const questionTitle = document.createElement('h3');
-            questionTitle.className = 'section-title';
-            questionTitle.textContent = currentLanguage === 'it' ? 'Domanda' : 'Question';
-            cardContent.appendChild(questionTitle);
-
+            // Add Question
             const questionBlock = createContentBlock('question', topic.question);
             cardContent.appendChild(questionBlock);
 
-            // Explanation
-            const answerTitle = document.createElement('h3');
-            answerTitle.className = 'section-title';
-            answerTitle.textContent = currentLanguage === 'it' ? 'Spiegazione' : 'Explanation';
-            cardContent.appendChild(answerTitle);
-
+            // Add Answer (Explanation)
             const answerBlock = createContentBlock('answer', topic.answer);
             cardContent.appendChild(answerBlock);
 
-            // Quote
-            const quoteTitle = document.createElement('h3');
-            quoteTitle.className = 'section-title';
-            quoteTitle.textContent = currentLanguage === 'it' ? 'Citazione' : 'Quote';
-            cardContent.appendChild(quoteTitle);
-
-            const quoteBlock = createContentBlock('quote', `"${topic.quote}"`);
+            // Add Quote
+            const quoteBlock = createContentBlock('quote', topic.quote);
             cardContent.appendChild(quoteBlock);
 
             card.appendChild(cardContent);
