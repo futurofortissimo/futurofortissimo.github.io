@@ -148,24 +148,21 @@
             border-radius: 10px;
             word-wrap: break-word; /* Prevent overflow of long words */
             font-size: 16px;
+        }
+
+        .question {
+            background-color: var(--question-color);
             font-weight: bold;
         }
 
-        .questions {
-            background-color: var(--question-color);
-        }
-
-        .data {
+        .answer {
             background-color: var(--data-color);
-        }
-
-        .quotes {
-            background-color: var(--quote-color);
-        }
-
-        .paragraphs {
-            background-color: #e0f7fa; /* Light cyan */
             font-weight: normal;
+        }
+
+        .quote {
+            background-color: var(--quote-color);
+            font-style: italic;
         }
 
         /* Hide scrollbars on card content */
@@ -213,9 +210,9 @@
             <a href="https://futurofortissimo.github.io/">
                 <img src="/index_files/ff.png" alt="Logo" class="logo">
             </a>
-            <!-- Buttons inside header -->
+            <!-- Buttons inside header with Emojis -->
             <div class="buttons-container" id="buttons-container">
-                <!-- Buttons will be dynamically inserted here -->
+                <!-- Buttons will be dynamically inserted here with emojis -->
             </div>
             <button class="language-switch" id="language-switch">🇬🇧</button>
         </div>
@@ -237,364 +234,114 @@
     </footer>
 
     <script>
-        // Content data in Italian and English
+        // Content data in Italian and English with updated explanations
         const content = {
-            it: {
-                chapters: [
-                    {
-                        title: "La Scienza dell'Invecchiamento",
-                        buttonLabel: '🧬 Scienza dell\'Invecchiamento',
-                        contentBlocks: [
-                            {
-                                type: 'paragraphs',
-                                content: [
-                                    "L'invecchiamento è un processo biologico naturale che comporta una graduale diminuzione delle funzioni fisiologiche e un aumento della vulnerabilità alle malattie. Questo processo è influenzato da una combinazione di fattori genetici, ambientali e di stile di vita. Contrariamente a quanto si possa pensare, nessuno muore di invecchiamento; tutti i centenari studiati sono deceduti a causa di malattie, prevalentemente attacchi di cuore.",
-                                    "Le malattie croniche, come le malattie cardiache, rappresentano una delle principali cause di morte sia nei centenari che nella popolazione generale. Con l'avanzare dell'età, il rischio di sviluppare queste malattie aumenta significativamente. Ad esempio, un individuo di 80 anni ha un rischio 500 volte maggiore di subire un attacco di cuore rispetto a qualcuno con colesterolo alto.",
-                                    "Intervenire sul processo di invecchiamento potrebbe ridurre drasticamente il rischio di morte, fragilità e disabilità. Riducendo l'età biologica di una persona di 65 anni allo stato di una di 58 anni, si potrebbe dimezzare il rischio di questi esiti negativi. Inoltre, le probabilità di vivere fino a 100 anni sono aumentate da 1 su 20 milioni a 1 su 50.",
-                                    "È importante notare che solo il 20-30% della variabilità della durata della vita è spiegata dall'ereditarietà genetica, indicando che una parte significativa è influenzata da fattori modificabili."
-                                ]
-                            },
-                            {
-                                type: 'questions',
-                                content: [
-                                    "Che cos'è l'invecchiamento e perché avviene?",
-                                    "Quali sono le principali cause di morte nei centenari?",
-                                    "Come influisce l'invecchiamento sul nostro rischio di malattie croniche?"
-                                ]
-                            },
-                            {
-                                type: 'data',
-                                content: [
-                                    "Il 60% degli americani di 65 anni e oltre sta perseguendo interventi anti-invecchiamento.",
-                                    "Il 100% dei centenari autopsiati è deceduto per malattie, prevalentemente attacchi di cuore.",
-                                    "Le malattie cardiache sono il principale killer sia dei centenari che della popolazione generale.",
-                                    "Un individuo di 80 anni ha un rischio 500 volte maggiore di subire un attacco di cuore rispetto a qualcuno con colesterolo alto.",
-                                    "Rallentare l'invecchiamento in modo che una persona di 65 anni abbia il profilo di salute di una di 58 anni potrebbe dimezzare il rischio di morte, fragilità e disabilità per tutti.",
-                                    "Le probabilità di vivere fino a 100 anni sono aumentate da circa 1 su 20 milioni a fino a 1 su 50.",
-                                    "Solo il 20-30% della variabilità della durata della vita è spiegata dall'ereditarietà genetica."
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        title: "Le Otto Chiavi Anti-Invecchiamento",
-                        buttonLabel: '🔑 Otto Anti-Invecchiamento',
-                        contentBlocks: [
-                            {
-                                type: 'paragraphs',
-                                content: [
-                                    "Le otto chiavi anti-invecchiamento rappresentano le aree fondamentali su cui concentrarsi per rallentare il processo di invecchiamento e migliorare la longevità. Queste chiavi influenzano undici vie dell'invecchiamento, offrendo un approccio olistico per mantenere la salute e la vitalità nel tempo.",
-                                    "Implementare queste otto chiavi nella vita quotidiana richiede passaggi pratici e consapevoli, come l'adozione di una dieta equilibrata, l'esercizio regolare, la gestione dello stress e il mantenimento di abitudini di sonno sane."
-                                ]
-                            },
-                            {
-                                type: 'questions',
-                                content: [
-                                    "Quali sono le otto aree chiave su cui concentrarsi per l'anti-invecchiamento?",
-                                    "Come influenzano queste aree gli undici percorsi dell'invecchiamento?",
-                                    "Quali sono alcuni passi pratici per implementare questi otto principi?"
-                                ]
-                            },
-                            {
-                                type: 'data',
-                                content: [
-                                    "Questa sezione richiede informazioni da un contesto più ampio, poiché non sono stati forniti dettagli specifici sulle 'Otto Chiavi Anti-Invecchiamento'."
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        title: "Ottimizzare la Nutrizione per la Longevità",
-                        buttonLabel: '🥦 Nutrizione & Longevità',
-                        contentBlocks: [
-                            {
-                                type: 'paragraphs',
-                                content: [
-                                    "Una nutrizione ottimale è essenziale per un invecchiamento sano. I nutrienti più importanti per l'invecchiamento sano includono vitamine, minerali, antiossidanti e composti bioattivi che supportano le funzioni corporee e prevengono le malattie croniche.",
-                                    "È altrettanto importante identificare le migliori fonti alimentari di questi nutrienti e minimizzare l'assunzione di fattori dietetici dannosi, come grassi saturi e zuccheri aggiunti, che possono aumentare il rischio di malattie cardiovascolari e altri problemi di salute.",
-                                    "Adottare una dieta ricca di alimenti nutrienti e povera di sostanze nocive può contribuire significativamente alla riduzione del rischio di malattie croniche e all'estensione della durata della vita sana."
-                                ]
-                            },
-                            {
-                                type: 'questions',
-                                content: [
-                                    "Quali sono i nutrienti più importanti per un invecchiamento sano?",
-                                    "Quali sono le migliori fonti alimentari di questi nutrienti?",
-                                    "Come possiamo minimizzare l'assunzione di fattori dietetici dannosi?"
-                                ]
-                            },
-                            {
-                                type: 'data',
-                                content: [
-                                    "Consumare 25 cucchiai di zucchero sotto forma di caramelle e soda al giorno non influisce sul grasso epatico se l'apporto calorico complessivo rimane costante.",
-                                    "Consumare una frazione della stessa quantità di grassi saturi provenienti da carne e latticini aumenta il grasso epatico del 39% in quattro settimane.",
-                                    "I fumatori hanno più di 5 volte l'attivazione dell'AMPK rispetto ai non fumatori.",
-                                    "½ cucchiaino di germe di grano può ridurre significativamente la perdita dei capelli.",
-                                    "Le persone che consumano più spermidina tendono ad avere meno malattie cardiovascolari.",
-                                    "La differenza nel tasso di mortalità tra coloro che consumano più spermidina e quelli che ne consumano meno equivale ad essere più giovani di 5,7 anni.",
-                                    "L'assunzione media di spermidina è di circa 10 mg al giorno, mentre negli Stati Uniti è di 8 mg.",
-                                    "Le verdure sono la principale fonte di spermidina."
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        title: "Strategie di Stile di Vita per l'Anti-Invecchiamento",
-                        buttonLabel: '🏃‍♂️ Stile di Vita & Anti-Invecchiamento',
-                        contentBlocks: [
-                            {
-                                type: 'paragraphs',
-                                content: [
-                                    "Uno stile di vita sano è fondamentale per rallentare il processo di invecchiamento e promuovere la longevità. Elementi chiave come un sonno adeguato, l'esercizio regolare e una gestione efficace dello stress possono influenzare positivamente la salute a lungo termine.",
-                                    "La qualità del sonno, ad esempio, ha un impatto diretto sul processo di invecchiamento. La privazione del sonno può accelerare l'invecchiamento biologico e aumentare il rischio di malattie croniche.",
-                                    "L'esercizio fisico regolare non solo migliora la salute cardiovascolare e muscolare, ma contribuisce anche alla salute mentale e alla prevenzione delle malattie degenerative.",
-                                    "La gestione dello stress attraverso tecniche come la meditazione, lo yoga o semplicemente il relax può proteggere contro il declino legato all'età e migliorare la qualità della vita."
-                                ]
-                            },
-                            {
-                                type: 'questions',
-                                content: [
-                                    "Come influenza il sonno il processo di invecchiamento?",
-                                    "Quali sono i benefici dell'esercizio regolare per la longevità?",
-                                    "Come possiamo gestire efficacemente lo stress per proteggere contro il declino legato all'età?"
-                                ]
-                            },
-                            {
-                                type: 'data',
-                                content: [
-                                    "Una settimana di notti da 5 ore ha effetti simili a quelli riportati in persone che fumano, hanno il diabete o malattie coronariche.",
-                                    "Un bagno caldo per i piedi può aiutare le persone ad addormentarsi 15 minuti più velocemente.",
-                                    "La persona media ha 11 evacuazioni intestinali a settimana.",
-                                    "Spingere per pochi secondi mentre si è sdraiati può aumentare la pressione sanguigna fino a quasi 170/110.",
-                                    "Aumentare l'assunzione giornaliera di fibre di 3 g potrebbe potenzialmente risparmiare miliardi in costi medici solo per la stipsi.",
-                                    "Ogni aumento di 7 g di assunzione giornaliera di fibre si correla a una riduzione del 9% del rischio di malattie cardiache.",
-                                    "In Uganda, dove le persone consumavano circa 77 g di fibre al giorno, le malattie coronariche erano quasi inesistenti."
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        title: "Mettere Tutto Insieme: Una Guida Pratica alla Longevità",
-                        buttonLabel: '📘 Guida alla Longevità',
-                        contentBlocks: [
-                            {
-                                type: 'paragraphs',
-                                content: [
-                                    "Per massimizzare i benefici delle strategie anti-invecchiamento, è essenziale personalizzare le raccomandazioni in base alle esigenze e alle preferenze individuali. Questo approccio personalizzato consente di affrontare le specifiche sfide di salute e di ottimizzare le abitudini di vita per una longevità sostenibile.",
-                                    "È importante sfatare i miti e le concezioni errate sull'invecchiamento per adottare pratiche basate su evidenze scientifiche. Ad esempio, contrariamente alla credenza popolare, non esiste una 'cura' definitiva per l'invecchiamento, ma ci sono molteplici strategie che possono rallentarlo e migliorare la qualità della vita.",
-                                    "Le ultime avanzamenti nella ricerca anti-invecchiamento offrono nuove prospettive e soluzioni innovative. Aspettative future includono terapie geniche, interventi farmacologici mirati e approcci nutrizionali avanzati che potrebbero rivoluzionare il modo in cui affrontiamo l'invecchiamento."
-                                ]
-                            },
-                            {
-                                type: 'questions',
-                                content: [
-                                    "Come possiamo personalizzare le raccomandazioni anti-invecchiamento in base alle nostre esigenze e preferenze individuali?",
-                                    "Quali sono alcuni miti e concezioni errate comuni sull'invecchiamento?",
-                                    "Quali sono gli ultimi avanzamenti nella ricerca anti-invecchiamento e cosa possiamo aspettarci in futuro?"
-                                ]
-                            },
-                            {
-                                type: 'data',
-                                content: [
-                                    "I pazienti obesi su una dieta a base di alimenti interi hanno perso in media 7 libbre senza controllare le porzioni o contare le calorie.",
-                                    "I diabetici sulla stessa dieta hanno visto i loro zuccheri nel sangue a digiuno scendere di 28 punti.",
-                                    "Coloro che hanno livelli di colesterolo LDL superiori a 100 mg/dL hanno sperimentato una riduzione di 33 punti.",
-                                    "I giocatori di calcio professionisti hanno 5 volte più probabilità di morire di Alzheimer rispetto ai controlli abbinati.",
-                                    "Un aumento del 5% nella prevalenza dell'obesità è associato a un aumento del 6% delle ospedalizzazioni correlate all'influenza.",
-                                    "Consumare 5 o più porzioni di frutta e verdura al giorno ha portato a una risposta anticorpale protettiva dell'82% maggiore a un vaccino dopo solo un mese."
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                bookDetails: {
-                    image: '/libri/anti-aging.png', // Replace with your actual image path
-                    title: 'Longevità: La Scienza dell\'Invecchiamento',
-                    author: 'Maria Rossi',
-                    year: '2024',
-                    pages: '450',
-                    link: 'https://example.com/buy-anti-aging', // Replace with your actual link
-                    offerCoffeeLink: 'https://example.com/coffee' // Replace with your actual link
-                }
-            },
-            en: {
-                chapters: [
-                    {
-                        title: "The Science of Aging",
-                        buttonLabel: '🧬 The Science of Aging',
-                        contentBlocks: [
-                            {
-                                type: 'paragraphs',
-                                content: [
-                                    "Aging is a natural biological process characterized by a gradual decline in physiological functions and an increased vulnerability to diseases. This process is influenced by a combination of genetic, environmental, and lifestyle factors. Contrary to popular belief, no one dies of old age; all centenarians studied have died from diseases, primarily heart attacks.",
-                                    "Chronic diseases, such as heart disease, are among the leading causes of death both in centenarians and the general population. As age advances, the risk of developing these diseases increases significantly. For example, an 80-year-old has a 500 times greater risk of having a heart attack compared to someone with high cholesterol.",
-                                    "Intervening in the aging process could drastically reduce the risk of death, frailty, and disability. Slowing aging so that a 65-year-old has the health profile of a 58-year-old could cut everyone's risk of these negative outcomes in half. Additionally, the odds of living to 100 have risen from 1 in 20 million to as high as 1 in 50.",
-                                    "It's important to note that only 20-30% of lifespan variance is explained by genetic inheritance, indicating that a significant portion is influenced by modifiable factors."
-                                ]
-                            },
-                            {
-                                type: 'questions',
-                                content: [
-                                    "What is aging and why does it happen?",
-                                    "What are the leading causes of death in centenarians?",
-                                    "How does aging affect our risk of chronic diseases?"
-                                ]
-                            },
-                            {
-                                type: 'data',
-                                content: [
-                                    "60% of Americans 65 and older are pursuing anti-aging interventions.",
-                                    "100% of centenarians autopsied died from diseases, most commonly heart attacks.",
-                                    "Heart disease is the number one killer of both centenarians and the general population.",
-                                    "An 80-year-old has a 500x greater risk of having a heart attack than someone with high cholesterol.",
-                                    "Slowing aging so that a 65-year-old has the health profile of a 58-year-old could cut in half everyone's risk of death, frailty, and disability.",
-                                    "The odds of living to 100 have risen from 1 in 20 million to as high as 1 in 50.",
-                                    "Only 20-30% of lifespan variance is explained by gene inheritance."
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        title: "The Anti-Aging Eight",
-                        buttonLabel: '🔑 Anti-Aging Eight',
-                        contentBlocks: [
-                            {
-                                type: 'paragraphs',
-                                content: [
-                                    "The Anti-Aging Eight represent the fundamental areas to focus on to slow the aging process and enhance longevity. These eight keys impact eleven pathways of aging, offering a holistic approach to maintaining health and vitality over time.",
-                                    "Implementing these eight keys into daily life requires practical and mindful steps, such as adopting a balanced diet, regular exercise, stress management, and maintaining healthy sleep habits."
-                                ]
-                            },
-                            {
-                                type: 'questions',
-                                content: [
-                                    "What are the eight key areas to focus on for anti-aging?",
-                                    "How do these areas impact the eleven pathways of aging?",
-                                    "What are some practical steps to implement these eight principles?"
-                                ]
-                            },
-                            {
-                                type: 'data',
-                                content: [
-                                    "This section requires information from a wider context than the provided source excerpts, as they do not explicitly detail the 'Anti-Aging Eight'."
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        title: "Optimizing Nutrition for Longevity",
-                        buttonLabel: '🥦 Nutrition & Longevity',
-                        contentBlocks: [
-                            {
-                                type: 'paragraphs',
-                                content: [
-                                    "Optimal nutrition is essential for healthy aging. The most important nutrients for healthy aging include vitamins, minerals, antioxidants, and bioactive compounds that support bodily functions and prevent chronic diseases.",
-                                    "Identifying the best food sources of these nutrients and minimizing the intake of harmful dietary factors, such as saturated fats and added sugars, which can increase the risk of cardiovascular diseases and other health issues, is equally important.",
-                                    "Adopting a diet rich in nutrient-dense foods and low in harmful substances can significantly contribute to reducing the risk of chronic diseases and extending healthy lifespan."
-                                ]
-                            },
-                            {
-                                type: 'questions',
-                                content: [
-                                    "What are the most important nutrients for healthy aging?",
-                                    "What are the best food sources of these nutrients?",
-                                    "How can we minimize our intake of harmful dietary factors?"
-                                ]
-                            },
-                            {
-                                type: 'data',
-                                content: [
-                                    "Consuming 25 spoonsful of sugar in the form of candy and soda daily does not impact liver fat if overall calorie intake remains steady.",
-                                    "Consuming a fraction of the same amount of saturated fat from meat and dairy increases liver fat by 39% in four weeks.",
-                                    "Smokers have more than 5x the AMPK activation compared to nonsmokers.",
-                                    "½ teaspoon of wheat germ can significantly reduce hair shedding.",
-                                    "People who eat more spermidine tend to have less cardiovascular disease.",
-                                    "The difference in death rate between those eating more spermidine and those eating less is equivalent to being 5.7 years younger.",
-                                    "The average intake of spermidine is about 10 mg a day, while the US is at 8 mg.",
-                                    "Vegetables are the main source of spermidine."
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        title: "Lifestyle Strategies for Anti-Aging",
-                        buttonLabel: '🏃‍♂️ Lifestyle & Anti-Aging',
-                        contentBlocks: [
-                            {
-                                type: 'paragraphs',
-                                content: [
-                                    "A healthy lifestyle is crucial for slowing the aging process and promoting longevity. Key elements such as adequate sleep, regular exercise, and effective stress management can positively influence long-term health.",
-                                    "Sleep quality, for instance, has a direct impact on the aging process. Sleep deprivation can accelerate biological aging and increase the risk of chronic diseases.",
-                                    "Regular physical exercise not only improves cardiovascular and muscular health but also contributes to mental health and the prevention of degenerative diseases.",
-                                    "Stress management through techniques like meditation, yoga, or simply relaxation can protect against age-related decline and enhance quality of life."
-                                ]
-                            },
-                            {
-                                type: 'questions',
-                                content: [
-                                    "How does sleep influence the aging process?",
-                                    "What are the benefits of regular exercise for longevity?",
-                                    "How can we manage stress effectively to protect against age-related decline?"
-                                ]
-                            },
-                            {
-                                type: 'data',
-                                content: [
-                                    "A week of 5-hour nights has similar effects to those reported in people who smoke, have diabetes, or have coronary artery disease.",
-                                    "A warm foot bath may help people fall asleep 15 minutes faster.",
-                                    "The average person has 11 bowel movements a week.",
-                                    "Bearing down for a few seconds while lying down can raise blood pressure to nearly 170/110.",
-                                    "Increasing daily fiber intake by 3 g could potentially save billions in medical costs for constipation alone.",
-                                    "Every 7 g of daily fiber intake correlates to a 9% reduced risk of heart disease.",
-                                    "In Uganda, where people used to eat about 77 g of fiber per day, coronary heart disease was almost nonexistent."
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        title: "Putting It All Together: A Practical Guide to Longevity",
-                        buttonLabel: '📘 Guide to Longevity',
-                        contentBlocks: [
-                            {
-                                type: 'paragraphs',
-                                content: [
-                                    "To maximize the benefits of anti-aging strategies, it's essential to personalize recommendations based on individual needs and preferences. This personalized approach allows addressing specific health challenges and optimizing lifestyle habits for sustainable longevity.",
-                                    "It's important to debunk myths and misconceptions about aging to adopt evidence-based practices. For example, contrary to popular belief, there is no definitive 'cure' for aging, but there are multiple strategies that can slow it down and improve quality of life.",
-                                    "Latest advancements in anti-aging research offer new perspectives and innovative solutions. Future expectations include gene therapies, targeted pharmacological interventions, and advanced nutritional approaches that could revolutionize how we approach aging."
-                                ]
-                            },
-                            {
-                                type: 'questions',
-                                content: [
-                                    "How can we personalize the anti-aging recommendations based on our individual needs and preferences?",
-                                    "What are some common myths and misconceptions about aging?",
-                                    "What are the latest advancements in anti-aging research and what can we expect in the future?"
-                                ]
-                            },
-                            {
-                                type: 'data',
-                                content: [
-                                    "Obese patients on a whole-food plant-based diet lost an average of 7 pounds without controlling portions or counting calories.",
-                                    "Diabetics on the same diet saw their fasting blood sugars drop by 28 points.",
-                                    "Those with LDL cholesterol levels over 100 mg/dL experienced a 33-point drop.",
-                                    "Professional soccer players are 5x more likely to die from Alzheimer's disease than matched controls.",
-                                    "A 5% increase in obesity prevalence is associated with a 6% increase in flu-related hospitalizations.",
-                                    "Eating 5 or more servings of fruits and vegetables daily resulted in an 82% greater protective antibody response to a vaccine after just one month."
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                bookDetails: {
-                    image: '/libri/anti-aging.png', // Replace with your actual image path
-                    title: 'Longevity: The Science of Aging',
-                    author: 'Maria Rossi',
-                    year: '2024',
-                    pages: '450',
-                    link: 'https://example.com/buy-anti-aging', // Replace with your actual link
-                    offerCoffeeLink: 'https://example.com/coffee' // Replace with your actual link
-                }
-            }
+            "en": {
+            "topics": [
+              {
+                "topic": "Spermidine",
+                "emoji": "🌿",
+                "question": "What is spermidine, and what are the top sources of this nutrient?",
+                "answer": "Spermidine, a polyamine compound found in cells, plays a vital role in autophagy, the body's natural process of removing damaged cells.\n\n**Studies reveal a correlation between higher spermidine intake and a reduced risk of cardiovascular disease, suggesting a potential link to longevity.** Notably, a study published in a scientific journal indicated that individuals with the highest spermidine intake, exceeding 12 mg daily, exhibited a mortality rate equivalent to being 5.7 years younger than those with lower intakes. This finding underscores the potential impact of spermidine on lifespan. The average daily intake of spermidine varies globally, with an estimated 10 mg per day. While some European and Asian countries, particularly those in the Mediterranean region, have higher intakes, the United States lags behind at 8 mg per day.\n\nIt's worth noting that while certain foods like dill might have a high concentration of spermidine per serving, common foods like chickpeas offer a more substantial amount due to typical serving sizes.",
+                "quote": "\"The difference in death rate was as if those eating more spermidine were 5.7 years younger.\""
+              },
+              {
+                "topic": "Coffee",
+                "emoji": "☕",
+                "question": "Is coffee good or bad for your health?",
+                "answer": "Coffee, a beverage enjoyed worldwide, contains over a thousand bioactive compounds, including chlorogenic acid, a potent antioxidant linked to various health benefits.\n\n**Research suggests that the health benefits associated with coffee consumption are not solely attributed to caffeine.** Studies comparing regular coffee to decaffeinated coffee have shown similar positive effects, implying that other compounds in coffee contribute significantly to its health-promoting properties. For those seeking to optimize the health benefits of coffee, it's essential to note that the chlorogenic acid content can vary drastically between brands and brewing methods.\n\n**Research revealed that coffee from Starbucks had notably lower levels of chlorogenic acid compared to other brands tested.** This highlights the importance of selecting coffee brands and brewing methods that maximize the intake of beneficial compounds.",
+                "quote": "\"More than a hundred coffees have been tested, and the levels of chlorogenic acids varied by more than thirtyfold. Interestingly, the major contributor widening the range was the coffee purchased from Starbucks, which had an extremely low chlorogenic acid content, averaging ten times lower than the others.\""
+              },
+              {
+                "topic": "Trans Fats",
+                "emoji": "❌🍔",
+                "question": "What are the primary sources of trans fats in the modern diet?",
+                "answer": "Trans fats, notorious for their detrimental impact on cardiovascular health, were once primarily associated with processed foods.\n\n**However, recent research reveals a shift in the primary sources of trans fat consumption globally.** Surprisingly, in 75% of the countries surveyed, meat and dairy products have overtaken processed foods as the main contributors to trans fat intake. This finding highlights the importance of considering the trans fat content of seemingly unprocessed animal products.\n\n**In the United States, dairy, including pizza, emerges as the leading source of trans fat intake, followed by chicken, pastries, pork, and burgers.** This underscores the pervasiveness of trans fats in the modern diet and the need for increased awareness about their presence in various food sources.",
+                "quote": "\"These days, in three-quarters of the countries surveyed, most exposure to trans fats now comes from meat and dairy.\""
+              },
+              {
+                "topic": "Microbiome",
+                "emoji": "🦠",
+                "question": "What impact can fecal transplants have on overall health?",
+                "answer": "Fecal transplants, though unconventional, have emerged as a promising area of research for their potential to restore and improve gut health.\n\n**The procedure involves transferring fecal matter from a healthy donor to a recipient, aiming to repopulate the gut with beneficial bacteria.** One remarkable case report highlighted the profound impact of fecal transplants, showcasing a completely bald man who experienced full hair regrowth following the procedure. This case, while anecdotal, suggests a potential link between gut health and hair loss.\n\n**Further supporting the potential of fecal transplants, a study conducted on mice showed that transplanting the microbiome of centenarians, individuals who have lived to 100 years or more, resulted in various positive physiological changes in the recipient mice.** These changes included a reduction in age pigment in the brain, suggesting potential anti-aging benefits.",
+                "quote": "\"Check out see.nf/hairfoods for a remarkable case report of a totally bald man receiving a fecal transplant and regrowing a full head of hair.\""
+              },
+              {
+                "topic": "Alzheimer's Disease",
+                "emoji": "🧠",
+                "question": "What are some surprising risk factors and ways to prevent Alzheimer's Disease?",
+                "answer": "Alzheimer's disease, a debilitating neurodegenerative condition, poses a significant public health challenge.\n\n**Beyond the well-known genetic and lifestyle factors, recent research has uncovered unexpected risk factors.** Shockingly, studies suggest that professional soccer players may face a fivefold increased risk of dying from Alzheimer's disease compared to the general population. The exact mechanisms behind this association remain unclear, but researchers speculate that repeated head impacts from heading the ball or exposure to environmental toxins on artificial turf may play a role.\n\n**Another concerning finding is the prevalence of silent stages of Alzheimer's disease, characterized by the accumulation of amyloid plaques and tau tangles in the brain, even in younger individuals.** Studies indicate that half of the population may exhibit these silent signs by the age of 50, with a small percentage displaying them as early as their twenties.",
+                "quote": "\"Silent stages of Alzheimer’s disease—what appear to be tangles in the brain—in half of people by age fifty and even 10 percent of those in their twenties.\""
+              },
+              {
+                "topic": "Supplements",
+                "emoji": "💊",
+                "question": "Are supplements always beneficial, and is there anything to be wary of in the supplement industry?",
+                "answer": "The Dietary Supplement Health and Education Act (DSHEA), enacted in 1994, significantly impacted the supplement industry.\n\n**While intended to regulate dietary supplements, the act inadvertently led to a boom in the industry, with the market expanding from $4 billion to a staggering $40 billion, accompanied by an explosion in the number of available products.** However, a crucial aspect of DSHEA was the removal of the burden of proof for quality control, safety, and efficacy from supplement manufacturers. This lack of stringent oversight has raised concerns about the quality and safety of many supplements available to consumers.\n\n**Disturbingly, investigations have revealed that a significant portion of supplements fail to meet label claims.** Specifically, four out of five bottles tested were found to contain ingredients other than what was listed on the label, often substituting inexpensive fillers like powdered rice or even \"houseplants\" in place of the advertised ingredients.",
+                "quote": "\"Thanks to DSHEA. The act removed the burden of proof for quality control, safety, or efficacy from the supplement manufacturers, and the market blew up from a $4 billion industry with 4,000 products before DSHEA’s passage to a $40 billion industry with an excess of 50,000 products.\""
+              },
+              {
+                "topic": "Antioxidants",
+                "emoji": "🍇",
+                "question": "How do antioxidants impact our health, and what are the best ways to incorporate them into our diets?",
+                "answer": "Antioxidants are crucial in mitigating oxidative stress and protecting our bodies from damage caused by free radicals. Maintaining optimal antioxidant levels is essential for overall health and well-being.\n\n**Surprisingly, even short periods of stress can significantly deplete these protective molecules.** Studies show that a stressful event can cause antioxidant levels to plummet within just two hours, and it may take up to three days for them to return to normal. This emphasizes the importance of replenishing antioxidants through a consistent and balanced diet.\n\n**Research suggests that the impact of a diet rich in antioxidants on population health is substantial.** A modeling study proposes that promoting the consumption of an apple a day could be as effective in preventing deaths from vascular disease as prescribing cholesterol-lowering statin drugs, and with potentially fewer side effects.",
+                "quote": "\"Healthier eating is especially important when we anticipate we’ll be stressed, sick, or tired. Ideally, we would be having antioxidant-rich foods at every meal and snack.\""
+              }
+            ]
+          },
+          "it": {
+            "topics": [
+              {
+                "topic": "Spermidina",
+                "emoji": "🌿",
+                "question": "Cos'è la spermidina e quali sono le principali fonti di questo nutriente?",
+                "answer": "La spermidina, un composto poliamminico presente nelle cellule, svolge un ruolo vitale nell'autofagia, il processo naturale del corpo di rimuovere le cellule danneggiate.\n\n**Gli studi rivelano una correlazione tra un'assunzione più elevata di spermidina e un ridotto rischio di malattie cardiovascolari, suggerendo un potenziale legame con la longevità.** Notabilmente, uno studio pubblicato su una rivista scientifica ha indicato che gli individui con il più alto apporto di spermidina, superiore a 12 mg al giorno, hanno mostrato un tasso di mortalità equivalente a essere 5,7 anni più giovani rispetto a coloro con assunzioni più basse. Questo risultato sottolinea il potenziale impatto della spermidina sulla durata della vita. L'assunzione giornaliera media di spermidina varia a livello globale, con una stima di 10 mg al giorno. Mentre alcuni paesi europei e asiatici, in particolare quelli della regione mediterranea, hanno assunzioni più elevate, gli Stati Uniti restano indietro con 8 mg al giorno.\n\nVale la pena notare che mentre alcuni alimenti come l'aneto potrebbero avere una concentrazione elevata di spermidina per porzione, alimenti comuni come i ceci offrono una quantità più sostanziale grazie alle dimensioni tipiche delle porzioni.",
+                "quote": "\"La differenza nel tasso di mortalità era come se coloro che mangiavano più spermidina fossero 5,7 anni più giovani.\""
+              },
+              {
+                "topic": "Caffè",
+                "emoji": "☕",
+                "question": "Il caffè fa bene o male alla salute?",
+                "answer": "Il caffè, una bevanda apprezzata in tutto il mondo, contiene oltre mille composti bioattivi, inclusi l'acido clorogenico, un potente antiossidante legato a vari benefici per la salute.\n\n**La ricerca suggerisce che i benefici per la salute associati al consumo di caffè non sono attribuibili solo alla caffeina.** Studi che confrontano il caffè normale con quello decaffeinato hanno mostrato effetti positivi simili, implicando che altri composti nel caffè contribuiscono in modo significativo alle sue proprietà benefiche. Per coloro che cercano di ottimizzare i benefici per la salute del caffè, è essenziale notare che il contenuto di acido clorogenico può variare drasticamente tra i marchi e i metodi di preparazione.\n\n**La ricerca ha rivelato che il caffè di Starbucks aveva livelli notevolmente inferiori di acido clorogenico rispetto ad altri marchi testati.** Questo evidenzia l'importanza di scegliere marchi di caffè e metodi di preparazione che massimizzano l'assunzione di composti benefici.",
+                "quote": "\"Più di cento caffè sono stati testati, e i livelli di acidi clorogenici sono variati di oltre trenta volte. Interessantemente, il principale contributore all'ampliamento della gamma era il caffè acquistato da Starbucks, che aveva un contenuto di acido clorogenico estremamente basso, in media dieci volte inferiore rispetto agli altri.\""
+              },
+              {
+                "topic": "Grassi Trans",
+                "emoji": "❌🍔",
+                "question": "Quali sono le principali fonti di grassi trans nella dieta moderna?",
+                "answer": "I grassi trans, noti per il loro impatto negativo sulla salute cardiovascolare, erano una volta principalmente associati ai cibi trasformati.\n\n**Tuttavia, ricerche recenti rivelano un cambiamento nelle principali fonti di consumo di grassi trans a livello globale.** Sorprendentemente, nel 75% dei paesi intervistati, carne e prodotti lattiero-caseari hanno superato i cibi trasformati come principali contributori all'assunzione di grassi trans. Questo risultato evidenzia l'importanza di considerare il contenuto di grassi trans di prodotti animali apparentemente non trasformati.\n\n**Negli Stati Uniti, i latticini, inclusa la pizza, emergono come la principale fonte di assunzione di grassi trans, seguiti da pollo, pasticcini, maiale e hamburger.** Questo sottolinea la pervasività dei grassi trans nella dieta moderna e la necessità di aumentare la consapevolezza sulla loro presenza in varie fonti alimentari.",
+                "quote": "\"Questi giorni, in tre quarti dei paesi intervistati, la maggior parte dell'esposizione ai grassi trans proviene ora da carne e latticini.\""
+              },
+              {
+                "topic": "Microbioma",
+                "emoji": "🦠",
+                "question": "Che impatto possono avere i trapianti fecali sulla salute generale?",
+                "answer": "I trapianti fecali, sebbene non convenzionali, sono emersi come un'area promettente di ricerca per il loro potenziale nel ripristinare e migliorare la salute intestinale.\n\n**La procedura prevede il trasferimento di materia fecale da un donatore sano a un ricevente, con l'obiettivo di ripopolare l'intestino con batteri benefici.** Un caso di studio notevole ha evidenziato l'impatto profondo dei trapianti fecali, mostrando un uomo completamente calvo che ha sperimentato una ricrescita completa dei capelli dopo la procedura. Questo caso, sebbene aneddotico, suggerisce un potenziale legame tra la salute intestinale e la perdita dei capelli.\n\n**Ulteriori ricerche a sostegno del potenziale dei trapianti fecali includono uno studio condotto su topi che ha mostrato che il trapianto del microbioma di centenari, individui che hanno vissuto fino a 100 anni o più, ha portato a vari cambiamenti fisiologici positivi nei topi riceventi.** Questi cambiamenti includevano una riduzione del pigmento dell'età nel cervello, suggerendo potenziali benefici anti-invecchiamento.",
+                "quote": "\"Visita see.nf/hairfoods per un caso di studio straordinario di un uomo completamente calvo che ha ricevuto un trapianto fecale e ha ricresciuto una testa completa di capelli.\""
+              },
+              {
+                "topic": "Malattia di Alzheimer",
+                "emoji": "🧠",
+                "question": "Quali sono alcuni fattori di rischio sorprendenti e modi per prevenire la malattia di Alzheimer?",
+                "answer": "La malattia di Alzheimer, una condizione neurodegenerativa debilitante, rappresenta una sfida significativa per la salute pubblica.\n\n**Oltre ai noti fattori genetici e di stile di vita, ricerche recenti hanno scoperto fattori di rischio inaspettati.** Sconvolgente, gli studi suggeriscono che i calciatori professionisti potrebbero affrontare un rischio cinque volte maggiore di morire a causa della malattia di Alzheimer rispetto alla popolazione generale. I meccanismi esatti dietro questa associazione rimangono poco chiari, ma i ricercatori ipotizzano che impatti ripetuti alla testa dovuti al colpire il pallone o l'esposizione a tossine ambientali su campi sintetici possano giocare un ruolo.\n\n**Un'altra scoperta preoccupante è la prevalenza di stadi silenziosi della malattia di Alzheimer, caratterizzati dall'accumulo di placche amiloidi e grovigli di tau nel cervello, anche in individui più giovani.** Gli studi indicano che la metà della popolazione potrebbe mostrare questi segni silenziosi entro i 50 anni, con una piccola percentuale che li manifesta già nei vent'anni.",
+                "quote": "\"Stadi silenziosi della malattia di Alzheimer—ciò che sembrano essere grovigli nel cervello—presenti nella metà delle persone entro i cinquanta anni e persino nel 10 percento di coloro nei vent'anni.\""
+              },
+              {
+                "topic": "Supplementi",
+                "emoji": "💊",
+                "question": "I supplementi sono sempre benefici e c'è qualcosa di cui preoccuparsi nell'industria dei supplementi?",
+                "answer": "Il Dietary Supplement Health and Education Act (DSHEA), emanato nel 1994, ha avuto un impatto significativo sull'industria dei supplementi.\n\n**Sebbene destinato a regolare i supplementi dietetici, l'atto ha inavvertitamente portato a un boom dell'industria, con il mercato che è passato da 4 miliardi di dollari a un impressionante 40 miliardi di dollari, accompagnato da un'esplosione del numero di prodotti disponibili.** Tuttavia, un aspetto cruciale del DSHEA è stata la rimozione dell'onere della prova per il controllo della qualità, la sicurezza e l'efficacia dai produttori di supplementi. Questa mancanza di supervisione rigorosa ha sollevato preoccupazioni sulla qualità e sicurezza di molti supplementi disponibili ai consumatori.\n\n**Preoccupantemente, le indagini hanno rivelato che una parte significativa dei supplementi non soddisfa le dichiarazioni sull'etichetta.** Nello specifico, quattro bottiglie su cinque testate sono risultate contenere ingredienti diversi da quelli elencati sull'etichetta, spesso sostituendo riempitivi economici come il riso in polvere o persino \"piante domestiche\" al posto degli ingredienti pubblicizzati.",
+                "quote": "\"Grazie al DSHEA. L'atto ha rimosso l'onere della prova per il controllo della qualità, la sicurezza o l'efficacia dai produttori di supplementi, e il mercato è esploso da un'industria da 4 miliardi di dollari con 4.000 prodotti prima dell'emanazione del DSHEA a un'industria da 40 miliardi di dollari con oltre 50.000 prodotti.\""
+              },
+              {
+                "topic": "Antiossidanti",
+                "emoji": "🍇",
+                "question": "Come influenzano gli antiossidanti la nostra salute e quali sono i modi migliori per incorporarli nella nostra dieta?",
+                "answer": "Gli antiossidanti sono cruciali nel mitigare lo stress ossidativo e nel proteggere il nostro corpo dai danni causati dai radicali liberi. Mantenere livelli ottimali di antiossidanti è essenziale per la salute e il benessere generale.\n\n**Sorprendentemente, anche brevi periodi di stress possono esaurire significativamente queste molecole protettive.** Gli studi mostrano che un evento stressante può far crollare i livelli di antiossidanti in appena due ore, e potrebbe richiedere fino a tre giorni per tornare alla normalità. Questo enfatizza l'importanza di reintegrare gli antiossidanti attraverso una dieta costante ed equilibrata.\n\n**La ricerca suggerisce che l'impatto di una dieta ricca di antiossidanti sulla salute della popolazione è sostanziale.** Uno studio di modellazione propone che promuovere il consumo di una mela al giorno potrebbe essere efficace quanto prescrivere farmaci statini per abbassare il colesterolo nella prevenzione delle morti per malattie vascolari, e con potenzialmente meno effetti collaterali.",
+                "quote": "\"Una dieta più sana è particolarmente importante quando prevediamo di essere stressati, malati o stanchi. Idealmente, dovremmo consumare alimenti ricchi di antiossidanti in ogni pasto e spuntino.\""
+              }
+            ]
+          }
         };
 
         let currentLanguage = 'it';
@@ -616,28 +363,23 @@
             cards = [];
             currentIndex = 0;
 
-            const { chapters, bookDetails } = content[currentLanguage];
+            const { topics } = content[currentLanguage];
 
-            // Create buttons and cards for chapters
-            chapters.forEach((chapter, index) => {
-                createButton(chapter.buttonLabel, index);
-                createCard(chapter);
+            // Create buttons and cards for topics
+            topics.forEach((topic, index) => {
+                createButton(topic.topic, index);
+                createCard(topic);
             });
-
-            // Create "Book Details" button and card
-            const detailsLabel = currentLanguage === 'it' ? '📖 Dettagli' : '📖 Details';
-            createButton(detailsLabel, chapters.length);
-            createBookCard(bookDetails);
 
             // Initialize to show the first card
             showCard(0);
         }
 
-        // Function to create a button
+        // Function to create a button with emoji
         function createButton(label, index) {
             const button = document.createElement('div');
             button.className = 'button';
-            button.textContent = label;
+            button.innerHTML = `${content[currentLanguage].topics[index].emoji} ${label}`;
             button.addEventListener('click', () => {
                 showCard(index);
             });
@@ -645,13 +387,21 @@
         }
 
         // Function to create a content block
-        function createContentBlock(type, contents) {
+        function createContentBlock(type, contentText) {
             const div = document.createElement('div');
             div.className = `content-block ${type}`;
 
-            contents.forEach(item => {
+            // Replace **text** with <strong>text</strong> for highlighting
+            const formattedText = contentText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            // Replace escaped quotes \"text\" with proper quotes
+            const finalText = formattedText.replace(/\\\"/g, '"').replace(/\\'/g, "'");
+
+            // Split the content by newline characters to create paragraphs
+            const paragraphs = finalText.split('\n\n');
+
+            paragraphs.forEach(paragraph => {
                 const p = document.createElement('p');
-                p.textContent = item;
+                p.innerHTML = paragraph;
                 div.appendChild(p);
             });
 
@@ -659,61 +409,36 @@
         }
 
         // Function to create a card
-        function createCard(chapter) {
+        function createCard(topic) {
             const card = document.createElement('div');
             card.className = 'card';
 
             const cardContent = document.createElement('div');
             cardContent.className = 'card-content';
 
-            const title = document.createElement('h2');
-            title.className = 'section-title';
-            title.textContent = chapter.title;
-            cardContent.appendChild(title);
+            // Add Question
+            const questionBlock = createContentBlock('question', topic.question);
+            cardContent.appendChild(questionBlock);
 
-            chapter.contentBlocks.forEach(block => {
-                const contentBlock = createContentBlock(block.type, block.content);
-                cardContent.appendChild(contentBlock);
-            });
+            // Add Answer (Explanation)
+            const answerBlock = createContentBlock('answer', topic.answer);
+            cardContent.appendChild(answerBlock);
 
-            card.appendChild(cardContent);
-
-            cardsWrapper.appendChild(card);
-            cards.push(card);
-        }
-
-        // Function to create the book details card
-        function createBookCard(bookDetails) {
-            const card = document.createElement('div');
-            card.className = 'card';
-
-            const cardContent = document.createElement('div');
-            cardContent.className = 'card-content book-details';
-
-            const buyText = currentLanguage === 'it' ? '📖 Acquista il libro' : '📖 Buy this book';
-            const coffeeText = currentLanguage === 'it' ? '☕ Offrimi un caffè' : '☕ Buy me a coffee';
-            const authorText = currentLanguage === 'it' ? 'Autore' : 'Author';
-            const yearText = currentLanguage === 'it' ? 'Anno' : 'Year';
-            const pagesText = currentLanguage === 'it' ? 'Pagine' : 'Pages';
-
-            cardContent.innerHTML = `
-                <img src="${bookDetails.image}" alt="Book Cover" style="width:100%; height:auto; border-radius: 10px;">
-                <h2>${bookDetails.title}</h2>
-                <p>${authorText}: ${bookDetails.author}</p>
-                <p>${yearText}: ${bookDetails.year}</p>
-                <p>${pagesText}: ${bookDetails.pages}</p>
-                <button class="action-button" onclick="window.open('${bookDetails.link}', '_blank')">${buyText}</button>
-                <button class="action-button" onclick="window.open('${bookDetails.offerCoffeeLink}', '_blank')">${coffeeText}</button>
-            `;
+            // Add Quote
+            const quoteBlock = createContentBlock('quote', topic.quote);
+            cardContent.appendChild(quoteBlock);
 
             card.appendChild(cardContent);
-
             cardsWrapper.appendChild(card);
             cards.push(card);
         }
 
         // Function to display a specific card
         function showCard(index) {
+            // Ensure index is within bounds
+            if (index < 0) index = 0;
+            if (index >= cards.length) index = cards.length - 1;
+
             currentIndex = index;
             cardsWrapper.style.transform = `translateX(-${index * 100}%)`;
             const progress = ((index + 1) / cards.length) * 100;
