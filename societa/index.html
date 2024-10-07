@@ -436,6 +436,13 @@
         const cardsWrapper = document.getElementById('cards-wrapper');
         const progressBar = document.querySelector('.progress-bar');
         const languageButton = document.getElementById('language-button');
+        // Check if languageButton exists before adding the event listener
+        if (languageButton) {
+            languageButton.addEventListener('click', () => {
+                currentLanguage = currentLanguage === 'it' ? 'en' : 'it';
+                initializeApp();
+            });
+        }
         // Share and Support are now <a> elements, no need for JS references
 
         const sideMenu = document.getElementById('side-menu');
