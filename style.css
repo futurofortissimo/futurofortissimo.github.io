@@ -26,48 +26,7 @@ footer {
     gap: 10px;
     padding: 10px 20px;
 }
-#overlay {
-    position: fixed;
-    display: none; /* Hidden by default */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5); /* Semi-transparent background */
-    z-index: 999; /* Below the side-menu */
-}
 
-#overlay.active {
-    display: block; /* Show overlay when active */
-}
-
-/* Side Menu styles */
-.side-menu {
-    position: fixed;
-    top: 0;
-    left: -250px; /* Hidden by default */
-    width: 250px;
-    height: 100%;
-    background-color: #fff;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
-    transition: left 0.3s ease;
-    z-index: 1000; /* Above the overlay */
-    padding-top: 60px; /* Space for close button */
-}
-
-.side-menu.open {
-    left: 0; /* Slide in when open */
-}
-
-.close-menu {
-    position: absolute;
-    top: 20px;
-    right: 25px;
-    font-size: 36px;
-    text-decoration: none;
-    color: #000;
-    cursor: pointer;
-}
 
 /* Buttons container in footer */
 .footer-buttons-container {
