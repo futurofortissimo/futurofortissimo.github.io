@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Import Montserrat font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet">
+
     <!-- Favicon -->
     <link rel="icon" href="/index_files/ff.webp" type="image/webp">
     <link rel="apple-touch-icon" href="/index_files/ff.webp">
@@ -282,13 +284,12 @@
     <div class="app-container">
         <!-- Header with logo and buttons -->
         <div class="header">
-            <!-- Buttons inside header -->
-            <div class="buttons-container" id="buttons-container">
-                <!-- Buttons will be dynamically inserted here -->
+            <div class="header-left">
+                <img src="/index_files/ff.png" alt="Logo" class="logo" id="header-logo">
             </div>
-            <!-- Hidden language switch in header -->
-            <button class="language-switch" id="language-switch" style="display:none;">🇬🇧</button>
+            <button class="language-switch" id="language-button">English 🇬🇧</button>
         </div>
+
 
         <!-- Progress bar -->
         <div class="progress-bar"></div>
@@ -304,16 +305,9 @@
     <footer>
 
         <div class="footer-content">
-          <a href="https://futurofortissimo.github.io/">
-              <img src="/index_files/ff.png" alt="Logo" class="logo">
-          </a>
-            <!-- Share Button as a link -->
-            <a href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io/" style="border-radius:20px" class="share-button">Share</a>
-            <!-- Support Button as a link -->
-            <a href="https://www.paypal.com/paypalme/michelemerelli" style="border-radius:20px" class="support-button">Support</a>
-            <!-- English Language Button -->
-            <a class="language-button" id="language-button" style="border-radius:20px">English</a>
-        </div>
+          <div class="buttons-container" id="buttons-container">
+              <!-- Buttons will be dynamically inserted here -->
+          </div>
     </footer>
 
     <script>

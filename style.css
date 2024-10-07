@@ -1,0 +1,191 @@
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--theme-color);
+    padding: 10px 20px;
+    flex-shrink: 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    /* Ensure it stays on top */
+}
+
+/* Buttons container in footer */
+.footer-buttons-container {
+    display: flex;
+    overflow-x: auto;
+    flex-grow: 1;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+    position: relative;
+    padding: 0 20px;
+    /* Add padding for fade effect */
+    gap: 15px;
+}
+
+.footer-buttons-container::-webkit-scrollbar {
+    display: none;
+    /* WebKit */
+}
+
+/* Emoji Buttons in Footer */
+.footer-buttons-container .emoji-button {
+    font-size: 25px;
+    /* 2x bigger */
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, border 0.2s ease-in-out;
+}
+
+.footer-buttons-container .emoji-button:hover {
+    transform: scale(var(--button-hover-scale));
+    border-color: #4CAF50;
+}
+
+.footer-buttons-container .emoji-button.selected {
+    border-color: #4CAF50;
+}
+
+/* Side Menu */
+.side-menu {
+    height: 100%;
+    /* Full-height */
+    width: 0;
+    /* Initial width is 0 */
+    position: fixed;
+    /* Stay in place */
+    top: 0;
+    left: 0;
+    background-color: #f1f1f1;
+    /* Light grey */
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    transition: 0.3s;
+    /* Transition effect */
+    padding-top: 60px;
+    /* Place content 60px from the top */
+    z-index: 1001;
+    /* Above header and footer */
+}
+
+.side-menu.open {
+    width: 200px;
+    /* Set width when open */
+}
+
+/* Close button inside side menu */
+.close-menu {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+/* Side menu content */
+.side-menu-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 20px;
+    gap: 20px;
+}
+
+/* Buttons inside side menu */
+.side-menu-content a,
+.side-menu-content button {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+    background-color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    width: 80px;
+    font-family: 'Montserrat', sans-serif;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    /* For hover animation */
+    font-size: 16px;
+}
+
+.side-menu-content a:hover,
+.side-menu-content button:hover {
+    transform: scale(var(--button-hover-scale));
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Overlay to dim the background when menu is open */
+.overlay {
+    position: fixed;
+    display: none;
+    /* Hidden by default */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black with opacity */
+    z-index: 1000;
+    /* Below side menu */
+    cursor: pointer;
+    /* Cursor changes to pointer */
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* Responsive adjustments */
+@media (min-width: 601px) {
+    footer {
+        display: flex;
+    }
+
+    .header {
+        position: fixed;
+        /* Already fixed */
+    }
+
+    .cards-container {
+        padding-bottom: 0;
+        /* Remove padding adjustment */
+    }
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--theme-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    /* Ensure it stays on top */
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    height: 40px;
+    cursor: pointer;
+}
