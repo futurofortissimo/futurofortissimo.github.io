@@ -283,12 +283,14 @@
 <body>
     <div class="app-container">
         <!-- Header with logo and buttons -->
-        <div class="header">
-            <div class="header-left">
-                <img src="/index_files/ff.png" alt="Logo" class="logo" id="header-logo">
+            <div class="header">
+                <div class="header-left">
+                    <img src="/index_files/ff.png" alt="Logo" class="logo" id="header-logo">
+                    <!-- Ensure this button is present if you want to use it to open the menu -->
+                    <button class="menu-button" id="menu-button">☰</button> <!-- Add this line if missing -->
+                </div>
+                <button class="language-switch" id="language-button">English 🇬🇧</button>
             </div>
-            <button class="language-switch" id="language-button">English 🇬🇧</button>
-        </div>
 
         <div id="side-menu" class="side-menu">
             <a href="javascript:void(0)" class="close-menu" id="close-menu">&times;</a>
@@ -318,6 +320,34 @@
               <!-- Buttons will be dynamically inserted here -->
           </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sideMenu = document.getElementById('side-menu');
+            const closeMenu = document.getElementById('close-menu');
+            const overlay = document.getElementById('overlay');
+            const headerLogo = document.getElementById('header-logo');
+            const menuButton = document.getElementById('menu-button'); // Ensure this is defined
+
+            // Function to open side menu
+            function openSideMenu() {
+                sideMenu.classList.add('open');
+                overlay.classList.add('active');
+            }
+
+            // Function to close side menu
+            function closeSideMenuFunc() {
+                sideMenu.classList.remove('open');
+                overlay.classList.remove('active');
+            }
+
+            // Event listeners for opening and closing side menu
+            headerLogo.addEventListener('click', openSideMenu);
+            menuButton.addEventListener('click', openSideMenu); // Add this line if using a button
+            closeMenu.addEventListener('click', closeSideMenuFunc);
+            overlay.addEventListener('click', closeSideMenuFunc);
+        });
+    </script>
 
     <script>
     let currentLanguage = 'it';
