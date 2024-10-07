@@ -203,6 +203,20 @@
         }
     </style>
 </head>
+
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Food-Mood Connection - Riepilogo del Libro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Import Montserrat font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="/index_files/ff.webp" type="image/webp">
+    <link rel="apple-touch-icon" href="/index_files/ff.webp">
+</head>
 <body>
     <div class="app-container">
         <!-- Header with logo, buttons, and language switch -->
@@ -234,123 +248,348 @@
     </footer>
 
     <script>
-        // Content data in Italian and English with updated explanations
+        // Content data in Italian and English with updated explanations and emojis
         const content = {
-        "en": {
-            "topics": [
+            "macro_areas": [
                 {
-                    "topic": "The Significance of Spermidine",
-                    "emoji": "🧬",
-                    "question": "How does spermidine impact longevity, and what are the best sources of this compound?",
-                    "answer": "Research has revealed that **spermidine**, a natural polyamine, is a strong predictor of **longevity**. Found abundantly in **vegetables**, spermidine plays a vital role in cellular processes like **autophagy**. Individuals with a higher spermidine intake exhibit a mortality rate comparable to those **5.7 years younger**. Interestingly, while **animal products** are often associated with spermidine, **wheat germ** stands out as a cost-effective and readily available source. A study in Turkey even identified **white bread** as a leading source of spermidine. The average spermidine intake is about **10 mg per day**, with some Asian and European countries, particularly those around the **Mediterranean**, reaching **13 mg** or more, while the United States lags at **8 mg**. These findings highlight the potential of **dietary modification**, specifically incorporating spermidine-rich foods, to influence lifespan.",
-                    "quote": "Researchers looked at 146 different nutrients in their diet, and the component most predictive of longevity was spermidine."
+                    "name_en": "Longevity and Aging",
+                    "name_it": "Longevità e Invecchiamento",
+                    "emoji": "⏳",
+                    "facts": [
+                      {
+                        "en": "60% of Americans aged 65 and older pursue anti-aging interventions, indicating the widespread desire to combat aging.",
+                        "it": "Il 60% degli americani di età pari o superiore a 65 anni persegue interventi anti-invecchiamento, indicando il diffuso desiderio di combattere l'invecchiamento."
+                      },
+                      {
+                        "en": "100% of centenarians examined in a study, even those perceived as healthy before death, died from diseases, primarily heart attacks, rather than old age. This suggests aging itself doesn't cause death but increases disease susceptibility.",
+                        "it": "Il 100% dei centenari esaminati in uno studio, anche quelli percepiti come sani prima della morte, sono morti a causa di malattie, principalmente attacchi di cuore, piuttosto che per l'età avanzata. Questo suggerisce che l'invecchiamento di per sé non causa la morte, ma aumenta la suscettibilità alle malattie."
+                      },
+                      {
+                        "en": "The likelihood of living to 100 has increased from 1 in 20 million to as high as 1 in 50. This reflects significant advancements in healthcare and lifestyle that have extended lifespan.",
+                        "it": "La probabilità di vivere fino a 100 anni è aumentata da 1 su 20 milioni a fino a 1 su 50. Ciò riflette significativi progressi nella sanità e nello stile di vita che hanno esteso la durata della vita."
+                      },
+                      {
+                        "en": "Boosting autophagy, the body's mechanism for clearing damaged cells, can increase the lifespan of mice by an average of 17% while also improving healthspan.",
+                        "it": "Aumentare l'autofagia, il meccanismo del corpo per eliminare le cellule danneggiate, può aumentare la durata della vita dei topi in media del 17% migliorando anche la salute durante la vita."
+                      },
+                      {
+                        "en": "Restricting dietary protein can have the same lifespan-extending effects as overall caloric restriction in lab settings.",
+                        "it": "Limitare l'assunzione di proteine alimentari può avere gli stessi effetti di estensione della durata della vita della restrizione calorica complessiva in ambienti di laboratorio."
+                      },
+                      {
+                        "en": "Mice on a calorie-restricted, low-fat diet lived for 153 weeks, a lifespan over 50% longer than the average lifespan of mice on a standard diet.",
+                        "it": "I topi con una dieta a basso contenuto calorico e di grassi hanno vissuto per 153 settimane, una durata della vita oltre il 50% più lunga rispetto alla durata media dei topi con una dieta standard."
+                      },
+                      {
+                        "en": "The ratio of protein to carbohydrates for lifespan across different species appears to be roughly 1:10, remarkably similar to the ratio found in the traditional Okinawan diet, which is 9% protein.",
+                        "it": "Il rapporto tra proteine e carboidrati per la durata della vita tra diverse specie sembra essere approssimativamente 1:10, sorprendentemente simile al rapporto trovato nella dieta tradizionale Okinawana, che è del 9% di proteine."
+                      },
+                      {
+                        "en": "Substituting 5% of animal protein with plant protein is associated with a 20% lower risk of death.",
+                        "it": "Sostituire il 5% delle proteine animali con proteine vegetali è associato a un rischio di morte inferiore del 20%."
+                      },
+                      {
+                        "en": "There's a strong negative correlation (r = -0.96) between methionine levels in body tissues and maximum lifespan across mammals - the higher the methionine, the shorter the lifespan.",
+                        "it": "C'è una forte correlazione negativa (r = -0,96) tra i livelli di metionina nei tessuti del corpo e la durata massima della vita tra i mammiferi: maggiore è la metionina, più breve è la durata della vita."
+                      },
+                      {
+                        "en": "Reducing methionine concentration in a cell culture can increase the replicative lifespan of human cells by 60–75%, enabling them to better withstand stressors like heat, radiation, carcinogens, and free radicals.",
+                        "it": "Ridurre la concentrazione di metionina in una coltura cellulare può aumentare la durata replicativa delle cellule umane del 60-75%, permettendo loro di resistere meglio a stressori come calore, radiazioni, cancerogeni e radicali liberi."
+                      },
+                      {
+                        "en": "Short-term methionine deprivation in obese mice resulted in a 60% reduction in fat mass within two weeks, despite increased calorie intake and decreased physical activity. This suggests the activation of a 'futile cycle' of simultaneous fat production and breakdown.",
+                        "it": "La privazione a breve termine di metionina in topi obesi ha portato a una riduzione del 60% della massa grassa in due settimane, nonostante l'aumento dell'assunzione calorica e la diminuzione dell'attività fisica. Questo suggerisce l'attivazione di un 'ciclo futile' di produzione e degradazione simultanea dei grassi."
+                      },
+                      {
+                        "en": "A 48-hour vegan diet challenge in omnivores can lead to substantial improvements in metabolic health.",
+                        "it": "Una sfida di dieta vegana di 48 ore in onnivori può portare a sostanziali miglioramenti nella salute metabolica."
+                      }
+                    ]
                 },
                 {
-                    "topic": "Impact of Diet on Hair Loss",
-                    "emoji": "🍖",
-                    "question": "Can dietary choices affect hair loss, and what surprising findings have emerged from research?",
-                    "answer": "Genetics and hormones are recognized contributors to **hair loss**, but research suggests that **diet** can also play a significant role. **Population studies** reveal intriguing correlations between **dietary habits** and pattern baldness. Consuming **meat** and **junk food** is linked with an increased risk, whereas a diet rich in **raw vegetables**, **fresh herbs**, and **regular soymilk** consumption demonstrates a protective effect. A striking **case report** documents a completely bald man experiencing full **hair regrowth** after a **fecal transplant**, highlighting a potential connection between the **gut microbiome** and **hair health**. In a study comparing **pumpkin seed oil** to **minoxidil** (a common hair loss medication), both treatments were effective for **female pattern hair loss**, although minoxidil was more effective despite being five times more expensive.",
-                    "quote": "Population studies have found that pattern baldness is associated with poor sleeping habits and the consumption of meat and junk food, whereas protective associations were found for the consumption of raw vegetables and fresh herbs, as well as frequent intake of soymilk."
+                  "name_en": "Nutrition and Diet",
+                  "name_it": "Nutrizione e Dieta",
+                  "facts": [
+                    {
+                      "en": "Starbucks coffee was found to have 10 times less chlorogenic acid, a beneficial polyphenol abundant in coffee beans, than other coffees tested.",
+                      "it": "Il caffè Starbucks è risultato contenere 10 volte meno acido clorogenico, un polifenolo benefico abbondante nei chicchi di caffè, rispetto ad altri caffè testati."
+                    },
+                    {
+                      "en": "Consuming half a teaspoon of wheat germ can substantially reduce hair shedding.",
+                      "it": "Consumare mezza cucchiaino di germe di grano può ridurre sostanzialmente la perdita dei capelli."
+                    },
+                    {
+                      "en": "People in the top third of spermidine intake, a compound present in foods like mushrooms and tempeh, appear 5.7 years younger in terms of death rate. The average daily intake of spermidine in the US is approximately 8mg, while some Asian and European countries, especially those in the Mediterranean, consume closer to 13mg or more.",
+                      "it": "Le persone nel terzo superiore dell'assunzione di spermidina, un composto presente in alimenti come funghi e tempeh, sembrano avere una mortalità equivalente a quella di persone di 5,7 anni più giovani. L'assunzione giornaliera media di spermidina negli Stati Uniti è di circa 8 mg, mentre alcuni paesi asiatici ed europei, soprattutto quelli del Mediterraneo, ne consumano circa 13 mg o più."
+                    },
+                    {
+                      "en": "One serving of chickpeas (around a third of a can) weighs the same as 100 servings of dill (about 500 sprigs). This illustrates the nutrient density variations between foods.",
+                      "it": "Una porzione di ceci (circa un terzo di una lattina) pesa quanto 100 porzioni di aneto (circa 500 rametti). Questo illustra le variazioni nella densità di nutrienti tra gli alimenti."
+                    },
+                    {
+                      "en": "Plain white mushrooms may contain double the spermidine of 'fancier' mushrooms like enoki or shiitake. Cooking mushrooms doesn't seem to affect spermidine levels.",
+                      "it": "I funghi bianchi semplici possono contenere il doppio della spermidina rispetto a funghi più 'eleganti' come enoki o shiitake. Cuocere i funghi sembra non influenzare i livelli di spermidina."
+                    },
+                    {
+                      "en": "Boiling or stewing chicken reduces spermidine content by about 15%, while roasting and grilling eliminate roughly 50%.",
+                      "it": "Bollire o stufare il pollo riduce il contenuto di spermidina di circa il 15%, mentre arrostire e grigliare ne elimina circa il 50%."
+                    },
+                    {
+                      "en": "The recommended daily allowance of folic acid for adults is 400 μg, but older men and women consume on average less than 300 μg, and one-third consume less than 200 μg. Our ancestors, with their leaf-rich diets, likely consumed double the folate we do today.",
+                      "it": "La dose giornaliera raccomandata di acido folico per gli adulti è di 400 μg, ma uomini e donne anziani consumano in media meno di 300 μg e un terzo ne consuma meno di 200 μg. I nostri antenati, con diete ricche di foglie, probabilmente consumavano il doppio dell'acido folico che consumiamo oggi."
+                    },
+                    {
+                      "en": "Meat contains approximately 20 times more AGEs (advanced glycation end products) than processed foods like breakfast cereal and about 150 times more than fruits and vegetables. AGEs contribute to aging and related diseases.",
+                      "it": "La carne contiene circa 20 volte più AGE (prodotti finali della glicazione avanzata) rispetto a cibi trasformati come i cereali per la colazione e circa 150 volte più rispetto a frutta e verdura. Gli AGE contribuiscono all'invecchiamento e alle malattie correlate."
+                    },
+                    {
+                      "en": "Oven-frying meat produces the most AGEs, followed by deep-frying, broiling, and lastly, roasting.",
+                      "it": "Friggere la carne nel forno produce il maggior numero di AGE, seguita dalla frittura profonda, dalla grigliatura e infine dall'arrostitura."
+                    },
+                    {
+                      "en": "A raw apple has 13 units of AGEs, a baked apple has 45, a boiled hot dog has 6,736, and a broiled hot dog has 10,143. This emphasizes how cooking methods significantly affect AGE formation in different foods.",
+                      "it": "Una mela cruda ha 13 unità di AGE, una mela al forno ne ha 45, un hot dog bollito ne ha 6.736 e un hot dog alla griglia ne ha 10.143. Questo evidenzia come i metodi di cottura influenzino significativamente la formazione di AGE in diversi alimenti."
+                    },
+                    {
+                      "en": "A 20oz bottle of Coke contains around 16 teaspoons of added sugar.",
+                      "it": "Una bottiglia da 20 once di Coca-Cola contiene circa 16 cucchiaini di zucchero aggiunto."
+                    },
+                    {
+                      "en": "Toasting white bread can mitigate some negative blood sugar impacts associated with its consumption.",
+                      "it": "Tostare il pane bianco può mitigare alcuni degli effetti negativi sullo zucchero nel sangue associati al suo consumo."
+                    },
+                    {
+                      "en": "There is a strong correlation between milk consumption and IGF-1 (Insulin-like growth factor 1) levels, as evidenced by a p-value of 10^-27.",
+                      "it": "Esiste una forte correlazione tra il consumo di latte e i livelli di IGF-1 (fattore di crescita insulina-simile 1), come dimostrato da un valore p di 10^-27."
+                    },
+                    {
+                      "en": "The liver produces about 75% of the IGF-1 circulating in the human body.",
+                      "it": "Il fegato produce circa il 75% dell'IGF-1 che circola nel corpo umano."
+                    },
+                    {
+                      "en": "Palmitic acid, found primarily in animal fat, can compromise the gut lining's barrier function, making it leakier, and directly transport endotoxins into the bloodstream.",
+                      "it": "L'acido palmitico, presente principalmente nei grassi animali, può compromettere la funzione di barriera del rivestimento intestinale, rendendolo più permeabile e trasportando direttamente endotossine nel flusso sanguigno."
+                    },
+                    {
+                      "en": "The traditional Okinawan diet, linked to longevity, consists of approximately 10% protein, with under 1% from animal products, equal to one serving of meat monthly and one egg every two months.",
+                      "it": "La dieta tradizionale Okinawana, collegata alla longevità, consiste in circa il 10% di proteine, con meno dell'1% proveniente da prodotti animali, equivalenti a una porzione di carne al mese e un uovo ogni due mesi."
+                    },
+                    {
+                      "en": "Whey protein contains 75% more leucine, a branched-chain amino acid activating the mTOR pathway implicated in aging, than beef.",
+                      "it": "La proteina del siero contiene il 75% in più di leucina, un aminoacido a catena ramificata che attiva la via mTOR implicata nell'invecchiamento, rispetto alla carne bovina."
+                    },
+                    {
+                      "en": "Tea, which doesn't contain fiber, is the most significant source of antioxidants in the American diet.",
+                      "it": "Il tè, che non contiene fibre, è la fonte più significativa di antiossidanti nella dieta americana."
+                    },
+                    {
+                      "en": "Consuming one serving of cooked spinach or two-thirds of a cup of blackberries is associated with a 7% lower risk of premature death.",
+                      "it": "Consumare una porzione di spinaci cotti o due terzi di una tazza di more è associato a un rischio del 7% inferiore di morte prematura."
+                    },
+                    {
+                      "en": "Adding half a teaspoon of cinnamon to oatmeal can more than quintuple its antioxidant content.",
+                      "it": "Aggiungere mezza cucchiaino di cannella all'avena può più che quintuplare il suo contenuto di antiossidanti."
+                    },
+                    {
+                      "en": "Cocoa can neutralize the pro-oxidant effects of dairy milk, and soymilk can decrease free radical damage, while rice milk may exacerbate it.",
+                      "it": "Il cacao può neutralizzare gli effetti pro-ossidanti del latte vaccino, e il latte di soia può diminuire i danni dei radicali liberi, mentre il latte di riso potrebbe esacerbarli."
+                    },
+                    {
+                      "en": "Only 1 in 25 Americans consume a dozen servings of fruits and vegetables in a month, while the recommendation is to consume more than a dozen servings a week.",
+                      "it": "Solo 1 americano su 25 consuma una dozzina di porzioni di frutta e verdura al mese, mentre la raccomandazione è di consumare più di una dozzina di porzioni a settimana."
+                    },
+                    {
+                      "en": "Over 8,000 distinct polyphenols have been identified, but only a small number have been studied for their health impacts.",
+                      "it": "Sono stati identificati oltre 8.000 polifenoli distinti, ma solo un piccolo numero è stato studiato per i loro impatti sulla salute."
+                    },
+                    {
+                      "en": "Supplements of lycopene, the red pigment in tomatoes, have repeatedly failed to prevent or treat prostate cancer, while tomato sauce consumption seems beneficial. This highlights that the synergistic effects of various compounds in whole foods can be more impactful than isolated nutrients.",
+                      "it": "Gli integratori di licopene, il pigmento rosso nei pomodori, hanno ripetutamente fallito nel prevenire o trattare il cancro alla prostata, mentre il consumo di salsa di pomodoro sembra benefico. Ciò evidenzia che gli effetti sinergici di vari composti negli alimenti interi possono essere più impattanti rispetto ai nutrienti isolati."
+                    }
+                  ]
                 },
                 {
-                    "topic": "Surprising Factors Affecting Aging",
-                    "emoji": "🕰️",
-                    "question": "What unexpected factors, beyond genetics, can influence the aging process?",
-                    "answer": "Aging is a **multifactorial** process influenced by a complex interplay of factors, and research has uncovered several surprising elements that can impact its progression. Contrary to the notion that **exercise** might accelerate cellular aging, studies have shown that both **exercise frequency** and **intensity** are associated with a **slower aging rate**. Surprisingly, **meditation**, often praised for its health benefits, did not show a significant impact on aging rates in a study involving **two months** of daily practice. **Environmental pollutants**, like by-products of banned pesticides (e.g., **DDT**) and long-term **air pollution**, have been linked to **accelerated aging**. These findings emphasize the interconnectedness between our **environment**, **lifestyle choices**, and the aging process.",
-                    "quote": "In contrast, both exercise frequency and intensity are associated with a deceleration of aging. What about meditation? Two months of daily practice failed to significantly affect aging rates,"
+                  "name_en": "Physical Activity and Exercise",
+                  "name_it": "Attività Fisica ed Esercizio",
+                  "facts": [
+                    {
+                      "en": "Aerobic exercise, lasting for an hour or more at a moderate to vigorous intensity (55–70% VO2 max), can trigger autophagy. High-intensity interval training hasn't shown a significant difference in autophagy, and data on resistance exercise is limited.",
+                      "it": "L'esercizio aerobico, della durata di un'ora o più a un'intensità da moderata a vigorosa (55–70% VO2 max), può innescare l'autofagia. L'allenamento a intervalli ad alta intensità non ha mostrato una differenza significativa nell'autofagia e i dati sull'esercizio di resistenza sono limitati."
+                    },
+                    {
+                      "en": "Exercising for 20 minutes daily might add an hour (2 microlives) to your lifespan.",
+                      "it": "Esercitarsi per 20 minuti al giorno potrebbe aggiungere un'ora (2 microvite) alla tua durata della vita."
+                    },
+                    {
+                      "en": "Eating about a cup of beans, chickpeas, or lentils daily for three months can lower the average resting heart rate by 3 beats per minute, comparable to a 12-week aerobic exercise program.",
+                      "it": "Mangiare circa una tazza di fagioli, ceci o lenticchie quotidianamente per tre mesi può abbassare la frequenza cardiaca a riposo media di 3 battiti al minuto, paragonabile a un programma di esercizio aerobico di 12 settimane."
+                    },
+                    {
+                      "en": "Exercise has been found to both increase and decrease the expression of certain microRNAs, which are involved in regulating gene expression, and these effects may have implications for Alzheimer's disease.",
+                      "it": "È stato scoperto che l'esercizio aumenta e diminuisce l'espressione di alcuni microRNA, che sono coinvolti nella regolazione dell'espressione genica, e questi effetti potrebbero avere implicazioni per la malattia di Alzheimer."
+                    }
+                  ]
                 },
                 {
-                    "topic": "Dangers of Aluminum Cookware",
-                    "emoji": "🍳",
-                    "question": "Can common household items pose a risk for DNA damage, and how can we minimize potential risks?",
-                    "answer": "While often overlooked, seemingly harmless **household items** can contribute to **DNA damage**. Research shows that cooking or storing **acidic foods** (e.g., **yogurt**, **tomato-based sauces**) in **aluminum cookware** is linked to increased DNA damage. Limiting the use of aluminum cookware, especially with **acidic ingredients**, could protect **cellular health**. Safer alternatives like **stainless steel**, **cast iron**, or **glass cookware** are available.",
-                    "quote": "Those who cook and store acidic foods like yogurt and tomato in aluminum cookware suffer significantly more DNA damage"
+                  "name_en": "Genetics and Molecular Biology",
+                  "name_it": "Genetica e Biologia Molecolare",
+                  "facts": [
+                    {
+                      "en": "The human DNA sequence contains approximately 750 megabytes of data, encoding around 50,000 genes.",
+                      "it": "La sequenza del DNA umano contiene circa 750 megabyte di dati, codificando circa 50.000 geni."
+                    },
+                    {
+                      "en": "There are approximately 28 million common methylation sites along our DNA, most of which are methylated at any given time. Methylation can alter gene expression.",
+                      "it": "Ci sono circa 28 milioni di siti di metilazione comuni lungo il nostro DNA, la maggior parte dei quali è metilata in qualsiasi momento. La metilazione può alterare l'espressione genica."
+                    },
+                    {
+                      "en": "Whey protein contains 75% more leucine, a branched-chain amino acid activating the mTOR pathway implicated in aging, than beef.",
+                      "it": "La proteina del siero contiene il 75% in più di leucina, un aminoacido a catena ramificata che attiva la via mTOR implicata nell'invecchiamento, rispetto alla carne bovina."
+                    },
+                    {
+                      "en": "The Nrf2 gene, a master regulator of antioxidant responses, is expressed six times more in long-lived naked mole rats compared to mice.",
+                      "it": "Il gene Nrf2, un regolatore principale delle risposte antiossidanti, è espresso sei volte di più nei topi talpa nudi longevi rispetto ai topi."
+                    },
+                    {
+                      "en": "Reducing protein intake from 112g daily, which is around the average intake for American men, to 64g daily can double FGF21 levels in the blood within six weeks.",
+                      "it": "Ridurre l'assunzione di proteine da 112 g al giorno, che è circa l'assunzione media per gli uomini americani, a 64 g al giorno può raddoppiare i livelli di FGF21 nel sangue entro sei settimane."
+                    },
+                    {
+                      "en": "Low-protein, high-carbohydrate diets can replicate the metabolic and immunity benefits of a 40% calorie restriction without actually restricting calories.",
+                      "it": "Diete a basso contenuto proteico e alto contenuto di carboidrati possono replicare i benefici metabolici e immunitari di una restrizione calorica del 40% senza effettivamente limitare le calorie."
+                    },
+                    {
+                      "en": "NAD+, an essential molecule for all life forms, is required for the function of around 500 enzymatic reactions, including energy extraction from food.",
+                      "it": "NAD+, una molecola essenziale per tutte le forme di vita, è necessaria per il funzionamento di circa 500 reazioni enzimatiche, inclusa l'estrazione di energia dal cibo."
+                    }
+                  ]
                 },
                 {
-                    "topic": "Protein Intake and Longevity",
-                    "emoji": "🍗",
-                    "question": "What are the implications of protein source and quantity on longevity, and what surprising insights have emerged?",
-                    "answer": "Protein is essential for building and maintaining **muscle mass**, but excessive intake, particularly from **animal sources**, is linked to **accelerated aging**. **IGF-1**, a hormone crucial for growth in early life, can promote aging when chronically elevated in adulthood. **Animal proteins** significantly elevate IGF-1 levels, while **plant-based proteins** have a less pronounced impact. Even **moderate intake**, like a single serving of **chicken breast** per day, can notably increase IGF-1 levels. This underscores the need to **moderate protein intake** and prioritize **plant-based sources** for healthy aging. The recommended daily protein intake is approximately **50g**, with **46g for women** and **56g for men**. In one study, researchers reduced the protein intake of men consuming **112g daily** (double the recommended amount) to **64g**, still exceeding the recommended amount. This reduction resulted in a doubling of **FGF21 levels** in their blood within about six weeks.",
-                    "quote": "Even a single serving of chicken breast a day would be expected to significantly raise IGF-1 levels in the blood."
+                  "name_en": "Disease and Health Risks",
+                  "name_it": "Malattie e Rischi per la Salute",
+                  "facts": [
+                    {
+                      "en": "Genetics only explain 20–30% of lifespan variations, indicating lifestyle and environmental factors play a more significant role in longevity.",
+                      "it": "La genetica spiega solo il 20–30% delle variazioni nella durata della vita, indicando che fattori di stile di vita e ambientali giocano un ruolo più significativo nella longevità."
+                    },
+                    {
+                      "en": "Metformin, a drug, can potentially increase the lifespan of certain mice by 5%, but higher doses can shorten it. This underlines the importance of dose-dependent effects and potential downsides of interventions.",
+                      "it": "La metformina, un farmaco, può potenzialmente aumentare la durata della vita di alcuni topi del 5%, ma dosi più elevate possono ridurla. Questo sottolinea l'importanza degli effetti dipendenti dalla dose e i potenziali svantaggi degli interventi."
+                    },
+                    {
+                      "en": "There is a strong correlation between milk consumption and IGF-1 (Insulin-like growth factor 1) levels, as evidenced by a p-value of 10^-27.",
+                      "it": "Esiste una forte correlazione tra il consumo di latte e i livelli di IGF-1 (fattore di crescita insulina-simile 1), come dimostrato da un valore p di 10^-27."
+                    },
+                    {
+                      "en": "IL-6 (Interleukin-6, an inflammatory marker) levels can double within six hours of consuming a high-fat meal.",
+                      "it": "I livelli di IL-6 (Interleuchina-6, un marcatore infiammatorio) possono raddoppiare entro sei ore dal consumo di un pasto ad alto contenuto di grassi."
+                    },
+                    {
+                      "en": "Palmitic acid, found primarily in animal fat, can compromise the gut lining's barrier function, making it leakier, and directly transport endotoxins into the bloodstream.",
+                      "it": "L'acido palmitico, presente principalmente nei grassi animali, può compromettere la funzione di barriera del rivestimento intestinale, rendendolo più permeabile e trasportando direttamente endotossine nel flusso sanguigno."
+                    },
+                    {
+                      "en": "Adding saturated fat, such as meat and dairy, to a vegetable-rich Mediterranean diet was found to increase blood pressure, not lower it.",
+                      "it": "Aggiungere grassi saturi, come carne e latticini, a una dieta mediterranea ricca di verdure è risultato aumentare la pressione sanguigna, non diminuirla."
+                    },
+                    {
+                      "en": "Drinking a single bottle of beet juice can lead to a significant increase in carcinogenic compounds in the urine of omnivores within 24 hours, while this effect is not observed in those on a plant-based diet.",
+                      "it": "Bere una singola bottiglia di succo di barbabietola può portare a un aumento significativo dei composti cancerogeni nelle urine degli onnivori entro 24 ore, mentre questo effetto non è osservato in coloro che seguono una dieta a base vegetale."
+                    },
+                    {
+                      "en": "Diet soda, while still linked to a higher mortality risk than not drinking soda, poses half the risk of regular soda, with an 8% increased risk from two servings daily.",
+                      "it": "La soda dietetica, pur essendo ancora collegata a un rischio di mortalità più alto rispetto a non bere soda, comporta la metà del rischio della soda normale, con un aumento dell'8% del rischio da due porzioni giornaliere."
+                    },
+                    {
+                      "en": "Alcohol consumption is the 7th leading risk factor for death globally, causing millions of deaths annually and three times more healthy years of life lost than all illicit drug use combined.",
+                      "it": "Il consumo di alcol è il settimo principale fattore di rischio per la morte a livello globale, causando milioni di morti ogni anno e tre volte più anni di vita sani persi rispetto a tutto l'uso di droghe illecite combinato."
+                    },
+                    {
+                      "en": "Substituting legumes for meat a couple of times a week can decrease CRP (C-reactive protein), IL-6, and TNF-α (tumor necrosis factor-alpha, an inflammatory cytokine) levels by about one-third within two months. Consuming eight servings of fruits and vegetables daily can significantly lower CRP levels compared to the average American intake.",
+                      "it": "Sostituire le leguminose con la carne un paio di volte a settimana può diminuire i livelli di CRP (proteina C-reattiva), IL-6 e TNF-α (fattore di necrosi tumorale-alfa, una citochina infiammatoria) di circa un terzo entro due mesi. Consumare otto porzioni di frutta e verdura al giorno può abbassare significativamente i livelli di CRP rispetto all'assunzione media americana."
+                    },
+                    {
+                      "en": "Adding around five almonds, walnuts, and hazelnuts to one's diet daily could potentially prevent approximately ten strokes per hour on a population level, based on findings from the PREDIMED trial.",
+                      "it": "Aggiungere circa cinque mandorle, noci e nocciole alla propria dieta quotidianamente potrebbe potenzialmente prevenire circa dieci ictus all'ora a livello di popolazione, basandosi sui risultati dello studio PREDIMED."
+                    },
+                    {
+                      "en": "Doubling the proportion of plants in one's diet, compared to the standard American diet, might reduce breast cancer risk by over 90%.",
+                      "it": "Raddoppiare la proporzione di piante nella propria dieta, rispetto alla dieta americana standard, potrebbe ridurre il rischio di cancro al seno di oltre il 90%."
+                    },
+                    {
+                      "en": "The four factors of not smoking, maintaining a healthy weight, getting 30 minutes of daily exercise, and eating a healthier diet account for 78% of chronic disease risk. Addressing all four can potentially eliminate over 90% of diabetes risk, over 80% of heart attack risk, halve stroke risk, and reduce overall cancer risk by more than a third.",
+                      "it": "I quattro fattori di non fumare, mantenere un peso sano, fare 30 minuti di esercizio quotidiano e mangiare una dieta più sana rappresentano il 78% del rischio di malattie croniche. Affrontare tutti e quattro può potenzialmente eliminare oltre il 90% del rischio di diabete, oltre l'80% del rischio di attacco di cuore, dimezzare il rischio di ictus e ridurre il rischio complessivo di cancro di oltre un terzo."
+                    },
+                    {
+                      "en": "Visceral fat, the type surrounding organs, is more harmful than subcutaneous fat, the type found under the skin. Saturated fat can lead to double the visceral fat accumulation compared to the same amount of other fats.",
+                      "it": "Il grasso viscerale, il tipo che circonda gli organi, è più dannoso del grasso sottocutaneo, il tipo che si trova sotto la pelle. Il grasso saturo può portare a un'accumulo di grasso viscerale doppio rispetto alla stessa quantità di altri grassi."
+                    },
+                    {
+                      "en": "The average LDL ('bad') cholesterol level in Western populations is around 120 mg/dL, while in populations with exceptionally low rates of Alzheimer's disease, it's around 25 mg/dL.",
+                      "it": "Il livello medio di colesterolo LDL ('cattivo') nelle popolazioni occidentali è di circa 120 mg/dL, mentre nelle popolazioni con tassi eccezionalmente bassi di malattia di Alzheimer, è di circa 25 mg/dL."
+                    },
+                    {
+                      "en": "Consuming a diet rich in fruits and vegetables and avoiding copper-containing supplements may help mitigate the negative effects of copper accumulation in the brain.",
+                      "it": "Consumare una dieta ricca di frutta e verdura ed evitare integratori contenenti rame può aiutare a mitigare gli effetti negativi dell'accumulo di rame nel cervello."
+                    },
+                    {
+                      "en": "Switching mice from a diet with 21% protein to 7% protein led to a 56–70% reduction in the growth rate of human breast and prostate tumors. Switching from animal to plant protein, even at the higher protein intake, reduced tumor weights by 37%.",
+                      "it": "Passare una dieta per topi dal 21% di proteine al 7% di proteine ha portato a una riduzione del 56-70% del tasso di crescita dei tumori al seno e alla prostata umani. Passare da proteine animali a proteine vegetali, anche con un'assunzione di proteine più alta, ha ridotto il peso dei tumori del 37%."
+                    },
+                    {
+                      "en": "Losing 20 pounds can significantly improve blood sugar control, but this benefit is negated if the weight loss is achieved through a high-protein diet.",
+                      "it": "Perdere 20 libbre può migliorare significativamente il controllo dello zucchero nel sangue, ma questo beneficio viene annullato se la perdita di peso è ottenuta attraverso una dieta ad alto contenuto proteico."
+                    }
+                  ]
                 },
                 {
-                    "topic": "Gut Microbiome and Aging",
-                    "emoji": "🦠",
-                    "question": "How does the gut microbiome influence the aging process, and what remarkable finding has surfaced from centenarian studies?",
-                    "answer": "The **gut microbiome**, a complex ecosystem of microorganisms in our **digestive tract**, plays a crucial role in various health aspects, including **aging**. Recent research reveals a fascinating connection between the gut microbiome and **longevity**. In a groundbreaking study, mice transplanted with the gut microbiome of **centenarians** displayed **youthful physiological characteristics**, including reduced **age-related pigment accumulation** in their brains. This suggests the potential for manipulating the gut microbiome to promote **healthy aging** in humans, possibly through methods like **fecal matter transplantation**.",
-                    "quote": "Mice transplanted with the centenarian microbiome ended up displaying a range of youthful physiological indicators, including less age pigment in their brains. This raises the possibility that we will one day be using centenarian fecal matter to promote healthy aging"
+                  "name_en": "Lifestyle Factors",
+                  "name_it": "Fattori di Stile di Vita",
+                  "facts": [
+                    {
+                      "en": "Genetics only explain 20–30% of lifespan variations, indicating lifestyle and environmental factors play a more significant role in longevity.",
+                      "it": "La genetica spiega solo il 20–30% delle variazioni nella durata della vita, indicando che fattori di stile di vita e ambientali giocano un ruolo più significativo nella longevità."
+                    },
+                    {
+                      "en": "Dr. Greger's book How Not to Die contains 2,000 citations, while How Not to Diet has 5,000, and How Not to Age required 995 pages of online citations due to its volume. This highlights the extensive research underpinning Dr. Greger's work.",
+                      "it": "Il libro del Dr. Greger 'How Not to Die' contiene 2.000 citazioni, mentre 'How Not to Diet ne ha 5.000, e 'How Not to Age' ha richiesto 995 pagine di citazioni online a causa del suo volume. Questo evidenzia la vasta ricerca alla base del lavoro del Dr. Greger."
+                    },
+                    {
+                      "en": "Alcohol consumption is the 7th leading risk factor for death globally, causing millions of deaths annually and three times more healthy years of life lost than all illicit drug use combined.",
+                      "it": "Il consumo di alcol è il settimo principale fattore di rischio per la morte a livello globale, causando milioni di morti ogni anno e tre volte più anni di vita sani persi rispetto a tutto l'uso di droghe illecite combinato."
+                    }
+                  ]
                 },
                 {
-                    "topic": "Unconventional Dietary Strategies for Longevity",
-                    "emoji": "🥗",
-                    "question": "Beyond conventional dietary recommendations, what alternative strategies show promise for extending lifespan?",
-                    "answer": "A balanced diet rich in **fruits**, **vegetables**, and **whole grains** is recognized for its health benefits. Research has illuminated **unconventional dietary strategies** that might contribute to **longevity**. **Calorie restriction**, a significant reduction in calorie intake without malnutrition, consistently extends lifespan in various organisms, though its applicability and practicality for humans are debated. **Alternate-day fasting**, alternating between days of **normal eating** and severely restricted calorie intake/**fasting**, is linked to various health benefits, including potential **anti-aging effects**. This could be attributed to its influence on cellular processes like **autophagy** and its impact on the **pro-aging amino acid methionine**.",
-                    "quote": "The purported pro-longevity benefits of alternate-day fasting, for instance, have been ascribed to the periodic depletion of the “pro-aging amino-acid methionine."
+                  "name_en": "Supplements and Medical Interventions",
+                  "name_it": "Integratori e Interventi Medici",
+                  "facts": [
+                    {
+                      "en": "Metformin, a drug, can potentially increase the lifespan of certain mice by 5%, but higher doses can shorten it. This underlines the importance of dose-dependent effects and potential downsides of interventions.",
+                      "it": "La metformina, un farmaco, può potenzialmente aumentare la durata della vita di alcuni topi del 5%, ma dosi più elevate possono ridurla. Questo sottolinea l'importanza degli effetti dipendenti dalla dose e i potenziali svantaggi degli interventi."
+                    },
+                    {
+                      "en": "Boosting autophagy, the body's mechanism for clearing damaged cells, can increase the lifespan of mice by an average of 17% while also improving healthspan.",
+                      "it": "Aumentare l'autofagia, il meccanismo del corpo per eliminare le cellule danneggiate, può aumentare la durata della vita dei topi in media del 17% migliorando anche la salute durante la vita."
+                    },
+                    {
+                      "en": "Polyphenol supplement intake can lead to blood levels nearly ten times higher than those achieved through a polyphenol-rich diet. This suggests that when it comes to hormesis, the principle of benefiting from moderate stress, less may be more effective.",
+                      "it": "L'assunzione di integratori di polifenoli può portare a livelli ematici quasi dieci volte superiori rispetto a quelli raggiunti attraverso una dieta ricca di polifenoli. Questo suggerisce che, quando si tratta di omeostasi, il principio di beneficiare dallo stress moderato, meno potrebbe essere più efficace."
+                    },
+                    {
+                      "en": "Supplements of lycopene, the red pigment in tomatoes, have repeatedly failed to prevent or treat prostate cancer, while tomato sauce consumption seems beneficial. This highlights that the synergistic effects of various compounds in whole foods can be more impactful than isolated nutrients.",
+                      "it": "Gli integratori di licopene, il pigmento rosso nei pomodori, hanno ripetutamente fallito nel prevenire o trattare il cancro alla prostata, mentre il consumo di salsa di pomodoro sembra benefico. Ciò evidenzia che gli effetti sinergici di vari composti negli alimenti interi possono essere più impattanti rispetto ai nutrienti isolati."
+                    }
+                  ]
                 }
-            ]
-        },
-        "it": {
-            "topics": [
-                {
-                    "topic": "La Significanza della Spermidina",
-                    "emoji": "🧬",
-                    "question": "Come influisce la spermidina sulla longevità e quali sono le migliori fonti di questo composto?",
-                    "answer": "La ricerca ha rivelato che la **spermidina**, una poliammina naturale, è un forte predittore della **longevità**. Abbondante nelle **verdure**, la spermidina svolge un ruolo vitale nei processi cellulari come l'**autofagia**. Gli individui con un'assunzione maggiore di spermidina mostrano un tasso di mortalità comparabile a quello di persone **5,7 anni più giovani**. È interessante notare che, mentre i **prodotti animali** sono spesso associati alla spermidina, il **germe di grano** si distingue come fonte economica e facilmente reperibile. Uno studio in Turchia ha identificato anche il **pane bianco** come una delle principali fonti di spermidina. L'assunzione media di spermidina è di circa **10 mg al giorno**, con alcuni paesi asiatici ed europei, in particolare quelli del **Mediterraneo**, che raggiungono **13 mg** o più, mentre gli Stati Uniti si attestano a **8 mg**. Questi risultati evidenziano il potenziale della **modificazione dietetica**, specificamente l'incorporazione di alimenti ricchi di spermidina, per influenzare la durata della vita.",
-                    "quote": "I ricercatori hanno esaminato 146 nutrienti diversi nella loro dieta e il componente più predittivo della longevità è stata la spermidina."
-                },
-                {
-                    "topic": "Impatto della Dieta sulla Perdita dei Capelli",
-                    "emoji": "🍖",
-                    "question": "Le scelte alimentari possono influenzare la perdita dei capelli e quali sorprendenti scoperte sono emerse dalla ricerca?",
-                    "answer": "La genetica e gli ormoni sono riconosciuti come fattori che contribuiscono alla **perdita dei capelli**, ma la ricerca suggerisce che anche la **dieta** può svolgere un ruolo significativo. Gli **studi di popolazione** rivelano interessanti correlazioni tra **abitudini alimentari** e calvizie a schema. Il consumo di **carne** e **cibo spazzatura** è associato a un rischio aumentato, mentre una dieta ricca di **verdure crude**, **erbe fresche** e consumo regolare di **soymilk** dimostra un effetto protettivo. Un sorprendente **caso clinico** documenta un uomo completamente calvo che ha sperimentato una **ricrescita completa dei capelli** dopo un **trapianto fecale**, evidenziando una possibile connessione tra il **microbioma intestinale** e la **salute dei capelli**. In uno studio che confrontava l'**olio di semi di zucca** con il **minoxidil** (un comune farmaco per la perdita dei capelli), entrambi i trattamenti si sono dimostrati efficaci per la **calvizie femminile**, sebbene il minoxidil fosse più efficace nonostante fosse cinque volte più costoso.",
-                    "quote": "Gli studi di popolazione hanno trovato che la calvizie a schema è associata a cattive abitudini di sonno e al consumo di carne e cibo spazzatura, mentre associazioni protettive sono state trovate per il consumo di verdure crude e erbe fresche, nonché per l'assunzione frequente di soymilk."
-                },
-                {
-                    "topic": "Fattori Sorprendenti che Influenzano l'Invecchiamento",
-                    "emoji": "🕰️",
-                    "question": "Quali fattori inaspettati, oltre alla genetica, possono influenzare il processo di invecchiamento?",
-                    "answer": "L'**invecchiamento** è un processo **multifattoriale** influenzato da una complessa interazione di fattori, e la ricerca ha scoperto diversi elementi sorprendenti che possono impattare la sua progressione. Contrariamente alla nozione che l'**esercizio fisico** possa accelerare l'invecchiamento cellulare, gli studi hanno dimostrato che sia la **frequenza** che l'**intensità** dell'esercizio sono associate a un **rallentamento del tasso di invecchiamento**. Sorprendentemente, la **meditazione**, spesso lodata per i suoi benefici sulla salute, non ha mostrato un impatto significativo sui tassi di invecchiamento in uno studio che ha coinvolto **due mesi** di pratica quotidiana. **Inquinanti ambientali**, come i sottoprodotti di pesticidi vietati (ad esempio, **DDT**) e l'**inquinamento atmosferico** a lungo termine, sono stati collegati a un **accelerato invecchiamento**. Questi risultati enfatizzano l'interconnessione tra il nostro **ambiente**, le **scelte di stile di vita** e il processo di invecchiamento.",
-                    "quote": "Al contrario, sia la frequenza che l'intensità dell'esercizio sono associate a un decelerazione dell'invecchiamento. E la meditazione? Due mesi di pratica quotidiana non hanno influenzato significativamente i tassi di invecchiamento,"
-                },
-                {
-                    "topic": "Pericoli delle Pentole in Alluminio",
-                    "emoji": "🍳",
-                    "question": "Gli oggetti domestici comuni possono rappresentare un rischio per il danno al DNA e come possiamo minimizzare i potenziali rischi?",
-                    "answer": "Sebbene spesso trascurati, oggetti domestici apparentemente innocui possono contribuire al **danno al DNA**. La ricerca mostra che cucinare o conservare **alimenti acidi** (ad esempio, **yogurt**, **salse a base di pomodoro**) in **pentole di alluminio** è collegato a un aumento del danno al DNA. Limitare l'uso di pentole in alluminio, soprattutto con ingredienti **acidi**, potrebbe proteggere la **salute cellulare**. Sono disponibili alternative più sicure come **acciaio inossidabile**, **ghisa** o **pentole di vetro**.",
-                    "quote": "Chi cucina e conserva alimenti acidi come yogurt e pomodoro in pentole di alluminio soffre significativamente di più danni al DNA"
-                },
-                {
-                    "topic": "Assunzione di Proteine e Longevità",
-                    "emoji": "🍗",
-                    "question": "Quali sono le implicazioni della fonte e della quantità di proteine sulla longevità e quali sorprendenti intuizioni sono emerse?",
-                    "answer": "Le proteine sono essenziali per costruire e mantenere la **massa muscolare**, ma un'assunzione eccessiva, in particolare da **fonti animali**, è collegata a un **invecchiamento accelerato**. **IGF-1**, un ormone cruciale per la crescita nella prima età, può promuovere l'invecchiamento quando è cronicamente elevato nell'età adulta. Le **proteine animali** elevano significativamente i livelli di IGF-1, mentre le **proteine vegetali** hanno un impatto meno pronunciato. Anche un'assunzione **moderata**, come una singola porzione di **petto di pollo** al giorno, può aumentare notevolmente i livelli di IGF-1. Questo sottolinea la necessità di **moderare l'assunzione di proteine** e di dare priorità alle **fonti vegetali** per un invecchiamento sano. L'assunzione giornaliera raccomandata di proteine è di circa **50g**, con **46g per le donne** e **56g per gli uomini**. In uno studio, i ricercatori hanno ridotto l'assunzione di proteine di uomini che consumavano **112g al giorno** (il doppio della quantità raccomandata) a **64g**, superando comunque la quantità raccomandata. Questa riduzione ha portato a un **raddoppio dei livelli di FGF21** nel loro sangue in circa sei settimane.",
-                    "quote": "Anche una singola porzione di petto di pollo al giorno dovrebbe aumentare significativamente i livelli di IGF-1 nel sangue."
-                },
-                {
-                    "topic": "Microbioma Intestinale e Invecchiamento",
-                    "emoji": "🦠",
-                    "question": "Come influenza il microbioma intestinale il processo di invecchiamento e quale scoperta notevole è emersa dagli studi sui centenari?",
-                    "answer": "Il **microbioma intestinale**, un complesso ecosistema di microrganismi nel nostro **tratto digestivo**, svolge un ruolo cruciale in vari aspetti della salute, incluso l'**invecchiamento**. Recenti ricerche rivelano una connessione affascinante tra il microbioma intestinale e la **longevità**. In uno studio rivoluzionario, topi trapiantati con il microbioma intestinale di **centenari** hanno mostrato caratteristiche fisiologiche **giovane**, inclusa una riduzione dell'**accumulo di pigmenti legati all'età** nei loro cervelli. Questo suggerisce il potenziale di manipolare il microbioma intestinale per promuovere un **invecchiamento sano** negli esseri umani, possibilmente attraverso metodi come il **trapianto di materia fecale**.",
-                    "quote": "Topi trapiantati con il microbioma dei centenari hanno finito per mostrare una serie di indicatori fisiologici giovanili, incluso meno pigmento d'età nei loro cervelli. Questo solleva la possibilità che un giorno utilizzeremo materia fecale di centenari per promuovere un invecchiamento sano"
-                },
-                {
-                    "topic": "Strategie Dietetiche Non Convenzionali per la Longevità",
-                    "emoji": "🥗",
-                    "question": "Oltre alle raccomandazioni dietetiche convenzionali, quali strategie alternative mostrano promettenti per estendere la durata della vita?",
-                    "answer": "Una **dieta equilibrata** ricca di **frutta**, **verdure** e **cereali integrali** è riconosciuta per i suoi benefici sulla salute. La ricerca ha illuminato **strategie dietetiche non convenzionali** che potrebbero contribuire alla **longevità**. **Restrizione calorica**, una significativa riduzione dell'apporto calorico senza malnutrizione, estende costantemente la durata della vita in vari organismi, anche se la sua applicabilità e praticità per gli esseri umani sono dibattute. **Digiuno a giorni alterni**, alternando giorni di **alimentazione normale** e giorni di restrizione calorica severa/**digiuno**, è collegato a vari benefici per la salute, inclusi potenziali effetti **anti-invecchiamento**. Ciò potrebbe essere attribuito alla sua influenza su processi cellulari come l'**autofagia** e al suo impatto sull'**aminoacido pro-invecchiamento metionina**.",
-                    "quote": "I presunti benefici per la longevità del digiuno a giorni alterni, ad esempio, sono stati attribuiti al deperimento periodico dell'“aminoacido pro-invecchiamento metionina.”"
-                }
-            ]
-        }
-    }
-
-
-
+                ]
+                };
 
         let currentLanguage = 'it';
 
         // Initialize the app
         let currentIndex = 0;
+        let filteredCards = [];
 
         // Get DOM elements
         const buttonsContainer = document.getElementById('buttons-container');
@@ -358,93 +597,99 @@
         const progressBar = document.querySelector('.progress-bar');
         const languageSwitch = document.getElementById('language-switch');
 
-        let cards = [];
-
         function initializeApp() {
             buttonsContainer.innerHTML = '';
             cardsWrapper.innerHTML = '';
-            cards = [];
+            filteredCards = [];
             currentIndex = 0;
 
-            const { topics } = content[currentLanguage];
+            const macroAreas = content.macro_areas;
 
-            // Create buttons and cards for topics
-            topics.forEach((topic, index) => {
-                createButton(topic.topic, index);
-                createCard(topic);
+            // Create buttons for each macro area with emoji
+            macroAreas.forEach((macroArea, index) => {
+                createButton(macroArea, index);
             });
 
-            // Initialize to show the first card
-            showCard(0);
+            // Optionally, select the first topic by default
+            if (macroAreas.length > 0) {
+                filterCards(0);
+            }
         }
 
         // Function to create a button with emoji
-        function createButton(label, index) {
-            const button = document.createElement('div');
+        function createButton(macroArea, index) {
+            const button = document.createElement('button');
             button.className = 'button';
-            button.innerHTML = `${content[currentLanguage].topics[index].emoji} ${label}`;
+            button.innerHTML = `${macroArea.emoji} ${macroArea['name_' + currentLanguage]}`;
             button.addEventListener('click', () => {
-                showCard(index);
+                // Remove active class from all buttons
+                document.querySelectorAll('.button').forEach(btn => btn.classList.remove('active'));
+                // Add active class to the clicked button
+                button.classList.add('active');
+                // Filter and display cards for the selected topic
+                filterCards(index);
             });
             buttonsContainer.appendChild(button);
         }
 
-        // Function to create a content block
-        function createContentBlock(type, contentText) {
-            const div = document.createElement('div');
-            div.className = `content-block ${type}`;
+        // Function to filter and display cards based on selected topic
+        function filterCards(macroIndex) {
+            cardsWrapper.innerHTML = '';
+            filteredCards = [];
 
-            // Replace **text** with <strong>text</strong> for highlighting
-            const formattedText = contentText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-            // Replace escaped quotes \"text\" with proper quotes
-            const finalText = formattedText.replace(/\\\"/g, '"').replace(/\\'/g, "'");
+            const macroArea = content.macro_areas[macroIndex];
+            const facts = macroArea.facts;
 
-            // Split the content by newline characters to create paragraphs
-            const paragraphs = finalText.split('\n\n');
-
-            paragraphs.forEach(paragraph => {
-                const p = document.createElement('p');
-                p.innerHTML = paragraph;
-                div.appendChild(p);
+            facts.forEach((fact, factIndex) => {
+                createCard(macroArea['name_' + currentLanguage], fact);
             });
 
-            return div;
+            // Reset progress bar
+            updateProgressBar();
+            currentIndex = 0;
+            showCard(0);
         }
 
         // Function to create a card
-        function createCard(topic) {
+        function createCard(topic, fact) {
             const card = document.createElement('div');
             card.className = 'card';
 
             const cardContent = document.createElement('div');
             cardContent.className = 'card-content';
 
-            // Add Question
-            const questionBlock = createContentBlock('question', topic.question);
-            cardContent.appendChild(questionBlock);
+            // Topic Title
+            const topicTitle = document.createElement('h2');
+            topicTitle.className = 'topic-title';
+            topicTitle.textContent = topic;
+            cardContent.appendChild(topicTitle);
 
-            // Add Answer (Explanation)
-            const answerBlock = createContentBlock('answer', topic.answer);
-            cardContent.appendChild(answerBlock);
-
-            // Add Quote
-            const quoteBlock = createContentBlock('quote', topic.quote);
-            cardContent.appendChild(quoteBlock);
+            // Fact Content
+            const factText = document.createElement('p');
+            factText.className = 'fact-text';
+            factText.textContent = fact[currentLanguage];
+            cardContent.appendChild(factText);
 
             card.appendChild(cardContent);
             cardsWrapper.appendChild(card);
-            cards.push(card);
+            filteredCards.push(card);
         }
 
         // Function to display a specific card
         function showCard(index) {
             // Ensure index is within bounds
             if (index < 0) index = 0;
-            if (index >= cards.length) index = cards.length - 1;
+            if (index >= filteredCards.length) index = filteredCards.length - 1;
 
             currentIndex = index;
             cardsWrapper.style.transform = `translateX(-${index * 100}%)`;
-            const progress = ((index + 1) / cards.length) * 100;
+            updateProgressBar();
+            updateActiveButton(index);
+        }
+
+        // Function to update the progress bar
+        function updateProgressBar() {
+            const progress = filteredCards.length > 0 ? ((currentIndex + 1) / filteredCards.length) * 100 : 0;
             progressBar.style.width = `${progress}%`;
         }
 
@@ -479,7 +724,7 @@
             isDown = false;
             const endX = evt.changedTouches[0].clientX;
             const deltaX = endX - startX;
-            if (deltaX < -50 && currentIndex < cards.length - 1) {
+            if (deltaX < -50 && currentIndex < filteredCards.length - 1) {
                 currentIndex++;
             } else if (deltaX > 50 && currentIndex > 0) {
                 currentIndex--;
@@ -514,7 +759,7 @@
             isDown = false;
             const endX = evt.clientX;
             const deltaX = endX - startX;
-            if (deltaX < -50 && currentIndex < cards.length - 1) {
+            if (deltaX < -50 && currentIndex < filteredCards.length - 1) {
                 currentIndex++;
             } else if (deltaX > 50 && currentIndex > 0) {
                 currentIndex--;
@@ -529,6 +774,12 @@
             languageSwitch.textContent = currentLanguage === 'it' ? '🇬🇧' : '🇮🇹';
             initializeApp();
         });
+
+        // Function to update active button based on current index
+        function updateActiveButton(index) {
+            // This function can be customized if needed
+            // Currently, active button remains based on topic selection
+        }
 
         // Initialize the app after the DOM is fully loaded
         document.addEventListener('DOMContentLoaded', () => {
