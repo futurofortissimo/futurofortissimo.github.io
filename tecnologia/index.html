@@ -287,7 +287,6 @@
                 <div class="header-left">
                     <img src="/index_files/ff.png" alt="Logo" class="logo" id="header-logo">
                     <!-- Ensure this button is present if you want to use it to open the menu -->
-                    <button class="menu-button" id="menu-button">☰</button> <!-- Add this line if missing -->
                 </div>
                 <button class="language-switch" id="language-button">English 🇬🇧</button>
             </div>
@@ -314,7 +313,22 @@
     </div>
 
     <footer>
-
+    <div class="footer-buttons-container" id="footer-buttons-container">
+        <!-- Emoji Buttons for filtering -->
+        <button class="emoji-button" data-category="🎼" aria-label="Musica">🎼</button>
+        <button class="emoji-button" data-category="🧠" aria-label="Intelligenza">🧠</button>
+        <button class="emoji-button" data-category="🤖" aria-label="Robotica">🤖</button>
+        <button class="emoji-button" data-category="🎨" aria-label="Arte">🎨</button>
+        <button class="emoji-button" data-category="💻" aria-label="Tecnologia">💻</button>
+        <button class="emoji-button" data-category="🍄" aria-label="Psichedelia">🍄</button>
+        <!-- Add more emoji buttons as needed -->
+    </div>
+        <!-- Search and Refresh Section -->
+        <div class="search-refresh-container">
+            <input type="text" id="csv-search-input" placeholder="Cerca una Nota 🎵">
+            <button id="csv-search-button">🔍</button>
+            <button id="refreshButton">🔄</button>
+        </div>
         <div class="footer-content">
           <div class="buttons-container" id="buttons-container">
               <!-- Buttons will be dynamically inserted here -->
@@ -346,6 +360,99 @@
             menuButton.addEventListener('click', openSideMenu); // Add this line if using a button
             closeMenu.addEventListener('click', closeSideMenuFunc);
             overlay.addEventListener('click', closeSideMenuFunc);
+        const emojiButtons = document.querySelectorAll('.footer-buttons-container .emoji-button');
+            const searchInput = document.getElementById('csv-search-input');
+            const searchButton = document.getElementById('csv-search-button');
+            const refreshButton = document.getElementById('refreshButton');
+
+            let selectedCategories = new Set(); // To store selected emoji categories
+
+            // Function to display filtered cards based on selected categories using AND logic
+            function displayFilteredCards(categories) {
+                if (categories.size === 0) {
+                    displayRandomCards(20); // Show random cards if no category is selected
+                    return;
+                }
+
+                // Filter entries that include all of the selected categories
+                const filtered = allEntries.filter(entry => {
+                    // Check if any selected category is present in the entry's emojis
+                    return [...categories].some(category => entry.emojis.includes(category));
+                });
+
+                if (filtered.length === 0) {
+                    cardsWrapper.innerHTML = '<p style="text-align:center;">Nessun contenuto disponibile per le categorie selezionate.</p>';
+                    return;
+                }
+
+                // Shuffle and select up to 'count'
+                const shuffled = filtered.sort(() => 0.5 - Math.random());
+                const selected = shuffled.slice(0, 20);
+                displayCards(selected);
+            }
+
+            // Add event listeners to emoji buttons
+            emojiButtons.forEach(button => {
+                const category = button.getAttribute('data-category');
+                button.addEventListener('click', () => {
+                    handleEmojiSelection(button, category);
+                });
+            });
+
+            // Function to handle emoji selection with AND logic
+            function handleEmojiSelection(button, category) {
+                if (selectedCategories.has(category)) {
+                    selectedCategories.delete(category);
+                    button.classList.remove('selected');
+                } else {
+                    selectedCategories.add(category);
+                    button.classList.add('selected');
+                }
+                displayFilteredCards(selectedCategories);
+            }
+
+            // Search functionality
+            function performSearch() {
+                const searchText = searchInput.value.toLowerCase().trim();
+                if (searchText === '') {
+                    displayRandomCards(20);
+                    return;
+                }
+
+                // Filter entries based on search text
+                const filtered = allEntries.filter(entry => {
+                    const combinedText = `${entry.description} ${entry.question}`.toLowerCase();
+                    return combinedText.includes(searchText);
+                });
+
+                if (filtered.length === 0) {
+                    cardsWrapper.innerHTML = '<p style="text-align:center;">Nessun contenuto trovato per la tua ricerca.</p>';
+                    return;
+                }
+
+                // Shuffle and select up to 'count'
+                const shuffled = filtered.sort(() => 0.5 - Math.random());
+                const selected = shuffled.slice(0, 20);
+                displayCards(selected);
+            }
+
+            // Add event listener to search button
+            searchButton.addEventListener('click', performSearch);
+
+            // Add event listener for Enter key on search input
+            searchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+
+            // Add event listener to refresh button
+            refreshButton.addEventListener('click', () => {
+                searchInput.value = '';
+                selectedCategories.clear();
+                emojiButtons.forEach(button => button.classList.remove('selected'));
+                displayRandomCards(20);
+            });
         });
     </script>
 
