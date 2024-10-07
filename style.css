@@ -162,22 +162,6 @@ footer {
     display: block;
 }
 
-/* Responsive adjustments */
-@media (min-width: 601px) {
-    footer {
-        display: flex;
-    }
-
-    .header {
-        position: fixed;
-        /* Already fixed */
-    }
-
-    .cards-container {
-        padding-bottom: 0;
-        /* Remove padding adjustment */
-    }
-}
 
 /* Header */
 .header {
@@ -194,6 +178,19 @@ footer {
     z-index: 1000;
     /* Ensure it stays on top */
 }
+
+@media (min-width: 1px) {
+    footer {
+        display: flex;
+    }
+
+    .header {
+        position: relative; /* Reset positioning to default */
+    }
+
+    .cards-container {
+        padding-bottom: 0; /* Remove padding adjustment */
+    }
 
 .header-left {
     display: flex;
