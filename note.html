@@ -586,39 +586,45 @@
             }
 
             // Language switch functionality
-            languageButton.addEventListener('click', () => {
-                currentLanguage = currentLanguage === 'it' ? 'en' : 'it';
-                languageButton.textContent = currentLanguage === 'it' ? 'English 🇬🇧' : 'Italian 🇮🇹';
-                initializeApp();
-            });
+            if (languageButton) {
+                languageButton.addEventListener('click', () => {
+                    currentLanguage = currentLanguage === 'it' ? 'en' : 'it';
+                    languageButton.textContent = currentLanguage === 'it' ? 'English 🇬🇧' : 'Italian 🇮🇹';
+                    initializeApp();
+                });
+            }
 
             // Support button functionality
-            supportButton.addEventListener('click', () => {
-                window.location.href = 'mailto:support@futurofortissimo.com';
-            });
+            if (supportButton) {
+                supportButton.addEventListener('click', () => {
+                    window.location.href = 'mailto:support@futurofortissimo.com';
+                });
+            }
 
             // Share button functionality
-            shareButton.addEventListener('click', () => {
-                const pageURL = window.location.href;
-                const pageTitle = document.title;
+            if (shareButton) {
+                shareButton.addEventListener('click', () => {
+                    const pageURL = window.location.href;
+                    const pageTitle = document.title;
 
-                if (navigator.share) {
-                    navigator.share({
-                        title: pageTitle,
-                        url: pageURL
-                    }).then(() => {
-                        console.log('Thanks for sharing!');
-                    })
-                    .catch(console.error);
-                } else {
-                    // Fallback: Copy to clipboard
-                    navigator.clipboard.writeText(pageURL).then(() => {
-                        alert('URL copiato negli appunti!');
-                    }, (err) => {
-                        console.error('Could not copy text: ', err);
-                    });
-                }
-            });
+                    if (navigator.share) {
+                        navigator.share({
+                            title: pageTitle,
+                            url: pageURL
+                        }).then(() => {
+                            console.log('Thanks for sharing!');
+                        })
+                        .catch(console.error);
+                    } else {
+                        // Fallback: Copy to clipboard
+                        navigator.clipboard.writeText(pageURL).then(() => {
+                            alert('URL copiato negli appunti!');
+                        }, (err) => {
+                            console.error('Could not copy text: ', err);
+                        });
+                    }
+                });
+            }
 
             // Add event listeners to emoji buttons
             document.querySelectorAll('.emoji-button').forEach(button => {
