@@ -286,7 +286,6 @@
             <div class="header">
                 <div class="header-left">
                     <img src="/index_files/ff.png" alt="Logo" class="logo" id="header-logo">
-                    <!-- Ensure this button is present if you want to use it to open the menu -->
                 </div>
                 <button class="language-switch" id="language-button">English 🇬🇧</button>
             </div>
@@ -312,6 +311,18 @@
         </div>
     </div>
 
+    <!-- Barra di ricerca sopra il footer -->
+    <div class="search-bar">
+        <div class="emoji-section" id="emoji-section">
+            <!-- Emoji verranno inseriti dinamicamente o staticamente -->
+            <span role="img" aria-label="Search">🔍</span>
+            <span role="img" aria-label="Search">😊</span>
+            <span role="img" aria-label="Search">🚀</span>
+            <!-- Aggiungi altri emoji a piacere -->
+        </div>
+        <input type="text" id="search-input" placeholder="Cerca..." />
+    </div>
+
     <footer>
 
         <div class="footer-content">
@@ -319,6 +330,44 @@
               <!-- Buttons will be dynamically inserted here -->
           </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // ... il tuo JavaScript esistente ...
+
+            const searchInput = document.getElementById('search-input');
+            const emojiSection = document.getElementById('emoji-section');
+
+            // Funzione per filtrare le cards
+            function filterCards(query) {
+                query = query.toLowerCase();
+                cards.forEach(card => {
+                    const cardText = card.textContent.toLowerCase();
+                    if (cardText.includes(query)) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+
+            // Event listener per la barra di ricerca
+            searchInput.addEventListener('input', (e) => {
+                const query = e.target.value;
+                filterCards(query);
+            });
+
+            // Event listener per gli emoji
+            emojiSection.addEventListener('click', (e) => {
+                if (e.target.tagName === 'SPAN') {
+                    const emoji = e.target.textContent;
+                    // Aggiungi l'emoji al campo di ricerca
+                    searchInput.value += emoji;
+                    filterCards(searchInput.value);
+                }
+            });
+        });
+    </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
