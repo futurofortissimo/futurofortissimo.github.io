@@ -98,16 +98,381 @@
     padding: 10px 0;
 }
     </style>
+    <style>
+        /* Root variables */
+        :root {
+            --theme-color: #ADD8E6;
+            /* Light blue */
+            --question-color: #B3E5FC;
+            /* Lighter blue */
+            --data-color: #81D4FA;
+            /* Medium blue */
+            --quote-color: #4FC3F7;
+            /* Darker blue */
+            --progress-bar-color: #4CAF50;
+            /* Green */
+            --button-hover-scale: 1.05;
+            /* Scale factor for hover effect */
+            --button-transition: transform 0.2s ease-in-out;
+            --menu-width: 250px;
+            /* Width of the side menu */
+        }
+    
+        .not-bold {
+            font-weight: normal !important;
+        }
+    
+        /* Basic styles */
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fff;
+            color: #333;
+            overflow-y: auto;
+            /* Allow vertical scrolling */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+    
+        /* App container */
+        .app-container {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+            padding-top: 60px;
+            /* Space for fixed header */
+            padding-bottom: 60px;
+            /* Space for fixed footer */
+        }
+    
+        /* Header with only logo */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            background-color: var(--theme-color);
+            padding: 10px;
+            z-index: 1000;
+            /* Ensure it stays on top */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    
+        .logo {
+            height: 40px;
+            cursor: pointer;
+            flex-shrink: 0;
+            margin: 0 auto;
+            /* Center the logo */
+        }
+    
+        /* Progress bar */
+        .progress-bar {
+            position: fixed;
+            top: 60px;
+            /* Below the header */
+            left: 0;
+            height: 5px;
+            background-color: var(--progress-bar-color);
+            width: 0%;
+            transition: width 0.5s ease-in-out;
+            z-index: 999;
+            /* Below the header */
+        }
+    
+        /* Cards container */
+        .cards-container {
+            flex: 1;
+            overflow: auto;
+            /* Allow vertical scrolling */
+            position: relative;
+            margin-top: 65px;
+            /* Below header and progress bar */
+            margin-bottom: 65px;
+            /* Above footer */
+        }
+    
+        /* Cards wrapper for sliding effect */
+        .cards-wrapper {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+    
+        /* Individual card */
+        .card {
+            flex: 0 0 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #fff;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+    
+        /* Card content */
+        .card-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px 20px 30px 20px;
+            /* Adjusted padding */
+            box-sizing: border-box;
+            max-width: 450px;
+            margin: 0 auto;
+            cursor: pointer;
+            /* Make card-content clickable */
+        }
+    
+        /* Section styles */
+        .section-title {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    
+        /* Content block */
+        .content-block {
+            padding: 10px;
+            border-radius: 10px;
+            word-wrap: break-word;
+            /* Prevent overflow of long words */
+            font-size: 16px;
+            font-weight: bold;
+        }
+    
+        .paragraphs {
+            background-color: #e0f7fa;
+            /* Light cyan */
+            font-weight: normal;
+        }
+    
+        /* Hide scrollbars on card content */
+        .card-content::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+    
+        /* Action button styles */
+        .action-button {
+            padding: 10px 20px;
+            margin: 5px 0;
+            background-color: var(--theme-color);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+    
+        .action-button:hover {
+            background-color: #7ec0ee;
+            /* Slightly darker blue */
+        }
+    
+        /* Footer */
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--theme-color);
+            padding: 10px 20px;
+            flex-shrink: 0;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            /* Ensure it stays on top */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        /* Buttons container in footer */
+        .footer-buttons-container {
+            display: flex;
+            overflow-x: auto;
+            flex-grow: 1;
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* Internet Explorer 10+ */
+            position: relative;
+            padding: 0 20px;
+            /* Add padding for fade effect */
+        }
+    
+        .footer-buttons-container::-webkit-scrollbar {
+            display: none;
+            /* WebKit */
+        }
+    
+        /* Buttons */
+        .button {
+            flex: 0 0 auto;
+            margin: 0 5px;
+            padding: 8px 12px;
+            background-color: #fff;
+            color: #333;
+            margin: 9px;
+            /* Corrected typo from 'magin' to 'margin' */
+            border-radius: 20px;
+            text-align: center;
+            font-size: 14px;
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+            font-family: 'Montserrat', sans-serif;
+            /* Ensure same font */
+            transition: transform 0.2s ease-in-out;
+            /* For hover animation */
+        }
+    
+        .substackButton {
+            flex: 0 0 auto;
+            margin: 0 5px;
+            padding: 8px 12px;
+            background-color: #fff;
+            color: #333;
+            border: 2px solid #000;
+            /* Optional black border */
+            border-radius: 35px;
+            text-align: center;
+            font-size: 18px;
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+            font-family: 'Montserrat', sans-serif;
+            /* Ensure same font */
+            transition: transform 0.2s ease-in-out;
+            /* For hover animation */
+        }
+    
+        .button:hover,
+        .substackButton:hover {
+            transform: scale(var(--button-hover-scale));
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    
+        /* Side Menu */
+        .side-menu {
+            height: 100%;
+            /* Full-height */
+            width: 0;
+            /* Initial width is 0 */
+            position: fixed;
+            /* Stay in place */
+            top: 0;
+            left: 0;
+            background-color: #f1f1f1;
+            /* Light grey */
+            overflow-x: hidden;
+            /* Disable horizontal scroll */
+            transition: 0.3s;
+            /* Transition effect */
+            padding-top: 60px;
+            /* Place content 60px from the top */
+            z-index: 1001;
+            /* Above header and footer */
+        }
+    
+        .side-menu.open {
+            width: var(--menu-width);
+            /* Set width when open */
+        }
+    
+        /* Close button inside side menu */
+        .close-menu {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+            cursor: pointer;
+        }
+    
+        /* Side menu content */
+        .side-menu-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0 20px;
+        }
+    
+        /* Buttons inside side menu */
+        .side-menu .share-button,
+        .side-menu .support-button,
+        .side-menu .language-button {
+            width: 100%;
+            margin: 10px 0;
+            text-align: left;
+        }
+    
+        .side-menu .share-button,
+        .side-menu .support-button,
+        .side-menu .language-button {
+            display: block;
+            padding: 10px 15px;
+            background-color: #fff;
+            color: #333;
+            border: none;
+            border-radius: 20px;
+            font-family: 'Montserrat', sans-serif;
+            text-decoration: none;
+            font-size: 14px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+    
+        .side-menu .share-button:hover,
+        .side-menu .support-button:hover,
+        .side-menu .language-button:hover {
+            transform: scale(var(--button-hover-scale));
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    
+        /* Overlay to dim the background when menu is open */
+        .overlay {
+            position: fixed;
+            display: none;
+            /* Hidden by default */
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Black with opacity */
+            z-index: 1000;
+            /* Below side menu */
+            cursor: pointer;
+            /* Cursor changes to pointer */
+        }
+    
+        .overlay.active {
+            display: block;
+        }
+    
+        /* Responsive adjustments */
+        @media (min-width: 601px) {
+            /* Adjust side menu if needed */
+        }
+    </style>
 </head>
 <body>
 <div id="__next">
   <div class="flex flex-col overflow-hidden">
-    <header class="__variable_a64ecd font-sans fixed top-0 w-full h-[70px] bg-white md:border-b border-gray-300 z-10" style="z-index: 1000; display: flex; justify-content: center; align-items: center; padding: 0 1rem; border-bottom: 2px solid black;">
-      <!-- Centered title -->
-      <div style="text-align: center;">
-        <a href="https://futurofortissimo.github.io/" style="font-size: 35px; font-family: 'Montserrat', sans-serif;;">futuro fortissimo</a>
-      </div>
-    </header>
+
+            <div class="header">
+                <img src="/index_files/ff.png" alt="Logo" class="logo" id="header-logo">
+            </div>
 
     <div style="width:100%; margin-top:5px; align-items: center; justify-content: center; display: flex; align-items: center; gap: 2px; font-size:21px;font-family: 'Montserrat', sans-serif;
 ;margin-top: 80px">
