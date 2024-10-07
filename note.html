@@ -17,7 +17,7 @@
             /* Light blue */
             --progress-bar-color: #4CAF50;
             /* Green */
-            --button-hover-scale: 1.05;
+            --button-hover-scale: 1.2;
             /* Scale factor for hover effect */
             --footer-height: 60px;
             --card-padding: 15px;
@@ -32,8 +32,6 @@
             --link-color: #1E90FF;
             --hashtag-color: #555;
             --note-color: #777;
-            --menu-width: 250px;
-            /* Width of the side menu */
         }
 
         /* Basic styles */
@@ -49,40 +47,71 @@
             min-height: 100vh;
         }
 
-        /* Header with only logo */
+        /* Header */
         .header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
+            background-color: var(--theme-color);
             display: flex;
             align-items: center;
-            background-color: var(--theme-color);
+            justify-content: space-between;
             padding: 10px 20px;
-            z-index: 1002;
-            /* Above progress bar */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            /* Ensure it stays on top */
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .logo {
             height: 40px;
             cursor: pointer;
-            margin: 0 auto;
-            /* Center the logo */
         }
 
-        /* Progress bar */
-        .progress-bar {
-            position: fixed;
-            top: 60px;
-            /* Below the header */
-            left: 0;
-            height: 5px;
-            background-color: var(--progress-bar-color);
-            width: 0%;
-            transition: width 0.5s ease-in-out;
-            z-index: 1001;
-            /* Below header */
+        .main-emojis {
+            display: flex;
+            gap: 10px;
+        }
+
+        .main-emoji-button {
+            font-size: 40px;
+            /* 2x bigger */
+            background: transparent;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out, border 0.2s ease-in-out;
+        }
+
+        .main-emoji-button:hover {
+            transform: scale(var(--button-hover-scale));
+            border-color: #4CAF50;
+        }
+
+        .main-emoji-button.selected {
+            border-color: #4CAF50;
+        }
+
+        .language-switch {
+            font-size: 16px;
+            background: #fff;
+            color: var(--text-color);
+            border: none;
+            border-radius: 20px;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .language-switch:hover {
+            transform: scale(var(--button-hover-scale));
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         /* Search and Refresh Section */
@@ -91,15 +120,11 @@
             justify-content: center;
             align-items: center;
             gap: 10px;
-            padding: 10px 20px;
+            padding: 70px 20px 10px 20px;
+            /* top padding to account for fixed header */
             background-color: #f0f8ff;
             border-bottom: 1px solid #ccc;
-            position: fixed;
-            top: 65px;
-            /* Below header and progress bar */
-            width: 100%;
-            z-index: 1000;
-            box-sizing: border-box;
+            flex-shrink: 0;
         }
 
         .search-refresh-container input[type="text"] {
@@ -131,18 +156,18 @@
             transform: scale(var(--button-hover-scale));
         }
 
-        /* App container */
-        .app-container {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-            overflow: hidden;
-            position: relative;
-            padding-top: 120px;
-            /* Space for fixed header and search */
-            padding-bottom: var(--footer-height);
-            /* Space for fixed footer */
-            background-color: var(--background-color);
+        /* Progress bar */
+        .progress-bar {
+            position: fixed;
+            top: 60px;
+            /* Below the header */
+            left: 0;
+            height: 5px;
+            background-color: var(--progress-bar-color);
+            width: 0%;
+            transition: width 0.5s ease-in-out;
+            z-index: 999;
+            /* Below the header */
         }
 
         /* Cards container */
@@ -152,10 +177,12 @@
             /* Allow vertical scrolling */
             position: relative;
             padding: 20px;
+            padding-top: 20px;
+            /* Padding to separate from search */
+            background-color: var(--background-color);
             display: flex;
             justify-content: center;
             /* Center the cards */
-            align-items: flex-start;
         }
 
         /* Cards wrapper */
@@ -249,75 +276,46 @@
             box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
             z-index: 1000;
             /* Ensure it stays on top */
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         /* Buttons container in footer */
-        .footer-content {
+        .footer-buttons-container {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: nowrap;
-            /* Prevent wrapping on small screens */
-            gap: 15px;
-            /* Space between buttons */
             overflow-x: auto;
+            flex-grow: 1;
             scrollbar-width: none;
             /* Firefox */
             -ms-overflow-style: none;
             /* Internet Explorer 10+ */
+            position: relative;
+            padding: 0 20px;
+            /* Add padding for fade effect */
+            gap: 15px;
         }
 
-        .footer-content::-webkit-scrollbar {
+        .footer-buttons-container::-webkit-scrollbar {
             display: none;
             /* WebKit */
         }
 
-        /* Buttons */
-        .button {
-            flex: 0 0 auto;
-            margin: 0 5px;
-            padding: 8px 12px;
-            background-color: #fff;
-            color: #333;
-            border-radius: 20px;
-            text-align: center;
-            font-size: 14px;
+        /* Emoji Buttons in Footer */
+        .footer-buttons-container .emoji-button {
+            font-size: 40px;
+            /* 2x bigger */
+            background: transparent;
+            border: 2px solid transparent;
+            border-radius: 10px;
             cursor: pointer;
-            user-select: none;
-            white-space: nowrap;
-            font-family: 'Montserrat', sans-serif;
-            /* Ensure same font */
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-            /* For hover animation */
+            transition: transform 0.2s ease-in-out, border 0.2s ease-in-out;
         }
 
-        .substackButton {
-            flex: 0 0 auto;
-            margin: 0 5px;
-            padding: 8px 12px;
-            background-color: #fff;
-            color: #333;
-            border: 2px solid #000;
-            /* Optional black border */
-            border-radius: 35px;
-            text-align: center;
-            font-size: 18px;
-            cursor: pointer;
-            user-select: none;
-            white-space: nowrap;
-            font-family: 'Montserrat', sans-serif;
-            /* Ensure same font */
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-            /* For hover animation */
-        }
-
-        .button:hover,
-        .substackButton:hover {
+        .footer-buttons-container .emoji-button:hover {
             transform: scale(var(--button-hover-scale));
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-color: #4CAF50;
+        }
+
+        .footer-buttons-container .emoji-button.selected {
+            border-color: #4CAF50;
         }
 
         /* Side Menu */
@@ -338,12 +336,12 @@
             /* Transition effect */
             padding-top: 60px;
             /* Place content 60px from the top */
-            z-index: 1003;
+            z-index: 1001;
             /* Above header and footer */
         }
 
         .side-menu.open {
-            width: var(--menu-width);
+            width: 250px;
             /* Set width when open */
         }
 
@@ -363,36 +361,29 @@
             flex-direction: column;
             align-items: flex-start;
             padding: 0 20px;
-            gap: 15px;
+            gap: 20px;
         }
 
         /* Buttons inside side menu */
-        .side-menu .share-button,
-        .side-menu .support-button,
-        .side-menu .language-button {
-            width: 100%;
-            text-align: left;
-        }
-
-        .side-menu .share-button,
-        .side-menu .support-button,
-        .side-menu .language-button {
-            display: block;
-            padding: 10px 15px;
-            background-color: #fff;
+        .side-menu-content a,
+        .side-menu-content button {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
             color: #333;
+            cursor: pointer;
+            background-color: #fff;
+            padding: 10px 15px;
             border: none;
             border-radius: 20px;
             font-family: 'Montserrat', sans-serif;
-            text-decoration: none;
-            font-size: 14px;
-            cursor: pointer;
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            /* For hover animation */
+            font-size: 16px;
         }
 
-        .side-menu .share-button:hover,
-        .side-menu .support-button:hover,
-        .side-menu .language-button:hover {
+        .side-menu-content a:hover,
+        .side-menu-content button:hover {
             transform: scale(var(--button-hover-scale));
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
@@ -406,9 +397,11 @@
             height: 100%;
             top: 0;
             left: 0;
+            right: 0;
+            bottom: 0;
             background-color: rgba(0, 0, 0, 0.5);
             /* Black with opacity */
-            z-index: 1002;
+            z-index: 1000;
             /* Below side menu */
             cursor: pointer;
             /* Cursor changes to pointer */
@@ -418,16 +411,37 @@
             display: block;
         }
 
+        /* Responsive adjustments */
         @media (min-width: 601px) {
-            /* Adjust side menu if needed */
+            footer {
+                display: flex;
+            }
+
+            .header {
+                position: fixed;
+                /* Already fixed */
+            }
+
+            .cards-container {
+                padding-bottom: 0;
+                /* Remove padding adjustment */
+            }
         }
     </style>
 </head>
 
 <body>
-    <!-- Header with only logo -->
+    <!-- Header with logo, main emojis, and language switch -->
     <div class="header">
-        <img src="/index_files/ff.png" alt="Logo" class="logo" id="header-logo">
+        <div class="header-left">
+            <img src="/index_files/ff.png" alt="Logo" class="logo" id="header-logo">
+            <div class="main-emojis">
+                <button class="main-emoji-button" data-category="🍃" aria-label="Clima">🍃</button>
+                <button class="main-emoji-button" data-category="💻" aria-label="Tecnologia">💻</button>
+                <button class="main-emoji-button" data-category="❤️" aria-label="Uomo">❤️</button>
+            </div>
+        </div>
+        <button class="language-switch" id="language-button">English 🇬🇧</button>
     </div>
 
     <!-- Progress bar -->
@@ -440,30 +454,24 @@
         <button id="refreshButton">🔄</button>
     </div>
 
-    <!-- App container -->
-    <div class="app-container">
-        <!-- Cards -->
-        <div class="cards-container">
-            <div class="cards-wrapper" id="cards-wrapper">
-                <!-- Cards will be dynamically inserted here -->
-                <!-- Initially, 20 random cards will be loaded via JavaScript -->
-            </div>
+    <!-- Cards -->
+    <div class="cards-container">
+        <div class="cards-wrapper" id="cards-wrapper">
+            <!-- Cards will be dynamically inserted here -->
+            <!-- Initially, 10 random cards will be loaded via JavaScript -->
         </div>
     </div>
 
-    <!-- Footer with publication emoji buttons -->
+    <!-- Footer with topic emoji buttons -->
     <footer>
         <div class="footer-content">
-            <!-- Emoji Buttons with data-category attributes -->
-            <div class="buttons-container" id="buttons-container">
-                <button class="emoji-button" data-category="💻" aria-label="Tecnologia">💻</button>
+            <div class="footer-buttons-container" id="footer-buttons-container">
+                <!-- Emoji Buttons in Footer -->
                 <button class="emoji-button" data-category="🎼" aria-label="Futuro">🎼</button>
                 <button class="emoji-button" data-category="👥" aria-label="Società">👥</button>
                 <button class="emoji-button" data-category="💬" aria-label="Comunicazione">💬</button>
                 <button class="emoji-button" data-category="💊" aria-label="Salute">💊</button>
-                <button class="emoji-button" data-category="❤️" aria-label="Uomo">❤️</button>
                 <button class="emoji-button" data-category="🧠" aria-label="Intelligenza Artificiale">🧠</button>
-                <button class="emoji-button" data-category="🍃" aria-label="Clima">🍃</button>
                 <button class="emoji-button" data-category="💸" aria-label="Criptovalute">💸</button>
                 <button class="emoji-button" data-category="⚽" aria-label="Sport">⚽</button>
                 <button class="emoji-button" data-category="🍽️" aria-label="Alimentazione">🍽️</button>
@@ -485,8 +493,6 @@
                 class="share-button">Share</a>
             <!-- Support Button as a link -->
             <a href="https://www.paypal.com/paypalme/michelemerelli" class="support-button">Support</a>
-            <!-- Language Button -->
-            <button class="language-button" id="language-button">English 🇬🇧</button>
         </div>
     </div>
 
@@ -498,21 +504,21 @@
         document.addEventListener('DOMContentLoaded', () => {
             let currentLanguage = 'it'; // Default language
             const languageButton = document.getElementById('language-button');
-            const supportButton = document.querySelector('.support-button');
-            const shareButton = document.querySelector('.share-button');
-            const buttonsContainer = document.getElementById('buttons-container');
+            const headerLogo = document.getElementById('header-logo');
+            const sideMenu = document.getElementById('side-menu');
+            const closeMenu = document.getElementById('close-menu');
+            const overlay = document.getElementById('overlay');
+            const footerButtonsContainer = document.getElementById('footer-buttons-container');
+            const mainEmojiButtons = document.querySelectorAll('.main-emoji-button');
+            const emojiButtons = document.querySelectorAll('.footer-buttons-container .emoji-button');
             const cardsWrapper = document.getElementById('cards-wrapper');
             const progressBar = document.getElementById('progress-bar');
             const searchInput = document.getElementById('csv-search-input');
             const searchButton = document.getElementById('csv-search-button');
             const refreshButton = document.getElementById('refreshButton');
 
-            const sideMenu = document.getElementById('side-menu');
-            const overlay = document.getElementById('overlay');
-            const headerLogo = document.getElementById('header-logo');
-            const closeMenu = document.getElementById('close-menu');
-
             let allEntries = []; // To store all CSV entries
+            let selectedCategories = new Set(); // To store selected emoji categories
 
             // Define a color palette for alternating card colors (only blues)
             const colorPalette = ['#ADD8E6', '#B3E5FC', '#81D4FA', '#4FC3F7', '#2196F3', '#1E90FF'];
@@ -592,7 +598,7 @@
                 // Fetch and parse CSV
                 allEntries = await fetchAndParseCSV(csvFile);
 
-                // Initialize with 20 random cards
+                // Initialize with 10 random cards
                 displayRandomCards(20);
             }
 
@@ -610,18 +616,31 @@
                 displayCards(selected);
             }
 
-            // Function to display filtered cards based on category
-            function displayFilteredCards(category, count) {
-                // Filter entries that include the category emoji
-                const filtered = allEntries.filter(entry => entry.emojis.includes(category));
+            // Function to display filtered cards based on selected categories
+            function displayFilteredCards(categories, count) {
+                if (categories.size === 0) {
+                    displayRandomCards(count);
+                    return;
+                }
+
+                // Filter entries that include any of the selected categories
+                const filtered = allEntries.filter(entry => {
+                    for (let category of categories) {
+                        if (entry.emojis.includes(category)) {
+                            return true;
+                        }
+                    }
+                    return false;
+                });
+
                 if (filtered.length === 0) {
-                    cardsWrapper.innerHTML = '<p style="text-align:center;">Nessun contenuto disponibile per questa categoria.</p>';
+                    cardsWrapper.innerHTML = '<p style="text-align:center;">Nessun contenuto disponibile per le categorie selezionate.</p>';
                     progressBar.style.width = '0%';
                     return;
                 }
-                // Shuffle the filtered array
+
+                // Shuffle and select up to 'count'
                 const shuffled = filtered.sort(() => 0.5 - Math.random());
-                // Select first 'count' entries
                 const selected = shuffled.slice(0, count);
                 displayCards(selected);
             }
@@ -640,6 +659,12 @@
 
                     const cardContent = document.createElement('div');
                     cardContent.className = 'card-content';
+
+                    // Add Question above title
+                    const question = document.createElement('p');
+                    question.className = 'question';
+                    question.textContent = entry.question;
+                    cardContent.appendChild(question);
 
                     // Add Description as title
                     const description = document.createElement('h2');
@@ -682,7 +707,7 @@
 
                 // Update progress bar
                 const totalDisplayed = entries.length;
-                const progress = (totalDisplayed / 20) * 100;
+                const progress = (totalDisplayed / 10) * 100;
                 progressBar.style.width = `${progress > 100 ? 100 : progress}%`;
             }
 
@@ -717,7 +742,7 @@
                     return;
                 }
 
-                // Shuffle and select up to 20
+                // Shuffle and select up to 'count'
                 const shuffled = filtered.sort(() => 0.5 - Math.random());
                 const selected = shuffled.slice(0, 20);
                 displayCards(selected);
@@ -726,28 +751,40 @@
             // Function to reset all filters and display random cards
             function resetFilters() {
                 searchInput.value = '';
+                selectedCategories.clear();
+                // Remove 'selected' class from all emoji buttons
+                mainEmojiButtons.forEach(button => button.classList.remove('selected'));
+                emojiButtons.forEach(button => button.classList.remove('selected'));
                 displayRandomCards(20);
             }
 
             // Language switch functionality
-            if (languageButton) {
-                languageButton.addEventListener('click', () => {
-                    currentLanguage = currentLanguage === 'it' ? 'en' : 'it';
-                    languageButton.textContent = currentLanguage === 'it' ? 'English 🇬🇧' : 'Italian 🇮🇹';
-                    initializeApp();
-                });
+            languageButton.addEventListener('click', () => {
+                currentLanguage = currentLanguage === 'it' ? 'en' : 'it';
+                languageButton.textContent = currentLanguage === 'it' ? 'English 🇬🇧' : 'Italian 🇮🇹';
+                initializeApp();
+            });
+
+            // Function to open side menu
+            function openSideMenu() {
+                sideMenu.classList.add('open');
+                overlay.classList.add('active');
             }
 
-            // Support button functionality
-            if (supportButton) {
-                supportButton.addEventListener('click', () => {
-                    window.location.href = 'mailto:support@futurofortissimo.com';
-                });
+            // Function to close side menu
+            function closeSideMenuFunc() {
+                sideMenu.classList.remove('open');
+                overlay.classList.remove('active');
             }
 
-            // Share button functionality
-            if (shareButton) {
-                shareButton.addEventListener('click', () => {
+            // Event listeners for opening and closing side menu
+            headerLogo.addEventListener('click', openSideMenu);
+            closeMenu.addEventListener('click', closeSideMenuFunc);
+            overlay.addEventListener('click', closeSideMenuFunc);
+
+            // Share and Support buttons functionality
+            document.querySelectorAll('.share-button').forEach(button => {
+                button.addEventListener('click', () => {
                     const pageURL = window.location.href;
                     const pageTitle = document.title;
 
@@ -768,13 +805,39 @@
                         });
                     }
                 });
+            });
+
+            document.querySelectorAll('.support-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    window.location.href = 'mailto:support@futurofortissimo.com';
+                });
+            });
+
+            // Function to handle emoji selection
+            function handleEmojiSelection(button, category) {
+                if (selectedCategories.has(category)) {
+                    selectedCategories.delete(category);
+                    button.classList.remove('selected');
+                } else {
+                    selectedCategories.add(category);
+                    button.classList.add('selected');
+                }
+                displayFilteredCards(selectedCategories, 20);
             }
 
-            // Add event listeners to emoji buttons
-            document.querySelectorAll('.emoji-button').forEach(button => {
+            // Add event listeners to main emoji buttons
+            mainEmojiButtons.forEach(button => {
+                const category = button.getAttribute('data-category');
                 button.addEventListener('click', () => {
-                    const category = button.getAttribute('data-category');
-                    displayFilteredCards(category, 20);
+                    handleEmojiSelection(button, category);
+                });
+            });
+
+            // Add event listeners to footer emoji buttons
+            emojiButtons.forEach(button => {
+                const category = button.getAttribute('data-category');
+                button.addEventListener('click', () => {
+                    handleEmojiSelection(button, category);
                 });
             });
 
@@ -784,22 +847,12 @@
             // Add event listener to refresh button
             refreshButton.addEventListener('click', resetFilters);
 
-            // Function to open side menu
-            function openSideMenu() {
-                sideMenu.classList.add('open');
-                overlay.classList.add('active');
-            }
-
-            // Function to close side menu
-            function closeSideMenu() {
-                sideMenu.classList.remove('open');
-                overlay.classList.remove('active');
-            }
-
-            // Event listeners for opening and closing side menu
-            headerLogo.addEventListener('click', openSideMenu);
-            closeMenu.addEventListener('click', closeSideMenu);
-            overlay.addEventListener('click', closeSideMenu);
+            // Add event listener for Enter key on search input
+            searchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
 
             // Initialize the app on page load
             initializeApp();
