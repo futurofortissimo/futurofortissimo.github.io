@@ -313,23 +313,24 @@
     </div>
 
     <footer>
-    <div class="footer-buttons-container" id="footer-buttons-container">
-        <!-- Emoji Buttons for filtering -->
-        <button class="emoji-button" data-category="🎼" aria-label="Musica">🎼</button>
-        <button class="emoji-button" data-category="🧠" aria-label="Intelligenza">🧠</button>
-        <button class="emoji-button" data-category="🤖" aria-label="Robotica">🤖</button>
-        <button class="emoji-button" data-category="🎨" aria-label="Arte">🎨</button>
-        <button class="emoji-button" data-category="💻" aria-label="Tecnologia">💻</button>
-        <button class="emoji-button" data-category="🍄" aria-label="Psichedelia">🍄</button>
-        <!-- Add more emoji buttons as needed -->
-    </div>
-        <!-- Search and Refresh Section -->
-        <div class="search-refresh-container">
-            <input type="text" id="csv-search-input" placeholder="Cerca una Nota 🎵">
-            <button id="csv-search-button">🔍</button>
-            <button id="refreshButton">🔄</button>
-        </div>
+    
         <div class="footer-content">
+            <div class="footer-buttons-container" id="footer-buttons-container">
+                <!-- Emoji Buttons for filtering -->
+                <button class="emoji-button" data-category="🎼" aria-label="Musica">🎼</button>
+                <button class="emoji-button" data-category="🧠" aria-label="Intelligenza">🧠</button>
+                <button class="emoji-button" data-category="🤖" aria-label="Robotica">🤖</button>
+                <button class="emoji-button" data-category="🎨" aria-label="Arte">🎨</button>
+                <button class="emoji-button" data-category="💻" aria-label="Tecnologia">💻</button>
+                <button class="emoji-button" data-category="🍄" aria-label="Psichedelia">🍄</button>
+                <!-- Add more emoji buttons as needed -->
+            </div>
+            <!-- Search and Refresh Section -->
+            <div class="search-refresh-container">
+                <input type="text" id="csv-search-input" placeholder="Cerca una Nota 🎵">
+                <button id="csv-search-button">🔍</button>
+                <button id="refreshButton">🔄</button>
+            </div>
           <div class="buttons-container" id="buttons-container">
               <!-- Buttons will be dynamically inserted here -->
           </div>
@@ -435,6 +436,15 @@
                 const selected = shuffled.slice(0, 20);
                 displayCards(selected);
             }
+
+            // Ensure the search functionality works for emoji buttons
+            emojiButtons.forEach(button => {
+                const category = button.getAttribute('data-category');
+                button.addEventListener('click', () => {
+                    handleEmojiSelection(button, category);
+                    performSearch(); // Call performSearch after emoji selection
+                });
+            });
 
             // Add event listener to search button
             searchButton.addEventListener('click', performSearch);
