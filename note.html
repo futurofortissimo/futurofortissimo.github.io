@@ -663,7 +663,7 @@
                     const question = document.createElement('p');
                     question.className = 'question';
                     question.textContent = entry.question;
-                    cardContent.appendChild(question);
+                    //cardContent.appendChild(question);
 
                     // Add Description as title
                     const description = document.createElement('h2');
@@ -675,7 +675,7 @@
                     const hashtags = document.createElement('p');
                     hashtags.className = 'hashtags';
                     hashtags.textContent = entry.hashtags.replace(/#/g, ''); // Remove #
-                    cardContent.appendChild(hashtags);
+                    //cardContent.appendChild(hashtags);
 
                     // Add Emojis at bottom left and note number at bottom right
                     const emojisAndNote = document.createElement('div');
@@ -690,7 +690,7 @@
                     noteNumber.textContent = `${entry.number}`; // No #
 
                     emojisAndNote.appendChild(emojis);
-                    emojisAndNote.appendChild(noteNumber);
+                    //emojisAndNote.appendChild(noteNumber);
 
                     cardContent.appendChild(emojisAndNote);
 
