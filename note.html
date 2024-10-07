@@ -121,10 +121,12 @@
             justify-content: center;
             align-items: center;
             gap: 10px;
-            padding: 0px 20px 10px 20px;
-            /* top padding to account for fixed header */
+            padding: 20px;
+            /* Top padding for separation */
+            background-color: #f0f8ff;
             border-bottom: 1px solid #ccc;
             flex-shrink: 0;
+            /* Prevent shrinking */
         }
 
         .search-refresh-container input[type="text"] {
@@ -448,41 +450,38 @@
     <!-- Progress bar -->
     <div class="progress-bar" id="progress-bar"></div>
 
+    <!-- Search and Refresh Section -->
+    <div class="search-refresh-container">
+        <input type="text" id="csv-search-input" placeholder="Cerca una Nota 🎵">
+        <button id="csv-search-button">🔍</button>
+        <button id="refreshButton">🔄</button>
+    </div>
 
     <!-- Cards -->
     <div class="cards-container">
         <div class="cards-wrapper" id="cards-wrapper">
             <!-- Cards will be dynamically inserted here -->
-            <!-- Initially, 10 random cards will be loaded via JavaScript -->
+            <!-- Initially, 20 random cards will be loaded via JavaScript -->
         </div>
     </div>
 
     <!-- Footer with topic emoji buttons -->
     <footer>
-            <!-- Search and Refresh Section -->
-
-        <div class="footer-content">
-            <div class="search-refresh-container">
-                <input type="text" id="csv-search-input" placeholder="Cerca una Nota 🎵">
-                <button id="csv-search-button">🔍</button>
-                <button id="refreshButton">🔄</button>
-            </div>
-            <div class="footer-buttons-container" id="footer-buttons-container">
-                <!-- Emoji Buttons in Footer -->
-                <button class="emoji-button" data-category="🎼" aria-label="Futuro">🎼</button>
-                <button class="emoji-button" data-category="👥" aria-label="Società">👥</button>
-                <button class="emoji-button" data-category="💬" aria-label="Comunicazione">💬</button>
-                <button class="emoji-button" data-category="💊" aria-label="Salute">💊</button>
-                <button class="emoji-button" data-category="🧠" aria-label="Intelligenza Artificiale">🧠</button>
-                <button class="emoji-button" data-category="💸" aria-label="Criptovalute">💸</button>
-                <button class="emoji-button" data-category="⚽" aria-label="Sport">⚽</button>
-                <button class="emoji-button" data-category="🍽️" aria-label="Alimentazione">🍽️</button>
-                <button class="emoji-button" data-category="🎙️" aria-label="Podcast">🎙️</button>
-                <button class="emoji-button" data-category="🎨" aria-label="Arte">🎨</button>
-                <button class="emoji-button" data-category="🥽" aria-label="Metaverso">🥽</button>
-                <button class="emoji-button" data-category="🚕" aria-label="Mobilità">🚕</button>
-                <!-- Add more emoji buttons as needed -->
-            </div>
+        <div class="footer-buttons-container" id="footer-buttons-container">
+            <!-- Emoji Buttons in Footer -->
+            <button class="emoji-button" data-category="🎼" aria-label="Futuro">🎼</button>
+            <button class="emoji-button" data-category="👥" aria-label="Società">👥</button>
+            <button class="emoji-button" data-category="💬" aria-label="Comunicazione">💬</button>
+            <button class="emoji-button" data-category="💊" aria-label="Salute">💊</button>
+            <button class="emoji-button" data-category="🧠" aria-label="Intelligenza Artificiale">🧠</button>
+            <button class="emoji-button" data-category="💸" aria-label="Criptovalute">💸</button>
+            <button class="emoji-button" data-category="⚽" aria-label="Sport">⚽</button>
+            <button class="emoji-button" data-category="🍽️" aria-label="Alimentazione">🍽️</button>
+            <button class="emoji-button" data-category="🎙️" aria-label="Podcast">🎙️</button>
+            <button class="emoji-button" data-category="🎨" aria-label="Arte">🎨</button>
+            <button class="emoji-button" data-category="🥽" aria-label="Metaverso">🥽</button>
+            <button class="emoji-button" data-category="🚕" aria-label="Mobilità">🚕</button>
+            <!-- Add more emoji buttons as needed -->
         </div>
     </footer>
 
@@ -664,7 +663,8 @@
                     const question = document.createElement('p');
                     question.className = 'question';
                     question.textContent = entry.question;
-                    //cardContent.appendChild(question);
+                    // Uncomment the line below if you want to display the question
+                    // cardContent.appendChild(question);
 
                     // Add Description as title
                     const description = document.createElement('h2');
@@ -676,7 +676,8 @@
                     const hashtags = document.createElement('p');
                     hashtags.className = 'hashtags';
                     hashtags.textContent = entry.hashtags.replace(/#/g, ''); // Remove #
-                    //cardContent.appendChild(hashtags);
+                    // Uncomment the line below if you want to display hashtags
+                    // cardContent.appendChild(hashtags);
 
                     // Add Emojis at bottom left and note number at bottom right
                     const emojisAndNote = document.createElement('div');
@@ -691,7 +692,8 @@
                     noteNumber.textContent = `${entry.number}`; // No #
 
                     emojisAndNote.appendChild(emojis);
-                    //emojisAndNote.appendChild(noteNumber);
+                    // Uncomment the line below if you want to display the note number
+                    // emojisAndNote.appendChild(noteNumber);
 
                     cardContent.appendChild(emojisAndNote);
 
