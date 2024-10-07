@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <title>Futuro Fortissimo - Riepilogo</title>
@@ -12,20 +13,27 @@
     <style>
         /* Root variables */
         :root {
-            --theme-color: #ADD8E6; /* Light blue */
-            --progress-bar-color: #4CAF50; /* Green */
-            --button-hover-scale: 1.05; /* Scale factor for hover effect */
+            --theme-color: #ADD8E6;
+            /* Light blue */
+            --progress-bar-color: #4CAF50;
+            /* Green */
+            --button-hover-scale: 1.05;
+            /* Scale factor for hover effect */
             --footer-height: 60px;
-            --card-padding: 15px; /* Reduced padding */
-            --card-margin: 10px 0; /* Reduced margin */
+            --card-padding: 15px;
+            /* Reduced padding */
+            --card-margin: 10px 0;
+            /* Reduced margin */
             --card-border-radius: 10px;
-            --card-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            --card-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             --button-transition: transform 0.2s ease-in-out;
             --background-color: #f9f9f9;
             --text-color: #333;
             --link-color: #1E90FF;
             --hashtag-color: #555;
             --note-color: #777;
+            --menu-width: 250px;
+            /* Width of the side menu */
         }
 
         /* Basic styles */
@@ -34,70 +42,50 @@
             font-family: 'Montserrat', sans-serif;
             background-color: #fff;
             color: var(--text-color);
-            overflow-y: auto; /* Allow vertical scrolling */
+            overflow-y: auto;
+            /* Allow vertical scrolling */
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
 
-        /* App container */
-        .app-container {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-            overflow: hidden;
-            position: relative;
-            padding-bottom: var(--footer-height); /* Space for fixed footer */
-        }
-
-        /* Header with logo and emoji buttons */
+        /* Header with only logo */
         .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
             display: flex;
             align-items: center;
             background-color: var(--theme-color);
             padding: 10px 20px;
-            flex-shrink: 0;
-            flex-wrap: nowrap;
-            justify-content: space-between;
+            z-index: 1002;
+            /* Above progress bar */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .logo {
             height: 40px;
             cursor: pointer;
-            flex-shrink: 0;
-            margin-right: 10px;
+            margin: 0 auto;
+            /* Center the logo */
         }
 
-        /* Buttons container inside header */
-        .buttons-container {
-            display: flex;
-            overflow-x: auto;
-            flex-grow: 1;
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* Internet Explorer 10+ */
-            position: relative;
-            padding: 0 20px; /* Add padding for fade effect */
-            gap: 10px;
+        /* Progress bar */
+        .progress-bar {
+            position: fixed;
+            top: 60px;
+            /* Below the header */
+            left: 0;
+            height: 5px;
+            background-color: var(--progress-bar-color);
+            width: 0%;
+            transition: width 0.5s ease-in-out;
+            z-index: 1001;
+            /* Below header */
         }
 
-        .buttons-container::-webkit-scrollbar {
-            display: none; /* WebKit */
-        }
-
-        /* Emoji Buttons */
-        .emoji-button {
-            font-size: 30px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.2s ease-in-out;
-        }
-
-        .emoji-button:hover {
-            transform: scale(var(--button-hover-scale));
-        }
-
-        /* Search and Refresh Container */
+        /* Search and Refresh Section */
         .search-refresh-container {
             display: flex;
             justify-content: center;
@@ -106,7 +94,12 @@
             padding: 10px 20px;
             background-color: #f0f8ff;
             border-bottom: 1px solid #ccc;
-            flex-shrink: 0;
+            position: fixed;
+            top: 65px;
+            /* Below header and progress bar */
+            width: 100%;
+            z-index: 1000;
+            box-sizing: border-box;
         }
 
         .search-refresh-container input[type="text"] {
@@ -138,24 +131,31 @@
             transform: scale(var(--button-hover-scale));
         }
 
-        /* Progress bar */
-        .progress-bar {
-            height: 5px;
-            background-color: var(--progress-bar-color);
-            width: 0%;
-            transition: width 0.5s ease-in-out;
-            flex-shrink: 0;
+        /* App container */
+        .app-container {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+            padding-top: 120px;
+            /* Space for fixed header and search */
+            padding-bottom: var(--footer-height);
+            /* Space for fixed footer */
+            background-color: var(--background-color);
         }
 
         /* Cards container */
         .cards-container {
             flex: 1;
-            overflow: auto; /* Allow vertical scrolling */
+            overflow: auto;
+            /* Allow vertical scrolling */
             position: relative;
             padding: 20px;
-            background-color: var(--background-color);
             display: flex;
-            justify-content: center; /* Center the cards */
+            justify-content: center;
+            /* Center the cards */
+            align-items: flex-start;
         }
 
         /* Cards wrapper */
@@ -163,9 +163,11 @@
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-            max-width: 1200px; /* To limit overall width */
+            max-width: 1200px;
+            /* To limit overall width */
             width: 100%;
-            justify-content: center; /* Center the cards */
+            justify-content: center;
+            /* Center the cards */
         }
 
         /* Individual card */
@@ -176,7 +178,8 @@
             box-shadow: var(--card-box-shadow);
             transition: background-color 0.3s ease;
             cursor: pointer;
-            max-width: 400px; /* Max width as per request */
+            max-width: 400px;
+            /* Max width as per request */
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -191,7 +194,8 @@
         .card-content {
             display: flex;
             flex-direction: column;
-            gap: 5px; /* Less vertical spacing */
+            gap: 5px;
+            /* Less vertical spacing */
         }
 
         .section-title {
@@ -203,10 +207,12 @@
         }
 
         .question {
-            font-size: 20px; /* Same as title */
+            font-size: 20px;
+            /* Same as title */
             font-weight: bold;
             color: var(--text-color);
-            margin-bottom: 5px; /* Less spacing */
+            margin-bottom: 5px;
+            /* Less spacing */
         }
 
         .hashtags {
@@ -240,127 +246,271 @@
             background-color: var(--theme-color);
             padding: 10px 20px;
             flex-shrink: 0;
-            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-            z-index: 1000; /* Ensure it stays on top */
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            /* Ensure it stays on top */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
+        /* Buttons container in footer */
         .footer-content {
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-wrap: nowrap; /* Prevent wrapping on small screens */
-            gap: 15px; /* Space between buttons */
+            flex-wrap: nowrap;
+            /* Prevent wrapping on small screens */
+            gap: 15px;
+            /* Space between buttons */
+            overflow-x: auto;
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* Internet Explorer 10+ */
         }
 
-        .footer-content a,
-        .footer-content button {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: #333;
-            cursor: pointer;
-            background-color: #fff;
+        .footer-content::-webkit-scrollbar {
+            display: none;
+            /* WebKit */
+        }
+
+        /* Buttons */
+        .button {
+            flex: 0 0 auto;
+            margin: 0 5px;
             padding: 8px 12px;
-            border: none;
+            background-color: #fff;
+            color: #333;
             border-radius: 20px;
-            font-family: 'Montserrat', sans-serif;
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* For hover animation */
+            text-align: center;
             font-size: 14px;
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+            font-family: 'Montserrat', sans-serif;
+            /* Ensure same font */
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            /* For hover animation */
         }
 
-        .footer-content a img {
-            height: 24px;
-            width: auto;
+        .substackButton {
+            flex: 0 0 auto;
+            margin: 0 5px;
+            padding: 8px 12px;
+            background-color: #fff;
+            color: #333;
+            border: 2px solid #000;
+            /* Optional black border */
+            border-radius: 35px;
+            text-align: center;
+            font-size: 18px;
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+            font-family: 'Montserrat', sans-serif;
+            /* Ensure same font */
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            /* For hover animation */
         }
 
-        /* Hover "pop-up" animation */
-        .footer-content a:hover,
-        .footer-content button:hover {
+        .button:hover,
+        .substackButton:hover {
             transform: scale(var(--button-hover-scale));
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
+        /* Side Menu */
+        .side-menu {
+            height: 100%;
+            /* Full-height */
+            width: 0;
+            /* Initial width is 0 */
+            position: fixed;
+            /* Stay in place */
+            top: 0;
+            left: 0;
+            background-color: #f1f1f1;
+            /* Light grey */
+            overflow-x: hidden;
+            /* Disable horizontal scroll */
+            transition: 0.3s;
+            /* Transition effect */
+            padding-top: 60px;
+            /* Place content 60px from the top */
+            z-index: 1003;
+            /* Above header and footer */
+        }
+
+        .side-menu.open {
+            width: var(--menu-width);
+            /* Set width when open */
+        }
+
+        /* Close button inside side menu */
+        .close-menu {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+            cursor: pointer;
+        }
+
+        /* Side menu content */
+        .side-menu-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0 20px;
+            gap: 15px;
+        }
+
+        /* Buttons inside side menu */
+        .side-menu .share-button,
+        .side-menu .support-button,
+        .side-menu .language-button {
+            width: 100%;
+            text-align: left;
+        }
+
+        .side-menu .share-button,
+        .side-menu .support-button,
+        .side-menu .language-button {
+            display: block;
+            padding: 10px 15px;
+            background-color: #fff;
+            color: #333;
+            border: none;
+            border-radius: 20px;
+            font-family: 'Montserrat', sans-serif;
+            text-decoration: none;
+            font-size: 14px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .side-menu .share-button:hover,
+        .side-menu .support-button:hover,
+        .side-menu .language-button:hover {
+            transform: scale(var(--button-hover-scale));
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Overlay to dim the background when menu is open */
+        .overlay {
+            position: fixed;
+            display: none;
+            /* Hidden by default */
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Black with opacity */
+            z-index: 1002;
+            /* Below side menu */
+            cursor: pointer;
+            /* Cursor changes to pointer */
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
         @media (min-width: 601px) {
-            footer {
-                display: flex;
-            }
-
-            .header {
-                position: relative; /* Reset positioning to default */
-            }
-
-            .cards-container {
-                padding-bottom: 0; /* Remove padding adjustment */
-            }
+            /* Adjust side menu if needed */
         }
     </style>
 </head>
+
 <body>
-    <div class="app-container">
-        <!-- Header with logo and emoji buttons -->
-        <div class="header">
+    <!-- Header with only logo -->
     <div class="header">
         <img src="/index_files/ff.png" alt="Logo" class="logo" id="header-logo">
     </div>
-        </div>
 
-        <!-- Search and Refresh Section -->
-        <div class="search-refresh-container">
-            <input type="text" id="csv-search-input" placeholder="Cerca una Nota 🎵">
-            <button id="csv-search-button">🔍</button>
-            <button id="refreshButton">🔄</button>
-        </div>
+    <!-- Progress bar -->
+    <div class="progress-bar" id="progress-bar"></div>
 
+    <!-- Search and Refresh Section -->
+    <div class="search-refresh-container">
+        <input type="text" id="csv-search-input" placeholder="Cerca una Nota 🎵">
+        <button id="csv-search-button">🔍</button>
+        <button id="refreshButton">🔄</button>
+    </div>
 
+    <!-- App container -->
+    <div class="app-container">
         <!-- Cards -->
         <div class="cards-container">
             <div class="cards-wrapper" id="cards-wrapper">
                 <!-- Cards will be dynamically inserted here -->
-                <!-- Initially, 10 random cards will be loaded via JavaScript -->
+                <!-- Initially, 20 random cards will be loaded via JavaScript -->
             </div>
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Footer with publication emoji buttons -->
     <footer>
         <div class="footer-content">
-
-        <!-- Emoji Buttons inside header -->
-        <div class="buttons-container" id="buttons-container">
             <!-- Emoji Buttons with data-category attributes -->
-            <button class="emoji-button" data-category="💻" aria-label="Tecnologia">💻</button>
-            <button class="emoji-button" data-category="🎼" aria-label="Futuro">🎼</button>
-            <button class="emoji-button" data-category="👥" aria-label="Società">👥</button>
-            <button class="emoji-button" data-category="💬" aria-label="Comunicazione">💬</button>
-            <button class="emoji-button" data-category="💊" aria-label="Salute">💊</button>
-            <button class="emoji-button" data-category="❤️" aria-label="Uomo">❤️</button>
-            <button class="emoji-button" data-category="🧠" aria-label="Intelligenza Artificiale">🧠</button>
-            <button class="emoji-button" data-category="🍃" aria-label="Clima">🍃</button>
-            <button class="emoji-button" data-category="💸" aria-label="Criptovalute">💸</button>
-            <button class="emoji-button" data-category="⚽" aria-label="Sport">⚽</button>
-            <button class="emoji-button" data-category="🍽️" aria-label="Alimentazione">🍽️</button>
-            <button class="emoji-button" data-category="🎙️" aria-label="Podcast">🎙️</button>
-            <button class="emoji-button" data-category="🎨" aria-label="Arte">🎨</button>
-            <button class="emoji-button" data-category="🥽" aria-label="Metaverso">🥽</button>
-            <button class="emoji-button" data-category="🚕" aria-label="Mobilità">🚕</button>
-            <!-- Add more emoji buttons as needed -->
-        </div>
+            <div class="buttons-container" id="buttons-container">
+                <button class="emoji-button" data-category="💻" aria-label="Tecnologia">💻</button>
+                <button class="emoji-button" data-category="🎼" aria-label="Futuro">🎼</button>
+                <button class="emoji-button" data-category="👥" aria-label="Società">👥</button>
+                <button class="emoji-button" data-category="💬" aria-label="Comunicazione">💬</button>
+                <button class="emoji-button" data-category="💊" aria-label="Salute">💊</button>
+                <button class="emoji-button" data-category="❤️" aria-label="Uomo">❤️</button>
+                <button class="emoji-button" data-category="🧠" aria-label="Intelligenza Artificiale">🧠</button>
+                <button class="emoji-button" data-category="🍃" aria-label="Clima">🍃</button>
+                <button class="emoji-button" data-category="💸" aria-label="Criptovalute">💸</button>
+                <button class="emoji-button" data-category="⚽" aria-label="Sport">⚽</button>
+                <button class="emoji-button" data-category="🍽️" aria-label="Alimentazione">🍽️</button>
+                <button class="emoji-button" data-category="🎙️" aria-label="Podcast">🎙️</button>
+                <button class="emoji-button" data-category="🎨" aria-label="Arte">🎨</button>
+                <button class="emoji-button" data-category="🥽" aria-label="Metaverso">🥽</button>
+                <button class="emoji-button" data-category="🚕" aria-label="Mobilità">🚕</button>
+                <!-- Add more emoji buttons as needed -->
+            </div>
         </div>
     </footer>
+
+    <!-- Side Menu -->
+    <div id="side-menu" class="side-menu">
+        <a href="javascript:void(0)" class="close-menu" id="close-menu">&times;</a>
+        <div class="side-menu-content">
+            <!-- Share Button as a link -->
+            <a href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io/"
+                class="share-button">Share</a>
+            <!-- Support Button as a link -->
+            <a href="https://www.paypal.com/paypalme/michelemerelli" class="support-button">Support</a>
+            <!-- Language Button -->
+            <button class="language-button" id="language-button">English 🇬🇧</button>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay" class="overlay"></div>
 
     <!-- JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             let currentLanguage = 'it'; // Default language
             const languageButton = document.getElementById('language-button');
-            const supportButton = document.getElementById('support-button');
-            const shareButton = document.getElementById('share-button');
+            const supportButton = document.querySelector('.support-button');
+            const shareButton = document.querySelector('.share-button');
             const buttonsContainer = document.getElementById('buttons-container');
             const cardsWrapper = document.getElementById('cards-wrapper');
             const progressBar = document.getElementById('progress-bar');
             const searchInput = document.getElementById('csv-search-input');
             const searchButton = document.getElementById('csv-search-button');
             const refreshButton = document.getElementById('refreshButton');
+
+            const sideMenu = document.getElementById('side-menu');
+            const overlay = document.getElementById('overlay');
+            const headerLogo = document.getElementById('header-logo');
+            const closeMenu = document.getElementById('close-menu');
 
             let allEntries = []; // To store all CSV entries
 
@@ -442,7 +592,7 @@
                 // Fetch and parse CSV
                 allEntries = await fetchAndParseCSV(csvFile);
 
-                // Initialize with 10 random cards
+                // Initialize with 20 random cards
                 displayRandomCards(20);
             }
 
@@ -491,12 +641,6 @@
                     const cardContent = document.createElement('div');
                     cardContent.className = 'card-content';
 
-                    // Add Question above title
-                    const question = document.createElement('p');
-                    question.className = 'question';
-                    question.textContent = entry.question;
-                    //cardContent.appendChild(question);
-
                     // Add Description as title
                     const description = document.createElement('h2');
                     description.className = 'section-title';
@@ -507,7 +651,7 @@
                     const hashtags = document.createElement('p');
                     hashtags.className = 'hashtags';
                     hashtags.textContent = entry.hashtags.replace(/#/g, ''); // Remove #
-                    //cardContent.appendChild(hashtags);
+                    cardContent.appendChild(hashtags);
 
                     // Add Emojis at bottom left and note number at bottom right
                     const emojisAndNote = document.createElement('div');
@@ -522,7 +666,7 @@
                     noteNumber.textContent = `${entry.number}`; // No #
 
                     emojisAndNote.appendChild(emojis);
-                    //emojisAndNote.appendChild(noteNumber);
+                    emojisAndNote.appendChild(noteNumber);
 
                     cardContent.appendChild(emojisAndNote);
 
@@ -538,7 +682,7 @@
 
                 // Update progress bar
                 const totalDisplayed = entries.length;
-                const progress = (totalDisplayed / 10) * 100;
+                const progress = (totalDisplayed / 20) * 100;
                 progressBar.style.width = `${progress > 100 ? 100 : progress}%`;
             }
 
@@ -573,7 +717,7 @@
                     return;
                 }
 
-                // Shuffle and select up to 10
+                // Shuffle and select up to 20
                 const shuffled = filtered.sort(() => 0.5 - Math.random());
                 const selected = shuffled.slice(0, 20);
                 displayCards(selected);
@@ -614,7 +758,7 @@
                         }).then(() => {
                             console.log('Thanks for sharing!');
                         })
-                        .catch(console.error);
+                            .catch(console.error);
                     } else {
                         // Fallback: Copy to clipboard
                         navigator.clipboard.writeText(pageURL).then(() => {
@@ -640,9 +784,27 @@
             // Add event listener to refresh button
             refreshButton.addEventListener('click', resetFilters);
 
+            // Function to open side menu
+            function openSideMenu() {
+                sideMenu.classList.add('open');
+                overlay.classList.add('active');
+            }
+
+            // Function to close side menu
+            function closeSideMenu() {
+                sideMenu.classList.remove('open');
+                overlay.classList.remove('active');
+            }
+
+            // Event listeners for opening and closing side menu
+            headerLogo.addEventListener('click', openSideMenu);
+            closeMenu.addEventListener('click', closeSideMenu);
+            overlay.addEventListener('click', closeSideMenu);
+
             // Initialize the app on page load
             initializeApp();
         });
     </script>
 </body>
+
 </html>
