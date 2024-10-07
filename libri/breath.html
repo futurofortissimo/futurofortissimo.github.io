@@ -148,11 +148,11 @@
             border-radius: 10px;
             word-wrap: break-word; /* Prevent overflow of long words */
             font-size: 16px;
-            font-weight: bold;
         }
 
         .question {
             background-color: var(--question-color);
+            font-weight: bold;
         }
 
         .answer {
@@ -353,10 +353,8 @@
 
             // Create buttons and cards for topics
             topics.forEach((topic, index) => {
-                createButton(topic.topic, index * 3); // Each topic has 3 cards
-                createCard(topic, 'question');
-                createCard(topic, 'answer');
-                createCard(topic, 'quote');
+                createButton(topic.topic, index); // Each topic corresponds to one card
+                createCard(topic);
             });
 
             // Initialize to show the first card
@@ -364,12 +362,12 @@
         }
 
         // Function to create a button
-        function createButton(label, cardStartIndex) {
+        function createButton(label, index) {
             const button = document.createElement('div');
             button.className = 'button';
             button.textContent = label;
             button.addEventListener('click', () => {
-                showCard(cardStartIndex);
+                showCard(index);
             });
             buttonsContainer.appendChild(button);
         }
@@ -387,36 +385,45 @@
         }
 
         // Function to create a card
-        function createCard(topic, cardType) {
+        function createCard(topic) {
             const card = document.createElement('div');
             card.className = 'card';
 
             const cardContent = document.createElement('div');
             cardContent.className = 'card-content';
 
-            // Determine the title based on card type
-            let titleText = '';
-            if (cardType === 'question') {
-                titleText = currentLanguage === 'it' ? 'Domanda' : 'Question';
-            } else if (cardType === 'answer') {
-                titleText = currentLanguage === 'it' ? 'Spiegazione' : 'Explanation';
-            } else if (cardType === 'quote') {
-                titleText = currentLanguage === 'it' ? 'Citazione' : 'Quote';
-            }
-
+            // Title of the topic
             const title = document.createElement('h2');
             title.className = 'section-title';
-            title.textContent = titleText;
+            title.textContent = topic.topic;
             cardContent.appendChild(title);
 
-            // Add content based on card type
-            if (cardType === 'question') {
-                cardContent.appendChild(createContentBlock('question', topic.question));
-            } else if (cardType === 'answer') {
-                cardContent.appendChild(createContentBlock('answer', topic.answer));
-            } else if (cardType === 'quote') {
-                cardContent.appendChild(createContentBlock('quote', `"${topic.quote}"`));
-            }
+            // Question
+            const questionTitle = document.createElement('h3');
+            questionTitle.className = 'section-title';
+            questionTitle.textContent = currentLanguage === 'it' ? 'Domanda' : 'Question';
+            cardContent.appendChild(questionTitle);
+
+            const questionBlock = createContentBlock('question', topic.question);
+            cardContent.appendChild(questionBlock);
+
+            // Explanation
+            const answerTitle = document.createElement('h3');
+            answerTitle.className = 'section-title';
+            answerTitle.textContent = currentLanguage === 'it' ? 'Spiegazione' : 'Explanation';
+            cardContent.appendChild(answerTitle);
+
+            const answerBlock = createContentBlock('answer', topic.answer);
+            cardContent.appendChild(answerBlock);
+
+            // Quote
+            const quoteTitle = document.createElement('h3');
+            quoteTitle.className = 'section-title';
+            quoteTitle.textContent = currentLanguage === 'it' ? 'Citazione' : 'Quote';
+            cardContent.appendChild(quoteTitle);
+
+            const quoteBlock = createContentBlock('quote', `"${topic.quote}"`);
+            cardContent.appendChild(quoteBlock);
 
             card.appendChild(cardContent);
             cardsWrapper.appendChild(card);
