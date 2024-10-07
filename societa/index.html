@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <title>Futuro Fortissimo - Riepilogo</title>
@@ -12,17 +13,26 @@
     <style>
         /* Root variables */
         :root {
-            --theme-color: #ADD8E6; /* Light blue */
-            --question-color: #B3E5FC; /* Lighter blue */
-            --data-color: #81D4FA; /* Medium blue */
-            --quote-color: #4FC3F7; /* Darker blue */
-            --progress-bar-color: #4CAF50; /* Green */
-            --button-hover-scale: 1.05; /* Scale factor for hover effect */
+            --theme-color: #ADD8E6;
+            /* Light blue */
+            --question-color: #B3E5FC;
+            /* Lighter blue */
+            --data-color: #81D4FA;
+            /* Medium blue */
+            --quote-color: #4FC3F7;
+            /* Darker blue */
+            --progress-bar-color: #4CAF50;
+            /* Green */
+            --button-hover-scale: 1.05;
+            /* Scale factor for hover effect */
             --button-transition: transform 0.2s ease-in-out;
+            --menu-width: 250px;
+            /* Width of the side menu */
         }
 
-        .not-bold {font-weight:normal !important;}
-
+        .not-bold {
+            font-weight: normal !important;
+        }
 
         /* Basic styles */
         body {
@@ -30,7 +40,8 @@
             font-family: 'Montserrat', sans-serif;
             background-color: #fff;
             color: #333;
-            overflow-y: auto; /* Allow vertical scrolling */
+            overflow-y: auto;
+            /* Allow vertical scrolling */
             display: flex;
             flex-direction: column;
             min-height: 100vh;
@@ -43,18 +54,19 @@
             flex: 1;
             overflow: hidden;
             position: relative;
-            padding-bottom: 60px; /* Space for fixed footer */
+            padding-bottom: 60px;
+            /* Space for fixed footer */
         }
 
-        /* Header with logo and buttons */
+        /* Header with only logo */
         .header {
             display: flex;
             align-items: center;
             background-color: var(--theme-color);
             padding: 5px 5px;
             flex-shrink: 0;
-            flex-wrap: nowrap;
-            justify-content: space-between;
+            justify-content: center;
+            /* Center the logo */
         }
 
         .logo {
@@ -64,65 +76,9 @@
             margin-right: 0px;
         }
 
-        /* Hide language-switch in header as it's moved to footer */
+        /* Hide language-switch in header as it's moved to footer/menu */
         .language-switch {
             display: none;
-        }
-
-        /* Buttons container inside header */
-        .buttons-container {
-            display: flex;
-            overflow-x: auto;
-            flex-grow: 1;
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* Internet Explorer 10+ */
-            position: relative;
-            padding: 0 20px; /* Add padding for fade effect */
-        }
-
-        .buttons-container::-webkit-scrollbar {
-            display: none; /* WebKit */
-        }
-
-        /* Buttons */
-        .button {
-            flex: 0 0 auto;
-            margin: 0 5px;
-            padding: 8px 12px;
-            background-color: #fff;
-            color: #333;
-            margin: 9px; /* Corrected typo from 'magin' to 'margin' */
-            border-radius: 20px;
-            text-align: center;
-            font-size: 14px;
-            cursor: pointer;
-            user-select: none;
-            white-space: nowrap;
-            font-family: 'Montserrat', sans-serif; /* Ensure same font */
-            transition: transform 0.2s ease-in-out; /* For hover animation */
-        }
-
-        .substackButton {
-            flex: 0 0 auto;
-            margin: 0 5px;
-            padding: 8px 12px;
-            background-color: #fff;
-            color: #333;
-            border: 2px solid #000; /* Optional black border */
-            border-radius: 35px;
-            text-align: center;
-            font-size: 18px;
-            cursor: pointer;
-            user-select: none;
-            white-space: nowrap;
-            font-family: 'Montserrat', sans-serif; /* Ensure same font */
-            transition: transform 0.2s ease-in-out; /* For hover animation */
-        }
-
-        .button:hover,
-        .substackButton:hover {
-            transform: scale(var(--button-hover-scale));
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         /* Progress bar */
@@ -137,7 +93,8 @@
         /* Cards container */
         .cards-container {
             flex: 1;
-            overflow: auto; /* Allow vertical scrolling */
+            overflow: auto;
+            /* Allow vertical scrolling */
             position: relative;
         }
 
@@ -158,18 +115,19 @@
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
-            /* Removed cursor pointer from card */
         }
 
         /* Card content */
         .card-content {
             flex: 1;
             overflow-y: auto;
-            padding: 10px 20px 30px 20px; /* Adjusted padding */
+            padding: 10px 20px 30px 20px;
+            /* Adjusted padding */
             box-sizing: border-box;
             max-width: 450px;
             margin: 0 auto;
-            cursor: pointer; /* Make card-content clickable */
+            cursor: pointer;
+            /* Make card-content clickable */
         }
 
         /* Section styles */
@@ -184,13 +142,15 @@
         .content-block {
             padding: 10px;
             border-radius: 10px;
-            word-wrap: break-word; /* Prevent overflow of long words */
+            word-wrap: break-word;
+            /* Prevent overflow of long words */
             font-size: 16px;
             font-weight: bold;
         }
 
         .paragraphs {
-            background-color: #e0f7fa; /* Light cyan */
+            background-color: #e0f7fa;
+            /* Light cyan */
             font-weight: normal;
         }
 
@@ -214,7 +174,8 @@
         }
 
         .action-button:hover {
-            background-color: #7ec0ee; /* Slightly darker blue */
+            background-color: #7ec0ee;
+            /* Slightly darker blue */
         }
 
         /* Footer */
@@ -226,72 +187,111 @@
             background-color: var(--theme-color);
             padding: 10px 20px;
             flex-shrink: 0;
-            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-            z-index: 1000; /* Ensure it stays on top */
-        }
-
-        .footer-content {
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            /* Ensure it stays on top */
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-wrap: nowrap; /* Prevent wrapping on small screens */
-            gap: 15px; /* Space between buttons */
         }
 
-        .footer-content a,
-        .footer-content button {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: #333;
+        .footer-logo {
+            height: 40px;
             cursor: pointer;
-            background-color: #fff;
-            padding: 8px 12px;
-            border: none;
-            border-radius: 20px;
-            font-family: 'Montserrat', sans-serif;
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* For hover animation */
-            font-size: 14px;
         }
 
-        .footer-content a img {
-            height: 24px;
-            width: auto;
+        /* Side Menu */
+        .side-menu {
+            height: 100%;
+            /* Full-height */
+            width: 0;
+            /* Initial width is 0 */
+            position: fixed;
+            /* Stay in place */
+            top: 0;
+            left: 0;
+            background-color: #f1f1f1;
+            /* Light grey */
+            overflow-x: hidden;
+            /* Disable horizontal scroll */
+            transition: 0.3s;
+            /* Transition effect */
+            padding-top: 60px;
+            /* Place content 60px from the top */
+            z-index: 1001;
+            /* Above footer */
         }
 
-        /* Hover "pop-up" animation */
-        .footer-content a:hover,
-        .footer-content button:hover {
-            transform: scale(var(--button-hover-scale));
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        .side-menu.open {
+            width: var(--menu-width);
+            /* Set width when open */
         }
 
+        /* Close button inside side menu */
+        .close-menu {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+            cursor: pointer;
+        }
+
+        /* Side menu content */
+        .side-menu-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0 20px;
+        }
+
+        /* Buttons inside side menu */
+        .side-menu .button,
+        .side-menu .substackButton,
+        .side-menu .footer-content a,
+        .side-menu .footer-content button {
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        /* Overlay to dim the background when menu is open */
+        .overlay {
+            position: fixed;
+            display: none;
+            /* Hidden by default */
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Black with opacity */
+            z-index: 1000;
+            /* Below side menu */
+            cursor: pointer;
+            /* Cursor changes to pointer */
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        /* Responsive adjustments */
         @media (min-width: 601px) {
-            footer {
-                display: flex;
-            }
-
-            .header {
-                position: relative; /* Reset positioning to default */
-            }
-
-            .cards-container {
-                padding-bottom: 0; /* Remove padding adjustment */
+            .side-menu {
+                padding-top: 60px;
+                /* Adjust padding if needed */
             }
         }
     </style>
 </head>
+
 <body>
     <div class="app-container">
-        <!-- Header with logo and buttons -->
+        <!-- Header with only logo -->
         <div class="header">
-
-            <!-- Buttons inside header -->
-            <div class="buttons-container" id="buttons-container">
-                <!-- Buttons will be dynamically inserted here -->
-            </div>
-            <!-- Hidden language switch in header -->
-            <button class="language-switch" id="language-switch" style="display:none;">🇬🇧</button>
+            <img src="/index_files/ff.png" alt="Logo" class="logo" id="header-logo">
         </div>
 
         <!-- Progress bar -->
@@ -305,276 +305,329 @@
         </div>
     </div>
 
+    <!-- Footer with logo -->
     <footer>
+        <img src="/index_files/ff.png" alt="Logo" class="footer-logo" id="footer-logo">
+    </footer>
 
-        <div class="footer-content">
-          <a href="https://futurofortissimo.github.io/">
-              <img src="/index_files/ff.png" alt="Logo" class="logo">
-          </a>
+    <!-- Side Menu -->
+    <div id="side-menu" class="side-menu">
+        <a href="javascript:void(0)" class="close-menu" id="close-menu">&times;</a>
+        <div class="side-menu-content">
+            <!-- Navigation Buttons -->
+            <div class="buttons-container" id="buttons-container">
+                <!-- Buttons will be dynamically inserted here -->
+            </div>
             <!-- Share Button as a link -->
-            <a href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io/" style="border-radius:20px" class="share-button">Share</a>
+            <a href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io/" style="border-radius:20px"
+                class="share-button">Share</a>
             <!-- Support Button as a link -->
-            <a href="https://www.paypal.com/paypalme/michelemerelli" style="border-radius:20px" class="support-button">Support</a>
+            <a href="https://www.paypal.com/paypalme/michelemerelli" style="border-radius:20px"
+                class="support-button">Support</a>
             <!-- English Language Button -->
             <a class="language-button" id="language-button" style="border-radius:20px">English</a>
         </div>
-    </footer>
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay" class="overlay"></div>
 
     <script>
-    let currentLanguage = 'it';
-    let currentIndex = 0;
-    let publicationIndices = [];
+        let currentLanguage = 'it';
+        let currentIndex = 0;
+        let publicationIndices = [];
 
-    const buttonsContainer = document.getElementById('buttons-container');
-    const cardsWrapper = document.getElementById('cards-wrapper');
-    const progressBar = document.querySelector('.progress-bar');
-    const languageButton = document.getElementById('language-button');
-    // Removed 'share-button' and 'support-button' references as they are now <a> elements without ids
+        const buttonsContainer = document.getElementById('buttons-container');
+        const cardsWrapper = document.getElementById('cards-wrapper');
+        const progressBar = document.querySelector('.progress-bar');
+        const languageButton = document.getElementById('language-button');
+        // Removed 'share-button' and 'support-button' references as they are now <a> elements without ids
 
-    let cards = [];
+        const sideMenu = document.getElementById('side-menu');
+        const overlay = document.getElementById('overlay');
+        const footerLogo = document.getElementById('footer-logo');
+        const closeMenu = document.getElementById('close-menu');
 
-    // Function to transform Substack URL for English using Google Translate (if needed)
-    function getTranslatedSubstackLink(originalLink) {
-        if (currentLanguage === 'it') {
-            return originalLink;
-        } else if (currentLanguage === 'en') {
-            // Parse the original URL
+        let cards = [];
+
+        // Function to transform Substack URL for English using Google Translate (if needed)
+        function getTranslatedSubstackLink(originalLink) {
+            if (currentLanguage === 'it') {
+                return originalLink;
+            } else if (currentLanguage === 'en') {
+                // Parse the original URL
+                try {
+                    const url = new URL(originalLink);
+                    const originalDomain = url.hostname; // e.g., fortissimo.substack.com
+                    const translatedDomain = originalDomain.replace(/\./g, '-') + '.translate.goog';
+                    const translatedURL = `https://${translatedDomain}${url.pathname}?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=it&_x_tr_hist=true`;
+                    return translatedURL;
+                } catch (error) {
+                    console.error('Invalid URL:', originalLink);
+                    return originalLink; // Fallback to original link if invalid
+                }
+            }
+            return originalLink; // Default fallback
+        }
+
+        // Function to initialize the app
+        async function initializeApp() {
+            buttonsContainer.innerHTML = '';
+            cardsWrapper.innerHTML = '';
+            cards = [];
+            currentIndex = 0;
+
+            // Fetch content based on current language
+            let contentURL = '';
+            if (currentLanguage === 'it') {
+                contentURL = 'content_it.json';
+                languageButton.textContent = 'English';
+            } else if (currentLanguage === 'en') {
+                contentURL = 'content_en.json';
+                languageButton.textContent = 'Italian';
+            }
+
             try {
-                const url = new URL(originalLink);
-                const originalDomain = url.hostname; // e.g., fortissimo.substack.com
-                const translatedDomain = originalDomain.replace(/\./g, '-') + '.translate.goog';
-                const translatedURL = `https://${translatedDomain}${url.pathname}?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=it&_x_tr_hist=true`;
-                return translatedURL;
-            } catch (error) {
-                console.error('Invalid URL:', originalLink);
-                return originalLink; // Fallback to original link if invalid
-            }
-        }
-        return originalLink; // Default fallback
-    }
+                const response = await fetch(contentURL);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const content = await response.json();
+                let { publications } = content;
 
-    // Function to initialize the app
-    async function initializeApp() {
-        buttonsContainer.innerHTML = '';
-        cardsWrapper.innerHTML = '';
-        cards = [];
-        currentIndex = 0;
-
-        // Fetch content based on current language
-        let contentURL = '';
-        if (currentLanguage === 'it') {
-            contentURL = 'content_it.json';
-            languageButton.textContent = 'English';
-        } else if (currentLanguage === 'en') {
-            contentURL = 'content_en.json';
-            languageButton.textContent = 'Italian';
-        }
-
-        try {
-            const response = await fetch(contentURL);
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            const content = await response.json();
-            let { publications } = content;
-
-            // Sort publications based on ff.xxxx numerically
-            publications.sort((a, b) => {
-                const numA = parseInt(a.buttonLabel.match(/ff\.(\d+)/)[1], 10);
-                const numB = parseInt(b.buttonLabel.match(/ff\.(\d+)/)[1], 10);
-                return numA - numB;
-            });
-
-            // Prepare buttons and cards
-            let cardIndex = 0;
-            publicationIndices = [];
-
-            publications.forEach((publication) => {
-                createButton(publication.buttonLabel, cardIndex);
-                publicationIndices.push(cardIndex);
-                // Sort cards within publication based on ff.xxxx
-                publication.cards.sort((a, b) => {
-                    const numA = parseInt(a.title.match(/ff\.(\d+)/)[1], 10);
-                    const numB = parseInt(b.title.match(/ff\.(\d+)/)[1], 10);
+                // Sort publications based on ff.xxxx numerically
+                publications.sort((a, b) => {
+                    const numA = parseInt(a.buttonLabel.match(/ff\.(\d+)/)[1], 10);
+                    const numB = parseInt(b.buttonLabel.match(/ff\.(\d+)/)[1], 10);
                     return numA - numB;
                 });
-                publication.cards.forEach(cardData => {
-                    createCard(publication, cardData); // Pass publication to createCard
-                    cardIndex++;
+
+                // Prepare buttons and cards
+                let cardIndex = 0;
+                publicationIndices = [];
+
+                publications.forEach((publication) => {
+                    createButton(publication.buttonLabel, cardIndex);
+                    publicationIndices.push(cardIndex);
+                    // Sort cards within publication based on ff.xxxx
+                    publication.cards.sort((a, b) => {
+                        const numA = parseInt(a.title.match(/ff\.(\d+)/)[1], 10);
+                        const numB = parseInt(b.title.match(/ff\.(\d+)/)[1], 10);
+                        return numA - numB;
+                    });
+                    publication.cards.forEach(cardData => {
+                        createCard(publication, cardData); // Pass publication to createCard
+                        cardIndex++;
+                    });
                 });
+
+                // Add a sentinel value for the end
+                publicationIndices.push(cardIndex);
+
+                showCard(0);
+            } catch (error) {
+                console.error('Error fetching content:', error);
+                buttonsContainer.innerHTML = '<p>Errore nel caricamento del contenuto.</p>';
+            }
+        }
+
+        // Function to create a button in the side menu
+        function createButton(label, index) {
+            const button = document.createElement('div');
+            button.className = 'button';
+            button.textContent = label;
+            button.addEventListener('click', () => {
+                closeSideMenu();
+                showCard(index);
+            });
+            buttonsContainer.appendChild(button);
+        }
+
+        // Function to create a card
+        function createCard(publication, cardData) {
+            const card = document.createElement('div');
+            card.className = 'card';
+
+            const cardContent = document.createElement('div');
+            cardContent.className = 'card-content';
+
+            // Create the Substack button using the existing 'substackButton' class
+            const substackButton = document.createElement('div');
+            substackButton.className = 'substackButton';
+            substackButton.textContent = publication.title; // Use publication title
+            substackButton.style.cursor = 'pointer';
+            substackButton.style.marginBottom = '10px'; // Add some spacing
+            substackButton.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent the card click event
+                const translatedLink = getTranslatedSubstackLink(publication.substackLink);
+                window.open(translatedLink, '_blank');
             });
 
-            // Add a sentinel value for the end
-            publicationIndices.push(cardIndex);
+            cardContent.appendChild(substackButton);
 
-            showCard(0);
-        } catch (error) {
-            console.error('Error fetching content:', error);
-            buttonsContainer.innerHTML = '<p>Errore nel caricamento del contenuto.</p>';
+            // Create the title
+            const title = document.createElement('h2');
+            title.className = 'section-title';
+            title.textContent = cardData.title;
+            cardContent.appendChild(title);
+
+            // Add content blocks
+            cardData.contentBlocks.forEach(block => {
+                const contentBlock = createContentBlock(block.type, block.content);
+                cardContent.appendChild(contentBlock);
+            });
+
+            card.appendChild(cardContent);
+            cardsWrapper.appendChild(card);
+            cards.push(card);
+
+            // Add click event to the card-content only
+            cardContent.addEventListener('click', () => {
+                const translatedLink = getTranslatedSubstackLink(publication.substackLink);
+                window.open(translatedLink, '_blank');
+            });
         }
-    }
 
-    // Function to create a button in the header
-    function createButton(label, index) {
-        const button = document.createElement('div');
-        button.className = 'button';
-        button.textContent = label;
-        button.addEventListener('click', () => {
-            showCard(index);
-        });
-        buttonsContainer.appendChild(button);
-    }
+        // Function to create a content block
+        function createContentBlock(type, contents) {
+            const div = document.createElement('div');
+            div.className = `content-block ${type}`;
 
-    // Function to create a card
-    function createCard(publication, cardData) {
-        const card = document.createElement('div');
-        card.className = 'card';
+            contents.forEach(item => {
+                // Split the item into title and content at the first newline
+                const [title, ...rest] = item.split('\n');
+                const contentText = rest.join('\n').trim();
 
-        const cardContent = document.createElement('div');
-        cardContent.className = 'card-content';
+                const p = document.createElement('p');
 
-        // Create the Substack button using the existing 'substackButton' class
-        const substackButton = document.createElement('div');
-        substackButton.className = 'substackButton';
-        substackButton.textContent = publication.title; // Use publication title
-        substackButton.style.cursor = 'pointer';
-        substackButton.style.marginBottom = '10px'; // Add some spacing
-        substackButton.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent the card click event
-            const translatedLink = getTranslatedSubstackLink(publication.substackLink);
-            window.open(translatedLink, '_blank');
-        });
+                // Create a bold element for the title
+                const boldTitle = document.createElement('strong');
+                boldTitle.textContent = title.trim();
 
-        cardContent.appendChild(substackButton);
+                // Append the bold title to the paragraph
+                p.appendChild(boldTitle);
 
-        // Create the title
-        const title = document.createElement('h2');
-        title.className = 'section-title';
-        title.textContent = cardData.title;
-        cardContent.appendChild(title);
+                if (contentText) {
+                    // Add a line break
+                    p.appendChild(document.createElement('br'));
 
-        // Add content blocks
-        cardData.contentBlocks.forEach(block => {
-            const contentBlock = createContentBlock(block.type, block.content);
-            cardContent.appendChild(contentBlock);
-        });
+                    // Create a span element to wrap the contentText
+                    const contentSpan = document.createElement('span');
+                    contentSpan.textContent = contentText;
 
-        card.appendChild(cardContent);
-        cardsWrapper.appendChild(card);
-        cards.push(card);
+                    // Apply the desired style with !important
+                    contentSpan.style.setProperty('font-weight', 'normal', 'important');
 
-        // Add click event to the card-content only
-        cardContent.addEventListener('click', () => {
-            const translatedLink = getTranslatedSubstackLink(publication.substackLink);
-            window.open(translatedLink, '_blank');
-        });
-    }
+                    // Append the styled span to the paragraph
+                    p.appendChild(contentSpan);
+                }
 
-    // Function to create a content block
-    function createContentBlock(type, contents) {
-        const div = document.createElement('div');
-        div.className = `content-block ${type}`;
+                div.appendChild(p);
+            });
 
-        contents.forEach(item => {
-            // Split the item into title and content at the first newline
-            const [title, ...rest] = item.split('\n');
-            const contentText = rest.join('\n').trim();
+            return div;
+        }
 
-            const p = document.createElement('p');
+        // Function to display a specific card
+        function showCard(index) {
+            currentIndex = index;
+            cardsWrapper.style.transform = `translateX(-${index * 100}%)`;
+            const progress = ((index + 1) / cards.length) * 100;
+            progressBar.style.width = `${progress}%`;
+            scrollButtonIntoView(index);
+        }
 
-            // Create a bold element for the title
-            const boldTitle = document.createElement('strong');
-            boldTitle.textContent = title.trim();
+        // Function to scroll buttons into view
+        function scrollButtonIntoView(index) {
+            const button = buttonsContainer.children[index];
+            if (button) {
+                button.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            }
+        }
 
-            // Append the bold title to the paragraph
-            p.appendChild(boldTitle);
+        // Swipe functionality
+        let startX = 0;
+        let startY = 0;
+        let isDown = false;
+        let isScrolling = false;
 
-            if (contentText) {
-                // Add a line break
-                p.appendChild(document.createElement('br'));
+        const cardsContainer = document.querySelector('.cards-container');
 
-                // Create a span element to wrap the contentText
-                const contentSpan = document.createElement('span');
-                contentSpan.textContent = contentText;
+        // Touch events for mobile
+        cardsContainer.addEventListener('touchstart', touchStart, false);
+        cardsContainer.addEventListener('touchmove', touchMove, false);
+        cardsContainer.addEventListener('touchend', touchEnd, false);
 
-                // Apply the desired style with !important
-                contentSpan.style.setProperty('font-weight', 'normal', 'important');
+        function touchStart(evt) {
+            startX = evt.touches[0].clientX;
+            startY = evt.touches[0].clientY;
+            isDown = true;
+            isScrolling = false;
+            cardsWrapper.style.transition = 'none';
+        }
 
-                // Append the styled span to the paragraph
-                p.appendChild(contentSpan);
+        function touchMove(evt) {
+            if (!isDown) return;
+            const x = evt.touches[0].clientX;
+            const y = evt.touches[0].clientY;
+            const deltaX = x - startX;
+            const deltaY = y - startY;
+
+            // Determine if the user is scrolling vertically
+            if (!isScrolling) {
+                isScrolling = Math.abs(deltaY) > Math.abs(deltaX);
             }
 
-
-            div.appendChild(p);
-        });
-
-        return div;
-    }
-
-    // Function to display a specific card
-    function showCard(index) {
-        currentIndex = index;
-        cardsWrapper.style.transform = `translateX(-${index * 100}%)`;
-        const progress = ((index + 1) / cards.length) * 100;
-        progressBar.style.width = `${progress}%`;
-        scrollButtonIntoView(index);
-    }
-
-    // Function to scroll buttons into view
-    function scrollButtonIntoView(index) {
-        const button = buttonsContainer.children[index];
-        if (button) {
-            button.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-        }
-    }
-
-    // Swipe functionality
-    let startX = 0;
-    let startY = 0;
-    let isDown = false;
-    let isScrolling = false;
-
-    const cardsContainer = document.querySelector('.cards-container');
-
-    // Touch events for mobile
-    cardsContainer.addEventListener('touchstart', touchStart, false);
-    cardsContainer.addEventListener('touchmove', touchMove, false);
-    cardsContainer.addEventListener('touchend', touchEnd, false);
-
-    function touchStart(evt) {
-        startX = evt.touches[0].clientX;
-        startY = evt.touches[0].clientY;
-        isDown = true;
-        isScrolling = false;
-        cardsWrapper.style.transition = 'none';
-    }
-
-    function touchMove(evt) {
-        if (!isDown) return;
-        const x = evt.touches[0].clientX;
-        const y = evt.touches[0].clientY;
-        const deltaX = x - startX;
-        const deltaY = y - startY;
-
-        // Determine if the user is scrolling vertically
-        if (!isScrolling) {
-            isScrolling = Math.abs(deltaY) > Math.abs(deltaX);
+            // Only allow horizontal swiping if not scrolling vertically
+            if (!isScrolling) {
+                evt.preventDefault(); // Prevent default scrolling
+                const percentage = (deltaX / window.innerWidth) * 100;
+                const offset = -currentIndex * 100 + percentage;
+                cardsWrapper.style.transform = `translateX(${offset}%)`;
+            }
         }
 
-        // Only allow horizontal swiping if not scrolling vertically
-        if (!isScrolling) {
-            evt.preventDefault(); // Prevent default scrolling
+        function touchEnd(evt) {
+            if (!isDown) return;
+            isDown = false;
+            if (!isScrolling) {
+                const endX = evt.changedTouches[0].clientX;
+                const deltaX = endX - startX;
+                if (deltaX < -50 && currentIndex < cards.length - 1) {
+                    currentIndex++;
+                } else if (deltaX > 50 && currentIndex > 0) {
+                    currentIndex--;
+                }
+                cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
+                showCard(currentIndex);
+            }
+        }
+
+        // Mouse events for desktop
+        cardsContainer.addEventListener('mousedown', mouseDown, false);
+        cardsContainer.addEventListener('mousemove', mouseMove, false);
+        cardsContainer.addEventListener('mouseup', mouseUp, false);
+        cardsContainer.addEventListener('mouseleave', mouseUp, false);
+
+        function mouseDown(evt) {
+            startX = evt.clientX;
+            isDown = true;
+            cardsWrapper.style.transition = 'none';
+        }
+
+        function mouseMove(evt) {
+            if (!isDown) return;
+            const x = evt.clientX;
+            const deltaX = x - startX;
             const percentage = (deltaX / window.innerWidth) * 100;
             const offset = -currentIndex * 100 + percentage;
             cardsWrapper.style.transform = `translateX(${offset}%)`;
         }
-    }
 
-    function touchEnd(evt) {
-        if (!isDown) return;
-        isDown = false;
-        if (!isScrolling) {
-            const endX = evt.changedTouches[0].clientX;
+        function mouseUp(evt) {
+            if (!isDown) return;
+            isDown = false;
+            const endX = evt.clientX;
             const deltaX = endX - startX;
             if (deltaX < -50 && currentIndex < cards.length - 1) {
                 currentIndex++;
@@ -584,55 +637,35 @@
             cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
             showCard(currentIndex);
         }
-    }
 
-    // Mouse events for desktop
-    cardsContainer.addEventListener('mousedown', mouseDown, false);
-    cardsContainer.addEventListener('mousemove', mouseMove, false);
-    cardsContainer.addEventListener('mouseup', mouseUp, false);
-    cardsContainer.addEventListener('mouseleave', mouseUp, false);
+        // Language switch functionality
+        languageButton.addEventListener('click', () => {
+            currentLanguage = currentLanguage === 'it' ? 'en' : 'it';
+            initializeApp();
+        });
 
-    function mouseDown(evt) {
-        startX = evt.clientX;
-        isDown = true;
-        cardsWrapper.style.transition = 'none';
-    }
-
-    function mouseMove(evt) {
-        if (!isDown) return;
-        const x = evt.clientX;
-        const deltaX = x - startX;
-        const percentage = (deltaX / window.innerWidth) * 100;
-        const offset = -currentIndex * 100 + percentage;
-        cardsWrapper.style.transform = `translateX(${offset}%)`;
-    }
-
-    function mouseUp(evt) {
-        if (!isDown) return;
-        isDown = false;
-        const endX = evt.clientX;
-        const deltaX = endX - startX;
-        if (deltaX < -50 && currentIndex < cards.length - 1) {
-            currentIndex++;
-        } else if (deltaX > 50 && currentIndex > 0) {
-            currentIndex--;
+        // Function to open side menu
+        function openSideMenu() {
+            sideMenu.classList.add('open');
+            overlay.classList.add('active');
         }
-        cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
-        showCard(currentIndex);
-    }
 
-    // Language switch functionality
-    languageButton.addEventListener('click', () => {
-        currentLanguage = currentLanguage === 'it' ? 'en' : 'it';
-        initializeApp();
-    });
+        // Function to close side menu
+        function closeSideMenu() {
+            sideMenu.classList.remove('open');
+            overlay.classList.remove('active');
+        }
 
-    // Removed event listeners for 'share-button' and 'support-button' as they are now <a> elements without ids
+        // Event listeners for opening and closing side menu
+        footerLogo.addEventListener('click', openSideMenu);
+        closeMenu.addEventListener('click', closeSideMenu);
+        overlay.addEventListener('click', closeSideMenu);
 
-    // Initialize the app after the DOM is fully loaded
-    document.addEventListener('DOMContentLoaded', () => {
-        initializeApp();
-    });
+        // Initialize the app after the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeApp();
+        });
     </script>
 </body>
+
 </html>
