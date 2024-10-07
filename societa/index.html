@@ -54,40 +54,47 @@
             flex: 1;
             overflow: hidden;
             position: relative;
+            padding-top: 60px;
+            /* Space for fixed header */
             padding-bottom: 60px;
             /* Space for fixed footer */
         }
 
         /* Header with only logo */
         .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
             display: flex;
             align-items: center;
             background-color: var(--theme-color);
-            padding: 5px 5px;
-            flex-shrink: 0;
-            justify-content: center;
-            /* Center the logo */
+            padding: 10px;
+            z-index: 1000;
+            /* Ensure it stays on top */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .logo {
             height: 40px;
             cursor: pointer;
             flex-shrink: 0;
-            margin-right: 0px;
-        }
-
-        /* Hide language-switch in header as it's moved to footer/menu */
-        .language-switch {
-            display: none;
+            margin: 0 auto;
+            /* Center the logo */
         }
 
         /* Progress bar */
         .progress-bar {
+            position: fixed;
+            top: 60px;
+            /* Below the header */
+            left: 0;
             height: 5px;
             background-color: var(--progress-bar-color);
             width: 0%;
             transition: width 0.5s ease-in-out;
-            flex-shrink: 0;
+            z-index: 999;
+            /* Below the header */
         }
 
         /* Cards container */
@@ -96,6 +103,10 @@
             overflow: auto;
             /* Allow vertical scrolling */
             position: relative;
+            margin-top: 65px;
+            /* Below header and progress bar */
+            margin-bottom: 65px;
+            /* Above footer */
         }
 
         /* Cards wrapper for sliding effect */
@@ -195,9 +206,70 @@
             justify-content: center;
         }
 
-        .footer-logo {
-            height: 40px;
+        /* Buttons container in footer */
+        .footer-buttons-container {
+            display: flex;
+            overflow-x: auto;
+            flex-grow: 1;
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* Internet Explorer 10+ */
+            position: relative;
+            padding: 0 20px;
+            /* Add padding for fade effect */
+        }
+
+        .footer-buttons-container::-webkit-scrollbar {
+            display: none;
+            /* WebKit */
+        }
+
+        /* Buttons */
+        .button {
+            flex: 0 0 auto;
+            margin: 0 5px;
+            padding: 8px 12px;
+            background-color: #fff;
+            color: #333;
+            margin: 9px;
+            /* Corrected typo from 'magin' to 'margin' */
+            border-radius: 20px;
+            text-align: center;
+            font-size: 14px;
             cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+            font-family: 'Montserrat', sans-serif;
+            /* Ensure same font */
+            transition: transform 0.2s ease-in-out;
+            /* For hover animation */
+        }
+
+        .substackButton {
+            flex: 0 0 auto;
+            margin: 0 5px;
+            padding: 8px 12px;
+            background-color: #fff;
+            color: #333;
+            border: 2px solid #000;
+            /* Optional black border */
+            border-radius: 35px;
+            text-align: center;
+            font-size: 18px;
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+            font-family: 'Montserrat', sans-serif;
+            /* Ensure same font */
+            transition: transform 0.2s ease-in-out;
+            /* For hover animation */
+        }
+
+        .button:hover,
+        .substackButton:hover {
+            transform: scale(var(--button-hover-scale));
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         /* Side Menu */
@@ -219,7 +291,7 @@
             padding-top: 60px;
             /* Place content 60px from the top */
             z-index: 1001;
-            /* Above footer */
+            /* Above header and footer */
         }
 
         .side-menu.open {
@@ -246,12 +318,35 @@
         }
 
         /* Buttons inside side menu */
-        .side-menu .button,
-        .side-menu .substackButton,
-        .side-menu .footer-content a,
-        .side-menu .footer-content button {
+        .side-menu .share-button,
+        .side-menu .support-button,
+        .side-menu .language-button {
             width: 100%;
             margin: 10px 0;
+            text-align: left;
+        }
+
+        .side-menu .share-button,
+        .side-menu .support-button,
+        .side-menu .language-button {
+            display: block;
+            padding: 10px 15px;
+            background-color: #fff;
+            color: #333;
+            border: none;
+            border-radius: 20px;
+            font-family: 'Montserrat', sans-serif;
+            text-decoration: none;
+            font-size: 14px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .side-menu .share-button:hover,
+        .side-menu .support-button:hover,
+        .side-menu .language-button:hover {
+            transform: scale(var(--button-hover-scale));
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         /* Overlay to dim the background when menu is open */
@@ -279,24 +374,22 @@
 
         /* Responsive adjustments */
         @media (min-width: 601px) {
-            .side-menu {
-                padding-top: 60px;
-                /* Adjust padding if needed */
-            }
+            /* Adjust side menu if needed */
         }
     </style>
 </head>
 
 <body>
+    <!-- Header with only logo -->
+    <div class="header">
+        <img src="/index_files/ff.png" alt="Logo" class="logo" id="header-logo">
+    </div>
+
+    <!-- Progress bar -->
+    <div class="progress-bar"></div>
+
+    <!-- App container -->
     <div class="app-container">
-        <!-- Header with only logo -->
-        <div class="header">
-            <img src="/index_files/ff.png" alt="Logo" class="logo" id="header-logo">
-        </div>
-
-        <!-- Progress bar -->
-        <div class="progress-bar"></div>
-
         <!-- Cards -->
         <div class="cards-container">
             <div class="cards-wrapper" id="cards-wrapper">
@@ -305,27 +398,24 @@
         </div>
     </div>
 
-    <!-- Footer with logo -->
+    <!-- Footer with publication buttons -->
     <footer>
-        <img src="/index_files/ff.png" alt="Logo" class="footer-logo" id="footer-logo">
+        <div class="footer-buttons-container" id="footer-buttons-container">
+            <!-- Publication buttons will be dynamically inserted here -->
+        </div>
     </footer>
 
     <!-- Side Menu -->
     <div id="side-menu" class="side-menu">
         <a href="javascript:void(0)" class="close-menu" id="close-menu">&times;</a>
         <div class="side-menu-content">
-            <!-- Navigation Buttons -->
-            <div class="buttons-container" id="buttons-container">
-                <!-- Buttons will be dynamically inserted here -->
-            </div>
             <!-- Share Button as a link -->
-            <a href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io/" style="border-radius:20px"
+            <a href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io/"
                 class="share-button">Share</a>
             <!-- Support Button as a link -->
-            <a href="https://www.paypal.com/paypalme/michelemerelli" style="border-radius:20px"
-                class="support-button">Support</a>
+            <a href="https://www.paypal.com/paypalme/michelemerelli" class="support-button">Support</a>
             <!-- English Language Button -->
-            <a class="language-button" id="language-button" style="border-radius:20px">English</a>
+            <a class="language-button" id="language-button">English</a>
         </div>
     </div>
 
@@ -337,15 +427,15 @@
         let currentIndex = 0;
         let publicationIndices = [];
 
-        const buttonsContainer = document.getElementById('buttons-container');
+        const footerButtonsContainer = document.getElementById('footer-buttons-container');
         const cardsWrapper = document.getElementById('cards-wrapper');
         const progressBar = document.querySelector('.progress-bar');
         const languageButton = document.getElementById('language-button');
-        // Removed 'share-button' and 'support-button' references as they are now <a> elements without ids
+        // Share and Support are now <a> elements, no need for JS references
 
         const sideMenu = document.getElementById('side-menu');
         const overlay = document.getElementById('overlay');
-        const footerLogo = document.getElementById('footer-logo');
+        const headerLogo = document.getElementById('header-logo');
         const closeMenu = document.getElementById('close-menu');
 
         let cards = [];
@@ -372,7 +462,7 @@
 
         // Function to initialize the app
         async function initializeApp() {
-            buttonsContainer.innerHTML = '';
+            footerButtonsContainer.innerHTML = '';
             cardsWrapper.innerHTML = '';
             cards = [];
             currentIndex = 0;
@@ -407,7 +497,7 @@
                 publicationIndices = [];
 
                 publications.forEach((publication) => {
-                    createButton(publication.buttonLabel, cardIndex);
+                    createFooterButton(publication.buttonLabel, cardIndex);
                     publicationIndices.push(cardIndex);
                     // Sort cards within publication based on ff.xxxx
                     publication.cards.sort((a, b) => {
@@ -427,20 +517,19 @@
                 showCard(0);
             } catch (error) {
                 console.error('Error fetching content:', error);
-                buttonsContainer.innerHTML = '<p>Errore nel caricamento del contenuto.</p>';
+                footerButtonsContainer.innerHTML = '<p>Errore nel caricamento del contenuto.</p>';
             }
         }
 
-        // Function to create a button in the side menu
-        function createButton(label, index) {
+        // Function to create a button in the footer
+        function createFooterButton(label, index) {
             const button = document.createElement('div');
             button.className = 'button';
             button.textContent = label;
             button.addEventListener('click', () => {
-                closeSideMenu();
                 showCard(index);
             });
-            buttonsContainer.appendChild(button);
+            footerButtonsContainer.appendChild(button);
         }
 
         // Function to create a card
@@ -539,7 +628,7 @@
 
         // Function to scroll buttons into view
         function scrollButtonIntoView(index) {
-            const button = buttonsContainer.children[index];
+            const button = footerButtonsContainer.children[index];
             if (button) {
                 button.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
             }
@@ -657,7 +746,7 @@
         }
 
         // Event listeners for opening and closing side menu
-        footerLogo.addEventListener('click', openSideMenu);
+        headerLogo.addEventListener('click', openSideMenu);
         closeMenu.addEventListener('click', closeSideMenu);
         overlay.addEventListener('click', closeSideMenu);
 
