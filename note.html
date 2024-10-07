@@ -341,7 +341,7 @@
         }
 
         .side-menu.open {
-            width: 150px;
+            width: 200px;
             /* Set width when open */
         }
 
@@ -376,7 +376,7 @@
             padding: 10px 15px;
             border: none;
             border-radius: 20px;
-            width: 100px;
+            width: 80px;
             font-family: 'Montserrat', sans-serif;
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
             /* For hover animation */
@@ -601,7 +601,7 @@
                 // Fetch and parse CSV
                 allEntries = await fetchAndParseCSV(csvFile);
 
-                // Initialize with 10 random cards
+                // Initialize with 20 random cards
                 displayRandomCards(20);
             }
 
@@ -619,21 +619,17 @@
                 displayCards(selected);
             }
 
-            // Function to display filtered cards based on selected categories
+            // Function to display filtered cards based on selected categories using AND logic
             function displayFilteredCards(categories, count) {
                 if (categories.size === 0) {
                     displayRandomCards(count);
                     return;
                 }
 
-                // Filter entries that include any of the selected categories
+                // Filter entries that include all of the selected categories
                 const filtered = allEntries.filter(entry => {
-                    for (let category of categories) {
-                        if (entry.emojis.includes(category)) {
-                            return true;
-                        }
-                    }
-                    return false;
+                    // Check if all selected categories are present in the entry's emojis
+                    return [...categories].every(category => entry.emojis.includes(category));
                 });
 
                 if (filtered.length === 0) {
@@ -667,7 +663,7 @@
                     const question = document.createElement('p');
                     question.className = 'question';
                     question.textContent = entry.question;
-                    //cardContent.appendChild(question);
+                    cardContent.appendChild(question);
 
                     // Add Description as title
                     const description = document.createElement('h2');
@@ -679,7 +675,7 @@
                     const hashtags = document.createElement('p');
                     hashtags.className = 'hashtags';
                     hashtags.textContent = entry.hashtags.replace(/#/g, ''); // Remove #
-                    //cardContent.appendChild(hashtags);
+                    cardContent.appendChild(hashtags);
 
                     // Add Emojis at bottom left and note number at bottom right
                     const emojisAndNote = document.createElement('div');
@@ -694,7 +690,7 @@
                     noteNumber.textContent = `${entry.number}`; // No #
 
                     emojisAndNote.appendChild(emojis);
-                    //emojisAndNote.appendChild(noteNumber);
+                    emojisAndNote.appendChild(noteNumber);
 
                     cardContent.appendChild(emojisAndNote);
 
@@ -710,7 +706,7 @@
 
                 // Update progress bar
                 const totalDisplayed = entries.length;
-                const progress = (totalDisplayed / 10) * 100;
+                const progress = (totalDisplayed / 20) * 100; // Adjusted to 20
                 progressBar.style.width = `${progress > 100 ? 100 : progress}%`;
             }
 
@@ -816,7 +812,7 @@
                 });
             });
 
-            // Function to handle emoji selection
+            // Function to handle emoji selection with AND logic
             function handleEmojiSelection(button, category) {
                 if (selectedCategories.has(category)) {
                     selectedCategories.delete(category);
