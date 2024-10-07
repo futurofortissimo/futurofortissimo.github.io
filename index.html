@@ -117,11 +117,11 @@
             --menu-width: 250px;
             /* Width of the side menu */
         }
-    
+
         .not-bold {
             font-weight: normal !important;
         }
-    
+
         /* Basic styles */
         body {
             margin: 0;
@@ -134,7 +134,7 @@
             flex-direction: column;
             min-height: 100vh;
         }
-    
+
         /* App container */
         .app-container {
             display: flex;
@@ -147,7 +147,7 @@
             padding-bottom: 60px;
             /* Space for fixed footer */
         }
-    
+
         /* Header with only logo */
         .header {
             position: fixed;
@@ -162,7 +162,7 @@
             /* Ensure it stays on top */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-    
+
         .logo {
             height: 40px;
             cursor: pointer;
@@ -170,7 +170,7 @@
             margin: 0 auto;
             /* Center the logo */
         }
-    
+
         /* Progress bar */
         .progress-bar {
             position: fixed;
@@ -184,7 +184,7 @@
             z-index: 999;
             /* Below the header */
         }
-    
+
         /* Cards container */
         .cards-container {
             flex: 1;
@@ -196,7 +196,7 @@
             margin-bottom: 65px;
             /* Above footer */
         }
-    
+
         /* Cards wrapper for sliding effect */
         .cards-wrapper {
             display: flex;
@@ -204,7 +204,7 @@
             transition: transform 0.5s ease-in-out;
             width: 100%;
         }
-    
+
         /* Individual card */
         .card {
             flex: 0 0 100%;
@@ -215,7 +215,7 @@
             display: flex;
             flex-direction: column;
         }
-    
+
         /* Card content */
         .card-content {
             flex: 1;
@@ -228,7 +228,7 @@
             cursor: pointer;
             /* Make card-content clickable */
         }
-    
+
         /* Section styles */
         .section-title {
             margin-top: 10px;
@@ -236,7 +236,7 @@
             font-size: 20px;
             font-weight: bold;
         }
-    
+
         /* Content block */
         .content-block {
             padding: 10px;
@@ -246,19 +246,19 @@
             font-size: 16px;
             font-weight: bold;
         }
-    
+
         .paragraphs {
             background-color: #e0f7fa;
             /* Light cyan */
             font-weight: normal;
         }
-    
+
         /* Hide scrollbars on card content */
         .card-content::-webkit-scrollbar {
             width: 0px;
             background: transparent;
         }
-    
+
         /* Action button styles */
         .action-button {
             padding: 10px 20px;
@@ -271,12 +271,12 @@
             font-size: 16px;
             width: 100%;
         }
-    
+
         .action-button:hover {
             background-color: #7ec0ee;
             /* Slightly darker blue */
         }
-    
+
         /* Footer */
         footer {
             position: fixed;
@@ -293,7 +293,7 @@
             align-items: center;
             justify-content: center;
         }
-    
+
         /* Buttons container in footer */
         .footer-buttons-container {
             display: flex;
@@ -307,12 +307,12 @@
             padding: 0 20px;
             /* Add padding for fade effect */
         }
-    
+
         .footer-buttons-container::-webkit-scrollbar {
             display: none;
             /* WebKit */
         }
-    
+
         /* Buttons */
         .button {
             flex: 0 0 auto;
@@ -333,7 +333,7 @@
             transition: transform 0.2s ease-in-out;
             /* For hover animation */
         }
-    
+
         .substackButton {
             flex: 0 0 auto;
             margin: 0 5px;
@@ -353,13 +353,13 @@
             transition: transform 0.2s ease-in-out;
             /* For hover animation */
         }
-    
+
         .button:hover,
         .substackButton:hover {
             transform: scale(var(--button-hover-scale));
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-    
+
         /* Side Menu */
         .side-menu {
             height: 100%;
@@ -381,12 +381,12 @@
             z-index: 1001;
             /* Above header and footer */
         }
-    
+
         .side-menu.open {
             width: var(--menu-width);
             /* Set width when open */
         }
-    
+
         /* Close button inside side menu */
         .close-menu {
             position: absolute;
@@ -396,7 +396,7 @@
             margin-left: 50px;
             cursor: pointer;
         }
-    
+
         /* Side menu content */
         .side-menu-content {
             display: flex;
@@ -404,7 +404,7 @@
             align-items: flex-start;
             padding: 0 20px;
         }
-    
+
         /* Buttons inside side menu */
         .side-menu .share-button,
         .side-menu .support-button,
@@ -413,7 +413,7 @@
             margin: 10px 0;
             text-align: left;
         }
-    
+
         .side-menu .share-button,
         .side-menu .support-button,
         .side-menu .language-button {
@@ -429,14 +429,14 @@
             cursor: pointer;
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
-    
+
         .side-menu .share-button:hover,
         .side-menu .support-button:hover,
         .side-menu .language-button:hover {
             transform: scale(var(--button-hover-scale));
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-    
+
         /* Overlay to dim the background when menu is open */
         .overlay {
             position: fixed;
@@ -455,11 +455,11 @@
             cursor: pointer;
             /* Cursor changes to pointer */
         }
-    
+
         .overlay.active {
             display: block;
         }
-    
+
         /* Responsive adjustments */
         @media (min-width: 601px) {
             /* Adjust side menu if needed */
@@ -476,7 +476,7 @@
 
     <div style="width:100%; margin-top:5px; align-items: center; justify-content: center; display: flex; align-items: center; gap: 2px; font-size:21px;font-family: 'Montserrat', sans-serif;
 ;margin-top: 80px">
-    
+
         <a href="#" id="image-box-link"
             style="cursor: pointer; font-size: 21px; font-family: 'Montserrat', sans-serif;; color:white; text-align:left; display: flex; flex-direction: column; width: 100%;"
             class="image-box">
@@ -492,11 +492,11 @@
                 </div>
             </div>
         </a>
-    
-    
-    
-    
-        
+
+
+
+
+
     </div>
     <div style="width:100%; margin-top:5px; align-items: center; justify-content: center; display: flex; align-items: center; gap: 2px; font-size:21px; font-family: 'Montserrat', sans-serif;">
         <div style="display: flex; justify-content: center; gap: 2px; padding: 5px 0;" id="div_search">
@@ -507,16 +507,16 @@
             <a href="https://futurofortissimo.github.io/societa/"
                 style="margin:2px; display: inline-block; border-radius: 20px; color: white; border: 1px solid white; padding: 5px; font-size: 35px; font-family: 'Montserrat', sans-serif;, sans-serif; background-color: rgb(245, 188, 188); text-align: center; width: auto; border-radius:42px;">❤️</a>
         </div>
-        <div style="display: flex; justify-content: center; gap: 2px; padding: 5px 0;" id="div_search">
-            <a href="https://futurofortissimo.github.io/note.html" style="margin:2px; display: inline-block; border-radius: 42px; color: white; border: 1px solid white; padding: 5px; font-size: 35px;
-            font-family: 'Montserrat', sans-serif;, sans-serif; background-color: #ADD8E6; text-align: center; width: auto; border-radius:42px;">🎵</a>
-            <a href="https://futurofortissimo.github.io/libri/index.html" style="margin:2px; display: inline-block; border-radius: 42px; color: white; border: 1px solid white; padding: 5px; font-size: 35px;
-            font-family: 'Montserrat', sans-serif;, sans-serif; background-color: #ADD8E6; text-align: center; width: auto; border-radius:42px;">📚</a>
-        </div>
+
     </div>
 
 
-
+    <div style="display: flex; justify-content: center; gap: 2px; padding: 5px 0;" id="div_search">
+        <a href="https://futurofortissimo.github.io/note.html" style="margin:2px; display: inline-block; border-radius: 42px; color: white; border: 1px solid white; padding: 5px; font-size: 35px;
+        font-family: 'Montserrat', sans-serif;, sans-serif; background-color: #ADD8E6; text-align: center; width: auto; border-radius:42px;">🎵</a>
+        <a href="https://futurofortissimo.github.io/libri/index.html" style="margin:2px; display: inline-block; border-radius: 42px; color: white; border: 1px solid white; padding: 5px; font-size: 35px;
+        font-family: 'Montserrat', sans-serif;, sans-serif; background-color: #ADD8E6; text-align: center; width: auto; border-radius:42px;">📚</a>
+    </div>
 
     <div style="width:100%; margin-top:5px; align-items: center; justify-content: center; display: flex; align-items: center; gap: 2px; font-size:21px; font-family: 'Montserrat', sans-serif;">
         <div style="display: flex; justify-content: center; gap: 2px; padding: 5px 0;" id="div_search">
