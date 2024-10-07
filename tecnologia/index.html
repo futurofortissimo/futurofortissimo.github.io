@@ -343,28 +343,25 @@
             const overlay = document.getElementById('overlay');
             const headerLogo = document.getElementById('header-logo');
             const menuButton = document.getElementById('menu-button'); // Ensure this is defined
-
-            // Function to open side menu
-            function openSideMenu() {
-                sideMenu.classList.add('open');
-                overlay.classList.add('active');
-            }
-
-            // Function to close side menu
-            function closeSideMenuFunc() {
-                sideMenu.classList.remove('open');
-                overlay.classList.remove('active');
-            }
-
-            // Event listeners for opening and closing side menu
-            headerLogo.addEventListener('click', openSideMenu);
-            menuButton.addEventListener('click', openSideMenu); // Add this line if using a button
-            closeMenu.addEventListener('click', closeSideMenuFunc);
-            overlay.addEventListener('click', closeSideMenuFunc);
-        const emojiButtons = document.querySelectorAll('.footer-buttons-container .emoji-button');
+            const emojiButtons = document.querySelectorAll('.footer-buttons-container .emoji-button');
             const searchInput = document.getElementById('csv-search-input');
             const searchButton = document.getElementById('csv-search-button');
             const refreshButton = document.getElementById('refreshButton');
+            const cardsWrapper = document.getElementById('cards-wrapper');
+
+            // Ensure the elements exist before adding event listeners
+            if (closeMenu) {
+                closeMenu.addEventListener('click', closeSideMenuFunc);
+            }
+            if (overlay) {
+                overlay.addEventListener('click', closeSideMenuFunc);
+            }
+            if (headerLogo) {
+                headerLogo.addEventListener('click', openSideMenu);
+            }
+            if (menuButton) {
+                menuButton.addEventListener('click', openSideMenu);
+            }
 
             let selectedCategories = new Set(); // To store selected emoji categories
 
@@ -375,10 +372,9 @@
                     return;
                 }
 
-                // Filter entries that include all of the selected categories
+                // Filter entries that include any of the selected categories
                 const filtered = allEntries.filter(entry => {
-                    // Check if any selected category is present in the entry's emojis
-                    return [...categories].some(category => entry.emojis.includes(category));
+                    return [...categories].some(category => entry.title.includes(category) || entry.cards.some(card => card.title.includes(category)));
                 });
 
                 if (filtered.length === 0) {
@@ -392,26 +388,6 @@
                 displayCards(selected);
             }
 
-            // Add event listeners to emoji buttons
-            emojiButtons.forEach(button => {
-                const category = button.getAttribute('data-category');
-                button.addEventListener('click', () => {
-                    handleEmojiSelection(button, category);
-                });
-            });
-
-            // Function to handle emoji selection with AND logic
-            function handleEmojiSelection(button, category) {
-                if (selectedCategories.has(category)) {
-                    selectedCategories.delete(category);
-                    button.classList.remove('selected');
-                } else {
-                    selectedCategories.add(category);
-                    button.classList.add('selected');
-                }
-                displayFilteredCards(selectedCategories);
-            }
-
             // Search functionality
             function performSearch() {
                 const searchText = searchInput.value.toLowerCase().trim();
@@ -422,7 +398,7 @@
 
                 // Filter entries based on search text
                 const filtered = allEntries.filter(entry => {
-                    const combinedText = `${entry.description} ${entry.question}`.toLowerCase();
+                    const combinedText = `${entry.title} ${entry.cards.map(card => card.contentBlocks.map(block => block.content.join(' ')).join(' ')).join(' ')}`.toLowerCase();
                     return combinedText.includes(searchText);
                 });
 
@@ -437,7 +413,7 @@
                 displayCards(selected);
             }
 
-            // Ensure the search functionality works for emoji buttons
+            // Add event listeners to emoji buttons
             emojiButtons.forEach(button => {
                 const category = button.getAttribute('data-category');
                 button.addEventListener('click', () => {
