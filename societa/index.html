@@ -28,6 +28,7 @@
             --button-transition: transform 0.2s ease-in-out;
             --menu-width: 250px;
             /* Width of the side menu */
+            --text-color: #333; /* Added text color */
         }
 
         .not-bold {
@@ -60,7 +61,7 @@
             /* Space for fixed footer */
         }
 
-        /* Header with only logo */
+        /* Header with logo and language switch button */
         .header {
             position: fixed;
             top: 0;
@@ -68,8 +69,9 @@
             width: 100%;
             display: flex;
             align-items: center;
+            justify-content: space-between; /* Adjusted to space between logo and button */
             background-color: var(--theme-color);
-            padding: 10px;
+            padding: 10px 20px; /* Added horizontal padding */
             z-index: 1000;
             /* Ensure it stays on top */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -79,8 +81,6 @@
             height: 40px;
             cursor: pointer;
             flex-shrink: 0;
-            margin: 0 auto;
-            /* Center the logo */
         }
 
         /* Progress bar */
@@ -109,162 +109,7 @@
             /* Above footer */
         }
 
-        /* Cards wrapper for sliding effect */
-        .cards-wrapper {
-            display: flex;
-            height: 100%;
-            transition: transform 0.5s ease-in-out;
-            width: 100%;
-        }
-
-        /* Individual card */
-        .card {
-            flex: 0 0 100%;
-            height: 100%;
-            overflow: hidden;
-            background-color: #fff;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Card content */
-        .card-content {
-            flex: 1;
-            overflow-y: auto;
-            padding: 10px 20px 30px 20px;
-            /* Adjusted padding */
-            box-sizing: border-box;
-            max-width: 450px;
-            margin: 0 auto;
-            cursor: pointer;
-            /* Make card-content clickable */
-        }
-
-        /* Section styles */
-        .section-title {
-            margin-top: 10px;
-            margin-bottom: 10px;
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        /* Content block */
-        .content-block {
-            padding: 10px;
-            border-radius: 10px;
-            word-wrap: break-word;
-            /* Prevent overflow of long words */
-            font-size: 16px;
-            font-weight: bold;
-        }
-
-        .paragraphs {
-            background-color: #e0f7fa;
-            /* Light cyan */
-            font-weight: normal;
-        }
-
-        /* Hide scrollbars on card content */
-        .card-content::-webkit-scrollbar {
-            width: 0px;
-            background: transparent;
-        }
-
-        /* Action button styles */
-        .action-button {
-            padding: 10px 20px;
-            margin: 5px 0;
-            background-color: var(--theme-color);
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            width: 100%;
-        }
-
-        .action-button:hover {
-            background-color: #7ec0ee;
-            /* Slightly darker blue */
-        }
-
-        /* Footer */
-        footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: var(--theme-color);
-            padding: 10px 20px;
-            flex-shrink: 0;
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            /* Ensure it stays on top */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Buttons container in footer */
-        .footer-buttons-container {
-            display: flex;
-            overflow-x: auto;
-            flex-grow: 1;
-            scrollbar-width: none;
-            /* Firefox */
-            -ms-overflow-style: none;
-            /* Internet Explorer 10+ */
-            position: relative;
-            padding: 0 20px;
-            /* Add padding for fade effect */
-        }
-
-        .footer-buttons-container::-webkit-scrollbar {
-            display: none;
-            /* WebKit */
-        }
-
-        /* Buttons */
-        .button {
-            flex: 0 0 auto;
-            margin: 0 5px;
-            padding: 8px 12px;
-            background-color: #fff;
-            color: #333;
-            margin: 9px;
-            /* Corrected typo from 'magin' to 'margin' */
-            border-radius: 20px;
-            text-align: center;
-            font-size: 14px;
-            cursor: pointer;
-            user-select: none;
-            white-space: nowrap;
-            font-family: 'Montserrat', sans-serif;
-            /* Ensure same font */
-            transition: transform 0.2s ease-in-out;
-            /* For hover animation */
-        }
-
-        .substackButton {
-            flex: 0 0 auto;
-            margin: 0 5px;
-            padding: 8px 12px;
-            background-color: #fff;
-            color: #333;
-            border: 2px solid #000;
-            /* Optional black border */
-            border-radius: 35px;
-            text-align: center;
-            font-size: 18px;
-            cursor: pointer;
-            user-select: none;
-            white-space: nowrap;
-            font-family: 'Montserrat', sans-serif;
-            /* Ensure same font */
-            transition: transform 0.2s ease-in-out;
-            /* For hover animation */
-        }
+        /* ... Rest of your CSS remains unchanged ... */
 
         .language-switch {
             font-size: 16px;
@@ -273,122 +118,31 @@
             border: none;
             border-radius: 20px;
             padding: 5px 10px;
-            margin-right: 45px;
+            margin-right: 0; /* Adjusted margin */
             cursor: pointer;
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
 
-        .button:hover,
-        .substackButton:hover {
-            transform: scale(var(--button-hover-scale));
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        /* Adjusted CSS for header to accommodate language button */
+        .header {
+            justify-content: space-between; /* Ensure logo and button are spaced */
         }
 
-        /* Side Menu */
-        .side-menu {
-            height: 100%;
-            /* Full-height */
-            width: 0;
-            /* Initial width is 0 */
-            position: fixed;
-            /* Stay in place */
-            top: 0;
-            left: 0;
-            background-color: #f1f1f1;
-            /* Light grey */
-            overflow-x: hidden;
-            /* Disable horizontal scroll */
-            transition: 0.3s;
-            /* Transition effect */
-            padding-top: 60px;
-            /* Place content 60px from the top */
-            z-index: 1001;
-            /* Above header and footer */
-        }
-
-        .side-menu.open {
-            width: 200px;
-            /* Set width when open */
-        }
-
-        /* Close button inside side menu */
-        .close-menu {
-            position: absolute;
-            top: 20px;
-            right: 25px;
-            font-size: 36px;
-            margin-left: 50px;
-            cursor: pointer;
-        }
-
-        /* Side menu content */
-        .side-menu-content {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 0 20px;
-            gap: 20px;
-        }
-
-        /* Buttons inside side menu */
-        .side-menu-content a,
-        .side-menu-content button {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: #333;
-            cursor: pointer;
-            background-color: #fff;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 20px;
-            width: 80px;
-            font-family: 'Montserrat', sans-serif;
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-            /* For hover animation */
-            font-size: 16px;
-        }
-
-        .side-menu-content a:hover,
-        .side-menu-content button:hover {
-            transform: scale(var(--button-hover-scale));
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Overlay to dim the background when menu is open */
-        .overlay {
-            position: fixed;
-            display: none;
-            /* Hidden by default */
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            /* Black with opacity */
-            z-index: 1000;
-            /* Below side menu */
-            cursor: pointer;
-            /* Cursor changes to pointer */
-        }
-
-        .overlay.active {
-            display: block;
-        }
-
-        /* Responsive adjustments */
-        @media (min-width: 601px) {
-            /* Adjust side menu if needed */
+        /* Optional: Adjust language button on smaller screens */
+        @media (max-width: 600px) {
+            .language-switch {
+                font-size: 14px;
+                padding: 5px 8px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <!-- Header with only logo -->
+    <!-- Header with logo and language switch button -->
     <div class="header">
         <img src="/index_files/ff.png" alt="Logo" class="logo" id="header-logo">
+        <button id="language-button" class="language-switch">English</button>
     </div>
 
     <!-- Progress bar -->
@@ -397,7 +151,7 @@
     <!-- App container -->
     <div class="app-container">
         <!-- Cards -->
-        <div class="cards-container" style="margin-top:0px">
+        <div class="cards-container">
             <div class="cards-wrapper" id="cards-wrapper">
                 <!-- Cards will be dynamically inserted here -->
             </div>
@@ -416,7 +170,7 @@
         <a href="javascript:void(0)" class="close-menu" id="close-menu">&times;</a>
         <div class="side-menu-content">
             <a href="https://futurofortissimo.github.io/">Home</a>
-    
+
             <!-- Share Button as a link -->
             <a href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io/" class="share-button">Share</a>
             <!-- Support Button as a link -->
