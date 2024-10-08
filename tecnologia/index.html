@@ -11,290 +11,21 @@
     <!-- Favicon -->
     <link rel="icon" href="/index_files/ff.webp" type="image/webp">
     <link rel="apple-touch-icon" href="/index_files/ff.webp">
-    <style>
-        /* Root variables */
-        :root {
-            --theme-color: #ADD8E6; /* Light blue */
-            --question-color: #B3E5FC; /* Lighter blue */
-            --data-color: #81D4FA; /* Medium blue */
-            --quote-color: #4FC3F7; /* Darker blue */
-            --progress-bar-color: #4CAF50; /* Green */
-            --button-hover-scale: 1.05; /* Scale factor for hover effect */
-            --button-transition: transform 0.2s ease-in-out;
-        }
-
-        /* Basic styles */
-        body {
-            margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            background-color: #fff;
-            color: #333;
-            overflow-y: auto; /* Allow vertical scrolling */
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        /* App container */
-        .app-container {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-            overflow: hidden;
-            position: relative;
-            padding-bottom: 60px; /* Space for fixed footer */
-        }
-
-        /* Header with logo and buttons */
-        .header {
-            display: flex;
-            align-items: center;
-            background-color: var(--theme-color);
-            padding: 5px 5px;
-            flex-shrink: 0;
-            flex-wrap: nowrap;
-            justify-content: space-between;
-        }
-
-        .logo {
-            height: 40px;
-            cursor: pointer;
-            flex-shrink: 0;
-            margin-right: 0px;
-        }
-
-        /* Hide language-switch in header as it's moved to footer */
-        .language-switch {
-            display: none;
-        }
-
-        /* Buttons container inside header */
-        .buttons-container {
-            display: flex;
-            overflow-x: auto;
-            flex-grow: 1;
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* Internet Explorer 10+ */
-            position: relative;
-            padding: 0 20px; /* Add padding for fade effect */
-        }
-
-        .buttons-container::-webkit-scrollbar {
-            display: none; /* WebKit */
-        }
-
-        /* Buttons */
-        .button {
-            flex: 0 0 auto;
-            margin: 0 5px;
-            padding: 8px 12px;
-            background-color: #fff;
-            color: #333;
-            margin: 9px; /* Corrected typo from 'magin' to 'margin' */
-            border-radius: 20px;
-            text-align: center;
-            font-size: 14px;
-            cursor: pointer;
-            user-select: none;
-            white-space: nowrap;
-            font-family: 'Montserrat', sans-serif; /* Ensure same font */
-            transition: transform 0.2s ease-in-out; /* For hover animation */
-        }
-
-        .substackButton {
-            flex: 0 0 auto;
-            margin: 0 5px;
-            padding: 8px 12px;
-            background-color: #fff;
-            color: #333;
-            border: 2px solid #000; /* Optional black border */
-            border-radius: 35px;
-            text-align: center;
-            font-size: 18px;
-            cursor: pointer;
-            user-select: none;
-            white-space: nowrap;
-            font-family: 'Montserrat', sans-serif; /* Ensure same font */
-            transition: transform 0.2s ease-in-out; /* For hover animation */
-        }
-
-        .button:hover,
-        .substackButton:hover {
-            transform: scale(var(--button-hover-scale));
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Progress bar */
-        .progress-bar {
-            height: 5px;
-            background-color: var(--progress-bar-color);
-            width: 0%;
-            transition: width 0.5s ease-in-out;
-            flex-shrink: 0;
-        }
-
-        /* Cards container */
-        .cards-container {
-            flex: 1;
-            overflow: auto; /* Allow vertical scrolling */
-            position: relative;
-        }
-
-        /* Cards wrapper for sliding effect */
-        .cards-wrapper {
-            display: flex;
-            height: 100%;
-            transition: transform 0.5s ease-in-out;
-            width: 100%;
-        }
-
-        /* Individual card */
-        .card {
-            flex: 0 0 100%;
-            height: 100%;
-            overflow: hidden;
-            background-color: #fff;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            /* Removed cursor pointer from card */
-        }
-
-        /* Card content */
-        .card-content {
-            flex: 1;
-            overflow-y: auto;
-            padding: 10px 20px 30px 20px; /* Adjusted padding */
-            box-sizing: border-box;
-            max-width: 450px;
-            margin: 0 auto;
-            cursor: pointer; /* Make card-content clickable */
-        }
-
-        /* Section styles */
-        .section-title {
-            margin-top: 10px;
-            margin-bottom: 10px;
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        /* Content block */
-        .content-block {
-            padding: 10px;
-            border-radius: 10px;
-            word-wrap: break-word; /* Prevent overflow of long words */
-            font-size: 16px;
-            font-weight: bold;
-        }
-
-        .paragraphs {
-            background-color: #e0f7fa; /* Light cyan */
-            font-weight: normal;
-        }
-
-        /* Hide scrollbars on card content */
-        .card-content::-webkit-scrollbar {
-            width: 0px;
-            background: transparent;
-        }
-
-        /* Action button styles */
-        .action-button {
-            padding: 10px 20px;
-            margin: 5px 0;
-            background-color: var(--theme-color);
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            width: 100%;
-        }
-
-        .action-button:hover {
-            background-color: #7ec0ee; /* Slightly darker blue */
-        }
-
-        /* Footer */
-        footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: var(--theme-color);
-            padding: 10px 20px;
-            flex-shrink: 0;
-            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-            z-index: 1000; /* Ensure it stays on top */
-        }
-
-        .footer-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: nowrap; /* Prevent wrapping on small screens */
-            gap: 15px; /* Space between buttons */
-        }
-
-        .footer-content a,
-        .footer-content button {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: #333;
-            cursor: pointer;
-            background-color: #fff;
-            padding: 8px 12px;
-            border: none;
-            border-radius: 20px;
-            font-family: 'Montserrat', sans-serif;
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* For hover animation */
-            font-size: 14px;
-        }
-
-        .footer-content a img {
-            height: 24px;
-            width: auto;
-        }
-
-        /* Hover "pop-up" animation */
-        .footer-content a:hover,
-        .footer-content button:hover {
-            transform: scale(var(--button-hover-scale));
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        @media (min-width: 1px) {
-            footer {
-                display: flex;
-            }
-
-            .header {
-                position: relative; /* Reset positioning to default */
-            }
-
-            .cards-container {
-                padding-bottom: 0; /* Remove padding adjustment */
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="app-container">
         <!-- Header with logo and buttons -->
-            <div class="header">
-                <div class="header-left">
-                    <img src="/index_files/ff.png" alt="Logo" class="logo" id="header-logo">
-                    <!-- Ensure this button is present if you want to use it to open the menu -->
-                </div>
-                <button class="language-switch" id="language-button">English 🇬🇧</button>
+        <div class="header">
+            <div class="header-left">
+                <img src="/index_files/ff.png" alt="Logo" class="logo" id="header-logo">
+                <!-- Ensure this button is present if you want to use it to open the menu -->
             </div>
+            <button class="language-switch" id="language-button">English 🇬🇧</button>
+        </div>
 
+        <!-- Side Menu -->
         <div id="side-menu" class="side-menu">
-          <div id="overlay" class="overlay"></div>
-
-          <a href="javascript:void(0)" class="close-menu button" id="close-menu">&times;</a>
+            <a href="javascript:void(0)" class="close-menu button" id="close-menu">&times;</a>
             <div class="side-menu-content">
                 <a href="https://futurofortissimo.github.io/">Home</a>
                 <a href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io/" class="share-button">Share</a>
@@ -302,6 +33,8 @@
             </div>
         </div>
 
+        <!-- Overlay -->
+        <div id="overlay" class="overlay"></div>
 
         <!-- Progress bar -->
         <div class="progress-bar"></div>
@@ -315,13 +48,21 @@
     </div>
 
     <footer>
-
         <div class="footer-content">
-          <div class="buttons-container" id="buttons-container">
-              <!-- Buttons will be dynamically inserted here -->
-          </div>
+            <!-- Left Scroll Button -->
+            <button class="footer-scroll-button left" id="footer-scroll-left">&#9664;</button>
+
+            <!-- Buttons Container -->
+            <div class="buttons-container" id="buttons-container">
+                <!-- Buttons will be dynamically inserted here -->
+            </div>
+
+            <!-- Right Scroll Button -->
+            <button class="footer-scroll-button right" id="footer-scroll-right">&#9654;</button>
+        </div>
     </footer>
 
+    <!-- Main JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const sideMenu = document.getElementById('side-menu');
