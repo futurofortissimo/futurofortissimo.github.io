@@ -292,9 +292,7 @@
             </div>
 
         <div id="side-menu" class="side-menu">
-          <div id="overlay" class="overlay"></div>
-
-          <a href="javascript:void(0)" class="close-menu button" id="close-menu">&times;</a>
+            <a href="javascript:void(0)" class="close-menu" id="close-menu">&times;</a>
             <div class="side-menu-content">
                 <a href="https://futurofortissimo.github.io/">Home</a>
                 <a href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io/" class="share-button">Share</a>
@@ -323,32 +321,31 @@
     </footer>
 
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-const sideMenu = document.getElementById('side-menu');
-const closeMenu = document.getElementById('close-menu');
-const overlay = document.getElementById('overlay');
-const headerLogo = document.getElementById('header-logo');
-const menuButton = document.getElementById('menu-button'); // Ensure this is defined if used
+        document.addEventListener('DOMContentLoaded', () => {
+            const sideMenu = document.getElementById('side-menu');
+            const closeMenu = document.getElementById('close-menu');
+            const overlay = document.getElementById('overlay');
+            const headerLogo = document.getElementById('header-logo');
+            const menuButton = document.getElementById('menu-button'); // Ensure this is defined
 
-// Function to open side menu
-function openSideMenu() {
-    sideMenu.classList.add('open');
-    overlay.classList.add('active');
-}
+            // Function to open side menu
+            function openSideMenu() {
+                sideMenu.classList.add('open');
+                overlay.classList.add('active');
+            }
 
-// Function to close side menu
-function closeSideMenuFunc() {
-    sideMenu.classList.remove('open');
-    overlay.classList.remove('active');
-}
+            // Function to close side menu
+            function closeSideMenuFunc() {
+                sideMenu.classList.remove('open');
+                overlay.classList.remove('active');
+            }
 
-// Event listeners for opening and closing side menu
-headerLogo.addEventListener('click', openSideMenu);
-// Uncomment if you have a menu button
-// menuButton.addEventListener('click', openSideMenu);
-closeMenu.addEventListener('click', closeSideMenuFunc);
-overlay.addEventListener('click', closeSideMenuFunc);
-});;
+            // Event listeners for opening and closing side menu
+            headerLogo.addEventListener('click', openSideMenu);
+            menuButton.addEventListener('click', openSideMenu); // Add this line if using a button
+            closeMenu.addEventListener('click', closeSideMenuFunc);
+            overlay.addEventListener('click', closeSideMenuFunc);
+        });
     </script>
 
     <script>
