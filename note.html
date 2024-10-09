@@ -502,360 +502,331 @@
     <div id="overlay" class="overlay"></div>
 
     <!-- JavaScript -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            let currentLanguage = 'it'; // Default language
-            const languageButton = document.getElementById('language-button');
-            const headerLogo = document.getElementById('header-logo');
-            const sideMenu = document.getElementById('side-menu');
-            const closeMenu = document.getElementById('close-menu');
-            const overlay = document.getElementById('overlay');
-            const footerButtonsContainer = document.getElementById('footer-buttons-container');
-            const mainEmojiButtons = document.querySelectorAll('.main-emoji-button');
-            const emojiButtons = document.querySelectorAll('.footer-buttons-container .emoji-button');
-            const cardsWrapper = document.getElementById('cards-wrapper');
-            const progressBar = document.getElementById('progress-bar');
-            const searchInput = document.getElementById('csv-search-input');
-            const searchButton = document.getElementById('csv-search-button');
-            const refreshButton = document.getElementById('refreshButton');
+    <!-- JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        let currentLanguage = 'it'; // Default language
+        const languageButton = document.getElementById('language-button');
+        const headerLogo = document.getElementById('header-logo');
+        const sideMenu = document.getElementById('side-menu');
+        const closeMenu = document.getElementById('close-menu');
+        const overlay = document.getElementById('overlay');
+        const footerButtonsContainer = document.getElementById('footer-buttons-container');
+        const mainEmojiButtons = document.querySelectorAll('.main-emoji-button');
+        const emojiButtons = document.querySelectorAll('.footer-buttons-container .emoji-button');
+        const cardsWrapper = document.getElementById('cards-wrapper');
+        const progressBar = document.getElementById('progress-bar');
+        const searchInput = document.getElementById('csv-search-input');
+        const searchButton = document.getElementById('csv-search-button');
+        const refreshButton = document.getElementById('refreshButton');
 
-            let allEntries = []; // To store all CSV entries
-            let selectedCategories = new Set(); // To store selected emoji categories
+        let allEntries = []; // To store all CSV entries
+        let selectedCategories = new Set(); // To store selected emoji categories
 
-            // Define a color palette for alternating card colors (only blues)
-            const colorPalette = ['#ADD8E6', '#B3E5FC', '#81D4FA', '#4FC3F7', '#2196F3', '#1E90FF'];
+        // Define a color palette for alternating card colors (only blues)
+        const colorPalette = ['#ADD8E6', '#B3E5FC', '#81D4FA', '#4FC3F7', '#2196F3', '#1E90FF'];
 
-            // Function to transform Substack URL for English using Google Translate (if needed)
-            function getTranslatedSubstackLink(originalLink) {
-                if (currentLanguage === 'it') {
-                    return originalLink;
-                } else if (currentLanguage === 'en') {
-                    // Parse the original URL
-                    try {
-                        const url = new URL(originalLink);
-                        const originalDomain = url.hostname; // e.g., fortissimo.substack.com
-                        const translatedDomain = originalDomain.replace(/\./g, '-') + '.translate.goog';
-                        const translatedURL = `https://${translatedDomain}${url.pathname}?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=it&_x_tr_hist=true`;
-                        return translatedURL;
-                    } catch (error) {
-                        console.error('Invalid URL:', originalLink);
-                        return originalLink; // Fallback to original link if invalid
-                    }
-                }
-                return originalLink; // Default fallback
-            }
-
-            // Function to parse CSV data
-            function parseCSV(data) {
-                const lines = data.trim().split('\n');
-                const result = [];
-                const headers = ['emojis', 'description', 'url', 'question', 'hashtags', 'number'];
-                lines.forEach((line, lineNumber) => {
-                    // Handle commas inside quoted fields
-                    const matches = line.match(/(?:[^,"]+|"[^"]*")+/g);
-                    if (matches) {
-                        const values = matches.map(val => val.replace(/^"|"$/g, '').trim());
-                        if (values.length >= 6) {
-                            const entry = {};
-                            headers.forEach((header, index) => {
-                                entry[header] = values[index];
-                            });
-                            result.push(entry);
-                        } else {
-                            console.warn(`Line ${lineNumber + 1} is malformed:`, line);
-                        }
-                    } else {
-                        console.warn(`No matches found for line ${lineNumber + 1}:`, line);
-                    }
-                });
-                return result;
-            }
-
-            // Function to fetch and parse CSV
-            async function fetchAndParseCSV(url) {
+        // Function to transform Substack URL for English using Google Translate (if needed)
+        function getTranslatedSubstackLink(originalLink) {
+            if (currentLanguage === 'it') {
+                return originalLink;
+            } else if (currentLanguage === 'en') {
+                // Parse the original URL
                 try {
-                    const response = await fetch(url);
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    const text = await response.text();
-                    return parseCSV(text);
+                    const url = new URL(originalLink);
+                    const originalDomain = url.hostname; // e.g., fortissimo.substack.com
+                    const translatedDomain = originalDomain.replace(/\./g, '-') + '.translate.goog';
+                    const translatedURL = `https://${translatedDomain}${url.pathname}?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=it&_x_tr_hist=true`;
+                    return translatedURL;
                 } catch (error) {
-                    console.error('Error fetching CSV:', error);
-                    return [];
+                    console.error('Invalid URL:', originalLink);
+                    return originalLink; // Fallback to original link if invalid
                 }
             }
+            return originalLink; // Default fallback
+        }
 
-            // Function to initialize the app
-            async function initializeApp() {
-                // Clear existing cards and progress bar
-                cardsWrapper.innerHTML = '';
-                progressBar.style.width = '0%';
-
-                // Determine the CSV file based on current language
-                const csvFile = currentLanguage === 'it' ?
-                    '/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo.csv' :
-                    '/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo_en.csv';
-
-                // Fetch and parse CSV
-                allEntries = await fetchAndParseCSV(csvFile);
-
-                // Initialize with 20 random cards
-                displayRandomCards(20);
-            }
-
-            // Function to display random cards
-            function displayRandomCards(count) {
-                if (allEntries.length === 0) {
-                    cardsWrapper.innerHTML = '<p style="text-align:center;">Nessun contenuto disponibile.</p>';
-                    progressBar.style.width = '0%';
-                    return;
+        // Function to parse CSV data
+        function parseCSV(data) {
+            const lines = data.trim().split('\n');
+            const result = [];
+            const headers = ['emojis', 'description', 'url', 'question', 'hashtags', 'number'];
+            lines.forEach((line, lineNumber) => {
+                // Handle commas inside quoted fields
+                const matches = line.match(/(?:[^,"]+|"[^"]*")+/g);
+                if (matches) {
+                    const values = matches.map(val => val.replace(/^"|"$/g, '').trim());
+                    if (values.length >= 6) {
+                        const entry = {};
+                        headers.forEach((header, index) => {
+                            entry[header] = values[index];
+                        });
+                        result.push(entry);
+                    } else {
+                        console.warn(`Line ${lineNumber + 1} is malformed:`, line);
+                    }
+                } else {
+                    console.warn(`No matches found for line ${lineNumber + 1}:`, line);
                 }
-                // Shuffle the array
-                const shuffled = allEntries.sort(() => 0.5 - Math.random());
-                // Select first 'count' entries
-                const selected = shuffled.slice(0, count);
-                displayCards(selected);
-            }
+            });
+            return result;
+        }
 
-            // Function to display filtered cards based on selected categories using AND logic
-            function displayFilteredCards(categories, count) {
-                if (categories.size === 0) {
-                    displayRandomCards(count);
-                    return;
+        // Function to fetch and parse CSV
+        async function fetchAndParseCSV(url) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
                 }
-
-                // Filter entries that include all of the selected categories
-                const filtered = allEntries.filter(entry => {
-                    // Check if all selected categories are present in the entry's emojis
-                    return [...categories].every(category => entry.emojis.includes(category));
-                });
-
-                if (filtered.length === 0) {
-                    cardsWrapper.innerHTML = '<p style="text-align:center;">Nessun contenuto disponibile per le categorie selezionate.</p>';
-                    progressBar.style.width = '0%';
-                    return;
-                }
-
-                // Shuffle and select up to 'count'
-                const shuffled = filtered.sort(() => 0.5 - Math.random());
-                const selected = shuffled.slice(0, count);
-                displayCards(selected);
+                const text = await response.text();
+                return parseCSV(text);
+            } catch (error) {
+                console.error('Error fetching CSV:', error);
+                return [];
             }
+        }
 
-            // Function to display cards
-            function displayCards(entries) {
-                // Clear existing cards
-                cardsWrapper.innerHTML = '';
+        // Unified filtering function
+        function applyFilters() {
+            const searchText = searchInput.value.toLowerCase().trim();
+            const hasSearchText = searchText !== '';
+            const hasSelectedCategories = selectedCategories.size > 0;
 
-                // Iterate over the entries and create card elements
-                entries.forEach((entry, index) => {
-                    const cardDiv = document.createElement('div');
-                    cardDiv.className = 'card';
-                    cardDiv.style.backgroundColor = colorPalette[index % colorPalette.length];
-                    cardDiv.style.maxWidth = '400px';
+            let filteredEntries = allEntries;
 
-                    const cardContent = document.createElement('div');
-                    cardContent.className = 'card-content';
-
-                    // Add Question above title
-                    const question = document.createElement('p');
-                    question.className = 'question';
-                    question.textContent = entry.question;
-                    //cardContent.appendChild(question);
-
-                    // Add Description as title
-                    const description = document.createElement('h2');
-                    description.className = 'section-title';
-                    description.textContent = entry.description;
-                    cardContent.appendChild(description);
-
-                    // Add Hashtags without #
-                    const hashtags = document.createElement('p');
-                    hashtags.className = 'hashtags';
-                    hashtags.textContent = entry.hashtags.replace(/#/g, ''); // Remove #
-                    //cardContent.appendChild(hashtags);
-
-                    // Add Emojis at bottom left and note number at bottom right
-                    const emojisAndNote = document.createElement('div');
-                    emojisAndNote.className = 'emojis-and-note';
-
-                    const emojis = document.createElement('div');
-                    emojis.className = 'emojis';
-                    emojis.textContent = entry.emojis; // Display emojis
-
-                    const noteNumber = document.createElement('div');
-                    noteNumber.className = 'note-number';
-                    noteNumber.textContent = `${entry.number}`; // No #
-
-                    emojisAndNote.appendChild(emojis);
-                    //emojisAndNote.appendChild(noteNumber);
-
-                    cardContent.appendChild(emojisAndNote);
-
-                    cardDiv.appendChild(cardContent);
-                    cardsWrapper.appendChild(cardDiv);
-
-                    // Add click event to the card-content only
-                    cardContent.addEventListener('click', () => {
-                        const translatedLink = getTranslatedSubstackLink(entry.url);
-                        window.open(translatedLink, '_blank');
-                    });
-                });
-
-                // Update progress bar
-                const totalDisplayed = entries.length;
-                const progress = (totalDisplayed / 20) * 100; // Adjusted to 20
-                progressBar.style.width = `${progress > 100 ? 100 : progress}%`;
-            }
-
-            // Search functionality
-            function performSearch() {
-                const searchText = searchInput.value.toLowerCase().trim();
-                if (searchText === '') {
-                    displayRandomCards(20);
-                    return;
-                }
-
-                // Filter entries based on search text, excluding stop words
-                const paroleEscluse = ['perchè', 'perché', 'quando', 'e', 'ma', 'se', 'come', 'con', 'su', 'per', 'tra', 'fra', 'nel', 'nello', 'nella', 'nei', 'nelle', 'al', 'allo', 'alla', 'ai', 'agli', 'alle', 'dal', 'dallo', 'dalla', 'dai', 'dagli', 'dalle', 'del', 'dello', 'della', 'dei', 'degli', 'delle', 'sul', 'sullo', 'sulla', 'sui', 'sugli', 'sulle', 'un', 'uno', 'una', 'gli', 'le', 'di', 'da', 'in', 'a', 'da', 'che', 'chi', 'cosa', 'quale', 'quanto', 'quanta', 'quanti', 'quante', 'dove', 'come', 'quando', 'perché', 'anche', 'solo', 'qui', 'lì', 'là', 'dunque', 'quindi', 'perciò', 'anche', 'ancora', 'già', 'mai', 'sempre', 'poi', 'prima', 'dopo', 'sopra', 'sotto', 'contro', 'molto', 'poco', 'troppo', 'più', 'meno', 'bene', 'male', 'meglio', 'peggio', 'quasi', 'circa', 'appena', 'solo', 'tanto', 'così', 'pure', 'anche', 'neanche', 'nemmeno', 'quasi', 'sia', 'anche'];
+            // Apply text search if present
+            if (hasSearchText) {
+                // Define stop words (parole escluse)
+                const paroleEscluse = [
+                    'perchè', 'perché', 'quando', 'e', 'ma', 'se', 'come', 'con', 'su',
+                    'per', 'tra', 'fra', 'nel', 'nello', 'nella', 'nei', 'nelle', 'al',
+                    'allo', 'alla', 'ai', 'agli', 'alle', 'dal', 'dallo', 'dalla',
+                    'dai', 'dagli', 'dalle', 'del', 'dello', 'della', 'dei', 'degli',
+                    'delle', 'sul', 'sullo', 'sulla', 'sui', 'sugli', 'sulle', 'un',
+                    'uno', 'una', 'gli', 'le', 'di', 'da', 'in', 'a', 'che', 'chi',
+                    'cosa', 'quale', 'quanto', 'quanta', 'quanti', 'quante', 'dove',
+                    'perché', 'anche', 'solo', 'qui', 'lì', 'là', 'dunque', 'quindi',
+                    'perciò', 'ancora', 'già', 'mai', 'sempre', 'poi', 'prima', 'dopo',
+                    'sopra', 'sotto', 'contro', 'molto', 'poco', 'troppo', 'più',
+                    'meno', 'bene', 'male', 'meglio', 'peggio', 'quasi', 'circa',
+                    'appena', 'tanto', 'così', 'pure', 'neanche', 'nemmeno', 'sia'
+                ];
 
                 // Split search text into words and exclude stop words
-                const searchWords = searchText.split(' ').filter(word => !paroleEscluse.includes(word) && word !== '');
+                const searchWords = searchText.split(' ').filter(word =>
+                    !paroleEscluse.includes(word) && word !== ''
+                );
 
-                if (searchWords.length === 0) {
-                    displayRandomCards(20);
-                    return;
+                if (searchWords.length > 0) {
+                    filteredEntries = filteredEntries.filter(entry => {
+                        // Combine all searchable fields into one string
+                        const combinedText = `${entry.emojis} ${entry.description} ${entry.url} ${entry.question} ${entry.hashtags} ${entry.number}`.toLowerCase();
+                        // Ensure all search words are present (AND logic)
+                        return searchWords.every(word => combinedText.includes(word));
+                    });
                 }
+            }
 
-                // Filter entries that contain any of the search words in description or question
-                const filtered = allEntries.filter(entry => {
-                    const combinedText = `${entry.description} ${entry.question}`.toLowerCase();
-                    return searchWords.some(word => combinedText.includes(word));
+            // Apply emoji filters if any are selected
+            if (hasSelectedCategories) {
+                filteredEntries = filteredEntries.filter(entry => {
+                    // Ensure all selected categories are present in the entry's emojis (AND logic)
+                    return [...selectedCategories].every(category => entry.emojis.includes(category));
                 });
+            }
 
-                if (filtered.length === 0) {
-                    cardsWrapper.innerHTML = '<p style="text-align:center;">Nessun contenuto trovato per la tua ricerca.</p>';
-                    progressBar.style.width = '0%';
-                    return;
-                }
-
-                // Shuffle and select up to 'count'
-                const shuffled = filtered.sort(() => 0.5 - Math.random());
+            // Display the filtered entries
+            if (filteredEntries.length === 0) {
+                cardsWrapper.innerHTML = '<p style="text-align:center;">Nessun contenuto disponibile per i filtri selezionati.</p>';
+                progressBar.style.width = '0%';
+            } else {
+                // Shuffle the filtered entries
+                const shuffled = filteredEntries.sort(() => 0.5 - Math.random());
+                // Select up to 20 entries
                 const selected = shuffled.slice(0, 20);
                 displayCards(selected);
             }
 
-            // Function to reset all filters and display random cards
-            function resetFilters() {
-                searchInput.value = '';
-                selectedCategories.clear();
-                // Remove 'selected' class from all emoji buttons
-                mainEmojiButtons.forEach(button => button.classList.remove('selected'));
-                emojiButtons.forEach(button => button.classList.remove('selected'));
-                displayRandomCards(20);
-            }
+            // Update progress bar based on the number of displayed cards
+            const progress = (Math.min(filteredEntries.length, 20) / 20) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
 
-            // Language switch functionality
-            languageButton.addEventListener('click', () => {
-                currentLanguage = currentLanguage === 'it' ? 'en' : 'it';
-                languageButton.textContent = currentLanguage === 'it' ? 'English 🇬🇧' : 'Italian 🇮🇹';
-                initializeApp();
-            });
+        // Function to initialize the app
+        async function initializeApp() {
+            // Clear existing cards and progress bar
+            cardsWrapper.innerHTML = '';
+            progressBar.style.width = '0%';
 
-            // Function to open side menu
-            function openSideMenu() {
-                sideMenu.classList.add('open');
-                overlay.classList.add('active');
-            }
+            // Determine the CSV file based on current language
+            const csvFile = currentLanguage === 'it' ?
+                '/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo.csv' :
+                '/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo_en.csv';
 
-            // Function to close side menu
-            function closeSideMenuFunc() {
-                sideMenu.classList.remove('open');
-                overlay.classList.remove('active');
-            }
+            // Fetch and parse CSV
+            allEntries = await fetchAndParseCSV(csvFile);
 
-            // Event listeners for opening and closing side menu
-            headerLogo.addEventListener('click', openSideMenu);
-            closeMenu.addEventListener('click', closeSideMenuFunc);
-            overlay.addEventListener('click', closeSideMenuFunc);
+            // Display all entries initially
+            applyFilters();
+        }
 
-            // Share and Support buttons functionality
-            document.querySelectorAll('.share-button').forEach(button => {
-                button.addEventListener('click', () => {
-                    const pageURL = window.location.href;
-                    const pageTitle = document.title;
+        // Function to display cards
+        function displayCards(entries) {
+            // Clear existing cards
+            cardsWrapper.innerHTML = '';
 
-                    if (navigator.share) {
-                        navigator.share({
-                            title: pageTitle,
-                            url: pageURL
-                        }).then(() => {
-                            console.log('Thanks for sharing!');
-                        })
-                            .catch(console.error);
-                    } else {
-                        // Fallback: Copy to clipboard
-                        navigator.clipboard.writeText(pageURL).then(() => {
-                            alert('URL copiato negli appunti!');
-                        }, (err) => {
-                            console.error('Could not copy text: ', err);
-                        });
-                    }
+            // Iterate over the entries and create card elements
+            entries.forEach((entry, index) => {
+                const cardDiv = document.createElement('div');
+                cardDiv.className = 'card';
+                cardDiv.style.backgroundColor = colorPalette[index % colorPalette.length];
+                cardDiv.style.maxWidth = '400px';
+
+                const cardContent = document.createElement('div');
+                cardContent.className = 'card-content';
+
+                // Add Description as title
+                const description = document.createElement('h2');
+                description.className = 'section-title';
+                description.textContent = entry.description;
+                cardContent.appendChild(description);
+
+                // Add Emojis and Note Number
+                const emojisAndNote = document.createElement('div');
+                emojisAndNote.className = 'emojis-and-note';
+
+                const emojis = document.createElement('div');
+                emojis.className = 'emojis';
+                emojis.textContent = entry.emojis; // Display emojis
+
+                const noteNumber = document.createElement('div');
+                noteNumber.className = 'note-number';
+                noteNumber.textContent = `#${entry.number}`; // Display with #
+
+                emojisAndNote.appendChild(emojis);
+                emojisAndNote.appendChild(noteNumber);
+
+                cardContent.appendChild(emojisAndNote);
+
+                cardDiv.appendChild(cardContent);
+                cardsWrapper.appendChild(cardDiv);
+
+                // Add click event to the card-content only
+                cardContent.addEventListener('click', () => {
+                    const translatedLink = getTranslatedSubstackLink(entry.url);
+                    window.open(translatedLink, '_blank');
                 });
             });
+        }
 
-            document.querySelectorAll('.support-button').forEach(button => {
-                button.addEventListener('click', () => {
-                    window.location.href = 'mailto:support@futurofortissimo.com';
-                });
-            });
-
-            // Function to handle emoji selection with AND logic
-            function handleEmojiSelection(button, category) {
-                if (selectedCategories.has(category)) {
-                    selectedCategories.delete(category);
-                    button.classList.remove('selected');
-                } else {
-                    selectedCategories.add(category);
-                    button.classList.add('selected');
-                }
-                displayFilteredCards(selectedCategories, 20);
+        // Function to handle emoji selection with AND logic
+        function handleEmojiSelection(button, category) {
+            if (selectedCategories.has(category)) {
+                selectedCategories.delete(category);
+                button.classList.remove('selected');
+            } else {
+                selectedCategories.add(category);
+                button.classList.add('selected');
             }
+            applyFilters();
+        }
 
-            // Add event listeners to main emoji buttons
-            mainEmojiButtons.forEach(button => {
-                const category = button.getAttribute('data-category');
-                button.addEventListener('click', () => {
-                    handleEmojiSelection(button, category);
-                });
+        // Add event listeners to main emoji buttons
+        mainEmojiButtons.forEach(button => {
+            const category = button.getAttribute('data-category');
+            button.addEventListener('click', () => {
+                handleEmojiSelection(button, category);
             });
+        });
 
-            // Add event listeners to footer emoji buttons
-            emojiButtons.forEach(button => {
-                const category = button.getAttribute('data-category');
-                button.addEventListener('click', () => {
-                    handleEmojiSelection(button, category);
-                });
+        // Add event listeners to footer emoji buttons
+        emojiButtons.forEach(button => {
+            const category = button.getAttribute('data-category');
+            button.addEventListener('click', () => {
+                handleEmojiSelection(button, category);
             });
+        });
 
-            // Add event listener to search button
-            searchButton.addEventListener('click', performSearch);
+        // Event listener for search button
+        searchButton.addEventListener('click', applyFilters);
 
-            // Add event listener to refresh button
-            refreshButton.addEventListener('click', resetFilters);
+        // Event listener for refresh button
+        refreshButton.addEventListener('click', () => {
+            searchInput.value = '';
+            selectedCategories.clear();
+            // Remove 'selected' class from all emoji buttons
+            mainEmojiButtons.forEach(button => button.classList.remove('selected'));
+            emojiButtons.forEach(button => button.classList.remove('selected'));
+            applyFilters();
+        });
 
-            // Add event listener for Enter key on search input
-            searchInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') {
-                    performSearch();
-                }
-            });
+        // Event listener for Enter key on search input
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                applyFilters();
+            }
+        });
 
-            // Initialize the app on page load
+        // Language switch functionality
+        languageButton.addEventListener('click', () => {
+            currentLanguage = currentLanguage === 'it' ? 'en' : 'it';
+            languageButton.textContent = currentLanguage === 'it' ? 'English 🇬🇧' : 'Italian 🇮🇹';
             initializeApp();
         });
-    </script>
+
+        // Side Menu Functions
+        function openSideMenu() {
+            sideMenu.classList.add('open');
+            overlay.classList.add('active');
+        }
+
+        function closeSideMenuFunc() {
+            sideMenu.classList.remove('open');
+            overlay.classList.remove('active');
+        }
+
+        // Event listeners for opening and closing side menu
+        headerLogo.addEventListener('click', openSideMenu);
+        closeMenu.addEventListener('click', closeSideMenuFunc);
+        overlay.addEventListener('click', closeSideMenuFunc);
+
+        // Share and Support buttons functionality
+        document.querySelectorAll('.share-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const pageURL = window.location.href;
+                const pageTitle = document.title;
+
+                if (navigator.share) {
+                    navigator.share({
+                        title: pageTitle,
+                        url: pageURL
+                    }).then(() => {
+                        console.log('Thanks for sharing!');
+                    })
+                    .catch(console.error);
+                } else {
+                    // Fallback: Copy to clipboard
+                    navigator.clipboard.writeText(pageURL).then(() => {
+                        alert('URL copiato negli appunti!');
+                    }, (err) => {
+                        console.error('Could not copy text: ', err);
+                    });
+                }
+            });
+        });
+
+        document.querySelectorAll('.support-button').forEach(button => {
+            button.addEventListener('click', () => {
+                window.location.href = 'mailto:support@futurofortissimo.com';
+            });
+        });
+
+        // Initialize the app on page load
+        initializeApp();
+    });
+</script>
+
 </body>
 
 </html>
