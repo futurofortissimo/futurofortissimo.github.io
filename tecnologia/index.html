@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Import Montserrat font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet">
+
     <!-- Favicon -->
     <link rel="icon" href="/index_files/ff.webp" type="image/webp">
     <link rel="apple-touch-icon" href="/index_files/ff.webp">
@@ -32,6 +34,191 @@
             flex-direction: column;
             min-height: 100vh;
         }
+        /* Root variables */
+        :root {
+            --theme-color: #ADD8E6; /* Light blue */
+            --progress-bar-color: #4CAF50; /* Green */
+            --button-hover-scale: 1.2; /* Scale factor for hover effect */
+            --overlay-background: rgba(0, 0, 0, 0.5);
+            /* Add other variables from both pages */
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--theme-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo {
+            height: 40px;
+            cursor: pointer;
+        }
+
+        .main-emojis {
+            display: flex;
+            gap: 10px;
+        }
+
+        .main-emoji-button {
+            font-size: 25px;
+            background: transparent;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out, border 0.2s ease-in-out;
+        }
+
+        .main-emoji-button:hover {
+            transform: scale(var(--button-hover-scale));
+            border-color: #4CAF50;
+        }
+
+        .main-emoji-button.selected {
+            border-color: #4CAF50;
+        }
+
+        .language-switch {
+            font-size: 16px;
+            background: #fff;
+            color: var(--text-color);
+            border: none;
+            border-radius: 20px;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .language-switch:hover {
+            transform: scale(var(--button-hover-scale));
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Side Menu Styles */
+        .side-menu {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #f1f1f1;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 60px;
+            z-index: 1001;
+        }
+
+        .side-menu.open {
+            width: 200px;
+        }
+
+        .close-menu {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 36px;
+            cursor: pointer;
+        }
+
+        .side-menu-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0 20px;
+            gap: 20px;
+        }
+
+        .side-menu-content a {
+            text-decoration: none;
+            color: #333;
+            cursor: pointer;
+            background-color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 20px;
+            width: 80px;
+            font-family: 'Montserrat', sans-serif;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            font-size: 16px;
+        }
+
+        .side-menu-content a:hover {
+            transform: scale(var(--button-hover-scale));
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Overlay Styles */
+        .overlay {
+            position: fixed;
+            display: none;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: var(--overlay-background);
+            z-index: 1000;
+            cursor: pointer;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        /* Progress Bar Styles */
+        .progress-bar {
+            position: fixed;
+            top: 60px; /* Adjust based on header height */
+            left: 0;
+            height: 5px;
+            background-color: var(--progress-bar-color);
+            width: 0%;
+            transition: width 0.5s ease-in-out;
+            z-index: 999;
+        }
+
+        /* Existing Styles from Second Page */
+        .app-container {
+            /* Ensure padding-top accommodates fixed header */
+            padding-top: 60px; /* Same as header height */
+            padding-bottom: 60px; /* Space for fixed footer */
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* ... Continue merging other styles as needed ... */
+
+        /* Responsive Adjustments */
+        @media (min-width: 601px) {
+            footer {
+                display: flex;
+            }
+
+            .header {
+                position: fixed;
+            }
+
+            .cards-container {
+                padding-bottom: 0;
+            }
+        }
+
 
         /* App container */
         .app-container {
@@ -173,7 +360,7 @@
         .section-title {
             margin-top: 10px;
             margin-bottom: 10px;
-            font-size: 21px;
+            font-size: 20px;
             font-weight: bold;
         }
 
@@ -182,7 +369,7 @@
             padding: 10px;
             border-radius: 10px;
             word-wrap: break-word; /* Prevent overflow of long words */
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
         }
 
@@ -278,17 +465,368 @@
         }
     </style>
 </head>
-<body>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        /* Common Variables */
+        let currentLanguage = 'it'; // Default language
+        const languageButton = document.getElementById('language-button');
+        const headerLogo = document.getElementById('header-logo');
+        const sideMenu = document.getElementById('side-menu');
+        const closeMenu = document.getElementById('close-menu');
+        const overlay = document.getElementById('overlay');
+        const footerButtonsContainer = document.getElementById('footer-buttons-container');
+        const mainEmojiButtons = document.querySelectorAll('.main-emoji-button');
+        const emojiButtons = document.querySelectorAll('.footer-buttons-container .emoji-button');
+        const cardsWrapper = document.getElementById('cards-wrapper');
+        const progressBar = document.getElementById('progress-bar');
+        const searchInput = document.getElementById('csv-search-input');
+        const searchButton = document.getElementById('csv-search-button');
+        const refreshButton = document.getElementById('refreshButton');
+        const buttonsContainer = document.getElementById('buttons-container');
+
+        let allEntries = []; // To store all CSV entries
+        let selectedCategories = new Set(); // To store selected emoji categories
+
+        // Side Menu Functions
+        function openSideMenu() {
+            sideMenu.classList.add('open');
+            overlay.classList.add('active');
+        }
+
+        function closeSideMenuFunc() {
+            sideMenu.classList.remove('open');
+            overlay.classList.remove('active');
+        }
+
+        // Event Listeners for Side Menu
+        headerLogo.addEventListener('click', openSideMenu);
+        closeMenu.addEventListener('click', closeSideMenuFunc);
+        overlay.addEventListener('click', closeSideMenuFunc);
+
+        // Language Switch Functionality
+        languageButton.addEventListener('click', () => {
+            currentLanguage = currentLanguage === 'it' ? 'en' : 'it';
+            languageButton.textContent = currentLanguage === 'it' ? 'English 🇬🇧' : 'Italian 🇮🇹';
+            initializeApp();
+        });
+
+        // Function to transform Substack URL for English using Google Translate (if needed)
+        function getTranslatedSubstackLink(originalLink) {
+            if (currentLanguage === 'it') {
+                return originalLink;
+            } else if (currentLanguage === 'en') {
+                // Parse the original URL
+                try {
+                    const url = new URL(originalLink);
+                    const originalDomain = url.hostname; // e.g., fortissimo.substack.com
+                    const translatedDomain = originalDomain.replace(/\./g, '-') + '.translate.goog';
+                    const translatedURL = `https://${translatedDomain}${url.pathname}?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=it&_x_tr_hist=true`;
+                    return translatedURL;
+                } catch (error) {
+                    console.error('Invalid URL:', originalLink);
+                    return originalLink; // Fallback to original link if invalid
+                }
+            }
+            return originalLink; // Default fallback
+        }
+
+        // Fetch and Parse CSV (from First Page)
+        async function fetchAndParseCSV(url) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const text = await response.text();
+                return parseCSV(text);
+            } catch (error) {
+                console.error('Error fetching CSV:', error);
+                return [];
+            }
+        }
+
+        // Function to parse CSV data
+        function parseCSV(data) {
+            const lines = data.trim().split('\n');
+            const result = [];
+            const headers = ['emojis', 'description', 'url', 'question', 'hashtags', 'number'];
+            lines.forEach((line, lineNumber) => {
+                // Handle commas inside quoted fields
+                const matches = line.match(/(?:[^,"]+|"[^"]*")+/g);
+                if (matches) {
+                    const values = matches.map(val => val.replace(/^"|"$/g, '').trim());
+                    if (values.length >= 6) {
+                        const entry = {};
+                        headers.forEach((header, index) => {
+                            entry[header] = values[index];
+                        });
+                        result.push(entry);
+                    } else {
+                        console.warn(`Line ${lineNumber + 1} is malformed:`, line);
+                    }
+                } else {
+                    console.warn(`No matches found for line ${lineNumber + 1}:`, line);
+                }
+            });
+            return result;
+        }
+
+        // Initialize the App (from First Page)
+        async function initializeApp() {
+            // Clear existing cards and progress bar
+            cardsWrapper.innerHTML = '';
+            progressBar.style.width = '0%';
+
+            // Determine the CSV file based on current language
+            const csvFile = currentLanguage === 'it' ?
+                '/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo.csv' :
+                '/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo_en.csv';
+
+            // Fetch and parse CSV
+            allEntries = await fetchAndParseCSV(csvFile);
+
+            // Initialize with 20 random cards
+            displayRandomCards(20);
+        }
+
+        // Function to display random cards
+        function displayRandomCards(count) {
+            if (allEntries.length === 0) {
+                cardsWrapper.innerHTML = '<p style="text-align:center;">Nessun contenuto disponibile.</p>';
+                progressBar.style.width = '0%';
+                return;
+            }
+            // Shuffle the array
+            const shuffled = allEntries.sort(() => 0.5 - Math.random());
+            // Select first 'count' entries
+            const selected = shuffled.slice(0, count);
+            displayCards(selected);
+        }
+
+        // Function to display filtered cards based on selected categories using AND logic
+        function displayFilteredCards(categories, count) {
+            if (categories.size === 0) {
+                displayRandomCards(count);
+                return;
+            }
+
+            // Filter entries that include all of the selected categories
+            const filtered = allEntries.filter(entry => {
+                // Check if all selected categories are present in the entry's emojis
+                return [...categories].every(category => entry.emojis.includes(category));
+            });
+
+            if (filtered.length === 0) {
+                cardsWrapper.innerHTML = '<p style="text-align:center;">Nessun contenuto disponibile per le categorie selezionate.</p>';
+                progressBar.style.width = '0%';
+                return;
+            }
+
+            // Shuffle and select up to 'count'
+            const shuffled = filtered.sort(() => 0.5 - Math.random());
+            const selected = shuffled.slice(0, count);
+            displayCards(selected);
+        }
+
+        // Function to display cards (from First Page)
+        function displayCards(entries) {
+            // Clear existing cards
+            cardsWrapper.innerHTML = '';
+
+            // Iterate over the entries and create card elements
+            entries.forEach((entry, index) => {
+                const cardDiv = document.createElement('div');
+                cardDiv.className = 'card';
+                cardDiv.style.backgroundColor = colorPalette[index % colorPalette.length];
+                cardDiv.style.maxWidth = '400px';
+
+                const cardContent = document.createElement('div');
+                cardContent.className = 'card-content';
+
+                // Add Question above title
+                const question = document.createElement('p');
+                question.className = 'question';
+                question.textContent = entry.question;
+                //cardContent.appendChild(question);
+
+                // Add Description as title
+                const description = document.createElement('h2');
+                description.className = 'section-title';
+                description.textContent = entry.description;
+                cardContent.appendChild(description);
+
+                // Add Hashtags without #
+                const hashtags = document.createElement('p');
+                hashtags.className = 'hashtags';
+                hashtags.textContent = entry.hashtags.replace(/#/g, ''); // Remove #
+                //cardContent.appendChild(hashtags);
+
+                // Add Emojis at bottom left and note number at bottom right
+                const emojisAndNote = document.createElement('div');
+                emojisAndNote.className = 'emojis-and-note';
+
+                const emojis = document.createElement('div');
+                emojis.className = 'emojis';
+                emojis.textContent = entry.emojis; // Display emojis
+
+                const noteNumber = document.createElement('div');
+                noteNumber.className = 'note-number';
+                noteNumber.textContent = `${entry.number}`; // No #
+
+                emojisAndNote.appendChild(emojis);
+                //emojisAndNote.appendChild(noteNumber);
+
+                cardContent.appendChild(emojisAndNote);
+
+                cardDiv.appendChild(cardContent);
+                cardsWrapper.appendChild(cardDiv);
+
+                // Add click event to the card-content only
+                cardContent.addEventListener('click', () => {
+                    const translatedLink = getTranslatedSubstackLink(entry.url);
+                    window.open(translatedLink, '_blank');
+                });
+            });
+
+            // Update progress bar
+            const totalDisplayed = entries.length;
+            const progress = (totalDisplayed / 20) * 100; // Adjusted to 20
+            progressBar.style.width = `${progress > 100 ? 100 : progress}%`;
+        }
+
+        // Search functionality (from First Page)
+        function performSearch() {
+            const searchText = searchInput.value.toLowerCase().trim();
+            if (searchText === '') {
+                displayRandomCards(20);
+                return;
+            }
+
+            // Filter entries based on search text, excluding stop words
+            const paroleEscluse = ['perchè', 'perché', 'quando', 'e', 'ma', 'se', 'come', 'con', 'su', 'per', 'tra', 'fra', 'nel', 'nello', 'nella', 'nei', 'nelle', 'al', 'allo', 'alla', 'ai', 'agli', 'alle', 'dal', 'dallo', 'dalla', 'dai', 'dagli', 'dalle', 'del', 'dello', 'della', 'dei', 'degli', 'delle', 'sul', 'sullo', 'sulla', 'sui', 'sugli', 'sulle', 'un', 'uno', 'una', 'gli', 'le', 'di', 'da', 'in', 'a', 'da', 'che', 'chi', 'cosa', 'quale', 'quanto', 'quanta', 'quanti', 'quante', 'dove', 'come', 'quando', 'perché', 'anche', 'solo', 'qui', 'lì', 'là', 'dunque', 'quindi', 'perciò', 'anche', 'ancora', 'già', 'mai', 'sempre', 'poi', 'prima', 'dopo', 'sopra', 'sotto', 'contro', 'molto', 'poco', 'troppo', 'più', 'meno', 'bene', 'male', 'meglio', 'peggio', 'quasi', 'circa', 'appena', 'solo', 'tanto', 'così', 'pure', 'anche', 'neanche', 'nemmeno', 'quasi', 'sia', 'anche'];
+
+            // Split search text into words and exclude stop words
+            const searchWords = searchText.split(' ').filter(word => !paroleEscluse.includes(word) && word !== '');
+
+            if (searchWords.length === 0) {
+                displayRandomCards(20);
+                return;
+            }
+
+            // Filter entries that contain any of the search words in description or question
+            const filtered = allEntries.filter(entry => {
+                const combinedText = `${entry.description} ${entry.question}`.toLowerCase();
+                return searchWords.some(word => combinedText.includes(word));
+            });
+
+            if (filtered.length === 0) {
+                cardsWrapper.innerHTML = '<p style="text-align:center;">Nessun contenuto trovato per la tua ricerca.</p>';
+                progressBar.style.width = '0%';
+                return;
+            }
+
+            // Shuffle and select up to 'count'
+            const shuffled = filtered.sort(() => 0.5 - Math.random());
+            const selected = shuffled.slice(0, 20);
+            displayCards(selected);
+        }
+
+        // Function to reset all filters and display random cards (from First Page)
+        function resetFilters() {
+            searchInput.value = '';
+            selectedCategories.clear();
+            // Remove 'selected' class from all emoji buttons
+            mainEmojiButtons.forEach(button => button.classList.remove('selected'));
+            emojiButtons.forEach(button => button.classList.remove('selected'));
+            displayRandomCards(20);
+        }
+
+        // Event listeners for Emoji Buttons (from First Page)
+        function handleEmojiSelection(button, category) {
+            if (selectedCategories.has(category)) {
+                selectedCategories.delete(category);
+                button.classList.remove('selected');
+            } else {
+                selectedCategories.add(category);
+                button.classList.add('selected');
+            }
+            displayFilteredCards(selectedCategories, 20);
+        }
+
+        mainEmojiButtons.forEach(button => {
+            const category = button.getAttribute('data-category');
+            button.addEventListener('click', () => {
+                handleEmojiSelection(button, category);
+            });
+        });
+
+        emojiButtons.forEach(button => {
+            const category = button.getAttribute('data-category');
+            button.addEventListener('click', () => {
+                handleEmojiSelection(button, category);
+            });
+        });
+
+        // Event listeners for Search and Refresh Buttons (from First Page)
+        searchButton.addEventListener('click', performSearch);
+        refreshButton.addEventListener('click', resetFilters);
+
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+
+        // Initialize the app on page load
+        initializeApp();
+
+        /* Additional JavaScript from Second Page */
+
+        // Function to transform Substack URL for English (already defined above)
+
+        // Function to create buttons and cards from JSON (from Second Page)
+        // If you want to integrate both functionalities, consider how they interact.
+        // For this guide, we assume you want to prioritize the CSV-based cards from the first page.
+
+        // If you need to integrate JSON-based content, you will need to merge the fetching and rendering logic carefully.
+
+        // Ensure swipe functionality works with the integrated cards
+        // (Swipe functionality code can remain as it is unless it conflicts with the first page's functionality)
+
+        /* Ensure that all functionalities coexist without conflicts */
+
+        // Example: If both scripts manipulate the cardsWrapper, decide which one takes precedence or merge their functionalities.
+    });
+</script>
+
+
+<<body>
     <div class="app-container">
-        <!-- Header with logo and buttons -->
+        <!-- Integrated Header -->
         <div class="header">
-            <!-- Buttons inside header -->
-            <div class="buttons-container" id="buttons-container">
-                <!-- Buttons will be dynamically inserted here -->
+            <div class="header-left">
+                <img src="/index_files/ff.png" alt="Logo" class="logo" id="header-logo">
+                <div class="main-emojis">
+                    <button class="main-emoji-button" data-category="🍃" aria-label="Clima">🍃</button>
+                    <button class="main-emoji-button" data-category="💻" aria-label="Tecnologia">💻</button>
+                    <button class="main-emoji-button" data-category="❤️" aria-label="Uomo">❤️</button>
+                </div>
             </div>
-            <!-- Hidden language switch in header -->
-            <button class="language-switch" id="language-switch" style="display:none;">🇬🇧</button>
+            <button class="language-switch" id="language-button">English 🇬🇧</button>
         </div>
+
+        <!-- Side Menu and Overlay -->
+        <div id="side-menu" class="side-menu">
+            <a href="javascript:void(0)" class="close-menu" id="close-menu">&times;</a>
+            <div class="side-menu-content">
+                <a href="https://futurofortissimo.github.io/">Home</a>
+                <a href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io/" class="share-button">Share</a>
+                <a href="https://www.paypal.com/paypalme/michelemerelli" class="support-button">Support</a>
+            </div>
+        </div>
+        <div id="overlay" class="overlay"></div>
 
         <!-- Progress bar -->
         <div class="progress-bar"></div>
@@ -302,19 +840,45 @@
     </div>
 
     <footer>
-
         <div class="footer-content">
-          <a href="https://futurofortissimo.github.io/">
-              <img src="/index_files/ff.png" alt="Logo" class="logo">
-          </a>
-            <!-- Share Button as a link -->
-            <a href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io/" style="border-radius:20px" class="share-button">Share</a>
-            <!-- Support Button as a link -->
-            <a href="https://www.paypal.com/paypalme/michelemerelli" style="border-radius:20px" class="support-button">Support</a>
-            <!-- English Language Button -->
-            <a class="language-button" id="language-button" style="border-radius:20px">English</a>
+            <div class="buttons-container" id="buttons-container">
+                <!-- Buttons will be dynamically inserted here -->
+            </div>
         </div>
     </footer>
+
+    <!-- JavaScript -->
+    <!-- (JavaScript code will be addressed in the next section) -->
+</body>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sideMenu = document.getElementById('side-menu');
+            const closeMenu = document.getElementById('close-menu');
+            const overlay = document.getElementById('overlay');
+            const headerLogo = document.getElementById('header-logo');
+            const menuButton = document.getElementById('menu-button'); // Ensure this is defined
+
+            // Function to open side menu
+            function openSideMenu() {
+                sideMenu.classList.add('open');
+                overlay.classList.add('active');
+            }
+
+            // Function to close side menu
+            function closeSideMenuFunc() {
+                sideMenu.classList.remove('open');
+                overlay.classList.remove('active');
+            }
+
+            // Event listeners for opening and closing side menu
+            headerLogo.addEventListener('click', openSideMenu);
+            menuButton.addEventListener('click', openSideMenu); // Add this line if using a button
+            closeMenu.addEventListener('click', closeSideMenuFunc);
+            overlay.addEventListener('click', closeSideMenuFunc);
+        });
+    </script>
 
     <script>
     let currentLanguage = 'it';
@@ -627,7 +1191,8 @@
 
     // Initialize the app after the DOM is fully loaded
     document.addEventListener('DOMContentLoaded', () => {
-        initializeApp();
+      const headerLogo = document.getElementById('header-logo');
+      initializeApp();
     });
     </script>
 </body>
