@@ -359,6 +359,12 @@
             transform: scale(var(--button-hover-scale));
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+        .post-title {
+        /* Ensure no conflicting styles */
+            white-space: normal; /* Allow wrapping */
+            word-wrap: break-word; /* Break long words */
+            overflow-wrap: break-word; /* For better compatibility */
+        }
 
         /* Side Menu */
         .side-menu {
@@ -480,7 +486,7 @@
 ;margin-top: 80px">
 
         <a href="#" id="image-box-link"
-            style="cursor: pointer; font-size: 21px; font-family: 'Montserrat', sans-serif;; color:white; text-align:left; display: flex; flex-direction: column; width: 100%;"
+            style="cursor: pointer; font-size: 19px; font-family: 'Montserrat', sans-serif;; color:white; text-align:left; display: flex; flex-direction: column; width: 100%;"
             class="image-box">
             <div class="my-text-container" style="padding:15px; width: 100%; position: relative; box-sizing: border-box;">
                 <div class="part1" style="margin-bottom: 15px;"> <!-- Added margin for spacing -->
@@ -548,19 +554,13 @@
 <style>
     .image-box {
         width: 80%;
-        /* Adjust as needed */
         max-width: 600px;
-        /* Set a max width */
         margin: auto;
-        /* Center the image box */
-        overflow: hidden;
-        /* Prevent overflow */
-        text-overflow: ellipsis;
-        /* Add ellipsis for overflow text */
-        white-space: nowrap;
-        /* Prevent text wrapping */
+        /* Remove the following lines */
+        /* overflow: hidden; */
+        /* text-overflow: ellipsis; */
+        /* white-space: nowrap; */
     }
-
     .button-container a {
         width: 80%;
         /* Match button width to image box */
