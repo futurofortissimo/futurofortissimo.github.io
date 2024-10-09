@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Import Montserrat font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link href="../style.css" rel="stylesheet">
-
     <!-- Favicon -->
     <link rel="icon" href="/index_files/ff.webp" type="image/webp">
     <link rel="apple-touch-icon" href="/index_files/ff.webp">
@@ -175,7 +173,7 @@
         .section-title {
             margin-top: 10px;
             margin-bottom: 10px;
-            font-size: 20px;
+            font-size: 21px;
             font-weight: bold;
         }
 
@@ -184,7 +182,7 @@
             padding: 10px;
             border-radius: 10px;
             word-wrap: break-word; /* Prevent overflow of long words */
-            font-size: 16px;
+            font-size: 18px;
             font-weight: bold;
         }
 
@@ -265,7 +263,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        @media (min-width: 1px) {
+        @media (min-width: 601px) {
             footer {
                 display: flex;
             }
@@ -283,23 +281,14 @@
 <body>
     <div class="app-container">
         <!-- Header with logo and buttons -->
-            <div class="header">
-                <div class="header-left">
-                    <img src="/index_files/ff.png" alt="Logo" class="logo" id="header-logo">
-                    <!-- Ensure this button is present if you want to use it to open the menu -->
-                </div>
-                <button class="language-switch" id="language-button">English 🇬🇧</button>
+        <div class="header">
+            <!-- Buttons inside header -->
+            <div class="buttons-container" id="buttons-container">
+                <!-- Buttons will be dynamically inserted here -->
             </div>
-
-        <div id="side-menu" class="side-menu">
-            <a href="javascript:void(0)" class="close-menu" id="close-menu">&times;</a>
-            <div class="side-menu-content">
-                <a href="https://futurofortissimo.github.io/">Home</a>
-                <a href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io/" class="share-button">Share</a>
-                <a href="https://www.paypal.com/paypalme/michelemerelli" class="support-button">Support</a>
-            </div>
+            <!-- Hidden language switch in header -->
+            <button class="language-switch" id="language-switch" style="display:none;">🇬🇧</button>
         </div>
-
 
         <!-- Progress bar -->
         <div class="progress-bar"></div>
@@ -315,38 +304,17 @@
     <footer>
 
         <div class="footer-content">
-          <div class="buttons-container" id="buttons-container">
-              <!-- Buttons will be dynamically inserted here -->
-          </div>
+          <a href="https://futurofortissimo.github.io/">
+              <img src="/index_files/ff.png" alt="Logo" class="logo">
+          </a>
+            <!-- Share Button as a link -->
+            <a href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io/" style="border-radius:20px" class="share-button">Share</a>
+            <!-- Support Button as a link -->
+            <a href="https://www.paypal.com/paypalme/michelemerelli" style="border-radius:20px" class="support-button">Support</a>
+            <!-- English Language Button -->
+            <a class="language-button" id="language-button" style="border-radius:20px">English</a>
+        </div>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const sideMenu = document.getElementById('side-menu');
-            const closeMenu = document.getElementById('close-menu');
-            const overlay = document.getElementById('overlay');
-            const headerLogo = document.getElementById('header-logo');
-            const menuButton = document.getElementById('menu-button'); // Ensure this is defined
-
-            // Function to open side menu
-            function openSideMenu() {
-                sideMenu.classList.add('open');
-                overlay.classList.add('active');
-            }
-
-            // Function to close side menu
-            function closeSideMenuFunc() {
-                sideMenu.classList.remove('open');
-                overlay.classList.remove('active');
-            }
-
-            // Event listeners for opening and closing side menu
-            headerLogo.addEventListener('click', openSideMenu);
-            menuButton.addEventListener('click', openSideMenu); // Add this line if using a button
-            closeMenu.addEventListener('click', closeSideMenuFunc);
-            overlay.addEventListener('click', closeSideMenuFunc);
-        });
-    </script>
 
     <script>
     let currentLanguage = 'it';
@@ -659,8 +627,7 @@
 
     // Initialize the app after the DOM is fully loaded
     document.addEventListener('DOMContentLoaded', () => {
-      const headerLogo = document.getElementById('header-logo');
-      initializeApp();
+        initializeApp();
     });
     </script>
 </body>
