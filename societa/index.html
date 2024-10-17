@@ -4,28 +4,27 @@
     <meta charset="UTF-8">
     <title>futuro fortissimo | ❤️ Società, Benessere, Tecnologia e Innovazione</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!-- Import Montserrat font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-
     <!-- Favicon -->
     <link rel="icon" href="/index_files/ff.webp" type="image/webp">
     <link rel="apple-touch-icon" href="/index_files/ff.webp">
-
     <!-- Meta Tags -->
-    <meta name="description" content="Esplora il futuro con futuro fortissimo: società, benessere, tecnologia, innovazione, salute mentale, stress, COVID-19, intelligenza artificiale, sport, alimentazione, obesità, longevità. Scopri le ultime tendenze e insights su società e tecnologia in italiano e inglese.">
-    <meta name="keywords" content="futuro fortissimo, società, benessere, tecnologia, innovazione, salute mentale, stress, COVID-19, intelligenza artificiale, sport, alimentazione, obesità, longevità, future trends, wellness, mental health, AI, nutrition, longevity, Italian blog, English blog">
+    <meta name="description"
+        content="Esplora il futuro con futuro fortissimo: società, benessere, tecnologia, innovazione, salute mentale, stress, COVID-19, intelligenza artificiale, sport, alimentazione, obesità, longevità. Scopri le ultime tendenze e insights su società e tecnologia in italiano e inglese.">
+    <meta name="keywords"
+        content="futuro fortissimo, società, benessere, tecnologia, innovazione, salute mentale, stress, COVID-19, intelligenza artificiale, sport, alimentazione, obesità, longevità, future trends, wellness, mental health, AI, nutrition, longevity, Italian blog, English blog">
     <meta name="author" content="futuro fortissimo michele merelli">
-
     <!-- Stylesheet -->
     <style>
         /* Root variables */
         :root {
             --theme-color: #ADD8E6; /* Light blue */
-            --button-bg-color: #fff;
-            --button-text-color: #333;
+            --question-color: #B3E5FC; /* Lighter blue */
+            --data-color: #81D4FA; /* Medium blue */
+            --quote-color: #4FC3F7; /* Darker blue */
             --progress-bar-color: #4CAF50; /* Green */
-            --button-hover-scale: 1.05;
+            --button-hover-scale: 1.05; /* Scale factor for hover effect */
             --button-transition: transform 0.2s ease-in-out;
             --font-family: 'Montserrat', sans-serif;
         }
@@ -42,6 +41,9 @@
             background-color: #fff;
             color: #333;
             overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         a {
@@ -49,11 +51,14 @@
             text-decoration: none;
         }
 
-        /* Container */
+        /* App container */
         .app-container {
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+            padding-bottom: 60px; /* Space for fixed footer */
         }
 
         /* Header */
@@ -73,37 +78,78 @@
             margin-right: 10px;
         }
 
-        nav {
+        /* Hamburger Menu */
+        .hamburger {
             display: flex;
-            flex-wrap: nowrap;
-            overflow-x: auto;
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* IE 10+ */
-            flex-grow: 1;
-        }
-
-        nav::-webkit-scrollbar {
-            display: none; /* Chrome, Safari */
-        }
-
-        .nav-button {
-            flex: 0 0 auto;
-            margin: 0 5px;
-            padding: 8px 16px;
-            background-color: var(--button-bg-color);
-            color: var(--button-text-color);
-            border-radius: 20px;
-            text-align: center;
-            font-size: 14px;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            background: none;
+            border: none;
             cursor: pointer;
-            user-select: none;
-            white-space: nowrap;
-            transition: var(--button-transition);
+            padding: 0;
+            margin-left: auto;
         }
 
-        .nav-button:hover {
-            transform: scale(var(--button-hover-scale));
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        .hamburger:focus {
+            outline: none;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 3px;
+            background-color: #333;
+            border-radius: 2px;
+            transition: all 0.3s linear;
+        }
+
+        /* Hamburger Menu Active State */
+        .hamburger.active div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active div:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -8px);
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu {
+            position: absolute;
+            top: 60px;
+            right: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            display: none;
+            flex-direction: column;
+            width: 200px;
+            z-index: 999;
+        }
+
+        .dropdown-menu.active {
+            display: flex;
+        }
+
+        .dropdown-menu a {
+            padding: 12px 16px;
+            text-align: left;
+            color: #333;
+            border-bottom: 1px solid #ddd;
+            transition: background 0.2s;
+        }
+
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f1f1f1;
         }
 
         /* Progress Bar */
@@ -115,7 +161,7 @@
         }
 
         /* Main Content */
-        main {
+        .cards-container {
             flex: 1;
             overflow: hidden;
             position: relative;
@@ -124,61 +170,122 @@
         .cards-wrapper {
             display: flex;
             transition: transform 0.5s ease-in-out;
+            height: 100%;
+            width: 100%;
         }
 
         .card {
             flex: 0 0 100%;
-            overflow-y: auto;
-            padding: 20px;
+            height: 100%;
+            overflow: hidden;
             background-color: #fff;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
         }
 
         .card-content {
-            max-width: 600px;
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px 20px 30px 20px; /* Adjusted padding */
+            box-sizing: border-box;
+            max-width: 450px;
             margin: 0 auto;
+            cursor: pointer; /* Make card-content clickable */
         }
 
+        /* Hide scrollbars on card content */
+        .card-content::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        /* Section styles */
         .section-title {
-            font-size: 24px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 21px;
             font-weight: bold;
-            margin-bottom: 15px;
         }
 
+        /* Content block */
         .content-block {
-            margin-bottom: 20px;
-            line-height: 1.6;
+            padding: 10px;
+            border-radius: 10px;
+            word-wrap: break-word; /* Prevent overflow of long words */
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .paragraphs {
+            background-color: #e0f7fa; /* Light cyan */
+            font-weight: normal;
+        }
+
+        /* Action button styles */
+        .action-button {
+            padding: 10px 20px;
+            margin: 5px 0;
+            background-color: var(--theme-color);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
             font-size: 16px;
+            width: 100%;
+        }
+
+        .action-button:hover {
+            background-color: #7ec0ee; /* Slightly darker blue */
         }
 
         /* Footer */
         footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
             background-color: var(--theme-color);
             padding: 10px 20px;
-            position: sticky;
-            bottom: 0;
-            z-index: 1000;
+            flex-shrink: 0;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+            z-index: 1000; /* Ensure it stays on top */
         }
 
         .footer-content {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 15px;
+            justify-content: space-around;
             flex-wrap: wrap;
+            gap: 15px; /* Space between buttons */
         }
 
         .footer-button {
             display: flex;
             align-items: center;
-            padding: 8px 16px;
-            background-color: var(--button-bg-color);
-            color: var(--button-text-color);
-            border-radius: 20px;
-            font-size: 14px;
+            justify-content: center;
+            text-decoration: none;
+            color: #333;
             cursor: pointer;
-            transition: var(--button-transition);
+            background-color: #fff;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 20px;
+            font-family: 'Montserrat', sans-serif;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* For hover animation */
+            font-size: 14px;
+            flex: 1 1 auto;
+            max-width: 120px;
+            text-align: center;
         }
 
+        .footer-button img.logo {
+            height: 24px;
+            width: auto;
+            margin-right: 8px;
+        }
+
+        /* Hover "pop-up" animation */
         .footer-button:hover {
             transform: scale(var(--button-hover-scale));
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -186,61 +293,82 @@
 
         /* Responsive Design */
         @media (max-width: 600px) {
-            .nav-button {
-                font-size: 12px;
-                padding: 6px 12px;
-            }
-
-            .footer-button {
-                font-size: 12px;
-                padding: 6px 12px;
-            }
-
             .section-title {
                 font-size: 20px;
             }
 
             .content-block {
-                font-size: 14px;
+                font-size: 16px;
+            }
+
+            .footer-button {
+                font-size: 12px;
+                padding: 6px 10px;
+                max-width: 100px;
+            }
+
+            .hamburger {
+                width: 25px;
+                height: 20px;
+            }
+
+            .hamburger div {
+                width: 25px;
+                height: 3px;
+            }
+
+            .dropdown-menu {
+                width: 150px;
+                top: 50px;
             }
         }
     </style>
 </head>
 <body>
     <div class="app-container">
-        <!-- Header -->
+        <!-- Header with logo and hamburger menu -->
         <header>
             <a href="https://futurofortissimo.github.io/">
                 <img src="/index_files/ff.png" alt="Logo" class="logo">
             </a>
-            <nav id="buttons-container">
-                <!-- Navigation buttons will be inserted here -->
-            </nav>
-            <button class="nav-button" id="language-switch">English</button>
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger" id="hamburger" aria-label="Open Menu" aria-expanded="false">
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
+            <!-- Dropdown Menu -->
+            <div class="dropdown-menu" id="dropdown-menu" aria-hidden="true">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+                <!-- Add more links as needed -->
+            </div>
         </header>
 
-        <!-- Progress Bar -->
+        <!-- Progress bar -->
         <div class="progress-bar" id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
 
         <!-- Main Content -->
-        <main>
+        <div class="cards-container">
             <div class="cards-wrapper" id="cards-wrapper">
-                <!-- Cards will be inserted here -->
+                <!-- Cards will be dynamically inserted here -->
             </div>
-        </main>
-
-        <!-- Footer -->
-        <footer>
-            <div class="footer-content">
-                <a href="https://futurofortissimo.github.io/" class="footer-button">
-                    <img src="/index_files/ff.png" alt="Logo" class="logo" style="height: 24px;">
-                </a>
-                <a href="#" class="footer-button" id="share-button">Condividi</a>
-                <a href="https://www.paypal.com/paypalme/michelemerelli" class="footer-button">Supporta</a>
-                <button class="footer-button" id="footer-language-switch">English</button>
-            </div>
-        </footer>
+        </div>
     </div>
+
+    <!-- Footer with navigation buttons -->
+    <footer>
+        <div class="footer-content" id="footer-content">
+            <!-- Navigation buttons will be dynamically inserted here -->
+            <a href="https://futurofortissimo.github.io/" class="footer-button">
+                <img src="/index_files/ff.png" alt="Logo" class="logo">Home
+            </a>
+            <a href="#" class="footer-button" id="share-button">Condividi</a>
+            <a href="https://www.paypal.com/paypalme/michelemerelli" class="footer-button">Supporta</a>
+            <button class="footer-button" id="footer-language-switch">English</button>
+        </div>
+    </footer>
 
     <!-- JavaScript -->
     <script>
@@ -248,17 +376,18 @@
             let currentLanguage = 'it';
             let currentIndex = 0;
             let publications = [];
-            const buttonsContainer = document.getElementById('buttons-container');
+            const buttonsContainer = document.getElementById('footer-content');
             const cardsWrapper = document.getElementById('cards-wrapper');
             const progressBar = document.getElementById('progress-bar');
-            const languageSwitch = document.getElementById('language-switch');
-            const footerLanguageSwitch = document.getElementById('footer-language-switch');
+            const languageSwitch = document.getElementById('footer-language-switch');
             const shareButton = document.getElementById('share-button');
+            const hamburger = document.getElementById('hamburger');
+            const dropdownMenu = document.getElementById('dropdown-menu');
 
             // Event Listeners
             languageSwitch.addEventListener('click', switchLanguage);
-            footerLanguageSwitch.addEventListener('click', switchLanguage);
             shareButton.addEventListener('click', shareContent);
+            hamburger.addEventListener('click', toggleMenu);
 
             // Initialize App
             initializeApp();
@@ -273,25 +402,29 @@
                     .then(response => response.json())
                     .then(data => {
                         publications = data.publications;
-                        renderNavigation();
                         renderCards();
+                        renderNavigationButtons();
                         updateProgressBar();
                     })
                     .catch(error => {
                         console.error('Error loading content:', error);
+                        cardsWrapper.innerHTML = '<p style="padding: 20px;">Errore nel caricamento del contenuto.</p>';
                     });
             }
 
-            function renderNavigation() {
-                buttonsContainer.innerHTML = '';
+            function renderNavigationButtons() {
+                // Remove existing publication buttons except the static ones
+                const dynamicButtons = document.querySelectorAll('.nav-publication-button');
+                dynamicButtons.forEach(btn => btn.remove());
+
                 publications.forEach((pub, index) => {
                     const button = document.createElement('button');
-                    button.className = 'nav-button';
+                    button.className = 'footer-button nav-publication-button';
                     button.textContent = pub.buttonLabel;
                     button.addEventListener('click', () => {
-                        scrollToCard(index);
+                        showCard(index);
                     });
-                    buttonsContainer.appendChild(button);
+                    buttonsContainer.insertBefore(button, shareButton);
                 });
             }
 
@@ -305,12 +438,17 @@
                     cardContent.className = 'card-content';
 
                     // Substack Button
-                    const substackButton = document.createElement('a');
-                    substackButton.href = pub.substackLink;
-                    substackButton.target = '_blank';
-                    substackButton.className = 'footer-button';
-                    substackButton.textContent = pub.title;
-                    substackButton.style.marginBottom = '15px';
+                    const substackButton = document.createElement('div');
+                    substackButton.className = 'substackButton';
+                    substackButton.textContent = pub.title; // Use publication title
+                    substackButton.style.cursor = 'pointer';
+                    substackButton.style.marginBottom = '10px'; // Add some spacing
+                    substackButton.addEventListener('click', (e) => {
+                        e.stopPropagation(); // Prevent the card click event
+                        const translatedLink = getTranslatedSubstackLink(pub.substackLink);
+                        window.open(translatedLink, '_blank');
+                    });
+
                     cardContent.appendChild(substackButton);
 
                     // Card Title
@@ -319,36 +457,80 @@
                     title.textContent = pub.title;
                     cardContent.appendChild(title);
 
-                    // Content Blocks
-                    pub.cards.forEach(contentBlock => {
-                        const block = document.createElement('div');
-                        block.className = 'content-block';
-                        block.innerHTML = contentBlock.contentBlocks.map(item => `<p>${item.content}</p>`).join('');
-                        cardContent.appendChild(block);
+                    // Add content blocks
+                    pub.cards.forEach(block => {
+                        const contentBlock = createContentBlock(block.type, block.content);
+                        cardContent.appendChild(contentBlock);
                     });
 
                     card.appendChild(cardContent);
                     cardsWrapper.appendChild(card);
+
+                    // Click event to open Substack
+                    cardContent.addEventListener('click', () => {
+                        const translatedLink = getTranslatedSubstackLink(pub.substackLink);
+                        window.open(translatedLink, '_blank');
+                    });
                 });
             }
 
-            function scrollToCard(index) {
-                currentIndex = index;
-                const offset = index * -100;
-                cardsWrapper.style.transform = `translateX(${offset}%)`;
-                updateProgressBar();
+            function createContentBlock(type, contents) {
+                const div = document.createElement('div');
+                div.className = `content-block ${type}`;
+
+                contents.forEach(item => {
+                    // Split the item into title and content at the first newline
+                    const [title, ...rest] = item.split('\n');
+                    const contentText = rest.join('\n').trim();
+
+                    const p = document.createElement('p');
+
+                    // Create a bold element for the title
+                    const boldTitle = document.createElement('strong');
+                    boldTitle.textContent = title.trim();
+
+                    // Append the bold title to the paragraph
+                    p.appendChild(boldTitle);
+
+                    if (contentText) {
+                        // Add a line break
+                        p.appendChild(document.createElement('br'));
+
+                        // Create a span element to wrap the contentText
+                        const contentSpan = document.createElement('span');
+                        contentSpan.textContent = contentText;
+
+                        // Apply the desired style with !important
+                        contentSpan.style.setProperty('font-weight', 'normal', 'important');
+
+                        // Append the styled span to the paragraph
+                        p.appendChild(contentSpan);
+                    }
+
+                    div.appendChild(p);
+                });
+
+                return div;
             }
 
-            function updateProgressBar() {
-                const progress = ((currentIndex + 1) / publications.length) * 100;
+            function showCard(index) {
+                currentIndex = index;
+                cardsWrapper.style.transform = `translateX(-${index * 100}%)`;
+                const progress = ((index + 1) / publications.length) * 100;
                 progressBar.style.width = `${progress}%`;
-                progressBar.setAttribute('aria-valuenow', progress);
+                scrollButtonIntoView(index);
+            }
+
+            function scrollButtonIntoView(index) {
+                const button = document.querySelectorAll('.nav-publication-button')[index];
+                if (button) {
+                    button.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                }
             }
 
             function switchLanguage() {
                 currentLanguage = currentLanguage === 'it' ? 'en' : 'it';
                 languageSwitch.textContent = currentLanguage === 'it' ? 'English' : 'Italiano';
-                footerLanguageSwitch.textContent = currentLanguage === 'it' ? 'English' : 'Italiano';
                 initializeApp();
             }
 
@@ -364,35 +546,84 @@
                 }
             }
 
-            // Swipe functionality
-            let startX = 0;
-            let isDown = false;
+            // Hamburger Menu Functionality
+            function toggleMenu() {
+                const isActive = hamburger.classList.toggle('active');
+                dropdownMenu.classList.toggle('active');
+                hamburger.setAttribute('aria-expanded', isActive);
+                dropdownMenu.setAttribute('aria-hidden', !isActive);
+            }
 
-            cardsWrapper.addEventListener('mousedown', (e) => {
-                isDown = true;
-                startX = e.pageX;
-                cardsWrapper.style.transition = 'none';
-            });
-
-            cardsWrapper.addEventListener('mouseup', () => {
-                isDown = false;
-                cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
-            });
-
-            cardsWrapper.addEventListener('mousemove', (e) => {
-                if (!isDown) return;
-                const deltaX = e.pageX - startX;
-                const offset = deltaX / window.innerWidth * 100;
-                const newOffset = currentIndex * -100 + offset;
-                cardsWrapper.style.transform = `translateX(${newOffset}%)`;
-            });
-
-            cardsWrapper.addEventListener('mouseleave', () => {
-                if (isDown) {
-                    isDown = false;
-                    cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
+            // Click outside to close the menu
+            document.addEventListener('click', (e) => {
+                if (!hamburger.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                    if (hamburger.classList.contains('active')) {
+                        hamburger.classList.remove('active');
+                        dropdownMenu.classList.remove('active');
+                        hamburger.setAttribute('aria-expanded', false);
+                        dropdownMenu.setAttribute('aria-hidden', true);
+                    }
                 }
             });
+
+            // Swipe functionality for touch devices
+            let startX = 0;
+            let startY = 0;
+            let isSwiping = false;
+
+            const cardsContainer = document.querySelector('.cards-container');
+
+            // Touch events for mobile
+            cardsContainer.addEventListener('touchstart', touchStart, false);
+            cardsContainer.addEventListener('touchmove', touchMove, false);
+            cardsContainer.addEventListener('touchend', touchEnd, false);
+
+            function touchStart(evt) {
+                if (evt.touches.length === 1) { // Only single touch
+                    startX = evt.touches[0].clientX;
+                    startY = evt.touches[0].clientY;
+                    isSwiping = true;
+                    cardsWrapper.style.transition = 'none';
+                }
+            }
+
+            function touchMove(evt) {
+                if (!isSwiping) return;
+                const x = evt.touches[0].clientX;
+                const y = evt.touches[0].clientY;
+                const deltaX = x - startX;
+                const deltaY = y - startY;
+
+                // Determine if the user is swiping horizontally
+                if (Math.abs(deltaX) > Math.abs(deltaY)) {
+                    evt.preventDefault(); // Prevent vertical scrolling
+                    const percentage = (deltaX / window.innerWidth) * 100;
+                    const offset = -currentIndex * 100 + percentage;
+                    cardsWrapper.style.transform = `translateX(${offset}%)`;
+                } else {
+                    isSwiping = false; // Allow vertical scrolling
+                }
+            }
+
+            function touchEnd(evt) {
+                if (!isSwiping) return;
+                isSwiping = false;
+                const endX = evt.changedTouches[0].clientX;
+                const deltaX = endX - startX;
+
+                if (deltaX > 50 && currentIndex > 0) {
+                    // Swipe right, go to previous card
+                    showCard(currentIndex - 1);
+                } else if (deltaX < -50 && currentIndex < publications.length - 1) {
+                    // Swipe left, go to next card
+                    showCard(currentIndex + 1);
+                } else {
+                    // Snap back to current card
+                    showCard(currentIndex);
+                }
+
+                cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
+            }
         });
     </script>
 </body>
