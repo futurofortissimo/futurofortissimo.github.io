@@ -4,638 +4,396 @@
     <meta charset="UTF-8">
     <title>futuro fortissimo | ❤️ Società, Benessere, Tecnologia e Innovazione</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- Import Montserrat font from Google Fonts -->
-    
-    <meta name="description"
-        content="Esplora il futuro con futuro fortissimo: società, benessere, tecnologia, innovazione, salute mentale, stress, COVID-19, intelligenza artificiale, sport, alimentazione, obesità, longevità. Scopri le ultime tendenze e insights su società e tecnologia in italiano e inglese.">
-    <meta name="keywords"
-        content="futuro fortissimo, società, benessere, tecnologia, innovazione, salute mentale, stress, COVID-19, intelligenza artificiale, sport, alimentazione, obesità, longevità, future trends, wellness, mental health, AI, nutrition, longevity, Italian blog, English blog">
-    <meta name="author" content="futuro fortissimo michele merelli">
-    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
     <!-- Favicon -->
     <link rel="icon" href="/index_files/ff.webp" type="image/webp">
     <link rel="apple-touch-icon" href="/index_files/ff.webp">
+
+    <!-- Meta Tags -->
+    <meta name="description" content="Esplora il futuro con futuro fortissimo: società, benessere, tecnologia, innovazione, salute mentale, stress, COVID-19, intelligenza artificiale, sport, alimentazione, obesità, longevità. Scopri le ultime tendenze e insights su società e tecnologia in italiano e inglese.">
+    <meta name="keywords" content="futuro fortissimo, società, benessere, tecnologia, innovazione, salute mentale, stress, COVID-19, intelligenza artificiale, sport, alimentazione, obesità, longevità, future trends, wellness, mental health, AI, nutrition, longevity, Italian blog, English blog">
+    <meta name="author" content="futuro fortissimo michele merelli">
+
+    <!-- Stylesheet -->
     <style>
         /* Root variables */
         :root {
             --theme-color: #ADD8E6; /* Light blue */
-            --question-color: #B3E5FC; /* Lighter blue */
-            --data-color: #81D4FA; /* Medium blue */
-            --quote-color: #4FC3F7; /* Darker blue */
+            --button-bg-color: #fff;
+            --button-text-color: #333;
             --progress-bar-color: #4CAF50; /* Green */
-            --button-hover-scale: 1.05; /* Scale factor for hover effect */
+            --button-hover-scale: 1.05;
             --button-transition: transform 0.2s ease-in-out;
+            --font-family: 'Montserrat', sans-serif;
         }
 
-        /* Basic styles */
-        body {
+        /* Global styles */
+        * {
+            box-sizing: border-box;
             margin: 0;
-            font-family: 'Montserrat', sans-serif;
+            padding: 0;
+            font-family: var(--font-family);
+        }
+
+        body {
             background-color: #fff;
             color: #333;
-            overflow-y: auto; /* Allow vertical scrolling */
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* Container */
+        .app-container {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
 
-        /* App container */
-        .app-container {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-            overflow: hidden;
-            position: relative;
-            padding-bottom: 60px; /* Space for fixed footer */
-        }
-
-        /* Header with logo and buttons */
-        .header {
+        /* Header */
+        header {
             display: flex;
             align-items: center;
             background-color: var(--theme-color);
-            padding: 5px 5px;
-            flex-shrink: 0;
-            flex-wrap: nowrap;
-            justify-content: space-between;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .logo {
             height: 40px;
             cursor: pointer;
-            flex-shrink: 0;
-            margin-right: 0px;
+            margin-right: 10px;
         }
 
-        /* Hide language-switch in header as it's moved to footer */
-        .language-switch {
-            display: none;
-        }
-
-        /* Buttons container inside header */
-        .buttons-container {
+        nav {
             display: flex;
+            flex-wrap: nowrap;
             overflow-x: auto;
-            flex-grow: 1;
             scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* Internet Explorer 10+ */
-            position: relative;
-            padding: 0 20px; /* Add padding for fade effect */
+            -ms-overflow-style: none; /* IE 10+ */
+            flex-grow: 1;
         }
 
-        .buttons-container::-webkit-scrollbar {
-            display: none; /* WebKit */
+        nav::-webkit-scrollbar {
+            display: none; /* Chrome, Safari */
         }
 
-        /* Buttons */
-        .button {
+        .nav-button {
             flex: 0 0 auto;
             margin: 0 5px;
-            padding: 8px 12px;
-            background-color: #fff;
-            color: #333;
-            margin: 9px; /* Corrected typo from 'magin' to 'margin' */
+            padding: 8px 16px;
+            background-color: var(--button-bg-color);
+            color: var(--button-text-color);
             border-radius: 20px;
             text-align: center;
             font-size: 14px;
             cursor: pointer;
             user-select: none;
             white-space: nowrap;
-            font-family: 'Montserrat', sans-serif; /* Ensure same font */
-            transition: transform 0.2s ease-in-out; /* For hover animation */
+            transition: var(--button-transition);
         }
 
-        .substackButton {
-            flex: 0 0 auto;
-            margin: 0 5px;
-            padding: 8px 12px;
-            background-color: #fff;
-            color: #333;
-            border: 2px solid #000; /* Optional black border */
-            border-radius: 35px;
-            text-align: center;
-            font-size: 18px;
-            cursor: pointer;
-            user-select: none;
-            white-space: nowrap;
-            font-family: 'Montserrat', sans-serif; /* Ensure same font */
-            transition: transform 0.2s ease-in-out; /* For hover animation */
-        }
-
-        .button:hover,
-        .substackButton:hover {
+        .nav-button:hover {
             transform: scale(var(--button-hover-scale));
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        /* Progress bar */
+        /* Progress Bar */
         .progress-bar {
             height: 5px;
             background-color: var(--progress-bar-color);
             width: 0%;
             transition: width 0.5s ease-in-out;
-            flex-shrink: 0;
         }
 
-        /* Cards container */
-        .cards-container {
+        /* Main Content */
+        main {
             flex: 1;
-            overflow: auto; /* Allow vertical scrolling */
+            overflow: hidden;
             position: relative;
         }
 
-        /* Cards wrapper for sliding effect */
         .cards-wrapper {
             display: flex;
-            height: 100%;
             transition: transform 0.5s ease-in-out;
-            width: 100%;
         }
 
-        /* Individual card */
         .card {
             flex: 0 0 100%;
-            height: 100%;
-            overflow: hidden;
-            background-color: #fff;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            /* Removed cursor pointer from card */
-        }
-
-        /* Card content */
-        .card-content {
-            flex: 1;
             overflow-y: auto;
-            padding: 10px 20px 30px 20px; /* Adjusted padding */
-            box-sizing: border-box;
-            max-width: 450px;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .card-content {
+            max-width: 600px;
             margin: 0 auto;
-            cursor: pointer; /* Make card-content clickable */
         }
 
-        /* Section styles */
         .section-title {
-            margin-top: 10px;
-            margin-bottom: 10px;
-            font-size: 21px;
+            font-size: 24px;
             font-weight: bold;
+            margin-bottom: 15px;
         }
 
-        /* Content block */
         .content-block {
-            padding: 10px;
-            border-radius: 10px;
-            word-wrap: break-word; /* Prevent overflow of long words */
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .paragraphs {
-            background-color: #e0f7fa; /* Light cyan */
-            font-weight: normal;
-        }
-
-        /* Hide scrollbars on card content */
-        .card-content::-webkit-scrollbar {
-            width: 0px;
-            background: transparent;
-        }
-
-        /* Action button styles */
-        .action-button {
-            padding: 10px 20px;
-            margin: 5px 0;
-            background-color: var(--theme-color);
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+            margin-bottom: 20px;
+            line-height: 1.6;
             font-size: 16px;
-            width: 100%;
-        }
-
-        .action-button:hover {
-            background-color: #7ec0ee; /* Slightly darker blue */
         }
 
         /* Footer */
         footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
             background-color: var(--theme-color);
             padding: 10px 20px;
-            flex-shrink: 0;
-            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-            z-index: 1000; /* Ensure it stays on top */
+            position: sticky;
+            bottom: 0;
+            z-index: 1000;
         }
 
         .footer-content {
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-wrap: nowrap; /* Prevent wrapping on small screens */
-            gap: 15px; /* Space between buttons */
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
-        .footer-content a,
-        .footer-content button {
+        .footer-button {
             display: flex;
             align-items: center;
-            text-decoration: none;
-            color: #333;
-            cursor: pointer;
-            background-color: #fff;
-            padding: 8px 12px;
-            border: none;
+            padding: 8px 16px;
+            background-color: var(--button-bg-color);
+            color: var(--button-text-color);
             border-radius: 20px;
-            font-family: 'Montserrat', sans-serif;
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* For hover animation */
             font-size: 14px;
+            cursor: pointer;
+            transition: var(--button-transition);
         }
 
-        .footer-content a img {
-            height: 24px;
-            width: auto;
-        }
-
-        /* Hover "pop-up" animation */
-        .footer-content a:hover,
-        .footer-content button:hover {
+        .footer-button:hover {
             transform: scale(var(--button-hover-scale));
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        @media (min-width: 601px) {
-            footer {
-                display: flex;
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .nav-button {
+                font-size: 12px;
+                padding: 6px 12px;
             }
 
-            .header {
-                position: relative; /* Reset positioning to default */
+            .footer-button {
+                font-size: 12px;
+                padding: 6px 12px;
             }
 
-            .cards-container {
-                padding-bottom: 0; /* Remove padding adjustment */
+            .section-title {
+                font-size: 20px;
+            }
+
+            .content-block {
+                font-size: 14px;
             }
         }
     </style>
 </head>
 <body>
     <div class="app-container">
-        <!-- Header with logo and buttons -->
-        <div class="header">
-            <!-- Buttons inside header -->
-            <div class="buttons-container" id="buttons-container">
-                <!-- Buttons will be dynamically inserted here -->
-            </div>
-            <!-- Hidden language switch in header -->
-            <button class="language-switch" id="language-switch" style="display:none;">🇬🇧</button>
-        </div>
+        <!-- Header -->
+        <header>
+            <a href="https://futurofortissimo.github.io/">
+                <img src="/index_files/ff.png" alt="Logo" class="logo">
+            </a>
+            <nav id="buttons-container">
+                <!-- Navigation buttons will be inserted here -->
+            </nav>
+            <button class="nav-button" id="language-switch">English</button>
+        </header>
 
-        <!-- Progress bar -->
-        <div class="progress-bar"></div>
+        <!-- Progress Bar -->
+        <div class="progress-bar" id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
 
-        <!-- Cards -->
-        <div class="cards-container">
+        <!-- Main Content -->
+        <main>
             <div class="cards-wrapper" id="cards-wrapper">
-                <!-- Cards will be dynamically inserted here -->
+                <!-- Cards will be inserted here -->
             </div>
-        </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <a href="https://futurofortissimo.github.io/" class="footer-button">
+                    <img src="/index_files/ff.png" alt="Logo" class="logo" style="height: 24px;">
+                </a>
+                <a href="#" class="footer-button" id="share-button">Condividi</a>
+                <a href="https://www.paypal.com/paypalme/michelemerelli" class="footer-button">Supporta</a>
+                <button class="footer-button" id="footer-language-switch">English</button>
+            </div>
+        </footer>
     </div>
 
-    <footer>
-
-        <div class="footer-content">
-          <a href="https://futurofortissimo.github.io/">
-              <img src="/index_files/ff.png" alt="Logo" class="logo">
-          </a>
-            <!-- Share Button as a link -->
-            <a href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io/" style="border-radius:20px" class="share-button">Share</a>
-            <!-- Support Button as a link -->
-            <a href="https://www.paypal.com/paypalme/michelemerelli" style="border-radius:20px" class="support-button">Support</a>
-            <!-- English Language Button -->
-            <a class="language-button" id="language-button" style="border-radius:20px">English</a>
-        </div>
-    </footer>
-
+    <!-- JavaScript -->
     <script>
-    let currentLanguage = 'it';
-    let currentIndex = 0;
-    let publicationIndices = [];
+        document.addEventListener('DOMContentLoaded', () => {
+            let currentLanguage = 'it';
+            let currentIndex = 0;
+            let publications = [];
+            const buttonsContainer = document.getElementById('buttons-container');
+            const cardsWrapper = document.getElementById('cards-wrapper');
+            const progressBar = document.getElementById('progress-bar');
+            const languageSwitch = document.getElementById('language-switch');
+            const footerLanguageSwitch = document.getElementById('footer-language-switch');
+            const shareButton = document.getElementById('share-button');
 
-    const buttonsContainer = document.getElementById('buttons-container');
-    const cardsWrapper = document.getElementById('cards-wrapper');
-    const progressBar = document.querySelector('.progress-bar');
-    const languageButton = document.getElementById('language-button');
-    // Removed 'share-button' and 'support-button' references as they are now <a> elements without ids
+            // Event Listeners
+            languageSwitch.addEventListener('click', switchLanguage);
+            footerLanguageSwitch.addEventListener('click', switchLanguage);
+            shareButton.addEventListener('click', shareContent);
 
-    let cards = [];
+            // Initialize App
+            initializeApp();
 
-    // Function to transform Substack URL for English using Google Translate (if needed)
-    function getTranslatedSubstackLink(originalLink) {
-        if (currentLanguage === 'it') {
-            return originalLink;
-        } else if (currentLanguage === 'en') {
-            // Parse the original URL
-            try {
-                const url = new URL(originalLink);
-                const originalDomain = url.hostname; // e.g., fortissimo.substack.com
-                const translatedDomain = originalDomain.replace(/\./g, '-') + '.translate.goog';
-                const translatedURL = `https://${translatedDomain}${url.pathname}?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=it&_x_tr_hist=true`;
-                return translatedURL;
-            } catch (error) {
-                console.error('Invalid URL:', originalLink);
-                return originalLink; // Fallback to original link if invalid
+            function initializeApp() {
+                loadContent();
             }
-        }
-        return originalLink; // Default fallback
-    }
 
-    // Function to initialize the app
-    async function initializeApp() {
-        buttonsContainer.innerHTML = '';
-        cardsWrapper.innerHTML = '';
-        cards = [];
-        currentIndex = 0;
-
-        // Fetch content based on current language
-        let contentURL = '';
-        if (currentLanguage === 'it') {
-            contentURL = 'content_it.json';
-            languageButton.textContent = 'English';
-        } else if (currentLanguage === 'en') {
-            contentURL = 'content_en.json';
-            languageButton.textContent = 'Italian';
-        }
-
-        try {
-            const response = await fetch(contentURL);
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
+            function loadContent() {
+                const contentURL = currentLanguage === 'it' ? 'content_it.json' : 'content_en.json';
+                fetch(contentURL)
+                    .then(response => response.json())
+                    .then(data => {
+                        publications = data.publications;
+                        renderNavigation();
+                        renderCards();
+                        updateProgressBar();
+                    })
+                    .catch(error => {
+                        console.error('Error loading content:', error);
+                    });
             }
-            const content = await response.json();
-            let { publications } = content;
 
-            // Sort publications based on ff.xxxx numerically
-            publications.sort((a, b) => {
-                const numA = parseInt(a.buttonLabel.match(/ff\.(\d+)/)[1], 10);
-                const numB = parseInt(b.buttonLabel.match(/ff\.(\d+)/)[1], 10);
-                return numA - numB;
+            function renderNavigation() {
+                buttonsContainer.innerHTML = '';
+                publications.forEach((pub, index) => {
+                    const button = document.createElement('button');
+                    button.className = 'nav-button';
+                    button.textContent = pub.buttonLabel;
+                    button.addEventListener('click', () => {
+                        scrollToCard(index);
+                    });
+                    buttonsContainer.appendChild(button);
+                });
+            }
+
+            function renderCards() {
+                cardsWrapper.innerHTML = '';
+                publications.forEach(pub => {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+
+                    const cardContent = document.createElement('div');
+                    cardContent.className = 'card-content';
+
+                    // Substack Button
+                    const substackButton = document.createElement('a');
+                    substackButton.href = pub.substackLink;
+                    substackButton.target = '_blank';
+                    substackButton.className = 'footer-button';
+                    substackButton.textContent = pub.title;
+                    substackButton.style.marginBottom = '15px';
+                    cardContent.appendChild(substackButton);
+
+                    // Card Title
+                    const title = document.createElement('h2');
+                    title.className = 'section-title';
+                    title.textContent = pub.title;
+                    cardContent.appendChild(title);
+
+                    // Content Blocks
+                    pub.cards.forEach(contentBlock => {
+                        const block = document.createElement('div');
+                        block.className = 'content-block';
+                        block.innerHTML = contentBlock.contentBlocks.map(item => `<p>${item.content}</p>`).join('');
+                        cardContent.appendChild(block);
+                    });
+
+                    card.appendChild(cardContent);
+                    cardsWrapper.appendChild(card);
+                });
+            }
+
+            function scrollToCard(index) {
+                currentIndex = index;
+                const offset = index * -100;
+                cardsWrapper.style.transform = `translateX(${offset}%)`;
+                updateProgressBar();
+            }
+
+            function updateProgressBar() {
+                const progress = ((currentIndex + 1) / publications.length) * 100;
+                progressBar.style.width = `${progress}%`;
+                progressBar.setAttribute('aria-valuenow', progress);
+            }
+
+            function switchLanguage() {
+                currentLanguage = currentLanguage === 'it' ? 'en' : 'it';
+                languageSwitch.textContent = currentLanguage === 'it' ? 'English' : 'Italiano';
+                footerLanguageSwitch.textContent = currentLanguage === 'it' ? 'English' : 'Italiano';
+                initializeApp();
+            }
+
+            function shareContent() {
+                if (navigator.share) {
+                    navigator.share({
+                        title: 'futuro fortissimo',
+                        url: 'https://futurofortissimo.github.io/'
+                    }).catch(error => console.error('Error sharing:', error));
+                } else {
+                    // Fallback for browsers that do not support navigator.share
+                    alert('La condivisione non è supportata dal tuo browser.');
+                }
+            }
+
+            // Swipe functionality
+            let startX = 0;
+            let isDown = false;
+
+            cardsWrapper.addEventListener('mousedown', (e) => {
+                isDown = true;
+                startX = e.pageX;
+                cardsWrapper.style.transition = 'none';
             });
 
-            // Prepare buttons and cards
-            let cardIndex = 0;
-            publicationIndices = [];
-
-            publications.forEach((publication) => {
-                createButton(publication.buttonLabel, cardIndex);
-                publicationIndices.push(cardIndex);
-                // Sort cards within publication based on ff.xxxx
-                publication.cards.sort((a, b) => {
-                    const numA = parseInt(a.title.match(/ff\.(\d+)/)[1], 10);
-                    const numB = parseInt(b.title.match(/ff\.(\d+)/)[1], 10);
-                    return numA - numB;
-                });
-                publication.cards.forEach(cardData => {
-                    createCard(publication, cardData); // Pass publication to createCard
-                    cardIndex++;
-                });
+            cardsWrapper.addEventListener('mouseup', () => {
+                isDown = false;
+                cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
             });
 
-            // Add a sentinel value for the end
-            publicationIndices.push(cardIndex);
+            cardsWrapper.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                const deltaX = e.pageX - startX;
+                const offset = deltaX / window.innerWidth * 100;
+                const newOffset = currentIndex * -100 + offset;
+                cardsWrapper.style.transform = `translateX(${newOffset}%)`;
+            });
 
-            showCard(0);
-        } catch (error) {
-            console.error('Error fetching content:', error);
-            buttonsContainer.innerHTML = '<p>Errore nel caricamento del contenuto.</p>';
-        }
-    }
-
-    // Function to create a button in the header
-    function createButton(label, index) {
-        const button = document.createElement('div');
-        button.className = 'button';
-        button.textContent = label;
-        button.addEventListener('click', () => {
-            showCard(index);
+            cardsWrapper.addEventListener('mouseleave', () => {
+                if (isDown) {
+                    isDown = false;
+                    cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
+                }
+            });
         });
-        buttonsContainer.appendChild(button);
-    }
-
-    // Function to create a card
-    function createCard(publication, cardData) {
-        const card = document.createElement('div');
-        card.className = 'card';
-
-        const cardContent = document.createElement('div');
-        cardContent.className = 'card-content';
-
-        // Create the Substack button using the existing 'substackButton' class
-        const substackButton = document.createElement('div');
-        substackButton.className = 'substackButton';
-        substackButton.textContent = publication.title; // Use publication title
-        substackButton.style.cursor = 'pointer';
-        substackButton.style.marginBottom = '10px'; // Add some spacing
-        substackButton.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent the card click event
-            const translatedLink = getTranslatedSubstackLink(publication.substackLink);
-            window.open(translatedLink, '_blank');
-        });
-
-        cardContent.appendChild(substackButton);
-
-        // Create the title
-        const title = document.createElement('h2');
-        title.className = 'section-title';
-        title.textContent = cardData.title;
-        cardContent.appendChild(title);
-
-        // Add content blocks
-        cardData.contentBlocks.forEach(block => {
-            const contentBlock = createContentBlock(block.type, block.content);
-            cardContent.appendChild(contentBlock);
-        });
-
-        card.appendChild(cardContent);
-        cardsWrapper.appendChild(card);
-        cards.push(card);
-
-        // Add click event to the card-content only
-        cardContent.addEventListener('click', () => {
-            const translatedLink = getTranslatedSubstackLink(publication.substackLink);
-            window.open(translatedLink, '_blank');
-        });
-    }
-
-    // Function to create a content block
-    function createContentBlock(type, contents) {
-        const div = document.createElement('div');
-        div.className = `content-block ${type}`;
-
-        contents.forEach(item => {
-            // Split the item into title and content at the first newline
-            const [title, ...rest] = item.split('\n');
-            const contentText = rest.join('\n').trim();
-
-            const p = document.createElement('p');
-
-            // Create a bold element for the title
-            const boldTitle = document.createElement('strong');
-            boldTitle.textContent = title.trim();
-
-            // Append the bold title to the paragraph
-            p.appendChild(boldTitle);
-
-            if (contentText) {
-                // Add a line break
-                p.appendChild(document.createElement('br'));
-
-                // Create a span element to wrap the contentText
-                const contentSpan = document.createElement('span');
-                contentSpan.textContent = contentText;
-
-                // Apply the desired style with !important
-                contentSpan.style.setProperty('font-weight', 'normal', 'important');
-
-                // Append the styled span to the paragraph
-                p.appendChild(contentSpan);
-            }
-
-
-            div.appendChild(p);
-        });
-
-        return div;
-    }
-
-    // Function to display a specific card
-    function showCard(index) {
-        currentIndex = index;
-        cardsWrapper.style.transform = `translateX(-${index * 100}%)`;
-        const progress = ((index + 1) / cards.length) * 100;
-        progressBar.style.width = `${progress}%`;
-        scrollButtonIntoView(index);
-    }
-
-    // Function to scroll buttons into view
-    function scrollButtonIntoView(index) {
-        const button = buttonsContainer.children[index];
-        if (button) {
-            button.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-        }
-    }
-
-    // Swipe functionality
-    let startX = 0;
-    let startY = 0;
-    let isDown = false;
-    let isScrolling = false;
-
-    const cardsContainer = document.querySelector('.cards-container');
-
-    // Touch events for mobile
-    cardsContainer.addEventListener('touchstart', touchStart, false);
-    cardsContainer.addEventListener('touchmove', touchMove, false);
-    cardsContainer.addEventListener('touchend', touchEnd, false);
-
-    function touchStart(evt) {
-        startX = evt.touches[0].clientX;
-        startY = evt.touches[0].clientY;
-        isDown = true;
-        isScrolling = false;
-        cardsWrapper.style.transition = 'none';
-    }
-
-    function touchMove(evt) {
-        if (!isDown) return;
-        const x = evt.touches[0].clientX;
-        const y = evt.touches[0].clientY;
-        const deltaX = x - startX;
-        const deltaY = y - startY;
-
-        // Determine if the user is scrolling vertically
-        if (!isScrolling) {
-            isScrolling = Math.abs(deltaY) > Math.abs(deltaX);
-        }
-
-        // Only allow horizontal swiping if not scrolling vertically
-        if (!isScrolling) {
-            evt.preventDefault(); // Prevent default scrolling
-            const percentage = (deltaX / window.innerWidth) * 100;
-            const offset = -currentIndex * 100 + percentage;
-            cardsWrapper.style.transform = `translateX(${offset}%)`;
-        }
-    }
-
-    function touchEnd(evt) {
-        if (!isDown) return;
-        isDown = false;
-        if (!isScrolling) {
-            const endX = evt.changedTouches[0].clientX;
-            const deltaX = endX - startX;
-            if (deltaX < -50 && currentIndex < cards.length - 1) {
-                currentIndex++;
-            } else if (deltaX > 50 && currentIndex > 0) {
-                currentIndex--;
-            }
-            cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
-            showCard(currentIndex);
-        }
-    }
-
-    // Mouse events for desktop
-    cardsContainer.addEventListener('mousedown', mouseDown, false);
-    cardsContainer.addEventListener('mousemove', mouseMove, false);
-    cardsContainer.addEventListener('mouseup', mouseUp, false);
-    cardsContainer.addEventListener('mouseleave', mouseUp, false);
-
-    function mouseDown(evt) {
-        startX = evt.clientX;
-        isDown = true;
-        cardsWrapper.style.transition = 'none';
-    }
-
-    function mouseMove(evt) {
-        if (!isDown) return;
-        const x = evt.clientX;
-        const deltaX = x - startX;
-        const percentage = (deltaX / window.innerWidth) * 100;
-        const offset = -currentIndex * 100 + percentage;
-        cardsWrapper.style.transform = `translateX(${offset}%)`;
-    }
-
-    function mouseUp(evt) {
-        if (!isDown) return;
-        isDown = false;
-        const endX = evt.clientX;
-        const deltaX = endX - startX;
-        if (deltaX < -50 && currentIndex < cards.length - 1) {
-            currentIndex++;
-        } else if (deltaX > 50 && currentIndex > 0) {
-            currentIndex--;
-        }
-        cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
-        showCard(currentIndex);
-    }
-
-    // Language switch functionality
-    languageButton.addEventListener('click', () => {
-        currentLanguage = currentLanguage === 'it' ? 'en' : 'it';
-        initializeApp();
-    });
-
-    // Removed event listeners for 'share-button' and 'support-button' as they are now <a> elements without ids
-
-    // Initialize the app after the DOM is fully loaded
-    document.addEventListener('DOMContentLoaded', () => {
-        initializeApp();
-    });
     </script>
 </body>
 </html>
