@@ -233,7 +233,9 @@ function render(){
   // —— HOME (no filter, no search) ——
   if(!hasFilter && !hasQuery){
     stack=[
-      ...PUBS.flatMap(p=>p.cards.map(c=>pubCard(p,c,false))),
+      ...PUBS.flatMap(p=>p.cards
+        .filter(c=>!c.title.startsWith('📖'))
+        .map(c=>pubCard(p,c,false))),
       ...BOOKSARR.map(b=>bookCard(b,false)),
       ...NOTESARR.map(n=>noteCard(n,false))
     ];
