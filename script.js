@@ -38,8 +38,14 @@ $(document).ready(function() {
   document.addEventListener('DOMContentLoaded', function() {
     adjustImageBoxWidth(); // Call to adjust the image box width on page load
 
-    // Fetch data from 'pubs_en.json' and initialize the page
-    fetch('index_files/pubs.json?' + new Date().getTime())
+    const lang = (document.documentElement.lang || 'en').toLowerCase();
+    const pubsPath = lang.startsWith('it') ? 'index_files/pubs.json' : 'pubs_en.json';
+    const csvPath  = lang.startsWith('it')
+      ? '/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo.csv'
+      : '/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo_en.csv';
+
+    // Fetch random entries
+    fetch(pubsPath + '?' + new Date().getTime())
       .then(response => response.json())
       .then(data => {
         const randomEntries = [];
@@ -51,7 +57,8 @@ $(document).ready(function() {
       })
       .catch(error => console.error('Error loading the JSON file:', error));
 
-    fetch('pubs_en.json?' + new Date().getTime())
+    // Fetch data again to hook up buttons
+    fetch(pubsPath + '?' + new Date().getTime())
       .then(response => response.json())
       .then(data => {
         const buttons = document.querySelectorAll('.slider-btn');
@@ -68,7 +75,6 @@ $(document).ready(function() {
         });
       })
       .catch(error => console.error('Error loading the JSON file:', error));
-  });
   document.addEventListener('DOMContentLoaded', function() {
     let timeout; // Memorizza il timeout per controllare l'inattività dopo lo scroll
     const iconsContainer = document.querySelector('.icons-container');
@@ -91,7 +97,7 @@ $(document).ready(function() {
               const paroleEscluse = ['perchè', 'perché', 'quando', 'e', 'ma', 'se', 'come', 'con', 'su', 'per', 'tra', 'fra', 'nel', 'nello', 'nella', 'nei', 'nelle', 'al', 'allo', 'alla', 'ai', 'agli', 'alle', 'dal', 'dallo', 'dalla', 'dai', 'dagli', 'dalle', 'del', 'dello', 'della', 'dei', 'degli', 'delle', 'sul', 'sullo', 'sulla', 'sui', 'sugli', 'sulle', 'un', 'uno', 'una', 'gli', 'le', 'di', 'da', 'in', 'a', 'da', 'che', 'chi', 'cosa', 'quale', 'quanto', 'quanta', 'quanti', 'quante', 'dove', 'come', 'quando', 'perché', 'anche', 'solo', 'qui', 'lì', 'là', 'dunque', 'quindi', 'perciò', 'anche', 'ancora', 'già', 'mai', 'sempre', 'poi', 'prima', 'dopo', 'sopra', 'sotto', 'contro', 'molto', 'poco', 'troppo', 'più', 'meno', 'bene', 'male', 'meglio', 'peggio', 'quasi', 'circa', 'appena', 'solo', 'tanto', 'così', 'pure', 'anche', 'neanche', 'nemmeno', 'quasi', 'sia', 'anche'];
 
               // Carica i dati dal CSV
-              fetch('/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo.csv')
+              fetch(csvPath)
                 .then(response => response.text())
                 .then(csvText => {
                   allData = csvText.split('\n').map(row => row.split(','));
