@@ -35,6 +35,10 @@ const isCrossReference = (text: string) => {
   return text.toLowerCase().includes('ff.');
 };
 
+const capitalizeFirstLetter = (string: string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
 const SubChapterItem: React.FC<Props> = ({ subchapter }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const { debouncedSearchQuery, activeId, incrementInteraction } = useNavigation();
@@ -56,38 +60,38 @@ const SubChapterItem: React.FC<Props> = ({ subchapter }) => {
 
   // Auto-expand based on DEBOUNCED search query
   useEffect(() => {
-    if (debouncedSearchQuery && (
-      subchapter.cleanTitle.toLowerCase().includes(debouncedSearchQuery.toLowerCase()) || 
-      subchapter.content.toLowerCase().includes(debouncedSearchQuery.toLowerCase())
-    )) {
-      setIsExpanded(true);
-    } else if (!debouncedSearchQuery) {
+    if (debouncedSearchQuery) {
+      const isMatch = 
+        subchapter.cleanTitle.toLowerCase().includes(debouncedSearchQuery.toLowerCase()) || 
+        subchapter.content.toLowerCase().includes(debouncedSearchQuery.toLowerCase());
+      
+      setIsExpanded(isMatch);
+    } else {
       setIsExpanded(false);
     }
   }, [debouncedSearchQuery, subchapter]);
 
   const allLinks = [...subchapter.references, ...subchapter.connections];
-  const crossReferences = allLinks.filter(ref => isValidLink(ref.text, ref.url) && isCrossReference(ref.text));
-  const externalLinks = allLinks.filter(ref => isValidLink(ref.text, ref.url) && !isCrossReference(ref.text));
-  const hasLinks = crossReferences.length > 0 || externalLinks.length > 0;
+  const validLinks = allLinks.filter(ref => isValidLink(ref.text, ref.url));
 
   return (
-    <div id={id} className="relative pl-0 group mb-8 scroll-mt-32 transition-all duration-300">
+    <div id={id} className="relative pl-0 group mb-6 scroll-mt-32 transition-all duration-300">
       
-      {/* Header Line */}
+      {/* Header Line - Aligned flush left with Chapter */}
       <div 
-        className="flex items-start sm:items-baseline gap-3 cursor-pointer hover:bg-gray-50 rounded-xl -ml-2 p-2 transition-colors select-none active:scale-[0.99] transform duration-100" 
+        className="flex items-baseline gap-2 cursor-pointer hover:bg-gray-50 rounded-lg p-1 -ml-1 transition-colors select-none active:scale-[0.99] transform duration-100" 
         onClick={toggleExpand}
       >
-        <span className="text-xl sm:text-2xl opacity-100 shrink-0 self-start leading-tight pt-1 sm:pt-0">{subchapter.originalEmoji}</span>
+        {/* Emoji Size Matched to Chapter */}
+        <span className="text-xl opacity-100 shrink-0 self-center leading-none">{subchapter.originalEmoji}</span>
         
-        <div className="flex-1 inline leading-snug">
-          {/* Title Link */}
+        <div className="flex-1 inline leading-tight items-baseline">
+          {/* Title Link - Size Matched to Chapter */}
           <a 
             href={subchapter.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-heading text-lg sm:text-xl font-bold text-gray-900 hover:text-blue-600 hover:underline decoration-2 underline-offset-4 transition-colors mr-2 break-words"
+            className="font-heading text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors mr-2 break-words hover:underline decoration-2 underline-offset-2"
             onClick={(e) => { e.stopPropagation(); incrementInteraction(); }}
           >
             <HighlightText text={subchapter.cleanTitle} highlight={debouncedSearchQuery} />
@@ -95,7 +99,7 @@ const SubChapterItem: React.FC<Props> = ({ subchapter }) => {
           
           {/* Topic Filter Chip */}
           <span 
-            className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-100 text-sm hover:bg-gray-200 hover:scale-110 transition-all cursor-default align-middle relative -top-0.5"
+            className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-gray-100 text-xs hover:bg-gray-200 hover:scale-110 transition-all cursor-default align-middle relative -top-0.5"
             title={`Topic: ${subchapter.secondaryEmoji}`}
             onClick={(e) => { e.stopPropagation(); incrementInteraction(); }}
           >
@@ -105,12 +109,12 @@ const SubChapterItem: React.FC<Props> = ({ subchapter }) => {
 
         {/* Toggle Chevron */}
         <button 
-          className="text-gray-400 hover:text-black transition-colors shrink-0 p-2 self-start active:bg-gray-100 rounded-full"
+          className="text-gray-400 hover:text-black transition-colors shrink-0 p-1 self-center active:bg-gray-100 rounded-full"
           aria-label="Toggle content"
         >
           <svg 
-            width="20" 
-            height="20" 
+            width="16" 
+            height="16" 
             viewBox="0 0 24 24" 
             fill="none" 
             stroke="currentColor" 
@@ -124,14 +128,48 @@ const SubChapterItem: React.FC<Props> = ({ subchapter }) => {
         </button>
       </div>
 
-      {/* Collapsible Content Body */}
-      <div className={`grid transition-all duration-500 ease-in-out ${isExpanded ? 'grid-rows-[1fr] opacity-100 mt-2 mb-6' : 'grid-rows-[0fr] opacity-0 mt-0 mb-0'}`}>
-        <div className="overflow-hidden pl-1 md:pl-10">
+      {/* Links - Always Visible & Indented */}
+      {validLinks.length > 0 && (
+        <div className="pl-0 md:pl-[2.5rem] mt-1.5 mb-2.5">
+            <div className="flex flex-wrap gap-2">
+              {validLinks.map((ref, idx) => {
+                const isCross = isCrossReference(ref.text);
+                const displayText = isCross ? ref.text : capitalizeFirstLetter(ref.text);
+                
+                return (
+                <a 
+                key={idx}
+                href={ref.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => { e.stopPropagation(); incrementInteraction(); }}
+                className={`inline-flex items-center gap-1.5 px-3 py-0.5 border rounded-full transition-all duration-200 ${
+                  isCross 
+                    ? 'bg-blue-50 hover:bg-blue-100 border-blue-100 text-blue-700' 
+                    : 'bg-gray-50 hover:bg-gray-100 border-gray-200 text-gray-700'
+                }`}
+              >
+                <span className="text-sm font-bold font-heading break-all hover:underline decoration-2 underline-offset-2">
+                    {displayText}
+                </span>
+                {!isCross && (
+                    <span className="text-gray-400 text-xs transition-colors">↗</span>
+                )}
+              </a>
+                )
+              })}
+            </div>
+        </div>
+      )}
+
+      {/* Collapsible Content Body - Indented */}
+      <div className={`grid transition-all duration-500 ease-in-out ${isExpanded ? 'grid-rows-[1fr] opacity-100 mt-2 mb-4' : 'grid-rows-[0fr] opacity-0 mt-0 mb-0'}`}>
+        <div className="overflow-hidden pl-0 md:pl-[2.5rem]">
           
-          <div className="prose prose-lg prose-stone max-w-none mb-6 text-gray-800 leading-relaxed font-normal break-words">
+          <div className="prose prose-sm max-w-none text-gray-800 leading-normal font-normal break-words">
             {subchapter.content.split('\n').map((paragraph, idx) => (
                paragraph.trim() && (
-                 <p key={idx} className="mb-4 last:mb-0">
+                 <p key={idx} className="mb-2 last:mb-0">
                    <HighlightText text={paragraph} highlight={debouncedSearchQuery} />
                  </p>
                )
@@ -140,17 +178,17 @@ const SubChapterItem: React.FC<Props> = ({ subchapter }) => {
           
           {/* Images */}
           {subchapter.images.length > 0 && (
-            <div className={`grid gap-4 mb-6 ${subchapter.images.length > 1 ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1'}`}>
+            <div className={`grid gap-2 mt-4 ${subchapter.images.length > 1 ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1'}`}>
               {subchapter.images.map((img, idx) => (
-                <figure key={idx} className="space-y-2">
+                <figure key={idx} className="space-y-1">
                   <img 
                     src={img.src} 
                     alt={img.caption || "Subchapter image"} 
-                    className="w-full h-auto rounded-xl border border-gray-100 shadow-sm bg-gray-50"
+                    className="w-full h-auto rounded-lg border border-gray-100 shadow-sm bg-gray-50"
                     loading="lazy"
                   />
                   {img.caption && (
-                    <figcaption className="text-xs font-heading uppercase tracking-widest text-gray-500 font-bold pl-1">
+                    <figcaption className="text-[9px] font-heading uppercase tracking-widest text-gray-500 font-bold pl-1">
                       {img.caption}
                     </figcaption>
                   )}
@@ -160,50 +198,6 @@ const SubChapterItem: React.FC<Props> = ({ subchapter }) => {
           )}
         </div>
       </div>
-
-      {/* Footer Links - Always Visible */}
-      {hasLinks && (
-        <div className="pl-1 md:pl-10 mt-2 flex flex-col gap-3">
-          
-          {/* Cross References (Connections) */}
-          {crossReferences.length > 0 && (
-            <div className="flex flex-wrap gap-2">
-              {crossReferences.map((ref, idx) => (
-                 <a 
-                 key={idx}
-                 href={ref.url}
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 onClick={incrementInteraction}
-                 className="group inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-blue-50 border border-blue-100 hover:bg-blue-100 hover:border-blue-200 transition-all duration-200 active:scale-95"
-               >
-                 <span className="text-base">🔗</span>
-                 <span className="text-sm font-bold text-blue-800 font-heading break-all">{ref.text}</span>
-               </a>
-              ))}
-            </div>
-          )}
-
-          {/* External References */}
-          {externalLinks.length > 0 && (
-            <div className="flex flex-wrap gap-2">
-              {externalLinks.map((ref, idx) => (
-                <a 
-                  key={idx}
-                  href={ref.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={incrementInteraction}
-                  className="group inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-gray-50 border border-gray-200 hover:bg-white hover:border-gray-400 hover:shadow-sm transition-all duration-200 active:scale-95"
-                >
-                  <span className="text-sm font-medium text-gray-700 group-hover:text-black border-b border-gray-300 group-hover:border-black transition-colors break-all">{ref.text}</span>
-                  <span className="text-gray-400 group-hover:text-black text-sm">↗</span>
-                </a>
-              ))}
-            </div>
-          )}
-        </div>
-      )}
     </div>
   );
 };
