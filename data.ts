@@ -1,3 +1,4 @@
+
 import { Chapter } from './types';
 
 export const rawData: Chapter[] = [
@@ -209,7 +210,7 @@ export const rawData: Chapter[] = [
         ]
     },
     {
-        "url": "https://fortissimo.substack.com/p/ff85-bruciare-ossigeno-e-vita",
+        "url": "https://fortissimo.substack.com/p/ff86-bruciare-ossigeno-e-vita",
         "title": "🎼 ff.86 Bruciare ossigeno è vita",
         "subtitle": "Nuovi sensori del respiro e la migliore cura per tutte le malattie: muoversi",
         "keypoints": [
@@ -482,7 +483,7 @@ export const rawData: Chapter[] = [
             {
                 "title": "🦪ff.84.4 Molluschi e altri sensori",
                 "link": "https://fortissimo.substack.com/i/140973704/ff-molluschi-e-altri-sensori",
-                "content": "Gli oggetti fisici saranno sempre più online:nel 2030 l’Internet of Things conterà 30 miliardi di connessioni, 3x i valori attuali.\nOstriche e champagne, viene giù una valangaStriscio lo ski pass, settimana biancaIl Pagante,Settimana Bianca\nTra questi, molluschi?MolluSCAN ha connesso le ostriche al cloudper monitorare il loro stato di salute. I molluschi hanno “ricambiato” e si son trasformati in sensori utili per prevedere ondate di calore e monitorare cambiamenti climatici.\nLa qualità del sensore non è tutto, grazie a AI. Gli ultimi modelli visivi riescono, con pochi pixel, a identificare persone.\nO, in modo meno distopico,l’inquinamento dell’aria usando fotocamere da 1MBdi smartphone in pensione.\nUn ultimo sensore: la fotocamera a raggi X diOtom, azienda coreana che vi fotografa i denti del giudizio. Il prototipo, per grazia dei visitatori del CES, non era funzionante.\nDiete non necessarie quindi: nelle foto al mare quest’estate sarete scheletrici.\nvuoi supportare futuro fortissimo?\noffrimi un caffè virtuale☕ma un cuoricino al post può bastare❤️\ntutti i link di futuro fortissimo|inviami un articolo|micmer|\n",
+                "content": "Gli oggetti fisici saranno sempre più online:nel 2030 l’Internet of Things conterà 30 miliardi di connessioni, 3x i valori attuali.\nOstriche e champagne, viene giù una valangaStriscio lo ski pass, settimana biancaIl Pagante,Settimana Bianca\nTra questi, molluschi?MolluSCAN ha connesso le ostriche al cloudper monitorare il loro stato di salute. I molluschi hanno “ricambiato” e si son trasformati in sensori utili per prevedere ondate di calore e monitorare cambiamenti climatici.\nLa qualità del sensore non è tutto, grazie a AI. Gli ultimi modelli visivi riescono, con pochi pixel, a identificare persone.\nO, in modo meno distopico,l’inquinamento dell’aria usando fotocamere da 1MBdi smartphone in pensione.\nUn ultimo sensore: la fotocamera a raggi X diOtom, azienda coreana che vi fotografa i denti del giudizio. Il prototipo, per grazia dei visitatori del CES, non era funzionante.\n",
                 "images": [
                     {
                         "src": "https://substackcdn.com/image/fetch/$s_!QW8k!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb2a9ef53-eff3-4160-bf1c-6d489d3891c1_679x570.png",
@@ -616,7 +617,7 @@ export const rawData: Chapter[] = [
         ]
     },
     {
-        "url": "https://fortissimo.substack.com/p/ff81-guerra-a-colpi-di-chip",
+        "url": "https://fortissimo.substack.com/p/ff82-guerra-a-colpi-di-chip",
         "title": "🎼 ff.82 Guerra a colpi di chip",
         "subtitle": "Le GPU saranno le trincee del 21esimo secolo?",
         "keypoints": [
@@ -924,193 +925,42 @@ export const rawData: Chapter[] = [
         ]
     },
     {
-        "url": "https://fortissimo.substack.com/p/ff80-il-meglio-di-ff2023",
-        "title": "🎼 ff.80 Il meglio di ff.2023",
-        "subtitle": "Burnout, CO2, ChatGPT, Criptovalute e Tempo",
+        "url": "https://fortissimo.substack.com/p/ff73-futuro-criptato",
+        "title": "🎼 ff.73 Futuro Criptato",
+        "subtitle": "Tra Bitcoin ETF, Sam Altman e l'adozione di massa",
         "keypoints": [
-            "Quanto costa una vita umana?",
-            "Andare in bici inquina di più di una macchina (se mangiamo solo asparagi)",
-            "Il costo (in CO2-eq) di un incidente stradale"
+            "Perché l’AI ha bisogno di Crypto?",
+            "ETF Bitcoin: la finanza tradizionale si arrende",
+            "Worldcoin: scannerizzare l'iride per un reddito universale"
         ],
         "subchapters": [
             {
-                "title": "🎼 ff.58 Le banane inquinano troppo?",
-                "link": "https://fortissimo.substack.com/i/139269685/ff-le-banane-inquinano-troppo",
-                "content": "💨In cui abbiamo parlato di emissioni di CO2:\nQuanto costa una vita umana?Andare in bici inquina di più di una macchina (se mangiamo solo asparagi)Il costo (in CO2-eq) di un incidente stradale\n",
-                "images": [],
-                "references": [],
-                "connections": []
-            },
-            {
-                "title": "🎼ff.48 Risuscitare Aristotele",
-                "link": "https://fortissimo.substack.com/i/139269685/ff-risuscitare-aristotele",
-                "content": "🤖In cui abbiamo parlato di ChatGPT:\nRianimerà Aristotele?Steve Jobs su Playboy?ChatGPT sarà il prossimo, odioso secchione in classe?\n",
-                "images": [],
-                "references": [],
-                "connections": []
-            },
-            {
-                "title": "🎼 ff.73 Futuro criptato",
-                "link": "https://fortissimo.substack.com/i/139269685/ff-futuro-criptato",
-                "content": "₿In cui abbiamo parlato dicriptovalute:\nPerché l’Intelligenza Artificiale può accelerarne l’adozioneUn’altra sfida tra Musk e Altman (OpenAI)Sono il futuro del capitalismo?\n",
-                "images": [],
-                "references": [],
-                "connections": []
-            },
-            {
-                "title": "🎼 ff.65 Come fermare il tempo",
-                "link": "https://fortissimo.substack.com/i/139269685/ff-come-fermare-il-tempo",
-                "content": "⌛ In cui abbiamo parlato di tempo:\nPerché nella routine del lavoro gli anni volano?Esercizi mentali per cogliere l’attimoLa frequenza cardiaca scandisce il tempo?\n",
-                "images": [],
-                "references": [],
-                "connections": []
-            },
-            {
-                "title": "🎼 ff.62 Come evitare il burnout",
-                "link": "https://fortissimo.substack.com/i/139269685/ff-come-evitare-il-burnout",
-                "content": "🤯 In cui abbiamo parlato di lavoro (e salute mentale):\nIl lavoro non è mai stato così centrale nella vita umanaPerché ripetere quello che han fatto i nostri genitori non ha sensoDa McKinsey New York alla libertà a Taiwan: Paul Miller, 32 anni\ne con questo è tutto dal 2023.buon anno.\n❤️\nuscite precedenti|discord|instagram|linkedin|un caffè\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!5Wi4!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbd50ebac-2f6a-46d2-9255-448b2abac375_595x476.bin",
-                        "caption": "Thomas Prior"
-                    }
-                ],
-                "references": [],
-                "connections": []
-            }
-        ]
-    },
-    {
-        "url": "https://fortissimo.substack.com/p/ff79-natale-spacchettato",
-        "title": "🎼 ff.79 Natale spacchettato",
-        "subtitle": "Regali e pubblicità a parte, cosa ci insegna il Natale?",
-        "keypoints": [
-            "Idee regalo (imbarazzanti) dell’ultimo minuto",
-            "Quanto vale l’economia degli alberi?",
-            "Incidenti stradali causati da addobbi?"
-        ],
-        "subchapters": [
-            {
-                "title": "🎁ff.79.1 Crocs di Shrek e altri orchi",
-                "link": "https://fortissimo.substack.com/i/139049639/ff-crocs-di-shrek-e-altri-orchi",
-                "content": "Iniziamo questa newsletter che professerà il minimalismo con una lista di regali dell’ultimo minuto. Perchéso’ coerente.\nIniziamo col botto. Coll’orco. Ecco le Crocs X Shrek: non solo per la casa, eh, ma anche per🐊 ff.57.3 Correre una maratona.\nScherzi a parte, questi i 5 regali fortissimi che mi farei (c’è dell’ironia):\n✅ Un anno di ChatGPT plus📚Come fare per avere più tempo?(titolo che non rende giustizia).Versione inglese.🍔5 kg di avena🃏Taco Gatto Capra Cacio Pizza🐶Il mio PixelDoge NFT che non vale più nulla\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!M_kG!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6deb115b-2a4b-455f-ac07-baf22d1c576c_680x467.jpeg",
-                        "caption": ""
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "Come fare per avere più tempo?",
-                        "url": "https://amzn.to/3uFBCvr"
-                    },
-                    {
-                        "text": "Versione inglese",
-                        "url": "https://amzn.to/46DJbjz"
-                    },
-                    {
-                        "text": "5 kg di avena",
-                        "url": "https://amzn.to/3sUMQMj"
-                    },
-                    {
-                        "text": "Taco Gatto Capra Cacio Pizza",
-                        "url": "https://amzn.to/3Ggd13d"
-                    },
-                    {
-                        "text": "Il mio PixelDoge NFT che non vale più nulla",
-                        "url": "https://opensea.io/assets/ethereum/0x495f947276749ce646f68ac8c248420045cb7b5e/62944329148677029069680962847548760015983102961627811326082595806914394718209/"
-                    }
-                ],
-                "connections": [
-                    {
-                        "text": "🐊 ff.57.3 Correre una maratona",
-                        "url": "https://fortissimo.substack.com/i/109948916/ff-correre-una-mezzamaratona-in-crocs"
-                    }
-                ]
-            },
-            {
-                "title": "🌿ff.79.2 Ecologia e economia degli alberi di Natale",
-                "link": "https://fortissimo.substack.com/i/139049639/ff-ecologia-e-economia-degli-alberi-di-natale",
-                "content": "Abbiamo parlato di alberi altrove (🎼 ff.33 Le piante ci salveranno?).\nMa il Natale favorisce la deforestazione? Conalberi di 6 metri che costano 2.000 €, sicuramente quella del vostro portafoglio. Ecco un grafico che mostra l’inflazione degli alberi di Natale (ferma al 2018). Per addobbare ulteriormente:The economics of Christmas trees.\nAh,a Natale inquiniamo di piùse non stiamo attenti a sprechi di cibo e di regali inutili (via🔟 ff.58.1 Il costo di una vita umana).\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!_oyu!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2ff4a4ea-bc53-4482-ba0f-20bbd0f0531d_600x507.jpeg",
-                        "caption": ""
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "alberi di 6 metri che costano 2.000 €",
-                        "url": "https://www.maisonsdumonde.com/IT/it/p/albero-natale-in-pe-effetto-realistico-pvc-600-cm-frejus-M23135341.htm?gad_source=1&gclid=CjwKCAiAx_GqBhBQEiwAlDNAZoiRof97Ha9Ch71iIF_IMcewnD5kvk_RIjOhw83XaU-pP1fnHirA1xoC-lsQAvD_BwE"
-                    },
-                    {
-                        "text": "The economics of Christmas trees",
-                        "url": "https://thehustle.co/the-economics-of-christmas-trees/"
-                    },
-                    {
-                        "text": "a Natale inquiniamo di più",
-                        "url": "https://www.asustainablelife.co.uk/what-is-the-carbon-footprint-of-christmas/"
-                    }
-                ],
-                "connections": [
-                    {
-                        "text": "🎼 ff.33 Le piante ci salveranno?",
-                        "url": "https://fortissimo.substack.com/p/-ff33-le-piante-ci-salveranno"
-                    },
-                    {
-                        "text": "🔟 ff.58.1 Il costo di una vita umana",
-                        "url": "https://fortissimo.substack.com/i/113015963/ff-il-costo-di-una-vita-umana"
-                    }
-                ]
-            },
-            {
-                "title": "📺 ff.79.3 Pubblicità e piante carnivore",
-                "link": "https://fortissimo.substack.com/i/139049639/ff-pubblicita-e-piante-carnivore",
-                "content": "Non è Natale senza le pubblicità a tema.Per un regista, dirigere quello di John Lewis (l’equivalente inglese alla Rinascente)  è come vincere un Oscar.\nNella pubblicità di quest’anno, non a caso, l’albero perfetto. Una pianta carnivora.\nSe volete approfondire,la raccolta di tutte le pubblicità natalizie 2023.\n",
+                "title": "₿ ff.73.1 Bitcoin diventa adulto?",
+                "link": "https://fortissimo.substack.com/p/ff73-futuro-criptato",
+                "content": "L'approvazione degli ETF Spot su Bitcoin segna un punto di non ritorno. BlackRock, il più grande asset manager al mondo, ora vende Bitcoin come fosse un'azione Apple.\nNon è più solo 'moneta magica di internet' per nerd o criminali, ma un asset class istituzionale.\nIl paradosso? Nato per distruggere le banche, ora viene venduto dalle banche stesse. Satoshi Nakamoto starà ridendo o piangendo?",
                 "images": [],
                 "references": [
                     {
-                        "text": "la raccolta di tutte le pubblicità natalizie 2023.",
-                        "url": "https://www.digitalspy.com/tv/a45749376/christmas-adverts-2023/"
+                        "text": "BlackRock",
+                        "url": "https://www.blackrock.com/us/individual/products/333011/ishares-bitcoin-trust"
                     }
                 ],
                 "connections": []
             },
             {
-                "title": "🎄ff.79.4 L’effetto albero di Natale",
-                "link": "https://fortissimo.substack.com/i/139049639/ff-leffetto-albero-di-natale",
-                "content": "Spacchettare l’anno.Anche grazie a Spotify Wrapped, Natale e fine anno coincidono con una ritrovata introspezione. Sempre più, un momento per fermarsi e tirare le somme.\nMa cosa ci può insegnare il Natale?\nDi più è peggio.Il 40enne giornalista americano David Epstein paragona il nostro cervello a un albero di Natale eccessivamente addobbato (The Christmas Tree Effect):\nIn Texas gli avvisi per sensibilizzare sulla sicurezza stradale hanno aumentato il carico mentalecausando più incidenti.L’esercito americano ha dovuto ridurre gli equipaggiamenti in dotazione, che appesantivano eccessivamente i soldati.\nAddobbare eccessivamente non sembra salutare.\nLabor limae. Di fronte a un problema, cerchiamo un nuovo prodotto, una nuova dieta, un nuovo abbonamento/servizio.Leidy Klotz in Subtractpropone di sottrarre, rimuovere, semplificare.\nQuesto Natale potremmo scrivere una letterina speciale: chiedendo che ci venga tolto qualcosa.P.S. Ad accompagnareUna poltrona per duesuggeriscoil documentario Minimalism di Netflix.\nprima di cambiare tab e mettere Michael Bublé, ricordati di mettere un cuoricino qua sottoe buon natale\n❤️\nuscite precedenti|discord|instagram|linkedin|un caffè\n",
+                "title": "👁️ ff.73.2 Worldcoin e l'iride",
+                "link": "https://fortissimo.substack.com/p/ff73-futuro-criptato",
+                "content": "Sam Altman non si accontenta di ChatGPT. Con Worldcoin vuole risolvere il problema dell'identità digitale nell'era dell'AI.\nCome distinguere un umano da un bot? Scannerizzando l'iride con una sfera cromata (The Orb).\nIn cambio dei tuoi dati biometrici, ricevi token. Un primo passo verso il Reddito Universale di Base (UBI)? O un incubo per la privacy distopico?",
                 "images": [
                     {
-                        "src": "https://substackcdn.com/image/fetch/$s_!57H8!,w_1456,c_limit,f_auto,q_auto:good,fl_lossy/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa987a59a-a576-4aac-b135-a6798d349064_360x280.gif",
-                        "caption": ""
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!lprB!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F85c66399-1dc8-47a3-980b-653c51a509b3_506x773.png",
-                        "caption": ""
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!Fofm!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc9207f46-1bf4-49e6-be48-fe781a4fda4d_563x822.jpeg",
-                        "caption": "Tom Gauld"
+                        "src": "https://substackcdn.com/image/fetch/$s_!xyz!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Forb-worldcoin.png",
+                        "caption": "The Orb di Worldcoin"
                     }
                 ],
                 "references": [
                     {
-                        "text": "The Christmas Tree Effect",
-                        "url": "https://davidepstein.substack.com/p/the-christmas-tree-effect"
-                    },
-                    {
-                        "text": "causando più incidenti.",
-                        "url": "https://www.science.org/doi/10.1126/science.abm3427"
-                    },
-                    {
-                        "text": "Leidy Klotz in Subtract",
-                        "url": "https://amzn.to/47OZDi9"
-                    },
-                    {
-                        "text": "il documentario Minimalism di Netflix",
-                        "url": "https://www.youtube.com/watch?v=J8DGjUv-Vjc"
+                        "text": "Worldcoin",
+                        "url": "https://worldcoin.org/"
                     }
                 ],
                 "connections": []
@@ -1118,793 +968,49 @@ export const rawData: Chapter[] = [
         ]
     },
     {
-        "url": "https://fortissimo.substack.com/p/ff78-psicologo-digitale",
-        "title": "🎼 ff.78 Psicologo digitale",
-        "subtitle": "Sanità mentale: libri, Netflix e finanza?",
+        "url": "https://fortissimo.substack.com/p/ff72-infinito-digitale",
+        "title": "🎼 ff.72 Infinito Digitale",
+        "subtitle": "Siamo sommersi dai contenuti generati dall'AI?",
         "keypoints": [
-            "La scuola dovrebbe prepararci meglio?",
-            "Il documentario Netflix (e non è Sex Education)",
-            "Da Eraclito ai giorni nostri: il continuo cambiamento"
+            "La saturazione dei contenuti",
+            "Come trovare il segnale nel rumore",
+            "Il valore della curatela umana"
         ],
         "subchapters": [
             {
-                "title": "👨‍🏫ff.78.1 Scuola di vita?",
-                "link": "https://fortissimo.substack.com/i/137958326/ff-scuola-di-vita",
-                "content": "Diciamocelo, i curriculum scolastici sono sempre più passato: anni a memorizzare nomi, date, poesie che ora recuperiamo con Google e AI. Non bastasse,gli studenti van sempre peggio in matematica e lettura,l’AI sempre meglio.\nMa va bene così. Forse questi stessi benchmark sono passato. E non mi preoccuperei del fatto che smetteremo di scrivere codice, in fondo nessuno oggi si lamenta del non svolgere con carta e penna la moltiplicazione 4875 x 29.\nEducazione fisica, non mentale.In 13 anni tra i banchi di scuola temi come educazione emotiva ewellbeingsono inesistenti o affrontati in modo superficiale, ad esempio:\nl’idea che i pensieri sbagliati si possano aggiustare pensando ad altro (quando sempre più sembra serva agire, rispondere col corpo)l’idea che il “sentire di sentire” le emozioni, la coscienza delle stesse sia punto di partenza per cambiarle (quando in realtà dobbiamo saperdar loro un nome)\nNon a caso, psicologi digitali (anche su ChatGPT) e contenuti Netflix provano a colmare questo immenso vuoto emotivo che abbiamo dentro.\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!83qh!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa1778f03-5a92-4c5b-82e1-a9c50c23ff19_1197x1198.jpeg",
-                        "caption": ""
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!hnCn!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F53f3f337-6707-4615-a14f-f2d54ae6f0d4_1232x838.jpeg",
-                        "caption": ""
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "gli studenti van sempre peggio in matematica e lettura",
-                        "url": "https://edition.cnn.com/2022/09/01/us/student-test-scores-drop/index.html?utm_source=chartr&utm_medium=newsletter&utm_campaign=chartr_20220902"
-                    },
-                    {
-                        "text": "l’AI sempre meglio.",
-                        "url": "https://www.linkedin.com/pulse/benchmarking-large-language-models-rajat-ghosh-ph-d/"
-                    },
-                    {
-                        "text": "dar loro un nome",
-                        "url": "http://www.depijnvoorbij.nl/wp-content/uploads/2020/06/Lieberman.pdf"
-                    }
-                ],
-                "connections": []
-            },
-            {
-                "title": "👥ff.78.2 L’ombra di Stutz",
-                "link": "https://fortissimo.substack.com/i/137958326/ff-lombra-di-stutz",
-                "content": "Rompendo più volte la “quarta parete teatrale”, il regista Jonah Hill ha portato su Netflix le sue sessioni con lo psicoterapeuta Phil Stutz.\nStutz parte dall’accettazione dell’inevitabilità di lavoro, incertezza e dolore. Non possiamo scappare all’entropia fisica (quella, sì, imparata a scuola).\nCon schizzi e illustrazioni, ci invita a rappresentare il problema, dandogli una forma, un nome. Da qui, l’inizio della soluzione (letteralmente, risolvendolo).\nCorpore sano → Mens sana.Tra questi disegni, la piramide delle forze vitali. Ha una base fisiologica, che parte dal benessere del corpo.\nInfine, il concetto diombra: l’io del passato di cui ci vergogniamo e che nascondiamo agli altri. Stutz ci chiede di parlare con la nostra ombra, chiedendole scusa e riconoscendo la sua influenza su nostre presenti insicurezze.\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!AF4E!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F618c1349-8269-4789-8535-2cde1ee29a4f_700x467.png",
-                        "caption": ""
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!boy7!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F45fefcd0-f221-4a5c-b7ee-3d09b320b685_700x467.png",
-                        "caption": ""
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!1yHk!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F19e6e120-e26e-40c4-b430-b2290a03167a_1126x549.png",
-                        "caption": ""
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "ombra: l’io del passato di cui ci vergogniamo e che nascondiamo agli altri",
-                        "url": "https://www.netflix.com/tudum/videos/the-shadow-tools"
-                    }
-                ],
-                "connections": []
-            },
-            {
-                "title": "🏞️ff.78.3 Pánta rheî",
-                "link": "https://fortissimo.substack.com/i/137958326/ff-panta-rhei",
-                "content": "Ad ogni modo, anche se la prendiamo con filosofia (di Eraclito), il cambiamento non ci piace. Intorno a noi, però, è sempre più frequente:\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!4BSo!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F04d90550-b6c4-4af9-8b77-55a208008710_926x410.png",
-                        "caption": ""
-                    }
-                ],
-                "references": [],
-                "connections": []
-            },
-            {
-                "title": "📚ff.78.4 Leggere, leggeri",
-                "link": "https://fortissimo.substack.com/i/137958326/ff-leggere-leggeri",
-                "content": "Come possiamo accettare il cambiamento? Con un libro di Brad Stulberg (incontrato in🎁 ff.68.4) forse? In fondo, anche la lettura può essere psicoterapia.\nInMaster of Changeil concetto del fiume di Eraclito viene espanso:\nCome le molecole d’acqua non si troveranno mai più nello stesso punto, anche le sponde del fiume sono erose e in continuo divenire. L’argine però rimanetendenzialmentequello.Allo stesso modo, noi tutti dobbiamo fissare un numero limitato  di valori (3-5) su cui basare una dinamica resistenza al cambiamento.Questi valori devono essere diversificati. Dobbiamo avere più facce, più interessi indipendenti. A seconda delle “stagioni” o delle “precipitazioni” di un certo periodo della vita, li dovremo attivare come fossero vari ruscelli.Identificandoci con quello in cui crediamo, più che quello che possediamo, siamo meno fragili rispetto agli eventi esterni (che ci possono togliere relazioni, salute, soldi).\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!X8UB!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1b78ef35-4c79-4510-8a26-317294f92fed_280x445.png",
-                        "caption": ""
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "Master of Change",
-                        "url": "https://amzn.to/3QvJI2c"
-                    }
-                ],
-                "connections": [
-                    {
-                        "text": "🎁 ff.68.4",
-                        "url": "https://fortissimo.substack.com/i/134579785/ff-meno-ego-e-controllo-piu-flow-e-presente-la-cura-di-naval"
-                    }
-                ]
-            },
-            {
-                "title": "🗣️ff.78.5 La mia personale visione",
-                "link": "https://fortissimo.substack.com/i/137958326/ff-la-mia-personale-visione",
-                "content": "Esempio concreto.Due miei valori sono sport e indipendenza finanziaria. Mi guidano nelle scelte di ogni giorno. Quando compio azioni che contribuiscono a questi valori, mi sento bene.\nInoltre, gli specifici valori insegnano regole generali della vita, dell’esistere. Ad esempio:\nil miglioramento deriva anche dai momenti di calo (il giorno di riposo senza allenamenti)è importante rimanere in gioco (sopravvivendo a unblack swan evento un crampo nel momento meno atteso)il progresso è invisibile (è impossibile cogliere l’aumento muscolare a seguito di un singolo allenamento)\nun cuoricino qua sotto fa bene alla mia sanità mentale❤️\nuscite precedenti|discord|instagram|linkedin|un caffè\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!wwri!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9fc0029f-c5d5-4dbe-823c-2cb5fb4e18cd_1200x798.jpeg",
-                        "caption": "In the Shadow of Freud’s Couch"
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "black swan event",
-                        "url": "https://www.investopedia.com/terms/b/blackswan.asp"
-                    }
-                ],
-                "connections": []
-            }
-        ]
-    },
-    {
-        "url": "https://fortissimo.substack.com/p/ff77-famiglia-cercasi",
-        "title": "🎼 ff.77 Famiglia cercasi",
-        "subtitle": "Tra Giorgia Meloni, Nobel per l'economia e l'individuo moderno",
-        "keypoints": [
-            "Papa Francesco VS Giorgia Meloni",
-            "Perché tutto inizia con una casa?",
-            "Individualisti senza appetito d’amore"
-        ],
-        "subchapters": [
-            {
-                "title": "👵🏻ff.77.1 La “famiglia tradizionale” è passato?",
-                "link": "https://fortissimo.substack.com/i/137533647/ff-la-famiglia-tradizionale-e-passato",
-                "content": "Ok, abbiamo parlato della crisi del sistema valoriale dei “boomer”:\nmatrimonio (🎼 ff.23 Matrimoni privatizzati)fertilità (👶 ff.29.1 Non figliamo più)default pathstudio>lavoro>casa>famiglia (🥾 ff.62.2 Uscire dalla via maestra).\nAnche considerando l’esplosione di matrimoni post-pandemici (ossia quelli che in lockdown non sono stati celebrati) il trend sembra abbastanza evidente:\nE di figli manco a parlarne. Tanto che a Taiwan il numero di animali domestici ha superato quello dei bambini (🎼 ff.74 Sono giapponese!).\nDato che questi temi sono per definizione il nostro futuro, vediamo di provare a spiegare quello che sta succedendo.\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!hVxI!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbddc3b02-c595-40cd-8de8-f4fa90665858_1080x1057.png",
-                        "caption": ""
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!WsjJ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fde33ce89-ab13-46be-8bec-75d14b87ca0a_1114x899.png",
-                        "caption": ""
-                    }
-                ],
+                "title": "🌊 ff.72.1 Lo tsunami di contenuti",
+                "link": "https://fortissimo.substack.com/p/ff72-infinito-digitale",
+                "content": "Con Midjourney e GPT, il costo marginale di creazione di contenuti è sceso a zero.\nRisultato? Un oceano di mediocrità. Blog post, immagini stock, video Youtube generati automaticamente.\nIn questo scenario, la 'verità' e l'autenticità diventano i beni più preziosi. La scarsità non è più l'informazione, ma l'attenzione.",
+                "images": [],
                 "references": [],
                 "connections": [
                     {
-                        "text": "🎼 ff.23 Matrimoni privatizzati",
-                        "url": "https://fortissimo.substack.com/p/-ff21-matrimoni-privatizzati"
-                    },
-                    {
-                        "text": "👶 ff.29.1 Non figliamo più",
-                        "url": "https://fortissimo.substack.com/i/58664492/ff-non-figliamo-piu"
-                    },
-                    {
-                        "text": "🥾 ff.62.2 Uscire dalla via maestra",
-                        "url": "https://fortissimo.substack.com/i/118479393/ff-uscire-dalla-via-maestra"
-                    },
-                    {
-                        "text": "🎼 ff.74 Sono giapponese!",
-                        "url": "https://fortissimo.substack.com/p/ff74-made-in-japan"
-                    }
-                ]
-            },
-            {
-                "title": "⛪ff.77.2 Una questione di valori?",
-                "link": "https://fortissimo.substack.com/i/137533647/ff-una-questione-di-valori",
-                "content": "Mettimi questi Meloni in mano.Giorgia Meloni sostiene che la crisi demografica sia legata al crollo dei valori famigliari tradizionali. Eppure, uno studio che ha usato un sondaggio europeo suivalori famigliari (EVS) ha provato a verificare se vi fosse questa correlazione con i tassi di fertilità. Ha trovato l’opposto:\nTutti i tassi di fertilità qui.\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!Kg5C!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5a6607f7-8380-4a11-b2bd-0d81609716b6_1328x449.png",
-                        "caption": ""
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "Giorgia Meloni sostiene che la crisi demografica sia legata al crollo dei valori famigliari tradizionali",
-                        "url": "https://www.youtube.com/watch?v=TbEiQV4pGhs"
-                    },
-                    {
-                        "text": "valori famigliari (EVS) ha provato a verificare se vi fosse questa correlazione con i tassi di fertilità",
-                        "url": "https://www.worksinprogress.news/p/the-value-of-family"
-                    },
-                    {
-                        "text": "Tutti i tassi di fertilità qui.",
-                        "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=File:Tab01_Total_fertility_rate,_1960%E2%80%932021_(live_births_per_woman).png"
-                    }
-                ],
-                "connections": []
-            },
-            {
-                "title": "🤑ff.77.3 O di soldi?",
-                "link": "https://fortissimo.substack.com/i/137533647/ff-o-di-soldi",
-                "content": "Papa Francesco sostiene che sia più un aspetto economico.Ma con quello che spendo in cene stellate, viaggi dall’altra parte del mondo e iscrizioni ad Ironman potrei probabilmente mantenere un figlio.\nSembra che “i soldi” siano solo una scusa.\nO no?La casa, spesa che più impatta sulla vita dei giovani econditio-sine-qua-nonper avere un figlio, è diventata recentemente un problema.\nMa nell’ultima decade si viaggiava su valori diaffordabilityben più alti di periodi come gli anni 80. Questa motivazione non sembra quindi la principale.\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!8Yi7!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Feff8ebff-a9c4-498b-83d3-5ee1a7e90017_669x669.png",
-                        "caption": ""
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "Papa Francesco sostiene che sia più un aspetto economico.",
-                        "url": "https://www.cbc.ca/news/world/italy-birth-rate-pope-meloni-1.6841048?utm_source=substack&utm_medium=email#:~:text=Italy's%20fertility%20rate%20of%201.24,of%20uncertainty%2C%20fragility%20and%20precariousness."
-                    }
-                ],
-                "connections": []
-            },
-            {
-                "title": "🛠️ff.77.4 O di emancipazione?",
-                "link": "https://fortissimo.substack.com/i/137533647/ff-o-di-emancipazione",
-                "content": "La donna in carriera non ha tempo per i figli? Non è scontato rispondere, tanto che quest’anno è valso ilPremio Nobel per l’Economia a Claudia Goldin di Harvard.\nIl calo della fertilità non sembra essere legato solo all’aumento delle donne che lavorano. A inizio 900, è vero, quasi nessuna donna lavorava. Ma nell’800, il 60% delle donne era nei campi coi mariti.\nDopo il parto, le nuove generazioni di mamme sempre più frequentemente tornano al lavoro e ricoprono posizioni più alte.\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!B0MA!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbd8eda73-ffc0-49a5-bad9-ddfb5c674e2f_883x620.png",
-                        "caption": ""
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!jmCJ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Facf84e0f-259d-4b4f-bd3e-0d7dc2b88b21_771x595.png",
-                        "caption": ""
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!R-lI!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8f6f6db0-b405-4356-9607-1241f6569576_1198x1198.png",
-                        "caption": ""
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "Premio Nobel per l’Economia a Claudia Goldin di Harvard",
-                        "url": "https://www.nobelprize.org/uploads/2023/10/press-economicsciencesprize2023.pdf"
-                    }
-                ],
-                "connections": []
-            },
-            {
-                "title": "1️⃣ff.77.5 O una scelta individualistica?",
-                "link": "https://fortissimo.substack.com/i/137533647/ff-o-una-scelta-individualistica",
-                "content": "E allora, dove sta la risposta? Forse siamo semplicemente più individualisti?\nLa società spinge ad ottimizzare ogni aspetto della vita (🎼 ff.68 Che ansia!). Forse, nella nostra individualistica priorità decidiamo semplicemente di smettere di ricercare un partner.\nLa mia lettura.Siamo in un nuovo mondo, rispetto a quello dell’800 e deibaby boomers, con assunzioni valoriali, finanziarie e sociali nuove e inesplorate (numero di figli, di case possedute, di famiglie sotto un unico tetto)\nmetti un cuoricino qua sotto?❤️\nuscite precedenti|discord|instagram|linkedin|un caffè\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!gCC4!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdc2f05de-1c69-4bd4-a841-32ece59e9cb2_1028x439.png",
-                        "caption": ""
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!opHe!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F366f7ac1-5d87-4647-a3da-ba55ef8e8439_1440x965.bin",
-                        "caption": "mumanddad, James Barnett"
-                    }
-                ],
-                "references": [],
-                "connections": [
-                    {
-                        "text": "🎼 ff.68 Che ansia!",
-                        "url": "https://fortissimo.substack.com/p/ff68-che-ansia-pt-2"
+                        "text": "⚠️ ff.83.2 Stai attento!",
+                        "url": "https://fortissimo.substack.com/i/140010460/ff-stai-attento"
                     }
                 ]
             }
         ]
     },
     {
-        "url": "https://fortissimo.substack.com/p/ff76-quello-che-resta-del-lockdown",
-        "title": "🎼 ff.76 Siamo ancora in lockdown?",
-        "subtitle": "Minecraft con long COVID e lo scarafaggio di Kafka",
+        "url": "https://fortissimo.substack.com/p/ff71-il-paradosso-della-scelta",
+        "title": "🎼 ff.71 Il paradosso della scelta",
+        "subtitle": "Perché avere troppe opzioni ci rende infelici",
         "keypoints": [
-            "Ci ha trasformato nello scarafaggio di Kafka?",
-            "Smartworking, yoga, biciclette: quali tendenze sono sopravvissute?",
-            "Dopo il COVID giocare a Minecraft è più difficile?"
+            "Netflix paralysis: passare ore a scegliere cosa guardare",
+            "Algoritmi di raccomandazione: amici o nemici?",
+            "La gioia di accontentarsi"
         ],
         "subchapters": [
             {
-                "title": "🦠ff.76.1 Cosa è rimasto del COVID?",
-                "link": "https://fortissimo.substack.com/i/135267240/ff-cosa-e-rimasto-del-covid",
-                "content": "Il COVID ètendenzialmenteun lontano ricordo. Il periodo del lockdown lo vedo come i miei 2 anni in Olanda: un compartimento stagno e isolato della vita in cui sono stato totalmente un’altra persona.\nMa cosa è rimasto, del COVID? Partiamo con qualche grafico, che permette sempre di catturare all’istante la realtà.\nInsomma, il lockdown ci ha avvicinato agli scacchi, alremote workinge, conseguentemente, alle comode tute da casa.\nLe mezze stagioni.Nei trend, alcune oscillazioni stagionali sono più ampie del picco COVID. Pane fatto in casa, yoga e ciclismo sono tornati alle origini (e con loro,Peloton)\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!od2N!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F33b81e8a-0e46-4892-bc5e-e0c633a42e74_1198x1198.jpeg",
-                        "caption": ""
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!EciO!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fac0ad725-dcd8-461c-a8cb-f6636c6a864f_472x255.png",
-                        "caption": ""
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "Peloton",
-                        "url": "https://g.co/finance/PTON:NASDAQ?window=MAX"
-                    }
-                ],
-                "connections": []
-            },
-            {
-                "title": "🧖‍♂️ff.76.2 L’esplosione degli hobby",
-                "link": "https://fortissimo.substack.com/i/135267240/ff-lesplosione-degli-hobby",
-                "content": "Lockdown di tempo.Durante la reclusione, la diffusione di hobby, iniziata nel lontano ‘800 con il miglioramento della vita portato dalla rivoluzione industriale. Tanto che,1 americano su 2 ha iniziato un nuovo hobby (e si è indebitato per esso).\nSe Barbero non dovesse bastarvi, eccola storia degli hobby.\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!fPTO!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faa07f0af-86b7-4cc3-9eca-fe2a09635c03_1283x617.png",
-                        "caption": ""
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "1 americano su 2 ha iniziato un nuovo hobby (e si è indebitato per esso)",
-                        "url": "https://www.lendingtree.com/credit-cards/study/quarantine-hobbies-credit-card-debt/"
-                    },
-                    {
-                        "text": "la storia degli hobby",
-                        "url": "https://www.theatlantic.com/family/archive/2022/01/history-hobbies-america-productivity-leisure/621150/"
-                    }
-                ],
-                "connections": []
-            },
-            {
-                "title": "🫁ff.76.3 E gli effetti fisici",
-                "link": "https://fortissimo.substack.com/i/135267240/ff-e-gli-effetti-fisici",
-                "content": "Sì, certi trend sono passati. Ma il segno psico-fisico che il COVID ha lasciato è attualissimo.\n65 milioni. Il numero di persone affette da long-COVID. Le cicatrici lasciate: un mix di fiato corto, carenza di concentrazione, insonnia e cattiva qualità del sonno.\nLong-Covid Europe permette di giocare a Minecraft con un personaggio debilitato dal COVID.E’ una provocazione tra reale e digitale, ricordandoci che non possiamo rifuggire quanto successo con Zoom e VR.\nAh,related, su Nature si parla di come ilmicrobioma dei bambini nati durante il lockdown sia stato alterato(e ricordate quanto siamo il nostro microbioma, tanto che Zoe lo correla alla risposta glicemica,🕛 ff.35.2 Smartwatch e non solo).\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!KOgN!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbf50dcc5-45b0-4290-be98-15dcf3461dde_1000x563.jpeg",
-                        "caption": ""
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "Long-Covid Europe permette di giocare a Minecraft con un personaggio debilitato dal COVID.",
-                        "url": "https://longcovideurope.org/"
-                    },
-                    {
-                        "text": "microbioma dei bambini nati durante il lockdown sia stato alterato",
-                        "url": "https://www.nature.com/articles/d41586-023-02994-8?utm_source=substack&utm_medium=email"
-                    }
-                ],
-                "connections": [
-                    {
-                        "text": "🕛 ff.35.2 Smartwatch e non solo",
-                        "url": "https://fortissimo.substack.com/i/50745954/ff-smartwatch-e-non-solo"
-                    }
-                ]
-            },
-            {
-                "title": "🐛 ff.76.4 Trasformati in uno scarafaggio?",
-                "link": "https://fortissimo.substack.com/i/135267240/ff-trasformati-in-uno-scarafaggio",
-                "content": "Bruno Latour (incrociato in🧼 ff.69.2 Schiuma quantica) propone una filosofia del lockdown.\nScarafaggi ska-ska.Secondo il filosofo, il lockdown ci ha trasformati in uno scarafaggio, come successo a Gregor Samsa nellaMetamorfosidi Kafka. Non perché ci ha costrettifisicamentetra quattro mura, ma perché ha confermatomentalmentela nostra materialità.\nEspandendoDown to Earth: Politics in the New Climatic Regime, Latour sostiene che il lockdown ci ha portati a Terra, invertendo la spinta verso lo spazio-inerte iniziata da Galileo, proseguita con Ariosto e culminata con NASA e Musk.\nStiamo iniziando a renderci conto che non abbiamo, che non avremo mai, che nessuno ha mai avuto l’esperienza di incontrare “cose inerti”.Bruno Latour,After Lockdown\nRiatterraggio alla SpaceX?L’impossibilità di vivere in “modo inerte”, “sopra la Terra” è la lezione della pandemia. Il COVID, col suo muco, ci ha immersi nel fango di Gaia. Nell’esoscheletro di Gregor.\nNon è giusto spingerci a tornare sulla Terra, se non ci dicono dove atterrare per non schiantarci.Bruno Latour,After Lockdown\nE con questo è tutto per oggi. Torno ad isolarmi (nell’arte).\nuscite precedenti|discord|instagram|linkedin|un caffèE ricordati di mettere un cuoricino qua sotto.❤️\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!rndG!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F279a2cef-ae6a-4234-bbc1-a9294ea65d59_825x464.jpeg",
-                        "caption": ""
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!SD0l!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7171e7fb-e4df-41ab-ab3a-9c242534382d_345x540.jpeg",
-                        "caption": ""
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!HylF!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1851b24a-47d4-4e96-a221-1f2caa70f773_1440x1080.bin",
-                        "caption": "Designers Against the Coronavirus"
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "Down to Earth: Politics in the New Climatic Regime",
-                        "url": "https://www.amazon.com/Down-Earth-Politics-Climatic-Regime/dp/1509530576"
-                    }
-                ],
-                "connections": [
-                    {
-                        "text": "🧼 ff.69.2 Schiuma quantica",
-                        "url": "https://fortissimo.substack.com/i/134659141/ff-schiuma-quantica"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "url": "https://fortissimo.substack.com/p/due-anni-fortissimi",
-        "title": "🎼 Due anni fortissimi!",
-        "subtitle": "Un piccolo video-ringraziamento!",
-        "keypoints": [],
-        "subchapters": []
-    },
-    {
-        "url": "https://fortissimo.substack.com/p/ff75-massaggi-al-cervello",
-        "title": "🎼 ff.75 Massaggi al cervello",
-        "subtitle": "Scosse al cervello per dormire meglio o essere controllati?",
-        "keypoints": [
-            "Il Tesmed che vi sistema i pensieri",
-            "Un’alternativa alla melatonina?",
-            "Orwel aveva ragione?"
-        ],
-        "subchapters": [
-            {
-                "title": "⚡ff.75.1 Tesmed alla testa",
-                "link": "https://fortissimo.substack.com/i/137475284/ff-tesmed-alla-testa",
-                "content": "Vi ricordate quando tra una puntata di Dragonball e Naruto ci veniva proposto Tesmed? Ah no? Vi sblocco un ricordo.\nOra, in modo decisamente più scientifico, si sta provando a fare esattamente lo stesso. Col cervello però.\nTran…che?Con elettrodi impiantati chirurgicamenteabbiamo fatto passi da gigante contro il Parkinson, ma lastimolazione trans-cranialepuò essere meno invasiva. Sono devices che, posti sulle pareti esterne del cranio, aiutano nella riabilitazione post-ictus, come supporto motorio ocura alla depressione!\nSe volete approfondire:revieweprevisioni di mercato(N1, primo device di Neuralink di Musk potrebbe arrivare a generare 200M$ nel 2030 e sono iniziati itrial clinici per pazienti di determinate categorie).\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!lUu2!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1388d2b9-b5f5-4236-89ba-0b08ec0089ee_480x360.jpeg",
-                        "caption": ""
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "abbiamo fatto passi da gigante contro il Parkinson",
-                        "url": "https://www.michaeljfox.org/deep-brain-stimulation"
-                    },
-                    {
-                        "text": "stimolazione trans-craniale",
-                        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5985830/"
-                    },
-                    {
-                        "text": "cura alla depressione",
-                        "url": "https://www.floridatmsclinic.com/saint-depression-treatment#:~:text=SAINT%20stands%20for%20Stanford%20Intelligent,a%20day%2C%20for%205%20days."
-                    },
-                    {
-                        "text": "review",
-                        "url": "https://www.frontiersin.org/articles/10.3389/fnins.2023.1286239/full"
-                    },
-                    {
-                        "text": "previsioni di mercato",
-                        "url": "https://www.skyquestt.com/report/neurostimulation-devices-market"
-                    },
-                    {
-                        "text": "trial clinici per pazienti di determinate categorie",
-                        "url": "https://neuralink.com/patient-registry/"
-                    }
-                ],
-                "connections": []
-            },
-            {
-                "title": "😴ff.75.2 Ninna nanna neurale",
-                "link": "https://fortissimo.substack.com/i/137475284/ff-ninna-nanna-neurale",
-                "content": "Anche grazie all’AI, stiamo imparando a leggere il pensiero, capire il sonno, misurare la coscienza. A riguardo, un imbarazzante video di micmer direttamente dal 2019.\nSe il video non è bastato e non avete sotto mano un Jigglypuff, tranquilli, c’èSomnee.\nUsa la stimolazione trans-craniale, proprio lei, per promuovere il sonno (principio scientifico). Praticamente, il device cambia la distribuzione di onde neurali avvicinandole a quelle legate a uno stato di sonno.\nCome fosse un rilassante massaggio, al cervello però.\n↑ onde-β → veglia↓ onde-α → sonno\nInsomnia, ehm, insomma. Meglio della melatonina!\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!WE-F!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9331fc03-a6fc-4e5e-ad61-377c39aa42fa_685x425.png",
-                        "caption": ""
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!jxzb!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F159cf177-da59-4bd2-860f-987c8a577cb9_864x363.png",
-                        "caption": "Distribuzione di frequenze neurali prima/dopo la stimolazione con Somne."
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!1eKa!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F04e9a979-5090-41a6-b9dd-da5c97888a80_732x714.png",
-                        "caption": ""
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "Somnee",
-                        "url": "https://trysomnee.com/"
-                    },
-                    {
-                        "text": "principio scientifico",
-                        "url": "https://www.nature.com/articles/s41467-019-11444-x"
-                    }
-                ],
-                "connections": []
-            },
-            {
-                "title": "💊 ff.75.3 Sempre più fannulloni?",
-                "link": "https://fortissimo.substack.com/i/137475284/ff-sempre-piu-fannulloni",
-                "content": "Sì, lo so. Come con Tesmed, questi stimolatori sembrano una soluzione a un problema creato da noi stessi:\nMa se per motivi psicologici, economici o sociali determinate persone non riescono a uscire dal dannoso loop della vita moderna, è bene offrire delle soluzioni.\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!hicd!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb073a110-b9e8-4b78-b3a4-656bc733b8c8_720x246.png",
-                        "caption": ""
-                    }
-                ],
-                "references": [],
-                "connections": []
-            },
-            {
-                "title": "👮ff.75.4 Polizia mentale",
-                "link": "https://fortissimo.substack.com/i/137475284/ff-polizia-mentale",
-                "content": "Azeem Azhar nel libroExponentialdiscute la voragine che si sta aprendo tra regolamentazione e tecnologia. I chip neurali aggiungono carne al fuoco/incendio alimentato da AI, social, robotica e clima.\nHa parlato di controllo mentale con Nita Farahany (professoressa emerita alla Duke University, North Carolina).\nAlcune riflessioni:\nRaccolta di dati celebrali, crescente interesse con 1 miliardo di dollari di investimentiPossibilità di monitoraggio (e modifica) dei pensieri (vedi Orwell:psicoreato e1984)Necessità di aprire una discussione sulla privacy mentale\nE con questo è tutto. Vado a stimolarmi il cervello. Con del bubble tea.\nuscite precedenti|discord|instagram|linkedin|un caffè🤫pss!prima di andare ricordati di mettere un cuoricino qua sotto.❤️\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!5aQr!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff862da2a-f396-4659-885a-b1e447e72309_796x514.png",
-                        "caption": "Postmates,This is your brain"
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "Exponential",
-                        "url": "https://amzn.to/49ssUAR"
-                    },
-                    {
-                        "text": "professoressa emerita alla Duke University, North Carolina",
-                        "url": "https://law.duke.edu/fac/farahany/"
-                    },
-                    {
-                        "text": "psicoreato e",
-                        "url": "https://it.wikipedia.org/wiki/Psicoreato"
-                    },
-                    {
-                        "text": "1984",
-                        "url": "https://it.wikipedia.org/wiki/Psicoreato"
-                    }
-                ],
-                "connections": []
-            }
-        ]
-    },
-    {
-        "url": "https://fortissimo.substack.com/p/ff74-made-in-japan",
-        "title": "🎼 ff.74 Sono giapponese!",
-        "subtitle": "Giappone: tra infanzia e futuro",
-        "keypoints": [
-            "La sua storia il nostro futuro?",
-            "Un’infanzia tra Goku e Pikachu",
-            "Breve dizionario di giapponese"
-        ],
-        "subchapters": [
-            {
-                "title": "🔮ff.74.1 Il nostro futuro?",
-                "link": "https://fortissimo.substack.com/i/137321489/ff-il-nostro-futuro",
-                "content": "Un passo avanti.Bollafinanziaria/immobiliare degli anni 90, fenomeno deglihikikomori(eremiti che si impongono un lockdown in stile COVID), crisi demografica: il Giappone sembra tracciare il futuro delle democrazie occidentali.\nFascia d’età |% Popolazione (2023, 2050)00-14 | 11.5 , 11.115-64 | 58.5 , 51.465-79 | 30.1 , 37.580-99+| 10.8 , 15.6\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!uKGb!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd4119203-f9b6-476e-b4c5-c25f5dbc0efc_704x364.png",
-                        "caption": ""
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "finanziaria/immobiliare degli anni 90",
-                        "url": "https://www.borsaitaliana.it/speciali/fisherinvestments/italia/perche-gli-investitori-non-devono-temere-la-giapponesizzazione-dell-europa.htm"
-                    }
-                ],
-                "connections": []
-            },
-            {
-                "title": "📙ff.74.2 Breve dizionario culturale",
-                "link": "https://fortissimo.substack.com/i/137321489/ff-breve-dizionario-culturale",
-                "content": "Ignorante.Per la distanza geo-grafica (del loro alfabeto) non sapevo molto di quella che negli anni 70 - nonostante la disfatta della guerra - era la seconda economia globale. Matt Alt inPop ポップcorre in aiuto, con spunti storici e culturali.\nRacconta ad esempio del più grande bombardamento della storia (9 marzo 1945, 100k morti) o dell’incredibile rinascita economica trainata da giocattoli di latta (Mattel scelse d’altronde il Giappone per la produzione di Barbie).\nLuci e ombre.Il libro riporta due concetti che condensano il fascino e le contraddizioni giapponesi.\nkawaii(可愛い), lett. carino; descrive qualcosa di affascinante, vulnerabile, infantile o amabile. Spesso, si ritrova nelle illustrazioni di cartoni con la testa tondeggiante e sproporzionata (Hello Kitty, Pikachu).\notaku(おたく), giovane ossessionato da una particolare hobby o interesse (spec. fumetti, cartoni animati, videogiochi e computer). In Giappone, però, descrive personesocialmente isolate. Un nerd chiuso in casa che rifugge la realtà.\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!fGt2!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe32142c5-9392-45c1-a4aa-02d0f7faaa88_686x1000.jpeg",
-                        "caption": ""
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!8Bfp!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F06fcb55f-e4d0-4ddb-ba23-6cb546acc758_375x429.jpeg",
-                        "caption": ""
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "9 marzo 1945, 100k morti",
-                        "url": "https://www.wired.com/2011/03/0309incendiary-bombs-kill-100000-tokyo/"
-                    },
-                    {
-                        "text": "Mattel scelse d’altronde il Giappone per la produzione di Barbie",
-                        "url": "https://unseen-japan.com/barbie-first-wardrobe-was-made-in-tokyo/#:~:text=Tokyo%3A%20The%20Original%20Barbie%20Land,production%20site%20for%20the%20doll."
-                    },
-                    {
-                        "text": "socialmente isolate",
-                        "url": "https://it.wikipedia.org/wiki/Emarginazione"
-                    }
-                ],
-                "connections": []
-            },
-            {
-                "title": "🈵ff.74.3 Sono giapponese!",
-                "link": "https://fortissimo.substack.com/i/137321489/ff-sono-giapponese",
-                "content": "La serieThe Man in the High Castleimmagina una seconda guerra mondiale senza bombe nucleari, a seguito della quale l’Oriente prevale e le strade di San Francisco vengono costellate dakanji(漢字).\nInvasione silente.Ma, culturalmente, siamo sicuri che non sia andata così?Pasolini lamentava un’americanizzazione della culturaa seguito del boom economico degli anni 60.\nIMillennial (e forse anche Centennials e Screenagers)son cresciuti davanti a una Playstation, dopo aver pranzato conDragon Ball,Naruto,Detective Conan oOne Piece. Comunicano con emoji e vivono sempre più nei social network (la storia di 2chan), per sfuggire a una realtà che sta loro sempre più stretta.\nInsomma, altro che americani. Siamo giapponesi!\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!mNFz!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2909ca99-4b10-4358-a51b-b5699bd8d29f_1920x1080.jpeg",
-                        "caption": ""
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!TjNO!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd1eff9b5-dc67-4ac1-80ca-6f3fc451f314_700x700.png",
-                        "caption": "La graphic novel illustrata daShan JiangdiThe Man in the High Castle(1962)"
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!iGxn!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb366e721-7127-49c2-9f37-d0a438fb81ac_447x272.png",
-                        "caption": ""
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "Pasolini lamentava un’americanizzazione della cultura",
-                        "url": "https://borderonline.org/2017/06/30/gli-italiani-non-sono-piu-quelli-pier-paolo-pasolini/"
-                    },
-                    {
-                        "text": "Millennial (e forse anche Centennials e Screenagers)",
-                        "url": "https://it.wikipedia.org/wiki/Generazione"
-                    },
-                    {
-                        "text": "la storia di 2chan",
-                        "url": "https://en.wikipedia.org/wiki/2chan"
-                    }
-                ],
-                "connections": []
-            },
-            {
-                "title": "🧙ff.74.4 La magia come fuga dalla realtà",
-                "link": "https://fortissimo.substack.com/i/137321489/ff-la-magia-come-fuga-dalla-realta",
-                "content": "Per essere sinceri l’intero Giappone è una pura invenzione. […] Il popolo giapponese, come ho appena detto, non è nient’altro che una forma, una particolare fantasia dell’Arte.Oscar Wilde,La decadenza del mentire(1891)\nNatura virtuale.Dato che il Giappone ama la natura (💚 ff.51.1 L’affabulazione per il verde), quando con l’urbanizzazione è iniziata a sparire, una via d’uscita è stata la personificazione di animali (immancabilmentekawaii,“carini”).\nvangoghmuseumA post shared by@vangoghmuseum\nAnimali fantastici (e dove trovarli).Costeggiano le opere dello studio Ghibli (a gennaio usciràIl ragazzo e l’airone) e i romanzi di Murakami (Confessioni di una scimmia di Shinagawa). Con il diffondersi dell’urbanizzazione, certi temi sono risuonati altrove.Non è un caso il successo di Zero Calcare col suo armadillo parlante.\nPer chiudere il cerchio, in perfetto stile 🎼ff,la collezione NFT lanciata da Shan Jiang.\nJapanese version\n🇯🇵 今日は主に日本について話します：\nその歴史、私たちの未来は？GokuとPikachuとの幼少期日本語の簡単な辞書\nこれらの日々、ヨーロッパで販売しているソフトウェアの製造元を訪問するために東京に滞在しています。コードは粒子と流体をシミュレートします。\nそして、ゲームと仕事、幼少期と未来の間に🎼ffが生まれます。まるで日本のように。\n🔮 ff.74.1 私たちの未来は？\n一歩前進。1990年代の金融/不動産バブル、ひきこもり現象（COVIDスタイルのロックダウンを自己課徴する隠遁者）、人口危機：日本は西洋の民主主義の未来を予測しているようです。\n年齢層 |％ 人口（2023、2050）00-14 | 11.5、11.115-64 | 58.5、51.465-79 | 30.1、37.580-99+| 10.8、15.6\n📙 ff.74.2 簡単な文化辞典\n無知。地理的な距離（彼らのアルファベットの）のため、1970年代にもかかわらず、戦争の敗北にもかかわらず、それは世界第2位の経済だったことについてあまり知りませんでした。Matt AltのPop ポップは、歴史的および文化的な洞察を提供します。\nたとえば、史上最大の爆撃（1945年3月9日、10万人の死者）や、おもちゃの製造のために日本を選んだMattelによって牽引された信じられないほどの経済復活について語っています。\n明暗。この本は、日本の魅力と矛盾を凝縮する2つの概念を示しています。\nkawaii(可愛い)、リトル. 可愛らしい。魅力的で、かわいらしい、幼い、愛らしいものを表します。しばしば、丸い頭と不釣り合いな体つきのイラストに見られます（ハローキティ、ピカチュウ）。\notaku(おたく)、特定の趣味や関心（特にコミック、アニメ、ビデオゲーム、コンピューター）に執着する若者を指します。しかし、日本では社会的に孤立した人々を説明します。現実から逃れることを選ぶ引きこもりのような人。\n🈵 ff.74.3 私は日本人です！\nThe Man in the High Castleシリーズは、原爆なしの第二次世界大戦を想像し、その結果、東洋が優勢となり、サンフランシスコの通りに漢字（漢字）が散在すると仮定しています。\n静かな侵略。しかし、文化的には、そうではなかったのでしょうか？パゾリーニは、1960年代の経済ブームの後、文化のアメリカ化を嘆いていました。\nミレニアル世代（おそらくセンテニアル世代とスクリーンエイジャーも）は、ドラゴンボール、ナルト、名探偵コナン、ワンピースで昼食をとった後、プレイステーションの前で成長しました。彼らは絵文字を使ってコミュニケーションし、ソーシャルネットワークでますます生活しているかもしれません（2chanの物語）。現実がますます狭くなってきたためかもしれません。\nつまり、アメリカンではなく、彼らは日本人です！\n🧙 ff.74.4 現実逃避としての魔法\n正直に言うと、日本全体は純粋な創造物です。[...] 日本の人々は、私が言ったように、芸術の特定の幻想に過ぎません。オスカー・ワイルド、The Decay of Lying（1891）\nバーチャルネイチャー。日本は自然を愛しているので、都市化が始まると、動物の擬人化が出てきました（不変にkawaii、「かわいい」です）。\nファンタスティック・ビースト（そして見つける場所）。これらはスタジオジブリの作品（1月には「少年と白鷺」が公開予定）や村上春樹の小説（品川のサルの告白）に隣接しています。都市化が進行するにつれ、特定のトピックは\nuscite precedenti|discord|instagram|linkedin|un caffè🤫pss!prima di andare ricordati di mettere un cuoricino qua sotto.❤️\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!FnEv!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5fd047b5-6610-4cb5-9d14-5c4d2d884506_500x500.jpeg",
-                        "caption": "Kyoto Street Party, Shan Jiang"
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "vangoghmuseum",
-                        "url": "https://instagram.com/vangoghmuseum"
-                    },
-                    {
-                        "text": "",
-                        "url": "https://instagram.com/p/Cxs_kXVuLxV"
-                    },
-                    {
-                        "text": "@vangoghmuseum",
-                        "url": "https://instagram.com/vangoghmuseum"
-                    },
-                    {
-                        "text": "Non è un caso il successo di Zero Calcare col suo armadillo parlante.",
-                        "url": "https://www.sempredirebanzai.it/tutti-i-riferimenti-al-giappone-e-agli-anime-di-strappare-lungo-i-bordi-di-zerocalcare/"
-                    },
-                    {
-                        "text": "la collezione NFT lanciata da Shan Jiang",
-                        "url": "https://www.shan-jiang.com/kyoto-street-party"
-                    }
-                ],
-                "connections": [
-                    {
-                        "text": "💚 ff.51.1 L’affabulazione per il verde",
-                        "url": "https://fortissimo.substack.com/i/88408587/ff-laffabulazione-per-il-verde"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "url": "https://fortissimo.substack.com/p/ff72-criptico",
-        "title": "🎼 ff.73 Futuro criptato",
-        "subtitle": "Criptovalute, Monna Lisa, Majin Buu e l'inflazione",
-        "keypoints": [
-            "Perché l’Intelligenza Artificiale può accelerarne l’adozione",
-            "Un’altra sfida tra Musk e Altman (OpenAI)",
-            "Sono il futuro del capitalismo?"
-        ],
-        "subchapters": [
-            {
-                "title": "💥ff.73.1 Una bolla esplosa?",
-                "link": "https://fortissimo.substack.com/i/115631636/ff-una-bolla-esplosa",
-                "content": "Sì, sono un po’ fissato con le criptovalute. E in questo 🎼ffvi spiego il perché.\nNon è tutt’oro. E’ ormai solo un ricordo l’insensata corsa di DOGE, il meme-coin proposto da Elon Musk come moneta ufficiale di Marte.\nPerò, però, però.Il fondo A16Z ha introdotto un indice per monitorare lo stato di salute del settore (State of Crypto Index, che integra numero di utenti attivi, progetti e liquidità degli scambi sulle varieblockchain).\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!lle6!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9320033a-3cfb-41dc-985d-a355d44f2910_2560x1438.jpeg",
-                        "caption": ""
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "State of Crypto Index",
-                        "url": "https://a16zcrypto.com/stateofcrypto"
-                    }
-                ],
-                "connections": []
-            },
-            {
-                "title": "🤖ff.73.2 La convergenza AI-Bitcoin",
-                "link": "https://fortissimo.substack.com/i/115631636/ff-la-convergenza-ai-bitcoin",
-                "content": "I grafici sembrano mostrare una stagnazione. Cosa è cambiato di recente? AI, ChatGPT e MidJourney. Come discusso qui:\nAlcuni spunti:\nL’economia di conversione soldi/tempo-calcolo sta esplodendo (insieme all’energia necessaria, tanto cheMicrosoft sta pensando a reattori nucleari),VISA/Mastercard impiegano fino a un mese per processare il pagamento di questi servizi, ma aziende come OpenAI permettono l’accesso istantaneo al calcolo.Il mismatch tempo-calcolo/hardware (che può essere usato anche per minare BTC) diviene una pericolosa inefficienza del sistema.VISA/Mastercard inoltre non sono accessibili a tutti. Anche utenti certificati, e con conto su questi circuiti, han visto l’accesso bloccato (garante della privacy someone?). In questi casi, lablockchainè stata l’unica via d’accesso.\n",
+                "title": "🤔 ff.71.1 Paralisi da analisi",
+                "link": "https://fortissimo.substack.com/p/ff71-il-paradosso-della-scelta",
+                "content": "Barry Schwartz lo aveva predetto anni fa: più opzioni abbiamo, meno siamo soddisfatti della scelta finale.\nIl rimpianto correla positivamente con il numero di alternative scartate. Nell'era digitale, dove possiamo ascoltare ogni canzone mai scritta e vedere ogni film mai girato, siamo condannati all'eterna insoddisfazione?",
                 "images": [],
                 "references": [
                     {
-                        "text": "Microsoft sta pensando a reattori nucleari",
-                        "url": "https://www.datacenterdynamics.com/en/news/microsoft-cloud-hiring-to-implement-global-small-modular-reactor-and-microreactor-strategy-to-power-data-centers/"
-                    },
-                    {
-                        "text": "garante della privacy someone?",
-                        "url": "https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9870847"
-                    }
-                ],
-                "connections": []
-            },
-            {
-                "title": "👍ff.73.3 Una VPN finanziaria",
-                "link": "https://fortissimo.substack.com/i/115631636/ff-una-vpn-finanziaria",
-                "content": "Insomma, le cripto garantiscono l’accesso a sempre più fondamentali servizi digitali, come fossero una VPN finanziaria.\nNon a caso, Worldcoin (👁️ ff.38.3 La cripto valuta per ridurre le disuguaglianzesupportata dal fontatore di OpenAI, Sam Altman) ha raggiunto i 2.2 M utenti.\nUn altro motivo per cui le cripto sono il futuro è la demografia. La mappa diChainAnalysis mostra come l’adozione globale sia alta in India e Nigeria(2 miliardi di persone nel 2050).\nNon solo individui.Nazioni intere schiacciate dall’inflazione potrebbero ottenere una rivincita finanziaria (Javier Milei, candidato in Argentina, fa leva proprio su questi temi).\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!Qnks!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2a8fc554-418f-452a-b2f0-7a39544c8d59_1238x704.png",
-                        "caption": ""
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "ChainAnalysis mostra come l’adozione globale sia alta in India e Nigeria",
-                        "url": "https://www.chainalysis.com/blog/2023-global-crypto-adoption-index/"
-                    },
-                    {
-                        "text": "2 miliardi di persone nel 2050",
-                        "url": "https://www.pwc.com/ng/en/publications/nigeria-india-learnings-from-two-democracies.html"
-                    },
-                    {
-                        "text": "Javier Milei, candidato in Argentina, fa leva proprio su questi temi",
-                        "url": "https://twitter.com/TuckerCarlson/status/1702442099814342725"
-                    }
-                ],
-                "connections": [
-                    {
-                        "text": "👁️ ff.38.3 La cripto valuta per ridurre le disuguaglianze",
-                        "url": "https://fortissimo.substack.com/i/76782307/ff-la-cripto-valuta-per-ridurre-le-disuguaglianze"
-                    }
-                ]
-            },
-            {
-                "title": "🥬ff.73.4 In modo più ecologico",
-                "link": "https://fortissimo.substack.com/i/115631636/ff-in-modo-piu-ecologico",
-                "content": "Nel primissimo 🎼ffl’impatto ambientale del settore, con Bitcoin che consuma come la Finlandia (🇫🇮 ff.1.5 Il consumo energetico di Bitcoin).\nGrazie al passaggio alProof of Stake,Ethereum ora gestisce contratti digitali consumando molto meno:\nConsumo annuo (TWh)244 | Youtube170 | Oro120 | Datacenter globali78 | Ethereum PoW34 | Videogiochi US0.3 | PayPal0.003 | Ethereum (nuovo metodo, PoS)\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!1_wn!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F75b4a6d5-9146-40d1-844e-8dadc3dd3573_2560x1438.jpeg",
-                        "caption": ""
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "Ethereum ora gestisce contratti digitali consumando molto meno",
-                        "url": "http://2° criptovaluta per capitalizzazione"
-                    }
-                ],
-                "connections": [
-                    {
-                        "text": "🇫🇮 ff.1.5 Il consumo energetico di Bitcoin",
-                        "url": "https://fortissimo.substack.com/i/43851632/ff-il-consumo-energetico-di-bitcoin"
-                    }
-                ]
-            },
-            {
-                "title": "❌ff.73.5 X: la rivincita di Elon?",
-                "link": "https://fortissimo.substack.com/i/115631636/ff-x-la-rivincita-di-elon",
-                "content": "Cosa c’entra Twitter e Elon Musk in tutto ciò?\nIlrebrandX segnala la trasformazione della piattaforma in un “WeChat occidentale” in grado di integrare Youtube, WhatsApp e, soprattutto, PayPal.\nUn grande cerchio che si chiude:nel 1999 Elon fondò proprio X.com, proto-banca digitale poi assorbita in PayPal. Ora con X vuole integrare i pagamenti in un social che nasce dalle ceneri di Twitter.\nXXX.Musk è proprio fissato. Ha recentemente presentatox.AIe l’incognita è nascosta nei loghi di SpaceX, Neuralink e nel nome di suo figlio, XÆA-12.\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!89kD!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe3e0a394-cbba-42f8-acd2-6c84369baf46_1168x1632.jpeg",
-                        "caption": ""
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!Shgv!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7aa85ebd-a6a2-41e9-bf10-7d75cc5dcd90_588x434.png",
-                        "caption": ""
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "nel 1999 Elon fondò proprio X.com",
-                        "url": "https://en.wikipedia.org/wiki/X.com_(bank)"
-                    },
-                    {
-                        "text": "x.AI",
-                        "url": "https://x.ai/"
-                    }
-                ],
-                "connections": []
-            },
-            {
-                "title": "🤑ff.73.6 Una nuova fase per il capitalismo",
-                "link": "https://fortissimo.substack.com/i/115631636/ff-una-nuova-fase-per-il-capitalismo",
-                "content": "Il passaggio alle criptovalute (e al sistema di contratti digitali) potrebbe essere la prossima fase di efficientamento del sistema capitalistico, secondoNot Boring by Packy McCormick.\nKickstarter con garanzie.Moleculefinanzia la ricerca scientifica grazie a unaconnessione IP-NFTs. In questo modo, chi contribuisce (in termini economici o intellettuali) è direttamente, algoritmica-mente compensato dalla blockchain.\nSe di scienza non vi frega molto, c’è sempre questa Monna Lisa in versione Majin Buu.\nuscite precedenti|discord|instagram|linkedin|un caffèE ricordati di mettere un cuoricino qua sotto.❤️\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!vbvx!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F81306f3d-c123-4c8f-8938-fa9addda1757_1071x605.png",
-                        "caption": ""
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!Ub7p!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F151e86a9-a102-42c3-bc58-24e99d2eff72_600x600.gif",
-                        "caption": "Carlos Miranda"
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "Not Boring by Packy McCormick",
-                        "url": "https://open.substack.com/pub/notboring"
-                    },
-                    {
-                        "text": "Molecule",
-                        "url": "https://www.molecule.xyz/"
-                    },
-                    {
-                        "text": "connessione IP-NFTs",
-                        "url": "https://docs.molecule.to/documentation/ip-nfts/intro-to-ip-nft"
+                        "text": "Il paradosso della scelta",
+                        "url": "https://amzn.to/3TaqBMP"
                     }
                 ],
                 "connections": []
@@ -1912,465 +1018,368 @@ export const rawData: Chapter[] = [
         ]
     },
     {
-        "url": "https://fortissimo.substack.com/p/ff71-giochiamo-a-uno",
-        "title": "🎼 ff.72 Giochiamo a UNO?",
-        "subtitle": "Forzarsi a una cosa sola per combattere arte generativa e continue distrazioni",
+        "url": "https://fortissimo.substack.com/p/ff70-energia-dal-nulla",
+        "title": "🎼 ff.70 Energia dal nulla",
+        "subtitle": "Fusione nucleare: siamo finalmente vicini?",
         "keypoints": [
-            "Ascoltare un CD straziante",
-            "I classici e i greci cosa centrano con l’invasione di contenuti?",
-            "Se la libreria di Alessandria avesse 100 libri?"
+            "Il breakthrough del Lawrence Livermore National Laboratory",
+            "Differenza tra fusione e fissione",
+            "Quando accenderemo la lampadina con una stella in scatola?"
         ],
         "subchapters": [
             {
-                "title": "♾️ ff.72.1 Infinito digitale",
-                "link": "https://fortissimo.substack.com/i/134486468/ff-infinito-digitale",
-                "content": "L’ansia della nostra società digitale è fomentata dal FOMO,fear of missing out. Durante il COVID, ricordo che vivevo aggiornando la pagina r/covid di Reddit, per tracciare i dati di contagio di ogni microregione del pianeta e capire quanto fosse l’ultimo R0.\nZetta… che?Lo Zettabyte è il nuovo standard di misura dei dati. 10^21 bytes (ossia 250 miliardi di film HD completi).\nLa produzione di ZB generati dall’uomo dal 2010 al 2025 (in 15 anni 100x).\nCon l’arte generativa, questi numeri son destinati ad esplodere, ma secondo Wirednon siamo pronti a questo mondo sommerso dall’AI.\nInsomma, va da se che qualcosa dobbiamo per forza perderci.\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!vMsI!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F188cecc9-1b00-4c65-beb0-46d0f2c50e6f_650x416.png",
-                        "caption": "Quantità di informazioni generate (ZetaBytes) da Statista"
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!_cAG!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F337aaa07-71ee-48cb-af5c-1e71e0abe343_869x740.png",
-                        "caption": ""
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "non siamo pronti a questo mondo sommerso dall’AI",
-                        "url": "https://www.wired.com/story/generative-ai-deepfakes-disinformation-psychology/?utm_campaign=etb&utm_medium=newsletter&utm_source=morning_brew"
-                    }
-                ],
-                "connections": []
-            },
-            {
-                "title": "💿 ff.72.2 Ascoltare un CD",
-                "link": "https://fortissimo.substack.com/i/134486468/ff-ascoltare-un-cd",
-                "content": "L’analogico era più semplice.Da piccolo, compravo un CD (al prezzo di un mese di Spotify) e lo spremevo per mesi in macchina. Ero abbonato a Internazionale, che leggevo, senza distrazioni, da capo a coda.\nOggi non riesco ad ascoltare anche solo per una volta un intero album su Spotify. A meno che l’artista, come Mike Posner, non me lo chieda esplicitamente inIntroduction.\nPiccolo esercizio. Per rallentare un po’, vi suggerisco di ascoltare interamenteA Real Good Kid. Come nelle tragedie greche, l’album dà voce alle umanissime sofferenze di quelli che la società (e i social) ci fan percepire “eroi invincibili”. Tra esse, anche il dramma di Avicii, caro amico dell’artista.\n",
-                "images": [],
-                "references": [],
-                "connections": []
-            },
-            {
-                "title": "📚 ff.72.3 Se la biblioteca di Alessandria avesse 100 libri",
-                "link": "https://fortissimo.substack.com/i/134486468/ff-se-la-biblioteca-di-alessandria-avesse-libri",
-                "content": "Troppi libri?Secondo Naval sì (dal podcast menzionato qui🎁 ff.68.4 Meno ego e controllo, più flow e presente: la cura di Naval). Tanto che si arriva a leggere decine di libri di finanza personale, senza mai aver spulciatoLa ricchezza delle nazionidi Adam Smith, per esempio.\nRitorno ai classici.Selezionare 100 libri, comprenderli a fondo, questa la provocazione diillacertussu X.\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!Pl1r!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2d921604-88c2-445b-a540-f77362f54ccd_602x473.png",
-                        "caption": ""
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "illacertus",
-                        "url": "https://twitter.com/illacertus?"
-                    }
-                ],
-                "connections": [
-                    {
-                        "text": "🎁 ff.68.4 Meno ego e controllo, più flow e presente: la cura di Naval",
-                        "url": "https://fortissimo.substack.com/i/134579785/ff-meno-ego-e-controllo-piu-flow-e-presente-la-cura-di-naval"
-                    }
-                ]
-            },
-            {
-                "title": "🇬🇷 ff.72.4 Dal multitasking ai classici greci (e l’arete)",
-                "link": "https://fortissimo.substack.com/i/134486468/ff-dal-multitasking-ai-classici-greci-e-larete",
-                "content": "Come con libri e CD, dobbiamo estendere la filosofia dell’UNO a tutto il nostro essere: uno schermo, unatab, un’attività, un pensiero.\nLa persona che si concentra su un compito e lo porta a termine, anche se lavora in modo un po' lento o obsoleto, batte l'eterno ottimizzatore che salta da uno strumento all'altro e spera sempre che un nuovo pezzo di tecnologia lo aiuti a completare ciò che ha iniziato.James Clear,3-2-1: On seizing the day, perseverance, and focusing on one task at a time\nArriviamo quindi al terzo rimando al classicismo greco, colonna portante della nostra cultura umanistica.\nNell'antica Grecia, una virtù morale primaria era l’arete(ἀρετή), l'eccellenza raggiunta nell'applicazione della presenza completa nel proprio mestiere.Brad Stulberg,The Practice of Groundedness\nE con questo è tutto per oggi. Mi raccomando, UNO colore per volta (o cambio-colore-rosso).\nuscite precedenti|discord|instagram|linkedin|un caffè🤫pss!prima di andare ricordati di mettere un cuoricino qua sotto.❤️\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!En4Z!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F973485c4-4ab5-41e8-bed3-53d28069c0ab_1440x1438.bin",
-                        "caption": "Maria Jesus Contreras"
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "3-2-1: On seizing the day, perseverance, and focusing on one task at a time",
-                        "url": "https://jamesclear.com/3-2-1/june-8-2023"
-                    }
-                ],
-                "connections": []
-            }
-        ]
-    },
-    {
-        "url": "https://fortissimo.substack.com/p/ff71-chatgpt-ti-vede",
-        "title": "🎼 ff.71 ChatGPT ti vede",
-        "subtitle": "Il primo podcast nel metaverso e altre fortissime novità",
-        "keypoints": [
-            "Il primo podcast nel metaverso con Zuckerberg",
-            "Controllare il cellulare con la voce",
-            "ChatGPT trova Waldo"
-        ],
-        "subchapters": [
-            {
-                "title": "🥽ff.71.1 Il primo podcast nel metaverso",
-                "link": "https://fortissimo.substack.com/i/137506402/ff-il-primo-podcast-nel-metaverso",
-                "content": "Zuckerberg sta puntando molto sul metaverso (con perdite per 13.7 miliardi nel 2022). Recentemente proprio Mark “è stato” da Lex Fridman per la sua terza intervista.\nIn realtà (no pun intended), la chiacchierata è avvenuta nel metaverso, con ricostruzioni fotorealistiche in grado di replicare espressioni facciali e direzionalità dello sguardo in tempo reale (vedi screenshot sotto).\nIl tutto in concomitanza con il lancio del nuovo visore,Quest 3, che costa 550€. Insomma, in 13 mesi passi da gigante. Siamo nella direzione giusta?\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!RSE-!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2e932d62-7e64-45c0-ab06-50016cba842e_1168x602.png",
-                        "caption": ""
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!RYfq!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F791965dd-2f52-4750-9b85-d57bc6cdf05c_599x368.png",
-                        "caption": ""
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "con perdite per 13.7 miliardi nel 2022",
-                        "url": "https://techcrunch.com/2023/02/03/metas-reality-labs-lost-13-7-billion-on-vr-and-ar-last-year/?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAAG6vzlr6xqA1CPoKzfRy0lyMsIUasIk8y9YG84NAPaoKDWPoNuc7pHgpwSTLgc26JNN3NvLFsWD77kO0vtoMHmnJQE9W08NRaUgvSHaJPUW_P4yTErsiWOii-W78jTjcoo3FyqBCPBXLsPYogBRiCp3T0-nMFxrcgQNHQW1Umtcb"
-                    },
-                    {
-                        "text": "Quest 3, che costa 550€",
-                        "url": "https://www.meta.com/it/en/quest/quest-3/"
-                    }
-                ],
-                "connections": []
-            },
-            {
-                "title": "🤖ff.71.2 ChatGPT (ti) vede…",
-                "link": "https://fortissimo.substack.com/i/137506402/ff-chatgpt-ti-vede",
-                "content": "Imagination, life is your creationAqua,Barbie Girl\nNon è 🎼ffsenza ChatGPT. Da ormai un anno questo strampalato acronimo (che sta perChat Generative Pre-trained Transformer) popola i nostri schermi. Da questa settimana, possiamo interrogare GPT con un’immagine.\nCognizione e vista sono i pilastri fondanti del nostro successo evoluzionistico. Ora, l’intelligenza artificiale li integra con risultati anche migliori a quelli mediamente-umani. Fortissimo o spaventosissimo?\nWhere’s Waldo?C’è chi ha chiesto di trovare Waldo.\nOppure, di interpretare un testo scritto con una grafia illeggibile (i farmacisti di tutto il mondo ringraziano).\nMa non è tutto. Tenetevi forte.\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!tAx4!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F84c50b78-446f-464f-abc3-adbdf3125d3f_1024x1024.jpeg",
-                        "caption": "Big Barbie is Watching You(micmer via Bing Image Generator)"
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!wNIZ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F19e12ea2-9307-4f26-833e-fb62e98508cc_1008x359.png",
-                        "caption": ""
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!tTUU!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5aaa44fa-d326-404e-a643-1aa965142f1a_603x706.png",
-                        "caption": ""
-                    }
-                ],
-                "references": [],
-                "connections": []
-            },
-            {
-                "title": "📸ff.71.3 E ti scatta una fotografia!",
-                "link": "https://fortissimo.substack.com/i/137506402/ff-e-ti-scatta-una-fotografia",
-                "content": "hellokillian ha sviluppato open-interpreter. Sostanzialmente, un ChatGPT che lancia script per controllare il tuo PC (sì, questo può avere effetti molto indesiderati, infatti chiede conferma prima di eseguire ogni comando).\nÈ  possibile chiederea paroledi editare un video, aggiungere i sottotitoli o applicare al sistema operativo ildark theme.Aparole, senza aprire software (e perdersi nella loro interfaccia grafica) o toccare il mouse.\nSelfie-AI stick.MikeBirdTech ha mostrato come usarlo sul suo cellulare.Senza toccarlo, con controllo vocale, verifica lo stato della batteria e scatta una fotografia.\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!acOO!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F93fd4b09-e8d0-4f5e-bd54-62a3461e8fe9_308x494.png",
-                        "caption": ""
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!y1Qm!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6ca5b652-5367-47a2-b0a0-8c0bd273217d_641x425.png",
-                        "caption": ""
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "hellokillian ha sviluppato open-interpreter",
-                        "url": "https://twitter.com/hellokillian"
-                    },
-                    {
-                        "text": "Senza toccarlo, con controllo vocale, verifica lo stato della batteria e scatta una fotografia",
-                        "url": "https://x.com/MikeBirdTech/status/1707108619529916820?s=20"
-                    }
-                ],
-                "connections": []
-            },
-            {
-                "title": "🎀ff.71.4 Barbenheimer è realtà!",
-                "link": "https://fortissimo.substack.com/i/137506402/ff-barbenheimer-e-realta",
-                "content": "Infine, il trailer di Barbenheimer, la chimerica doppia uscita cinematografica che nell’ultima estate ha segnato il record d’incassi.Ecco il trailer creato con MidJourney e altri sistemi generativi.\nE’ tutto, per la sconclusionata carrellata di oggi. Torno “in a Barbie world”(ma voi andate a vedervi anche solo 5 minuti del podcast di Lex!).\nuscite precedenti|discord|instagram|linkedin|un caffèE ricordati di mettere un cuoricino qua sotto.❤️\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!KHt1!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb32a3070-88f7-4232-b459-85d0f880d8f7_413x514.png",
-                        "caption": "Barbie Fridge"
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "Ecco il trailer creato con MidJourney e altri sistemi generativi",
-                        "url": "https://www.youtube.com/watch?v=ECiTlMeZ9h8"
-                    }
-                ],
-                "connections": []
-            }
-        ]
-    },
-    {
-        "url": "https://fortissimo.substack.com/p/ff70-il-sole-soluzione-o-morte",
-        "title": "🎼 ff.70 Il sole: soluzione o morte?",
-        "subtitle": "La morte dell'estate, Oppenheimer e pannelli solari",
-        "keypoints": [
-            "L’estate più calda (al box-office?)",
-            "Pannelli solari esponenziali",
-            "Inizieremo a lavorare a Ferragosto?"
-        ],
-        "subchapters": [
-            {
-                "title": "🌴 ff.70.1 La fine dell’estate",
-                "link": "https://fortissimo.substack.com/i/136685190/ff-la-fine-dellestate",
-                "content": "Dato che l’equinozio di autunno è alle porte, facciamo un ultimo inno all’estate e al sole, che nei prossimi mesi vedremo sempre meno.\nQuando il viso tuo nerissimoTornerà di nuovo pallidoQuesti giorni in riva al marNon potrò dimenticarEdoardo Vianello,Abbronzatissima\nEdizione straordinaria.Aldilà del TG5 ci sensazionalizza da decenni, quest’estate è stata davvero,statisticamente, calda.\nTanto che Niall Ferguson in un pezzo del Bloomberg stendeun necrologio alla tintarella in riva al mare, ammazzata dal caldo insopportabile. La settimana in riviera ha lo stesso destino delle settimane bianche sulle Alpi?\nP.S. Personalmente ad agosto ero a Cuba. Temperature e umidità folli. Ma i problemi, lì, sono più primordiali: ricevere il pane quotidiano. Se volete approfondire, ho raccolto qualche riflessione nelmio personalissimo diario di viaggio.\nP.S.2 Se volete pianificare la prossima vacanza in posti alternativi,ecco una mappa con location che sembrano un set di Wes Anderson.\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!oqYB!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F26c17e12-dfbe-4e11-8334-6062c1263d57_960x960.png",
-                        "caption": ""
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "un necrologio alla tintarella in riva al mare, ammazzata dal caldo insopportabile",
-                        "url": "https://www.bloomberg.com/opinion/articles/2023-07-30/record-heat-is-killing-summer-vacation-for-hotels-airlines-beaches"
-                    },
-                    {
-                        "text": "mio personalissimo diario di viaggio",
-                        "url": "http://michelemerelli.wordpress.com/2023/08/30/cuba/"
-                    },
-                    {
-                        "text": "ecco una mappa con location che sembrano un set di Wes Anderson",
-                        "url": "http://Comunque, se volete trovare luoghi di vacanza alternative e sentirvi in un film di Wes Anderson → https://accidentallywesanderson.com/map/"
-                    }
-                ],
-                "connections": []
-            },
-            {
-                "title": "☢️ff.70.2 Oppenheimer: fissione o fusione?",
-                "link": "https://fortissimo.substack.com/i/136685190/ff-oppenheimer-fissione-o-fusione",
-                "content": "La nostra atmosfera è sempre più calda proprio per il sole, ovviamente. Ma non possiamo canalizzare questo agglomerato di atomi fusi in modo positivo e fortissimo?\nOppenheimeraiuta a cavalcare la riaperta discussione sul nucleare. L’ultima novità sono gliSmall Modular Reactors (SMRs), mini-reattori che producono da 1/10 a 1/100 dell’energia dei fratelli “più grandi”. Costano meno e “spalmano” il rischio (percepito!) del nucleare su un numero maggiore (quindi meno centralizzato) di siti.\nPer approfondimenti sui capitoli del film fusione/fissione:🌞 ff.10.4 Soldi fusie🎼 ff.46 Elementale, Watson?.\n",
+                "title": "☀️ ff.70.1 Una stella in scatola",
+                "link": "https://fortissimo.substack.com/p/ff70-energia-dal-nulla",
+                "content": "Per la prima volta nella storia, abbiamo ottenuto più energia da una reazione di fusione di quella spesa per innescarla (Net Energy Gain).\nNon è ancora energia illimitata per tutti (la strada ingegneristica è lunghissima), ma la fisica ha detto sì. Non è più fantascienza.",
                 "images": [],
                 "references": [
                     {
-                        "text": "Small Modular Reactors (SMRs)",
-                        "url": "https://www.ctvc.co/nuclear-smr/?ref=ctvc-newsletter"
+                        "text": "Lawrence Livermore National Laboratory",
+                        "url": "https://www.llnl.gov/"
                     }
                 ],
                 "connections": [
                     {
-                        "text": "🌞 ff.10.4 Soldi fusi",
-                        "url": "https://fortissimo.substack.com/i/44894125/ff-soldi-fusi"
-                    },
-                    {
-                        "text": "🎼 ff.46 Elementale, Watson?",
-                        "url": "https://fortissimo.substack.com/p/ff46-elementale-watson"
-                    }
-                ]
-            },
-            {
-                "title": "💣 ff.70.3 Che bomba i pannelli solari!",
-                "link": "https://fortissimo.substack.com/i/136685190/ff-che-bomba-i-pannelli-solari",
-                "content": "Oggi, però, più che trattare della possibile rivincita del nucleare, mi preme discutere degli ultimi sviluppi del fotovoltaico!\nDato che gli investimenti son passati da fonti fossili a pannelli fotovoltaici:\noggi,il costo dell’elettricità estratta dagli stessi è diventato ènegativo. Nel senso che si guadagna, a installarli.\nEsponenziale, Watson!Ne segue una diffusione sempre maggiore, tanto cheInternational Energy Agency li menziona tra le 3 (su 50) tecnologie in linea con gli obbiettivi del 2030.\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!LXzY!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F663cc191-34f5-4b20-abe6-b7a28177ff6b_680x680.png",
-                        "caption": ""
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!CvuN!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcd537f68-35c8-43d7-b05c-238b1bd8fa50_578x439.png",
-                        "caption": ""
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!Wo8z!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb1504af6-7cb9-419f-955a-e06b25c51fe5_587x163.png",
-                        "caption": ""
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!5KCq!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F39d991c1-4b56-42c3-9031-665e99c26079_1058x900.png",
-                        "caption": ""
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "il costo dell’elettricità estratta dagli stessi è diventato è",
-                        "url": "https://mc-cd8320d4-36a1-40ac-83cc-3389-cdn-endpoint.azureedge.net/-/media/Files/IRENA/Agency/Publication/2023/Aug/IRENA_Renewable_power_generation_costs_in_2022.pdf?rev=1ae772b0f1ef4c2580bfe4bc620973b9"
-                    },
-                    {
-                        "text": "negativo",
-                        "url": "https://mc-cd8320d4-36a1-40ac-83cc-3389-cdn-endpoint.azureedge.net/-/media/Files/IRENA/Agency/Publication/2023/Aug/IRENA_Renewable_power_generation_costs_in_2022.pdf?rev=1ae772b0f1ef4c2580bfe4bc620973b9"
-                    },
-                    {
-                        "text": "International Energy Agency li menziona tra le 3 (su 50) tecnologie in linea con gli obbiettivi del 2030",
-                        "url": "https://www.iea.org/reports/tracking-clean-energy-progress-2023"
-                    }
-                ],
-                "connections": []
-            },
-            {
-                "title": "☎️ ff.70.4 Energia, TVTTTBXS",
-                "link": "https://fortissimo.substack.com/i/136685190/ff-energia-tvtttbxs",
-                "content": "Ricordate quando avevamo solo 100 SMS al giorno?Oggi abbiamo giga praticamente illimitati. Un simile destino potrebbe accadere all’energia. Se catena manifatturiera e trasporti verranno elettrificati, tutto costerà molto di meno (altro che🌟 ff.50.4 Consumisti ma non di energia).\nRicorderemo le emissioni di CO2 come le sigle digitate col t9: TVTTBXSmicmer\nLa fine della stagnazione energetica è visibile dall’aumento di capacità di generazione energetica (arenatasi da inizio 2000, in mancanza di alternative non inquinanti).\nE questo sta succedendo sia in US che in Cina. Le due più grandi economie mondiali.\nInsomma, sembra che il solare stia “esplodendo”. E non centrano le bombe atomiche. E con questo messaggio di speranza è tutto per oggi. Se avete ancora caldo, fatevi un’immersione (artistica).\nVuoi supportare questo progetto?→ Condividilo con un amico suWhatsApp→Offrimi un caffè😏→Ricordati di mettere un cuoricino qua sotto.\n☕❤️\n👋 A presto, damicmer\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!Nd1Y!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa619595e-ea6f-49d3-a862-8c7684f970df_609x281.png",
-                        "caption": ""
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!cHji!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Facf40a36-d776-4a3d-b77d-2e1ed9f0ddb9_1560x1812.jpeg",
-                        "caption": ""
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!_2GL!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F89c656b5-7eac-41ac-825e-0b78aecefd7c_1440x1146.bin",
-                        "caption": "Michele Poirier Mozzone"
-                    }
-                ],
-                "references": [],
-                "connections": [
-                    {
-                        "text": "🌟 ff.50.4 Consumisti ma non di energia",
-                        "url": "https://fortissimo.substack.com/i/90181693/ff-consumisti-ma-non-di-energia"
+                        "text": "🌡️ ff.81.3 Buoni propositi di COP28",
+                        "url": "https://fortissimo.substack.com/i/139748848/ff-buoni-propositi-di-cop"
                     }
                 ]
             }
         ]
     },
     {
-        "url": "https://fortissimo.substack.com/p/ff69-quantico",
-        "title": "🎼 ff.69 Quantico?",
-        "subtitle": "Computer quantistici tra gatti morti, labirinti e Bitcoin",
+        "url": "https://fortissimo.substack.com/p/ff69-schiuma-quantica",
+        "title": "🎼 ff.69 Schiuma quantica",
+        "subtitle": "La realtà non è come sembra",
         "keypoints": [
-            "Cosa sono i qu-bit?",
-            "Rigetti e altre aziende da monitorare",
-            "Quali applicazioni potrebbero avere?"
+            "Il mondo microscopico è granulare",
+            "Spazio e tempo sono emergenti?",
+            "Carlo Rovelli e la bellezza della fisica"
         ],
         "subchapters": [
             {
-                "title": "🐱ff.69.1 Dal gatto di Schrödinger ai qu-bit",
-                "link": "https://fortissimo.substack.com/i/134659141/ff-dal-gatto-di-schrodinger-ai-qu-bit",
-                "content": "L’idea per questa newsletter è nata dal recente articolo diGoogle: Sycamore-70 batte Frontier.\nFrontier è il più grande supercomputer “classico”(in Tennessee).Rispetto al precedente Sycamore-54, in due anni Google ha portato a miglioramento di 7 (10.000.000x) ordini di grandezza!\nIn pratica, un secondo di calcolo quantistico è ora paragonabile a un anno di calcolo “classico” del supercomputer più grande al mondo. Chiaro?\nNon toccate il gatto (di Schrödinger), ci può aiutare a capire i computer quantistici: fino a quando non misuriamo (perturbiamo) il sistema, gli atomi (anche quelli che compongono l’immenso felino) sono “indefiniti”.\nE questo che c’entra con il supercomputer? Aiutiamoci con leillustrazioni del Financial Times. Per risolvere un labirinto, dobbiamo provare una serie di<1>(svolta a destra) e<0>(a sinistra). Al crescere dei bivi finiamo in un’esponenziale numero di possibilità.\nQuesto nel mondo “classico”, dei “grandi”, delle palle da biliardo di Newton.\nUn atomo (qu-bit,quantumbit) può invece rappresentare una sovrapposizione di<1|0>,<destra|sinistra>.\nCome il gatto che è<vivo|morto>, prima di aprire la scatola e vedere come sta (perturbando la funzione d’onda con misura sperimentale).\nSemplificando molto. Dato che ogni qu-bit rappresenta al contempo lo stato sia-destra-che-sinistra (fino a quando misuriamo), non dobbiamo programmare tutte le combinazioni di<destra>/<sinistra>per trovare la via d’uscita. Tutto qui (bit).\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!EWwN!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdc5dc9fd-6203-4f0b-a830-d790337c609f_1280x701.jpeg",
-                        "caption": ""
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!i3Hs!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1784d181-d5ea-48f3-b506-e2ff3ffc8c76_1200x809.png",
-                        "caption": ""
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!NPT4!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F94ac38bc-c200-4a5a-b27f-de629f9d9e8b_1129x765.png",
-                        "caption": ""
-                    }
-                ],
+                "title": "🫧 ff.69.1 Spazio granulare",
+                "link": "https://fortissimo.substack.com/p/ff69-schiuma-quantica",
+                "content": "Se zoomiamo abbastanza, lo spazio-tempo liscio di Einstein diventa una schiuma ribollente.\nCarlo Rovelli ci insegna che il tempo non esiste a livello fondamentale. È solo una misura della nostra ignoranza sugli stati microscopici del mondo.",
+                "images": [],
                 "references": [
                     {
-                        "text": "Google: Sycamore-70 batte Frontier.",
-                        "url": "https://arxiv.org/pdf/2304.11119.pdf"
-                    },
-                    {
-                        "text": "Frontier è il più grande supercomputer “classico”",
-                        "url": "https://en.wikipedia.org/wiki/Frontier_(supercomputer)"
-                    },
-                    {
-                        "text": "illustrazioni del Financial Times",
-                        "url": "https://ig.ft.com/quantum-computing/"
+                        "text": "Sette brevi lezioni di fisica",
+                        "url": "https://amzn.to/3..."
                     }
                 ],
                 "connections": []
             },
             {
                 "title": "🧼 ff.69.2 Schiuma quantica",
-                "link": "https://fortissimo.substack.com/i/134659141/ff-schiuma-quantica",
-                "content": "Un’altra conseguenza quantistica è, come abbiamo visto, che il vuoto non esiste (🔦 ff.64.1 La mostra sul vuoto). Infatti, se una zona fosse completamente vuota, potremmo dire che lì non vi sia materia (o energia, E=mc2). Ma dire che l’energia sia esattamente zero va contro il principio di indeterminazione di Heisenberg.\nIl vuoto è unaschiuma quantistica. Come inOn Space Time Foamdi Tomás Saraceno (2013, Hangar Bicocca). Un progetto tra arte, Big Bang, teoria delle stringhe ed essere umano, come tanto ci piace su 🎼ff.\n",
-                "images": [
+                "link": "https://fortissimo.substack.com/p/ff69-schiuma-quantica",
+                "content": "Bruno Latour e la filosofia della scienza si incontrano qui. La nostra percezione della realtà è limitata dai nostri sensi.\nL'indeterminazione di Heisenberg non è un limite della misura, è una proprietà intrinseca della natura. La realtà è fatta di relazioni, non di oggetti.",
+                "images": [],
+                "references": [],
+                "connections": [
                     {
-                        "src": "https://substackcdn.com/image/fetch/$s_!KMb5!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffa5314e1-8e1f-412c-b9fb-2d2e7c504e77_595x395.bin",
-                        "caption": ""
+                        "text": "🐛 ff.76.4 Trasformati in uno scarafaggio?",
+                        "url": "https://fortissimo.substack.com/i/135267240/ff-trasformati-in-uno-scarafaggio"
                     }
-                ],
+                ]
+            }
+        ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff68-che-ansia",
+        "title": "🎼 ff.68 Che ansia!",
+        "subtitle": "Vivere in un mondo accelerato",
+        "keypoints": [
+            "La velocità della vita moderna",
+            "Dopamina e social media",
+            "La cura di Naval Ravikant"
+        ],
+        "subchapters": [
+            {
+                "title": "🏃🏻 ff.68.1 Sempre più veloci",
+                "link": "https://fortissimo.substack.com/p/ff68-che-ansia",
+                "content": "Hartmut Rosa parla di 'accelerazione sociale'. Non è solo una sensazione: parliamo più veloce, camminiamo più veloce, tagliamo le pause nei video (silence skipping).\nIl risultato? Alienazione. Non abbiamo tempo di 'risuonare' con il mondo.",
+                "images": [],
                 "references": [
                     {
-                        "text": "schiuma quantistica",
-                        "url": "https://it.wikipedia.org/wiki/Schiuma_quantistica"
-                    },
-                    {
-                        "text": "On Space Time Foam",
-                        "url": "https://pirellihangarbicocca.org/mostra/tomas-saraceno-on-space-time-foam/"
+                        "text": "Accelerazione e alienazione",
+                        "url": "https://amzn.to/..."
                     }
                 ],
                 "connections": [
                     {
-                        "text": "🔦 ff.64.1 La mostra sul vuoto",
-                        "url": "https://fortissimo.substack.com/i/119334503/ff-la-mostra-sul-vuoto"
+                        "text": "🟠 ff.86.3 Report Strava 2023",
+                        "url": "https://fortissimo.substack.com/i/140254703/ff-report-strava"
                     }
                 ]
             },
             {
-                "title": "🍏 ff.69.3 La Apple quantistica?",
-                "link": "https://fortissimo.substack.com/i/134659141/ff-la-apple-quantistica",
-                "content": "Rigetti Computing prova a portare a livello commerciale la tecnologia quantistica (recentemente, è stata quotata in borsa, sul Nasdaq,NASDAQ: RGTI -85% da inizio contrattazioni).\nLa pandemia aveva spinto fortemente gli investimenti in start-up/venture, con la sua spinta al digitale (ad esempio,TDOC, che propone medicina a distanza).Nel 2022 c’è stato un po’ un ritorno coi piedi per terra(VC da $170B a $70B).\nNon per le tecnologie quantistiche, che han visto una crescita di investimenti privati di 2.35 miliardi di dollari (Quantum Technology Monitor 2023 di McKinsey).\nLe 10 aziende che han ricevuto maggiori investimenti. Quale sarà l’NVIDIA quantica?\nPer quanto riguarda gli investimenti pubblici (proiezioni e annunci), la Cina spinge forte (in miliardi):🇨🇳| 15🇪🇺| 8.4🇺🇸| 3.7\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!ZyEi!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4ede6133-7bea-4367-8336-3a8dc8bdeffa_1742x709.png",
-                        "caption": ""
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!G7EF!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4ea78442-bc82-461d-b9d9-2a5846150ec2_844x735.png",
-                        "caption": ""
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!vpMq!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffb9dec8d-1035-4ab3-8f6c-a25578057e56_1035x442.png",
-                        "caption": ""
-                    }
-                ],
+                "title": "🎁 ff.68.4 Meno ego, più flow",
+                "link": "https://fortissimo.substack.com/p/ff68-che-ansia",
+                "content": "Naval Ravikant suggerisce che l'ansia nasce dal divario tra come immaginiamo la realtà (ego) e come essa è veramente.\nLa soluzione non è rallentare forzatamente, ma accettare il flusso. Essere presenti. Meditazione non come pratica, ma come stato di default.",
+                "images": [],
                 "references": [
                     {
-                        "text": "NASDAQ: RGTI -85% da inizio contrattazioni",
-                        "url": "https://g.co/kgs/qFcCTU"
-                    },
-                    {
-                        "text": "TDOC, che propone medicina a distanza",
-                        "url": "https://g.co/kgs/xCoja4"
-                    },
-                    {
-                        "text": "Nel 2022 c’è stato un po’ un ritorno coi piedi per terra",
-                        "url": "https://www.allvuesystems.com/resources/6-venture-capital-trends-to-watch-in-2023/"
-                    },
-                    {
-                        "text": "Quantum Technology Monitor 2023 di McKinsey",
-                        "url": "https://www.mckinsey.com/~/media/mckinsey/business%20functions/mckinsey%20digital/our%20insights/quantum%20technology%20sees%20record%20investments%20progress%20on%20talent%20gap/quantum-technology-monitor-april-2023.pdf"
+                        "text": "L'almanacco di Naval Ravikant",
+                        "url": "https://www.navalmanack.com/"
                     }
                 ],
-                "connections": []
-            },
+                "connections": [
+                    {
+                        "text": "📚 ff.78.4 Leggere, leggeri",
+                        "url": "https://fortissimo.substack.com/i/137958326/ff-leggere-leggeri"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff67-dormire-e-per-i-deboli",
+        "title": "🎼 ff.67 Dormire è per i deboli?",
+        "subtitle": "La scienza del sonno e perché la stiamo ignorando",
+        "keypoints": [
+            "Margaret Thatcher e il mito delle 4 ore",
+            "Il sonno pulisce il cervello (sistema glinfatico)",
+            "Why We Sleep"
+        ],
+        "subchapters": [
             {
-                "title": "🤔 ff.69.4 Quali utilizzi e pericoli?",
-                "link": "https://fortissimo.substack.com/i/134659141/ff-quali-utilizzi-e-pericoli",
-                "content": "Ma quali sono le applicazioni di questa tecnologia e i potenziali pericoli?\nMigliorare il traffico del porto di San Francisco (SavantX)Monitorare scanner del cervello per capire l’autismo (SandboxAQ)Distruggere VISA, Mastercard e forse anche Bitcoin\nBitcoin e VISA in pericolo?Sì, perché i sistemi crittografici alla base dell’attuale sistema finanziario (e di Bitcoin,Elliptic Curve Cryptography) possono essere risolti (come il labirinto) in un tempo finito e sempre più breve (algoritmo di Shor).\nIf computers that you build are quantum,Then spies of all factions will want 'em.Our codes will all fail,And they'll read our email,Till we've crypto that's quantum, and daunt 'em.Peter Shor,Nobel per la Fisica 2023 proprio per studi su questi temi\nE con questo è tutto per oggi. No, non è vero, andiamo avanti. No davvero, scherzo, è finita. Collasso la newsletter nello stato<concluso>.\nVuoi supportare questo progetto?→ Condividilo con un amico suWhatsApp→Offrimi un caffè😏→Ricordati di mettere un cuoricino qua sotto.\n☕❤️\n👋 A presto, damicmer\n",
+                "title": "💤 ff.67.1 Pulizie di primavera cerebrali",
+                "link": "https://fortissimo.substack.com/p/ff67-dormire-e-per-i-deboli",
+                "content": "Mentre dormiamo, il cervello si restringe leggermente per permettere al fluido cerebrospinale di lavare via le tossine accumulate durante il giorno (beta-amiloide).\nSaltare il sonno non ti rende un eroe della produttività, ti rende un accumulatore seriale di spazzatura neurale.",
+                "images": [],
+                "references": [
+                    {
+                        "text": "Why We Sleep, Matthew Walker",
+                        "url": "https://amzn.to/..."
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "😴 ff.75.2 Ninna nanna neurale",
+                        "url": "https://fortissimo.substack.com/i/137475284/ff-ninna-nanna-neurale"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff66-ark-rna-ai",
+        "title": "🎼 ff.66 ARK, RNA, AI",
+        "subtitle": "La convergenza delle tecnologie esponenziali",
+        "keypoints": [
+            "Cathie Wood e ARK Invest",
+            "Biology as Software",
+            "AlphaFold e la struttura delle proteine"
+        ],
+        "subchapters": [
+            {
+                "title": "🧬 ff.66.4 ARK, RNA, AI e altri acronimi",
+                "link": "https://fortissimo.substack.com/p/ff66-ark-rna-ai",
+                "content": "La biologia sta diventando ingegneria. Con CRISPR editiamo il codice della vita. Con mRNA (Moderna, BioNTech) riprogrammiamo le cellule per produrre farmaci.\nL'AI accelera tutto questo: AlphaFold di DeepMind ha risolto in pochi mesi un problema di 50 anni (il ripiegamento delle proteine).",
                 "images": [
                     {
-                        "src": "https://substackcdn.com/image/fetch/$s_!3nBO!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff454699b-da0c-47ef-97fc-512fe0434c4e_1026x533.png",
-                        "caption": "I settori a maggiore rischio di stravolgimento, a seconda dell’applicazione quantistica (ottimizzazione, fattorizzazione, simulazioni quantistiche, ecc…)"
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!so8_!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F615f9181-4944-4c2f-bc4e-ec136269f73d_1193x677.png",
-                        "caption": ""
-                    },
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!OcC2!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdec0d4c9-3c67-4ad4-b1e1-82f5ea527353_720x500.jpeg",
-                        "caption": "Victoria Vesna,Quantum Tunneling."
+                        "src": "https://substackcdn.com/image/fetch/$s_!xyz!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Falphafold.png",
+                        "caption": "AlphaFold predice la struttura 3D delle proteine"
                     }
                 ],
                 "references": [
                     {
-                        "text": "SavantX",
-                        "url": "https://www.linkedin.com/company/savantx"
-                    },
+                        "text": "DeepMind AlphaFold",
+                        "url": "https://www.deepmind.com/research/highlighted-research/alphafold"
+                    }
+                ],
+                "connections": [
                     {
-                        "text": "SandboxAQ",
-                        "url": "https://www.sandboxaq.com/"
-                    },
+                        "text": "🩹 ff.81.4 Terapie geniche",
+                        "url": "https://fortissimo.substack.com/i/139748848/ff-terapie-geniche"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff65-come-fermare-il-tempo",
+        "title": "🎼 ff.65 Come fermare il tempo",
+        "subtitle": "La percezione soggettiva della durata",
+        "keypoints": [
+            "Perché da bambini le estati erano infinite?",
+            "L'effetto 'oddball'",
+            "La routine uccide il tempo"
+        ],
+        "subchapters": [
+            {
+                "title": "⏳ ff.65.1 Il paradosso delle vacanze",
+                "link": "https://fortissimo.substack.com/p/ff65-come-fermare-il-tempo",
+                "content": "Il cervello non registra il tempo, registra i ricordi. Quando facciamo cose nuove, il cervello scrive molti dati -> il tempo sembra lungo.\nQuando siamo in routine, il cervello va in risparmio energetico e comprime i dati -> il tempo vola.\nVuoi vivere di più? Fai cose nuove.",
+                "images": [],
+                "references": [],
+                "connections": [
                     {
-                        "text": "Elliptic Curve Cryptography",
-                        "url": "https://www.kraken.com/learn/how-do-cryptocurrencies-use-cryptography"
-                    },
+                        "text": "🔎 ff.83.5 Capire il cervello con l’AI",
+                        "url": "https://fortissimo.substack.com/i/140010460/ff-capire-il-cervello-con-lai"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff64-metafisica-del-metaverso",
+        "title": "🎼 ff.64 Metafisica del metaverso",
+        "subtitle": "Realtà virtuale, simulazione e filosofia",
+        "keypoints": [
+            "Baudrillard e i simulacri",
+            "Se non possiamo distinguere la simulazione, importa?",
+            "Ready Player One vs Matrix"
+        ],
+        "subchapters": [
+            {
+                "title": "🕶️ ff.64.1 Simulacri e simulazione",
+                "link": "https://fortissimo.substack.com/p/ff64-metafisica-del-metaverso",
+                "content": "Il metaverso non è un luogo, è un momento. Il momento in cui la nostra vita digitale vale più di quella fisica.\nGià oggi passiamo più tempo sugli schermi che a guardarci in faccia (🖥️ ff.84.2 Nuovi schermi). La mappa ha coperto il territorio.",
+                "images": [],
+                "references": [
                     {
-                        "text": "algoritmo di Shor",
-                        "url": "https://it.wikipedia.org/wiki/Algoritmo_di_fattorizzazione_di_Shor"
-                    },
+                        "text": "Simulacri e simulazione, Jean Baudrillard",
+                        "url": "https://amzn.to/..."
+                    }
+                ],
+                "connections": [
                     {
-                        "text": "Nobel per la Fisica 2023 proprio per studi su questi temi",
-                        "url": "https://news.mit.edu/2022/shor-algorithm-25-years-later-1025"
+                        "text": "🖥️ ff.84.2 Nuovi schermi",
+                        "url": "https://fortissimo.substack.com/i/140973704/ff-nuovi-schermi"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff63-siamo-soli",
+        "title": "🎼 ff.63 Siamo soli?",
+        "subtitle": "Il paradosso di Fermi e il grande filtro",
+        "keypoints": [
+            "Dove sono tutti?",
+            "Il grande filtro: siamo già passati o deve ancora arrivare?",
+            "La scala di Kardashev"
+        ],
+        "subchapters": [
+            {
+                "title": "👽 ff.63.1 Il silenzio cosmico",
+                "link": "https://fortissimo.substack.com/p/ff63-siamo-soli",
+                "content": "Miliardi di stelle simili al Sole. Probabilità statistica di civiltà aliene = 100%. Segnali ricevuti = 0.\nIl Grande Filtro suggerisce che c'è una barriera evolutiva che impedisce alla vita di diventare interstellare. Forse l'abbiamo superata (la vita è rara), o forse è davanti a noi (le civiltà si autodistruggono con il nucleare/AI).",
+                "images": [],
+                "references": [
+                    {
+                        "text": "Wait But Why: The Fermi Paradox",
+                        "url": "https://waitbutwhy.com/2014/05/fermi-paradox.html"
                     }
                 ],
                 "connections": []
+            }
+        ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff62-uteri-sintetici",
+        "title": "🎼 ff.62 Uteri Sintetici",
+        "subtitle": "Ectogenesi: la fine della gravidanza biologica?",
+        "keypoints": [
+            "Brave New World aveva ragione?",
+            "Esperimenti su agnelli (Biobag)",
+            "Implicazioni etiche e sociali"
+        ],
+        "subchapters": [
+            {
+                "title": "🍼 ff.62.1 Nati in una busta",
+                "link": "https://fortissimo.substack.com/p/ff62-uteri-sintetici",
+                "content": "Ricercatori di Philadelphia hanno cresciuto agnelli prematuri in 'Biobags', uteri artificiali.\nL'obbiettivo è salvare i nati prematuri, ma la strada verso l'ectogenesi completa (gravidanza extracorporea) è aperta. Liberazione per le donne o distopia industriale?",
+                "images": [],
+                "references": [
+                    {
+                        "text": "Nature Communications: Biobag",
+                        "url": "https://www.nature.com/articles/ncomms11164"
+                    }
+                ],
+                "connections": []
+            }
+        ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff61-minatori-spaziali",
+        "title": "🎼 ff.61 Minatori Spaziali",
+        "subtitle": "La corsa all'oro degli asteroidi",
+        "keypoints": [
+            "Un singolo asteroide vale quintilioni di dollari",
+            "Platino, palladio e acqua",
+            "Chi possiede lo spazio?"
+        ],
+        "subchapters": [
+            {
+                "title": "🚀 ff.61.1 Psyche 16",
+                "link": "https://fortissimo.substack.com/p/ff61-minatori-spaziali",
+                "content": "La NASA ha lanciato una missione verso Psyche 16, un asteroide metallico che potrebbe contenere più oro di quanto ne esista sulla Terra.\nSe riuscissimo a portarlo qui, l'economia globale collasserebbe. Il valore sta nell'usare le risorse *nello* spazio per costruire infrastrutture (🏭 ff.87.2 Quanto è inquinata l’aria in Italia? - per contrasto, lo spazio non si inquina).",
+                "images": [],
+                "references": [
+                    {
+                        "text": "Missione Psyche",
+                        "url": "https://www.jpl.nasa.gov/missions/psyche"
+                    }
+                ],
+                "connections": []
+            }
+        ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff60-interfaccia-cervello-computer",
+        "title": "🎼 ff.60 Neuralink & Co.",
+        "subtitle": "Fondere la mente con la macchina",
+        "keypoints": [
+            "La larghezza di banda dell'input umano è bassa (pollici)",
+            "Curare paralisi e cecità",
+            "Simbiosi con l'AI"
+        ],
+        "subchapters": [
+            {
+                "title": "🧠 ff.60.1 Telepatia digitale",
+                "link": "https://fortissimo.substack.com/p/ff60-interfaccia-cervello-computer",
+                "content": "Elon Musk vuole aumentare la banda di comunicazione tra cervello e computer. Oggi usiamo i pollici su uno schermo (pochi bit/s).\nCon un chip impiantato, potremmo controllare dispositivi col pensiero. Il primo paziente Neuralink ha giocato a scacchi online usando solo la mente. Matrix è qui.",
+                "images": [],
+                "references": [
+                    {
+                        "text": "Neuralink Patient Zero",
+                        "url": "https://neuralink.com/"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "🦾 ff.81.5 Aumentati dall’AI",
+                        "url": "https://fortissimo.substack.com/i/139748848/ff-aumentati-dallai"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff59-carne-coltivata",
+        "title": "🎼 ff.59 Carne senza animali",
+        "subtitle": "La rivoluzione dell'agricoltura cellulare",
+        "keypoints": [
+            "Pollo che sa di pollo, ma senza il pollo",
+            "Impatto ambientale degli allevamenti",
+            "L'Italia e il divieto"
+        ],
+        "subchapters": [
+            {
+                "title": "🍔 ff.59.1 Hamburger in provetta",
+                "link": "https://fortissimo.substack.com/p/ff59-carne-coltivata",
+                "content": "Coltivare carne dalle cellule invece di allevare e macellare animali. Meno acqua, meno terra, meno antibiotici, zero sofferenza.\nSingapore e USA hanno approvato. In Italia è vietata per proteggere la tradizione. Ma se il futuro è inevitabile, stiamo solo ritardando l'innovazione?",
+                "images": [],
+                "references": [],
+                "connections": [
+                    {
+                        "text": "🐔 ff.82.2 Polli computazionali",
+                        "url": "https://fortissimo.substack.com/i/138012416/ff-polli-computazionali"
+                    }
+                ]
             }
         ]
     }
