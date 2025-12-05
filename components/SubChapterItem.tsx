@@ -130,7 +130,7 @@ const SubChapterItem: React.FC<Props> = ({ subchapter }) => {
 
       {/* Links - Always Visible & Indented */}
       {validLinks.length > 0 && (
-        <div className="pl-0 md:pl-[2.5rem] mt-1.5 mb-2.5">
+        <div className="pl-0 md:pl-[2.5rem] mt-1 mb-3">
             <div className="flex flex-wrap gap-2">
               {validLinks.map((ref, idx) => {
                 const isCross = isCrossReference(ref.text);
