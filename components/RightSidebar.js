@@ -3,11 +3,7 @@ import { slugify } from '../utils.js';
 import { useNavigation } from '../NavigationContext.js';
 
 const RightSidebar = ({ chapters, isMobileMode = false, onOpenMedia }) => {
-  const { searchQuery, setSearchQuery, debouncedSearchQuery, setActiveId, incrementInteraction, setIsMobileMenuOpen } = useNavigation();
-
-  const handleSearchChange = (e) => {
-    setSearchQuery(e.target.value);
-  };
+  const { searchQuery, debouncedSearchQuery, setActiveId, incrementInteraction, setIsMobileMenuOpen } = useNavigation();
 
   const handleItemClick = (id) => {
     setActiveId(id);
@@ -41,26 +37,20 @@ const RightSidebar = ({ chapters, isMobileMode = false, onOpenMedia }) => {
   }).filter(Boolean);
 
   return html`<div className="space-y-4">
-    <div className="relative flex items-center gap-2">
-      <input
-        type="text"
-        value=${searchQuery}
-        onInput=${handleSearchChange}
-        placeholder="Cerca storie..."
-        className="w-full px-4 py-3 pr-28 bg-white border-3 border-black font-heading uppercase tracking-[0.15em] placeholder:text-gray-400 focus:outline-none focus:ring-0"
-        aria-label="Cerca storie"
-      />
-      <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-2">
-        <span aria-hidden="true" className="text-black">🔍</span>
-        <button
-          type="button"
-          onClick=${() => onOpenMedia && onOpenMedia()}
-          className="px-3 py-1 border-2 border-black bg-white font-heading text-[11px] uppercase tracking-[0.18em] hover:-translate-y-0.5 transition-transform"
-          aria-label="Apri media deck"
-        >
-          Media
-        </button>
+    <div className="flex items-center justify-between gap-2">
+      <div className="font-heading text-[11px] uppercase tracking-[0.18em] text-black">
+        ${searchQuery ? `Risultati per “${searchQuery}”` : 'Naviga tra i capitoli'}
       </div>
+      ${onOpenMedia
+        ? html`<button
+            type="button"
+            onClick=${() => onOpenMedia()}
+            className="px-3 py-1 border-2 border-black bg-white font-heading text-[11px] uppercase tracking-[0.18em] hover:-translate-y-0.5 transition-transform"
+            aria-label="Apri media"
+          >
+            Media
+          </button>`
+        : null}
     </div>
 
     <div className="max-h-[70vh] overflow-y-auto pr-1 space-y-6 no-scrollbar">
