@@ -6,7 +6,7 @@ const Sidebar = ({ selectedEmoji, onSelect, vertical = true }) => {
 
   const containerClasses = vertical
     ? 'flex-col items-center gap-3'
-    : 'flex-row items-center gap-3 px-2';
+    : 'flex-row flex-wrap items-center gap-3 px-2 justify-center';
 
   const itemClasses =
     'w-12 h-12 flex-shrink-0 flex items-center justify-center border-3 border-black bg-white text-black font-heading text-lg transition-all duration-150 shadow-[6px_6px_0_#000] hover:-translate-y-0.5';

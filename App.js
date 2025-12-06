@@ -12,7 +12,7 @@ const InnerApp = () => {
   const [processedData, setProcessedData] = React.useState([]);
   const [selectedEmoji, setSelectedEmoji] = React.useState(null);
   const [isMediaOpen, setIsMediaOpen] = React.useState(false);
-  const { incrementInteraction } = useNavigation();
+  const { incrementInteraction, searchQuery, setSearchQuery } = useNavigation();
 
   React.useEffect(() => {
     const processed = rawData.map(processChapter);
@@ -42,6 +42,10 @@ const InnerApp = () => {
   const handleTopicSelect = (emoji) => {
     incrementInteraction();
     setSelectedEmoji(emoji);
+  };
+
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
   };
 
   const handleOpenMedia = () => {
@@ -76,6 +80,35 @@ const InnerApp = () => {
           </button>
         </div>
       </header>
+
+      <section className="brutal-card accent-bar accent-yellow no-round">
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div className="space-y-1">
+            <p className="mono-label text-xs text-black">Cerca nell'archivio</p>
+            <p className="text-sm md:text-base max-w-2xl">Trova capitoli e storie per parola chiave, poi apri il media deck per vedere le immagini correlate.</p>
+          </div>
+          <div className="w-full md:w-1/2 flex flex-col gap-3">
+            <div className="relative">
+              <input
+                type="text"
+                value=${searchQuery}
+                onInput=${handleSearchChange}
+                placeholder="Cerca storie..."
+                className="w-full px-4 py-3 pr-12 bg-white border-3 border-black font-heading uppercase tracking-[0.15em] placeholder:text-gray-400 focus:outline-none focus:ring-0"
+                aria-label="Cerca storie"
+              />
+              <span aria-hidden="true" className="absolute right-4 top-1/2 -translate-y-1/2 text-black">🔍</span>
+            </div>
+            <button
+              type="button"
+              onClick=${handleOpenMedia}
+              className="px-4 py-3 border-3 border-black bg-white brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
+            >
+              Apri media
+            </button>
+          </div>
+        </div>
+      </section>
 
       <section className="brutal-card no-round">
         <div className="grid grid-cols-1 lg:grid-cols-[140px_1fr_320px] gap-6 items-start">
