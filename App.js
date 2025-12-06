@@ -11,7 +11,7 @@ import { NavigationProvider, useNavigation } from './NavigationContext.js';
 const InnerApp = () => {
   const [processedData, setProcessedData] = React.useState([]);
   const [selectedEmoji, setSelectedEmoji] = React.useState(null);
-  const { isMobileMenuOpen, setIsMobileMenuOpen, incrementInteraction } = useNavigation();
+  const { incrementInteraction } = useNavigation();
 
   React.useEffect(() => {
     const processed = rawData.map(processChapter);
@@ -43,95 +43,179 @@ const InnerApp = () => {
     setSelectedEmoji(emoji);
   };
 
-  return html`<div className="min-h-screen bg-white font-sans text-gray-900 relative selection:bg-yellow-200 selection:text-black">
+  return html`<div className="min-h-screen text-black selection:bg-yellow-200 selection:text-black">
     <${SupportPopup} />
 
-    <div className="lg:hidden bg-white/95 backdrop-blur-md sticky top-0 z-40 border-b border-gray-100 shadow-sm transition-all duration-300">
-      <div className="px-4 py-3 flex justify-between items-center">
-        <span
-          className="font-heading font-bold text-xl tracking-tight cursor-pointer"
-          onClick=${() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        >
-          Futuro Fortissimo
-        </span>
-        <button
-          onClick=${() => setIsMobileMenuOpen(true)}
-          className="p-2 bg-gray-50 rounded-lg hover:bg-gray-100 text-gray-600 transition-colors active:bg-gray-200"
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-        </button>
+    <div className="max-w-6xl mx-auto px-4 md:px-8 py-10 space-y-10">
+      <header className="brutal-card accent-bar accent-blue flex flex-col md:flex-row justify-between items-start gap-4 no-round">
+        <div>
+          <p className="mono-label text-xs text-black">Mic Mer Archive</p>
+          <h1 className="text-4xl md:text-5xl font-heading font-black leading-none">Futuro Fortissimo</h1>
+          <p className="mt-3 text-base max-w-2xl">Brutalist, technical, retro. Un archivio cronologico di idee, media e collegamenti sul futuro sostenibile.</p>
+        </div>
+        <div className="flex gap-3">
+          <button
+            onClick=${() => handleTopicSelect(null)}
+            className="px-4 py-3 border-3 border-black bg-white brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
+          >
+            Reset filtri
+          </button>
+          <button
+            onClick=${() => incrementInteraction()}
+            className="px-4 py-3 border-3 border-black bg-[var(--ff-blue)] text-black brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
+          >
+            Supporto
+          </button>
+        </div>
+      </header>
+
+      <div className="grid gap-6 lg:grid-cols-[1.4fr_1fr]">
+        <section className="brutal-card accent-bar accent-blue no-round">
+          <div className="bg-[var(--ff-blue)] border-3 border-black p-3 flex items-center justify-between mb-4">
+            <div className="bg-white border-3 border-black px-3 py-1 font-heading text-sm">Profile</div>
+            <span className="font-heading text-xs tracking-[0.2em] text-white">Retro Computing Mood</span>
+          </div>
+          <div className="grid grid-cols-[140px_1fr] gap-6 items-start">
+            <div className="border-3 border-black bg-white brutal-shadow h-36 flex items-center justify-center text-center">
+              <span className="font-heading text-xl leading-tight">MIC<br />MER</span>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="border-3 border-black p-3 accent-bar accent-red no-round">
+                <p className="mono-label text-[10px] text-black">Location</p>
+                <p className="mt-2 font-heading text-lg flex items-center gap-2">📍 Bergamo</p>
+              </div>
+              <div className="border-3 border-black p-3 accent-bar accent-yellow no-round">
+                <p className="mono-label text-[10px] text-black">Born</p>
+                <p className="mt-2 font-heading text-lg flex items-center gap-2">📅 1990</p>
+              </div>
+              <div className="border-3 border-black p-3 accent-bar accent-green no-round">
+                <p className="mono-label text-[10px] text-black">Email</p>
+                <p className="mt-2 font-heading text-lg flex items-center gap-2">✉️ micmer@pm.me</p>
+              </div>
+              <div className="border-3 border-black p-3 accent-bar accent-blue no-round">
+                <p className="mono-label text-[10px] text-black">MSC</p>
+                <p className="mt-2 font-heading text-lg flex items-center gap-2">💻 PoliMi</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="brutal-card no-round">
+          <p className="mono-label text-[10px] text-black mb-3">Social + Links</p>
+          <div className="space-y-3">
+            ${[
+              { label: 'Newsletter', href: 'https://fortissimo.substack.com', icon: '➡️' },
+              { label: 'WhatsApp', href: 'https://api.whatsapp.com/send?text=https://futurofortissimo.github.io', icon: '↗' },
+              { label: 'Supporta', href: 'https://www.paypal.com/paypalme/michelemerelli', icon: '💙' },
+              { label: 'English', href: 'https://futurofortissimo.github.io/ff_en.html', icon: 'EN' }
+            ].map((item) => html`<a
+                key=${item.label}
+                href=${item.href}
+                className="flex items-center justify-between border-3 border-black px-4 py-3 bg-white brutal-shadow hover:-translate-y-1 transition-transform no-round"
+              >
+                <span className="font-heading text-lg">${item.icon}</span>
+                <span className="font-heading text-base flex-1 text-left ml-3">${item.label}</span>
+                <span className="font-heading text-lg">→</span>
+              </a>`)}
+          </div>
+        </section>
       </div>
 
-      <div className="px-4 pb-3 overflow-x-auto no-scrollbar">
-        <div className="flex w-max">
-          <${Sidebar} selectedEmoji=${selectedEmoji} onSelect=${handleTopicSelect} vertical=${false} />
+      <div className="grid gap-6 md:grid-cols-3">
+        <div className="brutal-card accent-bar accent-blue no-round flex flex-col gap-2">
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 border-3 border-black flex items-center justify-center font-heading">📚</div>
+            <div>
+              <p className="mono-label text-[10px] text-black">Feature</p>
+              <h3 className="font-heading text-2xl">Archive Stories</h3>
+            </div>
+          </div>
+          <p className="text-sm">Cronologia di capitoli ff.x.y con filtri per emoji e ricerca diretta.</p>
+        </div>
+        <div className="brutal-card accent-bar accent-yellow no-round flex flex-col gap-2 relative">
+          <span className="absolute right-3 top-2 mono-label text-[10px]">Knowledge Base</span>
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 border-3 border-black flex items-center justify-center font-heading">🧠</div>
+            <div>
+              <p className="mono-label text-[10px] text-black">Feature</p>
+              <h3 className="font-heading text-2xl">Connections</h3>
+            </div>
+          </div>
+          <p className="text-sm">Ogni sottocapitolo porta a riferimenti e collegamenti incrociati.</p>
+        </div>
+        <div className="brutal-card accent-bar accent-green no-round flex flex-col gap-2">
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 border-3 border-black flex items-center justify-center font-heading">🛰️</div>
+            <div>
+              <p className="mono-label text-[10px] text-black">Feature</p>
+              <h3 className="font-heading text-2xl">Media deck</h3>
+            </div>
+          </div>
+          <p className="text-sm">Slider visivo randomizzato ispirato al mood tecnico neo-brutalista.</p>
         </div>
       </div>
-    </div>
 
-    ${isMobileMenuOpen
-      ? html`<div className="fixed inset-0 z-50 lg:hidden overflow-hidden">
-          <div className="absolute inset-0 bg-black/30 backdrop-blur-sm animate-in fade-in duration-300" onClick=${() => setIsMobileMenuOpen(false)}></div>
-          <div className="absolute right-0 top-0 bottom-0 w-[85%] max-w-sm bg-white shadow-2xl p-4 transform transition-transform animate-in slide-in-from-right duration-300 rounded-l-2xl border-l border-gray-100">
-            <div className="flex justify-between items-center mb-4 pb-4 border-b border-gray-100">
-              <h2 className="font-heading font-bold text-lg">Search & Index</h2>
-              <button onClick=${() => setIsMobileMenuOpen(false)} className="p-2 hover:bg-gray-100 rounded-full transition-colors active:scale-95">✕</button>
+      <section className="brutal-card no-round accent-bar accent-blue relative">
+        <span className="absolute right-5 top-3 mono-label text-[10px]">Knowledge Base</span>
+        <div className="flex items-center gap-4">
+          <div className="w-16 h-16 border-3 border-black flex items-center justify-center font-heading">🗂️</div>
+          <div className="flex-1">
+            <h3 className="font-heading text-3xl leading-none">Futuro Fortissimo</h3>
+            <p className="mt-2 text-sm max-w-2xl">Archivio digitale di storie, note e immagini che miscelano tecnologia, sostenibilità e comunità.</p>
+          </div>
+          <a href="https://futurofortissimo.github.io/" className="px-4 py-3 border-3 border-black bg-white brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform">→ Apri</a>
+        </div>
+      </section>
+
+      <section className="brutal-card no-round">
+        <div className="grid lg:grid-cols-[140px_1fr_320px] gap-6 items-start">
+          <div className="hidden lg:block">
+            <${Sidebar} selectedEmoji=${selectedEmoji} onSelect=${handleTopicSelect} vertical=${true} />
+          </div>
+
+          <div className="flex-1 space-y-6">
+            <div className="lg:hidden">
+              <${Sidebar} selectedEmoji=${selectedEmoji} onSelect=${handleTopicSelect} vertical=${false} />
             </div>
-            <${RightSidebar} chapters=${filteredData} isMobileMode=${true} />
-          </div>
-        </div>`
-      : null}
 
-    <div className="max-w-[1600px] mx-auto">
-      <div className="flex flex-col lg:flex-row gap-0">
-        <aside className="hidden lg:block w-20 shrink-0 pt-8 h-screen sticky top-0 z-20 pl-4">
-          <${Sidebar} selectedEmoji=${selectedEmoji} onSelect=${handleTopicSelect} vertical=${true} />
-        </aside>
-
-        <main className="flex-1 min-w-0 pt-12 px-4 md:px-12 max-w-5xl mx-auto border-l border-r border-gray-50/50 min-h-screen">
-          <header className="mb-16 pl-0 md:pl-[3.25rem]">
-            <h1 className="text-4xl md:text-6xl font-extrabold font-heading text-black mb-4 tracking-tighter leading-none">
-              Futuro<br />Fortissimo
-            </h1>
-            <p className="text-lg text-gray-400 font-serif italic">
-              A chronological archive of the future.
+            <div className="border-3 border-black p-3 bg-white brutal-shadow flex items-center justify-between">
+              <div className="font-heading text-sm">Archivio • ${filteredData.length} capitoli</div>
               ${selectedEmoji
-                ? html`<span
-                    className="not-italic ml-2 text-black bg-gray-100 px-3 py-1 rounded-full text-xs font-heading font-bold uppercase tracking-widest inline-flex items-center gap-2 cursor-pointer hover:bg-gray-200 transition-colors"
+                ? html`<button
+                    className="font-heading text-xs uppercase tracking-[0.2em] border-3 border-black px-3 py-2 bg-[var(--ff-yellow)] brutal-shadow"
                     onClick=${() => handleTopicSelect(null)}
                   >
-                    <span>${selectedEmoji}</span> Filter Active
-                    <span className="hover:text-red-500">✕</span>
-                  </span>`
-                : null}
-            </p>
-          </header>
+                    Clear ${selectedEmoji}
+                  </button>`
+                : html`<span className="font-heading text-xs uppercase tracking-[0.2em]">Tutti i temi</span>`}
+            </div>
 
-          <${MediaSlider} chapters=${processedData} />
+            <${MediaSlider} chapters=${processedData} />
 
-          <div className="space-y-12">
-            ${filteredData.length > 0
-              ? filteredData.map((chapter, index) => html`<${ChapterItem} key=${`${chapter.url}-${index}`} chapter=${chapter} />`)
-              : html`<div className="py-32 text-center animate-in fade-in slide-in-from-bottom-4 duration-700">
-                  <span className="text-6xl block mb-6 grayscale opacity-20">🔍</span>
-                  <p className="text-xl text-gray-400 font-serif italic mb-6">No stories found for this topic.</p>
-                  <button
-                    onClick=${() => handleTopicSelect(null)}
-                    className="px-6 py-2 bg-black text-white text-sm font-bold uppercase tracking-widest rounded-full hover:bg-gray-800 transition-all shadow-lg hover:shadow-xl active:scale-95"
-                  >
-                    Clear all filters
-                  </button>
-                </div>`}
+            <div className="space-y-8">
+              ${filteredData.length > 0
+                ? filteredData.map((chapter, index) => html`<${ChapterItem} key=${`${chapter.url}-${index}`} chapter=${chapter} />`)
+                : html`<div className="border-3 border-black p-10 text-center brutal-shadow">
+                    <span className="text-5xl block mb-4">🔍</span>
+                    <p className="text-lg mb-4">Nessun risultato per questo filtro.</p>
+                    <button
+                      onClick=${() => handleTopicSelect(null)}
+                      className="px-4 py-3 border-3 border-black bg-white brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
+                    >
+                      Azzera filtri
+                    </button>
+                  </div>`}
+            </div>
           </div>
 
-          <footer className="mt-32 mb-16 pt-8 border-t border-gray-100 text-center text-gray-300 text-xs font-heading uppercase tracking-widest">
-            Futuro Fortissimo Archive • Built with ❤️ & 🤖
-          </footer>
-        </main>
+          <div className="hidden lg:block border-3 border-black bg-white brutal-shadow p-4">
+            <${RightSidebar} chapters=${filteredData} />
+          </div>
+        </div>
+      </section>
 
-        <aside className="hidden xl:block w-80 shrink-0 pt-12 pr-8 h-screen sticky top-0 z-10">
-          <${RightSidebar} chapters=${filteredData} />
-        </aside>
+      <div className="lg:hidden brutal-card no-round">
+        <${RightSidebar} chapters=${filteredData} isMobileMode=${true} />
       </div>
     </div>
   </div>`;

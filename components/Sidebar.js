@@ -5,10 +5,11 @@ const Sidebar = ({ selectedEmoji, onSelect, vertical = true }) => {
   const topics = Object.entries(TopicEmoji);
 
   const containerClasses = vertical
-    ? 'flex-col items-center gap-2'
+    ? 'flex-col items-center gap-3'
     : 'flex-row items-center gap-3 px-2';
 
-  const itemClasses = 'w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-lg transition-all duration-200 active:scale-90';
+  const itemClasses =
+    'w-12 h-12 flex-shrink-0 flex items-center justify-center border-3 border-black bg-white text-black font-heading text-lg transition-all duration-150 shadow-[6px_6px_0_#000] hover:-translate-y-0.5';
 
   return html`<nav className=${`flex ${containerClasses} ${vertical ? 'sticky top-8' : ''}`}>
     <button
@@ -16,14 +17,16 @@ const Sidebar = ({ selectedEmoji, onSelect, vertical = true }) => {
       title="All Topics"
       className=${`${itemClasses} ${
         selectedEmoji === null
-          ? 'bg-black text-white shadow-md scale-105 ring-2 ring-black ring-offset-1'
-          : 'bg-white border border-gray-100 text-gray-400 hover:text-black hover:bg-gray-50'
+          ? 'bg-[var(--ff-blue)] text-black scale-105'
+          : 'bg-white text-gray-600'
       }`}
     >
       <span className="text-lg">♾️</span>
     </button>
 
-    ${vertical ? html`<div className="w-4 h-px bg-gray-200 my-2"></div>` : html`<div className="h-4 w-px bg-gray-200 mx-1"></div>`}
+    ${vertical
+      ? html`<div className="w-px h-6 bg-black"></div>`
+      : html`<div className="h-px w-6 bg-black"></div>`}
 
     ${topics.map(([key, emoji]) => html`<button
       key=${key}
@@ -31,8 +34,8 @@ const Sidebar = ({ selectedEmoji, onSelect, vertical = true }) => {
       title=${key.toLowerCase()}
       className=${`${itemClasses} ${
         selectedEmoji === emoji
-          ? 'bg-gray-900 text-white shadow-md scale-105 ring-2 ring-gray-900 ring-offset-1'
-          : 'bg-white border border-gray-100 text-gray-500 hover:text-black hover:bg-gray-50'
+          ? 'bg-yellow-300 text-black scale-105'
+          : 'bg-white text-gray-700'
       }`}
     >
       <span className="text-xl leading-none">${emoji}</span>
