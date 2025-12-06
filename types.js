@@ -8,7 +8,7 @@ export const TopicEmoji = {
   TRANSPORT: '🚕',
   VR: '🥽',
   SOCIETY: '👥',
-  WELLNESS: '💆',
+  WELLNESS: '❤️',
   TECH: '💻',
   NATURE: '🍃',
   UNKNOWN: '✨'

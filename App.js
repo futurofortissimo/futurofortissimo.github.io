@@ -107,20 +107,17 @@ const InnerApp = () => {
             href="https://www.paypal.com/paypalme/MicheleMerelli"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Supporto PayPal"
             className="px-4 py-3 border-3 border-black bg-[var(--ff-blue)] text-black brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
           >
-            Supporto PayPal
+            ☕
           </a>
         </div>
       </header>
 
       <section className="brutal-card mobile-unboxed accent-bar accent-yellow no-round">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <div className="space-y-1">
-            <p className="mono-label text-xs text-black">Cerca nell'archivio</p>
-            <p className="text-sm md:text-base max-w-2xl">Trova capitoli e storie per parola chiave: i risultati compaiono in un pannello dedicato con evidenziazione nei contenuti.</p>
-          </div>
-          <div className="w-full md:w-1/2 flex flex-col gap-3">
+          <div className="w-full md:w-1/2 flex flex-col gap-3 md:ml-auto">
             <div className="relative">
               <input
                 type="text"

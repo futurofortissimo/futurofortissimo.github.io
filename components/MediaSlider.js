@@ -49,12 +49,12 @@ const MediaSlider = ({ chapters }) => {
   const goToNext = () => setCurrentIndex((prev) => (prev + 1) % mediaItems.length);
   const goToPrev = () => setCurrentIndex((prev) => (prev - 1 + mediaItems.length) % mediaItems.length);
 
-  const overlayLabel = currentItem.caption?.trim() ? currentItem.caption : currentItem.reference;
+  const captionText = currentItem.caption?.trim();
 
   return html`<section className="mb-12 md:mb-16">
     <div className="relative overflow-hidden brutal-card no-round bg-white accent-bar accent-yellow">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,#000_1px,transparent_0)] [background-size:22px_22px] opacity-10 pointer-events-none"></div>
-      <div className="relative p-6 md:p-8 flex flex-col gap-6">
+      <div className="relative p-5 md:p-8 flex flex-col gap-6">
         <div className="flex items-center justify-between gap-4">
           <h2 className="font-heading font-black text-xl md:text-2xl tracking-tight text-black">Media dall'archivio</h2>
           <div className="flex gap-2">
@@ -64,36 +64,33 @@ const MediaSlider = ({ chapters }) => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] gap-6 md:gap-8 items-center">
-          <div className="overflow-hidden border-4 border-black bg-white brutal-shadow flex items-center justify-center">
-            <div className="relative w-full">
+          <figure className="overflow-hidden border-4 border-black bg-white brutal-shadow flex flex-col">
+            <div className="relative w-full flex items-center justify-center bg-white">
               <img
                 src=${currentItem.src}
-                alt=${currentItem.caption || currentItem.subTitle}
-                className="w-full max-h-[70vh] object-contain bg-white"
+                alt=${captionText || currentItem.subTitle}
+                className="w-full max-h-[60vh] md:max-h-[70vh] object-contain bg-white"
                 loading="lazy"
               />
-              ${overlayLabel
-                ? html`<div className="absolute bottom-3 left-3 right-3 px-3 py-2 border-3 border-black bg-white text-black text-xs font-heading uppercase tracking-[0.12em] brutal-shadow">${overlayLabel}</div>`
-                : null}
             </div>
-          </div>
-
-          <div className="flex flex-col gap-4 bg-white border-4 border-black brutal-shadow p-4 md:p-6">
-            <h3 className="font-heading text-2xl md:text-3xl font-black text-black leading-tight">${currentItem.subTitle}</h3>
-            <p className="text-sm md:text-base text-black/80">${currentItem.chapterTitle}</p>
-            ${currentItem.reference
-              ? html`<span className="px-3 py-1 border-3 border-black bg-yellow-100 text-xs font-heading uppercase tracking-[0.18em] inline-flex w-fit">${currentItem.reference}</span>`
+            ${captionText
+              ? html`<figcaption className="px-4 py-3 border-t-4 border-black bg-white text-xs md:text-sm font-heading uppercase tracking-[0.12em]">${captionText}</figcaption>`
               : null}
-            <div className="flex flex-wrap gap-2 text-sm font-heading uppercase tracking-[0.2em]">
-              <a
-                href=${currentItem.link || currentItem.chapterUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-3 py-2 border-3 border-black bg-[var(--ff-blue)] text-black hover:-translate-y-0.5 transition-transform"
-              >
-                Apri sezione
-              </a>
-            </div>
+          </figure>
+
+          <div className="flex flex-col gap-3 bg-white border-4 border-black brutal-shadow p-4 md:p-6">
+            <h3 className="font-heading text-xl md:text-2xl font-black text-black leading-tight">${currentItem.subTitle}</h3>
+            <p className="text-xs md:text-sm text-black/80">${currentItem.chapterTitle}</p>
+            ${captionText && currentItem.reference
+              ? html`<a
+                  href=${currentItem.link || currentItem.chapterUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-1 border-3 border-black bg-yellow-100 text-[10px] md:text-xs font-heading uppercase tracking-[0.18em] inline-flex w-fit hover:-translate-y-0.5 transition-transform"
+                >
+                  ${currentItem.reference}
+                </a>`
+              : null}
           </div>
         </div>
       </div>
