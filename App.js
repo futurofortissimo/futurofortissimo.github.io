@@ -6,12 +6,15 @@ import Sidebar from './components/Sidebar.js';
 import RightSidebar from './components/RightSidebar.js';
 import SupportPopup from './components/SupportPopup.js';
 import MediaSlider from './components/MediaSlider.js';
+import SearchResultsModal from './components/SearchResultsModal.js';
 import { NavigationProvider, useNavigation } from './NavigationContext.js';
 
 const InnerApp = () => {
   const [processedData, setProcessedData] = React.useState([]);
   const [selectedEmoji, setSelectedEmoji] = React.useState(null);
   const [isMediaOpen, setIsMediaOpen] = React.useState(false);
+  const [isSearchOverlayOpen, setIsSearchOverlayOpen] = React.useState(false);
+  const [hasManuallyClosedSearch, setHasManuallyClosedSearch] = React.useState(false);
   const { incrementInteraction, searchQuery, setSearchQuery } = useNavigation();
 
   React.useEffect(() => {
@@ -45,7 +48,36 @@ const InnerApp = () => {
   };
 
   const handleSearchChange = (e) => {
+    setHasManuallyClosedSearch(false);
     setSearchQuery(e.target.value);
+  };
+
+  React.useEffect(() => {
+    if (searchQuery.trim()) {
+      if (!hasManuallyClosedSearch) {
+        setIsSearchOverlayOpen(true);
+      }
+    } else {
+      setIsSearchOverlayOpen(false);
+      setHasManuallyClosedSearch(false);
+    }
+  }, [searchQuery, hasManuallyClosedSearch]);
+
+  const handleHideSearchOverlay = () => {
+    setIsSearchOverlayOpen(false);
+    setHasManuallyClosedSearch(true);
+  };
+
+  const handleClearSearch = () => {
+    setSearchQuery('');
+    setHasManuallyClosedSearch(false);
+  };
+
+  const handleShowSearchOverlay = () => {
+    if (searchQuery.trim()) {
+      setHasManuallyClosedSearch(false);
+      setIsSearchOverlayOpen(true);
+    }
   };
 
   const handleOpenMedia = () => {
@@ -57,35 +89,36 @@ const InnerApp = () => {
 
   return html`<div className="min-h-screen text-black selection:bg-yellow-200 selection:text-black">
     <${SupportPopup} />
+    <${SearchResultsModal}
+      chapters=${processedData}
+      isOpen=${isSearchOverlayOpen}
+      onHide=${handleHideSearchOverlay}
+      onClear=${handleClearSearch}
+      onNavigate=${handleHideSearchOverlay}
+    />
 
     <div className="max-w-6xl mx-auto px-4 md:px-8 py-10 space-y-10">
-      <header className="brutal-card accent-bar accent-blue flex flex-col md:flex-row justify-between items-start gap-4 no-round">
+      <header className="brutal-card mobile-unboxed accent-bar accent-blue flex flex-col md:flex-row justify-between items-start gap-4 no-round">
         <div>
-          <p className="mono-label text-xs text-black">Mic Mer Archive</p>
           <h1 className="text-4xl md:text-5xl font-heading font-black leading-none">Futuro Fortissimo</h1>
-          <p className="mt-3 text-base max-w-2xl">Brutalist, technical, retro. Un archivio cronologico di idee, media e collegamenti sul futuro sostenibile.</p>
         </div>
         <div className="flex flex-wrap gap-3">
-          <button
-            onClick=${() => handleTopicSelect(null)}
-            className="px-4 py-3 border-3 border-black bg-white brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
-          >
-            Reset filtri
-          </button>
-          <button
-            onClick=${() => incrementInteraction()}
+          <a
+            href="https://www.paypal.com/paypalme/MicheleMerelli"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-4 py-3 border-3 border-black bg-[var(--ff-blue)] text-black brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
           >
-            Supporto
-          </button>
+            Supporto PayPal
+          </a>
         </div>
       </header>
 
-      <section className="brutal-card accent-bar accent-yellow no-round">
+      <section className="brutal-card mobile-unboxed accent-bar accent-yellow no-round">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div className="space-y-1">
             <p className="mono-label text-xs text-black">Cerca nell'archivio</p>
-            <p className="text-sm md:text-base max-w-2xl">Trova capitoli e storie per parola chiave, poi apri il media deck per vedere le immagini correlate.</p>
+            <p className="text-sm md:text-base max-w-2xl">Trova capitoli e storie per parola chiave: i risultati compaiono in un pannello dedicato con evidenziazione nei contenuti.</p>
           </div>
           <div className="w-full md:w-1/2 flex flex-col gap-3">
             <div className="relative">
@@ -106,11 +139,31 @@ const InnerApp = () => {
             >
               Apri media
             </button>
+            ${searchQuery
+              ? html`<div className="flex flex-wrap gap-2">
+                  ${!isSearchOverlayOpen
+                    ? html`<button
+                        type="button"
+                        onClick=${handleShowSearchOverlay}
+                        className="px-3 py-2 border-3 border-black bg-white brutal-shadow font-heading text-[11px] uppercase tracking-[0.2em] hover:-translate-y-0.5 transition-transform"
+                      >
+                        Mostra risultati
+                      </button>`
+                    : null}
+                  <button
+                    type="button"
+                    onClick=${handleClearSearch}
+                    className="px-3 py-2 border-3 border-black bg-[var(--ff-yellow)] brutal-shadow font-heading text-[11px] uppercase tracking-[0.2em] hover:-translate-y-0.5 transition-transform"
+                  >
+                    Svuota ricerca
+                  </button>
+                </div>`
+              : null}
           </div>
         </div>
       </section>
 
-      <section className="brutal-card no-round">
+      <section className="brutal-card mobile-unboxed no-round">
         <div className="grid grid-cols-1 lg:grid-cols-[140px_1fr_320px] gap-6 items-start">
           <div className="hidden lg:block">
             <${Sidebar} selectedEmoji=${selectedEmoji} onSelect=${handleTopicSelect} vertical=${true} />
@@ -155,7 +208,7 @@ const InnerApp = () => {
         </div>
       </section>
 
-      <div className="lg:hidden brutal-card no-round">
+      <div className="lg:hidden brutal-card mobile-unboxed no-round">
         <${RightSidebar} chapters=${filteredData} isMobileMode=${true} onOpenMedia=${handleOpenMedia} />
       </div>
     </div>

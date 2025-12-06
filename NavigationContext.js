@@ -16,7 +16,7 @@ export const NavigationProvider = ({ children }) => {
   React.useEffect(() => {
     const timer = setTimeout(() => {
       setDebouncedSearchQuery(searchQuery);
-    }, 1000);
+    }, 400);
 
     return () => clearTimeout(timer);
   }, [searchQuery]);
