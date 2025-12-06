@@ -73,24 +73,22 @@ const MediaSlider = ({ chapters }) => {
                 loading="lazy"
               />
             </div>
-            ${captionText
-              ? html`<figcaption className="px-4 py-3 border-t-4 border-black bg-white text-xs md:text-sm font-heading uppercase tracking-[0.12em]">${captionText}</figcaption>`
-              : null}
           </figure>
 
           <div className="flex flex-col gap-3 bg-white border-4 border-black brutal-shadow p-4 md:p-6">
             <h3 className="font-heading text-xl md:text-2xl font-black text-black leading-tight">${currentItem.subTitle}</h3>
             <p className="text-xs md:text-sm text-black/80">${currentItem.chapterTitle}</p>
-            ${captionText && currentItem.reference
-              ? html`<a
-                  href=${currentItem.link || currentItem.chapterUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-3 py-1 border-3 border-black bg-yellow-100 text-[10px] md:text-xs font-heading uppercase tracking-[0.18em] inline-flex w-fit hover:-translate-y-0.5 transition-transform"
-                >
-                  ${currentItem.reference}
-                </a>`
+            ${captionText
+              ? html`<p className="text-sm md:text-base text-black leading-relaxed">${captionText}</p>`
               : null}
+            <a
+              href=${currentItem.link || currentItem.chapterUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-1 border-3 border-black bg-yellow-100 text-[10px] md:text-xs font-heading uppercase tracking-[0.18em] inline-flex w-fit hover:-translate-y-0.5 transition-transform"
+            >
+              ${currentItem.reference}
+            </a>
           </div>
         </div>
       </div>
