@@ -1,6 +1,4 @@
-import { Chapter } from './types';
-
-export const rawData: Chapter[] = [
+export const rawData = [
     {
         "url": "https://fortissimo.substack.com/p/ff88-singolarita-nel-2029",
         "title": "🎼 ff.88 Singolarità nel 2029?",
