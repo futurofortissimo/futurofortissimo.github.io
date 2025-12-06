@@ -60,7 +60,7 @@ const SubChapterItem = ({ subchapter }) => {
 
   return html`<div id=${id} className="relative pl-0 group mb-6 scroll-mt-32 transition-all duration-300">
     <div
-      className="flex items-baseline gap-2 cursor-pointer bg-white border-3 border-black p-3 hover:-translate-y-1 transition-transform brutal-shadow"
+      className="flex items-baseline gap-2 cursor-pointer bg-white border-3 border-black p-3 hover:-translate-y-1 transition-transform"
       onClick=${toggleExpand}
     >
       <span className="text-xl opacity-100 shrink-0 self-center leading-none">${subchapter.originalEmoji}</span>
@@ -127,7 +127,7 @@ const SubChapterItem = ({ subchapter }) => {
                   e.stopPropagation();
                   incrementInteraction();
                 }}
-                className=${`inline-flex items-center gap-1.5 px-3 py-1 border-2 border-black bg-white text-black brutal-shadow hover:-translate-y-0.5 transition-transform ${
+                className=${`inline-flex items-center gap-1.5 px-3 py-1 border-2 border-black bg-white text-black hover:-translate-y-0.5 transition-transform ${
                   isCross ? 'bg-blue-100' : 'bg-gray-50'
                 }`}
               >
@@ -162,7 +162,7 @@ const SubChapterItem = ({ subchapter }) => {
                   <img
                     src=${img.src}
                     alt=${img.caption || 'Subchapter image'}
-                    className="w-full h-auto border-3 border-black bg-white brutal-shadow"
+                    className="w-full h-auto border-3 border-black bg-white"
                     loading="lazy"
                   />
                   ${img.caption
