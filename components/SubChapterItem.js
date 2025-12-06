@@ -70,7 +70,7 @@ const SubChapterItem = ({ subchapter }) => {
           href=${subchapter.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-heading text-xl font-bold text-black mr-2 break-words hover:underline decoration-4"
+          className="font-heading text-lg md:text-xl font-bold text-black mr-2 break-words hover:underline decoration-4"
           onClick=${(e) => {
             e.stopPropagation();
             incrementInteraction();
@@ -131,7 +131,7 @@ const SubChapterItem = ({ subchapter }) => {
                   isCross ? 'bg-blue-100' : 'bg-gray-50'
                 }`}
               >
-                <span className="text-sm font-bold font-heading break-all">
+                <span className="text-xs md:text-sm font-bold font-heading break-all">
                   ${displayText}
                 </span>
                 ${!isCross ? html`<span className="text-black text-xs">↗</span>` : null}
@@ -145,7 +145,7 @@ const SubChapterItem = ({ subchapter }) => {
       isExpanded ? 'grid-rows-[1fr] opacity-100 mt-2 mb-4' : 'grid-rows-[0fr] opacity-0 mt-0 mb-0'
     }`}>
       <div className="overflow-hidden pl-0 md:pl-[2.5rem]">
-        <div className="prose prose-sm max-w-none text-black leading-normal font-medium break-words">
+        <div className="prose prose-sm max-w-none text-black leading-normal font-medium break-words text-[13px] md:text-sm">
           ${subchapter.content
             .split('\n')
             .map((paragraph, idx) => (paragraph.trim() ? html`<p key=${idx} className="mb-2 last:mb-0">

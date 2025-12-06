@@ -6,12 +6,12 @@ const ChapterItem = ({ chapter }) => {
     <div className="mb-4 border-b-4 border-black pb-3 flex items-start gap-3">
       <span className="text-2xl select-none leading-none">${chapter.originalEmoji}</span>
       <div>
-        <h2 className="font-heading text-2xl font-bold text-black leading-none">
+        <h2 className="font-heading text-xl md:text-2xl font-bold text-black leading-none">
           <a href=${chapter.url} target="_blank" rel="noopener noreferrer" className="hover:underline decoration-4">
             ${chapter.cleanTitle}
           </a>
         </h2>
-        <p className="text-sm text-black/70 font-medium mt-2">${chapter.subtitle}</p>
+        <p className="text-xs md:text-sm text-black/70 font-medium mt-2">${chapter.subtitle}</p>
       </div>
     </div>
 
@@ -19,7 +19,7 @@ const ChapterItem = ({ chapter }) => {
       ? html`<div className="mb-4">
           <ul className="space-y-2">
             ${chapter.keypoints.map(
-              (point, idx) => html`<li key=${idx} className="text-sm text-black font-medium flex items-start gap-2 leading-snug">
+              (point, idx) => html`<li key=${idx} className="text-xs md:text-sm text-black font-medium flex items-start gap-2 leading-snug">
                   <span className="mt-1 w-2 h-2 bg-black shrink-0"></span>
                   <span>${point}</span>
                 </li>`
