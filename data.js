@@ -2371,5 +2371,606 @@ export const rawData = [
                 "connections": []
             }
         ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff68-che-ansia-pt-2",
+        "title": "🎼 ff.68 Che ansia! (pt. 2)",
+        "subtitle": "L'individuo moderno tra canzoni velocizzate, tracking di calorie ed evoluzione della specie",
+        "keypoints": [
+            "Sempre più veloci e monitorati",
+            "La mia prima maratona e l’ansia di perdere le forma raggiunta",
+            "La cura proposta da Naval"
+        ],
+        "subchapters": [
+            {
+                "title": "🏃🏻 ff.68.1 Sempre più veloci",
+                "link": "https://fortissimo.substack.com/i/134579785/ff-sempre-piu-veloci",
+                "content": "Dato che abbiamo sempre meno tempo, deve andare tutto più veloce. Anche e soprattutto gli audio di WhatsApp o i podcast su YouTube.\nPer i classici della musica, la playlist Spotifysped up songs(ottimizzati per i 15 secondi di TikTok).\nForrester: in tre anni (nei geologici 2006-2009) il tempo accettabile per il caricamento di una pagina web è sceso da 4 a 2 secondi.\nSanta pazienza. Insomma, non sappiamo più aspettare. Annoiarci. Stare fermi. Da qui lo spunto per tornare a parlare di ansia, ripartendo da dove eravamo rimasti,🎼 ff. 44 Che ansia! (pt. 1).\n",
+                "images": [],
+                "references": [
+                    {
+                        "text": "Forrester: in tre anni (nei geologici 2006-2009) il tempo accettabile per il caricamento di una pagina web è sceso da 4 a 2 secondi",
+                        "url": "https://www.hotelnewsresource.com/article41142.html"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "🎼 ff.44 Che ansia! (pt. 1)",
+                        "url": "https://fortissimo.substack.com/p/ff42-che-ansia-pt-1"
+                    }
+                ]
+            },
+            {
+                "title": "📏 ff.68.2 Sempre più misurati e controllati",
+                "link": "https://fortissimo.substack.com/i/134579785/ff-sempre-piu-misurati-e-controllati",
+                "content": "Misuriamo tutto, e sono io il primo. Sonno. Calorie. Glicemia. HRV (che? heart rate variability). Numero di passi. Follower Instagram. Iscritti a ff.\nAl contempo, sempre più rinunce. Sempre più no. Alcol. Tabacco. Droghe. Zuccheri aggiunti. Aspartame. Cibi processati. Cellulare dopo le 22. Caffè dopo le 17. Cibo 3 ore prima di andare a dormire.\nIo ci provo a capirti e non capisco un cazzo (No, no, no)Pinguini Tattici Nucleari,Nonono\nEppure, più misuriamo, più definiamo limiti assoluti, e più ci facciamo del male\nmentale (in mancanza di crescita costante, sensazione di fallimento e abbandono di buone pratiche)fisico (paper un po’ nerd che parla dell’effetto deleterio dithresholdassoluti in medicina per assegnazione delle terapie).\nLa voce fuori dal coro. Bryan Johnson (💊 ff. 49. 4 Il superuomo che prende 100 pillole al giorno) ribatte con una visione meno ego-centrica: stiamo semplicemente evolvendo, come società e come individui aumentati da AI e algoritmi, e dobbiamo anche un po’ accettarlo.\nInsomma, siamo di fronte a un bivio: seguire l’ottimizzazione e diventare Super Sapiens (🎼 ff. 35 Sto bene, sono Super Sapiens) o accontentarsi di capelli mori e pancetta.\n",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!WUFC!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fef2dfd6d-735b-4c9b-8e3f-fc737cf1455e_596x520.png",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!pM-n!,w_1456,c_limit,f_auto,q_auto:good,fl_lossy/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F17d595c7-e867-426d-9581-e711b2f9088c_220x154.gif",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "paper un po’ nerd che parla dell’effetto deleterio di",
+                        "url": "https://www.medrxiv.org/content/10.1101/2022.04.30.22274520v1.full.pdf?ref=https://githubhelp.com"
+                    },
+                    {
+                        "text": "threshold",
+                        "url": "https://www.medrxiv.org/content/10.1101/2022.04.30.22274520v1.full.pdf?ref=https://githubhelp.com"
+                    },
+                    {
+                        "text": "assoluti in medicina per assegnazione delle terapie",
+                        "url": "https://www.medrxiv.org/content/10.1101/2022.04.30.22274520v1.full.pdf?ref=https://githubhelp.com"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "💊 ff.49.4 Il superuomo che prende 100 pillole al giorno",
+                        "url": "https://fortissimo.substack.com/i/95768941/ff-il-superuomo-che-prende-pillole-al-giorno"
+                    },
+                    {
+                        "text": "🎼 ff.35 Sto bene, sono Super Sapiens",
+                        "url": "https://fortissimo.substack.com/p/ff35-siamo-supersapiens?utm_source=profile&utm_medium=reader2"
+                    }
+                ]
+            },
+            {
+                "title": "☝️ ff.68.3 Non c’è limite al meglio (o al peggio?)",
+                "link": "https://fortissimo.substack.com/i/134579785/ff-non-ce-limite-al-meglio-o-al-peggio",
+                "content": "A condire la ricetta dell’ansia moderna, l’infinito alzarsi di asticelle.\nHo corso la mia prima maratona in 2 ore e 45 minuti (3. 54 min/km). A livello sportivo potrei tranquillamente sentirmi “arrivato”, dato che soloil 2-3% di chi chiude una maratona, una sotto-popolazione già piccola, riesce a stare sotto le 3h.\nMa, condivisa l’impresa sui social, la reazione di un amico è stata: “la prossima quindi? 2 ore e 30?”.\nIl messaggio reiterato: continua crescita e limiti infiniti (sempre più inverosimili anche per i social e gli algoritmi che li governano). L’ego di tutti noi schiacciato.\n",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!ZixD!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1c47becf-48e6-464b-935b-6ec8f6579514_716x511.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "il 2-3% di chi chiude una maratona, una sotto-popolazione già piccola, riesce a stare sotto le 3h",
+                        "url": "https://www.researchgate.net/figure/Distribution-of-Marathon-Finishing-Times-n-9-789-093_fig2_314476528"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "🎁 ff.68.4 Meno ego e controllo, più flow e presente: la cura di Naval",
+                "link": "https://fortissimo.substack.com/i/134579785/ff-meno-ego-e-controllo-piu-flow-e-presente-la-cura-di-naval",
+                "content": "Prima dell’estate vi ho lasciato con un podcast del 2017 (!) con Naval Ravikant (qui la trascrizione).\nProprio in questa piacevole chiacchierata, una riflessione da cui partire per trovare una cura all’ansia moderna.\nNon voglio che il mio senso del sé continui a svilupparsi e diventi più forte man mano che invecchio. Voglio che sia più debole e più smorzato in modo da poter vivere molto di più nella realtà di ogni giorno. Accettare la natura e i suoi limiti. Apprezzare il momento presente, come si fa da bambini. Naval Ravikant\nBrad Stulberg, ottimizzatore ex-McKinsey e scrittore diPeak Performance, ora propone il concetto digroundedness. Che è poil’ideale dell’ostrica di Vergariadattato ai distratissimi e ansiosi giorni nostri.\nEcco gli esercizi proposti:\nAccetta il tuo stato attuale, ricorda a te stesso che stai facendo il possibile per essere il meglio. Una volta riconosciuto lo stato delle cose, ancorati ad esse, impegnandoti a focalizzare la tua attenzione sul presente. Aiutati ricercando il movimento, l’azione, che spesso accompagna ilflow; così la mente non vagherà nel passato o pianificherà il futuro (anche se fortissimo).\nLa scienza sembra promuovere questo messaggio di ancoramento al presente:l'attività  della corteccia posteriore, connessa all'ansia, diminuisce quando accettiamo la situazione in cui siamo. Come anche visto in💚 ff. 51. 1 L’affabulazione per il verde.\nRefer a friend\nE con questo è tutto per oggi. Vado a fare due passi, nel verde.\nVuoi supportare questo progetto?→ Condividilo con un amico suWhatsApp→Offrimi un caffè😏→Ricordati di mettere un cuoricino qua sotto.\n☕❤️\n👋 A presto, damicmer\n",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!NuIX!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbcb3b20a-4efb-4991-8a07-1aa490fa1dae_833x1258.jpeg",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!Ox8J!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4a60274d-6262-4dab-86b9-e430b18fb25f_1440x1439.bin",
+                        "caption": "Joey Levenson,All the Places in Between"
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "qui la trascrizione",
+                        "url": "https://fs.blog/wp-content/uploads/2017/02/Naval-Ravikant-TKP.pdf"
+                    },
+                    {
+                        "text": "Peak Performance",
+                        "url": "https://amzn.to/3M9DBhO"
+                    },
+                    {
+                        "text": "groundedness",
+                        "url": "https://amzn.to/3M9DBhO"
+                    },
+                    {
+                        "text": "l’ideale dell’ostrica di Verga",
+                        "url": "https://www.skuola.net/appunti-italiano/giovanni-verga/verga-teoria-ostrica-ciclo-vinti.html#:~:text=Giovanni%20Verga%3A%20La%20teoria%20dell'ostrica&text=Infatti%2C%20Verga%20crede%20che%2C%20se,gi%C3%A0%20possiede%20(visione%20immobilistica)."
+                    },
+                    {
+                        "text": "l'attività  della corteccia posteriore, connessa all'ansia, diminuisce quando accettiamo la situazione in cui siamo",
+                        "url": "https://psycnet.apa.org/record/2013-31328-001"
+                    },
+                    {
+                        "text": "Offrimi un caffè",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    },
+                    {
+                        "text": "☕",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    },
+                    {
+                        "text": "micmer",
+                        "url": "https://linktr.ee/micmer"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "💚 ff.51.1 L’affabulazione per il verde",
+                        "url": "https://fortissimo.substack.com/i/88408587/ff-laffabulazione-per-il-verde"
+                    },
+                    {
+                        "text": "Refer a friend",
+                        "url": "https://fortissimo.substack.com/leaderboard?&utm_source=post"
+                    },
+                    {
+                        "text": "WhatsApp",
+                        "url": "https://api.whatsapp.com/send?text=https%3A%2F%2Ffortissimo.substack.com%2F"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff-sogno-di-mezzestate",
+        "title": "🎼 ff Sogno di mezz'estate",
+        "subtitle": "Come stanno andando le vacanze?",
+        "keypoints": [],
+        "subchapters": [
+            {
+                "title": "Un collettore con tutti i post",
+                "link": "https://fortissimo.substack.com/i/134547534/un-collettore-con-tutti-i-post",
+                "content": "Nel caso non lo sapessi, c’è un sito con tutti le pubblicazioni di 🎼ff, per temi e con tutti i link citati. Lo troviqui.\n",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!zzz0!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F94a2a5b0-fd58-43fa-8ea6-d0ef8b1da5df_1168x895.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "qui",
+                        "url": "https://micmer.notion.site/ff-futuro-fortissimo-f41e153b16654108991832eae044338c?pvs=4"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "Una pizza per te",
+                "link": "https://fortissimo.substack.com/i/134547534/una-pizza-per-te",
+                "content": "C’è un programma di fidelizzazione degli iscritti di 🎼ff!\nIn pratica, se schiacci il pulsante sotto può fare da “passaparola” a un amico. Se si iscrive, guadagni punti.\nRefer a friend\nSe inviti a seguire 🎼ffun tuo famigliare, tuo cugino e un collega, ti invio un libro che sto leggendo. Se continui e arrivi fino a 25 persone, ci mangiamo una pizza insieme.\nVuoi supportare questo progetto?→ Condividilo con un amico suWhatsApp→Offrimi un caffè😏→Ricordati di mettere un cuoricino qua sotto.\n☕❤️\n👋 A presto, damicmer\n",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!61-w!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd3d2be84-c520-48cb-9bb7-5841c777b5a1_478x205.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "Offrimi un caffè",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    },
+                    {
+                        "text": "☕",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    },
+                    {
+                        "text": "micmer",
+                        "url": "https://linktr.ee/micmer"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "Refer a friend",
+                        "url": "https://fortissimo.substack.com/leaderboard??utm_source=post"
+                    },
+                    {
+                        "text": "WhatsApp",
+                        "url": "https://api.whatsapp.com/send?text=https%3A%2F%2Ffortissimo.substack.com%2F"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff67-lestate-sta-iniziando",
+        "title": "🎼 ff.67 L'estate sta iniziando",
+        "subtitle": "Come passare agosto pensando a un futuro fortissimo",
+        "keypoints": [],
+        "subchapters": [
+            {
+                "title": "📚 ff.67.1 Una lettura",
+                "link": "https://fortissimo.substack.com/i/133216439/ff-una-lettura",
+                "content": "Mark Manson con il suo leggerissimo - a volte scorrettissimo - libro ci ricorda che ogni tanto è giusto fare quel c***o che ci pare. Specie d’estate.\n",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!8aeF!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbedec253-6538-4fd4-b05b-a615e9c60c44_536x866.jpeg",
+                        "caption": ""
+                    }
+                ],
+                "references": [],
+                "connections": []
+            },
+            {
+                "title": "📜 ff.67.2 Due articoli",
+                "link": "https://fortissimo.substack.com/i/133216439/ff-due-articoli",
+                "content": "Il primo diMarc Andreessen: perché l’intelligenza artificiale ci salverà. Argomenta che non ci sostituirà né ci trasformerà inpaper clips, inserisce poi Cina,alignment probleme riflessioni storico-filosofiche sulla tecnologia. Leggetevelo con calma, ha davvero tanti spunti.\nIl secondo, più leggero, coni 150 ristoranti più iconici del mondo. Ok, questo non aiuta contro la centralizzazione del turismo e le immense code che troverete all’Antico Vinaio di Firenze o da Michele a Napoli. Ma tant’è.\nCVD. Il primo ristorante italiano (5° al mondo) è proprio Pizzeria da Michele a Napoli.\n",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!DT5Y!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6d546ed3-73ec-40da-9c59-b1954211c329_1281x726.jpeg",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!Uv-T!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F23f731f5-4c10-4be0-b170-3933d1f8b073_624x779.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "Marc Andreessen: perché l’intelligenza artificiale ci salverà",
+                        "url": "https://a16z.com/2023/06/06/ai-will-save-the-world/"
+                    },
+                    {
+                        "text": "i 150 ristoranti più iconici del mondo",
+                        "url": "https://www.tasteatlas.com/iconic-dishes-legendary-restaurants?utm_source=chartr&utm_medium=newsletter&utm_campaign=chartr_20230630"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "🎧 ff.67.3 Tre podcast",
+                "link": "https://fortissimo.substack.com/i/133216439/ff-tre-podcast",
+                "content": "E ora una carrellata di podcast per accompagnare della buona sangria, in serate in cui il sole non sembra voler tramontare.\nGeorge Hotz (geohot, quello dei jailbreak di iOS) è ripassato da Lex Fridman. E’ una personcina proprio speciale, talvolta un po’ nerd e strana, ma che offre tanti spunti.\nChe cruccio. Lo ammetto: non ho mai sopportato Cruciani e il tono del suo programma, la Zanzara. Ho fatto fatica a far partire l’intervista con Shy di Breaking Italy.\nAmmetto però che, nonostante la sua irriverenza, la chiacchierata è stata piacevole. Unreminderad uscire un po’ dallaconfort zone(per ritornarci subito).\nInfine, direttamente dal 2017, immenso, Naval. Su questo poi interrogo.\n",
+                "images": [],
+                "references": [
+                    {
+                        "text": "geohot, quello dei jailbreak di iOS",
+                        "url": "https://www.cnet.com/culture/blackra1n-jailbreaks-iphone-os-3-1-2/"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "✒️ ff.67.4 Quattro riflessioni",
+                "link": "https://fortissimo.substack.com/i/133216439/ff-quattro-riflessioni",
+                "content": "Spunti e citazioni su cui riflettere in riva al mare, aspettando la grande onda di Piotta.\nIl surfista passa il 90% del tempo senza cavalcare onde, ma remando e aspettando. Pazienza e posizione corretta sono tutto ciò che conta quando la prossima onda - inevitabilmente - arriverà. E quando arriva, se la gode. Una volta passata, non si rattrista. Sa che ci saranno sempre altre onde. Ma sa anche che non deve per forza cavalcarle tutte. Sahil Bloom,The Surfer Mentality\nSe dico “miliardario”, tutti pensano a Elon Musk, a jet privati e mega lusso. Siamo così ossessionati dai soldi che i grandi numeri hanno spesso il simbolo del dollaro a fianco. Eppure, ogni ventenne è un miliardario. Del tempo. 1 milione di secondi = 11 giorni1 miliardo di secondi = 31 anniGraham Duncan,The Tim Ferriss Show #362\nLa persona che si concentra su un compito e lo porta a termine, anche se lavora in modo un po' lento o obsoleto, batte l'eterno ottimizzatore che salta da uno strumento all'altro e spera sempre che un nuovo pezzo di tecnologia lo aiuti a completare ciò che ha iniziato. James Clear,3-2-1: On seizing the day, perseverance, and focusing on one task at a time\nE  ricordati che ognuno di noi vive solo questo breve istante, che è il presente. Il resto è già vita passata, o incerto avvenire. Marco Aurelio,Pensieri\n",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!ibbS!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3c9f79ee-b9e0-4bb1-8562-0443aa3894d7_1000x1000.jpeg",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "The Surfer Mentality",
+                        "url": "https://www.sahilbloom.com/newsletter/the-surfer-mentality"
+                    },
+                    {
+                        "text": "The Tim Ferriss Show #362",
+                        "url": "https://tim.blog/2019/02/28/graham-duncan/"
+                    },
+                    {
+                        "text": "3-2-1: On seizing the day, perseverance, and focusing on one task at a time",
+                        "url": "https://jamesclear.com/3-2-1/june-8-2023"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "🖐️ ff.65.5 Cinque pezzi facili",
+                "link": "https://fortissimo.substack.com/i/133216439/ff-cinque-pezzi-facili",
+                "content": "Considera disupportare 🎼 ff con un cafféoppure usa il tasto qui sotto per invitare un amico e guadagnarti un libro. Refer a friendDedica 15 minuti alla lettura, 20 minuti a una qualsiasi attività sportiva, 30 minuti a una chiacchierata senza cellulare nelle tue vicinanze. Mangia almeno 20g di fibre. Abbronzati un po’. Mandami per email un articolo, una citazione o unmemeleggero (michelemerelli. 8@gmail. com).\nVuoi supportare questo progetto?→ Condividilo con un amico suWhatsApp→Offrimi un caffè😏→Ricordati di mettere un cuoricino qua sotto.\n☕❤️\n👋 A presto, damicmer\n",
+                "images": [],
+                "references": [
+                    {
+                        "text": "supportare 🎼 ff con un caffé",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    },
+                    {
+                        "text": "",
+                        "url": "https://substackcdn.com/image/fetch/$s_!61-w!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd3d2be84-c520-48cb-9bb7-5841c777b5a1_478x205.png"
+                    },
+                    {
+                        "text": "Offrimi un caffè",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    },
+                    {
+                        "text": "☕",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    },
+                    {
+                        "text": "micmer",
+                        "url": "https://linktr.ee/micmer"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "Refer a friend",
+                        "url": "https://fortissimo.substack.com/leaderboard??utm_source=post"
+                    },
+                    {
+                        "text": "WhatsApp",
+                        "url": "https://api.whatsapp.com/send?text=https%3A%2F%2Ffortissimo.substack.com%2F"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff66-una-cura-a-tutto",
+        "title": "🎼 ff.66 Una cura a tutto?",
+        "subtitle": "Il futuro della medicina è a un punto di svolta?",
+        "keypoints": [
+            "Sempre più malati o più sani?",
+            "Quali sviluppi terapeutici tra DNA, RNA e proteine?",
+            "Le stime di ARK sulla terapia contro il cancro"
+        ],
+        "subchapters": [
+            {
+                "title": "📙 ff.66.1 Il dogma fondamentale",
+                "link": "https://fortissimo.substack.com/i/131834983/ff-il-dogma-fondamentale",
+                "content": "La biologia è complessa: un agglomerato di atomi via via più grandi (molecole, proteine, RNA, DNA, doppi layer lipidici che alla fiera dell’Est mio padre comprò).\nPrima di buttarci nel 🎼ffdi oggi, vediamo almeno le principali regole del gioco.\nConosco le leggi del mondo, e te ne farò dono. Supererò le correnti gravitazionali,lo spazio e la luce per non farti invecchiare. Franco Battiato,La Cura\nPrima l’uovo, poi la gallina. Il dogma fondamentale della biologia dice che le proteine vengono create seguendo le istruzioni dell’RNA che, a sua volta, è una “copia temporanea” di un tratto di DNA.\nDNA → RNA → proteine\nAnche a livello terapeutico abbiamo tre livelli di azione, modificare il DNA, iniettare RNA (come coi vaccini) o agire sul design di proteine.\nLa buona notizia? Stiamo avanzando un po’ in tutto:\nDNA: ilPrime Editing. RNA:😷 ff. 53. 3 Dal COVID al cancroProteine:🧬 ff. 4. 1 La struttura delle proteineFarmaci e molecole:primi trial clinici di molecole scoperte da AI. Praticamente, un MidJourney per la prossima tachipirina.\n",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!QQyc!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F377b7a37-22cb-4213-a64e-a70a1506ddaf_602x529.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "Prime Editing",
+                        "url": "https://ark-invest.com/newsletters/issue-282/"
+                    },
+                    {
+                        "text": "primi trial clinici di molecole scoperte da AI",
+                        "url": "https://www.ft.com/content/82071cf2-f0da-432b-b815-606d602871fc"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "😷 ff.53.3 Dal COVID al cancro",
+                        "url": "https://fortissimo.substack.com/i/104014049/ff-dal-covid-al-cancro"
+                    },
+                    {
+                        "text": "🧬 ff.4.1 La struttura delle proteine",
+                        "url": "https://fortissimo.substack.com/i/44077581/ff-la-struttura-delle-proteine"
+                    }
+                ]
+            },
+            {
+                "title": "❓ ff.66.2 Siamo sempre più malati?",
+                "link": "https://fortissimo.substack.com/i/131834983/ff-siamo-sempre-piu-malati",
+                "content": "Complice anche il COVID, l’aspettativa di vita in molti paesi è in stasi (se non in forte crollo), con Stati Uniti superati dalla Cina!\nIl futuro della medicina non sembra quindi fortissimo, se anche si considera che:\nL’aspettativa media più alta è anche connessa con il crollo della mortalità infantile (o no?)La spesa sanitaria (US) è esplosa negli ultimi 50 anni\nMomento, momento, momento. Non è che non sia migliorata la situazione. Innegabile che vi sia unadiminuzione di morti per malattie cardiovascolarie anche ilprogresso nella cura contro il cancroè evidente (🤞 ff. 53. 1 Meno morti per il cancro).\nMa dal 2012 il progresso annuale è diminuito, se non addirittura azzerato e invertito come per le malattie cardiovascolari.\n",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!dCrM!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb536824c-b9eb-40e0-a791-892ab83585fa_1262x698.png",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!ZkOq!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4a9ce886-5e1e-404a-b82f-7de3fb82cc74_872x513.png",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!6y1l!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F718e4a86-d444-4d08-adf3-2d77c9e26515_599x378.png",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!x5o3!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7fffa8e5-430d-4c48-954c-18f96dcde3cf_594x382.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "L’aspettativa media più alta è anche connessa con il crollo della mortalità infantile (o no?)",
+                        "url": "https://ourworldindata.org/its-not-just-about-child-mortality-life-expectancy-improved-at-all-ages"
+                    },
+                    {
+                        "text": "diminuzione di morti per malattie cardiovascolari",
+                        "url": "https://pubmed.ncbi.nlm.nih.gov/28104770/"
+                    },
+                    {
+                        "text": "progresso nella cura contro il cancro",
+                        "url": "https://ourworldindata.org/grapher/cancer-deaths-rate-and-age-standardized-rate-index"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "🤞 ff.53.1 Meno morti per il cancro",
+                        "url": "https://fortissimo.substack.com/i/104014049/ff-meno-morti-per-il-cancro"
+                    }
+                ]
+            },
+            {
+                "title": "👑 ff.66.3 Una decentralizzata cura contro i “poteri forti”",
+                "link": "https://fortissimo.substack.com/i/131834983/ff-una-decentralizzata-cura-contro-i-poteri-forti",
+                "content": "Che cosa non va, quindi? Probabilmente un mix di burocrazia, eccessiva prevenzione di rischi e gruppi a protezione dellostatus-quodel mercato da 0. 4 T$ del mondo farmaceutico, 0. 25% delGDP globale, 101 T$ nel 2022)\nBalaji, considerato da Trump tra i papabili direttori della Food and Drugs Administration (FDA), propone di superare la stessa conun’alternativa decentralizzata.\nQui sotto iltimestampdella chiacchierata con Lex Fridman a riguardo.\n",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!3eAI!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fca00a5c2-46de-418b-ba46-6496342dd544_740x428.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "del mercato da 0.4 T$ del mondo farmaceutico",
+                        "url": "https://www.grandviewresearch.com/industry-analysis/pharmaceutical-manufacturing-market"
+                    },
+                    {
+                        "text": "GDP globale, 101 T$ nel 2022",
+                        "url": "https://www.statista.com/statistics/1356755/share-global-economy-country/#:~:text=2022%20saw%20the%20global%20economy,51%20percent%20of%20global%20GDP."
+                    },
+                    {
+                        "text": "un’alternativa decentralizzata",
+                        "url": "https://twitter.com/balajis/status/1239023735698411521?lang=en"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "🧬 ff.66.4 ARK, RNA, AI e altri acronimi",
+                "link": "https://fortissimo.substack.com/i/131834983/ff-ark-rna-ai-e-altri-acronimi",
+                "content": "ARK, nel suoannuale report, affronta gli sviluppi diagnostici e terapeutici nel dettaglio:\nQui gli anni (!) che servono per sviluppare terapie a seconda della tipologia. Si nota che quelle a RNA hanno un range molto più stretto e veloce. Se abbiamo avuto un vaccino contro il COVID nel giro di un anno, è proprio grazie a questo.\nAnche i costi di sviluppo clinico sono minori (circa la metà).\nIl mercato legato a prevenzione, terapie escreeningoncologici può crescere di 5x (dal 2022 al 2030).\nE con questo è tutto per oggi.\nVuoi supportare questo progetto?→ Condividilo con un amico suWhatsApp→Offrimi un caffè😏→Ricordati di mettere un cuoricino qua sotto.\n☕❤️\n👋 A presto, damicmer\n",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!fThv!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4df8c9e7-f8cb-4605-974f-3db9a45a47e5_705x449.png",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!RQRU!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F52b864a6-b7c8-4daa-ae81-83a0a13197a1_685x429.png",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!XHQ7!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0e2744a7-2a73-4200-80e3-97d8137f7d7e_873x279.png",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!XVlQ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faac2d27b-b934-4c37-a17e-48a243151a45_800x534.jpeg",
+                        "caption": "Ricercatori di BioNTech durante lo sviluppo del vaccino COVID-19,Luca Locatelli"
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "annuale report",
+                        "url": "https://ark-invest.com/big-ideas-2023/"
+                    },
+                    {
+                        "text": "Offrimi un caffè",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    },
+                    {
+                        "text": "☕",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    },
+                    {
+                        "text": "micmer",
+                        "url": "https://linktr.ee/micmer"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "WhatsApp",
+                        "url": "https://api.whatsapp.com/send?text=https%3A%2F%2Ffortissimo.substack.com%2F"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff65-come-fermare-il-tempo",
+        "title": "🎼 ff.65 Come fermare il tempo",
+        "subtitle": "Da routine sempre più veloci a esercizi mentali per rallentare un attimo",
+        "keypoints": [
+            "Perché nella routine del lavoro gli anni volano?",
+            "Esercizi mentali per cogliere l’attimo",
+            "La frequenza cardiaca scandisce il tempo?"
+        ],
+        "subchapters": [
+            {
+                "title": "🆕 ff.65.1 Tempo = nuove esperienze?",
+                "link": "https://fortissimo.substack.com/i/107595173/ff-tempo-nuove-esperienze",
+                "content": "Il tempo. Che bell’argomento anche questo. Lo troviamo praticamente discusso in ogni ambito, dalla filosofia, alle canzoni pop di Jovanotti. Dalla fisica teorica fino agli effimeri fazzoletti per il raffreddore. Effimeri davvero.\nNonostante la tecnologia (elettrodomestici, internet iper veloce, messaggi istantanei), diciamo sempre di più di non avere tempo. Perché?\nDeltaT. Secondo una teoria, il tempo, più che numero assoluto di secondi è scandito dalla quantità di variazione che si presenta tra un prima e un dopo.\nIl cerchio dinamico. Un esperimento in questo senso ha dimostrato cheun cerchio mostrato per 500 millisecondi è percepito più breve se il cerchio si allarga/restringe.\nAl contempo, invecchiando, gli elementi di novità son sempre minori, avendo accumulato molti ricordi ed esperienze. Senza novità, il tempo sembra più veloce.\n",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!k_U-!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1aa54a58-a987-40da-8450-630ebc6bbda1_867x420.jpeg",
+                        "caption": "Olimpia Zanioli,Tempo"
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "un cerchio mostrato per 500 millisecondi è percepito più breve se il cerchio si allarga/restringe",
+                        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2685822/"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "🌴 ff.65.2 Una vita in vacanza",
+                "link": "https://fortissimo.substack.com/i/107595173/ff-una-vita-in-vacanza",
+                "content": "Non ho capito. Se siamo vecchi, la novità e dinamicità è minore e quindi il tempo passa più velocemente? Non è in contraddizione con tutto quello detto sul cerchio dinamico?\nLa differenza tra il tempo prospettico e quello retrospettivospiega il perché.\nIn generale, un periodo riempito di esperienze diverse ed interessanti sembra breve mentre passa, ma lungo quando guardiamo indietro. D'altro canto, un tratto di tempo privo di esperienze sembra lungo mentre passa, ma in retrospettiva breve. William James,The Principles of Psychology(1890)L’attesa di un aereo in ritardo di 5 ore può essere percepita più lunga di tutta una settimana in Grecia, mentre una giornata a Atene vola. Una settimana dal ritorno dal viaggio, però, l’attesa in aereoporto è un brevissimo attimo, mentre il divertimento della vacanza si dilata incredibilmente. Dean Buonomano,Your Brain is a Time Machine\n",
+                "images": [],
+                "references": [
+                    {
+                        "text": "La differenza tra il tempo prospettico e quello retrospettivo",
+                        "url": "https://www.jstor.org/stable/1421469"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "📝 ff.65.3 Il compito a casa per la vita",
+                "link": "https://fortissimo.substack.com/i/107595173/ff-il-compito-a-casa-per-la-vita",
+                "content": "Congelare attimi. Per dare valore al tempo (e dilatarlo anche quando la novità non è scontata) il cantastorie Matthew Dicks propone un compito a casa.\nInvece di spendere due ore davanti alla TV, fruendo di contenuti che vanno direttamente nel dimenticatoio, propone di fermarsi per 5 minuti per riflettere sulla giornata.\nMatthew, sostiene che questo metodo, inizialmente introdotto per trovare nuove storie da raccontare, sia una vera e propria macchina del tempo.\n5 minuti → istanti del giorno isolati → novità identificata → dilatazione dei tempi\n",
+                "images": [],
+                "references": [],
+                "connections": []
+            },
+            {
+                "title": "❤️ ff.65.4 Una questione di cuore?",
+                "link": "https://fortissimo.substack.com/i/107595173/ff-una-questione-di-cuore",
+                "content": "Il tempo si espande o si blocca in accordo con i movimenti del cuore. Murakami,Kafka sulla spiaggia\nI ricercatori londinesi della Royal Holloway University sono d’accordo con questo spunto letterario. Hanno infatti dimostrato cheun rumore è più o meno lungo a seconda che sia percepito durante una sistole o diastole.\nLo spiegone. Perché al battere del cuore il tempo dura di più? Forse perché nel suo (inconscio) processare di informazioni (anche interne), il cervello riceve durante la sistole un maggiore numero di input, costruendo la percezione / illusione di un tempo più veloce.\nA proposito, sapete che con un caffè il mio cuore accelererebbe un po’?\n☕ supporta ff con un fortissimo caffé ☕\n",
+                "images": [],
+                "references": [
+                    {
+                        "text": "un rumore è più o meno lungo a seconda che sia percepito durante una sistole o diastole",
+                        "url": "https://www.cell.com/current-biology/fulltext/S0960-9822(23)00174-4?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0960982223001744%3Fshowall%3Dtrue"
+                    },
+                    {
+                        "text": "☕ supporta ff con un fortissimo caffé ☕",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "🧠 ff.65.5 O di cervello?",
+                "link": "https://fortissimo.substack.com/i/107595173/ff-o-di-cervello",
+                "content": "Se volete approfondire il tema,Your Brain is a Time Machinedi Dean Buonomano.\nIl cervello deve gestire varie scale temporali di variazioni di tempo: millisecondi (suono), ore (ritmo circadiano) fino alle stagioni, per regolare il corretto funzionamento dell’organismo. Non è quindi solo un Rolex, ma anche un coltellino svizzero! Perché è nato il tempo? Forseper riuscire a cantare (o parlare). Per isolare fonemi. Un esempio: inPurple Hazedi Jimi Hendrix “excuse me while I kiss the sky” diventa “excuse me while I kiss this guy”.\nE con questo è tutto per oggi. Non ho più tempo. E penso che neanche voi l’abbiate.\nVuoi supportare questo progetto?→ Condividilo con un amico suWhatsApp→Offrimi un caffè😏→Ricordati di mettere un cuoricino qua sotto.\n☕❤️\n👋 A presto, damicmer\n",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!T6FO!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb97bff6e-c198-40cb-8100-1ba097b4487b_488x488.jpeg",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "",
+                        "url": "https://substackcdn.com/image/fetch/$s_!zED_!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd295fd24-c8f8-40d3-abcc-861327044eee_2439x1549.jpeg"
+                    },
+                    {
+                        "text": "per riuscire a cantare (o parlare). Per isolare fonemi.",
+                        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4073907/"
+                    },
+                    {
+                        "text": "Offrimi un caffè",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    },
+                    {
+                        "text": "☕",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    },
+                    {
+                        "text": "micmer",
+                        "url": "https://linktr.ee/micmer"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "WhatsApp",
+                        "url": "https://api.whatsapp.com/send?text=https%3A%2F%2Ffortissimo.substack.com%2F"
+                    }
+                ]
+            }
+        ]
     }
 ];
