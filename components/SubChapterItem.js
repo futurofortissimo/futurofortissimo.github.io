@@ -60,7 +60,7 @@ const SubChapterItem = ({ subchapter }) => {
 
   return html`<div id=${id} className="relative pl-0 group mb-6 scroll-mt-32 transition-all duration-300">
     <div
-      className="flex items-baseline gap-2 cursor-pointer hover:bg-gray-50 rounded-lg p-1 -ml-1 transition-colors select-none active:scale-[0.99] transform duration-100"
+      className="flex items-baseline gap-2 cursor-pointer bg-white border-3 border-black p-3 hover:-translate-y-1 transition-transform brutal-shadow"
       onClick=${toggleExpand}
     >
       <span className="text-xl opacity-100 shrink-0 self-center leading-none">${subchapter.originalEmoji}</span>
@@ -70,7 +70,7 @@ const SubChapterItem = ({ subchapter }) => {
           href=${subchapter.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-heading text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors mr-2 break-words hover:underline decoration-2 underline-offset-2"
+          className="font-heading text-xl font-bold text-black mr-2 break-words hover:underline decoration-4"
           onClick=${(e) => {
             e.stopPropagation();
             incrementInteraction();
@@ -80,7 +80,7 @@ const SubChapterItem = ({ subchapter }) => {
         </a>
 
         <span
-          className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-gray-100 text-xs hover:bg-gray-200 hover:scale-110 transition-all cursor-default align-middle relative -top-0.5"
+          className="inline-flex items-center justify-center w-6 h-6 border-2 border-black bg-yellow-200 text-xs align-middle"
           title=${`Topic: ${subchapter.secondaryEmoji}`}
           onClick=${(e) => {
             e.stopPropagation();
@@ -92,7 +92,7 @@ const SubChapterItem = ({ subchapter }) => {
       </div>
 
       <button
-        className="text-gray-400 hover:text-black transition-colors shrink-0 p-1 self-center active:bg-gray-100 rounded-full"
+        className="text-black hover:scale-110 transition-transform shrink-0 p-1 self-center"
         aria-label="Toggle content"
       >
         <svg
@@ -112,7 +112,7 @@ const SubChapterItem = ({ subchapter }) => {
     </div>
 
     ${validLinks.length > 0
-      ? html`<div className="pl-0 md:pl-[2.5rem] mt-1 mb-3">
+      ? html`<div className="pl-0 md:pl-[2.5rem] mt-2 mb-3">
           <div className="flex flex-wrap gap-2">
             ${validLinks.map((ref, idx) => {
               const isCross = isCrossReference(ref.text);
@@ -127,16 +127,14 @@ const SubChapterItem = ({ subchapter }) => {
                   e.stopPropagation();
                   incrementInteraction();
                 }}
-                className=${`inline-flex items-center gap-1.5 px-3 py-0.5 border rounded-full transition-all duration-200 ${
-                  isCross
-                    ? 'bg-blue-50 hover:bg-blue-100 border-blue-100 text-blue-700'
-                    : 'bg-gray-50 hover:bg-gray-100 border-gray-200 text-gray-700'
+                className=${`inline-flex items-center gap-1.5 px-3 py-1 border-2 border-black bg-white text-black brutal-shadow hover:-translate-y-0.5 transition-transform ${
+                  isCross ? 'bg-blue-100' : 'bg-gray-50'
                 }`}
               >
-                <span className="text-sm font-bold font-heading break-all hover:underline decoration-2 underline-offset-2">
+                <span className="text-sm font-bold font-heading break-all">
                   ${displayText}
                 </span>
-                ${!isCross ? html`<span className="text-gray-400 text-xs transition-colors">↗</span>` : null}
+                ${!isCross ? html`<span className="text-black text-xs">↗</span>` : null}
               </a>`;
             })}
           </div>
@@ -147,7 +145,7 @@ const SubChapterItem = ({ subchapter }) => {
       isExpanded ? 'grid-rows-[1fr] opacity-100 mt-2 mb-4' : 'grid-rows-[0fr] opacity-0 mt-0 mb-0'
     }`}>
       <div className="overflow-hidden pl-0 md:pl-[2.5rem]">
-        <div className="prose prose-sm max-w-none text-gray-800 leading-normal font-normal break-words">
+        <div className="prose prose-sm max-w-none text-black leading-normal font-medium break-words">
           ${subchapter.content
             .split('\n')
             .map((paragraph, idx) => (paragraph.trim() ? html`<p key=${idx} className="mb-2 last:mb-0">
@@ -164,11 +162,11 @@ const SubChapterItem = ({ subchapter }) => {
                   <img
                     src=${img.src}
                     alt=${img.caption || 'Subchapter image'}
-                    className="w-full h-auto rounded-lg border border-gray-100 shadow-sm bg-gray-50"
+                    className="w-full h-auto border-3 border-black bg-white brutal-shadow"
                     loading="lazy"
                   />
                   ${img.caption
-                    ? html`<figcaption className="text-[9px] font-heading uppercase tracking-widest text-gray-500 font-bold pl-1">
+                    ? html`<figcaption className="text-[10px] font-heading uppercase tracking-widest text-black font-bold pl-1">
                         ${img.caption}
                       </figcaption>`
                     : null}

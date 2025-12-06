@@ -7,22 +7,89 @@
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" rel="stylesheet">
+
     <style>
+      :root {
+        --ff-blue: #4a90e2;
+        --ff-red: #d0021b;
+        --ff-yellow: #f5a623;
+        --ff-green: #2ecc71;
+        --ff-black: #0a0a0a;
+        --ff-grid: rgba(0, 0, 0, 0.06);
+      }
+
       body {
-        font-family: 'Open Sans', sans-serif;
-        background-color: #ffffff;
-        color: #1a1a1a;
+        font-family: 'Inter', sans-serif;
+        background-color: #fdfdfd;
+        color: var(--ff-black);
+        position: relative;
+        min-height: 100vh;
       }
+
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background-image:
+          linear-gradient(var(--ff-grid) 1px, transparent 1px),
+          linear-gradient(90deg, var(--ff-grid) 1px, transparent 1px);
+        background-size: 32px 32px;
+        pointer-events: none;
+        z-index: -1;
+      }
+
       h1, h2, h3, h4, h5, h6, .font-heading {
-        font-family: 'Open Sans', sans-serif;
-        letter-spacing: -0.03em;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
       }
+
+      .brutal-card {
+        border: 4px solid var(--ff-black);
+        background: #ffffff;
+        box-shadow: 10px 10px 0 var(--ff-black);
+        padding: 24px;
+      }
+
+      .border-3 {
+        border-width: 3px !important;
+      }
+
+      .brutal-shadow {
+        box-shadow: 10px 10px 0 var(--ff-black);
+      }
+
+      .accent-bar { position: relative; }
+      .accent-bar::before {
+        content: '';
+        position: absolute;
+        top: -4px;
+        left: -4px;
+        right: -4px;
+        height: 10px;
+        background: var(--ff-blue);
+      }
+
+      .accent-red::before { background: var(--ff-red); }
+      .accent-yellow::before { background: var(--ff-yellow); }
+      .accent-green::before { background: var(--ff-green); }
+      .accent-blue::before { background: var(--ff-blue); }
+
+      .mono-label {
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.18em;
+        font-weight: 700;
+      }
+
+      .no-round, .no-round * {
+        border-radius: 0 !important;
+      }
+
       /* Hide scrollbar for Chrome, Safari and Opera */
       .no-scrollbar::-webkit-scrollbar {
           display: none;

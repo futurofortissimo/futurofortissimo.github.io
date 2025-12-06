@@ -40,16 +40,16 @@ const RightSidebar = ({ chapters, isMobileMode = false }) => {
     };
   }).filter(Boolean);
 
-  return html`<div className="space-y-6">
+  return html`<div className="space-y-4">
     <div className="relative">
       <input
         type="text"
         value=${searchQuery}
         onInput=${handleSearchChange}
         placeholder="Cerca storie..."
-        className="w-full px-4 py-2 bg-white border border-gray-200 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent transition-all shadow-sm"
+        className="w-full px-4 py-3 bg-white border-3 border-black font-heading uppercase tracking-[0.15em] placeholder:text-gray-400 focus:outline-none focus:ring-0"
       />
-      <div className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-300">🔍</div>
+      <div className="absolute right-3 top-1/2 -translate-y-1/2 text-black">🔍</div>
     </div>
 
     <div className="max-h-[70vh] overflow-y-auto pr-1 space-y-6 no-scrollbar">
@@ -62,10 +62,10 @@ const RightSidebar = ({ chapters, isMobileMode = false }) => {
             }}
           >
             <span className="text-lg">${chapter.originalEmoji}</span>
-            <span className="font-heading font-bold text-sm text-gray-900 group-hover:text-black transition-colors break-words">${chapter.cleanTitle}</span>
+            <span className="font-heading font-bold text-sm text-black group-hover:underline break-words">${chapter.cleanTitle}</span>
           </button>
 
-          <div className="pl-6 space-y-2 border-l border-gray-100">
+          <div className="pl-4 space-y-2 border-l-4 border-black">
             ${chapter.processedSubchapters.map((sub, sIdx) => {
               const id = slugify(sub.cleanTitle);
               return html`<button
@@ -79,8 +79,8 @@ const RightSidebar = ({ chapters, isMobileMode = false }) => {
                 <div className="flex items-start gap-2">
                   <span className="text-base leading-none mt-0.5">${sub.originalEmoji}</span>
                   <div>
-                    <div className="font-heading text-[13px] font-semibold text-gray-800 group-hover:text-black transition-colors break-words">${sub.cleanTitle}</div>
-                    <div className="text-[11px] text-gray-400 font-medium uppercase tracking-widest">${sub.secondaryEmoji}</div>
+                    <div className="font-heading text-[13px] font-semibold text-black group-hover:underline break-words">${sub.cleanTitle}</div>
+                    <div className="text-[11px] text-gray-600 font-medium uppercase tracking-widest">${sub.secondaryEmoji}</div>
                   </div>
                 </div>
               </button>`;
