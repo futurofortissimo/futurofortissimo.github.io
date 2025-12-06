@@ -5,6 +5,7 @@ import ChapterItem from './components/ChapterItem.js';
 import Sidebar from './components/Sidebar.js';
 import RightSidebar from './components/RightSidebar.js';
 import SupportPopup from './components/SupportPopup.js';
+import MediaSlider from './components/MediaSlider.js';
 import { NavigationProvider, useNavigation } from './NavigationContext.js';
 
 const InnerApp = () => {
@@ -105,6 +106,8 @@ const InnerApp = () => {
                 : null}
             </p>
           </header>
+
+          <${MediaSlider} chapters=${processedData} />
 
           <div className="space-y-12">
             ${filteredData.length > 0
