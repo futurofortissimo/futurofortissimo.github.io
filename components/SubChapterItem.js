@@ -60,7 +60,7 @@ const SubChapterItem = ({ subchapter }) => {
 
   return html`<div id=${id} className="relative pl-0 group mb-6 scroll-mt-32 transition-all duration-300">
     <div
-      className="flex items-baseline gap-2 cursor-pointer bg-white border-3 border-black p-3 hover:-translate-y-1 transition-transform"
+      className="flex items-baseline gap-2 cursor-pointer px-1 py-2 hover:-translate-y-0.5 transition-transform"
       onClick=${toggleExpand}
     >
       <span className="text-xl opacity-100 shrink-0 self-center leading-none">${subchapter.originalEmoji}</span>
@@ -70,7 +70,7 @@ const SubChapterItem = ({ subchapter }) => {
           href=${subchapter.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-heading text-lg md:text-xl font-bold text-black mr-2 break-words hover:underline decoration-4"
+          className="font-heading text-base md:text-lg font-bold text-black mr-2 break-words hover:underline decoration-4"
           onClick=${(e) => {
             e.stopPropagation();
             incrementInteraction();
@@ -78,17 +78,6 @@ const SubChapterItem = ({ subchapter }) => {
         >
           <${HighlightText} text=${subchapter.cleanTitle} highlight=${debouncedSearchQuery} />
         </a>
-
-        <span
-          className="inline-flex items-center justify-center w-6 h-6 border-2 border-black bg-yellow-200 text-xs align-middle"
-          title=${`Topic: ${subchapter.secondaryEmoji}`}
-          onClick=${(e) => {
-            e.stopPropagation();
-            incrementInteraction();
-          }}
-        >
-          ${subchapter.secondaryEmoji}
-        </span>
       </div>
 
       <button
