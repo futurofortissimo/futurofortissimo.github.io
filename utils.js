@@ -53,6 +53,7 @@ export const HighlightText = ({ text, highlight }) => {
 const getTopicEmoji = (text) => {
   const lowerText = text.toLowerCase();
 
+  if (lowerText.match(/(libro|libri|book|romanzo|biblioteca|lettura|letture)/)) return TopicEmoji.BOOKS;
   if (lowerText.match(/(soldi|finanza|crypto|bitcoin|investimenti|mercato|economi|pil|dollaro|euro|bank|banca|inflazione|prezzo)/)) return TopicEmoji.MONEY;
   if (lowerText.match(/(sport|calcio|maratona|corsa|olimpiadi|allenamento|atleta|nuoto|bici|sci)/)) return TopicEmoji.SPORT;
   if (lowerText.match(/(cibo|mangiare|dieta|pizza|hamburger|vino|ristorante|ricetta|cucina|pasta|carne|vegan|nutrizione)/)) return TopicEmoji.FOOD;
@@ -73,11 +74,17 @@ const processSubchapter = (sub) => {
   const { emoji, cleanTitle } = extractEmojiAndTitle(sub.title);
   const analysisText = `${sub.title} ${sub.content}`;
 
+  const mentionsBook =
+    analysisText.includes('📚') ||
+    /\b(libro|libri|book|romanzo|biblioteca|lettura|letture)\b/i.test(analysisText) ||
+    sub.references?.some((ref) => /book|libro|amzn\.to|amazon\.\w+/i.test(`${ref.text} ${ref.url}`));
+
   return {
     ...sub,
     cleanTitle,
     originalEmoji: emoji || '📄',
-    secondaryEmoji: getTopicEmoji(analysisText)
+    secondaryEmoji: getTopicEmoji(analysisText),
+    mentionsBook
   };
 };
 

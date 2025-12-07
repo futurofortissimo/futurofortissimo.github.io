@@ -1,6 +1,7 @@
 import { React, html } from './runtime.js';
 import { rawData } from './data.js';
 import { processChapter } from './utils.js';
+import { TopicEmoji } from './types.js';
 import ChapterItem from './components/ChapterItem.js';
 import Sidebar from './components/Sidebar.js';
 import RightSidebar from './components/RightSidebar.js';
@@ -15,7 +16,7 @@ const InnerApp = () => {
   const [isMediaOpen, setIsMediaOpen] = React.useState(false);
   const [isSearchOverlayOpen, setIsSearchOverlayOpen] = React.useState(false);
   const [hasManuallyClosedSearch, setHasManuallyClosedSearch] = React.useState(false);
-  const { incrementInteraction, searchQuery, setSearchQuery } = useNavigation();
+  const { incrementInteraction, searchQuery, setSearchQuery, isMobileMenuOpen, setIsMobileMenuOpen } = useNavigation();
 
   React.useEffect(() => {
     const processed = rawData.map(processChapter);
@@ -24,6 +25,22 @@ const InnerApp = () => {
 
   const filteredData = React.useMemo(() => {
     if (!selectedEmoji) return processedData;
+
+    if (selectedEmoji === 'BOOKS') {
+      return processedData
+        .map((chapter) => {
+          const matchingSubchapters = chapter.processedSubchapters.filter((sub) => sub.mentionsBook);
+
+          if (matchingSubchapters.length > 0) {
+            return {
+              ...chapter,
+              processedSubchapters: matchingSubchapters
+            };
+          }
+          return null;
+        })
+        .filter(Boolean);
+    }
 
     return processedData
       .map((chapter) => {
@@ -86,6 +103,8 @@ const InnerApp = () => {
   };
 
   const handleCloseMedia = () => setIsMediaOpen(false);
+
+  const handleToggleIndex = () => setIsMobileMenuOpen((prev) => !prev);
 
   return html`<div className="min-h-screen text-black selection:bg-yellow-200 selection:text-black">
     <${SupportPopup} />
@@ -178,7 +197,7 @@ const InnerApp = () => {
                     className="font-heading text-xs uppercase tracking-[0.2em] border-3 border-black px-3 py-2 bg-[var(--ff-yellow)] brutal-shadow"
                     onClick=${() => handleTopicSelect(null)}
                   >
-                    Clear ${selectedEmoji}
+                    Clear ${selectedEmoji === 'BOOKS' ? TopicEmoji.BOOKS : selectedEmoji}
                   </button>`
                 : html`<span className="font-heading text-xs uppercase tracking-[0.2em]">Tutti i temi</span>`}
             </div>
@@ -204,11 +223,63 @@ const InnerApp = () => {
           </div>
         </div>
       </section>
-
-      <div className="lg:hidden brutal-card mobile-unboxed no-round">
-        <${RightSidebar} chapters=${filteredData} isMobileMode=${true} onOpenMedia=${handleOpenMedia} />
-      </div>
     </div>
+
+    <div className="fixed bottom-4 right-4 flex flex-col gap-2 md:hidden z-40">
+      <button
+        type="button"
+        onClick=${() => {
+          handleShowSearchOverlay();
+          const searchInput = document.querySelector('input[aria-label="Cerca storie"]');
+          if (searchInput) {
+            searchInput.focus();
+          }
+        }}
+        className="h-12 w-12 rounded-full border-3 border-black bg-white brutal-shadow text-xl"
+        aria-label="Apri ricerca"
+      >
+        🔍
+      </button>
+      <button
+        type="button"
+        onClick=${handleOpenMedia}
+        className="h-12 w-12 rounded-full border-3 border-black bg-white brutal-shadow text-xl"
+        aria-label="Apri media"
+      >
+        🎞️
+      </button>
+      <button
+        type="button"
+        onClick=${handleToggleIndex}
+        className=${`h-12 w-12 rounded-full border-3 border-black brutal-shadow text-xl ${
+          isMobileMenuOpen ? 'bg-[var(--ff-blue)]' : 'bg-white'
+        }`}
+        aria-label="Apri indice"
+      >
+        📑
+      </button>
+    </div>
+
+    ${isMobileMenuOpen
+      ? html`<div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm md:hidden flex items-center justify-center p-4">
+          <div className="relative w-full max-w-3xl">
+            <button
+              type="button"
+              className="absolute top-2 right-2 px-3 py-2 border-3 border-black bg-white font-heading text-xs uppercase tracking-[0.2em] brutal-shadow"
+              onClick=${handleToggleIndex}
+            >
+              Chiudi indice
+            </button>
+            <div className="brutal-card no-round bg-white max-h-[80vh] overflow-y-auto">
+              <${RightSidebar}
+                chapters=${filteredData}
+                isMobileMode=${true}
+                onOpenMedia=${handleOpenMedia}
+              />
+            </div>
+          </div>
+        </div>`
+      : null}
 
     ${isMediaOpen
       ? html`<div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
