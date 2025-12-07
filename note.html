@@ -473,6 +473,7 @@
                 <button class="emoji-button" data-category="🍽️" aria-label="Alimentazione">🍽️</button>
                 <button class="emoji-button" data-category="🎙️" aria-label="Podcast">🎙️</button>
                 <button class="emoji-button" data-category="🎨" aria-label="Arte">🎨</button>
+                <button class="emoji-button" data-category="📚" aria-label="Libri">📚</button>
                 <button class="emoji-button" data-category="🥽" aria-label="Metaverso">🥽</button>
                 <button class="emoji-button" data-category="🚕" aria-label="Mobilità">🚕</button>
                 <!-- Add more emoji buttons as needed -->
@@ -520,6 +521,8 @@
         const searchButton = document.getElementById('csv-search-button');
         const refreshButton = document.getElementById('refreshButton');
 
+        let bookEntries = [];
+
         let allEntries = []; // To store all CSV entries
         let selectedCategories = new Set(); // To store selected emoji categories
 
@@ -530,20 +533,62 @@
         function getTranslatedSubstackLink(originalLink) {
             if (currentLanguage === 'it') {
                 return originalLink;
-            } else if (currentLanguage === 'en') {
-                // Parse the original URL
-                try {
-                    const url = new URL(originalLink);
-                    const originalDomain = url.hostname; // e.g., fortissimo.substack.com
-                    const translatedDomain = originalDomain.replace(/\./g, '-') + '.translate.goog';
-                    const translatedURL = `https://${translatedDomain}${url.pathname}?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=it&_x_tr_hist=true`;
-                    return translatedURL;
-                } catch (error) {
-                    console.error('Invalid URL:', originalLink);
-                    return originalLink; // Fallback to original link if invalid
-                }
             }
-            return originalLink; // Default fallback
+
+            try {
+                const url = new URL(originalLink);
+                if (!url.hostname.includes('substack.com')) {
+                    return originalLink;
+                }
+
+                const originalDomain = url.hostname; // e.g., fortissimo.substack.com
+                const translatedDomain = originalDomain.replace(/\./g, '-') + '.translate.goog';
+                const translatedURL = `https://${translatedDomain}${url.pathname}?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=it&_x_tr_hist=true`;
+                return translatedURL;
+            } catch (error) {
+                console.error('Invalid URL:', originalLink);
+                return originalLink; // Fallback to original link if invalid
+            }
+        }
+
+        async function fetchBooksData() {
+            const booksFile = currentLanguage === 'it' ? '/books.json' : '/books_en.json';
+
+            try {
+                const response = await fetch(booksFile);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                const grouped = {};
+
+                data.forEach(item => {
+                    const key = `${item.book}-${item.author}-${item.url}`;
+                    if (!grouped[key]) {
+                        grouped[key] = {
+                            book: item.book,
+                            author: item.author,
+                            url: item.url,
+                            titles: []
+                        };
+                    }
+                    grouped[key].titles.push(item.title);
+                });
+
+                return Object.values(grouped).map((group, index) => ({
+                    emojis: '📚',
+                    description: `${group.book} — ${group.author}`,
+                    url: group.url,
+                    question: currentLanguage === 'it' ? 'Indice capitoli' : 'Chapter index',
+                    hashtags: '',
+                    number: currentLanguage === 'it' ? `Libro ${index + 1}` : `Book ${index + 1}`,
+                    chapters: group.titles
+                }));
+            } catch (error) {
+                console.error('Error fetching books data:', error);
+                return [];
+            }
         }
 
         // Function to parse CSV data
@@ -665,7 +710,13 @@
                 '/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo_en.csv';
 
             // Fetch and parse CSV
-            allEntries = await fetchAndParseCSV(csvFile);
+            const csvEntries = await fetchAndParseCSV(csvFile);
+
+            // Fetch book index entries
+            bookEntries = await fetchBooksData();
+
+            // Combine entries so they can be filtered together
+            allEntries = [...csvEntries, ...bookEntries];
 
             // Display all entries initially
             applyFilters();
@@ -691,6 +742,22 @@
                 description.className = 'section-title';
                 description.textContent = entry.description;
                 cardContent.appendChild(description);
+
+                if (entry.chapters && entry.chapters.length > 0) {
+                    const indexTitle = document.createElement('div');
+                    indexTitle.className = 'content-block paragraphs';
+                    indexTitle.textContent = entry.question || (currentLanguage === 'it' ? 'Indice' : 'Index');
+                    cardContent.appendChild(indexTitle);
+
+                    const chapterList = document.createElement('ul');
+                    chapterList.className = 'content-block paragraphs';
+                    entry.chapters.forEach(chapterTitle => {
+                        const chapterItem = document.createElement('li');
+                        chapterItem.textContent = chapterTitle;
+                        chapterList.appendChild(chapterItem);
+                    });
+                    cardContent.appendChild(chapterList);
+                }
 
                 // Add Emojis and Note Number
                 const emojisAndNote = document.createElement('div');
