@@ -3,9 +3,9 @@ import SubChapterItem from './SubChapterItem.js';
 
 const ChapterItem = ({ chapter }) => {
   return html`<article id=${chapter.url} className="mb-10 scroll-mt-24 last:mb-0 space-y-4">
-    <div className="brutal-card accent-bar accent-blue no-round pb-4 pt-3 px-4">
+    <div className=${`brutal-card accent-bar ${chapter.accentClass} no-round pb-4 pt-3 px-4`}>
       <div className="border-b-4 border-black pb-3 flex items-start gap-3">
-        <span className="text-2xl select-none leading-none">${chapter.originalEmoji}</span>
+        <span className="text-2xl select-none leading-none">${chapter.categoryFlag}</span>
         <div>
         <h2 className="font-heading text-lg md:text-xl font-bold text-black leading-none">
           <a href=${chapter.url} target="_blank" rel="noopener noreferrer" className="hover:underline decoration-4">
@@ -16,7 +16,7 @@ const ChapterItem = ({ chapter }) => {
         </div>
       </div>
       <div className="flex items-center gap-2 px-2 py-1 border-2 border-black bg-white brutal-shadow">
-        <span aria-hidden="true" className="text-xl leading-none">${chapter.categoryFlag}</span>
+        <span aria-hidden="true" className="text-xl leading-none">${chapter.originalEmoji}</span>
         <span className="mono-label text-[11px] uppercase tracking-[0.18em] text-black">${chapter.categoryLabel}</span>
       </div>
     </div>

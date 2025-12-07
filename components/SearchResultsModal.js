@@ -37,6 +37,7 @@ const buildSearchResults = (chapters, query) => {
         results.push({
           type: 'chapter',
           id: chapter.url,
+          chapterId: chapter.url,
           emoji: chapter.originalEmoji,
           title: chapter.cleanTitle,
           subtitle: chapter.subtitle
@@ -51,6 +52,7 @@ const buildSearchResults = (chapters, query) => {
           results.push({
             type: 'subchapter',
             id: slugify(sub.cleanTitle),
+            chapterId: chapter.url,
             emoji: sub.originalEmoji,
             title: sub.cleanTitle,
             chapterTitle: chapter.cleanTitle,
@@ -64,21 +66,25 @@ const buildSearchResults = (chapters, query) => {
     .flat();
 };
 
-const SearchResultsModal = ({ chapters, isOpen, onHide, onClear, onNavigate }) => {
+const SearchResultsModal = ({ chapters, isOpen, onHide, onClear, onNavigate, onNavigateToSection }) => {
   const { debouncedSearchQuery, searchQuery, setActiveId } = useNavigation();
 
   if (!isOpen || !debouncedSearchQuery.trim()) return null;
 
   const results = buildSearchResults(chapters, debouncedSearchQuery);
 
-  const handleNavigate = (id) => {
-    setActiveId(id);
-    if (typeof onNavigate === 'function') {
-      onNavigate();
-    }
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const handleNavigate = (item) => {
+    setActiveId(item.id);
+    if (typeof onNavigateToSection === 'function') {
+      onNavigateToSection(item.id, item.chapterId);
+    } else {
+      if (typeof onNavigate === 'function') {
+        onNavigate();
+      }
+      const element = document.getElementById(item.id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
   };
 
@@ -116,7 +122,7 @@ const SearchResultsModal = ({ chapters, isOpen, onHide, onClear, onNavigate }) =
                 (item, idx) => html`<li key=${idx}>
                   <button
                     className="w-full text-left border-3 border-black bg-white brutal-shadow p-4 sm:p-5 hover:-translate-y-1 transition-transform"
-                    onClick=${() => handleNavigate(item.id)}
+                    onClick=${() => handleNavigate(item)}
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="flex items-start gap-2">
