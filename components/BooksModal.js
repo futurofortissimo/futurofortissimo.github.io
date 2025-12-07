@@ -16,18 +16,47 @@ const getAmazonReference = (references = []) =>
 
 const getPreviewImage = (images = []) => images.find((img) => img.src);
 
-const extractReferenceLabel = (title = '') => {
-  const match = title.match(/ff\.?\s*\d+(?:\.\d+)?/i);
-  return match ? match[0].replace(/\s+/g, '') : 'ff';
+const extractReferenceLabel = (chapterTitle = '', subchapterTitle = '') => {
+  const combinedTitle = `${subchapterTitle} ${chapterTitle}`;
+  const match = combinedTitle.match(/ff\.?\s*([0-9]+(?:bis)?(?:\.[0-9]+)?)/i);
+  return match ? `ff.${match[1].replace(/\s+/g, '')}` : 'ff';
 };
 
 const BooksModal = ({ sections, onClose }) => {
-  const hasSections = Array.isArray(sections) && sections.length > 0;
+  const safeSections = Array.isArray(sections) ? sections : [];
+  const hasSections = safeSections.length > 0;
   const [selectedFilter, setSelectedFilter] = React.useState(null);
+  const [selectedBookTitle, setSelectedBookTitle] = React.useState('all');
+
+  const enhancedSections = React.useMemo(
+    () =>
+      safeSections.map((section) => {
+        const previewImage = getPreviewImage(section.images);
+        const amazonRef = getAmazonReference(section.references);
+        const bookMetadata = amazonRef ? booksMap.get(normalizeUrl(amazonRef.url)) : null;
+        const bookTitle = bookMetadata?.title || amazonRef?.text || section.subchapterTitle;
+        const cleanedChapterTitle = section.chapterTitle.replace(/ff\.?\s*\d+[a-zA-Z]*(?:\.\d+)?\s*/i, '').trim();
+        const bookAuthor = bookMetadata?.author || cleanedChapterTitle || section.chapterTitle;
+        const referenceLabel = extractReferenceLabel(section.chapterTitle, section.subchapterTitle);
+        const quote = section.quote || '';
+
+        return {
+          ...section,
+          previewImage,
+          amazonRef,
+          bookMetadata,
+          bookTitle,
+          bookAuthor,
+          referenceLabel,
+          quote
+        };
+      }),
+    [safeSections]
+  );
 
   const filters = React.useMemo(() => {
     const available = new Set();
-    sections.forEach((section) => {
+    enhancedSections.forEach((section) => {
       if (section.secondaryEmoji) {
         available.add(section.secondaryEmoji);
       }
@@ -35,12 +64,34 @@ const BooksModal = ({ sections, onClose }) => {
 
     const uniqueFilters = Array.from(available);
     return [TopicEmoji.BOOKS, ...uniqueFilters.filter((emoji) => emoji !== TopicEmoji.BOOKS)];
-  }, [sections]);
+  }, [enhancedSections]);
+
+  const bookFilters = React.useMemo(() => {
+    const books = new Map();
+
+    enhancedSections.forEach((section) => {
+      if (section.amazonRef && section.bookTitle) {
+        const key = section.bookTitle;
+        books.set(key, { title: section.bookTitle, author: section.bookAuthor });
+      }
+    });
+
+    return Array.from(books.values());
+  }, [enhancedSections]);
 
   const filteredSections = React.useMemo(() => {
-    if (!selectedFilter || selectedFilter === TopicEmoji.BOOKS) return sections;
-    return sections.filter((section) => section.secondaryEmoji === selectedFilter);
-  }, [sections, selectedFilter]);
+    let results = enhancedSections;
+
+    if (selectedFilter && selectedFilter !== TopicEmoji.BOOKS) {
+      results = results.filter((section) => section.secondaryEmoji === selectedFilter);
+    }
+
+    if (selectedBookTitle !== 'all') {
+      results = results.filter((section) => section.bookTitle === selectedBookTitle);
+    }
+
+    return results;
+  }, [enhancedSections, selectedFilter, selectedBookTitle]);
 
   return html`<div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm overflow-y-auto p-4 sm:p-6">
     <div className="max-w-5xl mx-auto bg-white border-4 border-black brutal-shadow no-round">
@@ -60,32 +111,63 @@ const BooksModal = ({ sections, onClose }) => {
         </div>
 
         ${hasSections
-          ? html`<div className="flex flex-wrap gap-2 items-center">
-              <span className="text-[11px] font-heading uppercase tracking-[0.3em] text-black">Filtri</span>
-              <div className="flex flex-wrap gap-2">
-                <button
-                  className=${`px-3 py-1 border-2 border-black font-heading text-[11px] uppercase tracking-[0.2em] transition-transform brutal-shadow ${
-                    selectedFilter === null ? 'bg-[var(--ff-blue)]' : 'bg-white'
-                  }`}
-                  onClick=${() => setSelectedFilter(null)}
-                >
-                  Tutti
-                </button>
-                ${filters.map(
-                  (emoji) => html`<button
-                    key=${emoji}
-                    className=${`px-3 py-1 border-2 border-black font-heading text-[11px] uppercase tracking-[0.2em] transition-transform brutal-shadow flex items-center gap-2 ${
-                      selectedFilter === emoji ? 'bg-[var(--ff-yellow)]' : 'bg-white'
+          ? html`<div className="space-y-3">
+              <div className="flex flex-wrap gap-2 items-center">
+                <span className="text-[11px] font-heading uppercase tracking-[0.3em] text-black">Filtra per emoji</span>
+                <div className="flex flex-wrap gap-2">
+                  <button
+                    className=${`px-3 py-1 border-2 border-black font-heading text-[11px] uppercase tracking-[0.2em] transition-transform brutal-shadow ${
+                      selectedFilter === null ? 'bg-[var(--ff-blue)]' : 'bg-white'
                     }`}
-                    onClick=${() => setSelectedFilter(emoji)}
+                    onClick=${() => setSelectedFilter(null)}
                   >
-                    <span aria-hidden="true">${emoji}</span>
-                    <span className="text-[10px] font-semibold">
-                      ${emoji === TopicEmoji.BOOKS ? 'Sezioni libro' : 'Filtro'}
-                    </span>
-                  </button>`
-                )}
+                    Tutti
+                  </button>
+                  ${filters.map(
+                    (emoji) => html`<button
+                      key=${emoji}
+                      className=${`px-3 py-1 border-2 border-black font-heading text-[11px] uppercase tracking-[0.2em] transition-transform brutal-shadow flex items-center gap-2 ${
+                        selectedFilter === emoji ? 'bg-[var(--ff-yellow)]' : 'bg-white'
+                      }`}
+                      onClick=${() => setSelectedFilter(emoji)}
+                    >
+                      <span aria-hidden="true">${emoji}</span>
+                      <span className="text-[10px] font-semibold">
+                        ${emoji === TopicEmoji.BOOKS ? 'Sezioni libro' : 'Filtro'}
+                      </span>
+                    </button>`
+                  )}
+                </div>
               </div>
+
+              ${bookFilters.length
+                ? html`<div className="flex flex-col gap-2">
+                    <span className="text-[11px] font-heading uppercase tracking-[0.3em] text-black">Filtra per libro 📚</span>
+                    <div className="flex flex-wrap gap-2">
+                      <button
+                        className=${`px-3 py-1 border-2 border-black font-heading text-[11px] uppercase tracking-[0.2em] transition-transform brutal-shadow ${
+                          selectedBookTitle === 'all' ? 'bg-[var(--ff-blue)]' : 'bg-white'
+                        }`}
+                        onClick=${() => setSelectedBookTitle('all')}
+                      >
+                        Tutti i libri
+                      </button>
+                      ${bookFilters.map(
+                        ({ title, author }) => html`<button
+                          key=${title}
+                          className=${`px-3 py-1 border-2 border-black font-heading text-[11px] uppercase tracking-[0.15em] transition-transform brutal-shadow flex items-center gap-2 text-left ${
+                            selectedBookTitle === title ? 'bg-[var(--ff-yellow)]' : 'bg-white'
+                          }`}
+                          onClick=${() => setSelectedBookTitle(title)}
+                          title=${author ? `${title} — ${author}` : title}
+                        >
+                          <span aria-hidden="true">📚</span>
+                          <span className="text-[10px] font-semibold">${title}${author ? ` — ${author}` : ''}</span>
+                        </button>`
+                      )}
+                    </div>
+                  </div>`
+                : null}
             </div>`
           : null}
 
@@ -94,39 +176,34 @@ const BooksModal = ({ sections, onClose }) => {
               <p className="font-heading text-base">Nessuna sezione libro trovata.</p>
             </div>`
           : html`<div className="grid gap-4 sm:grid-cols-2">
-              ${filteredSections.map((section, idx) => {
-                const previewImage = getPreviewImage(section.images);
-                const amazonRef = getAmazonReference(section.references);
-                const bookMetadata = amazonRef ? booksMap.get(normalizeUrl(amazonRef.url)) : null;
-                const bookTitle = bookMetadata?.title || amazonRef?.text || section.subchapterTitle;
-                const bookAuthor = bookMetadata?.author || section.chapterTitle;
-                const referenceLabel = extractReferenceLabel(section.subchapterTitle);
-                const quote = section.quote || '';
-
-                return html`<article key=${idx} className="border-3 border-black bg-white brutal-shadow p-4 flex flex-col gap-3 h-full">
+              ${filteredSections.map((section, idx) =>
+                html`<article key=${idx} className="border-3 border-black bg-white brutal-shadow p-4 flex flex-col gap-3 h-full">
                   <div className="flex items-start justify-between gap-2">
-                    <div>
-                      <div className="font-heading font-bold text-base leading-tight">${bookTitle}</div>
-                      <div className="text-[11px] uppercase tracking-[0.2em] text-black/70">${bookAuthor}</div>
+                    <div className="space-y-1">
+                      <div className="font-heading font-bold text-base leading-tight">${section.bookTitle}</div>
+                      <div className="text-[11px] uppercase tracking-[0.2em] text-black/70">${section.bookAuthor}</div>
                     </div>
-                    <span className="text-xl" aria-hidden="true">📚</span>
+                    <div className="flex flex-col items-end gap-1">
+                      <span className="text-xl" aria-hidden="true">📚</span>
+                      <span className="px-2 py-1 border-2 border-black text-[10px] font-heading uppercase tracking-[0.2em] bg-[var(--ff-yellow)]">${section.referenceLabel}</span>
+                    </div>
                   </div>
 
-                  ${previewImage
+                  ${section.previewImage
                     ? html`<figure className="space-y-1">
-                        <img src=${previewImage.src} alt=${previewImage.caption || 'Anteprima libro'} className="w-full h-auto border-3 border-black bg-white" loading="lazy" />
-                        ${previewImage.caption
-                          ? html`<figcaption className="text-[10px] font-heading uppercase tracking-widest text-black font-bold pl-1">${previewImage.caption}</figcaption>`
+                        <img src=${section.previewImage.src} alt=${section.previewImage.caption || 'Anteprima libro'} className="w-full h-auto border-3 border-black bg-white" loading="lazy" />
+                        ${section.previewImage.caption
+                          ? html`<figcaption className="text-[10px] font-heading uppercase tracking-widest text-black font-bold pl-1">${section.previewImage.caption}</figcaption>`
                           : null}
                       </figure>`
                     : html`<blockquote className="border-l-4 border-black pl-3 text-sm leading-snug text-black/80">
-                        “${quote.length > 220 ? `${quote.slice(0, 220)}…` : quote}”
+                        “${section.quote.length > 220 ? `${section.quote.slice(0, 220)}…` : section.quote}”
                       </blockquote>`}
 
                   <div className="flex flex-wrap gap-2 mt-auto">
-                    ${amazonRef
+                    ${section.amazonRef
                       ? html`<a
-                          href=${amazonRef.url}
+                          href=${section.amazonRef.url}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="px-3 py-2 border-2 border-black bg-[var(--ff-yellow)] font-heading text-[11px] uppercase tracking-[0.2em] hover:-translate-y-0.5 transition-transform"
@@ -140,11 +217,11 @@ const BooksModal = ({ sections, onClose }) => {
                       rel="noopener noreferrer"
                       className="px-3 py-2 border-2 border-black bg-white font-heading text-[11px] uppercase tracking-[0.2em] hover:-translate-y-0.5 transition-transform"
                     >
-                      Apri ${referenceLabel}
+                      Apri ${section.referenceLabel}
                     </a>
                   </div>
-                </article>`;
-              })}
+                </article>`
+              )}
             </div>`}
       </div>
     </div>
