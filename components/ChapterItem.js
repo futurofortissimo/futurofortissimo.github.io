@@ -15,6 +15,10 @@ const ChapterItem = ({ chapter }) => {
         <p className="text-[11px] md:text-xs text-black/70 font-medium mt-2">${chapter.subtitle}</p>
         </div>
       </div>
+      <div className="flex items-center gap-2 px-2 py-1 border-2 border-black bg-white brutal-shadow">
+        <span aria-hidden="true" className="text-xl leading-none">${chapter.categoryFlag}</span>
+        <span className="mono-label text-[11px] uppercase tracking-[0.18em] text-black">${chapter.categoryLabel}</span>
+      </div>
     </div>
 
     ${chapter.keypoints.length > 0
