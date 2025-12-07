@@ -1,6 +1,6 @@
 import { React, html } from '../runtime.js';
 import { TopicEmoji } from '../types.js';
-import booksData from '../books.json';
+import booksData from '../books.json' assert { type: 'json' };
 
 const normalizeUrl = (url = '') => url.replace(/\/$/, '');
 
