@@ -6,12 +6,12 @@ const ChapterItem = ({ chapter }) => {
     <div className="mb-4 border-b-4 border-black pb-3 flex items-start gap-3">
       <span className="text-2xl select-none leading-none">${chapter.originalEmoji}</span>
       <div>
-        <h2 className="font-heading text-xl md:text-2xl font-bold text-black leading-none">
+        <h2 className="font-heading text-lg md:text-xl font-bold text-black leading-none">
           <a href=${chapter.url} target="_blank" rel="noopener noreferrer" className="hover:underline decoration-4">
             ${chapter.cleanTitle}
           </a>
         </h2>
-        <p className="text-xs md:text-sm text-black/70 font-medium mt-2">${chapter.subtitle}</p>
+        <p className="text-[11px] md:text-xs text-black/70 font-medium mt-2">${chapter.subtitle}</p>
       </div>
     </div>
 

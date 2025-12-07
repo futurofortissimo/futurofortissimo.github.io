@@ -63,14 +63,14 @@ const SubChapterItem = ({ subchapter }) => {
       className="flex items-baseline gap-2 cursor-pointer bg-white border-3 border-black p-3 hover:-translate-y-1 transition-transform"
       onClick=${toggleExpand}
     >
-      <span className="text-xl opacity-100 shrink-0 self-center leading-none">${subchapter.originalEmoji}</span>
+      <span className="text-lg opacity-100 shrink-0 self-center leading-none">${subchapter.originalEmoji}</span>
 
       <div className="flex-1 inline leading-tight items-baseline">
         <a
           href=${subchapter.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-heading text-lg md:text-xl font-bold text-black mr-2 break-words hover:underline decoration-4"
+          className="font-heading text-base md:text-lg font-bold text-black mr-2 break-words hover:underline decoration-4"
           onClick=${(e) => {
             e.stopPropagation();
             incrementInteraction();
@@ -80,7 +80,7 @@ const SubChapterItem = ({ subchapter }) => {
         </a>
 
         <span
-          className="inline-flex items-center justify-center w-6 h-6 border-2 border-black bg-yellow-200 text-xs align-middle"
+          className="inline-flex items-center justify-center w-5 h-5 border-2 border-black bg-yellow-200 text-[10px] align-middle"
           title=${`Topic: ${subchapter.secondaryEmoji}`}
           onClick=${(e) => {
             e.stopPropagation();
@@ -118,6 +118,22 @@ const SubChapterItem = ({ subchapter }) => {
               const isCross = isCrossReference(ref.text);
               const displayText = isCross ? ref.text : capitalizeFirstLetter(ref.text);
 
+              if (isCross) {
+                return html`<a
+                  key=${idx}
+                  href=${ref.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick=${(e) => {
+                    e.stopPropagation();
+                    incrementInteraction();
+                  }}
+                  className="text-sm md:text-base font-heading underline decoration-2 text-black"
+                >
+                  ${displayText}
+                </a>`;
+              }
+
               return html`<a
                 key=${idx}
                 href=${ref.url}
@@ -127,14 +143,12 @@ const SubChapterItem = ({ subchapter }) => {
                   e.stopPropagation();
                   incrementInteraction();
                 }}
-                className=${`inline-flex items-center gap-1.5 px-3 py-1 border-2 border-black bg-white text-black hover:-translate-y-0.5 transition-transform ${
-                  isCross ? 'bg-blue-100' : 'bg-gray-50'
-                }`}
+                className="inline-flex items-center gap-1.5 px-3 py-1 border-2 border-black bg-white text-black hover:-translate-y-0.5 transition-transform bg-gray-50"
               >
                 <span className="text-xs md:text-sm font-bold font-heading break-all">
                   ${displayText}
                 </span>
-                ${!isCross ? html`<span className="text-black text-xs">↗</span>` : null}
+                <span className="text-black text-xs">↗</span>
               </a>`;
             })}
           </div>
@@ -145,7 +159,7 @@ const SubChapterItem = ({ subchapter }) => {
       isExpanded ? 'grid-rows-[1fr] opacity-100 mt-2 mb-4' : 'grid-rows-[0fr] opacity-0 mt-0 mb-0'
     }`}>
       <div className="overflow-hidden pl-0 md:pl-[2.5rem]">
-        <div className="prose prose-sm max-w-none text-black leading-normal font-medium break-words text-[13px] md:text-sm">
+        <div className="prose prose-sm max-w-none text-black leading-normal font-medium break-words text-[12px] md:text-[13px]">
           ${subchapter.content
             .split('\n')
             .map((paragraph, idx) => (paragraph.trim() ? html`<p key=${idx} className="mb-2 last:mb-0">
