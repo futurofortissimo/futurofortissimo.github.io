@@ -3,7 +3,7 @@ import { TopicEmoji } from '../types.js';
 
 const Sidebar = ({ selectedEmoji, onSelect, vertical = true }) => {
   const prioritizedKeys = ['NATURE', 'TECH', 'WELLNESS'];
-  const topicsMap = Object.entries(TopicEmoji).filter(([key]) => key !== 'UNKNOWN' && key !== 'BOOKS');
+  const topicsMap = Object.entries(TopicEmoji).filter(([key]) => key !== 'UNKNOWN');
 
   const prioritizedTopics = prioritizedKeys
     .map((key) => topicsMap.find(([candidate]) => candidate === key))
@@ -29,16 +29,6 @@ const Sidebar = ({ selectedEmoji, onSelect, vertical = true }) => {
       }`}
     >
       <span className="text-lg">♾️</span>
-    </button>
-
-    <button
-      onClick=${() => onSelect('BOOKS')}
-      title="Libri citati"
-      className=${`${itemClasses} ${
-        selectedEmoji === 'BOOKS' ? 'bg-[var(--ff-yellow)] scale-105' : 'bg-white text-gray-700'
-      }`}
-    >
-      <span className="text-xl leading-none">${TopicEmoji.BOOKS}</span>
     </button>
 
     ${topics.map(([key, emoji], index) => {

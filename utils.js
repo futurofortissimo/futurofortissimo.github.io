@@ -1,12 +1,6 @@
 import { React, html } from './runtime.js';
 import { TopicEmoji } from './types.js';
 
-const ChapterCategory = {
-  NATURE: 'nature',
-  TECHNOLOGY: 'technology',
-  HUMAN: 'human'
-};
-
 const emojiRegex = /[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F1E0}-\u{1F1FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{1F900}-\u{1F9FF}\u{1F018}-\u{1F270}\u{238C}\u{2B05}-\u{2B07}\u{2190}-\u{2195}\u{200D}\u{200C}]/u;
 
 export const extractEmojiAndTitle = (text) => {
@@ -53,7 +47,6 @@ export const HighlightText = ({ text, highlight }) => {
 const getTopicEmoji = (text) => {
   const lowerText = text.toLowerCase();
 
-  if (lowerText.match(/(libro|libri|book|romanzo|biblioteca|lettura|letture)/)) return TopicEmoji.BOOKS;
   if (lowerText.match(/(soldi|finanza|crypto|bitcoin|investimenti|mercato|economi|pil|dollaro|euro|bank|banca|inflazione|prezzo)/)) return TopicEmoji.MONEY;
   if (lowerText.match(/(sport|calcio|maratona|corsa|olimpiadi|allenamento|atleta|nuoto|bici|sci)/)) return TopicEmoji.SPORT;
   if (lowerText.match(/(cibo|mangiare|dieta|pizza|hamburger|vino|ristorante|ricetta|cucina|pasta|carne|vegan|nutrizione)/)) return TopicEmoji.FOOD;
@@ -62,8 +55,8 @@ const getTopicEmoji = (text) => {
   if (lowerText.match(/(arte|museo|dipinti|design|colore|creativ|artista|musica|canzone|spotify|netflix|film|cinema|foto)/)) return TopicEmoji.ART;
   if (lowerText.match(/(auto|tesla|guida|traffico|trasporti|bici|scooter|aereo|volare|razzo|spazio|mobilità)/)) return TopicEmoji.TRANSPORT;
   if (lowerText.match(/(metaverso|visore|realtà|virtuale|vr|ar|oculus|digitale|avatar|internet|web)/)) return TopicEmoji.VR;
-  if (lowerText.match(/(società|persone|popolazione|generazione|demografia|guerra|pace|politica|geopolitica|governo|elezion|parlamento|storia|lavoro|donne|uomini|bambini)/)) return TopicEmoji.SOCIETY;
-  if (lowerText.match(/(relax|stress|sonno|dormire|benessere|felicità|ansia|respiro|yoga|meditazione)/)) return TopicEmoji.WELLNESS;
+  if (lowerText.match(/(società|persone|popolazione|generazione|demografia|guerra|pace|politica|storia|lavoro|donne|uomini|bambini)/)) return TopicEmoji.SOCIETY;
+  if (lowerText.match(/(relax|stress|sonno|dormire|benessere|felicità|ansia|respiro)/)) return TopicEmoji.WELLNESS;
   if (lowerText.match(/(robot|ai|tech|app|computer|software|hardware|google|apple|amazon|facebook|meta|chatgpt|gpt|algoritmo)/)) return TopicEmoji.TECH;
   if (lowerText.match(/(clima|co2|inquinamento|natura|sostenibile|energia|solare|nucleare|ambiente|green|piante|albero)/)) return TopicEmoji.NATURE;
 
@@ -74,71 +67,21 @@ const processSubchapter = (sub) => {
   const { emoji, cleanTitle } = extractEmojiAndTitle(sub.title);
   const analysisText = `${sub.title} ${sub.content}`;
 
-  const mentionsBook =
-    analysisText.includes('📚') ||
-    /\b(libro|libri|book|romanzo|biblioteca|lettura|letture)\b/i.test(analysisText) ||
-    sub.references?.some((ref) => /book|libro|amzn\.to|amazon\.\w+/i.test(`${ref.text} ${ref.url}`));
-
   return {
     ...sub,
     cleanTitle,
     originalEmoji: emoji || '📄',
-    secondaryEmoji: getTopicEmoji(analysisText),
-    mentionsBook
+    secondaryEmoji: getTopicEmoji(analysisText)
   };
 };
 
 export const processChapter = (chapter) => {
   const { emoji, cleanTitle } = extractEmojiAndTitle(chapter.title);
-  const analysisText = [
-    chapter.title,
-    chapter.subtitle || '',
-    ...(chapter.keypoints || []),
-    ...(chapter.subchapters || []).map((sub) => `${sub.title} ${sub.content}`)
-  ].join(' ');
-
-  const determineCategory = () => {
-    const lowerText = analysisText.toLowerCase();
-
-    if (lowerText.match(/(clima|co2|inquinamento|natura|sostenibilit|energia|solare|nucleare|ambiente|green|piante|albero|foresta|oceano|agricoltura|acqua|terra)/)) {
-      return ChapterCategory.NATURE;
-    }
-
-    if (lowerText.match(/(robot|ai|tech|app|computer|software|hardware|digitale|internet|chatgpt|gpt|algoritmo|tecnolog)/)) {
-      return ChapterCategory.TECHNOLOGY;
-    }
-
-    return ChapterCategory.HUMAN;
-  };
-
-  const category = determineCategory();
-
-  const categoryFlag = {
-    [ChapterCategory.NATURE]: '🍃',
-    [ChapterCategory.TECHNOLOGY]: '🖥️',
-    [ChapterCategory.HUMAN]: '❤️'
-  }[category];
-
-  const categoryLabel = {
-    [ChapterCategory.NATURE]: 'Nature',
-    [ChapterCategory.TECHNOLOGY]: 'Technology',
-    [ChapterCategory.HUMAN]: 'Human'
-  }[category];
-
-  const accentClass = {
-    [ChapterCategory.NATURE]: 'accent-green',
-    [ChapterCategory.TECHNOLOGY]: 'accent-blue',
-    [ChapterCategory.HUMAN]: 'accent-red'
-  }[category];
 
   return {
     ...chapter,
     cleanTitle,
     originalEmoji: emoji || '🎼',
-    processedSubchapters: chapter.subchapters.map(processSubchapter),
-    category,
-    categoryFlag,
-    categoryLabel,
-    accentClass
+    processedSubchapters: chapter.subchapters.map(processSubchapter)
   };
 };

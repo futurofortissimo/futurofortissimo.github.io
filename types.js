@@ -1,5 +1,4 @@
 export const TopicEmoji = {
-  BOOKS: '📚',
   MONEY: '💸',
   SPORT: '⚽',
   FOOD: '🍽',

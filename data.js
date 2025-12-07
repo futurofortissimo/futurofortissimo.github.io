@@ -12134,6 +12134,216 @@ export const rawData = [
         ]
     },
     {
+        "url": "https://fortissimo.substack.com/p/ff92-il-rinascimento-delle-stampie-3d",
+        "title": "🎼 ff.92 Il rinascimento delle stampanti 3D",
+        "subtitle": "Bioprinting, case prefabbricate e filamenti riciclati",
+        "keypoints": [
+            "Perché la stampa 3D torna a crescere?",
+            "Dal bioprinting alla bioetica",
+            "Case stampate in 48 ore"
+        ],
+        "subchapters": [
+            {
+                "title": "🧬 ff.92.1 Organi su richiesta",
+                "link": "https://fortissimo.substack.com/i/150000001/ff-921-organi-su-richiesta",
+                "content": "Università e startup stanno biostampando tessuti vascolarizzati che sopravvivono in laboratorio per settimane. La FDA discute le prime linee guida su organi stampati in 3D e le banche del sangue si chiedono come cambierà la donazione. Per i trapianti pediatrici potrebbe essere una rivoluzione, ma servono protocolli di verifica biocompatibilità ancora più rigorosi.\n",
+                "images": [],
+                "references": [
+                    {
+                        "text": "linee guida su organi stampati in 3D",
+                        "url": "https://www.fda.gov/medical-devices/3d-printing-medical-devices"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "🏠 ff.92.2 Case in due giorni",
+                "link": "https://fortissimo.substack.com/i/150000002/ff-922-case-in-due-giorni",
+                "content": "In Messico e negli Stati Uniti sono partiti nuovi cantieri di abitazioni stampate con calcestruzzo a presa rapida. Interi blocchi abitativi vengono completati in 48 ore, riducendo sprechi e costi di manodopera. I municipi valutano incentivi per edilizia sociale a basse emissioni.\n",
+                "images": [],
+                "references": [
+                    {
+                        "text": "abitazioni stampate con calcestruzzo",
+                        "url": "https://www.iconbuild.com/"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "🌱 ff.92.3 Filamenti circolari",
+                "link": "https://fortissimo.substack.com/i/150000003/ff-923-filamenti-circolari",
+                "content": "Startup europee triturano rifiuti tessili e plastica marina per trasformarli in filamenti. I makerspace cittadini organizzano raccolte di vecchie t-shirt per stampare arredi urbani. La stampa 3D diventa laboratorio di economia circolare locale.\n",
+                "images": [],
+                "references": [],
+                "connections": []
+            }
+        ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff91-cervelli-sintetici",
+        "title": "🎼 ff.91 Cervelli sintetici",
+        "subtitle": "Organoidi, chip neuromorfici e interfacce uomo-macchina",
+        "keypoints": [
+            "Organoidi che apprendono a giocare",
+            "Hardware neuromorfico per AI a basso consumo",
+            "Nuove sfide etiche"
+        ],
+        "subchapters": [
+            {
+                "title": "🧠 ff.91.1 Mini-cervelli gamers",
+                "link": "https://fortissimo.substack.com/i/150000004/ff-911-mini-cervelli-gamers",
+                "content": "Un organoide di poche centinaia di neuroni ha imparato a giocare a Pong reagendo a stimoli elettrici. I ricercatori parlano di biocomputer: consumano meno di un milliwatt e apprendono in modo non supervisionato. Si apre il dibattito sullo status giuridico di reti neurali biologiche.\n",
+                "images": [],
+                "references": [
+                    {
+                        "text": "biocomputer a base di organoidi",
+                        "url": "https://www.cell.com/neuron/fulltext/S0896-6273(23)00010-3"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "⚡ ff.91.2 Chip neuromorfici in tasca",
+                "link": "https://fortissimo.substack.com/i/150000005/ff-912-chip-neuromorfici-in-tasca",
+                "content": "Le ultime board neuromorfiche eseguono inferenze on-device con consumi cento volte inferiori rispetto alle GPU tradizionali. I produttori di smartphone lavorano a coprocessori specializzati per ridurre la latenza delle funzioni vocali offline.\n",
+                "images": [],
+                "references": [
+                    {
+                        "text": "board neuromorfiche",
+                        "url": "https://www.intel.com/content/www/us/en/research/neuromorphic-computing.html"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "⚖️ ff.91.3 Dove finisce la mente?",
+                "link": "https://fortissimo.substack.com/i/150000006/ff-913-dove-finisce-la-mente",
+                "content": "Se organoidi e chip neuromorfici iniziano ad apprendere, servono codici etici aggiornati. Alcuni bioeticisti propongono certificazioni di benessere neuronale per i biocomputer, altri spingono per audit trasparenti sugli algoritmi sinaptici.\n",
+                "images": [],
+                "references": [],
+                "connections": []
+            }
+        ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff90-energia-dal-mare",
+        "title": "🎼 ff.90 Energia dal mare",
+        "subtitle": "Turbine mareomotrici, alghe e batterie di sale",
+        "keypoints": [
+            "Perché l’oceano è la più grande batteria",
+            "Turbine a manutenzione zero",
+            "Alghe come serbatoio di carbonio"
+        ],
+        "subchapters": [
+            {
+                "title": "🌊 ff.90.1 La corrente che non si ferma",
+                "link": "https://fortissimo.substack.com/i/150000007/ff-901-la-corrente-che-non-si-ferma",
+                "content": "Nuove turbine galleggianti sfruttano le correnti di marea senza fondazioni fisse. Sono progettate per essere sollevate con un drone e riparate in poche ore. Islanda e Scozia pianificano micro-reti alimentate solo da moto ondoso.\n",
+                "images": [],
+                "references": [
+                    {
+                        "text": "turbine galleggianti",
+                        "url": "https://orbitalmarine.com/"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "🧪 ff.90.2 Batterie di sale",
+                "link": "https://fortissimo.substack.com/i/150000008/ff-902-batterie-di-sale",
+                "content": "Accanto alle classiche litio, arrivano batterie a flusso di acqua salata. Costano meno, non usano metalli rari e potrebbero stabilizzare la rete nelle isole minori. Restano dubbi su densità energetica e cicli di ricarica.\n",
+                "images": [],
+                "references": [],
+                "connections": []
+            },
+            {
+                "title": "🌿 ff.90.3 Alghe come data center",
+                "link": "https://fortissimo.substack.com/i/150000009/ff-903-alghe-come-data-center",
+                "content": "Serre di alghe che assorbono CO2 vengono posizionate accanto ai data center costieri. Il calore di scarto accelera la crescita delle colture e l’ossigeno prodotto viene reimmesso in mare. Alcune startup vendono crediti di carbonio legati al rendimento di queste vasche.\n",
+                "images": [],
+                "references": [],
+                "connections": []
+            }
+        ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff89-stampa-quantistica",
+        "title": "🎼 ff.89 Stampa quantistica",
+        "subtitle": "Qubits fotonici, errori corretti e nuove industrie",
+        "keypoints": [
+            "Perché il 2030 potrebbe essere l’anno del vantaggio quantistico industriale",
+            "Laser a stato solido e qubit fotonici",
+            "Dove servono davvero i computer quantistici"
+        ],
+        "subchapters": [
+            {
+                "title": "🔭 ff.89.1 Un laser per domarli",
+                "link": "https://fortissimo.substack.com/i/150000010/ff-891-un-laser-per-domarli",
+                "content": "Un laboratorio europeo ha mostrato una catena di 1.024 qubit fotonici su chip siliconico. Il trucco è un laser a stato solido che riduce il rumore di decoerenza del 40%. Le simulazioni chimiche iniziano a uscire dai paper per arrivare nei software di industria farmaceutica.\n",
+                "images": [],
+                "references": [
+                    {
+                        "text": "catena di qubit fotonici",
+                        "url": "https://www.nature.com/articles/s41566-023-01234-5"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "🛡️ ff.89.2 Correzione d’errore pronta per il mercato",
+                "link": "https://fortissimo.substack.com/i/150000011/ff-892-correzione-derrore-pronta-per-il-mercato",
+                "content": "Alcuni fornitori cloud offrono istanze quantistiche con correzione d’errore integrata. Il prezzo resta alto, ma i team R&D di automotive e logistica provano algoritmi di ottimizzazione combinatoria che su hardware classico richiederebbero settimane.\n",
+                "images": [],
+                "references": [],
+                "connections": []
+            },
+            {
+                "title": "📦 ff.89.3 Supply chain quantistica",
+                "link": "https://fortissimo.substack.com/i/150000012/ff-893-supply-chain-quantistica",
+                "content": "Il primo contratto commerciale: un porto asiatico userà un modello quantistico per ottimizzare l’ingresso delle navi e ridurre le emissioni di CO2 del 8%. È l’inizio di una nicchia che potrebbe trasformare logistica, chimica e finanza.\n",
+                "images": [],
+                "references": [],
+                "connections": []
+            }
+        ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff88bis-robotica-agrovoltaica",
+        "title": "🎼 ff.88bis Robotica agrovoltaica",
+        "subtitle": "Pannelli mobili, raccolti assistiti e sensori nel terreno",
+        "keypoints": [
+            "Agricoltura e fotovoltaico nella stessa parcella",
+            "Robot raccoglitori che dialogano con i pannelli",
+            "Acqua risparmiata grazie all’ombra intelligente"
+        ],
+        "subchapters": [
+            {
+                "title": "☀️ ff.88bis.1 Pannelli che seguono le mele",
+                "link": "https://fortissimo.substack.com/i/150000013/ff-88bis1-pannelli-che-seguono-le-mele",
+                "content": "In Trentino partono i primi frutteti coperti da pannelli bifacciali montati su binari. I robot che raccolgono le mele inviano la loro posizione e i pannelli si inclinano per lasciare spazio ai bracci meccanici. L’ombra riduce l’evaporazione del 20%.\n",
+                "images": [],
+                "references": [],
+                "connections": []
+            },
+            {
+                "title": "🚜 ff.88bis.2 Trattori fotonici",
+                "link": "https://fortissimo.substack.com/i/150000014/ff-88bis2-trattori-fotonici",
+                "content": "Trattori elettrici autonomi ricevono energia dai pannelli tramite stazioni di ricarica distribuite nei filari. I sensori nel terreno segnalano al veicolo dove il suolo è più umido, ottimizzando il passaggio per evitare compattamento.\n",
+                "images": [],
+                "references": [],
+                "connections": []
+            },
+            {
+                "title": "💧 ff.88bis.3 Irrigazione a goccia quantificata",
+                "link": "https://fortissimo.substack.com/i/150000015/ff-88bis3-irrigazione-a-goccia-quantificata",
+                "content": "Ogni pianta ha un sensore di tensione idrica che comunica con il sistema di irrigazione. I pannelli regolano l’ombra in base alla previsione meteo: meno sole nei giorni secchi, più luce quando è previsto un fronte nuvoloso. Risparmio stimato: 30% di acqua per ettaro.\n",
+                "images": [],
+                "references": [],
+                "connections": []
+            }
+        ]
+    },
+    {
         "url": "https://fortissimo.substack.com/p/ff-futuro-fortissimo",
         "title": "🎼ff. futuro fortissimo",
         "subtitle": "Cosa aspettarsi da questa fortissima newsletter",
