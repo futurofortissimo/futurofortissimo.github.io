@@ -1,26 +1,79 @@
 import { React, html } from './runtime.js';
 import { rawData } from './data.js';
 import { processChapter } from './utils.js';
+import { TopicEmoji } from './types.js';
 import ChapterItem from './components/ChapterItem.js';
 import Sidebar from './components/Sidebar.js';
 import RightSidebar from './components/RightSidebar.js';
 import SupportPopup from './components/SupportPopup.js';
 import MediaSlider from './components/MediaSlider.js';
 import SearchResultsModal from './components/SearchResultsModal.js';
+import BooksPopup from './components/BooksPopup.js';
 import { NavigationProvider, useNavigation } from './NavigationContext.js';
+
+const extractBooksFromData = (chapters = []) => {
+  const seen = new Set();
+  const books = [];
+
+  chapters.forEach((chapter) => {
+    chapter.processedSubchapters.forEach((sub) => {
+      const quote = (sub.content || '')
+        .split('\n')
+        .find((paragraph) => paragraph && paragraph.trim())
+        ?.trim();
+      const image = Array.isArray(sub.images) && sub.images.length > 0 ? sub.images[0].src : null;
+
+      [...(sub.references || []), ...(sub.connections || [])].forEach((ref) => {
+        if (!ref?.url || !ref.url.includes('amzn.to')) return;
+        const key = ref.url;
+        if (seen.has(key)) return;
+        seen.add(key);
+
+        const title = (ref.text || sub.cleanTitle || 'Consiglio di lettura').trim();
+        if (!title || title === '.') return;
+
+        books.push({
+          id: key,
+          title,
+          link: ref.url,
+          chapterTitle: chapter.cleanTitle,
+          subTitle: sub.cleanTitle,
+          image,
+          quote,
+          chapterUrl: chapter.url,
+          subLink: sub.link
+        });
+      });
+    });
+  });
+
+  return books;
+};
 
 const InnerApp = () => {
   const [processedData, setProcessedData] = React.useState([]);
   const [selectedEmoji, setSelectedEmoji] = React.useState(null);
   const [isMediaOpen, setIsMediaOpen] = React.useState(false);
+  const [isBooksOpen, setIsBooksOpen] = React.useState(false);
   const [isSearchOverlayOpen, setIsSearchOverlayOpen] = React.useState(false);
   const [hasManuallyClosedSearch, setHasManuallyClosedSearch] = React.useState(false);
   const { incrementInteraction, searchQuery, setSearchQuery } = useNavigation();
+  const initialBookShownRef = React.useRef(false);
 
   React.useEffect(() => {
     const processed = rawData.map(processChapter);
     setProcessedData(processed);
   }, []);
+
+  const bookSuggestions = React.useMemo(() => extractBooksFromData(processedData), [processedData]);
+
+  React.useEffect(() => {
+    if (!initialBookShownRef.current && bookSuggestions.length > 0) {
+      setIsBooksOpen(true);
+      setSelectedEmoji(TopicEmoji.BOOK);
+      initialBookShownRef.current = true;
+    }
+  }, [bookSuggestions.length]);
 
   const filteredData = React.useMemo(() => {
     if (!selectedEmoji) return processedData;
@@ -86,6 +139,11 @@ const InnerApp = () => {
   };
 
   const handleCloseMedia = () => setIsMediaOpen(false);
+  const handleOpenBooks = () => {
+    setSelectedEmoji(TopicEmoji.BOOK);
+    setIsBooksOpen(true);
+  };
+  const handleCloseBooks = () => setIsBooksOpen(false);
 
   return html`<div className="min-h-screen text-black selection:bg-yellow-200 selection:text-black">
     <${SupportPopup} />
@@ -96,6 +154,7 @@ const InnerApp = () => {
       onClear=${handleClearSearch}
       onNavigate=${handleHideSearchOverlay}
     />
+    <${BooksPopup} isOpen=${isBooksOpen} onClose=${handleCloseBooks} books=${bookSuggestions} />
 
     <div className="max-w-6xl mx-auto px-4 md:px-8 py-10 space-y-10">
       <header className="brutal-card mobile-unboxed accent-bar accent-blue flex flex-col md:flex-row justify-between items-start gap-4 no-round">
@@ -135,6 +194,14 @@ const InnerApp = () => {
               className="px-4 py-3 border-3 border-black bg-white brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
             >
               Apri media
+            </button>
+            <button
+              type="button"
+              onClick=${handleOpenBooks}
+              disabled=${bookSuggestions.length === 0}
+              className="px-4 py-3 border-3 border-black bg-white brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform disabled:opacity-60 disabled:cursor-not-allowed"
+            >
+              Filtra libri
             </button>
             ${searchQuery
               ? html`<div className="flex flex-wrap gap-2">

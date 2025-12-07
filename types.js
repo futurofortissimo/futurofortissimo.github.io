@@ -11,5 +11,6 @@ export const TopicEmoji = {
   WELLNESS: '❤️',
   TECH: '💻',
   NATURE: '🍃',
+  BOOK: '📚',
   UNKNOWN: '✨'
 };
