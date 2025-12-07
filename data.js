@@ -2972,5 +2972,760 @@ export const rawData = [
                 ]
             }
         ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff59-lottimismo-vola",
+        "title": "🎼 ff.59 L'ottimismo vola!",
+        "subtitle": "Superare la stagnazione tecnologica (se esiste) per un futuro positivo",
+        "keypoints": [
+            "Ma è poi vera la storia della stagnazione tecnologica?",
+            "Perché raccontare storie positive è importante",
+            "Cosa ha ispirato l’iPhone?"
+        ],
+        "subchapters": [
+            {
+                "title": "🐸 ff.59.1 Altro che stagnazione!",
+                "link": "https://fortissimo.substack.com/i/114932897/ff-altro-che-stagnazione",
+                "content": "Nato in Francia a metà Ottocento, il positivismo è il collante culturale della tecnica. Additato come miope ricerca dell’utile carente di analisi etiche/psicologiche, è indubbiamente la base culturale della società tecnologica in cui viviamo.\nTorniamo al 1971 e la presunta stasi tecnologica (🎼 ff. 50 Cosa c**** è successo nel 1971?)? SecondoWorksinprogress è una grande balla:\nIl PIL non cattura il progresso. Con la tecnologia raggiungiamo di più spendendo meno, in un deflazionario decremento di consumi (anche energetici). Gratuità digitale. C’è un famoso studio che dimostra cheil valore dei servizi digitali possa raggiungere 25. 000€ all’anno. Sono soldi che non spendiamo (e che non entrano nelle nostre tasche in busta paga) ma di cui dovremmo tenere conto. Online non si spende. Mi aveva fatto riflettere il dato sui consumi per servizi online. Nonostante ormaipassiamo un quarto della nostra giornata davanti a uno schermo, siamo particolarmente tirchi, online.\nA proposito, se volete offrire un caffé digitale (ne bevo molti) potete cliccarequi. Oppure, semplicemente, potete condividere questa newsletter. Share\nInventata la scrittura bisogna imparare a leggere! L’aumento di potenza di calcolo è stato focus principale degli ultimi 30 anni. Diciamo che ci siamo focalizzati ad ottimizzare l’inchiostro e la scrittura. Ora, grazie a formazione e a boomer sostituiti, possiamo iniziare a scrivere libri! E’ ora, come sostiene il Progressive Policy Institute, di“spaccare” il Grande Ristagno.\n",
+                "images": [],
+                "references": [
+                    {
+                        "text": "Worksinprogress è una grande balla",
+                        "url": "https://www.worksinprogress.co/issue/there-was-no-great-stagnation/"
+                    },
+                    {
+                        "text": "il valore dei servizi digitali possa raggiungere 25.000€ all’anno",
+                        "url": "https://www.researchgate.net/publication/332004186_Using_massive_online_choice_experiments_to_measure_changes_in_well-being"
+                    },
+                    {
+                        "text": "passiamo un quarto della nostra giornata davanti a uno schermo",
+                        "url": "https://www.bls.gov/news.release/atus.nr0.htm"
+                    },
+                    {
+                        "text": "qui",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    },
+                    {
+                        "text": "“spaccare” il Grande Ristagno",
+                        "url": "https://www.progressivepolicy.org/blogs/cracks-in-the-great-stagnation/"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "🎼 ff.50 Cosa c**** è successo nel 1971?",
+                        "url": "https://fortissimo.substack.com/p/ff50-cosa-c-e-successo-nel-1971"
+                    },
+                    {
+                        "text": "Share",
+                        "url": "https://fortissimo.substack.com/p/ff59-lottimismo-vola?utm_source=substack&utm_medium=email&utm_content=share&action=share"
+                    }
+                ]
+            },
+            {
+                "title": "🗃️ ff.59.2 Pressioni sociali e burocrazia",
+                "link": "https://fortissimo.substack.com/i/114932897/ff-pressioni-sociali-e-burocrazia",
+                "content": "Si può studiare la tecnologia con una teoria evoluzionistica: come una specie evolve e in base a pressioni esterne (o mancate tali), così lo sviluppo tecnologico va di pari passo con accettazione/blocchi della società.\nLa co-evoluzione tecnologica. QWERTY è tutt’altro che l’ottimo nella disposizione di caratteri di una tastiera, ma ci siamo adattati e ora cambiarla è un casino. Un altro esempio di interazione società-tecnologia è ilblocco nucleare post Fukushima e il revisionismo post invasione Ucraina.\nSe volete approfondire il tema, suggerisco il libroCome saremo, di Telmo Pievani e Luca de Biase.\n",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!RdJR!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F334c89c8-21f8-4cd1-846e-018b76afe57e_1000x1520.jpeg",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "Come saremo",
+                        "url": "https://amzn.to/41bkCJ6"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "blocco nucleare post Fukushima e il revisionismo post invasione Ucraina",
+                        "url": "https://fortissimo.substack.com/p/ff46-elementale-watson"
+                    }
+                ]
+            },
+            {
+                "title": "➕ ff.59.3 L’importanza di raccontare storie positive",
+                "link": "https://fortissimo.substack.com/i/114932897/ff-limportanza-di-raccontare-storie-positive",
+                "content": "Nella newsletterNot Boring, Packy McCormickfa notare che, nonostante:\nl’AGI (Artificial General Intelligence) è alle portemandiamo in orbita razzi sempre più grandiriprogrammiamo le cellule T per combattere i tumori (!!!)\nintorno a noi c’è solo tanta paura e negatività:\nLa ricerca spaziale è vista come un passatempo per miliardari. Le centrali nucleari stanno chiudendo in tutto il mondo. I progressi nell’AI suscitano timori di perdita di lavoro e di essere trasformati in clip di carta. I progressi nella biologia sintetica fanno pensare a focolai incontrollabili e alla minaccia del bioterrorismo. È difficile biasimare le persone. Lo show più discusso in TV al momento -The Last of Us- si svolge in un mondo in cui, secondo NPR: “il cambiamento climatico ha alimentato la diffusione di un nuovo patogeno, che si diffonde in tutto il mondo infettando gli esseri umani, trasformandoli in zombie e controllando il loro cervello\nElliot Hershberg@ElliotHershbergThe fact that we can hot-wire a patients own T cells to attack certain types of tumors is absolutely incredible.\n\nAnd the thing is, we're just scratching the surface when it comes to cell therapy. 8:00 PM ∙ Feb 7, 2023172Likes19Retweets\nIl sempre brillanteBalaji Srinivasannel pieno della pandemia pubblicavaThe Purpose of Technology, un inno alla positivà, auspicando scienziati creativi, attenti alla divulgazione, progressivi. Delle vere e proprie star.\nScienziati e ingegneri, progressisti piuttosto che conservatori tecnologici, devono imparare a scrivere, pubblicare e dirigere. Dobbiamo costruire consapevolmente un ecosistema mediatico decentralizzato guidato dalla tecnologia. Non tweet, ma articoli. Non articoli, ma video. Non video, ma lungometraggi. E non film, ma un’intera libreria di contenuti originali Netflix, un ecosistema mediatico tecnologico parallelo pieno di contenuti ispirazionali per i progressisti tecnologici. Una vita intera di contenuti che sostengono la moneta immutabile, la frontiera infinita, l’intelligenza artificiale e la vita eterna. Balaji Srinivasan,The purpose of Technology\nAncheChaudhri, cuore del design e del software dietro l’invenzione dell’iPhone, è di questa idea e riporta la lista dei suoi miti e fonti di ispirazione. I giovani hanno bisogno di inneggiare al Maradona della tecnologia. Della positività. Neil deGrasse Tyson non basta.\nVoglio trovare un senso. Ecco quello di futuro fortissimo: stimolare, divulgare, preparare la società al futuro fortissimo. Insomma, ilfuture-forming.\n🎵 Note finali\nIn futuro, una newsletter come questa, con le sue interazioni in termini di letture e condivisioni, fornirà un compenso diretto in base al percorso che l’informazione condivisa ha poi prodotto, stimolando invenzioni e nuovi collegamenti.\nNel prossimo 🎼 ff parleremo di cinema!👋 A presto, damicmer\nVuoi supportare questo progetto?→ Condividilo con un amico suWhatsApp→Offrimi un caffè😏→Ricordati di mettere un cuoricino qua sotto.\n☕❤️\n",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!la76!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6e11249c-351e-430f-91b3-2de3fabdc923_526x578.png",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!JRyN!,w_1456,c_limit,f_auto,q_auto:good,fl_lossy/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7dafdbb1-4238-4d33-8243-80b710992f65_480x270.gif",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "Not Boring, Packy McCormick",
+                        "url": "https://www.notboring.co/"
+                    },
+                    {
+                        "text": "Elliot Hershberg@ElliotHershbergThe fact that we can hot-wire a patients own T cells to attack certain types of tumors is absolutely incredible.\n\nAnd the thing is, we're just scratching the surface when it comes to cell therapy.",
+                        "url": "https://twitter.com/ElliotHershberg/status/1623049012466286592?s=20&utm_source=substack&utm_medium=email"
+                    },
+                    {
+                        "text": "8:00 PM ∙ Feb 7, 2023172Likes19Retweets",
+                        "url": "https://twitter.com/ElliotHershberg/status/1623049012466286592?s=20&utm_source=substack&utm_medium=email"
+                    },
+                    {
+                        "text": "Balaji Srinivasan",
+                        "url": "https://balajis.com/author/balajis/"
+                    },
+                    {
+                        "text": "The Purpose of Technology, un inno alla positivà",
+                        "url": "https://balajis.com/the-purpose-of-technology/?utm_source=substack&utm_medium=email"
+                    },
+                    {
+                        "text": "Chaudhri, cuore del design e del software dietro l’invenzione dell’iPhone",
+                        "url": "https://twitter.com/imranchaudhri/status/1092194839540584449?utm_source=substack&utm_medium=email"
+                    },
+                    {
+                        "text": "future-forming",
+                        "url": "https://fs.blog/knowledge-project-podcast/josh-wolfe/"
+                    },
+                    {
+                        "text": "micmer",
+                        "url": "https://linktr.ee/micmer"
+                    },
+                    {
+                        "text": "Offrimi un caffè",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    },
+                    {
+                        "text": "☕",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "WhatsApp",
+                        "url": "https://api.whatsapp.com/send?text=https%3A%2F%2Ffortissimo.substack.com%2F"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff58-le-banane-inquinano-troppo",
+        "title": "🎼 ff.58 Le banane inquinano troppo?",
+        "subtitle": "Come diminuire e monitorare le emissioni delle attività di ogni giorno",
+        "keypoints": [
+            "Quanto costa una vita umana?",
+            "Andare in bici inquina di più di una macchina (se mangiamo solo asparagi)",
+            "Il costo (in CO2-eq) di un incidente stradale"
+        ],
+        "subchapters": [
+            {
+                "title": "🔟 ff.58.1 Il costo di una vita umana",
+                "link": "https://fortissimo.substack.com/i/113015963/ff-il-costo-di-una-vita-umana",
+                "content": "InHow bad are banana, Mike Berners-lee, professore alla Lancester University, snocciola il costo ecologico di praticamente tutto. Con capitoli che dividono oggetti e attività per g/kg/ton di CO2 emessi, l’autore calcola l’impatto di: un mutuo, un incidente stradale, il sistema educativo, ecc…\n10 tonnellate. Se ogni cittadino emettesse questa quantità di CO2 (eviterò la distinzione CO2eq per semplicità), avremmo un aumento del 40% di emissioni (altro che 1. 5°C) rispetto ai 51 miliardi di kg CO2 del 2020 (📉 ff. 1. 2 Da 51 miliardi a 0).\nTonnellate medie di CO2 per cittadino:🇺🇸 | 28🇦🇺 | 30🇬🇧 | 15🇨🇳 | 3🇲🇼 | 0. 1🌎 | 7\nL’europeo medio emette 15 tonnellate. Secondo l’autore, anche stando molto attenti alle scelte alimentari e comportamentali, sarebbe difficile scendere sotto le 3 tonnellate: tanti i “costi fissi” legati allo standard societario da “primo mondo” tra servizi fruibili, educazione e sanità.\n2700 € o 150 ton CO2. Questo il costo di una vita umana, considerando il numero di morti per cambiamenti climatici ( vedi anche⚫ ff. 16. 3 Il mercato (nero) della CO2). Praticamente, i cittadini UK valgono come il 5% del PIL che generano.\n",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!KEoj!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9614772f-949d-44af-aa74-437869bb73b7_470x470.png",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!ykxd!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9c4906bb-b307-45a7-bda8-1b724577dc5e_467x458.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "How bad are banana",
+                        "url": "https://amzn.to/3WHf16M"
+                    },
+                    {
+                        "text": "📉 ff. 1. 2 Da 51 miliardi a 0",
+                        "url": "https://fortissimo.substack.com/i/44169224/ff-da-51-miliardi-a-0"
+                    },
+                    {
+                        "text": "L’europeo medio emette 15 tonnellate",
+                        "url": "https://worldpopulationreview.com/country-rankings/carbon-footprint-by-country"
+                    },
+                    {
+                        "text": "ff. 16. 3 Il mercato (nero) della CO2",
+                        "url": "https://fortissimo.substack.com/i/44166491/ff-il-mercato-della-co2"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "🕹️ ff.58.2 Minecraft delle emissioni",
+                "link": "https://fortissimo.substack.com/i/113015963/ff-minecraft-delle-emissioni",
+                "content": "Con How Bad Are Bananas ho finalmente trovato il catalogo-emissioni di cui parlavo ne ha bisogno di un “tracking delle emissioni” giocoso e dinamico.\nEmissioni di alcuni alimenti: fava tonka, asparagi, avocado. L’esportazione di questi alimenti causa una parte delle emissioni globali: le fava tonka arrivano dal Venezuela e rispettivi trasporti (solo le merci trasportate via aereo è responsabile del 0.5% delle emissioni globali). Un kg di asparagi causa 19 kg di CO2, di cui 12 di logistica. Una mela di commercio equo può costare meno di un hamburger in CO2.\nSport e trasporti emettono più del porno! Pornhub da solo genera meno della metà delle emissioni di un roundtrip New York-Los Angeles. Fonte: lo stesso Berners-Lee.\n",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!DX68!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F947d7509-e2fb-4d74-9314-ea59cb22df1c_467x447.png",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!BEFB!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F82598c92-6b21-441d-965e-54b7d40200f9_407x314.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "Emissioni di alcuni alimenti: fava tonka, asparagi, avocado",
+                        "url": "https://app.wedonthavetime.org/posts/6cfa4b73-d8b4-4bc5-abdc-ad64f0d32ad0?utm_source=substack&utm_medium=email"
+                    },
+                    {
+                        "text": "solo le merci trasportate via aereo è responsabile del 0.5% delle emissioni globali",
+                        "url": "https://ourworldindata.org/co2-travel-footprint"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "⛲ ff.58.3 Andare alle Cascate del Niagara",
+                "link": "https://fortissimo.substack.com/i/113015963/ff-andare-alle-cascate-del-niagara-da-new-york",
+                "content": "E quando proprio non possiamo evitare di muoverci? Quanto costerebbe andare a vedere le cascate del Niagara da New York City, come sostiene di voler fare Barney in How I met your mother? 2418. 785 km a 0. 243 kg CO2/km (auto a benzina media) = 590 kg CO2.\nCome se avessimo risparmiato la CO2 emessa dalla produzione di 1/4 di auto (📉 ff. 1. 2 Da 51 miliardi a 0) (o da un set di gomme per auto) oppure perdendo 80 kg di peso (📉 ff. 5. 3 Zavorre), oppure bevendo 10 mignon di vodka (🎼 ff. 23 Matrimoni privatizzati).\n",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!tOts!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8934e2e9-ae1b-4db1-9887-d57020fde395_1668x1584.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "0. 243 kg CO2/km (auto a benzina media)",
+                        "url": "https://ourworldindata.org/travel-carbon-footprint"
+                    },
+                    {
+                        "text": "How I Met Your Mother",
+                        "url": "https://it.wikipedia.org/wiki/How_I_Met_Your_Mother"
+                    },
+                    {
+                        "text": "📉 ff. 1. 2 Da 51 miliardi a 0",
+                        "url": "https://fortissimo.substack.com/i/44169224/ff-da-51-miliardi-a-0"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "📉 ff. 5. 3 Zavorre",
+                        "url": "https://fortissimo.substack.com/i/44168032/ff-zavorre"
+                    },
+                    {
+                        "text": "🎼 ff. 23 Matrimoni privatizzati",
+                        "url": "https://fortissimo.substack.com/p/ff23-matrimoni-privatizzati"
+                    },
+                    {
+                        "text": "WhatsApp",
+                        "url": "https://api.whatsapp.com/send?text=https%3A%2F%2Ffortissimo.substack.com%2F"
+                    }
+                ]
+            },
+            {
+                "title": "💲 ff.58.4 Spendere un dollaro",
+                "link": "https://fortissimo.substack.com/i/113015963/ff-spendere-un-dollaro",
+                "content": "Chiedo al chatbot “How bad are bananas” quanto si inquina con un biglietto di banca da un dollaro. Il libro mi risponde con un bel diagramma di flusso:\nEmissioni per produrre un biglietto: circa 0. 1 g CO2.\nSe il biglietto fosse una banconota venezuelana Varbolvar, sarebbe molto più inquinante. Il valore effettivo è crollato rispetto ai costi della filiera di produzione.\n",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!219k!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fccde0255-33cc-48dd-9c37-b66fc29bf778_720x1280.png",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!7Yix!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8cfc1adb-a574-4232-949c-49fe33ee78ed_896x825.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "How bad are bananas chatbot",
+                        "url": "https://howbadarebananas.doconomy.com/"
+                    },
+                    {
+                        "text": "banconota venezuelana Varbolvar",
+                        "url": "https://www.bloomberg.com/graphics/2018-venezuela-cash-crisis/#4"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "📉 ff.58.5 Decrescita felice o crescita tech?",
+                "link": "https://fortissimo.substack.com/i/113015963/ff-decrescita-felice-o-crescita-tech",
+                "content": "Vogliamo fare politica valoriale e decidere di non andare a Cascate del Niagara? Le possibilità sono due: decrescita felice o progresso tecnologico.\nMacchine a benzina vs carrozze trainate da cavalli. Prendiamo in considerazione l’inquinamento atmosferico: il mezzo in apparenza più sostenibile (in quanto non emette) era il cavallo, responsabile di produzione di sterco, cui seguivano mosche, che già a fine ‘800 erano un problema sanitario pubblico.\nStack Overflow. In un contesto futuristico, dall’intervento del MIT (riassunto in🔦 ff. 26. 2 Un'altra politica per l’Italia?) si evince che il lavoro e l’introduzione di nuovi processi produttivi è la fonte primaria di innovazione tecnologica, e va quindi protetto. L’innovazione è lenta quando le persone lavorano poco.\n",
+                "images": [],
+                "references": [
+                    {
+                        "text": "🔦 ff. 26. 2 Un'altra politica per l’Italia?",
+                        "url": "https://fortissimo.substack.com/i/44162223/ff-unaltra-politica-per-litalia"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "WhatsApp",
+                        "url": "https://api.whatsapp.com/send?text=https%3A%2F%2Ffortissimo.substack.com%2F"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff56-il-medico-mi-ha-prescritto-una",
+        "title": "🎼 ff.57 Il medico mi ha prescritto una maratona",
+        "subtitle": "Una storia millenaria tra Crocs, salute e limiti umani",
+        "keypoints": [
+            "Perché potrebbe sostituire una visita dal dottore",
+            "Si può correre in ciabatte (con le Crocs)?",
+            "Record del mondo e come raggiungerli"
+        ],
+        "subchapters": [
+            {
+                "title": "🔱 ff.57.1 Tra miti greci, filosofia e nuove religioni",
+                "link": "https://fortissimo.substack.com/i/109948916/ff-tra-miti-greci-filosofia-e-nuove-religioni",
+                "content": "Tra pochi giorni sarò sulla linea di partenza della Maratona di Padova. Sarà la mia prima ufficiale, ma durante la zona rossa, stando rigorosamente nel comune, avevo coperto la distanza facendo 6 giri del mio ridente comune, Gazzaniga.\nPellegrini moderni. Costeggiando le 78 statue di personaggi illustri legati alla città in Prato della Valle, probabilmente rifletterò sulla storia millenaria di questa competizione (a meno che i crampi non abbiano già preso il sopravvento).\nLo sport è nella mia quotidianità anche in risposta a traumi famigliari. Può aiutare contro la depressione ediventare una nuova religione. I membri di questa setta parlano in codice (VO2 max, BPM). Si salutano, mentre corrono, con reverenza come fossero dei preti.\nCorriamo perché gran parte della vita è frustrante e futile, e solo contrastandola con qualche sorta di dolore, che richiede tempo, fatica e mesi di sforzi ripetitivi - lontani da amici, famiglia, birra e sanità mentale - siamo in grado di fare un atto di sfida alle Moire che complottano sulla nostra vita. Corriamo perché ci permette, seppur brevemente, di entrare in un altro mondo. Spesso questo può comportare disagio o addirittura dolore, una sensazione di alienazione dalla nostra normale zona di comfort che ci ricorda la nostra mortalità e ci fa rispettare le nostre capacità e limiti. Correre è l’equivalente laico del servizio domenicale. La maratona è l’equivalente odierno del pellegrinaggio medievale. Jamie Doward,Running in this London marathon is a way of dealing with my mum's death\nDoveroso un futuro fortissimo su quest’attività dal passato remoto, in cui snocciolare effetti più o meno benefici di questo semplice e ripetitivo susseguirsi di “passi lunghi e ben distesi”.\n",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!iuBT!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F14b71ab3-3fcd-4863-a4ad-4d351939c114_1200x697.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "Lo sport è nella mia quotidianità anche in risposta a traumi famigliari",
+                        "url": "https://www.theguardian.com/commentisfree/2023/apr/20/running-london-marathon-mums-death"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "Lo sport è nella mia quotidianità anche in risposta a traumi famigliari",
+                        "url": "https://www.theguardian.com/commentisfree/2023/apr/20/running-london-marathon-mums-death"
+                    }
+                ]
+            },
+            {
+                "title": "👨‍⚕️ ff.57.2 Il consiglio del medico",
+                "link": "https://fortissimo.substack.com/i/109948916/ff-il-consiglio-del-medico",
+                "content": "“Doc, quanto dura un uomo, se non va mai a sbattere?” A nemmeno 30 anni, credo sia il momento di iniziare a prendere seriamente la salute, guardando oltre muscoli e cardi che crescono con pesi e corsa.\nPrevenzione? Per i medici, la parola d’ordine è “attenzione a bere e fumare poco, a non prendere troppo sole e a fare più sport”.\nStress fisico. “Go hard o go home” pare sia una locomotiva per il corpo: secondoil test del VO2max, livelli di fitness elevati si associano a un rischio cardiovascolare prossimo allo zero (⚫ ff. 23. 2 L’infarto di Lassie).\n",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!bXJQ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F819c8fc7-e8ee-490c-b80c-b08b1a1c0c58_1355x1600.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "il test del VO2max, livelli di fitness elevati si associano a un rischio cardiovascolare prossimo allo zero",
+                        "url": "https://www.jacc.org/doi/full/10.1016/j.jacc.2022.05.031"
+                    },
+                    {
+                        "text": "Un modo per misurarlo è il test di Cooper",
+                        "url": "https://www.ideegreen.it/vo2max-test-di-cooper-cosa-sono-a-cosa-servono-123401.html"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "studiare il Tour de France per curare il diabete",
+                        "url": "https://fortissimo.substack.com/p/ff53-la-cura-ai-tumori"
+                    }
+                ]
+            },
+            {
+                "title": "🐊 ff.57.3 Correre una (mezza)maratona in Crocs",
+                "link": "https://fortissimo.substack.com/i/109948916/ff-correre-una-mezzamaratona-in-crocs",
+                "content": "Da qualche settimana,le Crocs valgono ufficialmente più di Credit Suisse.\nCrisi finanziarie e politiche FED non c’entrano. E’ perché Benjamin Pachev (anche sosia di Harry Potter) usa queste ciabatte per chiudere mezze maratone in 1h e 12 minuti. 3. 24min/km. 17. 5 km/h.\n",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!oSfx!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8780f608-0034-4732-9c7b-3d6346d71eca_1749x708.png",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!aIcS!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3d722a26-1a28-48c9-b30f-f24b4e12285b_1735x691.png",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!hyCV!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5cf6e5dd-4d0c-4346-8feb-6ec2d9a00604_2200x1500.jpeg",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "le Crocs valgono ufficialmente più di Credit Suisse",
+                        "url": "https://coinunited.io/news/en/2023-03-16/stocks/cunews-credit-suisse-valuation-drops-below-crocs-amid-financial-turmoil"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "🪰 ff.57.4 Volare, oh-oh",
+                "link": "https://fortissimo.substack.com/i/109948916/ff-volare-oh-oh",
+                "content": "Non avendo il fitness di Harry Potter, per la corsa di domenica ho comprato le AIR ZOOM ALPHAFLY NEXT% (senza il 2 perché sono già abbastanza povero). Sonopraticamentequelle usate daKipchoge a Vienna per abbattere il record delle due oree danno una bella mano (probabilmente 5 s/km, ossia 3 minuti e 30 secondi su una maratona).\nVento in faccia. Siemens ha studiato (con simulazioni) il precedente record mondiale segnato a Monza. Pacers e macchina danno un guadagno complessivo di 7. 3W che si traducono sul tempo maratona a 4’35’’ in meno. Più delle scarpe.\nLo scorso annoDavid Kilgore è stato il vincitore del World Marathon Challenge: 7 maratone in 7 giorni e 7 continenti.\ndavidkilgoreA post shared by David Kilgore ® (@davidkilgore)\n🎵 Note finali\nIn futuro, con i risultati del test di Cooper otterremo delle assicurazioni sanitarie più o meno vantaggiose.\nNel prossimo 🎼ffparleremo del costo climatico di praticamente tutto!👋 A presto, damicmer\nVuoi supportare questo progetto?→ Condividilo con un amico suWhatsApp→Offrimi un caffè😏→Ricordati di mettere un cuoricino qua sotto.\n☕❤️\n",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!Lbsr!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe795b962-5c1f-4bc0-9d47-1b6b39e34ce2_765x553.png",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!a6qP!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdefd30be-f8b5-4667-b41e-e42cac291daf_1434x659.jpeg",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!YU1N!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F89cadabb-a6d5-49f4-bdf8-f0db761c6aba_1590x468.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "Kipchoge a Vienna per abbattere il record delle due ore",
+                        "url": "https://www.ineos159challenge.com/news/history-is-made-as-eliud-kipchoge-becomes-first-human-to-break-the-two-hour-marathon-barrier/"
+                    },
+                    {
+                        "text": "Siemens ha studiato (con simulazioni) il precedente record mondiale segnato a Monza",
+                        "url": "https://blogs.sw.siemens.com/simcenter/the-aerodynamics-of-a-marathon-world-record/"
+                    },
+                    {
+                        "text": "David Kilgore è stato il vincitore del World Marathon Challenge",
+                        "url": "https://www.outsideonline.com/health/running/culture-running/kilgore-wins-world-marathon-challenge/?utm_medium=email&utm_source=substack"
+                    },
+                    {
+                        "text": "davidkilgore",
+                        "url": "https://instagram.com/davidkilgore"
+                    },
+                    {
+                        "text": "",
+                        "url": "https://instagram.com/p/CoH_GwhrD2_"
+                    },
+                    {
+                        "text": "@davidkilgore",
+                        "url": "https://instagram.com/davidkilgore"
+                    },
+                    {
+                        "text": "micmer",
+                        "url": "https://linktr.ee/micmer"
+                    },
+                    {
+                        "text": "Offrimi un caffè",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    },
+                    {
+                        "text": "☕",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "WhatsApp",
+                        "url": "https://api.whatsapp.com/send?text=https%3A%2F%2Ffortissimo.substack.com%2F"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff54-il-condizionatore-terrestre",
+        "title": "🎼 ff.56 Il condizionatore terrestre",
+        "subtitle": "Geoingegneria, scie non chimiche e altri spauracchi da superare",
+        "keypoints": [
+            "Siamo già geoingegneri?",
+            "Sulla scia degli aerei: i problemi delle scie di condensazione",
+            "Più pioggia o meno pioggia?"
+        ],
+        "subchapters": [
+            {
+                "title": "🦣 ff.56.1 Gli ultimi 22k anni di termometro terrestre",
+                "link": "https://fortissimo.substack.com/i/105434036/ff-gli-ultimi-k-anni-di-termometro-terrestre",
+                "content": "Se vi interessa la storia climatica di tutta Terra (prima della scorsa puntata sul termometro di neve) c’è una bellissima ricostruzione dei climatologi giapponesi sugli ultimi 22k anni.\n",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!lU1O!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1c0498d2-e1f7-49bd-8c41-0134615c8b46_2848x1873.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "bellissima ricostruzione dei climatologi giapponesi sugli ultimi 22k anni",
+                        "url": "https://link.springer.com/article/10.1007/s00382-022-06220-z"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "🕳️ ff.56.2 Siamo già geo-ingegneri",
+                "link": "https://fortissimo.substack.com/i/105434036/ff-siamo-gi%C3%A0-geo-ingegneri",
+                "content": "Mi convince l’idea: non esiste la geo-ingegneria. Esiste la Earth Ingineering.\nE la facciamo da millenni (🏛 ff. 31. 4 Antropocene), con riduzione di foreste al ritmo di una Grecia all’anno e di insetti e animali al ritmo di milioni all’anno. E le emissioni? Guardate qua sotto (dal 1980 ad oggi).\n",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!7Bot!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2dec8c14-1f89-4def-aa60-1c96f7edeaa4_2340x1654.png",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!KBXG!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F48c77493-cc72-4f9a-9e9c-dd30a4414a24_1570x570.png",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!xWMF!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1086ce6f-01e6-43af-82d2-e988f1f66e60_930x523.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "al ritmo di una Grecia all’anno",
+                        "url": "https://ourworldindata.org/grapher/annual-forest-loss-share?tab=chart"
+                    },
+                    {
+                        "text": "anche le formiche vanno tenute in considerazione",
+                        "url": "https://www.science.org/doi/10.1126/sciadv.abp8064"
+                    },
+                    {
+                        "text": "l’espansione di aree verdi potrebbe assorbire il 27% delle emissioni di CO2",
+                        "url": "https://www.lucaschenet.org/articles/2021-06-13-trees.html"
+                    },
+                    {
+                        "text": "E le emissioni? Guardate qua sotto (dal 1980 ad oggi)",
+                        "url": "https://ourworldindata.org/emissions-by-sector"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "🏛 ff. 31. 4 Antropocene",
+                        "url": "https://fortissimo.substack.com/i/44164775/ff-antropocene"
+                    },
+                    {
+                        "text": "micmer",
+                        "url": "https://linktr.ee/micmer"
+                    }
+                ]
+            },
+            {
+                "title": "🌊 ff.56.3 Una cascata alta un chilometro",
+                "link": "https://fortissimo.substack.com/i/105434036/ff-una-cascata-alta-un-chilometro",
+                "content": "In tema geoingegneristico, progetti spaziali degni di Robert Moses e balena bianca di Elon Musk sono le dighe (delle Marche e) del Congo. Il Grand Inga può potenzialmente fornire 30 MW di energia elettrica (4x una centrale nucleare USA) sfruttando la più grande cascata di acqua del mondo e una diga di 200 metri che argina una discesa di oltre 1000 metri del fiume Congo.\n",
+                "images": [],
+                "references": [
+                    {
+                        "text": "Grand Inga",
+                        "url": "https://www.cairn.info/revue-politique-africaine-2018-3-page-171.htm"
+                    },
+                    {
+                        "text": "4x una centrale nucleare USA",
+                        "url": "https://www.nrc.gov/reading-rm/doc-collections/fact-sheets/power-grid-fundamentals.html#:~:text=The%20perpetual%20fuel%20cycle%20makes,bars%20and%2060%2C000%20gal.%20(227,000%20liters)"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "🌧️ ff.56.4 Controllare la pioggia",
+                "link": "https://fortissimo.substack.com/i/105434036/ff-controllare-la-pioggia",
+                "content": "Il principale “metodo” di geoingegneria riguarda il cloud seeding (non quello delle nuvole di dati). In teoria basterebbe vaporizzare ioduro d’argento in atmosfera (bastano due chili per una nuvola).\nIl mondo del cloud seeding è pieno di “e se fosse”, ma pare alcune aziende inizino a farlo a pagamento.\n",
+                "images": [],
+                "references": [
+                    {
+                        "text": "bastano due chili per una nuvola",
+                        "url": "https://www.scientificamerican.com/article/does-cloud-seeding-really-make-it-rain/"
+                    },
+                    {
+                        "text": "alcune aziende inizino a farlo a pagamento",
+                        "url": "https://www.modernhail.com/2022/01/11/kansas-and-texas-cloud-seeding-programs/"
+                    },
+                    {
+                        "text": "nuvola di dati",
+                        "url": "https://www.gartner.com/en/information-technology/glossary/cloud-seeding"
+                    },
+                    {
+                        "text": "2016 il seeding delle nuvole è stato sospeso per “sovraproduzione”",
+                        "url": "https://www.theguardian.com/world/2016/mar/09/uae-abu-dhabi-weather-flooding-cloud-seeding"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "micmer",
+                        "url": "https://linktr.ee/micmer"
+                    },
+                    {
+                        "text": "Offrimi un caffè",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    },
+                    {
+                        "text": "☕",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    },
+                    {
+                        "text": "WhatsApp",
+                        "url": "https://api.whatsapp.com/send?text=https%3A%2F%2Ffortissimo.substack.com%2F"
+                    }
+                ]
+            },
+            {
+                "title": "💸 ff.56.5 Altro che il MOSE a Venezia",
+                "link": "https://fortissimo.substack.com/i/105434036/ff-altro-che-il-mose-a-venezia",
+                "content": "Non solo nuvole. Con Digues de la Merdi Jacques Rougerie siamo oltre la fantascienza.\nPer 2MW (meno di 1% del potenziale del Grand Inga), un progetto da 2. 5 miliardi per 3 dighe che chiudono il Bosforo.\n",
+                "images": [],
+                "references": [],
+                "connections": []
+            }
+        ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff54-come-capire-una-rivoluzione",
+        "title": "🎼 ff.55 Sopravvivere alla rivoluzione",
+        "subtitle": "Intelligenza artificiale tra ghigliottine, impotenza e perdizione",
+        "keypoints": [
+            "Una macchina che scannerizza attività neurale e ricostruisce quello che stiamo vedendo (!)",
+            "Com'è vivere dentro una rivoluzione?",
+            "Perché non possiamo prevedere il futuro (ma ci provo)"
+        ],
+        "subchapters": [
+            {
+                "title": "✊ ff.55.1 Come ci si sente, dentro una rivoluzione?",
+                "link": "https://fortissimo.substack.com/i/106257226/ff-come-ci-si-sente-dentro-una-rivoluzione",
+                "content": "Prima di affrontare ogni altra riflessione, vi suggerisco il sempre puntuale podcast di Lex Fridman con il fondatore di OpenAI.\nQuando c’è una rivoluzione? Difficile dirlo, ma quandol’efficienza del lavoro più pagato al mondo migliora del 50% dal giorno con la nottee vi ècrescente convergenza (report annuale di ARK Invest)tra AI e altre tecnologie forse ci siamo vicini.\nLa ghigliottina. Con la macchina a vapore abbiamo delegato l'attività fisica, ora affidiamo attività mentali e ricordi al digitale. Come un contadino del ‘700 l’attività fisica era tutto e un trattore era inimmaginabile, se l'AI ci toglierà le facoltà mentali, quale dimensione umana scopriremo?\nMeditate gente, meditate! Palestre e Ironman stimolano il fisico sedentario di gran parte dei lavoratori: nessun feudatario si sognava di fare un ultra-trail o uneveresting. Allo stesso modo, mindfulness e meditazione (non a caso già in crescita) potrebbero essere sempre più importanti. Forse, l'uomo ripiegherà su l’irriducibile, la sua coscienza.\nPerò, però, però. Non diamo per scontata nemmeno la coscienza, dato che icomputer già ricostruiscono quello che stiamo vedendo.\n",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!F_6Q!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa573e176-c010-458c-9df5-a9095301650b_480x360.jpeg",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "l’efficienza del lavoro più pagato al mondo migliora del 50% dal giorno con la notte",
+                        "url": "https://arxiv.org/pdf/2302.06590.pdf"
+                    },
+                    {
+                        "text": "crescente convergenza (report annuale di ARK Invest)",
+                        "url": "https://research.ark-invest.com/hubfs/1_Download_Files_ARK-Invest/Big_Ideas/ARK%20Invest_013123_Presentation_Big%20Ideas%202023_Final.pdf?utm_source=substack&utm_medium=email"
+                    },
+                    {
+                        "text": "computer già ricostruiscono quello che stiamo vedendo.",
+                        "url": "https://sites.google.com/view/stablediffusion-with-brain/?utm_source=substack&utm_medium=email"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "🌾 ff.55.2 Campi da arare (e dati da reclamare)",
+                "link": "https://fortissimo.substack.com/i/106257226/ff-campi-da-arare-e-dati-da-reclamare",
+                "content": "Sam Korus di Ark Invest segnala come ogni rivoluzione dà valore a nuove materie prime e genera nuovi output, citando il libroTechnological Revolutions and Financial Capitaldi Carlota Perez.\nSam Korus@skorusARK1/From Carlota Perez's book:\n\nEach new technological revolution is associated with new inputs.\n-iron\n-steam\n-steel\n-oil\n-microelectronics\n\nIs it finally time for data to take its place as the key input for the Age of AI revolution? 4:57 PM ∙ Feb 23, 2023226Likes54Retweets\nagricoltura → possedimenti terrieri → proprietà privatamacchina a vapore → mezzi di produzione → industrieweb/programmazione → potenza calcolo → siti e socialalgoritmi neuromorfici → possesso dati → metaverso (?)\nCookies e Cambridge Analytica. La riflessione sulla proprietà dei dati personali è già stata aperta dagli scandali degli ultimi anni. Ora che Stable Diffusion genera immagini “imparando” da contenuti pubblici su internet senza darne credito, la questione si è fatta più scottante.\nCosì nascono siti comeStableAttribution che identifica quali immagini abbiano ispirato il DALL-E di turuno, dando a Cesare quello che è di Cesare.\n",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!0qop!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F22a91c43-0120-4226-8e73-5a9fdc5b3e79_733x739.png",
+                        "caption": "StableAttribution identifica le immagini che hanno ispirato l’output generativo di Midjourney."
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "Technological Revolutions and Financial Capital",
+                        "url": "https://amzn.to/3ZFX3XZ"
+                    },
+                    {
+                        "text": "Sam Korus@skorusARK1/From Carlota Perez's book:\n\nEach new technological revolution is associated with new inputs.\n-iron\n-steam\n-steel\n-oil\n-microelectronics\n\nIs it finally time for data to take its place as the key input for the Age of AI revolution?",
+                        "url": "https://twitter.com/skorusARK/status/1628801290301054981"
+                    },
+                    {
+                        "text": "4:57 PM ∙ Feb 23, 2023226Likes54Retweets",
+                        "url": "https://twitter.com/skorusARK/status/1628801290301054981"
+                    },
+                    {
+                        "text": "StableAttribution che identifica quali immagini abbiano ispirato il DALL-E di turuno",
+                        "url": "https://www.stableattribution.com/"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "👑 ff.55.3 Altro che Giulio Cesare: i nuovi imperatori",
+                "link": "https://fortissimo.substack.com/i/106257226/ff-altro-che-giulio-cesare-i-nuovi-imperatori",
+                "content": "In🎼 ff. 52 Fondare una Nazione in garageabbiamo parlato della crescente centralizzazione di alcuni servizi (e i problemi connessi ad essa). Mi ha colpito il dato relativo alcrollo del numero di dipendenti per raggiungere 1 M di revenue nelle aziende SP500.\nPresto potremmo avere aziende da 1T$ composte da un solo dipendente assistito da centinaia di robot/intelligenza artificiale.\nD’altronde, già oggi influencer potenziati da AI e network effect creano brand personali (hamburger di Mr. Beast,NFTs di Emily Ratajkowski): un esempio di quella cheLi Jin chiama Passion Economy. Ma sopravviveranno all’infinità di contenuti che verranno presto prodotti?\n",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!Rjqs!,w_1456,c_limit,f_auto,q_auto:good,fl_lossy/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdbc62a67-40bd-4e94-bd5f-e72b722143ab_238x160.gif",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!rwFq!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8a312513-9c61-4972-8e0b-31a529b2f827_707x419.png",
+                        "caption": "Numero di dipendenti per raggiungere 1M di vendite, media su SP500 (1986-2020)"
+                    },
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!lU3g!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fee82465e-354c-47c1-8ac0-2fd4fbd51aa1_1615x645.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "crollo del numero di dipendenti per raggiungere 1 M di revenue nelle aziende SP500",
+                        "url": "https://www.isabelnet.com/sp-500-total-number-of-employees-to-total-revenues-ratio/"
+                    },
+                    {
+                        "text": "hamburger di Mr. Beast",
+                        "url": "https://www.mrbeastburger.com/"
+                    },
+                    {
+                        "text": "NFTs di Emily Ratajkowski",
+                        "url": "https://www.nytimes.com/2021/04/23/style/emily-ratajkowski-nft-christies.html"
+                    },
+                    {
+                        "text": "Li Jin chiama Passion Economy",
+                        "url": "https://li-jin.co/"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "🎼 ff.52 Fondare una Nazione in garage",
+                        "url": "https://fortissimo.substack.com/p/ff52-fondare-una-nazione-in-garage"
+                    }
+                ]
+            },
+            {
+                "title": "🆕 ff.55.4 Un po’ di cose carine successe dall’ultimo aggiornamento",
+                "link": "https://fortissimo.substack.com/i/106257226/ff-un-po-di-cose-carine-successe-dallultimo-aggiornamento",
+                "content": "Recentemente il metodo stable diffusion ha surclassato i GANs,Generative Adversarial Networks. Eppure, se vogliamo passare da un’immagine generata con un prompt di testo ad un’altra,I GANs garantiscono transizioni video più consistenti.\nSu Instagram,life_imitates_ai_artraccoglie fotografie (reali) che però ricordano le tanto chimeriche immagini generative dell’AI.\nlife_imitates_ai_artA post shared by Life Imitates AI Art (@life_imitates_ai_art)\nGli ultimi sviluppi in tema NeRFs (Neural Radiance Fields) creano rendering dall’alto di città e monumenti famosi, accessibili da Google Maps.\nBilawal Sidhu@bilawalsidhu3D, AI, NeRFs and oh my! Immersive view is now rolling out to 5 cities, with 5 more to follow. Experience the best of all views, with helpful info layered on top, so you can decide when & where to go. Proud to be part of the team-of-teams that made this maps milestone a reality! 4:36 PM ∙ Feb 8, 20231,968Likes291Retweets\n🎵 Note finali\nIn futuro, ci saranno competizioni tutte mentali: i 100m della velocità del pensiero e il record per il periodo più lungo di concentrazione su un pensiero senza essere distratti.\nNel prossimo 🎼ffparleremo di geo-ingegneria (no, non scie chimiche)!👋 A presto, damicmer\nVuoi supportare questo progetto?→ Condividilo suWhatsApp→Offrimi un caffè😏→Ricordati di mettere un cuoricino qua sotto.\n☕❤️\n",
+                "images": [],
+                "references": [
+                    {
+                        "text": "I GANs garantiscono transizioni video più consistenti",
+                        "url": "https://sites.google.com/view/stylegan-t/"
+                    },
+                    {
+                        "text": "life_imitates_ai_art",
+                        "url": "https://www.instagram.com/life_imitates_ai_art/"
+                    },
+                    {
+                        "text": "life_imitates_ai_art",
+                        "url": "https://instagram.com/life_imitates_ai_art"
+                    },
+                    {
+                        "text": "",
+                        "url": "https://instagram.com/p/Cobm_RIOdox"
+                    },
+                    {
+                        "text": "@life_imitates_ai_art",
+                        "url": "https://instagram.com/life_imitates_ai_art"
+                    },
+                    {
+                        "text": "Neural Radiance Fields",
+                        "url": "https://www.matthewtancik.com/nerf"
+                    },
+                    {
+                        "text": "Bilawal Sidhu@bilawalsidhu3D, AI, NeRFs and oh my! Immersive view is now rolling out to 5 cities, with 5 more to follow. Experience the best of all views, with helpful info layered on top, so you can decide when & where to go. Proud to be part of the team-of-teams that made this maps milestone a reality!",
+                        "url": "https://twitter.com/bilawalsidhu/status/1623360174974021633?s=20"
+                    },
+                    {
+                        "text": "4:36 PM ∙ Feb 8, 20231,968Likes291Retweets",
+                        "url": "https://twitter.com/bilawalsidhu/status/1623360174974021633?s=20"
+                    },
+                    {
+                        "text": "micmer",
+                        "url": "https://linktr.ee/micmer"
+                    },
+                    {
+                        "text": "Offrimi un caffè",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    },
+                    {
+                        "text": "☕",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "WhatsApp",
+                        "url": "https://api.whatsapp.com/send?text=https%3A%2F%2Ffortissimo.substack.com%2F"
+                    }
+                ]
+            }
+        ]
     }
 ];
