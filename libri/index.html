@@ -113,6 +113,21 @@
             transition: transform 0.2s ease-in-out; /* For hover animation */
         }
 
+        .button.filter-pill {
+            background-color: #fff7e6;
+            border: 1px solid #f0c36d;
+            font-weight: 700;
+        }
+
+        .flag-button {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            padding: 8px;
+            font-size: 20px;
+        }
+
         .button:hover {
             transform: scale(var(--button-hover-scale));
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -125,6 +140,12 @@
             width: 0%;
             transition: width 0.5s ease-in-out;
             flex-shrink: 0;
+        }
+
+        @media (min-width: 768px) {
+            .flag-button {
+                display: inline-flex;
+            }
         }
 
         /* Cards container */
@@ -318,6 +339,7 @@
             <div class="buttons-container" id="buttons-container">
                 <!-- Buttons will be dynamically inserted here -->
             </div>
+            <button class="button flag-button" id="random-button" title="Nuova carta">🚩</button>
             <!-- Hidden language switch in header -->
             <button class="language-switch" id="language-switch" style="display:none;">🇬🇧</button>
         </div>
@@ -355,9 +377,11 @@
     const cardsWrapper = document.getElementById('cards-wrapper');
     const progressBar = document.querySelector('.progress-bar');
     const languageButton = document.getElementById('language-button');
+    const randomButton = document.getElementById('random-button');
 
     let booksData = [];
-    let currentIndex = 0;
+    let currentIndex = -1;
+    let collectionTitle = '';
 
     // Function to fetch JSON data based on language
     async function fetchBooks() {
@@ -368,10 +392,9 @@
             }
             const data = await response.json();
             booksData = data.books;
-            //headerTitle.textContent = data.title; // Set header title with emoji
+            collectionTitle = data.title || '';
             createButtons();
-            createCards();
-            showCard(0);
+            selectRandomCard(true);
         } catch (error) {
             console.error('Error fetching books:', error);
             buttonsContainer.innerHTML = '<p>Errore nel caricamento dei libri.</p>';
@@ -381,103 +404,103 @@
     // Function to create header buttons with emoji titles
     function createButtons() {
         buttonsContainer.innerHTML = ''; // Clear existing buttons
-        booksData.forEach((book, index) => {
-            const button = document.createElement('button');
-            button.className = 'button';
-            button.textContent = `${book.emoji} ${book.title}`;
-            button.addEventListener('click', () => {
-                showCard(index);
-            });
-            buttonsContainer.appendChild(button);
-        });
+        const filterText = collectionTitle || (currentLanguage === 'it' ? '📚 Libri citati' : '📚 Books mentioned');
+        const filterPill = document.createElement('div');
+        filterPill.className = 'button filter-pill';
+        filterPill.textContent = filterText;
+        buttonsContainer.appendChild(filterPill);
+        headerTitle.textContent = filterText;
     }
 
-    // Function to create cards for each book
-    function createCards() {
-        cardsWrapper.innerHTML = ''; // Clear existing cards
+    function renderCard(book) {
+        cardsWrapper.innerHTML = '';
 
-        booksData.forEach((book) => {
-            const card = document.createElement('div');
-            card.className = 'card';
+        const card = document.createElement('div');
+        card.className = 'card';
 
-            const cardContent = document.createElement('div');
-            cardContent.className = 'card-content';
+        const cardContent = document.createElement('div');
+        cardContent.className = 'card-content';
 
-            // Cover Image
-            const coverImage = document.createElement('img');
-            coverImage.src = book.coverImage;
-            coverImage.alt = currentLanguage === 'it' ? `Copertina di ${book.title}` : `Cover of ${book.title}`;
-            cardContent.appendChild(coverImage);
+        const coverImage = document.createElement('img');
+        coverImage.src = book.coverImage;
+        coverImage.alt = currentLanguage === 'it' ? `Copertina di ${book.title}` : `Cover of ${book.title}`;
+        cardContent.appendChild(coverImage);
 
-            // Book Title
-            const title = document.createElement('h2');
-            title.className = 'section-title';
-            title.textContent = book.title;
-            cardContent.appendChild(title);
+        const title = document.createElement('h2');
+        title.className = 'section-title';
+        title.textContent = book.title;
+        cardContent.appendChild(title);
 
-            // Author
-            const author = document.createElement('div');
-            author.className = 'content-block paragraphs';
-            author.textContent = currentLanguage === 'it' ? `Autore: ${book.author}` : `Author: ${book.author}`;
-            cardContent.appendChild(author);
+        const author = document.createElement('div');
+        author.className = 'content-block paragraphs';
+        author.textContent = currentLanguage === 'it' ? `Autore: ${book.author}` : `Author: ${book.author}`;
+        cardContent.appendChild(author);
 
-            // Year
-            const year = document.createElement('div');
-            year.className = 'content-block paragraphs';
-            year.textContent = currentLanguage === 'it' ? `Anno di Pubblicazione: ${book.year}` : `Publication Year: ${book.year}`;
-            cardContent.appendChild(year);
+        const year = document.createElement('div');
+        year.className = 'content-block paragraphs';
+        year.textContent = currentLanguage === 'it' ? `Anno di Pubblicazione: ${book.year}` : `Publication Year: ${book.year}`;
+        cardContent.appendChild(year);
 
-            // Pages
-            const pages = document.createElement('div');
-            pages.className = 'content-block paragraphs';
-            pages.textContent = currentLanguage === 'it' ? `Pagine: ${book.pages}` : `Pages: ${book.pages}`;
-            cardContent.appendChild(pages);
+        const pages = document.createElement('div');
+        pages.className = 'content-block paragraphs';
+        pages.textContent = currentLanguage === 'it' ? `Pagine: ${book.pages}` : `Pages: ${book.pages}`;
+        cardContent.appendChild(pages);
 
-            // Action Buttons
-            const buyButton = document.createElement('button'); // Changed from 'a' to 'button' for consistent styling
-            buyButton.className = 'action-button';
-            buyButton.textContent = currentLanguage === 'it' ? 'Acquista' : 'Buy';
-            buyButton.onclick = () => window.open(book.buyLink, '_blank');
+        const buyButton = document.createElement('button');
+        buyButton.className = 'action-button';
+        buyButton.textContent = currentLanguage === 'it' ? 'Acquista' : 'Buy';
+        buyButton.onclick = () => window.open(book.buyLink, '_blank');
 
-            const readMoreButton = document.createElement('button'); // Changed from 'a' to 'button' for consistent styling
-            readMoreButton.className = 'action-button';
-            readMoreButton.textContent = currentLanguage === 'it' ? 'Leggi di più' : 'Read More';
-            readMoreButton.onclick = () => window.open(book.readMoreLink, '_blank');
+        const readMoreButton = document.createElement('button');
+        readMoreButton.className = 'action-button';
+        readMoreButton.textContent = currentLanguage === 'it' ? 'Leggi di più' : 'Read More';
+        readMoreButton.onclick = () => window.open(book.readMoreLink, '_blank');
 
-            cardContent.appendChild(buyButton);
-            cardContent.appendChild(readMoreButton);
+        cardContent.appendChild(buyButton);
+        cardContent.appendChild(readMoreButton);
 
-            // Append card content to card
-            card.appendChild(cardContent);
-
-            // Append card to wrapper
-            cardsWrapper.appendChild(card);
-        });
+        card.appendChild(cardContent);
+        cardsWrapper.appendChild(card);
     }
 
-    // Function to display a specific card
-    function showCard(index) {
-        currentIndex = index;
-        cardsWrapper.style.transform = `translateX(-${index * 100}%)`;
-        const progress = ((index + 1) / booksData.length) * 100;
+    function updateProgress() {
+        const progress = booksData.length > 0 ? ((currentIndex + 1) / booksData.length) * 100 : 0;
         progressBar.style.width = `${progress}%`;
-        scrollButtonIntoView(index);
     }
 
-    // Function to scroll the active button into view
-    function scrollButtonIntoView(index) {
-        const button = buttonsContainer.children[index];
-        if (button) {
-            button.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    function selectRandomCard(initial = false) {
+        if (!booksData.length) return;
+        let nextIndex = Math.floor(Math.random() * booksData.length);
+        if (!initial && booksData.length > 1) {
+            while (nextIndex === currentIndex) {
+                nextIndex = Math.floor(Math.random() * booksData.length);
+            }
         }
+        currentIndex = nextIndex;
+        renderCard(booksData[currentIndex]);
+        updateProgress();
     }
 
     // Swipe functionality
     let startX = 0;
     let isDown = false;
-    let isScrolling = false;
 
     const cardsContainer = document.querySelector('.cards-container');
+
+    function resetCardPosition() {
+        cardsWrapper.style.transition = 'transform 0.3s ease-in-out';
+        cardsWrapper.style.transform = 'translateX(0)';
+        setTimeout(() => {
+            cardsWrapper.style.transition = 'none';
+        }, 300);
+    }
+
+    function handleSwipe(deltaX) {
+        if (Math.abs(deltaX) > 50) {
+            selectRandomCard();
+        }
+        resetCardPosition();
+    }
 
     // Touch events for mobile
     cardsContainer.addEventListener('touchstart', touchStart, false);
@@ -487,7 +510,6 @@
     function touchStart(evt) {
         startX = evt.touches[0].clientX;
         isDown = true;
-        isScrolling = false;
         cardsWrapper.style.transition = 'none';
     }
 
@@ -495,37 +517,15 @@
         if (!isDown) return;
         const x = evt.touches[0].clientX;
         const deltaX = x - startX;
-
-        // Determine if the user is scrolling vertically
-        if (!isScrolling) {
-            const y = evt.touches[0].clientY;
-            const deltaY = Math.abs(y - evt.touches[0].clientY);
-            isScrolling = Math.abs(deltaY) > Math.abs(deltaX);
-        }
-
-        // Only allow horizontal swiping if not scrolling vertically
-        if (!isScrolling) {
-            evt.preventDefault(); // Prevent default scrolling
-            const percentage = (deltaX / window.innerWidth) * 100;
-            const offset = -currentIndex * 100 + percentage;
-            cardsWrapper.style.transform = `translateX(${offset}%)`;
-        }
+        cardsWrapper.style.transform = `translateX(${deltaX}px)`;
     }
 
     function touchEnd(evt) {
         if (!isDown) return;
         isDown = false;
-        if (!isScrolling) {
-            const endX = evt.changedTouches[0].clientX;
-            const deltaX = endX - startX;
-            if (deltaX < -50 && currentIndex < booksData.length - 1) {
-                currentIndex++;
-            } else if (deltaX > 50 && currentIndex > 0) {
-                currentIndex--;
-            }
-            cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
-            showCard(currentIndex);
-        }
+        const endX = evt.changedTouches[0].clientX;
+        const deltaX = endX - startX;
+        handleSwipe(deltaX);
     }
 
     // Mouse events for desktop
@@ -537,7 +537,6 @@
     function mouseDown(evt) {
         startX = evt.clientX;
         isDown = true;
-        isScrolling = false;
         cardsWrapper.style.transition = 'none';
     }
 
@@ -545,38 +544,23 @@
         if (!isDown) return;
         const x = evt.clientX;
         const deltaX = x - startX;
-
-        // Determine if the user is scrolling vertically
-        if (!isScrolling) {
-            const y = evt.clientY;
-            const deltaY = Math.abs(y - evt.clientY);
-            isScrolling = Math.abs(deltaY) > Math.abs(deltaX);
-        }
-
-        // Only allow horizontal swiping if not scrolling vertically
-        if (!isScrolling) {
-            evt.preventDefault(); // Prevent default scrolling
-            const percentage = (deltaX / window.innerWidth) * 100;
-            const offset = -currentIndex * 100 + percentage;
-            cardsWrapper.style.transform = `translateX(${offset}%)`;
-        }
+        cardsWrapper.style.transform = `translateX(${deltaX}px)`;
     }
 
     function mouseUp(evt) {
         if (!isDown) return;
         isDown = false;
-        if (!isScrolling) {
-            const endX = evt.clientX;
-            const deltaX = endX - startX;
-            if (deltaX < -50 && currentIndex < booksData.length - 1) {
-                currentIndex++;
-            } else if (deltaX > 50 && currentIndex > 0) {
-                currentIndex--;
-            }
-            cardsWrapper.style.transition = 'transform 0.5s ease-in-out';
-            showCard(currentIndex);
-        }
+        const endX = evt.clientX;
+        const deltaX = endX - startX;
+        handleSwipe(deltaX);
     }
+
+    // Random card button for desktop
+    randomButton.addEventListener('click', () => {
+        cardsWrapper.style.transition = 'transform 0.2s ease-in-out';
+        cardsWrapper.style.transform = 'translateX(-12px)';
+        setTimeout(() => handleSwipe(-60), 120);
+    });
 
     // Language switch functionality
     languageButton.addEventListener('click', () => {
