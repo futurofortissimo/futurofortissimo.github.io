@@ -14,9 +14,9 @@ import { NavigationProvider, useNavigation } from './NavigationContext.js';
 const titleImageDataUri =
   'data:image/svg+xml;utf8,' +
   encodeURIComponent(`
-    <svg width="740" height="160" viewBox="0 0 740 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Futuro Fortissimo">
-      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="'IBM Plex Mono','Inter',monospace" font-size="56" font-weight="700" letter-spacing="3.5" fill="#0a0a0a">
-        Futuro Fortissimo
+    <svg width="740" height="130" viewBox="0 0 740 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="FUTURO FORTISSIMO">
+      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="'IBM Plex Mono','Inter',monospace" font-size="54" font-weight="700" letter-spacing="3.5" fill="#0a0a0a">
+        FUTURO FORTISSIMO
       </text>
     </svg>
   `);
@@ -250,7 +250,7 @@ const InnerApp = () => {
     />
     <${BooksPopup} isOpen=${isBooksOpen} onClose=${handleCloseBooks} books=${bookSuggestions} />
 
-    <div className="max-w-6xl mx-auto px-4 md:px-8 py-10 space-y-10">
+    <div className="max-w-6xl mx-auto px-4 md:px-8 py-8 space-y-8">
       <header
         className="brutal-card mobile-unboxed accent-bar accent-blue flex flex-col md:flex-row md:items-center justify-between gap-6 no-round"
         style=${{

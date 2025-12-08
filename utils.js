@@ -44,6 +44,47 @@ export const HighlightText = ({ text, highlight }) => {
   }
 };
 
+const buildLinkLabel = (url, title) => {
+  try {
+    const { hostname } = new URL(url);
+    const cleanHost = hostname.replace(/^www\./, '');
+    return `Approfondimento ${cleanHost ? `(${cleanHost}) ` : ''}su ${title}`.trim();
+  } catch (e) {
+    return `Approfondimento su ${title}`;
+  }
+};
+
+const normalizeLinks = (links = [], title) => {
+  return links.map((ref) => {
+    const cleanedText = (ref.text || '').trim();
+    const hasValidText = cleanedText && cleanedText !== '.';
+
+    return {
+      ...ref,
+      text: hasValidText ? cleanedText : buildLinkLabel(ref.url || '', title)
+    };
+  });
+};
+
+const generateSummary = (content = '') => {
+  const firstParagraph = content
+    .split('\n')
+    .map((paragraph) => paragraph.trim())
+    .find(Boolean);
+
+  if (!firstParagraph) return '';
+
+  const sentenceMatch = firstParagraph.match(/[^.!?]+[.!?]/);
+  const candidate = sentenceMatch ? sentenceMatch[0] : firstParagraph;
+  const cleaned = candidate.replace(/\s+/g, ' ').trim();
+
+  if (cleaned.length > 160) {
+    return `${cleaned.slice(0, 157)}...`;
+  }
+
+  return cleaned;
+};
+
 const getTopicEmoji = (text) => {
   const lowerText = text.toLowerCase();
 
@@ -67,7 +108,11 @@ const getTopicEmoji = (text) => {
 const processSubchapter = (sub) => {
   const { emoji, cleanTitle } = extractEmojiAndTitle(sub.title);
   const normalizedTitle = cleanTitle;
-  const referenceText = [...(sub.references || []), ...(sub.connections || [])]
+  const processedReferences = normalizeLinks(sub.references || [], normalizedTitle);
+  const processedConnections = normalizeLinks(sub.connections || [], normalizedTitle);
+  const summary = generateSummary(sub.content || '');
+
+  const referenceText = [...processedReferences, ...processedConnections]
     .map((ref) => `${ref.text || ''} ${ref.url || ''}`)
     .join(' ');
   const analysisText = `${sub.title} ${sub.content} ${referenceText}`;
@@ -75,8 +120,11 @@ const processSubchapter = (sub) => {
   return {
     ...sub,
     cleanTitle: normalizedTitle,
+    summary,
     originalEmoji: emoji || '📄',
-    secondaryEmoji: getTopicEmoji(analysisText)
+    secondaryEmoji: getTopicEmoji(analysisText),
+    references: processedReferences,
+    connections: processedConnections
   };
 };
 

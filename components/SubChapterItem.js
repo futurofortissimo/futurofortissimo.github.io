@@ -58,9 +58,9 @@ const SubChapterItem = ({ subchapter, parentId }) => {
   const allLinks = [...subchapter.references, ...subchapter.connections];
   const validLinks = allLinks.filter((ref) => isValidLink(ref.text, ref.url));
 
-  return html`<div id=${id} className="relative pl-0 group mb-6 scroll-mt-32 transition-all duration-300">
+  return html`<div id=${id} className="relative pl-0 group scroll-mt-32 transition-all duration-300">
     <div
-      className="flex items-baseline gap-2 cursor-pointer bg-white p-3 hover:-translate-y-1 transition-transform"
+      className="flex items-start gap-3 cursor-pointer bg-white p-3 hover:-translate-y-1 transition-transform"
       onClick=${toggleExpand}
     >
       <span className="text-lg opacity-100 shrink-0 self-center leading-none">${subchapter.originalEmoji}</span>
@@ -78,6 +78,11 @@ const SubChapterItem = ({ subchapter, parentId }) => {
         >
           <${HighlightText} text=${subchapter.cleanTitle} highlight=${debouncedSearchQuery} />
         </a>
+        ${subchapter.summary
+          ? html`<p className="mt-1 text-[12px] md:text-[13px] text-gray-700 font-medium leading-snug pr-8">
+              ${subchapter.summary}
+            </p>`
+          : null}
       </div>
 
       <button
@@ -101,7 +106,7 @@ const SubChapterItem = ({ subchapter, parentId }) => {
     </div>
 
     <div className=${`grid transition-all duration-500 ease-in-out ${
-      isExpanded ? 'grid-rows-[1fr] opacity-100 mt-2 mb-4' : 'grid-rows-[0fr] opacity-0 mt-0 mb-0'
+      isExpanded ? 'grid-rows-[1fr] opacity-100 mt-1.5 mb-3' : 'grid-rows-[0fr] opacity-0 mt-0 mb-0'
     }`}>
       <div className="overflow-hidden pl-0 md:pl-[2.5rem]">
         ${validLinks.length > 0 && isExpanded
