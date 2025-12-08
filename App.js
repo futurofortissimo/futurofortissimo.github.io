@@ -11,6 +11,49 @@ import SearchResultsModal from './components/SearchResultsModal.js';
 import BooksPopup from './components/BooksPopup.js';
 import { NavigationProvider, useNavigation } from './NavigationContext.js';
 
+const titleImageDataUri =
+  'data:image/svg+xml;utf8,' +
+  encodeURIComponent(`
+    <svg width="740" height="160" viewBox="0 0 740 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Futuro Fortissimo">
+      <defs>
+        <linearGradient id="titleHue" x1="0%" x2="100%" y1="0%" y2="100%">
+          <stop offset="0%" stop-color="#4a90e2"/>
+          <stop offset="35%" stop-color="#f5a623"/>
+          <stop offset="70%" stop-color="#d0021b"/>
+          <stop offset="100%" stop-color="#2ecc71"/>
+        </linearGradient>
+        <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+          <path d="M24 0H0V24" fill="none" stroke="rgba(0,0,0,0.08)" stroke-width="1"/>
+        </pattern>
+      </defs>
+      <rect x="10" y="10" width="720" height="140" fill="white" stroke="#0a0a0a" stroke-width="10" rx="16" ry="16"/>
+      <rect x="22" y="22" width="696" height="116" fill="url(#grid)" rx="10" ry="10"/>
+      <rect x="22" y="22" width="696" height="116" fill="url(#titleHue)" opacity="0.18" rx="10" ry="10"/>
+      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="'IBM Plex Mono','Inter',monospace" font-size="48" font-weight="700" letter-spacing="3" fill="#0a0a0a">
+        Futuro Fortissimo
+      </text>
+    </svg>
+  `);
+
+const headerBackgroundDataUri =
+  'data:image/svg+xml;utf8,' +
+  encodeURIComponent(`
+    <svg width="1200" height="600" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="backgroundHue" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#4a90e2" stop-opacity="0.14"/>
+          <stop offset="50%" stop-color="#f5a623" stop-opacity="0.18"/>
+          <stop offset="100%" stop-color="#2ecc71" stop-opacity="0.14"/>
+        </linearGradient>
+      </defs>
+      <rect width="1200" height="600" fill="url(#backgroundHue)"/>
+      <circle cx="180" cy="160" r="90" fill="#4a90e2" fill-opacity="0.1"/>
+      <circle cx="620" cy="120" r="140" fill="#d0021b" fill-opacity="0.08"/>
+      <circle cx="980" cy="320" r="160" fill="#f5a623" fill-opacity="0.09"/>
+      <circle cx="420" cy="380" r="120" fill="#2ecc71" fill-opacity="0.08"/>
+    </svg>
+  `);
+
 const extractBooksFromData = (chapters = []) => {
   const seen = new Set();
   const books = [];
@@ -218,9 +261,22 @@ const InnerApp = () => {
     <${BooksPopup} isOpen=${isBooksOpen} onClose=${handleCloseBooks} books=${bookSuggestions} />
 
     <div className="max-w-6xl mx-auto px-4 md:px-8 py-10 space-y-10">
-      <header className="brutal-card mobile-unboxed accent-bar accent-blue flex flex-col md:flex-row justify-between items-start gap-4 no-round">
-        <div>
-          <h1 className="text-4xl md:text-5xl font-heading font-black leading-none">Futuro Fortissimo</h1>
+      <header
+        className="brutal-card mobile-unboxed accent-bar accent-blue flex flex-col md:flex-row justify-between items-start gap-4 no-round"
+        style=${{
+          backgroundImage: `url(${headerBackgroundDataUri})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <div className="max-w-full">
+          <img
+            src=${titleImageDataUri}
+            alt="Futuro Fortissimo"
+            loading="lazy"
+            className="w-full max-w-[580px] brutal-shadow border-3 border-black bg-white"
+          />
         </div>
         <div className="flex flex-wrap gap-3">
           <a
