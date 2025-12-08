@@ -1,6 +1,6 @@
 import { React, html } from './runtime.js';
 import { rawData } from './data.js';
-import { processChapter } from './utils.js';
+import { mapTopicToTheme, processChapter } from './utils.js';
 import { TopicEmoji } from './types.js';
 import ChapterItem from './components/ChapterItem.js';
 import Sidebar from './components/Sidebar.js';
@@ -68,13 +68,27 @@ const InnerApp = () => {
 
   const bookSuggestions = React.useMemo(() => extractBooksFromData(processedData), [processedData]);
 
+  const doesSubchapterMatchSelection = React.useCallback(
+    (sub, emoji) => {
+      if (!emoji) return true;
+
+      const targetTheme = mapTopicToTheme(emoji);
+      if (targetTheme) {
+        return mapTopicToTheme(sub.secondaryEmoji) === targetTheme;
+      }
+
+      return sub.secondaryEmoji === emoji;
+    },
+    []
+  );
+
   const filteredData = React.useMemo(() => {
     if (!selectedEmoji) return processedData;
 
     return processedData
       .map((chapter) => {
-        const matchingSubchapters = chapter.processedSubchapters.filter(
-          (sub) => sub.secondaryEmoji === selectedEmoji
+        const matchingSubchapters = chapter.processedSubchapters.filter((sub) =>
+          doesSubchapterMatchSelection(sub, selectedEmoji)
         );
 
         if (matchingSubchapters.length > 0) {
@@ -218,10 +232,19 @@ const InnerApp = () => {
           >
             ☕
           </a>
+          <a
+            href="https://micmer-git.github.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Progetti micmer"
+            className="px-4 py-3 border-3 border-black bg-[var(--ff-blue)] text-black brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
+          >
+            M
+          </a>
         </div>
       </header>
 
-      <section className="brutal-card mobile-unboxed accent-bar accent-yellow no-round space-y-6">
+      <section className="brutal-card mobile-unboxed accent-bar accent-yellow no-round space-y-6 lg:sticky lg:top-4 lg:z-20">
         <div className="grid grid-cols-1 gap-6 items-start">
           <div className="flex flex-col gap-4">
             <div className="relative">
@@ -295,14 +318,9 @@ const InnerApp = () => {
           </div>
 
           <div className="flex-1 space-y-6" onTouchStart=${handleTouchStart} onTouchEnd=${handleTouchEnd}>
-            <div className="border-3 border-black p-3 bg-white flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+            <div className="border-3 border-black p-3 bg-white flex flex-col gap-3 md:flex-row md:items-center md:justify-between lg:sticky lg:top-4 lg:z-10">
               <div className="flex items-center gap-3">
-                <div className="font-heading text-sm">Archivio • ${filteredData.length} capitoli</div>
-                ${filteredData.length > 0
-                  ? html`<span className="font-heading text-[11px] uppercase tracking-[0.18em] text-black/70">
-                      Capitolo ${safeVisibleIndex + 1} di ${filteredData.length}
-                    </span>`
-                  : null}
+                <div className="font-heading text-sm">Archivio</div>
               </div>
 
               <div className="flex items-center gap-3 flex-wrap justify-end">

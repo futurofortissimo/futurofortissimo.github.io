@@ -80,7 +80,7 @@ const processSubchapter = (sub) => {
   };
 };
 
-const mapTopicToTheme = (topicEmoji) => {
+export const mapTopicToTheme = (topicEmoji) => {
   if (topicEmoji === TopicEmoji.NATURE) return 'nature';
   if (topicEmoji === TopicEmoji.TECH || topicEmoji === TopicEmoji.VR || topicEmoji === TopicEmoji.TRANSPORT) return 'tech';
   if (
