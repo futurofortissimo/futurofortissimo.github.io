@@ -244,7 +244,7 @@ const InnerApp = () => {
         </div>
       </header>
 
-      <section className="brutal-card mobile-unboxed accent-bar accent-yellow no-round space-y-6 lg:sticky lg:top-4 lg:z-20">
+      <section className="brutal-card mobile-unboxed accent-bar accent-yellow no-round space-y-6">
         <div className="grid grid-cols-1 gap-6 items-start">
           <div className="flex flex-col gap-4">
             <div className="relative">
@@ -311,14 +311,14 @@ const InnerApp = () => {
 
       <section className="brutal-card mobile-unboxed no-round">
         <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_320px] gap-6 items-start">
-          <div className="hidden lg:block">
-            <div className="border-3 border-black bg-white p-3 sticky top-6">
+          <div className="hidden lg:block sticky top-6">
+            <div className="border-3 border-black bg-white p-3">
               <${Sidebar} selectedEmoji=${selectedEmoji} onSelect=${handleTopicSelect} vertical=${true} />
             </div>
           </div>
 
           <div className="flex-1 space-y-6" onTouchStart=${handleTouchStart} onTouchEnd=${handleTouchEnd}>
-            <div className="border-3 border-black p-3 bg-white flex flex-col gap-3 md:flex-row md:items-center md:justify-between lg:sticky lg:top-4 lg:z-10">
+            <div className="border-3 border-black p-3 bg-white flex flex-col gap-3 md:flex-row md:items-center md:justify-between sticky top-4 z-10">
               <div className="flex items-center gap-3">
                 <div className="font-heading text-sm">Archivio</div>
               </div>
