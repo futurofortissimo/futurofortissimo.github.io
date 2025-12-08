@@ -2,7 +2,7 @@ import { React, html } from '../runtime.js';
 import { slugify } from '../utils.js';
 import { useNavigation } from '../NavigationContext.js';
 
-const RightSidebar = ({ chapters, isMobileMode = false, onOpenMedia }) => {
+const RightSidebar = ({ chapters, isMobileMode = false }) => {
   const { searchQuery, debouncedSearchQuery, setActiveId, incrementInteraction, setIsMobileMenuOpen } = useNavigation();
 
   const handleItemClick = (id) => {
@@ -37,20 +37,8 @@ const RightSidebar = ({ chapters, isMobileMode = false, onOpenMedia }) => {
   }).filter(Boolean);
 
   return html`<div className="space-y-4">
-    <div className="flex items-center justify-between gap-2">
-      <div className="font-heading text-[11px] uppercase tracking-[0.18em] text-black">
-        ${searchQuery ? `Risultati per “${searchQuery}”` : 'Naviga tra i capitoli'}
-      </div>
-      ${onOpenMedia
-        ? html`<button
-            type="button"
-            onClick=${() => onOpenMedia()}
-            className="px-3 py-1 border-2 border-black bg-white font-heading text-[11px] uppercase tracking-[0.18em] hover:-translate-y-0.5 transition-transform"
-            aria-label="Apri media"
-          >
-            Media
-          </button>`
-        : null}
+    <div className="font-heading text-[11px] uppercase tracking-[0.18em] text-black">
+      ${searchQuery ? `Risultati per “${searchQuery}”` : 'Naviga tra i capitoli'}
     </div>
 
     <div className="max-h-[70vh] overflow-y-auto pr-1 space-y-6 no-scrollbar">

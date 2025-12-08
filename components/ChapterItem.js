@@ -11,7 +11,7 @@ const ChapterItem = ({ chapter }) => {
             ${chapter.cleanTitle}
           </a>
         </h2>
-        <p className="inline-block bg-[var(--ff-yellow)] px-2 py-1 text-xs md:text-sm text-black font-semibold mt-2">
+        <p className="inline-block bg-[var(--ff-yellow)] px-2 py-1 text-[11px] md:text-sm text-black font-heading uppercase tracking-[0.18em] mt-2">
           ${chapter.subtitle}
         </p>
       </div>
@@ -32,7 +32,7 @@ const ChapterItem = ({ chapter }) => {
 
     <div className="space-y-2">
       ${chapter.processedSubchapters.map(
-        (sub, idx) => html`<${SubChapterItem} key=${idx} subchapter=${sub} />`
+        (sub, idx) => html`<${SubChapterItem} key=${idx} subchapter=${sub} parentId=${chapter.url} />`
       )}
     </div>
   </article>`;
