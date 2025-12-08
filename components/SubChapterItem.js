@@ -26,7 +26,7 @@ const isValidLink = (text, url) => {
 const isCrossReference = (text) => text.toLowerCase().includes('ff.');
 const capitalizeFirstLetter = (string) => string.charAt(0).toUpperCase() + string.slice(1);
 
-const SubChapterItem = ({ subchapter }) => {
+const SubChapterItem = ({ subchapter, parentId }) => {
   const [isExpanded, setIsExpanded] = React.useState(false);
   const { debouncedSearchQuery, activeId, incrementInteraction } = useNavigation();
   const id = slugify(subchapter.cleanTitle);
@@ -38,10 +38,10 @@ const SubChapterItem = ({ subchapter }) => {
   };
 
   React.useEffect(() => {
-    if (activeId === id) {
+    if (activeId === id || activeId === parentId) {
       setIsExpanded(true);
     }
-  }, [activeId, id]);
+  }, [activeId, id, parentId]);
 
   React.useEffect(() => {
     if (debouncedSearchQuery) {
@@ -100,14 +100,18 @@ const SubChapterItem = ({ subchapter }) => {
       </button>
     </div>
 
-    ${validLinks.length > 0
-      ? html`<div className="pl-0 md:pl-[2.5rem] mt-2 mb-3">
-          <div className="flex flex-wrap gap-2">
-            ${validLinks.map((ref, idx) => {
-              const isCross = isCrossReference(ref.text);
-              const displayText = isCross ? ref.text : capitalizeFirstLetter(ref.text);
+    <div className=${`grid transition-all duration-500 ease-in-out ${
+      isExpanded ? 'grid-rows-[1fr] opacity-100 mt-2 mb-4' : 'grid-rows-[0fr] opacity-0 mt-0 mb-0'
+    }`}>
+      <div className="overflow-hidden pl-0 md:pl-[2.5rem]">
+        ${validLinks.length > 0 && isExpanded
+          ? html`<div className="mb-3 flex flex-col gap-2">
+              ${validLinks.map((ref, idx) => {
+                const isCross = isCrossReference(ref.text);
+                const displayText = isCross ? ref.text : capitalizeFirstLetter(ref.text);
+                const linkClasses =
+                  'inline-flex items-center gap-1 bg-[var(--ff-yellow)] text-[11px] font-heading uppercase tracking-[0.18em] px-2 py-1 text-black w-fit hover:underline decoration-2';
 
-              if (isCross) {
                 return html`<a
                   key=${idx}
                   href=${ref.url}
@@ -117,37 +121,14 @@ const SubChapterItem = ({ subchapter }) => {
                     e.stopPropagation();
                     incrementInteraction();
                   }}
-                  className="text-sm md:text-base font-heading underline decoration-2 text-black"
+                  className=${linkClasses}
                 >
-                  ${displayText}
+                  <span className="break-words">${displayText}</span>
+                  ${isCross ? null : html`<span aria-hidden="true" className="text-[10px]">↗</span>`}
                 </a>`;
-              }
-
-              return html`<a
-                key=${idx}
-                href=${ref.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick=${(e) => {
-                  e.stopPropagation();
-                  incrementInteraction();
-                }}
-                className="inline-flex items-center gap-1.5 px-3 py-1 border-2 border-black bg-white text-black hover:-translate-y-0.5 transition-transform bg-gray-50"
-              >
-                <span className="text-xs md:text-sm font-bold font-heading break-all">
-                  ${displayText}
-                </span>
-                <span className="text-black text-xs">↗</span>
-              </a>`;
-            })}
-          </div>
-        </div>`
-      : null}
-
-    <div className=${`grid transition-all duration-500 ease-in-out ${
-      isExpanded ? 'grid-rows-[1fr] opacity-100 mt-2 mb-4' : 'grid-rows-[0fr] opacity-0 mt-0 mb-0'
-    }`}>
-      <div className="overflow-hidden pl-0 md:pl-[2.5rem]">
+              })}
+            </div>`
+          : null}
         <div className="prose prose-sm max-w-none text-black leading-relaxed font-medium break-words text-[12px] md:text-[13px]">
           ${subchapter.content
             .split('\n')

@@ -419,13 +419,13 @@ const InnerApp = () => {
           </div>
 
           <div id="indice" className="hidden lg:block border-3 border-black bg-white p-4 sticky top-6">
-            <${RightSidebar} chapters=${filteredData} onOpenMedia=${handleOpenMedia} />
+            <${RightSidebar} chapters=${filteredData} />
           </div>
         </div>
       </section>
 
       <div className="lg:hidden brutal-card mobile-unboxed no-round">
-        <${RightSidebar} chapters=${filteredData} isMobileMode=${true} onOpenMedia=${handleOpenMedia} />
+        <${RightSidebar} chapters=${filteredData} isMobileMode=${true} />
       </div>
     </div>
 
