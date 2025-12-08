@@ -60,7 +60,7 @@ const SubChapterItem = ({ subchapter }) => {
 
   return html`<div id=${id} className="relative pl-0 group mb-6 scroll-mt-32 transition-all duration-300">
     <div
-      className="flex items-baseline gap-2 cursor-pointer bg-white border-3 border-black p-3 hover:-translate-y-1 transition-transform"
+      className="flex items-baseline gap-2 cursor-pointer bg-white p-3 hover:-translate-y-1 transition-transform brutal-shadow"
       onClick=${toggleExpand}
     >
       <span className="text-lg opacity-100 shrink-0 self-center leading-none">${subchapter.originalEmoji}</span>
