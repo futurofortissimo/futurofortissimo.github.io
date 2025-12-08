@@ -62,7 +62,7 @@ const RightSidebar = ({ chapters, isMobileMode = false, onOpenMedia }) => {
               handleItemClick(chapter.url);
             }}
           >
-            <span className="text-lg">${chapter.originalEmoji}</span>
+            <span className="text-lg">${chapter.primaryEmoji || chapter.originalEmoji}</span>
             <span className="font-heading font-bold text-sm text-black group-hover:underline break-words">${chapter.cleanTitle}</span>
           </button>
 

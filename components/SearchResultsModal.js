@@ -37,7 +37,7 @@ const buildSearchResults = (chapters, query) => {
         results.push({
           type: 'chapter',
           id: chapter.url,
-          emoji: chapter.originalEmoji,
+          emoji: chapter.primaryEmoji || chapter.originalEmoji,
           title: chapter.cleanTitle,
           subtitle: chapter.subtitle
         });

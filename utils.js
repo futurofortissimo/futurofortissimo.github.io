@@ -80,13 +80,63 @@ const processSubchapter = (sub) => {
   };
 };
 
+const mapTopicToTheme = (topicEmoji) => {
+  if (topicEmoji === TopicEmoji.NATURE) return 'nature';
+  if (topicEmoji === TopicEmoji.TECH || topicEmoji === TopicEmoji.VR || topicEmoji === TopicEmoji.TRANSPORT) return 'tech';
+  if (
+    topicEmoji === TopicEmoji.SOCIETY ||
+    topicEmoji === TopicEmoji.WELLNESS ||
+    topicEmoji === TopicEmoji.HEALTH ||
+    topicEmoji === TopicEmoji.MIND
+  )
+    return 'heart';
+  return null;
+};
+
+const determineChapterEmoji = (chapter, processedSubchapters, fallbackEmoji) => {
+  const themeScores = { nature: 0, tech: 0, heart: 0 };
+
+  processedSubchapters.forEach((sub) => {
+    const baseTheme = mapTopicToTheme(sub.secondaryEmoji);
+    if (baseTheme) {
+      themeScores[baseTheme] += 2;
+    }
+
+    const contentTheme = mapTopicToTheme(getTopicEmoji(sub.content || ''));
+    if (contentTheme) {
+      themeScores[contentTheme] += 1;
+    }
+  });
+
+  const chapterText = [chapter.title, chapter.subtitle, ...(chapter.keypoints || [])].join(' ');
+  const chapterTheme = mapTopicToTheme(getTopicEmoji(chapterText));
+  if (chapterTheme) {
+    themeScores[chapterTheme] += 1;
+  }
+
+  const [topTheme, topScore] = Object.entries(themeScores).sort((a, b) => b[1] - a[1])[0];
+
+  if (topScore === 0) return fallbackEmoji;
+
+  const themeEmojiMap = {
+    nature: '🍃',
+    tech: '🖥️',
+    heart: '❤️'
+  };
+
+  return themeEmojiMap[topTheme] || fallbackEmoji;
+};
+
 export const processChapter = (chapter) => {
   const { emoji, cleanTitle } = extractEmojiAndTitle(chapter.title);
+  const processedSubchapters = chapter.subchapters.map(processSubchapter);
+  const fallbackEmoji = emoji || '🎼';
 
   return {
     ...chapter,
     cleanTitle,
-    originalEmoji: emoji || '🎼',
-    processedSubchapters: chapter.subchapters.map(processSubchapter)
+    originalEmoji: fallbackEmoji,
+    primaryEmoji: determineChapterEmoji(chapter, processedSubchapters, fallbackEmoji),
+    processedSubchapters
   };
 };
