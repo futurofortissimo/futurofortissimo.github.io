@@ -80,8 +80,7 @@ const RightSidebar = ({ chapters, isMobileMode = false, onOpenMedia }) => {
                 <div className="flex items-start gap-2">
                   <span className="text-base leading-none mt-0.5">${sub.originalEmoji}</span>
                   <div>
-                    <div className="font-heading text-[13px] font-semibold text-black group-hover:underline break-words">${sub.cleanTitle}</div>
-                    <div className="text-[11px] text-gray-600 font-medium uppercase tracking-widest">${sub.secondaryEmoji}</div>
+                    <div className="font-heading text-[12px] font-semibold text-black group-hover:underline break-words">${sub.cleanTitle}</div>
                   </div>
                 </div>
               </button>`;
