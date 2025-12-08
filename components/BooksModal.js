@@ -94,8 +94,8 @@ const BooksModal = ({ sections, onClose }) => {
   }, [enhancedSections, selectedFilter, selectedBookTitle]);
 
   return html`<div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm overflow-y-auto p-4 sm:p-6">
-    <div className="max-w-5xl mx-auto bg-white border-4 border-black brutal-shadow no-round">
-      <div className="p-5 sm:p-6 flex flex-col gap-5">
+    <div className="max-w-5xl w-full mx-auto bg-white border-4 border-black brutal-shadow no-round max-h-[calc(100vh-2rem)] overflow-hidden">
+      <div className="p-5 sm:p-6 flex flex-col gap-5 overflow-y-auto max-h-[calc(100vh-3.5rem)]">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div>
             <div className="text-[11px] font-heading uppercase tracking-[0.3em] text-black">Biblioteca</div>

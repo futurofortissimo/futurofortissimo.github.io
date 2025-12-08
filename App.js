@@ -222,8 +222,8 @@ const InnerApp = () => {
       </header>
 
       <section className="brutal-card mobile-unboxed accent-bar accent-yellow no-round space-y-6">
-        <div className="flex flex-col md:flex-row gap-6 md:items-start">
-          <div className="flex-1 flex flex-col gap-3">
+        <div className="grid grid-cols-1 gap-6 items-start">
+          <div className="flex flex-col gap-4">
             <div className="relative">
               <input
                 type="text"
@@ -241,7 +241,7 @@ const InnerApp = () => {
                 onClick=${handleOpenMedia}
                 className="px-4 py-3 border-3 border-black bg-white brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
               >
-                Apri media
+                Media
               </button>
               <button
                 type="button"
@@ -249,8 +249,14 @@ const InnerApp = () => {
                 disabled=${bookSuggestions.length === 0}
                 className="px-4 py-3 border-3 border-black bg-white brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Filtra libri
+                Libri
               </button>
+              <a
+                href="#indice"
+                className="px-4 py-3 border-3 border-black bg-[var(--ff-yellow)] brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
+              >
+                Indice
+              </a>
             </div>
             ${searchQuery
               ? html`<div className="flex flex-wrap gap-2">
@@ -272,20 +278,22 @@ const InnerApp = () => {
                   </button>
                 </div>`
               : null}
-          </div>
 
-          <div className="hidden md:flex md:w-48 justify-center">
-            <${Sidebar} selectedEmoji=${selectedEmoji} onSelect=${handleTopicSelect} vertical=${true} />
+            <div className="flex justify-center lg:hidden">
+              <${Sidebar} selectedEmoji=${selectedEmoji} onSelect=${handleTopicSelect} vertical=${false} />
+            </div>
           </div>
-        </div>
-
-        <div className="md:hidden flex justify-center">
-          <${Sidebar} selectedEmoji=${selectedEmoji} onSelect=${handleTopicSelect} vertical=${false} />
         </div>
       </section>
 
       <section className="brutal-card mobile-unboxed no-round">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_320px] gap-6 items-start">
+          <div className="hidden lg:block">
+            <div className="border-3 border-black bg-white p-3 sticky top-6">
+              <${Sidebar} selectedEmoji=${selectedEmoji} onSelect=${handleTopicSelect} vertical=${true} />
+            </div>
+          </div>
+
           <div className="flex-1 space-y-6" onTouchStart=${handleTouchStart} onTouchEnd=${handleTouchEnd}>
             <div className="border-3 border-black p-3 bg-white flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
               <div className="flex items-center gap-3">
@@ -344,7 +352,7 @@ const InnerApp = () => {
             </div>
           </div>
 
-          <div className="hidden lg:block border-3 border-black bg-white p-4">
+          <div id="indice" className="hidden lg:block border-3 border-black bg-white p-4 sticky top-6">
             <${RightSidebar} chapters=${filteredData} onOpenMedia=${handleOpenMedia} />
           </div>
         </div>

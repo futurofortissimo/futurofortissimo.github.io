@@ -159,7 +159,7 @@ const SubChapterItem = ({ subchapter }) => {
       isExpanded ? 'grid-rows-[1fr] opacity-100 mt-2 mb-4' : 'grid-rows-[0fr] opacity-0 mt-0 mb-0'
     }`}>
       <div className="overflow-hidden pl-0 md:pl-[2.5rem]">
-        <div className="prose prose-sm max-w-none text-black leading-normal font-medium break-words text-[12px] md:text-[13px]">
+        <div className="prose prose-sm max-w-none text-black leading-relaxed font-medium break-words text-[13px] md:text-[14px]">
           ${subchapter.content
             .split('\n')
             .map((paragraph, idx) => (paragraph.trim() ? html`<p key=${idx} className="mb-2 last:mb-0">
