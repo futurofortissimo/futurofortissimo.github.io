@@ -252,7 +252,7 @@ const InnerApp = () => {
 
     <div className="max-w-6xl mx-auto px-4 md:px-8 py-10 space-y-10">
       <header
-        className="brutal-card mobile-unboxed accent-bar accent-blue flex flex-col md:flex-row justify-between items-start gap-4 no-round"
+        className="brutal-card mobile-unboxed accent-bar accent-blue flex flex-col md:flex-row md:items-center justify-between gap-6 no-round"
         style=${{
           backgroundImage: `url(${headerBackgroundDataUri})`,
           backgroundSize: 'cover',
@@ -260,15 +260,15 @@ const InnerApp = () => {
           backgroundRepeat: 'no-repeat'
         }}
       >
-        <div className="max-w-full">
+        <div className="max-w-full w-full md:w-auto flex justify-center md:justify-start">
           <img
             src=${titleImageDataUri}
             alt="Futuro Fortissimo"
             loading="lazy"
-            className="w-full max-w-[580px]"
+            className="w-full max-w-[620px]"
           />
         </div>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-3 items-center justify-center md:justify-end w-full md:w-auto">
           <a
             href="https://www.paypal.com/paypalme/MicheleMerelli"
             target="_blank"
@@ -293,42 +293,44 @@ const InnerApp = () => {
       <section className="brutal-card mobile-unboxed accent-bar accent-yellow no-round space-y-6">
         <div className="grid grid-cols-1 gap-6 items-start">
           <div className="flex flex-col gap-4">
-            <div className="relative">
-              <input
-                type="text"
-                value=${searchQuery}
-                onInput=${handleSearchChange}
-                placeholder="Cerca storie..."
-                className="w-full px-4 py-3 pr-12 bg-white border-3 border-black font-heading uppercase tracking-[0.15em] placeholder:text-gray-400 focus:outline-none focus:ring-0"
-                aria-label="Cerca storie"
-              />
-              <span aria-hidden="true" className="absolute right-4 top-1/2 -translate-y-1/2 text-black">🔍</span>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              <button
-                type="button"
-                onClick=${handleOpenMedia}
-                className="px-4 py-3 border-3 border-black bg-white brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
-              >
-                Media
-              </button>
-              <button
-                type="button"
-                onClick=${handleOpenBooks}
-                disabled=${bookSuggestions.length === 0}
-                className="px-4 py-3 border-3 border-black bg-white brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform disabled:opacity-60 disabled:cursor-not-allowed"
-              >
-                Libri
-              </button>
-              <a
-                href="#indice"
-                className="px-4 py-3 border-3 border-black bg-[var(--ff-yellow)] brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
-              >
-                Indice
-              </a>
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+              <div className="relative flex-1 min-w-[220px]">
+                <input
+                  type="text"
+                  value=${searchQuery}
+                  onInput=${handleSearchChange}
+                  placeholder="Cerca storie..."
+                  className="w-full px-4 py-3 pr-12 bg-white border-3 border-black font-heading uppercase tracking-[0.15em] placeholder:text-gray-400 focus:outline-none focus:ring-0"
+                  aria-label="Cerca storie"
+                />
+                <span aria-hidden="true" className="absolute right-4 top-1/2 -translate-y-1/2 text-black">🔍</span>
+              </div>
+              <div className="flex flex-wrap gap-2 justify-start sm:justify-end">
+                <button
+                  type="button"
+                  onClick=${handleOpenMedia}
+                  className="px-4 py-3 border-3 border-black bg-white brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
+                >
+                  Media
+                </button>
+                <button
+                  type="button"
+                  onClick=${handleOpenBooks}
+                  disabled=${bookSuggestions.length === 0}
+                  className="px-4 py-3 border-3 border-black bg-white brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform disabled:opacity-60 disabled:cursor-not-allowed"
+                >
+                  Libri
+                </button>
+                <a
+                  href="#indice"
+                  className="px-4 py-3 border-3 border-black bg-[var(--ff-yellow)] brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
+                >
+                  Indice
+                </a>
+              </div>
             </div>
             ${searchQuery
-              ? html`<div className="flex flex-wrap gap-2">
+              ? html`<div className="flex flex-wrap gap-2 items-center">
                   ${!isSearchOverlayOpen
                     ? html`<button
                         type="button"
