@@ -67,22 +67,26 @@ const normalizeLinks = (links = [], title) => {
 };
 
 const generateSummary = (content = '') => {
-  const firstParagraph = content
+  const paragraphs = content
     .split('\n')
     .map((paragraph) => paragraph.trim())
-    .find(Boolean);
+    .filter(Boolean);
 
-  if (!firstParagraph) return '';
+  if (!paragraphs.length) return '';
 
-  const sentenceMatch = firstParagraph.match(/[^.!?]+[.!?]/);
-  const candidate = sentenceMatch ? sentenceMatch[0] : firstParagraph;
-  const cleaned = candidate.replace(/\s+/g, ' ').trim();
+  const sentences = paragraphs.flatMap((paragraph) => paragraph.match(/[^.!?]+[.!?]?/g) || []);
+  const quantitativeSentence = sentences.find((sentence) => /\d/.test(sentence));
+  const fallbackSentence = sentences.find(Boolean) || paragraphs[0];
+  const candidate = (quantitativeSentence || fallbackSentence || '').replace(/\s+/g, ' ').trim();
 
-  if (cleaned.length > 160) {
-    return `${cleaned.slice(0, 157)}...`;
+  if (!candidate) return '';
+
+  const maxLength = quantitativeSentence ? 120 : 160;
+  if (candidate.length > maxLength) {
+    return `${candidate.slice(0, maxLength - 1).trim()}…`;
   }
 
-  return cleaned;
+  return candidate;
 };
 
 const getTopicEmoji = (text) => {
