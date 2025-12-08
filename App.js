@@ -57,6 +57,8 @@ const InnerApp = () => {
   const [isBooksOpen, setIsBooksOpen] = React.useState(false);
   const [isSearchOverlayOpen, setIsSearchOverlayOpen] = React.useState(false);
   const [hasManuallyClosedSearch, setHasManuallyClosedSearch] = React.useState(false);
+  const [visibleChapterIndex, setVisibleChapterIndex] = React.useState(0);
+  const touchStartRef = React.useRef(null);
   const { incrementInteraction, searchQuery, setSearchQuery } = useNavigation();
 
   React.useEffect(() => {
@@ -85,6 +87,25 @@ const InnerApp = () => {
       })
       .filter(Boolean);
   }, [processedData, selectedEmoji]);
+
+  React.useEffect(() => {
+    if (filteredData.length === 0) return;
+    setVisibleChapterIndex(Math.floor(Math.random() * filteredData.length));
+  }, [filteredData]);
+
+  const showRandomChapter = React.useCallback(() => {
+    if (!filteredData.length) return;
+
+    setVisibleChapterIndex((prev) => {
+      if (filteredData.length === 1) return 0;
+
+      let next = prev;
+      while (next === prev) {
+        next = Math.floor(Math.random() * filteredData.length);
+      }
+      return next;
+    });
+  }, [filteredData.length]);
 
   const handleTopicSelect = (emoji) => {
     incrementInteraction();
@@ -140,7 +161,36 @@ const InnerApp = () => {
     setSelectedEmoji(TopicEmoji.BOOK);
     setIsBooksOpen(true);
   };
-  const handleCloseBooks = () => setIsBooksOpen(false);
+  const handleCloseBooks = () => {
+    setIsBooksOpen(false);
+    if (selectedEmoji === TopicEmoji.BOOK) {
+      setSelectedEmoji(null);
+    }
+  };
+
+  const handleTouchStart = (e) => {
+    touchStartRef.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e) => {
+    if (touchStartRef.current === null) return;
+    const deltaX = e.changedTouches[0].clientX - touchStartRef.current;
+    touchStartRef.current = null;
+
+    if (Math.abs(deltaX) > 50) {
+      showRandomChapter();
+    }
+  };
+
+  const safeVisibleIndex = React.useMemo(() => {
+    if (!filteredData.length) return 0;
+    return Math.min(visibleChapterIndex, filteredData.length - 1);
+  }, [filteredData.length, visibleChapterIndex]);
+
+  const chaptersToRender = React.useMemo(() => {
+    if (!filteredData.length) return [];
+    return [filteredData[safeVisibleIndex]];
+  }, [filteredData, safeVisibleIndex]);
 
   return html`<div className="min-h-screen text-black selection:bg-yellow-200 selection:text-black">
     <${SupportPopup} />
@@ -171,9 +221,9 @@ const InnerApp = () => {
         </div>
       </header>
 
-      <section className="brutal-card mobile-unboxed accent-bar accent-yellow no-round space-y-4">
-        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <div className="w-full md:w-1/2 flex flex-col gap-3 md:ml-auto">
+      <section className="brutal-card mobile-unboxed accent-bar accent-yellow no-round space-y-6">
+        <div className="flex flex-col md:flex-row gap-6 md:items-start">
+          <div className="flex-1 flex flex-col gap-3">
             <div className="relative">
               <input
                 type="text"
@@ -223,34 +273,64 @@ const InnerApp = () => {
                 </div>`
               : null}
           </div>
+
+          <div className="hidden md:flex md:w-48 justify-center">
+            <${Sidebar} selectedEmoji=${selectedEmoji} onSelect=${handleTopicSelect} vertical=${true} />
+          </div>
         </div>
 
-        <div className="border-3 border-black p-3 bg-white">
-          <div className="font-heading text-xs uppercase tracking-[0.2em] mb-3">Filtri per tema</div>
-          <div className="flex justify-center">
-            <${Sidebar} selectedEmoji=${selectedEmoji} onSelect=${handleTopicSelect} vertical=${false} />
-          </div>
+        <div className="md:hidden flex justify-center">
+          <${Sidebar} selectedEmoji=${selectedEmoji} onSelect=${handleTopicSelect} vertical=${false} />
         </div>
       </section>
 
       <section className="brutal-card mobile-unboxed no-round">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6 items-start">
-          <div className="flex-1 space-y-6">
-            <div className="border-3 border-black p-3 bg-white flex items-center justify-between">
-              <div className="font-heading text-sm">Archivio • ${filteredData.length} capitoli</div>
-              ${selectedEmoji
-                ? html`<button
-                    className="font-heading text-xs uppercase tracking-[0.2em] border-3 border-black px-3 py-2 bg-[var(--ff-yellow)] brutal-shadow"
-                    onClick=${() => handleTopicSelect(null)}
-                  >
-                    Clear ${selectedEmoji}
-                  </button>`
-                : html`<span className="font-heading text-xs uppercase tracking-[0.2em]">Tutti i temi</span>`}
+          <div className="flex-1 space-y-6" onTouchStart=${handleTouchStart} onTouchEnd=${handleTouchEnd}>
+            <div className="border-3 border-black p-3 bg-white flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+              <div className="flex items-center gap-3">
+                <div className="font-heading text-sm">Archivio • ${filteredData.length} capitoli</div>
+                ${filteredData.length > 0
+                  ? html`<span className="font-heading text-[11px] uppercase tracking-[0.18em] text-black/70">
+                      Capitolo ${safeVisibleIndex + 1} di ${filteredData.length}
+                    </span>`
+                  : null}
+              </div>
+
+              <div className="flex items-center gap-3 flex-wrap justify-end">
+                ${filteredData.length > 1
+                  ? html`<div className="flex gap-2" aria-label="Capitolo casuale">
+                      <button
+                        type="button"
+                        onClick=${showRandomChapter}
+                        className="px-3 py-2 border-3 border-black bg-white brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
+                      >
+                        ←
+                      </button>
+                      <button
+                        type="button"
+                        onClick=${showRandomChapter}
+                        className="px-3 py-2 border-3 border-black bg-white brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
+                      >
+                        →
+                      </button>
+                    </div>`
+                  : null}
+
+                ${selectedEmoji
+                  ? html`<button
+                      className="font-heading text-xs uppercase tracking-[0.2em] border-3 border-black px-3 py-2 bg-[var(--ff-yellow)] brutal-shadow"
+                      onClick=${() => handleTopicSelect(null)}
+                    >
+                      Clear ${selectedEmoji}
+                    </button>`
+                  : html`<span className="font-heading text-xs uppercase tracking-[0.2em]">Tutti i temi</span>`}
+              </div>
             </div>
 
             <div className="space-y-8">
-              ${filteredData.length > 0
-                ? filteredData.map((chapter, index) => html`<${ChapterItem} key=${`${chapter.url}-${index}`} chapter=${chapter} />`)
+              ${chaptersToRender.length > 0
+                ? chaptersToRender.map((chapter, index) => html`<${ChapterItem} key=${`${chapter.url}-${index}`} chapter=${chapter} />`)
                 : html`<div className="border-3 border-black p-10 text-center brutal-shadow">
                     <span className="text-5xl block mb-4">🔍</span>
                     <p className="text-lg mb-4">Nessun risultato per questo filtro.</p>

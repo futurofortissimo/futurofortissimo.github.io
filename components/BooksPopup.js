@@ -46,8 +46,11 @@ const BooksPopup = ({ isOpen, onClose, books }) => {
   const current = books[currentIndex];
   const quoteText = getQuote(current.quote || '');
 
-  return html`<div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm">
-    <div className="bg-white border-4 border-black brutal-shadow max-w-2xl w-full overflow-hidden animate-in fade-in zoom-in-95 duration-300 no-round">
+  return html`<div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm" onClick=${onClose}>
+    <div
+      className="bg-white border-4 border-black brutal-shadow max-w-2xl w-full overflow-hidden animate-in fade-in zoom-in-95 duration-300 no-round"
+      onClick=${(e) => e.stopPropagation()}
+    >
       <div className="relative p-6 md:p-8 bg-white accent-bar accent-yellow">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,#000_1px,transparent_0)] [background-size:20px_20px] opacity-10 pointer-events-none"></div>
         <div className="relative space-y-5">
