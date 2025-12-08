@@ -58,7 +58,6 @@ const InnerApp = () => {
   const [isSearchOverlayOpen, setIsSearchOverlayOpen] = React.useState(false);
   const [hasManuallyClosedSearch, setHasManuallyClosedSearch] = React.useState(false);
   const { incrementInteraction, searchQuery, setSearchQuery } = useNavigation();
-  const initialBookShownRef = React.useRef(false);
 
   React.useEffect(() => {
     const processed = rawData.map(processChapter);
@@ -66,14 +65,6 @@ const InnerApp = () => {
   }, []);
 
   const bookSuggestions = React.useMemo(() => extractBooksFromData(processedData), [processedData]);
-
-  React.useEffect(() => {
-    if (!initialBookShownRef.current && bookSuggestions.length > 0) {
-      setIsBooksOpen(true);
-      setSelectedEmoji(TopicEmoji.BOOK);
-      initialBookShownRef.current = true;
-    }
-  }, [bookSuggestions.length]);
 
   const filteredData = React.useMemo(() => {
     if (!selectedEmoji) return processedData;
@@ -98,6 +89,12 @@ const InnerApp = () => {
   const handleTopicSelect = (emoji) => {
     incrementInteraction();
     setSelectedEmoji(emoji);
+
+    if (emoji === TopicEmoji.BOOK) {
+      setIsBooksOpen(true);
+    } else {
+      setIsBooksOpen(false);
+    }
   };
 
   const handleSearchChange = (e) => {
@@ -174,7 +171,7 @@ const InnerApp = () => {
         </div>
       </header>
 
-      <section className="brutal-card mobile-unboxed accent-bar accent-yellow no-round">
+      <section className="brutal-card mobile-unboxed accent-bar accent-yellow no-round space-y-4">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div className="w-full md:w-1/2 flex flex-col gap-3 md:ml-auto">
             <div className="relative">
@@ -188,21 +185,23 @@ const InnerApp = () => {
               />
               <span aria-hidden="true" className="absolute right-4 top-1/2 -translate-y-1/2 text-black">🔍</span>
             </div>
-            <button
-              type="button"
-              onClick=${handleOpenMedia}
-              className="px-4 py-3 border-3 border-black bg-white brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
-            >
-              Apri media
-            </button>
-            <button
-              type="button"
-              onClick=${handleOpenBooks}
-              disabled=${bookSuggestions.length === 0}
-              className="px-4 py-3 border-3 border-black bg-white brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform disabled:opacity-60 disabled:cursor-not-allowed"
-            >
-              Filtra libri
-            </button>
+            <div className="flex flex-wrap gap-2">
+              <button
+                type="button"
+                onClick=${handleOpenMedia}
+                className="px-4 py-3 border-3 border-black bg-white brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
+              >
+                Apri media
+              </button>
+              <button
+                type="button"
+                onClick=${handleOpenBooks}
+                disabled=${bookSuggestions.length === 0}
+                className="px-4 py-3 border-3 border-black bg-white brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform disabled:opacity-60 disabled:cursor-not-allowed"
+              >
+                Filtra libri
+              </button>
+            </div>
             ${searchQuery
               ? html`<div className="flex flex-wrap gap-2">
                   ${!isSearchOverlayOpen
@@ -225,19 +224,18 @@ const InnerApp = () => {
               : null}
           </div>
         </div>
+
+        <div className="border-3 border-black p-3 bg-white">
+          <div className="font-heading text-xs uppercase tracking-[0.2em] mb-3">Filtri per tema</div>
+          <div className="flex justify-center">
+            <${Sidebar} selectedEmoji=${selectedEmoji} onSelect=${handleTopicSelect} vertical=${false} />
+          </div>
+        </div>
       </section>
 
       <section className="brutal-card mobile-unboxed no-round">
-        <div className="grid grid-cols-1 lg:grid-cols-[140px_1fr_320px] gap-6 items-start">
-          <div className="hidden lg:block">
-            <${Sidebar} selectedEmoji=${selectedEmoji} onSelect=${handleTopicSelect} vertical=${true} />
-          </div>
-
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6 items-start">
           <div className="flex-1 space-y-6">
-            <div className="lg:hidden">
-              <${Sidebar} selectedEmoji=${selectedEmoji} onSelect=${handleTopicSelect} vertical=${false} />
-            </div>
-
             <div className="border-3 border-black p-3 bg-white flex items-center justify-between">
               <div className="font-heading text-sm">Archivio • ${filteredData.length} capitoli</div>
               ${selectedEmoji

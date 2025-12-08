@@ -3,6 +3,8 @@ import { TopicEmoji } from './types.js';
 
 const emojiRegex = /[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F1E0}-\u{1F1FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{1F900}-\u{1F9FF}\u{1F018}-\u{1F270}\u{238C}\u{2B05}-\u{2B07}\u{2190}-\u{2195}\u{200D}\u{200C}]/u;
 
+const removeFFPrefix = (text) => text.replace(/^ff\.?:?\s*\d+(?:\.\d+)?\s*/i, '').trim();
+
 export const extractEmojiAndTitle = (text) => {
   const match = text.match(emojiRegex);
   const emoji = match ? match[0] : '';
@@ -66,6 +68,7 @@ const getTopicEmoji = (text) => {
 
 const processSubchapter = (sub) => {
   const { emoji, cleanTitle } = extractEmojiAndTitle(sub.title);
+  const normalizedTitle = removeFFPrefix(cleanTitle) || cleanTitle;
   const referenceText = [...(sub.references || []), ...(sub.connections || [])]
     .map((ref) => `${ref.text || ''} ${ref.url || ''}`)
     .join(' ');
@@ -73,7 +76,7 @@ const processSubchapter = (sub) => {
 
   return {
     ...sub,
-    cleanTitle,
+    cleanTitle: normalizedTitle,
     originalEmoji: emoji || '📄',
     secondaryEmoji: getTopicEmoji(analysisText)
   };
