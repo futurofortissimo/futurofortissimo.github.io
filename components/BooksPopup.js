@@ -6,6 +6,8 @@ const getQuote = (quote = '') => {
   return `${quote.slice(0, 277)}...`;
 };
 
+const stripFfCode = (text = '') => text.replace(/ff\.\d+(?:\.\d+)?\s*/i, '').trim();
+
 const BooksPopup = ({ isOpen, onClose, books }) => {
   const [currentIndex, setCurrentIndex] = React.useState(0);
 
@@ -45,6 +47,13 @@ const BooksPopup = ({ isOpen, onClose, books }) => {
 
   const current = books[currentIndex];
   const quoteText = getQuote(current.quote || '');
+  const chapterCode =
+    current.subTitle?.match(/ff\.\d+(?:\.\d+)?/i)?.[0] ||
+    current.chapterTitle?.match(/ff\.\d+(?:\.\d+)?/i)?.[0] ||
+    'Capitolo';
+  const chapterLabel = [stripFfCode(current.chapterTitle), stripFfCode(current.subTitle)]
+    .filter(Boolean)
+    .join(' · ');
 
   return html`<div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm" onClick=${onClose}>
     <div
@@ -58,7 +67,7 @@ const BooksPopup = ({ isOpen, onClose, books }) => {
             <div className="space-y-1">
               <div className="text-[11px] font-heading uppercase tracking-[0.3em] text-black mb-1">Consigli di lettura</div>
               <h3 className="text-2xl font-heading font-black text-black leading-tight">${current.title}</h3>
-              <p className="text-xs md:text-sm text-black/70">${current.chapterTitle} · ${current.subTitle}</p>
+              <p className="text-xs md:text-sm text-black/70">${chapterLabel}</p>
             </div>
             <div className="flex gap-2">
               <button aria-label="Libro casuale precedente" onClick=${goRandom} className="h-12 w-12 border-3 border-black bg-white brutal-shadow hover:-translate-y-1 transition-transform">⟵</button>
@@ -90,9 +99,9 @@ const BooksPopup = ({ isOpen, onClose, books }) => {
                 href=${current.subLink || current.chapterUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs text-black underline decoration-2"
+                className="px-4 py-3 border-3 border-black bg-white text-black brutal-shadow font-heading text-xs uppercase tracking-[0.2em] w-fit hover:-translate-y-1 transition-transform"
               >
-                Vai al capitolo di riferimento ↗
+                ${chapterCode}
               </a>
             </div>
           </div>
