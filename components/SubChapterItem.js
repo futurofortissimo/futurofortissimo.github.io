@@ -1,27 +1,6 @@
 import { React, html } from '../runtime.js';
-import { slugify, HighlightText } from '../utils.js';
+import { slugify, HighlightText, isLinkValid } from '../utils.js';
 import { useNavigation } from '../NavigationContext.js';
-
-const isValidLink = (text, url) => {
-  if (!text) return false;
-  const lowerText = text.toLowerCase();
-  const lowerUrl = url.toLowerCase();
-
-  if (lowerText.includes('whatsapp')) return false;
-  if (lowerText.includes('offrimi')) return false;
-  if (lowerText.includes('caffè') || lowerText.includes('caffe')) return false;
-  if (lowerText.includes('micmer')) return false;
-  if (lowerText.includes('iscriviti')) return false;
-  if (lowerText.includes('supportare questo progetto')) return false;
-  if (lowerText.trim() === '☕') return false;
-  if (lowerText.trim() === '❤️') return false;
-  if (lowerText.trim() === '.') return false;
-
-  if (lowerUrl.includes('paypal')) return false;
-  if (lowerUrl.includes('whatsapp')) return false;
-
-  return true;
-};
 
 const isCrossReference = (text) => text.toLowerCase().includes('ff.');
 const capitalizeFirstLetter = (string) => string.charAt(0).toUpperCase() + string.slice(1);
@@ -56,7 +35,7 @@ const SubChapterItem = ({ subchapter, parentId }) => {
   }, [debouncedSearchQuery, subchapter]);
 
   const allLinks = [...subchapter.references, ...subchapter.connections];
-  const validLinks = allLinks.filter((ref) => isValidLink(ref.text, ref.url));
+  const validLinks = allLinks.filter((ref) => isLinkValid(ref.text, ref.url));
 
   return html`<div id=${id} className="relative pl-0 group scroll-mt-32 transition-all duration-300">
     <div
