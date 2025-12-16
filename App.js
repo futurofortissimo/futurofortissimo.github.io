@@ -14,7 +14,10 @@ const titleImageDataUri =
   'data:image/svg+xml;utf8,' +
   encodeURIComponent(`
     <svg width="740" height="130" viewBox="0 0 740 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="FUTURO FORTISSIMO">
-      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="'IBM Plex Mono','Inter',monospace" font-size="54" font-weight="700" letter-spacing="3.5" fill="#0a0a0a">
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+      </style>
+      <text x="50%" y="52%" dominant-baseline="middle" text-anchor="middle" font-family="'Press Start 2P','IBM Plex Mono',monospace" font-size="46" font-weight="700" letter-spacing="3.5" fill="#0a0a0a">
         FUTURO FORTISSIMO
       </text>
     </svg>
@@ -342,7 +345,7 @@ const InnerApp = () => {
         </div>
       </section>
 
-      <section id="indice" className="brutal-card mobile-unboxed no-round">
+      <section id="indice" className="brutal-card mobile-unboxed no-round compact-index">
         <div className="flex flex-col gap-6">
           <div className="flex items-center gap-2 flex-wrap">
             <div className="font-heading text-sm">Indice</div>
