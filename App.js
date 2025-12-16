@@ -10,19 +10,6 @@ import BooksPopup from './components/BooksPopup.js';
 import { NavigationProvider, useNavigation } from './NavigationContext.js';
 import IndexChapter from './components/IndexChapter.js';
 
-const titleImageDataUri =
-  'data:image/svg+xml;utf8,' +
-  encodeURIComponent(`
-    <svg width="740" height="130" viewBox="0 0 740 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="FUTURO FORTISSIMO">
-      <style>
-        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-      </style>
-      <text x="50%" y="52%" dominant-baseline="middle" text-anchor="middle" font-family="'Press Start 2P','IBM Plex Mono',monospace" font-size="46" font-weight="700" letter-spacing="3.5" fill="#0a0a0a">
-        FUTURO FORTISSIMO
-      </text>
-    </svg>
-  `);
-
 const headerBackgroundDataUri =
   'data:image/svg+xml;utf8,' +
   encodeURIComponent(`
@@ -92,6 +79,7 @@ const InnerApp = () => {
   const [isBooksOpen, setIsBooksOpen] = React.useState(false);
   const [isSearchOverlayOpen, setIsSearchOverlayOpen] = React.useState(false);
   const [hasManuallyClosedSearch, setHasManuallyClosedSearch] = React.useState(false);
+  const [isFilterMenuOpen, setIsFilterMenuOpen] = React.useState(false);
   const { incrementInteraction, searchQuery, setSearchQuery, debouncedSearchQuery } = useNavigation();
 
   React.useEffect(() => {
@@ -170,13 +158,7 @@ const InnerApp = () => {
   const handleClearSearch = () => {
     setSearchQuery('');
     setHasManuallyClosedSearch(false);
-  };
-
-  const handleShowSearchOverlay = () => {
-    if (searchQuery.trim()) {
-      setHasManuallyClosedSearch(false);
-      setIsSearchOverlayOpen(true);
-    }
+    setIsSearchOverlayOpen(false);
   };
 
   const handleOpenMedia = () => {
@@ -249,12 +231,10 @@ const InnerApp = () => {
         }}
       >
         <div className="max-w-full w-full md:w-auto flex justify-center md:justify-start">
-          <img
-            src=${titleImageDataUri}
-            alt="Futuro Fortissimo"
-            loading="lazy"
-            className="w-full max-w-[620px]"
-          />
+          <div className="text-center">
+            <p className="text-[11px] font-heading uppercase tracking-[0.3em] text-black/70">Newsletter</p>
+            <h1 className="pixel-title text-2xl md:text-3xl lg:text-4xl leading-tight">FUTURO FORTISSIMO</h1>
+          </div>
         </div>
         <div className="flex flex-wrap gap-3 items-center justify-center md:justify-end w-full md:w-auto">
           <a
@@ -288,10 +268,29 @@ const InnerApp = () => {
                   value=${searchQuery}
                   onInput=${handleSearchChange}
                   placeholder="Cerca storie..."
-                  className="w-full px-4 py-3 pr-12 bg-white border-3 border-black font-heading uppercase tracking-[0.15em] placeholder:text-gray-400 focus:outline-none focus:ring-0"
+                  className="w-full px-4 py-3 pr-20 bg-white border-3 border-black font-heading uppercase tracking-[0.15em] placeholder:text-gray-400 focus:outline-none focus:ring-0"
                   aria-label="Cerca storie"
                 />
-                <span aria-hidden="true" className="absolute right-4 top-1/2 -translate-y-1/2 text-black">🔍</span>
+                <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-2">
+                  <button
+                    type="button"
+                    className="text-black text-lg"
+                    aria-label="Apri menu filtri"
+                    onClick=${() => setIsFilterMenuOpen(true)}
+                  >
+                    🔍
+                  </button>
+                  ${searchQuery
+                    ? html`<button
+                        type="button"
+                        className="text-black text-lg"
+                        aria-label="Pulisci ricerca"
+                        onClick=${handleClearSearch}
+                      >
+                        ✕
+                      </button>`
+                    : null}
+                </div>
               </div>
               <div className="flex flex-wrap gap-2 justify-start sm:justify-end">
                 <button
@@ -317,27 +316,6 @@ const InnerApp = () => {
                 </a>
               </div>
             </div>
-            ${searchQuery
-              ? html`<div className="flex flex-wrap gap-2 items-center">
-                  ${!isSearchOverlayOpen
-                    ? html`<button
-                        type="button"
-                        onClick=${handleShowSearchOverlay}
-                        className="px-3 py-2 border-3 border-black bg-white brutal-shadow font-heading text-[11px] uppercase tracking-[0.2em] hover:-translate-y-0.5 transition-transform"
-                      >
-                        Mostra risultati
-                      </button>`
-                    : null}
-                  <button
-                    type="button"
-                    onClick=${handleClearSearch}
-                    className="px-3 py-2 border-3 border-black bg-[var(--ff-yellow)] brutal-shadow font-heading text-[11px] uppercase tracking-[0.2em] hover:-translate-y-0.5 transition-transform"
-                  >
-                    Svuota ricerca
-                  </button>
-                </div>`
-              : null}
-
             <div className="flex justify-center lg:hidden">
               <${Sidebar} selectedEmoji=${selectedEmoji} onSelect=${handleTopicSelect} vertical=${false} />
             </div>
@@ -345,7 +323,7 @@ const InnerApp = () => {
         </div>
       </section>
 
-      <section id="indice" className="brutal-card mobile-unboxed no-round compact-index">
+      <section id="indice" className="compact-index space-y-6">
         <div className="flex flex-col gap-6">
           <div className="flex items-center gap-2 flex-wrap">
             <div className="font-heading text-sm">Indice</div>
@@ -396,6 +374,32 @@ const InnerApp = () => {
               </button>
             </div>
             <${MediaSlider} chapters=${processedData} />
+          </div>
+        </div>`
+      : null}
+
+    ${isFilterMenuOpen
+      ? html`<div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex justify-end lg:hidden">
+          <div className="w-72 max-w-full bg-white border-l-4 border-black p-4 flex flex-col gap-4">
+            <div className="flex items-center justify-between">
+              <div className="font-heading text-xs uppercase tracking-[0.2em]">Filtri</div>
+              <button
+                type="button"
+                aria-label="Chiudi filtri"
+                className="text-lg font-bold"
+                onClick=${() => setIsFilterMenuOpen(false)}
+              >
+                ✕
+              </button>
+            </div>
+            <${Sidebar}
+              selectedEmoji=${selectedEmoji}
+              onSelect=${(emoji) => {
+                handleTopicSelect(emoji);
+                setIsFilterMenuOpen(false);
+              }}
+              vertical=${true}
+            />
           </div>
         </div>`
       : null}

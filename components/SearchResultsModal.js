@@ -82,27 +82,31 @@ const SearchResultsModal = ({ chapters, isOpen, onHide, onClear, onNavigate }) =
     }
   };
 
+  const handleClose = () => {
+    if (typeof onClear === 'function') {
+      onClear();
+    }
+    if (typeof onHide === 'function') {
+      onHide();
+    }
+  };
+
   return html`<div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm overflow-y-auto p-4 sm:p-6">
-    <div className="max-w-4xl mx-auto bg-white border-4 border-black brutal-shadow no-round"> 
+    <div className="max-w-4xl mx-auto bg-white border-4 border-black brutal-shadow no-round">
       <div className="p-4 sm:p-6 flex flex-col gap-4">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-          <div>
-            <div className="text-[11px] font-heading uppercase tracking-[0.3em] text-black">Ricerca</div>
-            <h3 className="text-2xl font-heading font-black leading-tight">Risultati per “${searchQuery}”</h3>
-            <p className="text-sm text-black/70 max-w-2xl">Apri il risultato per scorrere alla card corrispondente. I testi coincidono con l’evidenziazione già visibile nelle schede.</p>
-          </div>
-          <div className="flex flex-wrap gap-2">
+        <div className="flex flex-col gap-3">
+          <div className="flex items-start justify-between gap-3">
+            <div>
+              <div className="text-[11px] font-heading uppercase tracking-[0.3em] text-black">Ricerca</div>
+              <h3 className="text-2xl font-heading font-black leading-tight">Risultati per “${searchQuery}”</h3>
+              <p className="text-sm text-black/70 max-w-2xl">Apri il risultato per scorrere alla card corrispondente. I testi coincidono con l’evidenziazione già visibile nelle schede.</p>
+            </div>
             <button
-              onClick=${onHide}
+              onClick=${handleClose}
               className="px-3 py-2 border-3 border-black bg-white font-heading text-[11px] uppercase tracking-[0.2em] brutal-shadow hover:-translate-y-0.5 transition-transform"
+              aria-label="Chiudi e cancella ricerca"
             >
-              Nascondi
-            </button>
-            <button
-              onClick=${onClear}
-              className="px-3 py-2 border-3 border-black bg-[var(--ff-yellow)] font-heading text-[11px] uppercase tracking-[0.2em] brutal-shadow hover:-translate-y-0.5 transition-transform"
-            >
-              Azzera ricerca
+              ✕
             </button>
           </div>
         </div>
