@@ -44,6 +44,27 @@ export const HighlightText = ({ text, highlight }) => {
   }
 };
 
+export const isLinkValid = (text = '', url = '') => {
+  const lowerText = text.toLowerCase();
+  const lowerUrl = url.toLowerCase();
+
+  if (!text) return false;
+  if (lowerText.includes('whatsapp')) return false;
+  if (lowerText.includes('offrimi')) return false;
+  if (lowerText.includes('caffè') || lowerText.includes('caffe')) return false;
+  if (lowerText.includes('micmer')) return false;
+  if (lowerText.includes('iscriviti')) return false;
+  if (lowerText.includes('supportare questo progetto')) return false;
+  if (lowerText.trim() === '☕') return false;
+  if (lowerText.trim() === '❤️') return false;
+  if (lowerText.trim() === '.') return false;
+
+  if (lowerUrl.includes('paypal')) return false;
+  if (lowerUrl.includes('whatsapp')) return false;
+
+  return true;
+};
+
 const buildLinkLabel = (url, title) => {
   try {
     const { hostname } = new URL(url);

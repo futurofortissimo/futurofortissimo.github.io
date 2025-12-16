@@ -2,14 +2,13 @@ import { React, html } from './runtime.js';
 import { rawData } from './data.js';
 import { mapTopicToTheme, processChapter } from './utils.js';
 import { TopicEmoji } from './types.js';
-import ChapterItem from './components/ChapterItem.js';
 import Sidebar from './components/Sidebar.js';
-import RightSidebar from './components/RightSidebar.js';
 import SupportPopup from './components/SupportPopup.js';
 import MediaSlider from './components/MediaSlider.js';
 import SearchResultsModal from './components/SearchResultsModal.js';
 import BooksPopup from './components/BooksPopup.js';
 import { NavigationProvider, useNavigation } from './NavigationContext.js';
+import IndexChapter from './components/IndexChapter.js';
 
 const titleImageDataUri =
   'data:image/svg+xml;utf8,' +
@@ -90,9 +89,7 @@ const InnerApp = () => {
   const [isBooksOpen, setIsBooksOpen] = React.useState(false);
   const [isSearchOverlayOpen, setIsSearchOverlayOpen] = React.useState(false);
   const [hasManuallyClosedSearch, setHasManuallyClosedSearch] = React.useState(false);
-  const [visibleChapterIndex, setVisibleChapterIndex] = React.useState(0);
-  const touchStartRef = React.useRef(null);
-  const { incrementInteraction, searchQuery, setSearchQuery } = useNavigation();
+  const { incrementInteraction, searchQuery, setSearchQuery, debouncedSearchQuery } = useNavigation();
 
   React.useEffect(() => {
     const processed = rawData.map(processChapter);
@@ -134,25 +131,6 @@ const InnerApp = () => {
       })
       .filter(Boolean);
   }, [processedData, selectedEmoji]);
-
-  React.useEffect(() => {
-    if (filteredData.length === 0) return;
-    setVisibleChapterIndex(Math.floor(Math.random() * filteredData.length));
-  }, [filteredData]);
-
-  const showRandomChapter = React.useCallback(() => {
-    if (!filteredData.length) return;
-
-    setVisibleChapterIndex((prev) => {
-      if (filteredData.length === 1) return 0;
-
-      let next = prev;
-      while (next === prev) {
-        next = Math.floor(Math.random() * filteredData.length);
-      }
-      return next;
-    });
-  }, [filteredData.length]);
 
   const handleTopicSelect = (emoji) => {
     incrementInteraction();
@@ -215,29 +193,36 @@ const InnerApp = () => {
     }
   };
 
-  const handleTouchStart = (e) => {
-    touchStartRef.current = e.touches[0].clientX;
-  };
 
-  const handleTouchEnd = (e) => {
-    if (touchStartRef.current === null) return;
-    const deltaX = e.changedTouches[0].clientX - touchStartRef.current;
-    touchStartRef.current = null;
+  const chaptersForIndex = React.useMemo(() => {
+    const query = debouncedSearchQuery.trim().toLowerCase();
 
-    if (Math.abs(deltaX) > 50) {
-      showRandomChapter();
-    }
-  };
+    return filteredData
+      .map((chapter) => {
+        const matchesChapterTitle =
+          !query ||
+          chapter.cleanTitle.toLowerCase().includes(query) ||
+          chapter.subtitle.toLowerCase().includes(query) ||
+          (chapter.keypoints || []).some((point) => point.toLowerCase().includes(query));
 
-  const safeVisibleIndex = React.useMemo(() => {
-    if (!filteredData.length) return 0;
-    return Math.min(visibleChapterIndex, filteredData.length - 1);
-  }, [filteredData.length, visibleChapterIndex]);
+        const subchapters = chapter.processedSubchapters.filter((sub) => {
+          if (!query) return true;
+          return (
+            sub.cleanTitle.toLowerCase().includes(query) ||
+            sub.content.toLowerCase().includes(query) ||
+            (sub.summary || '').toLowerCase().includes(query)
+          );
+        });
 
-  const chaptersToRender = React.useMemo(() => {
-    if (!filteredData.length) return [];
-    return [filteredData[safeVisibleIndex]];
-  }, [filteredData, safeVisibleIndex]);
+        if (query && !matchesChapterTitle && subchapters.length === 0) return null;
+
+        return {
+          ...chapter,
+          processedSubchapters: subchapters.length > 0 || query ? subchapters : chapter.processedSubchapters
+        };
+      })
+      .filter(Boolean);
+  }, [debouncedSearchQuery, filteredData]);
 
   return html`<div className="min-h-screen text-black selection:bg-yellow-200 selection:text-black">
     <${SupportPopup} />
@@ -357,78 +342,43 @@ const InnerApp = () => {
         </div>
       </section>
 
-      <section className="brutal-card mobile-unboxed no-round">
-        <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_320px] gap-6 items-start">
-          <div className="hidden lg:block sticky top-6">
-            <div className="border-3 border-black bg-white p-3">
-              <${Sidebar} selectedEmoji=${selectedEmoji} onSelect=${handleTopicSelect} vertical=${true} />
-            </div>
+      <section id="indice" className="brutal-card mobile-unboxed no-round">
+        <div className="flex flex-col gap-6">
+          <div className="flex items-center gap-2 flex-wrap">
+            <div className="font-heading text-sm">Indice</div>
+            <span aria-hidden="true" className="text-black/60">·</span>
+            ${selectedEmoji
+              ? html`<button
+                  className="font-heading text-xs uppercase tracking-[0.2em] border-3 border-black px-3 py-2 bg-[var(--ff-yellow)] brutal-shadow"
+                  onClick=${() => handleTopicSelect(null)}
+                >
+                  Clear ${selectedEmoji}
+                </button>`
+              : html`<span className="font-heading text-xs uppercase tracking-[0.2em]">Tutti i temi</span>`}
           </div>
 
-          <div className="flex-1 space-y-6" onTouchStart=${handleTouchStart} onTouchEnd=${handleTouchEnd}>
-            <div className="border-3 border-black p-3 bg-white flex flex-col gap-3 md:flex-row md:items-center md:justify-between sticky top-4 z-10">
-              <div className="flex items-center gap-2 flex-wrap">
-                <div className="font-heading text-sm">Archivio</div>
-                <span aria-hidden="true" className="text-black/60">
-                  ·
-                </span>
-                ${selectedEmoji
-                  ? html`<button
-                      className="font-heading text-xs uppercase tracking-[0.2em] border-3 border-black px-3 py-2 bg-[var(--ff-yellow)] brutal-shadow"
-                      onClick=${() => handleTopicSelect(null)}
-                    >
-                      Clear ${selectedEmoji}
-                    </button>`
-                  : html`<span className="font-heading text-xs uppercase tracking-[0.2em]">Tutti i temi</span>`}
-              </div>
-
-              <div className="flex items-center gap-3 flex-wrap justify-end">
-                ${filteredData.length > 1
-                  ? html`<div className="flex gap-2" aria-label="Capitolo casuale">
-                      <button
-                        type="button"
-                        onClick=${showRandomChapter}
-                        className="px-3 py-2 border-3 border-black bg-white brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
-                      >
-                        ←
-                      </button>
-                      <button
-                        type="button"
-                        onClick=${showRandomChapter}
-                        className="px-3 py-2 border-3 border-black bg-white brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
-                      >
-                        →
-                      </button>
-                    </div>`
-                  : null}
-              </div>
-            </div>
-
-            <div className="space-y-8">
-              ${chaptersToRender.length > 0
-                ? chaptersToRender.map((chapter, index) => html`<${ChapterItem} key=${`${chapter.url}-${index}`} chapter=${chapter} />`)
-                : html`<div className="border-3 border-black p-10 text-center brutal-shadow">
-                    <span className="text-5xl block mb-4">🔍</span>
-                    <p className="text-lg mb-4">Nessun risultato per questo filtro.</p>
-                    <button
-                      onClick=${() => handleTopicSelect(null)}
-                      className="px-4 py-3 border-3 border-black bg-white brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
-                    >
-                      Azzera filtri
-                    </button>
-                  </div>`}
-            </div>
-          </div>
-
-          <div id="indice" className="hidden lg:block border-3 border-black bg-white p-4 sticky top-6">
-            <${RightSidebar} chapters=${filteredData} />
+          <div className="space-y-6">
+            ${chaptersForIndex.length > 0
+              ? chaptersForIndex.map((chapter, index) =>
+                  html`<${IndexChapter}
+                    key=${`${chapter.url}-${index}`}
+                    chapter=${chapter}
+                    highlight=${debouncedSearchQuery}
+                  />`
+                )
+              : html`<div className="border-3 border-black p-10 text-center brutal-shadow">
+                  <span className="text-5xl block mb-4">🔍</span>
+                  <p className="text-lg mb-4">Nessun risultato per questo filtro.</p>
+                  <button
+                    onClick=${() => handleTopicSelect(null)}
+                    className="px-4 py-3 border-3 border-black bg-white brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
+                  >
+                    Azzera filtri
+                  </button>
+                </div>`}
           </div>
         </div>
       </section>
-
-      <div className="lg:hidden brutal-card mobile-unboxed no-round">
-        <${RightSidebar} chapters=${filteredData} isMobileMode=${true} />
-      </div>
     </div>
 
     ${isMediaOpen
