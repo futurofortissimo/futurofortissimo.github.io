@@ -22,23 +22,23 @@ const IndexChapter = ({ chapter, highlight }) => {
 
   return html`<article className="chapter-card border-b border-black/10 pb-5 last:border-b-0" id=${chapter.url}>
     <div className="flex items-start gap-3">
-      <span className="text-xl md:text-2xl select-none leading-none">${chapter.primaryEmoji || chapter.originalEmoji}</span>
+      <span className="text-xl select-none leading-none">${chapter.primaryEmoji || chapter.originalEmoji}</span>
       <div className="flex-1">
-        <h2 className="font-heading text-lg md:text-xl font-bold text-black leading-tight chapter-title">
+        <h2 className="font-heading text-xl md:text-2xl font-bold text-black leading-tight chapter-title">
           <a href=${chapter.url} target="_blank" rel="noopener noreferrer" className="hover:underline decoration-4">
             <${HighlightText} text=${chapter.cleanTitle} highlight=${highlight} />
           </a>
         </h2>
         ${chapter.subtitle
-          ? html`<p className="inline-block px-0 py-1 text-[12px] md:text-sm text-black font-heading uppercase tracking-[0.18em] mt-2 sub-title">
+          ? html`<p className="inline-block px-0 py-1 text-sm md:text-base text-black font-heading uppercase tracking-[0.18em] mt-2 sub-title">
               <${HighlightText} text=${chapter.subtitle} highlight=${highlight} />
             </p>`
           : null}
         ${chapter.keypoints.length
-          ? html`<ul className="mt-2 space-y-1 text-sm md:text-[15px] text-black font-medium">
+          ? html`<ul className="mt-3 space-y-2 text-base md:text-lg text-black font-medium">
               ${chapter.keypoints.map((point, idx) =>
                 html`<li key=${idx} className="leading-snug flex gap-2 items-start">
-                  <span className="text-base leading-none mt-0.5">•</span>
+                  <span className="text-lg leading-none mt-0.5">•</span>
                   <span><${HighlightText} text=${point} highlight=${highlight} /></span>
                 </li>`
               )}
@@ -47,7 +47,7 @@ const IndexChapter = ({ chapter, highlight }) => {
       </div>
     </div>
 
-    <div className="mt-4 space-y-2">
+    <div className="mt-5 space-y-3">
       ${chapter.processedSubchapters.map((sub, idx) =>
         html`<div key=${idx} className="flex gap-2 items-start">
           <span className="text-xl leading-none mt-0.5">${sub.originalEmoji}</span>
@@ -56,12 +56,12 @@ const IndexChapter = ({ chapter, highlight }) => {
               href=${sub.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-heading text-sm md:text-base font-bold text-black hover:underline decoration-2 break-words"
+              className="font-heading text-base md:text-lg font-bold text-black hover:underline decoration-2 break-words"
             >
               <${HighlightText} text=${sub.cleanTitle} highlight=${highlight} />
             </a>
             ${sub.summary
-              ? html`<p className="text-[13px] text-gray-700 leading-snug mt-0.5">
+              ? html`<p className="text-sm md:text-base text-gray-700 leading-snug mt-1">
                   <${HighlightText} text=${sub.summary} highlight=${highlight} />
                 </p>`
               : null}
@@ -71,7 +71,7 @@ const IndexChapter = ({ chapter, highlight }) => {
     </div>
 
     ${citations.length
-      ? html`<div className="mt-4 border-t border-black/10 pt-3">
+      ? html`<div className="mt-5 border-t border-black/10 pt-3">
           <button
             type="button"
             className="links-toggle inline-flex items-center gap-2 border-3 border-black bg-white brutal-shadow font-heading uppercase tracking-[0.18em] px-3 py-2"
@@ -82,14 +82,14 @@ const IndexChapter = ({ chapter, highlight }) => {
             <span aria-hidden="true">${showCitations ? '▲' : '▼'}</span>
           </button>
           ${showCitations
-            ? html`<div className="space-y-1 mt-2">
+            ? html`<div className="flex flex-wrap gap-2 mt-3">
                 ${citations.map((ref, idx) =>
                   html`<a
                     key=${idx}
                     href=${ref.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block bg-[var(--ff-yellow)] text-[11px] font-heading uppercase tracking-[0.18em] px-2 py-1 text-black hover:underline decoration-2"
+                    className="inline-flex items-center bg-[var(--ff-yellow)] text-[11px] font-heading uppercase tracking-[0.18em] px-2 py-1 text-black hover:underline decoration-2 brutal-shadow"
                   >
                     <${HighlightText} text=${ref.text} highlight=${highlight} />
                   </a>`

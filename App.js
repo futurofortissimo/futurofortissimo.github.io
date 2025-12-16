@@ -232,29 +232,8 @@ const InnerApp = () => {
       >
         <div className="max-w-full w-full md:w-auto flex justify-center md:justify-start">
           <div className="text-center">
-            <p className="text-[11px] font-heading uppercase tracking-[0.3em] text-black/70">Newsletter</p>
             <h1 className="pixel-title text-2xl md:text-3xl lg:text-4xl leading-tight">FUTURO FORTISSIMO</h1>
           </div>
-        </div>
-        <div className="flex flex-wrap gap-3 items-center justify-center md:justify-end w-full md:w-auto">
-          <a
-            href="https://www.paypal.com/paypalme/MicheleMerelli"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Supporto PayPal"
-            className="px-4 py-3 border-3 border-black bg-[var(--ff-blue)] text-black brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
-          >
-            ☕
-          </a>
-          <a
-            href="https://micmer-git.github.io/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Progetti micmer"
-            className="px-4 py-3 border-3 border-black bg-[var(--ff-blue)] text-black brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
-          >
-            M
-          </a>
         </div>
       </header>
 
@@ -292,31 +271,43 @@ const InnerApp = () => {
                     : null}
                 </div>
               </div>
-              <div className="flex flex-wrap gap-2 justify-start sm:justify-end">
-                <button
-                  type="button"
-                  onClick=${handleOpenMedia}
-                  className="px-4 py-3 border-3 border-black bg-white brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
-                >
-                  Media
-                </button>
-                <button
-                  type="button"
-                  onClick=${handleOpenBooks}
-                  disabled=${bookSuggestions.length === 0}
-                  className="px-4 py-3 border-3 border-black bg-white brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform disabled:opacity-60 disabled:cursor-not-allowed"
-                >
-                  Libri
-                </button>
-                <a
-                  href="#indice"
-                  className="px-4 py-3 border-3 border-black bg-[var(--ff-yellow)] brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
-                >
-                  Indice
-                </a>
-              </div>
+            <div className="flex flex-wrap gap-2 justify-start sm:justify-end">
+              <button
+                type="button"
+                onClick=${handleOpenMedia}
+                className="px-4 py-3 border-3 border-black bg-white brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
+              >
+                🎥 Media
+              </button>
+              <button
+                type="button"
+                onClick=${handleOpenBooks}
+                disabled=${bookSuggestions.length === 0}
+                className="px-4 py-3 border-3 border-black bg-white brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform disabled:opacity-60 disabled:cursor-not-allowed"
+              >
+                📚 Libri
+              </button>
+              <a
+                href="https://www.paypal.com/paypalme/MicheleMerelli"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Supporto PayPal"
+                className="px-4 py-3 border-3 border-black bg-[var(--ff-blue)] text-black brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
+              >
+                ☕
+              </a>
+              <a
+                href="https://micmer-git.github.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Progetti micmer"
+                className="px-4 py-3 border-3 border-black bg-[var(--ff-blue)] text-black brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
+              >
+                M
+              </a>
             </div>
-            <div className="flex justify-center lg:hidden">
+          </div>
+          <div className="flex justify-center lg:hidden">
               <${Sidebar} selectedEmoji=${selectedEmoji} onSelect=${handleTopicSelect} vertical=${false} />
             </div>
           </div>
