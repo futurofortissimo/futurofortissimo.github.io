@@ -17,7 +17,7 @@ const headerBackgroundDataUri =
       <defs>
         <pattern id="headerGrid" width="26" height="26" patternUnits="userSpaceOnUse">
           <rect width="26" height="26" fill="#ffffff"/>
-          <path d="M26 0H0V26" fill="none" stroke="rgba(0,0,0,0.08)" stroke-width="1"/>
+          <path d="M26 0H0V26" fill="none" stroke="rgba(0,0,0,0.05)" stroke-width="1"/>
         </pattern>
         <linearGradient id="bottomHue" x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" stop-color="#c8e6ff" stop-opacity="0.7"/>
@@ -222,7 +222,7 @@ const InnerApp = () => {
 
     <div className="max-w-6xl mx-auto px-4 md:px-8 py-8 space-y-8">
       <header
-        className="brutal-card mobile-unboxed accent-bar accent-blue flex flex-col md:flex-row md:items-center justify-between gap-6 no-round"
+        className="brutal-card mobile-unboxed accent-bar accent-blue flex flex-col items-center justify-center gap-6 text-center no-round"
         style=${{
           backgroundImage: `url(${headerBackgroundDataUri})`,
           backgroundSize: 'cover',
@@ -230,10 +230,8 @@ const InnerApp = () => {
           backgroundRepeat: 'no-repeat'
         }}
       >
-        <div className="max-w-full w-full md:w-auto flex justify-center md:justify-start">
-          <div className="text-center">
-            <h1 className="pixel-title text-2xl md:text-3xl lg:text-4xl leading-tight">FUTURO FORTISSIMO</h1>
-          </div>
+        <div className="w-full">
+          <h1 className="pixel-title text-2xl md:text-3xl lg:text-4xl leading-tight text-center">FUTURO FORTISSIMO</h1>
         </div>
       </header>
 

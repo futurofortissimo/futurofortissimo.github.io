@@ -49,7 +49,7 @@ const SubChapterItem = ({ subchapter, parentId }) => {
           href=${subchapter.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-heading text-sm md:text-base font-bold text-black mr-2 break-words hover:underline decoration-4"
+          className="font-heading text-lg md:text-xl font-bold text-black mr-2 break-words hover:underline decoration-4"
           onClick=${(e) => {
             e.stopPropagation();
             incrementInteraction();

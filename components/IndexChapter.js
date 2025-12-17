@@ -24,7 +24,7 @@ const IndexChapter = ({ chapter, highlight }) => {
     <div className="flex items-start gap-3">
       <span className="text-xl select-none leading-none">${chapter.primaryEmoji || chapter.originalEmoji}</span>
       <div className="flex-1">
-        <h2 className="font-heading text-xl md:text-2xl font-bold text-black leading-tight chapter-title">
+        <h2 className="font-heading text-lg md:text-xl font-bold text-black leading-tight chapter-title">
           <a href=${chapter.url} target="_blank" rel="noopener noreferrer" className="hover:underline decoration-4">
             <${HighlightText} text=${chapter.cleanTitle} highlight=${highlight} />
           </a>
@@ -56,7 +56,7 @@ const IndexChapter = ({ chapter, highlight }) => {
               href=${sub.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-heading text-base md:text-lg font-bold text-black hover:underline decoration-2 break-words"
+              className="font-heading text-lg md:text-xl font-bold text-black hover:underline decoration-2 break-words"
             >
               <${HighlightText} text=${sub.cleanTitle} highlight=${highlight} />
             </a>
