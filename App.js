@@ -181,21 +181,23 @@ const InnerApp = () => {
 
   const chaptersForIndex = React.useMemo(() => {
     const query = debouncedSearchQuery.trim().toLowerCase();
+    const toLower = (value) => (typeof value === 'string' ? value.toLowerCase() : '');
+    const includesQuery = (value) => toLower(value).includes(query);
 
     return filteredData
       .map((chapter) => {
         const matchesChapterTitle =
           !query ||
-          chapter.cleanTitle.toLowerCase().includes(query) ||
-          chapter.subtitle.toLowerCase().includes(query) ||
-          (chapter.keypoints || []).some((point) => point.toLowerCase().includes(query));
+          includesQuery(chapter.cleanTitle) ||
+          includesQuery(chapter.subtitle) ||
+          (chapter.keypoints || []).some((point) => includesQuery(point));
 
-        const subchapters = chapter.processedSubchapters.filter((sub) => {
+        const subchapters = (chapter.processedSubchapters || []).filter((sub) => {
           if (!query) return true;
           return (
-            sub.cleanTitle.toLowerCase().includes(query) ||
-            sub.content.toLowerCase().includes(query) ||
-            (sub.summary || '').toLowerCase().includes(query)
+            includesQuery(sub.cleanTitle) ||
+            includesQuery(sub.content) ||
+            includesQuery(sub.summary)
           );
         });
 
