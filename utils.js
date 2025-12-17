@@ -206,11 +206,13 @@ export const processChapter = (chapter) => {
   }
 
   const { emoji, cleanTitle } = extractEmojiAndTitle(chapter.title || '');
+  const keypoints = Array.isArray(chapter.keypoints) ? chapter.keypoints : [];
   const processedSubchapters = (chapter.subchapters || []).map(processSubchapter);
   const fallbackEmoji = emoji || '🎼';
 
   return {
     ...chapter,
+    keypoints,
     cleanTitle,
     originalEmoji: fallbackEmoji,
     primaryEmoji: determineChapterEmoji(chapter, processedSubchapters, fallbackEmoji),
