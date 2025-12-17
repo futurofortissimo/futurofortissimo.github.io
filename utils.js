@@ -201,8 +201,12 @@ const determineChapterEmoji = (chapter, processedSubchapters, fallbackEmoji) => 
 };
 
 export const processChapter = (chapter) => {
-  const { emoji, cleanTitle } = extractEmojiAndTitle(chapter.title);
-  const processedSubchapters = chapter.subchapters.map(processSubchapter);
+  if (!chapter || typeof chapter !== 'object') {
+    return null;
+  }
+
+  const { emoji, cleanTitle } = extractEmojiAndTitle(chapter.title || '');
+  const processedSubchapters = (chapter.subchapters || []).map(processSubchapter);
   const fallbackEmoji = emoji || '🎼';
 
   return {
