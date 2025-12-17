@@ -83,7 +83,7 @@ const InnerApp = () => {
   const { incrementInteraction, searchQuery, setSearchQuery, debouncedSearchQuery } = useNavigation();
 
   React.useEffect(() => {
-    const processed = rawData.map(processChapter);
+    const processed = rawData.map(processChapter).filter(Boolean);
     setProcessedData(processed);
   }, []);
 
