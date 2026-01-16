@@ -24,18 +24,18 @@ const IndexChapter = ({ chapter, highlight }) => {
     <div className="flex items-start gap-3">
       <span className="text-xl select-none leading-none">${chapter.primaryEmoji || chapter.originalEmoji}</span>
       <div className="flex-1">
-        <h2 className="font-heading text-lg md:text-xl font-bold text-black leading-tight chapter-title">
+        <h2 className="font-heading ff-heading-lg text-black chapter-title">
           <a href=${chapter.url} target="_blank" rel="noopener noreferrer" className="hover:underline decoration-4">
             <${HighlightText} text=${chapter.cleanTitle} highlight=${highlight} />
           </a>
         </h2>
         ${chapter.subtitle
-          ? html`<p className="inline-block px-0 py-1 text-sm md:text-base text-black font-heading uppercase tracking-[0.18em] mt-2 sub-title">
+          ? html`<p className="inline-block px-0 py-1 ff-eyebrow-md text-black/80 mt-2 sub-title">
               <${HighlightText} text=${chapter.subtitle} highlight=${highlight} />
             </p>`
           : null}
         ${chapter.keypoints.length
-          ? html`<ul className="mt-3 space-y-2 text-base md:text-lg text-black font-medium">
+          ? html`<ul className="mt-3 space-y-2 ff-body text-black font-medium">
               ${chapter.keypoints.map((point, idx) =>
                 html`<li key=${idx} className="leading-snug flex gap-2 items-start">
                   <span className="text-lg leading-none mt-0.5">•</span>
@@ -56,12 +56,12 @@ const IndexChapter = ({ chapter, highlight }) => {
               href=${sub.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-heading text-lg md:text-xl font-bold text-black hover:underline decoration-2 break-words"
+              className="font-heading ff-heading-md text-black hover:underline decoration-2 break-words"
             >
               <${HighlightText} text=${sub.cleanTitle} highlight=${highlight} />
             </a>
             ${sub.summary
-              ? html`<p className="text-sm md:text-base text-gray-700 leading-snug mt-1">
+              ? html`<p className="ff-body-sm text-black/70 leading-snug mt-1">
                   <${HighlightText} text=${sub.summary} highlight=${highlight} />
                 </p>`
               : null}
@@ -74,7 +74,7 @@ const IndexChapter = ({ chapter, highlight }) => {
       ? html`<div className="mt-5 border-t border-black/10 pt-3">
           <button
             type="button"
-            className="links-toggle inline-flex items-center gap-2 border-3 border-black bg-white brutal-shadow font-heading uppercase tracking-[0.18em] px-3 py-2"
+            className="links-toggle inline-flex items-center gap-2 border-3 border-black bg-white brutal-shadow ff-button px-3 py-2"
             onClick=${() => setShowCitations((prev) => !prev)}
             aria-expanded=${showCitations}
           >
@@ -89,7 +89,7 @@ const IndexChapter = ({ chapter, highlight }) => {
                     href=${ref.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center bg-[var(--ff-yellow)] text-[11px] font-heading uppercase tracking-[0.18em] px-2 py-1 text-black hover:underline decoration-2 brutal-shadow"
+                    className="inline-flex items-center bg-[var(--ff-yellow)] ff-caption px-2 py-1 text-black hover:underline decoration-2 brutal-shadow"
                   >
                     <${HighlightText} text=${ref.text} highlight=${highlight} />
                   </a>`

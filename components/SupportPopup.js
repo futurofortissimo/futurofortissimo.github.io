@@ -24,9 +24,9 @@ const SupportPopup = () => {
         <div className="relative space-y-5">
           <div className="flex justify-between items-start gap-4">
             <div>
-              <div className="text-[11px] font-heading uppercase tracking-[0.3em] text-black mb-2">Supporto</div>
-              <h3 className="text-3xl font-heading font-black text-black leading-tight">Sostieni Futuro Fortissimo</h3>
-              <p className="text-black mt-2 text-sm md:text-base max-w-xl">Se ti piace l’archivio, puoi dargli energia con un contributo via PayPal. Ogni gesto aiuta a mantenere aggiornate le storie e i media.</p>
+              <div className="ff-eyebrow text-black mb-2">Supporto</div>
+              <h3 className="ff-heading-xl font-heading text-black">Sostieni Futuro Fortissimo</h3>
+              <p className="text-black mt-2 ff-body-sm max-w-xl">Se ti piace l’archivio, puoi dargli energia con un contributo via PayPal. Ogni gesto aiuta a mantenere aggiornate le storie e i media.</p>
             </div>
             <button onClick=${closeSupportPopup} className="h-12 w-12 border-3 border-black bg-white brutal-shadow hover:-translate-y-1 transition-transform">✕</button>
           </div>
@@ -41,11 +41,11 @@ const SupportPopup = () => {
             <div className="relative flex items-center gap-3">
               <span className="text-3xl">💙</span>
               <div>
-                <div className="font-heading font-black text-black text-lg">PayPal</div>
-                <p className="text-sm text-black/80">Il modo più rapido per mandare un grazie e supportare l’archivio.</p>
+                <div className="font-heading ff-heading-md text-black">PayPal</div>
+                <p className="ff-body-sm text-black/80">Il modo più rapido per mandare un grazie e supportare l’archivio.</p>
               </div>
             </div>
-            <div className="relative mt-auto text-sm font-heading uppercase tracking-[0.2em] text-black">paypal.me/MicheleMerelli</div>
+            <div className="relative mt-auto ff-eyebrow-md text-black">paypal.me/MicheleMerelli</div>
           </a>
 
           <div className="flex flex-wrap gap-3">

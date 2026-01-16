@@ -49,7 +49,7 @@ const SubChapterItem = ({ subchapter, parentId }) => {
           href=${subchapter.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-heading text-lg md:text-xl font-bold text-black mr-2 break-words hover:underline decoration-4"
+          className="font-heading ff-heading-md text-black mr-2 break-words hover:underline decoration-4"
           onClick=${(e) => {
             e.stopPropagation();
             incrementInteraction();
@@ -58,7 +58,7 @@ const SubChapterItem = ({ subchapter, parentId }) => {
           <${HighlightText} text=${subchapter.cleanTitle} highlight=${debouncedSearchQuery} />
         </a>
         ${subchapter.summary
-          ? html`<p className="mt-1 text-[12px] md:text-[13px] text-gray-700 font-medium leading-snug pr-8">
+          ? html`<p className="mt-1 ff-body-xs text-black/70 font-medium leading-snug pr-8">
               ${subchapter.summary}
             </p>`
           : null}
@@ -94,7 +94,7 @@ const SubChapterItem = ({ subchapter, parentId }) => {
                 const isCross = isCrossReference(ref.text);
                 const displayText = isCross ? ref.text : capitalizeFirstLetter(ref.text);
                 const linkClasses =
-                  'inline-flex items-center gap-1 bg-[var(--ff-yellow)] text-[11px] font-heading uppercase tracking-[0.18em] px-2 py-1 text-black w-fit hover:underline decoration-2';
+                  'inline-flex items-center gap-1 bg-[var(--ff-yellow)] ff-caption px-2 py-1 text-black w-fit hover:underline decoration-2';
 
                 return html`<a
                   key=${idx}
@@ -113,7 +113,7 @@ const SubChapterItem = ({ subchapter, parentId }) => {
               })}
             </div>`
           : null}
-        <div className="prose prose-sm max-w-none text-black leading-relaxed font-medium break-words text-[12px] md:text-[13px]">
+        <div className="prose prose-sm max-w-none text-black leading-relaxed font-medium break-words ff-body-xs">
           ${subchapter.content
             .split('\n')
             .map((paragraph, idx) => (paragraph.trim() ? html`<p key=${idx} className="mb-2 last:mb-0">
@@ -134,7 +134,7 @@ const SubChapterItem = ({ subchapter, parentId }) => {
                     loading="lazy"
                   />
                   ${img.caption
-                    ? html`<figcaption className="text-[10px] font-heading uppercase tracking-widest text-black font-bold pl-1">
+                    ? html`<figcaption className="ff-caption text-black font-bold pl-1">
                         ${img.caption}
                       </figcaption>`
                     : null}

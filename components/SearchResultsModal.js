@@ -97,13 +97,13 @@ const SearchResultsModal = ({ chapters, isOpen, onHide, onClear, onNavigate }) =
         <div className="flex flex-col gap-3">
           <div className="flex items-start justify-between gap-3">
             <div>
-              <div className="text-[11px] font-heading uppercase tracking-[0.3em] text-black">Ricerca</div>
-              <h3 className="text-2xl font-heading font-black leading-tight">Risultati per “${searchQuery}”</h3>
-              <p className="text-sm text-black/70 max-w-2xl">Apri il risultato per scorrere alla card corrispondente. I testi coincidono con l’evidenziazione già visibile nelle schede.</p>
+              <div className="ff-eyebrow text-black">Ricerca</div>
+              <h3 className="ff-heading-xl font-heading text-black">Risultati per “${searchQuery}”</h3>
+              <p className="ff-body-sm text-black/70 max-w-2xl">Apri il risultato per scorrere alla card corrispondente. I testi coincidono con l’evidenziazione già visibile nelle schede.</p>
             </div>
             <button
               onClick=${handleClose}
-              className="px-3 py-2 border-3 border-black bg-white font-heading text-[11px] uppercase tracking-[0.2em] brutal-shadow hover:-translate-y-0.5 transition-transform"
+              className="px-3 py-2 border-3 border-black bg-white ff-button brutal-shadow hover:-translate-y-0.5 transition-transform"
               aria-label="Chiudi e cancella ricerca"
             >
               ✕
@@ -113,7 +113,7 @@ const SearchResultsModal = ({ chapters, isOpen, onHide, onClear, onNavigate }) =
 
         ${results.length === 0
           ? html`<div className="border-3 border-black p-6 text-center brutal-shadow bg-white">
-              <p className="font-heading text-base">Nessun contenuto corrisponde alla ricerca.</p>
+              <p className="font-heading ff-body">Nessun contenuto corrisponde alla ricerca.</p>
             </div>`
           : html`<ol className="space-y-3">
               ${results.map(
@@ -126,18 +126,18 @@ const SearchResultsModal = ({ chapters, isOpen, onHide, onClear, onNavigate }) =
                       <div className="flex items-start gap-2">
                         <span className="text-lg leading-none">${item.emoji}</span>
                         <div>
-                          <div className="font-heading font-bold text-base sm:text-lg text-black">
+                          <div className="font-heading ff-heading-md text-black">
                             <${HighlightText} text=${item.title} highlight=${debouncedSearchQuery} />
                           </div>
-                          <div className="text-[11px] uppercase tracking-[0.2em] text-black/70">${item.type === 'chapter'
+                          <div className="ff-eyebrow text-black/70">${item.type === 'chapter'
                             ? 'Capitolo'
                             : `Sottocapitolo · ${item.chapterTitle}`}</div>
                         </div>
                       </div>
-                      <span className="text-xs font-heading px-2 py-1 border-2 border-black bg-white">Apri</span>
+                      <span className="ff-caption px-2 py-1 border-2 border-black bg-white">Apri</span>
                     </div>
                     ${item.snippet
-                      ? html`<p className="mt-3 text-sm text-black/80 leading-snug">
+                      ? html`<p className="mt-3 ff-body-sm text-black/80 leading-snug">
                           <${HighlightText} text=${item.snippet} highlight=${debouncedSearchQuery} />
                         </p>`
                       : null}

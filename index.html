@@ -29,6 +29,7 @@
         color: var(--ff-black);
         position: relative;
         min-height: 100vh;
+        line-height: 1.6;
       }
 
       body::before {
@@ -78,12 +79,12 @@
       }
 
       .compact-index .chapter-title {
-        font-size: 15px;
+        font-size: 1.1rem;
       }
 
       .compact-index .sub-title,
       .compact-index .links-toggle {
-        font-size: 12px;
+        font-size: 0.75rem;
       }
 
       .accent-bar { position: relative; }
@@ -106,6 +107,92 @@
         font-family: 'IBM Plex Mono', monospace;
         letter-spacing: 0.18em;
         font-weight: 700;
+      }
+
+      .ff-hero {
+        font-size: clamp(1.9rem, 1.4rem + 2vw, 3rem);
+        line-height: 1.1;
+      }
+
+      .ff-heading-xl {
+        font-size: clamp(1.6rem, 1.2rem + 1vw, 2.2rem);
+        line-height: 1.2;
+        font-weight: 700;
+      }
+
+      .ff-heading-lg {
+        font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.6rem);
+        line-height: 1.25;
+        font-weight: 700;
+      }
+
+      .ff-heading-md {
+        font-size: 1.125rem;
+        line-height: 1.3;
+        font-weight: 700;
+      }
+
+      .ff-body {
+        font-size: 1rem;
+        line-height: 1.65;
+      }
+
+      .ff-body-sm {
+        font-size: 0.9375rem;
+        line-height: 1.6;
+      }
+
+      .ff-body-xs {
+        font-size: 0.875rem;
+        line-height: 1.55;
+      }
+
+      .ff-eyebrow {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 0.75rem;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      .ff-eyebrow-md {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 0.8125rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      .ff-caption {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 0.75rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      .ff-button {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 0.75rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      .ff-input {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 0.8125rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      a:focus-visible,
+      button:focus-visible,
+      input:focus-visible,
+      textarea:focus-visible,
+      select:focus-visible {
+        outline: 3px solid var(--ff-black);
+        outline-offset: 2px;
       }
 
       .no-round, .no-round * {

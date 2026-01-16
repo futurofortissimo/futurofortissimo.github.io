@@ -56,7 +56,7 @@ const MediaSlider = ({ chapters }) => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,#000_1px,transparent_0)] [background-size:22px_22px] opacity-10 pointer-events-none"></div>
       <div className="relative p-5 md:p-8 flex flex-col gap-6">
         <div className="flex items-center justify-between gap-4">
-          <h2 className="font-heading font-black text-xl md:text-2xl tracking-tight text-black">Media dall'archivio</h2>
+          <h2 className="font-heading ff-heading-lg text-black tracking-tight">Media dall'archivio</h2>
           <div className="flex gap-2">
             <button aria-label="Previous media" onClick=${goToPrev} className="h-10 w-10 border-3 border-black bg-white brutal-shadow hover:-translate-y-1 transition-transform">⟵</button>
             <button aria-label="Next media" onClick=${goToNext} className="h-10 w-10 border-3 border-black bg-white brutal-shadow hover:-translate-y-1 transition-transform">⟶</button>
@@ -76,16 +76,16 @@ const MediaSlider = ({ chapters }) => {
           </figure>
 
           <div className="flex flex-col gap-3 bg-white border-4 border-black brutal-shadow p-4 md:p-6">
-            <h3 className="font-heading text-xl md:text-2xl font-black text-black leading-tight">${currentItem.subTitle}</h3>
-            <p className="text-xs md:text-sm text-black/80">${currentItem.chapterTitle}</p>
+            <h3 className="font-heading ff-heading-xl text-black">${currentItem.subTitle}</h3>
+            <p className="ff-body-xs text-black/80">${currentItem.chapterTitle}</p>
             ${captionText
-              ? html`<p className="text-sm md:text-base text-black leading-relaxed">${captionText}</p>`
+              ? html`<p className="ff-body-sm text-black leading-relaxed">${captionText}</p>`
               : null}
             <a
               href=${currentItem.link || currentItem.chapterUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-1 border-3 border-black bg-yellow-100 text-[10px] md:text-xs font-heading uppercase tracking-[0.18em] inline-flex w-fit hover:-translate-y-0.5 transition-transform"
+              className="px-3 py-1 border-3 border-black bg-yellow-100 ff-caption inline-flex w-fit hover:-translate-y-0.5 transition-transform"
             >
               ${currentItem.reference}
             </a>

@@ -65,9 +65,9 @@ const BooksPopup = ({ isOpen, onClose, books }) => {
         <div className="relative space-y-5">
           <div className="flex justify-between items-start gap-4">
             <div className="space-y-1">
-              <div className="text-[11px] font-heading uppercase tracking-[0.3em] text-black mb-1">Consigli di lettura</div>
-              <h3 className="text-2xl font-heading font-black text-black leading-tight">${current.title}</h3>
-              <p className="text-xs md:text-sm text-black/70">${chapterLabel}</p>
+              <div className="ff-eyebrow text-black mb-1">Consigli di lettura</div>
+              <h3 className="ff-heading-xl font-heading text-black">${current.title}</h3>
+              <p className="ff-body-xs text-black/70">${chapterLabel}</p>
             </div>
             <div className="flex gap-2">
               <button aria-label="Libro casuale precedente" onClick=${goRandom} className="h-12 w-12 border-3 border-black bg-white brutal-shadow hover:-translate-y-1 transition-transform">⟵</button>
@@ -84,14 +84,14 @@ const BooksPopup = ({ isOpen, onClose, books }) => {
               : null}
             <div className="border-3 border-black bg-white brutal-shadow p-4 flex flex-col gap-3">
               ${quoteText
-                ? html`<p className="text-sm text-black leading-relaxed">“${quoteText}”</p>`
-                : html`<p className="text-sm text-black leading-relaxed">Scopri perché è in archivio: clicca per il capitolo completo.</p>`}
+                ? html`<p className="ff-body-sm text-black leading-relaxed">“${quoteText}”</p>`
+                : html`<p className="ff-body-sm text-black leading-relaxed">Scopri perché è in archivio: clicca per il capitolo completo.</p>`}
 
               <a
                 href=${current.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-3 border-3 border-black bg-[var(--ff-yellow)] text-black brutal-shadow font-heading text-xs uppercase tracking-[0.2em] w-fit hover:-translate-y-1 transition-transform"
+                className="px-4 py-3 border-3 border-black bg-[var(--ff-yellow)] text-black brutal-shadow ff-button w-fit hover:-translate-y-1 transition-transform"
               >
                 Compra su Amazon
               </a>
@@ -99,7 +99,7 @@ const BooksPopup = ({ isOpen, onClose, books }) => {
                 href=${current.subLink || current.chapterUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-3 border-3 border-black bg-white text-black brutal-shadow font-heading text-xs uppercase tracking-[0.2em] w-fit hover:-translate-y-1 transition-transform"
+                className="px-4 py-3 border-3 border-black bg-white text-black brutal-shadow ff-button w-fit hover:-translate-y-1 transition-transform"
               >
                 ${chapterCode}
               </a>

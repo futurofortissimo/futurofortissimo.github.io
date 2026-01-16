@@ -37,7 +37,7 @@ const RightSidebar = ({ chapters, isMobileMode = false }) => {
   }).filter(Boolean);
 
   return html`<div className="space-y-4">
-    <div className="font-heading text-[11px] uppercase tracking-[0.18em] text-black">
+    <div className="ff-eyebrow text-black">
       ${searchQuery ? `Risultati per “${searchQuery}”` : 'Naviga tra i capitoli'}
     </div>
 
@@ -51,7 +51,7 @@ const RightSidebar = ({ chapters, isMobileMode = false }) => {
             }}
           >
             <span className="text-lg">${chapter.primaryEmoji || chapter.originalEmoji}</span>
-            <span className="font-heading font-bold text-sm text-black group-hover:underline break-words">${chapter.cleanTitle}</span>
+            <span className="font-heading ff-body-xs text-black group-hover:underline break-words">${chapter.cleanTitle}</span>
           </button>
 
           <div className="pl-4 space-y-2 border-l-4 border-black">
@@ -68,7 +68,7 @@ const RightSidebar = ({ chapters, isMobileMode = false }) => {
                 <div className="flex items-start gap-2">
                   <span className="text-base leading-none mt-0.5">${sub.originalEmoji}</span>
                   <div>
-                    <div className="font-heading text-[12px] font-semibold text-black group-hover:underline break-words">${sub.cleanTitle}</div>
+                    <div className="font-heading ff-body-xs text-black group-hover:underline break-words">${sub.cleanTitle}</div>
                   </div>
                 </div>
               </button>`;
