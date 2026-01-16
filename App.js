@@ -233,7 +233,7 @@ const InnerApp = () => {
         }}
       >
         <div className="w-full">
-          <h1 className="pixel-title text-2xl md:text-3xl lg:text-4xl leading-tight text-center">FUTURO FORTISSIMO</h1>
+          <h1 className="pixel-title ff-hero text-center">FUTURO FORTISSIMO</h1>
         </div>
       </header>
 
@@ -247,7 +247,7 @@ const InnerApp = () => {
                   value=${searchQuery}
                   onInput=${handleSearchChange}
                   placeholder="Cerca storie..."
-                  className="w-full px-4 py-3 pr-20 bg-white border-3 border-black font-heading uppercase tracking-[0.15em] placeholder:text-gray-400 focus:outline-none focus:ring-0"
+                  className="w-full px-4 py-3 pr-20 bg-white border-3 border-black ff-input placeholder:text-gray-400 focus:outline-none focus:ring-0"
                   aria-label="Cerca storie"
                 />
                 <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-2">
@@ -275,7 +275,7 @@ const InnerApp = () => {
               <button
                 type="button"
                 onClick=${handleOpenMedia}
-                className="px-4 py-3 border-3 border-black bg-white brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
+                className="px-4 py-3 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-1 transition-transform"
               >
                 🎥 Media
               </button>
@@ -283,7 +283,7 @@ const InnerApp = () => {
                 type="button"
                 onClick=${handleOpenBooks}
                 disabled=${bookSuggestions.length === 0}
-                className="px-4 py-3 border-3 border-black bg-white brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform disabled:opacity-60 disabled:cursor-not-allowed"
+                className="px-4 py-3 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-1 transition-transform disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 📚 Libri
               </button>
@@ -292,7 +292,7 @@ const InnerApp = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Supporto PayPal"
-                className="px-4 py-3 border-3 border-black bg-[var(--ff-blue)] text-black brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
+                className="px-4 py-3 border-3 border-black bg-[var(--ff-blue)] text-black brutal-shadow ff-button hover:-translate-y-1 transition-transform"
               >
                 ☕
               </a>
@@ -301,7 +301,7 @@ const InnerApp = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Progetti micmer"
-                className="px-4 py-3 border-3 border-black bg-[var(--ff-blue)] text-black brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
+                className="px-4 py-3 border-3 border-black bg-[var(--ff-blue)] text-black brutal-shadow ff-button hover:-translate-y-1 transition-transform"
               >
                 M
               </a>
@@ -317,16 +317,16 @@ const InnerApp = () => {
       <section id="indice" className="compact-index space-y-6">
         <div className="flex flex-col gap-6">
           <div className="flex items-center gap-2 flex-wrap">
-            <div className="font-heading text-sm">Indice</div>
+            <div className="ff-eyebrow-md text-black/80">Indice</div>
             <span aria-hidden="true" className="text-black/60">·</span>
             ${selectedEmoji
               ? html`<button
-                  className="font-heading text-xs uppercase tracking-[0.2em] border-3 border-black px-3 py-2 bg-[var(--ff-yellow)] brutal-shadow"
+                  className="ff-button border-3 border-black px-3 py-2 bg-[var(--ff-yellow)] brutal-shadow"
                   onClick=${() => handleTopicSelect(null)}
                 >
                   Clear ${selectedEmoji}
                 </button>`
-              : html`<span className="font-heading text-xs uppercase tracking-[0.2em]">Tutti i temi</span>`}
+              : html`<span className="ff-eyebrow-md text-black/70">Tutti i temi</span>`}
           </div>
 
           <div className="space-y-6">
@@ -340,10 +340,10 @@ const InnerApp = () => {
                 )
               : html`<div className="border-3 border-black p-10 text-center brutal-shadow">
                   <span className="text-5xl block mb-4">🔍</span>
-                  <p className="text-lg mb-4">Nessun risultato per questo filtro.</p>
+                  <p className="ff-body mb-4">Nessun risultato per questo filtro.</p>
                   <button
                     onClick=${() => handleTopicSelect(null)}
-                    className="px-4 py-3 border-3 border-black bg-white brutal-shadow font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-1 transition-transform"
+                    className="px-4 py-3 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-1 transition-transform"
                   >
                     Azzera filtri
                   </button>
@@ -359,7 +359,7 @@ const InnerApp = () => {
             <div className="absolute right-4 top-4 z-10">
               <button
                 onClick=${handleCloseMedia}
-                className="px-4 py-2 border-3 border-black bg-white font-heading text-xs uppercase tracking-[0.2em] hover:-translate-y-0.5 transition-transform"
+                className="px-4 py-2 border-3 border-black bg-white ff-button hover:-translate-y-0.5 transition-transform"
               >
                 Chiudi media
               </button>
@@ -373,7 +373,7 @@ const InnerApp = () => {
       ? html`<div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex justify-end lg:hidden">
           <div className="w-72 max-w-full bg-white border-l-4 border-black p-4 flex flex-col gap-4">
             <div className="flex items-center justify-between">
-              <div className="font-heading text-xs uppercase tracking-[0.2em]">Filtri</div>
+              <div className="ff-eyebrow text-black/80">Filtri</div>
               <button
                 type="button"
                 aria-label="Chiudi filtri"
