@@ -9,6 +9,9 @@ import SearchResultsModal from './components/SearchResultsModal.js';
 import BooksPopup from './components/BooksPopup.js';
 import { NavigationProvider, useNavigation } from './NavigationContext.js';
 import IndexChapter from './components/IndexChapter.js';
+import ThemesPopup from './components/ThemesPopup.js';
+import ConnectionsPopup from './components/ConnectionsPopup.js';
+import BookOutlinePopup from './components/BookOutlinePopup.js';
 
 const headerBackgroundDataUri =
   'data:image/svg+xml;utf8,' +
@@ -80,6 +83,9 @@ const InnerApp = () => {
   const [isSearchOverlayOpen, setIsSearchOverlayOpen] = React.useState(false);
   const [hasManuallyClosedSearch, setHasManuallyClosedSearch] = React.useState(false);
   const [isFilterMenuOpen, setIsFilterMenuOpen] = React.useState(false);
+  const [isThemesOpen, setIsThemesOpen] = React.useState(false);
+  const [isConnectionsOpen, setIsConnectionsOpen] = React.useState(false);
+  const [isBookOpen, setIsBookOpen] = React.useState(false);
   const { incrementInteraction, searchQuery, setSearchQuery, debouncedSearchQuery } = useNavigation();
 
   React.useEffect(() => {
@@ -287,20 +293,27 @@ const InnerApp = () => {
               >
                 📚 Libri
               </button>
-              <a
-                href="./themes.html"
-                data-nav="1"
+              <button
+                type="button"
+                onClick=${() => setIsBookOpen(true)}
+                className="px-4 py-3 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-1 transition-transform"
+              >
+                📖 Libro
+              </button>
+              <button
+                type="button"
+                onClick=${() => setIsThemesOpen(true)}
                 className="px-4 py-3 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-1 transition-transform"
               >
                 🧭 Temi
-              </a>
-              <a
-                href="./connections.html"
-                data-nav="1"
+              </button>
+              <button
+                type="button"
+                onClick=${() => setIsConnectionsOpen(true)}
                 className="px-4 py-3 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-1 transition-transform"
               >
                 🕸️ Connessioni
-              </a>
+              </button>
               <a
                 href="https://www.paypal.com/paypalme/MicheleMerelli"
                 target="_blank"
@@ -382,6 +395,10 @@ const InnerApp = () => {
           </div>
         </div>`
       : null}
+
+    ${isThemesOpen ? html`<${ThemesPopup} onClose=${() => setIsThemesOpen(false)} />` : null}
+    ${isConnectionsOpen ? html`<${ConnectionsPopup} onClose=${() => setIsConnectionsOpen(false)} />` : null}
+    ${isBookOpen ? html`<${BookOutlinePopup} onClose=${() => setIsBookOpen(false)} />` : null}
 
     ${isFilterMenuOpen
       ? html`<div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex justify-end lg:hidden">
