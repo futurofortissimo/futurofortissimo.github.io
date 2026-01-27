@@ -22,6 +22,16 @@ const BookOutlinePopup = ({ onClose }) => {
         <div className="ff-eyebrow-md text-black/80">Libro / mini‑saggi</div>
         <h2 className="ff-heading-xl mt-2">14 capitoli (outline)</h2>
         <p className="ff-body text-black/70 mt-2">Struttura consequenziale: tech → cultura/simulazione → attenzione/salute → materiale/politico.</p>
+        <div className="mt-4 flex flex-wrap gap-3">
+          <a
+            data-nav="1"
+            data-track="book_static_open"
+            href="./book/"
+            className="px-4 py-2 border-3 border-black bg-[var(--ff-yellow)] brutal-shadow ff-button hover:-translate-y-0.5 transition-transform"
+          >
+            Apri pagine (SEO)
+          </a>
+        </div>
 
         ${!data
           ? html`<p className="mt-6">Caricamento…</p>`
