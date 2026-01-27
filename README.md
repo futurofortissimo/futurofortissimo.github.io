@@ -10,11 +10,37 @@ View your app in AI Studio: https://ai.studio/apps/drive/19Oz7ly-e_jI5MphGEB7ROJ
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
+**Prerequisites:** Node.js
 
-
-1. Install dependencies:
-   `npm install`
+1. Install dependencies: `npm install`
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+3. Run the app: `npm run dev`
+
+## Site extras
+
+### Macro‑temi + Connessioni
+Two static pages are generated from `futuro_fortissimo_full_data.txt`:
+- `/themes.html`
+- `/connections.html`
+
+Regenerate JSON:
+```bash
+node scripts/build_themes_connections.mjs
+```
+Outputs:
+- `generated/themes.json`
+- `generated/connections.json`
+
+### Analytics / tracking (visits + interactions)
+There is a small `analytics.js` that tracks:
+- navigation clicks
+- outbound link clicks
+
+By default it’s **no‑op** (safe). To enable real analytics, plug in a provider.
+Recommended: Plausible.
+
+Add this script tag to pages (or inject via your hosting):
+```html
+<script defer data-domain="YOUR_DOMAIN" src="https://plausible.io/js/script.js"></script>
+```
+Then events will fire via `window.plausible()`.
