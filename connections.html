@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Futuro Fortissimo — Connessioni fortissime</title>
+  <meta name="description" content="Connessioni tra i post Futuro Fortissimo: hub più citati, link interni e percorsi di lettura." />
+  <link rel="canonical" href="./connections.html" />
+
+  <meta property="og:title" content="Futuro Fortissimo — Connessioni fortissime" />
+  <meta property="og:description" content="Mappa delle connessioni interne tra post e sub-capitoli." />
+  <meta property="og:type" content="website" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=IBM+Plex+Mono:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{--ink:#0a0a0a;}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial; color:var(--ink);}
+    .mono{font-family:"IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; letter-spacing:.06em; text-transform:uppercase;}
+  </style>
+</head>
+<body class="bg-zinc-50">
+  <header class="border-b border-zinc-200 bg-white">
+    <div class="max-w-5xl mx-auto px-4 py-5 flex items-center justify-between gap-3">
+      <div>
+        <div class="mono text-xs text-zinc-500">Futuro Fortissimo I/O</div>
+        <h1 class="text-2xl font-extrabold tracking-tight">Connessioni fortissime</h1>
+        <p class="text-sm text-zinc-600 mt-1">Hub più citati e percorsi di lettura (dal grafo “connections” nel JSON).</p>
+      </div>
+      <nav class="flex gap-3 text-sm">
+        <a data-nav="1" class="underline" href="./index.html">Home</a>
+        <a data-nav="1" class="underline" href="./themes.html">Macro‑temi</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-8">
+    <div class="rounded-xl border border-zinc-200 bg-white p-5">
+      <div class="mono text-xs text-zinc-500">generated</div>
+      <div id="meta" class="text-sm text-zinc-600">Caricamento…</div>
+    </div>
+
+    <section class="mt-6 rounded-xl border border-zinc-200 bg-white p-5">
+      <h2 class="text-lg font-bold">Top hub (più citati)</h2>
+      <p class="text-sm text-zinc-600 mt-1">Non è “il migliore”, è solo ciò che fa da ponte tra pezzi del corpus.</p>
+      <ol id="hubs" class="mt-4 space-y-2 text-sm"></ol>
+    </section>
+
+    <section class="mt-8 rounded-xl border border-zinc-200 bg-white p-5">
+      <h2 class="text-lg font-bold">Note</h2>
+      <ul class="list-disc pl-5 mt-2 text-sm text-zinc-700 space-y-1">
+        <li>Il grafo viene dal campo <code class="text-xs bg-zinc-100 px-2 py-1 rounded">connections</code> nei subchapters.</li>
+        <li>Se vuoi, posso aggiungere anche i <i>references</i> esterni e generare “percorsi consigliati” di 5–7 letture.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="./analytics.js"></script>
+  <script>
+    async function load() {
+      const res = await fetch('./generated/connections.json?ts=' + Date.now());
+      const data = await res.json();
+      document.getElementById('meta').textContent = `Nodes: ${data.totals.nodes} · Edges: ${data.totals.edges} · Updated: ${new Date(data.generatedAt).toLocaleString()}`;
+
+      const hubs = document.getElementById('hubs');
+      hubs.innerHTML = '';
+
+      for (const h of (data.topHubs || []).slice(0, 20)) {
+        const li = document.createElement('li');
+        const url = h.url || null;
+        const label = (h.label || h.id).replace(/\s+/g,' ').trim();
+        li.innerHTML = `
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <div class="mono text-xs text-zinc-500">${h.id}</div>
+              <div class="font-semibold">${label}</div>
+              <div class="text-zinc-600">In‑degree score: <b>${h.score}</b></div>
+            </div>
+            ${url ? `<a class="underline" data-track="connection_open" href="${url}" target="_blank" rel="noopener">apri</a>` : ''}
+          </div>
+        `;
+        hubs.appendChild(li);
+      }
+    }
+
+    load().catch(err => {
+      document.getElementById('meta').textContent = 'Errore caricamento.';
+      console.error(err);
+    });
+  </script>
+</body>
+</html>

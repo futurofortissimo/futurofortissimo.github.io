@@ -288,6 +288,20 @@ const InnerApp = () => {
                 📚 Libri
               </button>
               <a
+                href="./themes.html"
+                data-nav="1"
+                className="px-4 py-3 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-1 transition-transform"
+              >
+                🧭 Temi
+              </a>
+              <a
+                href="./connections.html"
+                data-nav="1"
+                className="px-4 py-3 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-1 transition-transform"
+              >
+                🕸️ Connessioni
+              </a>
+              <a
                 href="https://www.paypal.com/paypalme/MicheleMerelli"
                 target="_blank"
                 rel="noopener noreferrer"
