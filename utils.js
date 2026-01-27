@@ -1,13 +1,36 @@
 import { React, html } from './runtime.js';
 import { TopicEmoji } from './types.js';
 
-const emojiRegex = /[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F1E0}-\u{1F1FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{1F900}-\u{1F9FF}\u{1F018}-\u{1F270}\u{238C}\u{2B05}-\u{2B07}\u{2190}-\u{2195}\u{200D}\u{200C}]/u;
+// Include variation selectors (FE0E/FE0F) and zero-width chars that often appear next to emoji.
+const emojiRegex = /[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F1E0}-\u{1F1FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{1F900}-\u{1F9FF}\u{1F018}-\u{1F270}\u{238C}\u{2B05}-\u{2B07}\u{2190}-\u{2195}\u{200D}\u{200C}\u{FE0E}\u{FE0F}]/u;
 
 export const extractEmojiAndTitle = (text) => {
   const match = text.match(emojiRegex);
   const emoji = match ? match[0] : '';
   const cleanTitle = text.replace(emojiRegex, '').trim();
   return { emoji, cleanTitle };
+};
+
+const stripFfPrefix = (title = '') => {
+  // Common title pattern: "ff.139" / "ff.139.2" (sometimes attached to emoji without spaces).
+  // Remove it to keep titles readable in the index.
+  return title
+    .replace(/^\s*[^A-Za-z0-9]*ff\.\d+(?:\.\d+)?\s*/i, '')
+    .replace(/^\s*[\-–—:]+\s*/, '')
+    .trim();
+};
+
+const normalizeTitle = (rawTitle = '') => {
+  // Remove leftover variation selectors / zero-width chars that can leak after stripping emoji.
+  let title = (rawTitle || '').replace(/[\u200B-\u200F\uFE0E\uFE0F]/g, '');
+  title = title.replace(/\s+/g, ' ').trim();
+
+  // Fix common keyboard substitute for "È" when it appears at the beginning.
+  title = title.replace(/^E'\b/, 'È');
+
+  title = stripFfPrefix(title);
+
+  return title;
 };
 
 export const slugify = (text) => {
@@ -87,27 +110,84 @@ const normalizeLinks = (links = [], title) => {
   });
 };
 
+const normalizeInlineText = (text = '') => {
+  return (text || '')
+    .replace(/\s+/g, ' ')
+    .replace(/([.!?])([A-Za-zÀ-ÖØ-öø-ÿ])/g, '$1 $2')
+    .replace(/([:;])([^\s])/g, '$1 $2')
+    .replace(/(\d)([A-Za-zÀ-ÖØ-öø-ÿ])/g, '$1 $2')
+    .replace(/([A-ZÀ-ÖØ-Ý]{2,})([a-zà-öø-ÿ])/g, '$1 $2')
+    .replace(/\(\s+/g, '(')
+    .replace(/\s+\)/g, ')')
+    .replace(/\s+,/g, ',')
+    .replace(/\s+\./g, '.')
+    .replace(/\s+…/g, '…')
+    .replace(/\s+–\s+/g, ' – ')
+    .trim();
+};
+
+const looksLikeNoise = (sentence = '') => {
+  const s = sentence.trim();
+  if (!s) return true;
+
+  // Ignore sentences that are basically just numbers / footnotes.
+  if (!/[A-Za-zÀ-ÖØ-öø-ÿ]/.test(s)) return true;
+  if (/^\(?\d+[\.)]?\)?$/.test(s)) return true;
+  if (/^\d+\s+[A-Za-zÀ-ÖØ-öø-ÿ]{1,8}\?$/.test(s)) return true;
+
+  const lower = s.toLowerCase();
+  if (lower.includes('refer a friend')) return true;
+  if (lower.includes('supportare questo progetto')) return true;
+
+  // Very short sentences are rarely meaningful in the index.
+  if (s.length < 18) return true;
+
+  return false;
+};
+
+const truncateNicely = (text, maxLength) => {
+  const candidate = text.trim();
+  if (candidate.length <= maxLength) return candidate;
+
+  let cut = candidate.slice(0, maxLength - 1).trim();
+
+  // Avoid leaving a dangling long last word.
+  const lastSpace = cut.lastIndexOf(' ');
+  if (lastSpace > Math.floor(maxLength * 0.6)) {
+    const lastWord = cut.slice(lastSpace + 1);
+    if (lastWord.length > 12) {
+      cut = cut.slice(0, lastSpace).trim();
+    }
+  }
+
+  return `${cut}…`;
+};
+
 const generateSummary = (content = '') => {
-  const paragraphs = content
+  const paragraphs = (content || '')
     .split('\n')
     .map((paragraph) => paragraph.trim())
-    .filter(Boolean);
+    .filter(Boolean)
+    .filter((paragraph) => !paragraph.toLowerCase().includes('refer a friend'));
 
   if (!paragraphs.length) return '';
 
-  const sentences = paragraphs.flatMap((paragraph) => paragraph.match(/[^.!?]+[.!?]?/g) || []);
-  const quantitativeSentence = sentences.find((sentence) => /\d/.test(sentence));
-  const fallbackSentence = sentences.find(Boolean) || paragraphs[0];
-  const candidate = (quantitativeSentence || fallbackSentence || '').replace(/\s+/g, ' ').trim();
+  const sentences = paragraphs
+    .flatMap((paragraph) => paragraph.match(/[^.!?]+[.!?]?/g) || [])
+    .map(normalizeInlineText)
+    .filter(Boolean)
+    .filter((sentence) => !looksLikeNoise(sentence));
 
-  if (!candidate) return '';
-
-  const maxLength = quantitativeSentence ? 120 : 160;
-  if (candidate.length > maxLength) {
-    return `${candidate.slice(0, maxLength - 1).trim()}…`;
+  if (!sentences.length) {
+    const fallback = normalizeInlineText(paragraphs[0] || '');
+    return looksLikeNoise(fallback) ? '' : truncateNicely(fallback, 160);
   }
 
-  return candidate;
+  const quantitativeSentence = sentences.find((sentence) => /\d/.test(sentence));
+  const candidate = quantitativeSentence || sentences[0];
+  const maxLength = quantitativeSentence ? 140 : 180;
+
+  return truncateNicely(candidate, maxLength);
 };
 
 const getTopicEmoji = (text) => {
@@ -132,7 +212,7 @@ const getTopicEmoji = (text) => {
 
 const processSubchapter = (sub) => {
   const { emoji, cleanTitle } = extractEmojiAndTitle(sub.title);
-  const normalizedTitle = cleanTitle;
+  const normalizedTitle = normalizeTitle(cleanTitle);
   const processedReferences = normalizeLinks(sub.references || [], normalizedTitle);
   const processedConnections = normalizeLinks(sub.connections || [], normalizedTitle);
   const summary = generateSummary(sub.content || '');
@@ -205,7 +285,8 @@ export const processChapter = (chapter) => {
     return null;
   }
 
-  const { emoji, cleanTitle } = extractEmojiAndTitle(chapter.title || '');
+  const { emoji, cleanTitle: extractedTitle } = extractEmojiAndTitle(chapter.title || '');
+  const cleanTitle = normalizeTitle(extractedTitle);
   const keypoints = Array.isArray(chapter.keypoints) ? chapter.keypoints : [];
   const processedSubchapters = (chapter.subchapters || []).map(processSubchapter);
   const fallbackEmoji = emoji || '🎼';
