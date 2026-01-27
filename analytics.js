@@ -1,4 +1,5 @@
 // Lightweight analytics + interaction tracking.
+// Note: this file is loaded as type=module (see index.html).
 // This file is safe even if no analytics provider is configured.
 //
 // To enable Plausible:
