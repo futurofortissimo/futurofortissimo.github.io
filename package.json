@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:graphs": "node ./scripts/build_themes_connections.mjs && node ./scripts/build_suggested_connections.mjs"
   },
   "dependencies": {
     "react": "^18.2.0",
