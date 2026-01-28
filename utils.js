@@ -291,10 +291,14 @@ export const processChapter = (chapter) => {
   const processedSubchapters = (chapter.subchapters || []).map(processSubchapter);
   const fallbackEmoji = emoji || '🎼';
 
+  const issueNumberMatch = /ff\.(\d+)/i.exec(chapter.title || '');
+  const issueId = issueNumberMatch ? `ff-${issueNumberMatch[1]}` : null;
+
   return {
     ...chapter,
     keypoints,
     cleanTitle,
+    issueId,
     originalEmoji: fallbackEmoji,
     primaryEmoji: determineChapterEmoji(chapter, processedSubchapters, fallbackEmoji),
     processedSubchapters

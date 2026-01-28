@@ -3,14 +3,22 @@ import { React, html } from '../runtime.js';
 const ConnectionsPopup = ({ onClose }) => {
   const [data, setData] = React.useState(null);
 
+  const [suggested, setSuggested] = React.useState(null);
+
   React.useEffect(() => {
     fetch(`./generated/connections.json?ts=${Date.now()}`)
       .then((r) => r.json())
       .then(setData)
       .catch(() => setData({ error: true }));
+
+    fetch(`./generated/suggested_connections.json?ts=${Date.now()}`)
+      .then((r) => r.json())
+      .then(setSuggested)
+      .catch(() => setSuggested({ error: true }));
   }, []);
 
   const hubs = data?.topHubs ? data.topHubs.slice(0, 25) : [];
+  const suggestedPacks = suggested?.suggestions ? suggested.suggestions.slice(0, 3) : [];
 
   return html`<div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
     <div role="dialog" aria-modal="true" aria-label="Connessioni" className="relative max-w-5xl w-full">
@@ -40,6 +48,39 @@ const ConnectionsPopup = ({ onClose }) => {
                   </li>
                 `)}
               </ol>`}
+
+        <div className="mt-10">
+          <div className="ff-eyebrow-md text-black/80">Connessioni suggerite (auto)</div>
+          <h3 className="ff-heading-lg mt-2">Ponti pronti da riusare</h3>
+          <p className="ff-body text-black/70 mt-2">Connessioni calcolate per overlap keyword: utili per costruire percorsi e cross‑link.</p>
+
+          ${!suggested
+            ? html`<p className="mt-6">Caricamento…</p>`
+            : suggested.error
+              ? html`<p className="mt-6">Errore caricamento suggerimenti.</p>`
+              : suggestedPacks.length
+                ? html`<div className="mt-6 space-y-6">
+                    ${suggestedPacks.map((p) => html`
+                      <section className="border-3 border-black p-4 brutal-shadow bg-[rgba(0,0,0,0.02)]">
+                        <div className="ff-caption text-black/70">${p.key}</div>
+                        <div className="text-lg font-bold mt-1">${p.title}</div>
+                        <ol className="mt-4 space-y-3">
+                          ${(p.items || []).slice(0, 6).map((it) => html`
+                            <li className="border-3 border-black p-3 brutal-shadow bg-white">
+                              <div className="ff-caption text-black/70">${it.from?.id} → ${it.to?.id} · strength ${it.strength}</div>
+                              <div className="ff-body mt-2">${(it.bridge || '').trim()}</div>
+                              <div className="mt-2 flex flex-wrap gap-3">
+                                ${it.from?.url ? html`<a className="underline" href=${it.from.url} target="_blank" rel="noopener noreferrer">Apri origine</a>` : null}
+                                ${it.to?.url ? html`<a className="underline" href=${it.to.url} target="_blank" rel="noopener noreferrer">Apri destinazione</a>` : null}
+                              </div>
+                            </li>
+                          `)}
+                        </ol>
+                      </section>
+                    `)}
+                  </div>`
+                : html`<p className="mt-6">Nessuna connessione suggerita disponibile.</p>`}
+        </div>
       </div>
     </div>
   </div>`;

@@ -20,7 +20,7 @@ const IndexChapter = ({ chapter, highlight }) => {
   const citations = collectCitations(chapter.processedSubchapters);
   const [showCitations, setShowCitations] = React.useState(false);
 
-  return html`<article className="chapter-card border-b border-black/10 pb-5 last:border-b-0" id=${chapter.url}>
+  return html`<article className="chapter-card border-b border-black/10 pb-5 last:border-b-0" id=${chapter.issueId || chapter.url}>
     <div className="flex items-start gap-3">
       <span className="text-xl select-none leading-none">${chapter.primaryEmoji || chapter.originalEmoji}</span>
       <div className="flex-1">
