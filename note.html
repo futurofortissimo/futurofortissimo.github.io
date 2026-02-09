@@ -1,899 +1,271 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
     <meta charset="UTF-8">
-    <title>Futuro Fortissimo - Riepilogo</title>
+    <title>Futuro Fortissimo — Note</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Import Montserrat font from Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <!-- Favicon -->
     <link rel="icon" href="/index_files/ff.webp" type="image/webp">
     <link rel="apple-touch-icon" href="/index_files/ff.webp">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
-        /* Root variables */
-        :root {
-            --theme-color: #ADD8E6;
-            /* Light blue */
-            --progress-bar-color: #4CAF50;
-            /* Green */
-            --button-hover-scale: 1.2;
-            /* Scale factor for hover effect */
-            --footer-height: 60px;
-            --card-padding: 15px;
-            /* Reduced padding */
-            --card-margin: 10px 0;
-            /* Reduced margin */
-            --card-border-radius: 10px;
-            --card-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            --button-transition: transform 0.2s ease-in-out;
-            --background-color: #f9f9f9;
-            --text-color: #333;
-            --link-color: #1E90FF;
-            --hashtag-color: #555;
-            --note-color: #777;
+        :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
+        body { font-family:'Inter',sans-serif; background-color:#fdfdfd; color:var(--ff-black); min-height:100vh; line-height:1.6; position:relative; }
+        body::before { content:''; position:fixed; inset:0; background-image:linear-gradient(var(--ff-grid) 1px,transparent 1px),linear-gradient(90deg,var(--ff-grid) 1px,transparent 1px); background-size:32px 32px; pointer-events:none; z-index:-1; }
+        h1,h2,h3,h4,h5,h6 { font-family:'IBM Plex Mono',monospace; letter-spacing:0.03em; text-transform:uppercase; }
+        .brutal-card { border:4px solid var(--ff-black); background:#fff; box-shadow:6px 6px 0 var(--ff-black); padding:24px; }
+        .accent-bar { position:relative; }
+        .accent-bar::before { content:''; position:absolute; top:-4px; left:-4px; right:-4px; height:10px; background:var(--ff-blue); }
+        .accent-red::before { background:var(--ff-red); }
+        .accent-yellow::before { background:var(--ff-yellow); }
+        .accent-green::before { background:var(--ff-green); }
+        .ff-eyebrow { font-family:'IBM Plex Mono',monospace; font-size:0.75rem; letter-spacing:0.24em; text-transform:uppercase; font-weight:700; }
+        .ff-body { font-size:1rem; line-height:1.65; }
+        .ff-body-sm { font-size:0.9375rem; line-height:1.6; }
+        .no-round,.no-round * { border-radius:0!important; }
+        a:focus-visible { outline:3px solid var(--ff-black); outline-offset:2px; }
+        .no-scrollbar::-webkit-scrollbar { display:none; }
+        .no-scrollbar { -ms-overflow-style:none; scrollbar-width:none; }
+
+        .ff-input {
+            border:3px solid var(--ff-black);
+            border-radius:0;
+            padding:10px 14px;
+            font-family:'Inter',sans-serif;
+            font-size:1rem;
+            outline:none;
+            transition:box-shadow 0.15s;
         }
-
-        /* Basic styles */
-        body {
-            margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            background-color: #fff;
-            color: var(--text-color);
-            overflow-y: auto;
-            /* Allow vertical scrolling */
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+        .ff-input:focus {
+            box-shadow:4px 4px 0 var(--ff-black);
         }
-
-        /* Header */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: var(--theme-color);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            /* Ensure it stays on top */
+        .tag-pill {
+            border:2px solid var(--ff-black);
+            border-radius:0;
+            padding:4px 10px;
+            cursor:pointer;
+            font-size:1.1rem;
+            background:#fff;
+            transition:background 0.15s, transform 0.1s;
+            user-select:none;
         }
-
-        .header-left {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .tag-pill:hover {
+            background:#f0f0f0;
+            transform:translateY(-1px);
         }
-
-        .logo {
-            height: 40px;
-            cursor: pointer;
+        .tag-pill.selected {
+            background:var(--ff-yellow);
+            box-shadow:3px 3px 0 var(--ff-black);
         }
-
-        .main-emojis {
-            display: flex;
-            gap: 10px;
+        .note-card {
+            transition:transform 0.15s, box-shadow 0.15s;
         }
-
-        .main-emoji-button {
-            font-size: 25px;
-            /* 2x bigger */
-            background: transparent;
-            border: 2px solid transparent;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.2s ease-in-out, border 0.2s ease-in-out;
-        }
-
-        .main-emoji-button:hover {
-            transform: scale(var(--button-hover-scale));
-            border-color: #4CAF50;
-        }
-
-        .main-emoji-button.selected {
-            border-color: #4CAF50;
-        }
-
-        .language-switch {
-            font-size: 16px;
-            background: #fff;
-            color: var(--text-color);
-            border: none;
-            border-radius: 20px;
-            padding: 5px 10px;
-            margin-right: 45px;
-            cursor: pointer;
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-        }
-
-        .language-switch:hover {
-            transform: scale(var(--button-hover-scale));
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Search and Refresh Section */
-        .search-refresh-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            padding: 0px 20px 10px 20px;
-            /* top padding to account for fixed header */
-            border-bottom: 1px solid #ccc;
-            flex-shrink: 0;
-        }
-
-        .search-refresh-container input[type="text"] {
-            width: 60%;
-            padding: 8px 12px;
-            border: 2px solid #ccc;
-            border-radius: 20px;
-            font-size: 16px;
-            outline: none;
-            transition: border-color 0.3s ease;
-        }
-
-        .search-refresh-container input[type="text"]:focus {
-            border-color: #4CAF50;
-        }
-
-        .search-refresh-container button {
-            padding: 8px 16px;
-            background-color: #4CAF50;
-            color: #fff;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: transform 0.2s ease-in-out;
-        }
-
-        .search-refresh-container button:hover {
-            transform: scale(var(--button-hover-scale));
-        }
-
-        /* Progress bar */
-        .progress-bar {
-            position: fixed;
-            top: 60px;
-            /* Below the header */
-            left: 0;
-            height: 5px;
-            background-color: var(--progress-bar-color);
-            width: 0%;
-            transition: width 0.5s ease-in-out;
-            z-index: 999;
-            /* Below the header */
-        }
-
-        /* Cards container */
-        .cards-container {
-            flex: 1;
-            overflow: auto;
-            /* Allow vertical scrolling */
-            position: relative;
-            padding: 20px;
-            padding-top: 20px;
-            /* Padding to separate from search */
-            background-color: var(--background-color);
-            display: flex;
-            justify-content: center;
-            /* Center the cards */
-        }
-
-        /* Cards wrapper */
-        .cards-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            max-width: 1200px;
-            /* To limit overall width */
-            width: 100%;
-            justify-content: center;
-            /* Center the cards */
-        }
-
-        /* Individual card */
-        .card {
-            background-color: #fff;
-            border-radius: var(--card-border-radius);
-            padding: var(--card-padding);
-            box-shadow: var(--card-box-shadow);
-            transition: background-color 0.3s ease;
-            cursor: pointer;
-            max-width: 400px;
-            /* Max width as per request */
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card:hover {
-            background-color: #f0f8ff;
-        }
-
-        /* Card content */
-        .card-content {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            /* Less vertical spacing */
-        }
-
-        .section-title {
-            margin: 0;
-            font-size: 20px;
-            font-weight: bold;
-            color: var(--text-color);
-            /* Same style as question */
-        }
-
-        .question {
-            font-size: 20px;
-            /* Same as title */
-            font-weight: bold;
-            color: var(--text-color);
-            margin-bottom: 5px;
-            /* Less spacing */
-        }
-
-        .hashtags {
-            font-size: 14px;
-            color: var(--hashtag-color);
-            margin: 0;
-        }
-
-        .emojis-and-note {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 10px;
-        }
-
-        .emojis {
-            font-size: 20px;
-        }
-
-        .note-number {
-            font-size: 14px;
-            color: var(--note-color);
-        }
-
-        /* Footer */
-        footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: var(--theme-color);
-            padding: 10px 20px;
-            flex-shrink: 0;
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            /* Ensure it stays on top */
-        }
-
-        /* Buttons container in footer */
-        .footer-buttons-container {
-            display: flex;
-            overflow-x: auto;
-            flex-grow: 1;
-            scrollbar-width: none;
-            /* Firefox */
-            -ms-overflow-style: none;
-            /* Internet Explorer 10+ */
-            position: relative;
-            padding: 0 20px;
-            /* Add padding for fade effect */
-            gap: 15px;
-        }
-
-        .footer-buttons-container::-webkit-scrollbar {
-            display: none;
-            /* WebKit */
-        }
-
-        /* Emoji Buttons in Footer */
-        .footer-buttons-container .emoji-button {
-            font-size: 25px;
-            /* 2x bigger */
-            background: transparent;
-            border: 2px solid transparent;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.2s ease-in-out, border 0.2s ease-in-out;
-        }
-
-        .footer-buttons-container .emoji-button:hover {
-            transform: scale(var(--button-hover-scale));
-            border-color: #4CAF50;
-        }
-
-        .footer-buttons-container .emoji-button.selected {
-            border-color: #4CAF50;
-        }
-
-        /* Side Menu */
-        .side-menu {
-            height: 100%;
-            /* Full-height */
-            width: 0;
-            /* Initial width is 0 */
-            position: fixed;
-            /* Stay in place */
-            top: 0;
-            left: 0;
-            background-color: #f1f1f1;
-            /* Light grey */
-            overflow-x: hidden;
-            /* Disable horizontal scroll */
-            transition: 0.3s;
-            /* Transition effect */
-            padding-top: 60px;
-            /* Place content 60px from the top */
-            z-index: 1001;
-            /* Above header and footer */
-        }
-
-        .side-menu.open {
-            width: 200px;
-            /* Set width when open */
-        }
-
-        /* Close button inside side menu */
-        .close-menu {
-            position: absolute;
-            top: 20px;
-            right: 25px;
-            font-size: 36px;
-            margin-left: 50px;
-            cursor: pointer;
-        }
-
-        /* Side menu content */
-        .side-menu-content {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 0 20px;
-            gap: 20px;
-        }
-
-        /* Buttons inside side menu */
-        .side-menu-content a,
-        .side-menu-content button {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: #333;
-            cursor: pointer;
-            background-color: #fff;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 20px;
-            width: 80px;
-            font-family: 'Montserrat', sans-serif;
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-            /* For hover animation */
-            font-size: 16px;
-        }
-
-        .side-menu-content a:hover,
-        .side-menu-content button:hover {
-            transform: scale(var(--button-hover-scale));
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Overlay to dim the background when menu is open */
-        .overlay {
-            position: fixed;
-            display: none;
-            /* Hidden by default */
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            /* Black with opacity */
-            z-index: 1000;
-            /* Below side menu */
-            cursor: pointer;
-            /* Cursor changes to pointer */
-        }
-
-        .overlay.active {
-            display: block;
-        }
-
-        /* Responsive adjustments */
-        @media (min-width: 601px) {
-            footer {
-                display: flex;
-            }
-
-            .header {
-                position: fixed;
-                /* Already fixed */
-            }
-
-            .cards-container {
-                padding-bottom: 0;
-                /* Remove padding adjustment */
-            }
+        .note-card:hover {
+            transform:translate(-2px,-2px);
+            box-shadow:8px 8px 0 var(--ff-black);
         }
     </style>
 </head>
+<body class="no-round">
 
-<body>
-    <!-- Header with logo, main emojis, and language switch -->
-    <div class="header">
-        <div class="header-left">
-            <img src="/index_files/ff.png" alt="Logo" class="logo" id="header-logo">
-            <div class="main-emojis">
-                <button class="main-emoji-button" data-category="🍃" aria-label="Clima">🍃</button>
-                <button class="main-emoji-button" data-category="💻" aria-label="Tecnologia">💻</button>
-                <button class="main-emoji-button" data-category="❤️" aria-label="Uomo">❤️</button>
+<header class="bg-white" style="border-bottom:4px solid var(--ff-black)">
+    <div class="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between gap-4">
+        <div>
+            <div class="ff-eyebrow text-gray-500">Futuro Fortissimo — Taccuino</div>
+            <h1 class="text-2xl font-bold tracking-tight mt-1" style="font-size:clamp(1.4rem,1.1rem+1vw,2rem)">NOTE</h1>
+        </div>
+        <nav class="flex gap-4 flex-shrink-0">
+            <a class="ff-eyebrow text-gray-600 hover:text-black hover:underline" href="/index.html">Home</a>
+            <a class="ff-eyebrow text-gray-600 hover:text-black hover:underline" href="/book/">Libro</a>
+            <a class="ff-eyebrow text-gray-600 hover:text-black hover:underline" href="/themes.html">Temi</a>
+            <a class="ff-eyebrow text-gray-600 hover:text-black hover:underline" href="/note.html">Note</a>
+        </nav>
+    </div>
+</header>
+
+<main class="max-w-5xl mx-auto px-6 py-8">
+    <!-- Search / Filter bar -->
+    <div class="brutal-card accent-bar mb-8">
+        <div class="flex flex-col md:flex-row gap-4 items-start md:items-center">
+            <div class="flex gap-3 flex-1 w-full">
+                <input type="text" id="search-input" class="ff-input flex-1" placeholder="Cerca una nota...">
+                <button id="refresh-btn" class="tag-pill font-bold" title="Reset">&#x21bb;</button>
+                <button id="lang-btn" class="tag-pill ff-eyebrow" style="font-size:0.7rem;padding:6px 12px;">EN</button>
+            </div>
+            <div class="flex flex-wrap gap-2" id="tag-filters">
+                <!-- Tag pills inserted dynamically -->
             </div>
         </div>
-        <button class="language-switch" id="language-button">English 🇬🇧</button>
     </div>
 
-    <!-- Progress bar -->
-    <div class="progress-bar" id="progress-bar"></div>
+    <!-- Count -->
+    <div class="ff-eyebrow text-gray-500 mb-4" id="count-display">Caricamento...</div>
 
-
-    <!-- Cards -->
-    <div class="cards-container" style="margin-top:60px; margin-bottom:70px">
-        <div class="cards-wrapper" id="cards-wrapper">
-            <!-- Cards will be dynamically inserted here -->
-            <!-- Initially, 10 random cards will be loaded via JavaScript -->
-        </div>
+    <!-- Notes Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="notes-grid">
+        <!-- Cards inserted dynamically -->
     </div>
+</main>
 
-    <!-- Footer with topic emoji buttons -->
-    <footer>
-            <!-- Search and Refresh Section -->
-
-            <div class="footer-buttons-container" id="footer-buttons-container">
-                <!-- Emoji Buttons in Footer -->
-                <button class="emoji-button" data-category="🎼" aria-label="Futuro">🎼</button>
-                <button class="emoji-button" data-category="👥" aria-label="Società">👥</button>
-                <button class="emoji-button" data-category="💬" aria-label="Comunicazione">💬</button>
-                <button class="emoji-button" data-category="💊" aria-label="Salute">💊</button>
-                <button class="emoji-button" data-category="🧠" aria-label="Intelligenza Artificiale">🧠</button>
-                <button class="emoji-button" data-category="💸" aria-label="Criptovalute">💸</button>
-                <button class="emoji-button" data-category="⚽" aria-label="Sport">⚽</button>
-                <button class="emoji-button" data-category="🍽️" aria-label="Alimentazione">🍽️</button>
-                <button class="emoji-button" data-category="🎙️" aria-label="Podcast">🎙️</button>
-                <button class="emoji-button" data-category="🎨" aria-label="Arte">🎨</button>
-                <button class="emoji-button" data-category="📚" aria-label="Libri">📚</button>
-                <button class="emoji-button" data-category="🥽" aria-label="Metaverso">🥽</button>
-                <button class="emoji-button" data-category="🚕" aria-label="Mobilità">🚕</button>
-                <!-- Add more emoji buttons as needed -->
-            </div>
-                        <div class="search-refresh-container" style="padding: 0px; margin-right: 45px;">
-                            <input type="text" id="csv-search-input" placeholder="Cerca una Nota 🎵">
-                            <button id="csv-search-button">🔍</button>
-                            <button id="refreshButton">🔄</button>
-                        </div>
-    </footer>
-
-    <!-- Side Menu -->
-    <div id="side-menu" class="side-menu">
-        <a href="javascript:void(0)" class="close-menu" id="close-menu">&times;</a>
-        <div class="side-menu-content">
-            <a href="https://futurofortissimo.github.io/">Home</a>
-
-            <!-- Share Button as a link -->
-            <a href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io/"
-                class="share-button">Share</a>
-            <!-- Support Button as a link -->
-            <a href="https://www.paypal.com/paypalme/michelemerelli" class="support-button">Support</a>
-        </div>
-    </div>
-
-    <!-- Overlay -->
-    <div id="overlay" class="overlay"></div>
-
-    <!-- JavaScript -->
-    <!-- JavaScript -->
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        let currentLanguage = 'it'; // Default language
-        const languageButton = document.getElementById('language-button');
-        const headerLogo = document.getElementById('header-logo');
-        const sideMenu = document.getElementById('side-menu');
-        const closeMenu = document.getElementById('close-menu');
-        const overlay = document.getElementById('overlay');
-        const footerButtonsContainer = document.getElementById('footer-buttons-container');
-        const mainEmojiButtons = document.querySelectorAll('.main-emoji-button');
-        const emojiButtons = document.querySelectorAll('.footer-buttons-container .emoji-button');
-        const cardsWrapper = document.getElementById('cards-wrapper');
-        const progressBar = document.getElementById('progress-bar');
-        const searchInput = document.getElementById('csv-search-input');
-        const searchButton = document.getElementById('csv-search-button');
-        const refreshButton = document.getElementById('refreshButton');
+document.addEventListener('DOMContentLoaded', () => {
+    let currentLanguage = 'it';
+    const searchInput = document.getElementById('search-input');
+    const refreshBtn = document.getElementById('refresh-btn');
+    const langBtn = document.getElementById('lang-btn');
+    const tagFiltersContainer = document.getElementById('tag-filters');
+    const notesGrid = document.getElementById('notes-grid');
+    const countDisplay = document.getElementById('count-display');
 
-        let bookEntries = [];
+    const TAG_EMOJIS = ['💻','🧠','❤️','👥','🎨','🍃','💊','💸','⚽','🍽','🎙️','📚','🥽','🚕'];
+    let allNotes = [];
+    let selectedTags = new Set();
 
-        let allEntries = []; // To store all CSV entries
-        let selectedCategories = new Set(); // To store selected emoji categories
-
-        // Define a color palette for alternating card colors (only blues)
-        const colorPalette = ['#ADD8E6', '#B3E5FC', '#81D4FA', '#4FC3F7', '#2196F3', '#1E90FF'];
-
-        // Function to transform Substack URL for English using Google Translate (if needed)
-        function getTranslatedSubstackLink(originalLink) {
-            if (currentLanguage === 'it') {
-                return originalLink;
-            }
-
-            try {
-                const url = new URL(originalLink);
-                if (!url.hostname.includes('substack.com')) {
-                    return originalLink;
-                }
-
-                const originalDomain = url.hostname; // e.g., fortissimo.substack.com
-                const translatedDomain = originalDomain.replace(/\./g, '-') + '.translate.goog';
-                const translatedURL = `https://${translatedDomain}${url.pathname}?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=it&_x_tr_hist=true`;
-                return translatedURL;
-            } catch (error) {
-                console.error('Invalid URL:', originalLink);
-                return originalLink; // Fallback to original link if invalid
-            }
-        }
-
-        async function fetchBooksData() {
-            const booksFile = currentLanguage === 'it' ? '/books.json' : '/books_en.json';
-
-            try {
-                const response = await fetch(booksFile);
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-
-                const data = await response.json();
-                const grouped = {};
-
-                data.forEach(item => {
-                    const key = `${item.book}-${item.author}-${item.url}`;
-                    if (!grouped[key]) {
-                        grouped[key] = {
-                            book: item.book,
-                            author: item.author,
-                            url: item.url,
-                            titles: []
-                        };
-                    }
-                    grouped[key].titles.push(item.title);
-                });
-
-                return Object.values(grouped).map((group, index) => ({
-                    emojis: '📚',
-                    description: `${group.book} — ${group.author}`,
-                    url: group.url,
-                    question: currentLanguage === 'it' ? 'Indice capitoli' : 'Chapter index',
-                    hashtags: '',
-                    number: currentLanguage === 'it' ? `Libro ${index + 1}` : `Book ${index + 1}`,
-                    chapters: group.titles
-                }));
-            } catch (error) {
-                console.error('Error fetching books data:', error);
-                return [];
-            }
-        }
-
-        // Function to parse CSV data
-        function parseCSV(data) {
-            const lines = data.trim().split('\n');
-            const result = [];
-            const headers = ['emojis', 'description', 'url', 'question', 'hashtags', 'number'];
-            lines.forEach((line, lineNumber) => {
-                // Handle commas inside quoted fields
-                const matches = line.match(/(?:[^,"]+|"[^"]*")+/g);
-                if (matches) {
-                    const values = matches.map(val => val.replace(/^"|"$/g, '').trim());
-                    if (values.length >= 6) {
-                        const entry = {};
-                        headers.forEach((header, index) => {
-                            entry[header] = values[index];
-                        });
-                        result.push(entry);
-                    } else {
-                        console.warn(`Line ${lineNumber + 1} is malformed:`, line);
-                    }
-                } else {
-                    console.warn(`No matches found for line ${lineNumber + 1}:`, line);
-                }
-            });
-            return result;
-        }
-
-        // Function to fetch and parse CSV
-        async function fetchAndParseCSV(url) {
-            try {
-                const response = await fetch(url);
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                const text = await response.text();
-                return parseCSV(text);
-            } catch (error) {
-                console.error('Error fetching CSV:', error);
-                return [];
-            }
-        }
-
-        // Unified filtering function
-        function applyFilters() {
-            const searchText = searchInput.value.toLowerCase().trim();
-            const hasSearchText = searchText !== '';
-            const hasSelectedCategories = selectedCategories.size > 0;
-
-            let filteredEntries = allEntries;
-
-            // Apply text search if present
-            if (hasSearchText) {
-                // Define stop words (parole escluse)
-                const paroleEscluse = [
-                    'perchè', 'perché', 'quando', 'e', 'ma', 'se', 'come', 'con', 'su',
-                    'per', 'tra', 'fra', 'nel', 'nello', 'nella', 'nei', 'nelle', 'al',
-                    'allo', 'alla', 'ai', 'agli', 'alle', 'dal', 'dallo', 'dalla',
-                    'dai', 'dagli', 'dalle', 'del', 'dello', 'della', 'dei', 'degli',
-                    'delle', 'sul', 'sullo', 'sulla', 'sui', 'sugli', 'sulle', 'un',
-                    'uno', 'una', 'gli', 'le', 'di', 'da', 'in', 'a', 'che', 'chi',
-                    'cosa', 'quale', 'quanto', 'quanta', 'quanti', 'quante', 'dove',
-                    'perché', 'anche', 'solo', 'qui', 'lì', 'là', 'dunque', 'quindi',
-                    'perciò', 'ancora', 'già', 'mai', 'sempre', 'poi', 'prima', 'dopo',
-                    'sopra', 'sotto', 'contro', 'molto', 'poco', 'troppo', 'più',
-                    'meno', 'bene', 'male', 'meglio', 'peggio', 'quasi', 'circa',
-                    'appena', 'tanto', 'così', 'pure', 'neanche', 'nemmeno', 'sia'
-                ];
-
-                // Split search text into words and exclude stop words
-                const searchWords = searchText.split(' ').filter(word =>
-                    !paroleEscluse.includes(word) && word !== ''
-                );
-
-                if (searchWords.length > 0) {
-                    filteredEntries = filteredEntries.filter(entry => {
-                        // Combine all searchable fields into one string
-                        const combinedText = `${entry.emojis} ${entry.description} ${entry.url} ${entry.question} ${entry.hashtags} ${entry.number}`.toLowerCase();
-                        // Ensure all search words are present (AND logic)
-                        return searchWords.every(word => combinedText.includes(word));
-                    });
-                }
-            }
-
-            // Apply emoji filters if any are selected
-            if (hasSelectedCategories) {
-                filteredEntries = filteredEntries.filter(entry => {
-                    // Ensure all selected categories are present in the entry's emojis (AND logic)
-                    return [...selectedCategories].every(category => entry.emojis.includes(category));
-                });
-            }
-
-            // Display the filtered entries
-            if (filteredEntries.length === 0) {
-                cardsWrapper.innerHTML = '<p style="text-align:center;">Nessun contenuto disponibile per i filtri selezionati.</p>';
-                progressBar.style.width = '0%';
+    // Build tag filter pills
+    TAG_EMOJIS.forEach(emoji => {
+        const pill = document.createElement('button');
+        pill.className = 'tag-pill';
+        pill.textContent = emoji;
+        pill.setAttribute('data-tag', emoji);
+        pill.addEventListener('click', () => {
+            if (selectedTags.has(emoji)) {
+                selectedTags.delete(emoji);
+                pill.classList.remove('selected');
             } else {
-                // Shuffle the filtered entries
-                const shuffled = filteredEntries.sort(() => 0.5 - Math.random());
-                // Select up to 20 entries
-                const selected = shuffled.slice(0, 20);
-                displayCards(selected);
-            }
-
-            // Update progress bar based on the number of displayed cards
-            const progress = (Math.min(filteredEntries.length, 20) / 20) * 100;
-            progressBar.style.width = `${progress}%`;
-        }
-
-        // Function to initialize the app
-        async function initializeApp() {
-            // Clear existing cards and progress bar
-            cardsWrapper.innerHTML = '';
-            progressBar.style.width = '0%';
-
-            // Determine the CSV file based on current language
-            const csvFile = currentLanguage === 'it' ?
-                '/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo.csv' :
-                '/index_files/notes_ff_michele_merelli_2024_futuro_fortissimo_en.csv';
-
-            // Fetch and parse CSV
-            const csvEntries = await fetchAndParseCSV(csvFile);
-
-            // Fetch book index entries
-            bookEntries = await fetchBooksData();
-
-            // Combine entries so they can be filtered together
-            allEntries = [...csvEntries, ...bookEntries];
-
-            // Display all entries initially
-            applyFilters();
-        }
-
-        // Function to display cards
-        function displayCards(entries) {
-            // Clear existing cards
-            cardsWrapper.innerHTML = '';
-
-            // Iterate over the entries and create card elements
-            entries.forEach((entry, index) => {
-                const cardDiv = document.createElement('div');
-                cardDiv.className = 'card';
-                cardDiv.style.backgroundColor = colorPalette[index % colorPalette.length];
-                cardDiv.style.maxWidth = '400px';
-
-                const cardContent = document.createElement('div');
-                cardContent.className = 'card-content';
-
-                // Add Description as title
-                const description = document.createElement('h2');
-                description.className = 'section-title';
-                description.textContent = entry.description;
-                cardContent.appendChild(description);
-
-                if (entry.chapters && entry.chapters.length > 0) {
-                    const indexTitle = document.createElement('div');
-                    indexTitle.className = 'content-block paragraphs';
-                    indexTitle.textContent = entry.question || (currentLanguage === 'it' ? 'Indice' : 'Index');
-                    cardContent.appendChild(indexTitle);
-
-                    const chapterList = document.createElement('ul');
-                    chapterList.className = 'content-block paragraphs';
-                    entry.chapters.forEach(chapterTitle => {
-                        const chapterItem = document.createElement('li');
-                        chapterItem.textContent = chapterTitle;
-                        chapterList.appendChild(chapterItem);
-                    });
-                    cardContent.appendChild(chapterList);
-                }
-
-                // Add Emojis and Note Number
-                const emojisAndNote = document.createElement('div');
-                emojisAndNote.className = 'emojis-and-note';
-
-                const emojis = document.createElement('div');
-                emojis.className = 'emojis';
-                emojis.textContent = entry.emojis; // Display emojis
-
-                const noteNumber = document.createElement('div');
-                noteNumber.className = 'note-number';
-                noteNumber.textContent = `#${entry.number}`; // Display with #
-
-                emojisAndNote.appendChild(emojis);
-                emojisAndNote.appendChild(noteNumber);
-
-                cardContent.appendChild(emojisAndNote);
-
-                cardDiv.appendChild(cardContent);
-                cardsWrapper.appendChild(cardDiv);
-
-                // Add click event to the card-content only
-                cardContent.addEventListener('click', () => {
-                    const translatedLink = getTranslatedSubstackLink(entry.url);
-                    window.open(translatedLink, '_blank');
-                });
-            });
-        }
-
-        // Function to handle emoji selection with AND logic
-        function handleEmojiSelection(button, category) {
-            if (selectedCategories.has(category)) {
-                selectedCategories.delete(category);
-                button.classList.remove('selected');
-            } else {
-                selectedCategories.add(category);
-                button.classList.add('selected');
+                selectedTags.add(emoji);
+                pill.classList.add('selected');
             }
             applyFilters();
-        }
-
-        // Add event listeners to main emoji buttons
-        mainEmojiButtons.forEach(button => {
-            const category = button.getAttribute('data-category');
-            button.addEventListener('click', () => {
-                handleEmojiSelection(button, category);
-            });
         });
-
-        // Add event listeners to footer emoji buttons
-        emojiButtons.forEach(button => {
-            const category = button.getAttribute('data-category');
-            button.addEventListener('click', () => {
-                handleEmojiSelection(button, category);
-            });
-        });
-
-        // Event listener for search button
-        searchButton.addEventListener('click', applyFilters);
-
-        // Event listener for refresh button
-        refreshButton.addEventListener('click', () => {
-            searchInput.value = '';
-            selectedCategories.clear();
-            // Remove 'selected' class from all emoji buttons
-            mainEmojiButtons.forEach(button => button.classList.remove('selected'));
-            emojiButtons.forEach(button => button.classList.remove('selected'));
-            applyFilters();
-        });
-
-        // Event listener for Enter key on search input
-        searchInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                applyFilters();
-            }
-        });
-
-        // Language switch functionality
-        languageButton.addEventListener('click', () => {
-            currentLanguage = currentLanguage === 'it' ? 'en' : 'it';
-            languageButton.textContent = currentLanguage === 'it' ? 'English 🇬🇧' : 'Italian 🇮🇹';
-            initializeApp();
-        });
-
-        // Side Menu Functions
-        function openSideMenu() {
-            sideMenu.classList.add('open');
-            overlay.classList.add('active');
-        }
-
-        function closeSideMenuFunc() {
-            sideMenu.classList.remove('open');
-            overlay.classList.remove('active');
-        }
-
-        // Event listeners for opening and closing side menu
-        headerLogo.addEventListener('click', openSideMenu);
-        closeMenu.addEventListener('click', closeSideMenuFunc);
-        overlay.addEventListener('click', closeSideMenuFunc);
-
-        // Share and Support buttons functionality
-        document.querySelectorAll('.share-button').forEach(button => {
-            button.addEventListener('click', () => {
-                const pageURL = window.location.href;
-                const pageTitle = document.title;
-
-                if (navigator.share) {
-                    navigator.share({
-                        title: pageTitle,
-                        url: pageURL
-                    }).then(() => {
-                        console.log('Thanks for sharing!');
-                    })
-                    .catch(console.error);
-                } else {
-                    // Fallback: Copy to clipboard
-                    navigator.clipboard.writeText(pageURL).then(() => {
-                        alert('URL copiato negli appunti!');
-                    }, (err) => {
-                        console.error('Could not copy text: ', err);
-                    });
-                }
-            });
-        });
-
-        document.querySelectorAll('.support-button').forEach(button => {
-            button.addEventListener('click', () => {
-                window.location.href = 'mailto:support@futurofortissimo.com';
-            });
-        });
-
-        // Initialize the app on page load
-        initializeApp();
+        tagFiltersContainer.appendChild(pill);
     });
+
+    // Italian stop words for search filtering
+    const stopWords = new Set([
+        'perchè','perché','quando','e','ma','se','come','con','su','per','tra','fra',
+        'nel','nello','nella','nei','nelle','al','allo','alla','ai','agli','alle',
+        'dal','dallo','dalla','dai','dagli','dalle','del','dello','della','dei','degli',
+        'delle','sul','sullo','sulla','sui','sugli','sulle','un','uno','una','gli','le',
+        'di','da','in','a','che','chi','cosa','quale','quanto','quanta','quanti','quante',
+        'dove','anche','solo','qui','lì','là','dunque','quindi','perciò','ancora','già',
+        'mai','sempre','poi','prima','dopo','sopra','sotto','contro','molto','poco',
+        'troppo','più','meno','bene','male','meglio','peggio','quasi','circa','appena',
+        'tanto','così','pure','neanche','nemmeno','sia'
+    ]);
+
+    function shuffle(arr) {
+        const a = [...arr];
+        for (let i = a.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+    }
+
+    function applyFilters() {
+        const searchText = searchInput.value.toLowerCase().trim();
+        const searchWords = searchText.split(/\s+/).filter(w => w && !stopWords.has(w));
+        let filtered = allNotes;
+
+        if (searchWords.length > 0) {
+            filtered = filtered.filter(note => {
+                const combined = `${note.tags.join(' ')} ${note.title} ${note.description} ${note.hashtags || ''}`.toLowerCase();
+                return searchWords.every(word => combined.includes(word));
+            });
+        }
+
+        if (selectedTags.size > 0) {
+            filtered = filtered.filter(note => {
+                return [...selectedTags].every(tag => note.tags.includes(tag));
+            });
+        }
+
+        const total = filtered.length;
+        const shuffled = shuffle(filtered);
+        const display = shuffled.slice(0, 40);
+
+        countDisplay.textContent = currentLanguage === 'it'
+            ? `${display.length} note su ${total}`
+            : `${display.length} notes of ${total}`;
+
+        renderNotes(display);
+    }
+
+    function renderNotes(notes) {
+        notesGrid.innerHTML = '';
+        if (notes.length === 0) {
+            notesGrid.innerHTML = '<div class="col-span-full text-center py-12"><p class="ff-body text-gray-500">' +
+                (currentLanguage === 'it' ? 'Nessuna nota trovata.' : 'No notes found.') + '</p></div>';
+            return;
+        }
+
+        const accentClasses = ['accent-bar', 'accent-bar accent-red', 'accent-bar accent-yellow', 'accent-bar accent-green'];
+
+        notes.forEach((note, i) => {
+            const card = document.createElement('div');
+            card.className = `brutal-card note-card ${accentClasses[i % accentClasses.length]}`;
+
+            const tagsSpan = document.createElement('div');
+            tagsSpan.className = 'text-lg mb-2';
+            tagsSpan.textContent = note.tags.join(' ');
+
+            const title = document.createElement('h3');
+            title.className = 'text-base font-bold mb-2 leading-snug';
+            title.textContent = note.title;
+
+            const desc = document.createElement('p');
+            desc.className = 'ff-body-sm text-gray-600 mb-4';
+            desc.textContent = note.description;
+
+            const link = document.createElement('a');
+            link.className = 'ff-eyebrow hover:underline';
+            link.style.color = 'var(--ff-blue)';
+            link.href = note.url;
+            link.target = '_blank';
+            link.rel = 'noopener';
+            link.textContent = currentLanguage === 'it' ? 'APRI \u2192' : 'OPEN \u2192';
+
+            card.appendChild(tagsSpan);
+            card.appendChild(title);
+            card.appendChild(desc);
+            card.appendChild(link);
+            notesGrid.appendChild(card);
+        });
+    }
+
+    async function loadNotes() {
+        const file = currentLanguage === 'it' ? '/notes.json' : '/notes_en.json';
+        try {
+            const res = await fetch(file);
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            const data = await res.json();
+            allNotes = data.notes || data;
+            applyFilters();
+        } catch (err) {
+            console.error('Error loading notes:', err);
+            notesGrid.innerHTML = '<div class="col-span-full text-center py-12"><p class="ff-body text-gray-500">Errore nel caricamento.</p></div>';
+        }
+    }
+
+    searchInput.addEventListener('input', applyFilters);
+    searchInput.addEventListener('keypress', e => { if (e.key === 'Enter') applyFilters(); });
+
+    refreshBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        selectedTags.clear();
+        tagFiltersContainer.querySelectorAll('.tag-pill').forEach(p => p.classList.remove('selected'));
+        applyFilters();
+    });
+
+    langBtn.addEventListener('click', () => {
+        currentLanguage = currentLanguage === 'it' ? 'en' : 'it';
+        langBtn.textContent = currentLanguage === 'it' ? 'EN' : 'IT';
+        searchInput.placeholder = currentLanguage === 'it' ? 'Cerca una nota...' : 'Search notes...';
+        loadNotes();
+    });
+
+    loadNotes();
+});
 </script>
-
 </body>
-
 </html>

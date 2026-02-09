@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="it">
+<html lang="it" class="scroll-smooth">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -21,135 +21,232 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=IBM+Plex+Mono:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
 
   <style>
-    :root{--ink:#0a0a0a;}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial; color:var(--ink);}
-    .mono{font-family:"IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; letter-spacing:.06em; text-transform:uppercase;}
+    :root {
+      --ff-blue: #4a90e2;
+      --ff-red: #d0021b;
+      --ff-yellow: #f5a623;
+      --ff-green: #2ecc71;
+      --ff-black: #0a0a0a;
+      --ff-grid: rgba(0, 0, 0, 0.03);
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fdfdfd;
+      color: var(--ff-black);
+      position: relative;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--ff-grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--ff-grid) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+      z-index: -1;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'IBM Plex Mono', monospace;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    .pixel-title { font-family: 'Press Start 2P', monospace; letter-spacing: 0.05em; }
+    .brutal-card {
+      border: 4px solid var(--ff-black);
+      background: #ffffff;
+      box-shadow: 6px 6px 0 var(--ff-black);
+      padding: 24px;
+    }
+    .accent-bar { position: relative; }
+    .accent-bar::before {
+      content: '';
+      position: absolute;
+      top: -4px; left: -4px; right: -4px;
+      height: 10px;
+      background: var(--ff-blue);
+    }
+    .accent-red::before { background: var(--ff-red); }
+    .accent-yellow::before { background: var(--ff-yellow); }
+    .accent-green::before { background: var(--ff-green); }
+    .ff-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .ff-heading-xl {
+      font-size: clamp(1.6rem, 1.2rem + 1vw, 2.2rem);
+      line-height: 1.2;
+      font-weight: 700;
+    }
+    .ff-body { font-size: 1rem; line-height: 1.65; }
+    .ff-body-sm { font-size: 0.9375rem; line-height: 1.6; }
+    .ff-button {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .ff-caption {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .no-round, .no-round * { border-radius: 0 !important; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--ff-black); outline-offset: 2px; }
+    ::selection { background: #0a0a0a; color: #ffffff; }
   </style>
 </head>
-<body class="bg-zinc-50">
-  <header class="border-b border-zinc-200 bg-white">
-    <div class="max-w-5xl mx-auto px-4 py-5 flex items-center justify-between gap-3">
+<body class="antialiased selection:bg-gray-900 selection:text-white no-round">
+
+  <header class="bg-white" style="border-bottom: 4px solid var(--ff-black);">
+    <div class="max-w-5xl mx-auto px-4 py-5 flex items-center justify-between gap-4">
       <div>
-        <div class="mono text-xs text-zinc-500">Futuro Fortissimo I/O</div>
-        <h1 class="text-2xl font-extrabold tracking-tight">Connessioni fortissime</h1>
-        <p class="text-sm text-zinc-600 mt-1">Hub più citati e percorsi di lettura (dal grafo “connections” nel JSON).</p>
+        <div class="ff-eyebrow" style="color: var(--ff-green);">Futuro Fortissimo — Grafo</div>
+        <h1 class="ff-heading-xl mt-1">Connessioni Fortissime</h1>
+        <p class="ff-body-sm mt-1" style="color: #555;">Hub più citati e percorsi di lettura (dal grafo "connections" nel JSON).</p>
       </div>
-      <nav class="flex gap-3 text-sm">
-        <a data-nav="1" class="underline" href="./index.html">Home</a>
-        <a data-nav="1" class="underline" href="./themes.html">Macro‑temi</a>
-        <a data-nav="1" class="underline" href="./note.html">Note</a>
+      <nav class="flex gap-4 flex-wrap justify-end">
+        <a class="ff-eyebrow hover:underline" href="/index.html">Home</a>
+        <a class="ff-eyebrow hover:underline" href="/book/">Libro</a>
+        <a class="ff-eyebrow hover:underline" href="/themes.html">Temi</a>
+        <a class="ff-eyebrow hover:underline" href="/connections.html">Connessioni</a>
+        <a class="ff-eyebrow hover:underline" href="/note.html">Note</a>
       </nav>
     </div>
   </header>
 
-  <main class="max-w-5xl mx-auto px-4 py-8">
-    <div class="rounded-xl border border-zinc-200 bg-white p-5">
-      <div class="mono text-xs text-zinc-500">generated</div>
-      <div id="meta" class="text-sm text-zinc-600">Caricamento…</div>
+  <main class="max-w-5xl mx-auto px-4 py-10">
+
+    <!-- Meta info card -->
+    <div class="brutal-card accent-bar">
+      <div class="ff-eyebrow" style="color: var(--ff-blue);">Generated</div>
+      <div id="meta" class="ff-body-sm mt-1" style="color: #555;">Caricamento...</div>
     </div>
 
-    <section class="mt-6 rounded-xl border border-zinc-200 bg-white p-5">
-      <h2 class="text-lg font-bold">Top hub (più citati)</h2>
-      <p class="text-sm text-zinc-600 mt-1">Non è “il migliore”, è solo ciò che fa da ponte tra pezzi del corpus.</p>
-      <ol id="hubs" class="mt-4 space-y-2 text-sm"></ol>
+    <!-- Top hubs section -->
+    <section class="mt-8 brutal-card accent-bar accent-red">
+      <h2 class="text-lg font-bold uppercase">Top hub (più citati)</h2>
+      <p class="ff-body-sm mt-2" style="color: #555;">Non è "il migliore", è solo ciò che fa da ponte tra pezzi del corpus.</p>
+      <ol id="hubs" class="mt-5 space-y-4"></ol>
     </section>
 
-    <section class="mt-8 rounded-xl border border-zinc-200 bg-white p-5">
-      <h2 class="text-lg font-bold">Connessioni suggerite (auto)</h2>
-      <p class="text-sm text-zinc-600 mt-1">Ponti “forti” calcolati per keyword/overlap. Servono per ispirare cross‑link, non come verità assoluta.</p>
-      <div id="suggested" class="mt-4 space-y-4"></div>
+    <!-- Suggested connections -->
+    <section class="mt-8 brutal-card accent-bar accent-yellow">
+      <h2 class="text-lg font-bold uppercase">Connessioni suggerite (auto)</h2>
+      <p class="ff-body-sm mt-2" style="color: #555;">Ponti "forti" calcolati per keyword/overlap. Servono per ispirare cross-link, non come verità assoluta.</p>
+      <div id="suggested" class="mt-5 space-y-5"></div>
     </section>
 
-    <section class="mt-8 rounded-xl border border-zinc-200 bg-white p-5">
-      <h2 class="text-lg font-bold">Note</h2>
-      <ul class="list-disc pl-5 mt-2 text-sm text-zinc-700 space-y-1">
-        <li>Il grafo viene dal campo <code class="text-xs bg-zinc-100 px-2 py-1 rounded">connections</code> nei subchapters.</li>
-        <li>Le “connessioni suggerite” sono automatiche: ottime per brainstorming, da rifinire a mano.</li>
+    <!-- Footer note -->
+    <section class="mt-10 brutal-card accent-bar accent-green">
+      <h2 class="text-base font-bold uppercase">Note</h2>
+      <ul class="list-disc pl-5 mt-3 ff-body-sm space-y-2" style="color: #333;">
+        <li>Il grafo viene dal campo <code class="ff-caption" style="background: #f5f5f5; padding: 2px 8px; border: 2px solid var(--ff-black);">connections</code> nei subchapters.</li>
+        <li>Le "connessioni suggerite" sono automatiche: ottime per brainstorming, da rifinire a mano.</li>
       </ul>
     </section>
+
   </main>
 
   <script src="./analytics.js"></script>
   <script>
     async function load() {
-      const ts = Date.now();
-      const [connRes, sugRes] = await Promise.all([
+      var ts = Date.now();
+      var results = await Promise.all([
         fetch('./generated/connections.json?ts=' + ts),
-        fetch('./generated/suggested_connections.json?ts=' + ts).catch(() => null)
+        fetch('./generated/suggested_connections.json?ts=' + ts).catch(function() { return null; })
       ]);
 
-      const data = await connRes.json();
-      document.getElementById('meta').textContent = `Nodes: ${data.totals.nodes} · Edges: ${data.totals.edges} · Updated: ${new Date(data.generatedAt).toLocaleString()}`;
+      var connRes = results[0];
+      var sugRes = results[1];
 
-      const hubs = document.getElementById('hubs');
+      var data = await connRes.json();
+      document.getElementById('meta').textContent = 'Nodes: ' + data.totals.nodes + ' \u00b7 Edges: ' + data.totals.edges + ' \u00b7 Updated: ' + new Date(data.generatedAt).toLocaleString();
+
+      // Top hubs
+      var hubs = document.getElementById('hubs');
       hubs.innerHTML = '';
 
-      for (const h of (data.topHubs || []).slice(0, 20)) {
-        const li = document.createElement('li');
-        const url = h.url || null;
-        const label = (h.label || h.id).replace(/\s+/g,' ').trim();
-        li.innerHTML = `
-          <div class="flex items-start justify-between gap-3">
-            <div>
-              <div class="mono text-xs text-zinc-500">${h.id}</div>
-              <div class="font-semibold">${label}</div>
-              <div class="text-zinc-600">In‑degree score: <b>${h.score}</b></div>
-            </div>
-            ${url ? `<a class="underline" data-track="connection_open" href="${url}" target="_blank" rel="noopener">apri</a>` : ''}
-          </div>
-        `;
+      var hubList = (data.topHubs || []).slice(0, 20);
+      hubList.forEach(function(h, i) {
+        var li = document.createElement('li');
+        var url = h.url || null;
+        var label = (h.label || h.id).replace(/\s+/g, ' ').trim();
+
+        li.style.borderBottom = '2px solid #eee';
+        li.style.paddingBottom = '12px';
+
+        li.innerHTML =
+          '<div class="flex items-start justify-between gap-4">' +
+            '<div>' +
+              '<div class="ff-eyebrow" style="color: #888;">' + h.id + '</div>' +
+              '<div class="font-semibold mt-1">' + label + '</div>' +
+              '<div class="ff-body-sm mt-1" style="color: #555;">In-degree score: <strong>' + h.score + '</strong></div>' +
+            '</div>' +
+            (url ? '<a class="ff-button underline flex-shrink-0" data-track="connection_open" href="' + url + '" target="_blank" rel="noopener">Apri</a>' : '') +
+          '</div>';
+
         hubs.appendChild(li);
-      }
+      });
 
       // Suggested connections
-      const suggestedRoot = document.getElementById('suggested');
+      var suggestedRoot = document.getElementById('suggested');
       if (!suggestedRoot) return;
+
       if (!sugRes) {
-        suggestedRoot.innerHTML = `<div class="text-sm text-zinc-600">(non disponibile)</div>`;
+        suggestedRoot.innerHTML = '<div class="ff-body-sm" style="color: #888;">(non disponibile)</div>';
         return;
       }
 
-      const sug = await sugRes.json();
-      const packs = (sug.suggestions || []).slice(0, 6);
+      var sug = await sugRes.json();
+      var packs = (sug.suggestions || []).slice(0, 6);
+
       if (!packs.length) {
-        suggestedRoot.innerHTML = `<div class="text-sm text-zinc-600">(nessuna suggerita)</div>`;
+        suggestedRoot.innerHTML = '<div class="ff-body-sm" style="color: #888;">(nessuna suggerita)</div>';
         return;
       }
 
-      suggestedRoot.innerHTML = packs
-        .map((p) => {
-          const items = (p.items || []).slice(0, 8);
-          const rows = items
-            .map((it) => {
-              const from = it.from;
-              const to = it.to;
-              return `
-                <li class="py-2">
-                  <div class="mono text-xs text-zinc-500">${from.id} → ${to.id} · strength ${it.strength}</div>
-                  <div class="text-sm text-zinc-800 mt-1">${(it.bridge || '').trim()}</div>
-                  <div class="text-sm mt-2 flex flex-wrap gap-3">
-                    ${from.url ? `<a class="underline" href="${from.url}" target="_blank" rel="noopener">apri origine</a>` : ''}
-                    ${to.url ? `<a class="underline" href="${to.url}" target="_blank" rel="noopener">apri destinazione</a>` : ''}
-                  </div>
-                </li>
-              `;
-            })
-            .join('');
-          return `
-            <div class="rounded-xl border border-zinc-200 bg-zinc-50 p-4">
-              <div class="mono text-xs text-zinc-500">${p.key}</div>
-              <div class="font-semibold mt-1">${p.title}</div>
-              <ul class="mt-3 divide-y divide-zinc-200">${rows}</ul>
-            </div>
-          `;
-        })
-        .join('');
+      var ACCENT_CYCLE = ['', 'accent-red', 'accent-yellow', 'accent-green'];
+      var COLORS = ['var(--ff-blue)', 'var(--ff-red)', 'var(--ff-yellow)', 'var(--ff-green)'];
+
+      suggestedRoot.innerHTML = packs.map(function(p, pi) {
+        var items = (p.items || []).slice(0, 8);
+        var accentClass = ACCENT_CYCLE[pi % 4];
+        var eyebrowColor = COLORS[pi % 4];
+
+        var rows = items.map(function(it) {
+          var from = it.from;
+          var to = it.to;
+          return '<li style="padding: 12px 0; border-bottom: 2px solid #eee;">' +
+            '<div class="ff-eyebrow" style="color: ' + eyebrowColor + ';">' + from.id + ' \u2192 ' + to.id + ' \u00b7 strength ' + it.strength + '</div>' +
+            '<div class="ff-body-sm mt-2" style="color: #333;">' + (it.bridge || '').trim() + '</div>' +
+            '<div class="mt-3 flex flex-wrap gap-4">' +
+              (from.url ? '<a class="ff-button underline" href="' + from.url + '" target="_blank" rel="noopener">Apri origine</a>' : '') +
+              (to.url ? '<a class="ff-button underline" href="' + to.url + '" target="_blank" rel="noopener">Apri destinazione</a>' : '') +
+            '</div>' +
+          '</li>';
+        }).join('');
+
+        return '<div class="brutal-card accent-bar ' + accentClass + '">' +
+          '<div class="ff-eyebrow" style="color: ' + eyebrowColor + ';">' + p.key + '</div>' +
+          '<div class="font-semibold mt-2" style="font-family: \'IBM Plex Mono\', monospace; text-transform: uppercase; letter-spacing: 0.03em;">' + p.title + '</div>' +
+          '<ul class="mt-4">' + rows + '</ul>' +
+        '</div>';
+      }).join('');
     }
 
-    load().catch(err => {
+    load().catch(function(err) {
       document.getElementById('meta').textContent = 'Errore caricamento.';
       console.error(err);
     });

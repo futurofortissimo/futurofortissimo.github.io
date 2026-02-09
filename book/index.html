@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="it">
+<html lang="it" class="scroll-smooth">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -24,12 +24,90 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=IBM+Plex+Mono:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
 
   <style>
-    :root{--ink:#0a0a0a;}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial; color:var(--ink);}
-    .mono{font-family:"IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; letter-spacing:.06em; text-transform:uppercase;}
+    :root {
+      --ff-blue: #4a90e2;
+      --ff-red: #d0021b;
+      --ff-yellow: #f5a623;
+      --ff-green: #2ecc71;
+      --ff-black: #0a0a0a;
+      --ff-grid: rgba(0, 0, 0, 0.03);
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fdfdfd;
+      color: var(--ff-black);
+      position: relative;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--ff-grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--ff-grid) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+      z-index: -1;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'IBM Plex Mono', monospace;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    .pixel-title { font-family: 'Press Start 2P', monospace; letter-spacing: 0.05em; }
+    .brutal-card {
+      border: 4px solid var(--ff-black);
+      background: #ffffff;
+      box-shadow: 6px 6px 0 var(--ff-black);
+      padding: 24px;
+    }
+    .accent-bar { position: relative; }
+    .accent-bar::before {
+      content: '';
+      position: absolute;
+      top: -4px; left: -4px; right: -4px;
+      height: 10px;
+      background: var(--ff-blue);
+    }
+    .accent-red::before { background: var(--ff-red); }
+    .accent-yellow::before { background: var(--ff-yellow); }
+    .accent-green::before { background: var(--ff-green); }
+    .ff-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .ff-heading-xl {
+      font-size: clamp(1.6rem, 1.2rem + 1vw, 2.2rem);
+      line-height: 1.2;
+      font-weight: 700;
+    }
+    .ff-body { font-size: 1rem; line-height: 1.65; }
+    .ff-body-sm { font-size: 0.9375rem; line-height: 1.6; }
+    .ff-button {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .ff-caption {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .no-round, .no-round * { border-radius: 0 !important; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--ff-black); outline-offset: 2px; }
+    ::selection { background: #0a0a0a; color: #ffffff; }
   </style>
 
   <script type="application/ld+json">
@@ -42,13 +120,13 @@
   "hasPart": [
     {
       "@type": "Chapter",
-      "name": "La nuova unità di misura: l’AI come metrica del valore",
+      "name": "La nuova unità di misura: l'AI come metrica del valore",
       "position": 1,
       "url": "https://futurofortissimo.github.io/book/chapter-01.html"
     },
     {
       "@type": "Chapter",
-      "name": "Il conto dell’intelligenza: costi, energia, compute, infrastrutture",
+      "name": "Il conto dell'intelligenza: costi, energia, compute, infrastrutture",
       "position": 2,
       "url": "https://futurofortissimo.github.io/book/chapter-02.html"
     },
@@ -60,13 +138,13 @@
     },
     {
       "@type": "Chapter",
-      "name": "Il coltellino svizzero cognitivo: dal tool all’agente",
+      "name": "Il coltellino svizzero cognitivo: dal tool all'agente",
       "position": 4,
       "url": "https://futurofortissimo.github.io/book/chapter-04.html"
     },
     {
       "@type": "Chapter",
-      "name": "Creatività post-umana: arte, stile, autenticità nell’era dei modelli",
+      "name": "Creatività post-umana: arte, stile, autenticità nell'era dei modelli",
       "position": 5,
       "url": "https://futurofortissimo.github.io/book/chapter-05.html"
     },
@@ -114,7 +192,7 @@
     },
     {
       "@type": "Chapter",
-      "name": "Imperi, dollaro, Internet: geopolitica nell’era delle reti",
+      "name": "Imperi, dollaro, Internet: geopolitica nell'era delle reti",
       "position": 13,
       "url": "https://futurofortissimo.github.io/book/chapter-13.html"
     },
@@ -128,170 +206,204 @@
 }
 </script>
 </head>
-<body class="bg-zinc-50">
-  <header class="border-b border-zinc-200 bg-white">
-    <div class="max-w-4xl mx-auto px-4 py-5 flex items-center justify-between gap-3">
+<body class="antialiased selection:bg-gray-900 selection:text-white no-round">
+
+  <header class="bg-white" style="border-bottom: 4px solid var(--ff-black);">
+    <div class="max-w-4xl mx-auto px-4 py-5 flex items-center justify-between gap-4">
       <div>
-        <div class="mono text-xs text-zinc-500">Futuro Fortissimo — book</div>
-        <div class="text-xl font-extrabold tracking-tight">Libro — 14 capitoli (outline)</div>
+        <div class="ff-eyebrow" style="color: var(--ff-blue);">Futuro Fortissimo — Libro</div>
+        <h1 class="ff-heading-xl mt-1">Libro — 14 capitoli</h1>
       </div>
-      <nav class="flex gap-3 text-sm">
-        <a data-nav="1" class="underline" href="/index.html">Home</a>
-        <a data-nav="1" class="underline" href="/book/">Libro</a>
+      <nav class="flex gap-4 flex-wrap justify-end">
+        <a class="ff-eyebrow hover:underline" href="/index.html">Home</a>
+        <a class="ff-eyebrow hover:underline" href="/book/">Libro</a>
+        <a class="ff-eyebrow hover:underline" href="/themes.html">Temi</a>
+        <a class="ff-eyebrow hover:underline" href="/connections.html">Connessioni</a>
+        <a class="ff-eyebrow hover:underline" href="/note.html">Note</a>
       </nav>
     </div>
   </header>
 
-  <main class="max-w-4xl mx-auto px-4 py-8">
-    
-  <section class="rounded-xl border border-zinc-200 bg-white p-5">
-    <p class="text-sm text-zinc-700">Outline in 14 capitoli: un percorso di lettura su AI, attenzione, società, natura, corpo e sovranità digitale.</p>
-    <div class="mono text-xs text-zinc-500 mt-3">generated 2026-01-27</div>
-  </section>
+  <main class="max-w-4xl mx-auto px-4 py-10">
 
-  <section class="mt-6 grid gap-4">
-    
-      <article class="rounded-xl border border-zinc-200 bg-white p-5">
-        <div class="mono text-xs text-zinc-500">Capitolo 01</div>
-        <h2 class="text-lg font-extrabold tracking-tight mt-1">La nuova unità di misura: l’AI come metrica del valore</h2>
-        <p class="text-sm text-zinc-700 mt-2">L’AI non è solo una tecnologia: è una nuova unità di misura che ridisegna valore, produttività e potere.</p>
-        <div class="mt-3 flex items-center justify-between gap-3">
-          <a class="underline font-semibold" data-track="chapter_open" href="/book/chapter-01.html">Apri capitolo</a>
-          <div class="mono text-[11px] text-zinc-500">refs: 5</div>
-        </div>
-      </article>
-      <article class="rounded-xl border border-zinc-200 bg-white p-5">
-        <div class="mono text-xs text-zinc-500">Capitolo 02</div>
-        <h2 class="text-lg font-extrabold tracking-tight mt-1">Il conto dell’intelligenza: costi, energia, compute, infrastrutture</h2>
-        <p class="text-sm text-zinc-700 mt-2">Ogni salto cognitivo artificiale è anche un salto infrastrutturale: paghiamo l’intelligenza in energia, supply chain e vincoli fisici.</p>
-        <div class="mt-3 flex items-center justify-between gap-3">
-          <a class="underline font-semibold" data-track="chapter_open" href="/book/chapter-02.html">Apri capitolo</a>
-          <div class="mono text-[11px] text-zinc-500">refs: 5</div>
-        </div>
-      </article>
-      <article class="rounded-xl border border-zinc-200 bg-white p-5">
-        <div class="mono text-xs text-zinc-500">Capitolo 03</div>
-        <h2 class="text-lg font-extrabold tracking-tight mt-1">Siamo già nella singolarità? (o nella sua versione gentile)</h2>
-        <p class="text-sm text-zinc-700 mt-2">La singolarità come cambio di regime: feedback economici/cognitivi che alterano aspettative e istituzioni.</p>
-        <div class="mt-3 flex items-center justify-between gap-3">
-          <a class="underline font-semibold" data-track="chapter_open" href="/book/chapter-03.html">Apri capitolo</a>
-          <div class="mono text-[11px] text-zinc-500">refs: 5</div>
-        </div>
-      </article>
-      <article class="rounded-xl border border-zinc-200 bg-white p-5">
-        <div class="mono text-xs text-zinc-500">Capitolo 04</div>
-        <h2 class="text-lg font-extrabold tracking-tight mt-1">Il coltellino svizzero cognitivo: dal tool all’agente</h2>
-        <p class="text-sm text-zinc-700 mt-2">L’AI utile non è quella che sa, ma quella che fa: integra strumenti, contesto e obiettivi e riscrive i workflow.</p>
-        <div class="mt-3 flex items-center justify-between gap-3">
-          <a class="underline font-semibold" data-track="chapter_open" href="/book/chapter-04.html">Apri capitolo</a>
-          <div class="mono text-[11px] text-zinc-500">refs: 7</div>
-        </div>
-      </article>
-      <article class="rounded-xl border border-zinc-200 bg-white p-5">
-        <div class="mono text-xs text-zinc-500">Capitolo 05</div>
-        <h2 class="text-lg font-extrabold tracking-tight mt-1">Creatività post-umana: arte, stile, autenticità nell’era dei modelli</h2>
-        <p class="text-sm text-zinc-700 mt-2">La creatività si sposta dal fare al dirigere: conta intenzione, gusto e firma in un mondo dove lo stile è commodity.</p>
-        <div class="mt-3 flex items-center justify-between gap-3">
-          <a class="underline font-semibold" data-track="chapter_open" href="/book/chapter-05.html">Apri capitolo</a>
-          <div class="mono text-[11px] text-zinc-500">refs: 7</div>
-        </div>
-      </article>
-      <article class="rounded-xl border border-zinc-200 bg-white p-5">
-        <div class="mono text-xs text-zinc-500">Capitolo 06</div>
-        <h2 class="text-lg font-extrabold tracking-tight mt-1">Simulare il mondo: modelli, videogiochi e verità operativa</h2>
-        <p class="text-sm text-zinc-700 mt-2">La simulazione è un modo di conoscere: quando il modello diventa più pratico del reale, cambia la nostra idea di verità.</p>
-        <div class="mt-3 flex items-center justify-between gap-3">
-          <a class="underline font-semibold" data-track="chapter_open" href="/book/chapter-06.html">Apri capitolo</a>
-          <div class="mono text-[11px] text-zinc-500">refs: 7</div>
-        </div>
-      </article>
-      <article class="rounded-xl border border-zinc-200 bg-white p-5">
-        <div class="mono text-xs text-zinc-500">Capitolo 07</div>
-        <h2 class="text-lg font-extrabold tracking-tight mt-1">Attenzione: la crisi non è (solo) distrazione, è governance interiore</h2>
-        <p class="text-sm text-zinc-700 mt-2">Difendere l’attenzione significa progettare ambienti e tecnologie che non colonizzino la mente: è una questione di libertà.</p>
-        <div class="mt-3 flex items-center justify-between gap-3">
-          <a class="underline font-semibold" data-track="chapter_open" href="/book/chapter-07.html">Apri capitolo</a>
-          <div class="mono text-[11px] text-zinc-500">refs: 5</div>
-        </div>
-      </article>
-      <article class="rounded-xl border border-zinc-200 bg-white p-5">
-        <div class="mono text-xs text-zinc-500">Capitolo 08</div>
-        <h2 class="text-lg font-extrabold tracking-tight mt-1">Flow e vita ben vissuta: performance, felicità, significato</h2>
-        <p class="text-sm text-zinc-700 mt-2">Il benessere è una tecnologia della vita: flow, esperienze e investimenti personali formano un portafoglio esistenziale.</p>
-        <div class="mt-3 flex items-center justify-between gap-3">
-          <a class="underline font-semibold" data-track="chapter_open" href="/book/chapter-08.html">Apri capitolo</a>
-          <div class="mono text-[11px] text-zinc-500">refs: 6</div>
-        </div>
-      </article>
-      <article class="rounded-xl border border-zinc-200 bg-white p-5">
-        <div class="mono text-xs text-zinc-500">Capitolo 09</div>
-        <h2 class="text-lg font-extrabold tracking-tight mt-1">Solitudine, contatto, stress: il corpo sociale come infrastruttura</h2>
-        <p class="text-sm text-zinc-700 mt-2">La crisi contemporanea è anche di contatto: salute mentale e relazione sono un problema di design sociale.</p>
-        <div class="mt-3 flex items-center justify-between gap-3">
-          <a class="underline font-semibold" data-track="chapter_open" href="/book/chapter-09.html">Apri capitolo</a>
-          <div class="mono text-[11px] text-zinc-500">refs: 5</div>
-        </div>
-      </article>
-      <article class="rounded-xl border border-zinc-200 bg-white p-5">
-        <div class="mono text-xs text-zinc-500">Capitolo 10</div>
-        <h2 class="text-lg font-extrabold tracking-tight mt-1">Mangiare il futuro: dieta, microbioma, longevità (senza culto)</h2>
-        <p class="text-sm text-zinc-700 mt-2">La via d’uscita dal caos nutrizionale è unire scienza, contesto personale e umiltà epistemica.</p>
-        <div class="mt-3 flex items-center justify-between gap-3">
-          <a class="underline font-semibold" data-track="chapter_open" href="/book/chapter-10.html">Apri capitolo</a>
-          <div class="mono text-[11px] text-zinc-500">refs: 8</div>
-        </div>
-      </article>
-      <article class="rounded-xl border border-zinc-200 bg-white p-5">
-        <div class="mono text-xs text-zinc-500">Capitolo 11</div>
-        <h2 class="text-lg font-extrabold tracking-tight mt-1">Corpo, performance e rischio: allenarsi contro la mortalità (davvero?)</h2>
-        <p class="text-sm text-zinc-700 mt-2">Salute e performance sono scelte di rischio: robustezza &gt; ottimizzazione fragile.</p>
-        <div class="mt-3 flex items-center justify-between gap-3">
-          <a class="underline font-semibold" data-track="chapter_open" href="/book/chapter-11.html">Apri capitolo</a>
-          <div class="mono text-[11px] text-zinc-500">refs: 6</div>
-        </div>
-      </article>
-      <article class="rounded-xl border border-zinc-200 bg-white p-5">
-        <div class="mono text-xs text-zinc-500">Capitolo 12</div>
-        <h2 class="text-lg font-extrabold tracking-tight mt-1">Plastica e modernità: il costo invisibile del comfort</h2>
-        <p class="text-sm text-zinc-700 mt-2">Le microplastiche rendono i costi esterni improvvisamente interni: corpo, arterie, ecosistemi.</p>
-        <div class="mt-3 flex items-center justify-between gap-3">
-          <a class="underline font-semibold" data-track="chapter_open" href="/book/chapter-12.html">Apri capitolo</a>
-          <div class="mono text-[11px] text-zinc-500">refs: 5</div>
-        </div>
-      </article>
-      <article class="rounded-xl border border-zinc-200 bg-white p-5">
-        <div class="mono text-xs text-zinc-500">Capitolo 13</div>
-        <h2 class="text-lg font-extrabold tracking-tight mt-1">Imperi, dollaro, Internet: geopolitica nell’era delle reti</h2>
-        <p class="text-sm text-zinc-700 mt-2">La geopolitica torna imperiale, ma con reti digitali e standard tecnologici al centro.</p>
-        <div class="mt-3 flex items-center justify-between gap-3">
-          <a class="underline font-semibold" data-track="chapter_open" href="/book/chapter-13.html">Apri capitolo</a>
-          <div class="mono text-[11px] text-zinc-500">refs: 6</div>
-        </div>
-      </article>
-      <article class="rounded-xl border border-zinc-200 bg-white p-5">
-        <div class="mono text-xs text-zinc-500">Capitolo 14</div>
-        <h2 class="text-lg font-extrabold tracking-tight mt-1">Sovranità digitale, proprietà e crypto: uscire (o entrare) nello Stato</h2>
-        <p class="text-sm text-zinc-700 mt-2">Crypto non sono soldi magici: sono strumenti per ripensare proprietà, fiducia e istituzioni, con costi politici.</p>
-        <div class="mt-3 flex items-center justify-between gap-3">
-          <a class="underline font-semibold" data-track="chapter_open" href="/book/chapter-14.html">Apri capitolo</a>
-          <div class="mono text-[11px] text-zinc-500">refs: 5</div>
-        </div>
-      </article>
-  </section>
+    <!-- Intro card -->
+    <section class="brutal-card accent-bar">
+      <p class="ff-body">Outline in 14 capitoli: un percorso di lettura su AI, attenzione, società, natura, corpo e sovranità digitale.</p>
+      <div class="ff-caption mt-4" style="color: var(--ff-blue);">Generated 2026-01-27</div>
+    </section>
 
-  <section class="mt-8 rounded-xl border border-zinc-200 bg-white p-5">
-    <h2 class="text-base font-bold">Note</h2>
-    <ul class="list-disc pl-5 mt-2 text-sm text-zinc-700 space-y-1">
-      <li>Queste pagine sono scaffolding statico: utili per SEO, condivisione e navigazione.</li>
-      <li>In futuro possono diventare un indice “vivo” con estratti e link ai subcapitoli.</li>
-    </ul>
-  </section>
-  
+    <!-- Chapters grid -->
+    <section class="mt-10 grid gap-6">
+
+      <!-- Chapter 01 — blue -->
+      <article class="brutal-card accent-bar">
+        <div class="ff-eyebrow" style="color: var(--ff-blue);">Capitolo 01</div>
+        <h2 class="text-lg font-bold uppercase mt-2">La nuova unità di misura: l'AI come metrica del valore</h2>
+        <p class="ff-body-sm mt-3" style="color: #333;">L'AI non è solo una tecnologia: è una nuova unità di misura che ridisegna valore, produttività e potere.</p>
+        <div class="mt-4 flex items-center justify-between gap-3">
+          <a class="ff-button underline" data-track="chapter_open" href="/book/chapter-01.html">Apri capitolo &rarr;</a>
+          <div class="ff-caption" style="color: #888;">refs: 5</div>
+        </div>
+      </article>
+
+      <!-- Chapter 02 — red -->
+      <article class="brutal-card accent-bar accent-red">
+        <div class="ff-eyebrow" style="color: var(--ff-red);">Capitolo 02</div>
+        <h2 class="text-lg font-bold uppercase mt-2">Il conto dell'intelligenza: costi, energia, compute, infrastrutture</h2>
+        <p class="ff-body-sm mt-3" style="color: #333;">Ogni salto cognitivo artificiale è anche un salto infrastrutturale: paghiamo l'intelligenza in energia, supply chain e vincoli fisici.</p>
+        <div class="mt-4 flex items-center justify-between gap-3">
+          <a class="ff-button underline" data-track="chapter_open" href="/book/chapter-02.html">Apri capitolo &rarr;</a>
+          <div class="ff-caption" style="color: #888;">refs: 5</div>
+        </div>
+      </article>
+
+      <!-- Chapter 03 — yellow -->
+      <article class="brutal-card accent-bar accent-yellow">
+        <div class="ff-eyebrow" style="color: var(--ff-yellow);">Capitolo 03</div>
+        <h2 class="text-lg font-bold uppercase mt-2">Siamo già nella singolarità? (o nella sua versione gentile)</h2>
+        <p class="ff-body-sm mt-3" style="color: #333;">La singolarità come cambio di regime: feedback economici/cognitivi che alterano aspettative e istituzioni.</p>
+        <div class="mt-4 flex items-center justify-between gap-3">
+          <a class="ff-button underline" data-track="chapter_open" href="/book/chapter-03.html">Apri capitolo &rarr;</a>
+          <div class="ff-caption" style="color: #888;">refs: 5</div>
+        </div>
+      </article>
+
+      <!-- Chapter 04 — green -->
+      <article class="brutal-card accent-bar accent-green">
+        <div class="ff-eyebrow" style="color: var(--ff-green);">Capitolo 04</div>
+        <h2 class="text-lg font-bold uppercase mt-2">Il coltellino svizzero cognitivo: dal tool all'agente</h2>
+        <p class="ff-body-sm mt-3" style="color: #333;">L'AI utile non è quella che sa, ma quella che fa: integra strumenti, contesto e obiettivi e riscrive i workflow.</p>
+        <div class="mt-4 flex items-center justify-between gap-3">
+          <a class="ff-button underline" data-track="chapter_open" href="/book/chapter-04.html">Apri capitolo &rarr;</a>
+          <div class="ff-caption" style="color: #888;">refs: 7</div>
+        </div>
+      </article>
+
+      <!-- Chapter 05 — blue -->
+      <article class="brutal-card accent-bar">
+        <div class="ff-eyebrow" style="color: var(--ff-blue);">Capitolo 05</div>
+        <h2 class="text-lg font-bold uppercase mt-2">Creatività post-umana: arte, stile, autenticità nell'era dei modelli</h2>
+        <p class="ff-body-sm mt-3" style="color: #333;">La creatività si sposta dal fare al dirigere: conta intenzione, gusto e firma in un mondo dove lo stile è commodity.</p>
+        <div class="mt-4 flex items-center justify-between gap-3">
+          <a class="ff-button underline" data-track="chapter_open" href="/book/chapter-05.html">Apri capitolo &rarr;</a>
+          <div class="ff-caption" style="color: #888;">refs: 7</div>
+        </div>
+      </article>
+
+      <!-- Chapter 06 — red -->
+      <article class="brutal-card accent-bar accent-red">
+        <div class="ff-eyebrow" style="color: var(--ff-red);">Capitolo 06</div>
+        <h2 class="text-lg font-bold uppercase mt-2">Simulare il mondo: modelli, videogiochi e verità operativa</h2>
+        <p class="ff-body-sm mt-3" style="color: #333;">La simulazione è un modo di conoscere: quando il modello diventa più pratico del reale, cambia la nostra idea di verità.</p>
+        <div class="mt-4 flex items-center justify-between gap-3">
+          <a class="ff-button underline" data-track="chapter_open" href="/book/chapter-06.html">Apri capitolo &rarr;</a>
+          <div class="ff-caption" style="color: #888;">refs: 7</div>
+        </div>
+      </article>
+
+      <!-- Chapter 07 — yellow -->
+      <article class="brutal-card accent-bar accent-yellow">
+        <div class="ff-eyebrow" style="color: var(--ff-yellow);">Capitolo 07</div>
+        <h2 class="text-lg font-bold uppercase mt-2">Attenzione: la crisi non è (solo) distrazione, è governance interiore</h2>
+        <p class="ff-body-sm mt-3" style="color: #333;">Difendere l'attenzione significa progettare ambienti e tecnologie che non colonizzino la mente: è una questione di libertà.</p>
+        <div class="mt-4 flex items-center justify-between gap-3">
+          <a class="ff-button underline" data-track="chapter_open" href="/book/chapter-07.html">Apri capitolo &rarr;</a>
+          <div class="ff-caption" style="color: #888;">refs: 5</div>
+        </div>
+      </article>
+
+      <!-- Chapter 08 — green -->
+      <article class="brutal-card accent-bar accent-green">
+        <div class="ff-eyebrow" style="color: var(--ff-green);">Capitolo 08</div>
+        <h2 class="text-lg font-bold uppercase mt-2">Flow e vita ben vissuta: performance, felicità, significato</h2>
+        <p class="ff-body-sm mt-3" style="color: #333;">Il benessere è una tecnologia della vita: flow, esperienze e investimenti personali formano un portafoglio esistenziale.</p>
+        <div class="mt-4 flex items-center justify-between gap-3">
+          <a class="ff-button underline" data-track="chapter_open" href="/book/chapter-08.html">Apri capitolo &rarr;</a>
+          <div class="ff-caption" style="color: #888;">refs: 6</div>
+        </div>
+      </article>
+
+      <!-- Chapter 09 — blue -->
+      <article class="brutal-card accent-bar">
+        <div class="ff-eyebrow" style="color: var(--ff-blue);">Capitolo 09</div>
+        <h2 class="text-lg font-bold uppercase mt-2">Solitudine, contatto, stress: il corpo sociale come infrastruttura</h2>
+        <p class="ff-body-sm mt-3" style="color: #333;">La crisi contemporanea è anche di contatto: salute mentale e relazione sono un problema di design sociale.</p>
+        <div class="mt-4 flex items-center justify-between gap-3">
+          <a class="ff-button underline" data-track="chapter_open" href="/book/chapter-09.html">Apri capitolo &rarr;</a>
+          <div class="ff-caption" style="color: #888;">refs: 5</div>
+        </div>
+      </article>
+
+      <!-- Chapter 10 — red -->
+      <article class="brutal-card accent-bar accent-red">
+        <div class="ff-eyebrow" style="color: var(--ff-red);">Capitolo 10</div>
+        <h2 class="text-lg font-bold uppercase mt-2">Mangiare il futuro: dieta, microbioma, longevità (senza culto)</h2>
+        <p class="ff-body-sm mt-3" style="color: #333;">La via d'uscita dal caos nutrizionale è unire scienza, contesto personale e umiltà epistemica.</p>
+        <div class="mt-4 flex items-center justify-between gap-3">
+          <a class="ff-button underline" data-track="chapter_open" href="/book/chapter-10.html">Apri capitolo &rarr;</a>
+          <div class="ff-caption" style="color: #888;">refs: 8</div>
+        </div>
+      </article>
+
+      <!-- Chapter 11 — yellow -->
+      <article class="brutal-card accent-bar accent-yellow">
+        <div class="ff-eyebrow" style="color: var(--ff-yellow);">Capitolo 11</div>
+        <h2 class="text-lg font-bold uppercase mt-2">Corpo, performance e rischio: allenarsi contro la mortalità (davvero?)</h2>
+        <p class="ff-body-sm mt-3" style="color: #333;">Salute e performance sono scelte di rischio: robustezza &gt; ottimizzazione fragile.</p>
+        <div class="mt-4 flex items-center justify-between gap-3">
+          <a class="ff-button underline" data-track="chapter_open" href="/book/chapter-11.html">Apri capitolo &rarr;</a>
+          <div class="ff-caption" style="color: #888;">refs: 6</div>
+        </div>
+      </article>
+
+      <!-- Chapter 12 — green -->
+      <article class="brutal-card accent-bar accent-green">
+        <div class="ff-eyebrow" style="color: var(--ff-green);">Capitolo 12</div>
+        <h2 class="text-lg font-bold uppercase mt-2">Plastica e modernità: il costo invisibile del comfort</h2>
+        <p class="ff-body-sm mt-3" style="color: #333;">Le microplastiche rendono i costi esterni improvvisamente interni: corpo, arterie, ecosistemi.</p>
+        <div class="mt-4 flex items-center justify-between gap-3">
+          <a class="ff-button underline" data-track="chapter_open" href="/book/chapter-12.html">Apri capitolo &rarr;</a>
+          <div class="ff-caption" style="color: #888;">refs: 5</div>
+        </div>
+      </article>
+
+      <!-- Chapter 13 — blue -->
+      <article class="brutal-card accent-bar">
+        <div class="ff-eyebrow" style="color: var(--ff-blue);">Capitolo 13</div>
+        <h2 class="text-lg font-bold uppercase mt-2">Imperi, dollaro, Internet: geopolitica nell'era delle reti</h2>
+        <p class="ff-body-sm mt-3" style="color: #333;">La geopolitica torna imperiale, ma con reti digitali e standard tecnologici al centro.</p>
+        <div class="mt-4 flex items-center justify-between gap-3">
+          <a class="ff-button underline" data-track="chapter_open" href="/book/chapter-13.html">Apri capitolo &rarr;</a>
+          <div class="ff-caption" style="color: #888;">refs: 6</div>
+        </div>
+      </article>
+
+      <!-- Chapter 14 — red -->
+      <article class="brutal-card accent-bar accent-red">
+        <div class="ff-eyebrow" style="color: var(--ff-red);">Capitolo 14</div>
+        <h2 class="text-lg font-bold uppercase mt-2">Sovranità digitale, proprietà e crypto: uscire (o entrare) nello Stato</h2>
+        <p class="ff-body-sm mt-3" style="color: #333;">Crypto non sono soldi magici: sono strumenti per ripensare proprietà, fiducia e istituzioni, con costi politici.</p>
+        <div class="mt-4 flex items-center justify-between gap-3">
+          <a class="ff-button underline" data-track="chapter_open" href="/book/chapter-14.html">Apri capitolo &rarr;</a>
+          <div class="ff-caption" style="color: #888;">refs: 5</div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- Footer note -->
+    <section class="mt-10 brutal-card accent-bar accent-green">
+      <h2 class="text-base font-bold uppercase">Note</h2>
+      <ul class="list-disc pl-5 mt-3 ff-body-sm space-y-2" style="color: #333;">
+        <li>Queste pagine sono scaffolding statico: utili per SEO, condivisione e navigazione.</li>
+        <li>In futuro possono diventare un indice "vivo" con estratti e link ai subcapitoli.</li>
+      </ul>
+    </section>
+
   </main>
 
   <script src="/analytics.js"></script>
   <script>
-    // Track page view (provider-agnostic). Implemented in analytics.js
     if (window.ffTrackPage) window.ffTrackPage();
   </script>
 </body>

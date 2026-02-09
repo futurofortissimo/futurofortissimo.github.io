@@ -1,97 +1,405 @@
 <!doctype html>
 <html lang="it">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Capitolo 02 — Il conto dell’intelligenza: costi, energia, compute, infrastrutture</title>
-  <meta name="description" content="Ogni salto cognitivo artificiale è anche un salto infrastrutturale: paghiamo l’intelligenza in energia, supply chain e vincoli fisici." />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Capitolo 02 — Il conto dell’intelligenza: costi, energia, compute, infrastrutture</title>
+    <meta name="description" content="Ogni salto cognitivo artificiale è anche un salto infrastrutturale: paghiamo l’intelligenza in energia, supply chain e vincoli fisici." />
 
-  <link rel="canonical" href="https://futurofortissimo.github.io/book/chapter-02.html" />
+    <link rel="canonical" href="https://futurofortissimo.github.io/book/chapter-02.html" />
 
-  <meta property="og:title" content="Capitolo 02 — Il conto dell’intelligenza: costi, energia, compute, infrastrutture" />
-  <meta property="og:description" content="Ogni salto cognitivo artificiale è anche un salto infrastrutturale: paghiamo l’intelligenza in energia, supply chain e vincoli fisici." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://futurofortissimo.github.io/book/chapter-02.html" />
-  <meta property="og:image" content="https://futurofortissimo.github.io/logo.png" />
+    <meta property="og:title" content="Capitolo 02 — Il conto dell’intelligenza: costi, energia, compute, infrastrutture" />
+    <meta property="og:description" content="Ogni salto cognitivo artificiale è anche un salto infrastrutturale: paghiamo l’intelligenza in energia, supply chain e vincoli fisici." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://futurofortissimo.github.io/book/chapter-02.html" />
+    <meta property="og:image" content="https://futurofortissimo.github.io/logo.png" />
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Capitolo 02 — Il conto dell’intelligenza: costi, energia, compute, infrastrutture" />
-  <meta name="twitter:description" content="Ogni salto cognitivo artificiale è anche un salto infrastrutturale: paghiamo l’intelligenza in energia, supply chain e vincoli fisici." />
-  <meta name="twitter:image" content="https://futurofortissimo.github.io/logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Capitolo 02 — Il conto dell’intelligenza: costi, energia, compute, infrastrutture" />
+    <meta name="twitter:description" content="Ogni salto cognitivo artificiale è anche un salto infrastrutturale: paghiamo l’intelligenza in energia, supply chain e vincoli fisici." />
+    <meta name="twitter:image" content="https://futurofortissimo.github.io/logo.png" />
 
-  <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.ico" />
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=IBM+Plex+Mono:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
 
-  <style>
-    :root{--ink:#0a0a0a;}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial; color:var(--ink);}
-    .mono{font-family:"IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; letter-spacing:.06em; text-transform:uppercase;}
-  </style>
+    <style>
+        :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
+        body { font-family:'Inter',sans-serif; background-color:#fdfdfd; color:var(--ff-black); min-height:100vh; line-height:1.6; position:relative; }
+        body::before { content:''; position:fixed; inset:0; background-image:linear-gradient(var(--ff-grid) 1px,transparent 1px),linear-gradient(90deg,var(--ff-grid) 1px,transparent 1px); background-size:32px 32px; pointer-events:none; z-index:-1; }
+        h1,h2,h3,h4,h5,h6 { font-family:'IBM Plex Mono',monospace; letter-spacing:0.03em; text-transform:uppercase; }
+        .brutal-card { border:4px solid var(--ff-black); background:#fff; box-shadow:6px 6px 0 var(--ff-black); padding:24px; }
+        .accent-bar { position:relative; }
+        .accent-bar::before { content:''; position:absolute; top:-4px; left:-4px; right:-4px; height:10px; background:var(--ff-blue); }
+        .accent-red::before { background:var(--ff-red); }
+        .accent-yellow::before { background:var(--ff-yellow); }
+        .accent-green::before { background:var(--ff-green); }
+        .ff-eyebrow { font-family:'IBM Plex Mono',monospace; font-size:0.75rem; letter-spacing:0.24em; text-transform:uppercase; font-weight:700; }
+        .ff-body { font-size:1rem; line-height:1.65; }
+        .ff-body-sm { font-size:0.9375rem; line-height:1.6; }
+        .no-round,.no-round * { border-radius:0!important; }
+        .note-card { border:2px solid var(--ff-black); background:#fafaf7; padding:16px; box-shadow:3px 3px 0 var(--ff-black); }
+        a:focus-visible { outline:3px solid var(--ff-black); outline-offset:2px; }
 
-  <script type="application/ld+json">
+        /* Additional book-quality styles */
+        .chapter-num { font-family:'Press Start 2P',monospace; font-size:0.6rem; letter-spacing:0.3em; }
+        .drop-cap::first-letter { font-family:'IBM Plex Mono',monospace; font-size:3.2em; float:left; line-height:0.8; padding-right:8px; padding-top:4px; font-weight:700; color:#d0021b; }
+        .toc-link { border-left:3px solid transparent; transition: border-color 0.2s, padding-left 0.2s; }
+        .toc-link:hover { border-left-color:#d0021b; padding-left:12px; }
+        @media print { body::before { display:none; } .brutal-card { box-shadow:none; border:1px solid #999; } }
+    </style>
+
+    <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Chapter",
-  "name": "Il conto dell’intelligenza: costi, energia, compute, infrastrutture",
-  "position": 2,
-  "isPartOf": {
-    "@type": "Book",
-    "name": "Futuro Fortissimo — 14 capitoli (outline)",
-    "url": "https://futurofortissimo.github.io/book/"
-  },
-  "url": "https://futurofortissimo.github.io/book/chapter-02.html",
-  "inLanguage": "it",
-  "description": "Ogni salto cognitivo artificiale è anche un salto infrastrutturale: paghiamo l’intelligenza in energia, supply chain e vincoli fisici."
+    "@context": "https://schema.org",
+    "@type": "Chapter",
+    "name": "Il conto dell’intelligenza: costi, energia, compute, infrastrutture",
+    "position": 2,
+    "isPartOf": {
+        "@type": "Book",
+        "name": "Futuro Fortissimo - Il Libro",
+        "url": "https://futurofortissimo.github.io/book/"
+    },
+    "url": "https://futurofortissimo.github.io/book/chapter-02.html",
+    "inLanguage": "it",
+    "description": "Ogni salto cognitivo artificiale è anche un salto infrastrutturale: paghiamo l’intelligenza in energia, supply chain e vincoli fisici.",
+    "author": {
+        "@type": "Person",
+        "name": "Michele Merelli",
+        "url": "https://www.linkedin.com/in/michelemerelli/"
+    }
 }
-</script>
+    </script>
 </head>
-<body class="bg-zinc-50">
-  <header class="border-b border-zinc-200 bg-white">
-    <div class="max-w-4xl mx-auto px-4 py-5 flex items-center justify-between gap-3">
-      <div>
-        <div class="mono text-xs text-zinc-500">Futuro Fortissimo — book</div>
-        <div class="text-xl font-extrabold tracking-tight">Capitolo 02 — Il conto dell’intelligenza: costi, energia, compute, infrastrutture</div>
-      </div>
-      <nav class="flex gap-3 text-sm">
-        <a data-nav="1" class="underline" href="/index.html">Home</a>
-        <a data-nav="1" class="underline" href="/book/">Libro</a>
-      </nav>
-    </div>
-  </header>
+<body>
 
-  <main class="max-w-4xl mx-auto px-4 py-8">
-    
-    <section class="rounded-xl border border-zinc-200 bg-white p-5">
-      <div class="mono text-xs text-zinc-500">Capitolo 02 / 14</div>
-      <h1 class="text-2xl font-extrabold tracking-tight mt-1">Il conto dell’intelligenza: costi, energia, compute, infrastrutture</h1>
-      <p class="text-sm text-zinc-700 mt-3">Ogni salto cognitivo artificiale è anche un salto infrastrutturale: paghiamo l’intelligenza in energia, supply chain e vincoli fisici.</p>
+    <!-- ============ HEADER ============ -->
+    <header class="bg-white" style="border-bottom:4px solid var(--ff-black);">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+            <div class="min-w-0">
+                <div class="ff-eyebrow text-zinc-500 mb-1">Futuro Fortissimo &mdash; Libro</div>
+                <div class="text-lg md:text-xl font-bold tracking-tight truncate" style="font-family:'IBM Plex Mono',monospace; text-transform:uppercase; letter-spacing:0.03em;">
+                    Cap. 02 &mdash; Il conto dell’intelligenza: costi, energia, compute, infrast...
+                </div>
+            </div>
+            <nav class="flex gap-4 text-sm font-medium flex-shrink-0">
+                <a href="/index.html" class="hover:underline underline-offset-4 text-zinc-600 hover:text-zinc-900">Home</a>
+                <a href="/book/" class="hover:underline underline-offset-4 text-zinc-600 hover:text-zinc-900">Libro</a>
+                <a href="/temi.html" class="hover:underline underline-offset-4 text-zinc-600 hover:text-zinc-900">Temi</a>
+                <a href="/note.html" class="hover:underline underline-offset-4 text-zinc-600 hover:text-zinc-900">Note</a>
+            </nav>
+        </div>
+    </header>
 
-      
-        <div class="mt-5">
-          <div class="mono text-xs text-zinc-500">Riferimenti (placeholder)</div>
-          <ul class="mt-2 grid gap-2 text-sm">
-            <li class="rounded-lg bg-zinc-50 border border-zinc-200 px-3 py-2"><code>ff.135.1</code></li><li class="rounded-lg bg-zinc-50 border border-zinc-200 px-3 py-2"><code>ff.135.2</code></li><li class="rounded-lg bg-zinc-50 border border-zinc-200 px-3 py-2"><code>ff.139.1</code></li><li class="rounded-lg bg-zinc-50 border border-zinc-200 px-3 py-2"><code>ff.126.1</code></li><li class="rounded-lg bg-zinc-50 border border-zinc-200 px-3 py-2"><code>ff.125.2</code></li>
-          </ul>
-          <p class="text-xs text-zinc-500 mt-3">TODO: collegare questi refs ai subcapitoli/URL reali (ff.xx.yy) e generare estratti.</p>
+    <!-- ============ MAIN CONTENT ============ -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 py-10 md:py-14">
+
+        <!-- ============ HERO ============ -->
+        <section class="brutal-card accent-bar accent-red mb-14">
+            <div class="chapter-num text-zinc-400 mb-4">Capitolo 02 / 14</div>
+            <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight mb-6" style="text-transform:none; font-family:'IBM Plex Mono',monospace;">
+                Il conto dell’intelligenza: costi, energia, compute, infrastrutture
+            </h1>
+            <p class="ff-body text-zinc-700 max-w-2xl mb-8 leading-relaxed" style="font-size:1.125rem;">
+                Ogni salto cognitivo artificiale è anche un salto infrastrutturale: paghiamo l’intelligenza in energia, supply chain e vincoli fisici.
+            </p>
+            <div class="border-t-2 border-zinc-100 pt-5">
+                <div class="ff-eyebrow text-zinc-400 mb-3 text-xs">Contiene materiale da</div>
+                <div class="flex flex-wrap">
+                    <span class="inline-block border-2 border-zinc-300 px-3 py-1 text-sm font-medium text-zinc-600 mr-2 mb-2">🎼 ff.135 Casino Royale</span><span class="inline-block border-2 border-zinc-300 px-3 py-1 text-sm font-medium text-zinc-600 mr-2 mb-2">🎼 ff.139 E&#x27; Stato l&#x27;AI?</span><span class="inline-block border-2 border-zinc-300 px-3 py-1 text-sm font-medium text-zinc-600 mr-2 mb-2">🎼 ff.126 Google: fine o rinascita?</span><span class="inline-block border-2 border-zinc-300 px-3 py-1 text-sm font-medium text-zinc-600 mr-2 mb-2">🎼 ff.125 USA: crollo di un impero</span>
+                </div>
+            </div>
+
+            <!-- Table of contents -->
+            <div class="mt-6 border-t-2 border-zinc-100 pt-5">
+                <div class="ff-eyebrow text-zinc-400 mb-3 text-xs">In questo capitolo</div>
+                <div class="space-y-1">
+                    <a href="#ff-135-1" class="toc-link block py-1 pl-3 ff-body-sm text-zinc-600 hover:text-zinc-900 transition-colors">FF.135.1 &mdash; 🎭 ff.135.1 E’ tutto un casino: manipolazioni</a><a href="#ff-135-2" class="toc-link block py-1 pl-3 ff-body-sm text-zinc-600 hover:text-zinc-900 transition-colors">FF.135.2 &mdash; ⚜ ff.135.2 Ritorno ai Comuni medievali?</a><a href="#ff-139-1" class="toc-link block py-1 pl-3 ff-body-sm text-zinc-600 hover:text-zinc-900 transition-colors">FF.139.1 &mdash; 🍫ff.139.1 Svizzero? No, NVIDIA</a><a href="#ff-126-1" class="toc-link block py-1 pl-3 ff-body-sm text-zinc-600 hover:text-zinc-900 transition-colors">FF.126.1 &mdash; 🔯 ff.126.1 Da campi di sterminio a Intel</a><a href="#ff-125-2" class="toc-link block py-1 pl-3 ff-body-sm text-zinc-600 hover:text-zinc-900 transition-colors">FF.125.2 &mdash; 💵 ff.125.2 Stabilizzare il dollaro</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SUBCHAPTERS ============ -->
+        
+    <!-- Subchapter: ff.135.1 -->
+    <section class="brutal-card accent-bar accent-red mb-10" id="ff-135-1">
+        <div class="ff-eyebrow mb-2" style="color:#d0021b">FF.135.1</div>
+        <h2 class="text-xl md:text-2xl font-bold mb-1">🎭 ff.135.1 E’ tutto un casino: manipolazioni</h2>
+        <div class="ff-eyebrow text-zinc-400 mb-6 text-xs">da 🎼 ff.135 Casino Royale</div>
+
+        <div class="max-w-none prose-zinc">
+            <p class="ff-body text-zinc-800 mb-4">Abbiamo un problema: Trump. O meglio, la possibilità che il mondo cambi con un tweet; per una guerra, un incremento di dazi, un blocco alle migrazioni.</p>
+<p class="ff-body text-zinc-800 mb-4">Cinguetti di “singoli nodi” che creano onde anomale nel mare iperconnesso che ci circonda. Tanto che una nuova minaccia di tariffe può valere80 mili</p>
         </div>
 
-      <div class="mt-6 flex flex-wrap gap-3">
-        <a class="underline" data-track="chapter_prev" href="/book/chapter-01.html">← Precedente</a>
-        <a class="underline" data-track="chapter_index" href="/book/">Indice capitoli</a>
-        <a class="underline" data-track="chapter_next" href="/book/chapter-03.html">Successivo →</a>
-      </div>
+        <div class="mt-4 text-right">
+            <a href="https://fortissimo.substack.com/i/173499753/ff-e-tutto-un-casino-manipolazioni" target="_blank" rel="noopener"
+               class="inline-flex items-center gap-1 ff-eyebrow text-xs hover:underline" style="color:#d0021b">
+                Leggi su Substack
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+        </div>
+        
+            <div class="mt-6 pt-4 border-t-2 border-zinc-100">
+                <div class="ff-eyebrow text-zinc-500 mb-3">Fonti e riferimenti</div>
+                <div class="flex flex-wrap gap-3">
+                    <a href="https://www.binance.com/en/square/post/30920097507386" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
+                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    80 milioni in 30 minuti (almeno per qualcuno con accesso a informazioni confiden
+                </a>
+                </div>
+            </div>
+        
     </section>
-    
-  </main>
+    <!-- Subchapter: ff.135.2 -->
+    <section class="brutal-card accent-bar accent-red mb-10" id="ff-135-2">
+        <div class="ff-eyebrow mb-2" style="color:#d0021b">FF.135.2</div>
+        <h2 class="text-xl md:text-2xl font-bold mb-1">⚜ ff.135.2 Ritorno ai Comuni medievali?</h2>
+        <div class="ff-eyebrow text-zinc-400 mb-6 text-xs">da 🎼 ff.135 Casino Royale</div>
 
-  <script src="/analytics.js"></script>
-  <script>
-    // Track page view (provider-agnostic). Implemented in analytics.js
-    if (window.ffTrackPage) window.ffTrackPage();
-  </script>
+        <div class="max-w-none prose-zinc">
+            <p class="ff-body text-zinc-800 mb-4">Non possiamo più permetterci di centralizzare (male) informazioni e scelte:l’incendio degli archivi in Sud Corea che ha bruciato 8 anni di lavoro pubblico.</p>
+<p class="ff-body text-zinc-800 mb-4">Ecco allora che nasce l’idea di🎼 ff.52 Fondare una Nazione in garage; un’Età dei Comuni 2.0, accelerati dalla tecnologia.</p>
+        </div>
+
+        <div class="mt-4 text-right">
+            <a href="https://fortissimo.substack.com/i/173499753/ff-ritorno-ai-comuni-medievali" target="_blank" rel="noopener"
+               class="inline-flex items-center gap-1 ff-eyebrow text-xs hover:underline" style="color:#d0021b">
+                Leggi su Substack
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+        </div>
+        
+            <div class="mt-6 pt-4 border-t-2 border-zinc-100">
+                <div class="ff-eyebrow text-zinc-500 mb-3">Fonti e riferimenti</div>
+                <div class="flex flex-wrap gap-3">
+                    <a href="https://www.macitynet.it/incendio-in-corea-del-sud-ha-distrutto-858-terabyte-di-dati-governativi/" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
+                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    l’incendio degli archivi in Sud Corea che ha bruciato 8 anni di lavoro pubblico
+                </a>
+                </div>
+            </div>
+        
+            <div class="mt-4">
+                <div class="ff-eyebrow text-zinc-500 mb-2">Letture collegate</div>
+                <div class="flex flex-wrap gap-3">
+                    <a href="https://fortissimo.substack.com/p/ff52-fondare-una-nazione-in-garage?utm_source=publication-search" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-1.5 text-sm font-medium hover:underline" style="color:#d0021b">
+                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+                    🎼 ff.52 Fondare una Nazione in garage
+                </a>
+                </div>
+            </div>
+    </section>
+    <!-- Subchapter: ff.139.1 -->
+    <section class="brutal-card accent-bar accent-red mb-10" id="ff-139-1">
+        <div class="ff-eyebrow mb-2" style="color:#d0021b">FF.139.1</div>
+        <h2 class="text-xl md:text-2xl font-bold mb-1">🍫ff.139.1 Svizzero? No, NVIDIA</h2>
+        <div class="ff-eyebrow text-zinc-400 mb-6 text-xs">da 🎼 ff.139 E&#x27; Stato l&#x27;AI?</div>
+
+        <div class="max-w-none prose-zinc">
+            <p class="ff-body text-zinc-800 mb-4">In 3 mesi, NVIDIA ha incassato 57 miliardi di dollari (guadagnandone 36, con un margine del 75%). Numeri incomprensibili. Proviamo a capirli.</p>
+<p class="ff-body text-zinc-800 mb-4">C’è chi confronta il suo valore di mercato con il prodotto interno lordo di interi stati. E’ sbagliato.</p>
+<p class="ff-body text-zinc-800 mb-4">Valuation ≠ GDP.Il primo è valoreteoricopercepito, il</p>
+        </div>
+
+        <div class="mt-4 text-right">
+            <a href="https://fortissimo.substack.com/i/179548983/ff-svizzero-no-nvidia" target="_blank" rel="noopener"
+               class="inline-flex items-center gap-1 ff-eyebrow text-xs hover:underline" style="color:#d0021b">
+                Leggi su Substack
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+        </div>
+        
+            <div class="mt-6 pt-4 border-t-2 border-zinc-100">
+                <div class="ff-eyebrow text-zinc-500 mb-3">Fonti e riferimenti</div>
+                <div class="flex flex-wrap gap-3">
+                    <a href="https://www.verbolsa.com/market-country-Switzerland-1" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
+                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    le aziende svizzere quotate a Zurigo (Rolex, Nestlé, ABB, Novartis…)
+                </a>
+                </div>
+            </div>
+        
+    </section>
+    <!-- Subchapter: ff.126.1 -->
+    <section class="brutal-card accent-bar accent-red mb-10" id="ff-126-1">
+        <div class="ff-eyebrow mb-2" style="color:#d0021b">FF.126.1</div>
+        <h2 class="text-xl md:text-2xl font-bold mb-1">🔯 ff.126.1 Da campi di sterminio a Intel</h2>
+        <div class="ff-eyebrow text-zinc-400 mb-6 text-xs">da 🎼 ff.126 Google: fine o rinascita?</div>
+
+        <div class="max-w-none prose-zinc">
+            <p class="ff-body text-zinc-800 mb-4">Andy Grove è sopravvissuto all’Olocausto. Poi, emigrato in America dall’Ungheria, ha guidato sin dalla sua nascita, Intel (co-fondata con Moore, quello della legge).</p>
+<p class="ff-body text-zinc-800 mb-4">Nonostante la sua formazione tecnica, si è reinventato manager operativo, raccogliendo successi tanto da essere nominatoTime Man of Th</p>
+        </div>
+
+        <div class="mt-4 text-right">
+            <a href="https://fortissimo.substack.com/i/164288050/ff-da-campi-di-sterminio-a-intel" target="_blank" rel="noopener"
+               class="inline-flex items-center gap-1 ff-eyebrow text-xs hover:underline" style="color:#d0021b">
+                Leggi su Substack
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+        </div>
+        
+            <div class="mt-6 pt-4 border-t-2 border-zinc-100">
+                <div class="ff-eyebrow text-zinc-500 mb-3">Fonti e riferimenti</div>
+                <div class="flex flex-wrap gap-3">
+                    <a href="https://en.wikipedia.org/wiki/Andrew_Grove" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
+                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    Andy Grove è sopravvissuto all’Olocausto
+                </a><a href="https://time.com/4267150/andrew-grove-intel-survivor-biography-budapest/" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
+                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    Time Man of The Year 1997
+                </a>
+                </div>
+            </div>
+        
+    </section>
+    <!-- Subchapter: ff.125.2 -->
+    <section class="brutal-card accent-bar accent-red mb-10" id="ff-125-2">
+        <div class="ff-eyebrow mb-2" style="color:#d0021b">FF.125.2</div>
+        <h2 class="text-xl md:text-2xl font-bold mb-1">💵 ff.125.2 Stabilizzare il dollaro</h2>
+        <div class="ff-eyebrow text-zinc-400 mb-6 text-xs">da 🎼 ff.125 USA: crollo di un impero</div>
+
+        <div class="max-w-none prose-zinc">
+            <p class="ff-body text-zinc-800 mb-4">Ilmoney-printing, insomma, e la ben nota inflazione. Per un’azione di S&amp;P500 in quegli anni bastavano 25 ore di lavoro, oggi servono 24giornidi lavoro.</p>
+<p class="ff-body text-zinc-800 mb-4">Una delle risposte? Le stablecoin: valute digitali il cui valore è stabilizzato algoritmicamente.</p>
+<p class="ff-body text-zinc-800 mb-4">Sempre più diffuse, specialmente nei BRICS e in Arabia Saudita, in 5 anni hanno superato VISA e Mastercard per quantità di transazioni (15T$ nel 2024).</p>
+<p class="ff-body text-zinc-800 mb-4">Non a caso, Stripe ha annunciatol’integrazione di pagamenti con Stablecoins.</p>
+        </div>
+
+        <div class="mt-4 text-right">
+            <a href="https://fortissimo.substack.com/i/163689154/ff-stabilizzare-il-dollaro" target="_blank" rel="noopener"
+               class="inline-flex items-center gap-1 ff-eyebrow text-xs hover:underline" style="color:#d0021b">
+                Leggi su Substack
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+        </div>
+        
+            <div class="mt-6 pt-4 border-t-2 border-zinc-100">
+                <div class="ff-eyebrow text-zinc-500 mb-3">Fonti e riferimenti</div>
+                <div class="flex flex-wrap gap-3">
+                    <a href="https://docs.stripe.com/crypto/stablecoin-financial-accounts" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
+                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    l’integrazione di pagamenti con Stablecoins
+                </a>
+                </div>
+            </div>
+        
+    </section>
+
+        
+    <!-- Notes Section -->
+    <section class="mt-16 mb-12">
+        <div class="flex items-center gap-3 mb-8">
+            <div class="h-1 flex-1" style="background:#d0021b"></div>
+            <h3 class="text-lg font-bold whitespace-nowrap">Dal Taccuino</h3>
+            <div class="h-1 flex-1" style="background:#d0021b"></div>
+        </div>
+        <p class="ff-body-sm text-zinc-500 mb-6 text-center max-w-lg mx-auto">
+            Note e segnalibri dall'archivio Futuro Fortissimo, collegati ai temi di questo capitolo.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            
+                <a href="https://x.com/EthanHe_42/status/1947711720665059595" target="_blank" rel="noopener" class="note-card block hover:shadow-[4px_4px_0_var(--ff-black)] transition-shadow group">
+                    <div class="text-xs mb-2 opacity-60">💻 🍃</div>
+                    <div class="ff-body-sm font-medium text-zinc-800 group-hover:text-zinc-900 leading-snug">
+                        50 milioni di GPU H100 a pieno regime consumano 35 GW circa il 2% del consumo elettrico globale
+                    </div>
+                    <div class="mt-2 ff-eyebrow text-xs opacity-40">Nota #1220</div>
+                </a>
+                <a href="https://techcrunch.com/2025/07/14/mark-zuckerberg-says-meta-is-building-a-5gw-ai-data-center/" target="_blank" rel="noopener" class="note-card block hover:shadow-[4px_4px_0_var(--ff-black)] transition-shadow group">
+                    <div class="text-xs mb-2 opacity-60">💻 🧠</div>
+                    <div class="ff-body-sm font-medium text-zinc-800 group-hover:text-zinc-900 leading-snug">
+                        Mark Zuckerberg annuncia la costruzione di un data center AI da 5 GW, Hyperion, cinque volte più grande degli attuali.
+                    </div>
+                    <div class="mt-2 ff-eyebrow text-xs opacity-40">Nota #1186</div>
+                </a>
+                <a href="https://x.com/JessePeltan/status/1927829603596587403" target="_blank" rel="noopener" class="note-card block hover:shadow-[4px_4px_0_var(--ff-black)] transition-shadow group">
+                    <div class="text-xs mb-2 opacity-60">💻 🍃</div>
+                    <div class="ff-body-sm font-medium text-zinc-800 group-hover:text-zinc-900 leading-snug">
+                        La crescita attuale della Cina richiede 300 GW di energia nucleare ogni 4 anni per tenere il passo.
+                    </div>
+                    <div class="mt-2 ff-eyebrow text-xs opacity-40">Nota #1154</div>
+                </a>
+                <a href="https://x.com/JessePeltan/status/1927829603596587403?t=iRp8zccf0Nj3pu_rImTg6A&amp;s=33" target="_blank" rel="noopener" class="note-card block hover:shadow-[4px_4px_0_var(--ff-black)] transition-shadow group">
+                    <div class="text-xs mb-2 opacity-60">💻 🍃</div>
+                    <div class="ff-body-sm font-medium text-zinc-800 group-hover:text-zinc-900 leading-snug">
+                        300 GW di nucleare è fantastico
+                    </div>
+                    <div class="mt-2 ff-eyebrow text-xs opacity-40">Nota #1109</div>
+                </a>
+                <a href="https://tech.eu/2025/07/30/ore-energy-connects-worlds-first-grid-connected-iron-air-battery-in-delft/" target="_blank" rel="noopener" class="note-card block hover:shadow-[4px_4px_0_var(--ff-black)] transition-shadow group">
+                    <div class="text-xs mb-2 opacity-60">💻 🍃</div>
+                    <div class="ff-body-sm font-medium text-zinc-800 group-hover:text-zinc-900 leading-snug">
+                        Ore Energy connette la prima batteria ferro-aria che offre 100 ore di stoccaggio energetico pulito
+                    </div>
+                    <div class="mt-2 ff-eyebrow text-xs opacity-40">Nota #1219</div>
+                </a>
+                <a href="https://www.sustainabilitybynumbers.com/p/carbon-footprint-chatgpt" target="_blank" rel="noopener" class="note-card block hover:shadow-[4px_4px_0_var(--ff-black)] transition-shadow group">
+                    <div class="text-xs mb-2 opacity-60">💻 🍃</div>
+                    <div class="ff-body-sm font-medium text-zinc-800 group-hover:text-zinc-900 leading-snug">
+                        Una ricerca su ChatGPT equivale a solo lo 0.00007% dell&#x27;impronta elettrica annuale pro capite nel Regno Unito.
+                    </div>
+                    <div class="mt-2 ff-eyebrow text-xs opacity-40">Nota #1145</div>
+                </a>
+                <a href="https://www.ft.com/content/d80b68ec-3da8-42ea-82ee-4cab22b31a69" target="_blank" rel="noopener" class="note-card block hover:shadow-[4px_4px_0_var(--ff-black)] transition-shadow group">
+                    <div class="text-xs mb-2 opacity-60">💻 🍃</div>
+                    <div class="ff-body-sm font-medium text-zinc-800 group-hover:text-zinc-900 leading-snug">
+                        La Banca Mondiale revoca il divieto sui finanziamenti all&#x27;energia nucleare per soddisfare la domanda crescente.
+                    </div>
+                    <div class="mt-2 ff-eyebrow text-xs opacity-40">Nota #1126</div>
+                </a>
+                <a href="https://www.economist.com/interactive/essay/2024/06/20/solar-power-is-going-to-be-huge" target="_blank" rel="noopener" class="note-card block hover:shadow-[4px_4px_0_var(--ff-black)] transition-shadow group">
+                    <div class="text-xs mb-2 opacity-60">💻 🍃</div>
+                    <div class="ff-body-sm font-medium text-zinc-800 group-hover:text-zinc-900 leading-snug">
+                        Celle solari: principale fonte elettrica entro il 2030, tutta l&#x27;energia entro il 2040
+                    </div>
+                    <div class="mt-2 ff-eyebrow text-xs opacity-40">Nota #681</div>
+                </a>
+        </div>
+    </section>
+
+        <!-- ============ NAVIGATION ============ -->
+        <nav class="mt-16 mb-8">
+            <div class="brutal-card p-0 overflow-hidden">
+                <div class="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-zinc-900" style="border:none; box-shadow:none;">
+                    <a href="chapter-01.html" class="flex items-center gap-2 p-5 hover:bg-zinc-50 transition-colors group"><svg class="w-5 h-5 text-zinc-400 group-hover:text-zinc-900 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg><div><div class="ff-eyebrow text-zinc-400 text-xs">Precedente</div><div class="text-sm font-semibold mt-0.5">Capitolo 01</div></div></a>
+
+                    <a href="/book/" class="flex items-center justify-center gap-2 p-5 hover:bg-zinc-50 transition-colors text-center group">
+                        <div>
+                            <div class="ff-eyebrow text-zinc-400 text-xs">Indice</div>
+                            <div class="text-sm font-semibold mt-0.5">Tutti i capitoli</div>
+                        </div>
+                    </a>
+
+                    <a href="chapter-03.html" class="flex items-center justify-end gap-2 p-5 hover:bg-zinc-50 transition-colors text-right group"><div><div class="ff-eyebrow text-zinc-400 text-xs">Successivo</div><div class="text-sm font-semibold mt-0.5">Capitolo 03</div></div><svg class="w-5 h-5 text-zinc-400 group-hover:text-zinc-900 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></a>
+                </div>
+            </div>
+        </nav>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="bg-white" style="border-top:4px solid var(--ff-black);">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-zinc-500">
+            <div class="ff-eyebrow text-xs">&copy; Futuro Fortissimo &mdash; Michele Merelli</div>
+            <div class="flex gap-4">
+                <a href="https://fortissimo.substack.com/" target="_blank" rel="noopener" class="hover:text-zinc-900 transition-colors">Substack</a>
+                <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener" class="hover:text-zinc-900 transition-colors">LinkedIn</a>
+                <a href="https://futurofortissimo.github.io/" class="hover:text-zinc-900 transition-colors">Archivio</a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
