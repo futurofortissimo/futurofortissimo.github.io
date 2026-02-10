@@ -31,6 +31,11 @@
         .toc-link{border-left:3px solid transparent;transition:all 0.2s}.toc-link:hover{border-left-color:var(--ff-blue);padding-left:12px}
         blockquote{border-left:4px solid var(--ff-blue);padding:12px 20px;margin:1.5em 0;background:#f8fafc;font-style:italic}
         .sep{height:2px;background:linear-gradient(90deg,var(--ff-blue),transparent);margin:3em 0}
+        .prose .fc{cursor:pointer;text-decoration:none;transition:color 0.15s}
+        .prose .fc:hover{text-decoration:underline}
+        .note-highlight{background:linear-gradient(180deg,transparent 60%,rgba(245,166,35,0.25) 60%);padding:0 2px;font-style:normal;color:inherit}
+        .prose{overflow-wrap:break-word;word-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+        .prose p{max-width:72ch}
         @media(max-width:640px){.brutal-card{border-width:2px;box-shadow:none;padding:16px}.prose p{font-size:1rem}}
         @media print{body::before{display:none}.brutal-card{box-shadow:none;border:1px solid #999}}
     </style>
@@ -65,6 +70,9 @@
                 <a href="#s1" class="toc-link block py-1 pl-3 text-sm text-zinc-600 hover:text-zinc-900">1.1 — La nuova unità di misura: AI, valore e singolarità</a>
                 <a href="#s2" class="toc-link block py-1 pl-3 text-sm text-zinc-600 hover:text-zinc-900">1.2 — Dal tool all'agente: simulazione, creatività e verità operativa</a>
                 <a href="#s3" class="toc-link block py-1 pl-3 text-sm text-zinc-600 hover:text-zinc-900">1.3 — Sovranità digitale: crypto, reti e il futuro dello Stato</a>
+                <a href="#s4" class="toc-link block py-1 pl-3 text-sm text-zinc-600 hover:text-zinc-900">1.4 — Robot e agenti autonomi: dall'automazione al pensiero</a>
+                <a href="#s5" class="toc-link block py-1 pl-3 text-sm text-zinc-600 hover:text-zinc-900">1.5 — Superintelligenza e allineamento: controllo, valori e rischi</a>
+                <a href="#s6" class="toc-link block py-1 pl-3 text-sm text-zinc-600 hover:text-zinc-900">1.6 — Startup, venture e il nuovo scambio di valore</a>
             </div>
         </div>
     </section>
@@ -148,6 +156,45 @@
     <p>"Con 10 GW di calcolo, l'AI può curare il cancro. O diventare un tutor per ogni studente del mondo. Ma non può fare entrambi. Se siamo limitati dall'energia, dobbiamo scegliere a cosa dare priorità."<br>— Sam Altman, <em>Abundant Intelligence</em></p>
     </blockquote>
 
+    <div class="sep"></div>
+
+    <!-- ===== 1.4 ===== -->
+    <h2 id="s4" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-blue-500 pb-3">1.4 — Robot e agenti autonomi: dall'automazione al pensiero</h2>
+
+    <p class="drop-cap">Un robot controllato da ChatGPT non ha bisogno di codice: gli basta un prompt. All'MIT, i ricercatori hanno dimostrato che un braccio robotico può eseguire compiti complessi — versare liquidi, impilare oggetti, navigare ambienti — semplicemente ricevendo istruzioni in linguaggio naturale da un modello di linguaggio (<span class="fc">🤖 ff.88.2 ChatGPT controlla un robot</span>). Non è automazione industriale classica, dove ogni movimento è pre-programmato: è <em>autonomia emergente</em>, dove il robot interpreta l'obiettivo e decide come raggiungerlo. La transizione è analoga al passaggio dalla fotografia alla cinematografia: il soggetto non è più fermo — si muove, reagisce, improvvisa.</p>
+
+    <p>La <mark class="note-highlight">visione artificiale</mark> è la frontiera successiva. L'AI non si limita più a leggere testo: <em>vede</em> il mondo fisico con una precisione che supera l'occhio umano in compiti specifici (<span class="fc">👁️ ff.88.3 Dalle parole ai fatti</span>). Un sistema di visione artificiale può ispezionare 10.000 componenti al minuto in una catena di montaggio, identificando difetti di 0,1 millimetri invisibili agli operatori umani. Ma è nella combinazione di linguaggio e visione che emerge la vera rivoluzione: un robot che <em>capisce</em> cosa gli stai chiedendo e <em>vede</em> come farlo non è più uno strumento — è un collaboratore. Il <mark class="note-highlight">filosofo Luciano Floridi</mark> ha definito questa soglia come il passaggio "dall'artefatto all'agente".</p>
+
+    <p>Tesla ha portato questa visione alla scala industriale con Optimus, il suo robot umanoide progettato per compiti domestici e manifatturieri (<span class="fc">🦾 ff.37.2 Tesla AI Day</span>). L'obiettivo dichiarato da Musk è un prezzo finale sotto i 20.000 dollari — meno di un'auto — producendone milioni di unità. Il concetto è semplice: lo stesso software di guida autonoma che pilota una Tesla Model 3 può pilotare un corpo bipede. I motori sono diversi, ma l'intelligenza è la stessa. A livello globale, l'adozione di robot industriali accelera: <mark class="note-highlight">secondo la International Federation of Robotics, nel 2024 sono stati installati 590.000 nuovi robot industriali</mark>, il 7% in più dell'anno precedente (<span class="fc">🏭 ff.37.4 Robot sempre più diffusi</span>). Ma la vera crescita è nei robot di servizio — magazzinieri, corrieri, assistenti sanitari — dove l'AI permette di operare in ambienti non strutturati, imprevedibili, umani.</p>
+
+    <p>Il punto di connessione nascosto tra un braccio robotico al MIT e un Optimus a Shanghai è che la robotica non è più un problema di <em>hardware</em> — è un problema di <em>software</em>. I motori, i sensori, gli attuatori sono commodity; ciò che manca è l'intelligenza per usarli in contesti reali. E quell'intelligenza, oggi, viene dai modelli di linguaggio. Il robot del futuro non sarà costruito da ingegneri meccanici: sarà programmato da chi sa parlare con un LLM.</p>
+
+    <div class="sep"></div>
+
+    <!-- ===== 1.5 ===== -->
+    <h2 id="s5" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-blue-500 pb-3">1.5 — Superintelligenza e allineamento: controllo, valori e rischi</h2>
+
+    <p class="drop-cap">Nel 2014, Nick Bostrom pubblica <em>Superintelligence</em> e introduce il problema dell'allineamento con un esperimento mentale divenuto celebre: il <em>paperclip maximizer</em> (<span class="fc">📎 ff.36.2 Il super-librozzo sulla singolarità</span>). Un'AI incaricata di massimizzare la produzione di graffette, senza vincoli morali, potrebbe convertire l'intero pianeta — compresi gli esseri umani — in materia prima per graffette. Non è una profezia: è un teorema sulla natura delle funzioni obiettivo. <mark class="note-highlight">Stuart Russell, professore a Berkeley, ha formalizzato il problema nel suo <em>Human Compatible</em></mark>: qualsiasi sistema sufficientemente intelligente che persegue un obiettivo mal specificato diventa pericoloso non per malevolenza, ma per competenza. L'AI non odia l'umanità — semplicemente non la include nella sua funzione di utilità.</p>
+
+    <p>Ray Kurzweil, il futurista più citato nella storia del genere, ha predetto nel 2005 che l'AGI — intelligenza artificiale generale — arriverà nel 2029 (<span class="fc">🔮 ff.36.3 Una bella chiaccherata</span>). Siamo nel 2026 e la previsione sembra sempre meno fantascientifica. Kurzweil definiva l'AGI come il momento in cui un computer supera il test di Turing in modo convincente — cioè quando non sappiamo più distinguere una macchina da un essere umano in una conversazione. <mark class="note-highlight">Con GPT-5 che ottiene punteggi nel top 1% in test standardizzati di ragionamento</mark>, la domanda non è più "se" ma "come" gestiremo il momento in cui la linea si confonde definitivamente.</p>
+
+    <p>Ma forse siamo già oltre quel punto, senza saperlo. Gli smartphone — estensioni permanenti del nostro corpo e della nostra mente — ci hanno trasformato in cyborg funzionali (<span class="fc">📱 ff.36.4 Siamo già mischiati con l'AI?</span>). <mark class="note-highlight">Il neuroscienziato David Eagleman</mark> ha documentato come il cervello umano già tratti lo smartphone come un "arto fantasma digitale": quando vibra, il sistema nervoso risponde prima della coscienza. I teenager che crescono con i social media mostrano alterazioni misurabili nei circuiti dopaminergici — non diverse, nella struttura, da quelle di una dipendenza chimica. L'allineamento non è solo un problema per le macchine superintelligenti del futuro: è un problema per gli algoritmi che già oggi determinano cosa vediamo, cosa desideriamo e di cosa abbiamo paura.</p>
+
+    <p>Il collegamento nascosto tra Bostrom e lo smartphone è questo: non serve una superintelligenza per perdere il controllo. Bastano miliardi di piccole ottimizzazioni — un feed, un like, una notifica — ciascuna innocua, ma nel loro insieme capaci di modellare il comportamento di intere popolazioni. La superintelligenza, forse, non arriverà come un'esplosione: arriverà come un'erosione. E il problema dell'allineamento non è tecnico — è filosofico: cosa vogliamo veramente? Se non lo sappiamo noi, come potrebbe saperlo una macchina?</p>
+
+    <div class="sep"></div>
+
+    <!-- ===== 1.6 ===== -->
+    <h2 id="s6" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-blue-500 pb-3">1.6 — Startup, venture e il nuovo scambio di valore</h2>
+
+    <p class="drop-cap">Il venture capital ha investito 40 miliardi di dollari in startup legate al clima nel solo 2023 — un record storico che supera l'intero budget della NASA. Northvolt costruisce batterie in Svezia; Helion promette la fusione nucleare commerciale entro il 2028; Commonwealth Fusion Systems, spinoff del MIT, ha raggiunto temperature plasmatiche di 100 milioni di gradi (<span class="fc">🌱 ff.16.4 Quali startup monitorare?</span>). Il deep tech — hardware, energia, biotech — cresce del 20% a trimestre, invertendo decenni di dominio del software puro. <mark class="note-highlight">Secondo PitchBook, il 35% dei deal venture nel 2024 riguarda startup con un componente hardware</mark> — un dato impensabile cinque anni fa, quando "software is eating the world" era il mantra unico di Sand Hill Road.</p>
+
+    <p>I trend emergenti ridisegnano il campo di gioco. L'AI generativa ha creato un mercato da zero a 100 miliardi di dollari in due anni — la crescita più rapida nella storia delle tecnologie (<span class="fc">📊 ff.45.3 Quali trend decolleranno?</span>). Ma la vera innovazione non è nel modello: è nell'applicazione. <mark class="note-highlight">Y Combinator riporta che il 75% delle startup del batch S24 usa AI generativa</mark> come componente core — non come feature aggiuntiva ma come architettura fondante. Il passaggio è cruciale: l'AI non è più un tool che si aggiunge a un prodotto esistente; è il substrato su cui nascono prodotti prima impossibili.</p>
+
+    <p>Devin, il software engineer AI di Cognition Labs, è l'esempio più radicale: un agente autonomo che scrive codice, lo testa, lo debugga e lo deploya — il tutto a partire da una descrizione in linguaggio naturale (<span class="fc">⚡ ff.88.5 Un paio di esempi di accelerazione</span>). Nella prima settimana su Upwork, ha guadagnato 4.000 dollari risolvendo bug per clienti che non sapevano di interagire con un'AI. <mark class="note-highlight">Bloomberg stima che il mercato del "coding assistants" raggiungerà i 22 miliardi di dollari entro il 2028</mark>. Non è la fine dei programmatori: è la fine della programmazione come lavoro manuale ripetitivo, e l'inizio della programmazione come attività creativa e architetturale.</p>
+
+    <p>Il collegamento nascosto tra le batterie di Northvolt e Devin è che il valore nel tech si sta spostando dai margini al centro: non più software leggero che scala a costo zero, ma sistemi complessi — fisici e cognitivi — che risolvono problemi reali. Il venture capital segue, investendo in atomi oltre che in bit. E la domanda che ogni fondatore si pone non è più "come posso scalare?" ma "cosa posso costruire che prima era impossibile?"</p>
+
     </article>
 
     <nav class="mt-16 mb-8">
@@ -175,5 +222,19 @@
         </div>
     </div>
 </footer>
+<script>
+document.querySelectorAll('.fc').forEach(el => {
+  const m = el.textContent.match(/ff\.(\d+)/);
+  if (m) {
+    const a = document.createElement('a');
+    a.href = 'https://futurofortissimo.github.io/#ff-' + m[1];
+    a.className = el.className;
+    a.innerHTML = el.innerHTML;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    el.replaceWith(a);
+  }
+});
+</script>
 </body>
 </html>
