@@ -20,17 +20,18 @@ const IndexChapter = ({ chapter, highlight }) => {
   const citations = collectCitations(chapter.processedSubchapters);
   const [showCitations, setShowCitations] = React.useState(false);
 
-  return html`<article className="chapter-card border-b border-black/10 pb-5 last:border-b-0" id=${chapter.issueId || chapter.url}>
-    <div className="flex items-start gap-3">
-      <span className="text-xl select-none leading-none">${chapter.primaryEmoji || chapter.originalEmoji}</span>
-      <div className="flex-1">
+  return html`<article className="chapter-card border-b border-black/10 pb-4 sm:pb-5 last:border-b-0" id=${chapter.issueId || chapter.url}>
+    <div className="flex items-start gap-2 sm:gap-3">
+      <span className="text-lg sm:text-xl select-none leading-none mt-0.5">${chapter.primaryEmoji || chapter.originalEmoji}</span>
+      <div className="flex-1 min-w-0">
         <h2 className="font-heading ff-heading-lg text-black chapter-title">
+          ${chapter.ffLabel ? html`<span className="ff-label">${chapter.ffLabel}</span> ` : null}
           <a href=${chapter.url} target="_blank" rel="noopener noreferrer" className="hover:underline decoration-4">
             <${HighlightText} text=${chapter.cleanTitle} highlight=${highlight} />
           </a>
         </h2>
         ${chapter.subtitle
-          ? html`<p className="inline-block px-0 py-1 ff-eyebrow-md text-black/80 mt-2 sub-title">
+          ? html`<p className="inline-block px-0 py-1 ff-eyebrow-md text-black/80 mt-1.5 sm:mt-2 sub-title">
               <${HighlightText} text=${chapter.subtitle} highlight=${highlight} />
             </p>`
           : null}
@@ -47,11 +48,12 @@ const IndexChapter = ({ chapter, highlight }) => {
       </div>
     </div>
 
-    <div className="mt-5 space-y-3">
+    <div className="mt-3 sm:mt-5 space-y-2 sm:space-y-3">
       ${chapter.processedSubchapters.map((sub, idx) =>
         html`<div key=${idx} className="flex gap-2 items-start">
-          <span className="text-xl leading-none mt-0.5">${sub.originalEmoji}</span>
-          <div className="flex-1">
+          <span className="text-lg sm:text-xl leading-none mt-0.5">${sub.originalEmoji}</span>
+          <div className="flex-1 min-w-0">
+            ${sub.ffLabel ? html`<span className="ff-label ff-label-sub">${sub.ffLabel}</span> ` : null}
             <a
               href=${sub.link}
               target="_blank"
