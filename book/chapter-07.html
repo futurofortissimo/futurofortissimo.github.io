@@ -1,97 +1,419 @@
 <!doctype html>
 <html lang="it">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Capitolo 07 — Attenzione: la crisi non è (solo) distrazione, è governance interiore</title>
-  <meta name="description" content="Difendere l’attenzione significa progettare ambienti e tecnologie che non colonizzino la mente: è una questione di libertà." />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Capitolo 07 — Attenzione: la crisi non è (solo) distrazione, è governance interiore</title>
+    <meta name="description" content="Difendere l’attenzione significa progettare ambienti e tecnologie che non colonizzino la mente: è una questione di libertà." />
 
-  <link rel="canonical" href="https://futurofortissimo.github.io/book/chapter-07.html" />
+    <link rel="canonical" href="https://futurofortissimo.github.io/book/chapter-07.html" />
 
-  <meta property="og:title" content="Capitolo 07 — Attenzione: la crisi non è (solo) distrazione, è governance interiore" />
-  <meta property="og:description" content="Difendere l’attenzione significa progettare ambienti e tecnologie che non colonizzino la mente: è una questione di libertà." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://futurofortissimo.github.io/book/chapter-07.html" />
-  <meta property="og:image" content="https://futurofortissimo.github.io/logo.png" />
+    <meta property="og:title" content="Capitolo 07 — Attenzione: la crisi non è (solo) distrazione, è governance interiore" />
+    <meta property="og:description" content="Difendere l’attenzione significa progettare ambienti e tecnologie che non colonizzino la mente: è una questione di libertà." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://futurofortissimo.github.io/book/chapter-07.html" />
+    <meta property="og:image" content="https://futurofortissimo.github.io/logo.png" />
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Capitolo 07 — Attenzione: la crisi non è (solo) distrazione, è governance interiore" />
-  <meta name="twitter:description" content="Difendere l’attenzione significa progettare ambienti e tecnologie che non colonizzino la mente: è una questione di libertà." />
-  <meta name="twitter:image" content="https://futurofortissimo.github.io/logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Capitolo 07 — Attenzione: la crisi non è (solo) distrazione, è governance interiore" />
+    <meta name="twitter:description" content="Difendere l’attenzione significa progettare ambienti e tecnologie che non colonizzino la mente: è una questione di libertà." />
+    <meta name="twitter:image" content="https://futurofortissimo.github.io/logo.png" />
 
-  <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.ico" />
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=IBM+Plex+Mono:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
 
-  <style>
-    :root{--ink:#0a0a0a;}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial; color:var(--ink);}
-    .mono{font-family:"IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; letter-spacing:.06em; text-transform:uppercase;}
-  </style>
+    <style>
+        :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
+        body { font-family:'Inter',sans-serif; background-color:#fdfdfd; color:var(--ff-black); min-height:100vh; line-height:1.6; position:relative; }
+        body::before { content:''; position:fixed; inset:0; background-image:linear-gradient(var(--ff-grid) 1px,transparent 1px),linear-gradient(90deg,var(--ff-grid) 1px,transparent 1px); background-size:32px 32px; pointer-events:none; z-index:-1; }
+        h1,h2,h3,h4,h5,h6 { font-family:'IBM Plex Mono',monospace; letter-spacing:0.03em; text-transform:uppercase; }
+        .brutal-card { border:4px solid var(--ff-black); background:#fff; box-shadow:6px 6px 0 var(--ff-black); padding:24px; }
+        .accent-bar { position:relative; }
+        .accent-bar::before { content:''; position:absolute; top:-4px; left:-4px; right:-4px; height:10px; background:var(--ff-blue); }
+        .accent-red::before { background:var(--ff-red); }
+        .accent-yellow::before { background:var(--ff-yellow); }
+        .accent-green::before { background:var(--ff-green); }
+        .ff-eyebrow { font-family:'IBM Plex Mono',monospace; font-size:0.75rem; letter-spacing:0.24em; text-transform:uppercase; font-weight:700; }
+        .ff-body { font-size:1rem; line-height:1.65; }
+        .ff-body-sm { font-size:0.9375rem; line-height:1.6; }
+        .no-round,.no-round * { border-radius:0!important; }
+        .note-card { border:2px solid var(--ff-black); background:#fafaf7; padding:16px; box-shadow:3px 3px 0 var(--ff-black); }
+        a:focus-visible { outline:3px solid var(--ff-black); outline-offset:2px; }
 
-  <script type="application/ld+json">
+        /* Additional book-quality styles */
+        .chapter-num { font-family:'Press Start 2P',monospace; font-size:0.6rem; letter-spacing:0.3em; }
+        .drop-cap::first-letter { font-family:'IBM Plex Mono',monospace; font-size:3.2em; float:left; line-height:0.8; padding-right:8px; padding-top:4px; font-weight:700; color:#f5a623; }
+        .toc-link { border-left:3px solid transparent; transition: border-color 0.2s, padding-left 0.2s; }
+        .toc-link:hover { border-left-color:#f5a623; padding-left:12px; }
+        @media print { body::before { display:none; } .brutal-card { box-shadow:none; border:1px solid #999; } }
+    </style>
+
+    <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Chapter",
-  "name": "Attenzione: la crisi non è (solo) distrazione, è governance interiore",
-  "position": 7,
-  "isPartOf": {
-    "@type": "Book",
-    "name": "Futuro Fortissimo — 14 capitoli (outline)",
-    "url": "https://futurofortissimo.github.io/book/"
-  },
-  "url": "https://futurofortissimo.github.io/book/chapter-07.html",
-  "inLanguage": "it",
-  "description": "Difendere l’attenzione significa progettare ambienti e tecnologie che non colonizzino la mente: è una questione di libertà."
+    "@context": "https://schema.org",
+    "@type": "Chapter",
+    "name": "Attenzione: la crisi non è (solo) distrazione, è governance interiore",
+    "position": 7,
+    "isPartOf": {
+        "@type": "Book",
+        "name": "Futuro Fortissimo - Il Libro",
+        "url": "https://futurofortissimo.github.io/book/"
+    },
+    "url": "https://futurofortissimo.github.io/book/chapter-07.html",
+    "inLanguage": "it",
+    "description": "Difendere l’attenzione significa progettare ambienti e tecnologie che non colonizzino la mente: è una questione di libertà.",
+    "author": {
+        "@type": "Person",
+        "name": "Michele Merelli",
+        "url": "https://www.linkedin.com/in/michelemerelli/"
+    }
 }
-</script>
+    </script>
 </head>
-<body class="bg-zinc-50">
-  <header class="border-b border-zinc-200 bg-white">
-    <div class="max-w-4xl mx-auto px-4 py-5 flex items-center justify-between gap-3">
-      <div>
-        <div class="mono text-xs text-zinc-500">Futuro Fortissimo — book</div>
-        <div class="text-xl font-extrabold tracking-tight">Capitolo 07 — Attenzione: la crisi non è (solo) distrazione, è governance interiore</div>
-      </div>
-      <nav class="flex gap-3 text-sm">
-        <a data-nav="1" class="underline" href="/index.html">Home</a>
-        <a data-nav="1" class="underline" href="/book/">Libro</a>
-      </nav>
-    </div>
-  </header>
+<body>
 
-  <main class="max-w-4xl mx-auto px-4 py-8">
-    
-    <section class="rounded-xl border border-zinc-200 bg-white p-5">
-      <div class="mono text-xs text-zinc-500">Capitolo 07 / 14</div>
-      <h1 class="text-2xl font-extrabold tracking-tight mt-1">Attenzione: la crisi non è (solo) distrazione, è governance interiore</h1>
-      <p class="text-sm text-zinc-700 mt-3">Difendere l’attenzione significa progettare ambienti e tecnologie che non colonizzino la mente: è una questione di libertà.</p>
+    <!-- ============ HEADER ============ -->
+    <header class="bg-white" style="border-bottom:4px solid var(--ff-black);">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+            <div class="min-w-0">
+                <div class="ff-eyebrow text-zinc-500 mb-1">Futuro Fortissimo &mdash; Libro</div>
+                <div class="text-lg md:text-xl font-bold tracking-tight truncate" style="font-family:'IBM Plex Mono',monospace; text-transform:uppercase; letter-spacing:0.03em;">
+                    Cap. 07 &mdash; Attenzione: la crisi non è (solo) distrazione, è governance ...
+                </div>
+            </div>
+            <nav class="flex gap-4 text-sm font-medium flex-shrink-0">
+                <a href="/index.html" class="hover:underline underline-offset-4 text-zinc-600 hover:text-zinc-900">Home</a>
+                <a href="/book/" class="hover:underline underline-offset-4 text-zinc-600 hover:text-zinc-900">Libro</a>
+                <a href="/temi.html" class="hover:underline underline-offset-4 text-zinc-600 hover:text-zinc-900">Temi</a>
+                <a href="/note.html" class="hover:underline underline-offset-4 text-zinc-600 hover:text-zinc-900">Note</a>
+            </nav>
+        </div>
+    </header>
 
-      
-        <div class="mt-5">
-          <div class="mono text-xs text-zinc-500">Riferimenti (placeholder)</div>
-          <ul class="mt-2 grid gap-2 text-sm">
-            <li class="rounded-lg bg-zinc-50 border border-zinc-200 px-3 py-2"><code>ff.132.1</code></li><li class="rounded-lg bg-zinc-50 border border-zinc-200 px-3 py-2"><code>ff.109.2</code></li><li class="rounded-lg bg-zinc-50 border border-zinc-200 px-3 py-2"><code>ff.121.1</code></li><li class="rounded-lg bg-zinc-50 border border-zinc-200 px-3 py-2"><code>ff.121.2</code></li><li class="rounded-lg bg-zinc-50 border border-zinc-200 px-3 py-2"><code>ff.134.1</code></li>
-          </ul>
-          <p class="text-xs text-zinc-500 mt-3">TODO: collegare questi refs ai subcapitoli/URL reali (ff.xx.yy) e generare estratti.</p>
+    <!-- ============ MAIN CONTENT ============ -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 py-10 md:py-14">
+
+        <!-- ============ HERO ============ -->
+        <section class="brutal-card accent-bar accent-yellow mb-14">
+            <div class="chapter-num text-zinc-400 mb-4">Capitolo 07 / 14</div>
+            <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight mb-6" style="text-transform:none; font-family:'IBM Plex Mono',monospace;">
+                Attenzione: la crisi non è (solo) distrazione, è governance interiore
+            </h1>
+            <p class="ff-body text-zinc-700 max-w-2xl mb-8 leading-relaxed" style="font-size:1.125rem;">
+                Difendere l’attenzione significa progettare ambienti e tecnologie che non colonizzino la mente: è una questione di libertà.
+            </p>
+            <div class="border-t-2 border-zinc-100 pt-5">
+                <div class="ff-eyebrow text-zinc-400 mb-3 text-xs">Contiene materiale da</div>
+                <div class="flex flex-wrap">
+                    <span class="inline-block border-2 border-zinc-300 px-3 py-1 text-sm font-medium text-zinc-600 mr-2 mb-2">🎼 ff.132 Inno ai videogiochi</span><span class="inline-block border-2 border-zinc-300 px-3 py-1 text-sm font-medium text-zinc-600 mr-2 mb-2">🎼 ff.109 Medico in famigl-IA</span><span class="inline-block border-2 border-zinc-300 px-3 py-1 text-sm font-medium text-zinc-600 mr-2 mb-2">🎼 ff.121 Il flow ti mette le ali?</span><span class="inline-block border-2 border-zinc-300 px-3 py-1 text-sm font-medium text-zinc-600 mr-2 mb-2">🎼 ff.134 Nomi alle cose</span>
+                </div>
+            </div>
+
+            <!-- Table of contents -->
+            <div class="mt-6 border-t-2 border-zinc-100 pt-5">
+                <div class="ff-eyebrow text-zinc-400 mb-3 text-xs">In questo capitolo</div>
+                <div class="space-y-1">
+                    <a href="#ff-132-1" class="toc-link block py-1 pl-3 ff-body-sm text-zinc-600 hover:text-zinc-900 transition-colors">FF.132.1 &mdash; 🎯 ff.132.1 Crisi dell’attenzione?</a><a href="#ff-109-2" class="toc-link block py-1 pl-3 ff-body-sm text-zinc-600 hover:text-zinc-900 transition-colors">FF.109.2 &mdash; 🌱 ff.109.2 Dai media al digital wellbeing</a><a href="#ff-121-1" class="toc-link block py-1 pl-3 ff-body-sm text-zinc-600 hover:text-zinc-900 transition-colors">FF.121.1 &mdash; 🌊 ff.121.1 Le basi del flow</a><a href="#ff-121-2" class="toc-link block py-1 pl-3 ff-body-sm text-zinc-600 hover:text-zinc-900 transition-colors">FF.121.2 &mdash; 💸 ff.121.2 Il flow ti mette le ali</a><a href="#ff-134-1" class="toc-link block py-1 pl-3 ff-body-sm text-zinc-600 hover:text-zinc-900 transition-colors">FF.134.1 &mdash; 🗣️ ff.134.1 Parole, parole, parole…</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SUBCHAPTERS ============ -->
+        
+    <!-- Subchapter: ff.132.1 -->
+    <section class="brutal-card accent-bar accent-yellow mb-10" id="ff-132-1">
+        <div class="ff-eyebrow mb-2" style="color:#f5a623">FF.132.1</div>
+        <h2 class="text-xl md:text-2xl font-bold mb-1">🎯 ff.132.1 Crisi dell’attenzione?</h2>
+        <div class="ff-eyebrow text-zinc-400 mb-6 text-xs">da 🎼 ff.132 Inno ai videogiochi</div>
+
+        <div class="max-w-none prose-zinc">
+            <p class="ff-body text-zinc-800 mb-4">Da gamer e (ex) youtuber con 50.000 iscritti, i videogiochi mi stanno a cuore.</p>
+<p class="ff-body text-zinc-800 mb-4">Spesso demonizzati insieme ai TikTok da 15 secondi, sono accusati di distruggere l’attenzione.</p>
+<p class="ff-body text-zinc-800 mb-4">Però, però, però.Siamo sicuri che non sappiamo più concentrarci? Secondo lo storico Daniel Immerwahr, non è così.</p>
+<p class="ff-body text-zinc-800 mb-4">Un paio di r</p>
         </div>
 
-      <div class="mt-6 flex flex-wrap gap-3">
-        <a class="underline" data-track="chapter_prev" href="/book/chapter-06.html">← Precedente</a>
-        <a class="underline" data-track="chapter_index" href="/book/">Indice capitoli</a>
-        <a class="underline" data-track="chapter_next" href="/book/chapter-08.html">Successivo →</a>
-      </div>
+        <div class="mt-4 text-right">
+            <a href="https://fortissimo.substack.com/i/170166035/ff-crisi-dellattenzione" target="_blank" rel="noopener"
+               class="inline-flex items-center gap-1 ff-eyebrow text-xs hover:underline" style="color:#f5a623">
+                Leggi su Substack
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+        </div>
+        
+        
     </section>
-    
-  </main>
+    <!-- Subchapter: ff.109.2 -->
+    <section class="brutal-card accent-bar accent-yellow mb-10" id="ff-109-2">
+        <div class="ff-eyebrow mb-2" style="color:#f5a623">FF.109.2</div>
+        <h2 class="text-xl md:text-2xl font-bold mb-1">🌱 ff.109.2 Dai media al digital wellbeing</h2>
+        <div class="ff-eyebrow text-zinc-400 mb-6 text-xs">da 🎼 ff.109 Medico in famigl-IA</div>
 
-  <script src="/analytics.js"></script>
-  <script>
-    // Track page view (provider-agnostic). Implemented in analytics.js
-    if (window.ffTrackPage) window.ffTrackPage();
-  </script>
+        <div class="max-w-none prose-zinc">
+            <p class="ff-body text-zinc-800 mb-4">Ha quindi lanciatoThrive Global, per incanalare la potenza algoritmi con una priorità: il benessere psicofisico dell’uomo.</p>
+<p class="ff-body text-zinc-800 mb-4">La montagna va da Maometto.Integrato in Microsoft Teams, Slack e simili spazi digitali, Thrive porta “sul luogo del lavoro” una valvola di sfogo come meditazione, check dell’umo</p>
+        </div>
+
+        <div class="mt-4 text-right">
+            <a href="https://fortissimo.substack.com/i/151066177/ff-dai-media-al-digital-wellbeing" target="_blank" rel="noopener"
+               class="inline-flex items-center gap-1 ff-eyebrow text-xs hover:underline" style="color:#f5a623">
+                Leggi su Substack
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+        </div>
+        
+            <div class="mt-6 pt-4 border-t-2 border-zinc-100">
+                <div class="ff-eyebrow text-zinc-500 mb-3">Fonti e riferimenti</div>
+                <div class="flex flex-wrap gap-3">
+                    <a href="https://thriveglobal.com/" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
+                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    Thrive Global
+                </a>
+                </div>
+            </div>
+        
+    </section>
+    <!-- Subchapter: ff.121.1 -->
+    <section class="brutal-card accent-bar accent-yellow mb-10" id="ff-121-1">
+        <div class="ff-eyebrow mb-2" style="color:#f5a623">FF.121.1</div>
+        <h2 class="text-xl md:text-2xl font-bold mb-1">🌊 ff.121.1 Le basi del flow</h2>
+        <div class="ff-eyebrow text-zinc-400 mb-6 text-xs">da 🎼 ff.121 Il flow ti mette le ali?</div>
+
+        <div class="max-w-none prose-zinc">
+            <p class="ff-body text-zinc-800 mb-4">Ho incontrato per la prima volta l’idea di flow qualche anno fa, leggendo Mihaly Csikszentmihalyi: è quello stato mentale di totale immersione in un’attività che ci fa perdere il senso del sé e del tempo.</p>
+<p class="ff-body text-zinc-800 mb-4">Cosa favorisce il flow?Il movimento fisico, il rischio, lacomplessità di un’attività (ma non troppa, la regola del 4%), la novità, la mancanza di distrazioni.</p>
+<p class="ff-body text-zinc-800 mb-4">Giocando, spesso finiamo nel flow. Non a caso è stato misurato per la prima volta neigiocatori di scacchi, con un aumento di onde teta e attivazione del &quot;sistema implicito&quot;.</p>
+        </div>
+
+        <div class="mt-4 text-right">
+            <a href="https://fortissimo.substack.com/i/159901694/ff-le-basi-del-flow" target="_blank" rel="noopener"
+               class="inline-flex items-center gap-1 ff-eyebrow text-xs hover:underline" style="color:#f5a623">
+                Leggi su Substack
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+        </div>
+        
+            <div class="mt-6 pt-4 border-t-2 border-zinc-100">
+                <div class="ff-eyebrow text-zinc-500 mb-3">Fonti e riferimenti</div>
+                <div class="flex flex-wrap gap-3">
+                    <a href="https://www.flowperformancepsych.com/post/2018/04/25/increasing-challenge-to-improve-performance-the-4-rule" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
+                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    complessità di un’attività (ma non troppa, la regola del 4%
+                </a><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7551835/#:~:text=Thereby%2C%20implicit%20systems%20are%20ultimately,the%20performer%20in%20the%20task." target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
+                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    giocatori di scacchi, con un aumento di onde teta e attivazione del &quot;sistema imp
+                </a>
+                </div>
+            </div>
+        
+    </section>
+    <!-- Subchapter: ff.121.2 -->
+    <section class="brutal-card accent-bar accent-yellow mb-10" id="ff-121-2">
+        <div class="ff-eyebrow mb-2" style="color:#f5a623">FF.121.2</div>
+        <h2 class="text-xl md:text-2xl font-bold mb-1">💸 ff.121.2 Il flow ti mette le ali</h2>
+        <div class="ff-eyebrow text-zinc-400 mb-6 text-xs">da 🎼 ff.121 Il flow ti mette le ali?</div>
+
+        <div class="max-w-none prose-zinc">
+            <p class="ff-body text-zinc-800 mb-4">Oltre a renderci felici, aumenta le nostre performance, con effetti socio-economici:</p>
+<p class="ff-body text-zinc-800 mb-4">McKinsey: i manager nel flow sono cinque volte più produttivi.DARPA (l&#x27;agenzia difesa USA):cecchini militari bersaglio acquisiti2 voltepiù velocemente.Red Bull: ilNorth America’s High-Performance Centerguidato daLeslie Sherlin</p>
+        </div>
+
+        <div class="mt-4 text-right">
+            <a href="https://fortissimo.substack.com/i/159901694/ff-il-flow-ti-mette-le-ali" target="_blank" rel="noopener"
+               class="inline-flex items-center gap-1 ff-eyebrow text-xs hover:underline" style="color:#f5a623">
+                Leggi su Substack
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+        </div>
+        
+            <div class="mt-6 pt-4 border-t-2 border-zinc-100">
+                <div class="ff-eyebrow text-zinc-500 mb-3">Fonti e riferimenti</div>
+                <div class="flex flex-wrap gap-3">
+                    <a href="https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/increasing-the-meaning-quotient-of-work" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
+                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    McKinsey: i manager nel flow sono cinque volte più produttivi
+                </a><a href="https://www.mendeley.com/catalogue/c5c0b0a7-fff0-3bfc-b106-5bf47ab775f1/" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
+                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    cecchini militari bersaglio acquisiti
+                </a><a href="https://www.mendeley.com/catalogue/c5c0b0a7-fff0-3bfc-b106-5bf47ab775f1/" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
+                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    2 volte
+                </a><a href="https://www.si.com/edge/2015/05/08/sweat-mecca-red-bull-high-performance-center" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
+                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    Red Bull: il
+                </a><a href="https://www.si.com/edge/2015/05/08/sweat-mecca-red-bull-high-performance-center" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
+                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    North America’s High-Performance Center
+                </a><a href="https://www.fuller.edu/adjunct/leslie-sherlin/" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
+                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    Leslie Sherlin
+                </a>
+                </div>
+            </div>
+        
+    </section>
+    <!-- Subchapter: ff.134.1 -->
+    <section class="brutal-card accent-bar accent-yellow mb-10" id="ff-134-1">
+        <div class="ff-eyebrow mb-2" style="color:#f5a623">FF.134.1</div>
+        <h2 class="text-xl md:text-2xl font-bold mb-1">🗣️ ff.134.1 Parole, parole, parole…</h2>
+        <div class="ff-eyebrow text-zinc-400 mb-6 text-xs">da 🎼 ff.134 Nomi alle cose</div>
+
+        <div class="max-w-none prose-zinc">
+            <p class="ff-body text-zinc-800 mb-4">Il rapporto tra pensiero, parole e costruzione del mondo mi affascina, specie da quando i modelli di linguaggio come ChatGPT hanno reso questa connessione ancor più stretta (🧠 ff.83.3 Linguaggio e pensiero).</p>
+<p class="ff-body text-zinc-800 mb-4">1.1 Il Mondo è la totalità dei Fatti, non delle Cose.2.1 Noi ci facciamo immagini dei Fatti</p>
+        </div>
+
+        <div class="mt-4 text-right">
+            <a href="https://fortissimo.substack.com/i/171281710/ff-parole-parole-parole" target="_blank" rel="noopener"
+               class="inline-flex items-center gap-1 ff-eyebrow text-xs hover:underline" style="color:#f5a623">
+                Leggi su Substack
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+        </div>
+        
+            <div class="mt-6 pt-4 border-t-2 border-zinc-100">
+                <div class="ff-eyebrow text-zinc-500 mb-3">Fonti e riferimenti</div>
+                <div class="flex flex-wrap gap-3">
+                    <a href="https://www.filosofico.net/Antologia_file/wittggggggeee32.htm" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
+                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    Tractatus Logico-Philosophicus
+                </a><a href="https://it.wikipedia.org/wiki/Gezelligheid" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
+                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    gezelligheid
+                </a>
+                </div>
+            </div>
+        
+            <div class="mt-4">
+                <div class="ff-eyebrow text-zinc-500 mb-2">Letture collegate</div>
+                <div class="flex flex-wrap gap-3">
+                    <a href="https://fortissimo.substack.com/i/140010460/ff-linguaggio-e-pensiero" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-1.5 text-sm font-medium hover:underline" style="color:#f5a623">
+                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+                    🧠 ff.83.3 Linguaggio e pensiero
+                </a>
+                </div>
+            </div>
+    </section>
+
+        
+    <!-- Notes Section -->
+    <section class="mt-16 mb-12">
+        <div class="flex items-center gap-3 mb-8">
+            <div class="h-1 flex-1" style="background:#f5a623"></div>
+            <h3 class="text-lg font-bold whitespace-nowrap">Dal Taccuino</h3>
+            <div class="h-1 flex-1" style="background:#f5a623"></div>
+        </div>
+        <p class="ff-body-sm text-zinc-500 mb-6 text-center max-w-lg mx-auto">
+            Note e segnalibri dall'archivio Futuro Fortissimo, collegati ai temi di questo capitolo.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            
+                <a href="https://x.com/davidasinclair/status/1951310208778539340" target="_blank" rel="noopener" class="note-card block hover:shadow-[4px_4px_0_var(--ff-black)] transition-shadow group">
+                    <div class="text-xs mb-2 opacity-60">❤️ 🧠</div>
+                    <div class="ff-body-sm font-medium text-zinc-800 group-hover:text-zinc-900 leading-snug">
+                        L&#x27;AI generativa accelera la ricerca sulla longevità riducendo un lavoro di 150 anni a un mese e a un miliardesimo del co...
+                    </div>
+                    <div class="mt-2 ff-eyebrow text-xs opacity-40">Nota #1221</div>
+                </a>
+                <a href="https://eusprig.org/research-info/horror-stories/" target="_blank" rel="noopener" class="note-card block hover:shadow-[4px_4px_0_var(--ff-black)] transition-shadow group">
+                    <div class="text-xs mb-2 opacity-60">❤️ 🧠</div>
+                    <div class="ff-body-sm font-medium text-zinc-800 group-hover:text-zinc-900 leading-snug">
+                        Sotto la voce &#x27;Storie dell&#x27;Orrore&#x27;, l&#x27;European Spreadsheet Risks Interest Group ha documentato decine di errori catastro...
+                    </div>
+                    <div class="mt-2 ff-eyebrow text-xs opacity-40">Nota #1151</div>
+                </a>
+                <a href="https://www.ft.com/content/149296b9-41b6-4fba-b72c-c72502d01800" target="_blank" rel="noopener" class="note-card block hover:shadow-[4px_4px_0_var(--ff-black)] transition-shadow group">
+                    <div class="text-xs mb-2 opacity-60">❤️ 🧠</div>
+                    <div class="ff-body-sm font-medium text-zinc-800 group-hover:text-zinc-900 leading-snug">
+                        MAI-DxO è la prima iniziativa dell&#x27;unità di salute AI di Microsoft, guidata dal co-fondatore di DeepMind Mustafa Suleyma...
+                    </div>
+                    <div class="mt-2 ff-eyebrow text-xs opacity-40">Nota #1153</div>
+                </a>
+                <a href="https://x.com/fortelabs/status/1952554624281637034" target="_blank" rel="noopener" class="note-card block hover:shadow-[4px_4px_0_var(--ff-black)] transition-shadow group">
+                    <div class="text-xs mb-2 opacity-60">❤️ 🧠</div>
+                    <div class="ff-body-sm font-medium text-zinc-800 group-hover:text-zinc-900 leading-snug">
+                        Gli organismi viventi vivono per circa 100 milioni di cicli respiratori una regola che unisce creature da batteri a bale...
+                    </div>
+                    <div class="mt-2 ff-eyebrow text-xs opacity-40">Nota #1226</div>
+                </a>
+                <a href="https://www.nature.com/articles/s41586-025-09321-3" target="_blank" rel="noopener" class="note-card block hover:shadow-[4px_4px_0_var(--ff-black)] transition-shadow group">
+                    <div class="text-xs mb-2 opacity-60">❤️ 🧠</div>
+                    <div class="ff-body-sm font-medium text-zinc-800 group-hover:text-zinc-900 leading-snug">
+                        L&#x27;RNA-sequencing su 1,1 milioni di cellule singole apre nuove strade alla ricerca
+                    </div>
+                    <div class="mt-2 ff-eyebrow text-xs opacity-40">Nota #1260</div>
+                </a>
+                <a href="https://news.mit.edu/2024/evidence-gamma-rhythm-stimulation-can-treat-neurological-orders-emerging-0118" target="_blank" rel="noopener" class="note-card block hover:shadow-[4px_4px_0_var(--ff-black)] transition-shadow group">
+                    <div class="text-xs mb-2 opacity-60">❤️ 🧠</div>
+                    <div class="ff-body-sm font-medium text-zinc-800 group-hover:text-zinc-900 leading-snug">
+                        Prove emergenti indicano che la stimolazione del ritmo gamma può trattare disturbi neurologici, critici per memoria e ap...
+                    </div>
+                    <div class="mt-2 ff-eyebrow text-xs opacity-40">Nota #1200</div>
+                </a>
+                <a href="https://www.chaidiscovery.com/news/introducing-chai-2" target="_blank" rel="noopener" class="note-card block hover:shadow-[4px_4px_0_var(--ff-black)] transition-shadow group">
+                    <div class="text-xs mb-2 opacity-60">❤️ 🧠</div>
+                    <div class="ff-body-sm font-medium text-zinc-800 group-hover:text-zinc-900 leading-snug">
+                        Chai-2 un modello AI progetta nuovi anticorpi con successo 100 volte superiore ai metodi precedenti.
+                    </div>
+                    <div class="mt-2 ff-eyebrow text-xs opacity-40">Nota #1169</div>
+                </a>
+                <a href="https://arxiv.org/abs/2405.12514" target="_blank" rel="noopener" class="note-card block hover:shadow-[4px_4px_0_var(--ff-black)] transition-shadow group">
+                    <div class="text-xs mb-2 opacity-60">❤️ 🧠</div>
+                    <div class="ff-body-sm font-medium text-zinc-800 group-hover:text-zinc-900 leading-snug">
+                        Sistema Future You: chatbot AI per ridurre l&#x27;ansia simulando il sé futuro
+                    </div>
+                    <div class="mt-2 ff-eyebrow text-xs opacity-40">Nota #653</div>
+                </a>
+        </div>
+    </section>
+
+        <!-- ============ NAVIGATION ============ -->
+        <nav class="mt-16 mb-8">
+            <div class="brutal-card p-0 overflow-hidden">
+                <div class="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-zinc-900" style="border:none; box-shadow:none;">
+                    <a href="chapter-06.html" class="flex items-center gap-2 p-5 hover:bg-zinc-50 transition-colors group"><svg class="w-5 h-5 text-zinc-400 group-hover:text-zinc-900 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg><div><div class="ff-eyebrow text-zinc-400 text-xs">Precedente</div><div class="text-sm font-semibold mt-0.5">Capitolo 06</div></div></a>
+
+                    <a href="/book/" class="flex items-center justify-center gap-2 p-5 hover:bg-zinc-50 transition-colors text-center group">
+                        <div>
+                            <div class="ff-eyebrow text-zinc-400 text-xs">Indice</div>
+                            <div class="text-sm font-semibold mt-0.5">Tutti i capitoli</div>
+                        </div>
+                    </a>
+
+                    <a href="chapter-08.html" class="flex items-center justify-end gap-2 p-5 hover:bg-zinc-50 transition-colors text-right group"><div><div class="ff-eyebrow text-zinc-400 text-xs">Successivo</div><div class="text-sm font-semibold mt-0.5">Capitolo 08</div></div><svg class="w-5 h-5 text-zinc-400 group-hover:text-zinc-900 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></a>
+                </div>
+            </div>
+        </nav>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="bg-white" style="border-top:4px solid var(--ff-black);">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-zinc-500">
+            <div class="ff-eyebrow text-xs">&copy; Futuro Fortissimo &mdash; Michele Merelli</div>
+            <div class="flex gap-4">
+                <a href="https://fortissimo.substack.com/" target="_blank" rel="noopener" class="hover:text-zinc-900 transition-colors">Substack</a>
+                <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener" class="hover:text-zinc-900 transition-colors">LinkedIn</a>
+                <a href="https://futurofortissimo.github.io/" class="hover:text-zinc-900 transition-colors">Archivio</a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
