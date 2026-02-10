@@ -243,11 +243,11 @@ const InnerApp = () => {
         </div>
       </header>
 
-      <section className="brutal-card mobile-unboxed accent-bar accent-yellow no-round space-y-6">
-        <div className="grid grid-cols-1 gap-6 items-start">
-          <div className="flex flex-col gap-4">
+      <section className="brutal-card mobile-unboxed accent-bar accent-yellow no-round space-y-4 sm:space-y-6">
+        <div className="grid grid-cols-1 gap-4 sm:gap-6 items-start">
+          <div className="flex flex-col gap-3 sm:gap-4">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
-              <div className="relative flex-1 min-w-[220px]">
+              <div className="relative flex-1 min-w-[200px]">
                 <input
                   type="text"
                   value=${searchQuery}

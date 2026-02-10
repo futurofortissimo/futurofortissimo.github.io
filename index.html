@@ -81,7 +81,31 @@
         .mobile-unboxed {
           border-width: 2px;
           box-shadow: none;
-          padding: 16px;
+          padding: 14px;
+        }
+
+        .ff-hero {
+          font-size: clamp(1.4rem, 1rem + 3vw, 2.2rem);
+          letter-spacing: 0.03em;
+        }
+
+        .chapter-card {
+          padding-bottom: 16px;
+          margin-bottom: 12px;
+        }
+
+        .ff-heading-md {
+          font-size: 1rem;
+        }
+
+        .ff-label {
+          font-size: 0.6rem;
+          padding: 1px 4px;
+        }
+
+        .ff-label-sub {
+          font-size: 0.55rem;
+          padding: 1px 3px;
         }
       }
 
@@ -91,6 +115,25 @@
 
       .brutal-shadow {
         box-shadow: 4px 4px 0 var(--ff-black);
+      }
+
+      .ff-label {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 0.7rem;
+        letter-spacing: 0.08em;
+        font-weight: 700;
+        color: var(--ff-blue);
+        background: #e8f0fe;
+        padding: 2px 6px;
+        border: 2px solid var(--ff-blue);
+        vertical-align: middle;
+        white-space: nowrap;
+        text-transform: none;
+      }
+
+      .ff-label-sub {
+        font-size: 0.625rem;
+        padding: 1px 5px;
       }
 
       .compact-index .chapter-title {
@@ -212,6 +255,40 @@
 
       .no-round, .no-round * {
         border-radius: 0 !important;
+      }
+
+      /* Smooth transitions for interactive elements */
+      .chapter-card {
+        transition: background-color 0.2s ease;
+      }
+
+      /* Better touch targets on mobile */
+      @media (max-width: 640px) {
+        .ff-button {
+          min-height: 44px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .links-toggle {
+          min-height: 40px;
+        }
+      }
+
+      /* Cleaner separator between chapters */
+      .chapter-card + .chapter-card {
+        border-top: 1px solid rgba(0, 0, 0, 0.06);
+        padding-top: 20px;
+      }
+
+      /* Safe area for notched phones */
+      @supports (padding: env(safe-area-inset-bottom)) {
+        body {
+          padding-left: env(safe-area-inset-left);
+          padding-right: env(safe-area-inset-right);
+          padding-bottom: env(safe-area-inset-bottom);
+        }
       }
 
       /* Hide scrollbar for Chrome, Safari and Opera */

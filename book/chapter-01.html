@@ -1,436 +1,179 @@
 <!doctype html>
 <html lang="it">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Capitolo 01 — La nuova unità di misura: l’AI come metrica del valore</title>
-    <meta name="description" content="L’AI non è solo una tecnologia: è una nuova unità di misura che ridisegna valore, produttività e potere." />
-
-    <link rel="canonical" href="https://futurofortissimo.github.io/book/chapter-01.html" />
-
-    <meta property="og:title" content="Capitolo 01 — La nuova unità di misura: l’AI come metrica del valore" />
-    <meta property="og:description" content="L’AI non è solo una tecnologia: è una nuova unità di misura che ridisegna valore, produttività e potere." />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://futurofortissimo.github.io/book/chapter-01.html" />
-    <meta property="og:image" content="https://futurofortissimo.github.io/logo.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Capitolo 01 — La nuova unità di misura: l’AI come metrica del valore" />
-    <meta name="twitter:description" content="L’AI non è solo una tecnologia: è una nuova unità di misura che ridisegna valore, produttività e potere." />
-    <meta name="twitter:image" content="https://futurofortissimo.github.io/logo.png" />
-
-    <link rel="icon" href="/favicon.ico" />
-
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Capitolo 1 — 💻 Tecnologia: La Macchina che Ridisegna il Mondo</title>
+    <meta name="description" content="L'AI non è solo una tecnologia: è una nuova unità di misura che ridisegna valore, produttività e potere. Dal tool all'agente, il compute diventa il nuovo petrolio."/>
+    <link rel="canonical" href="https://futurofortissimo.github.io/book/chapter-01.html"/>
+    <meta property="og:title" content="Capitolo 1 — Tecnologia: La Macchina che Ridisegna il Mondo"/>
+    <meta property="og:description" content="L'AI non è solo una tecnologia: è una nuova unità di misura che ridisegna valore, produttività e potere."/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="https://futurofortissimo.github.io/book/chapter-01.html"/>
+    <meta property="og:image" content="https://futurofortissimo.github.io/logo.png"/>
+    <link rel="icon" href="/favicon.ico"/>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
-
     <style>
-        :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
-        body { font-family:'Inter',sans-serif; background-color:#fdfdfd; color:var(--ff-black); min-height:100vh; line-height:1.6; position:relative; }
-        body::before { content:''; position:fixed; inset:0; background-image:linear-gradient(var(--ff-grid) 1px,transparent 1px),linear-gradient(90deg,var(--ff-grid) 1px,transparent 1px); background-size:32px 32px; pointer-events:none; z-index:-1; }
-        h1,h2,h3,h4,h5,h6 { font-family:'IBM Plex Mono',monospace; letter-spacing:0.03em; text-transform:uppercase; }
-        .brutal-card { border:4px solid var(--ff-black); background:#fff; box-shadow:6px 6px 0 var(--ff-black); padding:24px; }
-        .accent-bar { position:relative; }
-        .accent-bar::before { content:''; position:absolute; top:-4px; left:-4px; right:-4px; height:10px; background:var(--ff-blue); }
-        .accent-red::before { background:var(--ff-red); }
-        .accent-yellow::before { background:var(--ff-yellow); }
-        .accent-green::before { background:var(--ff-green); }
-        .ff-eyebrow { font-family:'IBM Plex Mono',monospace; font-size:0.75rem; letter-spacing:0.24em; text-transform:uppercase; font-weight:700; }
-        .ff-body { font-size:1rem; line-height:1.65; }
-        .ff-body-sm { font-size:0.9375rem; line-height:1.6; }
-        .no-round,.no-round * { border-radius:0!important; }
-        .note-card { border:2px solid var(--ff-black); background:#fafaf7; padding:16px; box-shadow:3px 3px 0 var(--ff-black); }
-        a:focus-visible { outline:3px solid var(--ff-black); outline-offset:2px; }
-
-        /* Additional book-quality styles */
-        .chapter-num { font-family:'Press Start 2P',monospace; font-size:0.6rem; letter-spacing:0.3em; }
-        .drop-cap::first-letter { font-family:'IBM Plex Mono',monospace; font-size:3.2em; float:left; line-height:0.8; padding-right:8px; padding-top:4px; font-weight:700; color:#4a90e2; }
-        .toc-link { border-left:3px solid transparent; transition: border-color 0.2s, padding-left 0.2s; }
-        .toc-link:hover { border-left-color:#4a90e2; padding-left:12px; }
-        @media print { body::before { display:none; } .brutal-card { box-shadow:none; border:1px solid #999; } }
+        :root{--ff-blue:#4a90e2;--ff-red:#d0021b;--ff-yellow:#f5a623;--ff-green:#2ecc71;--ff-black:#0a0a0a;--ff-grid:rgba(0,0,0,0.03)}
+        body{font-family:'Inter',sans-serif;background:#fdfdfd;color:var(--ff-black);min-height:100vh;line-height:1.7}
+        body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(var(--ff-grid) 1px,transparent 1px),linear-gradient(90deg,var(--ff-grid) 1px,transparent 1px);background-size:32px 32px;pointer-events:none;z-index:-1}
+        h1,h2,h3{font-family:'IBM Plex Mono',monospace;letter-spacing:0.03em}
+        .brutal-card{border:4px solid var(--ff-black);background:#fff;box-shadow:6px 6px 0 var(--ff-black);padding:24px}
+        .accent-bar{position:relative}.accent-bar::before{content:'';position:absolute;top:-4px;left:-4px;right:-4px;height:10px;background:var(--ff-blue)}
+        .ff-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.75rem;letter-spacing:0.24em;text-transform:uppercase;font-weight:700}
+        .chapter-num{font-family:'Press Start 2P',monospace;font-size:0.55rem;letter-spacing:0.3em}
+        .drop-cap::first-letter{font-family:'IBM Plex Mono',monospace;font-size:3.4em;float:left;line-height:0.8;padding-right:10px;padding-top:4px;font-weight:700;color:var(--ff-blue)}
+        .prose p{margin-bottom:1.2em;font-size:1.05rem;line-height:1.75}
+        .prose .fc{font-family:'IBM Plex Mono',monospace;font-size:0.82rem;font-weight:700;color:var(--ff-blue);white-space:nowrap}
+        .toc-link{border-left:3px solid transparent;transition:all 0.2s}.toc-link:hover{border-left-color:var(--ff-blue);padding-left:12px}
+        blockquote{border-left:4px solid var(--ff-blue);padding:12px 20px;margin:1.5em 0;background:#f8fafc;font-style:italic}
+        .sep{height:2px;background:linear-gradient(90deg,var(--ff-blue),transparent);margin:3em 0}
+        @media(max-width:640px){.brutal-card{border-width:2px;box-shadow:none;padding:16px}.prose p{font-size:1rem}}
+        @media print{body::before{display:none}.brutal-card{box-shadow:none;border:1px solid #999}}
     </style>
-
-    <script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Chapter",
-    "name": "La nuova unità di misura: l’AI come metrica del valore",
-    "position": 1,
-    "isPartOf": {
-        "@type": "Book",
-        "name": "Futuro Fortissimo - Il Libro",
-        "url": "https://futurofortissimo.github.io/book/"
-    },
-    "url": "https://futurofortissimo.github.io/book/chapter-01.html",
-    "inLanguage": "it",
-    "description": "L’AI non è solo una tecnologia: è una nuova unità di misura che ridisegna valore, produttività e potere.",
-    "author": {
-        "@type": "Person",
-        "name": "Michele Merelli",
-        "url": "https://www.linkedin.com/in/michelemerelli/"
-    }
-}
-    </script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Chapter","name":"Tecnologia — La Macchina che Ridisegna il Mondo","position":1,"isPartOf":{"@type":"Book","name":"Futuro Fortissimo — Tre Macro Temi","url":"https://futurofortissimo.github.io/book/"},"url":"https://futurofortissimo.github.io/book/chapter-01.html","inLanguage":"it","author":{"@type":"Person","name":"Michele Merelli"}}</script>
 </head>
 <body>
 
-    <!-- ============ HEADER ============ -->
-    <header class="bg-white" style="border-bottom:4px solid var(--ff-black);">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-            <div class="min-w-0">
-                <div class="ff-eyebrow text-zinc-500 mb-1">Futuro Fortissimo &mdash; Libro</div>
-                <div class="text-lg md:text-xl font-bold tracking-tight truncate" style="font-family:'IBM Plex Mono',monospace; text-transform:uppercase; letter-spacing:0.03em;">
-                    Cap. 01 &mdash; La nuova unità di misura: l’AI come metrica del valore
-                </div>
-            </div>
-            <nav class="flex gap-4 text-sm font-medium flex-shrink-0">
-                <a href="/index.html" class="hover:underline underline-offset-4 text-zinc-600 hover:text-zinc-900">Home</a>
-                <a href="/book/" class="hover:underline underline-offset-4 text-zinc-600 hover:text-zinc-900">Libro</a>
-                <a href="/temi.html" class="hover:underline underline-offset-4 text-zinc-600 hover:text-zinc-900">Temi</a>
-                <a href="/note.html" class="hover:underline underline-offset-4 text-zinc-600 hover:text-zinc-900">Note</a>
-            </nav>
+<header class="bg-white" style="border-bottom:4px solid var(--ff-black)">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <div class="min-w-0">
+            <div class="ff-eyebrow text-zinc-500 mb-1">Futuro Fortissimo — Libro</div>
+            <div class="text-lg font-bold tracking-tight" style="font-family:'IBM Plex Mono',monospace">💻 Cap. 01 — Tecnologia</div>
         </div>
-    </header>
-
-    <!-- ============ MAIN CONTENT ============ -->
-    <main class="max-w-5xl mx-auto px-4 sm:px-6 py-10 md:py-14">
-
-        <!-- ============ HERO ============ -->
-        <section class="brutal-card accent-bar  mb-14">
-            <div class="chapter-num text-zinc-400 mb-4">Capitolo 01 / 14</div>
-            <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight mb-6" style="text-transform:none; font-family:'IBM Plex Mono',monospace;">
-                La nuova unità di misura: l’AI come metrica del valore
-            </h1>
-            <p class="ff-body text-zinc-700 max-w-2xl mb-8 leading-relaxed" style="font-size:1.125rem;">
-                L’AI non è solo una tecnologia: è una nuova unità di misura che ridisegna valore, produttività e potere.
-            </p>
-            <div class="border-t-2 border-zinc-100 pt-5">
-                <div class="ff-eyebrow text-zinc-400 mb-3 text-xs">Contiene materiale da</div>
-                <div class="flex flex-wrap">
-                    <span class="inline-block border-2 border-zinc-300 px-3 py-1 text-sm font-medium text-zinc-600 mr-2 mb-2">🎼 ff.139 E&#x27; Stato l&#x27;AI?</span><span class="inline-block border-2 border-zinc-300 px-3 py-1 text-sm font-medium text-zinc-600 mr-2 mb-2">🎼 ff.135 Casino Royale</span><span class="inline-block border-2 border-zinc-300 px-3 py-1 text-sm font-medium text-zinc-600 mr-2 mb-2">🎼 ff.123 A caccia di diamanti</span><span class="inline-block border-2 border-zinc-300 px-3 py-1 text-sm font-medium text-zinc-600 mr-2 mb-2">🎼 ff.102 Il futuro in una conchiglia</span>
-                </div>
-            </div>
-
-            <!-- Table of contents -->
-            <div class="mt-6 border-t-2 border-zinc-100 pt-5">
-                <div class="ff-eyebrow text-zinc-400 mb-3 text-xs">In questo capitolo</div>
-                <div class="space-y-1">
-                    <a href="#ff-139-1" class="toc-link block py-1 pl-3 ff-body-sm text-zinc-600 hover:text-zinc-900 transition-colors">FF.139.1 &mdash; 🍫ff.139.1 Svizzero? No, NVIDIA</a><a href="#ff-139-2" class="toc-link block py-1 pl-3 ff-body-sm text-zinc-600 hover:text-zinc-900 transition-colors">FF.139.2 &mdash; 🧃ff.139.2 Combini e paperclips</a><a href="#ff-135-1" class="toc-link block py-1 pl-3 ff-body-sm text-zinc-600 hover:text-zinc-900 transition-colors">FF.135.1 &mdash; 🎭 ff.135.1 E’ tutto un casino: manipolazioni</a><a href="#ff-123-1" class="toc-link block py-1 pl-3 ff-body-sm text-zinc-600 hover:text-zinc-900 transition-colors">FF.123.1 &mdash; 🛠️ ff.123.1 L’AI con il coltellino svizzero</a><a href="#ff-102-3" class="toc-link block py-1 pl-3 ff-body-sm text-zinc-600 hover:text-zinc-900 transition-colors">FF.102.3 &mdash; 🔭 ff.102.3 Automatizzare la ricerca scientifica</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============ SUBCHAPTERS ============ -->
-        
-    <!-- Subchapter: ff.139.1 -->
-    <section class="brutal-card accent-bar  mb-10" id="ff-139-1">
-        <div class="ff-eyebrow mb-2" style="color:#4a90e2">FF.139.1</div>
-        <h2 class="text-xl md:text-2xl font-bold mb-1">🍫ff.139.1 Svizzero? No, NVIDIA</h2>
-        <div class="ff-eyebrow text-zinc-400 mb-6 text-xs">da 🎼 ff.139 E&#x27; Stato l&#x27;AI?</div>
-
-        <div class="max-w-none prose-zinc">
-            <p class="ff-body text-zinc-800 mb-4">In 3 mesi, NVIDIA ha incassato 57 miliardi di dollari (guadagnandone 36, con un margine del 75%). Numeri incomprensibili. Proviamo a capirli.</p>
-<p class="ff-body text-zinc-800 mb-4">C’è chi confronta il suo valore di mercato con il prodotto interno lordo di interi stati. E’ sbagliato.</p>
-<p class="ff-body text-zinc-800 mb-4">Valuation ≠ GDP.Il primo è valoreteoricopercepito, il</p>
-        </div>
-
-        <div class="mt-4 text-right">
-            <a href="https://fortissimo.substack.com/i/179548983/ff-svizzero-no-nvidia" target="_blank" rel="noopener"
-               class="inline-flex items-center gap-1 ff-eyebrow text-xs hover:underline" style="color:#4a90e2">
-                Leggi su Substack
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-            </a>
-        </div>
-        
-            <div class="mt-6 pt-4 border-t-2 border-zinc-100">
-                <div class="ff-eyebrow text-zinc-500 mb-3">Fonti e riferimenti</div>
-                <div class="flex flex-wrap gap-3">
-                    <a href="https://www.verbolsa.com/market-country-Switzerland-1" target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
-                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                    le aziende svizzere quotate a Zurigo (Rolex, Nestlé, ABB, Novartis…)
-                </a>
-                </div>
-            </div>
-        
-    </section>
-    <!-- Subchapter: ff.139.2 -->
-    <section class="brutal-card accent-bar  mb-10" id="ff-139-2">
-        <div class="ff-eyebrow mb-2" style="color:#4a90e2">FF.139.2</div>
-        <h2 class="text-xl md:text-2xl font-bold mb-1">🧃ff.139.2 Combini e paperclips</h2>
-        <div class="ff-eyebrow text-zinc-400 mb-6 text-xs">da 🎼 ff.139 E&#x27; Stato l&#x27;AI?</div>
-
-        <div class="max-w-none prose-zinc">
-            <p class="ff-body text-zinc-800 mb-4">Perché questohype? Perché l’AI si sta mostrando economicamente fruttifera.</p>
-<p class="ff-body text-zinc-800 mb-4">Dave Blundin nel sempre stimolante podcast MOONSHOTfa notare che il mercato delle pubblicità online (600 miliardi) è già interamente gestito da algoritmi.</p>
-<p class="ff-body text-zinc-800 mb-4">Agenti con capacità più spinte (e-commerce, contrattazione materie pri</p>
-        </div>
-
-        <div class="mt-4 text-right">
-            <a href="https://fortissimo.substack.com/i/179548983/ff-combini-e-paperclips" target="_blank" rel="noopener"
-               class="inline-flex items-center gap-1 ff-eyebrow text-xs hover:underline" style="color:#4a90e2">
-                Leggi su Substack
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-            </a>
-        </div>
-        
-            <div class="mt-6 pt-4 border-t-2 border-zinc-100">
-                <div class="ff-eyebrow text-zinc-500 mb-3">Fonti e riferimenti</div>
-                <div class="flex flex-wrap gap-3">
-                    <a href="https://www.youtube.com/watch?v=r8RGYw1n-5k&amp;t=1771s" target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
-                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                    Dave Blundin nel sempre stimolante podcast MOONSHOT
-                </a><a href="https://scale.com/leaderboard/humanitys_last_exam" target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
-                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                    Gemini 3 risolve 1/3 delle domande dell’Humanity Last Exam
-                </a><a href="https://nof1.ai/" target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
-                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                    Alpha Arena
-                </a><a href="https://andonlabs.com/evals/vending-bench-2" target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
-                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                    Vending-Bench 2
-                </a><a href="https://www.decisionproblem.com/paperclips/index2.html" target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
-                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                    minigioco per massimizzare la produzione di graffette
-                </a>
-                </div>
-            </div>
-        
-            <div class="mt-4">
-                <div class="ff-eyebrow text-zinc-500 mb-2">Letture collegate</div>
-                <div class="flex flex-wrap gap-3">
-                    <a href="https://fortissimo.substack.com/i/74061252/ff-il-super-librozzo-sulla-singolarita" target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-1.5 text-sm font-medium hover:underline" style="color:#4a90e2">
-                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
-                    🦉 ff.36.2 Il super-librozzo sulla singolarità
-                </a>
-                </div>
-            </div>
-    </section>
-    <!-- Subchapter: ff.135.1 -->
-    <section class="brutal-card accent-bar  mb-10" id="ff-135-1">
-        <div class="ff-eyebrow mb-2" style="color:#4a90e2">FF.135.1</div>
-        <h2 class="text-xl md:text-2xl font-bold mb-1">🎭 ff.135.1 E’ tutto un casino: manipolazioni</h2>
-        <div class="ff-eyebrow text-zinc-400 mb-6 text-xs">da 🎼 ff.135 Casino Royale</div>
-
-        <div class="max-w-none prose-zinc">
-            <p class="ff-body text-zinc-800 mb-4">Abbiamo un problema: Trump. O meglio, la possibilità che il mondo cambi con un tweet; per una guerra, un incremento di dazi, un blocco alle migrazioni.</p>
-<p class="ff-body text-zinc-800 mb-4">Cinguetti di “singoli nodi” che creano onde anomale nel mare iperconnesso che ci circonda. Tanto che una nuova minaccia di tariffe può valere80 mili</p>
-        </div>
-
-        <div class="mt-4 text-right">
-            <a href="https://fortissimo.substack.com/i/173499753/ff-e-tutto-un-casino-manipolazioni" target="_blank" rel="noopener"
-               class="inline-flex items-center gap-1 ff-eyebrow text-xs hover:underline" style="color:#4a90e2">
-                Leggi su Substack
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-            </a>
-        </div>
-        
-            <div class="mt-6 pt-4 border-t-2 border-zinc-100">
-                <div class="ff-eyebrow text-zinc-500 mb-3">Fonti e riferimenti</div>
-                <div class="flex flex-wrap gap-3">
-                    <a href="https://www.binance.com/en/square/post/30920097507386" target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
-                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                    80 milioni in 30 minuti (almeno per qualcuno con accesso a informazioni confiden
-                </a>
-                </div>
-            </div>
-        
-    </section>
-    <!-- Subchapter: ff.123.1 -->
-    <section class="brutal-card accent-bar  mb-10" id="ff-123-1">
-        <div class="ff-eyebrow mb-2" style="color:#4a90e2">FF.123.1</div>
-        <h2 class="text-xl md:text-2xl font-bold mb-1">🛠️ ff.123.1 L’AI con il coltellino svizzero</h2>
-        <div class="ff-eyebrow text-zinc-400 mb-6 text-xs">da 🎼 ff.123 A caccia di diamanti</div>
-
-        <div class="max-w-none prose-zinc">
-            <p class="ff-body text-zinc-800 mb-4">Se Tayler Coen (teorico della “grande stagnazione”,🤔 ff.50.1 La stranezza degli ultimi 50 anni),dice che il 16 aprile 2025 ha visto l’AGI (o un porno), bisogna fermarsi.</p>
-<p class="ff-body text-zinc-800 mb-4">In quel giorno, OpenAI ha reso pubblico il tanto atteso o3.</p>
-<p class="ff-body text-zinc-800 mb-4">In passato, sono stati contestati a ChatGPT errori matematici banali</p>
-        </div>
-
-        <div class="mt-4 text-right">
-            <a href="https://fortissimo.substack.com/i/161516506/ff-lai-con-il-coltellino-svizzero" target="_blank" rel="noopener"
-               class="inline-flex items-center gap-1 ff-eyebrow text-xs hover:underline" style="color:#4a90e2">
-                Leggi su Substack
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-            </a>
-        </div>
-        
-            <div class="mt-6 pt-4 border-t-2 border-zinc-100">
-                <div class="ff-eyebrow text-zinc-500 mb-3">Fonti e riferimenti</div>
-                <div class="flex flex-wrap gap-3">
-                    <a href="https://www.maximumtruth.org/p/skyrocketing-ai-intelligence-chatgpts" target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
-                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                    IQ di 136 (1% popolazione umana, l’anno scorso il record era 94)
-                </a><a href="https://openai.com/index/thinking-with-images/" target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
-                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                    risolve un labirinto mostrando il percorso.
-                </a>
-                </div>
-            </div>
-        
-            <div class="mt-4">
-                <div class="ff-eyebrow text-zinc-500 mb-2">Letture collegate</div>
-                <div class="flex flex-wrap gap-3">
-                    <a href="https://fortissimo.substack.com/i/90181693/ff-la-stranezza-degli-ultimi-anni" target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-1.5 text-sm font-medium hover:underline" style="color:#4a90e2">
-                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
-                    🤔 ff.50.1 La stranezza degli ultimi 50 anni
-                </a><a href="https://fortissimo.substack.com/i/95768574/ff-i-limiti-matematici-di-chatgpt" target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-1.5 text-sm font-medium hover:underline" style="color:#4a90e2">
-                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
-                    ⚠️ ff.48.4 I limiti (matematici) di ChatGPT
-                </a>
-                </div>
-            </div>
-    </section>
-    <!-- Subchapter: ff.102.3 -->
-    <section class="brutal-card accent-bar  mb-10" id="ff-102-3">
-        <div class="ff-eyebrow mb-2" style="color:#4a90e2">FF.102.3</div>
-        <h2 class="text-xl md:text-2xl font-bold mb-1">🔭 ff.102.3 Automatizzare la ricerca scientifica</h2>
-        <div class="ff-eyebrow text-zinc-400 mb-6 text-xs">da 🎼 ff.102 Il futuro in una conchiglia</div>
-
-        <div class="max-w-none prose-zinc">
-            <p class="ff-body text-zinc-800 mb-4">Fondata a Tokyo da ex dipendenti Google,Sakana AI ha presentato il suo AI Scientist: un sistema per automatizzare la scoperta scientifica che genera idee, conduce esperimenti e scrive paper scientifici.</p>
-<p class="ff-body text-zinc-800 mb-4">A soli 15$ per pubblicazione scientifica.</p>
-<p class="ff-body text-zinc-800 mb-4">I was just guessing at numbers and figuresPulling the p</p>
-        </div>
-
-        <div class="mt-4 text-right">
-            <a href="https://fortissimo.substack.com/i/145306452/ff-automatizzare-la-ricerca-scientifica" target="_blank" rel="noopener"
-               class="inline-flex items-center gap-1 ff-eyebrow text-xs hover:underline" style="color:#4a90e2">
-                Leggi su Substack
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-            </a>
-        </div>
-        
-            <div class="mt-6 pt-4 border-t-2 border-zinc-100">
-                <div class="ff-eyebrow text-zinc-500 mb-3">Fonti e riferimenti</div>
-                <div class="flex flex-wrap gap-3">
-                    <a href="https://sakana.ai/ai-scientist/" target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
-                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                    Sakana AI ha presentato il suo AI Scientist
-                </a>
-                </div>
-            </div>
-        
-    </section>
-
-        
-    <!-- Notes Section -->
-    <section class="mt-16 mb-12">
-        <div class="flex items-center gap-3 mb-8">
-            <div class="h-1 flex-1" style="background:#4a90e2"></div>
-            <h3 class="text-lg font-bold whitespace-nowrap">Dal Taccuino</h3>
-            <div class="h-1 flex-1" style="background:#4a90e2"></div>
-        </div>
-        <p class="ff-body-sm text-zinc-500 mb-6 text-center max-w-lg mx-auto">
-            Note e segnalibri dall'archivio Futuro Fortissimo, collegati ai temi di questo capitolo.
-        </p>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            
-                <a href="https://link.mail.beehiiv.com/ss/c/NtmPZtzmuFdbFBVKtipqd5XmxXFWSLmAZf-wdA5ufEkSSTZ5NS8WDwWrDszCU5XffdZP8zIOueuuEElVbytuvmT-NcZpy_54i9rrvNwALjcJmku_ZsRwPOpPnwj5F6QVcw3-Fb4dRwnRuZjVraNqxRNnYA_Io9YVRxqkPUa3r3Lb17jF8T3DsaAO-0ze0I6NBY0RRCn8N0KB7LcLRixjFMLyfad3Dd_U2p3kuOedAMY/41u/WpQZbT7OTCakhuAT9uuw5g/h12/_wTFfp4doTg-LIYl6DISoBzRNOZs4roaliC0dIoFCWE" target="_blank" rel="noopener" class="note-card block hover:shadow-[4px_4px_0_var(--ff-black)] transition-shadow group">
-                    <div class="text-xs mb-2 opacity-60">💻 🧠</div>
-                    <div class="ff-body-sm font-medium text-zinc-800 group-hover:text-zinc-900 leading-snug">
-                        Rain afferma che le sue NPUs ispirate al cervello saranno fino a 100 volte più veloci dei chip GPU come quelli di NVIDIA
-                    </div>
-                    <div class="mt-2 ff-eyebrow text-xs opacity-40">Nota #216</div>
-                </a>
-                <a href="https://x.com/AIatMeta/status/1954865388749205984" target="_blank" rel="noopener" class="note-card block hover:shadow-[4px_4px_0_var(--ff-black)] transition-shadow group">
-                    <div class="text-xs mb-2 opacity-60">💻 🧠</div>
-                    <div class="ff-body-sm font-medium text-zinc-800 group-hover:text-zinc-900 leading-snug">
-                        Il modello TRIBE di Meta è il primo a predire le risposte cerebrali agli stimoli con 1 miliardo di parametri
-                    </div>
-                    <div class="mt-2 ff-eyebrow text-xs opacity-40">Nota #1241</div>
-                </a>
-                <a href="https://alpha.school/video-library/" target="_blank" rel="noopener" class="note-card block hover:shadow-[4px_4px_0_var(--ff-black)] transition-shadow group">
-                    <div class="text-xs mb-2 opacity-60">💻 🧠</div>
-                    <div class="ff-body-sm font-medium text-zinc-800 group-hover:text-zinc-900 leading-snug">
-                        Alpha School usa l&#x27;AI per far apprendere agli studenti 2 volte più velocemente in sole 2 ore al giorno
-                    </div>
-                    <div class="mt-2 ff-eyebrow text-xs opacity-40">Nota #1255</div>
-                </a>
-                <a href="https://www.youtube.com/live/TLzna9__DnI" target="_blank" rel="noopener" class="note-card block hover:shadow-[4px_4px_0_var(--ff-black)] transition-shadow group">
-                    <div class="text-xs mb-2 opacity-60">💻 🧠</div>
-                    <div class="ff-body-sm font-medium text-zinc-800 group-hover:text-zinc-900 leading-snug">
-                        Keynote di Jensen Huang, CEO di NVIDIA, a COMPUTEX 2025.
-                    </div>
-                    <div class="mt-2 ff-eyebrow text-xs opacity-40">Nota #1161</div>
-                </a>
-                <a href="https://techcrunch.com/2025/06/11/metas-v-jepa-2-model-teaches-ai-to-understand-its-surroundings/" target="_blank" rel="noopener" class="note-card block hover:shadow-[4px_4px_0_var(--ff-black)] transition-shadow group">
-                    <div class="text-xs mb-2 opacity-60">💻 🧠</div>
-                    <div class="ff-body-sm font-medium text-zinc-800 group-hover:text-zinc-900 leading-snug">
-                        Meta lancia il nuovo &quot;world model&quot; AI V-JEPA 2, 30 volte più veloce di NVIDIA Cosmos.
-                    </div>
-                    <div class="mt-2 ff-eyebrow text-xs opacity-40">Nota #1125</div>
-                </a>
-                <a href="https://x.com/hamandcheese/status/1727533848328651057" target="_blank" rel="noopener" class="note-card block hover:shadow-[4px_4px_0_var(--ff-black)] transition-shadow group">
-                    <div class="text-xs mb-2 opacity-60">💻 🧠</div>
-                    <div class="ff-body-sm font-medium text-zinc-800 group-hover:text-zinc-900 leading-snug">
-                        AI: cos&#x27;è il Q learning?
-                    </div>
-                    <div class="mt-2 ff-eyebrow text-xs opacity-40">Nota #433</div>
-                </a>
-                <a href="https://twitter.com/ylecun" target="_blank" rel="noopener" class="note-card block hover:shadow-[4px_4px_0_var(--ff-black)] transition-shadow group">
-                    <div class="text-xs mb-2 opacity-60">💻 🧠</div>
-                    <div class="ff-body-sm font-medium text-zinc-800 group-hover:text-zinc-900 leading-snug">
-                        Yann LeCun guida il dipartimento AI di Meta
-                    </div>
-                    <div class="mt-2 ff-eyebrow text-xs opacity-40">Nota #305</div>
-                </a>
-                <a href="https://twitter.com/ylecun/status/1766498677751787723?s=20" target="_blank" rel="noopener" class="note-card block hover:shadow-[4px_4px_0_var(--ff-black)] transition-shadow group">
-                    <div class="text-xs mb-2 opacity-60">💻 🧠</div>
-                    <div class="ff-body-sm font-medium text-zinc-800 group-hover:text-zinc-900 leading-snug">
-                        Un bambino di 4 anni ha visto 50 volte i dati su cui è stato allenato ChatGPT
-                    </div>
-                    <div class="mt-2 ff-eyebrow text-xs opacity-40">Nota #306</div>
-                </a>
-        </div>
-    </section>
-
-        <!-- ============ NAVIGATION ============ -->
-        <nav class="mt-16 mb-8">
-            <div class="brutal-card p-0 overflow-hidden">
-                <div class="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-zinc-900" style="border:none; box-shadow:none;">
-                    <div class="p-5 opacity-30"><div class="ff-eyebrow text-zinc-400 text-xs">Inizio</div><div class="text-sm font-semibold mt-0.5 text-zinc-400">---</div></div>
-
-                    <a href="/book/" class="flex items-center justify-center gap-2 p-5 hover:bg-zinc-50 transition-colors text-center group">
-                        <div>
-                            <div class="ff-eyebrow text-zinc-400 text-xs">Indice</div>
-                            <div class="text-sm font-semibold mt-0.5">Tutti i capitoli</div>
-                        </div>
-                    </a>
-
-                    <a href="chapter-02.html" class="flex items-center justify-end gap-2 p-5 hover:bg-zinc-50 transition-colors text-right group"><div><div class="ff-eyebrow text-zinc-400 text-xs">Successivo</div><div class="text-sm font-semibold mt-0.5">Capitolo 02</div></div><svg class="w-5 h-5 text-zinc-400 group-hover:text-zinc-900 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></a>
-                </div>
-            </div>
+        <nav class="flex gap-4 text-sm font-medium flex-shrink-0">
+            <a href="../" class="hover:underline text-zinc-600">Home</a>
+            <a href="./" class="hover:underline text-zinc-600">Libro</a>
         </nav>
+    </div>
+</header>
 
-    </main>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 py-10 md:py-14">
 
-    <!-- ============ FOOTER ============ -->
-    <footer class="bg-white" style="border-top:4px solid var(--ff-black);">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-zinc-500">
-            <div class="ff-eyebrow text-xs">&copy; Futuro Fortissimo &mdash; Michele Merelli</div>
-            <div class="flex gap-4">
-                <a href="https://fortissimo.substack.com/" target="_blank" rel="noopener" class="hover:text-zinc-900 transition-colors">Substack</a>
-                <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener" class="hover:text-zinc-900 transition-colors">LinkedIn</a>
-                <a href="https://futurofortissimo.github.io/" class="hover:text-zinc-900 transition-colors">Archivio</a>
+    <section class="brutal-card accent-bar mb-10">
+        <div class="chapter-num text-zinc-400 mb-4">CAPITOLO 01 / 3</div>
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight mb-4" style="text-transform:none">
+            💻 Tecnologia — La Macchina che Ridisegna il Mondo
+        </h1>
+        <p class="text-zinc-600 text-lg max-w-2xl mb-6">L'AI non è solo una tecnologia: è una nuova unità di misura che ridisegna valore, produttività e potere. Dal tool all'agente, dalla simulazione alla singolarità, il compute diventa il nuovo petrolio.</p>
+        <div class="border-t-2 border-zinc-100 pt-4">
+            <div class="ff-eyebrow text-zinc-400 mb-3 text-xs">In questo capitolo</div>
+            <div class="space-y-1">
+                <a href="#s1" class="toc-link block py-1 pl-3 text-sm text-zinc-600 hover:text-zinc-900">1.1 — La nuova unità di misura: AI, valore e singolarità</a>
+                <a href="#s2" class="toc-link block py-1 pl-3 text-sm text-zinc-600 hover:text-zinc-900">1.2 — Dal tool all'agente: simulazione, creatività e verità operativa</a>
+                <a href="#s3" class="toc-link block py-1 pl-3 text-sm text-zinc-600 hover:text-zinc-900">1.3 — Sovranità digitale: crypto, reti e il futuro dello Stato</a>
             </div>
         </div>
-    </footer>
+    </section>
 
+    <article class="prose max-w-none">
+
+    <!-- ===== 1.1 ===== -->
+    <h2 id="s1" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-blue-500 pb-3">1.1 — La nuova unità di misura: AI, valore e singolarità</h2>
+
+    <p class="drop-cap">Nel terzo trimestre del 2025, una sola azienda ha incassato 57 miliardi di dollari in tre mesi, con un margine netto del 75% — vale a dire 36 miliardi di profitto puro. Non è una banca d'investimento di Wall Street, non è un cartello petrolifero: è NVIDIA, un produttore di schede grafiche che fino a dieci anni fa era noto principalmente ai videogiocatori (<span class="fc">🍫 ff.139.1 Svizzero? No, NVIDIA</span>). Il suo valore di mercato ha superato quello dell'insieme di tutte le società quotate alla borsa di Zurigo e delle venti più grandi d'Europa messe insieme. Ma qui serve una precisazione fondamentale: <em>valuation ≠ GDP</em>. Il primo è valore teorico percepito dal mercato, il secondo è il prodotto reale di un'economia. Confondere i due è come paragonare il prezzo di un quadro al costo dei suoi materiali.</p>
+
+    <p>Eppure il fatto che il mercato attribuisca a un singolo produttore di chip un valore superiore all'intera economia di un paese del G7 racconta qualcosa di profondo sulla direzione in cui si muovono i flussi di capitale: verso il <em>compute</em>, verso la capacità di calcolo. L'intelligenza artificiale non è più un esperimento di laboratorio: è la nuova infrastruttura economica globale. Come il petrolio nel XX secolo, il calcolo — misurato in GPU, watt e parametri — è diventato l'unità di misura con cui i mercati valutano il futuro.</p>
+
+    <p>Perché questo hype ha basi economiche concrete? Dave Blundin, nel podcast MOONSHOT, fa notare che il mercato della pubblicità online — da solo 600 miliardi di dollari — è <em>già interamente gestito</em> da algoritmi (<span class="fc">🧃 ff.139.2 Combini e paperclips</span>). Nessun essere umano sceglie più quale banner mostrarti: lo decide un modello. Ma la pubblicità è solo l'inizio. Agenti AI con capacità più avanzate — e-commerce, contrattazione di materie prime, logistica — potrebbero generare un mercato da 1.000 miliardi di dollari, pari all'1% del PIL mondiale. Si tratta di un'economia parallela, governata non da persone ma da sistemi che ottimizzano funzioni obiettivo 24 ore su 24. Il pensiero corre al celebre esperimento mentale dei paperclips — un'AI che massimizza la produzione di graffette fino a consumare tutte le risorse del pianeta — ma la versione reale è più sottile: non graffette, bensì clic, conversioni, engagement. La funzione obiettivo è già attiva.</p>
+
+    <p>Per misurare questa corsa servono nuovi benchmark. Non basta più il test di Turing: oggi si parla di Alpha Arena, Vending-Bench 2, FrontierMath. Google Gemini 3 risolve un terzo delle domande dell'Humanity's Last Exam — un test progettato per essere l'ultimo bastione della superiorità intellettuale umana. Ma c'è un dato ancora più impressionante: GPT-5 Pro è in grado di risolvere problemi classificati come "FrontierMath Livello 4", problemi che — ammesso vengano risolti — richiedono a matematici esperti settimane di lavoro (<span class="fc">♾️ ff.135.3 Siamo nella singolarità?</span>). Questa svolta è cruciale: dalla matematica dipendono, a cascata, fisica, chimica e biologia. Se un modello può fare in secondi ciò che un ricercatore fa in settimane, le implicazioni per la scienza sono sismiche.</p>
+
+    <p>Alex Wissner-Gross, fisico e imprenditore, ha commentato che siamo <em>nella</em> singolarità tecnologica — ma la descrive come un'illusione ottica: "Da lontano sembra un asintoto verticale, ma quando ci sei in mezzo… sembra abbastanza continuo." È una delle osservazioni più lucide sul tema: non un'esplosione improvvisa, ma un'accelerazione costante che stiamo già vivendo, giorno dopo giorno, senza renderci conto che la pendenza della curva è cambiata. Il grande inganno della singolarità è che chi la vive non la riconosce — come il pesce che non sa di nuotare nell'acqua.</p>
+
+    <p>Ma questa corsa ha un costo energetico mostruoso. Secondo dati della Federal Reserve, ChatGPT sta contribuendo a far salire le bollette elettriche americane da 0,17 a 0,19 dollari per kilowattora (<span class="fc">💲 ff.135.1 I costi dell'Intelligenza Artificiale</span>). In Europa l'effetto è eclissato dalla crisi energetica post-Ucraina, ma la tendenza è globale. Un'immagine generata dall'AI consuma 0,5 Wh — dato da Nature 2025 — che sembra poco finché non lo si moltiplica per miliardi di richieste al giorno. Se un minuto di laptop consuma 0,83 Wh, una singola immagine AI equivale a circa 36 secondi di elaborazione continua: nulla per un individuo, un'enormità per un pianeta. La Germania e il Regno Unito producono meno energia elettrica di quarant'anni fa: il problema non è tanto l'AI quanto una miopia energetica decennale che ha ignorato la domanda crescente di calcolo.</p>
+
+    <p>I piani per il futuro amplificano il problema. Elon Musk vuole acquistare 50 milioni di GPU H100 nei prossimi cinque anni, che assorbirebbero 35 GW — il 2% del consumo elettrico globale attuale (<span class="fc">🌊 ff.135.2 Onda (anomala) energetica</span>). Sam Altman è ancora più ambizioso: "Con 10 GW di calcolo, l'AI può curare il cancro. Oppure diventare un tutor privato per tutti gli studenti del mondo. Ma non può fare entrambi. Se siamo limitati dall'energia, dobbiamo scegliere a cosa dare priorità. La nostra visione è semplice: vogliamo produrre una centrale energetica per generare 1 GW di calcolo a settimana." Una frase che suona come fantascienza ma viene dal CEO della società che ha creato ChatGPT. I costi energetici previsti da OpenAI per il 2033 equivalgono a un terzo del PIL americano attuale: un numero che, se preso alla lettera, trasformerebbe l'AI nella più grande voce di spesa nella storia economica dell'umanità.</p>
+
+    <p>Fortunatamente, il solare offre una via d'uscita: in soli dieci anni la produzione mondiale è passata da zero a 2.073 TWh, equivalenti a 237 GW di potenza istantanea. Gli investimenti nel solare hanno superato i 500 miliardi di dollari — più di quanto speso per l'aviazione durante la Seconda Guerra Mondiale (400 miliardi, corretti per inflazione). È una transizione energetica senza precedenti nella storia, alimentata non dall'idealismo ambientalista ma dalla pura economia: il solare è ormai la fonte più economica nella maggior parte del pianeta. La curva di apprendimento del fotovoltaico — ogni raddoppio della capacità installata riduce il costo del 20-25% — è il motore silenzioso che potrebbe rendere sostenibile anche l'insaziabile fame energetica dell'AI.</p>
+
+    <p>E anche se lo sviluppo dell'AI si fermasse oggi? Dave Blundin fa notare che servirebbero comunque anni per esplorare e implementare le applicazioni già possibili con i modelli attuali (<span class="fc">☕ ff.135.4 L'AGI avanza: il "caffè" cinese</span>). I modelli sono già abbastanza intelligenti; ora bisogna distribuirli in robot, fabbriche e logistica, abbassandone i consumi. E qui rientra prepotentemente la Cina, che l'embargo americano sulle GPU più potenti (<span class="fc">🎼 ff.82 Guerra a colpi di chip</span>) ha costretto a "spremere i granelli di caffè con macchine del caffè meno performanti" — come dice Ryan Cunningham. L'analogia è perfetta: gli americani comprano macchine da caffè sempre più grandi, i cinesi imparano a fare un espresso migliore con una moka.</p>
+
+    <p>Non è un caso che alla AI Conference di Shanghai il professor Wang Yu abbia proposto il <em>watt-to-bit</em> come parametro per classificare l'efficienza dei modelli, una Energy-Compute Theory che misura non quanto un modello è intelligente, ma quanto è intelligente <em>per watt</em>. E la leaderboard dell'ARC Prize include ormai il costo per task, che traccia un limite di Pareto al momento occupato dai modelli o3 di OpenAI. L'efficienza, non la dimensione, sarà il vero campo di battaglia.</p>
+
+    <p>Sam Altman ha descritto tutto questo come una "singolarità gentile" (<span class="fc">🕳️ ff.129.1 La singolarità gentile di Altman</span>): non l'apocalisse robotica, ma un'espansione graduale e pervasiva dell'intelligenza disponibile a ciascun essere umano sul pianeta. Il punto di connessione nascosto tra NVIDIA, il solare e la Cina è questo: il futuro non appartiene a chi ha il modello più grande, ma a chi produce il miglior rapporto intelligenza-per-watt. La corsa all'AI è, alla fine, una corsa all'efficienza energetica. E come spesso accade nella storia, le limitazioni — l'embargo, la scarsità — generano più innovazione dell'abbondanza.</p>
+
+    <div class="sep"></div>
+
+    <!-- ===== 1.2 ===== -->
+    <h2 id="s2" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-blue-500 pb-3">1.2 — Dal tool all'agente: simulazione, creatività e verità operativa</h2>
+
+    <p class="drop-cap">Fino a ieri, un modello di linguaggio era uno strumento: gli facevi una domanda, rispondeva. Oggi è un agente: gli dai un obiettivo, e lui lo raggiunge autonomamente, usando strumenti, navigando il web, scrivendo codice, generando immagini. La differenza è la stessa che passa tra una calcolatrice e un ingegnere. Gemini 3 di Google è il primo vero modello multimodale nativo — non "un modello di testo che può anche vedere immagini", ma un sistema che pensa simultaneamente in testo, immagini, codice e azione (<span class="fc">🍫 ff.139.3 Dov'è la mia macchina volante</span>). Con 140 caratteri di prompt — meno di un vecchio tweet — genera un'applicazione completa con interfaccia grafica: un furetto nutrizionista che calcola le calorie, un convertitore di articoli in podcast, una simulazione di auto volanti. Su Polymarket, gli scommettitori danno il 65% di probabilità che Google avrà il miglior modello AI entro fine anno.</p>
+
+    <p>Ma la rivoluzione più profonda non è nella multimodalità: è nel <em>tool-calling</em>, la capacità di un modello di usare strumenti esterni. Un agente AI non si limita a "sapere" cose: può fare cose. Può cercare su internet, eseguire calcolo simbolico, interrogare database, generare grafici, prenotare voli, compilare dichiarazioni dei redditi. È la differenza tra un enciclopedista e un artigiano. E questa capacità trasforma radicalmente il rapporto tra simulazione e realtà: quando un modello può non solo descrivere il mondo ma agire su di esso, il confine tra mappa e territorio si fa sottilissimo.</p>
+
+    <p>Tyler Cowen — il teorico della "grande stagnazione" (<span class="fc">🤔 ff.50.1 La stranezza degli ultimi 50 anni</span>) — ha dichiarato che il 16 aprile 2025 ha visto l'AGI, quando OpenAI ha rilasciato o3. Un modello con un QI misurato di 136 — nel top 1% della popolazione umana — capace di risolvere labirinti visivi, scrivere paper scientifici, e ragionare su problemi mai visti prima (<span class="fc">🛠️ ff.123.1 L'AI con il coltellino svizzero</span>). L'anno precedente, il record era 94. Un salto di 42 punti QI in dodici mesi è qualcosa che la biologia non ha mai prodotto in nessuna specie. Se la selezione naturale impiega migliaia di generazioni per aumentare la capacità cognitiva di un punto, i gradient descent di OpenAI lo fanno in un trimestre fiscale.</p>
+
+    <p>I limiti matematici che una volta umiliavano ChatGPT — errori banali di aritmetica, confusione tra simboli — oggi sono reliquie. o3 non solo calcola: <em>pensa visivamente</em>, risolvendo labirinti mostrando il percorso, diagrammando ragionamenti spaziali, "vedendo" la struttura di un problema prima di risolverlo. È un'intelligenza che ha imparato a usare la vista come strumento di ragionamento, esattamente come un fisico alla lavagna.</p>
+
+    <p>A Tokyo, Sakana AI — fondata da ex dipendenti Google — ha creato l'AI Scientist: un sistema che genera ipotesi, conduce esperimenti, e scrive pubblicazioni scientifiche a 15 dollari l'una (<span class="fc">🔭 ff.102.3 Automatizzare la ricerca scientifica</span>). Non è ancora un premio Nobel automatizzato, ma è l'inizio della democratizzazione della scoperta scientifica: se un paper costa meno di un pranzo, la barriera d'ingresso alla ricerca non è più il budget ma l'immaginazione. E a DeepMind, Demis Hassabis — ex videogiocatore professionista, ora premio Nobel per la chimica — usa l'AI per modellare proteine e cellule (<span class="fc">📐 ff.132.3 Misurare e modellare il mondo</span>). Il collegamento nascosto tra Hassabis e i videogiochi non è casuale: come ha scoperto Will Wright creando SimCity, costruire mondi virtuali è più interessante che giocarli. Wright si era accorso che progettare il mondo del suo sparatutto arcade era più divertente che sparare.</p>
+
+    <p>Genie 3 di DeepMind oggi crea videogiochi interattivi in tempo reale partendo da una singola immagine — un "simulatore universale" che genera ambienti coerenti e navigabili. Non è solo intrattenimento: è la stessa tecnologia con cui si possono simulare ambienti per robot, scenari climatici, interazioni molecolari. La simulazione è il nuovo microscopio — lo strumento che ci permette di vedere ciò che non possiamo osservare direttamente.</p>
+
+    <p>E i videogiochi stessi, spesso demonizzati come distrazione, sono in realtà palestre cognitive tra le più efficaci mai inventate. Lo storico Daniel Immerwahr osserva che nell'Ottocento erano i <em>libri</em> a essere accusati di distruggere l'attenzione — e oggi sono diventati il simbolo della concentrazione (<span class="fc">🎯 ff.132.1 Crisi dell'attenzione?</span>). I videogiochi generano <em>flow</em>, non distrazione — ci fanno perdere ore nella loro immersività. La vera domanda non è "quanto" ci concentriamo, ma "su cosa".</p>
+
+    <p>Sparare in GTA aiuta a non farlo nella vita reale: la correlazione violenza-videogiochi è probabilmente fuffa, come dimostrano diversi studi (<span class="fc">🕹️ ff.132.2 I benefici dei videogiochi</span>). I giochi favoriscono il decision-making sotto stress, la coordinazione occhio-mano, la collaborazione in team. Braid, Edith Finch e Untitled Goose Game, secondo la game educator Ash Brandin, favoriscono l'apprendimento emotivo. Non è un caso che molti fondatori di startup vengano dal gaming: Kennan Davison, top 200 in League of Legends, è oggi CEO di Skio (YC S20). L'ossessione per l'ottimizzazione, la resilienza di fronte al fallimento ripetuto, il pensiero strategico: sono competenze che il gaming instilla prima che il mercato del lavoro le richieda.</p>
+
+    <p>Persino l'idrologia di Skyrim è stata verificata da geologi che hanno cercato la sorgente dei suoi fiumi virtuali (<span class="fc">🛶 ff.132.4 "Tutto scorre" anche Skyrim</span>) — a dimostrazione che la simulazione, quando è abbastanza buona, diventa indistinguibile dalla ricerca. E con agenti AI che possono esplorare simulazioni autonomamente, il confine tra "giocare" e "fare scienza" si dissolve. Il futuro della ricerca potrebbe assomigliare più a un videogioco open-world che a un laboratorio.</p>
+
+    <p>Ma con questa potenza viene una responsabilità nuova: gli algoritmi che ci circondano non solo simulano il mondo — lo <em>modificano</em>. Viviamo in un ambiente in cui le nostre scelte sono mediate da sistemi di raccomandazione che ottimizzano per il nostro engagement, non per il nostro benessere (<span class="fc">👨‍💻 ff.117.4 Liberarci dalla simulazione degli algoritmi</span>). Un viaggio tra Hong Kong e Shenzhen rivela questa realtà: telecamere, algoritmi, social media che costruiscono una simulazione del mondo più avvincente del mondo stesso (<span class="fc">🎼 ff.117 Viviamo in una simulazione</span>). L'ironia è che gli stessi strumenti che ci permettono di modellare il mondo ci modellano a loro volta. La simulazione non è fuori di noi — è il medium in cui nuotiamo. Liberarsi da essa richiede consapevolezza e, paradossalmente, altri strumenti: strumenti progettati non per catturare la nostra attenzione ma per restituircela.</p>
+
+    <div class="sep"></div>
+
+    <!-- ===== 1.3 ===== -->
+    <h2 id="s3" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-blue-500 pb-3">1.3 — Sovranità digitale: crypto, reti e il futuro dello Stato</h2>
+
+    <p class="drop-cap">Se l'AI ridisegna il valore e la simulazione ridisegna la realtà, la blockchain ridisegna il potere. Non si tratta di speculazione su token: si tratta di chi controlla l'infrastruttura della fiducia in un mondo digitale (<span class="fc">🌐 ff.95.1 La sovranità dei network</span>). Internet ha creato una nuova forma di sovranità — non territoriale ma reticolare, non basata su confini ma su protocolli. E questa sovranità è in competizione diretta con quella degli Stati-nazione, che per secoli hanno detenuto il monopolio sulla moneta, sull'identità e sulla proprietà.</p>
+
+    <p>Il feudalesimo digitale è già qui. Su piattaforme come Facebook, Instagram e TikTok, noi siamo i contadini e le piattaforme sono i feudatari: lavoriamo la terra — creiamo contenuti, generiamo dati, costruiamo comunità — ma non possediamo né il terreno né il raccolto (<span class="fc">🦆 ff.95.2 FarmVille e feudalesimo</span>). L'analogia con FarmVille non è accidentale: nel gioco virtuale di Zynga, milioni di persone coltivavano campi digitali per arricchire un'azienda quotata al NASDAQ. Nella vita reale, miliardi di persone fanno esattamente lo stesso — solo che il campo è il News Feed e il raccolto sono i loro dati comportamentali.</p>
+
+    <p>La blockchain promette una via d'uscita: la proprietà privata digitale, verificabile e non confiscabile (<span class="fc">🔑 ff.95.3 La proprietà privata digitale</span>). Non è utopia libertaria: è una risposta concreta a problemi reali. L'incendio degli archivi di Stato della Corea del Sud ha bruciato otto anni di lavoro pubblico — 858 terabyte di dati governativi in fumo (<span class="fc">⚜ ff.135.2 Ritorno ai Comuni medievali?</span>). Non possiamo più permetterci di centralizzare informazioni e scelte in sistemi fragili, in server che possono bruciare, in burocrazie che possono essere corrotte, in governi che possono cadere.</p>
+
+    <p>Cosa risolve, concretamente, la blockchain? (<span class="fc">⛓️ ff.95.5 Cosa risolve la blockchain?</span>) Non la velocità dei pagamenti — ci sono soluzioni più semplici. Non l'anonimato — la maggior parte delle blockchain sono trasparenti per design. Risolve il problema della fiducia in assenza di un intermediario fidato. In un mondo dove un tweet di Trump può valere 80 milioni di dollari in 30 minuti per chi ha accesso a informazioni privilegiate — forse Barron Trump, secondo i dati di Binance (<span class="fc">🎭 ff.135.1 È tutto un casino: manipolazioni</span>) — dove singoli nodi creano onde anomale nel mare iperconnesso della finanza globale, la necessità di sistemi <em>trustless</em> — che non richiedono fiducia in nessun singolo attore — diventa esistenziale.</p>
+
+    <p>Nasce così l'idea di un'Età dei Comuni 2.0 — comunità digitali accelerate dalla tecnologia, che riscoprono forme di governance decentrata premoderne ma le potenziano con strumenti post-moderni (<span class="fc">🎼 ff.52 Fondare una Nazione in garage</span>). La storia offre lezioni preziose: i comuni medievali italiani — Firenze, Venezia, Genova — furono laboratori di innovazione politica ed economica proprio perché erano piccoli, autonomi, in competizione tra loro. La blockchain e le DAO (Decentralized Autonomous Organizations) promettono lo stesso: governance sperimentale, iterativa, senza la rigidità degli Stati-nazione. Il Nepal ha eletto il suo primo ministro con un voto su Discord. L'Albania ha proposto un ministro governato dall'intelligenza artificiale — in un paese dove un terzo dei fondi pubblici si perde in corruzione, un "dipendente" digitale imparziale e senza nepotismi non è fantascienza, è efficienza operativa (<span class="fc">🏛️ ff.135.5 Politica tecnologica</span>).</p>
+
+    <p>Ma la rivoluzione più profonda è finanziaria, e sta avvenendo nel silenzio. Nel 2011, Cina e Giappone detenevano il 23% del debito pubblico americano. Oggi poco più del 6%. Chi li ha sostituiti? Probabilmente Nigeria e Argentina (<span class="fc">💳 ff.135.4 America, Nigeria e criptovalute</span>). Paesi in via di sviluppo alla ricerca di indipendenza finanziaria — e una moneta stabile contro l'inflazione delle loro valute locali (<span class="fc">👍 ff.73.3 Una VPN finanziaria</span>) — stanno comprando USDT, "dollari digitali" emessi su blockchain da Tether. Il debito americano si sta digitalizzando e decentralizzando, come documenta un report di ARK Invest. È un'ironia geopolitica di proporzioni storiche: gli Stati Uniti mantengono il dominio del dollaro non grazie alla Federal Reserve, non grazie al Tesoro, ma grazie a Tether — un'azienda privata con sede nelle Isole Vergini Britanniche che emette token ancorati al dollaro e compra buoni del Tesoro USA con i proventi.</p>
+
+    <p>La sfiducia nelle istituzioni centralizzate è misurabile: per la prima volta dal 1996, le banche centrali comprano più oro che debito pubblico americano (<span class="fc">🎲 ff.135.3 Scommesse da Nobel</span>). Il debito USA ha superato i 34.000 miliardi di dollari; il mercato crypto vale 2.500 miliardi; le riserve cinesi toccano i 3.200 miliardi. Sono numeri che raccontano una redistribuzione di potere in corso — lenta, silenziosa, ma inesorabile.</p>
+
+    <p>Accelerato dall'AI, il futuro oscilla tra due poli: la Cina, con la sua centralizzazione dei dati che un tempo avrebbe sommerso ogni burocrazia ma che oggi viene gestita da AI e LLM; e Internet, con la sua decentralizzazione e libertà di mercato, esemplificata dai prediction market come Polymarket che prevedono il Nobel per la Pace 11 ore prima dell'annuncio ufficiale. Due modelli, due filosofie: il controllo totalitario potenziato dall'AI contro la libertà caotica potenziata dalla blockchain. E nel mezzo, gli individui — i nuovi "nodi" della rete — che devono navigare un mondo dove un singolo tweet può spostare 80 milioni di dollari e un singolo voto su Discord può eleggere un primo ministro.</p>
+
+    <p>Il collegamento nascosto tra tutti questi temi — NVIDIA, energia solare, singolarità, blockchain, geopolitica — è la domanda su chi controllerà l'infrastruttura dell'intelligenza nel XXI secolo. Non è una battaglia tra nazioni: è una battaglia tra <em>architetture</em>. Centralizzazione contro decentralizzazione. GPU contro efficienza. Stato contro protocollo. Il watt-to-bit cinese contro il compute-per-dollar americano. L'oro delle banche centrali contro i token di Tether. La macchina sta ridisegnando il mondo — e la domanda non è <em>se</em> lo farà, ma secondo quale schema.</p>
+
+    <blockquote>
+    <p>"Con 10 GW di calcolo, l'AI può curare il cancro. O diventare un tutor per ogni studente del mondo. Ma non può fare entrambi. Se siamo limitati dall'energia, dobbiamo scegliere a cosa dare priorità."<br>— Sam Altman, <em>Abundant Intelligence</em></p>
+    </blockquote>
+
+    </article>
+
+    <nav class="mt-16 mb-8">
+        <div class="brutal-card p-0 overflow-hidden">
+            <div class="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-zinc-900" style="border:none;box-shadow:none">
+                <div class="p-5 opacity-30"><div class="ff-eyebrow text-xs text-zinc-400">Inizio</div></div>
+                <a href="./" class="flex items-center justify-center p-5 hover:bg-zinc-50 transition-colors text-center">
+                    <div><div class="ff-eyebrow text-xs text-zinc-400">Indice</div><div class="text-sm font-semibold mt-1">Tutti i capitoli</div></div>
+                </a>
+                <a href="chapter-02.html" class="flex items-center justify-end gap-2 p-5 hover:bg-zinc-50 transition-colors text-right">
+                    <div><div class="ff-eyebrow text-xs text-zinc-400">Successivo</div><div class="text-sm font-semibold mt-1">🍃 Cap. 02 — Natura</div></div>
+                    <svg class="w-5 h-5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+</main>
+
+<footer class="bg-white" style="border-top:4px solid var(--ff-black)">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-zinc-500">
+        <div class="ff-eyebrow text-xs">&copy; Futuro Fortissimo — Michele Merelli</div>
+        <div class="flex gap-4">
+            <a href="https://fortissimo.substack.com/" target="_blank" rel="noopener" class="hover:text-zinc-900">Substack</a>
+            <a href="https://futurofortissimo.github.io/" class="hover:text-zinc-900">Archivio</a>
+        </div>
+    </div>
+</footer>
 </body>
 </html>

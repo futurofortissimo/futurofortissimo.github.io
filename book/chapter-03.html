@@ -1,433 +1,161 @@
 <!doctype html>
 <html lang="it">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Capitolo 03 — Siamo già nella singolarità? (o nella sua versione gentile)</title>
-    <meta name="description" content="La singolarità come cambio di regime: feedback economici/cognitivi che alterano aspettative e istituzioni." />
-
-    <link rel="canonical" href="https://futurofortissimo.github.io/book/chapter-03.html" />
-
-    <meta property="og:title" content="Capitolo 03 — Siamo già nella singolarità? (o nella sua versione gentile)" />
-    <meta property="og:description" content="La singolarità come cambio di regime: feedback economici/cognitivi che alterano aspettative e istituzioni." />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://futurofortissimo.github.io/book/chapter-03.html" />
-    <meta property="og:image" content="https://futurofortissimo.github.io/logo.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Capitolo 03 — Siamo già nella singolarità? (o nella sua versione gentile)" />
-    <meta name="twitter:description" content="La singolarità come cambio di regime: feedback economici/cognitivi che alterano aspettative e istituzioni." />
-    <meta name="twitter:image" content="https://futurofortissimo.github.io/logo.png" />
-
-    <link rel="icon" href="/favicon.ico" />
-
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Capitolo 3 — 👥 Società: Noi, Insieme</title>
+    <meta name="description" content="La crisi contemporanea è di attenzione, contatto e governance. Flow, solitudine, geopolitica e denaro convergono nel corpo sociale come infrastruttura da riprogettare."/>
+    <link rel="canonical" href="https://futurofortissimo.github.io/book/chapter-03.html"/>
+    <meta property="og:title" content="Capitolo 3 — Società: Noi, Insieme"/>
+    <meta property="og:description" content="Flow, solitudine, geopolitica e denaro convergono nel corpo sociale come infrastruttura da riprogettare."/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="https://futurofortissimo.github.io/book/chapter-03.html"/>
+    <meta property="og:image" content="https://futurofortissimo.github.io/logo.png"/>
+    <link rel="icon" href="/favicon.ico"/>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
-
     <style>
-        :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
-        body { font-family:'Inter',sans-serif; background-color:#fdfdfd; color:var(--ff-black); min-height:100vh; line-height:1.6; position:relative; }
-        body::before { content:''; position:fixed; inset:0; background-image:linear-gradient(var(--ff-grid) 1px,transparent 1px),linear-gradient(90deg,var(--ff-grid) 1px,transparent 1px); background-size:32px 32px; pointer-events:none; z-index:-1; }
-        h1,h2,h3,h4,h5,h6 { font-family:'IBM Plex Mono',monospace; letter-spacing:0.03em; text-transform:uppercase; }
-        .brutal-card { border:4px solid var(--ff-black); background:#fff; box-shadow:6px 6px 0 var(--ff-black); padding:24px; }
-        .accent-bar { position:relative; }
-        .accent-bar::before { content:''; position:absolute; top:-4px; left:-4px; right:-4px; height:10px; background:var(--ff-blue); }
-        .accent-red::before { background:var(--ff-red); }
-        .accent-yellow::before { background:var(--ff-yellow); }
-        .accent-green::before { background:var(--ff-green); }
-        .ff-eyebrow { font-family:'IBM Plex Mono',monospace; font-size:0.75rem; letter-spacing:0.24em; text-transform:uppercase; font-weight:700; }
-        .ff-body { font-size:1rem; line-height:1.65; }
-        .ff-body-sm { font-size:0.9375rem; line-height:1.6; }
-        .no-round,.no-round * { border-radius:0!important; }
-        .note-card { border:2px solid var(--ff-black); background:#fafaf7; padding:16px; box-shadow:3px 3px 0 var(--ff-black); }
-        a:focus-visible { outline:3px solid var(--ff-black); outline-offset:2px; }
-
-        /* Additional book-quality styles */
-        .chapter-num { font-family:'Press Start 2P',monospace; font-size:0.6rem; letter-spacing:0.3em; }
-        .drop-cap::first-letter { font-family:'IBM Plex Mono',monospace; font-size:3.2em; float:left; line-height:0.8; padding-right:8px; padding-top:4px; font-weight:700; color:#f5a623; }
-        .toc-link { border-left:3px solid transparent; transition: border-color 0.2s, padding-left 0.2s; }
-        .toc-link:hover { border-left-color:#f5a623; padding-left:12px; }
-        @media print { body::before { display:none; } .brutal-card { box-shadow:none; border:1px solid #999; } }
+        :root{--ff-blue:#4a90e2;--ff-red:#d0021b;--ff-yellow:#f5a623;--ff-green:#2ecc71;--ff-black:#0a0a0a;--ff-grid:rgba(0,0,0,0.03)}
+        body{font-family:'Inter',sans-serif;background:#fdfdfd;color:var(--ff-black);min-height:100vh;line-height:1.7}
+        body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(var(--ff-grid) 1px,transparent 1px),linear-gradient(90deg,var(--ff-grid) 1px,transparent 1px);background-size:32px 32px;pointer-events:none;z-index:-1}
+        h1,h2,h3{font-family:'IBM Plex Mono',monospace;letter-spacing:0.03em}
+        .brutal-card{border:4px solid var(--ff-black);background:#fff;box-shadow:6px 6px 0 var(--ff-black);padding:24px}
+        .accent-bar{position:relative}.accent-bar::before{content:'';position:absolute;top:-4px;left:-4px;right:-4px;height:10px;background:var(--ff-red)}
+        .ff-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.75rem;letter-spacing:0.24em;text-transform:uppercase;font-weight:700}
+        .chapter-num{font-family:'Press Start 2P',monospace;font-size:0.55rem;letter-spacing:0.3em}
+        .drop-cap::first-letter{font-family:'IBM Plex Mono',monospace;font-size:3.4em;float:left;line-height:0.8;padding-right:10px;padding-top:4px;font-weight:700;color:var(--ff-red)}
+        .prose p{margin-bottom:1.2em;font-size:1.05rem;line-height:1.75}
+        .prose .fc{font-family:'IBM Plex Mono',monospace;font-size:0.82rem;font-weight:700;color:var(--ff-red);white-space:nowrap}
+        .toc-link{border-left:3px solid transparent;transition:all 0.2s}.toc-link:hover{border-left-color:var(--ff-red);padding-left:12px}
+        blockquote{border-left:4px solid var(--ff-red);padding:12px 20px;margin:1.5em 0;background:#fef2f2;font-style:italic}
+        .sep{height:2px;background:linear-gradient(90deg,var(--ff-red),transparent);margin:3em 0}
+        @media(max-width:640px){.brutal-card{border-width:2px;box-shadow:none;padding:16px}.prose p{font-size:1rem}}
+        @media print{body::before{display:none}.brutal-card{box-shadow:none;border:1px solid #999}}
     </style>
-
-    <script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Chapter",
-    "name": "Siamo già nella singolarità? (o nella sua versione gentile)",
-    "position": 3,
-    "isPartOf": {
-        "@type": "Book",
-        "name": "Futuro Fortissimo - Il Libro",
-        "url": "https://futurofortissimo.github.io/book/"
-    },
-    "url": "https://futurofortissimo.github.io/book/chapter-03.html",
-    "inLanguage": "it",
-    "description": "La singolarità come cambio di regime: feedback economici/cognitivi che alterano aspettative e istituzioni.",
-    "author": {
-        "@type": "Person",
-        "name": "Michele Merelli",
-        "url": "https://www.linkedin.com/in/michelemerelli/"
-    }
-}
-    </script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Chapter","name":"Società — Noi, Insieme","position":3,"isPartOf":{"@type":"Book","name":"Futuro Fortissimo — Tre Macro Temi","url":"https://futurofortissimo.github.io/book/"},"url":"https://futurofortissimo.github.io/book/chapter-03.html","inLanguage":"it","author":{"@type":"Person","name":"Michele Merelli"}}</script>
 </head>
 <body>
 
-    <!-- ============ HEADER ============ -->
-    <header class="bg-white" style="border-bottom:4px solid var(--ff-black);">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-            <div class="min-w-0">
-                <div class="ff-eyebrow text-zinc-500 mb-1">Futuro Fortissimo &mdash; Libro</div>
-                <div class="text-lg md:text-xl font-bold tracking-tight truncate" style="font-family:'IBM Plex Mono',monospace; text-transform:uppercase; letter-spacing:0.03em;">
-                    Cap. 03 &mdash; Siamo già nella singolarità? (o nella sua versione gentile)
-                </div>
-            </div>
-            <nav class="flex gap-4 text-sm font-medium flex-shrink-0">
-                <a href="/index.html" class="hover:underline underline-offset-4 text-zinc-600 hover:text-zinc-900">Home</a>
-                <a href="/book/" class="hover:underline underline-offset-4 text-zinc-600 hover:text-zinc-900">Libro</a>
-                <a href="/temi.html" class="hover:underline underline-offset-4 text-zinc-600 hover:text-zinc-900">Temi</a>
-                <a href="/note.html" class="hover:underline underline-offset-4 text-zinc-600 hover:text-zinc-900">Note</a>
-            </nav>
+<header class="bg-white" style="border-bottom:4px solid var(--ff-black)">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <div class="min-w-0">
+            <div class="ff-eyebrow text-zinc-500 mb-1">Futuro Fortissimo — Libro</div>
+            <div class="text-lg font-bold tracking-tight" style="font-family:'IBM Plex Mono',monospace">👥 Cap. 03 — Società</div>
         </div>
-    </header>
-
-    <!-- ============ MAIN CONTENT ============ -->
-    <main class="max-w-5xl mx-auto px-4 sm:px-6 py-10 md:py-14">
-
-        <!-- ============ HERO ============ -->
-        <section class="brutal-card accent-bar accent-yellow mb-14">
-            <div class="chapter-num text-zinc-400 mb-4">Capitolo 03 / 14</div>
-            <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight mb-6" style="text-transform:none; font-family:'IBM Plex Mono',monospace;">
-                Siamo già nella singolarità? (o nella sua versione gentile)
-            </h1>
-            <p class="ff-body text-zinc-700 max-w-2xl mb-8 leading-relaxed" style="font-size:1.125rem;">
-                La singolarità come cambio di regime: feedback economici/cognitivi che alterano aspettative e istituzioni.
-            </p>
-            <div class="border-t-2 border-zinc-100 pt-5">
-                <div class="ff-eyebrow text-zinc-400 mb-3 text-xs">Contiene materiale da</div>
-                <div class="flex flex-wrap">
-                    <span class="inline-block border-2 border-zinc-300 px-3 py-1 text-sm font-medium text-zinc-600 mr-2 mb-2">🎼 ff.135 Casino Royale</span><span class="inline-block border-2 border-zinc-300 px-3 py-1 text-sm font-medium text-zinc-600 mr-2 mb-2">🎼 ff.129 Il valzer di Tesla</span><span class="inline-block border-2 border-zinc-300 px-3 py-1 text-sm font-medium text-zinc-600 mr-2 mb-2">🎼 ff.139 E&#x27; Stato l&#x27;AI?</span><span class="inline-block border-2 border-zinc-300 px-3 py-1 text-sm font-medium text-zinc-600 mr-2 mb-2">🎼 ff.124 Ah-IA!</span><span class="inline-block border-2 border-zinc-300 px-3 py-1 text-sm font-medium text-zinc-600 mr-2 mb-2">🎼 ff.117 Viviamo in una simulazione</span>
-                </div>
-            </div>
-
-            <!-- Table of contents -->
-            <div class="mt-6 border-t-2 border-zinc-100 pt-5">
-                <div class="ff-eyebrow text-zinc-400 mb-3 text-xs">In questo capitolo</div>
-                <div class="space-y-1">
-                    <a href="#ff-135-3" class="toc-link block py-1 pl-3 ff-body-sm text-zinc-600 hover:text-zinc-900 transition-colors">FF.135.3 &mdash; 🎲 ff.135.3 Scommesse da Nobel</a><a href="#ff-129-1" class="toc-link block py-1 pl-3 ff-body-sm text-zinc-600 hover:text-zinc-900 transition-colors">FF.129.1 &mdash; 🕳️ff.129.1 La singolarità “gentile” di Altman</a><a href="#ff-139-2" class="toc-link block py-1 pl-3 ff-body-sm text-zinc-600 hover:text-zinc-900 transition-colors">FF.139.2 &mdash; 🧃ff.139.2 Combini e paperclips</a><a href="#ff-124-4" class="toc-link block py-1 pl-3 ff-body-sm text-zinc-600 hover:text-zinc-900 transition-colors">FF.124.4 &mdash; 🤹 ff.124.4 ChatGPT tuttofare</a><a href="#ff-117-4" class="toc-link block py-1 pl-3 ff-body-sm text-zinc-600 hover:text-zinc-900 transition-colors">FF.117.4 &mdash; 👨‍💻 ff.117.4 Liberarci dalla simulazione degli algoritmi?</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============ SUBCHAPTERS ============ -->
-        
-    <!-- Subchapter: ff.135.3 -->
-    <section class="brutal-card accent-bar accent-yellow mb-10" id="ff-135-3">
-        <div class="ff-eyebrow mb-2" style="color:#f5a623">FF.135.3</div>
-        <h2 class="text-xl md:text-2xl font-bold mb-1">🎲 ff.135.3 Scommesse da Nobel</h2>
-        <div class="ff-eyebrow text-zinc-400 mb-6 text-xs">da 🎼 ff.135 Casino Royale</div>
-
-        <div class="max-w-none prose-zinc">
-            <p class="ff-body text-zinc-800 mb-4">La sfiducia nei “nodi singoli” (e nell’America) sta tutta in questo grafico, che mostra come per la prima volta dal 1996 le banche comprano più oro che debito pubblico americano:</p>
-<p class="ff-body text-zinc-800 mb-4">Accelerato dall’AI, il futuro è di una nuova superpotenza tra:</p>
-<p class="ff-body text-zinc-800 mb-4">Cina, con la suacentralizzazione di datiche un tempo avreb</p>
-        </div>
-
-        <div class="mt-4 text-right">
-            <a href="https://fortissimo.substack.com/i/173499753/ff-scommesse-da-nobel" target="_blank" rel="noopener"
-               class="inline-flex items-center gap-1 ff-eyebrow text-xs hover:underline" style="color:#f5a623">
-                Leggi su Substack
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-            </a>
-        </div>
-        
-            <div class="mt-6 pt-4 border-t-2 border-zinc-100">
-                <div class="ff-eyebrow text-zinc-500 mb-3">Fonti e riferimenti</div>
-                <div class="flex flex-wrap gap-3">
-                    <a href="https://x.com/CarOnPolymarket/status/1976580469492715841?t=nWreL6M7j-5hoeqMiYcDLQ&amp;s=33" target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
-                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                    prevedono il Nobel per la Pace 11 ore prima dell’annuncio
-                </a>
-                </div>
-            </div>
-        
-    </section>
-    <!-- Subchapter: ff.129.1 -->
-    <section class="brutal-card accent-bar accent-yellow mb-10" id="ff-129-1">
-        <div class="ff-eyebrow mb-2" style="color:#f5a623">FF.129.1</div>
-        <h2 class="text-xl md:text-2xl font-bold mb-1">🕳️ff.129.1 La singolarità “gentile” di Altman</h2>
-        <div class="ff-eyebrow text-zinc-400 mb-6 text-xs">da 🎼 ff.129 Il valzer di Tesla</div>
-
-        <div class="max-w-none prose-zinc">
-            <p class="ff-body text-zinc-800 mb-4">QuandoSam Altmanpubblica qualcosa sul suo blog, è bene dargli una letta.</p>
-<p class="ff-body text-zinc-800 mb-4">InThe Gentle Singularitysostiene che abbiamo superato l’orizzonte degli eventi dell’intelligenza artificiale. Ma in modo tanto “gentile” da non essercene nemmeno accorti.</p>
-<p class="ff-body text-zinc-800 mb-4">Viviamo già con una intelligenza digitale incredibile ma</p>
-        </div>
-
-        <div class="mt-4 text-right">
-            <a href="https://fortissimo.substack.com/i/162404080/ff-la-singolarita-gentile-di-altman" target="_blank" rel="noopener"
-               class="inline-flex items-center gap-1 ff-eyebrow text-xs hover:underline" style="color:#f5a623">
-                Leggi su Substack
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-            </a>
-        </div>
-        
-            <div class="mt-6 pt-4 border-t-2 border-zinc-100">
-                <div class="ff-eyebrow text-zinc-500 mb-3">Fonti e riferimenti</div>
-                <div class="flex flex-wrap gap-3">
-                    <a href="https://blog.samaltman.com/the-gentle-singularity" target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
-                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                    Sam Altman
-                </a><a href="https://blog.samaltman.com/the-gentle-singularity" target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
-                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                    The Gentle Singularity
-                </a>
-                </div>
-            </div>
-        
-    </section>
-    <!-- Subchapter: ff.139.2 -->
-    <section class="brutal-card accent-bar accent-yellow mb-10" id="ff-139-2">
-        <div class="ff-eyebrow mb-2" style="color:#f5a623">FF.139.2</div>
-        <h2 class="text-xl md:text-2xl font-bold mb-1">🧃ff.139.2 Combini e paperclips</h2>
-        <div class="ff-eyebrow text-zinc-400 mb-6 text-xs">da 🎼 ff.139 E&#x27; Stato l&#x27;AI?</div>
-
-        <div class="max-w-none prose-zinc">
-            <p class="ff-body text-zinc-800 mb-4">Perché questohype? Perché l’AI si sta mostrando economicamente fruttifera.</p>
-<p class="ff-body text-zinc-800 mb-4">Dave Blundin nel sempre stimolante podcast MOONSHOTfa notare che il mercato delle pubblicità online (600 miliardi) è già interamente gestito da algoritmi.</p>
-<p class="ff-body text-zinc-800 mb-4">Agenti con capacità più spinte (e-commerce, contrattazione materie pri</p>
-        </div>
-
-        <div class="mt-4 text-right">
-            <a href="https://fortissimo.substack.com/i/179548983/ff-combini-e-paperclips" target="_blank" rel="noopener"
-               class="inline-flex items-center gap-1 ff-eyebrow text-xs hover:underline" style="color:#f5a623">
-                Leggi su Substack
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-            </a>
-        </div>
-        
-            <div class="mt-6 pt-4 border-t-2 border-zinc-100">
-                <div class="ff-eyebrow text-zinc-500 mb-3">Fonti e riferimenti</div>
-                <div class="flex flex-wrap gap-3">
-                    <a href="https://www.youtube.com/watch?v=r8RGYw1n-5k&amp;t=1771s" target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
-                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                    Dave Blundin nel sempre stimolante podcast MOONSHOT
-                </a><a href="https://scale.com/leaderboard/humanitys_last_exam" target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
-                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                    Gemini 3 risolve 1/3 delle domande dell’Humanity Last Exam
-                </a><a href="https://nof1.ai/" target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
-                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                    Alpha Arena
-                </a><a href="https://andonlabs.com/evals/vending-bench-2" target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
-                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                    Vending-Bench 2
-                </a><a href="https://www.decisionproblem.com/paperclips/index2.html" target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
-                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                    minigioco per massimizzare la produzione di graffette
-                </a>
-                </div>
-            </div>
-        
-            <div class="mt-4">
-                <div class="ff-eyebrow text-zinc-500 mb-2">Letture collegate</div>
-                <div class="flex flex-wrap gap-3">
-                    <a href="https://fortissimo.substack.com/i/74061252/ff-il-super-librozzo-sulla-singolarita" target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-1.5 text-sm font-medium hover:underline" style="color:#f5a623">
-                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
-                    🦉 ff.36.2 Il super-librozzo sulla singolarità
-                </a>
-                </div>
-            </div>
-    </section>
-    <!-- Subchapter: ff.124.4 -->
-    <section class="brutal-card accent-bar accent-yellow mb-10" id="ff-124-4">
-        <div class="ff-eyebrow mb-2" style="color:#f5a623">FF.124.4</div>
-        <h2 class="text-xl md:text-2xl font-bold mb-1">🤹 ff.124.4 ChatGPT tuttofare</h2>
-        <div class="ff-eyebrow text-zinc-400 mb-6 text-xs">da 🎼 ff.124 Ah-IA!</div>
-
-        <div class="max-w-none prose-zinc">
-            <p class="ff-body text-zinc-800 mb-4">Mi ha anche guidato in esercizi di fisioterapia, ha costruito un piano di recupero per il mio Ironman di settembre (finger crossed) e fornito una review stile PhD sull’uso dicollagene + vitamina C per favorire ricrescita ossea.</p>
-<p class="ff-body text-zinc-800 mb-4">Insomma, ChatGPT non sarà il miglior medico del mondo, ma spesso è megli</p>
-        </div>
-
-        <div class="mt-4 text-right">
-            <a href="https://fortissimo.substack.com/i/162941285/ff-chatgpt-tuttofare" target="_blank" rel="noopener"
-               class="inline-flex items-center gap-1 ff-eyebrow text-xs hover:underline" style="color:#f5a623">
-                Leggi su Substack
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-            </a>
-        </div>
-        
-            <div class="mt-6 pt-4 border-t-2 border-zinc-100">
-                <div class="ff-eyebrow text-zinc-500 mb-3">Fonti e riferimenti</div>
-                <div class="flex flex-wrap gap-3">
-                    <a href="https://chatgpt.com/share/681a4e45-541c-8000-b8dd-62dafdf1990f" target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
-                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                    collagene + vitamina C per favorire ricrescita ossea
-                </a>
-                </div>
-            </div>
-        
-    </section>
-    <!-- Subchapter: ff.117.4 -->
-    <section class="brutal-card accent-bar accent-yellow mb-10" id="ff-117-4">
-        <div class="ff-eyebrow mb-2" style="color:#f5a623">FF.117.4</div>
-        <h2 class="text-xl md:text-2xl font-bold mb-1">👨‍💻 ff.117.4 Liberarci dalla simulazione degli algoritmi?</h2>
-        <div class="ff-eyebrow text-zinc-400 mb-6 text-xs">da 🎼 ff.117 Viviamo in una simulazione</div>
-
-        <div class="max-w-none prose-zinc">
-            <p class="ff-body text-zinc-800 mb-4">Ma come possiamo sfuggire a questa simulazione?</p>
-<p class="ff-body text-zinc-800 mb-4">Nel video Youtube la possibile cura all’ipermodernismo (virtuale dei social e reale di Hong Kong): prestare attenzione a ciò che accade.</p>
-<p class="ff-body text-zinc-800 mb-4">Ma poi mi sono chiesto da dove arrivi questa frase.</p>
-<p class="ff-body text-zinc-800 mb-4">E’ tratta da un libro che avevo comprato prima di partire. Quel</p>
-        </div>
-
-        <div class="mt-4 text-right">
-            <a href="https://fortissimo.substack.com/i/157086176/ff-liberarci-dalla-simulazione-degli-algoritmi" target="_blank" rel="noopener"
-               class="inline-flex items-center gap-1 ff-eyebrow text-xs hover:underline" style="color:#f5a623">
-                Leggi su Substack
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-            </a>
-        </div>
-        
-            <div class="mt-6 pt-4 border-t-2 border-zinc-100">
-                <div class="ff-eyebrow text-zinc-500 mb-3">Fonti e riferimenti</div>
-                <div class="flex flex-wrap gap-3">
-                    <a href="https://en.wikiquote.org/wiki/Talk:Marshall_McLuhan" target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-900 border-b border-dotted border-zinc-400 hover:border-zinc-900 transition-colors pb-0.5">
-                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                    E’ tratta da un libro che avevo comprato prima di partire
-                </a>
-                </div>
-            </div>
-        
-            <div class="mt-4">
-                <div class="ff-eyebrow text-zinc-500 mb-2">Letture collegate</div>
-                <div class="flex flex-wrap gap-3">
-                    <a href="https://fortissimo.substack.com/p/ff75-massaggi-al-cervello?utm_source=publication-search" target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-1.5 text-sm font-medium hover:underline" style="color:#f5a623">
-                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
-                    🎼 ff.75 Massaggi al cervello
-                </a>
-                </div>
-            </div>
-    </section>
-
-        
-    <!-- Notes Section -->
-    <section class="mt-16 mb-12">
-        <div class="flex items-center gap-3 mb-8">
-            <div class="h-1 flex-1" style="background:#f5a623"></div>
-            <h3 class="text-lg font-bold whitespace-nowrap">Dal Taccuino</h3>
-            <div class="h-1 flex-1" style="background:#f5a623"></div>
-        </div>
-        <p class="ff-body-sm text-zinc-500 mb-6 text-center max-w-lg mx-auto">
-            Note e segnalibri dall'archivio Futuro Fortissimo, collegati ai temi di questo capitolo.
-        </p>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            
-                <a href="https://blog.samaltman.com/the-gentle-singularity" target="_blank" rel="noopener" class="note-card block hover:shadow-[4px_4px_0_var(--ff-black)] transition-shadow group">
-                    <div class="text-xs mb-2 opacity-60">💻 🧠</div>
-                    <div class="ff-body-sm font-medium text-zinc-800 group-hover:text-zinc-900 leading-snug">
-                        L&#x27;umanità è vicina alla costruzione di superintelligenza digitale, e finora è meno strano di quanto sembri.
-                    </div>
-                    <div class="mt-2 ff-eyebrow text-xs opacity-40">Nota #1122</div>
-                </a>
-                <a href="https://situational-awareness.ai/" target="_blank" rel="noopener" class="note-card block hover:shadow-[4px_4px_0_var(--ff-black)] transition-shadow group">
-                    <div class="text-xs mb-2 opacity-60">💻 🧠</div>
-                    <div class="ff-body-sm font-medium text-zinc-800 group-hover:text-zinc-900 leading-snug">
-                        OpenAI prevede superintelligenza entro il 2027: implicazioni
-                    </div>
-                    <div class="mt-2 ff-eyebrow text-xs opacity-40">Nota #670</div>
-                </a>
-                <a href="https://www.aarthiandsriram.com/p/marc-andreessen-and-steven-sinofsky" target="_blank" rel="noopener" class="note-card block hover:shadow-[4px_4px_0_var(--ff-black)] transition-shadow group">
-                    <div class="text-xs mb-2 opacity-60">💻 🧠</div>
-                    <div class="ff-body-sm font-medium text-zinc-800 group-hover:text-zinc-900 leading-snug">
-                        Note del podcast A16Z sulla ChatGPT
-                    </div>
-                    <div class="mt-2 ff-eyebrow text-xs opacity-40">Nota #245</div>
-                </a>
-                <a href="https://deepmind.google/discover/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/" target="_blank" rel="noopener" class="note-card block hover:shadow-[4px_4px_0_var(--ff-black)] transition-shadow group">
-                    <div class="text-xs mb-2 opacity-60">💻 🧠</div>
-                    <div class="ff-body-sm font-medium text-zinc-800 group-hover:text-zinc-900 leading-snug">
-                        Una versione avanzata di Gemini con Deep Think ha raggiunto il livello di medaglia d&#x27;oro all&#x27;Olimpiade Internazionale di...
-                    </div>
-                    <div class="mt-2 ff-eyebrow text-xs opacity-40">Nota #1194</div>
-                </a>
-                <a href="https://www.sciencedaily.com/releases/2025/07/250714052105.htm" target="_blank" rel="noopener" class="note-card block hover:shadow-[4px_4px_0_var(--ff-black)] transition-shadow group">
-                    <div class="text-xs mb-2 opacity-60">💻 🧠</div>
-                    <div class="ff-body-sm font-medium text-zinc-800 group-hover:text-zinc-900 leading-snug">
-                        Un laboratorio alimentato da AI si auto-gestisce e scopre materiali 10 volte più velocemente dei ricercatori umani.
-                    </div>
-                    <div class="mt-2 ff-eyebrow text-xs opacity-40">Nota #1181</div>
-                </a>
-                <a href="https://x.com/alexwei_/status/1946477742855532918" target="_blank" rel="noopener" class="note-card block hover:shadow-[4px_4px_0_var(--ff-black)] transition-shadow group">
-                    <div class="text-xs mb-2 opacity-60">💻 🧠</div>
-                    <div class="ff-body-sm font-medium text-zinc-800 group-hover:text-zinc-900 leading-snug">
-                        L&#x27;LLM di ragionamento sperimentale di OpenAI ha raggiunto prestazioni da medaglia d&#x27;oro all&#x27;Olimpiade Internazionale di ...
-                    </div>
-                    <div class="mt-2 ff-eyebrow text-xs opacity-40">Nota #1188</div>
-                </a>
-                <a href="https://www.nature.com/articles/d41586-024-01461-2" target="_blank" rel="noopener" class="note-card block hover:shadow-[4px_4px_0_var(--ff-black)] transition-shadow group">
-                    <div class="text-xs mb-2 opacity-60">💻 🧠</div>
-                    <div class="ff-body-sm font-medium text-zinc-800 group-hover:text-zinc-900 leading-snug">
-                        Scoperto RNA ponte: guida enzimi per riscritture genomiche su larga scala oltre CRISPR
-                    </div>
-                    <div class="mt-2 ff-eyebrow text-xs opacity-40">Nota #688</div>
-                </a>
-                <a href="https://open.spotify.com/episode/0ek5Hlyu9F05SpIRyX0BS9,Qual" target="_blank" rel="noopener" class="note-card block hover:shadow-[4px_4px_0_var(--ff-black)] transition-shadow group">
-                    <div class="text-xs mb-2 opacity-60">💻 🧠</div>
-                    <div class="ff-body-sm font-medium text-zinc-800 group-hover:text-zinc-900 leading-snug">
-                        Agenti autonomi in ascesa con riferimento anche al libro di Balaji
-                    </div>
-                    <div class="mt-2 ff-eyebrow text-xs opacity-40">Nota #350</div>
-                </a>
-        </div>
-    </section>
-
-        <!-- ============ NAVIGATION ============ -->
-        <nav class="mt-16 mb-8">
-            <div class="brutal-card p-0 overflow-hidden">
-                <div class="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-zinc-900" style="border:none; box-shadow:none;">
-                    <a href="chapter-02.html" class="flex items-center gap-2 p-5 hover:bg-zinc-50 transition-colors group"><svg class="w-5 h-5 text-zinc-400 group-hover:text-zinc-900 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg><div><div class="ff-eyebrow text-zinc-400 text-xs">Precedente</div><div class="text-sm font-semibold mt-0.5">Capitolo 02</div></div></a>
-
-                    <a href="/book/" class="flex items-center justify-center gap-2 p-5 hover:bg-zinc-50 transition-colors text-center group">
-                        <div>
-                            <div class="ff-eyebrow text-zinc-400 text-xs">Indice</div>
-                            <div class="text-sm font-semibold mt-0.5">Tutti i capitoli</div>
-                        </div>
-                    </a>
-
-                    <a href="chapter-04.html" class="flex items-center justify-end gap-2 p-5 hover:bg-zinc-50 transition-colors text-right group"><div><div class="ff-eyebrow text-zinc-400 text-xs">Successivo</div><div class="text-sm font-semibold mt-0.5">Capitolo 04</div></div><svg class="w-5 h-5 text-zinc-400 group-hover:text-zinc-900 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></a>
-                </div>
-            </div>
+        <nav class="flex gap-4 text-sm font-medium flex-shrink-0">
+            <a href="../" class="hover:underline text-zinc-600">Home</a>
+            <a href="./" class="hover:underline text-zinc-600">Libro</a>
         </nav>
+    </div>
+</header>
 
-    </main>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 py-10 md:py-14">
 
-    <!-- ============ FOOTER ============ -->
-    <footer class="bg-white" style="border-top:4px solid var(--ff-black);">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-zinc-500">
-            <div class="ff-eyebrow text-xs">&copy; Futuro Fortissimo &mdash; Michele Merelli</div>
-            <div class="flex gap-4">
-                <a href="https://fortissimo.substack.com/" target="_blank" rel="noopener" class="hover:text-zinc-900 transition-colors">Substack</a>
-                <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener" class="hover:text-zinc-900 transition-colors">LinkedIn</a>
-                <a href="https://futurofortissimo.github.io/" class="hover:text-zinc-900 transition-colors">Archivio</a>
+    <section class="brutal-card accent-bar mb-10">
+        <div class="chapter-num text-zinc-400 mb-4">CAPITOLO 03 / 3</div>
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight mb-4" style="text-transform:none">
+            👥 Società — Noi, Insieme
+        </h1>
+        <p class="text-zinc-600 text-lg max-w-2xl mb-6">La crisi contemporanea è di attenzione, contatto e governance. Flow, solitudine, geopolitica e denaro convergono in un unico tessuto: il corpo sociale come infrastruttura da riprogettare.</p>
+        <div class="border-t-2 border-zinc-100 pt-4">
+            <div class="ff-eyebrow text-zinc-400 mb-3 text-xs">In questo capitolo</div>
+            <div class="space-y-1">
+                <a href="#s1" class="toc-link block py-1 pl-3 text-sm text-zinc-600 hover:text-zinc-900">3.1 — Attenzione e governance interiore: flow, schermi e libertà</a>
+                <a href="#s2" class="toc-link block py-1 pl-3 text-sm text-zinc-600 hover:text-zinc-900">3.2 — Il corpo sociale: solitudine, stress e relazioni</a>
+                <a href="#s3" class="toc-link block py-1 pl-3 text-sm text-zinc-600 hover:text-zinc-900">3.3 — Imperi, denaro e potere: geopolitica nell'era delle reti</a>
             </div>
         </div>
-    </footer>
+    </section>
 
+    <article class="prose max-w-none">
+
+    <!-- ===== 3.1 ===== -->
+    <h2 id="s1" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-red-500 pb-3">3.1 — Attenzione e governance interiore: flow, schermi e libertà</h2>
+
+    <p class="drop-cap">Una persona controlla il telefono in media 150 volte al giorno. Non perché abbia 150 notifiche importanti, ma perché l'architettura degli schermi è progettata per catturare l'attenzione — il bene più prezioso dell'economia contemporanea. Eppure la narrazione della "crisi dell'attenzione" è più complessa di quanto sembri. Lo storico Daniel Immerwahr ricorda che nell'Ottocento erano i libri a essere accusati di distruggere la concentrazione — e oggi quei libri sono il simbolo stesso della focalizzazione (<span class="fc">🎯 ff.132.1 Crisi dell'attenzione?</span>). I videogiochi, demonizzati come TikTok, in realtà generano <em>flow</em> — quello stato di immersione totale che Mihaly Csikszentmihalyi ha descritto come l'apice dell'esperienza umana (<span class="fc">🌊 ff.121.1 Le basi del flow</span>). Un gamer perso in un RPG non ha un problema di attenzione: ha un problema di <em>direzione</em> dell'attenzione.</p>
+
+    <p>La vera domanda, suggerisce Immerwahr, non è "quanto" ci concentriamo, ma "su cosa". E qui la questione diventa politica: chi decide su cosa concentrarci? Noi, o gli algoritmi? In un mondo dove i sistemi di raccomandazione ottimizzano per l'engagement e non per il benessere (<span class="fc">👨‍💻 ff.117.4 Liberarci dalla simulazione degli algoritmi</span>), la governance interiore — la capacità di dirigere volontariamente la propria attenzione — diventa un atto di libertà. McKinsey stima che lo stato di flow aumenti la produttività del 500%. Il mercato globale della meditazione vale 9 miliardi di dollari. Ma la vera rivoluzione non è commerciale: è epistemologica.</p>
+
+    <p>Il rapporto tra parole, pensiero e costruzione del mondo è al centro di questa rivoluzione. Wittgenstein apre il <em>Tractatus</em> con: "Il Mondo è la totalità dei Fatti, non delle Cose" — e il Linguaggio è l'immagine logica di quei Fatti (<span class="fc">🗣️ ff.134.1 Parole, parole, parole</span>). In un'epoca in cui ChatGPT rende la connessione tra linguaggio e pensiero ancora più stretta, certe parole esistono solo in certi mondi: la <em>gezelligheid</em> olandese — quel calore intimo delle serate uggiose — e il giapponese 別腹 (<em>betsubara</em>), lo "stomaco separato" riservato ai dolci. Ogni parola è una lente: perderla significa perdere un modo di vedere il mondo.</p>
+
+    <p>Dare un nome alle emozioni è altrettanto cruciale. La neuroscienziata Lisa Feldman Barrett ha dimostrato che le emozioni non sono reazioni automatiche ma simulazioni create dal cervello per integrare segnali subconsci — battito cardiaco, temperatura, segnali interocettivi (<span class="fc">😭 ff.134.2 Dare un nome alle emozioni</span>). L'ansia pre-gara? Spesso è solo una sfumatura dell'eccitazione. Dare un nome diverso — eccitazione anziché ansia — cambia letteralmente la risposta fisiologica. Marc Brackett, fondatore del Centro per l'Intelligenza Emotiva a Yale, ha costruito un sistema per questo. E il fondatore di Pinterest ha creato How We Feel, un "Pokédex per le emozioni" — una app che insegna a distinguere e nominare ciò che sentiamo.</p>
+
+    <p>Ma cosa accade quando l'attenzione incontra il declino? Seth Godin descrive tre curve della vita: il Dip (depressione momentanea che i migliori superano), il Cul-de-Sac (illusione di risalita), e il Cliff (precipizio irreversibile) (<span class="fc">⛰️ ff.137.1 Orografia di una discesa</span>). Arthur Brooks, sul The Atlantic, ha descritto il <em>principle of psychoprofessional gravitation</em>: più si arriva in alto, più è dura andarsene (<span class="fc">🏆 ff.137.2 Picchi entropici</span>). Atleti olimpici, attori, ex-youtuber dimenticati — tutti soggetti alla stessa legge entropica. Brooks porta il suo esempio personale: "Un giorno ti svegli e non suoni più il corno con la stessa fluidità."</p>
+
+    <p>La soluzione sta nella distinzione di Raymond Cattell tra intelligenza fluida — quella che risolve problemi inediti con creatività — e intelligenza cristallizzata — quella che distilla e insegna alle generazioni future (<span class="fc">💎 ff.137.3 Cristalli e Bach</span>). Darwin, dopo l'innovativa gioventù, finì in una depressa inattività. Bach, invece, superò il declino insegnando. Invecchiando, serve cristallizzare le proprie esperienze — dar loro valore con il ricordo, la condivisione, l'insegnamento (<span class="fc">📈 ff.111.4 Esperienze = investimenti</span>). La governance interiore non è solo dirigere l'attenzione nel presente: è dirigere il significato nel tempo.</p>
+
+    <p>E forse è per questo che fermare il tempo — notando la novità che ogni giorno offre — è l'atto di attenzione più radicale (<span class="fc">👶 ff.108.2 Con gli occhi del fanciullino</span>). Il "Perfect Day" non è un evento straordinario: è un raggio di sole tra gli alberi, una giustapposizione di colori, un momento visto con occhi da bambino. In Giappone si contano 72 stagioni — non 4 — perché ogni settimana ha la sua micromeraviglia: 白露, la rugiada bianca che brilla a settembre; 魚上氷, i pesci che fanno capolino dal ghiaccio a febbraio (<span class="fc">❄️ ff.134.3 Le 72 stagioni giapponesi</span>). L'attenzione, alla fine, è la capacità di vedere 72 stagioni dove il qualunquista ne vede quattro.</p>
+
+    <div class="sep"></div>
+
+    <!-- ===== 3.2 ===== -->
+    <h2 id="s2" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-red-500 pb-3">3.2 — Il corpo sociale: solitudine, stress e relazioni</h2>
+
+    <p class="drop-cap">Il Surgeon General degli Stati Uniti ha dichiarato la solitudine un'epidemia nazionale. Un adulto americano su tre si sente cronicamente solo. L'isolamento sociale aumenta il rischio di mortalità del 26% — più dell'obesità, più dell'alcolismo. In Giappone, 1,5 milioni di <em>hikikomori</em> vivono in reclusione volontaria, disconnessi dalla società, spesso per anni. I tassi di natalità globali crollano: in Corea del Sud il tasso di fertilità è sceso a 0,72 — il più basso mai registrato da una nazione. La specie che ha conquistato il pianeta grazie alla cooperazione sta dimenticando come cooperare.</p>
+
+    <p>Il paradosso è che siamo più "connessi" che mai. Miliardi di messaggi, like, commenti, stories — un flusso continuo di interazione superficiale che simula la vicinanza senza offrirla. La differenza tra connessione digitale e contatto umano è la stessa tra una foto di un pasto e il pasto stesso: una nutre gli occhi, l'altra nutre il corpo. William James scriveva nel 1884: "Un'emozione puramente disincarnata è un non-ente" (<span class="fc">🦴 ff.134.4 Umanità all'osso</span>). E il mondo digitale sta "disincarnando" le nostre relazioni — scalando startup invece che montagne, postando selfie invece che abbracciando.</p>
+
+    <p>Ma il corpo resiste. Lo sport — in particolare lo sport di endurance — è una delle poche attività che reintegra il corpo nel sociale. Preparare un Ironman — 3,8 km di nuoto, 180 km di bici, 42 km di corsa — è un progetto che richiede mesi di dedizione, trasformando il processo in ricompensa (<span class="fc">🎼 ff.133 Sono un Ironman?</span>). Non è masochismo: è filosofia applicata. Il processo supera l'obiettivo. Ogni passo è la cima. La resistenza fisica diventa metafora della resistenza sociale — la capacità di sopportare la fatica del vivere insieme.</p>
+
+    <p>La saggezza orientale offre un framework complementare. Lao Tzu, nel verso 23 del Tao Te Ching, insegna: "Parlare poco è naturale. I venti impetuosi non soffiano tutta la mattina" (<span class="fc">☯️ ff.108.3 Essere acqua</span>). La violenza — fisica, verbale, digitale — non può durare perché va contro la natura delle cose. Essere acqua — adattarsi, fluire, aggirare gli ostacoli — non è passività: è la forma più sofisticata di resilienza sociale. In un mondo di tweets incendiari e guerre di dazi, il Tao ricorda che la sostenibilità del rapporto sociale dipende dalla sua leggerezza.</p>
+
+    <p>Le esperienze condivise — viaggiare, cenare insieme, celebrare — sono investimenti con un rendimento composto (<span class="fc">📈 ff.111.4 Esperienze = investimenti</span>). Come il patrimonio di Buffett, il loro valore cresce nel tempo — non nella fruizione immediata, ma nel ricordo. Un pasto condiviso con amici a vent'anni produce dividendi emotivi per decenni. La "filosofia dell'accumulo" applicata alle relazioni trasforma ogni momento condiviso in un cristallo che resiste all'entropia del tempo.</p>
+
+    <p>Il collegamento nascosto tra solitudine, Ironman e Taoismo è questo: il corpo sociale, come il corpo fisico, richiede allenamento, manutenzione e soprattutto <em>presenza</em>. Non la presenza digitale — quella abbonda. La presenza incarnata: essere lì, con il proprio corpo, con i propri sensi, con la propria vulnerabilità. In un mondo che offre mille scorciatoie per simulare la connessione, la vera cura è la fatica del contatto reale.</p>
+
+    <div class="sep"></div>
+
+    <!-- ===== 3.3 ===== -->
+    <h2 id="s3" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-red-500 pb-3">3.3 — Imperi, denaro e potere: geopolitica nell'era delle reti</h2>
+
+    <p class="drop-cap">Abbiamo un problema: Trump. O meglio, il fatto che il mondo possa cambiare con un tweet — per una guerra, un incremento di dazi, un blocco alle migrazioni (<span class="fc">🎭 ff.135.1 È tutto un casino: manipolazioni</span>). Cinguettii di "singoli nodi" che creano onde anomale nel mare iperconnesso della finanza globale. Una nuova minaccia di tariffe può valere 80 milioni di dollari in 30 minuti per chi ha accesso a informazioni riservate. Il potere, nell'era delle reti, non è centralizzato in un palazzo o in un esercito: è distribuito in tweet, token e terabyte.</p>
+
+    <p>La sfiducia è quantificabile. Per la prima volta dal 1996, le banche centrali del mondo comprano più oro che debito pubblico americano (<span class="fc">🎲 ff.135.3 Scommesse da Nobel</span>). Il debito USA supera i 34.000 miliardi di dollari. Il mercato crypto vale 2.500 miliardi. Le riserve cinesi toccano i 3.200 miliardi. La ridistribuzione del potere economico è in corso — lenta, silenziosa, e misurabile in ogni bilancio di banca centrale.</p>
+
+    <p>Due modelli si contendono il futuro. La Cina centralizza: la sua capacità di gestire dati massicci — che una volta avrebbero sommerso ogni burocrazia — è ora potenziata da AI e LLM. La sorveglianza diventa governance; il controllo diventa efficienza. Internet, al polo opposto, decentralizza: i prediction market come Polymarket prevedono il Nobel per la Pace 11 ore prima dell'annuncio ufficiale. L'intelligenza collettiva del mercato batte l'intelligence delle agenzie governative.</p>
+
+    <p>La guerra dei chip (<span class="fc">🎼 ff.82 Guerra a colpi di chip</span>) è il fronte principale di questo conflitto. L'embargo americano sulle GPU avanzate ha costretto la Cina a innovare nell'efficienza — a fare di più con meno. E il risultato paradossale è che la Cina potrebbe emergere con modelli AI più leggeri, economici e deployabili di quelli americani. Le sanzioni, come spesso accade, hanno rafforzato ciò che volevano indebolire.</p>
+
+    <p>Nel frattempo, il debito americano si sta digitalizzando in modo imprevisto. Nel 2011, Cina e Giappone detenevano il 23% del debito USA; oggi poco più del 6%. I nuovi creditori sono probabilmente Nigeria e Argentina — paesi che comprano USDT, dollari digitali su blockchain, come protezione contro l'inflazione locale (<span class="fc">💳 ff.135.4 America, Nigeria e criptovalute</span>). Il debito americano si decentralizza: non è più nei forzieri di Pechino ma nei wallet di Lagos. ARK Invest documenta come le stablecoin siano diventate un "alleato finanziario" degli Stati Uniti — un modo per esportare il dominio del dollaro senza la Federal Reserve.</p>
+
+    <p>La frammentazione del potere genera anche esperimenti radicali. Il Nepal ha eletto il primo ministro tramite Discord. L'Albania ha proposto un ministro AI — perché in un paese dove un terzo dei fondi pubblici si perde in corruzione, un "dipendente" digitale imparziale è più affidabile di uno umano (<span class="fc">🏛️ ff.135.5 Politica tecnologica</span>). L'incendio degli archivi sudcoreani — 858 terabyte di dati governativi in fumo — rende la decentralizzazione non un'opzione ideologica ma una necessità pratica (<span class="fc">⚜ ff.135.2 Ritorno ai Comuni medievali?</span>). Se otto anni di lavoro pubblico possono bruciare in un incendio, il modello centralizzato è strutturalmente fragile.</p>
+
+    <p>Il commercio globale muove 32.000 miliardi di dollari all'anno. In questo flusso, le reti sono più potenti degli imperi. Un protocollo blockchain è più resiliente di un trattato internazionale. Un prediction market è più accurato di un sondaggio elettorale. Un meme può spostare più capitali di un discorso presidenziale. Il potere non è scomparso — si è liquefatto, distribuendosi in una rete di nodi dove ognuno, con un tweet o un token, può generare un'onda.</p>
+
+    <p>Il collegamento nascosto tra attenzione, solitudine e geopolitica è che la crisi è strutturale: le istituzioni — familiari, sociali, politiche — progettate per un mondo gerarchico e territoriale si sgretolano in un mondo reticolare e digitale. La soluzione non è tornare indietro, ma ridisegnare le istituzioni per la nuova architettura. Come i Comuni medievali italiani — piccoli, autonomi, sperimentali — che produssero il Rinascimento non nonostante la frammentazione, ma grazie a essa.</p>
+
+    <blockquote>
+    <p>"Un'emozione puramente disincarnata è un non-ente."<br>— William James, <em>Che cos'è un'emozione?</em> (1884)</p>
+    </blockquote>
+
+    </article>
+
+    <nav class="mt-16 mb-8">
+        <div class="brutal-card p-0 overflow-hidden">
+            <div class="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-zinc-900" style="border:none;box-shadow:none">
+                <a href="chapter-02.html" class="flex items-center gap-2 p-5 hover:bg-zinc-50 transition-colors">
+                    <svg class="w-5 h-5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    <div><div class="ff-eyebrow text-xs text-zinc-400">Precedente</div><div class="text-sm font-semibold mt-1">🍃 Cap. 02 — Natura</div></div>
+                </a>
+                <a href="./" class="flex items-center justify-center p-5 hover:bg-zinc-50 transition-colors text-center">
+                    <div><div class="ff-eyebrow text-xs text-zinc-400">Indice</div><div class="text-sm font-semibold mt-1">Tutti i capitoli</div></div>
+                </a>
+                <div class="p-5 opacity-30 text-right"><div class="ff-eyebrow text-xs text-zinc-400">Fine</div></div>
+            </div>
+        </div>
+    </nav>
+</main>
+
+<footer class="bg-white" style="border-top:4px solid var(--ff-black)">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-zinc-500">
+        <div class="ff-eyebrow text-xs">&copy; Futuro Fortissimo — Michele Merelli</div>
+        <div class="flex gap-4">
+            <a href="https://fortissimo.substack.com/" target="_blank" rel="noopener" class="hover:text-zinc-900">Substack</a>
+            <a href="https://futurofortissimo.github.io/" class="hover:text-zinc-900">Archivio</a>
+        </div>
+    </div>
+</footer>
 </body>
 </html>

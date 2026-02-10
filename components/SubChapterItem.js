@@ -39,12 +39,13 @@ const SubChapterItem = ({ subchapter, parentId }) => {
 
   return html`<div id=${id} className="relative pl-0 group scroll-mt-32 transition-all duration-300">
     <div
-      className="flex items-start gap-3 cursor-pointer bg-white p-3 hover:-translate-y-1 transition-transform"
+      className="flex items-start gap-3 cursor-pointer bg-white p-3 sm:p-3 hover:-translate-y-0.5 transition-all duration-200 active:bg-gray-50"
       onClick=${toggleExpand}
     >
       <span className="text-lg opacity-100 shrink-0 self-center leading-none">${subchapter.originalEmoji}</span>
 
       <div className="flex-1 inline leading-tight items-baseline">
+        ${subchapter.ffLabel ? html`<span className="ff-label ff-label-sub mr-2">${subchapter.ffLabel}</span>` : null}
         <a
           href=${subchapter.link}
           target="_blank"

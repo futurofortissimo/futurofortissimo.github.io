@@ -11,6 +11,13 @@ export const extractEmojiAndTitle = (text) => {
   return { emoji, cleanTitle };
 };
 
+const ffLabelRegex = /ff\.(\d+(?:\.\d+)?)/i;
+
+const extractFfLabel = (title = '') => {
+  const match = title.match(ffLabelRegex);
+  return match ? `ff.${match[1]}` : '';
+};
+
 const stripFfPrefix = (title = '') => {
   // Common title pattern: "ff.139" / "ff.139.2" (sometimes attached to emoji without spaces).
   // Remove it to keep titles readable in the index.
@@ -163,6 +170,12 @@ const truncateNicely = (text, maxLength) => {
   return `${cut}…`;
 };
 
+const truncateToWords = (text, maxWords) => {
+  const words = text.trim().split(/\s+/);
+  if (words.length <= maxWords) return text.trim();
+  return words.slice(0, maxWords).join(' ') + '…';
+};
+
 const generateSummary = (content = '') => {
   const paragraphs = (content || '')
     .split('\n')
@@ -180,14 +193,14 @@ const generateSummary = (content = '') => {
 
   if (!sentences.length) {
     const fallback = normalizeInlineText(paragraphs[0] || '');
-    return looksLikeNoise(fallback) ? '' : truncateNicely(fallback, 160);
+    return looksLikeNoise(fallback) ? '' : truncateToWords(fallback, 20);
   }
 
-  const quantitativeSentence = sentences.find((sentence) => /\d/.test(sentence));
-  const candidate = quantitativeSentence || sentences[0];
-  const maxLength = quantitativeSentence ? 140 : 180;
+  // Strongly prefer sentences with numbers for quantitative summaries.
+  const quantitativeSentences = sentences.filter((s) => /\d/.test(s));
+  const candidate = quantitativeSentences[0] || sentences[0];
 
-  return truncateNicely(candidate, maxLength);
+  return truncateToWords(candidate, 20);
 };
 
 const getTopicEmoji = (text) => {
@@ -212,6 +225,7 @@ const getTopicEmoji = (text) => {
 
 const processSubchapter = (sub) => {
   const { emoji, cleanTitle } = extractEmojiAndTitle(sub.title);
+  const ffLabel = extractFfLabel(sub.title);
   const normalizedTitle = normalizeTitle(cleanTitle);
   const processedReferences = normalizeLinks(sub.references || [], normalizedTitle);
   const processedConnections = normalizeLinks(sub.connections || [], normalizedTitle);
@@ -225,6 +239,7 @@ const processSubchapter = (sub) => {
   return {
     ...sub,
     cleanTitle: normalizedTitle,
+    ffLabel,
     summary,
     originalEmoji: emoji || '📄',
     secondaryEmoji: getTopicEmoji(analysisText),
@@ -286,6 +301,7 @@ export const processChapter = (chapter) => {
   }
 
   const { emoji, cleanTitle: extractedTitle } = extractEmojiAndTitle(chapter.title || '');
+  const ffLabel = extractFfLabel(chapter.title || '');
   const cleanTitle = normalizeTitle(extractedTitle);
   const keypoints = Array.isArray(chapter.keypoints) ? chapter.keypoints : [];
   const processedSubchapters = (chapter.subchapters || []).map(processSubchapter);
@@ -298,6 +314,7 @@ export const processChapter = (chapter) => {
     ...chapter,
     keypoints,
     cleanTitle,
+    ffLabel,
     issueId,
     originalEmoji: fallbackEmoji,
     primaryEmoji: determineChapterEmoji(chapter, processedSubchapters, fallbackEmoji),
