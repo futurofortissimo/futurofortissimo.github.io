@@ -1,69 +1,98 @@
 <!doctype html>
-<html lang="it">
+<html lang="it" class="scroll-smooth">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Capitolo 2 — 🍃 Natura: Il Corpo e il Pianeta</title>
-    <meta name="description" content="La natura cura: dal bagno nei boschi al microbioma, dal cibo al clima. Il comfort moderno ha costi invisibili che rendono i costi esterni improvvisamente interni."/>
+    <title>Capitolo 2 — Natura: Corpo, Salute e Pianeta | Futuro Fortissimo</title>
+    <meta name="description" content="Dal bagno nei boschi al microbioma, dalla plastica al solare: la natura cura ma il comfort moderno ha costi invisibili. 45+ fonti dal corpus di Futuro Fortissimo."/>
     <link rel="canonical" href="https://futurofortissimo.github.io/book/chapter-02.html"/>
-    <meta property="og:title" content="Capitolo 2 — Natura: Il Corpo e il Pianeta"/>
-    <meta property="og:description" content="La natura cura: dal bagno nei boschi al microbioma. Il comfort moderno ha costi invisibili."/>
+    <meta property="og:title" content="Capitolo 2 — Natura: Corpo, Salute e Pianeta"/>
+    <meta property="og:description" content="Dal bagno nei boschi al microbioma, dalla plastica al solare. 45+ fonti su biofilia, dieta, longevità e clima."/>
     <meta property="og:type" content="article"/>
     <meta property="og:url" content="https://futurofortissimo.github.io/book/chapter-02.html"/>
     <meta property="og:image" content="https://futurofortissimo.github.io/logo.png"/>
+    <meta property="article:author" content="Michele Merelli"/>
+    <meta property="article:section" content="Natura"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Natura: Corpo, Salute e Pianeta — Futuro Fortissimo"/>
+    <meta name="twitter:description" content="Biofilia, microbioma, longevità, plastica e clima. 45+ fonti dal corpus."/>
     <link rel="icon" href="/favicon.ico"/>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
-        :root{--ff-blue:#4a90e2;--ff-red:#d0021b;--ff-yellow:#f5a623;--ff-green:#2ecc71;--ff-black:#0a0a0a;--ff-grid:rgba(0,0,0,0.03)}
-        body{font-family:'Inter',sans-serif;background:#fdfdfd;color:var(--ff-black);min-height:100vh;line-height:1.7}
+        :root{--ff-blue:#4a90e2;--ff-red:#d0021b;--ff-yellow:#f5a623;--ff-green:#2ecc71;--ff-black:#0a0a0a;--ff-grid:rgba(0,0,0,0.03);--accent:var(--ff-green)}
+        *,*::before,*::after{box-sizing:border-box}
+        body{font-family:'Inter',sans-serif;background:#fdfdfd;color:var(--ff-black);min-height:100vh;line-height:1.7;-webkit-text-size-adjust:100%}
         body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(var(--ff-grid) 1px,transparent 1px),linear-gradient(90deg,var(--ff-grid) 1px,transparent 1px);background-size:32px 32px;pointer-events:none;z-index:-1}
         h1,h2,h3{font-family:'IBM Plex Mono',monospace;letter-spacing:0.03em}
-        .brutal-card{border:4px solid var(--ff-black);background:#fff;box-shadow:6px 6px 0 var(--ff-black);padding:24px}
-        .accent-bar{position:relative}.accent-bar::before{content:'';position:absolute;top:-4px;left:-4px;right:-4px;height:10px;background:var(--ff-green)}
+        .skip-link{position:absolute;top:-50px;left:0;background:var(--ff-black);color:#fff;padding:8px 16px;z-index:100;font-size:0.875rem;transition:top 0.2s}.skip-link:focus{top:0}
+        .brutal-card{border:4px solid var(--ff-black);background:#fff;box-shadow:6px 6px 0 var(--ff-black);padding:clamp(16px,4vw,24px)}
+        .accent-bar{position:relative}.accent-bar::before{content:'';position:absolute;top:-4px;left:-4px;right:-4px;height:10px;background:var(--accent)}
         .ff-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.75rem;letter-spacing:0.24em;text-transform:uppercase;font-weight:700}
-        .chapter-num{font-family:'Press Start 2P',monospace;font-size:0.55rem;letter-spacing:0.3em}
-        .drop-cap::first-letter{font-family:'IBM Plex Mono',monospace;font-size:3.4em;float:left;line-height:0.8;padding-right:10px;padding-top:4px;font-weight:700;color:var(--ff-green)}
-        .prose p{margin-bottom:1.2em;font-size:1.05rem;line-height:1.75}
-        .prose .fc{font-family:'IBM Plex Mono',monospace;font-size:0.82rem;font-weight:700;color:var(--ff-green);white-space:nowrap}
-        .toc-link{border-left:3px solid transparent;transition:all 0.2s}.toc-link:hover{border-left-color:var(--ff-green);padding-left:12px}
-        blockquote{border-left:4px solid var(--ff-green);padding:12px 20px;margin:1.5em 0;background:#f0fdf4;font-style:italic}
-        .sep{height:2px;background:linear-gradient(90deg,var(--ff-green),transparent);margin:3em 0}
-        .prose .fc{cursor:pointer;text-decoration:none;transition:color 0.15s}
+        .chapter-num{font-family:'Press Start 2P',monospace;font-size:clamp(0.45rem,1vw,0.55rem);letter-spacing:0.3em}
+        .drop-cap::first-letter{font-family:'IBM Plex Mono',monospace;font-size:clamp(2.8em,5vw,3.4em);float:left;line-height:0.8;padding-right:10px;padding-top:4px;font-weight:700;color:var(--accent)}
+        .prose p{margin-bottom:1.2em;font-size:clamp(1rem,2.5vw,1.05rem);line-height:1.75;max-width:72ch}
+        .prose .fc{font-family:'IBM Plex Mono',monospace;font-size:0.8rem;font-weight:700;color:var(--accent);cursor:pointer;text-decoration:none;transition:color 0.15s;display:inline}
         .prose .fc:hover{text-decoration:underline}
-        .note-highlight{background:linear-gradient(180deg,transparent 60%,rgba(46,204,113,0.25) 60%);padding:0 2px;font-style:normal;color:inherit}
+        .toc-link{border-left:3px solid transparent;transition:all 0.2s;min-height:44px;display:flex;align-items:center}.toc-link:hover,.toc-link:focus{border-left-color:var(--accent);padding-left:12px}
+        blockquote{border-left:4px solid var(--accent);padding:12px 20px;margin:1.5em 0;background:#f0fdf4;font-style:italic}
+        .sep{height:2px;background:linear-gradient(90deg,var(--accent),transparent);margin:3em 0}
+        .note-highlight{background:linear-gradient(180deg,transparent 60%,rgba(46,204,113,0.22) 60%);padding:0 2px;font-style:normal;color:inherit}
         .prose{overflow-wrap:break-word;word-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
-        .prose p{max-width:72ch}
-        @media(max-width:640px){.brutal-card{border-width:2px;box-shadow:none;padding:16px}.prose p{font-size:1rem}}
-        @media print{body::before{display:none}.brutal-card{box-shadow:none;border:1px solid #999}}
+        h2[id]{scroll-margin-top:2rem}
+        .newsletter-cta{background:var(--ff-yellow);border:4px solid var(--ff-black);box-shadow:6px 6px 0 var(--ff-black);padding:clamp(20px,5vw,40px);text-align:center}
+        .newsletter-cta a.cta-btn{display:inline-block;background:var(--ff-black);color:#fff;padding:14px 36px;font-family:'IBM Plex Mono',monospace;font-size:0.875rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;text-decoration:none;transition:transform 0.15s,box-shadow 0.15s;border:none}
+        .newsletter-cta a.cta-btn:hover{transform:translateY(-2px);box-shadow:4px 4px 0 var(--accent)}
+        .reading-time{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:#888;letter-spacing:0.1em}
+        @media(max-width:640px){.brutal-card{border-width:2px;box-shadow:none}.newsletter-cta{box-shadow:none;border-width:2px}.toc-link{min-height:48px;padding:4px 0 4px 8px}}
+        @media print{body::before{display:none}.brutal-card{box-shadow:none;border:1px solid #999}.newsletter-cta,.skip-link{display:none}}
+        @media(prefers-reduced-motion:reduce){*{transition-duration:0.01ms!important;animation-duration:0.01ms!important}}
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Chapter","name":"Natura — Il Corpo e il Pianeta","position":2,"isPartOf":{"@type":"Book","name":"Futuro Fortissimo — Tre Macro Temi","url":"https://futurofortissimo.github.io/book/"},"url":"https://futurofortissimo.github.io/book/chapter-02.html","inLanguage":"it","author":{"@type":"Person","name":"Michele Merelli"}}</script>
+    <script type="application/ld+json">{
+      "@context":"https://schema.org","@type":"Chapter","name":"Natura — Il Corpo e il Pianeta","position":2,
+      "isPartOf":{"@type":"Book","name":"Futuro Fortissimo — Tre Macro Temi","url":"https://futurofortissimo.github.io/book/"},
+      "url":"https://futurofortissimo.github.io/book/chapter-02.html","inLanguage":"it",
+      "author":{"@type":"Person","name":"Michele Merelli"},
+      "description":"La natura cura: dal bagno nei boschi al microbioma, dal cibo al clima. Il comfort moderno ha costi invisibili.",
+      "wordCount":5000
+    }</script>
+    <script type="application/ld+json">{
+      "@context":"https://schema.org","@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://futurofortissimo.github.io/"},
+        {"@type":"ListItem","position":2,"name":"Libro","item":"https://futurofortissimo.github.io/book/"},
+        {"@type":"ListItem","position":3,"name":"Cap. 02 — Natura"}
+      ]
+    }</script>
 </head>
-<body>
+<body class="antialiased">
+<a href="#content" class="skip-link">Vai al contenuto</a>
 
-<header class="bg-white" style="border-bottom:4px solid var(--ff-black)">
+<header class="bg-white" style="border-bottom:4px solid var(--ff-black)" role="banner">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
         <div class="min-w-0">
-            <div class="ff-eyebrow text-zinc-500 mb-1">Futuro Fortissimo — Libro</div>
+            <nav aria-label="Breadcrumb" class="ff-eyebrow text-zinc-500 mb-1">
+                <a href="../" class="hover:underline">Home</a> <span aria-hidden="true">/</span>
+                <a href="./" class="hover:underline">Libro</a> <span aria-hidden="true">/</span>
+                <span aria-current="page">Cap. 02</span>
+            </nav>
             <div class="text-lg font-bold tracking-tight" style="font-family:'IBM Plex Mono',monospace">🍃 Cap. 02 — Natura</div>
         </div>
-        <nav class="flex gap-4 text-sm font-medium flex-shrink-0">
-            <a href="../" class="hover:underline text-zinc-600">Home</a>
-            <a href="./" class="hover:underline text-zinc-600">Libro</a>
-        </nav>
+        <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-eyebrow hover:underline" style="color:var(--accent)">Iscriviti alla newsletter &rarr;</a>
     </div>
 </header>
 
-<main class="max-w-4xl mx-auto px-4 sm:px-6 py-10 md:py-14">
+<main id="content" class="max-w-4xl mx-auto px-4 sm:px-6 py-10 md:py-14">
 
-    <section class="brutal-card accent-bar mb-10">
+    <section class="brutal-card accent-bar mb-10" aria-label="Intestazione capitolo">
         <div class="chapter-num text-zinc-400 mb-4">CAPITOLO 02 / 3</div>
         <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight mb-4" style="text-transform:none">
             🍃 Natura — Il Corpo e il Pianeta
         </h1>
-        <p class="text-zinc-600 text-lg max-w-2xl mb-6">La natura cura: dal bagno nei boschi al microbioma, dal cibo al clima. Ma il comfort moderno ha costi invisibili — plastica, energia, inquinamento — che rendono i costi esterni improvvisamente interni.</p>
+        <p class="text-zinc-600 text-lg max-w-2xl mb-4">La natura cura: dal bagno nei boschi al microbioma, dal cibo al clima. Ma il comfort moderno ha costi invisibili — plastica, energia, inquinamento — che rendono i costi esterni improvvisamente interni.</p>
+        <div class="reading-time mb-6">~20 min di lettura · 45+ riferimenti dal corpus</div>
         <div class="border-t-2 border-zinc-100 pt-4">
             <div class="ff-eyebrow text-zinc-400 mb-3 text-xs">In questo capitolo</div>
             <div class="space-y-1">
@@ -82,64 +111,126 @@
     <!-- ===== 2.1 ===== -->
     <h2 id="s1" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-green-500 pb-3">2.1 — Biofilia: la cura nel verde</h2>
 
-    <p class="drop-cap">Ogni mattina, milioni di persone percorrono il tragitto casa-lavoro ottimizzando per una sola variabile: il tempo. Google Maps calcola la brachistocrona del pendolare — il percorso più veloce tra due punti — tenendo conto di traffico, lavori stradali, incidenti (<span class="fc">🏎️ ff.138.1 La strada più veloce</span>). Da qualche anno, offre persino i tragitti meno inquinanti. Ma nessun navigatore calcola il percorso che massimizza la felicità. Nessuno, tranne la scienza.</p>
+    <p class="drop-cap">Ogni mattina, milioni di persone percorrono il tragitto casa-lavoro ottimizzando per una sola variabile: il tempo. Google Maps calcola la brachistocrona del pendolare — il percorso più veloce tra due punti
+    (<span class="fc">🏎️ ff.138.1
+    La strada più veloce</span>).
+    Da qualche anno offre persino i tragitti meno inquinanti. Ma nessun navigatore calcola il percorso che massimizza la felicità. Nessuno, tranne la scienza.</p>
 
-    <p>Secondo Kathy Willis, professoressa di biodiversità a Oxford e autrice de <em>La natura che cura</em>, il modo più efficace per migliorare il benessere psicologico quotidiano è allungare il tragitto verso il lavoro, includendo parchi, viali alberati e aree verdi (<span class="fc">😊 ff.138.2 La strada più felice</span>). Non si tratta di spiritualismo: è neuroscienza quantificabile. Gli orizzonti naturali hanno una "dimensione frattale" — la complessità geometrica di uno skyline — che risulta calmante per il sistema nervoso. I nostri sensi prediligono spazi ampi con qualche albero qua e là, come nella savana da cui proveniamo evoluzionisticamente. Dopo 300.000 anni di selezione naturale nella savana africana, il cervello umano è ancora programmato per rilassarsi davanti a un prato con alberi sparsi — e stressarsi davanti a un muro di cemento.</p>
+    <p>Secondo Kathy Willis, professoressa di biodiversità a Oxford e autrice de <em>La natura che cura</em>, il modo più efficace per migliorare il benessere quotidiano è allungare il tragitto includendo parchi e viali alberati
+    (<span class="fc">😊 ff.138.2
+    La strada più felice</span>).
+    Non è spiritualismo: è neuroscienza quantificabile. Gli orizzonti naturali hanno una "dimensione frattale" — la complessità geometrica di uno skyline — che risulta calmante per il sistema nervoso. Dopo 300.000 anni di selezione naturale nella savana africana, il cervello è ancora programmato per rilassarsi davanti a un prato con alberi sparsi — e stressarsi davanti a un muro di cemento. ChatGPT, quando gli si chiede un nome per questo percorso, conia <em>euthymìcrona</em> (εὔθυμος + χρόνος): il tempo del buon animo. Una parola che dovrebbe esistere in ogni lingua. Le scuole immerse nel verde hanno effetti benefici misurabili sullo sviluppo cognitivo dei bambini, come documentato su PNAS.</p>
 
-    <p>Il "bagno nei boschi" giapponese — <em>shinrin-yoku</em> — non è una moda new age ma una pratica terapeutica documentata da centinaia di studi (<span class="fc">💚 ff.51.1 L'affabulazione per il verde</span>). I dati sono impressionanti: scuole immerse nel verde mostrano effetti benefici misurabili sullo sviluppo cognitivo dei bambini, come documentato da uno studio pubblicato su PNAS. Non sono i giardini scolastici a fare la differenza — è l'esposizione costante a un ambiente visivamente complesso e biologicamente vivo. ChatGPT, quando gli si chiede un nome per il percorso che massimizza la felicità anziché minimizzare il tempo, conia <em>euthymìcrona</em> (εὔθυμος + χρόνος): il tempo del buon animo. Una parola che dovrebbe esistere in ogni lingua.</p>
+    <p>Il "bagno nei boschi" giapponese — <em>shinrin-yoku</em> — non è una moda new age ma una pratica terapeutica documentata da centinaia di studi
+    (<span class="fc">💚 ff.51.1
+    L'affabulazione per il verde</span>).
+    Ma Willis lamenta un problema epistemologico: su 1.500 paper che studiano gli effetti del "vedere la natura", solo 40 si chiedono se abbia senso <em>toccarla</em>
+    (<span class="fc">🪵 ff.138.3
+    Toccare legno o ferro?</span>).
+    Un gruppo giapponese ha dimostrato che toccare una quercia, rispetto a marmo e metallo, ha effetti calmanti misurabili su pressione sanguigna e frequenza cardiaca. Lo stesso gruppo ha confrontato foglie stampate e foglie vere — e sì, il corpo sa distinguerle. La pelle, più antica della corteccia cerebrale, ha i suoi modi per riconoscere la vita.</p>
 
-    <p>Ma Willis lamenta un problema epistemologico significativo: su 1.500 paper scientifici che studiano gli effetti psicologici del "vedere la natura", solo 40 si chiedono se abbia senso <em>toccarla</em> (<span class="fc">🪵 ff.138.3 Toccare legno o ferro?</span>). Il dominio della vista è platonico e riduttivo. La natura non è un quadro da guardare — è un ambiente da abitare con tutti i sensi. Un gruppo di ricerca giapponese ha dimostrato che toccare una quercia, rispetto al marmo e al metallo, ha effetti calmanti misurabili su pressione sanguigna e frequenza cardiaca. Lo stesso gruppo ha confrontato il contatto con foglie stampate e foglie vere — e sì, il corpo sa distinguerle. La pelle, più antica della corteccia cerebrale, ha i suoi modi per riconoscere la vita.</p>
+    <p>Il nesso tra natura e salute non è solo percettivo: è microbiologico. Sostituire ghiaia con mini-foreste negli asili nido svedesi ha aumentato in 28 giorni la biodiversità del microbioma nei bambini, riducendo biomarker di infiammazione e malattie autoimmuni
+    (<span class="fc">🥌 ff.138.4
+    Roomba o piante ornamentali?</span>).
+    Una sola pianta d'appartamento può ripopolare case sterili di microbi benefici — il Roomba pulisce dalle briciole, ma anche dai batteri buoni. Il canale più potente è quello olfattivo: l'α-pinene delle conifere — presente anche nella cannabis — rilassa in modo misurabile. Tre notti in un hotel con fragranze di cipresso aumentano la componente ad alta frequenza (HF) dell'HRV, uno dei marcatori più affidabili dello stato del sistema nervoso autonomo
+    (<span class="fc">🚬 ff.138.5
+    Sto lontano dallo stress</span>).</p>
 
-    <p>Il nesso tra natura e salute non è solo percettivo: è microbiologico. Sostituire ghiaia con mini-foreste negli asili nido svedesi ha aumentato in soli 28 giorni la biodiversità del microbioma nei bambini, riducendo contemporaneamente i biomarker di infiammazione e malattie autoimmuni (<span class="fc">🥌 ff.138.4 Roomba o piante ornamentali?</span>). La natura non cambia solo come ci sentiamo — cambia letteralmente chi siamo, a livello di flora batterica. E una sola pianta d'appartamento può ripopolare le nostre case, sterili come camere operatorie, di microbi benefici. Il Roomba pulisce i nostri pavimenti dalle briciole — ma anche dai batteri buoni che ci proteggono.</p>
+    <p>Il respiro — cavallo di battaglia di tutta la tradizione contemplativa — trova conferma scientifica nella chimica delle conifere
+    (<span class="fc">💨 ff.87.1
+    Breve storia del respiro</span>).
+    Il silenzio completa la cura: non come assenza di suono, ma come presenza di un paesaggio sonoro naturale — vento, uccelli, acqua
+    (<span class="fc">🌳 ff.118.3
+    La cura: albero e silenzi</span>).
+    John Cage lo sapeva: il suo celebre 4'33" di silenzio dura 273 secondi — 273 kelvin, lo zero assoluto. In un mondo da 85 decibel urbani, il silenzio della foresta è un farmaco gratuito, senza effetti collaterali, disponibile a chiunque abbia un parco nel raggio di 15 minuti.</p>
 
-    <p>C'è di più: gli ambienti indoor possono essere più inquinati dell'esterno, specialmente per composti organici volatili (VOC) rilasciati da oggetti di plastica, detergenti e mobili. Una pianta può ridurli significativamente. La natura non è solo "fuori" — può e deve essere "dentro", nelle nostre case, nei nostri uffici, nelle nostre scuole.</p>
-
-    <p>Il canale più potente, e forse più antico, è quello olfattivo. Il bagno nel bosco rilassa anche per l'α-pinene, una sostanza chimica rilasciata dalle conifere — presente, non a caso, anche nella cannabis (<span class="fc">🚬 ff.138.5 Sto lontano dallo stress</span>). Un esperimento ha mostrato che bastano tre notti in un hotel che rilascia fragranze di cipresso per aumentare significativamente i segnali di rilassatezza, misurati con la componente ad alta frequenza (HF) dell'HRV — la <em>heart rate variability</em>, uno dei marcatori più affidabili dello stato del sistema nervoso autonomo. Non serve un bosco: basta un odore. E il respiro — cavallo di battaglia di tutta la tradizione contemplativa — trova conferma scientifica nella chimica delle conifere (<span class="fc">💨 ff.87.1 Breve storia del respiro</span>).</p>
-
-    <p>Il silenzio, poi, è la terza gamba di questa cura naturale (<span class="fc">🌳 ff.118.3 La cura: albero e silenzi</span>). Non il silenzio come assenza di suono, ma come presenza di un paesaggio sonoro naturale — vento, uccelli, acqua che scorre — che il cervello riconosce come sicuro. In un mondo che produce 85 decibel di media nelle aree urbane, il silenzio della foresta è un farmaco. Un farmaco gratuito, senza effetti collaterali, e disponibile a chiunque abbia un parco nel raggio di 15 minuti.</p>
-
-    <p>Il collegamento nascosto tra tutti questi studi è la <em>biofilia</em> — l'ipotesi, proposta da E.O. Wilson, che gli esseri umani abbiano un bisogno biologico innato di connettersi con altre forme di vita. Non è sentimentalismo: è il risultato di 300.000 anni di co-evoluzione con un ecosistema che oggi stiamo sistematicamente demolendo. E l'ironia è che, mentre investiamo miliardi nella tecnologia per curare ansia e depressione, la cura più efficace — una passeggiata nel bosco — è ancora gratis.</p>
+    <p>Il collegamento nascosto è la <em>biofilia</em> — l'ipotesi di E.O. Wilson che gli esseri umani abbiano un bisogno biologico innato di connettersi con altre forme di vita. Non sentimentalismo: 300.000 anni di co-evoluzione con un ecosistema che stiamo demolendo. Negli Stati Uniti, il 20% del PIL va in spese mediche
+    (<span class="fc">💉 ff.35
+    Sto bene, sono Super Sapiens</span>)
+    e il mercato del wellness vale 1.500 miliardi di dollari. Eppure la cura più efficace — una passeggiata nel bosco — è ancora gratis.</p>
 
     <div class="sep"></div>
 
     <!-- ===== 2.2 ===== -->
     <h2 id="s2" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-green-500 pb-3">2.2 — Mangiare il futuro: microbioma, dieta e longevità</h2>
 
-    <p class="drop-cap">Il corpo umano ospita circa 39.000 miliardi di batteri — più delle sue stesse cellule. Questo ecosistema interno, il microbioma, è il vero protagonista della salute: regola il sistema immunitario, produce neurotrasmettitori, influenza l'umore, modula l'infiammazione. E quello che mangiamo è il suo fertilizzante — o il suo pesticida (<span class="fc">🥽 ff.90.3 Micro-bi di stress</span>).</p>
+    <p class="drop-cap">Il corpo umano ospita circa 39.000 miliardi di batteri — più delle sue stesse cellule. Questo ecosistema, il microbioma, regola il sistema immunitario, produce neurotrasmettitori, influenza l'umore, modula l'infiammazione. E quello che mangiamo è il suo fertilizzante — o il suo pesticida
+    (<span class="fc">🥽 ff.90.3
+    Micro-bi di stress</span>).
+    I batteri intestinali producono circa il 95% della serotonina del corpo — il neurotrasmettitore della serenità — e anche GABA, dopamina, noradrenalina. Il "secondo cervello" — l'intestino — ha 500 milioni di neuroni e un'influenza diretta su umore, decisioni, personalità.</p>
 
-    <p>La connessione tra microbioma e stress — l'asse intestino-cervello — è una delle scoperte più importanti della medicina del XXI secolo. I batteri intestinali producono circa il 95% della serotonina del corpo, il neurotrasmettitore della serenità. Producono anche GABA, dopamina, noradrenalina. In un certo senso, il nostro "secondo cervello" — l'intestino — non è poi così "secondo": è un organo neuroattivo con 500 milioni di neuroni e un'influenza diretta sull'umore, sulle decisioni e persino sulla personalità.</p>
+    <p>Ma questo ecosistema è fragile. Negli Stati Uniti, il 60% delle calorie consumate proviene da alimenti ultra-processati: emulsionanti, dolcificanti artificiali e conservanti sterminano intere specie batteriche benefiche. "Per migliorare non serve per forza fare cose stratosferiche — basta non fare cose sbagliate," come nota il corpus
+    (<span class="fc">🚫 ff.104.3
+    Gli abominevoli 5</span>).
+    I grassi trans aumentano il rischio di malattie cardiache del 30%. Il polisorbato 80 riduce l'integrità della barriera intestinale del 50%. Lo sciroppo di mais ad alto contenuto di fruttosio diminuisce la capacità di apprendimento e memoria del 20%. Il Red Dye 40 aumenta l'ADHD nei bambini del 10%. Cinque sostanze, cinque numeri, cinque motivi per leggere le etichette.</p>
 
-    <p>Ma questo ecosistema è fragile. Una dieta ricca di alimenti ultra-processati — che negli Stati Uniti rappresenta il 60% delle calorie consumate — riduce la diversità del microbioma in modi che ricordano una deforestazione biologica. Gli emulsionanti, i dolcificanti artificiali, i conservanti non uccidono solo batteri "cattivi": sterminano intere specie benefiche che impiegano mesi a ricolonizzare, se mai lo fanno. La monocultura intestinale che ne risulta è un terreno fertile per infiammazione cronica, resistenza all'insulina e, a cascata, obesità, diabete tipo 2, malattie cardiovascolari.</p>
+    <p>La dieta mediterranea — la più studiata nella storia della nutrizione — riduce la mortalità per tutte le cause del 25%. Le Blue Zones — Sardegna, Okinawa, Ikaria, Nicoya, Loma Linda — condividono il principio della diversità alimentare integrata in uno stile di vita comunitario. In Sardegna, la famiglia Melis è entrata nel Guinness dei Primati con una media di 93 anni tra 9 fratelli. Dan Buettner, esperto di zone blu, identifica pattern ricorrenti: legumi quotidiani, piccole porzioni, pasti condivisi
+    (<span class="fc">🧓 ff.92.2
+    La dieta dei centenari</span>).
+    Il digiuno intermittente aggiunge un'altra dimensione: 14-16 ore di astinenza attivano l'autofagia, il processo con cui le cellule riciclano i componenti danneggiati. Glicemia a digiuno ottimale: sotto 85 mg/dL. HOMA-IR sotto 2. HbA1c come indicatore a 3 mesi
+    (<span class="fc">⚖️ ff.113.1
+    Buttiamo la bilancia?</span>).</p>
 
-    <p>La dieta mediterranea — la più studiata nella storia della nutrizione — riduce la mortalità per tutte le cause del 25%. Non è un singolo alimento a fare la differenza, ma la diversità: olio d'oliva, legumi, pesce, verdure, cereali integrali, vino rosso in moderazione. Ogni componente nutre una diversa popolazione batterica, creando un ecosistema resiliente. Le Blue Zones — Sardegna, Okinawa, Ikaria, Nicoya, Loma Linda — dove la longevità è significativamente superiore alla media, condividono tutte questo principio: non una dieta specifica, ma una diversità alimentare integrata in uno stile di vita comunitario.</p>
+    <p>Casey Means, in <em>Good Energy</em>, critica una "medicina contemporanea che cura invece di prevenire" — quando la variazione giornaliera d'acqua nel corpo è di 1-4 litri, pesarsi ogni giorno è rumore, non segnale. Il 45% degli americani non raggiunge il fabbisogno giornaliero di magnesio
+    (<span class="fc">💊 ff.104
+    Hackerare il corpo</span>).
+    Dave Asprey propone il biohacking come risposta: integratori, cold exposure, luce rossa. Ma la scienza più solida è anche la più semplice: mangiare vero cibo, vario, in quantità moderate.</p>
 
-    <p>Il digiuno intermittente aggiunge un'altra dimensione. Periodi di astinenza alimentare di 14-16 ore attivano l'autofagia — il processo con cui le cellule "riciclano" i propri componenti danneggiati. I dati su biomarcatori metabolici — insulina a digiuno, trigliceridi, proteina C-reattiva — mostrano miglioramenti significativi dopo sole 8 settimane di pratica. Il corpo, privato temporaneamente di input calorico, passa dalla modalità "crescita" alla modalità "manutenzione" — un interruttore evolutivo che risale a milioni di anni di alternanza tra abbondanza e scarsità.</p>
+    <p>La filosofia dell'accumulo si applica alla salute come alla finanza
+    (<span class="fc">📈 ff.137.4
+    Filosofia dell'accumulo</span>):
+    anni di buone abitudini devono essere percepiti come un <em>compound</em> biologico che accumula salute come un conto accumula interessi. Il 95% del patrimonio di Warren Buffett si è accumulato dopo i 65 anni — e lo stesso vale per la salute: i benefici di decenni di dieta sana si manifestano pienamente nella seconda metà della vita. Bill Perkins, in <em>Die With Zero</em>, capovolge la prospettiva: "Se muori con 10.000 euro in banca, hai perso 3 mesi di vita lavorativa." L'età ottimale per investire in esperienze — e in salute — è 25-35 anni, quando i "dividendi di memoria" hanno più tempo per maturare
+    (<span class="fc">💰 ff.111
+    Morire con zero</span>).</p>
 
-    <p>La filosofia dell'accumulo (<span class="fc">📈 ff.137.4 Filosofia dell'accumulo</span>) si applica anche qui: anni di buone abitudini alimentari e sportive devono essere percepiti come una crescita continua, un <em>compound</em> biologico che accumula salute come un conto in banca accumula interessi. Il 95% del patrimonio di Warren Buffett si è accumulato dopo i 65 anni — e lo stesso vale per la salute: i benefici di decenni di dieta sana e attività fisica si manifestano pienamente nella seconda metà della vita, quando i coetanei meno attenti iniziano a pagare il conto dell'infiammazione cronica.</p>
-
-    <p>Il cibo ultra-processato è il debito subprime della salute: sembra conveniente nel breve termine, ma le clausole nascoste — infiammazione, disbiosi, resistenza insulinica — si accumulano silenziosamente fino al default metabolico. La domanda non è se, ma quando.</p>
+    <p>Il cibo ultra-processato è il debito subprime della salute: sembra conveniente nel breve termine, ma le clausole nascoste — infiammazione, disbiosi, resistenza insulinica — si accumulano fino al default metabolico. La domanda non è se, ma quando.</p>
 
     <div class="sep"></div>
 
     <!-- ===== 2.3 ===== -->
     <h2 id="s3" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-green-500 pb-3">2.3 — Il costo invisibile del comfort: plastica, energia e clima</h2>
 
-    <p class="drop-cap">Ogni settimana, un essere umano ingerisce circa 5 grammi di microplastiche — l'equivalente di una carta di credito. Non è un'iperbole giornalistica: è il dato di uno studio commissionato dal WWF all'Università di Newcastle (<span class="fc">🥤 ff.130.1 Plastic is fantastic</span>). Le microplastiche sono state trovate nell'80% dei campioni di sangue umano analizzati, nel latte materno, nella placenta, nel cervello. Respiriamo, beviamo e mangiamo plastica — e la scienza sta solo iniziando a capire cosa questo significhi per la nostra biologia.</p>
+    <p class="drop-cap">Ogni settimana, un essere umano ingerisce circa 5 grammi di microplastiche — l'equivalente di una carta di credito. Non è un'iperbole: è il dato di uno studio WWF/Università di Newcastle
+    (<span class="fc">🥤 ff.130.1
+    Plastic is fantastic</span>).
+    Le microplastiche sono state trovate nell'80% dei campioni di sangue umano analizzati, nel latte materno, nella placenta, nel cervello. Le fonti principali: pneumatici, tessuti sintetici, cosmetici, imballaggi, bustine di tè
+    (<span class="fc">🗑️ ff.130.3
+    Microplastiche: da dove provengono?</span>).
+    Ogni anno il mondo produce 400 milioni di tonnellate di plastica. Solo il 9% viene riciclato.</p>
 
-    <p>Da dove provengono? Non solo da bottiglie e sacchetti: le fonti principali sono pneumatici (che rilasciano particelle a ogni frenata), tessuti sintetici (che perdono fibre a ogni lavaggio), cosmetici, imballaggi alimentari, e perfino le bustine di tè (<span class="fc">🗑️ ff.130.3 Microplastiche: da dove provengono?</span>). Ogni anno il mondo produce 400 milioni di tonnellate di plastica. Solo il 9% viene riciclato. Il resto finisce in discariche, oceani, fiumi — e, infine, nei nostri corpi.</p>
+    <p>Gli effetti sulla salute emergono con chiarezza inquietante. Uno studio sul New England Journal of Medicine ha trovato che le microplastiche induriscono le arterie, aumentando il rischio cardiovascolare
+    (<span class="fc">🩸 ff.130.5
+    Microplastiche induriscono arterie</span>).
+    L'arte riflette questa crisi: Mandy Baker cataloga rifiuti oceanici come installazioni; Matthew Miller crea grafici socioeconomici sulle microplastiche
+    (<span class="fc">🎨 ff.130.2
+    Arte riciclabile?</span>).
+    La danza macabra della modernità non è più tra la morte e i vivi, ma tra i vivi e i rifiuti che li sopravviveranno di migliaia di anni
+    (<span class="fc">💀 ff.130.4
+    La danza macabra</span>).</p>
 
-    <p>Gli effetti sulla salute stanno emergendo con chiarezza inquietante. Uno studio pubblicato sul New England Journal of Medicine ha trovato che le microplastiche induriscono le arterie — letteralmente — aumentando il rischio di eventi cardiovascolari (<span class="fc">🩸 ff.130.5 Microplastiche induriscono arterie</span>). Agiscono come irritanti cronici, innescando una risposta infiammatoria che, nel tempo, causa la calcificazione delle pareti vascolari. È come mettere granelli di sabbia negli ingranaggi di un orologio: il meccanismo continua a funzionare, ma ogni giorno un po' peggio.</p>
+    <p>Il costo può essere quantificato con precisione. Mike Berners-Lee, in <em>How Bad Are Bananas?</em>, traduce ogni azione in CO2: una banana equivale a 4 minuti di inquinamento. Un uovo: 32 minuti. Un hamburger: 2 ore. Un chilometro in auto: 30 minuti
+    (<span class="fc">⏱️ ff.61
+    La decrescita felice è impossibile?</span>).
+    L'obiettivo globale è 10 tonnellate di CO2/anno a persona — il 50% in meno per un europeo medio. Tradotto: 27 kg al giorno, 1 kg all'ora, 20 grammi al minuto. Emissioni pro capite: USA 28 tonnellate, Australia 30, Regno Unito 15, Cina 3, Malawi 0,1, media globale 7
+    (<span class="fc">🍌 ff.58
+    Le banane inquinano troppo?</span>).
+    Anche con scelte attente, è difficile scendere sotto le 3 tonnellate. Il costo ambientale di una vita umana: circa 150 tonnellate di CO2.</p>
 
-    <p>L'arte riflette questa crisi. L'arte riciclabile — opere create con materiali di scarto — non è solo una scelta estetica: è un atto politico che rende visibile l'invisibile (<span class="fc">🎨 ff.130.2 Arte riciclabile?</span>). Quando un artista costruisce una scultura con bottiglie di plastica raccolte dall'oceano, sta rendendo tangibile il costo nascosto del comfort moderno. La danza macabra della modernità non è più tra la morte e i vivi, ma tra i vivi e i rifiuti che li sopravviveranno di migliaia di anni (<span class="fc">💀 ff.130.4 La danza macabra</span>).</p>
+    <p>L'energia è il nodo gordiano. L'energia eolica è cresciuta di 163 TWh (contro 148 del solare e 78 dell'idroelettrico), mentre il nucleare è calato di 94 TWh. La Cina ha installato 227 GW di solare nel 2021 contro i 140 globali dell'anno precedente. Capacità solare installata: Cina 254.355 MW, USA 75.572, Giappone 67.000, Germania 53.783, India 39.211, Italia 21.600
+    (<span class="fc">☀️ ff.12
+    Sole, cuore e amore</span>).
+    L'Agenzia Internazionale dell'Energia identifica il solare come una delle sole 3 tecnologie (su 50) allineate con gli obiettivi 2030
+    (<span class="fc">🌤️ ff.70
+    Il sole: soluzione o morte?</span>).
+    Carbon Engineering cattura CO2 a 100 dollari per tonnellata
+    (<span class="fc">🐍 ff.115
+    L'anno del serpente</span>).
+    La transizione è in corso — ma è ancora troppo lenta rispetto alla curva delle emissioni.</p>
 
-    <p>Il costo energetico del comfort è altrettanto nascosto. Come abbiamo visto nel capitolo sulla tecnologia, l'AI consuma quantità crescenti di energia. Ma il problema è più ampio: l'intera infrastruttura del comfort moderno — aria condizionata, streaming video, fast fashion, consegne in giornata — si regge su una produzione energetica che sta cambiando il clima in modi misurabili e irreversibili. Il solare offre speranza — da 0 a 2.073 TWh in dieci anni, investimenti che superano quelli dell'aviazione nella Seconda Guerra Mondiale (<span class="fc">🌊 ff.135.2 Onda (anomala) energetica</span>) — ma la transizione è ancora troppo lenta rispetto alla curva delle emissioni.</p>
-
-    <p>Il punto di connessione nascosto tra plastica, microbioma e clima è il concetto di <em>esternalità</em> — costi che chi produce e chi consuma non pagano, ma che vengono scaricati sull'ambiente, sulla salute pubblica, sulle generazioni future. L'economia classica li chiama "fallimenti di mercato". La realtà li chiama microplastiche nel sangue, batteri intestinali sterminati dai conservanti, e un pianeta che si riscalda di 1,5°C.</p>
-
-    <p>Ma c'è anche una via d'uscita, e passa — paradossalmente — dalla stessa natura che stiamo distruggendo. Una pianta d'appartamento riduce i VOC. Un'area verde davanti a scuola migliora lo sviluppo cognitivo. 28 giorni di gioco in una mini-foresta riducono l'infiammazione nei bambini. Il bagno nel bosco abbassa il cortisolo. La dieta mediterranea riduce la mortalità del 25%. Non sono soluzioni tecnologiche: sono soluzioni biologiche, gratuite, testate da millenni di evoluzione. Il futuro della salute non è in una pillola — è in un parco, in un orto, in un piatto di legumi.</p>
+    <p>Il punto di connessione nascosto tra plastica, microbioma e clima è il concetto di <em>esternalità</em> — costi che chi produce e chi consuma non pagano, scaricati sull'ambiente, sulla salute, sulle generazioni future. Ma c'è una via d'uscita, e passa dalla stessa natura che stiamo distruggendo: una pianta riduce i VOC, un'area verde migliora lo sviluppo cognitivo, 28 giorni in una mini-foresta riducono l'infiammazione. Il futuro della salute non è in una pillola — è in un parco, in un orto, in un piatto di legumi.</p>
 
     <blockquote>
-    <p>"Parlare poco è naturale: i venti impetuosi non soffiano tutta la mattina; una pioggia torrenziale non dura tutto il giorno. Chi li crea? Il cielo e la terra. Ma questi sono fenomeni violenti, ecco perché non possono durare a lungo."<br>— Lao Tzu, <em>Tao Te Ching</em>, verso 23</p>
+    <p>"Parlare poco è naturale: i venti impetuosi non soffiano tutta la mattina; una pioggia torrenziale non dura tutto il giorno."<br>— Lao Tzu, <em>Tao Te Ching</em>, verso 23</p>
     </blockquote>
 
     <div class="sep"></div>
@@ -147,43 +238,93 @@
     <!-- ===== 2.4 ===== -->
     <h2 id="s4" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-green-500 pb-3">2.4 — Acqua, flussi e la geometria nascosta dell'ecosistema</h2>
 
-    <p class="drop-cap">L'acqua scorre senza mappa. Non ha un piano, non segue un algoritmo — segue la gravità, e nel farlo disegna geometrie perfette: meandri, delta, bacini idrografici che ricalcano la struttura frattale degli alberi e dei polmoni. Questa semplicità radicale — una sola regola, nessun programma — è il cuore della filosofia taoista applicata alla natura (<span class="fc">💧 ff.112.5 Acqua da tutte le parti</span>). <mark class="note-highlight">Lao Tzu nel Tao Te Ching scrive: "L'acqua è la cosa più morbida del mondo, eppure dissolve la cosa più dura."</mark> L'acqua non combatte gli ostacoli: li aggira, li erode, li attraversa. È la metafora suprema della resilienza — non la forza bruta, ma l'adattamento costante.</p>
+    <p class="drop-cap">L'acqua scorre senza mappa. Non ha un piano, non segue un algoritmo — segue la gravità, e nel farlo disegna geometrie perfette: meandri, delta, bacini idrografici che ricalcano la struttura frattale degli alberi e dei polmoni. Lao Tzu nel Tao Te Ching scrive: "L'acqua è la cosa più morbida del mondo, eppure dissolve la cosa più dura"
+    (<span class="fc">💧 ff.112.5
+    Acqua da tutte le parti</span>).
+    L'acqua non combatte gli ostacoli: li aggira, li erode, li attraversa. È la metafora suprema della resilienza — non la forza bruta, ma l'adattamento costante.</p>
 
-    <p>Ma l'acqua è anche una risorsa in crisi. <mark class="note-highlight">Secondo l'ONU, 2,2 miliardi di persone non hanno accesso sicuro all'acqua potabile.</mark> Le infrastrutture idriche globali perdono in media il 30% dell'acqua trattata prima che raggiunga i rubinetti — un disastro silenzioso che costa miliardi di dollari e milioni di vite. La tecnologia offre soluzioni inattese: ACWA, un robot serpentiforme progettato al MIT, nuota all'interno delle tubature urbane identificando perdite con una precisione millimetrica grazie a sensori acustici e telecamere a infrarossi (<span class="fc">🐍 ff.47.2 Serpenti marini digitali</span>). È una convergenza poetica: un serpente artificiale che protegge il flusso dell'acqua — la stessa acqua che, nella mitologia, è sempre stata associata ai serpenti.</p>
+    <p>Ma l'acqua è anche una risorsa in crisi. Secondo l'ONU, 2,2 miliardi di persone non hanno accesso sicuro all'acqua potabile. Le infrastrutture perdono in media il 30% dell'acqua trattata prima che raggiunga i rubinetti. ACWA, un robot serpentiforme del MIT, nuota all'interno delle tubature identificando perdite con sensori acustici e telecamere a infrarossi
+    (<span class="fc">🐍 ff.47.2
+    Serpenti marini digitali</span>).
+    Un serpente artificiale che protegge il flusso dell'acqua — la stessa acqua che, nella mitologia, è sempre stata associata ai serpenti.</p>
 
-    <p>Le cascate rivelano l'altra faccia dell'acqua: la potenza. L'Angel Falls in Venezuela precipita per 979 metri — quasi un chilometro di caduta libera — generando una forza cinetica che, se convertita in energia idroelettrica, potrebbe alimentare una piccola città (<span class="fc">🌊 ff.56.3 Una cascata alta un chilometro</span>). <mark class="note-highlight">L'ingegnere idroelettrico Mark Jacobson di Stanford</mark> ha calcolato che l'energia potenziale dell'acqua dolce globale, se catturata integralmente, supererebbe il fabbisogno energetico mondiale di tre volte. Ma non è la cattura che manca: è la distribuzione. Come per l'AI e il solare, il problema non è la risorsa — è l'infrastruttura per portarla dove serve.</p>
+    <p>Il primo trapianto di cuore da maiale a umano senza rigetto — con il gene gal-transferasi rimosso — è stato possibile grazie alla comprensione dei flussi biologici
+    (<span class="fc">🐖 ff.25
+    La fattoria degli animali</span>).
+    Negli USA, 60.000 persone attendono un trapianto, ma solo il 65% lo ottiene. Organi più richiesti: rene (83%), fegato (10%), cuore (3%). Un'AI ha raggiunto il 90% di accuratezza nell'interpretare i grugniti dei maiali per stato emotivo — la comunicazione tra specie, mediata dalla tecnologia, è già in corso.</p>
 
-    <p>Il collegamento nascosto tra il serpente robotico e la cascata venezuelana è che l'acqua, come l'informazione, è tanto più preziosa quanto meglio fluisce. Ogni perdita — una tubatura rotta, un fiume inquinato, un ghiacciaio che si scioglie — è un'interruzione del flusso. La geometria dell'ecosistema è una geometria di flussi: nutrienti, energia, acqua, dati. Interrompere un flusso non è mai locale: le conseguenze si propagano come onde in un lago.</p>
+    <p>Le cascate rivelano l'altra faccia dell'acqua: la potenza. L'Angel Falls in Venezuela precipita per 979 metri — quasi un chilometro di caduta libera
+    (<span class="fc">🌊 ff.56.3
+    Una cascata alta un chilometro</span>).
+    L'energia potenziale dell'acqua dolce globale, se catturata integralmente, supererebbe il fabbisogno energetico mondiale di tre volte. Ma come per l'AI e il solare, il problema non è la risorsa — è l'infrastruttura per portarla dove serve. La geometria dell'ecosistema è una geometria di flussi: nutrienti, energia, acqua, dati. Interrompere un flusso non è mai locale: le conseguenze si propagano come onde in un lago.</p>
 
     <div class="sep"></div>
 
     <!-- ===== 2.5 ===== -->
     <h2 id="s5" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-green-500 pb-3">2.5 — Movimento, ossigeno e la biologia della longevità</h2>
 
-    <p class="drop-cap">La relazione tra movimento e mortalità è una delle più studiate in epidemiologia — e una delle più ignorate nella pratica quotidiana. Il dato è semplice e brutale: chi non si muove ha il 50% in più di probabilità di morire prematuramente rispetto a chi fa almeno 150 minuti di attività moderata alla settimana (<span class="fc">🏃 ff.86.1 Se non ti muovi, muori</span>). <mark class="note-highlight">Il sistema MET (metabolic equivalent of task), sviluppato dalla medicina sportiva americana</mark>, quantifica l'intensità: camminare è 3 MET, correre è 8, pedalare in salita è 12. Servono almeno 500-1000 MET-minuti alla settimana per ottenere benefici significativi. Tradotto: 30 minuti di camminata veloce al giorno. Il prezzo della longevità è ridicolmente basso — eppure il 28% della popolazione mondiale non lo paga.</p>
+    <p class="drop-cap">La relazione tra movimento e mortalità è semplice e brutale: chi non si muove ha il 50% in più di probabilità di morire prematuramente rispetto a chi fa almeno 150 minuti di attività moderata alla settimana
+    (<span class="fc">🏃 ff.86.1
+    Se non ti muovi, muori</span>).
+    Il sistema MET quantifica l'intensità: camminare è 3 MET, correre 8, pedalare in salita 12. Servono almeno 500-1000 MET-minuti alla settimana. Tradotto: 30 minuti di camminata veloce al giorno. Il prezzo della longevità è ridicolmente basso — eppure il 28% della popolazione mondiale non lo paga.</p>
 
-    <p>Il VO2max — la quantità massima di ossigeno che il corpo può assorbire durante l'esercizio — è il singolo migliore predittore della longevità secondo <mark class="note-highlight">il cardiologo Peter Attia nel suo bestseller <em>Outlive</em></mark>. Fino a poco tempo fa, misurarlo richiedeva un laboratorio, una maschera e un protocollo da 45 minuti. Oggi, wearable come il Calibre e l'Hexoskin misurano il consumo di ossigeno in tempo reale durante una normale corsa al parco (<span class="fc">🫁 ff.86.2 Misurare l'ossigeno bruciato</span>). L'Apple Watch stima il VO2max con un margine di errore del 5% usando solo l'accelerometro e il cardiofrequenzimetro. La democratizzazione della misurazione biologica è in corso: ciò che un decennio fa richiedeva un ospedale oggi si fa con un orologio.</p>
+    <p>Il VO2max — la quantità massima di ossigeno che il corpo può assorbire durante l'esercizio — è il singolo migliore predittore della longevità secondo il cardiologo Peter Attia nel suo <em>Outlive</em>. Oggi l'Apple Watch lo stima con un margine di errore del 5%
+    (<span class="fc">🫁 ff.86.2
+    Misurare l'ossigeno bruciato</span>).
+    Ciò che un decennio fa richiedeva un ospedale oggi si fa con un orologio. Il lattato — l'acido lattico — non è solo un sottoprodotto della fatica: il cervello lo preferisce al glucosio come fonte energetica. Il lattato promuove il BDNF (Brain-Derived Neurotrophic Factor), la crescita di nuove cellule nervose. L'esercizio fisico migliora la cognizione non nonostante la fatica, ma <em>grazie</em> a essa
+    (<span class="fc">🧠 ff.120.4
+    Lattato al cervello?</span>).</p>
 
-    <p>I dati globali confermano il trend. <mark class="note-highlight">Il report annuale di Strava — la piattaforma che traccia 120 milioni di atleti</mark> — rivela che la GenZ preferisce workout brevi e intensi (HIIT), i Millennials si concentrano sulla corsa, i Boomers pedalano (<span class="fc">📈 ff.86.3 Report Strava 2023</span>). Il dato più sorprendente: il commuting in bicicletta è raddoppiato tra gli under 25 in tre anni. Non è solo fitness — è infrastruttura sociale: le città che investono in piste ciclabili vedono aumentare il commercio locale del 30% e diminuire le emissioni di CO2 del trasporto urbano del 12%. Il corpo che si muove muove anche l'economia.</p>
+    <p>I dati globali confermano il trend. Strava — la piattaforma che traccia 120 milioni di atleti — rivela che la GenZ preferisce HIIT, i Millennials corrono, i Boomers pedalano
+    (<span class="fc">📈 ff.86.3
+    Report Strava 2023</span>).
+    Il commuting in bicicletta è raddoppiato tra gli under 25 in tre anni. Le attività fisiche fatte in compagnia hanno un effetto moltiplicatore misurabile: le pedalate in compagnia durano il 50% in più, le corse il 20% in più. Vedere un amico correre 1 km in più ci spinge a correrne 750 metri in più
+    (<span class="fc">🚴 ff.17
+    Sport (e chi ne fa le feci)</span>).
+    Kristian Blummenfelt ha chiuso l'Ironman in 7 ore e 21 minuti, battendo il record precedente — il corpo umano continua a superare i propri limiti. Le città che investono in piste ciclabili vedono il commercio locale crescere del 30% e le emissioni di CO2 del trasporto urbano calare del 12%.</p>
 
-    <p>Il collegamento nascosto tra VO2max e piste ciclabili è che la longevità non è solo una questione individuale: è una questione di design urbano, di politiche pubbliche, di scelte architettoniche. Una città che rende facile muoversi a piedi o in bici produce cittadini più sani, più felici e più longevi — senza bisogno di palestre, integratori o app di wellness. La biologia della longevità è, alla fine, urbanistica.</p>
+    <p>Un miliardo di secondi equivale a 31 anni: ogni ventenne è miliardario — di tempo
+    (<span class="fc">⏳ ff.67
+    L'estate sta iniziando</span>).
+    Bill Perkins ci ricorda che le esperienze pagano "dividendi di memoria" — un viaggio a vent'anni produce più di vent'anni di ricordi. La biologia della longevità non è solo individuale: è urbanistica, design delle città, scelta di investire il tempo nel corpo invece che solo nel conto in banca.</p>
 
     <div class="sep"></div>
 
     <!-- ===== 2.6 ===== -->
     <h2 id="s6" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-green-500 pb-3">2.6 — Sonno, ritmi e il restauro biochimico della salute</h2>
 
-    <p class="drop-cap">Dormiamo per un terzo della nostra vita — eppure la scienza ha capito il perché solo negli ultimi vent'anni. Il sonno non è riposo passivo: è manutenzione attiva. Durante il sonno profondo, il sistema glinfatico — scoperto nel 2012 dalla neuroscienziata <mark class="note-highlight">Maiken Nedergaard all'Università di Rochester</mark> — pompa liquido cerebrospinale nel cervello, rimuovendo le proteine tossiche (beta-amiloide e tau) che si accumulano durante la veglia e sono associate all'Alzheimer. Dormire male non è solo faticoso: è neurodegenerativo. E la tecnologia inizia a offrire soluzioni: il Motion Pillow, presentato al CES, usa microfoni e sensori per rilevare il russamento e gonfia automaticamente camere d'aria laterali per riposizionare la testa, riducendo il russamento del 44% (<span class="fc">😴 ff.47.1 Russa? No problem!</span>).</p>
+    <p class="drop-cap">Dormiamo per un terzo della vita — eppure la scienza ha capito il perché solo negli ultimi vent'anni. Il sonno non è riposo passivo: è manutenzione attiva. Durante il sonno profondo, il sistema glinfatico — scoperto nel 2012 dalla neuroscienziata Maiken Nedergaard all'Università di Rochester — pompa liquido cerebrospinale nel cervello, rimuovendo le proteine tossiche (beta-amiloide e tau) associate all'Alzheimer. Dormire male non è solo faticoso: è neurodegenerativo. Il Motion Pillow, presentato al CES, usa microfoni e sensori per ridurre il russamento del 44% riposizionando automaticamente la testa
+    (<span class="fc">😴 ff.47.1
+    Russa? No problem!</span>).</p>
 
-    <p>Ma il sonno è solo una parte del sistema. I ritmi circadiani — l'orologio biologico di 24 ore che governa ogni cellula del corpo — regolano non solo quando dormiamo, ma quando mangiamo, quando siamo più creativi, quando il sistema immunitario è più attivo. La <em>dieta circadiana</em> propone di allineare i pasti a questi ritmi: mangiare di più al mattino e meno la sera, perché la sensibilità all'insulina segue una curva discendente nel corso della giornata (<span class="fc">🕐 ff.22.1 Dieta circadiana?</span>). <mark class="note-highlight">Il cronobiologo Satchin Panda del Salk Institute</mark> ha dimostrato che topi alimentati con la stessa dieta ma in finestre temporali diverse mostrano differenze del 40% nel peso corporeo. Non è solo <em>cosa</em> mangi — è <em>quando</em>.</p>
+    <p>I ritmi circadiani — l'orologio biologico di 24 ore — regolano non solo quando dormiamo, ma quando mangiamo, quando siamo creativi, quando il sistema immunitario è più attivo. Il cronobiologo Satchin Panda del Salk Institute ha dimostrato che topi alimentati con la stessa dieta in finestre temporali diverse mostrano differenze del 40% nel peso corporeo
+    (<span class="fc">🕐 ff.22.1
+    Dieta circadiana?</span>).
+    Non è solo <em>cosa</em> mangi — è <em>quando</em>. Il cuore è direttamente coinvolto: gli eccessi di glucosio producono AGEs (Advanced Glycation Endproducts) che irrigidiscono le vene — la reazione di Maillard che dora il pane avviene anche nelle arterie. Il VO2max diventa così un parametro di longevità: i muscoli agiscono da "spugna" che assorbe gli eccessi metabolici
+    (<span class="fc">❤️ ff.120.3
+    Questioni di cuore</span>).</p>
 
-    <p>L'ottimizzazione del sonno è diventata un mercato da 100 miliardi di dollari — materassi smart, anelli Oura, maschere con luce rossa, integratori di melatonina e magnesio. Ma la scienza è più semplice dei prodotti che vende: <mark class="note-highlight">Matthew Walker, neuroscienziato a Berkeley e autore di <em>Why We Sleep</em></mark>, sintetizza le regole in tre punti: stessa ora di sveglia ogni giorno, niente schermi un'ora prima di dormire, temperatura della stanza sotto i 19 gradi (<span class="fc">💤 ff.35.4 Super-dormita e super-focus</span>). Il sonno ottimale non richiede tecnologia — richiede disciplina. Ma la disciplina è più difficile da vendere di un cuscino smart.</p>
+    <p>Matthew Walker, neuroscienziato a Berkeley e autore di <em>Why We Sleep</em>, sintetizza le regole in tre punti: stessa ora di sveglia ogni giorno, niente schermi un'ora prima di dormire, temperatura della stanza sotto i 19 gradi
+    (<span class="fc">💤 ff.35.4
+    Super-dormita e super-focus</span>).
+    L'ottimizzazione del sonno è un mercato da 100 miliardi — materassi smart, anelli Oura, maschere con luce rossa. Arianna Huffington, la donna con più follower su LinkedIn, ha fondato Thrive Global integrando meditazione, mood check e digital detox nei luoghi di lavoro
+    (<span class="fc">🧘 ff.109
+    Medico in famigl-IA</span>).
+    Ma la disciplina è più difficile da vendere di un cuscino smart.</p>
 
-    <p>Il collegamento nascosto tra sonno, ritmi circadiani e movimento è che il corpo umano è un sistema oscillatorio — progettato per alternare attività e riposo, luce e buio, sforzo e recupero. Ogni interruzione di questi ritmi — jet lag, lavoro notturno, luce blu degli schermi — è un debito biologico che si accumula silenziosamente. La longevità, alla fine, non è la somma di integratori e biohack: è la capacità di sincronizzarsi con i ritmi che la biologia ha perfezionato in 300 milioni di anni di evoluzione.</p>
+    <p>Il collegamento nascosto tra sonno, ritmi circadiani e movimento è che il corpo umano è un sistema oscillatorio — progettato per alternare attività e riposo, luce e buio, sforzo e recupero. Ogni interruzione — jet lag, lavoro notturno, luce blu — è un debito biologico che si accumula. La longevità, alla fine, non è la somma di integratori e biohack: è la capacità di sincronizzarsi con i ritmi che la biologia ha perfezionato in 300 milioni di anni di evoluzione.</p>
 
     </article>
 
-    <nav class="mt-16 mb-8">
+    <!-- Newsletter CTA -->
+    <section class="newsletter-cta mt-14 mb-10" role="complementary" aria-label="Iscrizione newsletter">
+        <p class="ff-eyebrow text-xs mb-2" style="color:var(--ff-black)">Non perderti il prossimo numero</p>
+        <h2 class="text-xl sm:text-2xl font-bold mb-3" style="font-family:'IBM Plex Mono',monospace">Ricevi Futuro Fortissimo</h2>
+        <p class="text-sm sm:text-base mb-6 max-w-lg mx-auto" style="line-height:1.6">Ogni settimana, tecnologia, natura e società in una newsletter gratuita.<br>147 numeri, 563 note, 1000+ fonti — e continua a crescere.</p>
+        <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="cta-btn">Iscriviti gratis &rarr;</a>
+    </section>
+
+    <nav class="mt-10 mb-8" aria-label="Navigazione capitoli">
         <div class="brutal-card p-0 overflow-hidden">
             <div class="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-zinc-900" style="border:none;box-shadow:none">
                 <a href="chapter-01.html" class="flex items-center gap-2 p-5 hover:bg-zinc-50 transition-colors">
@@ -202,10 +343,11 @@
     </nav>
 </main>
 
-<footer class="bg-white" style="border-top:4px solid var(--ff-black)">
+<footer class="bg-white" style="border-top:4px solid var(--ff-black)" role="contentinfo">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-zinc-500">
         <div class="ff-eyebrow text-xs">&copy; Futuro Fortissimo — Michele Merelli</div>
         <div class="flex gap-4">
+            <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="hover:text-zinc-900 font-semibold">Iscriviti</a>
             <a href="https://fortissimo.substack.com/" target="_blank" rel="noopener" class="hover:text-zinc-900">Substack</a>
             <a href="https://futurofortissimo.github.io/" class="hover:text-zinc-900">Archivio</a>
         </div>
