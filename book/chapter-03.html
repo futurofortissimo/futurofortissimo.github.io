@@ -1,69 +1,98 @@
 <!doctype html>
-<html lang="it">
+<html lang="it" class="scroll-smooth">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Capitolo 3 — 👥 Società: Noi, Insieme</title>
-    <meta name="description" content="La crisi contemporanea è di attenzione, contatto e governance. Flow, solitudine, geopolitica e denaro convergono nel corpo sociale come infrastruttura da riprogettare."/>
+    <title>Capitolo 3 — Società: Attenzione, Relazioni e Potere | Futuro Fortissimo</title>
+    <meta name="description" content="Attenzione, solitudine, geopolitica: la crisi contemporanea è di governance interiore e sociale. Flow, arte, lavoro e denaro. 50+ fonti dal corpus di Futuro Fortissimo."/>
     <link rel="canonical" href="https://futurofortissimo.github.io/book/chapter-03.html"/>
-    <meta property="og:title" content="Capitolo 3 — Società: Noi, Insieme"/>
-    <meta property="og:description" content="Flow, solitudine, geopolitica e denaro convergono nel corpo sociale come infrastruttura da riprogettare."/>
+    <meta property="og:title" content="Capitolo 3 — Società: Attenzione, Relazioni e Potere"/>
+    <meta property="og:description" content="Attenzione, solitudine, geopolitica. 50+ fonti su flow, arte, lavoro e il rifiuto del paradigma lineare."/>
     <meta property="og:type" content="article"/>
     <meta property="og:url" content="https://futurofortissimo.github.io/book/chapter-03.html"/>
     <meta property="og:image" content="https://futurofortissimo.github.io/logo.png"/>
+    <meta property="article:author" content="Michele Merelli"/>
+    <meta property="article:section" content="Società"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Società: Attenzione, Relazioni e Potere — Futuro Fortissimo"/>
+    <meta name="twitter:description" content="Flow, solitudine, geopolitica e denaro. 50+ fonti dal corpus."/>
     <link rel="icon" href="/favicon.ico"/>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
-        :root{--ff-blue:#4a90e2;--ff-red:#d0021b;--ff-yellow:#f5a623;--ff-green:#2ecc71;--ff-black:#0a0a0a;--ff-grid:rgba(0,0,0,0.03)}
-        body{font-family:'Inter',sans-serif;background:#fdfdfd;color:var(--ff-black);min-height:100vh;line-height:1.7}
+        :root{--ff-blue:#4a90e2;--ff-red:#d0021b;--ff-yellow:#f5a623;--ff-green:#2ecc71;--ff-black:#0a0a0a;--ff-grid:rgba(0,0,0,0.03);--accent:var(--ff-red)}
+        *,*::before,*::after{box-sizing:border-box}
+        body{font-family:'Inter',sans-serif;background:#fdfdfd;color:var(--ff-black);min-height:100vh;line-height:1.7;-webkit-text-size-adjust:100%}
         body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(var(--ff-grid) 1px,transparent 1px),linear-gradient(90deg,var(--ff-grid) 1px,transparent 1px);background-size:32px 32px;pointer-events:none;z-index:-1}
         h1,h2,h3{font-family:'IBM Plex Mono',monospace;letter-spacing:0.03em}
-        .brutal-card{border:4px solid var(--ff-black);background:#fff;box-shadow:6px 6px 0 var(--ff-black);padding:24px}
-        .accent-bar{position:relative}.accent-bar::before{content:'';position:absolute;top:-4px;left:-4px;right:-4px;height:10px;background:var(--ff-red)}
+        .skip-link{position:absolute;top:-50px;left:0;background:var(--ff-black);color:#fff;padding:8px 16px;z-index:100;font-size:0.875rem;transition:top 0.2s}.skip-link:focus{top:0}
+        .brutal-card{border:4px solid var(--ff-black);background:#fff;box-shadow:6px 6px 0 var(--ff-black);padding:clamp(16px,4vw,24px)}
+        .accent-bar{position:relative}.accent-bar::before{content:'';position:absolute;top:-4px;left:-4px;right:-4px;height:10px;background:var(--accent)}
         .ff-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.75rem;letter-spacing:0.24em;text-transform:uppercase;font-weight:700}
-        .chapter-num{font-family:'Press Start 2P',monospace;font-size:0.55rem;letter-spacing:0.3em}
-        .drop-cap::first-letter{font-family:'IBM Plex Mono',monospace;font-size:3.4em;float:left;line-height:0.8;padding-right:10px;padding-top:4px;font-weight:700;color:var(--ff-red)}
-        .prose p{margin-bottom:1.2em;font-size:1.05rem;line-height:1.75}
-        .prose .fc{font-family:'IBM Plex Mono',monospace;font-size:0.82rem;font-weight:700;color:var(--ff-red);white-space:nowrap}
-        .toc-link{border-left:3px solid transparent;transition:all 0.2s}.toc-link:hover{border-left-color:var(--ff-red);padding-left:12px}
-        blockquote{border-left:4px solid var(--ff-red);padding:12px 20px;margin:1.5em 0;background:#fef2f2;font-style:italic}
-        .sep{height:2px;background:linear-gradient(90deg,var(--ff-red),transparent);margin:3em 0}
-        .prose .fc{cursor:pointer;text-decoration:none;transition:color 0.15s}
+        .chapter-num{font-family:'Press Start 2P',monospace;font-size:clamp(0.45rem,1vw,0.55rem);letter-spacing:0.3em}
+        .drop-cap::first-letter{font-family:'IBM Plex Mono',monospace;font-size:clamp(2.8em,5vw,3.4em);float:left;line-height:0.8;padding-right:10px;padding-top:4px;font-weight:700;color:var(--accent)}
+        .prose p{margin-bottom:1.2em;font-size:clamp(1rem,2.5vw,1.05rem);line-height:1.75;max-width:72ch}
+        .prose .fc{font-family:'IBM Plex Mono',monospace;font-size:0.8rem;font-weight:700;color:var(--accent);cursor:pointer;text-decoration:none;transition:color 0.15s;display:inline}
         .prose .fc:hover{text-decoration:underline}
-        .note-highlight{background:linear-gradient(180deg,transparent 60%,rgba(208,2,27,0.2) 60%);padding:0 2px;font-style:normal;color:inherit}
+        .toc-link{border-left:3px solid transparent;transition:all 0.2s;min-height:44px;display:flex;align-items:center}.toc-link:hover,.toc-link:focus{border-left-color:var(--accent);padding-left:12px}
+        blockquote{border-left:4px solid var(--accent);padding:12px 20px;margin:1.5em 0;background:#fef2f2;font-style:italic}
+        .sep{height:2px;background:linear-gradient(90deg,var(--accent),transparent);margin:3em 0}
+        .note-highlight{background:linear-gradient(180deg,transparent 60%,rgba(208,2,27,0.18) 60%);padding:0 2px;font-style:normal;color:inherit}
         .prose{overflow-wrap:break-word;word-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
-        .prose p{max-width:72ch}
-        @media(max-width:640px){.brutal-card{border-width:2px;box-shadow:none;padding:16px}.prose p{font-size:1rem}}
-        @media print{body::before{display:none}.brutal-card{box-shadow:none;border:1px solid #999}}
+        h2[id]{scroll-margin-top:2rem}
+        .newsletter-cta{background:var(--ff-yellow);border:4px solid var(--ff-black);box-shadow:6px 6px 0 var(--ff-black);padding:clamp(20px,5vw,40px);text-align:center}
+        .newsletter-cta a.cta-btn{display:inline-block;background:var(--ff-black);color:#fff;padding:14px 36px;font-family:'IBM Plex Mono',monospace;font-size:0.875rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;text-decoration:none;transition:transform 0.15s,box-shadow 0.15s;border:none}
+        .newsletter-cta a.cta-btn:hover{transform:translateY(-2px);box-shadow:4px 4px 0 var(--accent)}
+        .reading-time{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:#888;letter-spacing:0.1em}
+        @media(max-width:640px){.brutal-card{border-width:2px;box-shadow:none}.newsletter-cta{box-shadow:none;border-width:2px}.toc-link{min-height:48px;padding:4px 0 4px 8px}}
+        @media print{body::before{display:none}.brutal-card{box-shadow:none;border:1px solid #999}.newsletter-cta,.skip-link{display:none}}
+        @media(prefers-reduced-motion:reduce){*{transition-duration:0.01ms!important;animation-duration:0.01ms!important}}
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Chapter","name":"Società — Noi, Insieme","position":3,"isPartOf":{"@type":"Book","name":"Futuro Fortissimo — Tre Macro Temi","url":"https://futurofortissimo.github.io/book/"},"url":"https://futurofortissimo.github.io/book/chapter-03.html","inLanguage":"it","author":{"@type":"Person","name":"Michele Merelli"}}</script>
+    <script type="application/ld+json">{
+      "@context":"https://schema.org","@type":"Chapter","name":"Società — Noi, Insieme","position":3,
+      "isPartOf":{"@type":"Book","name":"Futuro Fortissimo — Tre Macro Temi","url":"https://futurofortissimo.github.io/book/"},
+      "url":"https://futurofortissimo.github.io/book/chapter-03.html","inLanguage":"it",
+      "author":{"@type":"Person","name":"Michele Merelli"},
+      "description":"La crisi contemporanea è di attenzione, contatto e governance. Flow, solitudine, geopolitica e denaro convergono nel corpo sociale.",
+      "wordCount":5400
+    }</script>
+    <script type="application/ld+json">{
+      "@context":"https://schema.org","@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://futurofortissimo.github.io/"},
+        {"@type":"ListItem","position":2,"name":"Libro","item":"https://futurofortissimo.github.io/book/"},
+        {"@type":"ListItem","position":3,"name":"Cap. 03 — Società"}
+      ]
+    }</script>
 </head>
-<body>
+<body class="antialiased">
+<a href="#content" class="skip-link">Vai al contenuto</a>
 
-<header class="bg-white" style="border-bottom:4px solid var(--ff-black)">
+<header class="bg-white" style="border-bottom:4px solid var(--ff-black)" role="banner">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
         <div class="min-w-0">
-            <div class="ff-eyebrow text-zinc-500 mb-1">Futuro Fortissimo — Libro</div>
+            <nav aria-label="Breadcrumb" class="ff-eyebrow text-zinc-500 mb-1">
+                <a href="../" class="hover:underline">Home</a> <span aria-hidden="true">/</span>
+                <a href="./" class="hover:underline">Libro</a> <span aria-hidden="true">/</span>
+                <span aria-current="page">Cap. 03</span>
+            </nav>
             <div class="text-lg font-bold tracking-tight" style="font-family:'IBM Plex Mono',monospace">❤️ Cap. 03 — Società</div>
         </div>
-        <nav class="flex gap-4 text-sm font-medium flex-shrink-0">
-            <a href="../" class="hover:underline text-zinc-600">Home</a>
-            <a href="./" class="hover:underline text-zinc-600">Libro</a>
-        </nav>
+        <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-eyebrow hover:underline" style="color:var(--accent)">Iscriviti alla newsletter &rarr;</a>
     </div>
 </header>
 
-<main class="max-w-4xl mx-auto px-4 sm:px-6 py-10 md:py-14">
+<main id="content" class="max-w-4xl mx-auto px-4 sm:px-6 py-10 md:py-14">
 
-    <section class="brutal-card accent-bar mb-10">
+    <section class="brutal-card accent-bar mb-10" aria-label="Intestazione capitolo">
         <div class="chapter-num text-zinc-400 mb-4">CAPITOLO 03 / 3</div>
         <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight mb-4" style="text-transform:none">
             ❤️ Società — Noi, Insieme
         </h1>
-        <p class="text-zinc-600 text-lg max-w-2xl mb-6">La crisi contemporanea è di attenzione, contatto e governance. Flow, solitudine, geopolitica e denaro convergono in un unico tessuto: il corpo sociale come infrastruttura da riprogettare.</p>
+        <p class="text-zinc-600 text-lg max-w-2xl mb-4">La crisi contemporanea è di attenzione, contatto e governance. Flow, solitudine, geopolitica e denaro convergono in un unico tessuto: il corpo sociale come infrastruttura da riprogettare.</p>
+        <div class="reading-time mb-6">~22 min di lettura · 50+ riferimenti dal corpus</div>
         <div class="border-t-2 border-zinc-100 pt-4">
             <div class="ff-eyebrow text-zinc-400 mb-3 text-xs">In questo capitolo</div>
             <div class="space-y-1">
@@ -82,57 +111,114 @@
     <!-- ===== 3.1 ===== -->
     <h2 id="s1" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-red-500 pb-3">3.1 — Attenzione e governance interiore: flow, schermi e libertà</h2>
 
-    <p class="drop-cap">Una persona controlla il telefono in media 150 volte al giorno. Non perché abbia 150 notifiche importanti, ma perché l'architettura degli schermi è progettata per catturare l'attenzione — il bene più prezioso dell'economia contemporanea. Eppure la narrazione della "crisi dell'attenzione" è più complessa di quanto sembri. Lo storico Daniel Immerwahr ricorda che nell'Ottocento erano i libri a essere accusati di distruggere la concentrazione — e oggi quei libri sono il simbolo stesso della focalizzazione (<span class="fc">🎯 ff.132.1 Crisi dell'attenzione?</span>). I videogiochi, demonizzati come TikTok, in realtà generano <em>flow</em> — quello stato di immersione totale che Mihaly Csikszentmihalyi ha descritto come l'apice dell'esperienza umana (<span class="fc">🌊 ff.121.1 Le basi del flow</span>). Un gamer perso in un RPG non ha un problema di attenzione: ha un problema di <em>direzione</em> dell'attenzione.</p>
+    <p class="drop-cap">Una persona controlla il telefono in media 150 volte al giorno. Non perché abbia 150 notifiche importanti, ma perché l'architettura degli schermi è progettata per catturare l'attenzione — il bene più prezioso dell'economia contemporanea. Eppure la narrazione della "crisi dell'attenzione" è più complessa di quanto sembri. Lo storico Daniel Immerwahr ricorda che nell'Ottocento erano i libri a essere accusati di distruggere la concentrazione
+    (<span class="fc">🎯 ff.132.1
+    Crisi dell'attenzione?</span>).
+    I videogiochi, demonizzati come TikTok, generano <em>flow</em> — quello stato di immersione totale che Mihaly Csikszentmihalyi ha descritto come l'apice dell'esperienza umana
+    (<span class="fc">🌊 ff.121.1
+    Le basi del flow</span>).
+    Un gamer perso in un RPG non ha un problema di attenzione: ha un problema di <em>direzione</em> dell'attenzione.</p>
 
-    <p>La vera domanda, suggerisce Immerwahr, non è "quanto" ci concentriamo, ma "su cosa". E qui la questione diventa politica: chi decide su cosa concentrarci? Noi, o gli algoritmi? In un mondo dove i sistemi di raccomandazione ottimizzano per l'engagement e non per il benessere (<span class="fc">👨‍💻 ff.117.4 Liberarci dalla simulazione degli algoritmi</span>), la governance interiore — la capacità di dirigere volontariamente la propria attenzione — diventa un atto di libertà. McKinsey stima che lo stato di flow aumenti la produttività del 500%. Il mercato globale della meditazione vale 9 miliardi di dollari. Ma la vera rivoluzione non è commerciale: è epistemologica.</p>
+    <p>La vera domanda non è "quanto" ci concentriamo, ma "su cosa". Chi decide: noi o gli algoritmi? In un mondo dove i sistemi di raccomandazione ottimizzano per l'engagement e non per il benessere, la governance interiore diventa un atto di libertà
+    (<span class="fc">👨‍💻 ff.117.4
+    Liberarci dalla simulazione degli algoritmi</span>).
+    McKinsey stima che lo stato di flow aumenti la produttività del 500%. Il mercato globale della meditazione vale 9 miliardi. Ma la vera rivoluzione è epistemologica: Wittgenstein apre il <em>Tractatus</em> con "Il Mondo è la totalità dei Fatti, non delle Cose" — e il Linguaggio è l'immagine logica di quei Fatti
+    (<span class="fc">🗣️ ff.134.1
+    Parole, parole, parole</span>).
+    Certe parole esistono solo in certi mondi: la <em>gezelligheid</em> olandese — il calore delle serate uggiose — e il giapponese 別腹, lo "stomaco separato" riservato ai dolci. Ogni parola è una lente: perderla significa perdere un modo di vedere.</p>
 
-    <p>Il rapporto tra parole, pensiero e costruzione del mondo è al centro di questa rivoluzione. Wittgenstein apre il <em>Tractatus</em> con: "Il Mondo è la totalità dei Fatti, non delle Cose" — e il Linguaggio è l'immagine logica di quei Fatti (<span class="fc">🗣️ ff.134.1 Parole, parole, parole</span>). In un'epoca in cui ChatGPT rende la connessione tra linguaggio e pensiero ancora più stretta, certe parole esistono solo in certi mondi: la <em>gezelligheid</em> olandese — quel calore intimo delle serate uggiose — e il giapponese 別腹 (<em>betsubara</em>), lo "stomaco separato" riservato ai dolci. Ogni parola è una lente: perderla significa perdere un modo di vedere il mondo.</p>
+    <p>Dare un nome alle emozioni è cruciale. Lisa Feldman Barrett ha dimostrato che le emozioni non sono reazioni automatiche ma simulazioni create dal cervello per integrare segnali subconsci
+    (<span class="fc">😭 ff.134.2
+    Dare un nome alle emozioni</span>).
+    L'ansia pre-gara? Spesso è solo eccitazione. Dare un nome diverso cambia la risposta fisiologica. Marc Brackett, fondatore del Centro per l'Intelligenza Emotiva a Yale, ha costruito un sistema per questo. Il fondatore di Pinterest ha creato How We Feel — un "Pokédex per le emozioni." La neuroscienziata Means conferma: la glicemia a digiuno sotto 85 mg/dL si correla con migliore regolazione emotiva; il cervello consuma il 20% del glucosio totale, e le fluttuazioni glicemiche si traducono direttamente in instabilità dell'umore
+    (<span class="fc">🧠 ff.120.4
+    Lattato al cervello?</span>).</p>
 
-    <p>Dare un nome alle emozioni è altrettanto cruciale. La neuroscienziata Lisa Feldman Barrett ha dimostrato che le emozioni non sono reazioni automatiche ma simulazioni create dal cervello per integrare segnali subconsci — battito cardiaco, temperatura, segnali interocettivi (<span class="fc">😭 ff.134.2 Dare un nome alle emozioni</span>). L'ansia pre-gara? Spesso è solo una sfumatura dell'eccitazione. Dare un nome diverso — eccitazione anziché ansia — cambia letteralmente la risposta fisiologica. Marc Brackett, fondatore del Centro per l'Intelligenza Emotiva a Yale, ha costruito un sistema per questo. E il fondatore di Pinterest ha creato How We Feel, un "Pokédex per le emozioni" — una app che insegna a distinguere e nominare ciò che sentiamo.</p>
+    <p>Cosa accade quando l'attenzione incontra il declino? Seth Godin descrive tre curve: il Dip (depressione che i migliori superano), il Cul-de-Sac (illusione di risalita), e il Cliff (precipizio irreversibile)
+    (<span class="fc">⛰️ ff.137.1
+    Orografia di una discesa</span>).
+    Arthur Brooks ha descritto il <em>principle of psychoprofessional gravitation</em>: più si arriva in alto, più è dura andarsene. "Un giorno ti svegli e non suoni più il corno con la stessa fluidità"
+    (<span class="fc">🏆 ff.137.2
+    Picchi entropici</span>).
+    La soluzione sta nella distinzione di Raymond Cattell tra intelligenza fluida — che risolve problemi inediti — e cristallizzata — che distilla e insegna
+    (<span class="fc">💎 ff.137.3
+    Cristalli e Bach</span>).
+    Darwin, dopo la gioventù innovativa, finì in inattività depressiva. Bach superò il declino insegnando. Invecchiando, serve cristallizzare le esperienze.</p>
 
-    <p>Ma cosa accade quando l'attenzione incontra il declino? Seth Godin descrive tre curve della vita: il Dip (depressione momentanea che i migliori superano), il Cul-de-Sac (illusione di risalita), e il Cliff (precipizio irreversibile) (<span class="fc">⛰️ ff.137.1 Orografia di una discesa</span>). Arthur Brooks, sul The Atlantic, ha descritto il <em>principle of psychoprofessional gravitation</em>: più si arriva in alto, più è dura andarsene (<span class="fc">🏆 ff.137.2 Picchi entropici</span>). Atleti olimpici, attori, ex-youtuber dimenticati — tutti soggetti alla stessa legge entropica. Brooks porta il suo esempio personale: "Un giorno ti svegli e non suoni più il corno con la stessa fluidità."</p>
-
-    <p>La soluzione sta nella distinzione di Raymond Cattell tra intelligenza fluida — quella che risolve problemi inediti con creatività — e intelligenza cristallizzata — quella che distilla e insegna alle generazioni future (<span class="fc">💎 ff.137.3 Cristalli e Bach</span>). Darwin, dopo l'innovativa gioventù, finì in una depressa inattività. Bach, invece, superò il declino insegnando. Invecchiando, serve cristallizzare le proprie esperienze — dar loro valore con il ricordo, la condivisione, l'insegnamento (<span class="fc">📈 ff.111.4 Esperienze = investimenti</span>). La governance interiore non è solo dirigere l'attenzione nel presente: è dirigere il significato nel tempo.</p>
-
-    <p>E forse è per questo che fermare il tempo — notando la novità che ogni giorno offre — è l'atto di attenzione più radicale (<span class="fc">👶 ff.108.2 Con gli occhi del fanciullino</span>). Il "Perfect Day" non è un evento straordinario: è un raggio di sole tra gli alberi, una giustapposizione di colori, un momento visto con occhi da bambino. In Giappone si contano 72 stagioni — non 4 — perché ogni settimana ha la sua micromeraviglia: 白露, la rugiada bianca che brilla a settembre; 魚上氷, i pesci che fanno capolino dal ghiaccio a febbraio (<span class="fc">❄️ ff.134.3 Le 72 stagioni giapponesi</span>). L'attenzione, alla fine, è la capacità di vedere 72 stagioni dove il qualunquista ne vede quattro.</p>
+    <p>Fermare il tempo — notando la novità che ogni giorno offre — è l'atto di attenzione più radicale
+    (<span class="fc">👶 ff.108.2
+    Con gli occhi del fanciullino</span>).
+    In Giappone si contano 72 stagioni — non 4 — perché ogni settimana ha la sua micromeraviglia: 白露, la rugiada bianca di settembre; 魚上氷, i pesci che affiorano dal ghiaccio a febbraio
+    (<span class="fc">❄️ ff.134.3
+    Le 72 stagioni giapponesi</span>).
+    L'attenzione è la capacità di vedere 72 stagioni dove il qualunquista ne vede quattro. "Diventare adulti significa preferire le verdure ai biscotti," chiosa Joscha Bach — e forse anche questo è attenzione: saper distinguere il nutrimento dalla dolcezza.</p>
 
     <div class="sep"></div>
 
     <!-- ===== 3.2 ===== -->
     <h2 id="s2" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-red-500 pb-3">3.2 — Il corpo sociale: solitudine, stress e relazioni</h2>
 
-    <p class="drop-cap">Il Surgeon General degli Stati Uniti ha dichiarato la solitudine un'epidemia nazionale. Un adulto americano su tre si sente cronicamente solo. L'isolamento sociale aumenta il rischio di mortalità del 26% — più dell'obesità, più dell'alcolismo. In Giappone, 1,5 milioni di <em>hikikomori</em> vivono in reclusione volontaria, disconnessi dalla società, spesso per anni. I tassi di natalità globali crollano: in Corea del Sud il tasso di fertilità è sceso a 0,72 — il più basso mai registrato da una nazione. La specie che ha conquistato il pianeta grazie alla cooperazione sta dimenticando come cooperare.</p>
+    <p class="drop-cap">Il Surgeon General degli Stati Uniti ha dichiarato la solitudine un'epidemia nazionale. Un adulto americano su tre si sente cronicamente solo. L'isolamento aumenta il rischio di mortalità del 26% — più dell'obesità, più dell'alcolismo. In Giappone, 1,5 milioni di <em>hikikomori</em> vivono in reclusione volontaria. La mancanza di contatto fisico è più dannosa che fumare 15 sigarette al giorno. Passiamo con gli amici solo 40 minuti al giorno — nel 2003 erano 2 ore
+    (<span class="fc">🤝 ff.97
+    Tocchiamoci di più!</span>).
+    In Corea del Sud il tasso di fertilità è sceso a 0,72 — il più basso mai registrato. La specie che ha conquistato il pianeta grazie alla cooperazione sta dimenticando come cooperare.</p>
 
-    <p>Il paradosso è che siamo più "connessi" che mai. Miliardi di messaggi, like, commenti, stories — un flusso continuo di interazione superficiale che simula la vicinanza senza offrirla. La differenza tra connessione digitale e contatto umano è la stessa tra una foto di un pasto e il pasto stesso: una nutre gli occhi, l'altra nutre il corpo. William James scriveva nel 1884: "Un'emozione puramente disincarnata è un non-ente" (<span class="fc">🦴 ff.134.4 Umanità all'osso</span>). E il mondo digitale sta "disincarnando" le nostre relazioni — scalando startup invece che montagne, postando selfie invece che abbracciando.</p>
+    <p>Il paradosso: siamo più "connessi" che mai. Miliardi di messaggi, like, stories — interazione superficiale che simula la vicinanza senza offrirla. William James scriveva nel 1884: "Un'emozione puramente disincarnata è un non-ente"
+    (<span class="fc">🦴 ff.134.4
+    Umanità all'osso</span>).
+    Il mondo digitale sta disincarnando le nostre relazioni — scalando startup invece che montagne, postando selfie invece che abbracciando. I dati di Strava confermano l'importanza del corpo: le pedalate in compagnia durano il 50% in più, le corse il 20% in più. Vedere un amico correre 1 km in più ci spinge a correrne 750 metri in più. Il corpo sociale funziona come il corpo fisico: ha bisogno di compagnia per performare meglio.</p>
 
-    <p>Ma il corpo resiste. Lo sport — in particolare lo sport di endurance — è una delle poche attività che reintegra il corpo nel sociale. Preparare un Ironman — 3,8 km di nuoto, 180 km di bici, 42 km di corsa — è un progetto che richiede mesi di dedizione, trasformando il processo in ricompensa (<span class="fc">🎼 ff.133 Sono un Ironman?</span>). Non è masochismo: è filosofia applicata. Il processo supera l'obiettivo. Ogni passo è la cima. La resistenza fisica diventa metafora della resistenza sociale — la capacità di sopportare la fatica del vivere insieme.</p>
+    <p>Lo sport di endurance reintegra il corpo nel sociale. Preparare un Ironman — 3,8 km di nuoto, 180 km di bici, 42 km di corsa — è un progetto che trasforma il processo in ricompensa
+    (<span class="fc">🎼 ff.133
+    Sono un Ironman?</span>).
+    Non è masochismo: è filosofia applicata. Il processo supera l'obiettivo. Ogni passo è la cima. La saggezza orientale offre un framework complementare: Lao Tzu, nel verso 23 del Tao Te Ching, insegna che la violenza non può durare perché va contro la natura delle cose. Essere acqua — adattarsi, fluire, aggirare gli ostacoli — è la forma più sofisticata di resilienza sociale
+    (<span class="fc">☯️ ff.108.3
+    Essere acqua</span>).</p>
 
-    <p>La saggezza orientale offre un framework complementare. Lao Tzu, nel verso 23 del Tao Te Ching, insegna: "Parlare poco è naturale. I venti impetuosi non soffiano tutta la mattina" (<span class="fc">☯️ ff.108.3 Essere acqua</span>). La violenza — fisica, verbale, digitale — non può durare perché va contro la natura delle cose. Essere acqua — adattarsi, fluire, aggirare gli ostacoli — non è passività: è la forma più sofisticata di resilienza sociale. In un mondo di tweets incendiari e guerre di dazi, il Tao ricorda che la sostenibilità del rapporto sociale dipende dalla sua leggerezza.</p>
-
-    <p>Le esperienze condivise — viaggiare, cenare insieme, celebrare — sono investimenti con un rendimento composto (<span class="fc">📈 ff.111.4 Esperienze = investimenti</span>). Come il patrimonio di Buffett, il loro valore cresce nel tempo — non nella fruizione immediata, ma nel ricordo. Un pasto condiviso con amici a vent'anni produce dividendi emotivi per decenni. La "filosofia dell'accumulo" applicata alle relazioni trasforma ogni momento condiviso in un cristallo che resiste all'entropia del tempo.</p>
-
-    <p>Il collegamento nascosto tra solitudine, Ironman e Taoismo è questo: il corpo sociale, come il corpo fisico, richiede allenamento, manutenzione e soprattutto <em>presenza</em>. Non la presenza digitale — quella abbonda. La presenza incarnata: essere lì, con il proprio corpo, con i propri sensi, con la propria vulnerabilità. In un mondo che offre mille scorciatoie per simulare la connessione, la vera cura è la fatica del contatto reale.</p>
+    <p>Le esperienze condivise sono investimenti a rendimento composto
+    (<span class="fc">📈 ff.111.4
+    Esperienze = investimenti</span>).
+    Bill Perkins: "Le esperienze guadagnano valore nel tempo, pagando dividendi di memoria." Un pasto condiviso a vent'anni produce dividendi emotivi per decenni. La filosofia dell'accumulo applicata alle relazioni trasforma ogni momento condiviso in un cristallo che resiste all'entropia. Il collegamento nascosto tra solitudine, Ironman e Taoismo è questo: il corpo sociale richiede allenamento, manutenzione e soprattutto <em>presenza</em> — non digitale, ma incarnata.</p>
 
     <div class="sep"></div>
 
     <!-- ===== 3.3 ===== -->
     <h2 id="s3" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-red-500 pb-3">3.3 — Imperi, denaro e potere: geopolitica nell'era delle reti</h2>
 
-    <p class="drop-cap">Abbiamo un problema: Trump. O meglio, il fatto che il mondo possa cambiare con un tweet — per una guerra, un incremento di dazi, un blocco alle migrazioni (<span class="fc">🎭 ff.135.1 È tutto un casino: manipolazioni</span>). Cinguettii di "singoli nodi" che creano onde anomale nel mare iperconnesso della finanza globale. Una nuova minaccia di tariffe può valere 80 milioni di dollari in 30 minuti per chi ha accesso a informazioni riservate. Il potere, nell'era delle reti, non è centralizzato in un palazzo o in un esercito: è distribuito in tweet, token e terabyte.</p>
+    <p class="drop-cap">Abbiamo un problema: Trump. O meglio, il fatto che il mondo possa cambiare con un tweet — una guerra, un incremento di dazi, un blocco alle migrazioni
+    (<span class="fc">🎭 ff.135.1
+    È tutto un casino: manipolazioni</span>).
+    Una nuova minaccia di tariffe può valere 80 milioni di dollari in 30 minuti per chi ha accesso a informazioni riservate. Il potere, nell'era delle reti, è distribuito in tweet, token e terabyte. La sfiducia è quantificabile: per la prima volta dal 1996, le banche centrali comprano più oro che debito pubblico americano
+    (<span class="fc">🎲 ff.135.3
+    Scommesse da Nobel</span>).
+    Il debito USA supera i 34.000 miliardi. Le riserve cinesi: 3.200 miliardi. Il mercato crypto: 2.500 miliardi.</p>
 
-    <p>La sfiducia è quantificabile. Per la prima volta dal 1996, le banche centrali del mondo comprano più oro che debito pubblico americano (<span class="fc">🎲 ff.135.3 Scommesse da Nobel</span>). Il debito USA supera i 34.000 miliardi di dollari. Il mercato crypto vale 2.500 miliardi. Le riserve cinesi toccano i 3.200 miliardi. La ridistribuzione del potere economico è in corso — lenta, silenziosa, e misurabile in ogni bilancio di banca centrale.</p>
+    <p>Due modelli si contendono il futuro. La Cina centralizza: sorveglianza che diventa governance, controllo che diventa efficienza. I prediction market come Polymarket prevedono il Nobel per la Pace 11 ore prima dell'annuncio — l'intelligenza collettiva batte le agenzie governative. La guerra dei chip
+    (<span class="fc">🎼 ff.82
+    Guerra a colpi di chip</span>)
+    ha costretto la Cina a innovare nell'efficienza. Raoul Pal avverte: "Tra 5-6 anni l'attuale sistema socio-finanziario perderà completamente di senso"
+    (<span class="fc">💹 ff.112.1
+    5 anni per fare soldi</span>).
+    L'AI raddoppia la precisione dei suoi modelli in pochi mesi — il cambiamento esponenziale è incomprensibile per menti lineari.</p>
 
-    <p>Due modelli si contendono il futuro. La Cina centralizza: la sua capacità di gestire dati massicci — che una volta avrebbero sommerso ogni burocrazia — è ora potenziata da AI e LLM. La sorveglianza diventa governance; il controllo diventa efficienza. Internet, al polo opposto, decentralizza: i prediction market come Polymarket prevedono il Nobel per la Pace 11 ore prima dell'annuncio ufficiale. L'intelligenza collettiva del mercato batte l'intelligence delle agenzie governative.</p>
+    <p>Yuval Noah Harari, in <em>Nexus</em>, argomenta che ChatGPT rappresenta il culmine del processo iniziato con la scrittura — la tecnologia che "schematizza" la realtà in compartimenti: "La burocrazia sacrifica la profondità della comprensione in nome dell'efficienza organizzativa, creando una visione parziale e distorta del mondo"
+    (<span class="fc">📚 ff.106.3
+    Nexus e Harari</span>).
+    Andy Grove, sopravvissuto ai campi di sterminio, salvò Intel dalla competizione giapponese con un pivot strategico nel 1985 — dai chip di memoria ai processori. "La paranoia fomentata dalla gioventù tra guerra e nazismo ha salvato Intel," scrive in <em>Only the Paranoid Survive</em>
+    (<span class="fc">🏭 ff.126.1
+    Da campi di sterminio a Intel</span>).
+    Time lo elesse Man of the Year nel 1997.</p>
 
-    <p>La guerra dei chip (<span class="fc">🎼 ff.82 Guerra a colpi di chip</span>) è il fronte principale di questo conflitto. L'embargo americano sulle GPU avanzate ha costretto la Cina a innovare nell'efficienza — a fare di più con meno. E il risultato paradossale è che la Cina potrebbe emergere con modelli AI più leggeri, economici e deployabili di quelli americani. Le sanzioni, come spesso accade, hanno rafforzato ciò che volevano indebolire.</p>
-
-    <p>Nel frattempo, il debito americano si sta digitalizzando in modo imprevisto. Nel 2011, Cina e Giappone detenevano il 23% del debito USA; oggi poco più del 6%. I nuovi creditori sono probabilmente Nigeria e Argentina — paesi che comprano USDT, dollari digitali su blockchain, come protezione contro l'inflazione locale (<span class="fc">💳 ff.135.4 America, Nigeria e criptovalute</span>). Il debito americano si decentralizza: non è più nei forzieri di Pechino ma nei wallet di Lagos. ARK Invest documenta come le stablecoin siano diventate un "alleato finanziario" degli Stati Uniti — un modo per esportare il dominio del dollaro senza la Federal Reserve.</p>
-
-    <p>La frammentazione del potere genera anche esperimenti radicali. Il Nepal ha eletto il primo ministro tramite Discord. L'Albania ha proposto un ministro AI — perché in un paese dove un terzo dei fondi pubblici si perde in corruzione, un "dipendente" digitale imparziale è più affidabile di uno umano (<span class="fc">🏛️ ff.135.5 Politica tecnologica</span>). L'incendio degli archivi sudcoreani — 858 terabyte di dati governativi in fumo — rende la decentralizzazione non un'opzione ideologica ma una necessità pratica (<span class="fc">⚜ ff.135.2 Ritorno ai Comuni medievali?</span>). Se otto anni di lavoro pubblico possono bruciare in un incendio, il modello centralizzato è strutturalmente fragile.</p>
-
-    <p>Il commercio globale muove 32.000 miliardi di dollari all'anno. In questo flusso, le reti sono più potenti degli imperi. Un protocollo blockchain è più resiliente di un trattato internazionale. Un prediction market è più accurato di un sondaggio elettorale. Un meme può spostare più capitali di un discorso presidenziale. Il potere non è scomparso — si è liquefatto, distribuendosi in una rete di nodi dove ognuno, con un tweet o un token, può generare un'onda.</p>
-
-    <p>Il collegamento nascosto tra attenzione, solitudine e geopolitica è che la crisi è strutturale: le istituzioni — familiari, sociali, politiche — progettate per un mondo gerarchico e territoriale si sgretolano in un mondo reticolare e digitale. La soluzione non è tornare indietro, ma ridisegnare le istituzioni per la nuova architettura. Come i Comuni medievali italiani — piccoli, autonomi, sperimentali — che produssero il Rinascimento non nonostante la frammentazione, ma grazie a essa.</p>
+    <p>Il debito americano si digitalizza nel silenzio: nel 2011, Cina e Giappone detenevano il 23%; oggi il 6%. I nuovi creditori sono Nigeria e Argentina — paesi che comprano USDT come protezione contro l'inflazione locale
+    (<span class="fc">💳 ff.135.4
+    America, Nigeria e criptovalute</span>).
+    Bitcoin è passato da 69.000 a 75.000 dollari nella notte dell'elezione di Trump; El Salvador ha accumulato 600 milioni in riserva strategica
+    (<span class="fc">🪙 ff.110.3
+    Le criptovalute contro obsolescenza statale</span>).
+    La frammentazione genera esperimenti radicali: il Nepal ha eletto un ministro via Discord; l'Albania ha proposto un ministro AI
+    (<span class="fc">🏛️ ff.135.5
+    Politica tecnologica</span>).
+    Il commercio globale muove 32.000 miliardi l'anno. In questo flusso, le reti sono più potenti degli imperi. Un protocollo blockchain è più resiliente di un trattato internazionale.</p>
 
     <blockquote>
     <p>"Un'emozione puramente disincarnata è un non-ente."<br>— William James, <em>Che cos'è un'emozione?</em> (1884)</p>
@@ -143,41 +229,101 @@
     <!-- ===== 3.4 ===== -->
     <h2 id="s4" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-red-500 pb-3">3.4 — Intelligenza, apprendimento e la democratizzazione della conoscenza</h2>
 
-    <p class="drop-cap">Cosa significa essere intelligenti nell'era dell'AI? Non più risolvere equazioni o memorizzare date — quelle sono competenze che una macchina esegue meglio, più velocemente e a costo quasi zero. L'intelligenza che conta oggi è quella che <mark class="note-highlight">Howard Gardner chiama "intelligenze multiple"</mark>: interpersonale, intrapersonale, naturalistica, musicale — forme di comprensione che nessun modello di linguaggio può replicare perché richiedono un corpo, una storia, un contesto (<span class="fc">🧠 ff.103.3 La nuova Era dell'Intelligenza</span>). Il paradosso è illuminante: più l'AI diventa brava nei compiti cognitivi tradizionali, più il valore umano si sposta verso ciò che è radicalmente non-cognitivo — l'empatia, l'intuizione, la capacità di stare con l'incertezza.</p>
+    <p class="drop-cap">Cosa significa essere intelligenti nell'era dell'AI? Non più risolvere equazioni o memorizzare date. Howard Gardner identifica "intelligenze multiple" — interpersonale, intrapersonale, naturalistica, musicale — che nessun LLM può replicare perché richiedono un corpo, una storia, un contesto
+    (<span class="fc">🧠 ff.103.3
+    La nuova Era dell'Intelligenza</span>).
+    Il paradosso: più l'AI diventa brava nei compiti cognitivi tradizionali, più il valore umano si sposta verso empatia, intuizione, capacità di stare con l'incertezza. Alex Karp di Palantir quantifica il problema: i laureati in materie umanistiche sono scesi dal 14% al 7% — 179.000 in tutto — mentre l'informatica è salita a 90.000
+    (<span class="fc">🎓 ff.127.4
+    E Palantir che c'entra?</span>).
+    Servono "ingegneri curiosi del mondo, della sua storia, delle sue contraddizioni."</p>
 
-    <p>La democratizzazione dell'apprendimento è la rivoluzione silenziosa del nostro tempo. <mark class="note-highlight">Khan Academy, con 150 milioni di studenti registrati</mark>, dimostra che un'educazione di qualità non richiede più un campus da 60.000 dollari l'anno. I podcast di approfondimento — format che richiedono attenzione prolungata, il contrario del doom-scrolling — stanno creando una nuova classe di autodidatti informati (<span class="fc">🎧 ff.131.3 Tre ascolti</span>). Il long-form content non è morto: si è trasferito dall'aula alla cuffia. E le riflessioni tematiche — saggi, newsletter, deep dives — alimentano un ecosistema di pensiero critico che cresce al di fuori delle istituzioni accademiche tradizionali (<span class="fc">📝 ff.131.4 Quattro riflessioni</span>).</p>
+    <p>La democratizzazione dell'apprendimento è la rivoluzione silenziosa. Khan Academy, con 150 milioni di studenti, dimostra che un'educazione di qualità non richiede un campus da 60.000 dollari. I podcast di approfondimento creano una nuova classe di autodidatti informati
+    (<span class="fc">🎧 ff.131.3
+    Tre ascolti</span>).
+    Il long-form content non è morto: si è trasferito dall'aula alla cuffia. Le newsletter come questa alimentano un ecosistema di pensiero critico fuori dalle istituzioni tradizionali
+    (<span class="fc">📝 ff.131.4
+    Quattro riflessioni</span>).
+    Ivan Illich profetizzava nel 1971 in <em>Deschooling Society</em> una società dove l'educazione dipende dalle reti, non dalle istituzioni. Cinquant'anni dopo, chiunque con uno smartphone accede a più conoscenza dell'intera Biblioteca di Alessandria.</p>
 
-    <p>Il collegamento nascosto tra intelligenze multiple e podcast è che l'apprendimento, come l'acqua, trova la sua strada. <mark class="note-highlight">Il sociologo Ivan Illich profetizzava nel 1971 in <em>Deschooling Society</em></mark> una società dove l'educazione non dipende dalle istituzioni ma dalle reti. Cinquant'anni dopo, la sua profezia si avvera: chiunque con uno smartphone e la curiosità giusta può accedere a più conoscenza di quanta ne contenesse l'intera Biblioteca di Alessandria. Il problema non è più l'accesso: è la navigazione. E qui l'intelligenza umana — la capacità di distinguere il segnale dal rumore, il profondo dal superficiale — rimane insostituibile.</p>
+    <p>Rick Rubin, il leggendario produttore musicale, ha collaborato con Anthropic per creare <em>The Way of Code</em> — principi del Tao vecchi di 3.000 anni remixati con l'intelligenza artificiale: "L'AI è come la rivoluzione del jazz: permette di rimescolare elementi"
+    (<span class="fc">🎸 ff.127.2
+    Rock 'n' roll e vibe coding</span>).
+    Il metodo è lo stesso che Rubin usò con Johnny Cash: dialogo iterativo, mai accontentarsi della prima risposta — "la prima risposta è comune, banale, poco creativa." L'equazione di Schrödinger riscritta nello stile di Leopardi — "l'operatore Laplaciano, arcano scalpello dell'infinito" — è un esempio perfetto di intelligenza cristallizzata amplificata dalla macchina
+    (<span class="fc">📐 ff.127.3
+    Leopardi e l'equazione di Schrödinger</span>).</p>
+
+    <p>Il problema non è più l'accesso alla conoscenza: è la navigazione. L'intelligenza umana — distinguere il segnale dal rumore, il profondo dal superficiale — rimane insostituibile. E forse il vero test di intelligenza nel 2026 non è risolvere un problema: è sapere quale problema vale la pena risolvere.</p>
 
     <div class="sep"></div>
 
     <!-- ===== 3.5 ===== -->
     <h2 id="s5" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-red-500 pb-3">3.5 — Arte, creatività e il dialogo tra umano e macchina</h2>
 
-    <p class="drop-cap">La creatività umana segue un processo a quattro stadi, descritto per la prima volta dal matematico <mark class="note-highlight">Henri Poincaré nel 1908</mark> e formalizzato dallo psicologo Graham Wallas: preparazione conscia, incubazione inconscia, illuminazione e verifica. L'AI può assistere nella preparazione e nella verifica — i due stadi razionali — ma l'incubazione e l'illuminazione restano territori profondamente umani, legati al sogno, all'associazione libera, al vagabondaggio della mente (<span class="fc">🎨 ff.18.3 L'arte, tra intelligenza artificiale e l'uomo</span>). Quando un artista dice "l'idea mi è venuta sotto la doccia", sta descrivendo l'incubazione: il cervello che elabora in background, senza supervisione, e poi restituisce una soluzione che sembra magica ma è il prodotto di miliardi di connessioni sinaptiche che lavorano al buio.</p>
+    <p class="drop-cap">La creatività segue un processo a quattro stadi, descritto da Henri Poincaré nel 1908 e formalizzato da Graham Wallas: preparazione conscia, incubazione inconscia, illuminazione e verifica. L'AI può assistere nella preparazione e verifica; l'incubazione e l'illuminazione restano territori umani — legati al sogno, all'associazione libera, al vagabondaggio della mente
+    (<span class="fc">🎨 ff.18.3
+    L'arte, tra intelligenza artificiale e l'uomo</span>).
+    Quando un artista dice "l'idea mi è venuta sotto la doccia", sta descrivendo l'incubazione: miliardi di connessioni sinaptiche che lavorano al buio.</p>
 
-    <p>L'AI, però, sta ridefinendo cosa significa "creare". <mark class="note-highlight">DALL-E, Midjourney e Stable Diffusion</mark> generano immagini a partire da descrizioni testuali che — per la prima volta nella storia dell'arte — non richiedono nessuna competenza tecnica: né disegno, né pittura, né fotografia. Un bambino di otto anni può generare un'immagine fotorealistica di Napoleone in sneakers che mangia un gelato. L'AI ha riportato in vita volti storici con un realismo senza precedenti: da Nefertiti a Shakespeare, da Giulio Cesare a Jane Austen (<span class="fc">🖼️ ff.18.5 Dipinti ricreati da intelligenza artificiale</span>). Non è solo tecnica: è un atto di immaginazione storica. E l'evoluzione dell'arte visiva nel 2022-2025 — documentata dall'esplosione di nuove estetiche nate dalla collaborazione umano-macchina — conferma che la creatività non viene sostituita dall'AI: viene <em>accelerata</em> (<span class="fc">📐 ff.45.2 Arte e grafici dal 2022</span>).</p>
+    <p>L'AI ridefinisce cosa significa "creare". DALL-E, Midjourney e Stable Diffusion generano immagini da descrizioni testuali senza richiedere competenza tecnica. Un bambino di otto anni può generare un'immagine fotorealistica. L'AI ha riportato in vita volti storici — da Nefertiti a Shakespeare
+    (<span class="fc">🖼️ ff.18.5
+    Dipinti ricreati dall'AI</span>).
+    L'aggiornamento di DALL-E del 25 marzo ha portato precisione nei dettagli e fedeltà testuale in qualsiasi stile grafico — persino Pokémon filosofici
+    (<span class="fc">🎮 ff.123.4
+    Non solo Studio Ghibli</span>).
+    Jupiter Artland, il festival artistico di Edimburgo, è stato ricreato in Minecraft durante il lockdown 2020 — l'arte trova sempre un medium.</p>
 
-    <p>Il collegamento nascosto tra Poincaré e DALL-E è che la creatività non è generazione: è <em>selezione</em>. <mark class="note-highlight">Il regista David Lynch</mark> diceva: "Le idee sono come pesci. Puoi pescarli, ma non puoi costringerli a mordere." L'AI genera milioni di possibilità; l'artista umano sceglie quella giusta. È la stessa dinamica della selezione naturale: la mutazione è casuale, la selezione è intelligente. L'arte del futuro sarà una collaborazione dove la macchina propone e l'umano dispone — un dialogo perpetuo tra il rumore fertile dell'algoritmo e il silenzio discriminante dell'intuizione.</p>
+    <p>Sora di OpenAI genera video da descrizioni testuali: esperti ipotizzano che abbia appreso le leggi della fisica "guardando video." "Beyond Our Reality" — un documentario stile National Geographic con volpi volanti e creature fantastiche — è stato creato interamente con Sora
+    (<span class="fc">🎬 ff.98.3
+    Sora luna, e il cantico delle creature a nove code</span>).
+    L'evoluzione dell'arte visiva nel 2022-2025 conferma che la creatività non viene sostituita: viene accelerata
+    (<span class="fc">📐 ff.45.2
+    Arte e grafici dal 2022</span>).
+    David Lynch diceva: "Le idee sono come pesci. Puoi pescarli, ma non puoi costringerli a mordere." L'AI genera milioni di possibilità; l'artista sceglie quella giusta. È selezione naturale applicata all'estetica: la mutazione è casuale, la selezione è intelligente.</p>
 
     <div class="sep"></div>
 
     <!-- ===== 3.6 ===== -->
     <h2 id="s6" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-red-500 pb-3">3.6 — Lavoro, senso e il rifiuto del paradigma lineare</h2>
 
-    <p class="drop-cap">Il paradigma lineare — studia, laureati, trova un lavoro fisso, compra una casa, fai figli, vai in pensione — è morto. Solo il 40% degli americani lavora con un contratto tradizionale 9-to-5. In Italia, il tasso di dimissioni volontarie è cresciuto del 22% nel biennio post-Covid. Il fenomeno ha un nome — Great Resignation — ma la realtà è più sfumata: non è che la gente non voglia lavorare; è che non vuole lavorare <em>così</em> (<span class="fc">💼 ff.62.1 Il lavoro non è mai stato così importante</span>). <mark class="note-highlight">Il sociologo David Graeber, nel suo <em>Bullshit Jobs</em></mark>, documentava che il 40% dei lavoratori considera il proprio impiego socialmente inutile. Il paradosso è bruciante: in un'economia che produce più ricchezza che mai, una percentuale crescente di persone si sente economicamente obbligata a fare cose che sa essere prive di significato.</p>
+    <p class="drop-cap">Il paradigma lineare — studia, laureati, trova un lavoro fisso, compra una casa, vai in pensione — è morto. Solo il 40% degli americani lavora con un contratto 9-to-5. In Italia, le dimissioni volontarie sono cresciute del 22% nel biennio post-Covid. David Graeber, in <em>Bullshit Jobs</em>, documentava che il 40% dei lavoratori considera il proprio impiego socialmente inutile
+    (<span class="fc">💼 ff.62.1
+    Il lavoro non è mai stato così importante</span>).
+    Secondo Gallup, solo il 23% dei lavoratori globali si sente "engaged" — il 77% timbra il cartellino e conta le ore fino alle 18. Costo globale: 8.800 miliardi di dollari in produttività persa — più del PIL di Germania e Giappone messi insieme.</p>
 
-    <p>Paul Miller ha lasciato McKinsey — il tempio della consulenza strategica — per trasferirsi a Taiwan senza un piano (<span class="fc">🛤️ ff.62.2 Uscire dalla via maestra</span>). Nel suo libro <em>The Pathless Path</em>, descrive il terrore e la libertà di abbandonare il "percorso predefinito" che la società propone come unica opzione razionale. <mark class="note-highlight">Thomas Bevan, filosofo del lavoro</mark>, ha coniato il termine <em>misery tax</em>: il costo nascosto dell'infelicità professionale, misurato in salute compromessa, relazioni deteriorate, creatività soppressa (<span class="fc">😩 ff.62.3 Tassare la miseria</span>). E il <em>arrival fallacy</em> — l'illusione che il prossimo aumento, la prossima promozione, il prossimo traguardo porteranno finalmente la soddisfazione — è stato documentato da <mark class="note-highlight">Tal Ben-Shahar della Harvard Business School</mark> come una delle trappole cognitive più diffuse.</p>
+    <p>Paul Miller ha lasciato McKinsey per trasferirsi a Taiwan senza un piano. In <em>The Pathless Path</em>, descrive il terrore e la libertà di abbandonare il "percorso predefinito"
+    (<span class="fc">🛤️ ff.62.2
+    Uscire dalla via maestra</span>).
+    Thomas Bevan ha coniato <em>misery tax</em>: il costo nascosto dell'infelicità professionale — salute compromessa, relazioni deteriorate, creatività soppressa
+    (<span class="fc">😩 ff.62.3
+    Tassare la miseria</span>).
+    Tal Ben-Shahar della Harvard Business School ha documentato l'<em>arrival fallacy</em> — l'illusione che il prossimo aumento porterà finalmente la soddisfazione. Non la porta mai.</p>
 
-    <p>Maslow aveva capito tutto nel 1943: i bisogni materiali sono la base, non il tetto. Una volta soddisfatti cibo, sicurezza e appartenenza, emergono bisogni di stima e autorealizzazione che nessun aumento di stipendio può colmare (<span class="fc">🔺 ff.62.4 La piramide che c'è in tutti noi</span>). <mark class="note-highlight">Secondo Gallup, solo il 23% dei lavoratori globali si sente "engaged" nel proprio lavoro</mark> — il 77% va in ufficio, timbra il cartellino, e conta le ore fino alle 18. Il costo per l'economia globale: 8.800 miliardi di dollari in produttività persa. Più del PIL della Germania e del Giappone messi insieme.</p>
+    <p>Maslow capì tutto nel 1943: i bisogni materiali sono la base, non il tetto. Una volta soddisfatti cibo, sicurezza e appartenenza, emergono bisogni di stima e autorealizzazione che nessun aumento di stipendio può colmare
+    (<span class="fc">🔺 ff.62.4
+    La piramide che c'è in tutti noi</span>).
+    Il feudalesimo digitale si riflette anche nel lavoro: su Facebook e TikTok siamo contadini che lavorano la terra digitale senza possedere il raccolto
+    (<span class="fc">🦆 ff.95.2
+    FarmVille e feudalesimo</span>).
+    Epic Games combatte Apple sulla commissione del 30% — la stessa dinamica di potere si replica dal livello geopolitico a quello individuale.</p>
 
-    <p>La via d'uscita non è la ricchezza: è l'indipendenza. Il lavoro da remoto, la freelance economy (cresciuta dal 10% al 15% della forza lavoro in cinque anni), la creator economy — sono tutti segnali di un movimento tettonico verso l'autonomia (<span class="fc">🔓 ff.62.5 Indipendenza e curiosità</span>). <mark class="note-highlight">Cal Newport, professore a Georgetown e autore di <em>Deep Work</em></mark>, argomenta che il vero lusso del XXI secolo non è il denaro: è il controllo sul proprio tempo. E la curiosità — quella forza ancestrale che ci ha portato fuori dall'Africa 70.000 anni fa — è l'unica bussola affidabile per navigare un mondo dove le mappe tradizionali non funzionano più.</p>
+    <p>La via d'uscita non è la ricchezza: è l'indipendenza. La freelance economy è cresciuta dal 10% al 15% della forza lavoro in cinque anni
+    (<span class="fc">🔓 ff.62.5
+    Indipendenza e curiosità</span>).
+    Cal Newport, in <em>Deep Work</em>, argomenta che il vero lusso del XXI secolo non è il denaro: è il controllo sul proprio tempo. La curiosità — quella forza ancestrale che ci ha portato fuori dall'Africa 70.000 anni fa — è l'unica bussola per navigare un mondo dove le mappe tradizionali non funzionano più.</p>
 
-    <p>Il collegamento nascosto tra Maslow, McKinsey e la freelance economy è che la crisi del lavoro è una crisi di significato. Non manca l'occupazione — manca il senso. E il senso non si trova ottimizzando il curriculum: si trova smettendo di ottimizzare e iniziando a esplorare. Come scriveva Rilke: "Vivere le domande." Il futuro del lavoro non appartiene a chi ha le risposte giuste, ma a chi fa le domande più coraggiose.</p>
+    <p>Il collegamento nascosto tra Maslow, McKinsey e la freelance economy è che la crisi del lavoro è una crisi di significato. Non manca l'occupazione — manca il senso. Come scriveva Rilke: "Vivere le domande." Il futuro del lavoro non appartiene a chi ha le risposte giuste, ma a chi fa le domande più coraggiose.</p>
 
     </article>
 
-    <nav class="mt-16 mb-8">
+    <!-- Newsletter CTA -->
+    <section class="newsletter-cta mt-14 mb-10" role="complementary" aria-label="Iscrizione newsletter">
+        <p class="ff-eyebrow text-xs mb-2" style="color:var(--ff-black)">Non perderti il prossimo numero</p>
+        <h2 class="text-xl sm:text-2xl font-bold mb-3" style="font-family:'IBM Plex Mono',monospace">Ricevi Futuro Fortissimo</h2>
+        <p class="text-sm sm:text-base mb-6 max-w-lg mx-auto" style="line-height:1.6">Ogni settimana, tecnologia, natura e società in una newsletter gratuita.<br>147 numeri, 563 note, 1000+ fonti — e continua a crescere.</p>
+        <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="cta-btn">Iscriviti gratis &rarr;</a>
+    </section>
+
+    <nav class="mt-10 mb-8" aria-label="Navigazione capitoli">
         <div class="brutal-card p-0 overflow-hidden">
             <div class="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-zinc-900" style="border:none;box-shadow:none">
                 <a href="chapter-02.html" class="flex items-center gap-2 p-5 hover:bg-zinc-50 transition-colors">
@@ -193,10 +339,11 @@
     </nav>
 </main>
 
-<footer class="bg-white" style="border-top:4px solid var(--ff-black)">
+<footer class="bg-white" style="border-top:4px solid var(--ff-black)" role="contentinfo">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-zinc-500">
         <div class="ff-eyebrow text-xs">&copy; Futuro Fortissimo — Michele Merelli</div>
         <div class="flex gap-4">
+            <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="hover:text-zinc-900 font-semibold">Iscriviti</a>
             <a href="https://fortissimo.substack.com/" target="_blank" rel="noopener" class="hover:text-zinc-900">Substack</a>
             <a href="https://futurofortissimo.github.io/" class="hover:text-zinc-900">Archivio</a>
         </div>
