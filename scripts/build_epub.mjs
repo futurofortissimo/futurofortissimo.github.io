@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * build_epub.mjs
- * Converts the 3 enriched chapter HTML files into a single EPUB.
+ * Converts the 5 enriched chapter HTML files into a single EPUB.
  */
 import { readFileSync, writeFileSync } from 'fs';
 import { join, dirname } from 'path';
@@ -57,6 +57,10 @@ function extractContent(htmlPath) {
     return match;
   });
 
+  // Remove images (EPUB readers have limited image support for webp/data URIs)
+  content = content.replace(/<figure[^>]*>[\s\S]*?<\/figure>/g, '');
+  content = content.replace(/<img[^>]*\/?>/g, '');
+
   // Inline basic styles for EPUB compatibility
   content = content
     .replace(/class="drop-cap"/g, '')
@@ -71,16 +75,24 @@ function extractContent(htmlPath) {
 // Chapter metadata
 const chapters = [
   {
-    title: '💻 Capitolo 1 — Tecnologia: La Macchina che Ridisegna il Mondo',
+    title: '🌿 Capitolo 1 — Natura: Il Verde, la Città e il Piatto',
     file: 'book/chapter-01.html',
   },
   {
-    title: '🍃 Capitolo 2 — Natura: Il Corpo e il Pianeta',
+    title: '💻 Capitolo 2 — Tecnologia: Dalla Macchina all\'Agente',
     file: 'book/chapter-02.html',
   },
   {
     title: '❤️ Capitolo 3 — Società: Noi, Insieme',
     file: 'book/chapter-03.html',
+  },
+  {
+    title: '📚 Capitolo 4 — Letture e Riassunti: Spunti e Riflessioni',
+    file: 'book/chapter-04.html',
+  },
+  {
+    title: '📝 Capitolo 5 — Note e Documenti: Analisi e Approfondimenti',
+    file: 'book/chapter-05.html',
   },
 ];
 
@@ -97,10 +109,10 @@ async function buildEpub() {
   });
 
   const options = {
-    title: 'Futuro Fortissimo — Tre Macro Temi',
+    title: 'Futuro Fortissimo — Cinque Macro Temi',
     author: 'Michele Merelli',
     publisher: 'Futuro Fortissimo',
-    description: 'Tecnologia, Natura e Società: tre macro temi esplorati attraverso 140+ newsletter e 667 note dal corpus di Futuro Fortissimo.',
+    description: 'Natura, Tecnologia, Società, Letture e Note: cinque macro temi esplorati attraverso 140+ newsletter e 563 note dal corpus di Futuro Fortissimo.',
     lang: 'it',
     tocTitle: 'Indice',
     css: `

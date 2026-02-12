@@ -3,26 +3,34 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Capitolo 2 — Natura: Corpo, Salute e Pianeta | Futuro Fortissimo</title>
-    <meta name="description" content="Dal bagno nei boschi al microbioma, dalla plastica al solare: la natura cura ma il comfort moderno ha costi invisibili. 45+ fonti dal corpus di Futuro Fortissimo."/>
+    <title>Capitolo 2 — Tecnologia: Robotica, Metaverso, Prodotti | Futuro Fortissimo</title>
+    <meta name="description" content="Dall'AI che vale più della Svizzera al metaverso e le criptovalute, dai videogiochi alla guerra dei chip: la tecnologia ridisegna il mondo. 55+ fonti dal corpus di Futuro Fortissimo."/>
     <link rel="canonical" href="https://futurofortissimo.github.io/book/chapter-02.html"/>
-    <meta property="og:title" content="Capitolo 2 — Natura: Corpo, Salute e Pianeta"/>
-    <meta property="og:description" content="Dal bagno nei boschi al microbioma, dalla plastica al solare. 45+ fonti su biofilia, dieta, longevità e clima."/>
+    <meta property="og:title" content="Capitolo 2 — Tecnologia: Robotica, Metaverso, Prodotti"/>
+    <meta property="og:description" content="AI, robot, criptovalute e prodotti di consumo. 55+ fonti su come la tecnologia ridisegna valore e potere."/>
     <meta property="og:type" content="article"/>
     <meta property="og:url" content="https://futurofortissimo.github.io/book/chapter-02.html"/>
     <meta property="og:image" content="https://futurofortissimo.github.io/logo.png"/>
     <meta property="article:author" content="Michele Merelli"/>
-    <meta property="article:section" content="Natura"/>
+    <meta property="article:section" content="Tecnologia"/>
     <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:title" content="Natura: Corpo, Salute e Pianeta — Futuro Fortissimo"/>
-    <meta name="twitter:description" content="Biofilia, microbioma, longevità, plastica e clima. 45+ fonti dal corpus."/>
+    <meta name="twitter:title" content="Tecnologia: Robotica, Metaverso, Prodotti — Futuro Fortissimo"/>
+    <meta name="twitter:description" content="AI, singolarità, crypto e prodotti di consumo. 55+ fonti dal corpus."/>
     <link rel="icon" href="/favicon.ico"/>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NQ7MQR0VL8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NQ7MQR0VL8');
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
-        :root{--ff-blue:#4a90e2;--ff-red:#d0021b;--ff-yellow:#f5a623;--ff-green:#2ecc71;--ff-black:#0a0a0a;--ff-grid:rgba(0,0,0,0.03);--accent:var(--ff-green)}
+        :root{--ff-blue:#4a90e2;--ff-red:#d0021b;--ff-yellow:#f5a623;--ff-green:#2ecc71;--ff-black:#0a0a0a;--ff-grid:rgba(0,0,0,0.03);--accent:var(--ff-blue)}
         *,*::before,*::after{box-sizing:border-box}
         body{font-family:'Inter',sans-serif;background:#fdfdfd;color:var(--ff-black);min-height:100vh;line-height:1.7;-webkit-text-size-adjust:100%}
         body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(var(--ff-grid) 1px,transparent 1px),linear-gradient(90deg,var(--ff-grid) 1px,transparent 1px);background-size:32px 32px;pointer-events:none;z-index:-1}
@@ -37,11 +45,14 @@
         .prose .fc{font-family:'IBM Plex Mono',monospace;font-size:0.8rem;font-weight:700;color:var(--accent);cursor:pointer;text-decoration:none;transition:color 0.15s;display:inline}
         .prose .fc:hover{text-decoration:underline}
         .toc-link{border-left:3px solid transparent;transition:all 0.2s;min-height:44px;display:flex;align-items:center}.toc-link:hover,.toc-link:focus{border-left-color:var(--accent);padding-left:12px}
-        blockquote{border-left:4px solid var(--accent);padding:12px 20px;margin:1.5em 0;background:#f0fdf4;font-style:italic}
+        blockquote{border-left:4px solid var(--accent);padding:12px 20px;margin:1.5em 0;background:#f0f6ff;font-style:italic}
         .sep{height:2px;background:linear-gradient(90deg,var(--accent),transparent);margin:3em 0}
-        .note-highlight{background:linear-gradient(180deg,transparent 60%,rgba(46,204,113,0.22) 60%);padding:0 2px;font-style:normal;color:inherit}
+        .note-highlight{background:linear-gradient(180deg,transparent 60%,rgba(74,144,226,0.18) 60%);padding:0 2px;font-style:normal;color:inherit}
         .prose{overflow-wrap:break-word;word-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
         h2[id]{scroll-margin-top:2rem}
+        figure{margin:2em 0;border:2px solid var(--ff-black);background:#fff;overflow:hidden}
+        figure img{width:100%;height:auto;display:block}
+        figcaption{font-family:'IBM Plex Mono',monospace;font-size:0.75rem;padding:10px 14px;color:#555;letter-spacing:0.04em;border-top:2px solid var(--ff-black)}
         .newsletter-cta{background:var(--ff-yellow);border:4px solid var(--ff-black);box-shadow:6px 6px 0 var(--ff-black);padding:clamp(20px,5vw,40px);text-align:center}
         .newsletter-cta a.cta-btn{display:inline-block;background:var(--ff-black);color:#fff;padding:14px 36px;font-family:'IBM Plex Mono',monospace;font-size:0.875rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;text-decoration:none;transition:transform 0.15s,box-shadow 0.15s;border:none}
         .newsletter-cta a.cta-btn:hover{transform:translateY(-2px);box-shadow:4px 4px 0 var(--accent)}
@@ -51,19 +62,19 @@
         @media(prefers-reduced-motion:reduce){*{transition-duration:0.01ms!important;animation-duration:0.01ms!important}}
     </style>
     <script type="application/ld+json">{
-      "@context":"https://schema.org","@type":"Chapter","name":"Natura — Il Corpo e il Pianeta","position":2,
+      "@context":"https://schema.org","@type":"Chapter","name":"Tecnologia — La Macchina che Ridisegna il Mondo","position":2,
       "isPartOf":{"@type":"Book","name":"Futuro Fortissimo — Tre Macro Temi","url":"https://futurofortissimo.github.io/book/"},
       "url":"https://futurofortissimo.github.io/book/chapter-02.html","inLanguage":"it",
       "author":{"@type":"Person","name":"Michele Merelli"},
-      "description":"La natura cura: dal bagno nei boschi al microbioma, dal cibo al clima. Il comfort moderno ha costi invisibili.",
-      "wordCount":5000
+      "description":"Dall'AI alla singolarità, dal metaverso alle criptovalute, dai videogiochi alla guerra dei chip.",
+      "wordCount":5600
     }</script>
     <script type="application/ld+json">{
       "@context":"https://schema.org","@type":"BreadcrumbList",
       "itemListElement":[
         {"@type":"ListItem","position":1,"name":"Home","item":"https://futurofortissimo.github.io/"},
         {"@type":"ListItem","position":2,"name":"Libro","item":"https://futurofortissimo.github.io/book/"},
-        {"@type":"ListItem","position":3,"name":"Cap. 02 — Natura"}
+        {"@type":"ListItem","position":3,"name":"Cap. 02 — Tecnologia"}
       ]
     }</script>
 </head>
@@ -78,7 +89,7 @@
                 <a href="./" class="hover:underline">Libro</a> <span aria-hidden="true">/</span>
                 <span aria-current="page">Cap. 02</span>
             </nav>
-            <div class="text-lg font-bold tracking-tight" style="font-family:'IBM Plex Mono',monospace">🍃 Cap. 02 — Natura</div>
+            <div class="text-lg font-bold tracking-tight" style="font-family:'IBM Plex Mono',monospace">&#128187; Cap. 02 &mdash; Tecnologia</div>
         </div>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-eyebrow hover:underline" style="color:var(--accent)">Iscriviti alla newsletter &rarr;</a>
     </div>
@@ -87,21 +98,18 @@
 <main id="content" class="max-w-4xl mx-auto px-4 sm:px-6 py-10 md:py-14">
 
     <section class="brutal-card accent-bar mb-10" aria-label="Intestazione capitolo">
-        <div class="chapter-num text-zinc-400 mb-4">CAPITOLO 02 / 3</div>
+        <div class="chapter-num text-zinc-400 mb-4">CAPITOLO 02 / 5</div>
         <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight mb-4" style="text-transform:none">
-            🍃 Natura — Il Corpo e il Pianeta
+            &#128187; Tecnologia &mdash; La Macchina che Ridisegna il Mondo
         </h1>
-        <p class="text-zinc-600 text-lg max-w-2xl mb-4">La natura cura: dal bagno nei boschi al microbioma, dal cibo al clima. Ma il comfort moderno ha costi invisibili — plastica, energia, inquinamento — che rendono i costi esterni improvvisamente interni.</p>
-        <div class="reading-time mb-6">~20 min di lettura · 51+ riferimenti dal corpus</div>
+        <p class="text-zinc-600 text-lg max-w-2xl mb-4">L'AI non &egrave; solo una tecnologia: &egrave; una nuova unit&agrave; di misura che ridisegna valore, produttivit&agrave; e potere. Dai robot agli agenti autonomi, dal metaverso alle criptovalute, dai prodotti di consumo alla singolarit&agrave;: il compute diventa il nuovo petrolio.</p>
+        <div class="reading-time mb-6">~24 min di lettura &middot; 55+ riferimenti dal corpus</div>
         <div class="border-t-2 border-zinc-100 pt-4">
             <div class="ff-eyebrow text-zinc-400 mb-3 text-xs">In questo capitolo</div>
             <div class="space-y-1">
-                <a href="#s1" class="toc-link block py-1 pl-3 text-sm text-zinc-600 hover:text-zinc-900">2.1 — Biofilia: la cura nel verde</a>
-                <a href="#s2" class="toc-link block py-1 pl-3 text-sm text-zinc-600 hover:text-zinc-900">2.2 — Mangiare il futuro: microbioma, dieta e longevità</a>
-                <a href="#s3" class="toc-link block py-1 pl-3 text-sm text-zinc-600 hover:text-zinc-900">2.3 — Il costo invisibile del comfort: plastica, energia e clima</a>
-                <a href="#s4" class="toc-link block py-1 pl-3 text-sm text-zinc-600 hover:text-zinc-900">2.4 — Acqua, flussi e la geometria nascosta dell'ecosistema</a>
-                <a href="#s5" class="toc-link block py-1 pl-3 text-sm text-zinc-600 hover:text-zinc-900">2.5 — Movimento, ossigeno e la biologia della longevità</a>
-                <a href="#s6" class="toc-link block py-1 pl-3 text-sm text-zinc-600 hover:text-zinc-900">2.6 — Sonno, ritmi e il restauro biochimico della salute</a>
+                <a href="#s1" class="toc-link block py-1 pl-3 text-sm text-zinc-600 hover:text-zinc-900">2.1 &mdash; Robotica e AI</a>
+                <a href="#s2" class="toc-link block py-1 pl-3 text-sm text-zinc-600 hover:text-zinc-900">2.2 &mdash; Metaverso e Criptovalute</a>
+                <a href="#s3" class="toc-link block py-1 pl-3 text-sm text-zinc-600 hover:text-zinc-900">2.3 &mdash; Prodotti di consumo</a>
             </div>
         </div>
     </section>
@@ -109,292 +117,211 @@
     <article class="prose max-w-none">
 
     <!-- ===== 2.1 ===== -->
-    <h2 id="s1" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-green-500 pb-3">2.1 — Biofilia: la cura nel verde</h2>
+    <h2 id="s1" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-blue-500 pb-3">2.1 &mdash; Robotica e AI</h2>
 
-    <p class="drop-cap">Ogni mattina, milioni di persone percorrono il tragitto casa-lavoro ottimizzando per una sola variabile: il tempo. Google Maps calcola la brachistocrona del pendolare — il percorso più veloce tra due punti
-    (<span class="fc">🏎️ ff.138.1
-    La strada più veloce</span>).
-    Da qualche anno offre persino i tragitti meno inquinanti. Ma nessun navigatore calcola il percorso che massimizza la felicità. Nessuno, tranne la scienza.</p>
+    <p class="drop-cap">In tre mesi, NVIDIA ha incassato 57 miliardi di dollari, guadagnandone 36 con un margine del 75%. Numeri che sfidano l'intuizione. Per contestualizzarli: il valore di mercato di NVIDIA supera quello di <em>tutte</em> le aziende svizzere quotate a Zurigo messe insieme &mdash; Rolex, Nestl&eacute;, ABB, Novartis incluse &mdash; e delle 20 aziende pi&ugrave; importanti d'Europa (ASML, LVMH, SAP&hellip;)
+    (<span class="fc">&#127851; ff.139.1
+    Svizzero? No, NVIDIA</span>).
+    Non &egrave; corretto confrontare capitalizzazione di borsa con PIL &mdash; il primo &egrave; valore teorico percepito, il secondo &egrave; quanto fisicamente prodotto in un anno &mdash; ma la metafora rende l'idea della sproporzione. Se il mercato fosse un campionato di fantacalcio, per acquistare NVIDIA dovreste vendere l'intera squadra europea.</p>
 
-    <p>Secondo Kathy Willis, professoressa di biodiversità a Oxford e autrice de <em>La natura che cura</em>, il modo più efficace per migliorare il benessere quotidiano è allungare il tragitto includendo parchi e viali alberati
-    (<span class="fc">😊 ff.138.2
-    La strada più felice</span>).
-    Non è spiritualismo: è neuroscienza quantificabile. Gli orizzonti naturali hanno una "dimensione frattale" — la complessità geometrica di uno skyline — che risulta calmante per il sistema nervoso. Dopo 300.000 anni di selezione naturale nella savana africana, il cervello è ancora programmato per rilassarsi davanti a un prato con alberi sparsi — e stressarsi davanti a un muro di cemento. ChatGPT, quando gli si chiede un nome per questo percorso, conia <em>euthymìcrona</em> (εὔθυμος + χρόνος): il tempo del buon animo. Una parola che dovrebbe esistere in ogni lingua. Le scuole immerse nel verde hanno effetti benefici misurabili sullo sviluppo cognitivo dei bambini, come documentato su PNAS
-    (<a class="note-highlight" href="https://writings.stephenwolfram.com/2024/05/why-does-biological-evolution-work-a-minimal-model-for-biological-evolution-and-other-adaptive-processes/" target="_blank" rel="noopener">Wolfram Alpha: evoluzione biologica visualizzata con il codice</a>).</p>
+    <p>Perch&eacute; tutto questo hype? Perch&eacute; l'AI si sta mostrando economicamente fruttifera a una velocit&agrave; senza precedenti. Dave Blundin, nel podcast <em>MOONSHOT</em>, osserva che il mercato delle pubblicit&agrave; online &mdash; 600 miliardi di dollari &mdash; &egrave; gi&agrave; <em>interamente</em> gestito da algoritmi. Agenti con capacit&agrave; pi&ugrave; spinte (e-commerce, contrattazione di materie prime, pianificazione finanziaria) possono creare un mercato di almeno 1.000 miliardi, l'1% circa del PIL mondiale
+    (<span class="fc">&#127847; ff.139.2
+    Combini e paperclips</span>).
+    Le nuove classifiche dell'AI non sono pi&ugrave; solo cognitive ma economiche: Alpha Arena misura le performance in finanza; Vending-Bench 2 valuta abilit&agrave; di vendita, contrattazione e pianificazione a lungo termine. L'ottimizzazione economica a lungo termine richiama alla mente il minigioco del <em>paperclip maximizer</em>, citato da Nick Bostrom come esempio di superefficienza che potrebbe portare all'estinzione
+    (<span class="fc">&#129413; ff.36.2
+    Il super-librozzo sulla singolarit&agrave;</span>).</p>
 
-    <p>Il "bagno nei boschi" giapponese — <em>shinrin-yoku</em> — non è una moda new age ma una pratica terapeutica documentata da centinaia di studi
-    (<span class="fc">💚 ff.51.1
-    L'affabulazione per il verde</span>).
-    Ma Willis lamenta un problema epistemologico: su 1.500 paper che studiano gli effetti del "vedere la natura", solo 40 si chiedono se abbia senso <em>toccarla</em>
-    (<span class="fc">🪵 ff.138.3
-    Toccare legno o ferro?</span>).
-    Un gruppo giapponese ha dimostrato che toccare una quercia, rispetto a marmo e metallo, ha effetti calmanti misurabili su pressione sanguigna e frequenza cardiaca. Lo stesso gruppo ha confrontato foglie stampate e foglie vere — e sì, il corpo sa distinguerle. La pelle, più antica della corteccia cerebrale, ha i suoi modi per riconoscere la vita
-    (<a class="note-highlight" href="https://www.notboring.co/p/earth-ai" target="_blank" rel="noopener">Earth AI scopre un ricco deposito di molibdeno con costi ridotti</a>).</p>
+    <p>Ma quanto costa far girare questa macchina? L'energia &egrave; il vincolo pi&ugrave; concreto dell'era AI. Generare una singola immagine con un modello di diffusione consuma circa 0,5 Wh &mdash; quanto una lampadina LED accesa per tre minuti. Sembra poco, ma moltiplicato per miliardi di richieste giornaliere il conto sale. Secondo la North American Electric Reliability Corporation, il consumo legato all'AI potrebbe far salire il prezzo dell'elettricit&agrave; negli USA da 0,17 a 0,19 dollari per kWh
+    (<span class="fc">&#9889; ff.135.1
+    I costi dell'Intelligenza Artificiale</span>).
+    Elon Musk prevede 50 milioni di GPU H100 attive entro il 2026; a regime, 35 GW di potenza computazionale &mdash; il 2% dell'elettricit&agrave; globale &mdash; dedicati esclusivamente al calcolo AI
+    (<span class="fc">&#127754; ff.135.2
+    Onda anomala energetica</span>).
+    Sam Altman ha dichiarato che &ldquo;con 10 GW di calcolo, l'AI pu&ograve; curare il cancro&rdquo;. &Egrave; un'affermazione grandiosa, ma il trend &egrave; reale: i costi marginali del compute scendono del 70% all'anno, mentre le capacit&agrave; raddoppiano ogni 5-6 mesi.</p>
 
-    <p>Il nesso tra natura e salute non è solo percettivo: è microbiologico. Sostituire ghiaia con mini-foreste negli asili nido svedesi ha aumentato in 28 giorni la biodiversità del microbioma nei bambini, riducendo biomarker di infiammazione e malattie autoimmuni
-    (<span class="fc">🥌 ff.138.4
-    Roomba o piante ornamentali?</span>).
-    Una sola pianta d'appartamento può ripopolare case sterili di microbi benefici — il Roomba pulisce dalle briciole, ma anche dai batteri buoni. Il canale più potente è quello olfattivo: l'α-pinene delle conifere — presente anche nella cannabis — rilassa in modo misurabile. Tre notti in un hotel con fragranze di cipresso aumentano la componente ad alta frequenza (HF) dell'HRV, uno dei marcatori più affidabili dello stato del sistema nervoso autonomo
-    (<span class="fc">🚬 ff.138.5
-    Sto lontano dallo stress</span>)
-    (<a class="note-highlight" href="https://research.wri.org/gfr/latest-analysis-deforestation-trends" target="_blank" rel="noopener">Analisi globale delle tendenze della deforestazione nel 2023 pubblicata da World Resources Institute</a>).</p>
+    <blockquote>
+    <p>&ldquo;L'AI non &egrave; lo strumento della singolarit&agrave;; l'AI &egrave; la singolarit&agrave;. Non stiamo costruendo uno strumento che cambia il mondo &mdash; stiamo costruendo un mondo che cambia gli strumenti.&rdquo;<br>&mdash; Alexander Wissner-Gross, fisico di Harvard</p>
+    </blockquote>
 
-    <p>Il respiro — cavallo di battaglia di tutta la tradizione contemplativa — trova conferma scientifica nella chimica delle conifere
-    (<span class="fc">💨 ff.87.1
-    Breve storia del respiro</span>).
-    Il silenzio completa la cura: non come assenza di suono, ma come presenza di un paesaggio sonoro naturale — vento, uccelli, acqua
-    (<span class="fc">🌳 ff.118.3
-    La cura: albero e silenzi</span>).
-    John Cage lo sapeva: il suo celebre 4'33" di silenzio dura 273 secondi — 273 kelvin, lo zero assoluto. In un mondo da 85 decibel urbani, il silenzio della foresta è un farmaco gratuito, senza effetti collaterali, disponibile a chiunque abbia un parco nel raggio di 15 minuti
-    (<a class="note-highlight" href="https://substack.com/redirect/a3c11d90-269d-477b-b943-e1bb884d6ce1" target="_blank" rel="noopener">L'industria assicurativa statunitense affronta pressioni crescenti a causa dell'aumento dei costi dei disastri naturali da 4.6 miliardi di dollari nel 2000 a 100 miliardi oggi</a>).</p>
+    <p>Siamo nella singolarit&agrave;? Google Gemini 3 risolve un terzo delle domande dell'Humanity's Last Exam &mdash; un test progettato per essere la sfida cognitiva definitiva. GPT-5 risolve il 25% di FrontierMath, benchmark di matematica avanzata che sei mesi fa nessun modello superava l'1%
+    (<span class="fc">&#128165; ff.135.3
+    Siamo nella singolarit&agrave;?</span>).
+    Sam Altman preferisce parlare di &ldquo;singolarit&agrave; gentile&rdquo;: non un'esplosione improvvisa, ma un'accelerazione continua che entra nella vita quotidiana senza essere percepita come discontinuit&agrave;
+    (<span class="fc">&#128161; ff.129.1
+    La singolarit&agrave; gentile di Altman</span>).
+    Ray Kurzweil, nel 2005, aveva previsto il raggiungimento dell'AGI entro il 2029. L'economista Tyler Cowen, in un sondaggio Polymarket del 2025, stima la probabilit&agrave; al 30% &mdash; un anno prima era al 5%
+    (<span class="fc">&#128300; ff.123.1
+    L'AI con il coltellino svizzero</span>).
+    Il modello o3 di OpenAI ha raggiunto un QI misurato di 136 &mdash; pi&ugrave; alto del 98% della popolazione mondiale.</p>
 
+    <figure>
+        <img src="/index_files/pubs/ff2.webp" alt="Illustrazione di intelligenza artificiale e mente digitale" loading="lazy" width="800" height="450"/>
+        <figcaption>L'AI come nuova unit&agrave; di misura: dal tool all'agente, dalla simulazione alla singolarit&agrave;.</figcaption>
+    </figure>
 
+    <p>Ma l'intelligenza non resta confinata nel software. I robot controllati da LLM stanno uscendo dai laboratori. Al MIT, un braccio robotico guidato da un modello linguistico ha imparato a eseguire compiti mai visti, semplicemente leggendo le istruzioni in linguaggio naturale
+    (<span class="fc">&#129302; ff.88.2
+    ChatGPT controlla un robot</span>).
+    La visione artificiale supera gi&agrave; l'occhio umano in compiti specifici: diagnosi di retinopatia diabetica, classificazione di nei, lettura di TAC
+    (<span class="fc">&#128064; ff.88.3
+    Dalle parole ai fatti</span>).
+    Tesla ha presentato Optimus, un robot umanoide con l'obiettivo di costare meno di 20.000 dollari &mdash; un ordine di grandezza sotto i robot industriali attuali
+    (<span class="fc">&#129302; ff.37.2
+    Tesla AI Day</span>).
+    Negli USA, gli ordini di robot industriali hanno raggiunto le 29.000 unit&agrave; nel 2023, con un aumento del 37% annuo
+    (<span class="fc">&#128296; ff.9
+    Automazione</span>).
+    Il Giappone, con la popolazione pi&ugrave; anziana del mondo, &egrave; il laboratorio naturale della robotica assistenziale: Toyota ha sviluppato un robot infermiere che solleva pazienti di 80 kg; SoftBank, secondo quanto riportato da Bloomberg nel giugno 2025, sta investendo 100 miliardi in un polo AI-robotica in Arizona.</p>
 
-    <p>La natura non è un lusso: è un'infrastruttura sanitaria. Uno studio su PNAS dimostra che le scuole immerse nel verde migliorano le funzioni cognitive dei bambini. La biofilia non è sentimentalismo — è una necessità evolutiva confermata da 300.000 anni di co-evoluzione con gli ecosistemi
-    (<span class="fc">🌿 ff.122
-    Naturale è meglio</span>).</p>
+    <p>L'AI per la scienza &egrave; forse la frontiera pi&ugrave; sottovalutata. Sakana AI ha creato <em>The AI Scientist</em> &mdash; un sistema che genera, sperimenta e scrive articoli scientifici al costo di 15 dollari ciascuno
+    (<span class="fc">&#128218; ff.102.3
+    Automatizzare la ricerca scientifica</span>).
+    La capacit&agrave; di produrre ipotesi verificabili a costo marginale quasi zero cambia l'economia della scoperta. AlphaFold di DeepMind ha predetto la struttura 3D di 200 milioni di proteine &mdash; il lavoro di un secolo di cristallografi &mdash; in 18 mesi. L'AI applicata alla scoperta di farmaci sta accelerando: nel 2024, Insilico Medicine ha portato il primo farmaco scoperto interamente dall'AI alla fase 2 dei trial clinici, per la fibrosi polmonare idiopatica
+    (<span class="fc">&#128138; ff.53
+    La cura ai tumori?</span>).
+    Watson di IBM, seppur criticato per i suoi risultati in oncologia, ha aperto la strada all'idea che la chimica e la biologia potessero essere &ldquo;lette&rdquo; da una macchina come si legge un testo
+    (<span class="fc">&#128300; ff.46
+    Elementale, Watson?</span>).</p>
 
-    <p>Il lockdown ha rivelato cosa succede quando si taglia il contatto con la natura: depressione, insonnia, calo immunitario. Ma chi aveva accesso a uno spazio verde ha mostrato resilienza misurabilmente superiore. Il post-lockdown ha innescato un ritorno ai parchi, agli orti, alla terra
-    (<span class="fc">🏠 ff.76
-    Quello che resta del lockdown</span>).</p>
-
-    <p>Il collegamento nascosto è la <em>biofilia</em> — l'ipotesi di E.O. Wilson che gli esseri umani abbiano un bisogno biologico innato di connettersi con altre forme di vita. Non sentimentalismo: 300.000 anni di co-evoluzione con un ecosistema che stiamo demolendo. Negli Stati Uniti, il 20% del PIL va in spese mediche
-    (<span class="fc">💉 ff.35
-    Sto bene, sono Super Sapiens</span>)
-    e il mercato del wellness vale 1.500 miliardi di dollari. Eppure la cura più efficace — una passeggiata nel bosco — è ancora gratis
-    (<a class="note-highlight" href="https://podcastnotes.org/tetragrammaton-rick-rubin/dr-jack-kruse-and-andrew-huberman-ph-d-tetragrammaton-with-rick-rubin-part-2/" target="_blank" rel="noopener">Acqua deuterata incrementa la resa fotosintetica delle piante del 40% nel podcast di Rick Rubin e Andrew Huberman</a>).</p>
+    <p>La dematerializzazione dell'AI &mdash; modelli pi&ugrave; piccoli, pi&ugrave; efficienti, eseguibili su smartphone &mdash; &egrave; il trend nascosto del 2025. Mistral, con un team di 30 persone, compete con i giganti. Apple Intelligence gira localmente sul dispositivo. La corsa alla miniaturizzazione &egrave; il contraltare necessario alla corsa ai datacenter
+    (<span class="fc">&#128270; ff.114
+    MinIAture</span>).
+    Siamo gi&agrave; mischiati con l'AI? David Eagleman, neuroscienziato di Stanford, argomenta che lo smartphone &egrave; gi&agrave; un'estensione cognitiva: &ldquo;Non siamo cyborg perch&eacute; abbiamo un chip nel cervello; lo siamo perch&eacute; abbiamo un cervello nel chip.&rdquo;
+    (<span class="fc">&#129504; ff.36.4
+    Siamo gi&agrave; mischiati con l'AI?</span>).
+    Ray Kurzweil prevedeva che entro il 2029 le macchine avrebbero superato il test di Turing
+    (<span class="fc">&#129302; ff.36.3
+    Una bella chiaccherata</span>).
+    ChatGPT l'ha gi&agrave; fatto nel 2023, tre anni prima della scadenza &mdash; non perch&eacute; sia diventato umano, ma perch&eacute; ha imparato a sembrarlo. L'<em>ikigai</em> giapponese &mdash; la ragione d'essere &mdash; potrebbe essere la bussola per navigare questa rivoluzione. Se l'AI pu&ograve; fare tutto ci&ograve; che &egrave; codificabile, l'essenza umana sta in ci&ograve; che non lo &egrave;: l'intuizione, l'empatia, il senso del sacro
+    (<span class="fc">&#127887; ff.116
+    L'anno del serpente /2</span>).</p>
 
     <div class="sep"></div>
 
     <!-- ===== 2.2 ===== -->
-    <h2 id="s2" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-green-500 pb-3">2.2 — Mangiare il futuro: microbioma, dieta e longevità</h2>
+    <h2 id="s2" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-blue-500 pb-3">2.2 &mdash; Metaverso e Criptovalute</h2>
 
-    <p class="drop-cap">Il corpo umano ospita circa 39.000 miliardi di batteri — più delle sue stesse cellule. Questo ecosistema, il microbioma, regola il sistema immunitario, produce neurotrasmettitori, influenza l'umore, modula l'infiammazione. E quello che mangiamo è il suo fertilizzante — o il suo pesticida
-    (<span class="fc">🥽 ff.90.3
-    Micro-bi di stress</span>).
-    I batteri intestinali producono circa il 95% della serotonina del corpo — il neurotrasmettitore della serenità — e anche GABA, dopamina, noradrenalina. Il "secondo cervello" — l'intestino — ha 500 milioni di neuroni e un'influenza diretta su umore, decisioni, personalità.</p>
+    <p class="drop-cap">Mark Zuckerberg ha scommesso il futuro di Facebook su una parola: metaverso. Ha cambiato il nome dell'azienda in Meta, investito 13,7 miliardi di dollari nel 2022 e perso il 70% del valore azionario in un anno. I critici hanno dichiarato il metaverso morto. Avevano torto &mdash; ma anche Zuckerberg, in parte. Il metaverso non &egrave; morto: si &egrave; trasformato. Non &egrave; un visore da indossare in soggiorno, ma un tessuto digitale che avvolge progressivamente ogni interazione economica e sociale
+    (<span class="fc">&#127760; ff.3
+    Metaverso</span>).
+    <em>Fortnite</em> ospita concerti con 12 milioni di spettatori contemporanei. Roblox ha 70 milioni di utenti attivi al giorno, molti sotto i 13 anni. Il tempo medio giornaliero sullo smartphone &egrave; salito a 4,2 ore &mdash; per la GenZ 6,5. Viviamo gi&agrave; nel metaverso: non come avatar con visore, ma come profili con notifiche
+    (<span class="fc">&#128299; ff.11
+    Sparare nel metaverso</span>).</p>
 
-    <p>Ma questo ecosistema è fragile. Negli Stati Uniti, il 60% delle calorie consumate proviene da alimenti ultra-processati: emulsionanti, dolcificanti artificiali e conservanti sterminano intere specie batteriche benefiche. "Per migliorare non serve per forza fare cose stratosferiche — basta non fare cose sbagliate," come nota il corpus
-    (<span class="fc">🚫 ff.104.3
-    Gli abominevoli 5</span>).
-    I grassi trans aumentano il rischio di malattie cardiache del 30%. Il polisorbato 80 riduce l'integrità della barriera intestinale del 50%. Lo sciroppo di mais ad alto contenuto di fruttosio diminuisce la capacità di apprendimento e memoria del 20%. Il Red Dye 40 aumenta l'ADHD nei bambini del 10%. Cinque sostanze, cinque numeri, cinque motivi per leggere le etichette
-    (<a class="note-highlight" href="https://fortissimo.substack.com/p/ff92-la-dieta-dei-centenari" target="_blank" rel="noopener">Panoramica sulla dieta dei centenari con focus sui fagioli microbioma intestino e caffè</a>).</p>
+    <p>Ma dietro l'interfaccia c'&egrave; un problema strutturale: chi possiede cosa? Su Facebook e TikTok siamo contadini digitali che lavorano la terra senza possedere il raccolto. Ogni post, ogni like, ogni scroll genera valore che l'utente non cattura. Neal Stephenson (che ha inventato la parola &ldquo;metaverso&rdquo; nel 1992) lo chiama <em>feudalesimo digitale</em>
+    (<span class="fc">&#127966; ff.95.2
+    FarmVille e feudalesimo</span>).
+    Epic Games combatte Apple sulla commissione del 30% sugli acquisti in-app &mdash; la stessa dinamica di potere che si replica dal livello geopolitico a quello individuale. Su internet, il codice &egrave; legge: chi scrive il protocollo, detta le regole
+    (<span class="fc">&#127760; ff.95.1
+    La sovranit&agrave; dei network</span>).</p>
 
-    <p>La dieta mediterranea — la più studiata nella storia della nutrizione — riduce la mortalità per tutte le cause del 25%. Le Blue Zones — Sardegna, Okinawa, Ikaria, Nicoya, Loma Linda — condividono il principio della diversità alimentare integrata in uno stile di vita comunitario. In Sardegna, la famiglia Melis è entrata nel Guinness dei Primati con una media di 93 anni tra 9 fratelli. Dan Buettner, esperto di zone blu, identifica pattern ricorrenti: legumi quotidiani, piccole porzioni, pasti condivisi
-    (<span class="fc">🧓 ff.92.2
-    La dieta dei centenari</span>).
-    Il digiuno intermittente aggiunge un'altra dimensione: 14-16 ore di astinenza attivano l'autofagia, il processo con cui le cellule riciclano i componenti danneggiati. Glicemia a digiuno ottimale: sotto 85 mg/dL. HOMA-IR sotto 2. HbA1c come indicatore a 3 mesi
-    (<span class="fc">⚖️ ff.113.1
-    Buttiamo la bilancia?</span>)
-    (<a class="note-highlight" href="https://x.com/bryan_johnson/status/1945226063036211456" target="_blank" rel="noopener">Uno studio su 95 uomini HIV-negativi rivela una correlazione tra comportamento sessuale e batteri intestinali.</a>).</p>
+    <figure>
+        <img src="/index_files/pubs/ff98.webp" alt="Illustrazione di tecnologia e mondi digitali" loading="lazy" width="800" height="450"/>
+        <figcaption>Dal feudalesimo digitale alla sovranit&agrave;: blockchain, metaverso e il futuro della propriet&agrave;.</figcaption>
+    </figure>
 
-    <p>Casey Means, in <em>Good Energy</em>, critica una "medicina contemporanea che cura invece di prevenire" — quando la variazione giornaliera d'acqua nel corpo è di 1-4 litri, pesarsi ogni giorno è rumore, non segnale. Il 45% degli americani non raggiunge il fabbisogno giornaliero di magnesio
-    (<span class="fc">💊 ff.104
-    Hackerare il corpo</span>).
-    Dave Asprey propone il biohacking come risposta: integratori, cold exposure, luce rossa. Ma la scienza più solida è anche la più semplice: mangiare vero cibo, vario, in quantità moderate
-    (<a class="note-highlight" href="https://translational-medicine.biomedcentral.com/articles/10.1186/s12967-023-04833-w" target="_blank" rel="noopener">Studio clinico sulla restrizione amminoacidi solforati per sovrappeso e obesità: impatto sulla salute metabolica</a>).</p>
+    <p>La blockchain promette un'uscita dal feudalesimo. Se internet ha decentralizzato l'informazione, la blockchain decentralizza la <em>propriet&agrave;</em>. Un NFT non &egrave; un JPEG costoso: &egrave; un titolo di propriet&agrave; digitale verificabile senza intermediari. Ethereum ha elaborato pi&ugrave; transazioni nel 2024 che Visa nel 2010. La DeFi (finanza decentralizzata) gestisce 90 miliardi di dollari in protocolli automatizzati che funzionano 24 ore al giorno, senza banche, senza orari, senza confini
+    (<span class="fc">&#128279; ff.95.3
+    La propriet&agrave; privata digitale</span>).
+    Cosa risolve la blockchain, in sostanza? Il problema della fiducia senza intermediari &mdash; una &ldquo;VPN finanziaria&rdquo; che bypassa i custodi tradizionali del valore
+    (<span class="fc">&#128279; ff.95.5
+    Cosa risolve la blockchain?</span>).</p>
 
-    <p>La filosofia dell'accumulo si applica alla salute come alla finanza
-    (<span class="fc">📈 ff.137.4
-    Filosofia dell'accumulo</span>):
-    anni di buone abitudini devono essere percepiti come un <em>compound</em> biologico che accumula salute come un conto accumula interessi. Il 95% del patrimonio di Warren Buffett si è accumulato dopo i 65 anni — e lo stesso vale per la salute: i benefici di decenni di dieta sana si manifestano pienamente nella seconda metà della vita. Bill Perkins, in <em>Die With Zero</em>, capovolge la prospettiva: "Se muori con 10.000 euro in banca, hai perso 3 mesi di vita lavorativa." L'età ottimale per investire in esperienze — e in salute — è 25-35 anni, quando i "dividendi di memoria" hanno più tempo per maturare
-    (<span class="fc">💰 ff.111
-    Morire con zero</span>)
-    (<a class="note-highlight" href="https://fortissimo.substack.com/i/137958307/ff-un-organo-in-piu-il-microbioma" target="_blank" rel="noopener">Il microbioma intestinale è un organo chiave per la salute e la longevità</a>).</p>
+    <blockquote>
+    <p>&ldquo;Lo Stato &egrave; ogni giorno pi&ugrave; pesante. Non perch&eacute; fa di pi&ugrave;, ma perch&eacute; costa di pi&ugrave; fare meno. Il codice, invece, scala senza burocrazia.&rdquo;<br>&mdash; Naval Ravikant</p>
+    </blockquote>
 
+    <p>Il 5 agosto 1971, Richard Nixon annunci&ograve; la fine della convertibilit&agrave; del dollaro in oro. Da quel momento, il denaro &egrave; diventato una promessa senza garanzia materiale. Saifedean Ammous, in <em>The Bitcoin Standard</em>, argomenta che l'inflazione cronica degli ultimi 50 anni &egrave; una conseguenza diretta di quella decisione: i governi possono stampare denaro senza limiti, e la classe media paga il conto attraverso la svalutazione
+    (<span class="fc">&#128176; ff.50
+    Cosa &egrave; successo nel 1971?</span>).
+    Bitcoin nasce come risposta a questo problema: un'offerta monetaria fissa (21 milioni di unit&agrave;), verificabile da chiunque, non manipolabile da nessuno. Nella notte dell'elezione di Trump nel 2024, Bitcoin &egrave; passato da 69.000 a 75.000 dollari in poche ore. El Salvador ha accumulato 600 milioni di dollari in riserva strategica
+    (<span class="fc">&#129689; ff.110.3
+    Le criptovalute contro obsolescenza statale</span>).</p>
 
+    <p>La geopolitica delle criptovalute racconta una storia di fiducia erosa. Nel 2011, Cina e Giappone detenevano il 23% del debito americano; oggi il 6%. I nuovi compratori di dollari digitali? Nigeria e Argentina &mdash; paesi dove il cittadino medio compra USDT come protezione contro l'inflazione locale. Il 70% delle transazioni crypto in Nigeria avviene in stablecoin, non in Bitcoin
+    (<span class="fc">&#128179; ff.135.4
+    America, Nigeria e criptovalute</span>).
+    La guerra delle valute digitali &egrave; gi&agrave; iniziata: la Cina ha lanciato lo yuan digitale (e-CNY), testato da 260 milioni di utenti; l'Europa prepara l'euro digitale per il 2027; le banche centrali di 130 paesi esplorano le CBDC (Central Bank Digital Currencies)
+    (<span class="fc">&#9876;&#65039; ff.24
+    Guerra criptica</span>).</p>
 
-    <p>I farmaci GLP-1 — Ozempic, Mounjaro, Wegovy — stanno ridisegnando il mercato farmaceutico. Con una riduzione media del 15-22% del peso corporeo, il semaglutide ha superato la chirurgia bariatrica come opzione di prima linea. Ma la rivoluzione solleva domande: se una pillola può sostituire la disciplina alimentare, cosa resta della relazione tra cibo e identità?
-    (<span class="fc">💉 ff.107
-    GLP-1 la cura all'obesità</span>).</p>
-
-    <p>La cultura alimentare non è solo nutrizione: è narrazione. L'hamburger di Hemingway — crudo con cipolla, capperi e salsa di soia — è un testo letterario travestito da ricetta. Come il cibo ultra-processato impoverisce il microbioma, così il fast food culturale impoverisce il gusto
-    (<span class="fc">🍔 ff.19
-    L'hamburger di Hemingway</span>).</p>
-
-    <p>Il cibo ultra-processato è il debito subprime della salute: sembra conveniente nel breve termine, ma le clausole nascoste — infiammazione, disbiosi, resistenza insulinica — si accumulano fino al default metabolico. La domanda non è se, ma quando
-    (<a class="note-highlight" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7005631/" target="_blank" rel="noopener">Ruolo degli acidi grassi a catena corta del microbioma intestinale nella comunicazione intestino-cervello</a>).</p>
+    <p>Due modelli si contendono il futuro del potere digitale. La Cina centralizza: sorveglianza che diventa governance, controllo che diventa efficienza. I prediction market come Polymarket decentralizzano: hanno previsto il Nobel per la Pace 11 ore prima dell'annuncio ufficiale. La frammentazione genera esperimenti radicali: il Nepal ha eletto un ministro via Discord; l'Albania ha proposto un ministro AI; il Liechtenstein ha messo ai voti l'accettazione di Bitcoin come moneta legale
+    (<span class="fc">&#127963;&#65039; ff.135.5
+    Politica tecnologica</span>).
+    Le reti sono pi&ugrave; resilienti degli imperi. Un protocollo blockchain sopravvive alla caduta di un governo; un trattato internazionale non sopravvive a un tweet. Ogni impero ha una data di scadenza &mdash; Ray Dalio, in <em>The Changing World Order</em>, mappa il ciclo: ascesa, maturit&agrave;, declino. Gli USA sono nella fase 5 su 6
+    (<span class="fc">&#127482;&#127480; ff.125.1
+    Cicli imperiali</span>).
+    Ma il declino di un impero non &egrave; la fine di una civilt&agrave;: &egrave; una metamorfosi. Internet pu&ograve; essere l'alternativa alla successione cinese &mdash; non uno stato, ma un protocollo
+    (<span class="fc">&#127760; ff.125.4
+    L'alternativa alla Cina: Internet</span>).
+    Le partite a UNO, in fondo, si vincono con la strategia, non con la forza &mdash; e il gioco digitale &egrave; la pi&ugrave; grande partita di potere mai giocata
+    (<span class="fc">&#127183; ff.72
+    Giochiamo a UNO?</span>).</p>
 
     <div class="sep"></div>
 
     <!-- ===== 2.3 ===== -->
-    <h2 id="s3" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-green-500 pb-3">2.3 — Il costo invisibile del comfort: plastica, energia e clima</h2>
+    <h2 id="s3" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-blue-500 pb-3">2.3 &mdash; Prodotti di consumo</h2>
 
-    <p class="drop-cap">Ogni settimana, un essere umano ingerisce circa 5 grammi di microplastiche — l'equivalente di una carta di credito. Non è un'iperbole: è il dato di uno studio WWF/Università di Newcastle
-    (<span class="fc">🥤 ff.130.1
-    Plastic is fantastic</span>).
-    Le microplastiche sono state trovate nell'80% dei campioni di sangue umano analizzati, nel latte materno, nella placenta, nel cervello. Le fonti principali: pneumatici, tessuti sintetici, cosmetici, imballaggi, bustine di tè
-    (<span class="fc">🗑️ ff.130.3
-    Microplastiche: da dove provengono?</span>).
-    Ogni anno il mondo produce 400 milioni di tonnellate di plastica. Solo il 9% viene riciclato.</p>
+    <p class="drop-cap">Un mercoled&igrave; sera di novembre, mi sono rotto la clavicola cadendo dalla bicicletta. Il giorno dopo, invece di aspettare il consulto ortopedico, ho caricato le radiografie su ChatGPT. Il modello o3 ha analizzato la frattura, descritto la posizione esatta della lesione, valutato le opzioni terapeutiche e suggerito un piano di riabilitazione &mdash; tutto in 90 secondi, tutto gratis
+    (<span class="fc">&#129657; ff.124
+    Ah-IA!</span>).
+    L'ortopedico, tre giorni dopo, ha confermato la diagnosi al 95%. Non sto dicendo che ChatGPT sostituisce il medico. Sto dicendo che la distanza tra i due si accorcia a una velocit&agrave; che il sistema sanitario non &egrave; pronto ad assorbire.</p>
 
-    <p>Gli effetti sulla salute emergono con chiarezza inquietante. Uno studio sul New England Journal of Medicine ha trovato che le microplastiche induriscono le arterie, aumentando il rischio cardiovascolare
-    (<span class="fc">🩸 ff.130.5
-    Microplastiche induriscono arterie</span>).
-    L'arte riflette questa crisi: Mandy Baker cataloga rifiuti oceanici come installazioni; Matthew Miller crea grafici socioeconomici sulle microplastiche
-    (<span class="fc">🎨 ff.130.2
-    Arte riciclabile?</span>).
-    La danza macabra della modernità non è più tra la morte e i vivi, ma tra i vivi e i rifiuti che li sopravviveranno di migliaia di anni
-    (<span class="fc">💀 ff.130.4
-    La danza macabra</span>)
-    (<a class="note-highlight" href="https://www.carbonbrief.org/analysis-trump-election-win-could-add-4bn-tonnes-to-us-emissions-by-2030/" target="_blank" rel="noopener">Stima di 4 miliardi di tonnellate di CO2 in più con la rielezione di Trump entro il 2030</a>).</p>
+    <p>Il 31 ottobre 2024, Anthropic ha lanciato Claude Computer Use &mdash; un modello AI che pu&ograve; muovere il mouse, cliccare, digitare, navigare il web. Per la prima volta, un LLM non si limita a rispondere: <em>agisce</em>. Claude apre Google Maps, cerca un ristorante, prenota un tavolo
+    (<span class="fc">&#128421;&#65039; ff.106.1
+    Claude usa il computer</span>).
+    La domesticazione dell'AI &egrave; in corso: come il fuoco pass&ograve; da pericolo a strumento, l'intelligenza artificiale sta transitando da curiosit&agrave; a utility. Il 75% delle startup nel batch invernale 2025 di Y Combinator &egrave; basato sull'AI; il mercato dell'AI generativa &egrave; passato da zero a 100 miliardi in due anni
+    (<span class="fc">&#128200; ff.45.3
+    Quali trend decolleranno?</span>).
+    Devin, il primo &ldquo;programmatore AI&rdquo; autonomo, ha guadagnato 4.000 dollari nella prima settimana su Upwork
+    (<span class="fc">&#127774; ff.88.5
+    Un paio di esempi di accelerazione</span>).</p>
 
-    <p>Il costo può essere quantificato con precisione. Mike Berners-Lee, in <em>How Bad Are Bananas?</em>, traduce ogni azione in CO2: una banana equivale a 4 minuti di inquinamento. Un uovo: 32 minuti. Un hamburger: 2 ore. Un chilometro in auto: 30 minuti
-    (<span class="fc">⏱️ ff.61
-    La decrescita felice è impossibile?</span>).
-    L'obiettivo globale è 10 tonnellate di CO2/anno a persona — il 50% in meno per un europeo medio. Tradotto: 27 kg al giorno, 1 kg all'ora, 20 grammi al minuto. Emissioni pro capite: USA 28 tonnellate, Australia 30, Regno Unito 15, Cina 3, Malawi 0,1, media globale 7
-    (<span class="fc">🍌 ff.58
-    Le banane inquinano troppo?</span>).
-    Anche con scelte attente, è difficile scendere sotto le 3 tonnellate. Il costo ambientale di una vita umana: circa 150 tonnellate di CO2
-    (<a class="note-highlight" href="https://substack.com/redirect/f1cbdbfb-32fb-42af-8a9c-f9477a733c80" target="_blank" rel="noopener">Il piano di Terraform per produrre idrocarburi economici dalla cattura diretta dell'aria di CO2 e dalla luce solare</a>).</p>
+    <p>I videogiochi sono il laboratorio cognitivo pi&ugrave; sottovalutato del pianeta. Non &egrave; un caso che il fondatore di DeepMind, Demis Hassabis &mdash; premio Nobel per la chimica 2024 grazie ad AlphaFold &mdash; sia un ex campione mondiale di scacchi junior e un game designer. I videogiochi insegnano a simulare, a perdere, a iterare
+    (<span class="fc">&#127918; ff.132.2
+    I benefici dei videogiochi</span>).
+    Genie 3 di DeepMind genera mondi interattivi 3D da un singolo prompt testuale &mdash; non pi&ugrave; videogiocare in un mondo creato da altri, ma creare il proprio mondo giocandoci
+    (<span class="fc">&#127919; ff.132.3
+    Misurare e modellare il mondo</span>).
+    <em>Fortnite</em> non &egrave; solo un gioco: &egrave; una piattaforma sociale, un concerto, un negozio. Il videogioco &egrave; il <em>medium</em> definitivo perch&eacute; integra tutti gli altri.</p>
 
-    <p>L'energia è il nodo gordiano. L'energia eolica è cresciuta di 163 TWh (contro 148 del solare e 78 dell'idroelettrico), mentre il nucleare è calato di 94 TWh. La Cina ha installato 227 GW di solare nel 2021 contro i 140 globali dell'anno precedente. Capacità solare installata: Cina 254.355 MW, USA 75.572, Giappone 67.000, Germania 53.783, India 39.211, Italia 21.600
-    (<span class="fc">☀️ ff.12
-    Sole, cuore e amore</span>).
-    L'Agenzia Internazionale dell'Energia identifica il solare come una delle sole 3 tecnologie (su 50) allineate con gli obiettivi 2030
-    (<span class="fc">🌤️ ff.70
-    Il sole: soluzione o morte?</span>).
-    Carbon Engineering cattura CO2 a 100 dollari per tonnellata
-    (<span class="fc">🐍 ff.115
-    L'anno del serpente</span>).
-    La transizione è in corso — ma è ancora troppo lenta rispetto alla curva delle emissioni
-    (<a class="note-highlight" href="https://theconversation.com/the-worlds-280-million-electric-bikes-and-mopeds-are-cutting-demand-for-oil-far-more-than-electric-cars-213870" target="_blank" rel="noopener">Le e-bike riducono le emissioni climatiche globali più dei veicoli elettrici</a>).</p>
+    <figure>
+        <img src="/index_files/pubs/ff93.webp" alt="Illustrazione di Tesla e prodotti di consumo tecnologici" loading="lazy" width="800" height="450"/>
+        <figcaption>Dai videogiochi all'auto elettrica: la tecnologia di consumo ridisegna l'esperienza quotidiana.</figcaption>
+    </figure>
 
-    <p>Il punto di connessione nascosto tra plastica, microbioma e clima è il concetto di <em>esternalità</em> — costi che chi produce e chi consuma non pagano, scaricati sull'ambiente, sulla salute, sulle generazioni future. Ma c'è una via d'uscita, e passa dalla stessa natura che stiamo distruggendo: una pianta riduce i VOC, un'area verde migliora lo sviluppo cognitivo, 28 giorni in una mini-foresta riducono l'infiammazione. Il futuro della salute non è in una pillola — è in un parco, in un orto, in un piatto di legumi
-    (<a class="note-highlight" href="https://www.iea.org/reports/co2-emissions-in-2023" target="_blank" rel="noopener">Emissioni di CO2 nel 2023: nuovo record ma speranze per il futuro</a>).</p>
+    <p>Google, l'azienda pi&ugrave; potente del mondo digitale, &egrave; vulnerabile per la prima volta in 25 anni. Il 50% del suo fatturato proviene dalla ricerca testuale &mdash; un format che ChatGPT, Perplexity e gli AI assistants stanno erodendo. Ma Google non &egrave; solo Search: &egrave; DeepMind (Nobel), TPU v7, Gemini 3, Waymo, YouTube. La domanda non &egrave; se Google sopravviver&agrave;, ma <em>quale</em> Google sopravviver&agrave;
+    (<span class="fc">&#128270; ff.28
+    Google ricerca il futuro</span>).
+    Andy Grove, sopravvissuto ai campi di sterminio, salv&ograve; Intel dalla competizione giapponese nel 1985 con un pivot strategico dai chip di memoria ai processori. &ldquo;La paranoia fomentata dalla giovent&ugrave; tra guerra e nazismo ha salvato Intel,&rdquo; scrive in <em>Only the Paranoid Survive</em>. <em>Time</em> lo elesse Man of the Year nel 1997
+    (<span class="fc">&#127963;&#65039; ff.126.1
+    Da campi di sterminio a Intel</span>).</p>
 
     <blockquote>
-
-
-    <p>Tra il 2018 e il 2023, l'elettricità ha contribuito al 63% della crescita della domanda energetica globale. L'elettrificazione non è una scelta ideologica: è una transizione termodinamica. La natura usa solo lo 0,5% della luce solare — 200 volte meno della tecnologia umana — il che suggerisce che il potenziale del solare è appena iniziato
-    (<span class="fc">⚡ ff.105
-    Elettricità e vita</span>).</p>
-
-    <p>"Parlare poco è naturale: i venti impetuosi non soffiano tutta la mattina; una pioggia torrenziale non dura tutto il giorno."<br>— Lao Tzu, <em>Tao Te Ching</em>, verso 23
-    (<a class="note-highlight" href="https://www.asimov.press/p/sunlight-budget" target="_blank" rel="noopener">La natura usa solo lo 0,5% della luce solare 200 volte meno di quella che la Terra assorbe per gli ecosistemi</a>)</p>
+    <p>&ldquo;La tecnologia &egrave; la risorsa definitiva. Con abbastanza tecnologia, possiamo sostenere 50 miliardi di persone su questo pianeta.&rdquo;<br>&mdash; Marc Andreessen, <em>The Techno-Optimist Manifesto</em></p>
     </blockquote>
 
-    <div class="sep"></div>
+    <p>Il campo di battaglia pi&ugrave; caldo della tech &egrave; il silicio stesso. La guerra dei chip tra USA e Cina ha trasformato TSMC (Taiwan) nell'azienda pi&ugrave; strategica del pianeta: produce il 92% dei chip sotto i 7 nanometri. Un blocco di Taiwan fermerebbe l'industria globale. Huawei ha lanciato il Mate 60 Pro con un chip a 7nm fatto in casa, sorprendendo l'intelligence americana
+    (<span class="fc">&#128165; ff.82
+    Guerra a colpi di chip</span>).
+    Il quantum computing aggiunge un'altra dimensione: Sycamore-70 di Google ha dimostrato la supremazia quantistica risolvendo in 200 secondi un calcolo che richiederebbe 10.000 anni a un supercomputer classico
+    (<span class="fc">&#9883;&#65039; ff.69
+    Quantico?</span>).
+    La Cina produce l'80% dei pannelli solari mondiali e, tramite CATL, il 35% delle batterie
+    (<span class="fc">&#127464;&#127475; ff.42
+    Made in China</span>).</p>
 
-    <!-- ===== 2.4 ===== -->
-    <h2 id="s4" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-green-500 pb-3">2.4 — Acqua, flussi e la geometria nascosta dell'ecosistema</h2>
-
-    <p class="drop-cap">L'acqua scorre senza mappa. Non ha un piano, non segue un algoritmo — segue la gravità, e nel farlo disegna geometrie perfette: meandri, delta, bacini idrografici che ricalcano la struttura frattale degli alberi e dei polmoni. Lao Tzu nel Tao Te Ching scrive: "L'acqua è la cosa più morbida del mondo, eppure dissolve la cosa più dura"
-    (<span class="fc">💧 ff.112.5
-    Acqua da tutte le parti</span>).
-    L'acqua non combatte gli ostacoli: li aggira, li erode, li attraversa. È la metafora suprema della resilienza — non la forza bruta, ma l'adattamento costante.</p>
-
-    <p>Ma l'acqua è anche una risorsa in crisi. Secondo l'ONU, 2,2 miliardi di persone non hanno accesso sicuro all'acqua potabile. Le infrastrutture perdono in media il 30% dell'acqua trattata prima che raggiunga i rubinetti. ACWA, un robot serpentiforme del MIT, nuota all'interno delle tubature identificando perdite con sensori acustici e telecamere a infrarossi
-    (<span class="fc">🐍 ff.47.2
-    Serpenti marini digitali</span>).
-    Un serpente artificiale che protegge il flusso dell'acqua — la stessa acqua che, nella mitologia, è sempre stata associata ai serpenti
-    (<a class="note-highlight" href="https://tech.eu/2025/07/30/ore-energy-connects-worlds-first-grid-connected-iron-air-battery-in-delft/" target="_blank" rel="noopener">Ore Energy connette la prima batteria ferro-aria che offre 100 ore di stoccaggio energetico pulito</a>).</p>
-
-    <p>Il primo trapianto di cuore da maiale a umano senza rigetto — con il gene gal-transferasi rimosso — è stato possibile grazie alla comprensione dei flussi biologici
-    (<span class="fc">🐖 ff.25
-    La fattoria degli animali</span>).
-    Negli USA, 60.000 persone attendono un trapianto, ma solo il 65% lo ottiene. Organi più richiesti: rene (83%), fegato (10%), cuore (3%). Un'AI ha raggiunto il 90% di accuratezza nell'interpretare i grugniti dei maiali per stato emotivo — la comunicazione tra specie, mediata dalla tecnologia, è già in corso
-    (<a class="note-highlight" href="https://www.linkedin.com/posts/tidalx-ai_can-you-spot-the-sick-fish-salmon-swim-ugcPost-7346075175030775810-YWPU" target="_blank" rel="noopener">L'AI di Tidal rileva pesci malati monitorando il loro nuoto inclinato in tempo reale.</a>).</p>
-
-
-
-    <p>Anche la meccanica quantistica è una storia di flussi — di probabilità, non di certezze. Come l'acqua trova il suo percorso aggirando gli ostacoli, i qubit esplorano simultaneamente tutti i percorsi possibili. Il vuoto quantistico, come l'oceano, non è mai veramente vuoto: è pieno di energia potenziale
-    (<span class="fc">⚛️ ff.69
-    Quantico?</span>).</p>
-
-    <p>Le cascate rivelano l'altra faccia dell'acqua: la potenza. L'Angel Falls in Venezuela precipita per 979 metri — quasi un chilometro di caduta libera
-    (<span class="fc">🌊 ff.56.3
-    Una cascata alta un chilometro</span>).
-    L'energia potenziale dell'acqua dolce globale, se catturata integralmente, supererebbe il fabbisogno energetico mondiale di tre volte. Ma come per l'AI e il solare, il problema non è la risorsa — è l'infrastruttura per portarla dove serve. La geometria dell'ecosistema è una geometria di flussi: nutrienti, energia, acqua, dati. Interrompere un flusso non è mai locale: le conseguenze si propagano come onde in un lago
-    (<a class="note-highlight" href="https://x.com/itsarnavb/status/1888644776322540023" target="_blank" rel="noopener">Un articolo di Nature spiega come cuocere le uova in modo uniforme alternando la temperatura dell'acqua tra 30°C e 100°C.</a>)
-    (<a class="note-highlight" href="https://www.nature.com/articles/s41586-025-09136-2" target="_blank" rel="noopener">Gli enzimi progettati computazionalmente hanno mostrato tassi catalitici bassi e hanno richiesto un'intensa ottimizzazione sperimentale. Presentiamo un flusso di lavoro completamente computazionale per la progettazione di enzimi efficienti in ripiegamenti TIM-barrel utilizzando frammenti di backbone da proteine naturali e senza richiedere ottimizzazione tramite screening di librerie mutanti. Tre progetti di eliminasi di Kemp mostrano efficienze superiori a 2.000 M−1 s−1. Il più efficiente mostra più di 140 mutazioni da qualsiasi proteina naturale, incluso un nuovo sito attivo. Presenta alta stabilità (maggiore di 85 °C) e notevole efficienza catalitica (12.700 M−1 s−1) e velocità (2.8 s−1), superando i precedenti progetti computazionali di due ordini di grandezza.</a>)
-    (<a class="note-highlight" href="https://substack.com/redirect/61baa17f-18cb-4a92-9d52-200c9684b1be" target="_blank" rel="noopener">Invece di raffinare materie prime petrolchimiche per produrre sostanze chimiche Solugen utilizza l'ingegneria enzimatica per convertire zucchero e acqua (e in futuro CO2) in sostanze chimiche</a>).</p>
-
-    <div class="sep"></div>
-
-    <!-- ===== 2.5 ===== -->
-    <h2 id="s5" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-green-500 pb-3">2.5 — Movimento, ossigeno e la biologia della longevità</h2>
-
-    <p class="drop-cap">La relazione tra movimento e mortalità è semplice e brutale: chi non si muove ha il 50% in più di probabilità di morire prematuramente rispetto a chi fa almeno 150 minuti di attività moderata alla settimana
-    (<span class="fc">🏃 ff.86.1
-    Se non ti muovi, muori</span>).
-    Il sistema MET quantifica l'intensità: camminare è 3 MET, correre 8, pedalare in salita 12. Servono almeno 500-1000 MET-minuti alla settimana. Tradotto: 30 minuti di camminata veloce al giorno. Il prezzo della longevità è ridicolmente basso — eppure il 28% della popolazione mondiale non lo paga.</p>
-
-    <p>Il VO2max — la quantità massima di ossigeno che il corpo può assorbire durante l'esercizio — è il singolo migliore predittore della longevità secondo il cardiologo Peter Attia nel suo <em>Outlive</em>. Oggi l'Apple Watch lo stima con un margine di errore del 5%
-    (<span class="fc">🫁 ff.86.2
-    Misurare l'ossigeno bruciato</span>).
-    Ciò che un decennio fa richiedeva un ospedale oggi si fa con un orologio. Il lattato — l'acido lattico — non è solo un sottoprodotto della fatica: il cervello lo preferisce al glucosio come fonte energetica. Il lattato promuove il BDNF (Brain-Derived Neurotrophic Factor), la crescita di nuove cellule nervose. L'esercizio fisico migliora la cognizione non nonostante la fatica, ma <em>grazie</em> a essa
-    (<span class="fc">🧠 ff.120.4
-    Lattato al cervello?</span>)
-    (<a class="note-highlight" href="https://x.com/Alan_Couzens/status/1720437671623868878" target="_blank" rel="noopener">Panoramica sull'attività sportiva e la riduzione della mortalità con il VO2 max</a>).</p>
-
-    <p>I dati globali confermano il trend. Strava — la piattaforma che traccia 120 milioni di atleti — rivela che la GenZ preferisce HIIT, i Millennials corrono, i Boomers pedalano
-    (<span class="fc">📈 ff.86.3
-    Report Strava 2023</span>).
-    Il commuting in bicicletta è raddoppiato tra gli under 25 in tre anni. Le attività fisiche fatte in compagnia hanno un effetto moltiplicatore misurabile: le pedalate in compagnia durano il 50% in più, le corse il 20% in più. Vedere un amico correre 1 km in più ci spinge a correrne 750 metri in più
-    (<span class="fc">🚴 ff.17
-    Sport (e chi ne fa le feci)</span>).
-    Kristian Blummenfelt ha chiuso l'Ironman in 7 ore e 21 minuti, battendo il record precedente — il corpo umano continua a superare i propri limiti. Le città che investono in piste ciclabili vedono il commercio locale crescere del 30% e le emissioni di CO2 del trasporto urbano calare del 12%
-    (<a class="note-highlight" href="https://podcastnotes.org/tim-ferris-show/661-dr-peter-attia-the-science-and-art-of-longevity-the-tim-ferriss-show/" target="_blank" rel="noopener">Differenza di mortalità 5 volte inferiore tra top 2.5% e bottom 25% per VO2 max nel podcast di Tim Ferriss con Dr. Peter Attia</a>).</p>
-
-
-
-    <p>Alex Hutchinson nel libro Endure sostiene che il limite nello sport non è fisiologico ma mentale, legato alla propriocezione — la stima subconscia dello sforzo. Marcora ha dimostrato che lo stress mentale prima di una gara rallenta gli atleti del 6%. La fatica percepita conta più del lattato nel sangue: il corpo può fare di più, ma la mente lo frena
-    (<span class="fc">🧠 ff.128
-    La mente ci limita?</span>).</p>
-
-    <p>Un miliardo di secondi è 31 anni: ogni ventenne è miliardario — di tempo. Il problema non è la quantità ma la percezione: il tempo accelera con l'età perché il cervello smette di registrare novità. Muoversi in ambienti diversi, variare i percorsi, praticare sport nuovi rallenta il tempo soggettivo
-    (<span class="fc">⏰ ff.68
-    Come fermare il tempo</span>).</p>
-
-    <p>La pandemia ha dimostrato brutalmente il legame tra fitness cardiovascolare e sopravvivenza: il VO2max basso era un predittore di mortalità da COVID paragonabile all'età avanzata. Chi si muoveva regolarmente prima della pandemia ha avuto il 48% in meno di ospedalizzazioni — un dato che ha definitivamente chiuso il dibattito tra prevenzione e cura
-    (<span class="fc">🦠 ff.27
-    Un milione di morti COVID</span>).</p>
-
-    <p>Un miliardo di secondi equivale a 31 anni: ogni ventenne è miliardario — di tempo
-    (<span class="fc">⏳ ff.67
-    L'estate sta iniziando</span>).
-    Bill Perkins ci ricorda che le esperienze pagano "dividendi di memoria" — un viaggio a vent'anni produce più di vent'anni di ricordi. La biologia della longevità non è solo individuale: è urbanistica, design delle città, scelta di investire il tempo nel corpo invece che solo nel conto in banca
-    (<a class="note-highlight" href="https://substack.com/home/post/p-170402392" target="_blank" rel="noopener">Un biologo vegetale progetta 1000 fiori unici usando il genetic sculpting per definirne la morfologia</a>)
-    (<a class="note-highlight" href="https://newsroom.ucla.edu/stories/scientists-reprogram-stem-cells-cancer-fight-ucla" target="_blank" rel="noopener">Gli scienziati hanno riprogrammato le cellule staminali di un paziente per produrre continuamente cellule T che combattono il cancro</a>)
-    (<a class="note-highlight" href="https://x.com/davidasinclair/status/1951310208778539340" target="_blank" rel="noopener">L'AI generativa accelera la ricerca sulla longevità riducendo un lavoro di 150 anni a un mese e a un miliardesimo del costo</a>).</p>
-
-    <div class="sep"></div>
-
-    <!-- ===== 2.6 ===== -->
-    <h2 id="s6" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-green-500 pb-3">2.6 — Sonno, ritmi e il restauro biochimico della salute</h2>
-
-    <p class="drop-cap">Dormiamo per un terzo della vita — eppure la scienza ha capito il perché solo negli ultimi vent'anni. Il sonno non è riposo passivo: è manutenzione attiva. Durante il sonno profondo, il sistema glinfatico — scoperto nel 2012 dalla neuroscienziata Maiken Nedergaard all'Università di Rochester — pompa liquido cerebrospinale nel cervello, rimuovendo le proteine tossiche (beta-amiloide e tau) associate all'Alzheimer. Dormire male non è solo faticoso: è neurodegenerativo. Il Motion Pillow, presentato al CES, usa microfoni e sensori per ridurre il russamento del 44% riposizionando automaticamente la testa
-    (<span class="fc">😴 ff.47.1
-    Russa? No problem!</span>).</p>
-
-    <p>I ritmi circadiani — l'orologio biologico di 24 ore — regolano non solo quando dormiamo, ma quando mangiamo, quando siamo creativi, quando il sistema immunitario è più attivo. Il cronobiologo Satchin Panda del Salk Institute ha dimostrato che topi alimentati con la stessa dieta in finestre temporali diverse mostrano differenze del 40% nel peso corporeo
-    (<span class="fc">🕐 ff.22.1
-    Dieta circadiana?</span>).
-    Non è solo <em>cosa</em> mangi — è <em>quando</em>. Il cuore è direttamente coinvolto: gli eccessi di glucosio producono AGEs (Advanced Glycation Endproducts) che irrigidiscono le vene — la reazione di Maillard che dora il pane avviene anche nelle arterie. Il VO2max diventa così un parametro di longevità: i muscoli agiscono da "spugna" che assorbe gli eccessi metabolici
-    (<span class="fc">❤️ ff.120.3
-    Questioni di cuore</span>)
-    (<a class="note-highlight" href="https://news.mit.edu/2024/evidence-gamma-rhythm-stimulation-can-treat-neurological-orders-emerging-0118" target="_blank" rel="noopener">Prove emergenti indicano che la stimolazione del ritmo gamma può trattare disturbi neurologici, critici per memoria e apprendimento.</a>).</p>
-
-    <p>Matthew Walker, neuroscienziato a Berkeley e autore di <em>Why We Sleep</em>, sintetizza le regole in tre punti: stessa ora di sveglia ogni giorno, niente schermi un'ora prima di dormire, temperatura della stanza sotto i 19 gradi
-    (<span class="fc">💤 ff.35.4
-    Super-dormita e super-focus</span>).
-    L'ottimizzazione del sonno è un mercato da 100 miliardi — materassi smart, anelli Oura, maschere con luce rossa. Arianna Huffington, la donna con più follower su LinkedIn, ha fondato Thrive Global integrando meditazione, mood check e digital detox nei luoghi di lavoro
-    (<span class="fc">🧘 ff.109
-    Medico in famigl-IA</span>).
-    Ma la disciplina è più difficile da vendere di un cuscino smart
-    (<a class="note-highlight" href="https://share.google/o51n6C4dJwRFyddQq" target="_blank" rel="noopener">I prossimi smartglasses: la tecnologia di Emteq si basa su decenni di ricerca EMG che convalida la misurazione dell'attività muscolare facciale nella ricerca sulle emozioni, nella valutazione della salute mentale, nell'interazione cervello-computer, nell'analisi dell'esperienza utente e altro ancora.</a>).</p>
-
-
-
-    <p>La terapia cognitivo-comportamentale per l'insonnia (CBT-I) è più efficace dei sonniferi — e oggi è accessibile via app. Uno psicologo digitale che monitora i pattern del sonno e suggerisce interventi personalizzati: è la versione 2.0 del diario del sonno, potenziata dall'AI e dai dati biometrici
-    (<span class="fc">🧘 ff.78
-    Psicologo digitale</span>).</p>
-
-    <p>Il collegamento nascosto tra sonno, ritmi circadiani e movimento è che il corpo umano è un sistema oscillatorio — progettato per alternare attività e riposo, luce e buio, sforzo e recupero. Ogni interruzione — jet lag, lavoro notturno, luce blu — è un debito biologico che si accumula. La longevità, alla fine, non è la somma di integratori e biohack: è la capacità di sincronizzarsi con i ritmi che la biologia ha perfezionato in 300 milioni di anni di evoluzione
-    (<a class="note-highlight" href="https://www.reddit.com/r/timferriss/s/1hRx3k5h29" target="_blank" rel="noopener">Routine serale per migliorare il sonno: tè decaffeinato, bagno di sale e sauna</a>)
-    (<a class="note-highlight" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7005631/" target="_blank" rel="noopener">Acidi grassi del microbiota intestinale e comunicazione cervello-intestino</a>)
-    (<a class="note-highlight" href="https://www.nature.com/articles/d41586-024-01259-2" target="_blank" rel="noopener">Identificati neuroni che controllano la risposta immunitaria cervello-intestino</a>).</p>
+    <p>Tesla incarna tutte le contraddizioni dell'era tecnologica. L'azienda ha accelerato la transizione elettrica pi&ugrave; di qualsiasi politica governativa, ma la sua valutazione &egrave; pi&ugrave; una scommessa su Musk che un riflesso dei fondamentali. Nel 2024, BYD l'ha superata per vendite globali di veicoli elettrici
+    (<span class="fc">&#128663; ff.93
+    Tesla: la fine di un'era?</span>).
+    L'arte, infine, non &egrave; immune alla rivoluzione. DALL-E, apparso nel 2022, ha generato un'esplosione creativa: il numero di opere digitali pubblicate &egrave; cresciuto del 300%. L'AI non ha sostituito gli artisti &mdash; li ha democratizzati
+    (<span class="fc">&#127912; ff.30
+    DALL-E genera arte</span>).
+    ChatGPT, con le sue capacit&agrave; emergenti &mdash; non previste dai creatori &mdash; ci insegna qualcosa di profondo: l'intelligenza nasce dalla struttura, non dal materiale. I Transformer, l'architettura alla base di tutti i modelli attuali, sono un articolo di 8 pagine scritto da 8 ricercatori di Google nel 2017: &ldquo;Attention Is All You Need&rdquo;
+    (<span class="fc">&#129302; ff.83
+    Imparare da ChatGPT</span>).
+    Otto persone, un'idea, e il mondo non &egrave; pi&ugrave; lo stesso. Il futuro non appartiene a chi possiede la macchina, ma a chi sa parlarle.</p>
 
     </article>
 
@@ -402,7 +329,7 @@
     <section class="newsletter-cta mt-14 mb-10" role="complementary" aria-label="Iscrizione newsletter">
         <p class="ff-eyebrow text-xs mb-2" style="color:var(--ff-black)">Non perderti il prossimo numero</p>
         <h2 class="text-xl sm:text-2xl font-bold mb-3" style="font-family:'IBM Plex Mono',monospace">Ricevi Futuro Fortissimo</h2>
-        <p class="text-sm sm:text-base mb-6 max-w-lg mx-auto" style="line-height:1.6">Ogni settimana, tecnologia, natura e società in una newsletter gratuita.<br>147 numeri, 563 note, 1000+ fonti — e continua a crescere.</p>
+        <p class="text-sm sm:text-base mb-6 max-w-lg mx-auto" style="line-height:1.6">Ogni settimana, tecnologia, natura e societ&agrave; in una newsletter gratuita.<br>147 numeri, 563 note, 1000+ fonti &mdash; e continua a crescere.</p>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="cta-btn">Iscriviti gratis &rarr;</a>
     </section>
 
@@ -411,13 +338,13 @@
             <div class="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-zinc-900" style="border:none;box-shadow:none">
                 <a href="chapter-01.html" class="flex items-center gap-2 p-5 hover:bg-zinc-50 transition-colors">
                     <svg class="w-5 h-5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-                    <div><div class="ff-eyebrow text-xs text-zinc-400">Precedente</div><div class="text-sm font-semibold mt-1">💻 Cap. 01 — Tecnologia</div></div>
+                    <div><div class="ff-eyebrow text-xs text-zinc-400">Precedente</div><div class="text-sm font-semibold mt-1">&#127793; Cap. 01 &mdash; Natura</div></div>
                 </a>
                 <a href="./" class="flex items-center justify-center p-5 hover:bg-zinc-50 transition-colors text-center">
                     <div><div class="ff-eyebrow text-xs text-zinc-400">Indice</div><div class="text-sm font-semibold mt-1">Tutti i capitoli</div></div>
                 </a>
                 <a href="chapter-03.html" class="flex items-center justify-end gap-2 p-5 hover:bg-zinc-50 transition-colors text-right">
-                    <div><div class="ff-eyebrow text-xs text-zinc-400">Successivo</div><div class="text-sm font-semibold mt-1">❤️ Cap. 03 — Società</div></div>
+                    <div><div class="ff-eyebrow text-xs text-zinc-400">Successivo</div><div class="text-sm font-semibold mt-1">&#10084;&#65039; Cap. 03 &mdash; Societ&agrave;</div></div>
                     <svg class="w-5 h-5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                 </a>
             </div>
@@ -427,7 +354,7 @@
 
 <footer class="bg-white" style="border-top:4px solid var(--ff-black)" role="contentinfo">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-zinc-500">
-        <div class="ff-eyebrow text-xs">&copy; Futuro Fortissimo — Michele Merelli</div>
+        <div class="ff-eyebrow text-xs">&copy; Futuro Fortissimo &mdash; Michele Merelli</div>
         <div class="flex gap-4">
             <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="hover:text-zinc-900 font-semibold">Iscriviti</a>
             <a href="https://fortissimo.substack.com/" target="_blank" rel="noopener" class="hover:text-zinc-900">Substack</a>
@@ -436,7 +363,7 @@
     </div>
 </footer>
 <script>
-const substackMap = {"1":"https://fortissimo.substack.com/p/-ff1-clima","2":"https://fortissimo.substack.com/p/-ff2-mente-artificiale-e-psichedelica","4":"https://fortissimo.substack.com/p/-ff4-mammut-e-torneo-tremaghi","9":"https://fortissimo.substack.com/p/-ff9-automazione","10":"https://fortissimo.substack.com/p/-ff12-misurare-lintelligenza","12":"https://fortissimo.substack.com/p/-ff10-sole-cuore-e-amore","16":"https://fortissimo.substack.com/p/-ff15-sossoldi-la-transizione-ecologica","17":"https://fortissimo.substack.com/p/-ff16-sport-e-chi-ne-fa-le-feci","18":"https://fortissimo.substack.com/p/-ff17-tra-arte-digitale-e-ai","19":"https://fortissimo.substack.com/p/ff17-lhambuger-di-hemingway","22":"https://fortissimo.substack.com/p/-ff22-mangiamo-troppo","25":"https://fortissimo.substack.com/p/ff25-la-fattoria-degli-animali","27":"https://fortissimo.substack.com/p/-ff27-un-milione-di-morti-covid-us","28":"https://fortissimo.substack.com/p/-ff28-google-ricerca-il-futuro","30":"https://fortissimo.substack.com/p/-ff30-dall-e-genera-arte","35":"https://fortissimo.substack.com/p/ff35-siamo-supersapiens","37":"https://fortissimo.substack.com/p/ff37-i-robot-sono-qui","39":"https://fortissimo.substack.com/p/ff39-come-ti-vesti","44":"https://fortissimo.substack.com/p/ff42-che-ansia-pt-1","49":"https://fortissimo.substack.com/p/ff49-la-pandemia-del-21esimo-secolo","58":"https://fortissimo.substack.com/p/ff58-le-banane-inquinano-troppo","60":"https://fortissimo.substack.com/p/ff60-la-guida-autonoma-e-qui","62":"https://fortissimo.substack.com/p/ff61-come-evitare-il-burnout","68":"https://fortissimo.substack.com/p/ff65-come-fermare-il-tempo","69":"https://fortissimo.substack.com/p/ff69-quantico","72":"https://fortissimo.substack.com/p/ff71-giochiamo-a-uno","75":"https://fortissimo.substack.com/p/ff75-massaggi-al-cervello","76":"https://fortissimo.substack.com/p/ff76-quello-che-resta-del-lockdown","78":"https://fortissimo.substack.com/p/ff78-psicologo-digitale","82":"https://fortissimo.substack.com/p/ff81-guerra-a-colpi-di-chip","87":"https://fortissimo.substack.com/p/ff87-siamo-quello-che-respiriamo","88":"https://fortissimo.substack.com/p/ff88-singolarita-nel-2029","89":"https://fortissimo.substack.com/p/ff89-meno-tinder-piu-relazioni","90":"https://fortissimo.substack.com/p/ff91-lepidemia-di-stress","101":"https://fortissimo.substack.com/p/ff101-cosa-ci-rende-umani","102":"https://fortissimo.substack.com/p/ff102-il-futuro-in-una-conchiglia","103":"https://fortissimo.substack.com/p/ff103-fuoco-ferro-intelligenza","104":"https://fortissimo.substack.com/p/-ff104-hackerare-il-corpo","105":"https://fortissimo.substack.com/p/ff105-elettricita-e-vita","106":"https://fortissimo.substack.com/p/ff106-ai-lloween","107":"https://fortissimo.substack.com/p/ff107-glp-1-la-cura-allobesita","108":"https://fortissimo.substack.com/p/ff108-inno-alla-routine","109":"https://fortissimo.substack.com/p/ff109-medico-in-famigl-ia","110":"https://fortissimo.substack.com/p/ff110-uno-stato-da-mantenere","112":"https://fortissimo.substack.com/p/ff112-acqua-imprevedibile","113":"https://fortissimo.substack.com/p/ff113-fame-chimica","115":"https://fortissimo.substack.com/p/ff115-lanno-del-serpente-1","117":"https://fortissimo.substack.com/p/ff117-viviamo-in-una-simulazione","118":"https://fortissimo.substack.com/p/ff118-paprika-e-massaggi","119":"https://fortissimo.substack.com/p/ff119-mani-ovunque","120":"https://fortissimo.substack.com/p/ff120-sport-e-longevita","121":"https://fortissimo.substack.com/p/ff121-il-flow-ti-mette-le-ali","122":"https://fortissimo.substack.com/p/ff122-naturale-e-meglio","124":"https://fortissimo.substack.com/p/ff124-ah-ia","125":"https://fortissimo.substack.com/p/ff125-usa-crollo-di-un-impero","126":"https://fortissimo.substack.com/p/ff126-google-fine-o-rinascita","127":"https://fortissimo.substack.com/p/ff127-jazz-con-chatgpt","128":"https://fortissimo.substack.com/p/ff126-e-tutta-questione-di-testa","130":"https://fortissimo.substack.com/p/ff130-microplastiche","132":"https://fortissimo.substack.com/p/ff132-inno-ai-videogiochi"};
+const substackMap = {"2":"https://fortissimo.substack.com/p/-ff2-mente-artificiale-e-psichedelica","3":"https://fortissimo.substack.com/p/ff3-metaverso","5":"https://fortissimo.substack.com/p/ff5-elettrizzante","9":"https://fortissimo.substack.com/p/-ff9-automazione","11":"https://fortissimo.substack.com/p/ff11-sparare-nel-metaverso","16":"https://fortissimo.substack.com/p/-ff15-sossoldi-la-transizione-ecologica","24":"https://fortissimo.substack.com/p/ff24-guerra-criptica","28":"https://fortissimo.substack.com/p/-ff28-google-ricerca-il-futuro","30":"https://fortissimo.substack.com/p/-ff30-dall-e-genera-arte","36":"https://fortissimo.substack.com/p/ff36-singolarita","37":"https://fortissimo.substack.com/p/ff37-i-robot-sono-qui","42":"https://fortissimo.substack.com/p/ff42-made-in-china","45":"https://fortissimo.substack.com/p/ff45-trend","46":"https://fortissimo.substack.com/p/ff46-elementale-watson","50":"https://fortissimo.substack.com/p/ff50-cosa-e-successo-nel-1971","53":"https://fortissimo.substack.com/p/ff53-la-cura-ai-tumori","69":"https://fortissimo.substack.com/p/ff69-quantico","72":"https://fortissimo.substack.com/p/ff71-giochiamo-a-uno","82":"https://fortissimo.substack.com/p/ff81-guerra-a-colpi-di-chip","83":"https://fortissimo.substack.com/p/ff83-imparare-da-chatgpt","88":"https://fortissimo.substack.com/p/ff88-singolarita-nel-2029","93":"https://fortissimo.substack.com/p/ff93-tesla-fine-di-unera","95":"https://fortissimo.substack.com/p/ff95-sovranita-dei-network","98":"https://fortissimo.substack.com/p/ff98-quantico","102":"https://fortissimo.substack.com/p/ff102-il-futuro-in-una-conchiglia","106":"https://fortissimo.substack.com/p/ff106-ai-lloween","110":"https://fortissimo.substack.com/p/ff110-uno-stato-da-mantenere","114":"https://fortissimo.substack.com/p/ff114-miniature","116":"https://fortissimo.substack.com/p/ff116-lanno-del-serpente-2","123":"https://fortissimo.substack.com/p/ff123-coltellino-svizzero","124":"https://fortissimo.substack.com/p/ff124-ah-ia","125":"https://fortissimo.substack.com/p/ff125-usa-crollo-di-un-impero","126":"https://fortissimo.substack.com/p/ff126-google-fine-o-rinascita","129":"https://fortissimo.substack.com/p/ff129-singolarita-gentile","132":"https://fortissimo.substack.com/p/ff132-inno-ai-videogiochi","135":"https://fortissimo.substack.com/p/ff135-tutto-un-casino","139":"https://fortissimo.substack.com/p/ff139-e-stato-lai"};
 document.querySelectorAll('.fc').forEach(el => {
   const m = el.textContent.match(/ff\.(\d+)/);
   if (m) {
@@ -451,5 +378,7 @@ document.querySelectorAll('.fc').forEach(el => {
   }
 });
 </script>
+<script src="/analytics.js"></script>
+<script>if (window.ffTrackPage) window.ffTrackPage();</script>
 </body>
 </html>

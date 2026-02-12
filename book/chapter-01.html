@@ -3,26 +3,36 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Capitolo 1 — Tecnologia: AI, Energia e il Nuovo Potere | Futuro Fortissimo</title>
-    <meta name="description" content="L'AI ridisegna valore e potere: da NVIDIA ai robot, dalla blockchain alla singolarità. 40+ fonti dal corpus di Futuro Fortissimo su come il compute diventa il nuovo petrolio."/>
+    <title>Capitolo 1 — Natura: Mobilità, Ambiente, Cibo | Futuro Fortissimo</title>
+    <meta name="description" content="Dalle città camminate alla crisi delle microplastiche, dall'energia solare al microbioma: la natura è infrastruttura, cura e responsabilità. 40+ fonti dal corpus di Futuro Fortissimo."/>
     <link rel="canonical" href="https://futurofortissimo.github.io/book/chapter-01.html"/>
-    <meta property="og:title" content="Capitolo 1 — Tecnologia: AI, Energia e il Nuovo Potere"/>
-    <meta property="og:description" content="L'AI ridisegna valore e potere: da NVIDIA ai robot, dalla blockchain alla singolarità. 40+ fonti dal corpus di Futuro Fortissimo."/>
+    <meta property="og:title" content="Capitolo 1 — Natura: Mobilità, Ambiente, Cibo"/>
+    <meta property="og:description" content="Dalle città camminate alla crisi delle microplastiche, dall'energia solare al microbioma. 40+ fonti su mobilità, clima, cibo e moda."/>
     <meta property="og:type" content="article"/>
     <meta property="og:url" content="https://futurofortissimo.github.io/book/chapter-01.html"/>
     <meta property="og:image" content="https://futurofortissimo.github.io/logo.png"/>
     <meta property="article:author" content="Michele Merelli"/>
-    <meta property="article:section" content="Tecnologia"/>
+    <meta property="article:section" content="Natura"/>
     <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:title" content="Tecnologia: AI, Energia e il Nuovo Potere — Futuro Fortissimo"/>
-    <meta name="twitter:description" content="L'AI ridisegna valore e potere. 40+ fonti su come il compute diventa il nuovo petrolio."/>
+    <meta name="twitter:title" content="Natura: Mobilità, Ambiente, Cibo — Futuro Fortissimo"/>
+    <meta name="twitter:description" content="Mobilità felice, transizione energetica, microbioma e moda sostenibile. 40+ fonti dal corpus."/>
     <link rel="icon" href="/favicon.ico"/>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NQ7MQR0VL8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NQ7MQR0VL8');
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
-        :root{--ff-blue:#4a90e2;--ff-red:#d0021b;--ff-yellow:#f5a623;--ff-green:#2ecc71;--ff-black:#0a0a0a;--ff-grid:rgba(0,0,0,0.03);--accent:var(--ff-blue)}
+        :root{--ff-blue:#4a90e2;--ff-red:#d0021b;--ff-yellow:#f5a623;--ff-green:#2ecc71;--ff-black:#0a0a0a;--ff-grid:rgba(0,0,0,0.03);--accent:var(--ff-green)}
         *,*::before,*::after{box-sizing:border-box}
         body{font-family:'Inter',sans-serif;background:#fdfdfd;color:var(--ff-black);min-height:100vh;line-height:1.7;-webkit-text-size-adjust:100%}
         body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(var(--ff-grid) 1px,transparent 1px),linear-gradient(90deg,var(--ff-grid) 1px,transparent 1px);background-size:32px 32px;pointer-events:none;z-index:-1}
@@ -37,38 +47,34 @@
         .prose .fc{font-family:'IBM Plex Mono',monospace;font-size:0.8rem;font-weight:700;color:var(--accent);cursor:pointer;text-decoration:none;transition:color 0.15s;display:inline}
         .prose .fc:hover{text-decoration:underline}
         .toc-link{border-left:3px solid transparent;transition:all 0.2s;min-height:44px;display:flex;align-items:center}.toc-link:hover,.toc-link:focus{border-left-color:var(--accent);padding-left:12px}
-        blockquote{border-left:4px solid var(--accent);padding:12px 20px;margin:1.5em 0;background:#f8fafc;font-style:italic}
+        blockquote{border-left:4px solid var(--accent);padding:12px 20px;margin:1.5em 0;background:#f0fdf4;font-style:italic}
         .sep{height:2px;background:linear-gradient(90deg,var(--accent),transparent);margin:3em 0}
-        .note-highlight{background:linear-gradient(180deg,transparent 60%,rgba(74,144,226,0.22) 60%);padding:0 2px;font-style:normal;color:inherit}
+        .note-highlight{background:linear-gradient(180deg,transparent 60%,rgba(46,204,113,0.22) 60%);padding:0 2px;font-style:normal;color:inherit}
         .prose{overflow-wrap:break-word;word-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
         h2[id]{scroll-margin-top:2rem}
         .newsletter-cta{background:var(--ff-yellow);border:4px solid var(--ff-black);box-shadow:6px 6px 0 var(--ff-black);padding:clamp(20px,5vw,40px);text-align:center}
         .newsletter-cta a.cta-btn{display:inline-block;background:var(--ff-black);color:#fff;padding:14px 36px;font-family:'IBM Plex Mono',monospace;font-size:0.875rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;text-decoration:none;transition:transform 0.15s,box-shadow 0.15s;border:none}
         .newsletter-cta a.cta-btn:hover{transform:translateY(-2px);box-shadow:4px 4px 0 var(--accent)}
         .reading-time{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:#888;letter-spacing:0.1em}
+        figure{margin:2em 0}figure img{width:100%;height:auto;border:3px solid var(--ff-black)}figcaption{font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:#666;margin-top:8px;letter-spacing:0.04em}
         @media(max-width:640px){.brutal-card{border-width:2px;box-shadow:none}.newsletter-cta{box-shadow:none;border-width:2px}.toc-link{min-height:48px;padding:4px 0 4px 8px}}
         @media print{body::before{display:none}.brutal-card{box-shadow:none;border:1px solid #999}.newsletter-cta,.skip-link{display:none}}
         @media(prefers-reduced-motion:reduce){*{transition-duration:0.01ms!important;animation-duration:0.01ms!important}}
     </style>
     <script type="application/ld+json">{
-      "@context":"https://schema.org",
-      "@type":"Chapter",
-      "name":"Tecnologia — La Macchina che Ridisegna il Mondo",
-      "position":1,
+      "@context":"https://schema.org","@type":"Chapter","name":"Natura — Mobilità, Ambiente, Cibo e Fashion","position":1,
       "isPartOf":{"@type":"Book","name":"Futuro Fortissimo — Tre Macro Temi","url":"https://futurofortissimo.github.io/book/"},
-      "url":"https://futurofortissimo.github.io/book/chapter-01.html",
-      "inLanguage":"it",
+      "url":"https://futurofortissimo.github.io/book/chapter-01.html","inLanguage":"it",
       "author":{"@type":"Person","name":"Michele Merelli"},
-      "description":"L'AI ridisegna valore, produttività e potere. Dal tool all'agente, dalla simulazione alla singolarità, il compute diventa il nuovo petrolio.",
-      "wordCount":5200
+      "description":"Dalle città camminate alla crisi delle microplastiche, dall'energia solare al microbioma: la natura è infrastruttura, cura e responsabilità.",
+      "wordCount":5400
     }</script>
     <script type="application/ld+json">{
-      "@context":"https://schema.org",
-      "@type":"BreadcrumbList",
+      "@context":"https://schema.org","@type":"BreadcrumbList",
       "itemListElement":[
         {"@type":"ListItem","position":1,"name":"Home","item":"https://futurofortissimo.github.io/"},
         {"@type":"ListItem","position":2,"name":"Libro","item":"https://futurofortissimo.github.io/book/"},
-        {"@type":"ListItem","position":3,"name":"Cap. 01 — Tecnologia"}
+        {"@type":"ListItem","position":3,"name":"Cap. 01 — Natura"}
       ]
     }</script>
 </head>
@@ -83,7 +89,7 @@
                 <a href="./" class="hover:underline">Libro</a> <span aria-hidden="true">/</span>
                 <span aria-current="page">Cap. 01</span>
             </nav>
-            <div class="text-lg font-bold tracking-tight" style="font-family:'IBM Plex Mono',monospace">💻 Cap. 01 — Tecnologia</div>
+            <div class="text-lg font-bold tracking-tight" style="font-family:'IBM Plex Mono',monospace">&#127793; Cap. 01 — Natura</div>
         </div>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-eyebrow hover:underline" style="color:var(--accent)">Iscriviti alla newsletter &rarr;</a>
     </div>
@@ -92,21 +98,18 @@
 <main id="content" class="max-w-4xl mx-auto px-4 sm:px-6 py-10 md:py-14">
 
     <section class="brutal-card accent-bar mb-10" aria-label="Intestazione capitolo">
-        <div class="chapter-num text-zinc-400 mb-4">CAPITOLO 01 / 3</div>
+        <div class="chapter-num text-zinc-400 mb-4">CAPITOLO 01 / 5</div>
         <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight mb-4" style="text-transform:none">
-            💻 Tecnologia — La Macchina che Ridisegna il Mondo
+            &#127793; Natura — Mobilit&agrave;, Ambiente, Cibo e Fashion
         </h1>
-        <p class="text-zinc-600 text-lg max-w-2xl mb-4">L'AI non è solo una tecnologia: è una nuova unità di misura che ridisegna valore, produttività e potere. Dal tool all'agente, dalla simulazione alla singolarità, il compute diventa il nuovo petrolio.</p>
-        <div class="reading-time mb-6">~22 min di lettura · 66+ riferimenti dal corpus</div>
+        <p class="text-zinc-600 text-lg max-w-2xl mb-4">Come ci muoviamo, cosa respiriamo, cosa mangiamo, cosa indossiamo: ogni scelta quotidiana &egrave; un voto sul futuro del pianeta. La natura non &egrave; lo sfondo della nostra vita &mdash; ne &egrave; l'infrastruttura portante.</p>
+        <div class="reading-time mb-6">~22 min di lettura &middot; 40+ riferimenti dal corpus</div>
         <div class="border-t-2 border-zinc-100 pt-4">
             <div class="ff-eyebrow text-zinc-400 mb-3 text-xs">In questo capitolo</div>
             <div class="space-y-1">
-                <a href="#s1" class="toc-link block py-1 pl-3 text-sm text-zinc-600 hover:text-zinc-900">1.1 — La nuova unità di misura: AI, valore e singolarità</a>
-                <a href="#s2" class="toc-link block py-1 pl-3 text-sm text-zinc-600 hover:text-zinc-900">1.2 — Dal tool all'agente: simulazione, creatività e verità operativa</a>
-                <a href="#s3" class="toc-link block py-1 pl-3 text-sm text-zinc-600 hover:text-zinc-900">1.3 — Sovranità digitale: crypto, reti e il futuro dello Stato</a>
-                <a href="#s4" class="toc-link block py-1 pl-3 text-sm text-zinc-600 hover:text-zinc-900">1.4 — Robot e agenti autonomi: dall'automazione al pensiero</a>
-                <a href="#s5" class="toc-link block py-1 pl-3 text-sm text-zinc-600 hover:text-zinc-900">1.5 — Superintelligenza e allineamento: controllo, valori e rischi</a>
-                <a href="#s6" class="toc-link block py-1 pl-3 text-sm text-zinc-600 hover:text-zinc-900">1.6 — Startup, venture e il nuovo scambio di valore</a>
+                <a href="#s1" class="toc-link block py-1 pl-3 text-sm text-zinc-600 hover:text-zinc-900">1.1 — Mobilit&agrave; e Citt&agrave;</a>
+                <a href="#s2" class="toc-link block py-1 pl-3 text-sm text-zinc-600 hover:text-zinc-900">1.2 — Ambiente ed Energia</a>
+                <a href="#s3" class="toc-link block py-1 pl-3 text-sm text-zinc-600 hover:text-zinc-900">1.3 — Cibo e Fashion</a>
             </div>
         </div>
     </section>
@@ -114,348 +117,188 @@
     <article class="prose max-w-none">
 
     <!-- ===== 1.1 ===== -->
-    <h2 id="s1" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-blue-500 pb-3">1.1 — La nuova unità di misura: AI, valore e singolarità</h2>
+    <h2 id="s1" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-green-500 pb-3">1.1 — Mobilit&agrave; e Citt&agrave;</h2>
 
-    <p class="drop-cap">L'intelligenza artificiale non è più un esperimento di laboratorio: è la nuova infrastruttura economica globale. Come il petrolio nel XX secolo, il calcolo — misurato in GPU, watt e parametri — è diventato l'unità di misura con cui i mercati valutano il futuro. NVIDIA, un produttore di schede grafiche noto fino a dieci anni fa principalmente ai videogiocatori, ha visto il suo valore di mercato superare quello delle venti più grandi società europee messe insieme
-    (<span class="fc">🍫 ff.139.1
-    Svizzero? No, NVIDIA</span>).
-    Ma serve una precisazione fondamentale: <em>valuation ≠ GDP</em>. Il primo è valore teorico percepito dal mercato, il secondo è il prodotto reale di un'economia. Confondere i due è come paragonare il prezzo di un quadro al costo dei suoi materiali.</p>
+    <p class="drop-cap">Ogni mattina, centinaia di milioni di persone si mettono in moto. Letteralmente. Il tragitto casa-lavoro &egrave; il rituale pi&ugrave; universale della civilt&agrave; moderna, eppure lo eseguiamo quasi in trance, ottimizzando per un'unica variabile: il tempo. Google Maps calcola quella che potremmo chiamare la <em>brachistocrona del pendolare</em> &mdash; il percorso pi&ugrave; veloce tra due punti, come la celebre curva della meccanica classica che minimizza il tempo di caduta di una sfera
+    (<span class="fc">&#127950; ff.138.1
+    La strada pi&ugrave; veloce</span>).
+    Da qualche anno, l'app offre anche i tragitti con meno emissioni. Ma nessun navigatore calcola il percorso che massimizza la felicit&agrave;. Nessuno, tranne la scienza.</p>
 
-    <p>Eppure il fatto che il mercato attribuisca a un singolo produttore di chip un valore superiore all'intera economia di un paese del G7 racconta qualcosa di profondo: i flussi di capitale si muovono verso il <em>compute</em>. La traiettoria era visibile già nel 2021, quando Alibaba presentò M6 — un modello da 10.000 miliardi di parametri, 50 volte GPT-3 — il cui addestramento richiese appena l'1% del consumo energetico di GPT-3, stimato in 12 milioni di dollari
-    (<span class="fc">🧪 ff.2
-    Mente artificiale e psichedelia</span>).
-    Quei numeri, allora stupefacenti, oggi sono preistoria: GPT-4 ha richiesto oltre 100 milioni di dollari di training e i modelli di frontiera si avvicinano al miliardo.</p>
+    <p>Kathy Willis, professoressa di biodiversit&agrave; a Oxford e autrice di <em>Good Nature</em>, ha dimostrato che il modo pi&ugrave; efficace per migliorare il benessere quotidiano &egrave; allungare leggermente il tragitto includendo parchi e viali alberati
+    (<span class="fc">&#128522; ff.138.2
+    La strada pi&ugrave; felice</span>).
+    Non &egrave; spiritualismo: &egrave; neuroscienza quantificabile. Gli orizzonti naturali possiedono una &ldquo;dimensione frattale&rdquo; &mdash; la complessit&agrave; geometrica di uno skyline &mdash; che risulta calmante per il sistema nervoso. Dopo 300.000 anni di selezione nella savana africana, il cervello &egrave; ancora programmato per rilassarsi davanti a un prato con alberi sparsi e stressarsi davanti a un muro di cemento. La dimensione frattale ottimale &egrave; tra 1,3 e 1,5 &mdash; esattamente quella di un bosco di querce o di una costa frastagliata. ChatGPT, quando gli si chiede un nome per questo percorso ottimizzato per il benessere, conia <em>euthym&igrave;crona</em> (&epsilon;&#8016;&theta;&upsilon;&mu;&omicron;&sigmaf; + &chi;&rho;&#8057;&nu;&omicron;&sigmaf;): il tempo del buon animo. Una parola che dovrebbe esistere in ogni lingua.</p>
 
-    <p>Perché questo hype ha basi economiche concrete? Dave Blundin, nel podcast MOONSHOT, fa notare che il mercato della pubblicità online — da solo 600 miliardi di dollari — è già interamente gestito da algoritmi
-    (<span class="fc">🧃 ff.139.2
-    Combini e paperclips</span>).
-    Nessun essere umano sceglie più quale banner mostrarti: lo decide un modello. Ma la pubblicità è solo l'inizio. Agenti AI con capacità più avanzate — e-commerce, contrattazione di materie prime, logistica — potrebbero generare un mercato da 1.000 miliardi di dollari, pari all'1% del PIL mondiale. Il pensiero corre al celebre esperimento mentale dei paperclips — un'AI che massimizza la produzione di graffette fino a consumare tutte le risorse del pianeta — ma la versione reale è più sottile: non graffette, bensì clic, conversioni, engagement.</p>
+    <blockquote>
+    <p>&ldquo;Se le persone avessero un'app che suggerisce il percorso pi&ugrave; felice anzich&eacute; il pi&ugrave; veloce, scegliere di passare da un parco invece che da un'arteria stradale avrebbe effetti misurabili sulla salute mentale di intere citt&agrave;.&rdquo;<br>&mdash; Kathy Willis, <em>Good Nature</em></p>
+    </blockquote>
 
-    <p>Per misurare questa corsa servono nuovi benchmark. Non basta più il test di Turing. Google Gemini 3 risolve un terzo delle domande dell'Humanity's Last Exam — un test progettato per essere l'ultimo bastione della superiorità intellettuale umana. GPT-5 Pro risolve problemi classificati come "FrontierMath Livello 4", problemi che richiedono a matematici esperti settimane di lavoro
-    (<span class="fc">♾️ ff.135.3
-    Siamo nella singolarità?</span>).
-    Dalla matematica dipendono, a cascata, fisica, chimica e biologia: se un modello fa in secondi ciò che un ricercatore fa in settimane, le implicazioni per la scienza sono sismiche. Nel 1985, Steve Jobs profetizzava: "Potresti effettivamente porre una domanda ad Aristotele!"
-    (<span class="fc">🏛️ ff.48
-    Risuscitare Aristotele</span>).
-    Quarant'anni dopo, ChatGPT ha raggiunto 1 milione di utenti in 5 giorni e genera 15 dei 29 miliardi di ricavi di OpenAI.</p>
+    <p>Ma la felicit&agrave; del tragitto &egrave; solo l'inizio. La vera rivoluzione &egrave; ripensare le citt&agrave; stesse. Negli ultimi decenni, urbanisti come Jan Gehl e Carlos Moreno hanno proposto un modello radicale: la citt&agrave; a 15 minuti, in cui ogni servizio essenziale &mdash; scuola, medico, alimentari, parco, lavoro &mdash; sia raggiungibile a piedi o in bicicletta in un quarto d'ora
+    (<span class="fc">&#127961; ff.34
+    Ripensare le citt&agrave;</span>).
+    Parigi ha investito 250 milioni di euro in piste ciclabili post-pandemia. Barcellona ha creato i <em>superblocks</em>, isolati chiusi al traffico dove le strade tornano a essere piazze. Milano, con il suo &ldquo;Piano Quartieri&rdquo;, sta sperimentando zone a traffico limitato permanenti. Il risultato &egrave; che le citt&agrave; che investono in infrastrutture pedonali e ciclabili vedono il commercio locale crescere fino al 30% e le emissioni di CO&#8322; del trasporto urbano calare del 12%. Le strade pedonali non sono un lusso: sono un investimento con rendimenti misurabili.</p>
 
-    <p>Alex Wissner-Gross, fisico e imprenditore, ha commentato che siamo <em>nella</em> singolarità tecnologica — ma la descrive come un'illusione ottica: "Da lontano sembra un asintoto verticale, ma quando ci sei in mezzo sembra abbastanza continuo." Non un'esplosione improvvisa, ma un'accelerazione costante che viviamo giorno dopo giorno senza renderci conto che la pendenza della curva è cambiata. Il grande inganno della singolarità è che chi la vive non la riconosce — come il pesce che non sa di nuotare nell'acqua. Marc Andreessen, nel suo <em>Techno-Optimist Manifesto</em>, spinge il ragionamento fino alle estreme conseguenze: la tecnologia potrebbe portare la popolazione mondiale a 50 miliardi di persone vivendo tutti meglio di oggi
-    (<span class="fc">📖 ff.81
-    Il 2024 nei libri di storia</span>)
-    (<a class="note-highlight" href="https://x.com/EthanHe_42/status/1947711720665059595" target="_blank" rel="noopener">50 milioni di GPU H100 a pieno regime consumano 35 GW circa il 2% del consumo elettrico globale</a>).</p>
+    <figure>
+        <img src="/index_files/pubs/ff34.webp" alt="Illustrazione di una citt&agrave; ripensata con verde urbano e mobilit&agrave; sostenibile" loading="lazy" width="800" height="450"/>
+        <figcaption>ff.34 &mdash; Ripensare le citt&agrave;: dalla dominanza dell'auto alla citt&agrave; a 15 minuti.</figcaption>
+    </figure>
 
-    <p>Ma questa corsa ha un costo energetico mostruoso. ChatGPT sta contribuendo a far salire le bollette elettriche americane da 0,17 a 0,19 dollari per kilowattora secondo la Federal Reserve
-    (<span class="fc">💲 ff.135.1
-    I costi dell'Intelligenza Artificiale</span>).
-    Un'immagine generata dall'AI consuma 0,5 Wh — dato da Nature 2025 — che sembra poco finché non lo si moltiplica per miliardi di richieste al giorno. La Germania e il Regno Unito producono meno energia elettrica di quarant'anni fa: il problema non è tanto l'AI quanto una miopia energetica decennale. Elon Musk vuole acquistare 50 milioni di GPU H100 nei prossimi cinque anni, che assorbirebbero 35 GW — il 2% del consumo elettrico globale attuale
-    (<span class="fc">🌊 ff.135.2
-    Onda (anomala) energetica</span>)
-    (<a class="note-highlight" href="https://www.youtube.com/live/TLzna9__DnI" target="_blank" rel="noopener">Keynote di Jensen Huang, CEO di NVIDIA, a COMPUTEX 2025.</a>).</p>
+    <p>E le auto? Non scompariranno, ma cambieranno profondamente. La guida autonoma &egrave; gi&agrave; realt&agrave; in alcune citt&agrave; americane. Cruise, di propriet&agrave; di General Motors, ha lanciato un servizio di robotaxi 24 ore su 24 a San Francisco, e poi si &egrave; fermata dopo un incidente con un pedone che ha messo in luce la complessit&agrave; normativa del settore
+    (<span class="fc">&#128661; ff.60
+    La guida autonoma &egrave; qui!</span>).
+    ARK Invest stima che il mercato dei robotaxi potrebbe valere centinaia di miliardi di dollari: un'auto resta parcheggiata il 96% del tempo, e un veicolo autonomo che lavora 24 ore al giorno cambia l'equazione economica in modo radicale. In Cina, Haomo.ai sviluppa DriveGPT &mdash; la stessa tecnica di reinforcement learning da feedback umano che ha reso ChatGPT conversazionale, applicata alla guida. Tesla con il suo Autopilot, Waymo con il suo servizio attivo a Phoenix e San Francisco, e decine di startup cinesi stanno convergendo sulla stessa visione: la guida come servizio software, non come competenza umana.</p>
 
-    <p>Sam Altman è ancora più ambizioso: "Con 10 GW di calcolo, l'AI può curare il cancro. Oppure diventare un tutor privato per tutti gli studenti del mondo. Ma non può fare entrambi. Se siamo limitati dall'energia, dobbiamo scegliere a cosa dare priorità." I costi energetici previsti da OpenAI per il 2033 equivalgono a un terzo del PIL americano attuale. Fortunatamente, il solare offre una via d'uscita: in soli dieci anni la produzione mondiale è passata da zero a 2.073 TWh. Gli investimenti nel solare hanno superato i 500 miliardi di dollari — più di quanto speso per l'aviazione durante la Seconda Guerra Mondiale (400 miliardi, corretti per inflazione)
-    (<a class="note-highlight" href="https://research.ark-invest.com/e3t/Ctc/I1+113/c3nSf04/MVqcrgDSkFTW68SvVz6kpJ7JW5QKV2t5g-QwjN76MZ_43qgyTW7Y8-PT6lZ3p4W6LCCfq1r5W7rW2dLbJ787FFhfW6LZpWl7CQ2s_W8Q5h794JmdbfW8Tj_sn5vg3XMVyFBPc2qB16HW80zBH58L0S-9W4txjH43DtGlHW8PZx9l8Vlm5-W4PxZYN8dbz_LW85qMGC8GMjxYW3zLp1w3fK0jvN1t5HHrflpVZV2Qr_w72dx8HW2f8v4f7BQwN8W1j-fWB2t8sZlW4_m5x186wWjyW8VhlfC2tp07XW39dzp1661s4rW8qZF4s5Y4yKxN2Jl8g4FCmGpW7dMS933SG-dzVDzg5K2LNbJnW2bkwnZ498SYLW8m2rL44DnH8_W6QgYxB8PWwbR" target="_blank" rel="noopener">Hardware Etched: 20 volte più veloce delle GPU Nvidia per AI: vantaggi e svantaggi</a>).</p>
+    <p>Ma la rivoluzione pi&ugrave; silenziosa &egrave; elettrica. I veicoli elettrici hanno superato il 18% delle vendite globali nel 2023, con la Norvegia gi&agrave; sopra l'80% e la Cina al 35%. BYD ha superato Tesla per vendite globali di EV; la densit&agrave; energetica delle batterie &egrave; raddoppiata in un decennio; il costo per kilowattora &egrave; sceso da 1.100 dollari nel 2010 a meno di 140 nel 2023
+    (<span class="fc">&#9889; ff.5
+    Elettrizzante!</span>).
+    Le batterie al sodio &mdash; senza litio, senza cobalto &mdash; promettono di democratizzare l'accumulo energetico. CATL, il gigante cinese, detiene il 35% del mercato globale delle batterie. La transizione non &egrave; pi&ugrave; una questione di <em>se</em>, ma di <em>quanto velocemente</em>.</p>
 
-    <p>E anche se lo sviluppo dell'AI si fermasse oggi? Blundin fa notare che servirebbero comunque anni per implementare le applicazioni già possibili con i modelli attuali
-    (<span class="fc">☕ ff.135.4
-    L'AGI avanza: il "caffè" cinese</span>).
-    Rientra qui prepotentemente la Cina, che l'embargo americano sulle GPU più potenti
-    (<span class="fc">🎼 ff.82
-    Guerra a colpi di chip</span>)
-    ha costretto a "spremere i granelli di caffè con macchine meno performanti" — come dice Ryan Cunningham. DeepSeek, modello open source cinese, rende gratis ciò che OpenAI offre a 200 euro al mese
-    (<span class="fc">🐍 ff.115
-    L'anno del serpente</span>).
-    Non è un caso che alla AI Conference di Shanghai il professor Wang Yu abbia proposto il <em>watt-to-bit</em> come parametro per classificare l'efficienza dei modelli. L'efficienza, non la dimensione, sarà il vero campo di battaglia
-    (<a class="note-highlight" href="https://www.economist.com/interactive/essay/2024/06/20/solar-power-is-going-to-be-huge" target="_blank" rel="noopener">Celle solari: principale fonte elettrica entro il 2030, tutta l'energia entro il 2040</a>).</p>
+    <p>Resta per&ograve; una domanda scomoda: quanto inquina davvero muoversi? Mike Berners-Lee, in <em>How Bad Are Bananas?</em>, traduce ogni azione in CO&#8322;: un chilometro in auto produce circa 271 grammi di CO&#8322;, uno in bici circa 16 &mdash; inclusa l'energia metabolica del ciclista
+    (<span class="fc">&#127820; ff.58
+    Le banane inquinano troppo?</span>).
+    Se l'energia del ciclista proviene da una dieta carnivora, il rapporto peggiora; se proviene da una dieta vegetale, migliora ulteriormente. Il corpo umano, come ogni macchina, ha un'impronta carbonica &mdash; e la dieta &egrave; il suo carburante. L'obiettivo globale &egrave; arrivare a 10 tonnellate di CO&#8322; pro capite all'anno &mdash; il 50% in meno per un europeo medio. L'auto elettrica aiuta, ma non basta da sola se il mix energetico resta fossile.</p>
 
+    <p>La COP26 di Glasgow ha fissato l'obiettivo del net zero entro il 2050. Ma il net zero &egrave; una promessa aggregata che nasconde enormi disuguaglianze: le emissioni pro capite degli USA sono 28 tonnellate, quelle del Malawi 0,1. La micro-mobilit&agrave; &mdash; monopattini elettrici, e-bike, bike sharing &mdash; &egrave; il cavallo di Troia della decarbonizzazione urbana: incide poco nelle statistiche nazionali, ma trasforma il volto delle citt&agrave;
+    (<span class="fc">&#127758; ff.1
+    Clima</span>).
+    Un recente studio pubblicato sulla rivista <em>Nature Energy</em> ha dimostrato che le 280 milioni di e-bike e motorini elettrici in circolazione nel mondo riducono la domanda di petrolio molto pi&ugrave; dei veicoli elettrici a quattro ruote, perch&eacute; sostituiscono viaggi che altrimenti avverrebbero in auto o moto a combustione. Le e-bike non sono giocattoli: sono l'infrastruttura invisibile della transizione.</p>
 
+    <p>E nel cielo? L'aviazione &egrave; responsabile del 2,5% delle emissioni globali, ma del 3,5% del riscaldamento effettivo se si includono le scie di condensazione. Wright Electric sta sviluppando un aereo elettrico da 186 posti per tratte sotto i 1.500 chilometri &mdash; che coprono la met&agrave; di tutti i voli commerciali
+    (<span class="fc">&#9992;&#65039; ff.59
+    L'ottimismo vola!</span>).
+    I carburanti sostenibili per l'aviazione (SAF) coprono meno dell'1% del consumo attuale, ma la produzione raddoppia ogni 18 mesi. L'ottimismo, per&ograve;, non deve diventare un alibi: secondo l'IEA, il settore dei trasporti &egrave; quello pi&ugrave; lontano dagli obiettivi 2030. La mobilit&agrave; del futuro sar&agrave; elettrica, condivisa, autonoma e lenta &mdash; cio&egrave; riprogettata per la vita, non per la velocit&agrave;.</p>
 
-    <p>Il compute quantistico promette un ulteriore salto. Google Sycamore-70 ha superato i supercomputer classici, dimostrando che i qubit potrebbero rendere obsolete intere architetture di calcolo. Come i chip GPU hanno ridefinito il valore, i computer quantistici ridisegneranno la crittografia e l'ottimizzazione
-    (<span class="fc">⚛️ ff.69
-    Quantico?</span>).</p>
-
-    <p>Google — il motore di ricerca che ha organizzato il sapere mondiale — non si limita più a indicizzare: con DeepMind e i TPU di settima generazione, vuole generare conoscenza. Il 50% dei suoi ricavi — 200 miliardi l'anno dal search — è ora sotto attacco da ChatGPT e Perplexity
-    (<span class="fc">🔍 ff.28
-    Google ricerca il futuro</span>).</p>
-
-    <p>Sam Altman ha descritto tutto questo come una "singolarità gentile"
-    (<span class="fc">🕳️ ff.129.1
-    La singolarità gentile di Altman</span>):
-    non l'apocalisse robotica, ma un'espansione graduale e pervasiva dell'intelligenza disponibile a ciascun essere umano sul pianeta. Il punto di connessione nascosto tra NVIDIA, il solare e la Cina è questo: il futuro non appartiene a chi ha il modello più grande, ma a chi produce il miglior rapporto intelligenza-per-watt. La corsa all'AI è, alla fine, una corsa all'efficienza energetica. E come spesso accade nella storia, le limitazioni — l'embargo, la scarsità — generano più innovazione dell'abbondanza
-    (<a class="note-highlight" href="https://x.com/wintonARK/status/1801375180872462536" target="_blank" rel="noopener">Modelli AI meno dipendenti da GPU: 25% più veloci con 40% meno memoria su hardware Nvidia esistente</a>).</p>
+    <p>Il punto di connessione nascosto tra una pedalata nel parco e un robotaxi a San Francisco &egrave; che la mobilit&agrave; non &egrave; mai stata solo un problema ingegneristico: &egrave; un problema antropologico. Come ci muoviamo dice chi siamo. Un popolo che vive in auto &egrave; un popolo atomizzato; un popolo che cammina &egrave; un popolo che si incontra. La <em>euthym&igrave;crona</em> di Willis non &egrave; una curiosit&agrave; accademica: &egrave; un manifesto urbanistico. Il percorso pi&ugrave; felice passa per un parco, non per un'autostrada.</p>
 
     <div class="sep"></div>
 
     <!-- ===== 1.2 ===== -->
-    <h2 id="s2" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-blue-500 pb-3">1.2 — Dal tool all'agente: simulazione, creatività e verità operativa</h2>
+    <h2 id="s2" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-green-500 pb-3">1.2 — Ambiente ed Energia</h2>
 
-    <p class="drop-cap">Fino a ieri, un modello di linguaggio era uno strumento: gli facevi una domanda, rispondeva. Oggi è un agente: gli dai un obiettivo, e lui lo raggiunge autonomamente — usando strumenti, navigando il web, scrivendo codice, generando immagini. La differenza è la stessa che passa tra una calcolatrice e un ingegnere. Il salto concettuale è stato preparato da anni: i Large Language Models hanno "abilità emergenti" — capacità non esplicitamente programmate che appaiono spontaneamente al crescere dei parametri, come la capacità di ragionare per analogia o risolvere enigmi logici
-    (<span class="fc">📚 ff.83
-    Imparare da ChatGPT</span>).
-    L'architettura che ha reso tutto possibile si chiama <em>Transformer</em>, descritta nel paper "Attention Is All You Need" del 2017 — un titolo che si è rivelato profetico.</p>
+    <p class="drop-cap">Ogni settimana, un essere umano ingerisce circa 5 grammi di microplastiche &mdash; l'equivalente di una carta di credito. Non &egrave; un'iperbole: &egrave; il dato di uno studio commissionato dal WWF all'Universit&agrave; di Newcastle che ha analizzato 52 ricerche indipendenti
+    (<span class="fc">&#129483; ff.130.1
+    Plastic is fantastic</span>).
+    Le microplastiche sono state trovate nell'80% dei campioni di sangue umano analizzati in uno studio pubblicato su <em>Environment International</em> nel 2022. Le fonti principali sono pneumatici, tessuti sintetici, cosmetici, imballaggi alimentari e persino bustine di t&egrave; &mdash; una singola bustina rilascia 11,6 miliardi di microparticelle a ogni infusione
+    (<span class="fc">&#128465; ff.130.3
+    Microplastiche: da dove provengono?</span>).
+    Ogni anno il mondo produce 400 milioni di tonnellate di plastica. Solo il 9% viene riciclato. Il resto finisce in discarica, negli oceani o &mdash; ed &egrave; la scoperta pi&ugrave; inquietante &mdash; dentro di noi.</p>
 
-    <p>Gemini 3 di Google è il primo vero modello multimodale nativo — non "un modello di testo che può anche vedere immagini", ma un sistema che pensa simultaneamente in testo, immagini, codice e azione
-    (<span class="fc">🍫 ff.139.3
-    Dov'è la mia macchina volante</span>).
-    Con 140 caratteri di prompt genera un'applicazione completa con interfaccia grafica. Su Polymarket, gli scommettitori danno il 65% di probabilità che Google avrà il miglior modello AI entro fine anno. Ma la rivoluzione più profonda non è nella multimodalità: è nel <em>tool-calling</em>. Un agente AI non si limita a "sapere" cose: può <em>fare</em> cose. Manus AI è un "ChatGPT che controlla il vostro PC" — cerca su internet, compila fogli di calcolo, prenota voli
-    (<span class="fc">🤖 ff.119
-    Mani ovunque</span>).
-    EVO 2, nello stesso numero, "parla DNA" e aiuta a comprendere mutazioni genetiche
-    (<a class="note-highlight" href="https://substack.com/redirect/25be02e2-d5aa-4afc-9236-7e2e03c2603e" target="_blank" rel="noopener">Una richiesta Gemini consuma 0,24 Wh; un'ora di Netflix ne consuma quanto 400 richieste</a>).</p>
+    <p>Gli effetti sulla salute emergono con chiarezza crescente. Uno studio pubblicato sul <em>New England Journal of Medicine</em> nel 2024 ha dimostrato che le microplastiche indurite nelle arterie aumentano il rischio cardiovascolare: i pazienti con placche contenenti microplastiche avevano un rischio 4,5 volte superiore di eventi cardiaci gravi
+    (<span class="fc">&#129656; ff.130.5
+    Microplastiche induriscono arterie</span>).
+    L'arte documenta questa crisi: l'artista Mandy Barker cataloga rifiuti oceanici come installazioni museali; il designer Matthew Miller crea mappe socioeconomiche delle microplastiche per rendere visibile l'invisibile
+    (<span class="fc">&#127912; ff.130.2
+    Arte riciclabile?</span>).
+    La danza macabra della modernit&agrave; non &egrave; pi&ugrave; tra la morte e i vivi, ma tra i vivi e i rifiuti che li sopravviveranno di migliaia di anni
+    (<span class="fc">&#128128; ff.130.4
+    La danza macabra</span>).</p>
 
-    <p>Tyler Cowen — il teorico della "grande stagnazione"
-    (<span class="fc">🤔 ff.50.1
-    La stranezza degli ultimi 50 anni</span>)
-    — ha dichiarato che il 16 aprile 2025 ha visto l'AGI, quando OpenAI ha rilasciato o3. Un modello con un QI misurato di 136 — nel top 1% della popolazione umana — capace di risolvere labirinti visivi, scrivere paper scientifici, ragionare su problemi mai visti prima
-    (<span class="fc">🛠️ ff.123.1
-    L'AI con il coltellino svizzero</span>).
-    L'anno precedente, il record era 94. Un salto di 42 punti QI in dodici mesi è qualcosa che la biologia non ha mai prodotto in nessuna specie. Microsoft Research ha dedicato 150 pagine all'analisi delle capacità di GPT-4, concludendo che il sistema mostra "scintille di intelligenza artificiale generale"
-    (<span class="fc">🧠 ff.54
-    Sono stato lasciato da GPT-4</span>)
-    (<a class="note-highlight" href="https://alpha.school/video-library/" target="_blank" rel="noopener">Alpha School usa l'AI per far apprendere agli studenti 2 volte più velocemente in sole 2 ore al giorno</a>).</p>
+    <figure>
+        <img src="/index_files/pubs/ff1.webp" alt="Illustrazione sul clima e la transizione energetica" loading="lazy" width="800" height="450"/>
+        <figcaption>ff.1 &mdash; Clima: la sfida della transizione energetica dal COP26 al net zero.</figcaption>
+    </figure>
 
-    <p>A Tokyo, Sakana AI ha creato l'AI Scientist: un sistema che genera ipotesi, conduce esperimenti e scrive pubblicazioni scientifiche a 15 dollari l'una
-    (<span class="fc">🔭 ff.102.3
-    Automatizzare la ricerca scientifica</span>).
-    Non è ancora un premio Nobel automatizzato, ma è l'inizio della democratizzazione della scoperta: se un paper costa meno di un pranzo, la barriera d'ingresso alla ricerca non è più il budget ma l'immaginazione. Demis Hassabis — ex videogiocatore professionista, ora premio Nobel per la chimica — usa l'AI per modellare proteine e cellule
-    (<span class="fc">📐 ff.132.3
-    Misurare e modellare il mondo</span>).
-    Come ha scoperto Will Wright creando SimCity, costruire mondi virtuali è più interessante che giocarli. Genie 3 di DeepMind oggi crea videogiochi interattivi partendo da una singola immagine — un simulatore universale che genera ambienti coerenti e navigabili. La simulazione è il nuovo microscopio
-    (<a class="note-highlight" href="https://www.instagram.com/p/DND1eVwArBL/" target="_blank" rel="noopener">Riflessione sugli LLM e il linguaggio giapponese con le sue 72 micro stagioni</a>).</p>
+    <p>L'energia &egrave; il nodo gordiano dell'ambiente. La transizione &egrave; in corso, e i numeri sono impressionanti: la capacit&agrave; solare installata nel mondo ha raggiunto livelli che nessun analista prevedeva dieci anni fa. La Cina guida con 254.355 MW installati, seguita dagli USA con 75.572, dal Giappone con 67.000, dalla Germania con 53.783, dall'India con 39.211 e dall'Italia con 21.600 MW. I finanziamenti privati nella fusione nucleare hanno superato 1,8 miliardi di dollari &mdash; tre volte il precedente record &mdash; con Commonwealth Fusion Systems che ha raggiunto temperature plasmatiche di 100 milioni di gradi nel suo tokamak compatto
+    (<span class="fc">&#9728;&#65039; ff.12
+    Sole, cuore e amore</span>).
+    L'Agenzia Internazionale dell'Energia identifica il solare come una delle sole tre tecnologie &mdash; su cinquanta monitorate &mdash; allineate con gli obiettivi climatici del 2030, confermando che la curva di adozione ha superato il punto di flesso
+    (<span class="fc">&#127780;&#65039; ff.70
+    Il sole: soluzione o morte?</span>).</p>
 
-    <p>E i videogiochi stessi, spesso demonizzati come distrazione, sono palestre cognitive tra le più efficaci mai inventate. Lo storico Daniel Immerwahr osserva che nell'Ottocento erano i <em>libri</em> a essere accusati di distruggere l'attenzione
-    (<span class="fc">🎯 ff.132.1
-    Crisi dell'attenzione?</span>).
-    I videogiochi generano <em>flow</em>, non distrazione. Sparare in GTA aiuta a non farlo nella vita reale: la correlazione violenza-videogiochi è probabilmente fuffa
-    (<span class="fc">🕹️ ff.132.2
-    I benefici dei videogiochi</span>).
-    Braid, Edith Finch e Untitled Goose Game favoriscono l'apprendimento emotivo. Persino l'idrologia di Skyrim è stata verificata da geologi che hanno cercato la sorgente dei suoi fiumi virtuali
-    (<span class="fc">🛶 ff.132.4
-    "Tutto scorre" anche Skyrim</span>).
-    Meta, nel frattempo, ha perso 13,7 miliardi di dollari nel 2022 inseguendo il metaverso VR
-    (<span class="fc">🥽 ff.71
-    ChatGPT ti vede</span>)
-    — dimostrando che la simulazione come business è ancora un'incognita, anche quando quella come strumento scientifico funziona già
-    (<a class="note-highlight" href="https://x.com/AIatMeta/status/1954865388749205984" target="_blank" rel="noopener">Il modello TRIBE di Meta è il primo a predire le risposte cerebrali agli stimoli con 1 miliardo di parametri</a>).</p>
+    <p>Ma la produzione di energia pulita non basta se non affrontiamo il condizionamento planetario. Il geoengineering &mdash; l'idea di iniettare aerosol di solfati nella stratosfera per riflettere la luce solare e raffreddare il pianeta &mdash; &egrave; discusso ai massimi livelli scientifici, nonostante il rischio di effetti collaterali imprevedibili come l'alterazione dei monsoni e la riduzione della fotosintesi
+    (<span class="fc">&#10052;&#65039; ff.56
+    Il condizionatore terrestre</span>).
+    Come spesso accade, la tentazione di una soluzione tecnologica rapida distrae dall'unica soluzione strutturale: ridurre le emissioni alla fonte. La natura, per&ograve;, offre le sue soluzioni: la riforestazione rimane il sistema di cattura della CO&#8322; pi&ugrave; economico ed efficiente, e le piante &mdash; dalla vertical farming alle coltivazioni rigenerative &mdash; sono alleate silenziose nella lotta al cambiamento climatico
+    (<span class="fc">&#127793; ff.33
+    Le piante ci salveranno?</span>).</p>
 
+    <blockquote>
+    <p>&ldquo;Parlare poco &egrave; naturale: i venti impetuosi non soffiano tutta la mattina; una pioggia torrenziale non dura tutto il giorno. L'acqua &egrave; la cosa pi&ugrave; morbida del mondo, eppure dissolve la cosa pi&ugrave; dura.&rdquo;<br>&mdash; Lao Tzu, <em>Tao Te Ching</em>, versi 23 e 78</p>
+    </blockquote>
 
+    <p>L'acqua &egrave; la metafora suprema della resilienza: non combatte gli ostacoli, li aggira, li erode, li attraversa. Ma &egrave; anche una risorsa in crisi: 2,2 miliardi di persone non hanno accesso sicuro all'acqua potabile secondo l'ONU, e le infrastrutture perdono in media il 30% dell'acqua trattata prima che raggiunga i rubinetti
+    (<span class="fc">&#128167; ff.112.5
+    Acqua da tutte le parti</span>).
+    L'acqua non ha un piano, non segue un algoritmo &mdash; segue la gravit&agrave;, e nel farlo disegna geometrie frattali che ricalcano la struttura degli alberi e dei polmoni. Tra il 2018 e il 2023, l'elettricit&agrave; ha contribuito al 63% della crescita della domanda energetica globale. L'elettrificazione non &egrave; una scelta ideologica: &egrave; una transizione termodinamica. La natura usa solo lo 0,5% della luce solare &mdash; 200 volte meno della tecnologia umana &mdash; il che suggerisce che il potenziale del solare &egrave; appena iniziato
+    (<span class="fc">&#9889; ff.105
+    Elettricit&agrave; e vita</span>).</p>
 
-    <p>La generazione di immagini dall'AI non è più un esercizio tecnico: è un medium artistico. DALL-E ha dimostrato che la creatività computazionale può essere democratizzata — basta una frase per generare un'opera. La sintesi tra linguaggio e visione è il nuovo alfabeto visivo
-    (<span class="fc">🎨 ff.30
-    DALL-E genera arte</span>).</p>
+    <p>I numeri non mentono, ma vanno contestualizzati. Il telefono cellulare consuma meno CO&#8322; in tutta la sua vita utile di quanto un'auto a benzina ne produca in un singolo viaggio Roma-Milano. Il ritorno sull'investimento dei vaccini &egrave; di 44:1 secondo uno studio della Johns Hopkins; la transizione ai veicoli elettrici, conteggiando l'intero ciclo di vita, riduce le emissioni del 50-70% rispetto ai motori termici anche nei paesi con mix energetico prevalentemente fossile
+    (<span class="fc">&#128290; ff.32
+    I numeri non mentono</span>).
+    L'ecologia non &egrave; un sentimento: &egrave; un bilancio contabile. E il bilancio dice che ogni euro investito nella transizione energetica genera tra 3 e 7 euro di risparmi sanitari e ambientali.</p>
 
-    <p>L'AI non è più un monolite: è un ecosistema di strumenti specializzati. Da Claude a Gemini, da Copilot a Cursor — il 50% dei ricavi API di Anthropic proviene oggi da assistenti di programmazione. L'intelligenza artificiale sta diventando l'infrastruttura invisibile del lavoro creativo
-    (<span class="fc">🔧 ff.124
-    Ah-IA</span>).</p>
-
-    <p>Ma con questa potenza viene una responsabilità nuova: gli algoritmi che ci circondano non solo simulano il mondo — lo <em>modificano</em>. Viviamo in un ambiente in cui le nostre scelte sono mediate da sistemi di raccomandazione che ottimizzano per il nostro engagement, non per il nostro benessere
-    (<span class="fc">👨‍💻 ff.117.4
-    Liberarci dalla simulazione degli algoritmi</span>).
-    L'americano medio passava 4,2 ore al giorno sullo smartphone nel 2021, in aumento del 30% rispetto al 2019 — il 70% di quel tempo su social e video
-    (<span class="fc">🎮 ff.11
-    Sparare nel metaverso</span>).
-    L'ironia è che gli stessi strumenti che ci permettono di modellare il mondo ci modellano a loro volta. La simulazione non è fuori di noi: è il medium in cui nuotiamo. Liberarsi da essa richiede consapevolezza e, paradossalmente, altri strumenti — strumenti progettati non per catturare la nostra attenzione ma per restituircela
-    (<a class="note-highlight" href="https://www.profgmarkets.com/p/openai-is-on-track-to-become-the-world-s-most-valuable-startup" target="_blank" rel="noopener">L'85% degli utenti dell'app ChatGPT sono uomini le donne percepiscono l'AI come 'barare'</a>).</p>
+    <p>Le startup climatiche sono il motore di questa transizione. Northvolt costruisce la pi&ugrave; grande fabbrica di batterie europea in Svezia; Helion promette la fusione nucleare commerciale entro il 2028; i fondi di venture capital hanno investito 40 miliardi di dollari in climate tech nel solo 2023
+    (<span class="fc">&#127793; ff.16.4
+    Quali startup monitorare?</span>).
+    Dalla tavola periodica all'intelligenza artificiale, la chimica sta vivendo un rinascimento: l'AI pu&ograve; oggi simulare reazioni chimiche che prima richiedevano anni di esperimenti, accelerando la scoperta di nuovi materiali per batterie, celle solari e sistemi di cattura della CO&#8322;
+    (<span class="fc">&#129514; ff.46
+    Elementale, Watson?</span>).
+    Il punto di connessione nascosto tra una microplastica nel sangue e un pannello solare nel deserto &egrave; il concetto di <em>esternalit&agrave;</em>: costi che chi produce e chi consuma non pagano, scaricati sull'ambiente, sulla salute, sulle generazioni future. La transizione energetica non &egrave; solo una questione tecnologica: &egrave; la correzione di un errore contabile lungo due secoli.</p>
 
     <div class="sep"></div>
 
     <!-- ===== 1.3 ===== -->
-    <h2 id="s3" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-blue-500 pb-3">1.3 — Sovranità digitale: crypto, reti e il futuro dello Stato</h2>
+    <h2 id="s3" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-green-500 pb-3">1.3 — Cibo e Fashion</h2>
 
-    <p class="drop-cap">Se l'AI ridisegna il valore e la simulazione ridisegna la realtà, la blockchain ridisegna il potere. Non si tratta di speculazione su token: si tratta di chi controlla l'infrastruttura della fiducia in un mondo digitale
-    (<span class="fc">🌐 ff.95.1
-    La sovranità dei network</span>).
-    Internet ha creato una nuova forma di sovranità — non territoriale ma reticolare, non basata su confini ma su protocolli. Questa sovranità è in competizione diretta con quella degli Stati-nazione, che per secoli hanno detenuto il monopolio su moneta, identità e proprietà.</p>
+    <p class="drop-cap">Il corpo umano ospita circa 39.000 miliardi di batteri &mdash; pi&ugrave; delle sue stesse cellule. Questo ecosistema, il microbioma, regola il sistema immunitario, produce neurotrasmettitori, influenza l'umore, modula l'infiammazione
+    (<span class="fc">&#129504; ff.90.3
+    Micro-bi di stress</span>).
+    I batteri intestinali producono circa il 95% della serotonina del corpo &mdash; il neurotrasmettitore della serenit&agrave;. Il &ldquo;secondo cervello&rdquo; ha 500 milioni di neuroni e un'influenza diretta su umore, decisioni, personalit&agrave;. Quello che mangiamo &egrave; il fertilizzante del microbioma &mdash; o il suo pesticida. La dieta mediterranea, ricca di fibre e polifenoli, nutre le specie batteriche benefiche; il cibo ultra-processato le stermina. Non &egrave; una metafora: &egrave; ecologia applicata al corpo.</p>
 
-    <p>Il feudalesimo digitale è già qui. Su Facebook, Instagram e TikTok, noi siamo i contadini e le piattaforme sono i feudatari: lavoriamo la terra — creiamo contenuti, generiamo dati, costruiamo comunità — ma non possediamo né il terreno né il raccolto
-    (<span class="fc">🦆 ff.95.2
-    FarmVille e feudalesimo</span>).
-    L'analogia non è accidentale: nel gioco virtuale di Zynga, milioni di persone coltivavano campi digitali per arricchire un'azienda quotata al NASDAQ. Quando Facebook bloccò la crescita di Zynga nel 2011, distrusse FarmVille con un clic. Oggi Epic Games combatte Apple sulla commissione del 30% sugli acquisti in-app di Fortnite — stessa dinamica feudale, scala diversa.</p>
-
-    <p>La blockchain promette una via d'uscita: proprietà privata digitale, verificabile e non confiscabile
-    (<span class="fc">🔑 ff.95.3
-    La proprietà privata digitale</span>).
-    L'incendio degli archivi di Stato della Corea del Sud ha bruciato 858 terabyte di dati governativi in fumo
-    (<span class="fc">⚜ ff.135.2
-    Ritorno ai Comuni medievali?</span>).
-    Non possiamo più permetterci di centralizzare informazioni in sistemi fragili. Bitcoin è passato da 69.000 a 75.000 dollari nella notte dell'elezione di Trump; El Salvador ha accumulato una riserva strategica di Bitcoin da 600 milioni di dollari — era 100 milioni a inizio 2024
-    (<span class="fc">🪙 ff.110.3
-    Le criptovalute contro obsolescenza statale</span>).
-    Naval Ravikant commenta: "Lo Stato è ogni giorno più pesante."
-    (<a class="note-highlight" href="https://bitcointreasuries.net/" target="_blank" rel="noopener">Il numero di tesorerie Bitcoin attive quotate in borsa è aumentato del 50% a 116, con un valore aggregato di $86 miliardi.</a>)</p>
-
-    <p>Cosa risolve, concretamente, la blockchain?
-    (<span class="fc">⛓️ ff.95.5
-    Cosa risolve la blockchain?</span>)
-    Risolve il problema della fiducia in assenza di un intermediario fidato. In un mondo dove un tweet di Trump può valere 80 milioni di dollari in 30 minuti per chi ha informazioni privilegiate
-    (<span class="fc">🎭 ff.135.1
-    È tutto un casino: manipolazioni</span>),
-    la necessità di sistemi <em>trustless</em> diventa esistenziale. Per la prima volta dal 1996, le banche centrali comprano più oro che debito pubblico americano
-    (<span class="fc">🎲 ff.135.3
-    Scommesse da Nobel</span>).
-    Il debito USA supera i 34.000 miliardi; il mercato crypto vale 2.500 miliardi; le riserve cinesi toccano i 3.200 miliardi
-    (<a class="note-highlight" href="https://www.coindesk.com/business/2024/05/14/state-of-wisconsin-buys-nearly-100m-worth-of-blackrock-spot-bitcoin-etf/" target="_blank" rel="noopener">Il Wisconsin è il primo stato USA a divulgare l'acquisto di Bitcoin</a>).</p>
-
-    <p>Nasce così l'idea di un'Età dei Comuni 2.0 — comunità digitali che riscoprono forme di governance decentrata premoderne ma le potenziano con strumenti post-moderni
-    (<span class="fc">🎼 ff.52
-    Fondare una Nazione in garage</span>).
-    Il Nepal ha eletto il primo ministro con un voto su Discord. L'Albania ha proposto un ministro governato dall'AI — perché dove un terzo dei fondi pubblici si perde in corruzione, un "dipendente" digitale imparziale non è fantascienza ma efficienza operativa
-    (<span class="fc">🏛️ ff.135.5
-    Politica tecnologica</span>).
-    Alex Karp di Palantir, nel suo <em>The Technological Republic</em>, lamenta che la Silicon Valley ha perso la coscienza nazionale: il numero di laureati in materie umanistiche è passato dal 14% al 7% — 179.000 in tutto — mentre l'ingegneria informatica è salita a 90.000 nel 2020
-    (<span class="fc">🎓 ff.127.4
-    E Palantir che c'entra?</span>).
-    Servono, scrive, "ingegneri curiosi del mondo, della sua storia, delle sue contraddizioni; non solo capaci di programmare."
-    (<a class="note-highlight" href="https://igorpejic.substack.com/p/how-far-can-the-bitcoin-price-go" target="_blank" rel="noopener">La maggior parte degli esperti crypto nel 2019 prevedeva che il prezzo del Bitcoin crollasse a zero mentre ora sembra che coloro che avevano puntato su $100.000 siano più vicini alla realtà</a>)</p>
-
-    <p>Nel frattempo, il debito americano si digitalizza nel silenzio. Nel 2011, Cina e Giappone detenevano il 23% del debito USA; oggi poco più del 6%. I nuovi creditori sono probabilmente Nigeria e Argentina — paesi che comprano USDT come protezione contro l'inflazione locale
-    (<span class="fc">💳 ff.135.4
-    America, Nigeria e criptovalute</span>)
-    (<span class="fc">👍 ff.73.3
-    Una VPN finanziaria</span>).
-    Il debito americano si sta decentralizzando: non è più nei forzieri di Pechino ma nei wallet di Lagos
-    (<a class="note-highlight" href="https://www.linkedin.com/posts/brettadcock_excited-to-introduce-the-worlds-first-humanoid-activity-7361057524160086017-B8Ss" target="_blank" rel="noopener">Il primo robot umanoide che piega il bucato usando una rete neurale senza modifiche architetturali</a>).</p>
-
-
-
-    <p>La teoria dei giochi illumina le dinamiche di potere tra Stati e protocolli. Come nel gioco UNO, chi detiene l'ultima carta — il controllo dell'infrastruttura digitale — vince la partita. Le piattaforme non sono neutrali: sono arene dove si ridistribuisce il potere
-    (<span class="fc">🃏 ff.72
-    Giochiamo a UNO</span>).</p>
-
-    <p>L'impero americano scricchiola sotto il peso di 34.000 miliardi di debito. I prediction market di Polymarket prevedono eventi geopolitici con precisione superiore alle agenzie governative. Il passaggio di potere dal territorio ai protocolli accelera: le reti non hanno bisogno di eserciti, solo di consenso
-    (<span class="fc">🏛️ ff.125
-    USA crollo di un impero</span>).</p>
-
-    <p>Il collegamento nascosto tra tutti questi temi — NVIDIA, energia solare, singolarità, blockchain, geopolitica — è la domanda su chi controllerà l'infrastruttura dell'intelligenza nel XXI secolo. Non è una battaglia tra nazioni: è una battaglia tra <em>architetture</em>. Centralizzazione contro decentralizzazione. GPU contro efficienza. Stato contro protocollo. Il watt-to-bit cinese contro il compute-per-dollar americano. L'oro delle banche centrali contro i token di Tether. La macchina sta ridisegnando il mondo — e la domanda non è <em>se</em> lo farà, ma secondo quale schema
-    (<a class="note-highlight" href="https://www.profgmarkets.com/p/tesla-posted-its-worst-quarterly-sales-drop-in-10-years" target="_blank" rel="noopener">Tesla ha registrato il peggior calo trimestrale delle vendite in 10 anni ma il titolo è scambiato a 180x gli utili.</a>).</p>
-
-    <div class="sep"></div>
-
-    <!-- ===== 1.4 ===== -->
-    <h2 id="s4" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-blue-500 pb-3">1.4 — Robot e agenti autonomi: dall'automazione al pensiero</h2>
-
-    <p class="drop-cap">Un robot controllato da ChatGPT non ha bisogno di codice: gli basta un prompt. All'MIT, un braccio robotico esegue compiti complessi — versare liquidi, impilare oggetti, navigare ambienti — semplicemente ricevendo istruzioni in linguaggio naturale da un LLM
-    (<span class="fc">🤖 ff.88.2
-    ChatGPT controlla un robot</span>).
-    Non è automazione classica: è <em>autonomia emergente</em>. La transizione è analoga al passaggio dalla fotografia alla cinematografia: il soggetto non è più fermo — si muove, reagisce, improvvisa. L'AI non si limita più a leggere testo: <em>vede</em> il mondo fisico con una precisione che supera l'occhio umano in compiti specifici
-    (<span class="fc">👁️ ff.88.3
-    Dalle parole ai fatti</span>).</p>
-
-    <p>I numeri dell'adozione accelerano. Nel 2021, negli Stati Uniti sono stati ordinati 29.000 robot industriali — un incremento del 37%. Amazon impiega 350.000 robot nei suoi magazzini; negli ultimi cinque anni, i dipendenti umani sono cresciuti 5,6 volte mentre i robot 7,7 volte
-    (<span class="fc">🏭 ff.9
-    Automazione</span>).
-    Tesla ha portato la visione alla scala industriale con Optimus, il robot umanoide che al Tesla AI Day ha mostrato di saper preparare una frittata
-    (<span class="fc">🦾 ff.37.2
-    Tesla AI Day</span>).
-    L'obiettivo: prezzo sotto i 20.000 dollari, milioni di unità. Lo stesso software di guida autonoma che pilota una Model 3 può pilotare un corpo bipede
-    (<a class="note-highlight" href="https://fortissimo.substack.com/i/117901757/ff-i-taxi-di-tesla" target="_blank" rel="noopener">Robotaxi e Tesla cambiano il futuro della guida</a>).</p>
-
-    <p>La guida autonoma, intanto, è già realtà. Cruise (General Motors) ha lanciato un servizio robotaxi 24/7 a San Francisco
-    (<span class="fc">🚕 ff.60
-    La guida autonoma è qui!</span>).
-    ARK Invest stima Tesla a 2.000 dollari per azione entro il 2027 se il robotaxi decolla, con ricavi ipotetici da 613 miliardi — più di Apple nel 2022. Considerando che un'auto resta parcheggiata il 96% del tempo, il potenziale economico di veicoli autonomi che lavorano 24 ore al giorno è enorme. In Cina, Haomo.ai sviluppa DriveGPT con reinforcement learning da feedback umano — la stessa tecnica che ha reso ChatGPT conversazionale applicata alla guida
-    (<a class="note-highlight" href="https://www.wsj.com/business/logistics/texas-autonomous-trucks-dallas-houston-56b76993" target="_blank" rel="noopener">I camion autonomi di Aurora hanno percorso 20 mila miglia da maggio tra Dallas e Houston</a>).</p>
-
-
-
-    <p>L'elettricità non è solo energia: è il linguaggio del sistema nervoso. I robot del futuro — da Optimus ai droni taiwanesi (180.000 all'anno entro il 2028) — funzionano su impulsi elettrici che imitano quelli biologici. La convergenza tra biologia e ingegneria è il tema nascosto della robotica
-    (<span class="fc">⚡ ff.105
-    Elettricità e vita</span>).</p>
-
-    <p>Il punto di connessione nascosto tra un braccio robotico al MIT e un Optimus a Shanghai è che la robotica non è più un problema di <em>hardware</em> — è un problema di <em>software</em>. I motori, i sensori, gli attuatori sono commodity; ciò che manca è l'intelligenza per usarli in contesti reali. E quell'intelligenza viene dai modelli di linguaggio. Il robot del futuro non sarà costruito da ingegneri meccanici: sarà programmato da chi sa parlare con un LLM
-    (<a class="note-highlight" href="https://techcrunch.com/2025/06/11/metas-v-jepa-2-model-teaches-ai-to-understand-its-surroundings/" target="_blank" rel="noopener">Meta lancia il nuovo "world model" AI V-JEPA 2, 30 volte più veloce di NVIDIA Cosmos.</a>)
-    (<a class="note-highlight" href="https://x.com/leecronin/status/1799508734424580540" target="_blank" rel="noopener">Robot per automatizzare i laboratori di chimica: vantaggi nella ricerca</a>)
-    (<a class="note-highlight" href="https://www.theverge.com/2024/4/5/24122384/tesla-robotaxi-reveal-date-elon-musk-august-8" target="_blank" rel="noopener">Elon Musk annuncia che Tesla presenterà il suo primo Robotaxi il 8 agosto con una nuova direzione strategica che privilegia i veicoli autonomi rispetto ai modelli più economici</a>).</p>
-
-    <div class="sep"></div>
-
-    <!-- ===== 1.5 ===== -->
-    <h2 id="s5" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-blue-500 pb-3">1.5 — Superintelligenza e allineamento: controllo, valori e rischi</h2>
-
-    <p class="drop-cap">Nel 2014, Nick Bostrom pubblica <em>Superintelligence</em> e introduce il problema dell'allineamento con il celebre <em>paperclip maximizer</em>: un'AI incaricata di massimizzare la produzione di graffette che potrebbe convertire l'intero pianeta in materia prima
-    (<span class="fc">📎 ff.36.2
-    Il super-librozzo sulla singolarità</span>).
-    Non è una profezia: è un teorema sulla natura delle funzioni obiettivo. Stuart Russell, professore a Berkeley, ha formalizzato il problema in <em>Human Compatible</em>: qualsiasi sistema sufficientemente intelligente che persegue un obiettivo mal specificato diventa pericoloso non per malevolenza, ma per competenza. L'AI non odia l'umanità — semplicemente non la include nella sua funzione di utilità.</p>
-
-    <p>Ray Kurzweil predisse nel 2005 che l'AGI sarebbe arrivata nel 2029
-    (<span class="fc">🔮 ff.36.3
-    Una bella chiaccherata</span>).
-    Siamo nel 2026 e la previsione sembra sempre meno fantascientifica. Ma forse siamo già oltre quel punto, senza saperlo. Gli smartphone — estensioni permanenti del nostro corpo — ci hanno trasformato in cyborg funzionali
-    (<span class="fc">📱 ff.36.4
-    Siamo già mischiati con l'AI?</span>).
-    Il neuroscienziato David Eagleman ha documentato come il cervello tratti lo smartphone come un "arto fantasma digitale": quando vibra, il sistema nervoso risponde prima della coscienza. Neuralink va ancora oltre: il chip N1 potrebbe generare 200 milioni di dollari entro il 2030, la stimolazione transcranica supporta già la riabilitazione post-ictus e il trattamento della depressione
-    (<span class="fc">🧠 ff.75
-    Massaggi al cervello</span>)
-    (<a class="note-highlight" href="https://www.nature.com/articles/s41591-025-03798-1" target="_blank" rel="noopener">La terapia sostitutiva con estrogeni è associata a un invecchiamento più lento di cervello sistema immunitario fegato e arterie</a>).</p>
-
-    <p>Il fronte positivo dell'allineamento è la scienza. AlphaFold ha predetto la struttura di 350.000 proteine — 720 volte più velocemente dei metodi tradizionali, riducendo da 3 mesi a 3 ore ciò che prima richiedeva un intero laboratorio
-    (<span class="fc">🧬 ff.4
-    Mammut resuscitati</span>).
-    Il mercato farmaceutico vale 400 miliardi di dollari — lo 0,25% del PIL globale — e la scoperta AI-accelerata di nuovi farmaci potrebbe ridurre i costi del 90%
-    (<span class="fc">💊 ff.66
-    Una cura a tutto?</span>).
-    L'editing genetico — Prime Editing — permette di modificare il DNA con una precisione impensabile dieci anni fa. La prima terapia genica approvata dalla FDA è del 2024
-    (<a class="note-highlight" href="https://neuralink.com/blog/prime-study-progress-update-user-experience/" target="_blank" rel="noopener">Neuralink: controllo delle interfacce cervello quasi più veloce di un mouse</a>).</p>
-
-
-
-    <p>La domanda fondamentale dell'allineamento non è tecnica: è antropologica. Cosa ci rende umani quando la macchina ragiona, crea e persino prova qualcosa di simile alle emozioni? Le intelligenze multiple di Gardner — empatia, intuizione, coscienza corporea — restano l'ultimo bastione non replicabile
-    (<span class="fc">🫀 ff.101
-    Cosa ci rende umani</span>).</p>
-
-    <p>Come misuriamo l'intelligenza nell'era dell'AI? Il QI tradizionale è obsoleto. Il vero benchmark è la capacità di navigare l'incertezza, integrare contesti e fare domande che nessun algoritmo può formulare. L'intelligenza umana non è calcolo: è significato
-    (<span class="fc">📏 ff.10
-    Misurare l'intelligenza</span>).</p>
-
-    <p>Il collegamento nascosto tra Bostrom e AlphaFold è questo: il problema dell'allineamento non è tecnico — è filosofico. La stessa tecnologia che cura il cancro può costruire un'arma biologica. La stessa AI che accelera la scoperta scientifica può accelerare la sorveglianza di massa. Non serve una superintelligenza per perdere il controllo. Bastano miliardi di piccole ottimizzazioni — un feed, un like, una notifica — ciascuna innocua, ma nel loro insieme capaci di modellare il comportamento di intere popolazioni. La superintelligenza, forse, non arriverà come un'esplosione: arriverà come un'erosione
-    (<a class="note-highlight" href="https://optimists.ai/2023/11/28/ai-is-easy-to-control/" target="_blank" rel="noopener">L'intelligenza artificiale è sicura da controllare grazie alla sua natura 'scatola bianca' a differenza del cervello umano 'scatola nera'</a>)
-    (<a class="note-highlight" href="https://x.com/MorningBrew/status/1957842031373398278" target="_blank" rel="noopener">La Cina ha ospitato i primi Giochi Mondiali di Robot Umanoidi con 280 team 16 paesi e 500 robot</a>)
-    (<a class="note-highlight" href="https://www.sciencedirect.com/science/article/pii/S0092867425006816" target="_blank" rel="noopener">Un modello AI decifra il monologo interiore dall'attività cerebrale con un'accuratezza fino al 74%</a>).</p>
-
-    <div class="sep"></div>
-
-    <!-- ===== 1.6 ===== -->
-    <h2 id="s6" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-blue-500 pb-3">1.6 — Startup, venture e il nuovo scambio di valore</h2>
-
-    <p class="drop-cap">Il venture capital ha investito 40 miliardi di dollari in startup legate al clima nel solo 2023 — un record storico che supera l'intero budget della NASA. Northvolt costruisce batterie in Svezia; Helion promette la fusione nucleare commerciale entro il 2028; Commonwealth Fusion Systems, spinoff del MIT, ha raggiunto temperature plasmatiche di 100 milioni di gradi e raccolto 1,8 miliardi di dollari — tre volte il precedente record per una startup di fusione
-    (<span class="fc">🌱 ff.16.4
-    Quali startup monitorare?</span>)
-    (<span class="fc">☀️ ff.12
-    Sole, cuore e amore</span>).
-    Il deep tech — hardware, energia, biotech — cresce del 20% a trimestre, invertendo decenni di dominio del software puro. Secondo PitchBook, il 35% dei deal venture nel 2024 riguarda startup con un componente hardware.</p>
-
-    <p>L'AI generativa ha creato un mercato da zero a 100 miliardi di dollari in due anni — la crescita più rapida nella storia delle tecnologie
-    (<span class="fc">📊 ff.45.3
-    Quali trend decolleranno?</span>).
-    Y Combinator riporta che il 75% delle startup del batch S24 usa AI generativa come componente core. Il passaggio è cruciale: l'AI non è più un tool che si aggiunge; è il substrato su cui nascono prodotti prima impossibili. La Cina, nel frattempo, controlla l'80% della produzione mondiale di pannelli solari e CATL detiene il 35% del mercato globale delle batterie (LG il 14,4%, BYD l'11,8%)
-    (<span class="fc">🇨🇳 ff.42
-    Made in China</span>).
-    Nel 2021 la Cina ha installato 227 GW di solare — più dell'intera capacità globale dell'anno precedente (140 GW), un aumento del 50%
-    (<a class="note-highlight" href="https://www.economist.com/business/2025/05/20/chinas-battery-giant-eyes-world-domination?utm_source=substack&utm_medium=email" target="_blank" rel="noopener">Il gigante cinese delle batterie punta al dominio mondiale</a>).</p>
-
-    <p>Devin, il software engineer AI di Cognition Labs, è l'esempio più radicale di ciò che l'AI rende possibile: un agente autonomo che scrive codice, lo testa, lo debugga e lo deploya — il tutto da una descrizione in linguaggio naturale
-    (<span class="fc">⚡ ff.88.5
-    Un paio di esempi di accelerazione</span>).
-    Nella prima settimana su Upwork, ha guadagnato 4.000 dollari risolvendo bug per clienti ignari di interagire con un'AI. Bloomberg stima che il mercato dei "coding assistants" raggiungerà i 22 miliardi entro il 2028. Non è la fine dei programmatori: è la fine della programmazione come lavoro manuale ripetitivo, e l'inizio della programmazione come attività creativa e architetturale
-    (<a class="note-highlight" href="https://x.com/patrickc/status/1698496805162353029" target="_blank" rel="noopener">La diffusione del solare ha un tasso annuale di $500 miliardi più grande della produzione di aerei USA ($400 miliardi) e dei data center ($200 miliardi)</a>).</p>
-
-    <p>Il collegamento nascosto tra le batterie di Northvolt e Devin è che il valore nel tech si sta spostando dai margini al centro: non più software leggero che scala a costo zero, ma sistemi complessi — fisici e cognitivi — che risolvono problemi reali. Il venture capital segue, investendo in atomi oltre che in bit. La domanda che ogni fondatore si pone non è più "come posso scalare?" ma "cosa posso costruire che prima era impossibile?" Il mercato del wellness vale 1.500 miliardi di dollari, quello farmaceutico 400, quello dell'energia solare 500. Le risposte sono ovunque — basta avere il coraggio di cercarle
-    (<a class="note-highlight" href="https://www.economist.com/business/2025/05/20/chinas-battery-giant-eyes-world-domination" target="_blank" rel="noopener">CATL ha speso $2.6 miliardi in R&D, triplicando l'investimento del suo principale concorrente non cinese, consolidando la leadership cinese nelle batterie.</a>).</p>
+    <p>Le Blue Zones &mdash; Sardegna, Okinawa, Ikaria, Nicoya, Loma Linda &mdash; confermano questa biologia con i numeri della longevit&agrave;. In Sardegna, la famiglia Melis &egrave; entrata nel Guinness dei Primati con una media di 93 anni tra 9 fratelli. Dan Buettner, giornalista del National Geographic ed esperto di zone blu, identifica pattern ricorrenti: legumi quotidiani, piccole porzioni, pasti condivisi, niente fretta. La dieta mediterranea riduce la mortalit&agrave; per tutte le cause del 25% secondo una meta-analisi pubblicata su <em>BMJ</em> nel 2008 e confermata da decine di studi successivi
+    (<span class="fc">&#129491; ff.92.2
+    La dieta dei centenari</span>).</p>
 
     <blockquote>
-
-
-    <p>Il venture capital non è cieco al clima: i 40 miliardi investiti in climate tech nel 2023 superano il budget NASA. Ma il dato più rilevante è che la diffusione del solare ha raggiunto un tasso annuale di 500 miliardi di dollari — più grande della produzione annuale di qualsiasi nazione tranne le prime cinque
-    (<span class="fc">🌍 ff.1
-    Clima</span>).</p>
-
-    <p>La velocità del cambiamento tecnologico genera ansia — un'emozione che il venture capital ha trasformato in opportunità. Il mercato dei disturbi d'ansia vale 44 miliardi di dollari; paradossalmente, le stesse startup che accelerano il cambiamento offrono strumenti per gestirne le conseguenze psicologiche
-    (<span class="fc">😰 ff.44
-    Che ansia</span>).</p>
-
-    <p>"Con 10 GW di calcolo, l'AI può curare il cancro. O diventare un tutor per ogni studente del mondo. Ma non può fare entrambi. Se siamo limitati dall'energia, dobbiamo scegliere a cosa dare priorità."<br>— Sam Altman, <em>Abundant Intelligence</em>
-    (<a class="note-highlight" href="https://x.com/AssaadRazzouk/status/1937148780622569672" target="_blank" rel="noopener">Il costo del solare + accumulo è diminuito del 22% in un solo anno, entro la fine del 2024. Basandosi sull'ulteriore calo dei costi del solare + batterie nel 2025, si prevede un ulteriore 20%. La fonte di elettricità 24/7 più economica e pulita della storia.</a>)
-    (<a class="note-highlight" href="https://www.semafor.com/article/06/03/2025/how-vibe-coding-is-tipping-silicon-valleys-scales-of-power" target="_blank" rel="noopener">Un giovane fondatore di startup a San Francisco affida tutta la codifica all'IA, raggiungendo il Demo Day di Y Combinator.</a>)</p>
+    <p>&ldquo;Le persone nelle zone blu non fanno dieta e non contano le calorie. Mangiano come hanno sempre mangiato &mdash; poco, vario, in compagnia. La longevit&agrave; non &egrave; un progetto: &egrave; un sottoprodotto di una vita con significato.&rdquo;<br>&mdash; Dan Buettner, <em>The Blue Zones</em></p>
     </blockquote>
+
+    <p>Ma fuori dalle zone blu, il quadro &egrave; ben diverso. Negli Stati Uniti, il 60% delle calorie consumate proviene da alimenti ultra-processati. Emulsionanti, dolcificanti artificiali e conservanti sterminano intere specie batteriche benefiche
+    (<span class="fc">&#128683; ff.104.3
+    Gli abominevoli 5</span>).
+    I grassi trans aumentano il rischio cardiovascolare del 30%. Il polisorbato 80 riduce l'integrit&agrave; della barriera intestinale del 50%. Lo sciroppo di mais ad alto fruttosio (HFCS) diminuisce la capacit&agrave; di apprendimento e memoria del 20%, secondo uno studio della UCLA. Il Red Dye 40 &mdash; il colorante pi&ugrave; usato negli USA &mdash; aumenta l'iperattivit&agrave; nei bambini del 10%. Cinque sostanze, cinque numeri, cinque motivi per leggere le etichette. &ldquo;Per migliorare non serve per forza fare cose stratosferiche &mdash; basta non fare cose sbagliate,&rdquo; come recita il corpus. Il cibo ultra-processato &egrave; il debito subprime della salute: sembra conveniente nel breve termine, ma le clausole nascoste &mdash; infiammazione, disbiosi, resistenza insulinica &mdash; si accumulano fino al default metabolico.</p>
+
+    <p>Il metabolismo, non il peso, &egrave; la vera unit&agrave; di misura della salute. Casey Means, in <em>Good Energy</em>, critica una medicina che cura invece di prevenire: quando la variazione giornaliera d'acqua nel corpo &egrave; di 1-4 litri, pesarsi ogni giorno &egrave; rumore, non segnale. Glicemia a digiuno ottimale: sotto 85 mg/dL. HOMA-IR sotto 2. HbA1c come indicatore a 3 mesi
+    (<span class="fc">&#9878;&#65039; ff.113.1
+    Buttiamo la bilancia?</span>).
+    Il digiuno intermittente aggiunge un'altra dimensione: 14-16 ore di astinenza attivano l'autofagia, il processo con cui le cellule riciclano i componenti danneggiati. Non &egrave; solo <em>cosa</em> mangiamo, ma <em>quando</em>. Il cronobiologo Satchin Panda del Salk Institute ha dimostrato che topi alimentati con la stessa dieta in finestre temporali diverse mostrano differenze del 40% nel peso corporeo
+    (<span class="fc">&#128336; ff.22.1
+    Dieta circadiana?</span>).
+    Il corpo non &egrave; una caldaia che brucia calorie: &egrave; un orologio biologico che metabolizza in modo diverso a seconda dell'ora del giorno.</p>
+
+    <figure>
+        <img src="/index_files/pubs/ff12.webp" alt="Illustrazione su cibo, natura e sostenibilit&agrave;" loading="lazy" width="800" height="450"/>
+        <figcaption>ff.12 &mdash; Sole, cuore e amore: l'energia che nutre il pianeta e ci nutre.</figcaption>
+    </figure>
+
+    <p>La cultura alimentare non &egrave; solo nutrizione: &egrave; narrazione. L'hamburger di Hemingway &mdash; crudo con cipolla, capperi e salsa di soia &mdash; &egrave; un testo letterario travestito da ricetta. Come il cibo ultra-processato impoverisce il microbioma, cos&igrave; il fast food culturale impoverisce il gusto. Mangiare &egrave; un atto estetico, un atto politico, un atto identitario
+    (<span class="fc">&#127828; ff.19
+    L'hamburger di Hemingway</span>).
+    La rivoluzione del food delivery ha aggiunto un livello di complessit&agrave;: l'insalata a domicilio &egrave; un miracolo logistico che coinvolge catene del freddo, algoritmi di ottimizzazione e gig economy. Ma &egrave; anche un'opportunit&agrave; per democratizzare l'accesso al cibo sano &mdash; se i modelli di business riescono a superare l'ossessione per il junk food a basso costo
+    (<span class="fc">&#129367; ff.21
+    La magia dell'insalata a domicilio</span>).</p>
+
+    <p>I farmaci GLP-1 &mdash; Ozempic, Mounjaro, Wegovy &mdash; stanno ridisegnando il panorama farmaceutico e la relazione tra medicina e alimentazione. Il semaglutide produce una riduzione media del 15-22% del peso corporeo, superando in efficacia molti interventi di chirurgia bariatrica come opzione di prima linea per l'obesit&agrave;. Morgan Stanley stima che il mercato dei GLP-1 raggiunger&agrave; i 77 miliardi di dollari entro il 2030. Ma la rivoluzione solleva domande profonde: se una pillola pu&ograve; sostituire la disciplina alimentare, cosa resta della relazione tra cibo e identit&agrave;? Se il desiderio di cibo &egrave; chimicamente sopprimibile, la gastronomia diventa un'arte per pochi o una terapia per tutti?
+    (<span class="fc">&#128137; ff.107
+    GLP-1 la cura all'obesit&agrave;</span>).</p>
+
+    <p>Dalla tavola passiamo all'armadio. L'industria della moda &egrave; responsabile dell'8-10% delle emissioni globali di CO&#8322; &mdash; pi&ugrave; di tutti i voli internazionali e le rotte marittime messe insieme. Il fast fashion produce 100 miliardi di capi all'anno; il 60% finisce in discarica entro 12 mesi dall'acquisto. Ma il vento sta cambiando. Vinted ha raggiunto 80 milioni di utenti in Europa, dimostrando che l'usato non &egrave; pi&ugrave; uno stigma ma uno status. I tessuti riciclati, la moda on-demand, e persino il tessuto spray-on &mdash; applicato direttamente sul corpo da pistole a pressione &mdash; promettono di ridurre drasticamente gli scarti. La circolarit&agrave; nella moda non &egrave; una tendenza estetica: &egrave; una necessit&agrave; termodinamica
+    (<span class="fc">&#128090; ff.39
+    Come ti vesti?</span>).
+    Stella McCartney usa funghi per produrre cuoio vegano; Adidas crea scarpe dal riciclo della plastica oceanica; il mercato globale del second-hand vale gi&agrave; 177 miliardi di dollari e cresce tre volte pi&ugrave; veloce del fast fashion.</p>
+
+    <p>C'&egrave; un filo sottile che unisce il microbioma, la moda e il tocco della natura. Kathy Willis, la stessa scienziata della &ldquo;strada felice&rdquo;, ha documentato che il contatto fisico con materiali naturali ha effetti fisiologici misurabili. Un gruppo di ricercatori giapponesi ha dimostrato che toccare una quercia, rispetto a marmo e metallo, riduce la pressione sanguigna e la frequenza cardiaca in modo significativo
+    (<span class="fc">&#129716; ff.138.3
+    Toccare legno o ferro?</span>).
+    Le foglie stampate non producono lo stesso effetto delle foglie vere &mdash; la pelle, pi&ugrave; antica della corteccia cerebrale, sa riconoscere la vita. Il canale pi&ugrave; potente &egrave; quello olfattivo: l'&#945;-pinene delle conifere &mdash; presente anche nella cannabis e nella salvia &mdash; rilassa in modo misurabile. Tre notti in un hotel con fragranze di cipresso aumentano la componente ad alta frequenza dell'HRV, uno dei marcatori pi&ugrave; affidabili dello stato del sistema nervoso autonomo
+    (<span class="fc">&#128684; ff.138.4
+    Roomba o piante ornamentali?</span>)
+    (<span class="fc">&#128556; ff.138.5
+    Sto lontano dallo stress</span>).
+    Il <em>shinrin-yoku</em> &mdash; il bagno nei boschi giapponese &mdash; non &egrave; una moda new age: &egrave; una pratica terapeutica documentata da centinaia di studi che mostrano riduzioni dei livelli di cortisolo, aumento dell'attivit&agrave; delle cellule Natural Killer e miglioramento dell'umore in sole due ore di immersione forestale.</p>
+
+    <p>Il collegamento nascosto tra un piatto di legumi sardi, un cappotto di seconda mano e una passeggiata tra le conifere &egrave; che la salute &mdash; del corpo, del guardaroba, del pianeta &mdash; non si costruisce con soluzioni tecnologiche isolate ma con sistemi di abitudini integrate. La dieta dei centenari non &egrave; un protocollo: &egrave; una cultura. La moda sostenibile non &egrave; un brand: &egrave; un rapporto diverso con gli oggetti. Il tocco della natura non &egrave; un'esperienza: &egrave; un bisogno biologico. Il microbioma ce lo insegna: la diversit&agrave; &egrave; resilienza, la monocultura &egrave; fragilit&agrave;. Che si tratti di batteri intestinali, di ecosistemi forestali o di armadi pieni di capi identici, il principio &egrave; lo stesso. Il futuro della natura &mdash; e il nostro &mdash; dipende dalla capacit&agrave; di riscoprire la complessit&agrave; come valore, non come problema da semplificare.</p>
 
     </article>
 
@@ -463,7 +306,7 @@
     <section class="newsletter-cta mt-14 mb-10" role="complementary" aria-label="Iscrizione newsletter">
         <p class="ff-eyebrow text-xs mb-2" style="color:var(--ff-black)">Non perderti il prossimo numero</p>
         <h2 class="text-xl sm:text-2xl font-bold mb-3" style="font-family:'IBM Plex Mono',monospace">Ricevi Futuro Fortissimo</h2>
-        <p class="text-sm sm:text-base mb-6 max-w-lg mx-auto" style="line-height:1.6">Ogni settimana, tecnologia, natura e società in una newsletter gratuita.<br>147 numeri, 563 note, 1000+ fonti — e continua a crescere.</p>
+        <p class="text-sm sm:text-base mb-6 max-w-lg mx-auto" style="line-height:1.6">Ogni settimana, tecnologia, natura e societ&agrave; in una newsletter gratuita.<br>147 numeri, 563 note, 1000+ fonti &mdash; e continua a crescere.</p>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="cta-btn">Iscriviti gratis &rarr;</a>
     </section>
 
@@ -475,7 +318,7 @@
                     <div><div class="ff-eyebrow text-xs text-zinc-400">Indice</div><div class="text-sm font-semibold mt-1">Tutti i capitoli</div></div>
                 </a>
                 <a href="chapter-02.html" class="flex items-center justify-end gap-2 p-5 hover:bg-zinc-50 transition-colors text-right">
-                    <div><div class="ff-eyebrow text-xs text-zinc-400">Successivo</div><div class="text-sm font-semibold mt-1">🍃 Cap. 02 — Natura</div></div>
+                    <div><div class="ff-eyebrow text-xs text-zinc-400">Successivo</div><div class="text-sm font-semibold mt-1">&#128187; Cap. 02 — Tecnologia</div></div>
                     <svg class="w-5 h-5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                 </a>
             </div>
@@ -485,7 +328,7 @@
 
 <footer class="bg-white" style="border-top:4px solid var(--ff-black)" role="contentinfo">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-zinc-500">
-        <div class="ff-eyebrow text-xs">&copy; Futuro Fortissimo — Michele Merelli</div>
+        <div class="ff-eyebrow text-xs">&copy; Futuro Fortissimo &mdash; Michele Merelli</div>
         <div class="flex gap-4">
             <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="hover:text-zinc-900 font-semibold">Iscriviti</a>
             <a href="https://fortissimo.substack.com/" target="_blank" rel="noopener" class="hover:text-zinc-900">Substack</a>
@@ -494,7 +337,7 @@
     </div>
 </footer>
 <script>
-const substackMap = {"1":"https://fortissimo.substack.com/p/-ff1-clima","2":"https://fortissimo.substack.com/p/-ff2-mente-artificiale-e-psichedelica","4":"https://fortissimo.substack.com/p/-ff4-mammut-e-torneo-tremaghi","9":"https://fortissimo.substack.com/p/-ff9-automazione","10":"https://fortissimo.substack.com/p/-ff12-misurare-lintelligenza","12":"https://fortissimo.substack.com/p/-ff10-sole-cuore-e-amore","16":"https://fortissimo.substack.com/p/-ff15-sossoldi-la-transizione-ecologica","17":"https://fortissimo.substack.com/p/-ff16-sport-e-chi-ne-fa-le-feci","18":"https://fortissimo.substack.com/p/-ff17-tra-arte-digitale-e-ai","19":"https://fortissimo.substack.com/p/ff17-lhambuger-di-hemingway","22":"https://fortissimo.substack.com/p/-ff22-mangiamo-troppo","25":"https://fortissimo.substack.com/p/ff25-la-fattoria-degli-animali","27":"https://fortissimo.substack.com/p/-ff27-un-milione-di-morti-covid-us","28":"https://fortissimo.substack.com/p/-ff28-google-ricerca-il-futuro","30":"https://fortissimo.substack.com/p/-ff30-dall-e-genera-arte","35":"https://fortissimo.substack.com/p/ff35-siamo-supersapiens","37":"https://fortissimo.substack.com/p/ff37-i-robot-sono-qui","39":"https://fortissimo.substack.com/p/ff39-come-ti-vesti","44":"https://fortissimo.substack.com/p/ff42-che-ansia-pt-1","49":"https://fortissimo.substack.com/p/ff49-la-pandemia-del-21esimo-secolo","58":"https://fortissimo.substack.com/p/ff58-le-banane-inquinano-troppo","60":"https://fortissimo.substack.com/p/ff60-la-guida-autonoma-e-qui","62":"https://fortissimo.substack.com/p/ff61-come-evitare-il-burnout","68":"https://fortissimo.substack.com/p/ff65-come-fermare-il-tempo","69":"https://fortissimo.substack.com/p/ff69-quantico","72":"https://fortissimo.substack.com/p/ff71-giochiamo-a-uno","75":"https://fortissimo.substack.com/p/ff75-massaggi-al-cervello","76":"https://fortissimo.substack.com/p/ff76-quello-che-resta-del-lockdown","78":"https://fortissimo.substack.com/p/ff78-psicologo-digitale","82":"https://fortissimo.substack.com/p/ff81-guerra-a-colpi-di-chip","87":"https://fortissimo.substack.com/p/ff87-siamo-quello-che-respiriamo","88":"https://fortissimo.substack.com/p/ff88-singolarita-nel-2029","89":"https://fortissimo.substack.com/p/ff89-meno-tinder-piu-relazioni","90":"https://fortissimo.substack.com/p/ff91-lepidemia-di-stress","101":"https://fortissimo.substack.com/p/ff101-cosa-ci-rende-umani","102":"https://fortissimo.substack.com/p/ff102-il-futuro-in-una-conchiglia","103":"https://fortissimo.substack.com/p/ff103-fuoco-ferro-intelligenza","104":"https://fortissimo.substack.com/p/-ff104-hackerare-il-corpo","105":"https://fortissimo.substack.com/p/ff105-elettricita-e-vita","106":"https://fortissimo.substack.com/p/ff106-ai-lloween","107":"https://fortissimo.substack.com/p/ff107-glp-1-la-cura-allobesita","108":"https://fortissimo.substack.com/p/ff108-inno-alla-routine","109":"https://fortissimo.substack.com/p/ff109-medico-in-famigl-ia","110":"https://fortissimo.substack.com/p/ff110-uno-stato-da-mantenere","112":"https://fortissimo.substack.com/p/ff112-acqua-imprevedibile","113":"https://fortissimo.substack.com/p/ff113-fame-chimica","115":"https://fortissimo.substack.com/p/ff115-lanno-del-serpente-1","117":"https://fortissimo.substack.com/p/ff117-viviamo-in-una-simulazione","118":"https://fortissimo.substack.com/p/ff118-paprika-e-massaggi","119":"https://fortissimo.substack.com/p/ff119-mani-ovunque","120":"https://fortissimo.substack.com/p/ff120-sport-e-longevita","121":"https://fortissimo.substack.com/p/ff121-il-flow-ti-mette-le-ali","122":"https://fortissimo.substack.com/p/ff122-naturale-e-meglio","124":"https://fortissimo.substack.com/p/ff124-ah-ia","125":"https://fortissimo.substack.com/p/ff125-usa-crollo-di-un-impero","126":"https://fortissimo.substack.com/p/ff126-google-fine-o-rinascita","127":"https://fortissimo.substack.com/p/ff127-jazz-con-chatgpt","128":"https://fortissimo.substack.com/p/ff126-e-tutta-questione-di-testa","130":"https://fortissimo.substack.com/p/ff130-microplastiche","132":"https://fortissimo.substack.com/p/ff132-inno-ai-videogiochi"};
+const substackMap = {"1":"https://fortissimo.substack.com/p/-ff1-clima","5":"https://fortissimo.substack.com/p/ff5-elettrizzante","12":"https://fortissimo.substack.com/p/-ff10-sole-cuore-e-amore","16":"https://fortissimo.substack.com/p/-ff15-sossoldi-la-transizione-ecologica","19":"https://fortissimo.substack.com/p/ff17-lhambuger-di-hemingway","21":"https://fortissimo.substack.com/p/ff21-la-magia-dellinsalata","22":"https://fortissimo.substack.com/p/-ff22-mangiamo-troppo","32":"https://fortissimo.substack.com/p/ff32-i-numeri-non-mentono","33":"https://fortissimo.substack.com/p/ff33-le-piante-ci-salveranno","34":"https://fortissimo.substack.com/p/ff34-ripensare-le-citta","39":"https://fortissimo.substack.com/p/ff39-come-ti-vesti","46":"https://fortissimo.substack.com/p/ff46-elementale-watson","56":"https://fortissimo.substack.com/p/ff56-il-condizionatore-terrestre","58":"https://fortissimo.substack.com/p/ff58-le-banane-inquinano-troppo","59":"https://fortissimo.substack.com/p/ff59-lottimismo-vola","60":"https://fortissimo.substack.com/p/ff60-la-guida-autonoma-e-qui","70":"https://fortissimo.substack.com/p/ff70-il-sole-soluzione-o-morte","87":"https://fortissimo.substack.com/p/ff87-siamo-quello-che-respiriamo","90":"https://fortissimo.substack.com/p/ff91-lepidemia-di-stress","92":"https://fortissimo.substack.com/p/ff92-la-dieta-dei-centenari","104":"https://fortissimo.substack.com/p/-ff104-hackerare-il-corpo","105":"https://fortissimo.substack.com/p/ff105-elettricita-e-vita","107":"https://fortissimo.substack.com/p/ff107-glp-1-la-cura-allobesita","112":"https://fortissimo.substack.com/p/ff112-acqua-imprevedibile","113":"https://fortissimo.substack.com/p/ff113-fame-chimica","122":"https://fortissimo.substack.com/p/ff122-naturale-e-meglio","130":"https://fortissimo.substack.com/p/ff130-microplastiche","138":"https://fortissimo.substack.com/p/ff138-biofilia"};
 document.querySelectorAll('.fc').forEach(el => {
   const m = el.textContent.match(/ff\.(\d+)/);
   if (m) {
