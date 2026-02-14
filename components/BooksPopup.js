@@ -1,4 +1,5 @@
 import { React, html } from '../runtime.js';
+import { t } from '../i18n.js';
 
 const getQuote = (quote = '') => {
   if (!quote) return '';
@@ -50,7 +51,7 @@ const BooksPopup = ({ isOpen, onClose, books }) => {
   const chapterCode =
     current.subTitle?.match(/ff\.\d+(?:\.\d+)?/i)?.[0] ||
     current.chapterTitle?.match(/ff\.\d+(?:\.\d+)?/i)?.[0] ||
-    'Capitolo';
+    t('chapter');
   const chapterLabel = [stripFfCode(current.chapterTitle), stripFfCode(current.subTitle)]
     .filter(Boolean)
     .join(' · ');
@@ -65,13 +66,13 @@ const BooksPopup = ({ isOpen, onClose, books }) => {
         <div className="relative space-y-5">
           <div className="flex justify-between items-start gap-4">
             <div className="space-y-1">
-              <div className="ff-eyebrow text-black mb-1">Consigli di lettura</div>
+              <div className="ff-eyebrow text-black mb-1">${t('readingSuggestions')}</div>
               <h3 className="ff-heading-xl font-heading text-black">${current.title}</h3>
               <p className="ff-body-xs text-black/70">${chapterLabel}</p>
             </div>
             <div className="flex gap-2">
-              <button aria-label="Libro casuale precedente" onClick=${goRandom} className="h-12 w-12 border-3 border-black bg-white brutal-shadow hover:-translate-y-1 transition-transform">⟵</button>
-              <button aria-label="Libro casuale successivo" onClick=${goRandom} className="h-12 w-12 border-3 border-black bg-white brutal-shadow hover:-translate-y-1 transition-transform">⟶</button>
+              <button aria-label=${t('prevRandom')} onClick=${goRandom} className="h-12 w-12 border-3 border-black bg-white brutal-shadow hover:-translate-y-1 transition-transform">⟵</button>
+              <button aria-label=${t('nextRandom')} onClick=${goRandom} className="h-12 w-12 border-3 border-black bg-white brutal-shadow hover:-translate-y-1 transition-transform">⟶</button>
               <button onClick=${onClose} className="h-12 w-12 border-3 border-black bg-white brutal-shadow hover:-translate-y-1 transition-transform">✕</button>
             </div>
           </div>
@@ -85,7 +86,7 @@ const BooksPopup = ({ isOpen, onClose, books }) => {
             <div className="border-3 border-black bg-white brutal-shadow p-4 flex flex-col gap-3">
               ${quoteText
                 ? html`<p className="ff-body-sm text-black leading-relaxed">“${quoteText}”</p>`
-                : html`<p className="ff-body-sm text-black leading-relaxed">Scopri perché è in archivio: clicca per il capitolo completo.</p>`}
+                : html`<p className="ff-body-sm text-black leading-relaxed">${t('discoverArchive')}</p>`}
 
               <a
                 href=${current.link}
@@ -93,7 +94,7 @@ const BooksPopup = ({ isOpen, onClose, books }) => {
                 rel="noopener noreferrer"
                 className="px-4 py-3 border-3 border-black bg-[var(--ff-yellow)] text-black brutal-shadow ff-button w-fit hover:-translate-y-1 transition-transform"
               >
-                Compra su Amazon
+                ${t('buyAmazon')}
               </a>
               <a
                 href=${current.subLink || current.chapterUrl}

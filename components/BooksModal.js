@@ -1,6 +1,7 @@
 import { React, html } from '../runtime.js';
 import { TopicEmoji } from '../types.js';
 import booksData from '../books.json' assert { type: 'json' };
+import { t } from '../i18n.js';
 
 const normalizeUrl = (url = '') => url.replace(/\/$/, '');
 
@@ -98,22 +99,22 @@ const BooksModal = ({ sections, onClose }) => {
       <div className="p-5 sm:p-6 flex flex-col gap-5 overflow-y-auto max-h-[calc(100vh-3.5rem)]">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div>
-            <div className="ff-eyebrow text-black">Biblioteca</div>
-            <h3 className="ff-heading-xl font-heading text-black">Tutte le sezioni libro</h3>
-            <p className="ff-body-sm text-black/70 max-w-2xl">Scorri le citazioni dei libri presenti nei capitoli e apri subito la fonte su Amazon.</p>
+            <div className="ff-eyebrow text-black">${t('library')}</div>
+            <h3 className="ff-heading-xl font-heading text-black">${t('allBookSections')}</h3>
+            <p className="ff-body-sm text-black/70 max-w-2xl">${t('bookSectionsHint')}</p>
           </div>
           <button
             onClick=${onClose}
             className="px-3 py-2 border-3 border-black bg-white ff-button brutal-shadow hover:-translate-y-0.5 transition-transform"
           >
-            Chiudi
+            ${t('close')}
           </button>
         </div>
 
         ${hasSections
           ? html`<div className="space-y-3">
               <div className="flex flex-wrap gap-2 items-center">
-                <span className="ff-eyebrow text-black">Filtra per emoji</span>
+                <span className="ff-eyebrow text-black">${t('filterByEmoji')}</span>
                 <div className="flex flex-wrap gap-2">
                   <button
                     className=${`px-3 py-1 border-2 border-black ff-caption transition-transform brutal-shadow ${
@@ -121,7 +122,7 @@ const BooksModal = ({ sections, onClose }) => {
                     }`}
                     onClick=${() => setSelectedFilter(null)}
                   >
-                    Tutti
+                    ${t('all')}
                   </button>
                   ${filters.map(
                     (emoji) => html`<button
@@ -133,7 +134,7 @@ const BooksModal = ({ sections, onClose }) => {
                     >
                       <span aria-hidden="true">${emoji}</span>
                       <span className="text-[10px] font-semibold">
-                        ${emoji === TopicEmoji.BOOKS ? 'Sezioni libro' : 'Filtro'}
+                        ${emoji === TopicEmoji.BOOKS ? t('bookSections') : t('filter')}
                       </span>
                     </button>`
                   )}
@@ -142,7 +143,7 @@ const BooksModal = ({ sections, onClose }) => {
 
               ${bookFilters.length
                 ? html`<div className="flex flex-col gap-2">
-                    <span className="ff-eyebrow text-black">Filtra per libro 📚</span>
+                    <span className="ff-eyebrow text-black">${t('filterByBook')}</span>
                     <div className="flex flex-wrap gap-2">
                       <button
                         className=${`px-3 py-1 border-2 border-black ff-caption transition-transform brutal-shadow ${
@@ -150,7 +151,7 @@ const BooksModal = ({ sections, onClose }) => {
                         }`}
                         onClick=${() => setSelectedBookTitle('all')}
                       >
-                        Tutti i libri
+                        ${t('allBooks')}
                       </button>
                       ${bookFilters.map(
                         ({ title, author }) => html`<button
@@ -173,7 +174,7 @@ const BooksModal = ({ sections, onClose }) => {
 
         ${!hasSections
           ? html`<div className="border-3 border-black p-6 text-center brutal-shadow bg-white">
-              <p className="font-heading ff-body">Nessuna sezione libro trovata.</p>
+              <p className="font-heading ff-body">${t('noBookSections')}</p>
             </div>`
           : html`<div className="grid gap-4 sm:grid-cols-2">
               ${filteredSections.map((section, idx) =>
@@ -191,7 +192,7 @@ const BooksModal = ({ sections, onClose }) => {
 
                   ${section.previewImage
                     ? html`<figure className="space-y-1">
-                        <img src=${section.previewImage.src} alt=${section.previewImage.caption || 'Anteprima libro'} className="w-full h-auto border-3 border-black bg-white" loading="lazy" />
+                        <img src=${section.previewImage.src} alt=${section.previewImage.caption || t('bookPreview')} className="w-full h-auto border-3 border-black bg-white" loading="lazy" />
                         ${section.previewImage.caption
                           ? html`<figcaption className="ff-caption text-black font-bold pl-1">${section.previewImage.caption}</figcaption>`
                           : null}
@@ -208,7 +209,7 @@ const BooksModal = ({ sections, onClose }) => {
                           rel="noopener noreferrer"
                           className="px-3 py-2 border-2 border-black bg-[var(--ff-yellow)] ff-button hover:-translate-y-0.5 transition-transform"
                         >
-                          Leggi su Amazon ↗
+                          ${t('readAmazon')}
                         </a>`
                       : null}
                     <a
@@ -217,7 +218,7 @@ const BooksModal = ({ sections, onClose }) => {
                       rel="noopener noreferrer"
                       className="px-3 py-2 border-2 border-black bg-white ff-button hover:-translate-y-0.5 transition-transform"
                     >
-                      Apri ${section.referenceLabel}
+                      ${t('open')} ${section.referenceLabel}
                     </a>
                   </div>
                 </article>`

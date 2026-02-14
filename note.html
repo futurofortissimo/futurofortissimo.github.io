@@ -136,6 +136,7 @@
             <a class="ff-eyebrow text-gray-600 hover:text-black hover:underline" href="/index.html">Home</a>
             <a class="ff-eyebrow text-gray-600 hover:text-black hover:underline" href="/book/">Libro</a>
             <a class="ff-eyebrow text-gray-600 hover:text-black hover:underline" href="/themes.html">Temi</a>
+            <a class="ff-eyebrow text-gray-600 hover:text-black hover:underline" href="/connections.html">Connessioni</a>
             <a class="ff-eyebrow text-gray-600 hover:text-black hover:underline" href="/note.html">Note</a>
         </nav>
     </div>
@@ -267,26 +268,27 @@ document.addEventListener('DOMContentLoaded', () => {
             tagsSpan.className = 'text-lg mb-2';
             tagsSpan.textContent = note.tags.join(' ');
 
-            const title = document.createElement('h3');
-            title.className = 'text-base font-bold mb-2 leading-snug';
-            title.textContent = note.title;
+            const titleLink = document.createElement('a');
+            titleLink.className = 'text-base font-bold mb-2 leading-snug block hover:underline';
+            titleLink.style.color = 'var(--ff-black)';
+            titleLink.href = note.url;
+            titleLink.target = '_blank';
+            titleLink.rel = 'noopener';
+            titleLink.textContent = note.title;
 
             const desc = document.createElement('p');
-            desc.className = 'ff-body-sm text-gray-600 mb-4';
+            desc.className = 'ff-body-sm text-gray-600 mb-2';
             desc.textContent = note.description;
 
-            const link = document.createElement('a');
-            link.className = 'ff-eyebrow hover:underline';
-            link.style.color = 'var(--ff-blue)';
-            link.href = note.url;
-            link.target = '_blank';
-            link.rel = 'noopener';
-            link.textContent = currentLanguage === 'it' ? 'APRI \u2192' : 'OPEN \u2192';
+            const hashtags = document.createElement('div');
+            hashtags.className = 'ff-eyebrow text-gray-400';
+            hashtags.style.fontSize = '0.65rem';
+            hashtags.textContent = note.hashtags || '';
 
             card.appendChild(tagsSpan);
-            card.appendChild(title);
+            card.appendChild(titleLink);
             card.appendChild(desc);
-            card.appendChild(link);
+            if (note.hashtags) card.appendChild(hashtags);
             notesGrid.appendChild(card);
         });
     }
