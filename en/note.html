@@ -113,36 +113,42 @@
             transform:translate(-2px,-2px);
             box-shadow:8px 8px 0 var(--ff-black);
         }
-        .lang-bar {
+        .ff-lang-bar {
             font-family:'IBM Plex Mono',monospace;
-            font-size:0.7rem;
-            letter-spacing:0.15em;
+            font-size:0.6875rem;
+            letter-spacing:0.16em;
             text-transform:uppercase;
             font-weight:700;
+            background:var(--ff-black);
+            color:#fff;
         }
-        .lang-bar a {
-            color:var(--ff-black);
+        .ff-lang-bar a {
+            color:rgba(255,255,255,0.55);
             text-decoration:none;
-            padding:2px 6px;
+            padding:6px 8px;
+            transition:color 0.15s ease;
         }
-        .lang-bar a:hover {
-            text-decoration:underline;
+        .ff-lang-bar a:hover {
+            color:#fff;
         }
-        .lang-bar a.active {
-            background:var(--ff-yellow);
+        .ff-lang-bar a[aria-current="page"] {
+            color:#fff;
+            border-bottom:2px solid var(--ff-yellow);
         }
     </style>
 </head>
 <body class="no-round">
 
 <!-- Language Switcher Bar -->
-<div class="lang-bar bg-white text-center py-2" style="border-bottom:2px solid var(--ff-black)">
-    <a href="/">IT</a>
-    <span class="text-gray-400">|</span>
-    <a href="/en/" class="active">EN</a>
-    <span class="text-gray-400">|</span>
-    <a href="/hi/">HI</a>
-</div>
+<nav class="ff-lang-bar" aria-label="Language">
+    <div class="max-w-5xl mx-auto flex items-center justify-end gap-1 px-4 py-1">
+        <a href="/note.html" title="Italiano">IT</a>
+        <span class="text-gray-600 select-none">/</span>
+        <a href="/en/note.html" aria-current="page" title="English">EN</a>
+        <span class="text-gray-600 select-none">/</span>
+        <a href="/hi/note.html" title="Hindi">HI</a>
+    </div>
+</nav>
 
 <header class="bg-white" style="border-bottom:4px solid var(--ff-black)">
     <div class="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between gap-4">
@@ -152,7 +158,7 @@
         </div>
         <nav class="flex gap-4 flex-shrink-0">
             <a class="ff-eyebrow text-gray-600 hover:text-black hover:underline" href="/en/index.html">Home</a>
-            <a class="ff-eyebrow text-gray-600 hover:text-black hover:underline" href="/en/book/">Book</a>
+            <a class="ff-eyebrow text-gray-600 hover:text-black hover:underline" href="/book/">Book</a>
             <a class="ff-eyebrow text-gray-600 hover:text-black hover:underline" href="/en/themes.html">Themes</a>
             <a class="ff-eyebrow text-gray-600 hover:text-black hover:underline" href="/en/note.html">Notes</a>
             <a class="ff-eyebrow text-gray-600 hover:text-black hover:underline" href="/en/connections.html">Connections</a>
@@ -284,26 +290,27 @@ document.addEventListener('DOMContentLoaded', () => {
             tagsSpan.className = 'text-lg mb-2';
             tagsSpan.textContent = note.tags.join(' ');
 
-            const title = document.createElement('h3');
-            title.className = 'text-base font-bold mb-2 leading-snug';
-            title.textContent = note.title;
+            const titleLink = document.createElement('a');
+            titleLink.className = 'text-base font-bold mb-2 leading-snug block hover:underline';
+            titleLink.style.color = 'var(--ff-black)';
+            titleLink.href = note.url;
+            titleLink.target = '_blank';
+            titleLink.rel = 'noopener';
+            titleLink.textContent = note.title;
 
             const desc = document.createElement('p');
-            desc.className = 'ff-body-sm text-gray-600 mb-4';
+            desc.className = 'ff-body-sm text-gray-600 mb-2';
             desc.textContent = note.description;
 
-            const link = document.createElement('a');
-            link.className = 'ff-eyebrow hover:underline';
-            link.style.color = 'var(--ff-blue)';
-            link.href = note.url;
-            link.target = '_blank';
-            link.rel = 'noopener';
-            link.textContent = currentLanguage === 'en' ? 'OPEN \u2192' : 'APRI \u2192';
+            const hashtags = document.createElement('div');
+            hashtags.className = 'ff-eyebrow text-gray-400';
+            hashtags.style.fontSize = '0.65rem';
+            hashtags.textContent = note.hashtags || '';
 
             card.appendChild(tagsSpan);
-            card.appendChild(title);
+            card.appendChild(titleLink);
             card.appendChild(desc);
-            card.appendChild(link);
+            if (note.hashtags) card.appendChild(hashtags);
             notesGrid.appendChild(card);
         });
     }

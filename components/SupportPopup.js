@@ -1,5 +1,6 @@
 import { React, html } from '../runtime.js';
 import { useNavigation } from '../NavigationContext.js';
+import { t } from '../i18n.js';
 
 const SupportPopup = () => {
   const { showSupportPopup, closeSupportPopup } = useNavigation();
@@ -24,9 +25,9 @@ const SupportPopup = () => {
         <div className="relative space-y-5">
           <div className="flex justify-between items-start gap-4">
             <div>
-              <div className="ff-eyebrow text-black mb-2">Supporto</div>
-              <h3 className="ff-heading-xl font-heading text-black">Sostieni Futuro Fortissimo</h3>
-              <p className="text-black mt-2 ff-body-sm max-w-xl">Se ti piace l’archivio, puoi dargli energia con un contributo via PayPal. Ogni gesto aiuta a mantenere aggiornate le storie e i media.</p>
+              <div className="ff-eyebrow text-black mb-2">${t('support')}</div>
+              <h3 className="ff-heading-xl font-heading text-black">${t('supportTitle')}</h3>
+              <p className="text-black mt-2 ff-body-sm max-w-xl">${t('supportText')}</p>
             </div>
             <button onClick=${closeSupportPopup} className="h-12 w-12 border-3 border-black bg-white brutal-shadow hover:-translate-y-1 transition-transform">✕</button>
           </div>
@@ -42,7 +43,7 @@ const SupportPopup = () => {
               <span className="text-3xl">💙</span>
               <div>
                 <div className="font-heading ff-heading-md text-black">PayPal</div>
-                <p className="ff-body-sm text-black/80">Il modo più rapido per mandare un grazie e supportare l’archivio.</p>
+                <p className="ff-body-sm text-black/80">${t('paypalHint')}</p>
               </div>
             </div>
             <div className="relative mt-auto ff-eyebrow-md text-black">paypal.me/MicheleMerelli</div>
@@ -53,7 +54,7 @@ const SupportPopup = () => {
               onClick=${closeSupportPopup}
               className="flex-1 min-w-[140px] px-5 py-3 border-3 border-black text-black bg-white brutal-shadow hover:-translate-y-1 transition-transform font-heading font-semibold"
             >
-              Chiudi
+              ${t('close')}
             </button>
           </div>
         </div>

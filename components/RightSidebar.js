@@ -1,6 +1,7 @@
 import { React, html } from '../runtime.js';
 import { slugify } from '../utils.js';
 import { useNavigation } from '../NavigationContext.js';
+import { t } from '../i18n.js';
 
 const RightSidebar = ({ chapters, isMobileMode = false }) => {
   const { searchQuery, debouncedSearchQuery, setActiveId, incrementInteraction, setIsMobileMenuOpen } = useNavigation();
@@ -38,7 +39,7 @@ const RightSidebar = ({ chapters, isMobileMode = false }) => {
 
   return html`<div className="space-y-4">
     <div className="ff-eyebrow text-black">
-      ${searchQuery ? `Risultati per “${searchQuery}”` : 'Naviga tra i capitoli'}
+      ${searchQuery ? `${t('resultsFor')} "${searchQuery}"` : t('navigateChapters')}
     </div>
 
     <div className="max-h-[70vh] overflow-y-auto pr-1 space-y-6 no-scrollbar">

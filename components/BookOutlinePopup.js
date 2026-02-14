@@ -1,4 +1,5 @@
 import { React, html } from '../runtime.js';
+import { t } from '../i18n.js';
 
 const themeColors = {
   1: { accent: 'var(--ff-blue)', bg: 'bg-blue-50' },
@@ -19,17 +20,17 @@ const BookOutlinePopup = ({ onClose }) => {
   const pad2 = (n) => String(n).padStart(2, '0');
 
   return html`<div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-    <div role="dialog" aria-modal="true" aria-label="Outline libro" className="relative max-w-5xl w-full">
+    <div role="dialog" aria-modal="true" aria-label=${t('bookOutlineLabel')} className="relative max-w-5xl w-full">
       <div className="absolute right-4 top-4 z-10">
         <button onClick=${onClose} className="px-4 py-2 border-3 border-black bg-white ff-button hover:-translate-y-0.5 transition-transform">
-          Chiudi
+          ${t('close')}
         </button>
       </div>
 
       <div className="border-3 border-black bg-white brutal-shadow p-6 max-h-[80vh] overflow-auto">
-        <div className="ff-eyebrow-md text-black/80">Libro / mini-saggi</div>
-        <h2 className="ff-heading-xl mt-2">Tre Macro Temi</h2>
-        <p className="ff-body text-black/70 mt-2">Tre saggi interconnessi: 💻 Tecnologia, 🍃 Natura e 👥 Società. Un percorso quantitativo attraverso 147 numeri e 563 note del corpus.</p>
+        <div className="ff-eyebrow-md text-black/80">${t('bookEssays')}</div>
+        <h2 className="ff-heading-xl mt-2">${t('threeThemes')}</h2>
+        <p className="ff-body text-black/70 mt-2">${t('threeEssaysDesc')}</p>
         <div className="mt-4 flex flex-wrap gap-3">
           <a
             data-nav="1"
@@ -37,14 +38,14 @@ const BookOutlinePopup = ({ onClose }) => {
             href="./book/"
             className="px-4 py-2 border-3 border-black bg-[var(--ff-yellow)] brutal-shadow ff-button hover:-translate-y-0.5 transition-transform"
           >
-            Apri pagine (SEO)
+            ${t('openPages')}
           </a>
         </div>
 
         ${!data
-          ? html`<p className="mt-6">Caricamento…</p>`
+          ? html`<p className="mt-6">${t('loading')}</p>`
           : data.error
-            ? html`<p className="mt-6">Errore caricamento outline.</p>`
+            ? html`<p className="mt-6">${t('errorOutline')}</p>`
             : html`<div className="mt-6 space-y-6">
                 ${(data.chapters || []).map((c) => {
                   const colors = themeColors[c.n] || themeColors[1];
@@ -54,7 +55,7 @@ const BookOutlinePopup = ({ onClose }) => {
                       <div className="flex items-center gap-3 mb-3">
                         <span className="text-3xl">${c.emoji}</span>
                         <div>
-                          <div className="ff-caption" style=${{ color: colors.accent }}>Capitolo ${c.n} / 3</div>
+                          <div className="ff-caption" style=${{ color: colors.accent }}>${t('chapter')} ${c.n} / 3</div>
                           <div className="text-lg font-bold mt-1">${c.title}</div>
                         </div>
                       </div>
@@ -78,7 +79,7 @@ const BookOutlinePopup = ({ onClose }) => {
                           data-track="chapter_open"
                           href=${`./book/chapter-${pad2(c.n)}.html`}
                         >
-                          Leggi capitolo →
+                          ${t('readChapter')}
                         </a>
                         <div className="ff-caption text-black/50">refs: ${totalRefs}</div>
                       </div>

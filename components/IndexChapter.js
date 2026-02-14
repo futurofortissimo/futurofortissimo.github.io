@@ -1,5 +1,6 @@
 import { React, html } from '../runtime.js';
 import { HighlightText, isLinkValid } from '../utils.js';
+import { t } from '../i18n.js';
 
 const collectCitations = (subchapters = []) => {
   const seen = new Set();
@@ -80,7 +81,7 @@ const IndexChapter = ({ chapter, highlight }) => {
             onClick=${() => setShowCitations((prev) => !prev)}
             aria-expanded=${showCitations}
           >
-            ${showCitations ? 'Nascondi link' : `Link citati (${citations.length})`}
+            ${showCitations ? t('hideCitations') : `${t('showCitations')} (${citations.length})`}
             <span aria-hidden="true">${showCitations ? '▲' : '▼'}</span>
           </button>
           ${showCitations

@@ -9,6 +9,7 @@ import SearchResultsModal from './components/SearchResultsModal.js';
 import BooksPopup from './components/BooksPopup.js';
 import { NavigationProvider, useNavigation } from './NavigationContext.js';
 import IndexChapter from './components/IndexChapter.js';
+import { t } from './i18n.js';
 
 const headerBackgroundDataUri =
   'data:image/svg+xml;utf8,' +
@@ -51,7 +52,7 @@ const extractBooksFromData = (chapters = []) => {
         if (seen.has(key)) return;
         seen.add(key);
 
-        const title = (ref.text || sub.cleanTitle || 'Consiglio di lettura').trim();
+        const title = (ref.text || sub.cleanTitle || t('readingSuggestion')).trim();
         if (!title || title === '.') return;
 
         books.push({
@@ -246,15 +247,15 @@ const InnerApp = () => {
                   type="text"
                   value=${searchQuery}
                   onInput=${handleSearchChange}
-                  placeholder="Cerca storie..."
+                  placeholder=${t('searchPlaceholder')}
                   className="w-full px-4 py-3 pr-20 bg-white border-3 border-black ff-input placeholder:text-gray-400 focus:outline-none focus:ring-0"
-                  aria-label="Cerca storie"
+                  aria-label=${t('searchLabel')}
                 />
                 <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-2">
                   <button
                     type="button"
                     className="text-black text-lg"
-                    aria-label="Apri menu filtri"
+                    aria-label=${t('openFilterMenu')}
                     onClick=${() => setIsFilterMenuOpen(true)}
                   >
                     🔍
@@ -263,7 +264,7 @@ const InnerApp = () => {
                     ? html`<button
                         type="button"
                         className="text-black text-lg"
-                        aria-label="Pulisci ricerca"
+                        aria-label=${t('clearSearch')}
                         onClick=${handleClearSearch}
                       >
                         ✕
@@ -277,7 +278,7 @@ const InnerApp = () => {
                 onClick=${handleOpenMedia}
                 className="px-4 py-3 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-1 transition-transform"
               >
-                🎥 Media
+                ${t('media')}
               </button>
               <button
                 type="button"
@@ -285,19 +286,19 @@ const InnerApp = () => {
                 disabled=${bookSuggestions.length === 0}
                 className="px-4 py-3 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-1 transition-transform disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                📚 Libri
+                ${t('books')}
               </button>
               <a
                 href="./book/"
                 className="px-4 py-3 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-1 transition-transform"
               >
-                📖 Libro
+                ${t('book')}
               </a>
               <a
                 href="https://www.paypal.com/paypalme/MicheleMerelli"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Supporto PayPal"
+                aria-label=${t('supportLabel')}
                 className="px-4 py-3 border-3 border-black bg-[var(--ff-blue)] text-black brutal-shadow ff-button hover:-translate-y-1 transition-transform"
               >
                 ☕
@@ -306,7 +307,7 @@ const InnerApp = () => {
                 href="https://micmer-git.github.io/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Progetti micmer"
+                aria-label=${t('projectsLabel')}
                 className="px-4 py-3 border-3 border-black bg-[var(--ff-blue)] text-black brutal-shadow ff-button hover:-translate-y-1 transition-transform"
               >
                 M
@@ -323,7 +324,7 @@ const InnerApp = () => {
       <section id="indice" className="compact-index space-y-6">
         <div className="flex flex-col gap-6">
           <div className="flex items-center gap-2 flex-wrap">
-            <div className="ff-eyebrow-md text-black/80">Indice</div>
+            <div className="ff-eyebrow-md text-black/80">${t('index')}</div>
             <span aria-hidden="true" className="text-black/60">·</span>
             ${selectedEmoji
               ? html`<button
@@ -332,7 +333,7 @@ const InnerApp = () => {
                 >
                   Clear ${selectedEmoji}
                 </button>`
-              : html`<span className="ff-eyebrow-md text-black/70">Tutti i temi</span>`}
+              : html`<span className="ff-eyebrow-md text-black/70">${t('allThemes')}</span>`}
           </div>
 
           <div className="space-y-6">
@@ -346,12 +347,12 @@ const InnerApp = () => {
                 )
               : html`<div className="border-3 border-black p-10 text-center brutal-shadow">
                   <span className="text-5xl block mb-4">🔍</span>
-                  <p className="ff-body mb-4">Nessun risultato per questo filtro.</p>
+                  <p className="ff-body mb-4">${t('noResults')}</p>
                   <button
                     onClick=${() => handleTopicSelect(null)}
                     className="px-4 py-3 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-1 transition-transform"
                   >
-                    Azzera filtri
+                    ${t('resetFilters')}
                   </button>
                 </div>`}
           </div>
@@ -367,7 +368,7 @@ const InnerApp = () => {
                 onClick=${handleCloseMedia}
                 className="px-4 py-2 border-3 border-black bg-white ff-button hover:-translate-y-0.5 transition-transform"
               >
-                Chiudi media
+                ${t('closeMedia')}
               </button>
             </div>
             <${MediaSlider} chapters=${processedData} />
@@ -379,10 +380,10 @@ const InnerApp = () => {
       ? html`<div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex justify-end lg:hidden">
           <div className="w-72 max-w-full bg-white border-l-4 border-black p-4 flex flex-col gap-4">
             <div className="flex items-center justify-between">
-              <div className="ff-eyebrow text-black/80">Filtri</div>
+              <div className="ff-eyebrow text-black/80">${t('filters')}</div>
               <button
                 type="button"
-                aria-label="Chiudi filtri"
+                aria-label=${t('closeFilters')}
                 className="text-lg font-bold"
                 onClick=${() => setIsFilterMenuOpen(false)}
               >

@@ -1,6 +1,7 @@
 import { React, html } from '../runtime.js';
 import { HighlightText, slugify } from '../utils.js';
 import { useNavigation } from '../NavigationContext.js';
+import { t } from '../i18n.js';
 
 const createSnippet = (content, query) => {
   if (!content) return '';
@@ -97,14 +98,14 @@ const SearchResultsModal = ({ chapters, isOpen, onHide, onClear, onNavigate }) =
         <div className="flex flex-col gap-3">
           <div className="flex items-start justify-between gap-3">
             <div>
-              <div className="ff-eyebrow text-black">Ricerca</div>
-              <h3 className="ff-heading-xl font-heading text-black">Risultati per “${searchQuery}”</h3>
-              <p className="ff-body-sm text-black/70 max-w-2xl">Apri il risultato per scorrere alla card corrispondente. I testi coincidono con l’evidenziazione già visibile nelle schede.</p>
+              <div className="ff-eyebrow text-black">${t('search')}</div>
+              <h3 className="ff-heading-xl font-heading text-black">${t('resultsFor')} "${searchQuery}"</h3>
+              <p className="ff-body-sm text-black/70 max-w-2xl">${t('searchHint')}</p>
             </div>
             <button
               onClick=${handleClose}
               className="px-3 py-2 border-3 border-black bg-white ff-button brutal-shadow hover:-translate-y-0.5 transition-transform"
-              aria-label="Chiudi e cancella ricerca"
+              aria-label=${t('closeAndClear')}
             >
               ✕
             </button>
@@ -113,7 +114,7 @@ const SearchResultsModal = ({ chapters, isOpen, onHide, onClear, onNavigate }) =
 
         ${results.length === 0
           ? html`<div className="border-3 border-black p-6 text-center brutal-shadow bg-white">
-              <p className="font-heading ff-body">Nessun contenuto corrisponde alla ricerca.</p>
+              <p className="font-heading ff-body">${t('noSearchResults')}</p>
             </div>`
           : html`<ol className="space-y-3">
               ${results.map(
@@ -130,11 +131,11 @@ const SearchResultsModal = ({ chapters, isOpen, onHide, onClear, onNavigate }) =
                             <${HighlightText} text=${item.title} highlight=${debouncedSearchQuery} />
                           </div>
                           <div className="ff-eyebrow text-black/70">${item.type === 'chapter'
-                            ? 'Capitolo'
-                            : `Sottocapitolo · ${item.chapterTitle}`}</div>
+                            ? t('chapter')
+                            : `${t('subchapter')} · ${item.chapterTitle}`}</div>
                         </div>
                       </div>
-                      <span className="ff-caption px-2 py-1 border-2 border-black bg-white">Apri</span>
+                      <span className="ff-caption px-2 py-1 border-2 border-black bg-white">${t('open')}</span>
                     </div>
                     ${item.snippet
                       ? html`<p className="mt-3 ff-body-sm text-black/80 leading-snug">
