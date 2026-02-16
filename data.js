@@ -18066,5 +18066,177 @@ export const rawData = [
         "subtitle": "Cosa aspettarsi da questa fortissima newsletter",
         "keypoints": [],
         "subchapters": []
-    }
+    },
+{
+    "url": "https://fortissimo.substack.com/p/ff140-tutti-app-fluencers",
+    "title": "🎼 ff.140 Tutti App-fluencers?",
+    "subtitle": "A16Z investe 20 M$ in Wabi.ai, piattaforma che vuole trasformare ogni utente in creatore di app — come YouTube fece con i video nel 2012.",
+    "keypoints": [
+        "A16Z investe 20 M$ in Wabi.ai, piattaforma che vuole trasformare ogni utente in creatore di app — come YouTube fece con i video nel 2012.",
+        "Il vibe-coding (Gemini 3, Lovable) democratizza lo sviluppo: tre progetti funzionanti costruiti in un weekend senza saper programmare.",
+        "Rovescio della medaglia: la 'deflazione mentale' — se domani qualsiasi idea costerà meno, perché investirci oggi? Crisi esistenziale che tocca anche i matematici accademici."
+    ],
+    "subchapters": [
+        {
+            "title": "📱 ff.140.1 L'era degli App-fluencers",
+            "link": "https://fortissimo.substack.com/p/ff140-tutti-app-fluencers",
+            "content": "A16Z punta 20 milioni di dollari su Wabi.ai, una sorta di YouTube/Instagram delle app per cellulare, per ridare internet alla creatività individuale e strapparlo ai monopoli delle mega-corporazioni. Jenny Odell (Come non fare niente, 2020) avvertiva: 'Che senso ha costruire mondi digitali, quando il mondo fisico si sta sgretolando?'. La terza via proposta: un digitale su misura dell'utente, non degli algoritmi di retention.",
+            "images": [],
+            "references": [],
+            "connections": []
+        },
+        {
+            "title": "🛠️ ff.140.2 Vibe coding in un weekend",
+            "link": "https://fortissimo.substack.com/p/ff140-tutti-app-fluencers",
+            "content": "Gemini 3 rappresenta un salto qualitativo nel no-code: in un solo weekend è possibile creare il restyling completo di un sito, un'app nutrizionale (MangiaFortissimo) e un'app di lettura aumentata dall'AI (LeggiFortissimo). Il modello del 'levelsio dei poveri' diventa accessibile: Pieter Levels, creatore di NomadList, non ha mai programmato in vita sua. Ogni aggiornamento dei modelli accelera il processo — ma nasce la domanda: il prossimo influencer di app sarà umano o un agente AI?",
+            "images": [],
+            "references": [],
+            "connections": []
+        },
+        {
+            "title": "🧮 ff.140.3 Deflazione mentale e crisi accademica",
+            "link": "https://fortissimo.substack.com/p/ff140-tutti-app-fluencers",
+            "content": "Aristotle di HarmonicMath ha risolto il problema di Erdős #124, aperto da 30 anni: l'AI raggiunge gli apici della matematica. Anche professori come Aryeh Kontorovich (Università di Ben-Gurion, Israele) si chiedono se valga la pena continuare a scrivere paper. La 'deflazione mentale' è analoga a quella economica: se domani un bene o lo sviluppo di un'idea costerà meno, non ha senso investirci oggi.",
+            "images": [],
+            "references": [],
+            "connections": []
+        }
+    ]
+},
+{
+    "url": "https://fortissimo.substack.com/p/ff141-il-2025-su-un-floppy-disk",
+    "title": "🎼 ff.141 Il 2025 su un Floppy Disk",
+    "subtitle": "La singolarità sembra vicina: Gemini 3 permette di costruire qualsiasi cosa con pochi prompt, dalle app di studio ai giochi multiplayer.",
+    "keypoints": [
+        "La singolarità sembra vicina: Gemini 3 permette di costruire qualsiasi cosa con pochi prompt, dalle app di studio ai giochi multiplayer.",
+        "Rutger Bregman lancia la School for Moral Ambition per convertire il 40 % dei laureati Harvard assorbiti da consulenza/finanza in azioni ad impatto reale.",
+        "Boyd Varty (riserva di Londolozi, Sudafrica) propone un 'jiu-jitsu energetico': rallentare proprio quando tutto accelera."
+    ],
+    "subchapters": [
+        {
+            "title": "😰 ff.141.1 Sentirsi inutili nell'era AI",
+            "link": "https://fortissimo.substack.com/p/ff141-il-2025-su-un-floppy-disk",
+            "content": "Dalla ff.44 'Che ansia!' al 2025: l'ansia cresce con i mondi generativi paralleli ai social media classici (Instagram, LinkedIn). Paragone storico: nel Settecento ci si allenava vent'anni per arare campi, poi arrivò la rivoluzione industriale — oggi accade lo stesso con il cervello. Il 60 % dei laureati di Harvard finisce in consulenza, finanza o Big Tech: il 'Triangolo delle Bermuda del talento', dice Bregman.",
+            "images": [],
+            "references": [],
+            "connections": []
+        },
+        {
+            "title": "🦁 ff.141.2 Rallentare se inseguiti da leoni",
+            "link": "https://fortissimo.substack.com/p/ff141-il-2025-su-un-floppy-disk",
+            "content": "Boyd Varty organizza esperienze di crescita nella riserva naturale di Londolozi (Sudafrica), tra leoni e contesto atavico. Tim Ferriss lo intervista: 'Quando un progetto funziona, disinvesti e lascia correre — jiu-jitsu energetico sulle cose'. Controintuitivo: rallentare proprio quando i leoni (o le notifiche) accelerano.",
+            "images": [],
+            "references": [],
+            "connections": []
+        },
+        {
+            "title": "📝 ff.141.3 Done-List e compiti per le vacanze",
+            "link": "https://fortissimo.substack.com/p/ff141-il-2025-su-un-floppy-disk",
+            "content": "Oliver Burkeman propone la Done List al posto della To-Do List: scrivere cosa di soddisfacente si è fatto quest'anno. Dan Harris (Daily-ish): concedersi di saltare un giorno nelle routine maniacali. Jack King, prete del Tennessee, invita all'ospitalità 'scruffy': accogliere le persone nella propria vita imperfetta, rivelando il disordine che c'è in tutti noi.",
+            "images": [],
+            "references": [],
+            "connections": []
+        }
+    ]
+},
+{
+    "url": "https://fortissimo.substack.com/p/ff142-caro-marziano",
+    "title": "🎼 ff.142 Caro Marziano...",
+    "subtitle": "Altro che Pif: siamo noi gli alieni — riflessione su viaggi, privilegio occidentale e anomalia statistica, ispirata da un viaggio in India e Nepal.",
+    "keypoints": [
+        "Altro che Pif: siamo noi gli alieni — riflessione su viaggi, privilegio occidentale e anomalia statistica, ispirata da un viaggio in India e Nepal.",
+        "Il numero esplora quanto la normalità europea sia un'eccezione su scala globale, e come il viaggio la riveli.",
+        ""
+    ],
+    "subchapters": [
+        {
+            "title": "📖 Panorama",
+            "link": "https://fortissimo.substack.com/p/ff142-caro-marziano",
+            "content": "Altro che Pif: siamo noi gli alieni — riflessione su viaggi, privilegio occidentale e anomalia statistica, ispirata da un viaggio in India e Nepal. Il numero esplora quanto la normalità europea sia un'eccezione su scala globale, e come il viaggio la riveli.",
+            "images": [],
+            "references": [],
+            "connections": []
+        }
+    ]
+},
+{
+    "url": "https://fortissimo.substack.com/p/ff143-scimmie-col-rolex",
+    "title": "🎼 ff.143 Scimmie col Rolex",
+    "subtitle": "Il vero lusso occidentale? Non il Rolex: sole/aria/acqua (natura biologica).",
+    "keypoints": [
+        "Il vero lusso occidentale? Non il Rolex: sole/aria/acqua (natura biologica).",
+        "In India la distopia non è tech: è climatica e darwiniana (animali e città).",
+        "Fuoco come sopravvivenza/sussistenza/trascendenza: plastica, Flame Towers, pire di Varanasi."
+    ],
+    "subchapters": [
+        {
+            "title": "🌿 ff.143.1 Lusso naturale",
+            "link": "https://fortissimo.substack.com/p/ff143-scimmie-col-rolex",
+            "content": "Quando elettricità e servizi smettono di essere invisibili, capisci che la ricchezza è l’ecosistema: aria pulita, sole visibile, acqua usabile. Non la natura “hipster” da città: una natura chimica, elementare, sotto l’Io.",
+            "images": [],
+            "references": [],
+            "connections": []
+        },
+        {
+            "title": "🐒 ff.143.2 Darwinismo urbano",
+            "link": "https://fortissimo.substack.com/p/ff143-scimmie-col-rolex",
+            "content": "Scimmie come bande organizzate che presidiano i gelati e attaccano bambini: reminder evoluzionistico. Varanasi: animali tra fumo e pire, cibo tra resti e città. Distopia biologica, non cyberpunk.",
+            "images": [],
+            "references": [],
+            "connections": []
+        },
+        {
+            "title": "☀️ ff.143.3 Sole e Asian Brown Cloud",
+            "link": "https://fortissimo.substack.com/p/ff143-scimmie-col-rolex",
+            "content": "Nebbia grigia permanente: non manca solo l’aria, manca il sole. Ironia della geoingegneria: sotto l’ABC (Asian Brown Cloud) il cielo è già “filtrato”.",
+            "images": [],
+            "references": [],
+            "connections": []
+        },
+        {
+            "title": "🔥 ff.143.4 Fuoco (3 facce)",
+            "link": "https://fortissimo.substack.com/p/ff143-scimmie-col-rolex",
+            "content": "Sopravvivenza: falò di plastica e rifiuti per scaldarsi. Sussistenza: “terra del fuoco” (Azerbaijan) e le Flame Towers. Trascendenza: pire funerarie a Varanasi. Quando fuoco=plastica e aria=muro grigio, crollano i presupposti biologici.",
+            "images": [],
+            "references": [],
+            "connections": []
+        }
+    ]
+},
+{
+    "url": "https://fortissimo.substack.com/p/ff144-il-fischio-dellaragosta",
+    "title": "🎼 ff.144 Il fischio dell'aragosta",
+    "subtitle": "Peter Steinberger, pensionato a 40 anni dopo la vendita di PSPDFKit (100 M€, Insight Partners), pubblica OpenClaw: un proto-agente AI open-source che ha imparato da solo a decodificare un audio vocale.",
+    "keypoints": [
+        "Peter Steinberger, pensionato a 40 anni dopo la vendita di PSPDFKit (100 M€, Insight Partners), pubblica OpenClaw: un proto-agente AI open-source che ha imparato da solo a decodificare un audio vocale.",
+        "Aragoste ovunque — dalla letteratura (Accelerando di Stross, La Nausea di Sartre, The Lobster di Lanthimos) al KGB e alla singolarità tecnologica.",
+        "Il benchmark METR mostra agenti AI che lavorano ore in autonomia; Moltbook, social network per AI, raggiunge 1,5 milioni di utenti in una settimana."
+    ],
+    "subchapters": [
+        {
+            "title": "🦞 ff.144.1 OpenClaw e il pensionato dei PDF",
+            "link": "https://fortissimo.substack.com/p/ff144-il-fischio-dellaragosta",
+            "content": "Peter Steinberger era in Marocco quando ha inviato per sbaglio un vocale al suo bot Telegram: il bot, senza essere programmato per l'audio, ha decodificato autonomamente il messaggio usando Whisper di OpenAI. Sbalordito, Steinberger ha pubblicato il codice in open source con il nome OpenClaw — logo: un'aragosta. PSPDFKit, la sua azienda di gestione PDF, aveva ricevuto 100 M€ da Insight Partners prima del 'pensionamento'.",
+            "images": [],
+            "references": [],
+            "connections": []
+        },
+        {
+            "title": "📚 ff.144.2 Aragoste in letteratura e AI",
+            "link": "https://fortissimo.substack.com/p/ff144-il-fischio-dellaragosta",
+            "content": "In Accelerando (Charles Stross), aragoste del KGB diventano coscienze digitali ed esploratrici spaziali — il cervello di un crostaceo è più semplice da mappare. Sartre (La Nausea) e Lanthimos (The Lobster) completano il bestiario: l'aragosta come simbolo di emarginazione e trasformazione. David Foster Wallace, inviato al Maine Lobster Festival per Gourmet, chiede di 'considerare l'aragosta' — riflessione che oggi si estende all'automazione.",
+            "images": [],
+            "references": [],
+            "connections": []
+        },
+        {
+            "title": "🤖 ff.144.3 Agenti autonomi e Moltbook",
+            "link": "https://fortissimo.substack.com/p/ff144-il-fischio-dellaragosta",
+            "content": "Il benchmark METR documenta agenti AI che lavorano ore in piena autonomia, coordinandosi tra loro. Moltbook (da 'molt', la muta del crostaceo) è un social network per AI: 1,5 milioni di utenti-aragosta in una settimana, con post che propongono linguaggi indecifrabili per gli umani. RentAHuman.ai inverte il rapporto: l'AI assolda umani. Domanda aperta: siamo ancora i cuochi, o l'acqua si sta scaldando anche per noi?",
+            "images": [],
+            "references": [],
+            "connections": []
+        }
+    ]
+}
 ];
