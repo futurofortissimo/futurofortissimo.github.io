@@ -84,7 +84,17 @@ const InnerApp = () => {
   const { incrementInteraction, searchQuery, setSearchQuery, debouncedSearchQuery } = useNavigation();
 
   React.useEffect(() => {
-    const processed = rawData.map(processChapter).filter(Boolean);
+    const getIssueNumber = (chapter) => {
+      const label = chapter?.ffLabel || chapter?.title || '';
+      const match = /ff\.(\d+)/i.exec(label);
+      return match ? Number(match[1]) : -1;
+    };
+
+    const processed = rawData
+      .map(processChapter)
+      .filter(Boolean)
+      .sort((a, b) => getIssueNumber(b) - getIssueNumber(a));
+
     setProcessedData(processed);
   }, []);
 
