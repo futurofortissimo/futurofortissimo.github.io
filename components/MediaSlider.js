@@ -1,4 +1,5 @@
 import { React, html } from '../runtime.js';
+import { t } from '../i18n.js';
 
 const extractReference = (title = '') => {
   const match = title.match(/ff\.?\d+(\.\d+)?/i);
@@ -51,12 +52,12 @@ const MediaSlider = ({ chapters }) => {
 
   const captionText = currentItem.caption?.trim();
 
-  return html`<section className="mb-12 md:mb-16">
+  return html`<section>
     <div className="relative overflow-hidden brutal-card no-round bg-white accent-bar accent-yellow">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,#000_1px,transparent_0)] [background-size:22px_22px] opacity-10 pointer-events-none"></div>
       <div className="relative p-5 md:p-8 flex flex-col gap-6">
         <div className="flex items-center justify-between gap-4">
-          <h2 className="font-heading ff-heading-lg text-black tracking-tight">Media dall'archivio</h2>
+          <h2 className="font-heading ff-heading-lg text-black tracking-tight">${t('mediaTitle')}</h2>
           <div className="flex gap-2">
             <button aria-label="Previous media" onClick=${goToPrev} className="h-10 w-10 border-3 border-black bg-white brutal-shadow hover:-translate-y-1 transition-transform">⟵</button>
             <button aria-label="Next media" onClick=${goToNext} className="h-10 w-10 border-3 border-black bg-white brutal-shadow hover:-translate-y-1 transition-transform">⟶</button>

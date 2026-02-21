@@ -79,6 +79,7 @@ const translations = {
     filterByEmoji: 'Filtra per emoji',
     supportTitle: 'Sostieni Futuro Fortissimo',
     paypalHint: 'Il modo pi\u00f9 rapido per mandare un grazie e supportare l\u2019archivio.',
+    mediaTitle: "Media dall'archivio",
   },
   en: {
     searchPlaceholder: 'Search stories...',
@@ -160,6 +161,7 @@ const translations = {
     filterByEmoji: 'Filter by emoji',
     supportTitle: 'Support Futuro Fortissimo',
     paypalHint: 'The quickest way to say thanks and support the archive.',
+    mediaTitle: 'Media from the archive',
   },
   hi: {
     searchPlaceholder: 'कहानियाँ खोजें...',
@@ -241,6 +243,7 @@ const translations = {
     filterByEmoji: 'इमोजी के अनुसार फ़िल्टर करें',
     supportTitle: 'फ्यूचरो फोर्टिसिमो का समर्थन करें',
     paypalHint: 'धन्यवाद कहने और संग्रह का समर्थन करने का सबसे तेज़ तरीका।',
+    mediaTitle: 'संग्रह से मीडिया',
   }
 };
 

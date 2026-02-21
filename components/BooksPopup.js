@@ -56,9 +56,9 @@ const BooksPopup = ({ isOpen, onClose, books }) => {
     .filter(Boolean)
     .join(' · ');
 
-  return html`<div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm" onClick=${onClose}>
+  return html`<div className="fixed inset-0 z-50 flex items-start justify-center p-4 bg-black/40 backdrop-blur-sm overflow-y-auto" onClick=${onClose}>
     <div
-      className="bg-white border-4 border-black brutal-shadow max-w-2xl w-full overflow-hidden animate-in fade-in zoom-in-95 duration-300 no-round"
+      className="bg-white border-4 border-black brutal-shadow max-w-2xl w-full overflow-y-auto max-h-[90dvh] animate-in fade-in zoom-in-95 duration-300 no-round my-auto"
       onClick=${(e) => e.stopPropagation()}
     >
       <div className="relative p-6 md:p-8 bg-white accent-bar accent-yellow">
