@@ -371,8 +371,8 @@ const InnerApp = () => {
     </div>
 
     ${isMediaOpen
-      ? html`<div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-          <div role="dialog" aria-modal="true" aria-label="Media deck" className="relative max-w-5xl w-full">
+      ? html`<div className="fixed inset-0 z-50 flex items-start justify-center p-4 bg-black/60 backdrop-blur-sm overflow-y-auto">
+          <div role="dialog" aria-modal="true" aria-label="Media deck" className="relative max-w-5xl w-full my-auto">
             <div className="absolute right-4 top-4 z-10">
               <button
                 onClick=${handleCloseMedia}
