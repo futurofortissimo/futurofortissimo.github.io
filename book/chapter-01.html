@@ -103,7 +103,7 @@
             &#127793; Natura — Mobilit&agrave;, Ambiente, Cibo e Fashion
         </h1>
         <p class="text-zinc-600 text-lg max-w-2xl mb-4">Come ci muoviamo, cosa respiriamo, cosa mangiamo, cosa indossiamo: ogni scelta quotidiana &egrave; un voto sul futuro del pianeta. La natura non &egrave; lo sfondo della nostra vita &mdash; ne &egrave; l'infrastruttura portante.</p>
-        <div class="reading-time mb-6">~27 min di lettura &middot; Ultimo aggiornamento: 2026-02-25 &middot; Riferimenti: 58+</div>
+        <div class="reading-time mb-6">~27 min di lettura &middot; Ultimo aggiornamento: 2026-02-26 &middot; Riferimenti: 58</div>
         <div class="border-t-2 border-zinc-100 pt-4">
             <div class="ff-eyebrow text-zinc-400 mb-3 text-xs">In questo capitolo</div>
             <div class="space-y-1">
@@ -116,6 +116,13 @@
             <h2 class="ff-eyebrow text-zinc-500 mb-2 text-xs">Search</h2>
             <p class="text-sm text-zinc-600">Usa l'indice del browser (Ctrl/Cmd+F) per cercare concetti, nomi e riferimenti in questa pagina.</p>
         </section>        </div>
+    </section>
+
+    <section class="brutal-card mb-10" aria-label="Search nel capitolo">
+        <h2 class="text-lg font-bold mb-3" style="font-family:'IBM Plex Mono',monospace">Search nel capitolo</h2>
+        <label for="chapterSearch" class="ff-eyebrow text-zinc-500">Trova parole chiave</label>
+        <input id="chapterSearch" type="search" placeholder="Es. mobilità, microplastiche, longevità" class="mt-2 w-full border-2 border-zinc-900 px-3 py-2"/>
+        <p id="chapterSearchHint" class="text-xs text-zinc-500 mt-2">Ricerca locale sui paragrafi di questo capitolo.</p>
     </section>
 
     <article class="prose max-w-none">
@@ -382,6 +389,22 @@ document.querySelectorAll('.fc').forEach(el => {
     el.replaceWith(a);
   }
 });
+
+const searchInput = document.getElementById('chapterSearch');
+const hint = document.getElementById('chapterSearchHint');
+const blocks = Array.from(document.querySelectorAll('article.prose p, article.prose blockquote, article.prose h2, article.prose figure'));
+if (searchInput && hint) {
+  searchInput.addEventListener('input', () => {
+    const q = searchInput.value.trim().toLowerCase();
+    let visible = 0;
+    blocks.forEach((el) => {
+      const match = !q || el.textContent.toLowerCase().includes(q);
+      el.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+    hint.textContent = q ? `Risultati visibili: ${visible}` : 'Ricerca locale sui paragrafi di questo capitolo.';
+  });
+}
 </script>
 </body>
 </html>
