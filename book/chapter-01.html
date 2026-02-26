@@ -376,6 +376,13 @@
 </footer>
 <script>
 const substackMap = {"4":"https://fortissimo.substack.com/p/-ff4-mammut-e-torneo-tremaghi","25":"https://fortissimo.substack.com/p/ff25-la-fattoria-degli-animali","49":"https://fortissimo.substack.com/p/ff49-la-pandemia-del-21esimo-secolo","1":"https://fortissimo.substack.com/p/-ff1-clima","5":"https://fortissimo.substack.com/p/ff5-elettrizzante","12":"https://fortissimo.substack.com/p/-ff10-sole-cuore-e-amore","16":"https://fortissimo.substack.com/p/-ff15-sossoldi-la-transizione-ecologica","19":"https://fortissimo.substack.com/p/ff17-lhambuger-di-hemingway","21":"https://fortissimo.substack.com/p/ff21-la-magia-dellinsalata","22":"https://fortissimo.substack.com/p/-ff22-mangiamo-troppo","32":"https://fortissimo.substack.com/p/ff32-i-numeri-non-mentono","33":"https://fortissimo.substack.com/p/ff33-le-piante-ci-salveranno","34":"https://fortissimo.substack.com/p/ff34-ripensare-le-citta","39":"https://fortissimo.substack.com/p/ff39-come-ti-vesti","46":"https://fortissimo.substack.com/p/ff46-elementale-watson","56":"https://fortissimo.substack.com/p/ff56-il-condizionatore-terrestre","58":"https://fortissimo.substack.com/p/ff58-le-banane-inquinano-troppo","59":"https://fortissimo.substack.com/p/ff59-lottimismo-vola","60":"https://fortissimo.substack.com/p/ff60-la-guida-autonoma-e-qui","70":"https://fortissimo.substack.com/p/ff70-il-sole-soluzione-o-morte","87":"https://fortissimo.substack.com/p/ff87-siamo-quello-che-respiriamo","90":"https://fortissimo.substack.com/p/ff91-lepidemia-di-stress","92":"https://fortissimo.substack.com/p/ff92-la-dieta-dei-centenari","104":"https://fortissimo.substack.com/p/-ff104-hackerare-il-corpo","105":"https://fortissimo.substack.com/p/ff105-elettricita-e-vita","107":"https://fortissimo.substack.com/p/ff107-glp-1-la-cura-allobesita","112":"https://fortissimo.substack.com/p/ff112-acqua-imprevedibile","113":"https://fortissimo.substack.com/p/ff113-fame-chimica","122":"https://fortissimo.substack.com/p/ff122-naturale-e-meglio","130":"https://fortissimo.substack.com/p/ff130-microplastiche","138":"https://fortissimo.substack.com/p/ff138-biofilia"};
+const compactClaimLabel = (raw, maxWords = 15) => {
+  const cleaned = raw.replace(/\s+/g, ' ').trim();
+  const words = cleaned.split(' ').filter(Boolean);
+  if (words.length <= maxWords) return cleaned;
+  return `${words.slice(0, maxWords).join(' ')}…`;
+};
+
 document.querySelectorAll('.fc').forEach(el => {
   const m = el.textContent.match(/ff\.(\d+)/);
   if (m) {
@@ -383,9 +390,19 @@ document.querySelectorAll('.fc').forEach(el => {
     const a = document.createElement('a');
     a.href = url;
     a.className = el.className;
-    a.innerHTML = el.innerHTML;
     a.target = '_blank';
     a.rel = 'noopener noreferrer';
+
+    const rawText = el.textContent || '';
+    const ffMatch = rawText.match(/ff\.\d+(?:\.\d+)?/);
+    const ffToken = ffMatch ? ffMatch[0] : `ff.${m[1]}`;
+    const titlePart = rawText
+      .replace(/^[\s\S]*?(ff\.\d+(?:\.\d+)?)/, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+    const compactTitle = compactClaimLabel(titlePart, 15);
+    a.textContent = compactTitle ? `${ffToken} ${compactTitle}` : ffToken;
+
     el.replaceWith(a);
   }
 });
