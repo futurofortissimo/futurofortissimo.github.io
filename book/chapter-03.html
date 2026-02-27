@@ -35,7 +35,6 @@
         .prose p{margin-bottom:1.2em;font-size:clamp(1rem,2.5vw,1.05rem);line-height:1.75;max-width:72ch}
         .prose .fc{font-family:'IBM Plex Mono',monospace;font-size:0.8rem;font-weight:700;color:var(--accent);cursor:pointer;text-decoration:none;transition:color 0.15s;display:inline}
         .prose .fc:hover{text-decoration:underline}
-        .note-highlight{background:#fee2e2;color:#991b1b;padding:0 .15em;border-radius:2px}
         .toc-link{border-left:3px solid transparent;transition:all 0.2s;min-height:44px;display:flex;align-items:center}.toc-link:hover,.toc-link:focus{border-left-color:var(--accent);padding-left:12px}
         blockquote{border-left:4px solid var(--accent);padding:12px 20px;margin:1.5em 0;background:#fff0f0;font-style:italic}
         .sep{height:2px;background:linear-gradient(90deg,var(--accent),transparent);margin:3em 0}
@@ -75,7 +74,7 @@
         <div class="chapter-num text-zinc-400 mb-4">CAPITOLO 03 / 5</div>
         <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight mb-4" style="text-transform:none">&#10084;&#65039; Societ&agrave; &mdash; Noi, Insieme</h1>
         <p class="text-zinc-600 text-lg max-w-2xl mb-4">La crisi contemporanea &egrave; di attenzione, contatto e governance. Flow, solitudine, geopolitica e denaro convergono in un unico tessuto: il corpo sociale come infrastruttura da riprogettare.</p>
-        <div class="reading-time mb-6">~27 min di lettura &middot; Ultimo aggiornamento: 2026-02-25 &middot; Riferimenti: 68+</div>
+        <div class="reading-time mb-6">~27 min di lettura &middot; Ultimo aggiornamento: 2026-02-27 &middot; Riferimenti: 68+</div>
         <div class="border-t-2 border-zinc-100 pt-4">
             <div class="ff-eyebrow text-zinc-400 mb-3 text-xs">In questo capitolo</div>
             <div class="space-y-1">
@@ -84,18 +83,20 @@
                 <a href="#s3" class="toc-link block py-1 pl-3 text-sm text-zinc-600 hover:text-zinc-900">3.3 &mdash; Cultura, Politica e Demografia</a>
             </div>
 
-        <section id="search" class="mt-6" aria-label="Ricerca rapida nel capitolo">
-            <h2 class="ff-eyebrow text-zinc-500 mb-2 text-xs">Search</h2>
-            <p class="text-sm text-zinc-600">Usa l'indice del browser (Ctrl/Cmd+F) per cercare concetti, nomi e riferimenti in questa pagina.</p>
-        </section>        </div>
+        <section id="search" class="brutal-card mt-6" aria-label="Search nel capitolo">
+            <h2 class="text-lg font-bold mb-3" style="font-family:'IBM Plex Mono',monospace">Search nel capitolo</h2>
+            <label for="chapterSearch" class="ff-eyebrow text-zinc-500">Trova parole chiave</label>
+            <input id="chapterSearch" type="search" placeholder="Es. flow, burnout, VO2max" class="mt-2 w-full border-2 border-zinc-900 px-3 py-2"/>
+            <p id="chapterSearchHint" class="text-xs text-zinc-500 mt-2">Ricerca locale sui paragrafi di questo capitolo.</p>
+        </section>
+        </div>
     </section>
 
     <article class="prose max-w-none">
 
-    <!-- ===== 3.1 ===== -->
     <h2 id="s1" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-red-500 pb-3">3.1 &mdash; Psicologia e Wellbeing</h2>
 
-    <p class="drop-cap">Ludwig Wittgenstein apre il <em>Tractatus Logico-Philosophicus</em> con una delle frasi pi&ugrave; celebri della filosofia: &ldquo;Il Mondo &egrave; <mark class="note-highlight">la totalit&agrave; dei Fatti, non delle Cose</mark>.&rdquo; Il mondo non &egrave; fatto di oggetti, ma di relazioni tra oggetti. Questa intuizione, vecchia di un secolo, &egrave; sorprendentemente attuale: il benessere non dipende da ci&ograve; che possediamo, ma da come <em>nominiamo</em> ci&ograve; che proviamo. I finlandesi hanno una parola, <em>sisu</em>, per indicare la determinazione che emerge quando ogni risorsa razionale &egrave; esaurita. I giapponesi hanno <em>&#21029;&#33145;</em> (<em>betsubara</em>), lo &ldquo;stomaco separato&rdquo; riservato al dessert. Il giapponese ha 72 micro-stagioni &mdash; <em>sekku</em>&mdash; che nominano sfumature climatiche invisibili all'occhio occidentale. Gli olandesi hanno <em>gezelligheid</em>, la calore di un pomeriggio tra amici che nessun termine inglese cattura
+    <p class="drop-cap">Ludwig Wittgenstein apre il <em>Tractatus Logico-Philosophicus</em> con una delle frasi pi&ugrave; celebri della filosofia: &ldquo;Il Mondo &egrave; la totalit&agrave; dei Fatti, non delle Cose.&rdquo; Il mondo non &egrave; fatto di oggetti, ma di relazioni tra oggetti. Questa intuizione, vecchia di un secolo, &egrave; sorprendentemente attuale: il benessere non dipende da ci&ograve; che possediamo, ma da come <em>nominiamo</em> ci&ograve; che proviamo. I finlandesi hanno una parola, <em>sisu</em>, per indicare la determinazione che emerge quando ogni risorsa razionale &egrave; esaurita. I giapponesi hanno <em>&#21029;&#33145;</em> (<em>betsubara</em>), lo &ldquo;stomaco separato&rdquo; riservato al dessert. Il giapponese ha 72 micro-stagioni &mdash; <em>sekku</em>&mdash; che nominano sfumature climatiche invisibili all'occhio occidentale. Gli olandesi hanno <em>gezelligheid</em>, la calore di un pomeriggio tra amici che nessun termine inglese cattura
     (<span class="fc">&#128172; ff.134.1
     Parole, parole, parole</span>).</p>
 
@@ -108,7 +109,7 @@
     <p>&ldquo;Il Mondo &egrave; la totalit&agrave; dei Fatti, non delle Cose.&rdquo;<br>&mdash; Ludwig Wittgenstein, <em>Tractatus Logico-Philosophicus</em>, 1.1</p>
     </blockquote>
 
-    <p>Ma come si passa dal nominare le emozioni al viverle pienamente? Mih&aacute;ly Cs&iacute;kszentmih&aacute;lyi ha dedicato trent'anni allo studio del <em>flow</em> &mdash; quello stato di concentrazione totale in cui il tempo scompare, l'autocritica si spegne e la performance raggiunge il picco. Uno studio McKinsey, spesso citato, stima che i dirigenti in flow siano il <mark class="note-highlight">500% pi&ugrave; produttivi</mark> della loro versione &ldquo;normale&rdquo;
+    <p>Ma come si passa dal nominare le emozioni al viverle pienamente? Mih&aacute;ly Cs&iacute;kszentmih&aacute;lyi ha dedicato trent'anni allo studio del <em>flow</em> &mdash; quello stato di concentrazione totale in cui il tempo scompare, l'autocritica si spegne e la performance raggiunge il picco. Uno studio McKinsey, spesso citato, stima che i dirigenti in flow siano il 500% pi&ugrave; produttivi della loro versione &ldquo;normale&rdquo;
     (<span class="fc">&#128171; ff.121.1
     Le basi del flow</span>).
     Il flow non &egrave; un privilegio di atleti e artisti: &egrave; una condizione neurologica precisa, caratterizzata da un aumento di dopamina, norepinefrina e anandamide, e da una riduzione dell'attivit&agrave; nella corteccia prefrontale dorsolaterale &mdash; la sede dell'autocritica. Roger Bannister, nel 1954, ruppe il muro dei 4 minuti nel miglio; nelle sei settimane successive, altri due atleti fecero lo stesso. Il &ldquo;Bannister Effect&rdquo; dimostra che molti limiti sono psicologici, non fisici
@@ -117,7 +118,7 @@
 
     <figure>
         <img src="/index_files/pubs/ff44.webp" alt="Illustrazione di ansia e gestione del tempo" loading="lazy" width="800" height="450"/>
-        <figcaption>ff.44 &mdash; Che ansia! L'arte di vivere con <mark class="note-highlight">4.000 settimane</mark> a disposizione.</figcaption>
+        <figcaption>ff.44 &mdash; Che ansia! L'arte di vivere con 4.000 settimane a disposizione.</figcaption>
     </figure>
 
     <p>Oliver Burkeman, in <em>Four Thousand Weeks</em>, capovolge il problema: il tempo non va gestito, va accettato. Una vita media &egrave; di circa 4.000 settimane. L'ansia da produttivit&agrave; nasce dal tentativo di far entrare l'infinito nel finito. La soluzione non &egrave; fare di pi&ugrave;, ma scegliere consapevolmente cosa non fare
@@ -130,7 +131,7 @@
     (<span class="fc">&#128142; ff.137.3
     Cristalli e Bach</span>).</p>
 
-    <p>L'ansia moderna ha una dimensione quantitativa: il tempo accettabile per il caricamento di una pagina web &egrave; sceso da 4 a 2 secondi in tre anni. Misuriamo tutto &mdash; dal sonno alle calorie &mdash; con un incremento nell'uso di app di tracking che, paradossalmente, <mark class="note-highlight">aumenta l'ansia invece di ridurla</mark>. Naval Ravikant propone la cura: meno ego e controllo, pi&ugrave; flow e presente
+    <p>L'ansia moderna ha una dimensione quantitativa: il tempo accettabile per il caricamento di una pagina web &egrave; sceso da 4 a 2 secondi in tre anni. Misuriamo tutto &mdash; dal sonno alle calorie &mdash; con un incremento nell'uso di app di tracking che, paradossalmente, aumenta l'ansia invece di ridurla. Naval Ravikant propone la cura: meno ego e controllo, pi&ugrave; flow e presente
     (<span class="fc">&#128552; ff.68
     Che ansia! (pt. 2)</span>).</p>
 
@@ -147,7 +148,7 @@
     Le parole, a volte, finiscono: ci sono esperienze che trascendono il linguaggio, momenti in cui l'unica risposta adeguata &egrave; il silenzio. Restare senza parole non &egrave; un fallimento: &egrave; il riconoscimento che la realt&agrave; &egrave; pi&ugrave; vasta del vocabolario
     (<span class="fc">&#128566; ff.41
     Non ho parole</span>).
-    Byung-Chul Han, in <em>Vita Contemplativa</em>, sostiene che <mark class="note-highlight">l'inattivit&agrave; costituisce l'essere umano</mark>, distinguendolo dalle macchine &mdash; una vita senza pause si deteriora in pura sopravvivenza. Bryan Johnson, l'imprenditore che spende 2 milioni di dollari l'anno per rallentare l'invecchiamento, ha costruito la routine pi&ugrave; rigida del mondo: sveglia alle 4:30, 111 pillole al giorno, niente cibo dopo le 11. &Egrave; un caso estremo, ma il suo protocollo solleva una domanda legittima. La stimolazione trans-craniale promette soluzioni meno invasive: dispositivi come Somnee alterano la distribuzione delle onde neurali verso quelle associate al riposo, offrendo un'alternativa alla melatonina. Ma questi stimolatori sollevano interrogativi sulla <mark class="note-highlight">dipendenza tecnologica dal benessere</mark>
+    Byung-Chul Han, in <em>Vita Contemplativa</em>, sostiene che l'inattivit&agrave; costituisce l'essere umano, distinguendolo dalle macchine &mdash; una vita senza pause si deteriora in pura sopravvivenza. Bryan Johnson, l'imprenditore che spende 2 milioni di dollari l'anno per rallentare l'invecchiamento, ha costruito la routine pi&ugrave; rigida del mondo: sveglia alle 4:30, 111 pillole al giorno, niente cibo dopo le 11. &Egrave; un caso estremo, ma il suo protocollo solleva una domanda legittima. La stimolazione trans-craniale promette soluzioni meno invasive: dispositivi come Somnee alterano la distribuzione delle onde neurali verso quelle associate al riposo, offrendo un'alternativa alla melatonina. Ma questi stimolatori sollevano interrogativi sulla dipendenza tecnologica dal benessere
     (<span class="fc">&#9889; ff.75
     Massaggi al cervello</span>): quanta routine serve per essere liberi? Wim Wenders, in <em>Perfect Days</em>, offre la risposta opposta: un addetto alle pulizie di Tokyo che trova la perfezione nella ripetizione silenziosa
     (<span class="fc">&#128338; ff.108.1
@@ -155,16 +156,15 @@
 
     <div class="sep"></div>
 
-    <!-- ===== 3.2 ===== -->
     <h2 id="s2" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-red-500 pb-3">3.2 &mdash; Alimentazione e Sport</h2>
 
-    <p class="drop-cap">Se non ti muovi, muori. Non &egrave; un'esagerazione: <mark class="note-highlight">150 minuti di attivit&agrave; fisica moderata</mark> a settimana &mdash; una camminata veloce di 20 minuti al giorno &mdash; riducono la mortalit&agrave; per tutte le cause del 30%. Chi &egrave; completamente sedentario ha un rischio di morte prematura del 50% superiore a chi si muove regolarmente. Il sistema MET (Metabolic Equivalent of Task) misura il costo energetico di ogni attivit&agrave;: camminare &egrave; 3,5 MET, correre 8, stare seduti 1
+    <p class="drop-cap">Se non ti muovi, muori. Non &egrave; un'esagerazione: 150 minuti di attivit&agrave; fisica moderata a settimana &mdash; una camminata veloce di 20 minuti al giorno &mdash; riducono la mortalit&agrave; per tutte le cause del 30%. Chi &egrave; completamente sedentario ha un rischio di morte prematura del 50% superiore a chi si muove regolarmente. Il sistema MET (Metabolic Equivalent of Task) misura il costo energetico di ogni attivit&agrave;: camminare &egrave; 3,5 MET, correre 8, stare seduti 1
     (<span class="fc">&#127939; ff.86.1
     Se non ti muovi, muori</span>).
-    Il dato pi&ugrave; potente, per&ograve;, viene dal VO&#8322;max &mdash; la quantit&agrave; massima di ossigeno che il corpo pu&ograve; utilizzare sotto sforzo. Peter Attia, in <em>Outlive</em>, lo chiama &ldquo;il miglior predittore singolo di longevit&agrave;&rdquo;: chi ha un VO&#8322;max nel quartile pi&ugrave; basso ha un <mark class="note-highlight">rischio di morte 5 volte superiore</mark> a chi &egrave; nel quartile pi&ugrave; alto &mdash; pi&ugrave; del fumo, del diabete, delle malattie cardiovascolari
+    Il dato pi&ugrave; potente, per&ograve;, viene dal VO&#8322;max &mdash; la quantit&agrave; massima di ossigeno che il corpo pu&ograve; utilizzare sotto sforzo. Peter Attia, in <em>Outlive</em>, lo chiama &ldquo;il miglior predittore singolo di longevit&agrave;&rdquo;: chi ha un VO&#8322;max nel quartile pi&ugrave; basso ha un rischio di morte 5 volte superiore a chi &egrave; nel quartile pi&ugrave; alto &mdash; pi&ugrave; del fumo, del diabete, delle malattie cardiovascolari
     (<span class="fc">&#128168; ff.86.2
     Misurare l'ossigeno bruciato</span>).
-    Apple Watch, Garmin, WHOOP e Oura Ring misurano ormai il VO&#8322;max stimato al polso; la democratizzazione dei dati fisiologici &egrave; in corso. Uno studio recente rileva che <mark class="note-highlight">4.000 passi al giorno riducono il rischio di morte e malattie dal 9% al 39%</mark>&mdash; non servono maratone, bastano passeggiate. Il wellness market vale 1.500 miliardi di dollari globali
+    Apple Watch, Garmin, WHOOP e Oura Ring misurano ormai il VO&#8322;max stimato al polso; la democratizzazione dei dati fisiologici &egrave; in corso. Uno studio recente rileva che 4.000 passi al giorno riducono il rischio di morte e malattie dal 9% al 39%&mdash; non servono maratone, bastano passeggiate. Il wellness market vale 1.500 miliardi di dollari globali
     (<span class="fc">&#9201; ff.35
     Sto bene, sono Super Sapiens</span>).</p>
 
@@ -172,7 +172,7 @@
     <p>&ldquo;Il VO&#8322;max &egrave; il miglior predittore singolo di longevit&agrave;. Non il colesterolo, non la pressione, non il BMI. L'ossigeno.&rdquo;<br>&mdash; Peter Attia, <em>Outlive</em></p>
     </blockquote>
 
-    <p>Strava, la piattaforma sociale per atleti, conta 120 milioni di utenti attivi. Il suo report annuale racconta le abitudini della generazione che corre: la GenZ preferisce il HIIT (High-Intensity Interval Training), i Millennial corrono, i Boomer pedalano. Il dato pi&ugrave; interessante &egrave; sociale: chi si allena in gruppo &egrave; il <mark class="note-highlight">22% pi&ugrave; costante</mark> di chi si allena da solo
+    <p>Strava, la piattaforma sociale per atleti, conta 120 milioni di utenti attivi. Il suo report annuale racconta le abitudini della generazione che corre: la GenZ preferisce il HIIT (High-Intensity Interval Training), i Millennial corrono, i Boomer pedalano. Il dato pi&ugrave; interessante &egrave; sociale: chi si allena in gruppo &egrave; il 22% pi&ugrave; costante di chi si allena da solo
     (<span class="fc">&#128200; ff.86.3
     Report Strava 2023</span>).
     Il contagio sociale dell'esercizio &egrave; reale: uno studio pubblicato su <em>Nature Human Behaviour</em> ha dimostrato che se un amico inizia a correre, la probabilit&agrave; che tu inizi cresce del 25%
@@ -205,10 +205,10 @@
     (<span class="fc">&#129658; ff.57
     Il medico mi ha prescritto una maratona</span>).</p>
 
-    <p>James Nestor, in <em>Breath: The New Science of a Lost Art</em>, rivela che la maggior parte degli esseri umani moderni respira male. La respirazione orale cronica &egrave; associata a restringimento delle vie aeree, apnea del sonno, ansia. La respirazione nasale, al contrario, produce ossido nitrico nei seni paranasali &mdash; un vasodilatatore che aumenta l'assorbimento di ossigeno del 10-15%. La respirazione lenta, a circa <mark class="note-highlight">5,5 respiri al minuto</mark>, ottimizza lo scambio gassoso e attiva il sistema parasimpatico
+    <p>James Nestor, in <em>Breath: The New Science of a Lost Art</em>, rivela che la maggior parte degli esseri umani moderni respira male. La respirazione orale cronica &egrave; associata a restringimento delle vie aeree, apnea del sonno, ansia. La respirazione nasale, al contrario, produce ossido nitrico nei seni paranasali &mdash; un vasodilatatore che aumenta l'assorbimento di ossigeno del 10-15%. La respirazione lenta, a circa 5,5 respiri al minuto, ottimizza lo scambio gassoso e attiva il sistema parasimpatico
     (<span class="fc">&#127744; ff.87.1
     Breve storia del respiro</span>).
-    Il sonno, infine, &egrave; il grande dimenticato. Il sistema glinfatico &mdash; scoperto nel 2012 da Maiken Nedergaard alla University of Rochester &mdash; pulisce il cervello dai rifiuti metabolici durante il sonno profondo. Gli organismi viventi vivono per circa <mark class="note-highlight">100 milioni di cicli respiratori</mark>&mdash; una regola che unisce creature dai batteri alle balene. Dormire meno di <mark class="note-highlight">6 ore aumenta del 12%</mark> il rischio di malattie cardiovascolari. La cronobiologia insegna che anche <em>quando</em> mangiamo conta: topi alimentati nelle stesse calorie ma in finestre temporali diverse pesano il 40% in meno
+    Il sonno, infine, &egrave; il grande dimenticato. Il sistema glinfatico &mdash; scoperto nel 2012 da Maiken Nedergaard alla University of Rochester &mdash; pulisce il cervello dai rifiuti metabolici durante il sonno profondo. Gli organismi viventi vivono per circa 100 milioni di cicli respiratori&mdash; una regola che unisce creature dai batteri alle balene. Dormire meno di 6 ore aumenta del 12% il rischio di malattie cardiovascolari. La cronobiologia insegna che anche <em>quando</em> mangiamo conta: topi alimentati nelle stesse calorie ma in finestre temporali diverse pesano il 40% in meno
     (<span class="fc">&#128164; ff.47
     Russa? No problem!</span>)
     (<span class="fc">&#127748; ff.22
@@ -216,13 +216,12 @@
 
     <div class="sep"></div>
 
-    <!-- ===== 3.3 ===== -->
     <h2 id="s3" class="text-xl sm:text-2xl font-bold mt-14 mb-6 border-b-4 border-red-500 pb-3">3.3 &mdash; Cultura, Politica e Demografia</h2>
 
     <p class="drop-cap">Paul Millerd aveva un lavoro da consulente strategico, uno stipendio a sei cifre e un piano di carriera blindato. Poi si &egrave; fermato. In <em>The Pathless Path</em>, racconta la sua uscita dal paradigma lavoro-identit&agrave;-status: la scoperta che il burnout non &egrave; un problema individuale, ma sistemico. Il &ldquo;default path&rdquo; &mdash; scuola, universit&agrave;, carriera, pensione &mdash; funzionava quando il mondo era stabile. In un mondo che cambia ogni 18 mesi, il percorso lineare &egrave; una trappola
     (<span class="fc">&#128165; ff.62.1
     Il cambio di paradigma</span>).
-    Millerd introduce il concetto di <mark class="note-highlight">&ldquo;misery tax&rdquo;</mark>: il costo nascosto di un lavoro che non ami, misurato in pranzi costosi per compensare la frustrazione, vacanze lussuose per sopravvivere all'anno, spese sanitarie per lo stress accumulato
+    Millerd introduce il concetto di &ldquo;misery tax&rdquo;: il costo nascosto di un lavoro che non ami, misurato in pranzi costosi per compensare la frustrazione, vacanze lussuose per sopravvivere all'anno, spese sanitarie per lo stress accumulato
     (<span class="fc">&#128176; ff.62.3
     La tassa sulla miseria</span>).
     La piramide di Maslow va riletta: una volta soddisfatti i bisogni di base, non &egrave; lo status che cerchiamo ma l'autonomia. &ldquo;Il lavoro non &egrave; il contrario della libert&agrave;. Il lavoro senza scelta lo &egrave;.&rdquo; Sempre pi&ugrave; giovani abbracciano la &ldquo;strategia a bilanciere&rdquo;: lavori manuali oppure all-in digitale, abbandonando il percorso universitario tradizionale.
@@ -273,7 +272,7 @@
     (<span class="fc">&#127775; ff.44.5
     Quattro modi per trovare una cura</span>).</p>
 
-    <p>La solitudine &egrave; l'altra pandemia. Vivek Murthy, Surgeon General degli Stati Uniti, nel 2023 ha dichiarato la solitudine un'emergenza sanitaria pubblica: l'isolamento sociale ha lo stesso impatto sulla mortalit&agrave; di <mark class="note-highlight">fumare 15 sigarette al giorno</mark>. In Giappone, il fenomeno degli <em>hikikomori</em> &mdash; giovani che si ritirano dalla vita sociale per mesi o anni &mdash; coinvolge 1,5 milioni di persone. In Corea del Sud, il tasso di fertilit&agrave; &egrave; sceso a <mark class="note-highlight">0,72 figli per donna</mark> &mdash; il pi&ugrave; basso al mondo, e biologicamente insostenibile
+    <p>La solitudine &egrave; l'altra pandemia. Vivek Murthy, Surgeon General degli Stati Uniti, nel 2023 ha dichiarato la solitudine un'emergenza sanitaria pubblica: l'isolamento sociale ha lo stesso impatto sulla mortalit&agrave; di fumare 15 sigarette al giorno. In Giappone, il fenomeno degli <em>hikikomori</em> &mdash; giovani che si ritirano dalla vita sociale per mesi o anni &mdash; coinvolge 1,5 milioni di persone. In Corea del Sud, il tasso di fertilit&agrave; &egrave; sceso a 0,72 figli per donna &mdash; il pi&ugrave; basso al mondo, e biologicamente insostenibile
     (<span class="fc">&#129309; ff.97.1
     L'epidemia silenziosa</span>).
     In Italia, la situazione demografica non &egrave; molto diversa: 1,2 figli per donna, la popolazione in calo dal 2015. Le cause sono economiche (costo dell'abitazione, precariato), culturali (individualismo, posticipazione delle scelte di vita) e biologiche (fertilit&agrave; che cala dopo i 35 anni)
@@ -297,14 +296,14 @@
     La guerra, spesso presentata come inevitabile, &egrave; in realt&agrave; il peggior investimento possibile: il ritorno economico di un conflitto armato &egrave; negativo per tutte le parti coinvolte, se si contano i costi a 20 anni. La pace, al contrario, ha un ROI misurabile
     (<span class="fc">&#9876;&#65039; ff.14
     La guerra non &egrave; futuro</span>).
-    La disuguaglianza economica alimenta l'instabilit&agrave;: <mark class="note-highlight">la ricchezza globale resta fortemente concentrata</mark>. Negli ultimi 70 anni, la percentuale di proprietari di case sposati &egrave; crollata dal 50% al 15%. Il coefficiente di Gini degli USA &egrave; 0,49 &mdash; pi&ugrave; alto di qualsiasi paese europeo, pi&ugrave; vicino alla Turchia che alla Danimarca
+    La disuguaglianza economica alimenta l'instabilit&agrave;: la ricchezza globale resta fortemente concentrata. Negli ultimi 70 anni, la percentuale di proprietari di case sposati &egrave; crollata dal 50% al 15%. Il coefficiente di Gini degli USA &egrave; 0,49 &mdash; pi&ugrave; alto di qualsiasi paese europeo, pi&ugrave; vicino alla Turchia che alla Danimarca
     (<span class="fc">&#128176; ff.38
     Soldi spartiti male</span>).</p>
 
-    <p>Ma la crisi non &egrave; solo economica o politica: &egrave; cognitiva. Howard Gardner, in <em>Frames of Mind</em>, identifica <mark class="note-highlight">otto tipi di intelligenza</mark> &mdash; linguistica, logico-matematica, musicale, spaziale, corporea, interpersonale, intrapersonale, naturalistica. Il sistema scolastico ne valuta due. L'AI ne replica tre. Restano cinque forme di intelligenza che sono unicamente umane
+    <p>Ma la crisi non &egrave; solo economica o politica: &egrave; cognitiva. Howard Gardner, in <em>Frames of Mind</em>, identifica otto tipi di intelligenza &mdash; linguistica, logico-matematica, musicale, spaziale, corporea, interpersonale, intrapersonale, naturalistica. Il sistema scolastico ne valuta due. L'AI ne replica tre. Restano cinque forme di intelligenza che sono unicamente umane
     (<span class="fc">&#129504; ff.103.3
     La nuova Era dell'Intelligenza</span>).
-    Ivan Illich, in <em>Deschooling Society</em> (1971), aveva anticipato la crisi: l'istruzione istituzionalizzata confonde l'insegnamento con l'apprendimento, il diploma con la competenza. L'editore Wiley ha ritirato oltre 11.300 articoli e chiuso 19 pubblicazioni a causa di &ldquo;fabbriche di paper&rdquo; &mdash; la crisi epistemologica &egrave; gi&agrave; qui. I podcast &mdash; <mark class="note-highlight">504 milioni di ascoltatori</mark> globali nel 2024 &mdash; sono la descholarizzazione in atto: chiunque pu&ograve; imparare qualsiasi cosa. Alpha School usa l'AI per far apprendere agli studenti <mark class="note-highlight">2 volte pi&ugrave; velocemente in sole 2 ore al giorno</mark> ovunque, gratis
+    Ivan Illich, in <em>Deschooling Society</em> (1971), aveva anticipato la crisi: l'istruzione istituzionalizzata confonde l'insegnamento con l'apprendimento, il diploma con la competenza. L'editore Wiley ha ritirato oltre 11.300 articoli e chiuso 19 pubblicazioni a causa di &ldquo;fabbriche di paper&rdquo; &mdash; la crisi epistemologica &egrave; gi&agrave; qui. I podcast &mdash; 504 milioni di ascoltatori globali nel 2024 &mdash; sono la descholarizzazione in atto: chiunque pu&ograve; imparare qualsiasi cosa. Alpha School usa l'AI per far apprendere agli studenti 2 volte pi&ugrave; velocemente in sole 2 ore al giorno ovunque, gratis
     (<span class="fc">&#127911; ff.131.3
     Tre ascolti</span>)
     (<span class="fc">&#128214; ff.131.4
@@ -323,7 +322,7 @@
     <p>Le rivoluzioni tecnologiche, in fondo, non sono mai solo tecnologiche. Sopravvivere alla rivoluzione AI richiede le stesse competenze che hanno permesso all'umanit&agrave; di sopravvivere alla rivoluzione industriale: adattabilit&agrave;, apprendimento continuo, solidariet&agrave; comunitaria. Chi ha attraversato la prima rivoluzione non sono stati i pi&ugrave; forti o i pi&ugrave; intelligenti, ma i pi&ugrave; connessi
     (<span class="fc">&#9917; ff.55
     Sopravvivere alla rivoluzione</span>).
-    Greg McKeown, autore di <em>Essentialism</em>, ha rivoluzionato il concetto di obiettivi concentrandosi sulle persone: il successo non si misura in risultati ma in relazioni. Maslow stesso ha rivisitato la sua piramide aggiungendo la <em>self-transcendence</em> &mdash; il bisogno di superare s&eacute; stessi al servizio degli altri. L'essenziale, come insegna il Piccolo Principe, &egrave; invisibile agli occhi: <mark class="note-highlight">l'essenzialismo pu&ograve; favorire relazioni pi&ugrave; profonde e significative</mark>
+    Greg McKeown, autore di <em>Essentialism</em>, ha rivoluzionato il concetto di obiettivi concentrandosi sulle persone: il successo non si misura in risultati ma in relazioni. Maslow stesso ha rivisitato la sua piramide aggiungendo la <em>self-transcendence</em> &mdash; il bisogno di superare s&eacute; stessi al servizio degli altri. L'essenziale, come insegna il Piccolo Principe, &egrave; invisibile agli occhi: l'essenzialismo pu&ograve; favorire relazioni pi&ugrave; profonde e significative
     (<span class="fc">&#128140; ff.89
     Meno Tinder, pi&ugrave; relazioni</span>).</p>
 
@@ -380,7 +379,52 @@
 </footer>
 <script>
 const substackMap={"49":"https://fortissimo.substack.com/p/ff49-la-pandemia-del-21esimo-secolo","68":"https://fortissimo.substack.com/p/ff65-come-fermare-il-tempo","75":"https://fortissimo.substack.com/p/ff75-massaggi-al-cervello","89":"https://fortissimo.substack.com/p/ff89-meno-tinder-piu-relazioni","8":"https://fortissimo.substack.com/p/ff8-combattere-la-noia","14":"https://fortissimo.substack.com/p/ff14-la-guerra-non-e-futuro","17":"https://fortissimo.substack.com/p/-ff16-sport-e-chi-ne-fa-le-feci","18":"https://fortissimo.substack.com/p/-ff17-tra-arte-digitale-e-ai","22":"https://fortissimo.substack.com/p/-ff22-mangiamo-troppo","23":"https://fortissimo.substack.com/p/ff23-matrimoni-privatizzati","29":"https://fortissimo.substack.com/p/ff29-viva-la-mamma","35":"https://fortissimo.substack.com/p/ff35-siamo-supersapiens","38":"https://fortissimo.substack.com/p/ff38-soldi-spartiti-male","41":"https://fortissimo.substack.com/p/ff41-non-ho-parole","44":"https://fortissimo.substack.com/p/ff42-che-ansia-pt-1","47":"https://fortissimo.substack.com/p/ff47-sonno","55":"https://fortissimo.substack.com/p/ff55-sopravvivere-alla-rivoluzione","57":"https://fortissimo.substack.com/p/ff57-il-medico-mi-ha-prescritto-una-maratona","62":"https://fortissimo.substack.com/p/ff61-come-evitare-il-burnout","86":"https://fortissimo.substack.com/p/ff86-movimento","87":"https://fortissimo.substack.com/p/ff87-siamo-quello-che-respiriamo","89":"https://fortissimo.substack.com/p/ff89-meno-tinder-piu-relazioni","90":"https://fortissimo.substack.com/p/ff91-lepidemia-di-stress","97":"https://fortissimo.substack.com/p/ff97-tocchiamoci","103":"https://fortissimo.substack.com/p/ff103-fuoco-ferro-intelligenza","108":"https://fortissimo.substack.com/p/ff108-inno-alla-routine","120":"https://fortissimo.substack.com/p/ff120-sport-e-longevita","121":"https://fortissimo.substack.com/p/ff121-il-flow-ti-mette-le-ali","125":"https://fortissimo.substack.com/p/ff125-usa-crollo-di-un-impero","127":"https://fortissimo.substack.com/p/ff127-jazz-con-chatgpt","128":"https://fortissimo.substack.com/p/ff126-e-tutta-questione-di-testa","131":"https://fortissimo.substack.com/p/ff131-ascolti","133":"https://fortissimo.substack.com/p/ff133-ironman","134":"https://fortissimo.substack.com/p/ff134-parole","135":"https://fortissimo.substack.com/p/ff135-tutto-un-casino","137":"https://fortissimo.substack.com/p/ff137-accumulo"};
-document.querySelectorAll('.fc').forEach(el=>{const m=el.textContent.match(/ff\.(\d+)/);if(m){const url=substackMap[m[1]]||('https://fortissimo.substack.com/p/ff'+m[1]);const a=document.createElement('a');a.href=url;a.className=el.className;a.innerHTML=el.innerHTML;a.target='_blank';a.rel='noopener noreferrer';el.replaceWith(a);}});
+const compactClaimLabel = (raw, maxWords = 15) => {
+  const cleaned = raw.replace(/\s+/g, ' ').trim();
+  if (!cleaned) return '';
+  const words = cleaned.split(' ');
+  if (words.length <= maxWords) return cleaned;
+  return `${words.slice(0, maxWords).join(' ')}…`;
+};
+
+document.querySelectorAll('.fc').forEach(el=>{
+  const rawText = el.textContent || '';
+  const m=rawText.match(/ff\.(\d+)/);
+  if(m){
+    const url=substackMap[m[1]]||('https://fortissimo.substack.com/p/ff'+m[1]);
+    const ffMatch = rawText.match(/ff\.\d+(?:\.\d+)?/);
+    const titlePart = rawText
+      .replace(/^[^\w\d]*(?:ff\.\d+(?:\.\d+)?)?/i, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+    const compactTitle = compactClaimLabel(titlePart, 15);
+    const label = ffMatch ? `${ffMatch[0]} ${compactTitle}`.trim() : compactTitle;
+
+    const a=document.createElement('a');
+    a.href=url;
+    a.className=el.className;
+    a.textContent=label;
+    a.target='_blank';
+    a.rel='noopener noreferrer';
+    el.replaceWith(a);
+  }
+});
+
+const searchInput=document.getElementById('chapterSearch');
+const hint=document.getElementById('chapterSearchHint');
+const blocks=Array.from(document.querySelectorAll('article.prose p, article.prose blockquote, article.prose h2'));
+if(searchInput&&hint){
+  searchInput.addEventListener('input',()=>{
+    const q=searchInput.value.trim().toLowerCase();
+    let visible=0;
+    blocks.forEach((el)=>{
+      const match=!q||el.textContent.toLowerCase().includes(q);
+      el.style.display=match?'':'none';
+      if(match) visible++;
+    });
+    hint.textContent=q?`Risultati visibili: ${visible}`:'Ricerca locale sui paragrafi di questo capitolo.';
+  });
+}
 </script>
 </body>
 </html>
