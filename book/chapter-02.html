@@ -103,7 +103,7 @@
             &#128187; Tecnologia &mdash; La Macchina che Ridisegna il Mondo
         </h1>
         <p class="text-zinc-600 text-lg max-w-2xl mb-4">L'AI non &egrave; solo una tecnologia: &egrave; una nuova unit&agrave; di misura che ridisegna valore, produttivit&agrave; e potere. Dai robot agli agenti autonomi, dal metaverso alle criptovalute, dai prodotti di consumo alla singolarit&agrave;: il compute diventa il nuovo petrolio.</p>
-        <div class="reading-time mb-6">~30 min di lettura &middot; Ultimo aggiornamento: 2026-02-25 &middot; Riferimenti: 59+</div>
+        <div class="reading-time mb-6">~30 min di lettura &middot; Ultimo aggiornamento: 2026-03-03 &middot; Riferimenti: 60+</div>
         <div class="border-t-2 border-zinc-100 pt-4">
             <div class="ff-eyebrow text-zinc-400 mb-3 text-xs">In questo capitolo</div>
             <div class="space-y-1">
@@ -158,7 +158,7 @@
     <p>&ldquo;L'AI non &egrave; lo strumento della singolarit&agrave;; l'AI &egrave; la singolarit&agrave;. Non stiamo costruendo uno strumento che cambia il mondo &mdash; stiamo costruendo un mondo che cambia gli strumenti.&rdquo;<br>&mdash; Alexander Wissner-Gross, fisico di Harvard</p>
     </blockquote>
 
-    <p>Nel filo editoriale di Futuro Fortissimo c'&egrave; un punto fermo: l'AI non &egrave; solo una corsa a benchmark, &egrave; una riorganizzazione di lavoro e decisioni. Le note su costi energetici, efficienza e accessibilit&agrave; raccontano la stessa tensione: pi&ugrave; potenza, ma anche pi&ugrave; disciplina nell'uso (<span class="fc">&#9889; ff.135.1
+    <p>L'AI non &egrave; solo una corsa a benchmark: sta riorganizzando lavoro e decisioni. Costi energetici, efficienza e accessibilit&agrave; mostrano la stessa tensione: pi&ugrave; potenza, ma anche pi&ugrave; disciplina nell'uso (<span class="fc">&#9889; ff.135.1
     I costi dell'Intelligenza Artificiale</span>; <span class="fc">&#128161; ff.129.1
     La singolarit&agrave; gentile di Altman</span>). Il punto non &egrave; prevedere tutto: &egrave; mantenere governabile l'accelerazione.</p>
 
@@ -413,18 +413,35 @@
 </footer>
 <script>
 const substackMap = {"2":"https://fortissimo.substack.com/p/-ff2-mente-artificiale-e-psichedelica","115":"https://fortissimo.substack.com/p/ff115-lanno-del-serpente-1","117":"https://fortissimo.substack.com/p/ff117-viviamo-in-una-simulazione","122":"https://fortissimo.substack.com/p/ff122-naturale-e-meglio","2":"https://fortissimo.substack.com/p/-ff2-mente-artificiale-e-psichedelica","3":"https://fortissimo.substack.com/p/ff3-metaverso","5":"https://fortissimo.substack.com/p/ff5-elettrizzante","9":"https://fortissimo.substack.com/p/-ff9-automazione","11":"https://fortissimo.substack.com/p/ff11-sparare-nel-metaverso","16":"https://fortissimo.substack.com/p/-ff15-sossoldi-la-transizione-ecologica","24":"https://fortissimo.substack.com/p/ff24-guerra-criptica","28":"https://fortissimo.substack.com/p/-ff28-google-ricerca-il-futuro","30":"https://fortissimo.substack.com/p/-ff30-dall-e-genera-arte","36":"https://fortissimo.substack.com/p/ff36-singolarita","37":"https://fortissimo.substack.com/p/ff37-i-robot-sono-qui","42":"https://fortissimo.substack.com/p/ff42-made-in-china","45":"https://fortissimo.substack.com/p/ff45-trend","46":"https://fortissimo.substack.com/p/ff46-elementale-watson","50":"https://fortissimo.substack.com/p/ff50-cosa-e-successo-nel-1971","53":"https://fortissimo.substack.com/p/ff53-la-cura-ai-tumori","69":"https://fortissimo.substack.com/p/ff69-quantico","72":"https://fortissimo.substack.com/p/ff71-giochiamo-a-uno","82":"https://fortissimo.substack.com/p/ff81-guerra-a-colpi-di-chip","83":"https://fortissimo.substack.com/p/ff83-imparare-da-chatgpt","88":"https://fortissimo.substack.com/p/ff88-singolarita-nel-2029","93":"https://fortissimo.substack.com/p/ff93-tesla-fine-di-unera","95":"https://fortissimo.substack.com/p/ff95-sovranita-dei-network","98":"https://fortissimo.substack.com/p/ff98-quantico","102":"https://fortissimo.substack.com/p/ff102-il-futuro-in-una-conchiglia","106":"https://fortissimo.substack.com/p/ff106-ai-lloween","110":"https://fortissimo.substack.com/p/ff110-uno-stato-da-mantenere","114":"https://fortissimo.substack.com/p/ff114-miniature","116":"https://fortissimo.substack.com/p/ff116-lanno-del-serpente-2","123":"https://fortissimo.substack.com/p/ff123-coltellino-svizzero","124":"https://fortissimo.substack.com/p/ff124-ah-ia","125":"https://fortissimo.substack.com/p/ff125-usa-crollo-di-un-impero","126":"https://fortissimo.substack.com/p/ff126-google-fine-o-rinascita","129":"https://fortissimo.substack.com/p/ff129-singolarita-gentile","132":"https://fortissimo.substack.com/p/ff132-inno-ai-videogiochi","135":"https://fortissimo.substack.com/p/ff135-tutto-un-casino","139":"https://fortissimo.substack.com/p/ff139-e-stato-lai"};
+const compactClaimLabel = (raw, maxWords = 15) => {
+  const cleaned = raw.replace(/\s+/g, ' ').trim();
+  const parts = cleaned.split(/\s+/);
+  if (parts.length <= maxWords) return cleaned;
+  return `${parts.slice(0, maxWords).join(' ')}…`;
+};
+
 document.querySelectorAll('.fc').forEach(el => {
-  const m = el.textContent.match(/ff\.(\d+)/);
-  if (m) {
-    const url = substackMap[m[1]] || ('https://fortissimo.substack.com/p/ff' + m[1]);
-    const a = document.createElement('a');
-    a.href = url;
-    a.className = el.className;
-    a.innerHTML = el.innerHTML;
-    a.target = '_blank';
-    a.rel = 'noopener noreferrer';
-    el.replaceWith(a);
-  }
+  const rawText = el.textContent || '';
+  const ffMatch = rawText.match(/ff\.(\d+(?:\.\d+)?)/);
+  const m = rawText.match(/ff\.(\d+)/);
+  if (!m) return;
+
+  const titlePart = rawText
+    .replace(/^[\s\S]*?ff\.\d+(?:\.\d+)?\s*/,'')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  const labelCore = titlePart || rawText.replace(/\s+/g, ' ').trim();
+  const compact = ffMatch ? `${ffMatch[0]} ${compactClaimLabel(labelCore, 15)}` : compactClaimLabel(labelCore, 15);
+
+  const url = substackMap[m[1]] || ('https://fortissimo.substack.com/p/ff' + m[1]);
+  const a = document.createElement('a');
+  a.href = url;
+  a.className = el.className;
+  a.textContent = compact;
+  a.target = '_blank';
+  a.rel = 'noopener noreferrer';
+  el.replaceWith(a);
 });
 </script>
 
