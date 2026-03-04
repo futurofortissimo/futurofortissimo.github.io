@@ -64,12 +64,12 @@
         <div class="chapter-num text-zinc-400 mb-4">CAPITOLO 05 / 5</div>
         <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight mb-4" style="text-transform:none">&#128221; Casi studio</h1>
         <p class="text-zinc-600 text-lg max-w-2xl mb-4">Analisi approfondite dal corpus: esperimenti reali, risultati verificati e implicazioni pratiche.</p>
-        <div class="reading-time mb-6">~9 min di lettura · Ultimo aggiornamento: 2026-02-25 · Riferimenti: 8</div>
+        <div class="reading-time mb-6">~13 min di lettura · Ultimo aggiornamento: 2026-03-04 · Riferimenti: 7</div>
     </section>
 
 
 
-    <section id="search" class="brutal-card mb-10" aria-label="Search nel capitolo">
+    <section id="search" class="brutal-card mb-10" aria-label="Ricerca rapida nel capitolo">
         <h2 class="text-lg font-bold mb-3" style="font-family:'IBM Plex Mono',monospace">Search</h2>
         <label for="chapterSearch" class="ff-eyebrow text-zinc-500">Trova parole chiave</label>
         <input id="chapterSearch" type="search" placeholder="Es. ortopedico, ansia, triage" class="mt-2 w-full border-2 border-zinc-900 px-3 py-2"/>
@@ -170,8 +170,45 @@
     </div>
 </footer>
 <script>
-const substackMap={"109":"https://fortissimo.substack.com/p/ff109-medico-in-famigl-ia","120":"https://fortissimo.substack.com/p/ff120-sport-e-longevita","124":"https://fortissimo.substack.com/p/ff124-ah-ia","135":"https://fortissimo.substack.com/p/ff135-tutto-un-casino"};
-document.querySelectorAll('.fc').forEach(el=>{const m=el.textContent.match(/ff\.(\d+)/);if(m){const url=substackMap[m[1]]||('https://fortissimo.substack.com/p/ff'+m[1]);const a=document.createElement('a');a.href=url;a.className=el.className;a.innerHTML=el.innerHTML;a.target='_blank';a.rel='noopener noreferrer';el.replaceWith(a);}});
+const substackMap={"106":"https://fortissimo.substack.com/p/ff106-claude-usa-il-computer","109":"https://fortissimo.substack.com/p/ff109-medico-in-famigl-ia","120":"https://fortissimo.substack.com/p/ff120-sport-e-longevita","124":"https://fortissimo.substack.com/p/ff124-ah-ia","135":"https://fortissimo.substack.com/p/ff135-tutto-un-casino"};
+
+const compactClaimLabel = (raw, maxWords = 15) => {
+  const cleaned = raw.replace(/\s+/g, ' ').trim();
+  const words = cleaned.split(' ').filter(Boolean);
+  if (words.length <= maxWords) return cleaned;
+  return `${words.slice(0, maxWords).join(' ')}…`;
+};
+
+document.querySelectorAll('.fc').forEach((el)=>{
+  const rawText = el.textContent || '';
+  const ffMatch = rawText.match(/ff\.\d+(?:\.\d+)?/);
+  const m = rawText.match(/ff\.(\d+)/);
+  if (!m) return;
+
+  const url = substackMap[m[1]] || (`https://fortissimo.substack.com/p/ff${m[1]}`);
+  const titlePart = rawText
+    .replace(/\s*\(\s*ff\.\d+(?:\.\d+)?\s*\)\s*/i, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  const fallback = ffMatch ? `Source ${ffMatch[0]}` : `Source ff.${m[1]}`;
+  const label = compactClaimLabel(titlePart || fallback, 15);
+
+  const a = document.createElement('a');
+  a.href = url;
+  a.className = el.className;
+  a.target = '_blank';
+  a.rel = 'noopener noreferrer';
+  a.textContent = label;
+  a.setAttribute('aria-label', `${label} — apre la fonte`);
+  a.title = titlePart || fallback;
+  el.replaceWith(a);
+});
+
+const refsCount = document.querySelectorAll('article.prose .fc, article.prose a.fc').length;
+const readingMeta = document.querySelector('.reading-time');
+if (readingMeta) {
+  readingMeta.textContent = readingMeta.textContent.replace(/Riferimenti:\s*\d+\+?/, `Riferimenti: ${refsCount}`);
+}
 
 const searchInput=document.getElementById('chapterSearch');
 const hint=document.getElementById('chapterSearchHint');
