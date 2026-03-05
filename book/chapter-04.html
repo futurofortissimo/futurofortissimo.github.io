@@ -74,17 +74,24 @@
         <div class="chapter-num text-zinc-400 mb-4">CAPITOLO 04 / 5</div>
         <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight mb-4" style="text-transform:none">&#128218; Letture e Riassunti &mdash; I Libri che Hanno Ispirato la Newsletter</h1>
         <p class="text-zinc-600 text-lg max-w-2xl mb-4">Sette libri che hanno plasmato il pensiero di Futuro Fortissimo: dalla respirazione alla dopamina, dal tempo alla creativit&agrave;. Un viaggio attraverso le idee che connettono corpo, mente e societ&agrave;.</p>
-        <div class="reading-time mb-6">~11 min di lettura &middot; Ultimo aggiornamento: 2026-02-28 &middot; Riferimenti: 10</div>
+        <div class="reading-time mb-6">~11 min di lettura &middot; Ultimo aggiornamento: 2026-03-03 &middot; Riferimenti: 10</div>
         <div class="border-t-2 border-zinc-100 pt-4">
             <div class="ff-eyebrow text-zinc-400 mb-3 text-xs">In questo capitolo</div>
             <div class="space-y-1">
                 <a href="#s1" class="toc-link block py-1 pl-3 text-sm text-zinc-600 hover:text-zinc-900">4.1 &mdash; Spunti e riflessioni</a>
             </div>
         </div>
-        <section id="search" class="mt-6" aria-label="Ricerca rapida nel capitolo">
-            <h2 class="ff-eyebrow text-zinc-500 mb-2 text-xs">Search</h2>
-            <p class="text-sm text-zinc-600">Parole chiave rapide: <a href="#s1" class="underline">respirazione</a>, <a href="#s1" class="underline">dopamina</a>, <a href="#s1" class="underline">tempo finito</a>, <a href="#s1" class="underline">movimento</a>, <a href="#s1" class="underline">longevit&agrave;</a>, <a href="#s1" class="underline">creativit&agrave;</a>.</p>
-        </section>
+    </section>
+
+    <section id="search" class="brutal-card mb-10" aria-label="Search nel capitolo">
+        <h2 class="text-lg font-bold mb-3" style="font-family:'IBM Plex Mono',monospace">Search</h2>
+        <label for="chapterSearch" class="ff-eyebrow text-zinc-500">Trova parole chiave</label>
+        <input id="chapterSearch" type="search" placeholder="Es. respirazione, dopamina, tempo finito" class="mt-2 w-full border-2 border-zinc-900 px-3 py-2"/>
+        <p id="chapterSearchHint" class="text-xs text-zinc-500 mt-2">Ricerca locale sui paragrafi di questo capitolo.</p>
+    </section>
+
+    <section class="sr-only" aria-label="Parole chiave rapide">
+        <p>Parole chiave: respirazione, dopamina, tempo finito, movimento, longevità, creatività.</p>
     </section>
 
     <article class="prose max-w-none">
@@ -204,7 +211,7 @@
                     <div><div class="ff-eyebrow text-xs text-zinc-400">Indice</div><div class="text-sm font-semibold mt-1">Tutti i capitoli</div></div>
                 </a>
                 <a href="chapter-05.html" class="flex items-center justify-end gap-2 p-5 hover:bg-zinc-50 transition-colors text-right">
-                    <div><div class="ff-eyebrow text-xs text-zinc-400">Successivo</div><div class="text-sm font-semibold mt-1">&#128221; Cap. 05 &mdash; Note</div></div>
+                    <div><div class="ff-eyebrow text-xs text-zinc-400">Successivo</div><div class="text-sm font-semibold mt-1">&#128221; Cap. 05 &mdash; Casi studio</div></div>
                     <svg class="w-5 h-5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                 </a>
             </div>
@@ -256,6 +263,24 @@ document.querySelectorAll('.fc').forEach((el)=>{
   a.title = titlePart || fallback;
   el.replaceWith(a);
 });
+
+const searchInput = document.getElementById('chapterSearch');
+const hint = document.getElementById('chapterSearchHint');
+const searchableBlocks = Array.from(document.querySelectorAll('article.prose p, article.prose blockquote, article.prose h2, article.prose figure'));
+if (searchInput && hint) {
+  searchInput.addEventListener('input', () => {
+    const query = searchInput.value.trim().toLowerCase();
+    let visible = 0;
+    searchableBlocks.forEach((el) => {
+      const match = !query || (el.textContent || '').toLowerCase().includes(query);
+      el.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+    hint.textContent = query
+      ? `Risultati visibili: ${visible}`
+      : 'Ricerca locale sui paragrafi di questo capitolo.';
+  });
+}
 </script>
 </body>
 </html>
