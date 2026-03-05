@@ -74,7 +74,7 @@
         <div class="chapter-num text-zinc-400 mb-4">CAPITOLO 04 / 5</div>
         <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight mb-4" style="text-transform:none">&#128218; Letture e Riassunti &mdash; I Libri che Hanno Ispirato la Newsletter</h1>
         <p class="text-zinc-600 text-lg max-w-2xl mb-4">Sette libri che hanno plasmato il pensiero di Futuro Fortissimo: dalla respirazione alla dopamina, dal tempo alla creativit&agrave;. Un viaggio attraverso le idee che connettono corpo, mente e societ&agrave;.</p>
-        <div class="reading-time mb-6">~11 min di lettura &middot; Ultimo aggiornamento: 2026-02-28 &middot; Riferimenti: 10</div>
+        <div class="reading-time mb-6">~12 min di lettura &middot; Ultimo aggiornamento: 2026-03-05 &middot; Riferimenti: 10</div>
         <div class="border-t-2 border-zinc-100 pt-4">
             <div class="ff-eyebrow text-zinc-400 mb-3 text-xs">In questo capitolo</div>
             <div class="space-y-1">
@@ -157,9 +157,9 @@
     Le patate di Okinawa, viola acceso per via degli antociani, sono il superfood pi&ugrave; economico e pi&ugrave; nutriente per unit&agrave; di costo. Sul versante intestinale: il <mark class="note-highlight">75% della massa fecale</mark> &egrave; composto da microbi del microbioma &mdash; il che significa che mangiare pi&ugrave; fibre alimenta direttamente la biodiversit&agrave; intestinale. Per ogni 7 grammi di fibre in pi&ugrave; al giorno si ottiene una riduzione delle malattie cardiache del 9%: bastano due mele, un avocado o 20 grammi di mandorle. Non servono integratori da 100 euro a barattolo
     (<span class="fc">&#128163; ff.99.4
     Il microbioma nella cacca</span>).
-    Un ultimo elemento emerso dalla ricerca nutrizionale: limitare la metionina &mdash; amminoacido abbondante nelle proteine animali &mdash; allunga la vita e, come effetto collaterale, migliora il precursore di melatonina e serotonina. Il cibo non regola solo il peso: regola il sonno, l&#39;umore e il tempo che ci rimane
+    Un ultimo elemento emerso dalla ricerca nutrizionale: limitare la metionina &mdash; amminoacido abbondante nelle proteine animali &mdash; allunga la vita e, come effetto collaterale, migliora il precursore di melatonina e serotonina. Il cibo non regola solo il peso: regola sonno, umore e aspettativa di vita
     (<span class="fc">&#127815; ff.99.5
-    Altre note fortissime</span>).</p>
+    Metionina, sonno e longevit&agrave;</span>).</p>
 
     <div class="sep"></div>
 
@@ -256,6 +256,12 @@ document.querySelectorAll('.fc').forEach((el)=>{
   a.title = titlePart || fallback;
   el.replaceWith(a);
 });
+
+const refsCount = document.querySelectorAll('article.prose .fc, article.prose a.fc').length;
+const readingMeta = document.querySelector('.reading-time');
+if (readingMeta) {
+  readingMeta.textContent = readingMeta.textContent.replace(/Riferimenti:\s*\d+\+?/, `Riferimenti: ${refsCount}`);
+}
 </script>
 </body>
 </html>
