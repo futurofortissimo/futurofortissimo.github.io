@@ -18082,14 +18082,6 @@ export const rawData = [
                 "link": "https://fortissimo.substack.com/p/ff140-tutti-app-fluencers",
                 "content": "A16Z punta 20 milioni di dollari su Wabi.ai, una sorta di YouTube/Instagram delle app per cellulare, per ridare internet alla creatività individuale e strapparlo ai monopoli delle mega-corporazioni. Jenny Odell (Come non fare niente, 2020) avvertiva: 'Che senso ha costruire mondi digitali, quando il mondo fisico si sta sgretolando?'. La terza via proposta: un digitale su misura dell'utente, non degli algoritmi di retention.",
                 "images": [],
-                "references": [],
-                "connections": []
-            },
-            {
-                "title": "🛠️ ff.140.2 Vibe coding in un weekend",
-                "link": "https://fortissimo.substack.com/p/ff140-tutti-app-fluencers",
-                "content": "Gemini 3 rappresenta un salto qualitativo nel no-code: in un solo weekend è possibile creare il restyling completo di un sito, un'app nutrizionale (MangiaFortissimo) e un'app di lettura aumentata dall'AI (LeggiFortissimo). Il modello del 'levelsio dei poveri' diventa accessibile: Pieter Levels, creatore di NomadList, non ha mai programmato in vita sua. Ogni aggiornamento dei modelli accelera il processo — ma nasce la domanda: il prossimo influencer di app sarà umano o un agente AI?",
-                "images": [],
                 "references": [
                     {
                         "text": "A16Z ha annunciato un investimento di 20M$ in wabi.ai",
@@ -18116,9 +18108,9 @@ export const rawData = [
                 ]
             },
             {
-                "title": "🧮 ff.140.3 Deflazione mentale e crisi accademica",
+                "title": "🛠️ ff.140.2 Vibe coding in un weekend",
                 "link": "https://fortissimo.substack.com/p/ff140-tutti-app-fluencers",
-                "content": "Aristotle di HarmonicMath ha risolto il problema di Erdős #124, aperto da 30 anni: l'AI raggiunge gli apici della matematica. Anche professori come Aryeh Kontorovich (Università di Ben-Gurion, Israele) si chiedono se valga la pena continuare a scrivere paper. La 'deflazione mentale' è analoga a quella economica: se domani un bene o lo sviluppo di un'idea costerà meno, non ha senso investirci oggi.",
+                "content": "Gemini 3 rappresenta un salto qualitativo nel no-code: in un solo weekend è possibile creare il restyling completo di un sito, un'app nutrizionale (MangiaFortissimo) e un'app di lettura aumentata dall'AI (LeggiFortissimo). Il modello del 'levelsio dei poveri' diventa accessibile: Pieter Levels, creatore di NomadList, non ha mai programmato in vita sua. Ogni aggiornamento dei modelli accelera il processo — ma nasce la domanda: il prossimo influencer di app sarà umano o un agente AI?",
                 "images": [],
                 "references": [
                     {
@@ -18148,6 +18140,28 @@ export const rawData = [
                         "url": "https://fortissimo.substack.com/i/148256016/ff-buongpt-il-mio-nutrizionista-privato"
                     }
                 ]
+            },
+            {
+                "title": "🧮 ff.140.3 Deflazione mentale e crisi accademica",
+                "link": "https://fortissimo.substack.com/p/ff140-tutti-app-fluencers",
+                "content": "Aristotle di HarmonicMath ha risolto il problema di Erdős #124, aperto da 30 anni: l'AI raggiunge gli apici della matematica. Anche professori come Aryeh Kontorovich (Università di Ben-Gurion, Israele) si chiedono se valga la pena continuare a scrivere paper. La 'deflazione mentale' è analoga a quella economica: se domani un bene o lo sviluppo di un'idea costerà meno, non ha senso investirci oggi.",
+                "images": [],
+                "references": [
+                    {
+                        "text": "Aristotle risolve il problema di Erdős #124",
+                        "url": "https://harmonicmath.com/aristotle"
+                    },
+                    {
+                        "text": "Aryeh Kontorovich sul futuro della ricerca accademica",
+                        "url": "https://x.com/kaborov/status/1929614205507838397"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "🤘 ff.127.2 Rock 'n' roll e vibe coding",
+                        "url": "https://fortissimo.substack.com/i/165079348/ff-rock-n-roll-e-vibe-coding"
+                    }
+                ]
             }
         ]
     },
@@ -18166,7 +18180,12 @@ export const rawData = [
                 "link": "https://fortissimo.substack.com/p/ff141-il-2025-su-un-floppy-disk",
                 "content": "Dalla ff.44 'Che ansia!' al 2025: l'ansia cresce con i mondi generativi paralleli ai social media classici (Instagram, LinkedIn). Paragone storico: nel Settecento ci si allenava vent'anni per arare campi, poi arrivò la rivoluzione industriale — oggi accade lo stesso con il cervello. Il 60 % dei laureati di Harvard finisce in consulenza, finanza o Big Tech: il 'Triangolo delle Bermuda del talento', dice Bregman.",
                 "images": [],
-                "references": [],
+                "references": [
+                    {
+                        "text": "School for Moral Ambition",
+                        "url": "https://www.moralambition.org/"
+                    }
+                ],
                 "connections": [
                     {
                         "text": "🎼 ff.44 Che ansia!",
@@ -18181,8 +18200,12 @@ export const rawData = [
                 "images": [],
                 "references": [
                     {
-                        "text": "School for Moral Ambition",
-                        "url": "https://www.moralambition.org/"
+                        "text": "The Lion Tracker’s Guide To Life, Boyd Varty (via futuro fortissimo)",
+                        "url": "https://amzn.to/4s3luNB"
+                    },
+                    {
+                        "text": "Byod Varty, The Return of The Lion Tracker (Tim Ferris Show)",
+                        "url": "https://www.youtube.com/watch?v=V7tTxDkGU20&t=527s"
                     }
                 ],
                 "connections": [
@@ -18199,12 +18222,12 @@ export const rawData = [
                 "images": [],
                 "references": [
                     {
-                        "text": "The Lion Tracker’s Guide To Life, Boyd Varty (via futuro fortissimo)",
-                        "url": "https://amzn.to/4s3luNB"
+                        "text": "Oliver Burkeman, Four Thousand Weeks",
+                        "url": "https://amzn.to/3YMKPcR"
                     },
                     {
-                        "text": "Byod Varty, The Return of The Lion Tracker (Tim Ferris Show)",
-                        "url": "https://www.youtube.com/watch?v=V7tTxDkGU20&t=527s"
+                        "text": "Dan Harris, Daily-ish podcast",
+                        "url": "https://www.tenpercent.com/danharris"
                     }
                 ],
                 "connections": [
@@ -18324,10 +18347,15 @@ export const rawData = [
                     },
                     {
                         "text": "🎼 ff.56 Il condizionatore terrestre",
-                        "url": "https://www.google.com/search?q=link"
+                        "url": "https://fortissimo.substack.com/p/ff56-il-condizionatore-terrestre"
                     }
                 ],
-                "connections": []
+                "connections": [
+                    {
+                        "text": "🎼 ff.56 Il condizionatore terrestre",
+                        "url": "https://fortissimo.substack.com/p/ff56-il-condizionatore-terrestre"
+                    }
+                ]
             },
             {
                 "title": "🔥 ff.143.4 Fuoco (3 facce)",
@@ -18348,7 +18376,12 @@ export const rawData = [
                         "url": "https://www.linkedin.com/in/michelemerelli/"
                     }
                 ],
-                "connections": []
+                "connections": [
+                    {
+                        "text": "🎼 ff.142 Caro Marziano...",
+                        "url": "https://fortissimo.substack.com/p/ff142-caro-marziano"
+                    }
+                ]
             }
         ]
     },
@@ -18381,7 +18414,12 @@ export const rawData = [
                         "url": "https://github.com/openclaw/openclaw"
                     }
                 ],
-                "connections": []
+                "connections": [
+                    {
+                        "text": "🛠️ ff.140.2 Vibe coding in un weekend",
+                        "url": "https://fortissimo.substack.com/p/ff140-tutti-app-fluencers"
+                    }
+                ]
             },
             {
                 "title": "📚 ff.144.2 Aragoste in letteratura e AI",
@@ -18398,7 +18436,12 @@ export const rawData = [
                         "url": "https://x.com/METR_Evals/status/2002203627377574113"
                     }
                 ],
-                "connections": []
+                "connections": [
+                    {
+                        "text": "🐆 ff.127.3 Leopardi e l'equazione di Schrödinger",
+                        "url": "https://fortissimo.substack.com/i/165079348/ff-leopardi-e-lequazione-di-schrodinger"
+                    }
+                ]
             },
             {
                 "title": "🤖 ff.144.3 Agenti autonomi e Moltbook",
@@ -18419,7 +18462,12 @@ export const rawData = [
                         "url": "https://www.moltbook.com/post/81540bef-7e64-4d19-899b-d071518b4a4a"
                     }
                 ],
-                "connections": []
+                "connections": [
+                    {
+                        "text": "🎼 ff.140 Tutti App-fluencers?",
+                        "url": "https://fortissimo.substack.com/p/ff140-tutti-app-fluencers"
+                    }
+                ]
             }
         ]
     }
