@@ -18221,18 +18221,45 @@ export const rawData = [
         "title": "🎼 ff.142 Caro Marziano...",
         "subtitle": "Altro che Pif: siamo noi gli alieni — riflessione su viaggi, privilegio occidentale e anomalia statistica, ispirata da un viaggio in India e Nepal.",
         "keypoints": [
-            "Altro che Pif: siamo noi gli alieni — riflessione su viaggi, privilegio occidentale e anomalia statistica, ispirata da un viaggio in India e Nepal.",
-            "Il numero esplora quanto la normalità europea sia un'eccezione su scala globale, e come il viaggio la riveli.",
-            ""
+            "Siamo noi gli alieni: il privilegio occidentale come anomalia statistica",
+            "India e Nepal rivelano quanto la 'normalità' europea sia un'eccezione",
+            "Il viaggio come strumento di ricalibrazione cognitiva"
         ],
         "subchapters": [
             {
-                "title": "📖 Panorama",
+                "title": "👽 ff.142.1 Siamo noi gli alieni",
                 "link": "https://fortissimo.substack.com/p/ff142-caro-marziano",
-                "content": "Altro che Pif: siamo noi gli alieni — riflessione su viaggi, privilegio occidentale e anomalia statistica, ispirata da un viaggio in India e Nepal. Il numero esplora quanto la normalità europea sia un'eccezione su scala globale, e come il viaggio la riveli.",
+                "content": "Altro che Pif: siamo noi gli alieni. Un viaggio in India e Nepal rivela quanto la normalità europea sia un'eccezione su scala globale. Acqua corrente, elettricità stabile, aria respirabile: non sono 'il minimo', sono un privilegio statistico. Su 8 miliardi di persone, la maggioranza vive senza ciò che noi diamo per scontato.",
+                "images": [],
+                "references": [
+                    {
+                        "text": "Factfulness, Hans Rosling: il mondo è meglio di come pensiamo",
+                        "url": "https://amzn.to/3YKDgP8"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "🎼 ff.117 Viviamo in una simulazione",
+                        "url": "https://fortissimo.substack.com/p/ff117-viviamo-in-una-simulazione"
+                    }
+                ]
+            },
+            {
+                "title": "🧭 ff.142.2 Il viaggio come ricalibrazione",
+                "link": "https://fortissimo.substack.com/p/ff142-caro-marziano",
+                "content": "Il viaggio non è turismo: è ricalibrazione cognitiva. Quando l'infrastruttura scompare, emergono i presupposti biologici — aria, acqua, sole — che il comfort occidentale rende invisibili. Il confronto con l'India forza una revisione delle priorità: la nostra ansia per il Wi-Fi si ridimensiona davanti a chi combatte per l'acqua potabile.",
                 "images": [],
                 "references": [],
-                "connections": []
+                "connections": [
+                    {
+                        "text": "🌿 ff.143.1 Lusso naturale",
+                        "url": "https://fortissimo.substack.com/p/ff143-scimmie-col-rolex"
+                    },
+                    {
+                        "text": "🎼 ff.118 Paprika e massaggi",
+                        "url": "https://fortissimo.substack.com/p/ff118-paprika-e-massaggi"
+                    }
+                ]
             }
         ]
     },
