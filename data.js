@@ -34,7 +34,7 @@ export const rawData = [
             {
                 "title": "🧃ff.139.2 Combini e paperclips",
                 "link": "https://fortissimo.substack.com/i/179548983/ff-combini-e-paperclips",
-                "content": "Perché questohype? Perché l’AI si sta mostrando economicamente fruttifera.\nDave Blundin nel sempre stimolante podcast MOONSHOTfa notare che il mercato delle pubblicità online (600 miliardi) è già interamente gestito da algoritmi.\nAgenti con capacità più spinte (e-commerce, contrattazione materie prime…) possono creare un mercato di almeno 1T$ (~1% del GPD mondiale).\nA riconferma (e dato che gli ultimi modelli stanno saturando i benchmark più difficili:Gemini 3 risolve 1/3 delle domande dell’Humanity Last Exam), le nuove “classifiche” di AI sono economiche:\nperformance in finanza (Alpha Arena)abilità di vendita, contrattazione e pianificazione a lungo termine (Vending-Bench 2; anche qui Gemini 3 vince “portando a casa 5000$”).\nAngolo nerd.Variazione dei guadagni suddivisi per modelli AI e strategie di contrattazione (amichevole, negoziatore, doppiogiochista).\nOttimizzazione economica,long term planning... Mi torna in mente ilminigioco per massimizzare la produzione di graffette, citato da Bolstrom come esempio di superefficienza che porta all’estinzione (🦉 ff.36.2 Il super-librozzo sulla singolarità).\n",
+                "content": "Perché questo hype? Perché l’AI si sta mostrando economicamente fruttifera.\nDave Blundin nel sempre stimolante podcast MOONSHOT fa notare che il mercato delle pubblicità online (600 miliardi) è già interamente gestito da algoritmi.\nAgenti con capacità più spinte (e-commerce, contrattazione materie prime…) possono creare un mercato di almeno 1T$ (~1% del GPD mondiale).\nA riconferma (e dato che gli ultimi modelli stanno saturando i benchmark più difficili: Gemini 3 risolve 1/3 delle domande dell’Humanity Last Exam), le nuove “classifiche” di AI sono economiche:\nperformance in finanza (Alpha Arena) abilità di vendita, contrattazione e pianificazione a lungo termine (Vending-Bench 2; anche qui Gemini 3 vince “portando a casa 5000$”).\nAngolo nerd. Variazione dei guadagni suddivisi per modelli AI e strategie di contrattazione (amichevole, negoziatore, doppiogiochista).\nOttimizzazione economica,long term planning... Mi torna in mente il minigioco per massimizzare la produzione di graffette, citato da Bolstrom come esempio di superefficienza che porta all’estinzione (🦉 ff.36.2 Il super-librozzo sulla singolarità).\n",
                 "images": [
                     {
                         "src": "https://substackcdn.com/image/fetch/$s_!pCwF!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F291740ec-a1ed-46b9-8fe9-f02787e8a7e0_1559x738.png",
@@ -81,7 +81,7 @@ export const rawData = [
             {
                 "title": "🍫ff.139.3 Dov’è la mia macchina volante (in GTA 6?)",
                 "link": "https://fortissimo.substack.com/i/179548983/ff-dove-la-mia-macchina-volante-in-gta",
-                "content": "Tutte queste riflessioni tornano in auge per via dell’ennesimo, silente ma sbalorditivo modello.\nGemini 3è più di un semplice update di numero: è il primo vero modello multimodale.\nGenera app che integrano riconoscimento di videocamera, creazione immagini, search e text-to-speech. App contool-calling, insomma.\nUn paio di esempi (creati con una descrizione lunga meno di un tweet):\nFuretto nutrizionista. Scattando foto al cibo, la analizza e restituisce un report dettagliato (a colpo di squit!) del piatto che “ha annusato”.\nPodcast converter. Copiando la puntata di oggi, ottengo post LinkedIn personalizzato, immagini sui temi più importanti e un podcast di 5 minuti.\n140 caratteri.Storrs Hall lamentava che abbiamo Twitter, ma non le auto volanti (😭 ff.46.3 Anni buttati).\nMa ora con Gemini e 140 caratteri abbiamo unasimulazionedi auto volante. In un futuro robotico, lo stesso input potrebbeconcrettizzarla.\nNon è un caso chePolymarket sia sempre più sicuro che Google avrà il migliore modello a fine 2025.\n",
+                "content": "Tutte queste riflessioni tornano in auge per via dell’ennesimo, silente ma sbalorditivo modello.\nGemini 3 è più di un semplice update di numero: è il primo vero modello multimodale.\nGenera app che integrano riconoscimento di videocamera, creazione immagini, search e text-to-speech. App con tool-calling, insomma.\nUn paio di esempi (creati con una descrizione lunga meno di un tweet):\nFuretto nutrizionista. Scattando foto al cibo, la analizza e restituisce un report dettagliato (a colpo di squit!) del piatto che “ha annusato”.\nPodcast converter. Copiando la puntata di oggi, ottengo post LinkedIn personalizzato, immagini sui temi più importanti e un podcast di 5 minuti.\n140 caratteri.Storrs Hall lamentava che abbiamo Twitter, ma non le auto volanti (😭 ff.46.3 Anni buttati).\nMa ora con Gemini e 140 caratteri abbiamo una simulazione di auto volante. In un futuro robotico, lo stesso input potrebbe concretizzarla.\nNon è un caso che Polymarket sia sempre più sicuro che Google avrà il migliore modello a fine 2025.\n",
                 "images": [
                     {
                         "src": "https://substackcdn.com/image/fetch/$s_!rsMo!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F44a11cf6-618d-4faf-a5f6-3207a152d744_404x726.png",
@@ -162,7 +162,7 @@ export const rawData = [
             {
                 "title": "😊ff.138.2 La strada più felice",
                 "link": "https://fortissimo.substack.com/i/178186942/ff-la-strada-piu-felice",
-                "content": "Se ci chiedessimo invece quale percorso massimizza la felicità?\nSecondoKathy Willis (La natura che cura), si trovaallungandoil tragitto verso il lavoro, includendo parchi e verde (o, ancora meglio, un florilegio di colori autunnali).\nTorna con nuovi dettagli il “bagno nei boschi” (💚 ff.51.1 L’affabulazione per il verde):\nOrizzonti naturali hanno una “dimensione frattale” (la complessità di uno skyline) calmante: i nostri sensi prediligono spazi ampi con qualche albero qua e là (come nella savana, da dove proveniamo evoluzionisticamente).\nScuole immerse nel verde hanno effetti benefici sullo sviluppo cognitivo dei bambini.\nPS. ChatGPT ha coniato un termine per la “brachistocrona di felicità”:euthymìcrona(εὔθυμος+χρόνος), il tempo del buon animo.εὔθυμος = “di buon cuore, sereno” +  χρόνος  = “tempo”.\n",
+                "content": "Se ci chiedessimo invece quale percorso massimizza la felicità?\nSecondo Kathy Willis (La natura che cura), si trova allungando il tragitto verso il lavoro, includendo parchi e verde (o, ancora meglio, un florilegio di colori autunnali).\nTorna con nuovi dettagli il “bagno nei boschi” (💚 ff.51.1 L’affabulazione per il verde):\nOrizzonti naturali hanno una “dimensione frattale” (la complessità di uno skyline) calmante: i nostri sensi prediligono spazi ampi con qualche albero qua e là (come nella savana, da dove proveniamo evoluzionisticamente).\nScuole immerse nel verde hanno effetti benefici sullo sviluppo cognitivo dei bambini.\nPS. ChatGPT ha coniato un termine per la “brachistocrona di felicità”:euthymìcrona(εὔθυμος+χρόνος), il tempo del buon animo.εὔθυμος = “di buon cuore, sereno” +  χρόνος  = “tempo”.\n",
                 "images": [
                     {
                         "src": "https://substackcdn.com/image/fetch/$s_!AZFm!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F50647001-c033-4db3-8d84-1e6350e9e174_1000x1491.jpeg",
@@ -231,7 +231,7 @@ export const rawData = [
             {
                 "title": "🥌ff.138.4 Roomba o piante ornamentali?",
                 "link": "https://fortissimo.substack.com/i/178186942/ff-roomba-o-piante-ornamentali",
-                "content": "Non è solo una questione di percezione: la natura cambia il microbioma (e, quindi, la regolamentazione fisiologica e psicologica,🥽 ff.90.3 Micro-bi di stress):\nSostituire ghiaia con foreste in asili nidoaumenta in soli 28 giorni la biodiversità nei bambini svedesi, riducendo biomarker di infiammazione e malattie auto-immuni.Una sola piantapuò ripopolare le nostre case, sterili, di microbi benefici (RoombaI see you).\nBonus.Gli ambienti indoor possono essere più inquinati dell’esterno, specie per composti volatili (Volatile Organic Compounds, VOCs) rilasciati da oggetti di plastica o detergenti.Una pianta può ridurli.\n",
+                "content": "Non è solo una questione di percezione: la natura cambia il microbioma (e, quindi, la regolamentazione fisiologica e psicologica,🥽 ff.90.3 Micro-bi di stress):\nSostituire ghiaia con foreste in asili nido aumenta in soli 28 giorni la biodiversità nei bambini svedesi, riducendo biomarker di infiammazione e malattie auto-immuni.Una sola pianta può ripopolare le nostre case, sterili, di microbi benefici (RoombaI see you).\nBonus.Gli ambienti indoor possono essere più inquinati dell’esterno, specie per composti volatili (Volatile Organic Compounds, VOCs) rilasciati da oggetti di plastica o detergenti.Una pianta può ridurli.\n",
                 "images": [],
                 "references": [
                     {
@@ -261,7 +261,7 @@ export const rawData = [
             {
                 "title": "🚬ff.138.5 Sto lontano dallo stress…",
                 "link": "https://fortissimo.substack.com/i/178186942/ff-sto-lontano-dallo-stress",
-                "content": "Dulcis in fundo, il respiro, un altro cavallo di battaglia di futuro fortissimo (‍💨ff.87.1 Breve storia del respiro).\nIl bagno nel bosco rilassa anche per l’α-pinene, sostanza rilasciata dalle conifere (e presente nella cannabis).\nE bastanotre notti in un hotel che rilascia fragranze di cipresso per aumentare segnali di rilassatezza(misurati con la componente “high-frequency” (HF) dell’HRV,heart rate variability.\n",
+                "content": "Dulcis in fundo, il respiro, un altro cavallo di battaglia di futuro fortissimo (‍💨ff.87.1 Breve storia del respiro).\nIl bagno nel bosco rilassa anche per l’α-pinene, sostanza rilasciata dalle conifere (e presente nella cannabis).\nE bastano tre notti in un hotel che rilascia fragranze di cipresso per aumentare segnali di rilassatezza (misurati con la componente “high-frequency” (HF) dell’HRV,heart rate variability.\n",
                 "images": [
                     {
                         "src": "https://substackcdn.com/image/fetch/$s_!G0Ud!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F94e96e72-da99-4348-8303-3e9ff13f00f5_472x205.jpeg",
@@ -284,7 +284,7 @@ export const rawData = [
                 ],
                 "connections": [
                     {
-                        "text": "ff.87.1 Breve storia del respiro",
+                        "text": "‍💨 ff.87.1 Breve storia del respiro",
                         "url": "https://fortissimo.substack.com/i/141422894/ff-breve-storia-del-respiro"
                     }
                 ]
@@ -1015,7 +1015,7 @@ export const rawData = [
             {
                 "title": "📚 ff.131.1 Una lettura",
                 "link": "https://fortissimo.substack.com/i/168408634/ff-una-lettura",
-                "content": "Pensando al libro più significativo di quest’anno, non posso che tornare suLa saggezza del Tao(☯️ ff.108.3 Essere acqua).\nRaccoglie e interpreta gli81 messaggi di Lao Tzuapplicandoli ai tormentati, digitali, iper-connessi e ottimizzatori giorni nostri.\nHo riletto per esempio parte del verso 23. Interessante.\nParlare poco è naturale:i venti impetuosi non soffiano tutta la mattina;una pioggia torrenziale non dura tutto il giorno.Chi li crea? Il cielo e la terra.Ma questi sono fenomeni atmosferici violenti,ecco perché non possono durare a lungo.Se il cielo e la terranon possono sostenere a lungo un’azione violenta,come potrebbero riuscire gli uomini?Lao Tzu,Tao Te Ching\n",
+                "content": "Pensando al libro più significativo di quest’anno, non posso che tornare su La saggezza del Tao(☯️ ff.108.3 Essere acqua).\nRaccoglie e interpreta gli 81 messaggi di Lao Tzu applicandoli ai tormentati, digitali, iper-connessi e ottimizzatori giorni nostri.\nHo riletto per esempio parte del verso 23. Interessante.\nParlare poco è naturale: i venti impetuosi non soffiano tutta la mattina;una pioggia torrenziale non dura tutto il giorno. Chi li crea? Il cielo e la terra. Ma questi sono fenomeni atmosferici violenti, ecco perché non possono durare a lungo. Se il cielo e la terra non possono sostenere a lungo un’azione violenta, come potrebbero riuscire gli uomini? Lao Tzu, Tao Te Ching\n",
                 "images": [
                     {
                         "src": "https://substackcdn.com/image/fetch/$s_!YXut!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7a0a05df-6ebe-44b1-bc6d-414b185fbb40_500x748.jpeg",
@@ -1127,7 +1127,7 @@ export const rawData = [
             {
                 "title": "🖐️ ff.131.5 Cinque pezzi facili",
                 "link": "https://fortissimo.substack.com/i/168408634/ff-cinque-pezzi-facili",
-                "content": "Considera disupportare 🎼 ff con un cafféoppure usa il tasto qui sotto per invitare un amico e guadagnarti un libro.Refer a friendDedica 15 minuti alla lettura, 20 minuti a una qualsiasi attività sportiva, 30 minuti a una chiacchierata senza cellulare nelle tue vicinanze.Mangia almeno 20g di fibre.Abbronzati un po’.Mandami per email un articolo, una citazione o unmemeleggero (michelemerelli.8@gmail.com).\nVuoi supportare questo progetto?→ Condividilo con un amico suWhatsApp→Offrimi un caffè😏→Ricordati di mettere un cuoricino qua sotto.\n☕❤️\n👋 Buona estate! damicmer\n©futuro fortissimo|michele merelli\n",
+                "content": "Considera disupportare 🎼 ff con un caffé oppure usa il tasto qui sotto per invitare un amico e guadagnarti un libro.Refer a friendDedica 15 minuti alla lettura, 20 minuti a una qualsiasi attività sportiva, 30 minuti a una chiacchierata senza cellulare nelle tue vicinanze.Mangia almeno 20g di fibre.Abbronzati un po’.Mandami per email un articolo, una citazione o un meme leggero (michelemerelli.8@gmail.com).\nVuoi supportare questo progetto?→ Condividilo con un amico suWhatsApp→Offrimi un caffè😏→Ricordati di mettere un cuoricino qua sotto.\n☕❤️\n👋 Buona estate! damicmer\n©futuro fortissimo|michele merelli\n",
                 "images": [
                     {
                         "src": "https://substackcdn.com/image/fetch/$s_!WwBa!,w_1456,c_limit,f_auto,q_auto:good,fl_lossy/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F415b956a-913f-4d08-a257-ae7eb34e4cd1_700x438.gif",
@@ -3141,7 +3141,7 @@ export const rawData = [
                         "url": "https://fortissimo.substack.com/i/145245800/ff-sistemi-quantistici"
                     },
                     {
-                        "text": "ff.98.4 Sistemi quantistici",
+                        "text": "⚛️ ff.98.4 Sistemi quantistici",
                         "url": "https://fortissimo.substack.com/i/145245800/ff-sistemi-quantistici"
                     },
                     {
@@ -3994,7 +3994,7 @@ export const rawData = [
                         "url": "https://fortissimo.substack.com/i/138012416/ff-estinzione-di-massa"
                     },
                     {
-                        "text": "ff.82.1 Estinzione di massa?",
+                        "text": "🦖 ff.82.1 Estinzione di massa?",
                         "url": "https://fortissimo.substack.com/i/138012416/ff-estinzione-di-massa"
                     }
                 ]
@@ -5000,7 +5000,7 @@ export const rawData = [
                         "url": "https://fortissimo.substack.com/p/-ff16-sport-e-chi-ne-fa-le-feci"
                     },
                     {
-                        "text": "ff.92.2 Un organo in più: il microbioma",
+                        "text": "🦠 ff.92.2 Un organo in più: il microbioma",
                         "url": "https://fortissimo.substack.com/i/137958307/ff-un-organo-in-piu-il-microbioma"
                     },
                     {
@@ -5230,7 +5230,7 @@ export const rawData = [
                         "url": "https://fortissimo.substack.com/i/137533647/ff-la-famiglia-tradizionale-e-passato"
                     },
                     {
-                        "text": "ff.77.1 La “famiglia tradizionale” è passato?",
+                        “text”: “👨‍👩‍👧 ff.77.1 La \”famiglia tradizionale\” è passato?”,
                         "url": "https://fortissimo.substack.com/i/137533647/ff-la-famiglia-tradizionale-e-passato"
                     },
                     {
@@ -5238,7 +5238,7 @@ export const rawData = [
                         "url": "https://fortissimo.substack.com/i/137321489/ff-breve-dizionario-culturale"
                     },
                     {
-                        "text": "ff.74.2 Breve dizionario culturale",
+                        "text": "🎌 ff.74.2 Breve dizionario culturale",
                         "url": "https://fortissimo.substack.com/i/137321489/ff-breve-dizionario-culturale"
                     }
                 ]
@@ -5265,7 +5265,7 @@ export const rawData = [
                         "url": "https://fortissimo.substack.com/i/141331290/ff-piramide-di-maslow"
                     },
                     {
-                        "text": "ff.89.2 Piramide di Maslow 2.0",
+                        "text": "🔺 ff.89.2 Piramide di Maslow 2.0",
                         "url": "https://fortissimo.substack.com/i/141331290/ff-piramide-di-maslow"
                     }
                 ]
@@ -5304,7 +5304,7 @@ export const rawData = [
                         "url": "https://fortissimo.substack.com/i/141914401/ff-scappare-da-un-leone-o-una-notifica"
                     },
                     {
-                        "text": "ff.90.1 Scappare da un leone o una notifica",
+                        "text": "🦁 ff.90.1 Scappare da un leone o una notifica",
                         "url": "https://fortissimo.substack.com/i/141914401/ff-scappare-da-un-leone-o-una-notifica"
                     }
                 ]
@@ -5538,7 +5538,7 @@ export const rawData = [
                         "url": "https://fortissimo.substack.com/i/137944571/ff-carbonara-e-criptovalute"
                     },
                     {
-                        "text": "ff.85.4 Carbonara e criptovalute",
+                        "text": "🍝 ff.85.4 Carbonara e criptovalute",
                         "url": "https://fortissimo.substack.com/i/137944571/ff-carbonara-e-criptovalute"
                     }
                 ]
@@ -6617,7 +6617,7 @@ export const rawData = [
                         "url": "https://fortissimo.substack.com/i/140010460/ff-stai-attento"
                     },
                     {
-                        "text": "ff.83.2 Stai attento!",
+                        "text": "👀 ff.83.2 Stai attento!",
                         "url": "https://fortissimo.substack.com/i/140010460/ff-stai-attento"
                     }
                 ]
@@ -9160,7 +9160,7 @@ export const rawData = [
             {
                 "title": "🖐️ ff.65.5 Cinque pezzi facili",
                 "link": "https://fortissimo.substack.com/i/133216439/ff-cinque-pezzi-facili",
-                "content": "Considera disupportare 🎼 ff con un cafféoppure usa il tasto qui sotto per invitare un amico e guadagnarti un libro. Refer a friendDedica 15 minuti alla lettura, 20 minuti a una qualsiasi attività sportiva, 30 minuti a una chiacchierata senza cellulare nelle tue vicinanze. Mangia almeno 20g di fibre. Abbronzati un po’. Mandami per email un articolo, una citazione o unmemeleggero (michelemerelli. 8@gmail. com).\nVuoi supportare questo progetto?→ Condividilo con un amico suWhatsApp→Offrimi un caffè😏→Ricordati di mettere un cuoricino qua sotto.\n☕❤️\n👋 A presto, damicmer\n",
+                "content": "Considera disupportare 🎼 ff con un caffé oppure usa il tasto qui sotto per invitare un amico e guadagnarti un libro. Refer a friendDedica 15 minuti alla lettura, 20 minuti a una qualsiasi attività sportiva, 30 minuti a una chiacchierata senza cellulare nelle tue vicinanze. Mangia almeno 20g di fibre. Abbronzati un po’. Mandami per email un articolo, una citazione o un meme leggero (michelemerelli. 8@gmail. com).\nVuoi supportare questo progetto?→ Condividilo con un amico suWhatsApp→Offrimi un caffè😏→Ricordati di mettere un cuoricino qua sotto.\n☕❤️\n👋 A presto, damicmer\n",
                 "images": [],
                 "references": [
                     {
@@ -9774,7 +9774,7 @@ export const rawData = [
             {
                 "title": "🧾 ff.62.3 Tassare la miseria",
                 "link": "https://fortissimo.substack.com/i/118479393/ff-tassare-la-miseria",
-                "content": "Soldi e successo sono l’unico paradigma sopravvissuto alla distruzione valoriale degli ultimi anni.\nfuturo_fortissimo_newsletterA post shared by futuro fortissimo (@futuro_fortissimo_newsletter)\nMisery tax. Questa la tassa chesecondo Thomas J. Bevan i lavoratori infelici devono pagare per continuare a lavorare.\nInteressante ancheil concetto di “arrival fallacy”proposto dal professore di Harvard, Ben-Shahar: l’idea che la prossima promozione, il prossimo aumento, la prossima posizione lavorativa, sarannoassolutamentequello che ci renderà davvero felici.\nAverne abbastanza:L’aneddoto di Kurt Vonnegut:\n",
+                "content": "Soldi e successo sono l’unico paradigma sopravvissuto alla distruzione valoriale degli ultimi anni.\nfuturo_fortissimo_newsletterA post shared by futuro fortissimo (@futuro_fortissimo_newsletter)\nMisery tax. Questa la tassa che secondo Thomas J. Bevan i lavoratori infelici devono pagare per continuare a lavorare.\nInteressante anche il concetto di “arrival fallacy”proposto dal professore di Harvard, Ben-Shahar: l’idea che la prossima promozione, il prossimo aumento, la prossima posizione lavorativa, sarannoassolutamentequello che ci renderà davvero felici.\nAverne abbastanza:L’aneddoto di Kurt Vonnegut:\n",
                 "images": [
                     {
                         "src": "https://substackcdn.com/image/fetch/$s_!KKmc!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F75c3ed6e-7610-4fb0-a5ea-dc4e512dd9a3_625x544.png",
@@ -13599,7 +13599,7 @@ export const rawData = [
             {
                 "title": "🚦 ff.34.2 Ripensare le città: mobilità e traffico",
                 "link": "https://fortissimo.substack.com/i/67910559/ff-ripensare-le-citta-mobilita-e-traffico",
-                "content": "Se anche la maggior parte degli italiani vivefuori dagli agglomerati di 1M di persone, spesso raggiungono questi centri nevralgici per lavoro durante il giorno. E lo sappiamo bene, visto il quantitativo di traffico (specie tra Pero e Cormano). Il COVID e lo smart working un po’ han migliorato la situazione. Ma quanto?\nTomTom (esiste ancora qualcuno che lo usa?)faun’analisi interessantee ha un sacco di dati suddivisi per nazione e città. Qui sotto, uno spaccato su Roma.\nDopo il ritorno alla normalità “post” COVID, a Roma siamo a un livello di traffico minore al 2019. Da 24 minuti di attesa (di mattina, 21 la sera) si è passati a “soli” 17 minuti nel 2021.\n10% di inquinamento solo per le code. Il sito riporta una stima del quantitativo di CO2 dovuto alle congestioni. A Parigi, per esempio, delle 13. 8 MT di CO2 annue legate alla mobilità, più del 10% si potrebbe evitare se non cifossero code (magari conflessibilità di orari lavorativi o smartworking?). Ad Am(mi)sterdam le emissioni sono 10 volte meno, perché vanno tutti in bici.\n",
+                "content": "Se anche la maggior parte degli italiani vivefuori dagli agglomerati di 1M di persone, spesso raggiungono questi centri nevralgici per lavoro durante il giorno. E lo sappiamo bene, visto il quantitativo di traffico (specie tra Pero e Cormano). Il COVID e lo smart working un po’ han migliorato la situazione. Ma quanto?\nTomTom (esiste ancora qualcuno che lo usa?)faun’analisi interessantee ha un sacco di dati suddivisi per nazione e città. Qui sotto, uno spaccato su Roma.\nDopo il ritorno alla normalità “post” COVID, a Roma siamo a un livello di traffico minore al 2019. Da 24 minuti di attesa (di mattina, 21 la sera) si è passati a “soli” 17 minuti nel 2021.\n10% di inquinamento solo per le code. Il sito riporta una stima del quantitativo di CO2 dovuto alle congestioni. A Parigi, per esempio, delle 13. 8 MT di CO2 annue legate alla mobilità, più del 10% si potrebbe evitare se non ci fossero code (magari conflessibilità di orari lavorativi o smartworking?). Ad Am(mi)sterdam le emissioni sono 10 volte meno, perché vanno tutti in bici.\n",
                 "images": [
                     {
                         "src": "https://substackcdn.com/image/fetch/$s_!PB7Y!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F28cc133d-a9da-4270-9c46-2824a96548de_1163x427.png",
@@ -15608,7 +15608,7 @@ export const rawData = [
                 ],
                 "connections": [
                     {
-                        "text": "ff.",
+                        "text": "⚡ ff.5 Elettrizzante!",
                         "url": "https://fortissimo.substack.com/p/-ff5-elettrizzante"
                     },
                     {
@@ -16523,7 +16523,7 @@ export const rawData = [
             {
                 "title": "👰 ff.13.3 Trend relazionali",
                 "link": "https://fortissimo.substack.com/i/46806059/ff133-trend-relazionali",
-                "content": "Come detto aspetti sociologici e culturali sono alla base di questo rallentamento di crescita. In un prossimofuturo, parleremo più direttamente di sesso e relazioni, per ora qualche assaggio.\n3, is a magic number. Interessante vedere quanti appuntamenti ci vogliono, per uomini o donne, perfinire a letto. Per le donne, il terzo appuntamento è quello chiave. E, ometti, ricordatevi dichiamarla dopo 3 giornidopo il primo appuntamento (regolafondata da Gesù, cit).\nNel grafico sotto la distribuzione delle risposte di questionario inglese, che chiedeva quanto tempo cifosse voluto, in una relazione, per:\nandare a lettodire “ti amo”fare unfiglioandare a convivere.\n",
+                "content": "Come detto aspetti sociologici e culturali sono alla base di questo rallentamento di crescita. In un prossimo futuro, parleremo più direttamente di sesso e relazioni, per ora qualche assaggio.\n3, is a magic number. Interessante vedere quanti appuntamenti ci vogliono, per uomini o donne, perfinire a letto. Per le donne, il terzo appuntamento è quello chiave. E, ometti, ricordatevi di chiamarla dopo 3 giornidopo il primo appuntamento (regola fondata da Gesù, cit).\nNel grafico sotto la distribuzione delle risposte di questionario inglese, che chiedeva quanto tempo ci fosse voluto, in una relazione, per:\nandare a lettodire “ti amo”fare un figlio andare a convivere.\n",
                 "images": [
                     {
                         "src": "https://substackcdn.com/image/fetch/$s_!722D!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Ff1d18048-2e6e-4958-8a89-68bb1c448c2c_960x960.jpeg",
@@ -18210,7 +18210,7 @@ export const rawData = [
                 ],
                 "connections": [
                     {
-                        "text": "ff.55 Sopravvivere alla rivoluzione",
+                        "text": "✊ ff.55 Sopravvivere alla rivoluzione",
                         "url": "https://fortissimo.substack.com/p/ff54-come-capire-una-rivoluzione?utm_source=publication-search"
                     }
                 ]
