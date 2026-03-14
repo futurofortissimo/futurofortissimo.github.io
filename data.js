@@ -5230,7 +5230,7 @@ export const rawData = [
                         "url": "https://fortissimo.substack.com/i/137533647/ff-la-famiglia-tradizionale-e-passato"
                     },
                     {
-                        “text”: “👨‍👩‍👧 ff.77.1 La \”famiglia tradizionale\” è passato?”,
+                        "text": "👨‍👩‍👧 ff.77.1 La \"famiglia tradizionale\" è passato?",
                         "url": "https://fortissimo.substack.com/i/137533647/ff-la-famiglia-tradizionale-e-passato"
                     },
                     {
