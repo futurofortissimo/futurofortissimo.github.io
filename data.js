@@ -1,5 +1,146 @@
 export const rawData = [
     {
+        "url": "https://fortissimo.substack.com/p/ff145-zucchero-ossa-e-creme-brulee",
+        "title": "🎼 ff.145 Zucchero, ossa e crème brûlée",
+        "subtitle": "Food design contro \"il nuovo fumo\", il cibo",
+        "keypoints": [
+            "Le rughe sono la crème brûlée del nostro corpo?",
+            "Bere aceto abbatte gli zuccheri?",
+            "Torte, da feste nuziali a grafici"
+        ],
+        "subchapters": [
+            {
+                "title": "🦴ff.145.1 L'uomo all'osso",
+                "link": "https://fortissimo.substack.com/i/187751091/ff-luomo-allosso",
+                "content": "Ogni settimana viene rilasciato un modello di AI con risultati sorprendenti (l'ultimo è Gemini 3 e il suo 48.4% nell'Humanity's Next Exam). Così, da tempo, sostengo che al crescere dell'automazione l'uomo dovrà rifugiarsi nella fisiologia, substrato naturale.\n\"Se energia e soldi perderanno valore, la salute biologica (misurata in VO2max) sarà la nuova ricchezza?\" — micmer\nÈ il motivo per cui futuro fortissimo torna periodicamente anche su temi come salute (metabolica), esercizio e dieta. Un ritorno all'\"umano ridotto all'osso\".\n\"Ah l'uomo che se ne va sicuro, agli altri ed a se stesso amico, e l'ombra sua non cura che la canicola stampa sopra uno scalcinato muro!\" — Eugenio Montale, Ossi di seppia\n",
+                "images": [],
+                "references": [
+                    {
+                        "text": "Gemini 3 e il suo 48.4% nell'Humanity's Next Exam",
+                        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think/"
+                    },
+                    {
+                        "text": "Ossi di seppia",
+                        "url": "https://www.nilalienum.it/Letteratura/Poesie/Montale/Ossi-Di-Seppia.pdf"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "🙅 ff.112.2 Non possiamo prevedere nulla",
+                        "url": "https://fortissimo.substack.com/i/153969354/ff1122-non-possiamo-prevedere-nulla"
+                    }
+                ]
+            },
+            {
+                "title": "🍬ff.145.2 Caramelle e sconosciuti",
+                "link": "https://fortissimo.substack.com/i/187751091/ff-caramelle-e-sconosciuti",
+                "content": "A proposito di ossa. In Sugar Bones, Martí Guixé immaginava zollette di zucchero con all'interno residui insolubili: fossili dello zuccherino consumo.\nUn collegamento perfetto al tema principale di oggi, i picchi glicemici.\nMomento, momento, momento… Lo zucchero non è intrinsecamente il male. È fondamentale per il nostro cervello (e per Pogačar per vincere al Tour de France). Il vero problema è l'assenza di movimento (e di muscoli) in grado di \"assorbirlo\".\n",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!IkK8!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3e71827d-920e-4bd6-b625-2cb22cf55c59_441x702.png",
+                        "caption": "Tratto da Food designing, Martí Guixé - via futuro fortissimo"
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "Food designing, Martí Guixé",
+                        "url": "https://amzn.to/4cAr2Kf"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "🥇 ff.53.2 Sportivi professionisti in nostro aiuto",
+                        "url": "https://fortissimo.substack.com/i/104014049/ff532-sportivi-professionisti-in-nostro-aiuto"
+                    }
+                ]
+            },
+            {
+                "title": "🎢ff.145.3 Picchi glicemici (e come evitarli)",
+                "link": "https://fortissimo.substack.com/i/187751091/ff-picchi-glicemici-e-come-evitarli",
+                "content": "In Glucose Revolution, Jessie Inchauspé sostiene che siamo analfabeti molecolari. Ci fermiamo a calorie ed etichette, ma dovremmo concentrarci sui \"rapporti\" tra i nutrienti.\nL'autrice fa notare che, appunto, gli zuccheri non sono di per sé dannosi (sono alla base della frutta, d'altronde), lo è assumerli senza il loro \"substrato naturale\" che naturalmente gli accompagnano, come fibre e vitamine che ne rallentano l'assorbimento.\nPer \"rallentare\" la dieta occidentale, Blue Tornado di picchi glicemici, suggerisce di:\n1. Vestire i carboidrati \"nudi\" (pasta da sola o frutta a stomaco vuoto) con fibre o proteine (la fibra riduce anche l'alfa-amilasi e crea una rete viscosa che rallenta lo svuotamento gastrico nell'intestino)\n2. Bere aceto di mele 20 minuti prima del dolce, così da ridurre fino al 30% il picco, sempre grazie alla disattivazione temporanea dell'alfa-amilasi.\n3. Mangiare i carboidrati per ultimi, concedendosi pure un piatto di pasta o un dolce a fine pasto, ma solo dopo un'insalata seguita da proteine e grassi buoni.\nBonus. L'eccessivo zucchero in circolo porta alla glicazione della pelle (rughe) e del sangue (o meglio, dell'emoglobina = HbA1c).\n",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!Jznm!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc9d07206-d18e-4c8a-893c-8ec5c785f3cc_937x1500.jpeg",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "Glucose Revolution, Jessie Inchauspé",
+                        "url": "https://amzn.to/4kHiJyw"
+                    },
+                    {
+                        "text": "glicazione della pelle (rughe) e del sangue",
+                        "url": "https://www.my-personaltrainer.it/salute/glicazione-cosa-e-conseguenze.html"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "🥛 ff.113.2 L'inganno del latte proteico",
+                        "url": "https://fortissimo.substack.com/i/154401282/ff1132-linganno-del-latte-proteico"
+                    }
+                ]
+            },
+            {
+                "title": "🚬ff.145.4 Il cibo nuoce gravemente alla salute",
+                "link": "https://fortissimo.substack.com/i/187751091/ff-il-cibo-nuoce-gravemente-alla-salute",
+                "content": "Questa montagna russa di energie non è colpa vostra, comunque.\nMark Hyman, in un recente podcast di ZOE, racconta come i produttori alimentari assumano \"craving experts\" per massimizzare la dipendenza dei cibi processati, con un mix irresistibile di sale, zucchero e grassi.\nI risultati? In Cina, in una sola generazione, l'esposizione a questi cibi ha portato il diabete da 1 caso su 150 a 1 su 10.\nNon sorprende, quindi, che il cibo ultra-processato sia \"la nuova sigaretta\" (11 milioni di morti vs 8), tanto che 1€ speso al supermercato ne nasconde 2€ di costi sanitari (Rockefeller Foundation, 2021).\nHyman arriva a paragonare una torta a tequila a colazione, dicendo che - effettivamente - è ugualmente dannosa.\n",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!g7Me!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2a7eff6d-c88a-4417-86fc-be31c03d46f4_313x475.jpeg",
+                        "caption": "Michael Moss, Grassi dolci e salati - via futuro fortissimo"
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "Michael Moss, Grassi dolci e salati",
+                        "url": "https://amzn.to/402meGh"
+                    },
+                    {
+                        "text": "il cibo ultra-processato sia \"la nuova sigaretta\" (11 milioni di morti vs 8)",
+                        "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(19)30041-8/fulltext"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "🍰ff.145.5 Grafici a torta geniali",
+                "link": "https://fortissimo.substack.com/i/187751091/ff-grafici-a-torta-geniali",
+                "content": "E così, torniamo a Martí Guixé.\nPer il padre del food design, il cibo deve essere un oggetto capace di comunicare la sua funzione (o il suo pericolo), tanto che in I-Cakes, Guixé sostituì le decorazioni floreali sulle torte con un grafico, a torta appunto, delle percentuali degli ingredienti.\nUna grafico a torta da metabolizzare prima dell'ingestione.\nVent'anni prima dei sensori di glucosio di Supersapiens, Guixé aveva insomma capito che per risolvere la pandemia del 21esimo secolo dobbiamo tornare ai dati.\nProbabilmente, non vedremo mai, sui pacchetti di Pringles un etichetta come sulle Marlboro, con scritto \"il cibo processato uccide\".\nMa proprio da questo progetto dobbiamo ripartire, superando l'estetica del cibo e tornando ai dati. Per non ridurci (anche fisiologicamente…) all'osso.\n",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!OZn4!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdc6759e4-25ef-4b0e-8fcc-e082fa5d033d_898x747.png",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!Rh9Z!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe4c0be17-f24c-4d02-b599-1b49f9a45b42_3027x1968.jpeg",
+                        "caption": "Martí Guixé, Arcipelago dei Futuri (Cagliari 2025)"
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "food design, Martí Guixé",
+                        "url": "https://www.food-designing.com/"
+                    },
+                    {
+                        "text": "Arcipelago dei Futuri (Cagliari 2025)",
+                        "url": "https://www.guixe.com/GUIXE/2025-10_Tactical_food_flux_Contemporanea_Cagliari_Guixe.html"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "🕛 ff.35.2 Smartwatch e non solo",
+                        "url": "https://fortissimo.substack.com/i/50745954/ff352-smartwatch-e-non-solo"
+                    },
+                    {
+                        "text": "🎼 ff.49 La pandemia del 21esimo secolo",
+                        "url": "https://fortissimo.substack.com/p/ff49-la-pandemia-del-21esimo-secolo?utm_source=publication-search"
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "url": "https://fortissimo.substack.com/p/ff139-e-stato-lai",
         "title": "🎼 ff.139 E' Stato l'AI?",
         "subtitle": "Se NVIDIA vale più della Svizzera",
