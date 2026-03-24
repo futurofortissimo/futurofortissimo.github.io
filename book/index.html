@@ -35,7 +35,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -137,6 +137,210 @@
         padding-bottom: env(safe-area-inset-bottom);
       }
     }
+
+    /* --- Adelphi-style book cover --- */
+    .book-hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 1rem 2.5rem;
+      background: #f5f0eb;
+    }
+    .book-cover {
+      position: relative;
+      width: min(340px, 88vw);
+      aspect-ratio: 2 / 3;
+      background: #e8a87c;
+      box-shadow:
+        4px 8px 24px rgba(0,0,0,0.22),
+        1px 2px 6px rgba(0,0,0,0.12);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    /* Paper grain overlay */
+    .book-cover::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      background-size: 128px 128px;
+      pointer-events: none;
+      z-index: 1;
+    }
+    /* Double border / inset frame */
+    .book-cover::after {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border: 1.5px solid rgba(90, 50, 20, 0.35);
+      outline: 1px solid rgba(90, 50, 20, 0.15);
+      outline-offset: 6px;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .book-cover__inner {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      gap: 0;
+      height: 100%;
+    }
+    .book-cover__author {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(60, 30, 10, 0.7);
+      margin-bottom: auto;
+      padding-top: 1.5rem;
+    }
+    .book-cover__vignette {
+      margin-bottom: 1.2rem;
+    }
+    .book-cover__title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #3a1a05;
+      line-height: 1.15;
+      margin: 0;
+    }
+    .book-cover__subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(60, 30, 10, 0.65);
+      margin-top: 0.5rem;
+    }
+    .book-cover__footer {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(60, 30, 10, 0.55);
+      margin-top: auto;
+      padding-bottom: 1.2rem;
+    }
+
+    /* CTA section below cover */
+    .book-cta {
+      width: 100%;
+      max-width: 480px;
+      margin-top: 2.5rem;
+      text-align: center;
+    }
+    .book-cta__headline {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ff-black);
+    }
+    .book-cta__sub {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 0.5rem;
+      line-height: 1.5;
+    }
+    .book-cta__form {
+      display: flex;
+      gap: 0;
+      margin-top: 1.2rem;
+    }
+    .book-cta__input {
+      flex: 1;
+      padding: 12px 14px;
+      border: 3px solid var(--ff-black);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      outline: none;
+      background: #fff;
+      min-width: 0;
+    }
+    .book-cta__input:focus {
+      border-color: var(--ff-blue);
+    }
+    .book-cta__btn {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 12px 20px;
+      background: var(--ff-black);
+      color: #fff;
+      border: 3px solid var(--ff-black);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.15s, color 0.15s;
+    }
+    .book-cta__btn:hover {
+      background: var(--ff-blue);
+      border-color: var(--ff-blue);
+    }
+    .book-cta__thanks {
+      display: none;
+      margin-top: 1.2rem;
+    }
+    .book-cta__thanks.is-visible {
+      display: block;
+    }
+    .book-cta__thanks p {
+      font-size: 0.95rem;
+      color: #333;
+      margin-bottom: 0.8rem;
+    }
+    .book-cta__dl-btn {
+      display: inline-block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 12px 28px;
+      background: var(--ff-black);
+      color: #fff;
+      text-decoration: none;
+      margin: 0.3rem;
+      transition: background 0.15s;
+    }
+    .book-cta__dl-btn:hover {
+      background: var(--ff-blue);
+    }
+    .book-cta__dl-btn--outline {
+      background: #fff;
+      color: var(--ff-black);
+      border: 3px solid var(--ff-black);
+    }
+    .book-cta__dl-btn--outline:hover {
+      background: var(--ff-black);
+      color: #fff;
+    }
+    @media (max-width: 480px) {
+      .book-cta__form {
+        flex-direction: column;
+      }
+      .book-cta__btn {
+        width: 100%;
+      }
+      .book-cover {
+        width: 78vw;
+      }
+    }
   </style>
 
   <script type="application/ld+json">
@@ -207,6 +411,59 @@
       </nav>
     </div>
   </header>
+
+  <!-- Book Cover Hero -->
+  <section class="book-hero">
+    <div class="book-cover">
+      <div class="book-cover__inner">
+        <span class="book-cover__author">Michele Merelli</span>
+
+        <!-- SVG vignette: abstract compass rose -->
+        <svg class="book-cover__vignette" width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="40" cy="40" r="30" stroke="#3a1a05" stroke-width="0.7" opacity="0.4"/>
+          <circle cx="40" cy="40" r="20" stroke="#3a1a05" stroke-width="0.5" opacity="0.3"/>
+          <circle cx="40" cy="40" r="3" fill="#3a1a05" opacity="0.5"/>
+          <!-- Cardinal points -->
+          <line x1="40" y1="8" x2="40" y2="18" stroke="#3a1a05" stroke-width="1" opacity="0.5"/>
+          <line x1="40" y1="62" x2="40" y2="72" stroke="#3a1a05" stroke-width="1" opacity="0.5"/>
+          <line x1="8" y1="40" x2="18" y2="40" stroke="#3a1a05" stroke-width="1" opacity="0.5"/>
+          <line x1="62" y1="40" x2="72" y2="40" stroke="#3a1a05" stroke-width="1" opacity="0.5"/>
+          <!-- Diagonal spokes -->
+          <line x1="17.3" y1="17.3" x2="24" y2="24" stroke="#3a1a05" stroke-width="0.6" opacity="0.35"/>
+          <line x1="56" y1="56" x2="62.7" y2="62.7" stroke="#3a1a05" stroke-width="0.6" opacity="0.35"/>
+          <line x1="62.7" y1="17.3" x2="56" y2="24" stroke="#3a1a05" stroke-width="0.6" opacity="0.35"/>
+          <line x1="24" y1="56" x2="17.3" y2="62.7" stroke="#3a1a05" stroke-width="0.6" opacity="0.35"/>
+          <!-- Inner diamond -->
+          <polygon points="40,25 55,40 40,55 25,40" stroke="#3a1a05" stroke-width="0.6" fill="none" opacity="0.3"/>
+          <!-- Tiny decorative dots -->
+          <circle cx="40" cy="10" r="1.5" fill="#3a1a05" opacity="0.45"/>
+          <circle cx="40" cy="70" r="1.5" fill="#3a1a05" opacity="0.45"/>
+          <circle cx="10" cy="40" r="1.5" fill="#3a1a05" opacity="0.45"/>
+          <circle cx="70" cy="40" r="1.5" fill="#3a1a05" opacity="0.45"/>
+        </svg>
+
+        <h2 class="book-cover__title">Futuro<br>Fortissimo</h2>
+        <span class="book-cover__subtitle">Cinque Macro Temi</span>
+
+        <span class="book-cover__footer">Natura &middot; Tecnologia &middot; Societ&agrave;</span>
+      </div>
+    </div>
+
+    <!-- Download CTA -->
+    <div class="book-cta" id="bookCta">
+      <div class="book-cta__headline">Scarica il libro gratuitamente</div>
+      <p class="book-cta__sub">Inserisci la tua email per ricevere il link di download. Tre saggi, 275+ fonti, 43k parole.</p>
+      <form class="book-cta__form" id="bookDownloadForm" action="https://formspree.io/f/xpwzgwkk" method="POST">
+        <input class="book-cta__input" type="email" name="email" placeholder="la-tua@email.it" required aria-label="Email">
+        <button class="book-cta__btn" type="submit">Scarica</button>
+      </form>
+      <div class="book-cta__thanks" id="bookThanks">
+        <p>Grazie! Ecco il tuo download.</p>
+        <a class="book-cta__dl-btn" href="/book/futuro-fortissimo-tre-macro-temi.epub" data-track="book_download" download>Scarica EPUB</a>
+        <a class="book-cta__dl-btn book-cta__dl-btn--outline" href="/book/chapter-01.html">Leggi online &rarr;</a>
+      </div>
+    </div>
+  </section>
 
   <main class="max-w-4xl mx-auto px-4 py-10">
 
@@ -461,6 +718,43 @@
   <script src="/analytics.js"></script>
   <script>
     if (window.ffTrackPage) window.ffTrackPage();
+  </script>
+
+  <!-- Book download form handler -->
+  <script>
+  (function() {
+    var form = document.getElementById('bookDownloadForm');
+    var thanks = document.getElementById('bookThanks');
+    if (!form || !thanks) return;
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var email = form.querySelector('input[name="email"]').value;
+
+      // Fire GA event
+      if (typeof gtag === 'function') {
+        gtag('event', 'book_download_request', { email: email });
+      }
+
+      // Submit to Formspree
+      fetch(form.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email })
+      }).then(function(res) {
+        if (res.ok) {
+          form.style.display = 'none';
+          thanks.classList.add('is-visible');
+        } else {
+          alert('Errore nell\'invio. Riprova.');
+        }
+      }).catch(function() {
+        // Show download anyway on network error
+        form.style.display = 'none';
+        thanks.classList.add('is-visible');
+      });
+    });
+  })();
   </script>
 </body>
 </html>
