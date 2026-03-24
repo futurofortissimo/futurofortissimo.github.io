@@ -35,7 +35,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -138,22 +138,22 @@
       }
     }
 
-    /* --- Adelphi-style book cover --- */
+    /* --- Book cover — light blue, Playfair Display --- */
     .book-hero {
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 3rem 1rem 2.5rem;
-      background: #f5f0eb;
+      background: #f0f4f8;
     }
     .book-cover {
       position: relative;
       width: min(340px, 88vw);
       aspect-ratio: 2 / 3;
-      background: #e8a87c;
+      background: #b8d4e8;
       box-shadow:
-        4px 8px 24px rgba(0,0,0,0.22),
-        1px 2px 6px rgba(0,0,0,0.12);
+        4px 8px 24px rgba(0,0,0,0.18),
+        1px 2px 6px rgba(0,0,0,0.10);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -165,7 +165,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
       background-size: 128px 128px;
       pointer-events: none;
       z-index: 1;
@@ -175,8 +175,8 @@
       content: '';
       position: absolute;
       inset: 12px;
-      border: 1.5px solid rgba(90, 50, 20, 0.35);
-      outline: 1px solid rgba(90, 50, 20, 0.15);
+      border: 1.5px solid rgba(15, 40, 70, 0.28);
+      outline: 1px solid rgba(15, 40, 70, 0.12);
       outline-offset: 6px;
       pointer-events: none;
       z-index: 2;
@@ -194,45 +194,53 @@
       height: 100%;
     }
     .book-cover__author {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.8rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 0.78rem;
       font-weight: 400;
-      letter-spacing: 0.28em;
+      letter-spacing: 0.3em;
       text-transform: uppercase;
-      color: rgba(60, 30, 10, 0.7);
+      color: rgba(10, 30, 60, 0.6);
       margin-bottom: auto;
       padding-top: 1.5rem;
     }
     .book-cover__vignette {
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
     }
     .book-cover__title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.5rem, 5vw, 2rem);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 5.5vw, 2.2rem);
       font-weight: 700;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
-      color: #3a1a05;
+      color: #0f1e38;
       line-height: 1.15;
       margin: 0;
     }
     .book-cover__subtitle {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem;
-      font-weight: 300;
+      font-family: 'Playfair Display', serif;
+      font-size: 0.95rem;
+      font-weight: 400;
       font-style: italic;
-      color: rgba(60, 30, 10, 0.65);
-      margin-top: 0.5rem;
+      color: rgba(10, 30, 60, 0.55);
+      margin-top: 0.6rem;
     }
     .book-cover__footer {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.72rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 0.68rem;
       font-weight: 400;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: rgba(60, 30, 10, 0.55);
+      color: rgba(10, 30, 60, 0.45);
       margin-top: auto;
       padding-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .book-cover__footer svg {
+      width: 14px;
+      height: 14px;
+      opacity: 0.55;
     }
 
     /* CTA section below cover */
@@ -418,34 +426,62 @@
       <div class="book-cover__inner">
         <span class="book-cover__author">Michele Merelli</span>
 
-        <!-- SVG vignette: abstract compass rose -->
-        <svg class="book-cover__vignette" width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="40" cy="40" r="30" stroke="#3a1a05" stroke-width="0.7" opacity="0.4"/>
-          <circle cx="40" cy="40" r="20" stroke="#3a1a05" stroke-width="0.5" opacity="0.3"/>
-          <circle cx="40" cy="40" r="3" fill="#3a1a05" opacity="0.5"/>
-          <!-- Cardinal points -->
-          <line x1="40" y1="8" x2="40" y2="18" stroke="#3a1a05" stroke-width="1" opacity="0.5"/>
-          <line x1="40" y1="62" x2="40" y2="72" stroke="#3a1a05" stroke-width="1" opacity="0.5"/>
-          <line x1="8" y1="40" x2="18" y2="40" stroke="#3a1a05" stroke-width="1" opacity="0.5"/>
-          <line x1="62" y1="40" x2="72" y2="40" stroke="#3a1a05" stroke-width="1" opacity="0.5"/>
-          <!-- Diagonal spokes -->
-          <line x1="17.3" y1="17.3" x2="24" y2="24" stroke="#3a1a05" stroke-width="0.6" opacity="0.35"/>
-          <line x1="56" y1="56" x2="62.7" y2="62.7" stroke="#3a1a05" stroke-width="0.6" opacity="0.35"/>
-          <line x1="62.7" y1="17.3" x2="56" y2="24" stroke="#3a1a05" stroke-width="0.6" opacity="0.35"/>
-          <line x1="24" y1="56" x2="17.3" y2="62.7" stroke="#3a1a05" stroke-width="0.6" opacity="0.35"/>
-          <!-- Inner diamond -->
-          <polygon points="40,25 55,40 40,55 25,40" stroke="#3a1a05" stroke-width="0.6" fill="none" opacity="0.3"/>
-          <!-- Tiny decorative dots -->
-          <circle cx="40" cy="10" r="1.5" fill="#3a1a05" opacity="0.45"/>
-          <circle cx="40" cy="70" r="1.5" fill="#3a1a05" opacity="0.45"/>
-          <circle cx="10" cy="40" r="1.5" fill="#3a1a05" opacity="0.45"/>
-          <circle cx="70" cy="40" r="1.5" fill="#3a1a05" opacity="0.45"/>
+        <!-- SVG vignette: leaf + circuit + heart converging -->
+        <svg class="book-cover__vignette" width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Outer circle -->
+          <circle cx="45" cy="45" r="36" stroke="#0f1e38" stroke-width="0.6" opacity="0.25"/>
+          <!-- Inner circle -->
+          <circle cx="45" cy="45" r="18" stroke="#0f1e38" stroke-width="0.5" opacity="0.2"/>
+
+          <!-- Natura: minimal leaf (top-left) -->
+          <g transform="translate(18, 18)" opacity="0.5">
+            <path d="M10 2C10 2 2 8 2 14c0 4 3 6 8 6 0-4 0-10 0-10" stroke="#0f1e38" stroke-width="1" fill="none" stroke-linecap="round"/>
+            <line x1="10" y1="4" x2="6" y2="14" stroke="#0f1e38" stroke-width="0.6"/>
+          </g>
+
+          <!-- Tecnologia: minimal circuit node (top-right) -->
+          <g transform="translate(60, 18)" opacity="0.5">
+            <rect x="3" y="5" width="8" height="8" rx="1" stroke="#0f1e38" stroke-width="1" fill="none"/>
+            <line x1="7" y1="5" x2="7" y2="1" stroke="#0f1e38" stroke-width="0.7"/>
+            <line x1="7" y1="13" x2="7" y2="17" stroke="#0f1e38" stroke-width="0.7"/>
+            <line x1="3" y1="9" x2="0" y2="9" stroke="#0f1e38" stroke-width="0.7"/>
+            <line x1="11" y1="9" x2="14" y2="9" stroke="#0f1e38" stroke-width="0.7"/>
+            <circle cx="7" cy="9" r="2" fill="#0f1e38" opacity="0.3"/>
+          </g>
+
+          <!-- Societ&agrave;: minimal connected people (bottom-center) -->
+          <g transform="translate(35, 62)" opacity="0.5">
+            <circle cx="5" cy="3" r="2.5" stroke="#0f1e38" stroke-width="0.8" fill="none"/>
+            <circle cx="15" cy="3" r="2.5" stroke="#0f1e38" stroke-width="0.8" fill="none"/>
+            <path d="M5 6C5 6 3 9 3 11h4M15 6c0 0 2 3 2 5h-4" stroke="#0f1e38" stroke-width="0.7" fill="none" stroke-linecap="round"/>
+            <line x1="7" y1="4" x2="13" y2="4" stroke="#0f1e38" stroke-width="0.5" stroke-dasharray="1.5 1"/>
+          </g>
+
+          <!-- Connecting lines from center to each symbol -->
+          <line x1="45" y1="45" x2="28" y2="28" stroke="#0f1e38" stroke-width="0.4" opacity="0.2" stroke-dasharray="2 2"/>
+          <line x1="45" y1="45" x2="67" y2="27" stroke="#0f1e38" stroke-width="0.4" opacity="0.2" stroke-dasharray="2 2"/>
+          <line x1="45" y1="45" x2="45" y2="68" stroke="#0f1e38" stroke-width="0.4" opacity="0.2" stroke-dasharray="2 2"/>
+
+          <!-- Center dot -->
+          <circle cx="45" cy="45" r="2" fill="#0f1e38" opacity="0.35"/>
         </svg>
 
         <h2 class="book-cover__title">Futuro<br>Fortissimo</h2>
-        <span class="book-cover__subtitle">Cinque Macro Temi</span>
+        <span class="book-cover__subtitle">Leggi il futuro, oggi.</span>
 
-        <span class="book-cover__footer">Natura &middot; Tecnologia &middot; Societ&agrave;</span>
+        <span class="book-cover__footer">
+          <!-- Leaf -->
+          <svg viewBox="0 0 16 16" fill="none"><path d="M8 2C8 2 2 6 2 11c0 2.5 2.5 4 6 4 0-4 0-8 0-8" stroke="#0f1e38" stroke-width="1.2" fill="none" stroke-linecap="round"/><line x1="8" y1="4" x2="5" y2="11" stroke="#0f1e38" stroke-width="0.7"/></svg>
+          Natura
+          &middot;
+          <!-- Circuit -->
+          <svg viewBox="0 0 16 16" fill="none"><rect x="4" y="4" width="8" height="8" rx="1" stroke="#0f1e38" stroke-width="1.1" fill="none"/><circle cx="8" cy="8" r="2" fill="#0f1e38" opacity="0.4"/><line x1="8" y1="0" x2="8" y2="4" stroke="#0f1e38" stroke-width="0.8"/><line x1="8" y1="12" x2="8" y2="16" stroke="#0f1e38" stroke-width="0.8"/></svg>
+          Tecnologia
+          &middot;
+          <!-- People -->
+          <svg viewBox="0 0 16 16" fill="none"><circle cx="5" cy="4" r="2.2" stroke="#0f1e38" stroke-width="1" fill="none"/><circle cx="11" cy="4" r="2.2" stroke="#0f1e38" stroke-width="1" fill="none"/><path d="M5 7c0 0-2 2.5-2 4h4M11 7c0 0 2 2.5 2 4h-4" stroke="#0f1e38" stroke-width="0.8" fill="none" stroke-linecap="round"/></svg>
+          Societ&agrave;
+        </span>
       </div>
     </div>
 
@@ -453,7 +489,10 @@
     <div class="book-cta" id="bookCta">
       <div class="book-cta__headline">Scarica il libro gratuitamente</div>
       <p class="book-cta__sub">Inserisci la tua email per ricevere il link di download. Tre saggi, 275+ fonti, 43k parole.</p>
-      <form class="book-cta__form" id="bookDownloadForm" action="https://formspree.io/f/xpwzgwkk" method="POST">
+      <form class="book-cta__form" id="bookDownloadForm" action="https://formsubmit.co/ajax/michelemerelli.8@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="FF Libro — Nuovo download richiesto">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
         <input class="book-cta__input" type="email" name="email" placeholder="la-tua@email.it" required aria-label="Email">
         <button class="book-cta__btn" type="submit">Scarica</button>
       </form>
@@ -736,18 +775,20 @@
         gtag('event', 'book_download_request', { email: email });
       }
 
-      // Submit to Formspree
+      // Submit to FormSubmit.co
       fetch(form.action, {
         method: 'POST',
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email })
+        body: JSON.stringify({
+          email: email,
+          _subject: 'FF Libro — Nuovo download richiesto',
+          _template: 'table',
+          _captcha: 'false',
+          source: 'futurofortissimo.github.io/book'
+        })
       }).then(function(res) {
-        if (res.ok) {
-          form.style.display = 'none';
-          thanks.classList.add('is-visible');
-        } else {
-          alert('Errore nell\'invio. Riprova.');
-        }
+        form.style.display = 'none';
+        thanks.classList.add('is-visible');
       }).catch(function() {
         // Show download anyway on network error
         form.style.display = 'none';
