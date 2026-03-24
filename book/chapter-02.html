@@ -42,7 +42,7 @@
         .chapter-num{font-family:'Press Start 2P',monospace;font-size:clamp(0.45rem,1vw,0.55rem);letter-spacing:0.3em}
         .drop-cap::first-letter{font-family:'IBM Plex Mono',monospace;font-size:clamp(2.8em,5vw,3.4em);float:left;line-height:0.8;padding-right:10px;padding-top:4px;font-weight:700;color:var(--accent)}
         .prose p{margin-bottom:1.2em;font-size:clamp(1rem,2.5vw,1.05rem);line-height:1.75;max-width:72ch}
-        .prose .fc{font-family:'IBM Plex Mono',monospace;font-size:0.8rem;font-weight:700;color:var(--accent);cursor:pointer;text-decoration:none;transition:color 0.15s;display:inline}
+        .prose .fc{font-family:'Inter',sans-serif;font-size:0.92rem;font-weight:600;color:var(--accent);cursor:pointer;text-decoration:none;transition:color 0.15s;display:inline}
         .prose .fc:hover{text-decoration:underline}
         .toc-link{border-left:3px solid transparent;transition:all 0.2s;min-height:44px;display:flex;align-items:center}.toc-link:hover,.toc-link:focus{border-left-color:var(--accent);padding-left:12px}
         blockquote{border-left:4px solid var(--accent);padding:12px 20px;margin:1.5em 0;background:#f0f6ff;font-style:italic}
@@ -739,9 +739,20 @@ document.querySelectorAll('.fc').forEach(el => {
     const a = document.createElement('a');
     a.href = url;
     a.className = el.className;
-    a.innerHTML = el.innerHTML;
     a.target = '_blank';
     a.rel = 'noopener noreferrer';
+    const rawText = el.textContent || '';
+    const ffMatch = rawText.match(/ff\.\d+(?:\.\d+)?/);
+    const ffToken = ffMatch ? ffMatch[0] : `ff.${m[1]}`;
+    // Extract emoji (everything before "ff.")
+    const emojiMatch = rawText.match(/^([\s\S]*?)(?=ff\.)/);
+    const emoji = emojiMatch ? emojiMatch[1].trim() : '';
+    const titlePart = rawText
+      .replace(/^[\s\S]*?(ff\.\d+(?:\.\d+)?)/, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+    const compactTitle = titlePart.split(' ').filter(Boolean).slice(0, 15).join(' ');
+    a.textContent = emoji ? `${emoji} ${ffToken} ${compactTitle}`.trim() : (compactTitle ? `${ffToken} ${compactTitle}` : ffToken);
     el.replaceWith(a);
   }
 });
