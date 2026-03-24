@@ -36,7 +36,14 @@ Constraints:
 - Use plain Italian by default.
 - Distinguish clearly between source facts and interpretation.
 
-## Editorial / FF Book Constraints
+## Editorial / FF Book Constraints — RULE ZERO: CORPUS FIDELITY
+- **ABSOLUTE**: Every sentence in the book MUST trace to notes.json or data.js. NO exceptions.
+- **NO embellishment**: Do not add analogies, metaphors, scientific references, or poetic phrases not in the source note.
+- **NO invented links**: Every `<a href>` must come from the source note's links[] or connections[] in data.js. If no link exists, do NOT fabricate one.
+- **NO editorial expansion**: The inject pipeline REPHRASES source content — it does NOT create new content.
+- **VERIFY before commit**: grep the ff.X.Y in data.js, diff the book paragraph vs source, flag anything not in source.
+- **Test every link**: curl each URL. Broken = fix or remove. Never leave broken links.
+- **If in doubt: OMIT rather than INVENT.**
 - Use only allowed corpus/notes.
 - Avoid external references unless explicitly requested.
 - Enforce required FF reference formatting in content.
