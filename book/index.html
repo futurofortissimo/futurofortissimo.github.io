@@ -234,13 +234,10 @@
       margin-top: auto;
       padding-bottom: 1.2rem;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 0.6rem;
-    }
-    .book-cover__footer svg {
-      width: 14px;
-      height: 14px;
-      opacity: 0.55;
+      gap: 0.15rem;
+      line-height: 1.6;
     }
 
     /* CTA section below cover */
@@ -470,17 +467,9 @@
         <span class="book-cover__subtitle">Leggi il futuro, oggi.</span>
 
         <span class="book-cover__footer">
-          <!-- Leaf -->
-          <svg viewBox="0 0 16 16" fill="none"><path d="M8 2C8 2 2 6 2 11c0 2.5 2.5 4 6 4 0-4 0-8 0-8" stroke="#0f1e38" stroke-width="1.2" fill="none" stroke-linecap="round"/><line x1="8" y1="4" x2="5" y2="11" stroke="#0f1e38" stroke-width="0.7"/></svg>
-          Natura
-          &middot;
-          <!-- Circuit -->
-          <svg viewBox="0 0 16 16" fill="none"><rect x="4" y="4" width="8" height="8" rx="1" stroke="#0f1e38" stroke-width="1.1" fill="none"/><circle cx="8" cy="8" r="2" fill="#0f1e38" opacity="0.4"/><line x1="8" y1="0" x2="8" y2="4" stroke="#0f1e38" stroke-width="0.8"/><line x1="8" y1="12" x2="8" y2="16" stroke="#0f1e38" stroke-width="0.8"/></svg>
-          Tecnologia
-          &middot;
-          <!-- People -->
-          <svg viewBox="0 0 16 16" fill="none"><circle cx="5" cy="4" r="2.2" stroke="#0f1e38" stroke-width="1" fill="none"/><circle cx="11" cy="4" r="2.2" stroke="#0f1e38" stroke-width="1" fill="none"/><path d="M5 7c0 0-2 2.5-2 4h4M11 7c0 0 2 2.5 2 4h-4" stroke="#0f1e38" stroke-width="0.8" fill="none" stroke-linecap="round"/></svg>
-          Societ&agrave;
+          <span>🌿 Natura</span>
+          <span>💻 Tecnologia</span>
+          <span>❤️ Società</span>
         </span>
       </div>
     </div>
@@ -514,46 +503,54 @@
 
     <!-- Ultime aggiunte — 2026-03-12 -->
     <section class="mt-8 brutal-card accent-bar accent-yellow" style="border-width:3px;">
-      <div class="flex items-center gap-2 mb-3">
-        <span class="text-xl">&#9997;&#65039;</span>
-        <h2 class="text-base font-bold uppercase" style="margin:0;">Ultime aggiunte al corpus</h2>
-      </div>
-      <p class="ff-body-sm" style="color:#555;">Cinque nuove iniezioni tematiche e cinque revisioni stilistiche integrate il 24 marzo 2026.</p>
+      <details>
+        <summary style="cursor:pointer;list-style:none;display:flex;align-items:center;gap:0.5rem;">
+          <span style="transition:transform 0.2s;display:inline-block;" class="toggle-chevron">&#9654;</span>
+          <span class="text-xl">&#9997;&#65039;</span>
+          <h2 class="text-base font-bold uppercase" style="margin:0;display:inline;">Ultime aggiunte al corpus</h2>
+        </summary>
+        <style>
+          details[open] .toggle-chevron { transform: rotate(90deg); }
+          details summary::-webkit-details-marker { display: none; }
+        </style>
 
-      <div class="grid gap-4 mt-4" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+        <p class="ff-body-sm mt-3" style="color:#555;">Cinque nuove iniezioni tematiche e cinque revisioni stilistiche integrate il 24 marzo 2026.</p>
 
-        <!-- Block 1: Natura 1.3 — nutrizione e glicemia -->
-        <div style="border-left:4px solid var(--ff-green);padding-left:12px;">
-          <div class="ff-caption" style="color:var(--ff-green);">Natura 1.3 &mdash; Nutrizione e chimica</div>
-          <ul class="mt-2 text-sm" style="color:#444;list-style:none;padding:0;margin:0;">
-            <li><strong>ff.94.2</strong> &mdash; Grassi buoni e cattivi: il Pok&eacute;dex degli oli</li>
-            <li><strong>ff.145.3</strong> &mdash; Picchi glicemici e come evitarli (Glucose Revolution)</li>
-          </ul>
-          <div class="mt-2"><a class="ff-button underline text-xs" href="/book/chapter-01.html#s3-1">Vai a 1.3 &rarr;</a></div>
+        <div class="grid gap-4 mt-4" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+
+          <!-- Block 1: Natura 1.3 — nutrizione e glicemia -->
+          <div style="border-left:4px solid var(--ff-green);padding-left:12px;">
+            <div class="ff-caption" style="color:var(--ff-green);">Natura 1.3 &mdash; Nutrizione e chimica</div>
+            <ul class="mt-2 text-sm" style="color:#444;list-style:none;padding:0;margin:0;">
+              <li><strong>ff.94.2</strong> &mdash; Grassi buoni e cattivi: il Pok&eacute;dex degli oli</li>
+              <li><strong>ff.145.3</strong> &mdash; Picchi glicemici e come evitarli (Glucose Revolution)</li>
+            </ul>
+            <div class="mt-2"><a class="ff-button underline text-xs" href="/book/chapter-01.html#s3-1">Vai a 1.3 &rarr;</a></div>
+          </div>
+
+          <!-- Block 2: Tecnologia 2.1 — AI e cultura -->
+          <div style="border-left:4px solid var(--ff-blue);padding-left:12px;">
+            <div class="ff-caption" style="color:var(--ff-blue);">Tecnologia 2.1 &mdash; AI e cultura</div>
+            <ul class="mt-2 text-sm" style="color:#444;list-style:none;padding:0;margin:0;">
+              <li><strong>ff.67.2</strong> &mdash; Marc Andreessen: perch&eacute; l&rsquo;AI ci salver&agrave;</li>
+            </ul>
+            <div class="mt-2"><a class="ff-button underline text-xs" href="/book/chapter-02.html#s1-2">Vai a 2.1 &rarr;</a></div>
+          </div>
+
+          <!-- Block 3: Società 3.2/3.3 — sport e demografia -->
+          <div style="border-left:4px solid var(--ff-red);padding-left:12px;">
+            <div class="ff-caption" style="color:var(--ff-red);">Societ&agrave; 3.2/3.3 &mdash; Sport e demografia</div>
+            <ul class="mt-2 text-sm" style="color:#444;list-style:none;padding:0;margin:0;">
+              <li><strong>ff.120.2</strong> &mdash; Dieta o esercizio? Il movimento batte tutto</li>
+              <li><strong>ff.23.1</strong> &mdash; Le relazioni negli ultimi 100 anni (Flowing Data)</li>
+            </ul>
+            <div class="mt-2"><a class="ff-button underline text-xs" href="/book/chapter-03.html#s2-1">Vai a 3.2 &rarr;</a></div>
+          </div>
+
         </div>
 
-        <!-- Block 2: Tecnologia 2.1 — AI e cultura -->
-        <div style="border-left:4px solid var(--ff-blue);padding-left:12px;">
-          <div class="ff-caption" style="color:var(--ff-blue);">Tecnologia 2.1 &mdash; AI e cultura</div>
-          <ul class="mt-2 text-sm" style="color:#444;list-style:none;padding:0;margin:0;">
-            <li><strong>ff.67.2</strong> &mdash; Marc Andreessen: perch&eacute; l&rsquo;AI ci salver&agrave;</li>
-          </ul>
-          <div class="mt-2"><a class="ff-button underline text-xs" href="/book/chapter-02.html#s1-2">Vai a 2.1 &rarr;</a></div>
-        </div>
-
-        <!-- Block 3: Società 3.2/3.3 — sport e demografia -->
-        <div style="border-left:4px solid var(--ff-red);padding-left:12px;">
-          <div class="ff-caption" style="color:var(--ff-red);">Societ&agrave; 3.2/3.3 &mdash; Sport e demografia</div>
-          <ul class="mt-2 text-sm" style="color:#444;list-style:none;padding:0;margin:0;">
-            <li><strong>ff.120.2</strong> &mdash; Dieta o esercizio? Il movimento batte tutto</li>
-            <li><strong>ff.23.1</strong> &mdash; Le relazioni negli ultimi 100 anni (Flowing Data)</li>
-          </ul>
-          <div class="mt-2"><a class="ff-button underline text-xs" href="/book/chapter-03.html#s2-1">Vai a 3.2 &rarr;</a></div>
-        </div>
-
-      </div>
-
-      <p class="ff-body-sm mt-4" style="color:#777;font-style:italic;">Revisioni: 3 link parentetici convertiti a gold standard (ch01 sez. 1.2), 2 paragrafi con highlight mancanti integrati (ch03 sez. 3.2.3, 3.3.1), clip emoji rimossi da link inline.</p>
+        <p class="ff-body-sm mt-4" style="color:#777;font-style:italic;">Revisioni: 3 link parentetici convertiti a gold standard (ch01 sez. 1.2), 2 paragrafi con highlight mancanti integrati (ch03 sez. 3.2.3, 3.3.1), clip emoji rimossi da link inline.</p>
+      </details>
     </section>
 
     <!-- Chapters grid -->
