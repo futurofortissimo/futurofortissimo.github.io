@@ -1,5 +1,12 @@
 export const rawData = [
     {
+        "url": "https://fortissimo.substack.com/p/ff146-cicatrici-silenziose",
+        "title": "🎼 ff.146 Cicatrici silenziose",
+        "subtitle": "Contro le infinite permutazioni dell'AI, cicatrici e poesia?",
+        "keypoints": [],
+        "subchapters": []
+    },
+    {
         "url": "https://fortissimo.substack.com/p/ff145-zucchero-ossa-e-creme-brulee",
         "title": "🎼 ff.145 Zucchero, ossa e crème brûlée",
         "subtitle": "Food design contro \"il nuovo fumo\", il cibo",
@@ -139,6 +146,13 @@ export const rawData = [
                 ]
             }
         ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff126-e-tutta-questione-di-testa",
+        "title": "🎼 ff.128 La mente ci limita?",
+        "subtitle": "Come cervello e microbioma regolano la nostra resistenza, dai 10 km alle ultramaratone",
+        "keypoints": [],
+        "subchapters": []
     },
     {
         "url": "https://fortissimo.substack.com/p/ff139-e-stato-lai",
