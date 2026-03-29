@@ -286,6 +286,25 @@
     var fonti = document.querySelectorAll('[id^="fonte-"]');
     if (!fonti.length) return;
 
+    // Pre-collect all content links once for efficient matching
+    var contentLinks = document.querySelectorAll('article.prose a[href]');
+
+    // Normalize URL for comparison: strip trailing slash, lowercase hostname
+    function normalizeUrl(url) {
+      try {
+        var u = new URL(url, location.href);
+        return u.origin + u.pathname.replace(/\/+$/, '') + u.search + u.hash;
+      } catch (e) {
+        return url.replace(/\/+$/, '');
+      }
+    }
+
+    // Extract domain from URL for partial matching
+    function extractDomain(url) {
+      try { return new URL(url, location.href).hostname.replace(/^www\./, ''); }
+      catch (e) { return ''; }
+    }
+
     fonti.forEach(function (li) {
       var fonteAnchor = li.querySelector('a');
       if (!fonteAnchor) return;
@@ -293,14 +312,27 @@
       var fonteUrl = fonteAnchor.getAttribute('href');
       if (!fonteUrl) return;
 
-      // Find matching link in article content
-      var match = document.querySelector('article.prose a[href="' + CSS.escape ? fonteUrl : fonteUrl + '"]');
-      // Fallback: try matching by href attribute directly
-      if (!match) {
-        var contentLinks = document.querySelectorAll('article.prose a');
-        for (var i = 0; i < contentLinks.length; i++) {
-          if (contentLinks[i].getAttribute('href') === fonteUrl) {
-            match = contentLinks[i];
+      var normalizedFonte = normalizeUrl(fonteUrl);
+      var fonteDomain = extractDomain(fonteUrl);
+
+      // Find matching link in article content (exact URL match first, then domain+path match)
+      var match = null;
+      for (var i = 0; i < contentLinks.length; i++) {
+        var linkHref = contentLinks[i].getAttribute('href');
+        if (!linkHref) continue;
+        // Exact match
+        if (linkHref === fonteUrl || normalizeUrl(linkHref) === normalizedFonte) {
+          match = contentLinks[i];
+          break;
+        }
+      }
+      // Fallback: match by domain + partial path
+      if (!match && fonteDomain) {
+        for (var j = 0; j < contentLinks.length; j++) {
+          var href2 = contentLinks[j].getAttribute('href');
+          if (!href2) continue;
+          if (extractDomain(href2) === fonteDomain && href2.length > 20) {
+            match = contentLinks[j];
             break;
           }
         }
