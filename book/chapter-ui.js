@@ -38,8 +38,8 @@
     '@keyframes ff-flash-bg{0%{background:rgba(74,144,226,0.25)}100%{background:transparent}}',
     '.flash-highlight{animation:ff-flash-bg 1.5s ease-out}',
 
-    /* Mobile: hide toggle, panel goes full-width */
-    '@media(max-width:768px){.ff-side-panel__toggle{display:none}.ff-side-panel{width:85vw}}',
+    /* Mobile: toggle moves to bottom-right, panel goes full-width */
+    '@media(max-width:768px){.ff-side-panel__toggle{top:auto;bottom:20px;left:auto;right:16px;transform:none;width:48px;height:48px;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,0.3);font-size:1.3rem;z-index:51}.ff-side-panel{width:85vw}}',
 
     /* Reduced motion */
     '@media(prefers-reduced-motion:reduce){.ff-side-panel,.ff-side-panel__backdrop,.ff-sticky-search,.flash-highlight{transition-duration:0.01ms!important;animation-duration:0.01ms!important}}'
