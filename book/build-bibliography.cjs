@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 /**
- * build-bibliography.cjs — Builds internal bibliography sections for each subchapter page.
- * Each entry links to the section anchor where the ff.X.Y reference appears.
+ * build-bibliography.cjs — Builds external-source bibliography for each subchapter page.
+ * Extracts all external <a> links from prose, creates "Fonti esterne" section with id="fonte-N".
+ * chapter-ui.js then creates bidirectional links: [N] in prose → bib, ↩ in bib → prose+highlight.
  */
 const fs = require('fs');
 
@@ -10,131 +11,90 @@ const files = fs.readdirSync('.').filter(f => /^chapter-0[123]-[a-z]+\.html$/.te
 for (const file of files) {
   let html = fs.readFileSync(file, 'utf-8');
 
-  // 1. Extract all h2/h3 section anchors with their line positions
-  const sections = [];
-  const lines = html.split('\n');
-  for (let i = 0; i < lines.length; i++) {
-    const m = lines[i].match(/<h[23] id="(s[\d-]+)"[^>]*>([\s\S]*?)<\/h[23]>/);
-    if (m) {
-      sections.push({ id: m[1], title: m[2].replace(/<[^>]*>/g, '').replace(/&[a-z]+;/g, c => {
-        const map = {'&mdash;':'—','&agrave;':'à','&egrave;':'è','&igrave;':'ì','&ograve;':'ò','&ugrave;':'ù','&rsquo;':"'",'&lsquo;':"'",'&nbsp;':' '};
-        return map[c] || c;
-      }).trim(), line: i });
+  // 1. Extract all external links from article.prose content
+  // Find the article section
+  const articleStart = html.indexOf('<article class="prose"');
+  const articleEnd = html.indexOf('</article>');
+  if (articleStart < 0 || articleEnd < 0) {
+    console.log(file + ': no article.prose found, skipping');
+    continue;
+  }
+  const articleHtml = html.slice(articleStart, articleEnd);
+
+  // Extract all <a href="https://..."> links (external only)
+  const linkRegex = /<a href="(https?:\/\/[^"]+)"[^>]*>([^<]*(?:<[^/][^>]*>[^<]*<\/[^>]+>[^<]*)*)<\/a>/g;
+  const seen = new Set();
+  const sources = [];
+  let match;
+
+  while ((match = linkRegex.exec(articleHtml)) !== null) {
+    const url = match[1];
+    // Skip duplicate URLs and internal anchors
+    if (seen.has(url)) continue;
+    if (url.startsWith('#') || url.includes('translate.google.com')) continue;
+    seen.add(url);
+
+    // Clean link text
+    let text = match[2]
+      .replace(/<[^>]*>/g, '')        // strip inner tags
+      .replace(/&[a-z]+;/g, c => ({   // decode common entities
+        '&mdash;':'—','&agrave;':'à','&egrave;':'è','&igrave;':'ì',
+        '&ograve;':'ò','&ugrave;':'ù','&rsquo;':"'",'&lsquo;':"'",
+        '&ldquo;':'"','&rdquo;':'"','&eacute;':'é','&nbsp;':' ',
+        '&amp;':'&','&thinsp;':' '
+      }[c] || c))
+      .trim();
+
+    // Skip if text is too short (just a domain or fragment)
+    if (text.length < 8) continue;
+
+    // Truncate very long text
+    if (text.length > 120) {
+      text = text.substring(0, text.lastIndexOf(' ', 115)) + '...';
     }
+
+    // Extract domain
+    let domain;
+    try { domain = new URL(url).hostname.replace(/^www\./, ''); }
+    catch { domain = 'link'; }
+
+    sources.push({ url, text, domain });
   }
 
-  // 2. Extract all fc spans with their line positions
-  const refs = [];
-  for (let i = 0; i < lines.length; i++) {
-    // Match <span class="fc">CONTENT</span> — may span multiple lines
-    const lineBlock = lines.slice(i, Math.min(i + 3, lines.length)).join('\n');
-    const fcMatches = [...lineBlock.matchAll(/<span class="fc">([\s\S]*?)<\/span>/g)];
-    for (const fm of fcMatches) {
-      const raw = fm[1].replace(/<[^>]*>/g, '').trim();
-      // Extract emoji, ff code, and title
-      // Pattern: EMOJI ff.X.Y\nTitle or EMOJI ff.X.Y Title
-      const codeMatch = raw.match(/([\s\S]*?)(ff\.\d+(?:\.\d+)?)\s*([\s\S]*)/);
-      if (codeMatch) {
-        let emoji = codeMatch[1].trim();
-        const code = codeMatch[2];
-        let title = codeMatch[3].replace(/^\n/, '').trim();
+  console.log(`${file}: ${sources.length} external sources`);
 
-        // Decode HTML entities in emoji
-        emoji = emoji.replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(parseInt(n)))
-                     .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)));
+  // 2. Build bibliography HTML
+  let bibHtml = `\n    <!-- ===== Fonti esterne ===== -->
+    <section id="bibliografia" class="mt-12 mb-10 border-t-4 border-zinc-900 pt-8">
+      <h2 class="text-xl sm:text-2xl font-bold mb-2" style="font-family:'IBM Plex Mono',monospace;">Fonti esterne</h2>
+      <p class="text-sm text-zinc-500 mb-4">${sources.length} fonti in questa sezione.</p>
+      <ol class="list-decimal pl-6 space-y-2 text-sm text-zinc-700">\n`;
 
-        // Decode entities in title
-        title = title.replace(/&[a-z]+;/g, c => {
-          const map = {'&mdash;':'—','&agrave;':'à','&egrave;':'è','&igrave;':'ì','&ograve;':'ò','&ugrave;':'ù','&rsquo;':"'",'&lsquo;':"'",'&eacute;':'é','&nbsp;':' '};
-          return map[c] || c;
-        });
-
-        // Find which section this ref belongs to
-        let sectionId = sections.length > 0 ? sections[0].id : 's1';
-        for (const sec of sections) {
-          if (sec.line <= i) sectionId = sec.id;
-        }
-
-        // Avoid duplicates
-        if (!refs.find(r => r.code === code)) {
-          refs.push({ emoji, code, title, sectionId, line: i });
-        }
-      }
-    }
-  }
-
-  // Also extract note refs: note XXXX
-  for (let i = 0; i < lines.length; i++) {
-    const lineBlock = lines.slice(i, Math.min(i + 3, lines.length)).join('\n');
-    const noteMatches = [...lineBlock.matchAll(/<span class="fc">([\s\S]*?)<\/span>/g)];
-    for (const nm of noteMatches) {
-      const raw = nm[1].replace(/<[^>]*>/g, '').trim();
-      const noteMatch = raw.match(/([\s\S]*?)(note \d+)\s*([\s\S]*)/i);
-      if (noteMatch && !refs.find(r => r.code === noteMatch[2])) {
-        let emoji = noteMatch[1].trim()
-          .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(parseInt(n)));
-        const code = noteMatch[2];
-        let title = noteMatch[3].replace(/^\n/, '').trim()
-          .replace(/&[a-z]+;/g, c => ({'&mdash;':'—','&agrave;':'à','&egrave;':'è','&rsquo;':"'"}[c] || c));
-        let sectionId = sections.length > 0 ? sections[0].id : 's1';
-        for (const sec of sections) {
-          if (sec.line <= i) sectionId = sec.id;
-        }
-        refs.push({ emoji, code, title, sectionId, line: i });
-      }
-    }
-  }
-
-  // Sort refs by line number
-  refs.sort((a, b) => a.line - b.line);
-
-  console.log(`\n${file}: ${refs.length} unique refs, ${sections.length} sections`);
-  for (const r of refs.slice(0, 5)) {
-    console.log(`  ${r.emoji} ${r.code} — ${r.title} → #${r.sectionId}`);
-  }
-  if (refs.length > 5) console.log(`  ... and ${refs.length - 5} more`);
-
-  // 3. Build bibliography HTML
-  let bibHtml = `\n    <!-- ===== Note del capitolo ===== -->
-    <section id="note-capitolo" class="mt-12 brutal-card accent-bar">
-      <h2 class="text-lg font-bold uppercase mb-4" style="font-family:'IBM Plex Mono',monospace;letter-spacing:0.12em;">Note del capitolo</h2>
-      <p class="text-sm text-zinc-500 mb-4">${refs.length} riferimenti in questa sezione. Clicca per navigare al paragrafo.</p>
-      <ol style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.5rem;">\n`;
-
-  for (let ri = 0; ri < refs.length; ri++) {
-    const r = refs[ri];
-    const displayEmoji = r.emoji || '🎼';
-    // HTML-encode the emoji for safety
-    bibHtml += `        <li id="nota-${ri + 1}" style="border-left:3px solid var(--accent);padding:6px 12px;transition:background 0.2s;">
-          <a href="#${r.sectionId}" style="text-decoration:none;color:inherit;display:block;">
-            <span style="font-size:1.1em;">${displayEmoji}</span>
-            <strong style="font-family:'IBM Plex Mono',monospace;font-size:0.82rem;color:var(--accent);">${r.code}</strong>
-            <span style="font-size:0.88rem;color:#444;margin-left:4px;">${r.title}</span>
-          </a>
-        </li>\n`;
+  for (let i = 0; i < sources.length; i++) {
+    const s = sources[i];
+    bibHtml += `        <li id="fonte-${i + 1}"><a href="${s.url}" target="_blank" rel="noopener" class="text-blue-700 hover:underline">${s.text}</a> &mdash; <span class="text-zinc-500">${s.domain}</span></li>\n`;
   }
 
   bibHtml += `      </ol>
     </section>\n`;
 
-  // 4. Remove old bibliography if exists
+  // 3. Remove old bibliography / note sections
   html = html.replace(/\n\s*<!-- ===== Note del capitolo ===== -->[\s\S]*?<\/section>\s*\n/g, '\n');
-  // Also remove old Fonti esterne bibliography
+  html = html.replace(/\n\s*<!-- ===== Fonti esterne ===== -->[\s\S]*?<\/section>\s*\n/g, '\n');
   html = html.replace(/\n\s*<section id="bibliografia"[\s\S]*?<\/section>\s*\n/g, '\n');
 
-  // 5. Insert new bibliography before the navigation section
-  const navInsertPoint = html.indexOf('<!-- Navigation -->');
-  if (navInsertPoint > 0) {
-    html = html.slice(0, navInsertPoint) + bibHtml + '\n    ' + html.slice(navInsertPoint);
+  // 4. Insert bibliography before navigation
+  const navPoint = html.indexOf('<!-- Navigation -->');
+  if (navPoint > 0) {
+    html = html.slice(0, navPoint) + bibHtml + '\n    ' + html.slice(navPoint);
   } else {
-    // Fallback: insert before </article>
-    const articleEnd = html.lastIndexOf('</article>');
-    if (articleEnd > 0) {
-      html = html.slice(0, articleEnd) + bibHtml + '\n    ' + html.slice(articleEnd);
+    const artEnd = html.lastIndexOf('</article>');
+    if (artEnd > 0) {
+      html = html.slice(0, artEnd) + '\n' + bibHtml + '\n    ' + html.slice(artEnd);
     }
   }
 
   fs.writeFileSync(file, html, 'utf-8');
 }
 
-console.log('\nDone — all bibliographies rebuilt as internal navigation.');
+console.log('\nDone — all bibliographies rebuilt as Fonti esterne with anchor IDs.');
