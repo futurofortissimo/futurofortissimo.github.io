@@ -466,10 +466,7 @@
     <div class="book-cta" id="bookCta">
       <div class="book-cta__headline">Scarica il libro gratuitamente</div>
       <p class="book-cta__sub">Inserisci la tua email per ricevere il link di download. Tre saggi, 451 fonti, 50k parole.</p>
-      <form class="book-cta__form" id="bookDownloadForm" action="https://formsubmit.co/ajax/michelemerelli.8@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="FF Libro — Nuovo download richiesto">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
+      <form class="book-cta__form" id="bookDownloadForm" action="https://recastello-forms.micmer-recastello.workers.dev/ff-book" method="POST">
         <input class="book-cta__input" type="email" name="email" placeholder="la-tua@email.it" required aria-label="Email">
         <button class="book-cta__btn" type="submit">Scarica</button>
       </form>
@@ -769,18 +766,16 @@
         gtag('event', 'book_download_request', { email: email });
       }
 
-      // Submit to FormSubmit.co
+      // Submit to Recastello CF Worker (email notification via Resend)
       fetch(form.action, {
         method: 'POST',
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
         body: JSON.stringify({
           email: email,
-          _subject: 'FF Libro — Nuovo download richiesto',
-          _template: 'table',
-          _captcha: 'false',
           source: 'futurofortissimo.github.io/book'
         })
       }).then(function(res) {
+        // Show download regardless of email delivery status
         form.style.display = 'none';
         thanks.classList.add('is-visible');
       }).catch(function() {
