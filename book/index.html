@@ -466,7 +466,7 @@
     <div class="book-cta" id="bookCta">
       <div class="book-cta__headline">Scarica il libro gratuitamente</div>
       <p class="book-cta__sub">Inserisci la tua email per ricevere il link di download. Tre saggi, 451 fonti, 50k parole.</p>
-      <form class="book-cta__form" id="bookDownloadForm" action="https://formsubmit.co/ajax/michelemerelli.8@gmail.com" method="POST">
+      <form class="book-cta__form" id="bookDownloadForm" action="https://recastello-forms.micmer-recastello.workers.dev/ff-book" method="POST">
         <input class="book-cta__input" type="email" name="email" placeholder="la-tua@email.it" required aria-label="Email">
         <button class="book-cta__btn" type="submit">Scarica</button>
       </form>
@@ -753,7 +753,7 @@
   <!-- Book download form handler -->
   <script>
   (function() {
-    var FF_GETFORM_URL = 'https://getform.io/f/GETFORM_FF_ID';
+    var WORKER_URL = 'https://recastello-forms.micmer-recastello.workers.dev/ff-book';
     var form = document.getElementById('bookDownloadForm');
     var thanks = document.getElementById('bookThanks');
     if (!form || !thanks) return;
@@ -767,29 +767,15 @@
         gtag('event', 'book_download_request', { email: email });
       }
 
-      // Dual-send: FormSubmit.co + Getform.io
-      var sends = [
-        fetch(form.action, {
-          method: 'POST',
-          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            email: email,
-            _subject: 'FF Libro — Nuovo download richiesto',
-            _replyto: email,
-            _template: 'table',
-            _captcha: 'false',
-            source: 'futurofortissimo.github.io/book'
-          })
+      // Send to Recastello worker (handles email via MailChannels)
+      fetch(WORKER_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: email,
+          source: 'futurofortissimo.github.io/book'
         })
-      ];
-      if (FF_GETFORM_URL.indexOf('REPLACE_ME') === -1 && FF_GETFORM_URL.indexOf('GETFORM_FF_ID') === -1) {
-        sends.push(fetch(FF_GETFORM_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email: email, source: 'ff-book-download' })
-        }));
-      }
-      Promise.allSettled(sends).then(function() {
+      }).then(function() {
         form.style.display = 'none';
         thanks.classList.add('is-visible');
       }).catch(function() {
