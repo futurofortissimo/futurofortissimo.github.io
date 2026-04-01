@@ -753,6 +753,7 @@
   <!-- Book download form handler -->
   <script>
   (function() {
+    var FF_GETFORM_URL = 'https://getform.io/f/GETFORM_FF_ID';
     var form = document.getElementById('bookDownloadForm');
     var thanks = document.getElementById('bookThanks');
     if (!form || !thanks) return;
@@ -766,20 +767,29 @@
         gtag('event', 'book_download_request', { email: email });
       }
 
-      // Submit to formsubmit.co (email notification)
-      fetch(form.action, {
-        method: 'POST',
-        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email: email,
-          _subject: 'FF Libro — Nuovo download richiesto',
-          _replyto: email,
-          _captcha: 'false',
-          _template: 'table',
-          source: 'futurofortissimo.github.io/book'
+      // Dual-send: FormSubmit.co + Getform.io
+      var sends = [
+        fetch(form.action, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: email,
+            _subject: 'FF Libro — Nuovo download richiesto',
+            _replyto: email,
+            _template: 'table',
+            _captcha: 'false',
+            source: 'futurofortissimo.github.io/book'
+          })
         })
-      }).then(function(res) {
-        // Show download regardless of email delivery status
+      ];
+      if (FF_GETFORM_URL.indexOf('REPLACE_ME') === -1 && FF_GETFORM_URL.indexOf('GETFORM_FF_ID') === -1) {
+        sends.push(fetch(FF_GETFORM_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email, source: 'ff-book-download' })
+        }));
+      }
+      Promise.allSettled(sends).then(function() {
         form.style.display = 'none';
         thanks.classList.add('is-visible');
       }).catch(function() {
