@@ -37,21 +37,26 @@ function extractContent(htmlPath) {
   }
 
   // Convert .fc spans to inline links (since JS won't run in EPUB)
-  // Build substack map
+  // Load canonical map (proven sitemap URLs) as primary source
+  const canonical = JSON.parse(readFileSync(join(ROOT, 'canonical_substack_map.json'), 'utf8'));
+
+  // Build fallback map from newsletter_data.json
   const nlRaw = readFileSync(join(ROOT, 'newsletter_data.json'), 'utf8');
-  const substackMap = {};
+  const nlMap = {};
   const reNL = /"buttonLabel":\s*"([^"]+)"[\s\S]*?"substackLink":\s*"([^"]+)"/g;
   let mm;
   while ((mm = reNL.exec(nlRaw)) !== null) {
     const ffm = mm[1].match(/ff\.(\d+)/);
-    if (ffm && !substackMap[ffm[1]]) substackMap[ffm[1]] = mm[2];
+    if (ffm && !nlMap[ffm[1]]) nlMap[ffm[1]] = mm[2];
   }
 
   // Replace <span class="fc">... ff.N ...</span> with <a href="substack-url">...</a>
+  // Priority: canonical (proven) > newsletter_data > generic fallback
   content = content.replace(/<span class="fc">([\s\S]*?)<\/span>/g, (match, inner) => {
     const ffMatch = inner.match(/ff\.(\d+)/);
     if (ffMatch) {
-      const url = substackMap[ffMatch[1]] || `https://fortissimo.substack.com/p/ff${ffMatch[1]}`;
+      const num = ffMatch[1];
+      const url = canonical[num] || nlMap[num] || `https://fortissimo.substack.com/p/ff${num}`;
       return `<a href="${url}" style="font-family:monospace;font-size:0.8em;font-weight:bold;color:#4a90e2;text-decoration:none;">${inner.trim()}</a>`;
     }
     return match;
@@ -72,27 +77,43 @@ function extractContent(htmlPath) {
   return content;
 }
 
-// Chapter metadata
+// Chapter metadata — subchapter pages (split from monolithic chapters)
 const chapters = [
   {
-    title: '🌿 Capitolo 1 — Natura: Il Verde, la Città e il Piatto',
-    file: 'book/chapter-01.html',
+    title: '🌿 1.1 — Mobilità e Città',
+    file: 'book/chapter-01-mobilita.html',
   },
   {
-    title: '💻 Capitolo 2 — Tecnologia: Dalla Macchina all\'Agente',
-    file: 'book/chapter-02.html',
+    title: '🌿 1.2 — Ambiente ed Energia',
+    file: 'book/chapter-01-ambiente.html',
   },
   {
-    title: '❤️ Capitolo 3 — Società: Noi, Insieme',
-    file: 'book/chapter-03.html',
+    title: '🌿 1.3 — Cibo e Fashion',
+    file: 'book/chapter-01-cibo.html',
   },
   {
-    title: '📚 Capitolo 4 — Letture e Riassunti: Spunti e Riflessioni',
-    file: 'book/chapter-04.html',
+    title: '💻 2.1 — Robotica e AI',
+    file: 'book/chapter-02-robotica.html',
   },
   {
-    title: '📝 Capitolo 5 — Note e Documenti: Analisi e Approfondimenti',
-    file: 'book/chapter-05.html',
+    title: '💻 2.2 — Metaverso e Criptovalute',
+    file: 'book/chapter-02-metaverso.html',
+  },
+  {
+    title: '💻 2.3 — Prodotti di consumo',
+    file: 'book/chapter-02-prodotti.html',
+  },
+  {
+    title: '❤️ 3.1 — Psicologia e Wellbeing',
+    file: 'book/chapter-03-psicologia.html',
+  },
+  {
+    title: '❤️ 3.2 — Alimentazione e Sport',
+    file: 'book/chapter-03-alimentazione.html',
+  },
+  {
+    title: '❤️ 3.3 — Cultura e Demografia',
+    file: 'book/chapter-03-cultura.html',
   },
 ];
 

@@ -432,35 +432,43 @@
     var fcSpans = document.querySelectorAll('.fc');
     if (!fcSpans.length) return;
 
-    // Load newsletter_data.json to build substackMap
-    var mapScript = document.currentScript || document.querySelector('script[src*="chapter-ui"]');
-    var basePath = mapScript ? mapScript.src.replace(/book\/chapter-ui\.js.*$/, '') : '../';
-    // Resolve relative to book/ parent
-    var jsonUrl = (window.location.pathname.indexOf('/book/') !== -1)
+    // Resolve paths relative to book/ parent
+    var canonicalUrl = (window.location.pathname.indexOf('/book/') !== -1)
+      ? '../canonical_substack_map.json'
+      : 'canonical_substack_map.json';
+    var nlUrl = (window.location.pathname.indexOf('/book/') !== -1)
       ? '../newsletter_data.json'
       : 'newsletter_data.json';
 
-    fetch(jsonUrl).then(function (r) { return r.json(); }).then(function (nlData) {
-      var substackMap = {};
-      (nlData || []).forEach(function (entry) {
+    // Load canonical map (proven sitemap URLs), then newsletter_data as fallback
+    Promise.all([
+      fetch(canonicalUrl).then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; }),
+      fetch(nlUrl).then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; })
+    ]).then(function (results) {
+      var canonical = results[0] || {};
+      var nlData = results[1] || [];
+
+      // Build fallback map from newsletter_data.json
+      var nlMap = {};
+      (Array.isArray(nlData) ? nlData : []).forEach(function (entry) {
         var bl = entry.buttonLabel || '';
         var sl = entry.substackLink || '';
         var m = bl.match(/ff\.(\d+)/);
-        if (m && sl && !substackMap[m[1]]) substackMap[m[1]] = sl;
+        if (m && sl && !nlMap[m[1]]) nlMap[m[1]] = sl;
       });
-      convertFcSpans(substackMap);
-    }).catch(function () {
-      // Fallback: convert with generic URLs
-      convertFcSpans({});
+
+      // Canonical wins, then newsletter_data, then generic fallback
+      convertFcSpans(canonical, nlMap);
     });
 
-    function convertFcSpans(substackMap) {
+    function convertFcSpans(canonical, nlMap) {
       document.querySelectorAll('.fc').forEach(function (el) {
         var text = el.textContent || '';
         var m = text.match(/ff\.(\d+)/);
         if (!m) return;
 
-        var url = substackMap[m[1]] || ('https://fortissimo.substack.com/p/ff' + m[1]);
+        var num = m[1];
+        var url = canonical[num] || nlMap[num] || ('https://fortissimo.substack.com/p/ff' + num);
         var a = document.createElement('a');
         a.href = url;
         a.className = el.className;
