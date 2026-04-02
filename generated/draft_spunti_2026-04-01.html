@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>FF Draft — Anatomia di un robot che ricorda</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); --accent:var(--ff-blue); }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Inter',sans-serif; background:#fdfdfd; color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
+    body::before { content:''; position:fixed; inset:0; background-image:linear-gradient(var(--ff-grid) 1px,transparent 1px),linear-gradient(90deg,var(--ff-grid) 1px,transparent 1px); background-size:32px 32px; pointer-events:none; z-index:-1; }
+    h1,h2,h3 { font-family:'IBM Plex Mono',monospace; letter-spacing:0.03em; text-transform:uppercase; }
+    .wrapper { max-width:720px; margin:0 auto; padding:48px 24px; }
+    .brutal-card { border:4px solid var(--ff-black); background:#fff; box-shadow:6px 6px 0 var(--ff-black); padding:28px 24px; margin-bottom:32px; position:relative; }
+    .accent-bar { position:relative; }
+    .accent-bar::before { content:''; position:absolute; top:-4px; left:-4px; right:-4px; height:10px; }
+    .accent-blue::before { background:var(--ff-blue); }
+    .accent-red::before { background:var(--ff-red); }
+    .accent-yellow::before { background:var(--ff-yellow); }
+    .accent-green::before { background:var(--ff-green); }
+    .accent-black::before { background:var(--ff-black); }
+    .ff-eyebrow { font-family:'IBM Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; font-weight:700; color:#888; margin-bottom:6px; }
+    .ff-title { font-size:1.15rem; line-height:1.35; margin-bottom:14px; font-weight:700; }
+    .ff-body { font-size:0.975rem; line-height:1.7; }
+    .ff-body p { margin-bottom:14px; }
+    .note-highlight { background:linear-gradient(180deg, transparent 60%, rgba(46,204,113,0.22) 60%); padding:0 2px; font-style:normal; color:inherit; }
+    .note-src { font-family:'IBM Plex Mono',monospace; font-size:0.78rem; font-weight:bold; color:var(--accent); text-decoration:none; }
+    .note-src:hover { text-decoration:underline; }
+    .fc { font-family:'IBM Plex Mono',monospace; font-size:0.82rem; font-weight:700; color:var(--ff-blue); cursor:pointer; }
+    .fc:hover { text-decoration:underline; }
+    .draft-header { border-bottom:4px solid var(--ff-black); padding-bottom:20px; margin-bottom:36px; }
+    .draft-header h1 { font-size:1.6rem; line-height:1.3; margin-bottom:8px; }
+    .draft-header .sub { font-size:0.85rem; color:#666; font-family:'IBM Plex Mono',monospace; }
+    .theme-tag { display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:0.7rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; padding:3px 10px; border:2px solid var(--ff-black); margin-right:6px; margin-bottom:6px; }
+    .connector { text-align:center; font-family:'IBM Plex Mono',monospace; font-size:0.8rem; color:#aaa; margin:12px 0 24px; letter-spacing:0.3em; }
+    a { color:var(--accent); }
+    @media(max-width:600px) { .wrapper { padding:24px 14px; } .brutal-card { padding:20px 16px; } .ff-title { font-size:1.05rem; } }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="draft-header">
+    <div class="ff-eyebrow">draft spunti — 01 apr 2026</div>
+    <h1>🦾 Anatomia di un robot che ricorda</h1>
+    <p class="sub">5 sezioni, 15+ fonti, 1 filo: la robotica non è più hardware. È memoria, muscoli, economia, e — sorpresa — solitudine.</p>
+    <div style="margin-top:12px;">
+      <span class="theme-tag">💻 robotica</span>
+      <span class="theme-tag">🧠 memoria</span>
+      <span class="theme-tag">💊 corpo</span>
+      <span class="theme-tag">💸 economia</span>
+      <span class="theme-tag">❤️ umanità</span>
+    </div>
+  </div>
+
+  <!-- ff.146.1 -->
+  <div class="brutal-card accent-bar accent-blue">
+    <div class="ff-eyebrow">💻🧠 ff.146.1</div>
+    <h2 class="ff-title">🧊 Il robot che sa dove ha messo la spatola</h2>
+    <div class="ff-body">
+      <p>
+        Un robot che pulisce la cucina non è impressionante. Un robot che <em>ricorda</em> dove ha messo la spatola e <em>perché</em> stava cucinando — quello è un cambio di paradigma. Physical Intelligence ha sviluppato un sistema di <mark class="note-highlight">memoria visiva a breve termine e memoria semantica a lungo termine</mark> per i propri modelli: i robot eseguono task concatenati come preparare un grilled cheese da zero
+        (<a href="https://x.com/physical_int/status/2028954630458401040" target="_blank" rel="noopener" class="note-src">&#128206; Physical Intelligence — memoria robot</a>).
+        È lo stesso pattern che Yann LeCun sta teorizzando su scala più ampia: AMI, la sua nuova startup da <mark class="note-highlight">$1.03 miliardi</mark>, costruisce architetture JEPA — sistemi con memoria persistente, ragionamento causale e world models che apprendono dal mondo fisico, non dai token
+        (<a href="https://www.reuters.com/business/ex-meta-ai-chief-yann-lecuns-ami-raises-103-billion-alternative-ai-approach-2026-03-10/" target="_blank" rel="noopener" class="note-src">&#128206; AMI — $1.03B per JEPA</a>).
+      </p>
+      <p>
+        Il salto non è nei motori, è nella gestione del contesto. I transformer hanno vinto sul testo perché ricordano cosa hanno letto 10.000 token fa. I robot vinceranno nella cucina perché ricordano cosa hanno fatto 10 minuti fa. E General Intuition la mette così: i <mark class="note-highlight">World Models sono una nuova classe di foundation model più potente dei LLM</mark> per ambienti che richiedono ragionamento spaziale e temporale
+        (<a href="https://www.generalintuition.com/" target="_blank" rel="noopener" class="note-src">&#128206; General Intuition — World Models</a>).
+        Se ne parlava già in (<span class="fc">🤖 ff.88.2 ChatGPT controlla un robot</span>), quando il testo diventava per la prima volta interfaccia verso il mondo fisico. Ma lì era un trucco. Qui la memoria è nativa.
+      </p>
+      <p>
+        La domanda: se un modello linguistico ricrea l'appartamento di Monica di Friends in 3D navigabile <em>in 2 prompt</em>
+        (<a href="https://x.com/i/status/2029923290299441181" target="_blank" rel="noopener" class="note-src">&#128206; GPT-5.4 — Monica's apartment in Three.js</a>),
+        quanto manca prima che lo stesso ragionamento spaziale guidi un robot nella tua cucina reale?
+      </p>
+    </div>
+  </div>
+
+  <div class="connector">· · · memoria → corpo → gesto · · ·</div>
+
+  <!-- ff.146.2 -->
+  <div class="brutal-card accent-bar accent-red">
+    <div class="ff-eyebrow">💻🚕 ff.146.2</div>
+    <h2 class="ff-title">🧹 Dal Roomba cieco al robot che capisce il salotto</h2>
+    <div class="ff-body">
+      <p>
+        Figure ha mostrato Helix 02 che riordina un salotto intero — <mark class="note-highlight">whole body, end-to-end, senza intervento umano</mark>
+        (<a href="https://www.linkedin.com/posts/brettadcock_today-figure-is-showing-another-major-milestone-ugcPost-7436806575538843648-61W1" target="_blank" rel="noopener" class="note-src">&#128206; Figure — Helix 02 cleanup autonomo</a>).
+        Non un braccio su un tavolo: un umanoide che cammina, raccoglie, riposiziona, decide dove va ogni cosa. In (<span class="fc">🥧 ff.129.2 Pi-greco, FigureAI e 1 ora "logistica"?</span>) si raccontava come π0 di Physical Intelligence gestisse 8 architetture diverse, e come Helix smistasse pacchetti migliorando da 5 a 4 secondi per collo. Adesso lo stesso sistema è passato dal magazzino al divano.
+      </p>
+      <p>
+        Intanto, LATENT ha addestrato umanoidi a giocare a tennis usando <mark class="note-highlight">dati di movimento umano imperfetti</mark> — video rumorosi, gesti incompleti — imparando un "latent action space" che compone e corregge skill atletiche al volo
+        (<a href="https://x.com/i/status/2033035812431081778" target="_blank" rel="noopener" class="note-src">&#128206; LATENT — tennis da video imperfetti</a>).
+        Collegamento non ovvio: la memoria semantica di Physical Intelligence e il latent space di LATENT sono la stessa idea a scale diverse. Uno ricorda il contesto (dove va il telecomando), l'altro ricorda il gesto (il rovescio). E il Roomba, come si diceva in (<span class="fc">🥌 ff.138.4 Roomba o piante ornamentali?</span>), restava una pianta ornamentale con le ruote.
+      </p>
+      <p>
+        A proposito di cose che si muovono da sole: in Cina ci sono già complessi residenziali con <mark class="note-highlight">robot di ricarica mobili da 100 kWh</mark> che trasformano ogni posto auto in punto di ricarica
+        (<a href="https://x.com/liumiao/status/2033710941217435663" target="_blank" rel="noopener" class="note-src">&#128206; Cina — robot ricarica 100kWh</a>).
+        Un power bank su ruote con la stessa autonomia di un'auto. La mobilità autonoma non è solo robotaxi — è infrastruttura che viene da te.
+      </p>
+    </div>
+  </div>
+
+  <div class="connector">· · · gesto → muscoli → recupero · · ·</div>
+
+  <!-- ff.146.3 -->
+  <div class="brutal-card accent-bar accent-green">
+    <div class="ff-eyebrow">💊💻 ff.146.3</div>
+    <h2 class="ff-title">🏋️ Il robot ha i muscoli. Tu come li mantieni?</h2>
+    <div class="ff-body">
+      <p>
+        Connessione orizzontale. I robot imparano skill atletiche da video imperfetti. Ma il corpo umano che quei video ha prodotto — quanto è fragile? Quanto è ottimizzabile?
+      </p>
+      <p>
+        Due dati incrociati. Primo: <mark class="note-highlight">2.5 grammi di EPA+DHA al giorno per 8 settimane</mark> riducono la perdita di forza dopo esercizio muscolare dannoso, tramite oxylipins — mediatori lipidici bioattivi derivati dalla ossidazione degli omega-3
+        (<a href="https://x.com/i/status/2033618983556157820" target="_blank" rel="noopener" class="note-src">&#128206; Omega-3 — recupero muscolare via oxylipins</a>).
+        Il supplemento più banale del mondo protegge i muscoli che i robot stanno imparando a imitare. Come si diceva in (<span class="fc">🚬 ff.94.3 Omega-3 come sigarette?</span>), sono il jolly più sottovalutato della farmacologia quotidiana.
+      </p>
+      <p>
+        Secondo: la <mark class="note-highlight">circonferenza del polpaccio sotto 35 cm predice mortalità più alta negli anziani</mark>; sopra 38.5 cm, mortalità ridotta. Il polpaccio come proxy di massa muscolare scheletrica — il sarto come diagnostico
+        (<a href="https://www.instagram.com/p/DWPAkZ3iAVi/" target="_blank" rel="noopener" class="note-src">&#128206; Polpaccio e mortalità</a>).
+        Il punto: mentre insegniamo ai robot la coordinazione whole-body, il corpo umano perde massa muscolare — <mark class="note-highlight">sarcopenia</mark> — e nessun latent action space lo salverà. Il robot migliora il gesto, l'omega-3 migliora il recupero, il polpaccio misura quanto tempo ti resta.
+      </p>
+      <p>
+        Come notava Ethan Mollick, di tutti i <mark class="note-highlight">117 miliardi di umani mai vissuti, solo l'1.5%</mark> ha avuto uno stile di vita equivalente alla classe media odierna
+        (<a href="https://x.com/i/status/2034079540570419344" target="_blank" rel="noopener" class="note-src">&#128206; Mollick — 1.5% fortunati</a>).
+        Tradotto: sei tra i pochi nella storia con accesso a omega-3, palestre, e presto robot domestici. Il lusso non è avere la macchina — è avere il corpo per usarla. O il robot per compensare quando non ce l'hai più (<span class="fc">🦼 ff.9.4 Robot oltre la disabilità</span>).
+      </p>
+    </div>
+  </div>
+
+  <div class="connector">· · · corpo → economia → scala · · ·</div>
+
+  <!-- ff.146.4 -->
+  <div class="brutal-card accent-bar accent-yellow">
+    <div class="ff-eyebrow">💻💸 ff.146.4</div>
+    <h2 class="ff-title">⛏️ Otto anni in stealth, un miliardo di turbine</h2>
+    <div class="ff-body">
+      <p>
+        Mentre Figure faceva video virali, Travis Kalanick costruiva Atoms in silenzio: <mark class="note-highlight">8 anni in stealth, "migliaia" di dipendenti</mark>, robotica per mining e trasporto automotive
+        (<a href="https://x.com/i/status/2032527564774977703" target="_blank" rel="noopener" class="note-src">&#128206; Atoms — Kalanick in stealth</a>).
+        Il pattern è quello di Uber: non il prodotto consumer che fa wow, ma l'infrastruttura pesante che genera margine. Come dicevamo in (<span class="fc">💱 ff.9.2 I robot ci ruberanno il lavoro?</span>), la vera disruption robotica non è nel salotto — è nella miniera.
+      </p>
+      <p>
+        E dove c'è mining, c'è energia. Arbor Energy ha chiuso un <mark class="note-highlight">ordine da $1 miliardo</mark> per turbine a ciclo CO₂ supercritico: zero emissioni su gas naturale, carbon-negative su biomassa, fuel-agnostic, <mark class="note-highlight">stampate 3D</mark>
+        (<a href="https://techcrunch.com/2026/03/25/arbor-energy-just-landed-a-billion-dollar-order" target="_blank" rel="noopener" class="note-src">&#128206; Arbor Energy — turbine 3D $1B</a>).
+        Il collegamento: robot autonomi nel mining consumano energia. Turbine 3D carbon-negative la producono. È lo stesso principio della Cina che risolve la ricarica con robot mobili da 100 kWh: <em>automazione che alimenta automazione</em>.
+      </p>
+      <p>
+        Il Texas già <mark class="note-highlight">alimenta il 70% della sua economia con rinnovabili</mark> in tempo reale
+        (<a href="https://x.com/i/status/2034634362029817987" target="_blank" rel="noopener" class="note-src">&#128206; Texas — 70% rinnovabili</a>).
+        Se i robot estraggono minerali, turbine 3D li alimentano e le rinnovabili coprono il 70%, il ciclo produzione-energia-automazione non è un sogno: è un bilancio. E Coatue proietta Anthropic a <mark class="note-highlight">$2.4 trilioni nel 2031 su $200B di revenue</mark>
+        (<a href="https://www.newcomer.co/p/coatue-projected-1995-trillion-valuation" target="_blank" rel="noopener" class="note-src">&#128206; Coatue — Anthropic $2.4T</a>):
+        il software che coordina i robot varrà più dei robot stessi.
+      </p>
+    </div>
+  </div>
+
+  <div class="connector">· · · economia → solitudine → umanità · · ·</div>
+
+  <!-- ff.146.5 -->
+  <div class="brutal-card accent-bar accent-black">
+    <div class="ff-eyebrow">❤️💸🎨 ff.146.5</div>
+    <h2 class="ff-title">🛒 Il cassiere che il robot non può sostituire</h2>
+    <div class="ff-body">
+      <p>
+        E poi il plot twist. Amazon smantella i negozi automatizzati — quelli senza cassa, senza code, senza attrito. Perché <mark class="note-highlight">i clienti preferiscono fare la fila dal cassiere scazzato con cui scambiare due parole</mark>
+        (<a href="https://www.honest-broker.com/p/the-new-cool-thing-being-human" target="_blank" rel="noopener" class="note-src">&#128206; Honest Broker — il nuovo cool: essere umani</a>).
+        Nella stessa settimana in cui un robot impara il tennis da video sgranati e un altro riordina il salotto da solo, il più grande retailer del pianeta scopre che il valore aggiunto del cassiere è la <em>chiacchierata</em>. Come si notava in (<span class="fc">🧝 ff.6.2 Gli elfi di Amazon</span>) e (<span class="fc">🩸 ff.102.4 Dal sangue ad Amazon</span>), la macchina Amazon ha sempre cercato di eliminare l'umano dalla catena. Ora scopre che l'umano <em>era</em> il prodotto.
+      </p>
+      <p>
+        E c'è un dato obliquo che conferma: i social media polarizzano, ma <mark class="note-highlight">l'AI spinge le persone verso il centro</mark> — tutti i modelli studiati, Grok incluso, hanno effetto depolarizzante
+        (<a href="https://x.com/i/status/2037795164186390769" target="_blank" rel="noopener" class="note-src">&#128206; AI depolarizzante vs social</a>).
+        Traduzione: i robot ci aiutano, ma non ci uniscono. Il cassiere sì. L'AI ci modera, ma non ci scalda. La tecnologia, per la prima volta, è più razionale dei suoi utenti — e proprio per questo non basta.
+      </p>
+      <p>
+        Agnes Martin scriveva nel 1973: <em>"The function of art is the renewal of memories of moments of perfection"</em>
+        (<a href="#" class="note-src">&#128206; Agnes Martin — On the Perfection Underlying Life</a>).
+        Victor Solomon a Los Angeles ricompone un campo da basket con <mark class="note-highlight">crepe dorate secondo la tecnica giapponese del Kintsugi</mark>
+        (<a href="https://www.instagram.com/p/DWRYkckjgIl/" target="_blank" rel="noopener" class="note-src">&#128206; Kintsugi Court — Victor Solomon</a>).
+        Il paradosso della robotica 2026 è Kintsugi: la frattura ricomposta con l'oro. I robot sapranno dove hai messo la spatola, giocheranno a tennis meglio di te, estrarranno minerali in autonomia. Ma al supermercato vorrai il cassiere, e nell'arte cercherai la crepa umana riempita d'oro — non la superficie perfetta di una macchina.
+      </p>
+      <p>
+        Forse il vero status symbol dei prossimi anni non sarà il robot in casa. Sarà potersi permettere un umano. O, come direbbe LeCun con il suo miliardo di dollari: il robot che ragiona come un umano varrà meno dell'umano che accetta di non ragionare come un robot.
+      </p>
+    </div>
+  </div>
+
+  <div style="margin-top:40px; padding:20px; border-top:2px solid #ddd; font-family:'IBM Plex Mono',monospace; font-size:0.75rem; color:#999; letter-spacing:0.1em;">
+    DRAFT · futuro fortissimo · 5 spunti robotica · 01-04-2026<br>
+    Note: #1355 #1357 #1358 #1361 #1363 #1366 #1367 #1368 #1369 #1370 #1371 #1372 #1375 #1377 #1380 #1383 #1384<br>
+    FF refs: ff.6.2 · ff.9.2 · ff.9.4 · ff.88.2 · ff.94.3 · ff.102.4 · ff.129.2 · ff.138.4<br>
+    Filo: memoria → corpo+gesto → muscoli+recupero → economia+energia → umanità+kintsugi
+  </div>
+
+</div>
+</body>
+</html>

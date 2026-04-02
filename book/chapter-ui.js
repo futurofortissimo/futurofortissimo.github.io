@@ -427,4 +427,50 @@
     });
   }
 
+  // ─── .fc click handler — convert ff.x.y spans to Substack links ──
+  (function initFcLinks() {
+    var fcSpans = document.querySelectorAll('.fc');
+    if (!fcSpans.length) return;
+
+    // Load newsletter_data.json to build substackMap
+    var mapScript = document.currentScript || document.querySelector('script[src*="chapter-ui"]');
+    var basePath = mapScript ? mapScript.src.replace(/book\/chapter-ui\.js.*$/, '') : '../';
+    // Resolve relative to book/ parent
+    var jsonUrl = (window.location.pathname.indexOf('/book/') !== -1)
+      ? '../newsletter_data.json'
+      : 'newsletter_data.json';
+
+    fetch(jsonUrl).then(function (r) { return r.json(); }).then(function (nlData) {
+      var substackMap = {};
+      (nlData || []).forEach(function (entry) {
+        var bl = entry.buttonLabel || '';
+        var sl = entry.substackLink || '';
+        var m = bl.match(/ff\.(\d+)/);
+        if (m && sl && !substackMap[m[1]]) substackMap[m[1]] = sl;
+      });
+      convertFcSpans(substackMap);
+    }).catch(function () {
+      // Fallback: convert with generic URLs
+      convertFcSpans({});
+    });
+
+    function convertFcSpans(substackMap) {
+      document.querySelectorAll('.fc').forEach(function (el) {
+        var text = el.textContent || '';
+        var m = text.match(/ff\.(\d+)/);
+        if (!m) return;
+
+        var url = substackMap[m[1]] || ('https://fortissimo.substack.com/p/ff' + m[1]);
+        var a = document.createElement('a');
+        a.href = url;
+        a.className = el.className;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.textContent = text.trim();
+        a.style.cursor = 'pointer';
+        el.replaceWith(a);
+      });
+    }
+  })();
+
 })();
