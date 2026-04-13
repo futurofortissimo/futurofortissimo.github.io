@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Review — Inject 2026-04-14b (all axes)</title>
+  <style>
+    :root { --green: #2ecc71; --blue: #4a90e2; --red: #d0021b; --bg: #fafafa; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: #222; padding: 2rem; max-width: 960px; margin: 0 auto; line-height: 1.6; }
+    h1 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .meta { color: #666; font-size: 0.85rem; margin-bottom: 2rem; border-bottom: 2px solid #ddd; padding-bottom: 1rem; }
+    .injection { margin-bottom: 3rem; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; }
+    .injection-header { padding: 1rem 1.5rem; font-weight: 700; color: #fff; font-size: 0.95rem; }
+    .injection-header.natura { background: var(--green); }
+    .injection-header.tecnologia { background: var(--blue); }
+    .injection-header.societa { background: var(--red); }
+    .section { padding: 1rem 1.5rem; }
+    .section-title { font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+    .pre { background: #fff3f3; border-left: 4px solid #e74c3c; padding: 1rem; margin-bottom: 0.5rem; font-size: 0.9rem; border-radius: 4px; }
+    .post { background: #f0fff0; border-left: 4px solid var(--green); padding: 1rem; margin-bottom: 0.5rem; font-size: 0.9rem; border-radius: 4px; }
+    .injected { background: #f0f7ff; border-left: 4px solid var(--blue); padding: 1rem; margin-bottom: 0.5rem; font-size: 0.9rem; border-radius: 4px; }
+    .label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.3rem; }
+    .label.pre-label { color: #e74c3c; }
+    .label.post-label { color: var(--green); }
+    .label.new-label { color: var(--blue); }
+    mark { background: #ffe066; padding: 0 2px; border-radius: 2px; }
+    .note-meta { font-size: 0.8rem; color: #888; margin-top: 0.5rem; font-family: monospace; }
+    .ff-ref { font-weight: 600; color: var(--blue); }
+    .checklist { padding: 1rem 1.5rem; background: #f9f9f9; border-top: 1px solid #eee; }
+    .checklist ul { list-style: none; padding: 0; }
+    .checklist li { padding: 0.3rem 0; font-size: 0.85rem; }
+    .checklist li::before { content: "✅ "; }
+    a { color: var(--blue); }
+    .summary-box { background: #fff; border: 2px solid #333; border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; }
+    .summary-box h2 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid #eee; }
+    th { font-weight: 700; background: #f5f5f5; }
+  </style>
+</head>
+<body>
+
+<h1>Review — Inject 2026-04-14b</h1>
+<div class="meta">
+  PR unico, 3 assi (Natura + Tecnologia + Societa) &mdash; 3 note iniettate, 6 ff.x.y cross-refs &mdash; Generato 2026-04-14
+</div>
+
+<div class="summary-box">
+  <h2>Riepilogo iniezioni</h2>
+  <table>
+    <tr><th>Asse</th><th>Nota</th><th>Capitolo</th><th>Cross-refs</th></tr>
+    <tr><td style="color:var(--green);">&#127793; Natura</td><td>#1402 — Rinnovabili cinesi erodono il fossile</td><td>Cap. 1 §2.2</td><td>ff.42.2, ff.135.2</td></tr>
+    <tr><td style="color:var(--blue);">&#128187; Tecnologia</td><td>#1415 — Stanford: AI colpisce junior 22-25</td><td>Cap. 2 §1.2</td><td>ff.62.1, ff.135.3</td></tr>
+    <tr><td style="color:var(--red);">&#10084;&#65039; Società</td><td>#1407 — MIT percorso ombreggiato</td><td>Cap. 3 §3.1</td><td>ff.34.3, ff.110.4</td></tr>
+  </table>
+</div>
+
+<!-- ===== NATURA ===== -->
+<div class="injection">
+  <div class="injection-header natura">&#127793; Natura — Nota #1402: Rinnovabili cinesi erodono la quota fossile</div>
+  <div class="section">
+    <div class="label pre-label">Paragrafo precedente (pre)</div>
+    <div class="pre">La transizione energetica tocca anche il mondo digitale. [...] Ethereum ora gestisce contratti digitali consumando molto meno [...] Se la blockchain ha un peccato originale energetico, la redenzione tecnologica è possibile. (ff.73.4 In modo più ecologico)</div>
+  </div>
+  <div class="section">
+    <div class="label new-label">Paragrafo iniettato</div>
+    <div class="injected">E il sorpasso cinese non è più solo una questione di capacità installata: è diventato erosione strutturale. Eolico e solare in Cina hanno raggiunto <mark>2.073 TWh</mark>, superando tutte le altre fonti pulite combinate. Il dato segna un cambio di fase: le rinnovabili non si limitano più a coprire la nuova domanda energetica — stanno mangiando la quota di carbone e gas. [...] (ff.42.2, ff.135.2)</div>
+    <div class="note-meta">Source: notes.json #1402 | URL: x.com/AssaadRazzouk/status/1965923547869790614 | Highlight: var(--ff-green)</div>
+  </div>
+  <div class="section">
+    <div class="label post-label">Sezione successiva (post)</div>
+    <div class="post">h3: 1.2.4 — Alberi, acqua e biodiversità</div>
+  </div>
+  <div class="checklist">
+    <ul>
+      <li>Corpus fidelity: 2.073 TWh da note #1402 title + data.js ff.135.2 content</li>
+      <li>ff.42.2 cross-ref verified: data.js line 12682 — "Inquinano o spingono la transizione?"</li>
+      <li>ff.135.2 cross-ref verified: data.js line 613 — "Onda anomala energetica" (mentions 2073 TWh)</li>
+      <li>No citation blocks — inline prose only</li>
+      <li>Highlight color: var(--ff-green)</li>
+      <li>Source URL: 403 (normal for x.com, requires auth)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== TECNOLOGIA ===== -->
+<div class="injection">
+  <div class="injection-header tecnologia">&#128187; Tecnologia — Nota #1415: Stanford AI job displacement</div>
+  <div class="section">
+    <div class="label pre-label">Paragrafo precedente (pre)</div>
+    <div class="pre">Andreessen non è stato l'unico a piantare una bandiera ottimista. [...] L'ottimismo tecnologico non è una posizione scientifica: è un atto di fede laica, con tanto di credo e santi. (ff.81.1 Il tecno-ottimismo)</div>
+  </div>
+  <div class="section">
+    <div class="label new-label">Paragrafo iniettato</div>
+    <div class="injected">Ma l'ottimismo ha un contrappunto empirico che arriva da Stanford. Uno studio di Erik Brynjolfsson documenta che i <mark>lavoratori tra i 22 e i 25 anni</mark> in ruoli ad alta esposizione AI — software, marketing, customer service — mostrano cali significativi nell'occupazione. I canarini nella miniera dell'intelligenza artificiale sono i ventenni [...] (ff.62.1, ff.135.3)</div>
+    <div class="note-meta">Source: notes.json #1415 | URL: digitaleconomy.stanford.edu | Highlight: var(--ff-blue)</div>
+  </div>
+  <div class="section">
+    <div class="label post-label">Sezione successiva (post)</div>
+    <div class="post">h3: 2.1.3 — Robot e biomimetica</div>
+  </div>
+  <div class="checklist">
+    <ul>
+      <li>Corpus fidelity: Brynjolfsson, 22-25 anni, cali occupazione da note #1415 title</li>
+      <li>ff.62.1 cross-ref verified: data.js line 9875 — "Il lavoro non è mai stato così importante"</li>
+      <li>ff.135.3 cross-ref verified: data.js line 651 — "Siamo nella singolarità?"</li>
+      <li>No citation blocks — inline prose only</li>
+      <li>Highlight color: var(--ff-blue)</li>
+      <li>Source URL: 301 redirect (normal for PDF)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== SOCIETA ===== -->
+<div class="injection">
+  <div class="injection-header societa">&#10084;&#65039; Società — Nota #1407: MIT percorso ombreggiato</div>
+  <div class="section">
+    <div class="label pre-label">Paragrafo precedente (pre)</div>
+    <div class="pre">Il tempo perduto nel tragitto casa-lavoro è una costante antropologica [...] In duemila anni di storia, il muro di Marchetti non è mai stato abbattuto. (ff.5.5 Il muro di Marchetti)</div>
+  </div>
+  <div class="section">
+    <div class="label new-label">Paragrafo iniettato</div>
+    <div class="injected">Se il muro di Marchetti fissa il quanto, il MIT Senseable City Lab indaga il come. Il progetto Cooling Path dimostra che il percorso più ombreggiato è solo l'<mark>1,3% più lungo</mark> del più breve, ma offre l'<mark>8,9% in più di ombra</mark> da edifici e l'<mark>8,8% in meno di esposizione solare</mark>. [...] (ff.34.3, ff.110.4)</div>
+    <div class="note-meta">Source: notes.json #1407 | URL: senseable.mit.edu/cooling-path/ | Highlight: var(--ff-red)</div>
+  </div>
+  <div class="section">
+    <div class="label post-label">Paragrafo successivo (post)</div>
+    <div class="post">Il lockdown ha fatto saltare il muro di Marchetti, almeno temporaneamente [...] (ff.76.2 L'esplosione degli hobby)</div>
+  </div>
+  <div class="checklist">
+    <ul>
+      <li>Corpus fidelity: 1.3%, 8.9%, 8.8% da note #1407 title</li>
+      <li>ff.34.3 cross-ref verified: data.js line 13763 — "Ripensare le città: spazi vivibili"</li>
+      <li>ff.110.4 cross-ref verified: data.js line 3963 — "Robot e AI: opportunità" (MIT Senseable Lab, Sidewalk AI)</li>
+      <li>No citation blocks — inline prose only</li>
+      <li>Highlight color: var(--ff-red)</li>
+      <li>Source URL: 200 OK</li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>
