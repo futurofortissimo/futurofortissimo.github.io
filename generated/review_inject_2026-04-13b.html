@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Review — Inject 2026-04-13b (all axes)</title>
+  <style>
+    :root { --green: #2ecc71; --blue: #4a90e2; --red: #d0021b; --bg: #fafafa; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: #222; padding: 2rem; max-width: 960px; margin: 0 auto; line-height: 1.6; }
+    h1 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .meta { color: #666; font-size: 0.85rem; margin-bottom: 2rem; border-bottom: 2px solid #ddd; padding-bottom: 1rem; }
+    .injection { margin-bottom: 3rem; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; }
+    .injection-header { padding: 1rem 1.5rem; font-weight: 700; color: #fff; font-size: 0.95rem; }
+    .injection-header.natura { background: var(--green); }
+    .injection-header.tecnologia { background: var(--blue); }
+    .injection-header.societa { background: var(--red); }
+    .section { padding: 1rem 1.5rem; }
+    .section-title { font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+    .pre { background: #fff3f3; border-left: 4px solid #e74c3c; padding: 1rem; margin-bottom: 0.5rem; font-size: 0.9rem; border-radius: 4px; }
+    .post { background: #f0fff0; border-left: 4px solid var(--green); padding: 1rem; margin-bottom: 0.5rem; font-size: 0.9rem; border-radius: 4px; }
+    .injected { background: #f0f7ff; border-left: 4px solid var(--blue); padding: 1rem; margin-bottom: 0.5rem; font-size: 0.9rem; border-radius: 4px; }
+    .label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.3rem; }
+    .label.pre-label { color: #e74c3c; }
+    .label.post-label { color: var(--green); }
+    .label.new-label { color: var(--blue); }
+    mark { background: #ffe066; padding: 0 2px; border-radius: 2px; }
+    .note-meta { font-size: 0.8rem; color: #888; margin-top: 0.5rem; font-family: monospace; }
+    .ff-ref { font-weight: 600; color: var(--blue); }
+    .checklist { padding: 1rem 1.5rem; background: #f9f9f9; border-top: 1px solid #eee; }
+    .checklist ul { list-style: none; padding: 0; }
+    .checklist li { padding: 0.3rem 0; font-size: 0.85rem; }
+    .checklist li::before { content: "✅ "; }
+    a { color: var(--blue); }
+    .summary-box { background: #fff; border: 2px solid #333; border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; }
+    .summary-box h2 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid #eee; }
+    th { font-weight: 700; background: #f5f5f5; }
+  </style>
+</head>
+<body>
+
+<h1>Review — Inject 2026-04-13b</h1>
+<div class="meta">
+  PR unico, 3 assi (Natura + Tecnologia + Societa) &mdash; 3 note iniettate, 8 ff.x.y cross-refs &mdash; Generato 2026-04-13
+</div>
+
+<div class="summary-box">
+  <h2>Riepilogo iniezioni</h2>
+  <table>
+    <thead>
+      <tr><th>Asse</th><th>Capitolo</th><th>Nota</th><th>ff.x.y refs</th><th>Posizione</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="color:var(--green);font-weight:700;">Natura</td>
+        <td>chapter-01-ambiente.html</td>
+        <td>#1328 &mdash; 730M senza elettricita</td>
+        <td>ff.11.5, ff.70.1</td>
+        <td>Dopo &sect; rinnovabili &gt; carbone</td>
+      </tr>
+      <tr>
+        <td style="color:var(--blue);font-weight:700;">Tecnologia</td>
+        <td>chapter-02-robotica.html</td>
+        <td>#1344 &mdash; Waymo 57M miglia</td>
+        <td>ff.60.2, ff.60.3</td>
+        <td>Dopo &sect; ff.60.5 Meno morti</td>
+      </tr>
+      <tr>
+        <td style="color:var(--red);font-weight:700;">Societa</td>
+        <td>chapter-03-psicologia.html</td>
+        <td>#1386 &mdash; Ftalati prematurita</td>
+        <td>ff.130.4, ff.130.5, ff.49.4</td>
+        <td>Prima di &sect; Hirayama/Wenders</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ==================== NATURA ==================== -->
+<div class="injection">
+  <div class="injection-header natura">NATURA &mdash; chapter-01-ambiente.html &mdash; Note #1328</div>
+
+  <div class="section">
+    <div class="label pre-label">Paragrafo precedente (contesto pre-injection)</div>
+    <div class="pre">
+      Il sorpasso, del resto, e gia avvenuto. Secondo i dati EMBER e IEA, le fonti rinnovabili hanno superato il carbone nella generazione elettrica mondiale &mdash; un traguardo raggiunto prima di quanto le previsioni piu ottimistiche osassero sperare. Il dibattito sulla transizione energetica non riguarda piu un treno da prendere: <strong>il treno e partito</strong>, e chi non e salito rischia di restare sulla banchina. [&hellip;]
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="label new-label">Paragrafo iniettato (NUOVO)</div>
+    <div class="injected">
+      Ma il treno e partito per chi? Secondo l'IEA, <mark>730 milioni di persone nel 2024 non hanno ancora accesso all'elettricita</mark>, l'80% concentrate nell'Africa sub-sahariana. In un anno il numero e calato di appena 11 milioni &mdash; un ritmo che rallenta proprio quando i guadagni facili sono esauriti e i restanti sono i piu difficili da raggiungere: comunita rurali disperse, reti assenti, investimenti troppo rischiosi per il capitale privato. Il paradosso e che il solare costa meno che mai, ma chi ne ha piu bisogno non puo permettersi nemmeno il pannello. La transizione energetica non e solo una curva tecnologica: e una questione di ultimo miglio, e l'ultimo miglio e quasi sempre il piu costoso (<span class="ff-ref">ff.11.5 Finire le risorse</span>; <span class="ff-ref">ff.70.1 La fine dell'estate</span>).
+      <div class="note-meta">Fonte: note #1328 — IEA (iea.org) | 129 parole</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="label post-label">Paragrafo successivo (contesto post-injection)</div>
+    <div class="post">
+      E la generazione distribuita potrebbe avere appena trovato il suo motore. Arbor Energy ha ottenuto un ordine da <mark>1 miliardo di dollari</mark> per turbine a CO2 supercritico stampate in 3D, fuel-agnostic: a zero emissioni su gas naturale, carbon-negative su biomassa.
+    </div>
+  </div>
+
+  <div class="checklist">
+    <ul>
+      <li>Corpus fidelity: dati da nota #1328 (IEA)</li>
+      <li>Zero link esterni nel testo (solo fonte IEA)</li>
+      <li>ff.x.y refs: ff.11.5, ff.70.1 (entrambi available in coverage)</li>
+      <li>Highlight: solo dati quantitativi</li>
+      <li>Posizionamento: dopo "il treno e partito" &mdash; bridge naturale</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==================== TECNOLOGIA ==================== -->
+<div class="injection">
+  <div class="injection-header tecnologia">TECNOLOGIA &mdash; chapter-02-robotica.html &mdash; Note #1344</div>
+
+  <div class="section">
+    <div class="label pre-label">Paragrafo precedente (contesto pre-injection)</div>
+    <div class="pre">
+      I robot non sostituiscono solo braccia: sostituiscono anche volanti. [&hellip;] Sul sito di Tesla, i dati mostrano un miglioramento di <mark>10x</mark>: da 500.000 miglia per incidente (media USA) a 4-6 milioni con Autopilot. [&hellip;] In futuro, i nomadi digitali lavoreranno su un van a guida autonoma (<span class="ff-ref">ff.60.5 Meno morti sulle strade?</span>).
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="label new-label">Paragrafo iniettato (NUOVO)</div>
+    <div class="injected">
+      I dati Waymo portano la discussione su un terreno ancora piu solido. Con <mark>57 milioni di miglia di guida autonoma analizzate</mark>, l'azienda di Alphabet registra l'<mark>85% in meno di lesioni gravi</mark> e il <mark>79% in meno di lesioni complessive</mark> rispetto ai guidatori umani. Per contestualizzare: negli Stati Uniti si contano <mark>2,4 milioni di feriti e 40.000 morti all'anno</mark> sulle strade. Se la guida autonoma raggiungesse la penetrazione dei veicoli elettrici &mdash; cosa che i trend suggeriscono potrebbe accadere entro un decennio &mdash; il calo di vite perse sarebbe dell'ordine di grandezza di un vaccino. A quel punto, resistere alla guida autonoma non sara piu prudenza: sara una scelta etica difficile da giustificare (<span class="ff-ref">ff.60.2 I taxi di Tesla</span>; <span class="ff-ref">ff.60.3 Piu soldi ai taxi, meno ai produttori</span>).
+      <div class="note-meta">Fonte: note #1344 — Ethan Mollick / Waymo (x.com) | 115 parole</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="label post-label">Paragrafo successivo (contesto post-injection)</div>
+    <div class="post">
+      Il cervello robotico, intanto, diventa un prodotto commerciale. Il Jetson AGX Thor di NVIDIA e in vendita come developer kit a 3.499 dollari: una piattaforma di calcolo pensata per dare intelligenza ai robot autonomi.
+    </div>
+  </div>
+
+  <div class="checklist">
+    <ul>
+      <li>Corpus fidelity: dati da nota #1344 (Ethan Mollick / Waymo study)</li>
+      <li>Zero link esterni inventati (solo fonte Mollick)</li>
+      <li>ff.x.y refs: ff.60.2, ff.60.3 (entrambi available in coverage)</li>
+      <li>Highlight: solo dati quantitativi (57M, 85%, 79%, 2.4M, 40k)</li>
+      <li>Posizionamento: subito dopo ff.60.5 &mdash; rafforza con evidenza indipendente</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==================== SOCIETA ==================== -->
+<div class="injection">
+  <div class="injection-header societa">SOCIETA &mdash; chapter-03-psicologia.html &mdash; Note #1386</div>
+
+  <div class="section">
+    <div class="label pre-label">Paragrafo precedente (contesto pre-injection)</div>
+    <div class="pre">
+      [&hellip;] Bryan Johnson, fondatore di Braintree e primo classificato alle Olimpiadi del Ringiovanimento, propone il metodo Blueprint per rallentare l'invecchiamento con dieta a restrizione calorica del 24% e <mark>100+ pillole al giorno</mark> (<span class="ff-ref">ff.49.4 Il superuomo che prende 100 pillole al giorno</span>). [&hellip;] Il viaggio non e turismo: e ricalibrazione cognitiva. [&hellip;] (<span class="ff-ref">ff.142.2 Il viaggio come ricalibrazione</span>).
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="label new-label">Paragrafo iniettato (NUOVO)</div>
+    <div class="injected">
+      Bryan Johnson puo permettersi saune, trasfusioni di plasma e protocolli da centomila dollari l'anno per ridurre le microplastiche nel sangue. Ma il problema e molto piu vasto di un biohacker miliardario. Uno studio pubblicato nel 2024 stima che i ftalati presenti nelle plastiche abbiano contribuito a <mark>1,97 milioni di nascite premature</mark> e <mark>74.000 morti neonatali</mark> nel solo 2018, con <mark>6,69 milioni di anni di vita persi</mark>. Non sono sostanze esotiche: sono gli addolcenti del PVC, presenti in imballaggi alimentari, giocattoli, dispositivi medici. Le "everywhere chemicals" &mdash; cosi le chiamano gli epidemiologi &mdash; sono ovunque proprio perche rendono la plastica flessibile, economica, indispensabile. Il packaging in plastica non e piu solo un problema di riciclo: e un problema di salute pubblica su scala demografica (<span class="ff-ref">ff.130.4 La danza macabra</span>; <span class="ff-ref">ff.130.5 Microplastiche induriscono arterie</span>; <span class="ff-ref">ff.49.4 Il superuomo che prende 100 pillole al giorno</span>).
+      <div class="note-meta">Fonte: note #1386 — x.com/status/2039144463797473412 | 130 parole</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="label post-label">Paragrafo successivo (contesto post-injection)</div>
+    <div class="post">
+      Ma Hirayama, il protagonista di Wenders, non e solo un asceta della routine: e un uomo che guarda le foglie come se le vedesse per la prima volta. Ogni mattina la luce e diversa, ogni albero e un evento. Giovanni Pascoli, nella Poetica del fanciullino, aveva descritto esattamente questa facolta [&hellip;]
+    </div>
+  </div>
+
+  <div class="checklist">
+    <ul>
+      <li>Corpus fidelity: dati da nota #1386 + contesto ff.130 (microplastiche) e ff.49.4 (Bryan Johnson)</li>
+      <li>Zero link esterni inventati (solo fonte nota)</li>
+      <li>ff.x.y refs: ff.130.4, ff.130.5, ff.49.4 (tutti in_main/used &mdash; cross-ref legittimo)</li>
+      <li>Highlight: solo dati quantitativi (1.97M, 74k, 6.69M)</li>
+      <li>Posizionamento: dopo Bryan Johnson/Blueprint &mdash; amplia da individuale a demografico</li>
+    </ul>
+  </div>
+</div>
+
+<div class="summary-box" style="margin-top: 2rem;">
+  <h2>Compliance</h2>
+  <table>
+    <thead>
+      <tr><th>Check</th><th>Natura</th><th>Tecnologia</th><th>Societa</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Corpus fidelity</td><td>&#9989;</td><td>&#9989;</td><td>&#9989;</td></tr>
+      <tr><td>Zero link esterni inventati</td><td>&#9989;</td><td>&#9989;</td><td>&#9989;</td></tr>
+      <tr><td>Highlight solo dati</td><td>&#9989;</td><td>&#9989;</td><td>&#9989;</td></tr>
+      <tr><td>ff.x.y cross-refs</td><td>2</td><td>2</td><td>3</td></tr>
+      <tr><td>Parole iniettate</td><td>129</td><td>115</td><td>130</td></tr>
+      <tr><td>Overlap &lt;30%</td><td>&#9989;</td><td>&#9989;</td><td>&#9989;</td></tr>
+      <tr><td>Toggle aggiornato</td><td colspan="3" style="text-align:center;">&#9989; index.html (89 inject, 537 links)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<footer style="margin-top:2rem;padding-top:1rem;border-top:1px solid #ddd;font-size:0.8rem;color:#999;">
+  Generato automaticamente &mdash; PR inject/all-axes-2026-04-13b &mdash; Co-Authored-By: Claude Opus 4.6 (1M context)
+</footer>
+
+</body>
+</html>
