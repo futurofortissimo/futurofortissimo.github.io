@@ -1,5 +1,332 @@
 export const rawData = [
     {
+        "url": "https://fortissimo.substack.com/p/ff148-il-mito-dellai",
+        "title": "🎼 ff.148 Il \"Mito\" dell'AI",
+        "subtitle": "Claude Mythos, autografi e world models",
+        "keypoints": [
+            "L’ultimo modello di Anthropic è troppo pericoloso?",
+            "Sinner verrà battuto da Roomba?",
+            "La via d’uscita umana: Twitch e autografi?"
+        ],
+        "subchapters": [
+            {
+                "title": "🐉 ff.148.1 Claude Mythos: non per tutti",
+                "link": "https://fortissimo.substack.com/i/193567489/ff-claude-mythos-non-per-tutti",
+                "content": "Come forse avrete sentito, c’è un nuovo mito là fuori: Claude Mythos - il pdf release da 245 pagine.\nIl nuovo modello di Anthropic è tanto potente che, se rilasciato oggi, potrebbe causare non pochi problemi. Infatti, ha scovato falle e vulnerabilità in sistemi alla base di internet, incluso un bug in OpenBSD (un sistema operativo noto per la sua sicurezza granitica) che era rimasto nascosto agli occhi umani per 27 anni.\nInsomma, sta succedendo al codice quello che è successo con “la mossa 37” di Go (♟️ ff.18.4 Chess(i) artistici: il re degli scacchi): anche i campioni del mondo sono battuti. Ma qui non si tratta di un gioco da tavolo, bensì delle fondamenta - internet e software - della nostra economia (e vita).\nQuindi? Lato codice, Anthropic (con Apple, Amazon, Cisco e altri) ha lanciato il progetto Glasswing, per dare le ali - sì - all’AI, ma con trasparenza, come fossero vetro.",
+                "images": [],
+                "references": [
+                    {
+                        "text": "Claude Mythos - il pdf release da 245 pagine.",
+                        "url": "https://www-cdn.anthropic.com/08ab9158070959f88f296514c21b7facce6f52bc.pdf"
+                    },
+                    {
+                        "text": "Anthropic (con Apple, Amazon, Cisco e altri) ha lanciato il progetto Glasswing,",
+                        "url": "https://www.anthropic.com/glasswing"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "♟️ ff.18.4 Chess(i) artistici: il re degli scacchi",
+                        "url": "https://fortissimo.substack.com/i/49403403/ff184-chessi-artistici-il-re-degli-scacchi"
+                    }
+                ]
+            },
+            {
+                "title": "🎾 ff.148.2 Sinner e altri peccati",
+                "link": "https://fortissimo.substack.com/i/193567489/ff-sinner-e-altri-peccati",
+                "content": "La singolarità - nel codice - sembra essere raggiunta. Seguiranno, probabilmente, altri settori: biologia, economia, genetica. Ah, e robotica ovviamente.\nIl primo “spillover fisico” dell’AI, come dimostrano recenti sviluppi:\nLATENT ha addestrato umanoidi a giocare a tennis usando dati di movimento umano imperfetti e video rumorosi, passando dall’hard code di movimenti al dinamico (perché AI) “latent action space”.\nIn Cina robot di ricarica mobili da 100 kWh trasformano i parcheggi in punto di ricarica: power bank su quattroruote.\nFigure ha mostrato Helix 02 che riordina un salotto intero.",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!-jX-!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0a56ae97-6ee1-4c29-b81f-6744e61205dc_604x614.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "LATENT ha addestrato umanoidi a giocare a tennis",
+                        "url": "https://x.com/i/status/2033035812431081778"
+                    },
+                    {
+                        "text": "robot di ricarica mobili da 100 kWh trasformano i parcheggi in punto di ricarica",
+                        "url": "https://x.com/liumiao/status/2033710941217435663"
+                    },
+                    {
+                        "text": "Figure ha mostrato Helix 02 che riordina un salotto intero",
+                        "url": "https://www.linkedin.com/posts/brettadcock_today-figure-is-showing-another-major-milestone-ugcPost-7436806575538843648-61W1/"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "🌎 ff.148.3 Un mondo là fuori?",
+                "link": "https://fortissimo.substack.com/i/193567489/ff-un-mondo-la-fuori",
+                "content": "Secondo alcuni, per passare da una chat al mondo reale, ovvero da ChatGPT a Westworld, serve qualcosa in più di “next token prediction”, di un LLM: nelle azioni fisiche, serve sì capirei concetti, ma anche collocarli nello spazio e nel tempo.\nI prossimi OpenAI o Antrhopic, quindi, potrebbero essere i World Models.\nCi stanno lavorando in tanti: General Intuition e l’ex chief dell’AI di Meta, Yann LeCun, con AMI Labs (Advanced Machine Intelligence).\nE Physical Intelligence (incontrata in 🥧 ff.129.2 Pi-greco, FigureAI e 1 ora “logistica”?) ha dimostrato un caso applicativo per cucinare un perfetto grilled cheese sandwich.",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!OE_a!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0b58f9b3-16f5-472a-9467-d75138346ebc_1646x861.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "World Models.",
+                        "url": "https://www.generalintuition.com/"
+                    },
+                    {
+                        "text": "General Intuition",
+                        "url": "https://www.generalintuition.com/"
+                    },
+                    {
+                        "text": "Yann LeCun, con AMI Labs (Advanced Machine Intelligence",
+                        "url": "https://amilabs.xyz/"
+                    },
+                    {
+                        "text": "cucinare un perfetto grilled cheese sandwich",
+                        "url": "https://x.com/physical_int/status/2028954630458401040"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "🥧 ff.129.2 Pi-greco, FigureAI e 1 ora “logistica”?",
+                        "url": "https://fortissimo.substack.com/i/162404080/ff1292-pi-greco-figureai-e-1-ora-logistica"
+                    }
+                ]
+            },
+            {
+                "title": "💭 ff.148.4 Tutto il mondo dentro",
+                "link": "https://fortissimo.substack.com/i/193567489/ff-tutto-il-mondo-dentro",
+                "content": "Ma davvero serve un modello differente? Non sono - forse - già gli LLM in grado di avere visione di un mondo 3D, magari “sognandolo”?\nCVD? GPT-5.4 ricrea in due prompt l’appartamento di Monica di Friends.",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!p_1c!,w_1456,c_limit,f_auto,q_auto:good,fl_lossy/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc3647771-7454-4e8d-8ff5-507838af7b01_480x267.gif",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!Q6J3!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe741e780-80d9-456d-b95f-2c2a3d4cd846_649x770.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "GPT-5.4 ricrea in due prompt l’appartamento di Monica di Friends",
+                        "url": "https://x.com/i/status/2029923290299441181"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "🖊️ ff.148.5 Ci metto una firma",
+                "link": "https://fortissimo.substack.com/i/193567489/ff-ci-metto-una-firma",
+                "content": "Dopo tanto parlare di robotica, torniamo all’uomo. E ai libri. Quindi, in un loop perfetto, ad Amazon.\nIl colosso, nato proprio per sostituire le librerie (e da sempre in auge su automazione, 🧝 ff.6.2 Gli elfi di Amazon, e negozi senza commessi) sembra non aver considerato il lato umano delle cose: una libreria in Alabama vende libri autografati dagli autori che li hanno scritti.\nAllo stesso prezzo di quelli originali, si intende, ma con un tocco umano.\nSono tanto richiesti che hanno hanno siglato una convenzione con l’hotel del paesino, per accogliere acquirenti provenienti da lontano. Corrieri al contrario.\nRachel Karten fa notare che questo stesso tocco “umano” è lo stesso che ci fa amare Twitch e i live-streaming:\nIl live-streaming offre un rifugio dalla crescente sovrabbondanza di contenuti generati dall’intelligenza artificiale nei feed.\nIn un panorama dei social media in cui la differenza tra reale e artificiale è diventata quasi impercettibile, l’inconfondibile umanità dei video in tempo reale rappresenta un’attrazione rinfrescante.\nRachel Karten su Substack\nInsomma, l’imperfezione umana che torna. La solita imperfezione riempita d’oro, anche nelle crepe di un campo da basket.",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!HWxc!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb0ec7d7b-fee5-4994-abc5-7b5d6bd34792_934x711.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "una libreria in Alabama vende libri autografati dagli autori che li hanno scritti",
+                        "url": "https://www.alabamabooksmith.com/"
+                    },
+                    {
+                        "text": "hanno siglato una convenzione con l’hotel del paesino, per accogliere acquirenti provenienti da lontano.",
+                        "url": "https://www.alabamabooksmith.com/out-town-customers"
+                    },
+                    {
+                        "text": "Rachel Karten su Substack",
+                        "url": "https://substack.com/@rachelkarten"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "🧝 ff.6.2 Gli elfi di Amazon",
+                        "url": "https://fortissimo.substack.com/i/44167769/ff62-gli-elfi-di-amazon"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff147-grazie-per-tutto-il-pesce",
+        "title": "🎼 ff.147 Grazie per tutto il pesce",
+        "subtitle": "Chiudere un cerchio fortissimo, tra passato e futuro",
+        "keypoints": [
+            "146 newsletter raccolte in un libro sconclusionato",
+            "25 anni di acquisti di uova, un esempio di archeologia-AI",
+            "La fine di futuro fortissimo?"
+        ],
+        "subchapters": [
+            {
+                "title": "🏺 ff.147.1 Passato fortissimo",
+                "link": "https://fortissimo.substack.com/i/192614489/ff-passato-fortissimo",
+                "content": "Innanzitutto, benvenuti.\nUltimamente siete arrivati in tantissimi, tra follower e nuovi iscritti. Grazie!\nPartiamo dalla fine: non so se questa newsletter abbia ancora senso. Per questo, volevo salutarvi, “ringraziandovi per tutto il pesce”.\nSto attraversando uno dei periodi più densi degli ultimi 3 anni, tra una maratona (Roma 2026, che non è andata affatto male), la preparazione di un nuovo IRONMAN (a Francoforte, tra 3 mesi), relazioni e lavoro (il solito).\nMa - soprattutto - (ho messo le “-” io, promesso) sono letteralmente risucchiato dalle potenzialità di Claude Code.\nUno dei progetti (malsani) in cui mi sono lanciato è la scrittura di un libro.\nOgni giorno, Claude rilegge il mio archivio di 146 newsletter (con paragrafi identificati da un’emoji e un codice = ff.x.y, come quello su Rick Rubin: 🤘 ff.127.2 Rock ‘n’ roll e vibe coding) per scovare connessioni. Arricchisce poi le mie argomentazioni con note esterne di articoli letti qua e là negli anni.\nE ogni mattina mi sveglio con una nuova revisione editoriale del libro, che non solo mi ricorda vecchi scritti, ma traccia tra essi nuove connessioni nascoste.\nQuesta “archeologia dei dati” è la più grande opportunità che l’AI ci offre. Ossia, ristrutturare informazioni e frammenti dispersi nel web, nonché storie umane analogiche e faldoni cartacei.\nAd esempio, tracciando gli acquisti di uova con 500 scontrini in 25 anni.\nQuesto tipo di attività mi sta rubando sempre più tempo che prima dedicavo alla newsletter.\nE - forse - è la giusta risposta a un futuro fortissimo sempre più minacciato dall “AI-slop”. Ossia, girare il “telescopio/microscopio” di Claude verso il passato.\nLa fine di futuro fortissimo, quindi? Ai posteri l’ardua sentenza.\nPS.Se volete scaricare il libro in formato EPUB, lo trovate qui:https://futurofortissimo.github.io/book/\nMa, forse, è meglio che leggiate questo: Guida galattica per gli autostoppisti di Douglas Adams.",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!FkQ_!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fba61c9eb-83ef-45ea-bd4a-1c15ad6ea1e3_359x531.png",
+                        "caption": "Il libro di futuro fortissimo - epub gratuito"
+                    },
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!DXrc!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3a70dd1b-054e-449c-bf7c-168febcaffaf_627x736.png",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!mGtT!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc8382585-16fb-4840-ade2-5dbaafa59e7a_316x475.jpeg",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "tracciando gli acquisti di uova con 500 scontrini in 25 anni",
+                        "url": "https://www.john-rush.com/posts/eggs-25-years-20260219"
+                    },
+                    {
+                        "text": "Guida galattica per gli autostoppisti di Douglas Adams",
+                        "url": "http://Guida galattica per gli autostoppisti."
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "🤘 ff.127.2 Rock ‘n’ roll e vibe coding",
+                        "url": "https://fortissimo.substack.com/i/165079348/ff1272-rock-n-roll-e-vibe-coding"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff146-cicatrici-silenziose",
+        "title": "🎼 ff.146 Cicatrici silenziose",
+        "subtitle": "Contro le infinite permutazioni dell'AI, cicatrici e poesia?",
+        "keypoints": [
+            "Cultura urinale: se Duchamp fosse vivo oggi, userebbe ChatGPT?",
+            "Da Calvino a Heidegger, scrittura automatica o poesia?",
+            "Per scrivere, bisogna “sentire” = “patire”?"
+        ],
+        "subchapters": [
+            {
+                "title": "🚽 ff.146.1 Urinali e AI",
+                "link": "https://fortissimo.substack.com/i/186303579/ff-urinali-e-ai",
+                "content": "Non lo nascondo, ho iniziato a scrivere questa newsletter per raccogliere notizie e spunti, per promuovere una maggiore consapevolezza del futuro fortissimo che ci aspetta.\nOggi, però, mi basta prendere un qualsiasi spunto (podcast, articolo, libro) e convertirlo in un sottocapitolo stile ff.x.y.\nL’automazione del processo artistico non è una novità: Walter Benjamin in L’opera d’arte ai tempi della riproduzione meccanica partiva da uno spunto di Paul Valéry, i tempi dei greci, le tecniche di duplicazione erano pressoché inesistenti.\nPoi, un attacco agli artisti:\nLe nostre belle arti sono state istituite, e i loro tipi e usi fissati, in tempi molto diversi dai nostri, da uomini il cui potere d'azione sulle cose era insignificante rispetto al nostro.\nMa la straordinaria crescita delle nostre tecniche [...] rende certo che profondi cambiamenti sono imminenti nell'antico mestiere del Bello.\nPaul Valéry, La conquista dell'ubiquità\nNei secoli, una “crescita delle nostre tecniche” che hanno minato il Bello:\nStampa = amanuensiFotografia = pittoriPlastica = scultori\nMa - lamentava Benjamin - anche nella riproduzione più perfetta manca un elemento cruciale: la sua “presenza nel tempo e nello spazio”, la sua “Aura”.\nÈ il motivo per cui è arte l’urinale di Duchamp, ma non quelli che trovate in Autogrill: l’urinale è un ready made ripetibile, ma è irripetibile la prima idea dell’artista che lo innalza ad arte.\nL’artista che dà così un’Aura di presenza nello spazio-tempo della nostra cultura.\nBonus. Quando parlammo di DALL-E per la prima volta (😱 ff.30.3 Qualche esempio meno divertente), “toccammo” proprio degli urinali…",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!SamW!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fbe326f8e-f97d-422e-976d-f0141d977814_738x822.jpeg",
+                        "caption": "I primi urinali “generativi”, in stile Razer Gaming (😱 ff.30.3 Qualche esempio meno divertente)"
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "Walter Benjamin in",
+                        "url": "https://substack.com/redirect/eb82acc3-a816-42a2-a082-e7243f9504a7?j=eyJ1IjoiYnJ1aWcifQ.dTn9OQuik7BeImaMzApcuS7GK7FYXHeDzAa8mDzM3rghttps://web.mit.edu/allanmc/www/benjamin.pdf?utm_source=substack&utm_medium=email"
+                    },
+                    {
+                        "text": "L’opera d’arte ai tempi della riproduzione meccanica",
+                        "url": "https://substack.com/redirect/eb82acc3-a816-42a2-a082-e7243f9504a7?j=eyJ1IjoiYnJ1aWcifQ.dTn9OQuik7BeImaMzApcuS7GK7FYXHeDzAa8mDzM3rghttps://web.mit.edu/allanmc/www/benjamin.pdf?utm_source=substack&utm_medium=email"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "😱 ff.30.3 Qualche esempio meno divertente",
+                        "url": "https://fortissimo.substack.com/i/60166534/ff303-qualche-esempio-meno-divertente"
+                    },
+                    {
+                        "text": "😱 ff.30.3 Qualche esempio meno divertente",
+                        "url": "https://fortissimo.substack.com/p/-ff30-dall-e-genera-arte?open=false#%C2%A7ff303-qualche-esempio-meno-divertente"
+                    }
+                ]
+            },
+            {
+                "title": "👻 ff.146.2 Fantasmi e Calvino",
+                "link": "https://fortissimo.substack.com/i/186303579/ff-fantasmi-e-calvino",
+                "content": "Nello scrivere questa newsletter, sto così evitando di dettare a voce o generare testi con GPT.\nOggi, scrivere a mano è il mio corrispettivo mentale dell’andare a fare la spesa a piedi o prendere le scale invece dell’ascensore: una rivendicazione di umanità.\nChatGPT, comunque, non c’entra. E’ da tempo che la macchina può - almeno teoricamente - combinare gli 1 e gli 0 dell’informazione e generare tutto lo scibile umano.\nItalo Calvino, in una lezione divenuta famosissima, Cibernetica e fantasmi (1961); abbracciava la visione di un pensiero “discreto”, fatto di segnali e circuiti (gli 1 e 0, appunto).\nE sognava un “ChatGPT”: una “macchina poetico-elettronica” in grado di sviscerare all’infinito, sbriciolando in 1 e 0, i testi classici; per estrarne l’essenza poetica.\nChatGPT, insomma, non ha inventato nulla: negli anni ‘60 gli esperimenti dell’Ou-li-po (acronimo francese Ouvroir de Littérature Potentielle, \"officina di letteratura potenziale\") d’altronde proponevano un’infinità di algoritmi per generare testi:\nMetodo di sostituzione “S + 7” (o “N + 7”)Sostituire ogni sostantivo (S) in un testo con il sostantivo che cade 7 posizioni più avanti in un dato dizionario. In tal modo, ad esempio, “L’abito non fa il monaco” diventa, con un dato dizionario, “L’abiura non fa il monarca”.Paolo Albani, La letteratura potenziale - alcune note sparse",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!MiqB!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F673abc87-e4de-4ea3-b4b8-f6fcf6dc667d_1335x744.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "Cibernetica e fantasmi",
+                        "url": "https://www.academia.edu/1488098/_Cibernetica_e_fantasmi_Italo_Calvino_fra_mito_e_numero_"
+                    },
+                    {
+                        "text": "(1961)",
+                        "url": "https://www.academia.edu/1488098/_Cibernetica_e_fantasmi_Italo_Calvino_fra_mito_e_numero_"
+                    },
+                    {
+                        "text": "Metodo di sostituzione “S + 7” (o “N + 7”)",
+                        "url": "https://poets.org/text/brief-guide-oulipo"
+                    },
+                    {
+                        "text": "La letteratura potenziale",
+                        "url": "https://www.paoloalbani.it/Letteraturapotenziale.html"
+                    },
+                    {
+                        "text": "- alcune note sparse",
+                        "url": "https://www.paoloalbani.it/Letteraturapotenziale.html"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "🤐 ff.146.3 Il silenzio degli innocenti",
+                "link": "https://fortissimo.substack.com/i/186303579/ff-il-silenzio-degli-innocenti",
+                "content": "A ben vedere, Calvino stesso metteva l’uomo come un automa-pappagallo che riformula “stando sulle spalle dei giganti”.\nMa e così? Una via alternativa potrebbe essere il silenzio, poetico.\nHeidegger suggeriva d’altronde che la poesia risiedesse nel non-detto: l’aposiopesi (o reticenza), la capacità umana di interrompersi un attimo prima di aver spiegato tutto, lasciando spazio all’interpretazione.\nInterpretazione - non a caso - che capeggia l’arte contemporanea, in cui gli artisti arrivano sempre più a negare anche il titolo stesso dell’opera, lasciando più spazio alla poesia del fruitore (in greco poíēsis deriva da poiéō, “faccio, produco”).\nSpoiler allert. Questa sospensione l’ho ritrovata anche in una delle ultime scene di La Grazia di Sorrentino, in cui l’uscente presidente della repubblica è scortato da un cane robotico alla Boston Dynamics (pronto a sparare o a proteggere?).",
+                "images": [],
+                "references": [],
+                "connections": []
+            },
+            {
+                "title": "💔 ff.146.4 Pathos e patire",
+                "link": "https://fortissimo.substack.com/i/186303579/ff-pathos-e-patire",
+                "content": "Un’altra via per salvare l’uomo potrebbe essere la malattia. E tutta la sofferenza, patetica, delle nostre membra.\nUno dei tanti esempi potrebbe essere Love’s Work (1995), libro scritto da Gillian Rose mentre moriva di cancro alle ovaie.\nLa sua sofferenza (anche amorosa) l’ha portata a formulare frasi come: “non c’è democrazia in nessuna relazione d’amore: solo misericordia.”\nUna successione di parole che, sicuramente, Ou-li-po (o ChatGPT) può generare con qualche permutazione.\nAnche se fosse, però, mancherebbe dell’“Aura” di Benjamin. Del pathos umano, che ci porta a com-patire, a sentire con l’altro: la solidarietà esistenziale del filosofo Evan Selinger.\nContro le infinite permutazioni, quindi, l’uomo può proteggersi con le cicatrici.\nHarry (fatto a pezzi) a parte, io ne ho una per una clavicola rotta (🎼 ff.124 Ah-IA!): ha impreziosito e reso unica la mia sofferenza durante l’IRONMAN di Cervia.\nUn altro, inaspettato esempio di 🦴 ff.145.1 L’uomo all’osso. Rotto.",
+                "images": [
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!PppR!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe36a3a7e-67d0-4b9a-ac52-c79af43d5b36_300x480",
+                        "caption": "Eugène Atget. Magasin, avenue des Gobelins. 1925, il primo reportage di Parigi fatto con una macchina fotografica (Archivio MOMA)"
+                    },
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!JgRp!,w_1456,c_limit,f_auto,q_auto:good,fl_lossy/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9c7fa948-b594-4135-871c-9930b589fb11_245x150.gif",
+                        "caption": "Eugène Atget. Magasin, avenue des Gobelins. 1925, il primo reportage di Parigi fatto con una macchina fotografica (Archivio MOMA)"
+                    },
+                    {
+                        "src": "https://substackcdn.com/image/fetch/$s_!I10h!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F18fc4d6a-9ec2-4036-8f45-bab6121b3080_1184x666.jpeg",
+                        "caption": "Eugène Atget. Magasin, avenue des Gobelins. 1925, il primo reportage di Parigi fatto con una macchina fotografica (Archivio MOMA)"
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "solidarietà esistenziale",
+                        "url": "https://blog.apaonline.org/2025/11/06/seeking-existential-solidarity-in-the-age-of-ai/?utm_source=substack&utm_medium=email"
+                    },
+                    {
+                        "text": "🎼 ff.124 Ah-IA!",
+                        "url": "https://fortissimo.substack.com/p/ff124-ah-ia?utm_source=publication-search"
+                    },
+                    {
+                        "text": "la mia sofferenza durante l’IRONMAN di Cervia",
+                        "url": "https://www.youtube.com/watch?v=NgaMUQFWcf0"
+                    },
+                    {
+                        "text": "Eugène Atget.",
+                        "url": "https://www.moma.org/artists/229-eugene-atget"
+                    },
+                    {
+                        "text": "Magasin, avenue des Gobelins",
+                        "url": "https://www.moma.org/artists/229-eugene-atget"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "🦴 ff.145.1 L’uomo all’osso",
+                        "url": "https://fortissimo.substack.com/i/187751091/ff1451-luomo-allosso"
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "url": "https://fortissimo.substack.com/p/ff145-zucchero-ossa-e-creme-brulee",
         "title": "🎼 ff.145 Zucchero, ossa e crème brûlée",
         "subtitle": "Food design contro \"il nuovo fumo\", il cibo",
