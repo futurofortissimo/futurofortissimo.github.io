@@ -1,8 +1,13 @@
 #!/usr/bin/env node
 /**
  * build_ffxy_index.mjs
- * Scans all chapter HTML files, extracts every <span class="fc"> reference,
- * and outputs book/ffxy-index.json.
+ *
+ * 1. Scans all chapter HTML files → book/ffxy-index.json  (injected refs only)
+ * 2. Reads data.js corpus + used_codes_book.txt + ffxy-index.json
+ *    → book/ffxy-historical.json  (ALL ff.x.y from corpus, with injection status)
+ *
+ * Run after every injection cycle:
+ *   node scripts/build_ffxy_index.mjs
  */
 import { readFileSync, writeFileSync } from 'fs';
 import { join, dirname } from 'path';
@@ -57,12 +62,9 @@ function extractFcRefs(html, chapterDef) {
   const entries = [];
   const seen = new Set();
 
-  // Find all <span class="fc"> ... </span> blocks
-  // They can span multiple lines, so use a regex with dotAll
   const fcRegex = /<span\s+class="fc">([\s\S]*?)<\/span>/g;
   let match;
 
-  // Build a map of section headings: id -> { sectionId, sectionTitle }
   const headingRegex = /<h[23]\s+id="([^"]+)"[^>]*>([\s\S]*?)<\/h[23]>/g;
   const headings = [];
   let hm;
@@ -76,9 +78,6 @@ function extractFcRefs(html, chapterDef) {
     const raw = match[1].trim();
     const decoded = decodeEntities(raw.replace(/<[^>]+>/g, '').trim());
 
-    // Parse: optional emoji + ff.NUM or ff.NUM.SUB + optional title
-    // Examples: "🛴 ff.1.3 L'80% dei tragitti è sotto i 16 km"
-    //           "🏙️ ff.34\n    Ripensare le città"
     const ffMatch = decoded.match(/ff\.(\d+)(?:\.(\d+))?\s*(.*)/s);
     if (!ffMatch) continue;
 
@@ -87,15 +86,12 @@ function extractFcRefs(html, chapterDef) {
     const code = sub ? `ff.${num}.${sub}` : `ff.${num}`;
     const titleRaw = ffMatch[3] ? ffMatch[3].replace(/\n\s*/g, ' ').trim() : '';
 
-    // Deduplicate by code within each file
     if (seen.has(code)) continue;
     seen.add(code);
 
-    // Look up emoji from map
     const emojiKey = sub ? `${num}.${sub}` : `${num}`;
     const emoji = emojiMap[emojiKey] || '';
 
-    // Find nearest preceding section heading
     let sectionId = '';
     let sectionTitle = '';
     const pos = match.index;
@@ -108,10 +104,7 @@ function extractFcRefs(html, chapterDef) {
     }
 
     entries.push({
-      code,
-      num,
-      sub,
-      emoji,
+      code, num, sub, emoji,
       title: titleRaw,
       chapter: chapterDef.chapter,
       chapterName: chapterDef.chapterName,
@@ -125,7 +118,9 @@ function extractFcRefs(html, chapterDef) {
   return entries;
 }
 
-// Main
+// ── PART 1: Build ffxy-index.json (injected refs from chapter HTML) ──
+
+console.log('=== Part 1: ffxy-index.json (injected refs from HTML) ===');
 const allEntries = [];
 
 for (const ch of CHAPTERS) {
@@ -135,11 +130,110 @@ for (const ch of CHAPTERS) {
   console.log(`  ${ch.file}: ${refs.length} refs`);
 }
 
-// Sort by ff number ascending, then sub ascending
 allEntries.sort((a, b) => a.num - b.num || a.sub - b.sub);
 
-const outPath = join(BOOK, 'ffxy-index.json');
-writeFileSync(outPath, JSON.stringify(allEntries, null, 2), 'utf8');
+const indexPath = join(BOOK, 'ffxy-index.json');
+writeFileSync(indexPath, JSON.stringify(allEntries, null, 2), 'utf8');
+console.log(`\nTotal injected refs: ${allEntries.length}`);
+console.log(`Written to: ${indexPath}`);
 
-console.log(`\nTotal: ${allEntries.length} ff.x.y references`);
-console.log(`Written to: ${outPath}`);
+// ── PART 2: Build ffxy-historical.json (ALL ff.x.y from data.js corpus) ──
+
+console.log('\n=== Part 2: ffxy-historical.json (full corpus) ===');
+
+// 2a. Parse data.js
+const dataJsContent = readFileSync(join(ROOT, 'data.js'), 'utf8');
+// Strip the "export const rawData = " prefix and trailing ";"
+const jsonStart = dataJsContent.indexOf('[');
+const jsonEnd = dataJsContent.lastIndexOf(']') + 1;
+const rawJson = dataJsContent.slice(jsonStart, jsonEnd);
+
+// data.js may contain JS template strings or special chars; use Function eval
+let rawData;
+try {
+  rawData = (new Function(`return ${rawJson}`))();
+} catch (e) {
+  console.error('Failed to parse data.js:', e.message);
+  process.exit(1);
+}
+
+console.log(`  data.js: ${rawData.length} newsletter entries`);
+
+// 2b. Read used_codes_book.txt
+const usedCodesRaw = readFileSync(join(ROOT, 'used_codes_book.txt'), 'utf8');
+const usedCodes = new Set(
+  usedCodesRaw.split('\n').map(l => l.trim()).filter(Boolean)
+);
+console.log(`  used_codes_book.txt: ${usedCodes.size} injected codes`);
+
+// 2c. Build lookup from ffxy-index.json for injection details
+const indexData = JSON.parse(readFileSync(indexPath, 'utf8'));
+const indexLookup = {};
+for (const entry of indexData) {
+  // For duplicate codes (same code in multiple files), keep the first
+  if (!indexLookup[entry.code]) {
+    indexLookup[entry.code] = entry;
+  }
+}
+
+// 2d. Extract all ff.x.y from data.js
+const historical = [];
+
+for (const newsletter of rawData) {
+  // Parse newsletter number from title: "🎼 ff.148 Il \"Mito\" dell'AI"
+  const nlMatch = newsletter.title.match(/ff\.(\d+)/);
+  if (!nlMatch) continue;
+  const nlNum = parseInt(nlMatch[1], 10);
+
+  if (!newsletter.subchapters || !newsletter.subchapters.length) continue;
+
+  for (const sub of newsletter.subchapters) {
+    // Parse subchapter title: "🐉 ff.148.1 Claude Mythos: non per tutti"
+    const subMatch = sub.title.match(/^(.+?)\s*ff\.(\d+)\.(\d+)\s+(.*)/s);
+    if (!subMatch) continue;
+
+    const emoji = subMatch[1].trim();
+    const num = parseInt(subMatch[2], 10);
+    const subNum = parseInt(subMatch[3], 10);
+    const title = subMatch[4].trim();
+    const code = `ff.${num}.${subNum}`;
+
+    const isInjected = usedCodes.has(code);
+    const idx = indexLookup[code];
+
+    historical.push({
+      code,
+      num,
+      sub: subNum,
+      emoji,
+      title,
+      injected: isInjected,
+      file: idx ? idx.file : null,
+      sectionId: idx ? idx.sectionId : null,
+      chapter: idx ? idx.chapter : null,
+      chapterName: idx ? idx.chapterName : null,
+      chapterColor: idx ? idx.chapterColor : null,
+    });
+  }
+}
+
+// Sort by num, sub ascending
+historical.sort((a, b) => a.num - b.num || a.sub - b.sub);
+
+const histPath = join(BOOK, 'ffxy-historical.json');
+writeFileSync(histPath, JSON.stringify(historical, null, 2), 'utf8');
+
+const injectedCount = historical.filter(h => h.injected).length;
+console.log(`\nTotal ff.x.y in corpus: ${historical.length}`);
+console.log(`Injected: ${injectedCount} / ${historical.length}`);
+console.log(`Written to: ${histPath}`);
+
+console.log(`
+────────────────────────────────────────────
+Run this script after every injection cycle:
+  node scripts/build_ffxy_index.mjs
+
+It updates both:
+  • book/ffxy-index.json      (injected refs from chapter HTML)
+  • book/ffxy-historical.json (full corpus, read at runtime by index.html)
+────────────────────────────────────────────`);
