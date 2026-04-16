@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="it" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Indice ff.x.y | Futuro Fortissimo</title>
+  <meta name="description" content="Indice completo di tutti i riferimenti ff.x.y nel libro Tre Macro Temi di Futuro Fortissimo." />
+
+  <link rel="canonical" href="https://futurofortissimo.github.io/book/ffxy-index.html" />
+  <link rel="icon" href="/favicon.ico" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ff-green: #2ecc71;
+      --ff-blue: #4a90e2;
+      --ff-red: #d0021b;
+      --ff-black: #0a0a0a;
+      --ff-grid: rgba(0, 0, 0, 0.03);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fdfdfd;
+      color: var(--ff-black);
+      margin: 0;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--ff-grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--ff-grid) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+      z-index: -1;
+    }
+    .container { max-width: 56rem; margin: 0 auto; padding: 2rem 1rem 4rem; }
+
+    /* Header */
+    .back-link {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #888;
+      text-decoration: none;
+    }
+    .back-link:hover { color: var(--ff-black); }
+    h1 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: clamp(1.2rem, 1rem + 1vw, 1.8rem);
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin: 1rem 0 0.5rem;
+    }
+
+    /* Search */
+    .search-wrap { margin: 1.5rem 0 1rem; }
+    .search-wrap input {
+      width: 100%;
+      max-width: 32rem;
+      padding: 10px 14px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      border: 2px solid var(--ff-black);
+      background: #fff;
+      outline: none;
+    }
+    .search-wrap input:focus { border-color: var(--ff-blue); }
+
+    /* Stats bar */
+    .stats-bar {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      color: #888;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+    .stats-bar .stat-total { font-weight: 700; color: var(--ff-black); }
+    .stats-bar .stat-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 8px;
+      font-size: 0.72rem;
+      border: 1px solid;
+      font-weight: 600;
+    }
+
+    /* Chapter group */
+    .chapter-group { margin-bottom: 2rem; }
+    .chapter-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      padding: 0.6rem 0;
+      border-bottom: 3px solid;
+      margin-bottom: 0.5rem;
+      user-select: none;
+    }
+    .chapter-header:hover { opacity: 0.8; }
+    .chapter-header .chevron {
+      font-size: 0.7rem;
+      transition: transform 0.2s;
+      display: inline-block;
+    }
+    .chapter-header.collapsed .chevron { transform: rotate(-90deg); }
+    .chapter-header h2 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    .chapter-header .ch-count {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      color: #aaa;
+      margin-left: auto;
+    }
+    .chapter-entries { padding: 0; }
+    .chapter-entries.hidden { display: none; }
+
+    /* Entry */
+    .entry {
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.1s;
+    }
+    .entry:hover { background: rgba(0,0,0,0.02); }
+    .entry-code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.82rem;
+      font-weight: 600;
+      white-space: nowrap;
+      min-width: 5.5rem;
+    }
+    .entry-emoji { font-size: 1rem; flex-shrink: 0; }
+    .entry-title {
+      font-size: 0.88rem;
+      color: #333;
+      flex: 1;
+      min-width: 0;
+    }
+    .entry-section {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      color: #aaa;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* Mobile */
+    @media (max-width: 640px) {
+      .entry { flex-wrap: wrap; gap: 0.3rem; }
+      .entry-section { width: 100%; padding-left: 6.1rem; }
+      .stats-bar { flex-direction: column; gap: 0.4rem; align-items: flex-start; }
+    }
+
+    /* Footer */
+    footer {
+      border-top: 3px solid var(--ff-black);
+      margin-top: 3rem;
+      padding: 1.5rem 0;
+      text-align: center;
+    }
+    footer a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      color: #888;
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    footer a:hover { color: var(--ff-black); }
+
+    .no-results {
+      text-align: center;
+      color: #aaa;
+      font-size: 0.9rem;
+      padding: 3rem 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="/book/" class="back-link">&larr; Indice del libro</a>
+    <h1>Indice ff.x.y</h1>
+    <p style="color:#555;font-size:0.9rem;margin:0 0 0.5rem;">Tutti i riferimenti al corpus Futuro Fortissimo nel libro. Clicca per navigare al paragrafo.</p>
+
+    <div class="search-wrap">
+      <input type="search" id="ffSearch" placeholder="Cerca per codice, titolo o parola chiave..." autocomplete="off" />
+    </div>
+
+    <div class="stats-bar" id="statsBar"></div>
+    <div id="content"></div>
+    <div class="no-results" id="noResults" style="display:none;">Nessun risultato.</div>
+  </div>
+
+  <footer>
+    <a href="/book/">&copy; Futuro Fortissimo &mdash; Libro</a>
+  </footer>
+
+  <script>
+  (function () {
+    'use strict';
+    var data = [];
+    var contentEl = document.getElementById('content');
+    var statsEl = document.getElementById('statsBar');
+    var noResults = document.getElementById('noResults');
+    var searchInput = document.getElementById('ffSearch');
+    var debounceTimer;
+
+    var CHAPTERS = [
+      { name: 'Natura',     color: '#2ecc71', emoji: '\uD83C\uDF3F', num: 1 },
+      { name: 'Tecnologia', color: '#4a90e2', emoji: '\uD83D\uDCBB', num: 2 },
+      { name: 'Societ\u00E0',    color: '#d0021b', emoji: '\u2764\uFE0F',  num: 3 }
+    ];
+
+    fetch('/book/ffxy-index.json')
+      .then(function (r) { return r.json(); })
+      .then(function (d) { data = d; render(data); })
+      .catch(function () { contentEl.innerHTML = '<p style="color:red;">Errore nel caricamento dei dati.</p>'; });
+
+    searchInput.addEventListener('input', function () {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(function () {
+        var q = searchInput.value.trim().toLowerCase();
+        if (!q) { render(data); return; }
+        var filtered = data.filter(function (e) {
+          return e.code.toLowerCase().indexOf(q) !== -1 ||
+                 e.title.toLowerCase().indexOf(q) !== -1 ||
+                 e.sectionTitle.toLowerCase().indexOf(q) !== -1 ||
+                 e.chapterName.toLowerCase().indexOf(q) !== -1;
+        });
+        render(filtered);
+      }, 200);
+    });
+
+    function render(entries) {
+      contentEl.innerHTML = '';
+      if (!entries.length) {
+        noResults.style.display = '';
+        statsEl.innerHTML = '';
+        return;
+      }
+      noResults.style.display = 'none';
+
+      // Stats
+      var total = entries.length;
+      var counts = {};
+      CHAPTERS.forEach(function (c) { counts[c.num] = 0; });
+      entries.forEach(function (e) { counts[e.chapter] = (counts[e.chapter] || 0) + 1; });
+
+      var statsHtml = '<span class="stat-total">' + total + ' riferimenti</span>';
+      CHAPTERS.forEach(function (c) {
+        statsHtml += '<span class="stat-chip" style="border-color:' + c.color + ';color:' + c.color + ';">' +
+          c.emoji + ' ' + c.name + ': ' + (counts[c.num] || 0) + '</span>';
+      });
+      statsEl.innerHTML = statsHtml;
+
+      // Group by chapter
+      CHAPTERS.forEach(function (ch) {
+        var chEntries = entries.filter(function (e) { return e.chapter === ch.num; });
+        if (!chEntries.length) return;
+
+        var group = document.createElement('div');
+        group.className = 'chapter-group';
+
+        var header = document.createElement('div');
+        header.className = 'chapter-header';
+        header.style.borderBottomColor = ch.color;
+        header.innerHTML = '<span class="chevron" style="color:' + ch.color + ';">\u25BC</span>' +
+          '<h2 style="color:' + ch.color + ';">' + ch.emoji + ' Cap. ' + ch.num + ' \u2014 ' + ch.name + '</h2>' +
+          '<span class="ch-count">' + chEntries.length + '</span>';
+
+        var entriesDiv = document.createElement('div');
+        entriesDiv.className = 'chapter-entries';
+
+        chEntries.forEach(function (e) {
+          var a = document.createElement('a');
+          a.className = 'entry';
+          a.href = '/book/' + e.file + (e.sectionId ? '#' + e.sectionId : '');
+          a.innerHTML =
+            '<span class="entry-code" style="color:' + e.chapterColor + ';">' + e.code + '</span>' +
+            '<span class="entry-emoji">' + e.emoji + '</span>' +
+            '<span class="entry-title">' + escapeHtml(e.title) + '</span>' +
+            '<span class="entry-section">' + escapeHtml(e.sectionTitle) + '</span>';
+          entriesDiv.appendChild(a);
+        });
+
+        header.addEventListener('click', function () {
+          var isCollapsed = header.classList.toggle('collapsed');
+          entriesDiv.classList.toggle('hidden', isCollapsed);
+        });
+
+        group.appendChild(header);
+        group.appendChild(entriesDiv);
+        contentEl.appendChild(group);
+      });
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+  })();
+  </script>
+</body>
+</html>

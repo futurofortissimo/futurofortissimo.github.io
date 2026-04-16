@@ -148,15 +148,26 @@
     homeLink.textContent = '📖 Indice del libro';
     nav.appendChild(homeLink);
 
-    // Build chapter structure
+    // Detect if we're on a subchapter page (not hub/index)
+    var isSubchapterPage = /chapter-0\d-\w+\.html/.test(location.pathname);
+
+    // Build chapter structure — current chapter expanded, others collapsed
     BOOK.forEach(function (ch) {
       var div = document.createElement('div');
       div.className = 'ff-panel__chapter';
 
+      var isCurrentChapter = (ch.n === currentChNum);
+
       var title = document.createElement('div');
       title.className = 'ff-panel__chapter-title';
-      title.innerHTML = '<span>' + ch.emoji + '</span> Cap. ' + ch.n + ' — ' + ch.title;
+      title.style.cursor = 'pointer';
+      title.innerHTML = '<span>' + ch.emoji + '</span> Cap. ' + ch.n + ' — ' + ch.title + ' <span class="ff-panel__ch-chevron" style="font-size:0.6em;transition:transform 0.2s;display:inline-block;margin-left:auto;">' + (isCurrentChapter ? '\u25BC' : '\u25B6') + '</span>';
       div.appendChild(title);
+
+      // Wrapper for collapsible content
+      var subsWrap = document.createElement('div');
+      subsWrap.className = 'ff-panel__subs-wrap';
+      if (!isCurrentChapter) subsWrap.style.display = 'none';
 
       ch.subs.forEach(function (sub) {
         var a = document.createElement('a');
@@ -166,10 +177,19 @@
           a.classList.add('is-current');
         }
         a.innerHTML = '<span class="ff-sub-num">' + sub.num + '</span> ' + sub.title;
-        div.appendChild(a);
+        subsWrap.appendChild(a);
       });
 
+      div.appendChild(subsWrap);
       nav.appendChild(div);
+
+      // Toggle collapse on title click
+      title.addEventListener('click', function () {
+        var isHidden = subsWrap.style.display === 'none';
+        subsWrap.style.display = isHidden ? '' : 'none';
+        var chevron = title.querySelector('.ff-panel__ch-chevron');
+        if (chevron) chevron.textContent = isHidden ? '\u25BC' : '\u25B6';
+      });
 
       // Add in-page headings for current subchapter
       if (ch.n === currentChNum) {
@@ -187,7 +207,7 @@
                 document.getElementById(h.id).scrollIntoView({ behavior: 'smooth', block: 'start' });
                 if (window.innerWidth <= 768) closePanel();
               });
-              div.appendChild(ha);
+              subsWrap.appendChild(ha);
             });
           }
         });
@@ -197,6 +217,71 @@
       divider.className = 'ff-panel__divider';
       nav.appendChild(divider);
     });
+
+    // ─── FF.X.Y REFERENCE LIST in hamburger (subchapter pages only) ──
+    if (isSubchapterPage) {
+      var fcSpansNav = document.querySelectorAll('.fc');
+      if (fcSpansNav.length) {
+        var fcRefs = [];
+        var fcSeen = {};
+        fcSpansNav.forEach(function (el) {
+          var text = (el.textContent || '').trim();
+          var m = text.match(/ff\.(\d+)(?:\.(\d+))?\s*(.*)/s);
+          if (!m) return;
+          var num = parseInt(m[1], 10);
+          var sub = m[2] ? parseInt(m[2], 10) : 0;
+          var code = sub ? 'ff.' + num + '.' + sub : 'ff.' + num;
+          if (fcSeen[code]) return;
+          fcSeen[code] = true;
+          var title = m[3] ? m[3].replace(/\n\s*/g, ' ').trim() : '';
+          if (title.length > 50) title = title.slice(0, 47) + '...';
+          fcRefs.push({ code: code, num: num, sub: sub, title: title, el: el });
+        });
+        fcRefs.sort(function (a, b) { return a.num - b.num || a.sub - b.sub; });
+
+        if (fcRefs.length) {
+          var fcDivider = document.createElement('div');
+          fcDivider.className = 'ff-panel__divider';
+          fcDivider.style.margin = '0.6rem 1rem';
+          nav.appendChild(fcDivider);
+
+          var fcSection = document.createElement('div');
+          fcSection.className = 'ff-panel__chapter';
+
+          var fcTitle = document.createElement('div');
+          fcTitle.className = 'ff-panel__chapter-title';
+          fcTitle.innerHTML = '<span>\uD83D\uDD17</span> Riferimenti ff.x.y (' + fcRefs.length + ')';
+          fcSection.appendChild(fcTitle);
+
+          fcRefs.forEach(function (ref) {
+            var a = document.createElement('a');
+            a.href = '#';
+            a.className = 'ff-panel__sub';
+            a.style.fontSize = '0.8rem';
+            a.innerHTML = '<span class="ff-sub-num">' + ref.code + '</span> ' + ref.title;
+            a.addEventListener('click', function (e) {
+              e.preventDefault();
+              // Scroll to nearest heading before this fc span
+              var target = ref.el;
+              var prev = target.closest('p') || target;
+              while (prev && prev.previousElementSibling) {
+                prev = prev.previousElementSibling;
+                if (prev.tagName === 'H2' || prev.tagName === 'H3') break;
+              }
+              if (prev && (prev.tagName === 'H2' || prev.tagName === 'H3')) {
+                prev.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              } else {
+                target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              }
+              closePanel();
+            });
+            fcSection.appendChild(a);
+          });
+
+          nav.appendChild(fcSection);
+        }
+      }
+    }
 
     panel.appendChild(nav);
     document.body.appendChild(panel);
