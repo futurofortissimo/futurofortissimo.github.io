@@ -500,22 +500,43 @@
       });
       li.appendChild(backLink);
 
-      // Superscript [N] in prose
-      var refLink = document.createElement('a');
-      refLink.href = '#' + fonteId;
-      refLink.textContent = ' [' + fonteId.replace('fonte-', '') + ']';
-      refLink.style.cssText = 'color:var(--accent,#2ecc71);text-decoration:none;font-size:0.65rem;font-family:"IBM Plex Mono",monospace;margin-left:2px;cursor:pointer;vertical-align:super;';
-      refLink.addEventListener('click', function (e) {
-        e.preventDefault();
-        var t = document.getElementById(fonteId);
-        if (!t) return;
-        t.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        t.classList.remove('flash-highlight'); void t.offsetWidth;
-        t.classList.add('flash-highlight');
-        setTimeout(function () { t.classList.remove('flash-highlight'); }, 1500);
-      });
-      if (match.nextSibling) match.parentNode.insertBefore(refLink, match.nextSibling);
-      else match.parentNode.appendChild(refLink);
+      // Superscript [N] in prose — skip if already present
+      var fonteNum = fonteId.replace('fonte-', '');
+      var alreadyHasRef = false;
+      // Check if [N] superscript already exists near this link
+      var nextEl = match.nextSibling;
+      while (nextEl) {
+        if (nextEl.nodeType === 1 && (nextEl.tagName === 'SUP' || nextEl.tagName === 'A') &&
+            (nextEl.textContent || '').indexOf('[' + fonteNum + ']') !== -1) {
+          alreadyHasRef = true; break;
+        }
+        if (nextEl.nodeType === 3 && nextEl.textContent.trim()) break;
+        if (nextEl.nodeType === 1 && nextEl.tagName !== 'SUP' && nextEl.tagName !== 'A') break;
+        nextEl = nextEl.nextSibling;
+      }
+      // Also check previous sibling (ref might be before the link)
+      if (!alreadyHasRef) {
+        var prevText = (match.parentNode.textContent || '');
+        if (prevText.indexOf('[' + fonteNum + ']') !== -1) alreadyHasRef = true;
+      }
+
+      if (!alreadyHasRef) {
+        var refLink = document.createElement('a');
+        refLink.href = '#' + fonteId;
+        refLink.textContent = ' [' + fonteNum + ']';
+        refLink.style.cssText = 'color:var(--accent,#2ecc71);text-decoration:none;font-size:0.65rem;font-family:"IBM Plex Mono",monospace;margin-left:2px;cursor:pointer;vertical-align:super;';
+        refLink.addEventListener('click', function (e) {
+          e.preventDefault();
+          var t = document.getElementById(fonteId);
+          if (!t) return;
+          t.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          t.classList.remove('flash-highlight'); void t.offsetWidth;
+          t.classList.add('flash-highlight');
+          setTimeout(function () { t.classList.remove('flash-highlight'); }, 1500);
+        });
+        if (match.nextSibling) match.parentNode.insertBefore(refLink, match.nextSibling);
+        else match.parentNode.appendChild(refLink);
+      }
     });
   }
 
