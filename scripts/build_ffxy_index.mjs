@@ -103,6 +103,9 @@ function extractFcRefs(html, chapterDef) {
       }
     }
 
+    // Generate precise anchor ID matching chapter-ui.js runtime IDs
+    const anchorId = sub ? `ffxy-${num}-${sub}` : `ffxy-${num}`;
+
     entries.push({
       code, num, sub, emoji,
       title: titleRaw,
@@ -110,6 +113,7 @@ function extractFcRefs(html, chapterDef) {
       chapterName: chapterDef.chapterName,
       chapterColor: chapterDef.chapterColor,
       file: chapterDef.file,
+      anchorId,
       sectionId,
       sectionTitle,
     });
@@ -201,6 +205,8 @@ for (const newsletter of rawData) {
     const isInjected = usedCodes.has(code);
     const idx = indexLookup[code];
 
+    const anchorId = `ffxy-${num}-${subNum}`;
+
     historical.push({
       code,
       num,
@@ -209,6 +215,7 @@ for (const newsletter of rawData) {
       title,
       injected: isInjected,
       file: idx ? idx.file : null,
+      anchorId: isInjected ? anchorId : null,
       sectionId: idx ? idx.sectionId : null,
       chapter: idx ? idx.chapter : null,
       chapterName: idx ? idx.chapterName : null,

@@ -784,8 +784,9 @@
             '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:0.78rem;font-weight:600;color:' + (hasInjected ? '#333' : '#bbb') + ';margin-bottom:0.2rem;">ff.' + num + '</div>' +
             '<div style="display:flex;flex-direction:column;gap:0.15rem;padding-left:0.8rem;">' +
             entries.map(function(e) {
-              if (e.injected && e.file && e.sectionId) {
-                return '<a href="' + e.file + '#' + e.sectionId + '" style="font-size:0.82rem;color:' + (e.chapterColor || '#448aff') + ';text-decoration:none;display:flex;align-items:baseline;gap:0.3rem;padding:1px 0;transition:opacity 0.15s;" onmouseover="this.style.opacity=\'0.7\'" onmouseout="this.style.opacity=\'1\'">' +
+              if (e.injected && e.file) {
+                var anchor = e.anchorId || e.sectionId || '';
+                return '<a href="' + e.file + '#' + anchor + '" style="font-size:0.82rem;color:' + (e.chapterColor || '#448aff') + ';text-decoration:none;display:flex;align-items:baseline;gap:0.3rem;padding:1px 0;transition:opacity 0.15s;" onmouseover="this.style.opacity=\'0.7\'" onmouseout="this.style.opacity=\'1\'">' +
                   '<span style="font-family:\'IBM Plex Mono\',monospace;font-size:0.75rem;min-width:4.5rem;">' + e.code + '</span>' +
                   '<span>' + e.emoji + ' ' + e.title + '</span>' +
                 '</a>';

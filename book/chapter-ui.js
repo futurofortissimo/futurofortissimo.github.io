@@ -261,17 +261,24 @@
             a.innerHTML = '<span class="ff-sub-num">' + ref.code + '</span> ' + ref.title;
             a.addEventListener('click', function (e) {
               e.preventDefault();
-              // Scroll to nearest heading before this fc span
-              var target = ref.el;
-              var prev = target.closest('p') || target;
-              while (prev && prev.previousElementSibling) {
-                prev = prev.previousElementSibling;
-                if (prev.tagName === 'H2' || prev.tagName === 'H3') break;
+              // Scroll directly to the fc element (now has id="ffxy-N-S")
+              // The .fc span may have been replaced by an <a> — find by ID
+              var fcId = ref.el.id;
+              var target = fcId ? document.getElementById(fcId) : null;
+              if (!target) {
+                // Fallback: find by code text in any .fc or a.fc
+                var all = document.querySelectorAll('.fc, a.fc');
+                for (var i = 0; i < all.length; i++) {
+                  if ((all[i].textContent || '').indexOf(ref.code) !== -1) { target = all[i]; break; }
+                }
               }
-              if (prev && (prev.tagName === 'H2' || prev.tagName === 'H3')) {
-                prev.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              } else {
-                target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              if (target) {
+                // Scroll to the parent paragraph for better context
+                var para = target.closest('p') || target;
+                para.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                para.classList.remove('flash-highlight'); void para.offsetWidth;
+                para.classList.add('flash-highlight');
+                setTimeout(function () { para.classList.remove('flash-highlight'); }, 1500);
               }
               closePanel();
             });
@@ -512,6 +519,20 @@
     });
   }
 
+  // ─── Assign IDs to all .fc spans for precise anchoring ──
+  (function assignFcIds() {
+    var seen = {};
+    document.querySelectorAll('.fc').forEach(function (el) {
+      var text = el.textContent || '';
+      var m = text.match(/ff\.(\d+)(?:\.(\d+))?/);
+      if (!m) return;
+      var id = 'ffxy-' + m[1] + (m[2] ? '-' + m[2] : '');
+      // Handle duplicates: append -2, -3 etc
+      if (seen[id]) { seen[id]++; id += '-' + seen[id]; } else { seen[id] = 1; }
+      el.id = id;
+    });
+  })();
+
   // ─── .fc click handler — convert ff.x.y spans to Substack links ──
   (function initFcLinks() {
     var fcSpans = document.querySelectorAll('.fc');
@@ -557,6 +578,7 @@
         var a = document.createElement('a');
         a.href = url;
         a.className = el.className;
+        if (el.id) a.id = el.id; // Preserve ffxy-N-S anchor ID
         a.target = '_blank';
         a.rel = 'noopener noreferrer';
         a.textContent = text.trim();

@@ -298,7 +298,7 @@
         chEntries.forEach(function (e) {
           var a = document.createElement('a');
           a.className = 'entry';
-          a.href = '/book/' + e.file + (e.sectionId ? '#' + e.sectionId : '');
+          a.href = '/book/' + e.file + '#' + (e.anchorId || e.sectionId || '');
           a.innerHTML =
             '<span class="entry-code" style="color:' + e.chapterColor + ';">' + e.code + '</span>' +
             '<span class="entry-emoji">' + e.emoji + '</span>' +
