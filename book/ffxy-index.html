@@ -7,6 +7,50 @@
   <meta name="description" content="Indice completo di tutti i riferimenti ff.x.y nel libro Tre Macro Temi di Futuro Fortissimo." />
 
   <link rel="canonical" href="https://futurofortissimo.github.io/book/ffxy-index.html" />
+  
+    <!-- data-seo-upgraded: 2026-04-17 -->
+  <meta name="keywords" content="ff.x.y, indice Futuro Fortissimo, riferimenti corpus, AI, natura, tecnologia, società"/>
+  <meta name="author" content="Michele Merelli"/>
+  <meta name="robots" content="index, follow, max-snippet:-1"/>
+  <link rel="alternate" hreflang="it" href="https://futurofortissimo.github.io/book/ffxy-index.html"/>
+
+  <meta property="og:site_name" content="Futuro Fortissimo"/>
+  <meta property="og:locale" content="it_IT"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Indice ff.x.y | Futuro Fortissimo"/>
+  <meta property="og:description" content="Tutti i riferimenti ff.x.y del libro, cercabili e raggruppati per capitolo. 629+ voci dal corpus Futuro Fortissimo."/>
+  <meta property="og:url" content="https://futurofortissimo.github.io/book/ffxy-index.html"/>
+  <meta property="og:image" content="https://futurofortissimo.github.io/logo.png"/>
+
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:site" content="@micmer"/>
+  <meta name="twitter:title" content="Indice ff.x.y | Futuro Fortissimo"/>
+  <meta name="twitter:description" content="Tutti i riferimenti ff.x.y del libro, cercabili e raggruppati per capitolo."/>
+  <meta name="twitter:image" content="https://futurofortissimo.github.io/logo.png"/>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Indice ff.x.y",
+    "description": "Tutti i riferimenti ff.x.y nel libro Futuro Fortissimo.",
+    "url": "https://futurofortissimo.github.io/book/ffxy-index.html",
+    "inLanguage": "it",
+    "isPartOf": { "@type": "Book", "name": "Futuro Fortissimo — Tre Macro Temi", "url": "https://futurofortissimo.github.io/book/" },
+    "author": { "@type": "Person", "name": "Michele Merelli" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://futurofortissimo.github.io/" },
+      { "@type": "ListItem", "position": 2, "name": "Libro", "item": "https://futurofortissimo.github.io/book/" },
+      { "@type": "ListItem", "position": 3, "name": "Indice ff.x.y", "item": "https://futurofortissimo.github.io/book/ffxy-index.html" }
+    ]
+  }
+  </script>
   <link rel="icon" href="/favicon.ico" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -198,6 +242,51 @@
       font-size: 0.9rem;
       padding: 3rem 0;
     }
+
+    /* Recent injections (last cycle) */
+    .entry.entry--recent { background: rgba(245,166,35,0.08); border-left: 3px solid #f5a623; padding-left: 6px; }
+    .entry.entry--recent .entry-title { font-weight: 700; color: #111; }
+    .entry.entry--recent .entry-code { text-shadow: 0 0 0 currentColor; }
+    .entry-new-badge {
+      display: inline-block;
+      background: #f5a623;
+      color: #000;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.62rem;
+      font-weight: 700;
+      padding: 1px 5px;
+      border-radius: 3px;
+      letter-spacing: 0.3px;
+      margin-right: 4px;
+    }
+    .recent-banner {
+      border: 2px solid #f5a623;
+      background: rgba(245,166,35,0.06);
+      padding: 0.8rem 1rem;
+      margin-bottom: 1.2rem;
+      font-size: 0.82rem;
+    }
+    .recent-banner strong {
+      font-family: 'IBM Plex Mono', monospace;
+      color: #b97808;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    .recent-banner code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #111;
+      background: #fff;
+      border: 1px solid rgba(245,166,35,0.4);
+      padding: 1px 5px;
+      border-radius: 3px;
+      margin: 0 3px 3px 0;
+      display: inline-block;
+    }
   </style>
 </head>
 <body>
@@ -211,6 +300,7 @@
     </div>
 
     <div class="stats-bar" id="statsBar"></div>
+    <div id="recentBanner"></div>
     <div id="content"></div>
     <div class="no-results" id="noResults" style="display:none;">Nessun risultato.</div>
   </div>
@@ -225,6 +315,7 @@
     var data = [];
     var contentEl = document.getElementById('content');
     var statsEl = document.getElementById('statsBar');
+    var bannerEl = document.getElementById('recentBanner');
     var noResults = document.getElementById('noResults');
     var searchInput = document.getElementById('ffSearch');
     var debounceTimer;
@@ -234,6 +325,20 @@
       { name: 'Tecnologia', color: '#4a90e2', emoji: '\uD83D\uDCBB', num: 2 },
       { name: 'Societ\u00E0',    color: '#d0021b', emoji: '\u2764\uFE0F',  num: 3 }
     ];
+
+    // Codici iniettati nell'ultimo ciclo bulk (2026-04-17).
+    // Aggiornare questa lista ad ogni inject; alimenta sia il banner che il bold/badge degli entry.
+    var RECENT = {
+      date: '2026-04-17',
+      cycle: 'bulk inject 22 ff.X.Y + 20 note',
+      codes: [
+        'ff.26.5',
+        'ff.148.1','ff.148.3','ff.37.4','ff.148.4','ff.3.1','ff.3.4','ff.15.2','ff.26.1','ff.41.5',
+        'ff.68.3','ff.76.4','ff.112.3','ff.146.4','ff.62.5','ff.23.3','ff.23.4','ff.27.1','ff.27.2','ff.64.1','ff.18.2','ff.20.4'
+      ]
+    };
+    var RECENT_SET = {};
+    RECENT.codes.forEach(function (c) { RECENT_SET[c] = 1; });
 
     fetch('/book/ffxy-index.json')
       .then(function (r) { return r.json(); })
@@ -255,8 +360,29 @@
       }, 200);
     });
 
+    function renderBanner(entries) {
+      if (!bannerEl) return;
+      // Build a chip cloud of recent codes, linking to the corresponding entry (if present in data)
+      var byCode = {};
+      entries.forEach(function (e) { byCode[e.code] = e; });
+      var chips = RECENT.codes.map(function (c) {
+        var e = byCode[c];
+        if (e) {
+          var href = '/book/' + e.file + '#' + (e.anchorId || e.sectionId || '');
+          return '<a href="' + href + '" style="text-decoration:none;"><code>' + c + '</code></a>';
+        }
+        return '<code>' + c + '</code>';
+      }).join('');
+      bannerEl.innerHTML =
+        '<div class="recent-banner">' +
+          '<strong>// Appena iniettati &middot; ' + RECENT.date + ' &middot; ' + RECENT.cycle + '</strong>' +
+          chips +
+        '</div>';
+    }
+
     function render(entries) {
       contentEl.innerHTML = '';
+      renderBanner(entries);
       if (!entries.length) {
         noResults.style.display = '';
         statsEl.innerHTML = '';
@@ -297,9 +423,11 @@
 
         chEntries.forEach(function (e) {
           var a = document.createElement('a');
-          a.className = 'entry';
+          var isRecent = !!RECENT_SET[e.code];
+          a.className = 'entry' + (isRecent ? ' entry--recent' : '');
           a.href = '/book/' + e.file + '#' + (e.anchorId || e.sectionId || '');
           a.innerHTML =
+            (isRecent ? '<span class="entry-new-badge">NEW</span>' : '') +
             '<span class="entry-code" style="color:' + e.chapterColor + ';">' + e.code + '</span>' +
             '<span class="entry-emoji">' + e.emoji + '</span>' +
             '<span class="entry-title">' + escapeHtml(e.title) + '</span>' +
