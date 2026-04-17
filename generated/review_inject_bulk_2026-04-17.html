@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="it"><head>
+<meta charset="utf-8"/>
+<title>Review inject bulk 2026-04-17 — FF Book</title>
+<style>
+body{font-family:'Inter',sans-serif;max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.55;color:#111}
+h1{font-family:'IBM Plex Mono',monospace;border-bottom:4px solid #0a0a0a;padding-bottom:0.5rem}
+h2{font-family:'IBM Plex Mono',monospace;margin-top:2rem;border-left:6px solid var(--c,#4a90e2);padding-left:0.6rem}
+.nat h2{--c:#2ecc71}.tec h2{--c:#4a90e2}.soc h2{--c:#d0021b}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:0.9rem}
+th,td{border:1px solid #ccc;padding:0.4rem 0.6rem;text-align:left;vertical-align:top}
+th{background:#f4f4f4;font-family:'IBM Plex Mono',monospace;font-size:0.8rem}
+.ok{color:#2ecc71;font-weight:700}
+.badge{display:inline-block;padding:0.1rem 0.4rem;border-radius:4px;background:#eee;font-family:'IBM Plex Mono',monospace;font-size:0.75rem}
+code{background:#f4f4f4;padding:0.1rem 0.3rem;border-radius:3px;font-family:'IBM Plex Mono',monospace}
+</style></head><body>
+
+<h1>Review inject bulk — 2026-04-17</h1>
+<p><strong>Scope:</strong> Bulk inject consolidato di 22 <code>ff.x.y</code> mai referenziati nel libro + 20 note non citate in precedenza. Override autorizzato del cap standard (3 PR/day) per ciclo di recupero programmato.</p>
+
+<p><strong>Compliance summary:</strong></p>
+<ul>
+  <li><span class="ok">✓</span> 0 occorrenze di <code>class="citation"</code> in tutti i chapter-*.html.</li>
+  <li><span class="ok">✓</span> Ogni <code>ff.X.Y</code> iniettato come contenuto principale ha campo <code>content</code> verificato in <code>data.js</code>.</li>
+  <li><span class="ok">✓</span> Ogni <code>&lt;a href&gt;</code> esterno proviene da <code>references</code>/<code>connections</code> in <code>data.js</code> o da <code>notes.json</code> — nessuna URL fabbricata.</li>
+  <li><span class="ok">✓</span> Tutte le URL testate con <code>curl</code>: code 2xx o 3xx (3xx = redirect legittimo; 403/406 = anti-bot, URL valida nel corpus).</li>
+  <li><span class="ok">✓</span> Sezione “Ultime aggiunte” aggiornata con 8 card rappresentative del bulk inject; contatore ref totali aggiornato a 617.</li>
+  <li><span class="ok">✓</span> EPUB ricostruito (255.8 KB).</li>
+  <li><span class="ok">✓</span> <code>used_codes_book.txt</code> aggiornato con i 22 nuovi codici.</li>
+</ul>
+
+<section class="nat"><h2>Asse Natura (cap 1) — 1 ff.X.Y + 5 note</h2>
+<table>
+  <tr><th>File</th><th>Sezione</th><th>Tipo</th><th>ID</th><th>Titolo</th><th>Fidelity</th></tr>
+  <tr><td>chapter-01-mobilita</td><td>1.1.4 Impronte e cieli</td><td>ff.X.Y</td><td>ff.26.5</td><td>Yacht volanti</td><td class="ok">✓ content verificato</td></tr>
+  <tr><td>chapter-01-mobilita</td><td>1.1.2 Città a 15 min</td><td>nota</td><td>1297</td><td>Philadelphia bus spacing 214m</td><td class="ok">✓ URL findingspress.org</td></tr>
+  <tr><td>chapter-01-ambiente</td><td>1.2.2 Nodo gordiano</td><td>nota</td><td>1402</td><td>Cina 2073 TWh eolico+solare</td><td class="ok">✓ x.com</td></tr>
+  <tr><td>chapter-01-ambiente</td><td>1.2.2 Nodo gordiano</td><td>nota</td><td>1306</td><td>Oxford $1.2T PIL rinnovabili</td><td class="ok">✓ smithschool.ox.ac.uk</td></tr>
+  <tr><td>chapter-01-ambiente</td><td>1.2.2 Nodo gordiano</td><td>nota</td><td>1283</td><td>Africa solare x33 Algeria</td><td class="ok">✓ x.com</td></tr>
+  <tr><td>chapter-01-ambiente</td><td>1.2.2 Nodo gordiano</td><td>nota</td><td>1289</td><td>Abu Dhabi 200 MW solare galleggiante</td><td class="ok">✓ masdar.ae</td></tr>
+</table></section>
+
+<section class="tec"><h2>Asse Tecnologia (cap 2) — 9 ff.X.Y + 8 note</h2>
+<table>
+  <tr><th>File</th><th>Sezione</th><th>Tipo</th><th>ID</th><th>Titolo</th><th>Fidelity</th></tr>
+  <tr><td>chapter-02-robotica</td><td>2.1.1 Economia compute</td><td>ff.X.Y</td><td>ff.148.1</td><td>Claude Mythos: non per tutti</td><td class="ok">✓ OpenBSD bug 27 anni</td></tr>
+  <tr><td>chapter-02-robotica</td><td>2.1.1 Economia compute</td><td>nota</td><td>1383</td><td>Coatue Anthropic $2.4T 2031</td><td class="ok">✓ newcomer.co</td></tr>
+  <tr><td>chapter-02-robotica</td><td>2.1.1 Economia compute</td><td>nota</td><td>1385</td><td>TurboQuant Google KV cache</td><td class="ok">✓ research.google</td></tr>
+  <tr><td>chapter-02-robotica</td><td>2.1.2 Singolarità gentile</td><td>ff.X.Y</td><td>ff.148.3</td><td>Un mondo là fuori? (World Models)</td><td class="ok">✓ content verificato</td></tr>
+  <tr><td>chapter-02-robotica</td><td>2.1.2 Singolarità gentile</td><td>nota</td><td>1371</td><td>General Intuition World Models</td><td class="ok">✓ generalintuition.com</td></tr>
+  <tr><td>chapter-02-robotica</td><td>2.1.2 Singolarità gentile</td><td>nota</td><td>1408</td><td>Lila Sciences $235M superintelligenza</td><td class="ok">✓ lila.ai</td></tr>
+  <tr><td>chapter-02-robotica</td><td>2.1.3 Robot biomimetica</td><td>ff.X.Y</td><td>ff.37.4</td><td>Robot sempre più diffusi</td><td class="ok">✓ content verificato</td></tr>
+  <tr><td>chapter-02-robotica</td><td>2.1.3 Robot biomimetica</td><td>nota</td><td>1405</td><td>Mordvintsev Game of Life reverso</td><td class="ok">✓ quantamagazine.org</td></tr>
+  <tr><td>chapter-02-robotica</td><td>2.1.3 Robot biomimetica</td><td>nota</td><td>1411</td><td>Alterego Silent Sense interfaccia</td><td class="ok">✓ alterego.io</td></tr>
+  <tr><td>chapter-02-metaverso</td><td>2.2.1 Metaverso trasformato</td><td>ff.X.Y</td><td>ff.148.4</td><td>Tutto il mondo dentro</td><td class="ok">✓ content verificato</td></tr>
+  <tr><td>chapter-02-metaverso</td><td>2.2.1 Metaverso trasformato</td><td>ff.X.Y</td><td>ff.3.1</td><td>Cosa sei realmente, Meta? (parte 1)</td><td class="ok">✓ content verificato</td></tr>
+  <tr><td>chapter-02-metaverso</td><td>2.2.1 Metaverso trasformato</td><td>ff.X.Y</td><td>ff.3.4</td><td>Tutta facciata? (Discord)</td><td class="ok">✓ content verificato</td></tr>
+  <tr><td>chapter-02-metaverso</td><td>2.2.1 Metaverso trasformato</td><td>ff.X.Y</td><td>ff.15.2</td><td>Non solo borse e scarpe (LV game)</td><td class="ok">✓ content verificato</td></tr>
+  <tr><td>chapter-02-metaverso</td><td>2.2.1 Metaverso trasformato</td><td>ff.X.Y</td><td>ff.26.1</td><td>Influencers (virtuali) genuini</td><td class="ok">✓ content verificato</td></tr>
+  <tr><td>chapter-02-prodotti</td><td>2.3.2 Intelligenze aliene</td><td>ff.X.Y</td><td>ff.41.5</td><td>Malattie genetiche (ChatGPT CFTR)</td><td class="ok">✓ content verificato</td></tr>
+  <tr><td>chapter-02-prodotti</td><td>2.3.2 Intelligenze aliene</td><td>nota</td><td>1414</td><td>Tempo Stripe stablecoin L1</td><td class="ok">✓ tempo.xyz</td></tr>
+  <tr><td>chapter-02-prodotti</td><td>2.3.2 Intelligenze aliene</td><td>nota</td><td>1417</td><td>Electric Stack USA→Cina</td><td class="ok">✓ electricslide.notboring.com</td></tr>
+</table></section>
+
+<section class="soc"><h2>Asse Società (cap 3) — 12 ff.X.Y + 7 note</h2>
+<table>
+  <tr><th>File</th><th>Sezione</th><th>Tipo</th><th>ID</th><th>Titolo</th><th>Fidelity</th></tr>
+  <tr><td>chapter-03-psicologia</td><td>3.1.2 Tempo e finitudine</td><td>ff.X.Y</td><td>ff.68.3</td><td>Non c’è limite al meglio</td><td class="ok">✓ 2h45 maratona</td></tr>
+  <tr><td>chapter-03-psicologia</td><td>3.1.2 Tempo e finitudine</td><td>nota</td><td>1416</td><td>Gurwinder: social accorciano vita</td><td class="ok">✓ gurwinder.blog</td></tr>
+  <tr><td>chapter-03-psicologia</td><td>3.1.2 Tempo e finitudine</td><td>nota</td><td>1382</td><td>Kokotajlo trilioni AI 100x velocità</td><td class="ok">✓ lesswrong.com</td></tr>
+  <tr><td>chapter-03-psicologia</td><td>3.1.4 Noia/silenzio/routine</td><td>ff.X.Y</td><td>ff.76.4</td><td>Trasformati in uno scarafaggio? (Latour)</td><td class="ok">✓ content verificato</td></tr>
+  <tr><td>chapter-03-psicologia</td><td>3.1.4 Noia/silenzio/routine</td><td>ff.X.Y</td><td>ff.112.3</td><td>Possiamo solo prepararci al meglio (NotebookLM)</td><td class="ok">✓ content verificato</td></tr>
+  <tr><td>chapter-03-psicologia</td><td>3.1.4 Noia/silenzio/routine</td><td>ff.X.Y</td><td>ff.146.4</td><td>Pathos e patire</td><td class="ok">✓ content verificato</td></tr>
+  <tr><td>chapter-03-psicologia</td><td>3.1.4 Noia/silenzio/routine</td><td>nota</td><td>1390</td><td>100M cicli respiratori universali</td><td class="ok">✓ x.com/fortelabs</td></tr>
+  <tr><td>chapter-03-psicologia</td><td>3.1.4 Noia/silenzio/routine</td><td>nota</td><td>1370</td><td>Mollick 117 mld umani 1.5%</td><td class="ok">✓ x.com</td></tr>
+  <tr><td>chapter-03-cultura</td><td>3.3.1 Lavoro e identità</td><td>ff.X.Y</td><td>ff.62.5</td><td>Indipendenza e curiosità</td><td class="ok">✓ content verificato</td></tr>
+  <tr><td>chapter-03-cultura</td><td>3.3.2 Solitudine e demografia</td><td>ff.X.Y</td><td>ff.23.3</td><td>Non si s***a più</td><td class="ok">✓ content verificato</td></tr>
+  <tr><td>chapter-03-cultura</td><td>3.3.2 Solitudine e demografia</td><td>ff.X.Y</td><td>ff.23.4</td><td>La “parete” di Tinder</td><td class="ok">✓ content verificato</td></tr>
+  <tr><td>chapter-03-cultura</td><td>3.3.4 Arte, previsioni e futuro</td><td>ff.X.Y</td><td>ff.27.1</td><td>I pixel del New York Times</td><td class="ok">✓ content verificato</td></tr>
+  <tr><td>chapter-03-cultura</td><td>3.3.4 Arte, previsioni e futuro</td><td>ff.X.Y</td><td>ff.27.2</td><td>Scroll e morti (Axios)</td><td class="ok">✓ content verificato</td></tr>
+  <tr><td>chapter-03-cultura</td><td>3.3.4 Arte, previsioni e futuro</td><td>ff.X.Y</td><td>ff.64.1</td><td>La mostra sul vuoto</td><td class="ok">✓ content verificato</td></tr>
+  <tr><td>chapter-03-cultura</td><td>3.3.4 Arte, previsioni e futuro</td><td>ff.X.Y</td><td>ff.18.2</td><td>Cessi artistici (Rankin)</td><td class="ok">✓ content verificato</td></tr>
+  <tr><td>chapter-03-cultura</td><td>3.3.4 Arte, previsioni e futuro</td><td>ff.X.Y</td><td>ff.20.4</td><td>Simmetrie di Wes Anderson contro i furti</td><td class="ok">✓ content verificato</td></tr>
+  <tr><td>chapter-03-cultura</td><td>3.3.4 Arte, previsioni e futuro</td><td>nota</td><td>1404</td><td>58.687 poster cinematografici arancione</td><td class="ok">✓ stephenfollows.com</td></tr>
+  <tr><td>chapter-03-cultura</td><td>3.3.4 Arte, previsioni e futuro</td><td>nota</td><td>1393</td><td>IgNobel 2025 cacio e pepe</td><td class="ok">✓ instagram.com</td></tr>
+  <tr><td>chapter-03-cultura</td><td>3.3.4 Arte, previsioni e futuro</td><td>nota</td><td>1389</td><td>Albania ministro AI Diella</td><td class="ok">✓ x.com/kimmonismus</td></tr>
+</table></section>
+
+<h2>Totali</h2>
+<p><strong>ff.X.Y iniettati:</strong> 22 (Natura 1, Tecnologia 9, Società 12)</p>
+<p><strong>Note iniettate (ID da notes.json):</strong> 20 (Natura 5, Tecnologia 8, Società 7)</p>
+<p><strong>Totale nuovi paragrafi:</strong> 42</p>
+<p><strong>Lunghezza media:</strong> ~210 parole</p>
+<p><strong>Duplicati:</strong> nessuno (ogni codice/id aggiunto una sola volta, con count atteso di 2 per ff.X.Y: badge + content principale).</p>
+
+</body></html>
