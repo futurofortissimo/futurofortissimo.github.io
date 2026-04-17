@@ -197,32 +197,30 @@
     .sub-list { list-style: none; padding: 0; margin: 0; }
     .sub-list li { padding: 6px 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
     .sub-list li:last-child { border-bottom: none; }
-    /* Recent injection highlight — aggiornato automaticamente da #ultime-aggiunte */
-    .sub-list a.ff-recent { font-weight: 800 !important; color: #111 !important; }
-    .sub-list a.ff-recent .ff-ref-badge {
+    /* Corpus list: injected entries bolded, recent-cycle highlighted */
+    .hist-entry-injected { font-weight: 700 !important; color: #111 !important; }
+    .hist-entry-recent {
+      background: linear-gradient(180deg, transparent 55%, rgba(245,166,35,0.22) 55%);
+    }
+    .hist-entry-new-badge {
       display: inline-block;
       background: var(--ff-yellow);
       color: #000;
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.62rem;
+      font-size: 0.6rem;
       font-weight: 700;
-      padding: 1px 5px;
-      border-radius: 3px;
-      margin-right: 5px;
-      vertical-align: middle;
+      padding: 1px 4px;
+      border-radius: 2px;
       letter-spacing: 0.3px;
-    }
-    .sub-list a.ff-recent:hover { color: var(--ff-yellow) !important; }
-    .ff-chapter-recent-count {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: var(--ff-yellow);
-      background: rgba(245,166,35,0.12);
-      padding: 1px 6px;
-      border-radius: 4px;
-      margin-left: 0.5rem;
+      margin-right: 4px;
       vertical-align: middle;
+    }
+    .hist-group-header-count {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.66rem;
+      color: #aaa;
+      font-weight: 400;
+      margin-left: 0.4rem;
     }
     @supports (padding: env(safe-area-inset-bottom)) {
       body {
@@ -580,113 +578,6 @@
       <div class="ff-caption mt-4" style="color: var(--ff-blue);">Aggiornato 2026-04-17</div>
     </section>
 
-    <!-- Ultime aggiunte — 2026-04-17 (bulk inject) -->
-    <section id="ultime-aggiunte" class="mt-8 brutal-card accent-bar accent-yellow" style="border-width:3px;">
-      <details open>
-        <summary style="cursor:pointer;list-style:none;display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">
-          <span style="transition:transform 0.2s;display:inline-block;" class="toggle-chevron">&#9654;</span>
-          <span class="text-xl">&#9997;&#65039;</span>
-          <h2 class="text-base font-bold uppercase" style="margin:0;display:inline;">Ultime aggiunte al corpus</h2>
-          <span id="ultime-codes" style="margin-left:0.5rem;font-family:'IBM Plex Mono',monospace;font-size:0.75rem;font-weight:600;color:var(--ff-yellow);letter-spacing:0.3px;"></span>
-        </summary>
-        <style>
-          details[open] .toggle-chevron { transform: rotate(90deg); }
-          details summary::-webkit-details-marker { display: none; }
-        </style>
-
-        <p class="ff-body-sm mt-3" style="color:#555;">Bulk inject 2026-04-17: 22 ff.x.y mai referenziati + 20 note non citate, distribuiti su 3 assi (Natura, Tecnologia, Societ&agrave;). 617 link ff.x.y cliccabili verso Substack. EPUB aggiornato.</p>
-
-        <div style="display:flex;flex-direction:column;gap:1.2rem;margin-top:1rem;">
-
-          <!-- ff.148.1 — Claude Mythos (17 apr) -->
-          <a href="/book/chapter-02-robotica.html#s1-1" style="border-left:4px solid var(--ff-blue);padding-left:12px;display:block;text-decoration:none;color:inherit;border-radius:0 6px 6px 0;transition:background 0.15s;" onmouseover="this.style.background='rgba(0,0,0,0.02)'" onmouseout="this.style.background='transparent'">
-            <div style="font-weight:700;color:var(--ff-blue);font-size:0.95rem;">&#128009; <span style="font-family:'IBM Plex Mono',monospace;font-size:0.78rem;opacity:0.6;">ff.148.1</span> Claude Mythos: non per tutti</div>
-            <p class="ff-body-sm mt-1" style="color:#444;">Il nuovo modello di Anthropic ha scovato un bug in OpenBSD rimasto nascosto per 27 anni. La singolarit&agrave; gentile finisce dove inizia il codice. Progetto Glasswing per trasparenza come sicurezza.</p>
-          </a>
-
-          <!-- ff.148.3 — World Models (17 apr) -->
-          <a href="/book/chapter-02-robotica.html#s1-2" style="border-left:4px solid var(--ff-blue);padding-left:12px;display:block;text-decoration:none;color:inherit;border-radius:0 6px 6px 0;transition:background 0.15s;" onmouseover="this.style.background='rgba(0,0,0,0.02)'" onmouseout="this.style.background='transparent'">
-            <div style="font-weight:700;color:var(--ff-blue);font-size:0.95rem;">&#127758; <span style="font-family:'IBM Plex Mono',monospace;font-size:0.78rem;opacity:0.6;">ff.148.3</span> Un mondo l&agrave; fuori?</div>
-            <p class="ff-body-sm mt-1" style="color:#444;">General Intuition, AMI Labs, Physical Intelligence: tre scommesse parallele sui World Models. Il prossimo foundation model non parler&agrave;, agir&agrave; &mdash; perch&eacute; capisce spazio e tempo, non solo token.</p>
-          </a>
-
-          <!-- ff.37.4 — Robot sempre più diffusi (17 apr) -->
-          <a href="/book/chapter-02-robotica.html#s1-3" style="border-left:4px solid var(--ff-blue);padding-left:12px;display:block;text-decoration:none;color:inherit;border-radius:0 6px 6px 0;transition:background 0.15s;" onmouseover="this.style.background='rgba(0,0,0,0.02)'" onmouseout="this.style.background='transparent'">
-            <div style="font-weight:700;color:var(--ff-blue);font-size:0.95rem;">&#128200; <span style="font-family:'IBM Plex Mono',monospace;font-size:0.78rem;opacity:0.6;">ff.37.4</span> Robot sempre pi&ugrave; diffusi</div>
-            <p class="ff-body-sm mt-1" style="color:#444;">Italia: 11.600 robot nel 2022, +50% sul 2020. La Cina copre quasi la met&agrave; delle installazioni globali. BCG al 2030: i robot escono dalla manifattura ed entrano nei servizi &mdash; cibo, retail, pulizia.</p>
-          </a>
-
-          <!-- ff.3.1 — Cosa sei realmente, Meta? (17 apr) -->
-          <a href="/book/chapter-02-metaverso.html#s2-1" style="border-left:4px solid var(--ff-blue);padding-left:12px;display:block;text-decoration:none;color:inherit;border-radius:0 6px 6px 0;transition:background 0.15s;" onmouseover="this.style.background='rgba(0,0,0,0.02)'" onmouseout="this.style.background='transparent'">
-            <div style="font-weight:700;color:var(--ff-blue);font-size:0.95rem;">&#127961;&#65039; <span style="font-family:'IBM Plex Mono',monospace;font-size:0.78rem;opacity:0.6;">ff.3.1</span> Cosa sei realmente, Meta?</div>
-            <p class="ff-body-sm mt-1" style="color:#444;">2021: Facebook diventa Meta. Quattro pilastri dichiarati, uno non detto: la finitudine. La scommessa del rebrand era sulla categoria, non sul prodotto &mdash; e la categoria &egrave; sopravvissuta al fallimento dei prodotti.</p>
-          </a>
-
-          <!-- ff.68.3 — Non c'è limite al meglio (17 apr) -->
-          <a href="/book/chapter-03-psicologia.html#s1-2" style="border-left:4px solid var(--ff-red);padding-left:12px;display:block;text-decoration:none;color:inherit;border-radius:0 6px 6px 0;transition:background 0.15s;" onmouseover="this.style.background='rgba(0,0,0,0.02)'" onmouseout="this.style.background='transparent'">
-            <div style="font-weight:700;color:var(--ff-red);font-size:0.95rem;">&#9757;&#65039; <span style="font-family:'IBM Plex Mono',monospace;font-size:0.78rem;opacity:0.6;">ff.68.3</span> Non c&rsquo;&egrave; limite al meglio (o al peggio?)</div>
-            <p class="ff-body-sm mt-1" style="color:#444;">Chiudere una maratona sotto le 3 ore sta nel 2-3%. Condividila sui social e la domanda diventa: &ldquo;la prossima 2h30?&rdquo;. L&rsquo;ansia moderna non nasce dal fallimento ma dal non-essere-mai-abbastanza.</p>
-          </a>
-
-          <!-- ff.76.4 — Latour scarafaggio (17 apr) -->
-          <a href="/book/chapter-03-psicologia.html#s1-4" style="border-left:4px solid var(--ff-red);padding-left:12px;display:block;text-decoration:none;color:inherit;border-radius:0 6px 6px 0;transition:background 0.15s;" onmouseover="this.style.background='rgba(0,0,0,0.02)'" onmouseout="this.style.background='transparent'">
-            <div style="font-weight:700;color:var(--ff-red);font-size:0.95rem;">&#128027; <span style="font-family:'IBM Plex Mono',monospace;font-size:0.78rem;opacity:0.6;">ff.76.4</span> Trasformati in uno scarafaggio?</div>
-            <p class="ff-body-sm mt-1" style="color:#444;">Bruno Latour su <em>Down to Earth</em>: il lockdown ci ha ricondotti a terra, invertendo la spinta di Galileo-NASA-Musk. Reset da due anni: il rapporto tra Occidente e materia &egrave; stato riscritto.</p>
-          </a>
-
-          <!-- ff.27.1 — Pixel NYT (17 apr) -->
-          <a href="/book/chapter-03-cultura.html#s3-4" style="border-left:4px solid var(--ff-red);padding-left:12px;display:block;text-decoration:none;color:inherit;border-radius:0 6px 6px 0;transition:background 0.15s;" onmouseover="this.style.background='rgba(0,0,0,0.02)'" onmouseout="this.style.background='transparent'">
-            <div style="font-weight:700;color:var(--ff-red);font-size:0.95rem;">&#9864; <span style="font-family:'IBM Plex Mono',monospace;font-size:0.78rem;opacity:0.6;">ff.27.1</span> I pixel del New York Times</div>
-            <p class="ff-body-sm mt-1" style="color:#444;">Il NYT visualizza il milione di morti COVID con pixel, uno per vita. Come Duchamp con l&rsquo;orinatoio: il gesto artistico non aggiunge informazioni, modifica l&rsquo;attenzione.</p>
-          </a>
-
-          <!-- Note Natura: Cina 2073 TWh (17 apr) -->
-          <a href="/book/chapter-01-ambiente.html#s2-2" style="border-left:4px solid var(--ff-green);padding-left:12px;display:block;text-decoration:none;color:inherit;border-radius:0 6px 6px 0;transition:background 0.15s;" onmouseover="this.style.background='rgba(0,0,0,0.02)'" onmouseout="this.style.background='transparent'">
-            <div style="font-weight:700;color:var(--ff-green);font-size:0.95rem;">&#128206; <span style="font-family:'IBM Plex Mono',monospace;font-size:0.78rem;opacity:0.6;">note 1402</span> Cina: 2.073 TWh eolico+solare</div>
-            <p class="ff-body-sm mt-1" style="color:#444;">Le rinnovabili cinesi non coprono pi&ugrave; solo la nuova domanda: erodono la quota di carbone e gas. 2.073 TWh superano tutte le altre fonti pulite combinate. Il sorpasso &egrave; strutturale.</p>
-          </a>
-
-        </div>
-
-        <!-- Tutte le 22 iniezioni 2026-04-17 — compact pill grid -->
-        <div class="mt-6 pt-4" style="border-top:1px dashed rgba(0,0,0,0.12);">
-          <div class="ff-eyebrow mb-3" style="color:var(--ff-yellow);font-size:0.72rem;letter-spacing:0.22em;">// tutti i 22 ff.x.y iniettati (17 apr)</div>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;">
-            <!-- Natura -->
-            <a href="/book/chapter-01-mobilita.html#s1-4" class="ff-recent-pill" data-axis="natura" data-code="ff.26.5" style="padding:3px 8px;border:1px solid var(--ff-green);border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;font-weight:700;color:var(--ff-green);text-decoration:none;background:rgba(46,204,113,0.06);">ff.26.5 · yacht volanti</a>
-            <!-- Tecnologia -->
-            <a href="/book/chapter-02-robotica.html#s1-1" class="ff-recent-pill" data-axis="tecnologia" data-code="ff.148.1" style="padding:3px 8px;border:1px solid var(--ff-blue);border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;font-weight:700;color:var(--ff-blue);text-decoration:none;background:rgba(74,144,226,0.06);">ff.148.1 · Claude Mythos</a>
-            <a href="/book/chapter-02-robotica.html#s1-2" class="ff-recent-pill" data-axis="tecnologia" data-code="ff.148.3" style="padding:3px 8px;border:1px solid var(--ff-blue);border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;font-weight:700;color:var(--ff-blue);text-decoration:none;background:rgba(74,144,226,0.06);">ff.148.3 · World Models</a>
-            <a href="/book/chapter-02-robotica.html#s1-3" class="ff-recent-pill" data-axis="tecnologia" data-code="ff.37.4" style="padding:3px 8px;border:1px solid var(--ff-blue);border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;font-weight:700;color:var(--ff-blue);text-decoration:none;background:rgba(74,144,226,0.06);">ff.37.4 · robot diffusi</a>
-            <a href="/book/chapter-02-metaverso.html#s2-1" class="ff-recent-pill" data-axis="tecnologia" data-code="ff.148.4" style="padding:3px 8px;border:1px solid var(--ff-blue);border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;font-weight:700;color:var(--ff-blue);text-decoration:none;background:rgba(74,144,226,0.06);">ff.148.4 · mondo dentro</a>
-            <a href="/book/chapter-02-metaverso.html#s2-1" class="ff-recent-pill" data-axis="tecnologia" data-code="ff.3.1" style="padding:3px 8px;border:1px solid var(--ff-blue);border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;font-weight:700;color:var(--ff-blue);text-decoration:none;background:rgba(74,144,226,0.06);">ff.3.1 · cosa sei Meta</a>
-            <a href="/book/chapter-02-metaverso.html#s2-1" class="ff-recent-pill" data-axis="tecnologia" data-code="ff.3.4" style="padding:3px 8px;border:1px solid var(--ff-blue);border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;font-weight:700;color:var(--ff-blue);text-decoration:none;background:rgba(74,144,226,0.06);">ff.3.4 · Discord facciata</a>
-            <a href="/book/chapter-02-metaverso.html#s2-1" class="ff-recent-pill" data-axis="tecnologia" data-code="ff.15.2" style="padding:3px 8px;border:1px solid var(--ff-blue);border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;font-weight:700;color:var(--ff-blue);text-decoration:none;background:rgba(74,144,226,0.06);">ff.15.2 · LV game</a>
-            <a href="/book/chapter-02-metaverso.html#s2-1" class="ff-recent-pill" data-axis="tecnologia" data-code="ff.26.1" style="padding:3px 8px;border:1px solid var(--ff-blue);border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;font-weight:700;color:var(--ff-blue);text-decoration:none;background:rgba(74,144,226,0.06);">ff.26.1 · influencer virtuali</a>
-            <a href="/book/chapter-02-prodotti.html#s3-2" class="ff-recent-pill" data-axis="tecnologia" data-code="ff.41.5" style="padding:3px 8px;border:1px solid var(--ff-blue);border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;font-weight:700;color:var(--ff-blue);text-decoration:none;background:rgba(74,144,226,0.06);">ff.41.5 · CFTR ChatGPT</a>
-            <!-- Societa -->
-            <a href="/book/chapter-03-psicologia.html#s1-2" class="ff-recent-pill" data-axis="societa" data-code="ff.68.3" style="padding:3px 8px;border:1px solid var(--ff-red);border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;font-weight:700;color:var(--ff-red);text-decoration:none;background:rgba(208,2,27,0.06);">ff.68.3 · maratona 2h45</a>
-            <a href="/book/chapter-03-psicologia.html#s1-4" class="ff-recent-pill" data-axis="societa" data-code="ff.76.4" style="padding:3px 8px;border:1px solid var(--ff-red);border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;font-weight:700;color:var(--ff-red);text-decoration:none;background:rgba(208,2,27,0.06);">ff.76.4 · Latour scarafaggio</a>
-            <a href="/book/chapter-03-psicologia.html#s1-4" class="ff-recent-pill" data-axis="societa" data-code="ff.112.3" style="padding:3px 8px;border:1px solid var(--ff-red);border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;font-weight:700;color:var(--ff-red);text-decoration:none;background:rgba(208,2,27,0.06);">ff.112.3 · NotebookLM</a>
-            <a href="/book/chapter-03-psicologia.html#s1-4" class="ff-recent-pill" data-axis="societa" data-code="ff.146.4" style="padding:3px 8px;border:1px solid var(--ff-red);border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;font-weight:700;color:var(--ff-red);text-decoration:none;background:rgba(208,2,27,0.06);">ff.146.4 · pathos</a>
-            <a href="/book/chapter-03-cultura.html#s3-1" class="ff-recent-pill" data-axis="societa" data-code="ff.62.5" style="padding:3px 8px;border:1px solid var(--ff-red);border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;font-weight:700;color:var(--ff-red);text-decoration:none;background:rgba(208,2,27,0.06);">ff.62.5 · indipendenza</a>
-            <a href="/book/chapter-03-cultura.html#s3-2" class="ff-recent-pill" data-axis="societa" data-code="ff.23.3" style="padding:3px 8px;border:1px solid var(--ff-red);border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;font-weight:700;color:var(--ff-red);text-decoration:none;background:rgba(208,2,27,0.06);">ff.23.3 · non si s***a</a>
-            <a href="/book/chapter-03-cultura.html#s3-2" class="ff-recent-pill" data-axis="societa" data-code="ff.23.4" style="padding:3px 8px;border:1px solid var(--ff-red);border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;font-weight:700;color:var(--ff-red);text-decoration:none;background:rgba(208,2,27,0.06);">ff.23.4 · Tinder parete</a>
-            <a href="/book/chapter-03-cultura.html#s3-4" class="ff-recent-pill" data-axis="societa" data-code="ff.27.1" style="padding:3px 8px;border:1px solid var(--ff-red);border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;font-weight:700;color:var(--ff-red);text-decoration:none;background:rgba(208,2,27,0.06);">ff.27.1 · pixel NYT</a>
-            <a href="/book/chapter-03-cultura.html#s3-4" class="ff-recent-pill" data-axis="societa" data-code="ff.27.2" style="padding:3px 8px;border:1px solid var(--ff-red);border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;font-weight:700;color:var(--ff-red);text-decoration:none;background:rgba(208,2,27,0.06);">ff.27.2 · scroll morti</a>
-            <a href="/book/chapter-03-cultura.html#s3-4" class="ff-recent-pill" data-axis="societa" data-code="ff.64.1" style="padding:3px 8px;border:1px solid var(--ff-red);border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;font-weight:700;color:var(--ff-red);text-decoration:none;background:rgba(208,2,27,0.06);">ff.64.1 · mostra vuoto</a>
-            <a href="/book/chapter-03-cultura.html#s3-4" class="ff-recent-pill" data-axis="societa" data-code="ff.18.2" style="padding:3px 8px;border:1px solid var(--ff-red);border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;font-weight:700;color:var(--ff-red);text-decoration:none;background:rgba(208,2,27,0.06);">ff.18.2 · Rankin cessi</a>
-            <a href="/book/chapter-03-cultura.html#s3-4" class="ff-recent-pill" data-axis="societa" data-code="ff.20.4" style="padding:3px 8px;border:1px solid var(--ff-red);border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;font-weight:700;color:var(--ff-red);text-decoration:none;background:rgba(208,2,27,0.06);">ff.20.4 · Wes Anderson</a>
-          </div>
-        </div>
-
-        <p class="ff-body-sm mt-4" style="color:#777;font-style:italic;">Ultimo aggiornamento: 17 aprile 2026. Bulk inject consolidato: 22 ff.x.y + 20 note non citate, distribuiti su 3 assi con fidelity corpus verificata. EPUB ricostruito.</p>
-
-        <div style="text-align:center;margin-top:1rem;">
-          <a href="/book/ffxy-index.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.82rem;color:var(--ff-yellow);text-decoration:underline;">Indice completo ff.x.y &rarr;</a>
-        </div>
-      </details>
-    </section>
 
     <!-- Chapters grid -->
     <section class="mt-10 grid gap-6">
@@ -905,14 +796,33 @@
   })();
   </script>
 
-  <!-- Historical ff.x.y corpus renderer -->
+  <!--
+    Historical ff.x.y corpus renderer
+    - Carica ffxy-historical.json (570 entries)
+    - Entries iniettate → bold + link; non iniettate → grigio, testo
+    - Entries del ciclo recente (campo `recentCycle`) → highlight giallo + badge NEW
+    - Counter "N/M iniettati" in cima + "+K nuovi" se recentCycle presente
+    - "+N note citate" accanto al counter se note_citations fornito via fetch opzionale
+  -->
   <script>
   (function() {
-    fetch('ffxy-historical.json').then(function(r){ return r.json(); }).then(function(data) {
+    var HIST_JSON = 'ffxy-historical.json';
+    var NOTES_CIT_JSON = 'ffxy-note-citations.json'; // opzionale: { total: N, recent: M }
+
+    Promise.all([
+      fetch(HIST_JSON).then(function(r){ return r.json(); }),
+      fetch(NOTES_CIT_JSON).then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; })
+    ]).then(function(out) {
+      var data = out[0];
+      var notesCit = out[1];
       var list = document.getElementById('hist-list');
       var searchEl = document.getElementById('hist-search');
       var summaryCount = document.getElementById('hist-summary-count');
       if (!list || !searchEl) return;
+
+      function escHtml(s) {
+        return (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      }
 
       function render(items) {
         var grouped = {};
@@ -922,8 +832,12 @@
         });
 
         var injectedCount = items.filter(function(d){ return d.injected; }).length;
+        var recentCount = items.filter(function(d){ return d.recentCycle; }).length;
         if (summaryCount) {
-          summaryCount.textContent = injectedCount + '/' + items.length + ' iniettati';
+          var txt = injectedCount + '/' + items.length + ' iniettati';
+          if (recentCount > 0) txt += ' · +' + recentCount + ' nuovi';
+          if (notesCit && notesCit.total) txt += ' · ' + notesCit.total + ' note citate';
+          summaryCount.textContent = txt;
         }
 
         var keys = Object.keys(grouped).map(Number).sort(function(a,b){ return a - b; });
@@ -931,22 +845,29 @@
         list.innerHTML = keys.map(function(num) {
           var entries = grouped[num];
           var hasInjected = entries.some(function(e){ return e.injected; });
+          var groupInjected = entries.filter(function(e){ return e.injected; }).length;
           return '<div style="margin-bottom:0.6rem;">' +
-            '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:0.78rem;font-weight:600;color:' + (hasInjected ? '#333' : '#bbb') + ';margin-bottom:0.2rem;">ff.' + num + '</div>' +
+            '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:0.78rem;font-weight:600;color:' + (hasInjected ? '#333' : '#bbb') + ';margin-bottom:0.2rem;">ff.' + num +
+              '<span class="hist-group-header-count">' + groupInjected + '/' + entries.length + '</span>' +
+            '</div>' +
             '<div style="display:flex;flex-direction:column;gap:0.15rem;padding-left:0.8rem;">' +
             entries.map(function(e) {
+              var codeHtml = '<span style="font-family:\'IBM Plex Mono\',monospace;font-size:0.75rem;min-width:4.5rem;">' + escHtml(e.code) + '</span>';
+              var titleHtml = '<span>' + escHtml(e.emoji) + ' ' + escHtml(e.title) + '</span>';
+              var newBadge = e.recentCycle ? '<span class="hist-entry-new-badge">NEW</span>' : '';
+              var classes = [];
+              if (e.injected) classes.push('hist-entry-injected');
+              if (e.recentCycle) classes.push('hist-entry-recent');
+              var clsAttr = classes.length ? ' class="' + classes.join(' ') + '"' : '';
               if (e.injected && e.file) {
                 var anchor = e.anchorId || e.sectionId || '';
-                return '<a href="' + e.file + '#' + anchor + '" style="font-size:0.82rem;color:' + (e.chapterColor || '#448aff') + ';text-decoration:none;display:flex;align-items:baseline;gap:0.3rem;padding:1px 0;transition:opacity 0.15s;" onmouseover="this.style.opacity=\'0.7\'" onmouseout="this.style.opacity=\'1\'">' +
-                  '<span style="font-family:\'IBM Plex Mono\',monospace;font-size:0.75rem;min-width:4.5rem;">' + e.code + '</span>' +
-                  '<span>' + e.emoji + ' ' + e.title + '</span>' +
+                return '<a' + clsAttr + ' href="' + e.file + '#' + anchor + '" style="font-size:0.82rem;color:' + (e.chapterColor || '#448aff') + ';text-decoration:none;display:flex;align-items:baseline;gap:0.3rem;padding:1px 0;transition:opacity 0.15s;" onmouseover="this.style.opacity=\'0.7\'" onmouseout="this.style.opacity=\'1\'">' +
+                  newBadge + codeHtml + titleHtml +
                 '</a>';
-              } else {
-                return '<span style="font-size:0.82rem;color:#ccc;display:flex;align-items:baseline;gap:0.3rem;padding:1px 0;">' +
-                  '<span style="font-family:\'IBM Plex Mono\',monospace;font-size:0.75rem;min-width:4.5rem;">' + e.code + '</span>' +
-                  '<span>' + e.emoji + ' ' + e.title + '</span>' +
-                '</span>';
               }
+              return '<span' + clsAttr + ' style="font-size:0.82rem;color:#ccc;display:flex;align-items:baseline;gap:0.3rem;padding:1px 0;">' +
+                codeHtml + titleHtml +
+              '</span>';
             }).join('') +
             '</div></div>';
         }).join('');
@@ -963,7 +884,7 @@
           render(data.filter(function(d) {
             return d.code.toLowerCase().indexOf(q) !== -1 ||
                    d.title.toLowerCase().indexOf(q) !== -1 ||
-                   d.emoji.indexOf(q) !== -1;
+                   (d.emoji || '').indexOf(q) !== -1;
           }));
         }, 200);
       });
@@ -971,86 +892,5 @@
   })();
   </script>
 
-  <!--
-    Highlight recently injected ff.x.y in chapter sub-lists, driven by #ultime-aggiunte.
-    Ricorrenza: lo script rilegge la section ad ogni page load, quindi ogni ciclo
-    di inject (che aggiorna le card "Ultime aggiunte") propaga automaticamente
-    bold/badge nell'indice + codici nel summary del toggle + contatore per capitolo.
-  -->
-  <script>
-  (function () {
-    "use strict";
-    var section = document.getElementById("ultime-aggiunte");
-    if (!section) return;
-
-    // Collect recent entries: href → [ff.x.y codes…] (multi-code aware)
-    var recentHrefs = {};   // href → array of codes
-    var recentCodes = [];   // ordered unique list of all codes
-    var seen = {};
-
-    function addEntry(href, code) {
-      if (!href) return;
-      if (!recentHrefs[href]) recentHrefs[href] = [];
-      if (code && recentHrefs[href].indexOf(code) === -1) recentHrefs[href].push(code);
-      if (code && !seen[code]) { seen[code] = 1; recentCodes.push(code); }
-    }
-
-    // (a) feature cards: ff.x.y inside an IBM Plex Mono span
-    section.querySelectorAll('a[href*="chapter-"]').forEach(function (a) {
-      if (a.classList.contains("ff-recent-pill")) return; // handled below
-      var href = a.getAttribute("href");
-      var mono = a.querySelector("span[style*='IBM Plex Mono']");
-      var code = mono ? mono.textContent.trim() : "";
-      addEntry(href, code);
-    });
-
-    // (b) compact pill grid: ff.x.y declared via data-code
-    section.querySelectorAll("a.ff-recent-pill").forEach(function (a) {
-      addEntry(a.getAttribute("href"), a.getAttribute("data-code") || "");
-    });
-
-    // Populate the toggle summary with the list of recent codes
-    var codesEl = document.getElementById("ultime-codes");
-    if (codesEl && recentCodes.length) {
-      codesEl.textContent = "// " + recentCodes.length + " nuovi: " + recentCodes.join(" · ");
-    }
-
-    // Mark matching sublist links → bold + badge with all codes
-    var matched = 0;
-    document.querySelectorAll('.sub-list a[href*="chapter-"]').forEach(function (a) {
-      var href = a.getAttribute("href");
-      if (!(href in recentHrefs)) return;
-      a.classList.add("ff-recent");
-      var codes = recentHrefs[href].filter(Boolean);
-      if (codes.length) {
-        var badge = document.createElement("span");
-        badge.className = "ff-ref-badge";
-        badge.textContent = codes.length > 1 ? codes.join(" ") : codes[0];
-        a.insertBefore(badge, a.firstChild);
-      }
-      matched++;
-    });
-
-    // Per-chapter counter in the h2 title (count codes, not anchors)
-    document.querySelectorAll("article.brutal-card").forEach(function (article) {
-      var codesInChapter = 0;
-      article.querySelectorAll(".sub-list a.ff-recent").forEach(function (a) {
-        var href = a.getAttribute("href");
-        codesInChapter += (recentHrefs[href] || []).length;
-      });
-      if (codesInChapter === 0) return;
-      var h2 = article.querySelector("h2");
-      if (!h2) return;
-      var tag = document.createElement("span");
-      tag.className = "ff-chapter-recent-count";
-      tag.textContent = "+" + codesInChapter + " nuovi";
-      h2.appendChild(tag);
-    });
-
-    if (window.console) {
-      console.log("[ff-recent] " + recentCodes.length + " codici · " + matched + " subchapter in bold");
-    }
-  })();
-  </script>
 </body>
 </html>
