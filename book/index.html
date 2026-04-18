@@ -572,8 +572,31 @@
 
   <main class="max-w-4xl mx-auto px-4 py-10">
 
+    <!-- Search + ff.x.y index toggle (subito sotto CTA download) -->
+    <section class="brutal-card accent-bar accent-yellow" style="border-color:var(--ff-black);">
+      <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.8rem;">
+        <span style="font-size:1.4rem;">&#128269;</span>
+        <div>
+          <div class="ff-eyebrow" style="color: var(--ff-black);">Indice + Ricerca</div>
+          <h2 class="text-base font-bold uppercase mt-1">Cerca nel libro &middot; sfoglia ff.1 &rarr; ff.148</h2>
+        </div>
+      </div>
+      <input type="text" id="hist-search" placeholder="Cerca ff.x.y, titolo, emoji, parola chiave..." style="width:100%;padding:0.6rem 0.9rem;border:2px solid var(--ff-black);font-size:0.95rem;font-family:'Inter',sans-serif;background:#fff;outline:none;">
+      <details style="margin-top:0.8rem;">
+        <summary style="cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:0.78rem;font-weight:700;color:#444;letter-spacing:0.04em;text-transform:uppercase;list-style:none;display:flex;align-items:center;gap:0.4rem;">
+          <span class="toggle-chevron" style="transition:transform 0.2s;display:inline-block;font-size:0.7rem;">&#9654;</span>
+          &#128218; Apri indice completo ff.x.y
+          <span id="hist-summary-count" style="font-weight:400;color:#888;margin-left:auto;"></span>
+        </summary>
+        <div style="margin-top:0.8rem;">
+          <div id="hist-list" style="max-height:520px;overflow-y:auto;"></div>
+        </div>
+      </details>
+      <p class="ff-body-sm" style="margin-top:0.7rem;color:#666;font-size:0.82rem;">Digita per filtrare in tempo reale tra i 148 numeri della newsletter. Ogni riga linka il sottocapitolo del libro o la fonte Substack.</p>
+    </section>
+
     <!-- Intro card -->
-    <section class="brutal-card accent-bar">
+    <section class="brutal-card accent-bar mt-6">
       <p class="ff-body">Tre saggi su <strong>Natura</strong>, <strong>Tecnologia</strong> e <strong>Societ&agrave;</strong>: un percorso di lettura che unisce verde, AI, corpo, attenzione e geopolitica a partire dal corpus di Futuro Fortissimo.</p>
       <div class="ff-caption mt-4" style="color: var(--ff-blue);">Aggiornato 2026-04-17</div>
     </section>
@@ -709,21 +732,6 @@
       </article>
 
 
-    </section>
-
-    <!-- Historical ff.x.y corpus list -->
-    <section class="mt-8 brutal-card accent-bar accent-black" style="border-color:#888;">
-      <details>
-        <summary style="cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:0.82rem;font-weight:600;color:#888;letter-spacing:0.03em;text-transform:uppercase;list-style:none;display:flex;align-items:center;gap:0.4rem;">
-          <span class="toggle-chevron" style="transition:transform 0.2s;display:inline-block;font-size:0.7rem;">&#9654;</span>
-          &#128218; Corpus completo ff.x.y (ff.1 &ndash; ff.148)
-          <span id="hist-summary-count" style="font-weight:400;color:#888;margin-left:auto;"></span>
-        </summary>
-        <div style="margin-top:1rem;">
-          <input type="text" id="hist-search" placeholder="Cerca ff.x.y, titolo, emoji..." style="width:100%;padding:0.4rem 0.8rem;border:1px solid #ddd;border-radius:6px;font-size:0.85rem;margin-bottom:0.8rem;font-family:'Inter',sans-serif;">
-          <div id="hist-list" style="max-height:500px;overflow-y:auto;"></div>
-        </div>
-      </details>
     </section>
 
     <!-- Newsletter CTA -->
@@ -880,6 +888,8 @@
         clearTimeout(timer);
         timer = setTimeout(function() {
           var q = searchEl.value.toLowerCase().trim();
+          var detailsEl = searchEl.parentElement && searchEl.parentElement.querySelector('details');
+          if (detailsEl && q.length >= 1 && !detailsEl.open) detailsEl.open = true;
           if (q.length < 2) { render(data); return; }
           render(data.filter(function(d) {
             return d.code.toLowerCase().indexOf(q) !== -1 ||
