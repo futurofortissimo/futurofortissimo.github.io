@@ -215,6 +215,40 @@
     <p>Il vincolo reale, per&ograve;, non &egrave; il compute: &egrave; la memoria. <a id="ref-fonte-80"></a><a href="#fonte-80" class="fnote-ref" style="color:var(--accent);text-decoration:none;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;vertical-align:super;font-weight:bold;">[80]</a>, con guadagni drammatici di efficienza su Gemma, Mistral e Llama-3.1. La cache chiave-valore &egrave; ci&ograve; che tiene in RAM il contesto di conversazione di un modello: pi&ugrave; &egrave; lunga, pi&ugrave; memoria serve, pi&ugrave; costa ogni token. <mark class="note-highlight">Tagliarla online senza degradare la qualit&agrave;</mark> significa rendere l&rsquo;inference economicamente sostenibile anche a contesti da milioni di token. &Egrave; il secondo tempo della curva di Wright: il primo tempo ha reso il training 70% pi&ugrave; economico all&rsquo;anno (<span class="fc">&#9749; ff.135.4 L&rsquo;AGI avanza: il &ldquo;caff&egrave;&rdquo; cinese</span>), il secondo sta rendendo l&rsquo;inference democratica. Chi oggi paga il token paga perch&eacute; la memoria non basta, non perch&eacute; il calcolo non c&rsquo;&egrave;. La direzione &egrave; gi&agrave; chiara: <a href="https://substrate.com/" target="_blank" rel="noopener" style="font-family:'IBM Plex Mono',monospace;font-size:0.78rem;font-weight:bold;color:var(--accent);text-decoration:none;">&#128206; AlphaEvolve scopre varianti algoritmiche per l&rsquo;inference di Gemini con &minus;74% di memoria e 6.8&times; di runtime</a> &mdash; quando l&rsquo;AI ottimizza l&rsquo;AI, la curva di Wright si auto-accelera.</p>
 
     <!-- ===== inject 2026-04-08 — Guerra calda (ff.82.4) ===== -->
+    <figure aria-label="Distribuzione GPU H100 NVIDIA tra clienti principali (2024)" style="margin:2em auto;max-width:520px;">
+      <svg viewBox="0 0 520 240" xmlns="http://www.w3.org/2000/svg" role="img" style="width:100%;height:auto;background:#fafafa;border:2px solid var(--accent);">
+        <text x="260" y="22" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="700" fill="#222">GPU H100 NVIDIA — 1 milione di unit&agrave; (2024)</text>
+        <!-- Donut: 4 segments. Total = 1M; Tesla 15k = 1.5%; Microsoft/OpenAI ~150k=15%; Meta ~150k=15%; Google ~170k=17%; resto ~52% -->
+        <g transform="translate(160,135)">
+          <circle r="80" fill="none" stroke="#eee" stroke-width="40"/>
+          <!-- Resto 52% -->
+          <circle r="80" fill="none" stroke="var(--accent)" stroke-opacity="0.3" stroke-width="40" stroke-dasharray="261 502" transform="rotate(-90)"/>
+          <!-- Google 17% -->
+          <circle r="80" fill="none" stroke="var(--accent)" stroke-opacity="0.55" stroke-width="40" stroke-dasharray="85 502" stroke-dashoffset="-261" transform="rotate(-90)"/>
+          <!-- Meta 15% -->
+          <circle r="80" fill="none" stroke="var(--accent)" stroke-opacity="0.7" stroke-width="40" stroke-dasharray="75 502" stroke-dashoffset="-346" transform="rotate(-90)"/>
+          <!-- Microsoft+OpenAI 15% -->
+          <circle r="80" fill="none" stroke="var(--accent)" stroke-opacity="0.85" stroke-width="40" stroke-dasharray="75 502" stroke-dashoffset="-421" transform="rotate(-90)"/>
+          <!-- Tesla 1.5% -->
+          <circle r="80" fill="none" stroke="#d0021b" stroke-width="40" stroke-dasharray="8 502" stroke-dashoffset="-496" transform="rotate(-90)"/>
+          <text y="6" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="14" font-weight="700" fill="#222">1M GPU</text>
+        </g>
+        <g font-family="'IBM Plex Mono',monospace" font-size="10" fill="#222">
+          <rect x="280" y="60" width="14" height="14" fill="var(--accent)" opacity="0.85"/>
+          <text x="300" y="72">Microsoft + OpenAI ~15%</text>
+          <rect x="280" y="85" width="14" height="14" fill="var(--accent)" opacity="0.7"/>
+          <text x="300" y="97">Meta ~15%</text>
+          <rect x="280" y="110" width="14" height="14" fill="var(--accent)" opacity="0.55"/>
+          <text x="300" y="122">Google ~17%</text>
+          <rect x="280" y="135" width="14" height="14" fill="#d0021b"/>
+          <text x="300" y="147">Tesla 1,5% (15k)</text>
+          <rect x="280" y="160" width="14" height="14" fill="var(--accent)" opacity="0.3"/>
+          <text x="300" y="172">Resto del mondo ~52%</text>
+        </g>
+      </svg>
+      <figcaption>&#128202; <strong>ff.82.4</strong> &mdash; Distribuzione delle 1 milione di GPU H100 nel 2024 (stime indicative): Tesla con soli 15k unit&agrave; vale appena l&rsquo;1,5%, mentre i 3 hyperscaler ne assorbono quasi met&agrave;.</figcaption>
+    </figure>
+
     <p>E la guerra &egrave; soprattutto tra aziende. NVIDIA produrr&agrave; nel 2024 <mark class="note-highlight">1 milione di GPU H100</mark> (40.000 dollari l&rsquo;una, con performance <mark class="note-highlight">9 volte superiori rispetto alla A100</mark>). <a href="https://a16z.com/universally-accessible-intelligence/" target="_blank" rel="noopener" style="font-size:0.92rem;font-weight:600;color:var(--accent);text-decoration:none;">Noam Shazeer, CEO di Character.ai, calcola che abbiamo abbastanza GPU per sostenere un modello GPT-4 a persona</a>. Ma <a href="https://www.theverge.com/2023/12/4/23987953/the-gpu-haves-and-have-nots" target="_blank" rel="noopener" style="font-size:0.92rem;font-weight:600;color:var(--accent);text-decoration:none;">non c&rsquo;&egrave; computronio per tutti</a>: Tesla si &egrave; accaparrata solo 15.000 GPU; <a href="https://web.archive.org/web/20230601163710/https:/humanloop.com/blog/openai-plans" target="_blank" rel="noopener" style="font-size:0.92rem;font-weight:600;color:var(--accent);text-decoration:none;">anche OpenAI, nonostante la partnership con Microsoft, non ha tutte le risorse necessarie</a>. Come sempre visionario, Musk sta costruendo la sua indipendenza con Dojo, il supercomputer tailor-made che nel 2024 sar&agrave; nella top 5 mondiale. Davide tra i Gol-IA: il ricercatore della Columbia Ishan Dhanani vuole democratizzare l&rsquo;accesso al computronio, decentralizzando
     (<span class="fc">&#129397; ff.82.4
     Guerra calda</span>).</p>
