@@ -125,7 +125,9 @@ function process(parentFile, cfg) {
     if (idx < 0) { console.log(`  [skip] ${sec.code}: section ${sec.sid} not found`); continue; }
     const startPos = sectionStarts[idx].start;
     const nextPos = sectionStarts[idx + 1].start;
-    const sectionHtml = article.substring(startPos, nextPos);
+    let sectionHtml = article.substring(startPos, nextPos);
+    // Strip subpage-link badges (duplicate in sub-pages)
+    sectionHtml = sectionHtml.replace(/\n\s*<p class="subpage-link"[\s\S]*?<\/p>/g, '');
 
     const citedFonti = new Set();
     const fonteRe = /#fonte-(\d+)/g;
