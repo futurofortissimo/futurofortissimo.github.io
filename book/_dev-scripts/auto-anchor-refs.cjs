@@ -1,11 +1,10 @@
 #!/usr/bin/env node
-// Auto-wrap prose links with bidirectional anchors (<a id="ref-fonte-N"></a> + <sup>[N]</sup>).
-// Matches URLs against <li id="fonte-N"> in the bibliografia section. Idempotent.
+// Auto-wrap prose links with bidirectional anchors. Idempotent.
 const fs = require('fs');
 const path = require('path');
 const files = [
   'chapter-01-mobilita.html','chapter-01-ambiente.html','chapter-01-cibo.html',
-  'chapter-02-robotica.html','chapter-02-prodotti.html',
+  'chapter-02-robotica.html','chapter-02-metaverso.html','chapter-02-prodotti.html',
   'chapter-03-psicologia.html','chapter-03-alimentazione.html','chapter-03-cultura.html',
 ];
 const rootDir = path.resolve(__dirname, '..');
@@ -16,11 +15,10 @@ function processFile(filename){
   let txt = fs.readFileSync(full,'utf8');
   const biblioMatch = txt.match(/<section id="bibliografia"[\s\S]*?<\/section>/);
   if (!biblioMatch) return {added:0,skipped:'no biblio'};
-  const biblio = biblioMatch[0];
   const liRe = /<li id="fonte-(\d+)">\s*<a href="([^"]+)"/g;
   const fontes = [];
   let m;
-  while ((m = liRe.exec(biblio)) !== null) fontes.push({n:parseInt(m[1],10), url:m[2]});
+  while ((m = liRe.exec(biblioMatch[0])) !== null) fontes.push({n:parseInt(m[1],10), url:m[2]});
   if (!fontes.length) return {added:0,skipped:'no fontes'};
   const artRe = /<article class="prose">([\s\S]*?)<\/article>/;
   const artMatch = txt.match(artRe);
