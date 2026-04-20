@@ -75,6 +75,17 @@
     @keyframes ff-flash-bg{0%{background:rgba(74,144,226,0.25)}100%{background:transparent}}
     .flash-highlight{animation:ff-flash-bg 1.5s ease-out}
 
+    /* Media lightbox — click figure img to enlarge */
+    article.prose figure img{cursor:zoom-in;transition:transform .15s}
+    article.prose figure img:hover{transform:scale(1.01)}
+    .ff-lightbox{position:fixed;inset:0;background:rgba(10,10,10,0.92);z-index:200;display:none;align-items:center;justify-content:center;padding:3vw;cursor:zoom-out;flex-direction:column;gap:1rem}
+    .ff-lightbox.is-open{display:flex}
+    .ff-lightbox__img{max-width:94vw;max-height:80vh;box-shadow:0 0 40px rgba(0,0,0,0.5);background:#fff}
+    .ff-lightbox__caption{color:#fff;font-family:'IBM Plex Mono',monospace;font-size:0.78rem;max-width:640px;text-align:center;line-height:1.5;opacity:0.85;padding:0 1rem}
+    .ff-lightbox__close{position:absolute;top:1.2rem;right:1.4rem;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;opacity:0.7;line-height:1}
+    .ff-lightbox__close:hover{opacity:1}
+    .ff-lightbox__hint{color:rgba(255,255,255,0.5);font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase}
+
     /* Mobile */
     @media(max-width:768px){
       .ff-toggle{top:auto;bottom:20px;left:auto;right:16px;transform:none;width:52px;height:52px;border-radius:50%;box-shadow:0 2px 12px rgba(0,0,0,0.35);font-size:1.4rem;z-index:51}
@@ -89,6 +100,7 @@
   function init() {
     buildPanel();
     buildBibliographyLinks();
+    buildMediaLightbox();
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
@@ -537,6 +549,63 @@
         if (match.nextSibling) match.parentNode.insertBefore(refLink, match.nextSibling);
         else match.parentNode.appendChild(refLink);
       }
+    });
+  }
+
+  // ═══════════════════════════════════════════════════════════════════
+  // 3. MEDIA LIGHTBOX — click figure img to enlarge (like front-page card)
+  // ═══════════════════════════════════════════════════════════════════
+  function buildMediaLightbox() {
+    var imgs = document.querySelectorAll('article.prose figure img');
+    if (!imgs.length) return;
+
+    // Build overlay once
+    var box = document.createElement('div');
+    box.className = 'ff-lightbox';
+    box.setAttribute('role', 'dialog');
+    box.setAttribute('aria-modal', 'true');
+    box.innerHTML =
+      '<button class="ff-lightbox__close" aria-label="Chiudi">\u00D7</button>' +
+      '<img class="ff-lightbox__img" alt="" />' +
+      '<div class="ff-lightbox__caption"></div>' +
+      '<div class="ff-lightbox__hint">Click sullo sfondo o ESC per chiudere</div>';
+    document.body.appendChild(box);
+
+    var lbImg = box.querySelector('.ff-lightbox__img');
+    var lbCap = box.querySelector('.ff-lightbox__caption');
+    var lbClose = box.querySelector('.ff-lightbox__close');
+
+    function open(src, alt, caption) {
+      lbImg.src = src;
+      lbImg.alt = alt || '';
+      lbCap.textContent = caption || '';
+      box.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+    function close() {
+      box.classList.remove('is-open');
+      lbImg.src = '';
+      document.body.style.overflow = '';
+    }
+
+    imgs.forEach(function (img) {
+      img.addEventListener('click', function (e) {
+        // Only expand if inside a <figure> (i.e. not book covers or bibliography thumbs)
+        var fig = img.closest('figure');
+        if (!fig) return;
+        var cap = fig.querySelector('figcaption');
+        var capText = cap ? cap.textContent.trim() : '';
+        e.preventDefault();
+        open(img.src, img.alt, capText);
+      });
+    });
+
+    lbClose.addEventListener('click', close);
+    box.addEventListener('click', function (e) {
+      if (e.target === box) close();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && box.classList.contains('is-open')) close();
     });
   }
 
