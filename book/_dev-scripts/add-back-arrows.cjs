@@ -1,10 +1,9 @@
 #!/usr/bin/env node
-// Add ↩ back-reference arrows to <li id="fonte-N"> bibliography items. Idempotent.
 const fs = require('fs');
 const path = require('path');
 const files = [
   'chapter-01-mobilita.html','chapter-01-ambiente.html','chapter-01-cibo.html',
-  'chapter-02-robotica.html','chapter-02-prodotti.html',
+  'chapter-02-robotica.html','chapter-02-metaverso.html','chapter-02-prodotti.html',
   'chapter-03-psicologia.html','chapter-03-alimentazione.html','chapter-03-cultura.html',
 ];
 const rootDir = path.resolve(__dirname, '..');
