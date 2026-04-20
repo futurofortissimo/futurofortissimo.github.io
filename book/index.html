@@ -890,13 +890,31 @@
           var q = searchEl.value.toLowerCase().trim();
           var detailsEl = searchEl.parentElement && searchEl.parentElement.querySelector('details');
           if (detailsEl && q.length >= 1 && !detailsEl.open) detailsEl.open = true;
-          if (q.length < 2) { render(data); return; }
-          render(data.filter(function(d) {
+          if (q.length < 2) {
+            render(data);
+            if (summaryCount) summaryCount.textContent = data.length + ' voci totali';
+            return;
+          }
+          var filtered = data.filter(function(d) {
             return d.code.toLowerCase().indexOf(q) !== -1 ||
                    d.title.toLowerCase().indexOf(q) !== -1 ||
                    (d.emoji || '').indexOf(q) !== -1;
-          }));
+          });
+          render(filtered);
+          if (summaryCount) summaryCount.textContent = filtered.length + ' / ' + data.length + ' risultati';
         }, 200);
+      });
+      // Initial counter on page load
+      if (summaryCount && !summaryCount.textContent) {
+        summaryCount.textContent = data.length + ' voci totali';
+      }
+      // ESC clears the search
+      searchEl.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          searchEl.value = '';
+          render(data);
+          if (summaryCount) summaryCount.textContent = data.length + ' voci totali';
+        }
       });
     });
   })();
