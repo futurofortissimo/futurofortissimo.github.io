@@ -19,13 +19,17 @@ export const rawData = [
                         "caption": ""
                     }
                 ],
-                "references": [
+                "references": [],
+                "connections": [
+                    {
+                        "text": "🎼 ff.12 Sole, cuore e amore",
+                        "url": "https://fortissimo.substack.com/p/-ff12-sole-cuore-e-amore"
+                    },
                     {
                         "text": "🕳️ ff.56.2 Siamo già geo-ingegneri",
                         "url": "https://fortissimo.substack.com/i/105434036/ff562-siamo-gia-geo-ingegneri"
                     }
-                ],
-                "connections": []
+                ]
             },
             {
                 "title": "🧮 ff.149.2 Una questione di ore…",
@@ -33,7 +37,12 @@ export const rawData = [
                 "content": "… una breve guida energetica, per mettere numeri ed etichette (d’altronde, 🎼 ff.32 I numeri non mentono ). Un’ora sola ti vorrei. Innanzitutto, ricordo l’unità di misura della potenza (W, spesso in GW) e energia prodotta/consumata (spesso TWh). La loro relazione: 1 GW che “produce” per un anno (8760 ore) = 8.76 TWh. E, quantificando l’energia: 1 GW = 450.000 famiglie italiane 510 GW (aggiunti nel 2025) = produzione elettrica India + Brasile 2.392 GW = solare totale = 10% elettricità mondiale Elettricità = 20% energia mondiale",
                 "images": [],
                 "references": [],
-                "connections": []
+                "connections": [
+                    {
+                        "text": "🎼 ff.32 I numeri non mentono",
+                        "url": "https://fortissimo.substack.com/p/-ff32-i-numeri-non-mentono"
+                    }
+                ]
             },
             {
                 "title": "🃏 ff.149.3 Texas hold 'em",
