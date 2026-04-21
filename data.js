@@ -1,5 +1,62 @@
 export const rawData = [
     {
+        "url": "https://fortissimo.substack.com/p/ff149-come-essere-solari",
+        "title": "🎼 ff.149 Come essere solari",
+        "subtitle": "L'abbondanza è qui, basta mettere gli occhiali da sole",
+        "keypoints": [
+            "Se chiude lo stretto di Hormuz, vince il Mar del Nord (Norvegia)?",
+            "Indipendenza energetica, ma non dalla Cina?",
+            "Maximo: un robot che installa un pannello al minuto"
+        ],
+        "subchapters": [
+            {
+                "title": "3️⃣ ff.149.1 Dammi tre parole…",
+                "link": "https://fortissimo.substack.com/i/ff149-come-essere-solari/ff-dammi-tre-parole",
+                "content": "ff.149.1 Dammi tre parole… La prima uscita di futuro fortissimo sul clima, e sulle energie rinnovabili, era in un freddo marzo di quattro anni fa ( 🎼 ff.12 Sole, cuore e amore ). Freddo marzo, si intende, a Bergamo. Nel sud-ovest degli Stati Uniti, quest’anno, un’ondata di calore ha fatto segnare temperature come a metà giugno. Insomma, un sole (cuore e amore) che scalda il nostro pianeta e i nostri oceani sempre più, anche per la riduzione delle emissioni (dei solfiti, nella fattispecie 🕳️ ff.56.2 Siamo già geo-ingegneri ). Fermarsi a quello che “vediamo” oggi è miope (sì, dovrebbe far ridere): il futuro è una proiezione dell’oggi, non un’interpolazione del ieri. Con questa proverò a mettere in luce (solare) gli ultimi sviluppi che fanno sperare in un futuro diverso. Migliore. Ma prima…",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/2cfb99ce-775e-4f4a-962b-20b8dbcc5b97_873x454.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [],
+                "connections": []
+            },
+            {
+                "title": "🧮 ff.149.2 Una questione di ore…",
+                "link": "https://fortissimo.substack.com/i/ff149-come-essere-solari/ff-una-questione-di-ore",
+                "content": "ff.149.2 Una questione di ore… … una breve guida energetica, per mettere numeri ed etichette (d’altronde, 🎼 ff.32 I numeri non mentono ). Un’ora sola ti vorrei. Innanzitutto, ricordo l’unità di misura della potenza (W, spesso in GW) e energia prodotta/consumata (spesso TWh). La loro relazione: 1 GW che “produce” per un anno (8760 ore) = 8.76 TWh. E, quantificando l’energia: 1 GW = 450.000 famiglie italiane 510 GW (aggiunti nel 2025) = produzione elettrica India + Brasile 2.392 GW = solare totale = 10% elettricità mondiale Elettricità = 20% energia mondiale",
+                "images": [],
+                "references": [],
+                "connections": []
+            },
+            {
+                "title": "🃏 ff.149.3 Texas hold 'em",
+                "link": "https://fortissimo.substack.com/i/ff149-come-essere-solari/ff-texas-hold-em",
+                "content": "ff.149.3 Texas hold ‘em Con questi “righelli” alla mano, misuriamo gli ultimi sviluppi. In Texas - da sempre simbolo del petrolio americano - il 2025, ha visto un aumentato del 40% della produzione solare, con un picco di 7 TWh per agosto (~1GW di energia prodotta, ovvero le famose 450.000 famiglie italiane). Sì, il sole non brilla di notte. 15GW anche dal vento allora. Tanto che a marzo 2026 le rinnovabili coprono il 70% dell’elettricità texana . PS. Come in molte tecnologie innovative (batterie, pannelli solari, eolico) la Cina fa da padrone: le top aziende cinesi hanno contribuito per un +125GW di eolico (~25GW fuori dalla Cina). Non solo solare: anche il vento non scherza (via futuro fortissimo) E - laddove il sole non manca, in Africa - si sta pure compiendo una rivoluzione “araba”: guidano Nigeria, Algeria, Congo e Mozambico (1.5-0.4 GW di pannelli solari importati dalla Cina).",
+                "images": [],
+                "references": [],
+                "connections": []
+            },
+            {
+                "title": "🤖 ff.149.4 Andare al Maximo",
+                "link": "https://fortissimo.substack.com/i/ff149-come-essere-solari/ff-andare-al-maximo",
+                "content": "ff.149.4 Andare al Maximo Il motivo di queste accelerazioni? Ormai, produrre elettricità rinnovabile è tecnologicamente vantaggioso. Un collo di bottiglia è l’installazione. Ma anche qui ci soccorre un altro trend caro a futuro fortissimo: la robotica. Maximo (sviluppato da AES, azienda supportata da NVIDIA) ha appena completato l’installazione di 100 MW di pannelli solari in California (installando l’equivalente dello 0.5% della produzione del Texas in 7 mesi ). Maximo installa un pannello al minuto. Quindi, ogni mese, 2.500 famiglie italiane: 480 pannelli al giorno (60 min x 8h) x 20 giorni di lavoro = 9600 pannelli x produzione di un pannello = 500 W = 4.8 MW",
+                "images": [],
+                "references": [],
+                "connections": []
+            },
+            {
+                "title": "🗽 ff.149.5 Libertà (da gas e petrolio)",
+                "link": "https://fortissimo.substack.com/i/ff149-come-essere-solari/ff-liberta-da-gas-e-petrolio",
+                "content": "ff.149.5 Libertà (da gas e petrolio) Il solare è anche un’opportunità per ridurre la dipendenza da gas (Russia) o petrolio (Iran). Una dipendenza che - ai tempi della guerra in Ucraina o della chiusura dello stretto di Hormuz - fa male a tanti Paesi, a parte ovviamente la Norvegia… Da Prof G Media Ad esempio, l’Egitto ha visto raddoppiare il costo dell’energia in due mesi e potrebbe salvarsi solo con l’eolico cinese . Ma la stessa Cina, per ridurre la dipendenza da import esterni, sta pensando di bloccare gli export del solare . Quindi, chi vincerà? Maximo o Trump? Ai posteri l’ardua sentenza. Il progetto Sun Day , per finanziare un pianeta supportato dal sole (via futuro fortissimo) ☕",
+                "images": [],
+                "references": [],
+                "connections": []
+            }
+        ]
+    },
+    {
         "url": "https://fortissimo.substack.com/p/ff148-il-mito-dellai",
         "title": "🎼 ff.148 Il \"Mito\" dell'AI",
         "subtitle": "Claude Mythos, autografi e world models",
