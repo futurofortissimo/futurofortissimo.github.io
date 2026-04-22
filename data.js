@@ -55,7 +55,7 @@ export const rawData = [
                     },
                     {
                         "src": "https://substackcdn.com/image/fetch/$s_!3V34!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F00340294-6a11-492e-bd7a-d3692835f4d2_1152x1368.jpeg",
-                        "caption": ""
+                        "caption": "Non solo solare: anche il vento non scherza (via futuro fortissimo)"
                     }
                 ],
                 "references": [
@@ -94,11 +94,11 @@ export const rawData = [
                 "images": [
                     {
                         "src": "https://substackcdn.com/image/fetch/$s_!FWe2!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9e9d3162-27d5-480c-b67f-74bafba8c171_2501x2514.png",
-                        "caption": ""
+                        "caption": "Da Prof G Media"
                     },
                     {
                         "src": "https://substackcdn.com/image/fetch/$s_!SdWX!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F70238a53-e130-4b02-9952-708d17bf2abe_309x234.png",
-                        "caption": ""
+                        "caption": "Il progetto Sun Day, per finanziare un pianeta supportato dal sole (via futuro fortissimo)"
                     }
                 ],
                 "references": [
