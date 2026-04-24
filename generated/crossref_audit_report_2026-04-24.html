@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>PR 7/10 — Crossref Fidelity Audit Report — 2026-04-24</title>
+<style>
+  body{font-family:system-ui,-apple-system,sans-serif;max-width:1100px;margin:2rem auto;padding:0 1rem;color:#1a1a1a;line-height:1.55}
+  h1,h2{font-family:'IBM Plex Mono',monospace;letter-spacing:.02em}
+  h1{border-bottom:4px solid #0a0a0a;padding-bottom:.3em}
+  table{border-collapse:collapse;width:100%;font-size:14px;margin:1em 0}
+  td,th{border:1px solid #ddd;padding:6px 10px;text-align:left}
+  th{background:#f5f5f5;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.05em;text-transform:uppercase}
+  .pill{display:inline-block;padding:2px 8px;border-radius:10px;font-size:12px;font-weight:600}
+  .green{background:#dcfce7;color:#14532d}
+  .yellow{background:#fef9c3;color:#713f12}
+  .red{background:#fee2e2;color:#7f1d1d}
+  code{background:#f3f4f6;padding:1px 4px;border-radius:3px;font-size:13px}
+  .box{border:2px solid #0a0a0a;padding:1em 1.2em;margin:1.2em 0;background:#fafafa}
+  .muted{color:#666;font-size:.9em}
+</style>
+</head>
+<body>
+<h1>PR 7/10 — Crossref fidelity audit</h1>
+<p class="muted">Data: 2026-04-24 · Branch: <code>crossref/fidelity-audit-pr7</code></p>
+
+<div class="box">
+<b>Authority index:</b> 570 ff.X.Y in data.js + 559 in ffxy-historical.json (union come authority allargata).<br>
+<b>Inline uses scanned:</b> 1.860 occorrenze grezze su 48 chapter-*.html (media ~39 per chapter, include TOC/navigation + prosa).<br>
+<b>Classifier primario (keyword overlap stem-based):</b>
+  GREEN 1.612 ·
+  YELLOW (overlap=1) 149 ·
+  YELLOW_LOW (overlap=0) 97 ·
+  RED_MISSING <b>2</b>.<br>
+<b>Classifier secondario (root-prefix, piu lasco):</b> refined 248 flagged items — 91 YELLOW_REFINED, 92 RED_WEAK (false positive dovuti a titolo storico != authority corrente), 2 RED_MISSING (veri errori).
+</div>
+
+<h2>Fix applicati</h2>
+<table>
+<tr><th>Tipo</th><th>ff.X.Y</th><th>File</th><th>Azione</th></tr>
+<tr>
+  <td><span class="pill red">RED</span></td>
+  <td><code>ff.39.1</code></td>
+  <td>chapter-01-3-3.html</td>
+  <td>RIMOSSO — codice invented: <code>ff.39.1 L'impatto del fast fashion sul clima</code> non esiste ne in data.js ne in ffxy-historical.json (verificato). Frase riformulata eliminando la parentesi fc_span.</td>
+</tr>
+<tr>
+  <td><span class="pill red">RED</span></td>
+  <td><code>ff.39.1</code></td>
+  <td>chapter-01-cibo.html</td>
+  <td>RIMOSSO — stessa duplicazione sul wrapper macro-capitolo. Fix identico.</td>
+</tr>
+</table>
+
+<h2>YELLOW tenuti</h2>
+<p>
+I 91 YELLOW_REFINED (overlap basso ma codice esistente in historical) sono stati mantenuti. Motivazione:
+il codice ff.X.Y esiste e punta a un sottocapitolo storicamente valido; il titolo inline in molti casi corrisponde a una
+versione editoriale precedente (ora rinominata in data.js ma tracciata in <code>ffxy-historical.json</code>). Esempi:
+ff.122.4 "Nike fatte da vermi" (ora "Piramidi in 4 minuti?"), ff.76.1 "Cento milioni di respiri" (ora "Cosa e rimasto del COVID?"),
+ff.4.5 "Microbi computazionali?" (ora "Neve, la neve!"). Sono casi di <b>drift del titolo</b>, non di errore di cross-ref:
+la connessione semantica nel testo rimane coerente con la versione citata. Rimuoverli distruggerebbe 90+ connessioni
+editoriali valide. La remediation del titolo drift appartiene a una PR separata di sync corpus-libro.
+</p>
+
+<h2>Stats aggiornate</h2>
+<table>
+<tr><th>Metrica</th><th>Prima</th><th>Dopo</th></tr>
+<tr><td>book/used_codes_book.txt (totale codici unici)</td><td>534</td><td>531</td></tr>
+<tr><td>book/index.html meta "ff.x.y citati"</td><td>134</td><td>133</td></tr>
+<tr><td>RED_MISSING residui</td><td>2</td><td>0</td></tr>
+</table>
+
+<h2>Output generati</h2>
+<ul>
+  <li><code>generated/ffxy_authority_2026-04-24.json</code> (570 entry da data.js)</li>
+  <li><code>generated/ffxy_inline_uses_2026-04-24.json</code> (1.860 usi classificati)</li>
+  <li><code>generated/ffxy_fix_shortlist_2026-04-24.json</code> (shortlist rifinita)</li>
+  <li><code>generated/crossref_audit_report_2026-04-24.html</code> (questo file)</li>
+</ul>
+
+<h2>Rule compliance</h2>
+<ul>
+  <li>Nessun nuovo ff.X.Y inventato: solo RIMOZIONI mirate.</li>
+  <li>Skip 2.2.4 e 3.2.4 per evitare conflitto con PR #427 (come da brief).</li>
+  <li>Modifiche solo in chapter HTML + stats. Nessun CSS toccato. Merge-safe rispetto a PR #424-#427.</li>
+</ul>
+
+</body>
+</html>
