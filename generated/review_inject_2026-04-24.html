@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Review Inject 2026-04-24 — Backup-mined corpus fidelity</title>
+<style>
+body{font-family:'Inter',system-ui,sans-serif;max-width:980px;margin:2rem auto;padding:0 1rem;color:#222;background:#fafaf7;}
+h1{font-family:'Lora',serif;font-size:1.6rem;margin-bottom:.2rem;}
+h2{font-family:'IBM Plex Mono',monospace;font-size:.9rem;letter-spacing:.08em;text-transform:uppercase;margin-top:2rem;color:#444;}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.9rem;}
+th,td{border:1px solid #ddd;padding:.5rem .7rem;text-align:left;vertical-align:top;}
+th{background:#f0ede6;font-family:'IBM Plex Mono',monospace;font-size:.78rem;text-transform:uppercase;}
+.ok{color:#2ecc71;font-weight:700;}
+.skip{color:#d0021b;font-weight:700;}
+.warn{color:#e8a033;font-weight:700;}
+pre{background:#fff;border:1px solid #ddd;padding:.6rem;font-size:.78rem;overflow-x:auto;white-space:pre-wrap;}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#888;}
+</style>
+</head>
+<body>
+<div class="eyebrow">FF Book inject review — 2026-04-24</div>
+<h1>Backup-mined corpus fidelity: 3 ff.X.Y shipped, 5 skipped</h1>
+<p><strong>Branch:</strong> <code>inject/2026-04-24-backup-mined-corpus-fidelity</code><br>
+<strong>Fonti:</strong> <code>futuro_fortissimo_full_data.txt</code> (backup 24 aprile) + <code>data.js</code>.</p>
+
+<h2>1. Fidelity table (shipped)</h2>
+<table>
+<tr><th>ff.X.Y</th><th>Titolo</th><th>Capitolo/sezione</th><th>Source</th><th>Cross-ref fidelity</th><th>Inline link</th><th>No citation block</th><th>Mark ≤2</th></tr>
+<tr>
+  <td>ff.6.2</td>
+  <td>Gli elfi di Amazon</td>
+  <td>chapter-02-robotica.html §2.1.3 — Robot e biomimetica</td>
+  <td>backup.txt + data.js<br/>(content 294c)</td>
+  <td class="ok">✓ 150mila stagionali + "doppio dei dipendenti Nike" da content</td>
+  <td class="warn">nessun URL esterno nel content originale → zero link (fedele)</td>
+  <td class="ok">✓</td>
+  <td class="ok">✓ 2</td>
+</tr>
+<tr>
+  <td>ff.6.3</td>
+  <td>L'avvento delle spese, nel mondo</td>
+  <td>chapter-03-cultura.html §3.3.3 — Economia e geopolitica</td>
+  <td>backup.txt + data.js<br/>(content 1104c)</td>
+  <td class="ok">✓ Black Friday / Cyber Monday / 1T Natale / 139B Singles Day tutti dal content</td>
+  <td class="ok">✓ 2 link (visualcapitalist + cnbc) entrambi dai references originali</td>
+  <td class="ok">✓</td>
+  <td class="ok">✓ 2</td>
+</tr>
+<tr>
+  <td>ff.15.1</td>
+  <td>La prima goccia di sangue</td>
+  <td>chapter-02-metaverso.html §2.2.1 — Il metaverso trasformato</td>
+  <td>backup.txt + data.js<br/>(content 335c)</td>
+  <td class="ok">✓ Tarantino + Pulp Fiction + Miramax + NFT.NYC dal content</td>
+  <td class="ok">✓ 2 link (nft.nyc + nytimes) entrambi dai references originali</td>
+  <td class="ok">✓</td>
+  <td class="ok">✓ 2</td>
+</tr>
+</table>
+
+<h2>2. Skipped (e perché)</h2>
+<table>
+<tr><th>ff.X.Y</th><th>Titolo backup</th><th>Motivo skip</th></tr>
+<tr>
+  <td class="skip">ff.90.1</td>
+  <td>🌊 La corrente che non si ferma</td>
+  <td><strong>CONFLITTO DI NUMERAZIONE.</strong> In data.js live il codice <code>ff.90.1</code> è riferito come "🦁 Scappare da un leone o una notifica" (parent: ff.90 L'epidemia di stress) e viene citato in entry esistenti. Iniettare il codice con titolo diverso ("La corrente che non si ferma", parent ff.90 Energia dal mare) violerebbe §0.decies "No invented ff.X.Y". Serve una decisione editoriale di rinumerazione (o rename del parent) prima di iniettare.</td>
+</tr>
+<tr>
+  <td class="skip">ff.90.2</td>
+  <td>🧪 Batterie di sale</td>
+  <td><strong>Parent ff.90 conflittuale.</strong> Stesso problema: il parent "ff.90 Energia dal mare" non è in data.js (coesiste solo "ff.90 L'epidemia di stress"). Va sincronizzato il parent prima dei subchapters.</td>
+</tr>
+<tr>
+  <td class="skip">ff.91.1</td>
+  <td>🧠 Mini-cervelli gamers</td>
+  <td><strong>Parent ff.91 conflittuale.</strong> Idem: data.js ha "ff.91 I sassi, le luci, il sale" — non "Cervelli sintetici".</td>
+</tr>
+<tr>
+  <td class="skip">ff.91.2</td>
+  <td>⚡ Chip neuromorfici in tasca</td>
+  <td>Stesso conflitto parent di ff.91.1.</td>
+</tr>
+<tr>
+  <td class="skip">ff.91.3</td>
+  <td>⚖️ Dove finisce la mente?</td>
+  <td>Stesso conflitto parent di ff.91.1.</td>
+</tr>
+<tr>
+  <td class="skip">ff.101.1 / ff.128.1</td>
+  <td>(solo cross-ref esistenti)</td>
+  <td>Già trattati come cross-ref nel libro, nessun subchapter da materializzare.</td>
+</tr>
+</table>
+
+<h2>3. Bibliography updates</h2>
+<table>
+<tr><th>Chapter</th><th>Fonte precedente max</th><th>Nuove fonti</th></tr>
+<tr><td>chapter-02-metaverso.html</td><td>34</td><td>35 (nft.nyc), 36 (nytimes miramax)</td></tr>
+<tr><td>chapter-02-robotica.html</td><td>88</td><td>— (nessuna nuova fonte, il content ff.6.2 non ha references)</td></tr>
+<tr><td>chapter-03-cultura.html</td><td>39</td><td>40 (visualcapitalist), 41 (cnbc singles day)</td></tr>
+</table>
+
+<h2>4. Index/ffxy updates</h2>
+<ul>
+<li><code>ffxy-index.json</code>: +3 entries (ff.6.2, ff.6.3, ff.15.1) → totale 591.</li>
+<li><code>index.html</code>: banner data "Aggiornato 2026-04-17" → "2026-04-24".</li>
+<li><code>used_codes_book.txt</code>: rigenerato via grep live → 534 codici.</li>
+</ul>
+
+<h2>5. Note constraints — scaling rispetto al prompt</h2>
+<p>Il prompt richiedeva 8 ff.X.Y + 30 note. Vincoli operativi applicati:</p>
+<ul>
+<li><strong>5 ff.X.Y skipped</strong> per conflitto di numerazione tra backup 24-aprile e data.js live (§0.decies vieta invented ff.X.Y).</li>
+<li><strong>Note weaving escluso dal ciclo</strong>: INJECT_PROMPT_V4 prescrive max 3 note + 6 ff.X.Y per ciclo. 30 note + 8 ff.X.Y supererebbe il cap di 5-10x. Iniettare 3 ff.X.Y robusti, corpus-fideli, senza sovraccarico di note in un'unica PR.</li>
+<li>Next action: aprire PR dedicata "sync ff.90/ff.91 parent rename" per risolvere conflitto numerazione, prima di sbloccare gli altri 5 codici.</li>
+</ul>
+
+<h2>6. Compliance gate</h2>
+<pre>
+grep -c 'class="citation"' chapter-02-metaverso.html chapter-02-robotica.html chapter-03-cultura.html
+# expected: 0 0 0
+
+grep -c '📎\|&#128206;' (new injections)
+# expected: 0 (formato [N] bibliografia attivo)
+
+ff.X.Y iniettati esistono in data.js:
+  ff.6.2 ✓ (parent ff.6 Caro Babbo Natale, subchapter present)
+  ff.6.3 ✓ (parent ff.6 Caro Babbo Natale, subchapter present)
+  ff.15.1 ✓ (parent ff.15 Assaggi di metaverso, subchapter present)
+</pre>
+
+<p class="eyebrow">End of review.</p>
+</body>
+</html>
