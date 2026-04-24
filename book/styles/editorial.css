@@ -1,0 +1,421 @@
+/* =====================================================================
+ * FF Book — Substack Editorial Style (PR 5/10)
+ * ---------------------------------------------------------------------
+ * Strategy: class-level migration, activated via `body.editorial`.
+ * Legacy classes (.brutal-card, .keypoints, .fc, .note-highlight,
+ * .pull-quote, .citation) are re-styled in-place — no markup rewrite.
+ *
+ * Fonts: Lora (serif body), Inter (UI/headings), IBM Plex Mono (eyebrow).
+ * Palette base: crema #fbfaf7. Accent preserved per chapter.
+ * ===================================================================== */
+
+/* ---- Google Fonts (additive: Lora is new; Inter + Plex Mono already
+       loaded in chapter pages — duplicate @import is idempotent) ---- */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
+
+/* =====================================================================
+ * Root tokens (editorial-only, scoped under body.editorial)
+ * ===================================================================== */
+body.editorial{
+  /* Editorial palette */
+  --ed-bg:           #fbfaf7;   /* crema base */
+  --ed-bg-elev:      #ffffff;   /* card / pullquote background */
+  --ed-ink:          #1a1a1a;   /* testo principale */
+  --ed-ink-soft:     #434343;   /* testo secondario */
+  --ed-ink-mute:     #6b6b6b;   /* meta / caption */
+  --ed-rule:         #e5e1d8;   /* separatori sobri */
+  --ed-rule-strong:  #cfc9bb;
+
+  /* Accent — default verde (cap.1). Cap 2/3 override sotto. */
+  --ed-accent:       var(--accent, #2ecc71);
+  --ed-accent-soft:  color-mix(in srgb, var(--ed-accent) 22%, transparent);
+  --ed-accent-hair:  color-mix(in srgb, var(--ed-accent) 55%, transparent);
+
+  /* Typography */
+  --ed-serif:   'Lora', 'Georgia', 'Times New Roman', serif;
+  --ed-sans:    'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --ed-mono:    'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+}
+
+/* Per-chapter accent mapping (applicato a body.editorial)
+   Cap 1 — Natura:  verde
+   Cap 2 — Tech:    blu
+   Cap 3 — Corpo/Mente: rosso
+   Tutti i sub-capitoli ereditano via --accent già settato nelle pagine. */
+body.editorial[data-macro="natura"]   { --ed-accent: #2ecc71; }
+body.editorial[data-macro="tech"]     { --ed-accent: #4a90e2; }
+body.editorial[data-macro="corpo"]    { --ed-accent: #d0021b; }
+body.editorial[data-macro="index"]    { --ed-accent: #0a0a0a; }
+
+/* =====================================================================
+ * Base body / typography
+ * ===================================================================== */
+body.editorial{
+  background: var(--ed-bg) !important;
+  color: var(--ed-ink);
+  font-family: var(--ed-serif);
+  font-size: 1.05rem;
+  line-height: 1.72;
+  font-feature-settings: "kern" 1, "liga" 1, "onum" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Neutralizza il grid background brutalista */
+body.editorial::before{
+  display: none !important;
+}
+
+/* Headings — Inter per heading, ma garanzia leggibilità */
+body.editorial h1,
+body.editorial h2,
+body.editorial h3,
+body.editorial h4{
+  font-family: var(--ed-sans);
+  letter-spacing: -0.01em;
+  color: var(--ed-ink);
+  font-weight: 700;
+  line-height: 1.25;
+}
+body.editorial h1{ font-size: clamp(1.9rem, 4.5vw, 2.6rem); }
+body.editorial h2{ font-size: clamp(1.45rem, 3.2vw, 1.8rem); margin-top: 1.6em; }
+body.editorial h3{ font-size: clamp(1.15rem, 2.6vw, 1.3rem); margin-top: 1.3em; }
+
+/* Prose */
+body.editorial .prose p,
+body.editorial .prose-lg p,
+body.editorial main p{
+  font-family: var(--ed-serif);
+  font-size: 1.05rem;
+  line-height: 1.72;
+  color: var(--ed-ink);
+  max-width: 68ch;
+  text-align: left;
+  margin-bottom: 1.15em;
+  /* Disabilita il justify brutalista su editoriale */
+  text-justify: auto;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+/* Drop-cap editoriale (se presente) */
+body.editorial .drop-cap::first-letter{
+  font-family: var(--ed-serif);
+  font-weight: 700;
+  color: var(--ed-ink);
+  font-size: clamp(3.2em, 6vw, 4em);
+  line-height: 0.85;
+  padding-right: 0.08em;
+  padding-top: 0.05em;
+  float: left;
+}
+
+/* =====================================================================
+ * Eyebrow — IBM Plex Mono uppercase
+ * ===================================================================== */
+body.editorial .ff-eyebrow,
+body.editorial .reading-time,
+body.editorial .chapter-num,
+body.editorial .eyebrow{
+  font-family: var(--ed-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ed-ink-mute);
+}
+body.editorial .ff-eyebrow{
+  color: var(--ed-accent);
+}
+
+/* =====================================================================
+ * Brutal-card → editorial card
+ * Legacy class kept for MC gate compat; visually re-styled.
+ * ===================================================================== */
+body.editorial .brutal-card{
+  border: 1px solid var(--ed-rule) !important;
+  background: var(--ed-bg-elev) !important;
+  box-shadow: none !important;
+  border-radius: 4px;
+  padding: clamp(18px, 4vw, 28px);
+  position: relative;
+}
+/* Accent-bar editoriale: hair-line sul top */
+body.editorial .accent-bar::before{
+  height: 3px !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  background: var(--ed-accent) !important;
+  opacity: 0.85;
+}
+@media (max-width: 640px){
+  body.editorial .brutal-card{
+    border-width: 1px;
+    box-shadow: none;
+  }
+}
+
+/* Keypoints — eyebrow list editoriale */
+body.editorial .keypoints{
+  border-top: 1px solid var(--ed-rule);
+  border-bottom: 1px solid var(--ed-rule);
+  padding: 1em 0;
+  margin: 1.8em 0;
+  list-style: none;
+}
+body.editorial .keypoints li{
+  font-family: var(--ed-sans);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ed-ink-soft);
+  padding: 0.35em 0 0.35em 1.2em;
+  position: relative;
+}
+body.editorial .keypoints li::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.85em;
+  width: 0.65em;
+  height: 1px;
+  background: var(--ed-accent);
+}
+
+/* =====================================================================
+ * Rule between cards — border-top, not dark container
+ * ===================================================================== */
+body.editorial .sep,
+body.editorial hr{
+  height: 1px !important;
+  background: var(--ed-rule) !important;
+  border: 0;
+  margin: 2.4em 0 !important;
+}
+/* Sep con accent hair-line */
+body.editorial .sep{
+  background: linear-gradient(90deg, var(--ed-accent-hair), transparent 40%) !important;
+}
+
+/* =====================================================================
+ * Highlight — underline pastello soft (NO solid block)
+ * ===================================================================== */
+body.editorial mark.note-highlight,
+body.editorial .note-highlight{
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    transparent 70%,
+    var(--ed-accent-soft) 70%,
+    var(--ed-accent-soft) 92%,
+    transparent 92%
+  ) !important;
+  color: inherit !important;
+  padding: 0 1px;
+  font-style: normal;
+  border-radius: 0;
+}
+
+/* =====================================================================
+ * Cross-reference chip .fc — editorial chip-sottile
+ * ===================================================================== */
+body.editorial .prose .fc,
+body.editorial .fc{
+  font-family: var(--ed-sans);
+  font-size: 0.92em;
+  font-weight: 600;
+  color: var(--ed-accent);
+  text-decoration: none;
+  padding: 0.05em 0.4em;
+  border: 1px solid var(--ed-accent-hair);
+  border-radius: 3px;
+  background: transparent;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+  cursor: pointer;
+}
+body.editorial .fc:hover,
+body.editorial .fc:focus{
+  background: var(--ed-accent-soft);
+  text-decoration: none;
+  color: var(--ed-ink);
+}
+
+/* =====================================================================
+ * Links in prose — underline sobrio, accent color
+ * ===================================================================== */
+body.editorial .prose a,
+body.editorial main p a,
+body.editorial article a{
+  color: var(--ed-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--ed-accent-hair);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.15s, color 0.15s;
+}
+body.editorial .prose a:hover,
+body.editorial main p a:hover,
+body.editorial article a:hover{
+  color: var(--ed-accent);
+  text-decoration-color: var(--ed-accent);
+}
+
+/* =====================================================================
+ * Pullquote — editoriale leggera, no heavy quote marks
+ * ===================================================================== */
+body.editorial .pull-quote,
+body.editorial blockquote.pullquote{
+  border: none !important;
+  background: transparent !important;
+  padding: 1.8em 1em !important;
+  margin: 2.4em auto !important;
+  max-width: 56ch;
+  text-align: left;
+  font-family: var(--ed-serif) !important;
+  font-size: clamp(1.18rem, 2.6vw, 1.38rem) !important;
+  font-weight: 500;
+  font-style: italic !important;
+  line-height: 1.45;
+  color: var(--ed-ink) !important;
+  border-left: 3px solid var(--ed-accent) !important;
+  padding-left: 1.4em !important;
+  letter-spacing: 0;
+}
+body.editorial .pull-quote::before,
+body.editorial .pull-quote::after{
+  display: none !important;   /* niente quote marks pesanti */
+  content: none !important;
+}
+
+/* Blockquote generico — editoriale, niente sfondo colorato */
+body.editorial blockquote:not(.pullquote):not(.pull-quote){
+  border-left: 3px solid var(--ed-rule-strong) !important;
+  padding: 0.2em 1.2em !important;
+  margin: 1.6em 0 !important;
+  background: transparent !important;
+  font-style: italic;
+  color: var(--ed-ink-soft);
+}
+
+/* =====================================================================
+ * Figures — bordi sottili con accent chapter-scoped
+ * ===================================================================== */
+body.editorial figure{
+  margin: 2.2em 0;
+}
+body.editorial figure img,
+body.editorial figure svg{
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--ed-rule) !important;
+  border-top: 3px solid var(--ed-accent) !important;
+  box-shadow: none !important;
+  border-radius: 2px;
+  background: var(--ed-bg-elev);
+}
+body.editorial figcaption{
+  font-family: var(--ed-mono) !important;
+  font-size: 0.72rem !important;
+  color: var(--ed-ink-mute) !important;
+  letter-spacing: 0.06em !important;
+  margin-top: 0.6em !important;
+  line-height: 1.5;
+  text-transform: none;
+}
+
+/* =====================================================================
+ * Bibliografia — .fonti-esterne editoriale (complementa PR #425 :target)
+ * ===================================================================== */
+body.editorial .fonti-esterne,
+body.editorial .bibliography,
+body.editorial section[aria-label*="Fonti"]{
+  font-family: var(--ed-sans);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--ed-ink-soft);
+  border-top: 1px solid var(--ed-rule);
+  padding-top: 1.4em;
+  margin-top: 2.4em;
+}
+body.editorial .fonti-esterne h2,
+body.editorial .fonti-esterne h3{
+  font-family: var(--ed-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ed-ink-mute);
+  margin-bottom: 0.8em;
+}
+body.editorial .fonti-esterne ol,
+body.editorial .fonti-esterne ul{
+  padding-left: 1.4em;
+}
+body.editorial .fonti-esterne li{
+  margin-bottom: 0.5em;
+}
+body.editorial .fonti-esterne a{
+  color: var(--ed-accent);
+  text-decoration: underline;
+  text-decoration-color: var(--ed-accent-hair);
+}
+/* NON sovrascrivere PR #425 :target highlight (usa !important dove serve) */
+body.editorial li[id^="fonte-"]:target{
+  /* Lascia ereditare da PR #425; rinforza solo il border-radius editoriale */
+  border-radius: 4px;
+}
+
+/* =====================================================================
+ * Defensive: nascondi eventuali div.citation residui (banned style)
+ * ===================================================================== */
+body.editorial .citation,
+body.editorial div.citation{
+  background: transparent !important;
+  border: none !important;
+  border-left: 3px solid var(--ed-rule-strong) !important;
+  padding: 0.2em 1em !important;
+  color: var(--ed-ink-soft) !important;
+  font-style: italic;
+  box-shadow: none !important;
+}
+
+/* =====================================================================
+ * TOC / Navigation — sobrio
+ * ===================================================================== */
+body.editorial .toc-link{
+  border-left: 2px solid transparent;
+  transition: all 0.18s;
+  font-family: var(--ed-sans);
+}
+body.editorial .toc-link:hover,
+body.editorial .toc-link:focus{
+  border-left-color: var(--ed-accent);
+  padding-left: 10px;
+  color: var(--ed-accent);
+}
+
+/* =====================================================================
+ * Index / front page — preserva "Ultime aggiunte" toggle UX
+ * ===================================================================== */
+body.editorial.index-page .recent-additions,
+body.editorial [data-ultime-aggiunte]{
+  border: 1px solid var(--ed-rule);
+  background: var(--ed-bg-elev);
+  border-radius: 4px;
+}
+
+/* =====================================================================
+ * Print
+ * ===================================================================== */
+@media print{
+  body.editorial{
+    background: #fff !important;
+    color: #000;
+  }
+  body.editorial .brutal-card{
+    border: 1px solid #999 !important;
+    box-shadow: none !important;
+  }
+}
+
+/* Reduced motion: già gestito dalle pagine */

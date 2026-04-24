@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>PR 5/10 — Substack Editorial Style Migration Preview (2026-04-24)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../book/styles/editorial.css">
+<style>
+  body{background:#fbfaf7;color:#1a1a1a;font-family:'Lora',Georgia,serif;margin:0;padding:2em;max-width:1200px;margin:0 auto}
+  header{border-bottom:1px solid #e5e1d8;padding-bottom:1em;margin-bottom:2em}
+  h1{font-family:'Inter',sans-serif;font-weight:700;letter-spacing:-0.01em;margin:0 0 .4em 0}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:#6b6b6b;margin-bottom:.4em}
+  .meta{color:#6b6b6b;font-size:.9rem;font-family:'Inter',sans-serif}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.2em;margin-top:1.5em}
+  .card{border:1px solid #e5e1d8;border-radius:4px;padding:1em 1.2em;background:#fff;transition:border-color .15s}
+  .card:hover{border-color:#cfc9bb}
+  .card a{color:#1a1a1a;text-decoration:none;display:block}
+  .card .chip{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;padding:.12em .5em;border-radius:3px;margin-bottom:.4em;font-weight:600}
+  .chip.natura{background:#e7f8ee;color:#156a38}
+  .chip.tech{background:#e6eff9;color:#1e3f67}
+  .chip.corpo{background:#fbe6e8;color:#7f0a16}
+  .chip.index{background:#eee;color:#333}
+  .card .title{font-family:'Inter',sans-serif;font-weight:600;font-size:.98rem;line-height:1.35;color:#1a1a1a}
+  section{margin-top:2.5em}
+  section h2{font-family:'Inter',sans-serif;font-size:1.2rem;border-top:1px solid #e5e1d8;padding-top:1.2em;margin-top:2em}
+  .legend{display:flex;gap:1em;flex-wrap:wrap;margin-top:.8em}
+  .legend .chip{font-family:'IBM Plex Mono',monospace;font-size:.7rem;padding:.2em .6em;border-radius:3px}
+  .demo{border:1px solid #e5e1d8;border-radius:4px;background:#fff;padding:1.5em;margin-top:1.5em}
+  .demo p{max-width:68ch;font-size:1.05rem;line-height:1.72}
+  mark.note-highlight{background:linear-gradient(180deg,transparent 0%,transparent 70%,rgba(46,204,113,.22) 70%,rgba(46,204,113,.22) 92%,transparent 92%);padding:0 1px}
+  .fc{font-family:'Inter',sans-serif;font-size:.92em;font-weight:600;color:#2ecc71;text-decoration:none;padding:.05em .4em;border:1px solid rgba(46,204,113,.55);border-radius:3px}
+  blockquote.pullquote{border:none;border-left:3px solid #2ecc71;padding:0;padding-left:1.4em;margin:1.6em 0;font-style:italic;font-family:'Lora',serif;font-size:1.25rem;color:#1a1a1a}
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">PR 5/10 — 2026-04-24</div>
+  <h1>Substack-Editorial Style Migration</h1>
+  <div class="meta">Migrazione classe-level su 48 capitoli + 2 index. Lora serif + Inter + IBM Plex Mono, palette crema #fbfaf7, accenti per macro-tema preservati.</div>
+  <div class="legend">
+    <span class="chip natura">Cap 1 — Natura (verde #2ecc71)</span>
+    <span class="chip tech">Cap 2 — Tech (blu #4a90e2)</span>
+    <span class="chip corpo">Cap 3 — Corpo/Mente (rosso #d0021b)</span>
+  </div>
+</header>
+
+<section>
+  <h2>Demo tipografica (in-page, stile editoriale)</h2>
+  <div class="demo">
+    <div class="eyebrow">ff.27.3 — anteprima stile</div>
+    <p>Una pagina editoriale non urla: respira. La prosa in <strong>Lora</strong> serif a 1.05rem con line-height 1.72 recupera la leggibilità di un pezzo lungo, mentre <mark class="note-highlight">il tratto evidenziato</mark> resta un gesto sobrio — un sottile wash pastello, non un blocco solido. Le cross-reference <a class="fc" href="#">ff.27.2</a> diventano chip leggeri, bordati dall'accent del capitolo, con hover che accende il wash ma non trasforma il ritmo visivo. I link inline mantengono l'<a href="#">underline sobrio</a> in colore accent, senza pesantezze barocche.</p>
+    <blockquote class="pullquote">Il pullquote editoriale: leggero, corsivo, senza virgolette enormi. Una pausa, non uno stop.</blockquote>
+    <p>Le card — ex <em>brutal-card</em> — conservano il nome classe per compatibilità gate MC, ma visivamente diventano contenitori a hair-line 1px con border-top accent da 3px: rule-line, non muro. La bibliografia <em>.fonti-esterne</em> rimane distinta, il <code>:target</code> highlight di PR #425 non viene sovrascritto.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Navigazione capitoli migrati (50 pagine)</h2>
+  <div class="grid">
+    <div class="card"><a href="../book/chapter-01-1-1.html" target="_blank"><span class="chip natura">Natura · chapter-01-1-1</span><div class="title">1.1 — Mobilità e Città | 🌿 Natura</div></a></div>
+    <div class="card"><a href="../book/chapter-01-1-2.html" target="_blank"><span class="chip natura">Natura · chapter-01-1-2</span><div class="title">1.1 — Mobilità e Città | 🌿 Natura</div></a></div>
+    <div class="card"><a href="../book/chapter-01-1-3.html" target="_blank"><span class="chip natura">Natura · chapter-01-1-3</span><div class="title">1.1 — Mobilità e Città | 🌿 Natura</div></a></div>
+    <div class="card"><a href="../book/chapter-01-1-4.html" target="_blank"><span class="chip natura">Natura · chapter-01-1-4</span><div class="title">1.1 — Mobilità e Città | 🌿 Natura</div></a></div>
+    <div class="card"><a href="../book/chapter-01-2-1.html" target="_blank"><span class="chip natura">Natura · chapter-01-2-1</span><div class="title">1.2 — Ambiente ed Energia | 🌿 Natura</div></a></div>
+    <div class="card"><a href="../book/chapter-01-2-2.html" target="_blank"><span class="chip natura">Natura · chapter-01-2-2</span><div class="title">1.2 — Ambiente ed Energia | 🌿 Natura</div></a></div>
+    <div class="card"><a href="../book/chapter-01-2-3.html" target="_blank"><span class="chip natura">Natura · chapter-01-2-3</span><div class="title">1.2 — Ambiente ed Energia | 🌿 Natura</div></a></div>
+    <div class="card"><a href="../book/chapter-01-2-4.html" target="_blank"><span class="chip natura">Natura · chapter-01-2-4</span><div class="title">1.2 — Ambiente ed Energia | 🌿 Natura</div></a></div>
+    <div class="card"><a href="../book/chapter-01-3-1.html" target="_blank"><span class="chip natura">Natura · chapter-01-3-1</span><div class="title">1.3 — Cibo e Fashion | 🌿 Natura</div></a></div>
+    <div class="card"><a href="../book/chapter-01-3-2.html" target="_blank"><span class="chip natura">Natura · chapter-01-3-2</span><div class="title">1.3 — Cibo e Fashion | 🌿 Natura</div></a></div>
+    <div class="card"><a href="../book/chapter-01-3-3.html" target="_blank"><span class="chip natura">Natura · chapter-01-3-3</span><div class="title">1.3 — Cibo e Fashion | 🌿 Natura</div></a></div>
+    <div class="card"><a href="../book/chapter-01-3-4.html" target="_blank"><span class="chip natura">Natura · chapter-01-3-4</span><div class="title">1.3 — Cibo e Fashion | 🌿 Natura</div></a></div>
+    <div class="card"><a href="../book/chapter-01-ambiente.html" target="_blank"><span class="chip natura">Natura · chapter-01-ambiente</span><div class="title">1.2 — Ambiente ed Energia | 🌿 Natura</div></a></div>
+    <div class="card"><a href="../book/chapter-01-cibo.html" target="_blank"><span class="chip natura">Natura · chapter-01-cibo</span><div class="title">1.3 — Cibo e Fashion | 🌿 Natura</div></a></div>
+    <div class="card"><a href="../book/chapter-01-mobilita.html" target="_blank"><span class="chip natura">Natura · chapter-01-mobilita</span><div class="title">1.1 — Mobilità e Città | 🌿 Natura</div></a></div>
+    <div class="card"><a href="../book/chapter-01.html" target="_blank"><span class="chip natura">Natura · chapter-01</span><div class="title">Natura: mobilità, energia, cibo — Cap. 1</div></a></div>
+    <div class="card"><a href="../book/chapter-02-1-1.html" target="_blank"><span class="chip tech">Tech · chapter-02-1-1</span><div class="title">2.1 — Robotica e AI | 💻 Tecnologia</div></a></div>
+    <div class="card"><a href="../book/chapter-02-1-2.html" target="_blank"><span class="chip tech">Tech · chapter-02-1-2</span><div class="title">2.1 — Robotica e AI | 💻 Tecnologia</div></a></div>
+    <div class="card"><a href="../book/chapter-02-1-3.html" target="_blank"><span class="chip tech">Tech · chapter-02-1-3</span><div class="title">2.1 — Robotica e AI | 💻 Tecnologia</div></a></div>
+    <div class="card"><a href="../book/chapter-02-1-4.html" target="_blank"><span class="chip tech">Tech · chapter-02-1-4</span><div class="title">2.1 — Robotica e AI | 💻 Tecnologia</div></a></div>
+    <div class="card"><a href="../book/chapter-02-2-1.html" target="_blank"><span class="chip tech">Tech · chapter-02-2-1</span><div class="title">2.2 — Metaverso e Criptovalute | 💻 Tecnologia</div></a></div>
+    <div class="card"><a href="../book/chapter-02-2-2.html" target="_blank"><span class="chip tech">Tech · chapter-02-2-2</span><div class="title">2.2 — Metaverso e Criptovalute | 💻 Tecnologia</div></a></div>
+    <div class="card"><a href="../book/chapter-02-2-3.html" target="_blank"><span class="chip tech">Tech · chapter-02-2-3</span><div class="title">2.2 — Metaverso e Criptovalute | 💻 Tecnologia</div></a></div>
+    <div class="card"><a href="../book/chapter-02-2-4.html" target="_blank"><span class="chip tech">Tech · chapter-02-2-4</span><div class="title">2.2 — Metaverso e Criptovalute | 💻 Tecnologia</div></a></div>
+    <div class="card"><a href="../book/chapter-02-3-1.html" target="_blank"><span class="chip tech">Tech · chapter-02-3-1</span><div class="title">2.3 — Prodotti di consumo | 💻 Tecnologia</div></a></div>
+    <div class="card"><a href="../book/chapter-02-3-2.html" target="_blank"><span class="chip tech">Tech · chapter-02-3-2</span><div class="title">2.3 — Prodotti di consumo | 💻 Tecnologia</div></a></div>
+    <div class="card"><a href="../book/chapter-02-3-3.html" target="_blank"><span class="chip tech">Tech · chapter-02-3-3</span><div class="title">2.3 — Prodotti di consumo | 💻 Tecnologia</div></a></div>
+    <div class="card"><a href="../book/chapter-02-3-4.html" target="_blank"><span class="chip tech">Tech · chapter-02-3-4</span><div class="title">2.3 — Prodotti di consumo | 💻 Tecnologia</div></a></div>
+    <div class="card"><a href="../book/chapter-02-metaverso.html" target="_blank"><span class="chip tech">Tech · chapter-02-metaverso</span><div class="title">2.2 — Metaverso e Criptovalute | 💻 Tecnologia</div></a></div>
+    <div class="card"><a href="../book/chapter-02-prodotti.html" target="_blank"><span class="chip tech">Tech · chapter-02-prodotti</span><div class="title">2.3 — Prodotti di consumo | 💻 Tecnologia</div></a></div>
+    <div class="card"><a href="../book/chapter-02-robotica.html" target="_blank"><span class="chip tech">Tech · chapter-02-robotica</span><div class="title">2.1 — Robotica e AI | 💻 Tecnologia</div></a></div>
+    <div class="card"><a href="../book/chapter-02.html" target="_blank"><span class="chip tech">Tech · chapter-02</span><div class="title">Tecnologia: AI, robot, metaverso — Cap. 2</div></a></div>
+    <div class="card"><a href="../book/chapter-03-1-1.html" target="_blank"><span class="chip corpo">Corpo/Mente · chapter-03-1-1</span><div class="title">3.1 — Psicologia e Wellbeing | ❤️ Società</div></a></div>
+    <div class="card"><a href="../book/chapter-03-1-2.html" target="_blank"><span class="chip corpo">Corpo/Mente · chapter-03-1-2</span><div class="title">3.1 — Psicologia e Wellbeing | ❤️ Società</div></a></div>
+    <div class="card"><a href="../book/chapter-03-1-3.html" target="_blank"><span class="chip corpo">Corpo/Mente · chapter-03-1-3</span><div class="title">3.1 — Psicologia e Wellbeing | ❤️ Società</div></a></div>
+    <div class="card"><a href="../book/chapter-03-1-4.html" target="_blank"><span class="chip corpo">Corpo/Mente · chapter-03-1-4</span><div class="title">3.1 — Psicologia e Wellbeing | ❤️ Società</div></a></div>
+    <div class="card"><a href="../book/chapter-03-2-1.html" target="_blank"><span class="chip corpo">Corpo/Mente · chapter-03-2-1</span><div class="title">3.2 — Alimentazione e Sport | ❤️ Società</div></a></div>
+    <div class="card"><a href="../book/chapter-03-2-2.html" target="_blank"><span class="chip corpo">Corpo/Mente · chapter-03-2-2</span><div class="title">3.2 — Alimentazione e Sport | ❤️ Società</div></a></div>
+    <div class="card"><a href="../book/chapter-03-2-3.html" target="_blank"><span class="chip corpo">Corpo/Mente · chapter-03-2-3</span><div class="title">3.2 — Alimentazione e Sport | ❤️ Società</div></a></div>
+    <div class="card"><a href="../book/chapter-03-2-4.html" target="_blank"><span class="chip corpo">Corpo/Mente · chapter-03-2-4</span><div class="title">3.2 — Alimentazione e Sport | ❤️ Società</div></a></div>
+    <div class="card"><a href="../book/chapter-03-3-1.html" target="_blank"><span class="chip corpo">Corpo/Mente · chapter-03-3-1</span><div class="title">3.3 — Cultura, Politica e Demografia | ❤️ Società</div></a></div>
+    <div class="card"><a href="../book/chapter-03-3-2.html" target="_blank"><span class="chip corpo">Corpo/Mente · chapter-03-3-2</span><div class="title">3.3 — Cultura, Politica e Demografia | ❤️ Società</div></a></div>
+    <div class="card"><a href="../book/chapter-03-3-3.html" target="_blank"><span class="chip corpo">Corpo/Mente · chapter-03-3-3</span><div class="title">3.3 — Cultura, Politica e Demografia | ❤️ Società</div></a></div>
+    <div class="card"><a href="../book/chapter-03-3-4.html" target="_blank"><span class="chip corpo">Corpo/Mente · chapter-03-3-4</span><div class="title">3.3 — Cultura, Politica e Demografia | ❤️ Società</div></a></div>
+    <div class="card"><a href="../book/chapter-03-alimentazione.html" target="_blank"><span class="chip corpo">Corpo/Mente · chapter-03-alimentazione</span><div class="title">3.2 — Alimentazione e Sport | ❤️ Società</div></a></div>
+    <div class="card"><a href="../book/chapter-03-cultura.html" target="_blank"><span class="chip corpo">Corpo/Mente · chapter-03-cultura</span><div class="title">3.3 — Cultura, Politica e Demografia | ❤️ Società</div></a></div>
+    <div class="card"><a href="../book/chapter-03-psicologia.html" target="_blank"><span class="chip corpo">Corpo/Mente · chapter-03-psicologia</span><div class="title">3.1 — Psicologia e Wellbeing | ❤️ Società</div></a></div>
+    <div class="card"><a href="../book/chapter-03.html" target="_blank"><span class="chip corpo">Corpo/Mente · chapter-03</span><div class="title">Società: psicologia, corpo, cultura — Cap. 3</div></a></div>
+    <div class="card"><a href="../book/index.html" target="_blank"><span class="chip index">Index · index</span><div class="title">Futuro Fortissimo — Il libro | Tre saggi su Natura, Tecnologia, Società</div></a></div>
+    <div class="card"><a href="../book/ffxy-index.html" target="_blank"><span class="chip index">Index · ffxy-index</span><div class="title">Indice ff.x.y</div></a></div>
+  </div>
+</section>
+
+<section>
+  <h2>Mapping accenti</h2>
+  <div class="demo">
+    <ul style="font-family:'Inter',sans-serif;font-size:.95rem;color:#434343;line-height:1.8">
+      <li><strong>data-macro="natura"</strong> → 16 file — accent verde <code>#2ecc71</code></li>
+      <li><strong>data-macro="tech"</strong> → 16 file — accent blu <code>#4a90e2</code></li>
+      <li><strong>data-macro="corpo"</strong> → 16 file — accent rosso <code>#d0021b</code></li>
+      <li><strong>data-macro="index"</strong> → 2 file (book/index.html + ffxy-index.html) — accent neutro</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Merge-safety</h2>
+  <div class="demo">
+    <ul style="font-family:'Inter',sans-serif;font-size:.95rem;color:#434343;line-height:1.8">
+      <li><strong>PR #424</strong> (backup-mined-corpus-fidelity): tocca <code>data.js</code> + nuovi sottocapitoli. PR 5 non tocca data.js né aggiunge subchapter markup → conflitti assenti.</li>
+      <li><strong>PR #425</strong> (parent ff.31/101/128 + bib v2 + figures): tocca heading/figure/bib all'interno dei capitoli e aggiunge CSS <code>:target</code> inline nei file HTML. PR 5 usa CSS esterno <code>styles/editorial.css</code> + attributi <code>class</code>/<code>data-*</code> sul body. Gli unici tocchi in-file di PR 5 sono: (a) <code>&lt;link&gt;</code> prima di <code>&lt;/head&gt;</code>, (b) attributi sul <code>&lt;body&gt;</code>. Merge 3-way risolve automaticamente.</li>
+      <li>Il CSS editorial è progettato per <em>complementare</em> il <code>:target</code> di PR #425 (non sovrascrive il background giallo, rinforza solo border-radius).</li>
+    </ul>
+  </div>
+</section>
+
+</body>
+</html>
