@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="it" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Mobile — Futuro Fortissimo | Indice sottocapitoli</title>
+  <meta name="description" content="Indice mobile-first di Futuro Fortissimo: 36 sottocapitoli tappabili, filtro rapido, navigazione swipe tra pagine."/>
+  <link rel="canonical" href="https://futurofortissimo.github.io/book/mobile.html"/>
+  <link rel="alternate" href="https://futurofortissimo.github.io/book/" hreflang="it"/>
+  <meta name="robots" content="index, follow"/>
+  <meta property="og:title" content="Futuro Fortissimo — Indice mobile"/>
+  <meta property="og:description" content="36 sottocapitoli navigabili come schede tappabili. Filtro, breadcrumb, swipe."/>
+  <meta property="og:url" content="https://futurofortissimo.github.io/book/mobile.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="https://futurofortissimo.github.io/logo.png"/>
+  <link rel="icon" href="/favicon.ico"/>
+  <style>
+    :root{--bg:#fdfdfd;--fg:#0a0a0a;--mute:#666;--line:rgba(0,0,0,.08);--accent:#0a0a0a}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:'Inter',system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.55;-webkit-text-size-adjust:100%}
+    header.top{position:sticky;top:0;z-index:10;background:#0a0a0a;color:#fff;padding:14px 16px;border-bottom:2px solid #f5a623}
+    header.top .bar{display:flex;align-items:center;gap:10px;max-width:720px;margin:0 auto}
+    header.top a{color:#fff;text-decoration:none;font-weight:700;letter-spacing:.04em;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.78rem}
+    header.top .spacer{flex:1}
+    main{max-width:720px;margin:0 auto;padding:16px}
+    .hero{padding:12px 4px 4px}
+    .hero h1{margin:0 0 6px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1.4rem;letter-spacing:.01em}
+    .hero p{margin:0;color:var(--mute);font-size:.92rem}
+    .search{margin:14px 4px 8px;position:sticky;top:50px;z-index:5;background:var(--bg);padding:8px 0}
+    .search input{width:100%;padding:12px 14px;font-size:1rem;border:2px solid #0a0a0a;border-radius:0;background:#fff;font-family:inherit;-webkit-appearance:none}
+    .macro{margin:18px 0 4px;border-top:2px solid #0a0a0a;padding-top:14px}
+    .macro-head{margin:0 0 8px}
+    .macro-link{display:flex;align-items:baseline;gap:10px;text-decoration:none;color:#0a0a0a;padding:8px 4px}
+    .macro-link .tag{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:700}
+    .macro-link .t{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1.1rem;font-weight:700}
+    .parent{border-bottom:1px solid var(--line);padding:4px 0}
+    .parent > summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;padding:10px 4px;min-height:44px;font-family:'IBM Plex Mono',ui-monospace,monospace}
+    .parent > summary::-webkit-details-marker{display:none}
+    .parent > summary::after{content:'+';margin-left:auto;font-weight:700;color:var(--mute);font-size:1.2rem}
+    .parent[open] > summary::after{content:'−'}
+    .parent .yid{font-size:.82rem;color:var(--accent);font-weight:700;letter-spacing:.08em}
+    .parent .yn{font-size:1rem;font-weight:600}
+    .parent .ppage{margin-left:auto;margin-right:24px;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);text-decoration:none;border:1px solid var(--mute);padding:4px 8px}
+    ul.subs{list-style:none;margin:0 0 12px;padding:0}
+    .sub{border-top:1px dashed var(--line)}
+    .sub a{display:grid;grid-template-columns:auto 1fr;grid-column-gap:10px;padding:12px 6px;color:#0a0a0a;text-decoration:none;min-height:56px;align-items:baseline}
+    .sub .sid{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.78rem;color:var(--accent);font-weight:700;letter-spacing:.06em}
+    .sub .st{font-size:1rem;font-weight:600;grid-column:2}
+    .sub .sd{grid-column:2;font-size:.86rem;color:var(--mute);margin-top:4px}
+    .sub:active{background:#f6f6f6}
+    .empty{padding:16px;text-align:center;color:var(--mute);font-size:.9rem;display:none}
+    footer{padding:24px 16px;text-align:center;color:var(--mute);font-size:.78rem;font-family:'IBM Plex Mono',ui-monospace,monospace}
+    footer a{color:var(--mute)}
+    @media(min-width:880px){
+      main{max-width:980px}
+      .parents{display:grid;grid-template-columns:1fr 1fr;gap:8px 22px}
+      .parent{border-bottom:none;border-top:1px solid var(--line)}
+    }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="bar">
+      <a href="/">FF</a>
+      <span>/</span>
+      <a href="/book/">Libro</a>
+      <span class="spacer"></span>
+      <a href="/book/" aria-label="Vista desktop">vista desktop</a>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Indice mobile</h1>
+      <p>36 sottocapitoli come schede tappabili. Tocca un sottocapitolo per aprirlo; swipe destra/sinistra naviga tra i sottocapitoli all'interno della pagina.</p>
+    </section>
+    <div class="search">
+      <input id="q" type="search" inputmode="search" placeholder="Filtra per titolo o parola chiave…" aria-label="Filtra sottocapitoli"/>
+    </div>
+    <section class="macro" data-chapter="1" style="--accent:#2ecc71">
+      <header class="macro-head">
+        <a class="macro-link" href="chapter-01.html">
+          <span class="tag">Capitolo 1</span>
+          <span class="t">Natura</span>
+        </a>
+      </header>
+      <div class="parents">
+        <details class="parent" open>
+          <summary>
+            <span class="yid">1.1</span>
+            <span class="yn">Mobilità e Città</span>
+            <a class="ppage" href="chapter-01-mobilita.html" aria-label="Apri 1.1 in pagina unica">vista unica</a>
+          </summary>
+          <ul class="subs">
+            <li class="sub" data-search="🏎️ 1.1.1 — l&#x27;euthymìcrona del pendolare 1.1.1 — l&#x27;euthymìcrona del pendolare: gli orizzonti naturali possiedono una “dimensione frattale”…">
+              <a href="chapter-01-1-1.html">
+                <span class="sid">1.1.1</span>
+                <span class="st">🏎️ 1.1.1 — L&#x27;euthymìcrona del pendolare</span>
+                <span class="sd">1.1.1 — L&#x27;euthymìcrona del pendolare: Gli orizzonti naturali possiedono una “dimensione frattale”…</span>
+              </a>
+            </li>
+            <li class="sub" data-search="🏙️ 1.1.2 — la città a 15 minuti 1.1.2 — la città a 15 minuti: ma la felicità del tragitto è solo l&#x27;inizio.">
+              <a href="chapter-01-1-2.html">
+                <span class="sid">1.1.2</span>
+                <span class="st">🏙️ 1.1.2 — La città a 15 minuti</span>
+                <span class="sd">1.1.2 — La città a 15 minuti: Ma la felicità del tragitto è solo l&#x27;inizio.</span>
+              </a>
+            </li>
+            <li class="sub" data-search="🚙 1.1.3 — ruote autonome 1.1.3 — ruote autonome: un&#x27;auto resta parcheggiata il 96% del tempo, e un veicolo autonomo che…">
+              <a href="chapter-01-1-3.html">
+                <span class="sid">1.1.3</span>
+                <span class="st">🚙 1.1.3 — Ruote autonome</span>
+                <span class="sd">1.1.3 — Ruote autonome: Un&#x27;auto resta parcheggiata il 96% del tempo, e un veicolo autonomo che…</span>
+              </a>
+            </li>
+            <li class="sub" data-search="🍌 1.1.4 — impronte e cieli 1.1.4 — impronte e cieli: un chilometro in auto produce circa 271 grammi di co₂, uno in bici circa…">
+              <a href="chapter-01-1-4.html">
+                <span class="sid">1.1.4</span>
+                <span class="st">🍌 1.1.4 — Impronte e cieli</span>
+                <span class="sd">1.1.4 — Impronte e cieli: Un chilometro in auto produce circa 271 grammi di CO₂, uno in bici circa…</span>
+              </a>
+            </li>
+          </ul>
+        </details>
+        <details class="parent" open>
+          <summary>
+            <span class="yid">1.2</span>
+            <span class="yn">Ambiente ed Energia</span>
+            <a class="ppage" href="chapter-01-ambiente.html" aria-label="Apri 1.2 in pagina unica">vista unica</a>
+          </summary>
+          <ul class="subs">
+            <li class="sub" data-search="💳 1.2.1 — la carta di credito invisibile 1.2.1 — la carta di credito invisibile: non demonizziamo la plastica: fa anche del bene, specie per…">
+              <a href="chapter-01-2-1.html">
+                <span class="sid">1.2.1</span>
+                <span class="st">💳 1.2.1 — La carta di credito invisibile</span>
+                <span class="sd">1.2.1 — La carta di credito invisibile: Non demonizziamo la plastica: fa anche del bene, specie per…</span>
+              </a>
+            </li>
+            <li class="sub" data-search="⚡ 1.2.2 — il nodo gordiano dell&#x27;energia 1.2.2 — il nodo gordiano dell&#x27;energia: produrre un terajoule di energia con l&#x27;uranio costa appena…">
+              <a href="chapter-01-2-2.html">
+                <span class="sid">1.2.2</span>
+                <span class="st">⚡ 1.2.2 — Il nodo gordiano dell&#x27;energia</span>
+                <span class="sd">1.2.2 — Il nodo gordiano dell&#x27;energia: Produrre un terajoule di energia con l&#x27;uranio costa appena…</span>
+              </a>
+            </li>
+            <li class="sub" data-search="🌍 1.2.3 — geoingegneria e clima 1.2.3 — geoingegneria e clima: la deglaciazione ha impiegato millenni per i suoi +4 °c; noi…">
+              <a href="chapter-01-2-3.html">
+                <span class="sid">1.2.3</span>
+                <span class="st">🌍 1.2.3 — Geoingegneria e clima</span>
+                <span class="sd">1.2.3 — Geoingegneria e clima: La deglaciazione ha impiegato millenni per i suoi +4 °C; noi…</span>
+              </a>
+            </li>
+            <li class="sub" data-search="🌳 1.2.4 — alberi, acqua e biodiversità 1.2.4 — alberi, acqua e biodiversità: la fusione nucleare è la promessa perenne dell&#x27;energia: sempre…">
+              <a href="chapter-01-2-4.html">
+                <span class="sid">1.2.4</span>
+                <span class="st">🌳 1.2.4 — Alberi, acqua e biodiversità</span>
+                <span class="sd">1.2.4 — Alberi, acqua e biodiversità: La fusione nucleare è la promessa perenne dell&#x27;energia: sempre…</span>
+              </a>
+            </li>
+          </ul>
+        </details>
+        <details class="parent" open>
+          <summary>
+            <span class="yid">1.3</span>
+            <span class="yn">Cibo e Salute</span>
+            <a class="ppage" href="chapter-01-cibo.html" aria-label="Apri 1.3 in pagina unica">vista unica</a>
+          </summary>
+          <ul class="subs">
+            <li class="sub" data-search="🦠 1.3.1 — dal microbioma al piatto 1.3.1 — dal microbioma al piatto: 100 grammi di proteine, 40 grammi di fibre, micronutrienti…">
+              <a href="chapter-01-3-1.html">
+                <span class="sid">1.3.1</span>
+                <span class="st">🦠 1.3.1 — Dal microbioma al piatto</span>
+                <span class="sd">1.3.1 — Dal microbioma al piatto: 100 grammi di proteine, 40 grammi di fibre, micronutrienti…</span>
+              </a>
+            </li>
+            <li class="sub" data-search="🍽️ 1.3.2 — calorie, peso e metabolismo 1.3.2 — calorie, peso e metabolismo: il panino integrale richiede quasi il doppio dell&#x27;energia per…">
+              <a href="chapter-01-3-2.html">
+                <span class="sid">1.3.2</span>
+                <span class="st">🍽️ 1.3.2 — Calorie, peso e metabolismo</span>
+                <span class="sd">1.3.2 — Calorie, peso e metabolismo: Il panino integrale richiede quasi il doppio dell&#x27;energia per…</span>
+              </a>
+            </li>
+            <li class="sub" data-search="👕 1.3.3 — l&#x27;armadio sostenibile 1.3.3 — l&#x27;armadio sostenibile: toccare una quercia, rispetto a marmo e metallo, riduce la pressione…">
+              <a href="chapter-01-3-3.html">
+                <span class="sid">1.3.3</span>
+                <span class="st">👕 1.3.3 — L&#x27;armadio sostenibile</span>
+                <span class="sd">1.3.3 — L&#x27;armadio sostenibile: Toccare una quercia, rispetto a marmo e metallo, riduce la pressione…</span>
+              </a>
+            </li>
+            <li class="sub" data-search="⚡ 1.3.4 — il corpo elettrico 1.3.4 — il corpo elettrico: c’è un filo elettrico che attraversa la storia del corpo umano, e parte…">
+              <a href="chapter-01-3-4.html">
+                <span class="sid">1.3.4</span>
+                <span class="st">⚡ 1.3.4 — Il corpo elettrico</span>
+                <span class="sd">1.3.4 — Il corpo elettrico: C’è un filo elettrico che attraversa la storia del corpo umano, e parte…</span>
+              </a>
+            </li>
+          </ul>
+        </details>
+      </div>
+    </section>
+    <section class="macro" data-chapter="2" style="--accent:#4a90e2">
+      <header class="macro-head">
+        <a class="macro-link" href="chapter-02.html">
+          <span class="tag">Capitolo 2</span>
+          <span class="t">Tecnologia</span>
+        </a>
+      </header>
+      <div class="parents">
+        <details class="parent" open>
+          <summary>
+            <span class="yid">2.1</span>
+            <span class="yn">Robotica e AI</span>
+            <a class="ppage" href="chapter-02-robotica.html" aria-label="Apri 2.1 in pagina unica">vista unica</a>
+          </summary>
+          <ul class="subs">
+            <li class="sub" data-search="💲 2.1.1 — l&#x27;economia del compute 2.1.1 — l&#x27;economia del compute: in tre mesi, nvidia ha incassato 57 miliardi di dollari con un…">
+              <a href="chapter-02-1-1.html">
+                <span class="sid">2.1.1</span>
+                <span class="st">💲 2.1.1 — L&#x27;economia del compute</span>
+                <span class="sd">2.1.1 — L&#x27;economia del compute: In tre mesi, NVIDIA ha incassato 57 miliardi di dollari con un…</span>
+              </a>
+            </li>
+            <li class="sub" data-search="🕳️ 2.1.2 — la singolarità gentile 2.1.2 — la singolarità gentile: l&#x27;economista tyler cowen, in un sondaggio polymarket del 2025…">
+              <a href="chapter-02-1-2.html">
+                <span class="sid">2.1.2</span>
+                <span class="st">🕳️ 2.1.2 — La singolarità gentile</span>
+                <span class="sd">2.1.2 — La singolarità gentile: L&#x27;economista Tyler Cowen, in un sondaggio Polymarket del 2025…</span>
+              </a>
+            </li>
+            <li class="sub" data-search="🦾 2.1.3 — robot e biomimetica 2.1.3 — robot e biomimetica: sakana ai ha creato the ai scientist — un sistema che genera…">
+              <a href="chapter-02-1-3.html">
+                <span class="sid">2.1.3</span>
+                <span class="st">🦾 2.1.3 — Robot e biomimetica</span>
+                <span class="sd">2.1.3 — Robot e biomimetica: Sakana AI ha creato The AI Scientist — un sistema che genera…</span>
+              </a>
+            </li>
+            <li class="sub" data-search="🔬 2.1.4 — miniaturizzazione e ricorsività 2.1.4 — miniaturizzazione e ricorsività: su nature, un team ha dimostrato come trovare un antidoto…">
+              <a href="chapter-02-1-4.html">
+                <span class="sid">2.1.4</span>
+                <span class="st">🔬 2.1.4 — Miniaturizzazione e ricorsività</span>
+                <span class="sd">2.1.4 — Miniaturizzazione e ricorsività: Su Nature, un team ha dimostrato come trovare un antidoto…</span>
+              </a>
+            </li>
+          </ul>
+        </details>
+        <details class="parent" open>
+          <summary>
+            <span class="yid">2.2</span>
+            <span class="yn">Metaverso e Cripto</span>
+            <a class="ppage" href="chapter-02-metaverso.html" aria-label="Apri 2.2 in pagina unica">vista unica</a>
+          </summary>
+          <ul class="subs">
+            <li class="sub" data-search="🌐 2.2.1 — il metaverso trasformato 2.2.1 — il metaverso trasformato: mark zuckerberg ha investito 13,7 miliardi di dollari nel…">
+              <a href="chapter-02-2-1.html">
+                <span class="sid">2.2.1</span>
+                <span class="st">🌐 2.2.1 — Il metaverso trasformato</span>
+                <span class="sd">2.2.1 — Il metaverso trasformato: Mark Zuckerberg ha investito 13,7 miliardi di dollari nel…</span>
+              </a>
+            </li>
+            <li class="sub" data-search="🔑 2.2.2 — proprietà digitale e blockchain 2.2.2 — proprietà digitale e blockchain: ma dietro l&#x27;interfaccia c&#x27;è un problema strutturale: chi…">
+              <a href="chapter-02-2-2.html">
+                <span class="sid">2.2.2</span>
+                <span class="st">🔑 2.2.2 — Proprietà digitale e blockchain</span>
+                <span class="sd">2.2.2 — Proprietà digitale e blockchain: Ma dietro l&#x27;interfaccia c&#x27;è un problema strutturale: chi…</span>
+              </a>
+            </li>
+            <li class="sub" data-search="💰 2.2.3 — la geopolitica delle criptovalute 2.2.3 — la geopolitica delle criptovalute: nel 2011, cina e giappone detenevano il 23% del debito…">
+              <a href="chapter-02-2-3.html">
+                <span class="sid">2.2.3</span>
+                <span class="st">💰 2.2.3 — La geopolitica delle criptovalute</span>
+                <span class="sd">2.2.3 — La geopolitica delle criptovalute: Nel 2011, Cina e Giappone detenevano il 23% del debito…</span>
+              </a>
+            </li>
+            <li class="sub" data-search="🎯 2.2.4 — cripto in guerra e simulazioni 2.2.4 — cripto in guerra e simulazioni: il 26 febbraio 2022, mentre i carri armati russi avanzavano…">
+              <a href="chapter-02-2-4.html">
+                <span class="sid">2.2.4</span>
+                <span class="st">🎯 2.2.4 — Cripto in guerra e simulazioni</span>
+                <span class="sd">2.2.4 — Cripto in guerra e simulazioni: Il 26 febbraio 2022, mentre i carri armati russi avanzavano…</span>
+              </a>
+            </li>
+          </ul>
+        </details>
+        <details class="parent" open>
+          <summary>
+            <span class="yid">2.3</span>
+            <span class="yn">Prodotti e Software</span>
+            <a class="ppage" href="chapter-02-prodotti.html" aria-label="Apri 2.3 in pagina unica">vista unica</a>
+          </summary>
+          <ul class="subs">
+            <li class="sub" data-search="💊 2.3.1 — ai medica in tasca 2.3.1 — ai medica in tasca: un mercoledì sera di novembre, mi sono rotto la clavicola cadendo dalla…">
+              <a href="chapter-02-3-1.html">
+                <span class="sid">2.3.1</span>
+                <span class="st">💊 2.3.1 — AI medica in tasca</span>
+                <span class="sd">2.3.1 — AI medica in tasca: Un mercoledì sera di novembre, mi sono rotto la clavicola cadendo dalla…</span>
+              </a>
+            </li>
+            <li class="sub" data-search="👽 2.3.2 — intelligenze aliene e agenti 2.3.2 — intelligenze aliene e agenti: qui si apre il passaggio successivo: non solo ai che…">
+              <a href="chapter-02-3-2.html">
+                <span class="sid">2.3.2</span>
+                <span class="st">👽 2.3.2 — Intelligenze aliene e agenti</span>
+                <span class="sd">2.3.2 — Intelligenze aliene e agenti: Qui si apre il passaggio successivo: non solo AI che…</span>
+              </a>
+            </li>
+            <li class="sub" data-search="🎮 2.3.3 — videogiochi e creatività 2.3.3 — videogiochi e creatività: tsmc produce il 92% dei chip sotto i 7 nanometri; un blocco di…">
+              <a href="chapter-02-3-3.html">
+                <span class="sid">2.3.3</span>
+                <span class="st">🎮 2.3.3 — Videogiochi e creatività</span>
+                <span class="sd">2.3.3 — Videogiochi e creatività: TSMC produce il 92% dei chip sotto i 7 nanometri; un blocco di…</span>
+              </a>
+            </li>
+            <li class="sub" data-search="🔧 2.3.4 — il collo di bottiglia fisico 2.3.4 — il collo di bottiglia fisico: un cheeseburger mcdonald&#x27;s equivale all&#x27;energia di 80.000…">
+              <a href="chapter-02-3-4.html">
+                <span class="sid">2.3.4</span>
+                <span class="st">🔧 2.3.4 — Il collo di bottiglia fisico</span>
+                <span class="sd">2.3.4 — Il collo di bottiglia fisico: Un cheeseburger McDonald&#x27;s equivale all&#x27;energia di 80.000…</span>
+              </a>
+            </li>
+          </ul>
+        </details>
+      </div>
+    </section>
+    <section class="macro" data-chapter="3" style="--accent:#d0021b">
+      <header class="macro-head">
+        <a class="macro-link" href="chapter-03.html">
+          <span class="tag">Capitolo 3</span>
+          <span class="t">Società</span>
+        </a>
+      </header>
+      <div class="parents">
+        <details class="parent" open>
+          <summary>
+            <span class="yid">3.1</span>
+            <span class="yn">Psicologia e Mente</span>
+            <a class="ppage" href="chapter-03-psicologia.html" aria-label="Apri 3.1 in pagina unica">vista unica</a>
+          </summary>
+          <ul class="subs">
+            <li class="sub" data-search="🗣️ 3.1.1 — nominare per guarire 3.1.1 — nominare per guarire: secondo mckinsey, i manager nel flow sono cinque volte più produttivi.">
+              <a href="chapter-03-1-1.html">
+                <span class="sid">3.1.1</span>
+                <span class="st">🗣️ 3.1.1 — Nominare per guarire</span>
+                <span class="sd">3.1.1 — Nominare per guarire: Secondo McKinsey, i manager nel flow sono cinque volte più produttivi.</span>
+              </a>
+            </li>
+            <li class="sub" data-search="⏳ 3.1.2 — tempo e finitudine 3.1.2 — tempo e finitudine: l&#x27;intelligenza fluida declina dopo i 40, ma l&#x27;intelligenza…">
+              <a href="chapter-03-1-2.html">
+                <span class="sid">3.1.2</span>
+                <span class="st">⏳ 3.1.2 — Tempo e finitudine</span>
+                <span class="sd">3.1.2 — Tempo e finitudine: L&#x27;intelligenza fluida declina dopo i 40, ma l&#x27;intelligenza…</span>
+              </a>
+            </li>
+            <li class="sub" data-search="🎯 3.1.3 — attenzione e stimolo 3.1.3 — attenzione e stimolo: il 60% dei laureati di harvard finisce in consulenza, finanza o big…">
+              <a href="chapter-03-1-3.html">
+                <span class="sid">3.1.3</span>
+                <span class="st">🎯 3.1.3 — Attenzione e stimolo</span>
+                <span class="sd">3.1.3 — Attenzione e stimolo: Il 60% dei laureati di Harvard finisce in consulenza, finanza o Big…</span>
+              </a>
+            </li>
+            <li class="sub" data-search="🧘 3.1.4 — noia, silenzio e routine 3.1.4 — noia, silenzio e routine: negli ultimi 70 anni la percentuale di proprietari di case e di…">
+              <a href="chapter-03-1-4.html">
+                <span class="sid">3.1.4</span>
+                <span class="st">🧘 3.1.4 — Noia, silenzio e routine</span>
+                <span class="sd">3.1.4 — Noia, silenzio e routine: Negli ultimi 70 anni la percentuale di proprietari di case e di…</span>
+              </a>
+            </li>
+          </ul>
+        </details>
+        <details class="parent" open>
+          <summary>
+            <span class="yid">3.2</span>
+            <span class="yn">Cultura e Società</span>
+            <a class="ppage" href="chapter-03-cultura.html" aria-label="Apri 3.2 in pagina unica">vista unica</a>
+          </summary>
+          <ul class="subs">
+            <li class="sub" data-search="🫁 3.2.1 — vo₂max e longevità 3.2.1 — vo₂max e longevità: chi si muove regolarmente allunga la vita anche mangiando male; chi non…">
+              <a href="chapter-03-2-1.html">
+                <span class="sid">3.2.1</span>
+                <span class="st">🫁 3.2.1 — VO₂max e longevità</span>
+                <span class="sd">3.2.1 — VO₂max e longevità: Chi si muove regolarmente allunga la vita anche mangiando male; chi non…</span>
+              </a>
+            </li>
+            <li class="sub" data-search="🌊 3.2.2 — flow e limiti estremi 3.2.2 — flow e limiti estremi: c’è un principio di progettazione personale che attraversa tutti…">
+              <a href="chapter-03-2-2.html">
+                <span class="sid">3.2.2</span>
+                <span class="st">🌊 3.2.2 — Flow e limiti estremi</span>
+                <span class="sd">3.2.2 — Flow e limiti estremi: C’è un principio di progettazione personale che attraversa tutti…</span>
+              </a>
+            </li>
+            <li class="sub" data-search="⚗️ 3.2.3 — chimica del corpo 3.2.3 — chimica del corpo: la fatica mentale riduce la performance atletica anche quando i…">
+              <a href="chapter-03-2-3.html">
+                <span class="sid">3.2.3</span>
+                <span class="st">⚗️ 3.2.3 — Chimica del corpo</span>
+                <span class="sd">3.2.3 — Chimica del corpo: La fatica mentale riduce la performance atletica anche quando i…</span>
+              </a>
+            </li>
+            <li class="sub" data-search="💤 3.2.4 — respiro e sonno 3.2.4 — respiro e sonno: james nestor, in breath: the new science of a lost art , rivela che la…">
+              <a href="chapter-03-2-4.html">
+                <span class="sid">3.2.4</span>
+                <span class="st">💤 3.2.4 — Respiro e sonno</span>
+                <span class="sd">3.2.4 — Respiro e sonno: James Nestor, in Breath: The New Science of a Lost Art , rivela che la…</span>
+              </a>
+            </li>
+          </ul>
+        </details>
+        <details class="parent" open>
+          <summary>
+            <span class="yid">3.3</span>
+            <span class="yn">Alimentazione e Corpo</span>
+            <a class="ppage" href="chapter-03-alimentazione.html" aria-label="Apri 3.3 in pagina unica">vista unica</a>
+          </summary>
+          <ul class="subs">
+            <li class="sub" data-search="💼 3.3.1 — lavoro e identità 3.3.1 — lavoro e identità: paul millerd aveva uno stipendio a sei cifre e un piano di carriera…">
+              <a href="chapter-03-3-1.html">
+                <span class="sid">3.3.1</span>
+                <span class="st">💼 3.3.1 — Lavoro e identità</span>
+                <span class="sd">3.3.1 — Lavoro e identità: Paul Millerd aveva uno stipendio a sei cifre e un piano di carriera…</span>
+              </a>
+            </li>
+            <li class="sub" data-search="📍 3.3.2 — solitudine e demografia 3.3.2 — solitudine e demografia: in corea del sud il tasso di fertilità è sceso a 0,72 figli per…">
+              <a href="chapter-03-3-2.html">
+                <span class="sid">3.3.2</span>
+                <span class="st">📍 3.3.2 — Solitudine e demografia</span>
+                <span class="sd">3.3.2 — Solitudine e demografia: In Corea del Sud il tasso di fertilità è sceso a 0,72 figli per…</span>
+              </a>
+            </li>
+            <li class="sub" data-search="🌎 3.3.3 — economia e geopolitica 3.3.3 — economia e geopolitica: la burocrazia è stata il primo algoritmo della storia: ha risolto…">
+              <a href="chapter-03-3-3.html">
+                <span class="sid">3.3.3</span>
+                <span class="st">🌎 3.3.3 — Economia e geopolitica</span>
+                <span class="sd">3.3.3 — Economia e geopolitica: La burocrazia è stata il primo algoritmo della storia: ha risolto…</span>
+              </a>
+            </li>
+            <li class="sub" data-search="🎨 3.3.4 — arte, previsioni e futuro 3.3.4 — arte, previsioni e futuro: dagli anni ottanta le parole “progresso” e “futuro” compaiono…">
+              <a href="chapter-03-3-4.html">
+                <span class="sid">3.3.4</span>
+                <span class="st">🎨 3.3.4 — Arte, previsioni e futuro</span>
+                <span class="sd">3.3.4 — Arte, previsioni e futuro: Dagli anni Ottanta le parole “progresso” e “futuro” compaiono…</span>
+              </a>
+            </li>
+          </ul>
+        </details>
+      </div>
+    </section>
+    <div class="empty" id="empty">Nessun sottocapitolo corrisponde al filtro.</div>
+  </main>
+  <footer>
+    <p>Futuro Fortissimo · <a href="/book/ffxy-index.html">Indice ff.x.y completo</a> · <a href="/book/">Versione desktop</a></p>
+  </footer>
+  <script>
+    (function(){
+      var q = document.getElementById('q');
+      var empty = document.getElementById('empty');
+      if (!q) return;
+      function apply(){
+        var v = (q.value || '').trim().toLowerCase();
+        var items = document.querySelectorAll('.sub');
+        var any = 0;
+        items.forEach(function(it){
+          var hay = it.getAttribute('data-search') || '';
+          var ok = !v || hay.indexOf(v) !== -1;
+          it.style.display = ok ? '' : 'none';
+          if (ok) any++;
+        });
+        // Hide parent blocks whose children are all hidden
+        document.querySelectorAll('.parent').forEach(function(p){
+          var visible = p.querySelectorAll('.sub:not([style*="display: none"])').length;
+          p.style.display = visible ? '' : 'none';
+        });
+        empty.style.display = any ? 'none' : '';
+      }
+      q.addEventListener('input', apply);
+    })();
+  </script>
+</body>
+</html>
