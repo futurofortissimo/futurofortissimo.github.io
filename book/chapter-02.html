@@ -77,6 +77,26 @@
         .chapter-num{font-family:'Press Start 2P',monospace;font-size:clamp(0.45rem,1vw,0.55rem);letter-spacing:0.3em}
         @media(max-width:640px){.brutal-card{border-width:2px;box-shadow:none}}
     </style>
+
+<style>
+/* Bibliography v2 — highlight on click */
+li[id^="fonte-"]:target{
+  background: rgba(255, 215, 0, 0.22);
+  outline: 2px solid rgba(255, 215, 0, 0.55);
+  outline-offset: 2px;
+  border-radius: 4px;
+  padding: 3px 6px;
+  animation: ff-bib-flash 2.4s ease-out;
+}
+@keyframes ff-bib-flash {
+  0%   { background: rgba(255, 215, 0, 0.65); }
+  100% { background: rgba(255, 215, 0, 0.22); }
+}
+.ff-note-weave{ font-style: normal; }
+.ff-note-weave mark.note-highlight{ background: rgba(255,235,59,0.35); padding: 0 2px; }
+.ff-corpus-img img{ max-width: 100%; }
+.ff-svg-figure svg{ width:100%; height:auto; display:block; }
+</style>
 </head>
 <body class="antialiased">
 
