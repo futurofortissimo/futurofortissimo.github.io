@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><title>Review PR 6/10 - rewrite 2026-04-24</title>
+<style>body{font-family:-apple-system,sans-serif;max-width:900px;margin:2em auto;padding:0 1em;line-height:1.55;color:#222}h1{border-bottom:3px solid #0a0a0a}h2{border-left:4px solid #2ecc71;padding-left:.6em;margin-top:2em}table{border-collapse:collapse;width:100%;margin:1em 0}th,td{border:1px solid #ddd;padding:.4em .6em;text-align:left;font-size:.92em}th{background:#f5f5f5}code{background:#f5f5f5;padding:.1em .3em;border-radius:3px;font-size:.9em}.good{color:#2ecc71;font-weight:700}.ok{color:#4a90e2}.before{background:#fff5f5;padding:.8em;border-left:3px solid #d0021b}.after{background:#f0fdf4;padding:.8em;border-left:3px solid #2ecc71}</style></head>
+<body>
+<h1>PR 6/10 - Rewrite gold-standard continuation (2026-04-24)</h1>
+<p><strong>Sottocapitoli riscritti:</strong> 2 (2.2.4 Cripto in guerra, 3.2.4 Respiro e sonno).</p>
+<p><strong>Gold reference:</strong> paragrafo Matrix e materia (ff.64.4) in <code>book/chapter-02-metaverso.html</code>, righe 175-178.</p>
+<p><strong>Pattern doc:</strong> <code>generated/rewrite_gold_patterns_2026-04-24.md</code>.</p>
+
+<h2>Fidelity table</h2>
+<table>
+<tr><th>File</th><th>Word count</th><th>Anchors (ref-fonte)</th><th>Sup refs</th><th>mark.note-highlight</th><th>Fonti bibliografia</th><th>Pull-quote</th><th>Figure SVG</th></tr>
+<tr><td>chapter-02-2-4.html</td><td>1534 &rarr; <span class="good">1835</span></td><td>2 &rarr; <span class="good">8</span></td><td>1 &rarr; <span class="good">4</span></td><td>5 &rarr; <span class="good">5</span></td><td>1 &rarr; <span class="good">4</span></td><td>1 &rarr; 1</td><td>0 &rarr; <span class="good">1</span></td></tr>
+<tr><td>chapter-03-2-4.html</td><td>1470 &rarr; <span class="good">2179</span></td><td>6 &rarr; <span class="good">17</span></td><td>3 &rarr; <span class="good">7</span></td><td>3 &rarr; <span class="good">7</span></td><td>3 &rarr; <span class="good">10</span></td><td>0 &rarr; <span class="good">1</span></td><td>1 &rarr; <span class="good">2</span></td></tr>
+</table>
+
+<h2>Cross-ref fidelity check (tutti esistenti in data.js)</h2>
+<table>
+<tr><th>Cross-ref</th><th>File di destinazione</th><th>Verifica</th></tr>
+<tr><td>ff.24.1</td><td>2.2.4</td><td class="good">ok</td></tr>
+<tr><td>ff.24.3 (nuovo)</td><td>2.2.4</td><td class="good">ok, data.js:15526</td></tr>
+<tr><td>ff.64.4 (nuovo cross-ref a Matrix)</td><td>2.2.4</td><td class="good">ok, chapter-02-metaverso</td></tr>
+<tr><td>ff.84.1 / ff.84.2</td><td>2.2.4</td><td class="good">ok</td></tr>
+<tr><td>ff.117.3 / ff.15.3</td><td>2.2.4</td><td class="good">ok</td></tr>
+<tr><td>ff.87.1 / ff.87.4 / ff.47.1 / ff.22.1 / ff.86.3 / ff.35.3</td><td>3.2.4</td><td class="good">tutti ok</td></tr>
+</table>
+
+<h2>Before/After: 2.2.4 opening</h2>
+<div class="before"><strong>BEFORE:</strong> "Il 26 febbraio 2022, mentre i carri armati russi avanzavano verso Kiev, il Ministro della Trasformazione Digitale ucraino fece qualcosa che nessun manuale diplomatico prevedeva..."</div>
+<div class="after"><strong>AFTER (Matrix-style dry list opening):</strong> "Bitcoin. Ethereum. USDT. Tre stringhe alfanumeriche pubblicate sull'account Twitter ufficiale dell'Ucraina alle 15:29 del 26 febbraio 2022..."</div>
+<p>Opening tre-parole-staccate stile Matrix ("Cloud, Internet of Things, 5G, QR code..."), ancorato a tweet url diretto via <code>ref-fonte-1</code> bidirezionale.</p>
+
+<h2>Before/After: 3.2.4 opening</h2>
+<div class="before"><strong>BEFORE:</strong> "James Nestor, in Breath: The New Science of a Lost Art, rivela che la maggior parte degli esseri umani moderni respira male..."</div>
+<div class="after"><strong>AFTER (dry hook + Feuerbach bridge):</strong> "La maggior parte degli esseri umani moderni respira male. Lo dice James Nestor in L'arte di respirare: due secoli di cibi processati hanno ristretto i palati... Feuerbach diceva che siamo cio che mangiamo; Nestor aggiorna: siamo quello che respiriamo, e respiriamo male da quando abbiamo smesso di masticare."</div>
+
+<h2>Nuove fonti esterne aggiunte</h2>
+<p><strong>2.2.4:</strong> twitter.com/ukraine/1497594592438497282, ambientphotonics.com &mdash; oltre alle gia presenti fortissimo.substack (nuovi-schermi, eventi-digitali).</p>
+<p><strong>3.2.4:</strong> pubmed.ncbi.nlm.nih.gov/25450408 (mouth taping), sciencedirect.com/S0960982210015083 (paziente SM), salk.edu/satchidananda-panda, nature.com/s42255-021-00466-9 (TRF topi), frontiersin.org/10.3389/fphys.2021.771944 (TRF umani), motionpillow.com &mdash; tutte gia presenti in <code>data.js</code> references di ff.87.1, ff.47.1, ff.22.1. Zero invenzione.</p>
+
+<h2>Rule compliance</h2>
+<ul>
+<li class="good">Corpus fidelity: ogni fatto tracciabile a data.js/notes.json</li>
+<li class="good">Cross-ref fidelity: tutti e 13 i ff.X.Y verificati presenti in data.js</li>
+<li class="good">ff.X.Y strict: nessun ff.X chapter-only inline</li>
+<li class="good">Inline external links in prose: <a> come ancore in argomentazione, non liste</li>
+<li class="good">NO citation blocks: zero div.citation</li>
+<li class="good">Bibliography v2: ancore bidirezionali ref-fonte-N / #fonte-N / &#8617;</li>
+<li class="good">Figure rule 3-4p: 1 SVG in 2.2.4, 2 figure in 3.2.4 (una Breath + una SVG)</li>
+<li class="good">Highlight colors: verde natura - blu tech - rosso corpo, gia definiti a CSS-level, preservati</li>
+<li class="good">Class names preservati: brutal-card, pull-quote, fc, note-highlight, drop-cap, prose</li>
+<li class="good">Nessun CSS touched (PR 5 domain)</li>
+</ul>
+
+<h2>Piano PR 7/10</h2>
+<p>Crossref fidelity audit: scan tutti i ff.X.Y inline nei 36 sottocapitoli vs data.js, flag invented/mismatched, produce CSV report. Pronto a partire.</p>
+
+</body></html>
