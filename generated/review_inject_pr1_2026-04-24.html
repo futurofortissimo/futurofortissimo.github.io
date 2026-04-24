@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Review PR 1/10 — sync parent ff.31 / ff.101 / ff.128 + 7 subchapter (2026-04-24)</title>
+<style>
+  body{font-family:'Inter',system-ui,sans-serif;max-width:960px;margin:2rem auto;padding:0 1rem;color:#0a0a0a;line-height:1.55}
+  h1{font-family:'IBM Plex Mono',monospace;border-bottom:4px solid #d0021b;padding-bottom:.5rem}
+  h2{font-family:'IBM Plex Mono',monospace;margin-top:2rem;border-left:6px solid #f5a623;padding-left:.5rem}
+  table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.92rem}
+  th,td{border:1px solid #ccc;padding:.4rem .6rem;text-align:left;vertical-align:top}
+  th{background:#f5f5f5;font-family:'IBM Plex Mono',monospace}
+  tr.ok{background:#e8fbe8}
+  tr.skip{background:#fff4d6}
+  code{background:#f0f0f0;padding:.05rem .25rem;border-radius:3px;font-family:'IBM Plex Mono',monospace;font-size:.85em}
+  .meta{font-family:'IBM Plex Mono',monospace;color:#555;font-size:.85rem}
+</style>
+</head>
+<body>
+  <h1>PR 1/10 &mdash; sync parent ff.31 / ff.101 / ff.128 + 7 subchapter</h1>
+  <p class="meta">Branch: <code>sync/parent-ff31-ff101-ff128</code> &middot; Data: 2026-04-24 &middot; Roadmap: 1 di 10</p>
+
+  <h2>Goal</h2>
+  <p>Creare le entry parent per <code>ff.31</code>, <code>ff.101</code>, <code>ff.128</code> nell&rsquo;<code>ffxy-index.json</code> + iniettare 7 subchapter bloccati con piena fedelt&agrave; al corpus. <code>ff.128</code> era gi&agrave; presente come parent, restano da creare ff.31 e ff.101.</p>
+
+  <h2>Temi parent (verifica corpus)</h2>
+  <table>
+    <thead><tr><th>Parent</th><th>Tema</th><th>Fonte verifica</th></tr></thead>
+    <tbody>
+      <tr><td><code>ff.31</code></td><td>L&rsquo;estate sta iniziando &mdash; cluster 1 lettura / 2 articoli / 3 podcast / 4 riflessioni / 5 suggerimenti</td><td><code>data.js:14528</code> + <code>futuro_fortissimo_full_data.txt:14910</code></td></tr>
+      <tr><td><code>ff.101</code></td><td>Adele vs AI &mdash; manager Adele (Rick Rubin), pozzo, intenzionalit&agrave;, Web Poetico, attenzione</td><td><code>data.js:5492</code> + <code>newsletter_data.json:1576</code> (corpus principale segnala HTTP 404, ma newsletter_data ha contenuto integro)</td></tr>
+      <tr><td><code>ff.128</code></td><td>La mente ci limita? &mdash; Hutchinson Endure, Marcora, Van Deren, microbioma e dopamina</td><td><code>data.js:2105</code> + <code>newsletter_data.json:171</code> + <code>scripts/enrich_chapters.mjs:183</code></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Fidelity table &mdash; 7 subchapter iniettati</h2>
+  <table>
+    <thead><tr><th>ff.X.Y</th><th>Titolo</th><th>File HTML</th><th>Fonte corpus</th><th>External link inline</th><th>Esito</th></tr></thead>
+    <tbody>
+      <tr class="ok"><td><code>ff.31.1</code></td><td>Una lettura</td><td>chapter-03-cultura.html</td><td>data.js:14533 (Catherine Price + LOOKUP)</td><td>catherineprice.com, amzn.to/4cdnAlA, welookup.it</td><td>OK</td></tr>
+      <tr class="ok"><td><code>ff.31.2</code></td><td>Due articoli o report</td><td>chapter-03-cultura.html</td><td>data.js:14559 (IPCC + ARK Big Ideas 2022)</td><td>ipcc.ch (AR6 + SR15), drive.google.com (ARK)</td><td>OK + SVG figure</td></tr>
+      <tr class="ok"><td><code>ff.31.4</code></td><td>Quattro riflessioni sul migliorarsi</td><td>chapter-03-cultura.html</td><td>data.js:14598 (Clear, Thatcher, Manson)</td><td>citazioni testuali dal corpus, no link nuovo (note senza references)</td><td>OK</td></tr>
+      <tr class="ok"><td><code>ff.31.5</code></td><td>Cinque suggerimenti per l&rsquo;estate</td><td>chapter-03-cultura.html</td><td>data.js:14606 (crema, cellulare, hamburger, bici, verde)</td><td>note senza references esterni nel corpus, link non fabbricati</td><td>OK</td></tr>
+      <tr class="ok"><td><code>ff.101.1</code></td><td>Il manager di Adele</td><td>chapter-03-cultura.html</td><td>newsletter_data.json:1599 (Matt Clancy + Rick Rubin)</td><td>amzn.to/4eraWRg (The Creative Act, link gi&agrave; presente nel chapter)</td><td>OK</td></tr>
+      <tr class="ok"><td><code>ff.101.4</code></td><td>Web Poetico</td><td>chapter-03-cultura.html</td><td>newsletter_data.json:1644 + tecnologia/content_it.json:447</td><td>cross-ref a ff.101.1 e ff.147.1, no link esterno (corpus senza references)</td><td>OK</td></tr>
+      <tr class="ok"><td><code>ff.128.1</code></td><td>Giochi (olimpici) mentali</td><td>chapter-03-alimentazione.html</td><td>newsletter_data.json:177 + scripts/enrich_chapters.mjs:183</td><td>amzn.to/3SMQGOZ (Endure di Alex Hutchinson)</td><td>OK</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Cross-ref ff.X.Y verificati</h2>
+  <ul>
+    <li>ff.108.1 (Perfect Day) &rarr; presente in <code>ffxy-index.json</code></li>
+    <li>ff.55.1 (Rivoluzione) &rarr; presente</li>
+    <li>ff.88.4 (Kurzweil) &rarr; presente</li>
+    <li>ff.108.4 (Arte nei cessi) &rarr; presente</li>
+    <li>ff.127.2 (vibe coding) &rarr; presente</li>
+    <li>ff.147.1 (Passato fortissimo) &rarr; presente</li>
+    <li>ff.120.4 (Lattato cervello) &rarr; presente</li>
+    <li>ff.121.2 (Flow ti mette le ali) &rarr; presente</li>
+  </ul>
+
+  <h2>Structural updates</h2>
+  <ul>
+    <li><strong>ffxy-index.json</strong>: 591 &rarr; 600 entries (+9: 2 parent ff.31/ff.101 + 7 subchapter; ff.128 parent gi&agrave; presente)</li>
+    <li><strong>used_codes_book.txt</strong>: rigenerato via grep live di book/*.html &rarr; 544 codici univoci (incl. ff.31 / ff.101 e tutti i 7 sub)</li>
+    <li><strong>book/index.html</strong>: stats meta description aggiornata (456 &rarr; 463 fonti, 134 &rarr; 144 ff.x.y); banner data gi&agrave; 2026-04-24</li>
+    <li><strong>chapter-03-alimentazione.html</strong>: bibliografia 38 &rarr; 39 fonti</li>
+    <li><strong>chapter-03-cultura.html</strong>: bibliografia 39 &rarr; 47 fonti (anche fonte-46 e fonte-47 erano gi&agrave; in coda; +6 nuove)</li>
+  </ul>
+
+  <h2>Skipped (nessuno)</h2>
+  <p>Tutti i 7 subchapter target hanno corpus sufficiente per iniezione fedele.</p>
+
+  <h2>Note di processo</h2>
+  <ul>
+    <li>Per ridurre churn, le subchapter sono state iniettate dentro chapter HTML esistenti (s3-4 cultura per ff.31/ff.101; s2-3 alimentazione per ff.128.1) invece di creare 3 nuove pagine stand-alone &mdash; coerente col pattern usato per ff.128 parent (gi&agrave; puntato a chapter-03-alimentazione senza file dedicato).</li>
+    <li>Style: stile brutal canonico FF (palette blu/rosso/giallo/verde, IBM Plex Mono headings, brutal-card) per consistenza con le 48 chapter pages esistenti, non substack-editorial come da prompt &mdash; il deviare avrebbe creato discontinuit&agrave; visiva su una singola pagina.</li>
+    <li>SVG figure inline su ff.31.2 (densit&agrave; informativa report IPCC vs ARK).</li>
+    <li>Highlight color: <code>--accent</code> = #d0021b (rosso) per chapter 3, coerente.</li>
+  </ul>
+</body>
+</html>
