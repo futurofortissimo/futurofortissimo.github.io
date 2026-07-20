@@ -1,5 +1,308 @@
 export const rawData = [
     {
+        "url": "https://fortissimo.substack.com/p/ff151-immagina-puoi",
+        "title": "🎼 ff.151 Immagina, puoi!",
+        "subtitle": "Simulare odori, generare il web in live e altra Paprika",
+        "keypoints": [
+            "Prophetic: un caschetto che sa di DC Mini",
+            "Annusare i fiori di Minecraft ?",
+            "Flipbook: everything everywhere all at generated"
+        ],
+        "subchapters": [
+            {
+                "title": "🐸 ff.151.1 Rospi che mangiano cartone",
+                "link": "https://fortissimo.substack.com/i/195021734/ff1511-rospi-che-mangiano-cartone",
+                "content": "Alcune teorie neuroscientifiche dicono che la realtà là fuori è tutta una costruzione del cervello. D'altronde, se ci pensate, è un agglomerato di neuroni e acqua chiuso in una scatola cranica che cerca di dare un senso ai vari stimoli elettrici che gli sopraggiungono. Cerca di costruire una realtà che a volte va contro la realtà stessa: un rospo ( lupus in fabula , direi, 🤴 ff.105.1 Trasformare una rana in principe azzurro? ) non mangia una mosca se questa è paralizzata con cloroformio. Non muovendosi, non risulta “allungata” dal movimento delle ali, e quindi non è “vista” come cibo. Almeno, nella simulazione del cervello dell’animale. Riecco il sottile confine tra reale, immaginato, sognato e generato.",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/99f7fa55-0e45-459d-853d-8d7f26584ac3_554x316.png",
+                        "caption": "Un rospo che mangia cartone rettangolare (ma non mosche)"
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "Un rospo che mangia cartone rettangolare (ma non mosche)",
+                        "url": "https://worrydream.com/refs/Kay_2004_-_The_Center_of_Why.pdf"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "🤴 ff.105.1 Trasformare una rana in principe azzurro?",
+                        "url": "https://fortissimo.substack.com/i/141601434/ff1051-trasformare-una-rana-in-principe-azzurro"
+                    }
+                ]
+            },
+            {
+                "title": "🌶️ ff.151.2 Prophetic(a) Paprika",
+                "link": "https://fortissimo.substack.com/i/195021734/ff1512-prophetica-paprika",
+                "content": "E’ un tema che ci sta a cuore. I sogni, altre simulazioni mentali, alimentano questa confusione, come visto in 🎼 ff.118 Paprika e massaggi . Nel film Paprika , un dispositivo, il DC Mini, permetteva per la prima volta di controllare i sogni (o la realtà?) del paziente. La DC Mini è realtà, oggi: se già nel 2016 si era dimostrata la fattibilità tecnologica di un dispositivo simile ( paper Nature di stimolazione a ultrasuoni per far “vedere” un paziente ), oggi Prophetic lo commercializza. Dreams will never be the same , a meno di 500€. La DC Mini, comunque, era - agli albori di Internet, nel 2006, data di uscita del film - una metafora per le presto infinite realtà parallele generate online. Questo trend continua oggi con flipbook.page che genera un in live una qualsivoglia pagina web. Impreciso? Sì. Ma è la parola live che va sottolineata. Presto, potremo creare “a telecomando” un’interfaccia video personalizzata, se non una realtà completamente esplorabile. Vi ricorda qualcosa? Suggerimento: 🦊 ff.98.3 Sora luna, e il cantico delle creature a nove code .",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/a0eff7d8-87ce-43e5-a11d-6ab5fc73054c_1173x814.png",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/dcfa1479-395c-43f2-83f1-5029fcbc66cf_1153x877.png",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/d32030a2-dde5-4c9e-a180-c8dd6a62e452_1400x596.jpeg",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "paper Nature di stimolazione a ultrasuoni per far “vedere” un paziente",
+                        "url": "https://dash.harvard.edu/server/api/core/bitstreams/7312037e-0918-6bd4-e053-0100007fdf3b/content"
+                    },
+                    {
+                        "text": "Prophetic",
+                        "url": "https://www.prophetic.com/?utm_source=substack&utm_medium=email"
+                    },
+                    {
+                        "text": "flipbook.page",
+                        "url": "https://flipbook.page/"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "🎼 ff.118 Paprika e massaggi",
+                        "url": "https://fortissimo.substack.com/p/ff118-paprika-e-massaggi?utm_source=publication-search"
+                    },
+                    {
+                        "text": "🦊 ff.98.3 Sora luna, e il cantico delle creature a nove code",
+                        "url": "https://fortissimo.substack.com/i/145245800/ff983-sora-luna-e-il-cantico-delle-creature-a-nove-code"
+                    }
+                ]
+            },
+            {
+                "title": "👃 ff.151.3 Annusare Minecraft?",
+                "link": "https://fortissimo.substack.com/i/195021734/ff1513-annusare-minecraft",
+                "content": "Parlando di stimolazioni mentali (e illusioni), torniamo ai videogiochi per un triplo salto carpiato di reale/ricreato/fisico/digitale. La realtà (il COVID) era entrata nel digitale quando avevamo visto personaggi di Minecraft “con il fiatone”. Era un progetto per sensibilizzare sugli effetti del virus sui polmoni ( 🫁 ff.76.3 E gli effetti fisici ). Oggi, vediamo l’opposto: il profumo dei fiori finti di Minecraft ricreati con onde a ultrasoni: lo Smell Simulator del Caltech . BONUS. Parlando di olfatto, ma con uno studio più terra-a-terra, i cani annusano tumori . Almeno in India.",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/e122ad99-70c6-43f0-abf0-cd0525442d83_1074x1000.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "Smell Simulator del Caltech",
+                        "url": "https://x.com/i/status/2044631856830976231"
+                    },
+                    {
+                        "text": "i cani annusano tumori",
+                        "url": "https://ascopubs.org/doi/abs/10.1200/JCO-25-02310?utm_source=substack&utm_medium=email"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "🫁 ff.76.3 E gli effetti fisici",
+                        "url": "https://fortissimo.substack.com/i/135267240/ff763-e-gli-effetti-fisici"
+                    }
+                ]
+            },
+            {
+                "title": "🧠 ff.151.4 Altre aziende “mentali”",
+                "link": "https://fortissimo.substack.com/i/195021734/ff1514-altre-aziende-mentali",
+                "content": "Gli esempi di applicazioni, anche terapeutiche, non finiscono qui. Sabi , azienda con finanziamenti da Khosla e dal VP scientifico di OpenAI Kevin Weil, prova a leggere i pensieri sviluppando un ChatGPT di pattern neurali. E Motif Neurotech è una delle prime aziende ad aver l’ok dalla FDA per trial clinici della neurostimolazione per curare la depressione.",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/766a0764-44f1-4cac-a6a2-5707ce6d4dfd_1854x771.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "Sabi",
+                        "url": "https://x.com/i/status/2044781153559929199"
+                    },
+                    {
+                        "text": "Motif Neurotech",
+                        "url": "https://motifneuro.tech/"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "🍵 ff.151.5 (Digital) detox",
+                "link": "https://fortissimo.substack.com/i/195021734/ff1515-digital-detox",
+                "content": "Sì, lo so, lo state pensando anche voi: l’ennesima tecnologia che risolve un “problema” con l’approccio “a pillola”. Per risolvere la depressione moderna, basterebbe togliere i social, invece di massaggiare elettronicamente il cervello: studio Stanford su 35.000 persone riduce depressione togliendo Facebook e Instagram in 6 settimane . Per misurare il detox sul corpo, David Daines ha lanciato Year Unplagged, un anno senza schermo con tracciamento di cortisolo e altri parametri fisiologici . Insomma, il futuro sarà più flipbook e neurostimoli o natura e zero connessioni?",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/6a2261db-ca27-4eff-b6fa-9e1d4e9116a1_1080x1920.webp",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/35a4299c-1a93-4d78-989c-d4cf9c0792af_1440x1440.bin",
+                        "caption": "Jackson Green e la creatività contro l’ADHD (via futuro fortissimo)"
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "studio Stanford su 35.000 persone riduce depressione togliendo Facebook e Instagram in 6 settimane",
+                        "url": "https://x.com/i/status/2045314524962545861"
+                    },
+                    {
+                        "text": "un anno senza schermo con tracciamento di cortisolo e altri parametri fisiologici",
+                        "url": "https://yearunplugged.com/biomarkers"
+                    },
+                    {
+                        "text": "Jackson Green e la creatività contro l’ADHD (via futuro fortissimo)",
+                        "url": "https://www.itsnicethat.com/features/does-having-adhd-optimise-creativity-creative-industry-040522"
+                    },
+                    {
+                        "text": "supporta con un caffè",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    },
+                    {
+                        "text": "michele merelli",
+                        "url": "https://www.linkedin.com/in/michelemerelli/"
+                    }
+                ],
+                "connections": []
+            }
+        ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff150-yes-we-can",
+        "title": "🎼 ff.150 Yes we can?",
+        "subtitle": "Potere vs dovere e la negativit&#224; dell'Altro",
+        "keypoints": [
+            "La prossima pandemia: i neuroni? (altro che COVID)",
+            "Dal dovere al potere: Yes We Can (un po’ troppo)",
+            "Cosa sono Unselfing e We-tiredeness ?"
+        ],
+        "subchapters": [
+            {
+                "title": "🐺 ff.150.1 Lupi, virus e neuroni",
+                "link": "https://fortissimo.substack.com/i/194704648/ff1501-lupi-virus-e-neuroni",
+                "content": "Salute mentale e burnout riguardano il nostro futuro. Così, 🎼 ff torna anche sull’ ❤️ Uomo (oltre che 🍃 Natura e 🖥️ Tecnologia). Qualche tempo fa, avevamo visto 🎼 ff.62 Come evitare il burnout con Paul Millard che ha lascito McKinsey per trasferirsi a Taiwan. Non è un caso se Byung-Chul Han, importante pensatore contemporaneo già incontrato in 🍎 ff.64.2 Da Newton a Einstein ha scritto anche The Burnout Society : Il XX secolo era immunologico: confini, muri, l’Estraneo/Altro visto come minaccia. Poi, l’Altro è diventato sempre più subdolo: dal lupo al ratto, dall’insetto al virus. Nel XXI secolo, l’Altro è sparito. E il pericolo maggiore è diventato interno: i nostri neuroni. Bonus. In biologia, le malattie autoimmuni sono in aumento .",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/be74cbe3-9d1f-48d7-ba8a-dc15dd46e10b_1000x1428.jpeg",
+                        "caption": "La società della stanchezza (2015), Byung-Chul Han (via futuro fortissimo)"
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "The Burnout Society",
+                        "url": "https://www.sup.org/books/title/?id=20550"
+                    },
+                    {
+                        "text": "La società della stanchezza",
+                        "url": "https://amzn.to/4dXNRsa"
+                    },
+                    {
+                        "text": "le malattie autoimmuni sono in aumento",
+                        "url": "https://pubs.sciepub.com/ijcd/3/4/8/"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "🎼 ff.62 Come evitare il burnout",
+                        "url": "https://fortissimo.substack.com/p/ff61-come-evitare-il-burnout"
+                    },
+                    {
+                        "text": "🍎 ff.64.2 Da Newton a Einstein",
+                        "url": "https://fortissimo.substack.com/i/119334503/ff642-da-newton-a-einstein"
+                    }
+                ]
+            },
+            {
+                "title": "🛋️ ff.150.2 Freud nel cestino?",
+                "link": "https://fortissimo.substack.com/i/194704648/ff1502-freud-nel-cestino",
+                "content": "Depressione e burnout non sono quindi infezioni esterne ( negatività dell’Altro), ma esplosioni interne, di un io-potenziale che si moltiplica all’infinito. Come un tumore. Siamo lontani, quindi, dal Super-io di Freud, che frena pulsioni dell’Es in una società moralistica e religiosa: il Du sollst (Should, Devi) è stato rimpiazzato dal Du kannst (Can, Puoi).",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/0ad85a4f-6a4d-4889-ab01-96437c5705d3_1000x1000.jpeg",
+                        "caption": ""
+                    }
+                ],
+                "references": [],
+                "connections": []
+            },
+            {
+                "title": "♾️ ff.150.3 Possibilità (e vita) infinita?",
+                "link": "https://fortissimo.substack.com/i/194704648/ff1503-possibilita-e-vita-infinita",
+                "content": "Continua, Han, riflettendo sull’infinità dell’Ego: Se società e tessuto sociale stanno sparendo (l’Altro), all’Ego rimane il proprio corpo, da mantenere in salute a ogni costo. L’economia capitalista assolutizza la sopravvivenza. Si regge sull’illusione che più capitale produca più vita, intesa come una maggiore capacità di vivere. Viene in mente DON’T DIE di Bryan Johsnon ... Han chiama la nostra società Leistungsgesellschaft , la società degli achievement. Fonte di perenne (distr)-azione, tanto che non riusciamo più nemmeno ad incazzarci. La rabbia è stata sostituita dal fastidio: La distrazione generale che affligge la società contemporanea non permette all’energia e all’intensità della rabbia di emergere. Oggi, questa cede sempre più il passo all’offesa o al fastidio, all’avere ‘un conto in sospeso’ ( having a beef ), sentimenti che si rivelano incapaci di produrre un cambiamento decisivo. Sì, siamo infastiditi da tutto. Anche da una piccola incomprensione uscendo da un parcheggio. A proposito: è uscita la seconda stagione di Beef (titolo auto esplicativo).",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/d376d5cb-93eb-4d7f-9014-0021527dcc6a_452x678.jpeg",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "DON’T DIE di Bryan Johsnon",
+                        "url": "https://dontdie.bryanjohnson.com/"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "- ff.150.4 Io penso negativo?",
+                "link": "https://fortissimo.substack.com/i/194704648/ff1504-io-penso-negativo",
+                "content": "Mea culpa . Non nascondo che futuro fortissimo è innanzitutto positivismo ( 🎼 ff.59 L’ottimismo vola! ). Eppure la negatività (del clacson in coda a Paullo) dell’Altro sembra essere l’unica cura all’iperattività. Senza questo limite esterno, sprofondiamo nell’ I-tiredness di Peter Handke: una stanchezza muta e solitaria, alla ricerca dell’ennesimo PR in maratona, dell’ultima offerta di lavoro più remunerativa, dell’ennesimo IRONMAN. O uno, o l’altro. Di fronte all’infinito moderno, a un certo punto bisogna tagliare, de-cidere, recidere ( 🏠 ff.44.3 Stabilirsi stabilizza ). E’ difficile, lo so. E lo sapeva Kierkegaard nel 1843, con il suo libro Aut-Aut .",
+                "images": [],
+                "references": [
+                    {
+                        "text": "Kierkegaard nel 1843, con il suo libro",
+                        "url": "https://amzn.to/3QdDTcp"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "🎼 ff.59 L’ottimismo vola!",
+                        "url": "https://fortissimo.substack.com/p/ff59-lottimismo-vola?utm_source=publication-search"
+                    },
+                    {
+                        "text": "🏠 ff.44.3 Stabilirsi stabilizza",
+                        "url": "https://fortissimo.substack.com/i/82346421/ff-stabilirsi-stabilizza"
+                    }
+                ]
+            },
+            {
+                "title": "🌱 ff.150.5 Amarsi (e annoiarsi) un po’",
+                "link": "https://fortissimo.substack.com/i/194704648/ff1505-amarsi-e-annoiarsi-un-po",
+                "content": "Ma l’Altro non è per forza un camionista incazzato che suona il clacson. L’Altro è anzitutto amore: L’amore è l’estrema e difficile consapevolezza che qualcosa oltre a noi stessi è reale. Iris Murdoch, Esistenzialisti e mistici Il biologo cileno Humberto Maturana arriva allo stesso punto per via evolutiva: Senza amore, senza l'accettazione degli altri che vivono accanto a noi, non c'è alcun processo sociale e, di conseguenza, non c'è umanità. Humberto R. Maturana , L’albero della conoscenza Iris Murdoch e Peter Handke tornano quindi insieme. Serve meno Sé, Unselfing come suggerito dalla prima, per annoiarci - sì - ma insieme: la We-tiredness , come proposto dal secondo.",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/051eca33-1c68-4fe8-b372-2730f3947acc_956x640.png",
+                        "caption": "I LOVE NY: un’heatmap della parola love nelle strade di New York (ma anche del vostro nome)"
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "Esistenzialisti e mistici",
+                        "url": "https://amzn.to/4cZj2Cg"
+                    },
+                    {
+                        "text": "L’albero della conoscenza",
+                        "url": "https://amzn.to/4mJbGGp"
+                    },
+                    {
+                        "text": "la",
+                        "url": "https://the-haven.co/be-tired-with-me/"
+                    },
+                    {
+                        "text": "I LOVE NY: un’heatmap della parola love nelle strade di New York",
+                        "url": "https://alltext.nyc/map?q=love"
+                    },
+                    {
+                        "text": "supporta con un caffè",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    },
+                    {
+                        "text": "michele merelli",
+                        "url": "https://www.linkedin.com/in/michelemerelli/"
+                    }
+                ],
+                "connections": []
+            }
+        ]
+    },
+    {
         "url": "https://fortissimo.substack.com/p/ff149-come-essere-solari",
         "title": "🎼 ff.149 Come essere solari",
         "subtitle": "L'abbondanza è qui, basta mettere gli occhiali da sole",
