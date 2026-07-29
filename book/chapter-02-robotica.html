@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>2.1 &mdash; Robotica e AI | 💻 Tecnologia | Futuro Fortissimo</title>
-    <meta name="description" content="2.1 &mdash; Robotica e AI (L'economia del compute, La singolarit&agrave; gentile, &hellip;). Introduzione + 4 sottocapitoli di Futuro Fortissimo. 88 fonti, ~61 min."/>
+    <meta name="description" content="2.1 &mdash; Robotica e AI (L'economia del compute, La singolarit&agrave; gentile, &hellip;). Introduzione + 4 sottocapitoli di Futuro Fortissimo. 91 fonti, ~61 min."/>
     <link rel="canonical" href="https://futurofortissimo.github.io/book/chapter-02-robotica.html"/>
     <meta property="og:title" content="2.1 &mdash; Robotica e AI | Tecnologia"/>
     <meta property="og:type" content="article"/>
@@ -21,7 +21,7 @@
 
     <meta property="og:site_name" content="Futuro Fortissimo"/>
     <meta property="og:locale" content="it_IT"/>
-    <meta property="og:description" content="2.1 &mdash; Robotica e AI (L'economia del compute, La singolarit&agrave; gentile, &hellip;). Introduzione + 4 sottocapitoli di Futuro Fortissimo. 88 fonti, ~61 min."/>
+    <meta property="og:description" content="2.1 &mdash; Robotica e AI (L'economia del compute, La singolarit&agrave; gentile, &hellip;). Introduzione + 4 sottocapitoli di Futuro Fortissimo. 91 fonti, ~61 min."/>
     <meta property="article:section" content="Tecnologia"/>
     <meta property="article:modified_time" content="2026-04-21"/>
 
@@ -29,7 +29,7 @@
     <meta name="twitter:site" content="@micmer"/>
     <meta name="twitter:creator" content="@micmer"/>
     <meta name="twitter:title" content="2.1 — Robotica e AI | 💻 Tecnologia"/>
-    <meta name="twitter:description" content="2.1 &mdash; Robotica e AI (L'economia del compute, La singolarit&agrave; gentile, &hellip;). Introduzione + 4 sottocapitoli di Futuro Fortissimo. 88 fonti, ~61 min."/>
+    <meta name="twitter:description" content="2.1 &mdash; Robotica e AI (L'economia del compute, La singolarit&agrave; gentile, &hellip;). Introduzione + 4 sottocapitoli di Futuro Fortissimo. 91 fonti, ~61 min."/>
     <meta name="twitter:image" content="https://futurofortissimo.github.io/logo.png"/>
 
     <script type="application/ld+json">
@@ -37,7 +37,7 @@
       "@context": "https://schema.org",
       "@type": "Article",
       "headline": "2.1 — Robotica e AI | 💻 Tecnologia",
-      "description": "2.1 &mdash; Robotica e AI (L'economia del compute, La singolarit&agrave; gentile, &hellip;). Introduzione + 4 sottocapitoli di Futuro Fortissimo. 88 fonti, ~61 min.",
+      "description": "2.1 &mdash; Robotica e AI (L'economia del compute, La singolarit&agrave; gentile, &hellip;). Introduzione + 4 sottocapitoli di Futuro Fortissimo. 91 fonti, ~61 min.",
       "author": { "@type": "Person", "name": "Michele Merelli", "url": "https://futurofortissimo.substack.com/" },
       "publisher": { "@type": "Organization", "name": "Futuro Fortissimo", "url": "https://futurofortissimo.github.io/" },
       "datePublished": "2024-01-01",
@@ -279,6 +279,51 @@ li[id^="fonte-"]:target{
     <p>E la guerra &egrave; soprattutto tra aziende. NVIDIA produrr&agrave; nel 2024 <mark class="note-highlight">1 milione di GPU H100</mark> (40.000 dollari l&rsquo;una, con performance <mark class="note-highlight">9 volte superiori rispetto alla A100</mark>). <a href="https://a16z.com/universally-accessible-intelligence/" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;">Noam Shazeer, CEO di Character.ai, calcola che abbiamo abbastanza GPU per sostenere un modello GPT-4 a persona</a>. Ma <a href="https://www.theverge.com/2023/12/4/23987953/the-gpu-haves-and-have-nots" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;">non c&rsquo;&egrave; computronio per tutti</a>: Tesla si &egrave; accaparrata solo 15.000 GPU; <a href="https://web.archive.org/web/20230601163710/https:/humanloop.com/blog/openai-plans" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;">anche OpenAI, nonostante la partnership con Microsoft, non ha tutte le risorse necessarie</a>. Come sempre visionario, Musk sta costruendo la sua indipendenza con Dojo, il supercomputer tailor-made che nel 2024 sar&agrave; nella top 5 mondiale. Davide tra i Gol-IA: il ricercatore della Columbia Ishan Dhanani vuole democratizzare l&rsquo;accesso al computronio, decentralizzando
     (<span class="fc">&#129397; ff.82.4
     Guerra calda</span>).</p>
+    <!-- ===== inject 2026-07-29 &mdash; note_id:1621 &mdash; Epoch AI: training decentralizzato 20x/anno ===== -->
+    <figure aria-label="Compute di training: frontiera vs run decentralizzate (scala logaritmica)" style="margin:2em auto;max-width:520px;">
+      <svg viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" role="img" style="width:100%;height:auto;background:#fafafa;border:2px solid var(--accent);">
+        <text x="260" y="20" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="700" fill="#222">Compute di training &mdash; scala log (FLOP)</text>
+        <!-- axes -->
+        <line x1="58" y1="215" x2="495" y2="215" stroke="#222" stroke-width="1.5"/>
+        <line x1="58" y1="34" x2="58" y2="215" stroke="#222" stroke-width="1.5"/>
+        <g font-family="'IBM Plex Mono',monospace" font-size="9" fill="#666">
+          <text x="52" y="212" text-anchor="end">1e20</text>
+          <text x="52" y="167" text-anchor="end">1e22</text>
+          <text x="52" y="122" text-anchor="end">1e24</text>
+          <text x="52" y="77" text-anchor="end">1e26</text>
+          <text x="80" y="230">2020</text>
+          <text x="255" y="230">2023</text>
+          <text x="430" y="230">2025</text>
+        </g>
+        <!-- frontier line: 5x/year -->
+        <polyline points="80,138 197,117 314,96 430,75" fill="none" stroke="var(--accent)" stroke-width="3"/>
+        <circle cx="430" cy="75" r="4" fill="var(--accent)"/>
+        <text x="424" y="66" text-anchor="end" font-family="'IBM Plex Mono',monospace" font-size="9" font-weight="700" fill="var(--accent)">frontiera &mdash; 5x/anno</text>
+        <!-- decentralized line: 20x/year -->
+        <polyline points="80,209 197,180 314,151 430,155" fill="none" stroke="#d0021b" stroke-width="3" stroke-dasharray="6 4"/>
+        <circle cx="430" cy="155" r="4" fill="#d0021b"/>
+        <text x="424" y="176" text-anchor="end" font-family="'IBM Plex Mono',monospace" font-size="9" font-weight="700" fill="#d0021b">decentralizzato &mdash; 20x/anno</text>
+        <!-- gap bracket -->
+        <line x1="455" y1="75" x2="455" y2="155" stroke="#222" stroke-width="1" stroke-dasharray="3 3"/>
+        <line x1="451" y1="75" x2="459" y2="75" stroke="#222" stroke-width="1"/>
+        <line x1="451" y1="155" x2="459" y2="155" stroke="#222" stroke-width="1"/>
+        <text x="463" y="119" font-family="'IBM Plex Mono',monospace" font-size="10" font-weight="700" fill="#222">1000x</text>
+      </svg>
+      <figcaption>&#128200; <strong>ff.2.1.1</strong> &mdash; Il training decentralizzato cresce quattro volte pi&ugrave; in fretta di quello di frontiera (20x contro 5x l'anno), ma parte da mille volte pi&ugrave; in basso: le run pi&ugrave; grandi restano nell'intervallo 6e22-6e23 FLOP. Stime Epoch AI, scala logaritmica indicativa.</figcaption>
+    </figure>
+
+    <p>Decentralizzare, per&ograve;, ha un tasso di cambio che Epoch AI ha misurato. Il training di frontiera cresce di <mark class="note-highlight">5x l'anno</mark>; le run distribuite su internet crescono di <mark class="note-highlight">20x l'anno</mark>, un ritmo che dal 2020 vale un aumento di 600.000 volte nella scala dei progetti decentralizzati. Il quadruplo della velocit&agrave; sembrerebbe la condanna del super-cluster monolitico, finch&eacute; non si guarda il punto di partenza: <a id="ref-fonte-91"></a><a href="https://epoch.ai/gradient-updates/how-far-can-decentralized-training-over-the-internet-scale" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;">le pi&ugrave; grandi run decentralizzate mai completate stanno nell'intervallo 6e22-6e23 FLOP, mille volte meno del compute stimato per i modelli di frontiera</a><sup><a href="#fonte-91" style="color:var(--accent);text-decoration:none;">[91]</a></sup>. INTELLECT-1 di Prime Intellect ha addestrato 10 miliardi di parametri su mille miliardi di token con DiLoCo, cento passi interni e quantizzazione a 8 bit; INTELLECT-2 ha coordinato oltre 800 nodi per il post-training in RL asincrono di QwQ-32B. Il collo di bottiglia si &egrave; spostato sulla banda in upload: a <mark class="note-highlight">60 Mbps</mark> tipici, tenendo la sincronizzazione sotto i dieci minuti, il modello pi&ugrave; grande allenabile resta un modesto 600M di parametri &mdash; ed &egrave; per questo che DiLoCo, che taglia il fabbisogno di banda di <mark class="note-highlight">500 volte</mark>, &egrave; diventato l'algoritmo di riferimento. L'aritmetica del differenziale darebbe cinque anni e mezzo per colmare il divario, ma Jaime Sevilla conclude che &egrave; <mark class="note-highlight">improbabile che le run decentralizzate raggiungano la scala della frontiera entro questo decennio</mark>. Le classi di riferimento che usa per stimare un'espansione possibile di 30-3.000 volte sono gi&agrave; passate da queste pagine: folding@home al picco di 2,43e18 FLOP/s e i circa 30 miliardi di dollari di infrastruttura Bitcoin, il cui consumo si stimava pari a quello dell'intera Finlandia
+    (<span class="fc">&#127467;&#127470; ff.1.5
+    Il consumo energetico di Bitcoin</span>),
+    dentro quella stessa economia di conversione soldi/tempo-calcolo in cui l'hardware che mina pu&ograve; anche allenare
+    (<span class="fc">&#129302; ff.73.2
+    La convergenza AI-Bitcoin</span>).
+    Per ora centralizzare conviene ancora
+    (<span class="fc">&#127961;&#65039; ff.52.2
+    Centralizzare conviene</span>),
+    e il vantaggio residuo si misura in una manciata di anni.</p>
+
+
 
     <h3 id="s1-2" class="text-lg sm:text-xl font-bold mt-10 mb-4" style="font-family:'IBM Plex Mono',monospace;letter-spacing:0.02em;text-transform:uppercase;">2.1.2 &mdash; La singolarit&agrave; gentile</h3>
     <p class="subpage-link" style="margin:-0.5em 0 1.2em;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;"><a href="chapter-02-1-2.html" style="color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent);">&rarr; Apri come pagina indipendente</a> &mdash; bibliografia + nav dedicata</p>
@@ -638,7 +683,7 @@ La terza vIA?</span>).</p>
     <!-- ===== Fonti esterne ===== -->
     <section id="bibliografia" class="mt-12 mb-10 border-t-4 border-zinc-900 pt-8">
       <h2 class="text-xl sm:text-2xl font-bold mb-2" style="font-family:'IBM Plex Mono',monospace;">Fonti esterne</h2>
-      <p class="text-sm text-zinc-500 mb-4">90 fonti in questa sezione.</p>
+      <p class="text-sm text-zinc-500 mb-4">91 fonti in questa sezione.</p>
       <ol class="list-decimal pl-6 space-y-2 text-sm text-zinc-700">
         <li id="fonte-1"><a href="https://www.youtube.com/live/TLzna9__DnI" target="_blank" rel="noopener" class="text-blue-700 hover:underline">Una visione del mondo dove l'unità di misura è il watt di calcolo</a> &mdash; <span class="text-zinc-500">youtube.com</span> <a href="#ref-fonte-1" style="text-decoration:none;" aria-label="Torna al testo">&#8617;</a></li>
 <li id="fonte-2"><a href="https://x.com/i/status/2036860080541589529" target="_blank" rel="noopener" class="text-blue-700 hover:underline">ARC-AGI-3: unico benchmark agentico non saturato. Umani 100%, AI sotto 1%</a> &mdash; <span class="text-zinc-500">x.com</span> <a href="#ref-fonte-2" style="text-decoration:none;" aria-label="Torna al testo">&#8617;</a></li>
@@ -730,6 +775,7 @@ La terza vIA?</span>).</p>
 <li id="fonte-88"><a href="https://www.flyzipline.com/newsroom/stories/2023-impact-report/preventing-maternal-deaths-through-faster-blood-delivery" target="_blank" rel="noopener" class="text-blue-700 hover:underline">Zipline, nata nel 2016 per trasportare sangue in Rwanda, ha ridotto del 50% le morti post-parto</a> &mdash; <span class="text-zinc-500">flyzipline.com</span> <a href="#ref-fonte-88" style="text-decoration:none;" aria-label="Torna al testo">&#8617;</a></li>
 <li id="fonte-89"><a href="https://x.com/maximlott/status/1834652893229859212" target="_blank" rel="noopener" class="text-blue-700 hover:underline">o1 al test MENSA con domande non pubbliche: QI ~100 (vs ~60 di GPT-4)</a> &mdash; <span class="text-zinc-500">x.com</span> <a href="#ref-fonte-89" style="text-decoration:none;" aria-label="Torna al testo">&#8617;</a></li>
 <li id="fonte-90"><a href="https://arxiv.org/pdf/2208.01626.pdf" target="_blank" rel="noopener" class="text-blue-700 hover:underline">Prompt-to-Prompt Image Editing with Cross-Attention Control (Google, arXiv 2208.01626)</a> &mdash; <span class="text-zinc-500">arxiv.org</span> <a href="#ref-fonte-90" style="text-decoration:none;" aria-label="Torna al testo">&#8617;</a></li>
+<li id="fonte-91"><a href="https://epoch.ai/gradient-updates/how-far-can-decentralized-training-over-the-internet-scale" target="_blank" rel="noopener" class="text-blue-700 hover:underline">Le pi&ugrave; grandi run decentralizzate stanno nell'intervallo 6e22-6e23 FLOP, mille volte meno dei modelli di frontiera</a> &mdash; <span class="text-zinc-500">epoch.ai</span> <a href="#ref-fonte-91" style="text-decoration:none;" aria-label="Torna al testo">&#8617;</a></li>
       </ol>
     </section>
 
