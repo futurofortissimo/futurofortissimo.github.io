@@ -1,5 +1,113 @@
 export const rawData = [
     {
+        "url": "https://fortissimo.substack.com/p/ff152-un-nuovo-futuro",
+        "title": "🎼 ff.152 Un nuovo futuro (?)",
+        "subtitle": "Un nuovo futuro fortissimo, per altri tempi?",
+        "keypoints": [],
+        "subchapters": [
+            {
+                "title": "🧠 ff.152.1 Il pensiero di Claude (J-Space)",
+                "link": "https://fortissimo.substack.com/i/206037608/ff1521-il-pensiero-di-claude-j-space",
+                "content": "Anthropic studia gli LLMs come un cervello, vivisezionando l’attività dei “neuroni” : hanno scoperto il Jacobian Space. Uno spazio di parole “pensate”, mentre altre vengono “dette”. Quando applichiamo questa tecnica all’attività interna di Claude, otteniamo un elenco di parole – il contenuto dello spazio J in quel preciso istante – che possiamo semplicemente leggere. Claude elabora il testo attraverso una serie di fasi interne multiple, chiamate livelli, e applicando questa tecnica a diversi livelli, possiamo osservare l’evoluzione di queste parole silenziose nello spazio J, mentre il modello elabora ciò che deve dire. Ciò che appare nello spazio J va ben oltre il testo che Claude sta leggendo o scrivendo. Quando Claude legge del codice con un bug che nessuno ha segnalato, il suo spazio J contiene “ERRORE”. Quando legge le lettere grezze di una sequenza proteica, lo spazio J contiene la funzione biologica della proteina. E così si può controllare il pensiero di Claude:",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/eae34231-95de-4af0-a392-039eb219a346_1760x760.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "Anthropic studia gli LLMs come un cervello, vivisezionando l’attività dei “neuroni”",
+                        "url": "https://www.anthropic.com/research/global-workspace"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "🏋️‍♂️ ff.152.2 Un piano di allenamento, ma per la vita.",
+                "link": "https://fortissimo.substack.com/i/206037608/ff1522-un-piano-di-allenamento-ma-per-la-vita",
+                "content": "Chi non conosce un amico che di recente si è lanciato nella preparazione di un HYROX o di un IRONMAN? Giochi finiti (vedi sotto) che chiedono tabelle di allenamento e dedizione. Momentanee. Alan Couzens ci ricorda che stiamo “giocando” o “allenandoci”, sì, ma per la vita. PS: a 80 anni per mantenere un buon livello di fitness, dovremo allenarci 760 ore all’anno.",
+                "images": [],
+                "references": [],
+                "connections": []
+            },
+            {
+                "title": "🎮 ff.152.3 Giochi finiti e infiniti",
+                "link": "https://fortissimo.substack.com/i/206037608/ff1523-giochi-finiti-e-infiniti",
+                "content": "Sono un videogiocatore incallito, non solo davanti a uno schermo. Tutti forse lo siamo, e la realtà è sempre più simulata ( 🎼 ff.98 Giochi e simulazioni ). Non a caso, mi è stato regalato - per il 32esimo compleanno - questo bel libro . Volevo condividerlo.",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/db93ae54-0ace-45f0-bede-384da70730d5_311x466.jpeg",
+                        "caption": "Giochi finiti e infiniti, James P. Carse"
+                    },
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/3cd312f5-a4f8-489a-a243-74d68c61d397_2268x3291.jpeg",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "questo bel libro",
+                        "url": "https://amzn.to/3S3VQez"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "🎼 ff.98 Giochi e simulazioni",
+                        "url": "https://fortissimo.substack.com/p/ff98-giochi-e-simulazioni"
+                    }
+                ]
+            },
+            {
+                "title": "🤠 ff.152.4 Oliver, davvero?",
+                "link": "https://fortissimo.substack.com/i/206037608/ff1524-oliver-davvero",
+                "content": "Una canzone che forse non conoscevate, di un artista a cui tenevo che non c’è più - per un volo in elicottero andato male. After all, Life Goes On , I guess… Ci è rimasta la storia della sua fondazione, il cui dominio è un programma (maiuscole per facilitare la lettura)… https://www.DrOliverTreesExtremelyEpicArtGrantForBabyGeniuses.com/",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/419e3ea6-c4aa-448b-84a3-3c3ca825fd83_905x755.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [],
+                "connections": []
+            },
+            {
+                "title": "🚲 ff.152.5 Ho risparmiato 900€ andando al lavoro in bici",
+                "link": "https://fortissimo.substack.com/i/206037608/ff1525-ho-risparmiato-900-andando-al-lavoro-in-bici",
+                "content": "Ennesimo progetto costruito grazie all’AI (che però è esploso su LinkedIn con 200.000 visualizzazioni ): i miei bike-to-work visualizzati. Tutte le statistiche sul sito . Se andate in bici al lavoro (e usate Strava), potete vedere il vostro: https://bike2work.pages.dev/",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/41f728a9-9f44-4141-8885-ea16d93b6cda_435x807.png",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/fadf88ff-2054-481d-91f3-87bcb42cbfa9_440x440.gif",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "esploso su LinkedIn con 200.000 visualizzazioni",
+                        "url": "https://lnkd.in/p/dv72NSai"
+                    },
+                    {
+                        "text": "sul sito",
+                        "url": "https://micmer-git.github.io/bike-to-work/"
+                    },
+                    {
+                        "text": "supporta con un caffè",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    },
+                    {
+                        "text": "michele merelli",
+                        "url": "https://www.linkedin.com/in/michelemerelli/"
+                    }
+                ],
+                "connections": []
+            }
+        ]
+    },
+    {
         "url": "https://fortissimo.substack.com/p/ff151-immagina-puoi",
         "title": "🎼 ff.151 Immagina, puoi!",
         "subtitle": "Simulare odori, generare il web in live e altra Paprika",
