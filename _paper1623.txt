@@ -1,0 +1,1668 @@
+===PAGE 1===
+Senseable City Lab :.:: Massachusetts Institute of Technology
+This paper might be a pre-copy-editing or a post-print 
+author-produced .pdf of an article accepted for publication. For 
+the deﬁnitive publisher-authenticated version, please refer 
+directly to publishing house’s archive system
+SENSEABLE CITY LAB
+
+===PAGE 2===
+Nature Sustainability
+nature sustainability
+https://doi.org/10.1038/s41893-026-01797-9
+Article
+Ubiquitous data-driven framework for traffic 
+emission estimation and policy evaluation
+ 
+Songhua Hu 
+  1,2 
+, Paolo Santi 
+  1,3, Tom Benson 
+  1, Xuesong Zhou 
+  4, 
+An Wang 
+  5, Ashutosh Kumar1 & Carlo Ratti1,6
+Quantifying urban traffic emission dynamics is critical for evaluating 
+decarbonization policies, yet existing models often lack resolution, timeliness 
+or scalability. Ubiquitous urban data offer new opportunities for large-scale, 
+fine-grained and near-real-time emission estimation. Here we present a 
+data-driven framework that integrates traffic camera footage with mobile 
+phone data to estimate citywide vehicular emissions. Applied to Manhattan, 
+New York, our method captures substantial spatiotemporal variation in 
+emissions across hours, days and road segments. Omitting fine-grained inputs, 
+such as traffic signals, speed variation or fleet heterogeneity, introduces 
+average uncertainties of −49% to +25% in emission estimates. We further 
+evaluate the early impacts of Manhattan’s congestion pricing programme, 
+finding that 8 weeks after the implementation, traffic volumes declined by 
+10%, resulting in a 16–22% drop in emissions. Our approach enables timely, 
+high-resolution policy assessment using widely available urban big data, 
+offering a practical and transferable tool for supporting climate action.
+Transport contributes nearly 25% of global energy-related carbon 
+dioxide (CO2) emissions and stands as a critical barrier to achieving 
+net-zero climate targets1–3. Road transport is the largest contributor 
+to these emissions. According to the US Environmental Protection 
+Agency (EPA), transport accounted for 28% (the largest) of total CO2 
+emissions in 2022, with road transport accounting for 80% (ref. 4) of 
+total transport emissions. Similarly, in the European Union, the Euro-
+pean Environment Agency reports that transport contributes 25% of 
+total CO2 emissions, with road transport making up 75% (ref. 5). Beyond 
+CO2 emissions, transport is also a major source of air pollutants, par-
+ticularly nitrogen oxides (NOx), particulate matter (PM) and carbon 
+monoxide (CO)4–6, resulting in increasingly severe climate change, 
+health risks and ecological deterioration5–8.
+Despite advances in green fuels, low-carbon technologies and 
+sustainability policies, road transport emissions have continued to rise 
+globally over decades and are projected to increase further in the com-
+ing years2. As cities not only account for the largest share of road traffic 
+emissions but also have the highest population densities and exposure 
+to traffic-related air pollution and its associated health impacts3,9, 
+there is an urgent need for developing a scalable framework capable 
+of accurately and promptly estimating emissions at urban scales, both 
+under baseline conditions and in response to policy interventions2,10. 
+For instance, on 5 January 2025, the United States launched its first 
+congestion pricing programme in Manhattan11, aimed at reducing 
+traffic congestion and emissions. In Europe, similar policies, such as 
+London’s Low Emission Zone and Milan’s Area C, have been in place for 
+years. However, the extent of their actual impact on emissions remains 
+unclear12. Moreover, given the inherent spatiotemporal variability of 
+traffic patterns, traffic emissions fluctuate substantially across space 
+and time13–15. Effective traffic emission models must therefore not 
+only estimate total emissions accurately but also resolve their spati-
+otemporal distributions, which are essential for targeted mitigation, 
+aetiological analysis and advancing environmental justice.
+Current methods for estimating citywide traffic emission invento-
+ries typically rely on macroscopic models, which use static approaches 
+to estimate long-term, macro-scale averages16. However, their coarse 
+Received: 2 July 2025
+Accepted: 2 March 2026
+Published online: xx xx xxxx
+ Check for updates
+1Senseable City Laboratory, Massachusetts Institute of Technology, Cambridge, MA, USA. 2Department of Architecture and Civil Engineering, City 
+University of Hong Kong, Hong Kong, China. 3Istituto di Informatica e Telematica, CNR, Pisa, Italy. 4School of Sustainable Engineering and the Built 
+Environment, Arizona State University, Tempe, AZ, USA. 5Department of Civil and Environmental Engineering, The Hong Kong Polytechnic University 
+(PolyU), Hong Kong, China. 6ABC Department, Politecnico di Milano, Milan, Italy. 
+ e-mail: hsonghua@mit.edu
+
+===PAGE 3===
+Nature Sustainability
+Article
+https://doi.org/10.1038/s41893-026-01797-9
+emission inventories without relying on comprehensive individual-level 
+inputs. Specifically, our approach integrates near-real-time fleet com-
+position and traffic signal timing extracted from traffic camera footage 
+with origin–destination (OD) flows extracted from anonymized and 
+aggregated mobile phone location data (MPLD) to reconstruct citywide 
+traffic dynamics. These are then combined with microscopic emis-
+sion models to (1) generate near-real-time, high-resolution on-road 
+emission maps to identify hyperlocal hotspots; (2) quantify biases 
+in conventional methods arising from the omission of key factors, 
+including traffic signals, speed variation and fleet heterogeneity; and 
+(3) evaluate the impacts of various decarbonization strategies on emis-
+sion reduction, including congestion pricing, travel mode shifts and 
+departure time shifts. The approach is highly scalable, as it bypasses 
+the need for intrusive, high-frequency vehicle tracking and instead 
+relies on globally ubiquitous data sources. The approach can also 
+generate near-real-time outcomes as all inputs are updated either in 
+real time (live traffic footage) or daily (MPLD). This enables large-scale, 
+near-real-time implementation and provides a unified platform for 
+rapid and dynamic emission estimation and policy evaluation to inform 
+emission mitigation strategies.
+Results
+Fleet composition and signal control
+We show that fleet composition can be extracted from low-resolution 
+camera footage using computer vision methods based on vehicle 
+appearance, without relying on license plate recognition (see ‘Vehicle 
+spatial resolution and low update frequency (typically every 1–5 years) 
+limit their ability to capture near-real-time dynamics and fine-scale 
+spatiotemporal variability10,17–20. To address these, microscopic mod-
+els have been developed, enabling much finer-resolution estimates 
+tailored to specific application needs. While these models offer higher 
+resolution and dynamics, they require granular inputs that are difficult 
+to obtain and computationally expensive to process12,21. For example, 
+for project-level estimates, the Motor Vehicle Emission Simulator 
+(MOVES)22, the regulatory standard in the United States, requires 
+1-Hz speed profiles for every on-road vehicle. Although advances in 
+intelligent transportation systems have enabled large-scale traffic 
+data collection, such as high-frequency trajectory data from probe 
+vehicles3,12,23, multimodal traffic counts from city cameras24 and vehicle 
+registration information with detailed vehicle configurations15,21,25, 
+accessing such data remains limited owing to privacy concerns sur-
+rounding individual locations and identities. This hinders the scal-
+ability of bottom-up models and always leads to the omission of key 
+emission-related factors in practical implementations26. For instance, 
+traffic signal is widely acknowledged as a key determinant of vehicular 
+emissions in urban settings as it substantially changes stop-and-go 
+behaviour27,28, yet it is rarely incorporated into citywide emission inven-
+tories owing to a lack of accessible data.
+To bridge the gap between macroscopic models, which lack reso-
+lution and responsiveness, and microscopic models, which require 
+fine-grained yet often inaccessible data, we propose a scalable mes-
+oscopic framework that generates near-real-time, high-resolution 
+0
+20
+Time (h)
+500
+1,000
+1,500
+Hourly volume
+P_Car
+0
+20
+Time (h)
+0
+50
+P_Truck
+0
+20
+Time (h)
+25
+50
+SU_Truck
+0
+20
+Time (h)
+0
+50
+Hourly volume
+T_Bus
+0
+20
+Time (h)
+5
+10
+15
+S_Bus
+0
+20
+Time (h)
+20
+40
+M_Cycle
+0
+20
+40
+60
+80
+Fleet composition (%) 
+P_Car
+P_Truck
+C_Truck
+SU_Truck
+S_Bus
+T_Bus
+M_Cycle
+YOLO + classifier
+Truth
+YOLO
+0
+2
+4
+Arrival
+0
+200
+400
+600
+800
+Time (s)
+5
+10
+15
+Queuing
+0
+0.5
+1.0
+0
+0.5
+1.0
+10
+15
+20
+Speed (raw)
+Speed (new)
+1,250
+1,275
+1,300
+1,325
+1,250
+1,275
+1,300
+1,325
+Time (s)
+0
+20
+–75
+–50
+–25
+0
+25
+50
+Diﬀerence (%)
+0
+1
+12
+22
+23
+24
+33
+35
+37
+38
+OpMode (categorical)
+Residential
+Secondary
+Primary
+a
+b
+c
+d
+e
+f
+0
+1,000
+Hourly volume (ATR)
+Hourly volume (camera)
+2,000
+ρ = 0.93
+MAPE = 16.31%
+2,500
+2,000
+1,500
+1,000
+500
+0
+3,000
+0
+200
+400
+600
+800
+Fig. 1 | Fleet composition and signal timing. a, Weekday hourly volume  
+profiles for the top six vehicle types: passenger car (P_Car), passenger truck 
+(P_Truck), single-unit truck (SU_Truck), school bus (S_Bus), transit bus  
+(T_Bus) and motorcycle (M_Cycle). b, Scatter plot comparing hourly traffic 
+volumes derived from cameras and ATRs. The black dashed line indicates the 1:1 
+reference. c, Comparison of vehicle type distributions from our model (YOLO + 
+classifier), the baseline (YOLO) and nearby ATRs (Truth). d, Vehicle arrival 
+and queuing patterns at a two-phase signalized intersection, with the traffic flow 
+represented by blue curves and inferred green and red phases shown as binary 
+signals. e, Traffic speed profiles during the green phase before (top) and after 
+(bottom) adding signal control. f, Average changes in the distribution of OpModes 
+after adding signal control. The top ten most affected OpModes are shown.
+
+===PAGE 4===
+Nature Sustainability
+Article
+https://doi.org/10.1038/s41893-026-01797-9
+information extraction’ in Methods). The fine-tuned image classifier 
+achieves 92.9% average accuracy (range: 81–100%) in identifying 12 
+vehicle types defined by MOVES22. Applied to 331 cameras in Manhattan, 
+the model reveals distinct hourly volume profiles for different vehicle 
+types (Fig. 1a): passenger cars and buses follow a bimodal weekday 
+distribution, trucks and motorcycles follow a unimodal pattern and 
+school buses show sharp dual peaks aligned with school schedules. 
+Spatial heterogeneity is also evident, with buses concentrated in 
+midtown and trucks more frequently observed in peripheral areas 
+(Supplementary Fig. 2). For validation, we compare camera-derived 
+traffic volumes with nearby automated traffic recorders (ATRs) and 
+find high consistency (correlation: 0.93) (Fig. 1b). We further compare 
+vehicle type distributions derived from our model with the manually 
+labelled ground truth and a baseline model (You Only Look Once (YOLO) 
+v8 (ref. 29)). While the baseline underestimates the share of passen-
+ger cars by 15% and overestimates trucks and buses by 7%, our model 
+reduces these biases to within ±5% (Fig. 1c).
+We show that traffic signal, another important factor in urban 
+traffic emission estimation27,28, can also be identified from traffic cam-
+era footage. As illustrated in Fig. 1d, clear vehicle arrival and queuing 
+patterns during red and green phases at a signalized intersection can 
+be observed and discretized into detailed signal phase information 
+(mean absolute error: 2–5 s) (see ‘Traffic signal timing inference’ 
+in Methods). The inferred signal timing is then used to reconstruct 
+second-by-second driving cycles from average speed profiles: vehicle 
+speed is set to zero during red phases, while green phases are modelled 
+with a typical accelerate–cruise–decelerate pattern (Fig. 1e). These 
+adjustments notably impact the distribution of vehicle operating 
+modes (OpModes) used by MOVES to estimate emission rates. As shown 
+in Fig. 1f, incorporating signal control substantially increases idle 
+statuses (OpMode 1), particularly on residential roads owing to longer 
+red phases. In addition, there is a marked shift from low-speed, gentle 
+driving (OpMode 12) to high-speed, aggressive driving (OpModes 
+22–38), indicating more frequent acceleration and deceleration events 
+induced by signal controls.
+Traffic network extrapolation
+Cameras cover only part of the road network, yet citywide emission 
+estimation requires network-wide traffic information. We show that 
+integrating camera observations with MPLD-derived OD matrices can 
+produce reliable full-network traffic flow estimations (see ‘Traffic net-
+work extrapolation’ in Methods); at no point were datasets merged at 
+the individual level, nor were attempts made to reidentify anonymized 
+mobility data. MPLD offers broad coverage and near-real-time 
+updates on human travel, but as a sampled dataset, it suffers from 
+incomplete population representation30. To correct for this, we cali-
+brate traffic analysis zone-level sampling rates using an integrated 
+optimization-dynamic traffic assignment (DTA) approach31, improving 
+the correlation between assigned volumes and camera-derived vol-
+umes from 0.34 to 0.94 (Fig. 2a). The assigned volumes are then used 
+to estimate speeds via a road-specific fundamental diagram (FD)32, 
+which characterizes the relationship among traffic volume, speed 
+and density. As shown in Fig. 2b, a clear negative relationship between 
+traffic density and speed is well captured, with the degree of curvature 
+varying by road type. After calibration by real-world observations, the 
+speed estimated from the FD can achieve a correlation of 0.87 with 
+ground truth (Supplementary Fig. 3). This calibrated FD serves as a 
+foundation for assessing policy impacts, for example, modelling how 
+shifts in travel demand propagate through network traffic dynamics 
+to ultimately affect emissions (that is, travel demand → traffic volume 
+→ traffic speed → traffic emission).
+Figure 2c,d shows the daily profiles of estimated traffic speed and 
+volume, aggregated at 5-min intervals, by road type. Clear diurnal pat-
+terns are observed, with distinct morning and evening peaks character-
+ized by increased volumes and reduced speeds (11–21 miles per hour 
+(mph)). Distinct traffic flow patterns also emerge across road types: 
+motorways show the highest volumes and speeds, whereas residential 
+roads show the lowest. Figure 2e,f presents the spatial distributions 
+of estimated traffic speed and volume, revealing fine-grained spatial 
+heterogeneity that would be obscured under conventional zonal aver-
+age spatial allocation methods14,19,33: traffic speeds are notably lower 
+in midtown and downtown Manhattan, areas known for high conges-
+tion due to dense intersections and heavy travel demand, while traffic 
+volumes are notably higher along major corridors and near entry and 
+exit points (tunnels and bridges).
+Spatiotemporal emission mapping
+By inputting road-level traffic details into MOVES (see ‘On-road vehic-
+ular emission estimation’ in Methods), we estimate annual on-road 
+vehicular emissions in Manhattan for 2020 to be 11.67 ktCO, 2.30 MtCO2, 
+2.05 kt of NOx and 0.12 kt of PM2.5. Compared with the 2020 on-road 
+National Emissions Inventory of the US EPA34, our estimates are higher 
+across all pollutants: 22.52% for CO, 36.35% for CO2, 36.77% for NOx and 
+48.46% for PM2.5. These discrepancies remain substantial even when 
+accounting for the total uncertainty of 4.51–6.75% in the yearly inven-
+tory caused by input estimate errors. Consistent with previous studies 
+reporting that emission inventories in US cities are under-reported 
+by 18.3% on average10, we attribute this discrepancy to the absence of 
+high-resolution traffic data in EPA models and to differences in how 
+road traffic changes during the COVID-19 pandemic were captured13,35,36.
+Figure 3a–d presents the spatial distribution of road-level emission 
+densities. A subset of road segments with available air quality sensor 
+data was used to validate the estimated emission concentrations, yield-
+ing a correlation of 0.87–0.91 between observed and modelled values 
+(Supplementary Fig. 6). Spatial patterns are similar across pollutants, 
+with concentrations notably higher near major entry and exit points 
+connecting Manhattan to neighbouring boroughs. Emission densities 
+on these bridges and tunnels are 318.90% (CO) to 513.38% (NOx) higher 
+than the network average, and rise further during peak hours. Emission 
+densities also vary substantially by road type: motorways, comprising 
+only 16.40% of the network, contribute 30.74% of total CO2 emissions. 
+Even within the same road type, emission densities show wide varia-
+tion. Relative to road-type-specific averages, CO2 density ranges from 
+−100.00% to +391.08% on residential roads and −96.37% to +156.12% 
+on primary roads. Moreover, we notice that pollutants such as CO and 
+NOx are more concentrated in city centres, probably because slower, 
+stop-and-go traffic in these areas leads to incomplete combustion and 
+frequent acceleration events that elevate emissions. These results 
+highlight that relying on road-type averages for citywide extrapolation 
+can obscure substantial spatial heterogeneity and introduce systematic 
+biases in emission estimates.
+Temporal variations in emissions are also notable. CO2 emissions 
+show hourly fluctuations from −86.45% (at 3:00 a.m.) to +77.23% (at 
+4:00 p.m.) relative to the daily average, with peak hours (7:00–9:00 
+a.m. and 4:00–6:00 p.m.) contributing 38.92% of total daily emissions 
+(Fig. 3e). Day-to-day variations are also notable owing to both regular 
+weekly cycles and irregular disruptions (Fig. 3f). By analysing 2 years 
+of MPLD, we find that in 2021, compared with the daily average, CO2 
+emissions dropped by 90.02% during the February snowstorm and 
+by 61.78% during Hurricane Henri, but increased by 36.80% on Black 
+Friday. Other notable events are also well captured, including reduc-
+tions during the December 2020 snowstorm and the May 2021 thun-
+derstorm, as well as an increase around Christmas. In 2020, emissions 
+averaged 32.69% lower than in 2021 owing to the COVID-19 pandemic, 
+with the largest daily drop of 87.21% occurring on March 22 during the 
+national lockdown37.
+Ablation analysis
+We quantify the change in total emissions when fine-grained data inputs 
+are omitted or replaced with citywide averages. This analysis not only 
+
+===PAGE 5===
+Nature Sustainability
+Article
+https://doi.org/10.1038/s41893-026-01797-9
+reveals potential biases in conventional inventories but also provides 
+adjustment factors when such detailed inputs are unavailable. As shown 
+in Fig. 4a, omitting traffic signals underestimates total emissions by 
+6.5% for NOx, 15.17% for CO and 48.64% for PM2.5, while its impact on CO2 
+is minimal. These discrepancies are driven by the influence of signal 
+controls on vehicle acceleration patterns in urban settings (Fig. 1f), 
+which result in higher emission rates of NOx, CO and PM2.5 compared 
+with steady cruising. The discrepancy is especially pronounced on 
+residential roads, where emissions are underestimated by 11.16% for 
+CO2, 29.61% for NOx, 43.10% for CO and 66.85% for PM2.5. This is prob-
+ably due to the high density of traffic lights and low traffic priority on 
+residential roads, which results in more frequent stop-and-go driving 
+that substantially increases emissions.
+Figure 4b shows that replacing road-level fleet composition with 
+citywide averages leads to overestimations of NOx by 24.79% and PM2.5 by 
+23.16%, with minimal impacts on CO and CO2. This is probably because 
+citywide averages reflect a broader spatial distribution of heavy-duty 
+vehicles, which are primary contributors to NOx and PM2.5. This also 
+explains the large road-level variation observed in these pollutants when 
+average fleet composition is applied. Figure 4c shows that substituting 
+road-specific speeds with road-type-specific averages underestimates 
+total emissions by 10.99% for PM2.5, 12.00% for CO, 13.13% for CO2 and 
+14.55% for NOx. The effect is particularly pronounced on higher-class 
+roads, which is plausible as they show the highest original speed lev-
+els and variation, but are obscured when using aggregated averages 
+(Fig. 2c). Finally, Fig. 4d shows that removing all camera-derived infor-
+mation—including fleet composition (replaced by citywide averages), 
+signal control (omitted) and calibrated volumes (replaced with uncal-
+ibrated volumes)—leads to underestimations of total emissions by 
+31.96% for CO2, 34.72% for NOx, 35.03% for CO and 44.72% for PM2.5. These 
+results underscore the importance of incorporating camera footage to 
+enhance the accuracy of urban emission inventories.
+Policy evaluation
+We show that the proposed framework can effectively quantify the 
+effects of various transportation decarbonization policies, such as 
+travel mode shifts, departure time shifts and congestion pricing38. While 
+the first two policy scenarios are based on simulated input changes, the 
+congestion pricing case leverages real-world observational data (see 
+‘On-road vehicular emission estimation’ in Methods). Figure 5a shows 
+that shifting 10% of departures out of peak hours leads to emission 
+reductions of 3.64% for CO, 5.89% for PM2.5, 6.57% for NOx and 5.96% 
+for CO2. These reductions become more pronounced with a 30% shift, 
+reaching 9.38%, 14.46%, 16.57% and 14.95% for CO, PM2.5, NOx and CO2, 
+respectively. Note that as total travel demand remains unchanged, 
+the observed decreases are mainly due to the alleviation of peak-hour 
+congestion. Similarly, Fig. 5b shows that encouraging a shift from driv-
+ing to public transit substantially reduces emissions, with additional 
+benefits from reduced congestion. A 10% shift lowers CO by 16.16%, CO2 
+by 17.31%, NOx by 13.90% and PM2.5 by 15.43%; at 30%, the reductions rise 
+to 40.54%, 41.24%, 34.54% and 37.84%, respectively.
+Figure 5c shows the growing impact of congestion pricing over 
+time. Emissions decrease by 3.56% for CO, 9.57% for CO2, 12.18% for 
+NOx and 13.69% for PM2.5 2 weeks after implementation; after 8 weeks, 
+the reductions reach 16.16%, 18.07%, 21.91% and 22.72%, respectively. 
+These reductions result from combined declines in traffic volume, 
+heavy-duty vehicle share and congestion, including a 10.34% decrease 
+in passenger cars, a 13.76% reduction in trucks and a 12.18% increase in 
+average traffic speed by week 8 (Extended Data Fig. 1). These changes 
+are timely captured by our framework and align well with independ-
+ent traffic observations from the E-ZPass system39 and Google Maps40 
+(Supplementary Section 1.7). Although an overall decrease is observed, 
+these reductions are not uniformly distributed. As shown in Fig. 5d–g, 
+higher-class road segments show greater reductions compared with 
+local roads. Emission decreases first appear near major entry and 
+0
+50
+100
+150
+Density (veh mile−1 lane−1)
+20
+40
+60
+Motorway
+Primary
+Secondary
+Residential
+0
+2,000
+4,000
+Ground truth
+0
+1,000
+2,000
+3,000
+4,000
+5,000
+Before: ρ = 0.34
+After: ρ= 0.94
+0
+3
+6
+9
+12
+15
+18
+21
+0
+Time (h)
+10
+20
+30
+40
+50
+Speed (mph)
+Assignment volume
+Volume
+Speed (mph)
+Motorway
+Primary
+Secondary
+Residential
+0
+3
+6
+9
+12
+15
+18
+21
+0
+Time (h)
+0
+50
+100
+150
+200
+250
+Motorway
+Primary
+Secondary
+Residential
+Speed (mph)
+<10
+(10, 20]
+(20, 30]
+(30, 45]
+>45
+Volume
+<500
+(500, 1,000]
+(1,000, 2,000]
+(2,000, 4,000]
+>4,000
+a
+b
+c
+d
+e
+f
+Fig. 2 | Network-wide traffic flow estimation. a, Comparison of assigned 
+versus ground truth hourly volumes during the morning peak, before (teal) 
+and after (coral) calibration. The black dashed line indicates the 1:1 reference. 
+Translucent bands around the regression line show the 95% confidence interval. 
+b, Fitted speed–density curves based on the S3 FD, with each curve denoting 
+a road and colour coded by road type. c, Assigned weekday speed profiles by 
+road type, aggregated in 5-min intervals. d, Assigned weekday volume profiles 
+by road type, aggregated in 5-min intervals. e, Spatial distribution of estimated 
+speeds (8:00–9:00 a.m.), with red to green representing speeds from low to 
+high. f, Spatial distribution of assigned volumes (8:00–9:00 a.m.), with red to 
+green representing volumes from high to low; line width increases with volume. 
+Basemap data in e and f from OpenStreetMap under an Open Data Commons 
+Open Database License. Veh, vehicle.
+
+===PAGE 6===
+Nature Sustainability
+Article
+https://doi.org/10.1038/s41893-026-01797-9
+exit points and gradually become more widespread and pronounced 
+over time. In addition, some segments, particularly those outside the 
+congestion relief zone, experience moderate increases, potentially 
+owing to rerouted traffic or concentrated commercial activity. This 
+spatial heterogeneity underscores the importance of fine-grained 
+emission monitoring to identify areas that may require targeted 
+complementary interventions.
+Discussion
+As cities worldwide pursue ambitious decarbonization targets, accurate 
+quantification and timely evaluation of emerging decarbonization 
+policies are critical. In this study, we present the first unified, scalable 
+framework that integrates ubiquitous, multi-source data to generate 
+high-resolution, near-real-time vehicular emission inventories at the 
+city scale. Methodologically, we introduce several innovations: (1) a 
+vehicle type classifier that extracts fleet composition from camera 
+footage in full alignment with the official emission model, (2) a citywide 
+signal inference module that reconstructs second-by-second driving 
+cycles directly from camera footage and (3) an optimization-assignment 
+model that fuses sparse camera observations with MPLD-derived OD 
+flows to extrapolate network-wide traffic dynamics. Together, these 
+advances bridge the gap between macroscopic inventory models that 
+lack spatiotemporal dynamics and microscopic models that are often 
+unscalable. In addition, with fully live data streams, our approach is 
+capable of producing near-real-time emission estimates, offering 
+great potential for rapid policy evaluation and adaptive management. 
+We show this through an empirical evaluation of the newly imple-
+mented Manhattan congestion pricing policy, along with analyses 
+of a wide range of real-world events and simulated travel demand 
+management strategies.
+Our findings challenge the adequacy of conventional traffic emis-
+sion modelling practices41,42. Most existing inventories rely on average 
+traffic and static fleet assumptions, potentially misrepresenting where 
+and when emissions are actually concentrated26. In Manhattan, we 
+observe substantial spatiotemporal variations in emissions, which can 
+distort policy impact assessments and misdirect mitigation resources. 
+For instance, while citywide emissions targets may appear to be met, 
+specific neighbourhoods may still experience excessive pollution lev-
+els, undermining environmental goals and exacerbating environmental 
+injustice8. By contrast, high-resolution emissions mapping enables 
+more targeted and effective policy interventions. For example, we find 
+that emission densities near major connectors are 319–513% higher 
+than the average, and emissions also surge during peak hours and 
+specific events. These spatiotemporal hotspots suggest opportunities 
+for hyperlocal interventions, such as dynamic signal optimization or 
+peak-hour delivery restrictions, to more effectively reduce emissions 
+at critical times and locations.
+Another central finding of this work is the quantifiable biases 
+introduced by simplifying assumptions common in emission invento-
+ries. Omitting traffic signals underestimates PM2.5 by 49%. Given that 
+over 330,000 traffic signals operate in the United States, neglecting 
+their impact may introduce substantial errors in emission inventories. 
+a
+b
+c
+d
+e
+f
+CO
+<1.08
+(1.08, 3.11]
+(3.11, 6.11]
+(6.11, 12.13]
+>12.13
+NOx
+<0.34
+(0.34, 1.14]
+(1.14, 2.56]
+(2.56, 5.76]
+>5.76
+PM2.5
+<0.01
+(0.01, 0.05]
+(0.05, 0.1]
+(0.1, 0.22]
+>0.22
+CO2
+<0.24
+(0.24, 0.71]
+(0.71, 1.45]
+(1.45, 2.95]
+>2.95
+0
+3
+6
+9
+12
+15
+18
+21
+Time (h)
+–100
+–50
+0
+50
+100
+150
+200
+CO2 emission variation (%)
+May 2020
+January 2021
+September 2021
+Date
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+CO2 emission (t)
+1 × 104
+COVID-19 
+pandemic
+Black 
+Friday
+Henri 
+flooding
+Snowstorm
+Fig. 3 | Emission estimation outcomes. a–d, Spatial distribution of emission 
+density from 8:00–9:00 a.m. for CO (a), NOx (b), PM2.5 (kg h−1 mi−1) (c) and CO2 
+(t h−1 mi−1) (d). Road segments with greater width and deeper red colouring 
+indicate higher emission densities. Jenks natural breaks classification is applied. 
+Spatial maps for other hours are shown in Supplementary Fig. 7. e, Hourly 
+variation in CO2 emissions across all road segments during weekdays, shown 
+relative to their daily hourly average. Box plots show the mean (purple line) 
+and median (grey line); whiskers are confined to the interquartile range, and 
+outliers are not shown. Sample size n = 13,553 road segments. f, Daily total CO2 
+emissions (t) from 2020 to 2021, with major events annotated; corresponding 
+spatial changes are shown in Supplementary Fig. 8. Basemap data in a–d from 
+OpenStreetMap under an Open Data Commons Open Database License.
+
+===PAGE 7===
+Nature Sustainability
+Article
+https://doi.org/10.1038/s41893-026-01797-9
+In addition, using citywide average fleet composition or speed 
+changes NOx emissions by −15% to +25%, challenging the assumption 
+that top-down models can produce results comparable to bottom-up 
+estimates17. One key reason is that emission models are composed of 
+nonlinear, nonadditive functions, making them highly sensitive to 
+input resolution26. These structural limitations raise concerns about 
+the reliability of self-reported inventories. Previous research has docu-
+mented discrepancies between traditional and data-driven estimates 
+ranging from −145% to +63% (refs. 10,13). Our results contribute to this 
+evidence and underscore the need for high-resolution inputs.
+Beyond methodological improvements, our framework enables 
+causal evaluation of policy interventions by explicitly linking travel 
+demand, traffic flow and emissions. While current decarbonization 
+efforts largely focus on technological solutions (for example, electrifi-
+cation and renewable energy), we find that travel demand management 
+strategies are also highly effective in advancing net-zero goals1,43. For 
+example, shifting 10% of vehicle departures out of peak hours cuts emis-
+sions by 4–7%, but an even more effective policy would be redirecting 
+these trips to public transit, which would lower emissions by 14–17% 
+(ref. 44). These nonlinear gains from driving trip reduction and conges-
+tion alleviation highlight the importance of prioritizing demand man-
+agement strategies in accelerating the decarbonization transition2,45. 
+The real-world rollout of congestion pricing in Manhattan serves as 
+a compelling validation case: within 8 weeks, emissions declined by 
+16–22% across pollutants, driven by a 10–14% drop in driving trips and 
+a 12% increase in traffic speed. Importantly, these reductions were 
+not uniform but varied substantially by road type and location. Roads 
+outside the congestion relief zone experience on average 5–9% less 
+reduction in emissions, and some segments even saw increases due 
+to traffic detours or demand shifts13. These disparities highlight the 
+need for real-time, high-resolution monitoring to identify communi-
+ties that may be underserved by such policies and to enable adaptive 
+refinements that ensure both effectiveness and equity.
+While our case study focuses on Manhattan, the proposed frame-
+work is broadly transferable. Public traffic cameras are deployed in 
+numerous cities globally, and the rapid development of computer 
+vision technologies has made large-scale, camera-based traffic moni-
+toring increasingly feasible24. MPLD are also increasingly available 
+across the world through commercial and academic partnerships, 
+showing great potential across domains such as transportation 
+planning, environmental monitoring and public health37,46. Nota-
+bly, our method does not rely on fine-grained vehicle trajectories, 
+high-resolution cameras or vehicle registration records. Instead, it 
+uses sparse camera feeds and aggregated OD flows, making it transfer-
+able even to cities with limited data infrastructures47. Nevertheless, we 
+acknowledge that practical barriers remain. Access to traffic camera 
+data is not always feasible across jurisdictions owing to differences in 
+privacy regulations and data-sharing policies, and obtaining large-scale 
+MPLD from commercial providers can be costly. These factors may 
+limit the immediate scalability of the framework, but also highlight the 
+need to improve data accessibility for public benefit. By showing the 
+scientific value of these datasets and quantifying the substantial biases 
+introduced to emission estimates when they are omitted, this study 
+calls for greater investment in open data systems and cross-agency col-
+laboration to support more accurate and adaptive climate governance.
+Several limitations remain. First, our emission estimates focus 
+solely on on-road running emissions and exclude upstream emis-
+sions from vehicle manufacturing. Future work should incorporate 
+a
+b
+c
+d
+–100
+–50
+0
+50
+100
+Emission diﬀerence (%)
+Residential
+Secondary
+Primary
+Motorway
+CO
+NOx
+CO2
+PM2.5
+–100
+0
+100
+200
+Emission diﬀerence (%)
+Residential
+Secondary
+Primary
+Motorway
+–100
+–50
+0
+50
+100
+Emission diﬀerence (%)
+Residential
+Secondary
+Primary
+Motorway
+–50
+–25
+0
+25
+50
+Emission diﬀerence (%)
+Residential
+Secondary
+Primary
+Motorway
+CO
+NOx
+CO2
+PM2.5
+CO
+NOx
+CO2
+PM2.5
+CO
+NOx
+CO2
+PM2.5
+Fig. 4 | Ablation analysis. a–d, Change in road-level emissions by road type 
+under different model simplifications: signal controls are not considered (a), 
+road-level fleet composition is replaced by the citywide average (b), road-level 
+traffic speed is replaced with the average for the same hour and road type (c) and 
+all camera-derived information is removed (d). In each box plot, the short purple 
+line represents the mean, and the grey line represents the median. Whiskers are 
+limited to the bounds of the interquartile range, and outliers outside this range 
+are not shown. Sample size n = 13,553 road segments.
+
+===PAGE 8===
+Nature Sustainability
+Article
+https://doi.org/10.1038/s41893-026-01797-9
+life-cycle assessments to provide a more comprehensive understanding 
+of decarbonization trade-offs18. In addition, emissions from vehicle 
+starts are not considered, which would lead to an underestimation 
+of total traffic-related emissions, as start emissions, particularly in 
+urban areas with frequent short trips, can be substantial48. Second, 
+while all key input components and a subset of outputs are validated 
+against data collected from external sensors, direct validation of total 
+emission estimates remains infeasible owing to the absence of citywide 
+ground-truth data. Given that the framework uses the MOVES emission 
+model, we assume that output accuracy depends primarily on input 
+accuracy, while the accuracy of emission factors themselves lies beyond 
+the scope of this study. Finally, as the framework relies on multi-source 
+crowdsourced data, it is inherently sensitive to sampling biases, cov-
+erage variability and environmental conditions such as night-time or 
+inclement weather49. While the model performs well in a high-density, 
+data-rich setting, future research should further assess its robustness 
+across cities with diverse data availability, urban morphologies and 
+mobility patterns.
+Methods
+Our method integrates multi-source ubiquitous data to prepare 
+near-real-time, high-resolution inputs for emission estimation (see 
+full framework in Extended Data Fig. 2). Specifically, traffic camera 
+footage is used to extract fleet composition, traffic volume and signal 
+timing at selected intersections. These localized observations are 
+then combined with mobile phone data to extrapolate traffic pat-
+terns across the entire road network. The resulting road-level fleet 
+composition and traffic flow patterns are input into the MOVES to 
+produce a citywide on-road vehicular emission inventory. We select 
+Manhattan as our case study owing to its urgent decarbonization 
+goals38, the recent implementation of congestion pricing11 and rich 
+public data sources.
+10
+20
+30
+Departure time shift (%)
+–25
+–20
+–15
+–10
+–5
+0
+5
+10
+CO
+NOx
+CO2
+PM2.5
+CO
+NOx
+CO2
+PM2.5
+CO
+NOx
+CO2
+PM2.5
+10
+20
+30
+Mode shift (%)
+–50
+–40
+–30
+–20
+–10
+2
+4
+6
+8
+Time after announcement (weeks)
+–150
+–100
+–50
+0
+50
+100
+Emission change (%) 
+Emission change (%) 
+Emission change (%) 
+NOx change (%)
+<–30
+(–30, –15]
+(–15, 0]
+(0, 15]
+(15, 30]
+>30
+NOx change (%)
+<–30
+(–30, –15]
+(–15, 0]
+(0, 15]
+(15, 30]
+>30
+NOx change (%)
+<–30
+(–30, –15]
+(–15, 0]
+(0, 15]
+(15, 30]
+>30
+NOx change (%)
+<–30
+(–30, –15]
+(–15, 0]
+(0, 15]
+(15, 30]
+>30
+a
+b
+c
+d
+e
+f
+g
+Fig. 5 | Scenario analysis. a, Change in emission if 10%, 20% and 30% of peak-hour 
+trips shift to off-peak hours. b, Change in emission if 10%, 20% and 30% of drivers 
+shift to public transit. c, Change in emissions observed 2 weeks, 4 weeks, 6 weeks 
+and 8 weeks after the implementation of congestion pricing. For each box plot 
+in a–c, the short purple line represents the mean and the grey line represents 
+the median. Whiskers are limited to the bounds of the interquartile range, and 
+outliers outside this range are not shown. Sample size n = 13,553 road segments. 
+d–g, Spatial distribution of NOx changes (%) observed 2 weeks (d), 4 weeks (e), 
+6 weeks (f) and 8 weeks (g) after the implementation of congestion pricing. 
+Road segments shaded in deeper red indicate greater emission increases, while 
+those in deeper green indicate greater emission reductions. The blue boundary 
+denotes the congestion relief zone. Basemap data in d–g from OpenStreetMap 
+under an Open Data Commons Open Database License.
+
+===PAGE 9===
+Nature Sustainability
+Article
+https://doi.org/10.1038/s41893-026-01797-9
+Vehicle information extraction
+A total of 331 traffic cameras are installed in Manhattan (Supplementary 
+Fig. 1), each providing live public feeds consisting of still images 
+updated every 2–5 s. This study starts by scraping live images from 
+these cameras and concatenating them into hourly video streams. 
+The videos are then processed using computer vision techniques to 
+detect, track, classify and count vehicles by type. The resulting vehicle 
+data are mapped to specific road segments based on spatial proximity, 
+directional alignment and scene similarity (Supplementary Section 1.1).
+We use the YOLOv8 network29 to detect on-road vehicles in each 
+video frame. YOLOv8 is a state-of-the-art one-stage object detection 
+model that offers superior accuracy and computational efficiency 
+compared with previous architectures29. Following detection, each 
+vehicle is assigned a bounding box indicating its location within the 
+frame. The coordinates of these bounding boxes are then recorded for 
+subsequent vehicle tracking and type classification.
+Given the prevalence of stationary vehicles on urban roads, it is 
+crucial to identify these still vehicles to prevent double-counting the 
+same vehicle across frames. A common solution is object tracking50,51, 
+which links the same object across consecutive frames based on visual 
+similarity. However, most tracking algorithms require high frame 
+rates and high-resolution inputs—conditions not met in this study. To 
+address this challenge, we design a custom tracking algorithm that 
+relies solely on positional closeness to identify and match still objects 
+across consecutive frames:
+∑
+4
+i=1√(xt
+i −xt+1
+i
+)
+2 + (yt
+i −yt+1
+i
+)
+2
+4√H × W
+< ε,
+(1)
+where (xt
+i, yt
+i) are the coordinates of the ith corners of the bounding box 
+at frame t; H and W are the height and width of the frame; and ε is the 
+minimal displacement threshold, which is calibrated via ground-truth 
+volume and set as 3% in this study.
+To classify vehicle type, the default YOLOv8 model includes only 
+5 vehicle types (car, motorcycle, bus, bike and truck), which does not 
+align with the 13 source types used in MOVES. To address this, we con-
+struct a labelled dataset using the Bing Image API to retrieve images 
+corresponding to each MOVES-defined vehicle type (Supplementary 
+Section 1.2). This process yields a dataset of 6,382 images covering 
+12 vehicle types: combination truck, electric car, intercity bus, light 
+commercial truck, motorcycle, motorhome, passenger car, passenger 
+truck, refuse truck, single-unit truck, school bus and transit bus. Due 
+to the difficulty in visually distinguishing between short-haul and 
+long-haul vehicles, we merge them into a single type. Also, as vehicle age 
+cannot be reliably inferred from images alone, we apply the citywide 
+vehicle age distribution by source type based on New York City (NYC) 
+vehicle registration statistics.
+On the basis of this dataset, we evaluate 10 state-of-the-art image 
+classifiers and select the best model based on both performance and 
+efficiency. The model training process and performance metrics are 
+summarized in Extended Data Fig. 3. Among all models, ConvNeXt52 
+achieves the best performance on our datasets. We therefore apply it 
+to vehicles detected by YOLOv8 to assign each vehicle a more detailed 
+type. To further evaluate model performance on real-world traffic 
+camera footage, we randomly selected 20 vehicle images from each 
+camera footage and manually labelled their vehicle types. These 
+ground truths were then used to assess the performance of different 
+classifiers (Fig. 1f).
+Finally, road-level, vehicle-type-specific traffic volume is esti-
+mated by counting the number of vehicle bounding boxes that cross 
+virtual detectors, which are manually placed perpendicular to the traf-
+fic flow direction on each road segment. For cameras covering multiple 
+roads or directions, separate sets of detectors are assigned accord-
+ingly (Supplementary Fig. 1). To avoid double-counting, stationary 
+vehicle identification is applied to detect and remove vehicles appear-
+ing repeatedly across frames. The extracted traffic volumes are vali-
+dated by comparing hourly camera-derived counts with volume data 
+from nearby ATRs. Validation results are detailed in Supplementary 
+Section 1.3.
+Traffic signal timing inference
+Traffic signal timing can be extracted from traffic camera footage based 
+on vehicle arrival time series. Specifically, we convert the arrival time 
+series into a binary signal, assigning a value of 1 to time steps with more 
+than one vehicle arrival and 0 otherwise. We then identify intervals of 
+consecutive 1 s and 0 s to estimate green and red phases:
+Red time = mode ({t0|t0 ≥10 s}), green time = mode ({t1|t1 ≥10 s})
+(2)
+where t0 is the duration of continuous 0 s (no vehicle arrivals) and t1 
+is the duration of continuous 1 s (arrivals). Intervals shorter than 10 s 
+are excluded.
+To avoid overestimating red time during night-time, when sparse 
+arrivals may lead to no arrivals even during green phases owing to low 
+traffic volume, we restrict the analysis to daytime traffic from 8:00 a.m. 
+to 6:00 p.m. In addition, to ensure compatibility with vehicular emis-
+sion models, we simplify complex signal timing schemes. For example, 
+exclusive left-turn phases are merged with straight-through phases 
+from the same entrance, and transitional phases such as yellow and 
+all-red intervals are omitted, focusing solely on effective red and 
+green phases.
+Manhattan contains 2,862 signalized intersections, of which 309 
+are covered by cameras. Signal timings for these intersections are 
+inferred directly, while the remaining intersections are assigned aver-
+age signal timing values based on intersection type within their cor-
+responding Thiessen polygons. We validate the model by comparing 
+inferred timings with manual observations at 60 randomly selected 
+intersections (10 per type), as summarized in Supplementary Table 1.
+Traffic network extrapolation
+To extrapolate limited camera observations to the entire network, traf-
+fic assignment is typically used30,53. In this study, we first use MPLD to 
+construct an initial OD matrix. Next, camera-derived traffic volumes are 
+used as ground truth to calibrate the traffic assignment model. Finally, 
+traffic speeds are estimated using the FD based on the assigned traffic 
+volumes and corresponding traffic densities32.
+We use MPLD provided by Cuebiq54 to derive the initial OD matrix. 
+The dataset comprises anonymized location records from over 
+1.75 million anonymized mobile devices within NYC during the study 
+time frame, representing approximately 21.49% of the population of 
+NYC. We extract all trips intersecting Manhattan and identify driving 
+trips based on the following criteria55: trip distances between 1 mi and 
+500 mi, durations >5 min and maximum GPS speed >5 mph. Selected 
+trips are then aggregated at the traffic analysis zone level to construct 
+the OD matrix. As MPLD captures only a subset of total travel, we weight 
+the MPLD-based OD matrix using census-block-group-level penetration 
+rates, calculated as the ratio of observed devices to the total population 
+within each region (Supplementary Section 1.5).
+We use hourly aggregated MPLD from 2020 and 2021 to ana-
+lyse hourly and daily fluctuations, and from the first 8 weeks of 
+2024 and 2025 to assess the impact of congestion pricing. To cap-
+ture passing-through trips, we include road networks within and 
+surrounding Manhattan. Traffic signal timing inferred from camera 
+footage is integrated into the road cost function when calculating 
+path travel time. The complete assignment network and the network 
+configurations, along with simulated traffic volumes, are illustrated 
+in Extended Data Fig. 4.
+We use DTALite31,56,57, an open-source mesoscopic traffic simulator, 
+to conduct DTA. DTALite integrates Newell’s simplified kinematic wave 
+
+===PAGE 10===
+Nature Sustainability
+Article
+https://doi.org/10.1038/s41893-026-01797-9
+model58 into its lightweight mesoscopic simulation engine to represent 
+queue formation, spillback and dissipation. This allows DTALite to 
+dynamically simulate queues and gridlocks in dense traffic while main-
+taining computational efficiency31. In our study, the hourly OD matrix 
+is discretized into 5-min departure intervals based on temporal profiles 
+derived from MPLD and is sequentially loaded onto the road network. 
+The DTA outputs road-level estimates of traffic volume and density at 
+5-min intervals20. Detailed information on the DTA configuration and 
+implementation is provided in Supplementary Section 1.5.
+Camera-based traffic volume serves as ground truth to calibrate 
+the MPLD-based OD matrix. The calibration process is integrated 
+with DTA and formulated as a bi-level optimization problem59. The 
+upper-level objective is to minimize the gap between simulated and 
+observed traffic volume, using the time-dependent OD matrices as 
+decision variables. The lower-level problem is a user equilibrium DTA, 
+which determines a time-dependent traffic volume pattern for each 
+road segment that satisfies dynamic user equilibrium conditions:
+Min Z = βd ∑
+i,j,t
+(d(i, j, t) −ˆd(i, j, t))
+2
++ ∑
+a∈S
+∑
+t∈Th0
+βq(q(a, t) −̂q(a, t))
+2
+(3)
+where d(i, j, t) and ˆd(i, j, t) are the initial and calibrated OD demand from 
+origin i to destination j at time interval [t, t + 1], respectively; q(a, t) and 
+̃q(a, t) are the simulated and observed traffic volume, respectively, on 
+road segment a at time interval [t, t + 1]; S is the set of road segments 
+with cameras; Th0 is the set of intervals with observations; and βd, βq are 
+the weights reflecting different degrees of confidence on target OD 
+demands and camera observations, respectively.
+OD matrix calibration is sensitive to camera coverage, as the under-
+determination issue can arise when cameras are sparse60. In our study, 
+this issue is mitigated by (1) using MPLD-derived OD as the prior, (2) 
+introducing a regularization term to prevent large deviations (term 1 
+in equation (3)) and (3) reducing dimensionality by defining weights 
+at the zone level rather than at the OD-pair level. After estimating traf-
+fic volume and density via DTA, we use the state-of-the-art S-shaped 
+three-parameter (S3) FD32 to estimate traffic speed:
+v =
+vf
+[1 + (k/kc)
+m]
+2/m
+(4)
+where v is the estimated traffic speed, k is the traffic density, vf is the 
+free flow speed, kc is the critical density and m is the parameter of 
+polynomial order.
+To calibrate the FD, we use 1 year of traffic flow data for all road 
+segments in Manhattan. We calibrate vf, kc and m at the road-segment 
+level. For segments without available observations, parameter values 
+are inputted using the average values corresponding to their road type. 
+The calibrated outcomes are summarized in Supplementary Fig. 3.
+Driving cycle reconstruction considering signal control
+To better replicate real-world urban driving behaviours, we reconstruct 
+second-by-second driving cycles by combining inferred traffic signal 
+timing with average road traffic speed estimated from the FD. Within 
+each signal cycle, speed is set to zero during red phases, while green 
+phases are modelled as a full accelerate–cruise–decelerate sequence. 
+To preserve consistency in vehicle miles travelled, the cruising speed 
+during the green phase is adjusted such that the total driving distance 
+within each cycle remains equal to the pre-reconstruction estimate:
+∫
+C
+0
+̄v(t)dt = v2
+a + v (G −2v
+a )
+(5)
+where C is the signal cycle length, G is the green time, ̄v(t) is the original 
+average speed, a is the acceleration and deceleration rate (1.26 m s−2) 
+and v is the reconstructed cruising speed during the green phase.
+Note that only vehicles encountering a red light are assumed to 
+follow the reconstructed driving cycle, while all others maintain their 
+original driving cycles. Total emissions are calculated separately for 
+both driving cycles and then combined using a weighted average based 
+on the probability of encountering a red light:
+Etotal = 1 −G
+C
+E( ̄v) + G
+C E(v)
+(6)
+where Etotal is the total emission, E( ̄v) is the emission under the recon-
+structed driving cycle and E(v) is the emission under the original 
+driving cycle.
+On-road vehicular emission estimation
+The MOVES of the US EPA is the regulatory model for estimating 
+emissions from mobile sources22. This study uses the latest version, 
+MOVES4. MOVES estimates emissions based on instantaneous energy 
+demand, which is determined by a combination of power requirements, 
+vehicle configurations and operating modes. To approximate engine 
+load, MOVES uses surrogate metrics: vehicle-specific power (VSP) for 
+light-duty vehicles and scaled tractive power (STP) for heavy-duty 
+vehicles. The second-by-second VSP and STP are calculated as follows61:
+VSP (or STP)t (kW t−1) = A
+M vt + B
+M v2
+t + C
+M v3
+t + m
+M (at + g sin θt) vt
+(7)
+where vt is the vehicle speed at time t (m s−1); at is the acceleration at 
+time t (m s−2); g = 9.81 m s−2; θt is the road grade; coefficients A, B and 
+C represent rolling resistance, rotational resistance and aerodynamic 
+drag, respectively; m is vehicle mass (t); M in VSP represents the fixed 
+mass factor (t); and M in STP serves as a scaling factor to align STP 
+ranges with those of VSP.
+Based on VSP (or STP), MOVES classifies driving activity into dis-
+crete OpModes, each associated with a specific emission rate (g s−1). 
+These OpModes capture variations in engine load and driving behav-
+iour; higher speeds and accelerations result in elevated VSP (or STP) 
+values, which correspond to increased fuel consumption and higher 
+emissions. An example of how emission rates vary by OpMode across 
+different source types is shown in Supplementary Fig. 4.
+Running MOVES is computationally intensive, making it impracti-
+cal for large-scale transportation networks with dynamic changes62,63. 
+To enhance modelling efficiency, this study uses MOVES-Matrix, which 
+is a pre-processed version of MOVES that runs the model iteratively 
+to generate a comprehensive matrix of emission rates covering all 
+possible input combinations. This approach is 200 times faster while 
+generating results identical to those obtained from running MOVES 
+directly62,63. In this study, we focus on preparing high-resolution, 
+road-level data for MOVES-Matrix, including fleet composition, driv-
+ing cycles and road attributes, while the source-type-specific age dis-
+tribution and meteorological conditions are represented as citywide 
+averages. Specifically, meteorological inputs are derived from his-
+torical records across all weather stations in NYC, while the vehicle age 
+distribution is based on NYC vehicle registration statistics by source 
+type (Supplementary Fig. 5).
+Note that this study focuses exclusively on on-road running emis-
+sions; emissions from vehicle starts, hoteling, evaporation and other 
+off-network sources are not included. In addition, this study focuses 
+on improving the accuracy and resolution of emission estimates by 
+enhancing vehicle activity inputs. The accuracy of emission factors 
+themselves, as defined within MOVES, is beyond the scope of this study.
+Scenario design
+We examine three key transport decarbonization policies: travel mode 
+shift, departure time shift and congestion pricing. The first three are 
+simulated scenarios, and the corresponding inputs are modified 
+as follows:
+
+===PAGE 11===
+Nature Sustainability
+Article
+https://doi.org/10.1038/s41893-026-01797-9
+(1)	 Travel mode shift: The driving demand is reduced by 10%, 20% 
+and 30%, with a corresponding increase in the bus demand 
+based on a 1:50 conversion ratio (average bus capacity). OD 
+matrices for other vehicle types remain unchanged.
+(2)	 Departure time shift: The driving demand is redistributed from 
+the morning peak hours (7:00–9:00 a.m.) to adjacent hours 
+(6:00–7:00 a.m. and 9:00–10:00 a.m.), and from the evening 
+peak hours (4:00–6:00 p.m.) to adjacent hours (3:00–4:00 p.m. 
+and 6:00–7:00 p.m.), using a total of shift rates of 10%, 20% and 
+30%. Driving demand outside these periods is held constant.
+(3)	 Congestion pricing: We use real-world travel demand derived 
+from MPLD and fleet composition derived from traffic cam-
+era footage to estimate emissions during weeks 2, 4, 6 and 8 
+after the announcement of the policy on 5 January 2025. The 
+corresponding weeks in 2024 were used as the baseline for 
+comparison. All public holidays and special events in NYC were 
+excluded from the analysis to ensure that observed changes 
+in traffic primarily reflect the effects of congestion pricing. 
+Although the congestion relief zone includes only roads at and 
+below 60th Street, we evaluate the policy’s impact on emissions 
+across the entire Manhattan. We also incorporate two inde-
+pendent data sources for validation: the Manhattan E-ZPass 
+system39 and Google Maps traffic trends40. The E-ZPass system 
+tracks the number of vehicles at major bridges and tunnels; we 
+use the Lincoln Tunnel and Holland Tunnel, both directly con-
+necting to the congestion zone, as validation points. Google 
+Maps traffic data are used as a benchmark for assessing changes 
+in vehicle speeds throughout the congestion relief zone. Valida-
+tion details are reported in Supplementary Section 1.7.
+Validation and uncertainty analysis
+Citywide emission inventory is inherently difficult to validate owing to 
+the absence of ground-truth data. Therefore, we focus on validating all 
+key inputs, including traffic volume, fleet composition, signal timing 
+and traffic speeds. As each model-inferred input introduces uncer-
+tainty, we conduct a comprehensive uncertainty analysis by comparing 
+emissions estimated from model-inferred inputs with those estimated 
+from ground truth. Both the total uncertainty, obtained by replacing 
+all inputs with ground truth simultaneously, and the component-wise 
+uncertainty, evaluated by varying one input at a time while keeping 
+others fixed, are quantified. These uncertainties are assessed at two 
+spatiotemporal resolutions: (1) yearly, citywide totals, which align 
+with how official inventories are typically reported, and (2) hourly, 
+road-segment-level estimates, which reflect the uncertainty intro-
+duced to fine-grained estimates. The detailed results are provided in 
+Supplementary Section 1.8.
+To further validate our results, we compare a subset of our emis-
+sion estimates with independent measurements collected by City 
+Scanner64, a mobile sensing platform mounted on vehicles to monitor 
+on-road air pollutants such as PM and NOx. In total, five vehicles oper-
+ated in NYC in January–February 2020 and September–December 2021 
+to collect PM and NOx concentration data. These measurements are 
+aggregated to the hourly, road-segment level and compared with our 
+modelled PM2.5 and NOx concentrations estimated by the air quality 
+dispersion model AERMOD65. The detailed outcomes are reported in 
+Supplementary Section 1.6.
+Data availability
+Traffic camera images used in this study are publicly available from 
+the New York City Department of Transportation (https://webcams.
+nyctmc.org). MPLD used to construct OD flows were provided by Cue-
+biq and are subject to data use agreements; they cannot be shared 
+publicly but may be accessed from the data provider by qualified 
+researchers under similar agreements. Shareable source data have 
+been deposited on GitHub at https://github.com/SonghuaHu-UMD/
+VisualAI_Emission. The full intermediate and derived datasets are 
+available from the corresponding author upon reasonable request.
+Code availability
+Python code to reproduce the results and paper is available via GitHub 
+at https://github.com/SonghuaHu-UMD/VisualAI_Emission.
+References
+1.	
+Wadud, Z., Adeel, M. & Anable, J. Understanding the large role of 
+long-distance travel in carbon emissions from passenger travel. 
+Nat. Energy 9, 1129–1138 (2024).
+2.	
+Axsen, J., Plötz, P. & Wolinetz, M. Crafting strong, integrated 
+policy mixes for deep CO2 mitigation in road transport. Nat. Clim. 
+Change 10, 809–818 (2020).
+3.	
+Böhm, M., Nanni, M. & Pappalardo, L. Gross polluters and vehicle 
+emissions reduction. Nat. Sustain. 5, 699–707 (2022).
+4.	
+Fast Facts on Transportation Greenhouse Gas Emissions  
+(US Environmental Protection Agency, 2022); https://www.epa.
+gov/greenvehicles/fast-facts-transportation-greenhouse-gas-
+emissions
+5.	
+Climate Change Mitigation: Reducing Emissions: Road Transport 
+(European Environment Agency, 2024); https://www.eea.europa.
+eu/en/topics/in-depth/road-transport
+6.	
+Air Quality in Europe 2022 (European Environment Agency, 
+2022); https://www.eea.europa.eu/publications/air-quality-in-
+europe-2022
+7.	
+Liang, X. et al. Air quality and health benefits from fleet 
+electrification in China. Nat. Sustain. 2, 962–971 (2019).
+8.	
+Nunez, Y. et al. An environmental justice analysis of air pollution 
+emissions in the United States from 1970 to 2010. Nat. Commun. 
+15, 268 (2024).
+9.	
+Testi, I. et al. Big mobility data reveals hyperlocal air pollution 
+exposure disparities in the Bronx, New York. Nat. Cities 1, 512–521 
+(2024).
+10.	 Gurney, K. R. et al. Under-reporting of greenhouse gas emissions 
+in US cities. Nat. Commun. 12, 553 (2021).
+11.	
+City of New York Congestion pricing program. https://portal.311.
+nyc.gov/article/?kanumber=KA-03612 (2025).
+12.	 Hu, S. et al. Evaluating the impact of zone 30 policies on citywide 
+road traffic emissions and efficiency: a big data-driven approach. 
+Transp. Res. A 202, 104705 (2025).
+13.	 Deng, F. et al. A big data approach to improving the vehicle 
+emission inventory in China. Nat. Commun. 11, 2801 (2020).
+14.	 Wen, Y. et al. Mapping dynamic road emissions for a megacity by 
+using open-access traffic congestion index data. Appl. Energy 
+260, 114357 (2020).
+15.	 Yang, D. et al. High-resolution mapping of vehicle emissions of 
+atmospheric pollutants based on large-scale, real-world traffic 
+datasets. Atmos. Chem. Phys. 19, 8831–8843 (2019).
+16.	 COPERT The Industry Standard Emissions Calculator  
+(Emisia, 2024); https://copert.emisia.com/
+17.	 Fung, P. L., Al-Jaghbeer, O., Pirjola, L., Aaltonen, H. & Järvi, L. 
+Exploring the discrepancy between top-down and bottom-up 
+approaches of fine spatio-temporal vehicular CO2 emission in an 
+urban road network. Sci. Total Environ. 901, 165827 (2023).
+18.	 Chen, G. et al. Review on city-level carbon accounting. Environ. 
+Sci. Technol. 53, 5545–5558 (2019).
+19.	 Gómez, C., González, C., Osses, M. & Aristizábal, B. Spatial and 
+temporal disaggregation of the on-road vehicle emission inventory 
+in a medium-sized Andean city. Comparison of GIS-based 
+top-down methodologies. Atmos. Environ. 179, 142–155 (2018).
+20.	 Zhou, X. et al. Integrating a simplified emission estimation model 
+and mesoscopic dynamic traffic simulator to efficiently evaluate 
+emission impacts of traffic management strategies. Transp. Res. D 
+37, 123–136 (2015).
+
+===PAGE 12===
+Nature Sustainability
+Article
+https://doi.org/10.1038/s41893-026-01797-9
+21.	 Zhang, S. et al. Fine-grained vehicle emission management 
+using intelligent transportation system data. Environ. Pollut. 241, 
+1027–1037 (2018).
+22.	 EPA’s MOtor Vehicle Emission Simulator (MOVES)  
+(US Environmental Protection Agency, 2024); https://www.epa.
+gov/moves
+23.	 Xia, Y. et al. Future reductions of China’s transport emissions 
+impacted by changing driving behaviour. Nat. Sustain. 6, 
+1228–1236 (2023).
+24.	 Janež, M., Verovšek, Š, Zupančič, T. & Moškon, M. Citizen 
+science for traffic monitoring: investigating the potentials 
+for complementing traffic counters with crowdsourced data. 
+Sustainability 14, 622 (2022).
+25.	 Jiang, L. et al. Hyperfine-resolution mapping of on-road 
+vehicle emissions with comprehensive traffic monitoring and 
+an intelligent transportation system. Atmos. Chem. Phys. 21, 
+16985–17002 (2021).
+26.	 Wang, A. et al. Capturing uncertainty in emission estimates 
+related to vehicle electrification and implications for metropolitan 
+greenhouse gas emission inventories. Appl. Energy 265, 114798 
+(2020).
+27.	 Meneguzzer, C., Gastaldi, M., Rossi, R., Gecchele, G. & Prati, M. V. 
+Comparison of exhaust emissions at intersections under traffic 
+signal versus roundabout control using an instrumented vehicle. 
+Transp. Res. Proc. 25, 1597–1609 (2017).
+28.	 Wu, K. et al. Big-data empowered traffic signal control could 
+reduce urban carbon emission. Nat. Commun. 16, 2013 (2025).
+29.	 Jocher, G., Chaurasia, A. & Qiu, J. Ultralytics YOLO (version 8.0). 
+GitHub https://github.com/ultralytics/ultralytics (2023).
+30.	 Iqbal, M. S., Choudhury, C. F., Wang, P. & González, M. C. 
+Development of origin–destination matrices using mobile phone 
+call data. Transp. Res. C 40, 63–74 (2014).
+31.	 Zhou, X. & Taylor, J. DTALite: a queue-based mesoscopic traffic 
+simulator for fast model evaluation and calibration. Cogent Eng. 
+https://doi.org/10.1080/23311916.2014.961345 (2014).
+32.	 Cheng, Q., Liu, Z., Lin, Y. & Zhou, X. S. An s-shaped 
+three-parameter (S3) traffic stream model with consistent car 
+following relationship. Transp. Res. B 153, 246–271 (2021).
+33.	 Liu, J., Han, K., Chen, X. M. & Ong, G. P. Spatial–temporal 
+inference of urban traffic emissions based on taxi  
+trajectories and multi-source urban data. Transp. Res. C 106, 
+145–165 (2019).
+34.	 Get Air Emissions Data (US Environmental Protection Agency, 
+accessed 18 October 2024); https://www.epa.gov/air-emissions-
+inventories/get-air-emissions-data-0
+35.	 Liu, Z. et al. Near-real-time monitoring of global CO2 emissions 
+reveals the effects of the COVID-19 pandemic. Nat. Commun. 11, 
+5172 (2020).
+36.	 Le Quéré, C. et al. Temporary reduction in daily global CO2 
+emissions during the COVID-19 forced confinement. Nat. Clim. 
+Change 10, 647–653 (2020).
+37.	 Hu, S. et al. A big-data driven approach to analyzing and 
+modeling human mobility trend under non-pharmaceutical 
+interventions during COVID-19 pandemic. Transp. Res. C 124, 
+102955 (2021).
+38.	 Isik, M., Dodder, R. & Kaplan, P. O. Transportation emissions 
+scenarios for New York City under different carbon intensities 
+of electricity and electric vehicle adoption rates. Nat. Energy 6, 
+92–104 (2021).
+39.	 Manhattan Congestion Tracker 2025 (C2SMARTER, accessed 24 
+May 2025); https://c2smarter.engineering.nyu.edu/manhattan-
+congestion-tracker/
+40.	 Cook, C. et al. The Short-Run Effects of Congestion Pricing in 
+New York City Technical Report (National Bureau of Economic 
+Research, 2025).
+41.	 Winkler, L., Pearce, D., Nelson, J. & Babacan, O. The effect of 
+sustainable mobility transition policies on cumulative urban 
+transport emissions and energy demand. Nat. Commun. 14, 2357 
+(2023).
+42.	 Liotta, C., Viguié, V. & Creutzig, F. Environmental and welfare 
+gains via urban transport policy portfolios across 120 cities. Nat. 
+Sustain. 6, 1067–1076 (2023).
+43.	 Fu, X. et al. Co-benefits of transport demand reductions from 
+compact urban development in Chinese cities. Nat. Sustain. 7, 
+294–304 (2024).
+44.	 Grote, M., Williams, I., Preston, J. & Kemp, S. Including congestion 
+effects in urban road traffic CO2 emissions modelling: do local 
+government authorities have the right options? Transp. Res. D 43, 
+95–106 (2016).
+45.	 Hu, S. et al. Understanding factors influencing user engagement 
+in incentive-based travel demand management program. Transp. 
+Res. A 186, 104145 (2024).
+46.	 Çolak, S., Lima, A. & González, M. C. Understanding congested 
+travel in urban areas. Nat. Commun. 7, 10793 (2016).
+47.	 Meng, J. et al. The rise of south–south trade and its effect on 
+global CO2 emissions. Nat. Commun. 9, 1871 (2018).
+48.	 EMFAC On-Road Emissions Inventory (California Air Resources 
+Board, 2025); https://arb.ca.gov/emfac/emissions-inventory
+49.	 Hu, S. et al. Multi-crowdsourced data fusion for modeling 
+link-level traffic resilience to adverse weather events. Int. J. 
+Disaster Risk Reduct. 112, 104754 (2024).
+50.	 Zhang, Y. et al. Bytetrack: Multi-object Tracking by Associating 
+Every Detection Box (Springer, 2022).
+51.	 Bewley, A., Ge, Z., Ott, L., Ramos, F. & Upcroft, B. Simple online 
+and realtime tracking. In 2016 IEEE International Conference on 
+Image Processing (ICIP) 3464–3468 (IEEE, 2016).
+52.	 Liu, Z. et al. A ConvNet for the 2020s. In 2022 IEEE/CVF 
+Conference on Computer Vision and Pattern Recognition. CVPR 
+2022, 11966–11976 (2022).
+53.	 Zhou, X. S. et al. Flow-through tensors: a unified computational 
+graph architecture for multi-layer transportation network 
+optimization. Artif. Intell. Transp. 1, 100006 (2025).
+54.	 Cuebiq Connecting people, places, and possibilities.  
+https://cuebiq.com/ (2024).
+55.	 Hu, S. A Big-Data-Driven Framework for Spatiotemporal Travel 
+Demand Estimation and Prediction. Ph.D. thesis, Univ. Maryland 
+(2023).
+56.	 Zhou, X. S. et al. A meso-to-macro cross-resolution performance 
+approach for connecting polynomial arrival queue model to 
+volume-delay function with inflow demand-to-capacity ratio. 
+Multimodal Transp. 1, 100017 (2022).
+57.	 Lu, J. & Zhou, X. S. Virtual track networks: a hierarchical modeling 
+framework and open-source tools for simplified and efficient 
+connected and automated mobility (cam) system design based 
+on general modeling network specification (gmns). Transp. Res. C 
+153, 104223 (2023).
+58.	 Newell, G. F. A simplified theory of kinematic waves in highway 
+traffic, part I: general theory. Transp. Res. B 27, 281–287 (1993).
+59.	 Lu, C.-C., Zhou, X. & Zhang, K. Dynamic origin–destination 
+demand flow estimation under congested traffic conditions. 
+Transp. Res. C 34, 16–37 (2013).
+60.	 Krishnakumari, P., Van Lint, H., Djukic, T. & Cats, O. A data driven 
+method for od matrix estimation. Transp. Res. C 113, 38–56 
+(2020).
+61.	 Motor Vehicle Emission Simulator: MOVES5 (Office of 
+Transportation and Air Quality, US Environmental Protection 
+Agency, 2024).
+62.	 Liu, H. et al. Moves-matrix for high-performance on-road energy 
+and running emission rate modeling applications. J. Air Waste 
+Manag. Assoc. 69, 1415–1428 (2019).
+
+===PAGE 13===
+Nature Sustainability
+Article
+https://doi.org/10.1038/s41893-026-01797-9
+63.	 Lu, H. et al. Moves-Matrix 4.0 for High-Performance On-Road 
+Energy Use and Emission Rate Modeling Applications Technical 
+Report (National Center for Sustainable Transportation, 2025); 
+https://escholarship.org/uc/item/0xg905w5
+64.	 Wang, A. et al. Hyperlocal environmental data with a mobile 
+platform in urban environments. Sci. Data 10, 524 (2023).
+65.	 Cimorelli, A. J. et al. AERMOD: a dispersion model for industrial 
+source applications. Part I: generalmodel formulation and 
+boundary layer characterization. J. Appl. Meteorol. 44, 682–693 
+(2005).
+Acknowledgements
+We thank H. Lu, R. L. Guensler (Georgia Institute of Technology) 
+and H. Liu (Tongji University) for developing the MOVES-Matrix and 
+preparing the NYC MOVES-Matrix dataset using the latest MOVES4. 
+We would like to thank Cuebiq for providing mobile device location 
+data. We would also like to thank all members of the MIT Senseable 
+City Consortium (including FAE Technology, Dubai Future Foundation, 
+Sondotécnica, Seoul AI Foundation, Arnold Ventures, Sidara, Toyota, 
+Abu Dhabi’s Department of Municipal Transportation, city of Rio de 
+Janeiro, city of Amsterdam, A2A, UnipolTech, Consiglio per la Ricerca 
+in Agricoltura e l’Analisi dell’Economia Agraria, Hospital Israelita Albert 
+Einstein, KACST, KAIST, SMART and AMS Institute) for supporting 
+this study.
+Author contributions
+S.H. conceived of the study and led the overall research design. 
+S.H. developed and implemented the methodology, conducted the 
+analysis and drafted the paper. P.S. and C.R. provided conceptual 
+guidance, helped interpret the results and contributed to the framing 
+and revision of the paper. T.B. contributed to data integration, 
+model validation and result interpretation. X.Z. provided expertise 
+in traffic modelling and assignment methods and contributed to 
+methodological development. A.W. contributed to the environmental 
+aspects, including emission-related analysis, validation and 
+interpretation. A.K. contributed to the development of the computer 
+vision components. All authors reviewed, edited and approved the 
+final paper.
+Competing interests
+The authors declare no competing interests.
+Additional information
+Extended data is available for this paper at  
+https://doi.org/10.1038/s41893-026-01797-9.
+Supplementary information The online version contains supplementary 
+material available at https://doi.org/10.1038/s41893-026-01797-9.
+Correspondence and requests for materials should be addressed to 
+Songhua Hu.
+Peer review information Nature Sustainability thanks James Tate, Qiao 
+Yu and the other, anonymous, reviewer(s) for their contribution to the 
+peer review of this work. Peer reviewer reports are available.
+Reprints and permissions information is available at  
+www.nature.com/reprints.
+Publisher’s note Springer Nature remains neutral with regard to 
+jurisdictional claims in published maps and institutional affiliations.
+Springer Nature or its licensor (e.g. a society or other partner) holds 
+exclusive rights to this article under a publishing agreement with 
+the author(s) or other rightsholder(s); author self-archiving of the 
+accepted manuscript version of this article is solely governed by the 
+terms of such publishing agreement and applicable law.
+© The Author(s), under exclusive licence to Springer Nature Limited 
+2026
+
+===PAGE 14===
+Nature Sustainability
+Article
+https://doi.org/10.1038/s41893-026-01797-9
+Extended Data Fig. 1 | Impact of congestion pricing on traffic speed and 
+volume. The daily average traffic volume and speed from the same day of  
+the week and the corresponding week in 2024 are used as the baseline.  
+(a-b) Temporal changes in network-wide average traffic speed (by road type) 
+and volume (by car type). Shaded areas represent 95% confidence intervals. 
+(c-e) Spatial distribution of traffic volume changes (in %) by week 8. Each 
+point represents a camera location. Green indicates a decrease in volume, red 
+indicates an increase. Marker size reflects the magnitude of absolute change. 
+‘Truck’ represents the combined total of passenger trucks, single-unit trucks, 
+and combination trucks. The blue boundary denotes the congestion relief zone. 
+Basemap data in c–e from OpenStreetMap under an Open Data Commons  
+Open Database License.
+
+===PAGE 15===
+Nature Sustainability
+Article
+https://doi.org/10.1038/s41893-026-01797-9
+Extended Data Fig. 2 | Methodological Framework. The total framework includes three main parts: Visual information enrichment, network extrapolation, and emission 
+estimation. Basemap data from OpenStreetMap under an Open Data Commons Open Database License.
+
+===PAGE 16===
+Nature Sustainability
+Article
+https://doi.org/10.1038/s41893-026-01797-9
+Extended Data Fig. 3 | Vehicle type classifier performance and outcome.  
+(a) Learning curves for the ten image classifiers. (b) Scatter plot showing the 
+number of parameters (M) versus Top-1 Accuracy (%). (c) Confusion matrix for 
+ConvNeXt. Twelve vehicle types are considered: combination truck (C_Truck), 
+electric car (E_Car), intercity bus (I_Bus), light commercial truck (LC_Truck), 
+motorcycle (M_Cycle), motorhome (M_Home), passenger car (P_Car), passenger 
+truck (P_Truck), refuse truck (R_Truck), single-unit truck (SU_Truck), school bus 
+(S_Bus), and transit bus (T_Bus).
+
+===PAGE 17===
+Nature Sustainability
+Article
+https://doi.org/10.1038/s41893-026-01797-9
+Extended Data Fig. 4 | The DTA outcomes of the whole simulation network. 
+The volume is based on the average value during the morning peak 08:00-09:00 
+a.m. OD flow is aggregated at the census tract level, and only class labels greater 
+than 1 are plotted for better visualization. In the real simulation, OD flow is 
+aggregated at the TAZ level, and all OD flows are input. Although only Manhattan 
+City is the focus (red area), we considered nearby OD flows to include passing-
+through travels. In (c-d), the red line represents the iteration where we terminate 
+the DTA and calibration. Basemap data in a and b from OpenStreetMap under an 
+Open Data Commons Open Database License.

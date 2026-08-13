@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DRAFT ff.XXX — industria pesante dell'intelligenza</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+  :root {
+    --bg: #0a0a0a; --fg: #e8e8e8; --fg-muted: #999;
+    --accent: #448aff; --accent-dim: #448aff33;
+    --card-bg: #111; --card-border: #448aff;
+    --link: #6ba3ff; --highlight-bg: #448aff22; --highlight-border: #448aff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.7; max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem; }
+  h1, h2, h3 { font-family: 'IBM Plex Mono', monospace; }
+  h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.3rem; color: var(--accent); }
+  .draft-badge { display: inline-block; background: var(--accent); color: #000; font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 2px; text-transform: uppercase; margin-bottom: 1rem; }
+  .subtitle { font-size: 1.1rem; color: var(--fg-muted); margin-bottom: 1.5rem; font-style: italic; }
+  .keypoints { list-style: none; margin-bottom: 2.5rem; padding: 1rem; border-left: 3px solid var(--accent); background: var(--accent-dim); }
+  .keypoints li { padding: 0.3rem 0; font-weight: 500; }
+  .keypoints li::before { content: '\25B8 '; color: var(--accent); font-weight: 700; }
+  .brutal-card { background: var(--card-bg); border-left: 4px solid var(--card-border); padding: 1.5rem; margin-bottom: 2rem; border-radius: 0 4px 4px 0; }
+  .brutal-card h2 { font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; color: var(--fg); }
+  .brutal-card p { margin-bottom: 0.8rem; color: #ccc; }
+  mark.note-highlight { background: var(--highlight-bg); border-bottom: 2px solid var(--highlight-border); color: var(--fg); padding: 1px 4px; border-radius: 2px; }
+  .meta { margin-top: 1rem; padding-top: 0.8rem; border-top: 1px solid #222; font-size: 0.85rem; color: var(--fg-muted); }
+  .meta a, .connections a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--link); }
+  .meta a:hover, .connections a:hover { border-bottom-style: solid; }
+  a.note-src { color: var(--accent); font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; text-decoration: none; border-bottom: 1px dotted var(--accent); }
+  .connections { margin-top: 0.5rem; font-size: 0.85rem; }
+  hr { border: none; border-top: 1px solid #222; margin: 2rem 0; }
+  .backlog { background: var(--card-bg); border: 1px solid #222; padding: 1.2rem; margin-top: 2.5rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.82rem; color: var(--fg-muted); }
+  .pullquote { border-left: 3px solid var(--accent); padding: 6px 0 6px 18px; margin: 18px 0; font-style: italic; color: #ccc; font-size: 1.05rem; }
+  .cross-refs { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid #222; }
+  .cross-refs h4 { font-size: 0.78rem; color: var(--fg-muted); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.7rem; }
+  .cross-refs ul { list-style: none; padding-left: 0; }
+  .cross-refs li { margin-bottom: 0.35rem; font-size: 0.9rem; color: #ccc; }
+  .cross-refs li::before { content: "↳ "; color: var(--accent); }
+  .cross-refs a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--link); }
+</style>
+</head>
+<body>
+<span class="draft-badge">Draft · ff.156</span>
+<h1>💻 Oggi parliamo di industria pesante dell'intelligenza</h1>
+<p class="subtitle">Un milione di tonnellate di datacenter da mettere in orbita, neuroni di topo che pilotano un drone da corsa, ventisei pulcini nati dentro un guscio stampato. Nello stesso trimestre un modello ha tenuto la barra su sei ore e mezza di lavoro software senza supervisione, e un demo di mondi giocabili ha bruciato in un pomeriggio un quinto della capitalizzazione dei publisher. La parte interessante sta nei posti dove il calcolo smette di essere un servizio e torna a essere materia: silicio da lanciare, cellule da coltivare, molecole da progettare. E l'Europa guarda tutto questo con circa un anno di scarto.</p>
+<ul class="keypoints">
+  <li>Musk punta a 100 GW/anno di compute AI in orbita: ~1 milione di tonnellate di hardware, uno Starship ogni ora con 200 tonnellate a volo</li>
+  <li>Openclaw integra lidar, stereo e RGB in uno stack percettivo open source, con demo su Unitree G1 e droni</li>
+  <li>All'Anduril AI Grand Prix una squadra pilota il drone da corsa con un computer biologico di cellule cerebrali di topo (premio 500.000 dollari più assunzione)</li>
+  <li>Colossal Biosciences fa schiudere 26 pulcini sani da un uovo interamente artificiale: guscio ovale stampato, membrana permeabile all'ossigeno</li>
+  <li>METR misura GPT-5.2 'high' a un 50%-time-horizon di 6,6 ore su task software, con intervallo di confidenza fra 3h20 e 17h30</li>
+  <li>La Fed di St. Louis stima l'adozione AI in Francia, Germania, Spagna e Italia circa un anno indietro rispetto agli USA</li>
+  <li>Google Genie fa scivolare i titoli videogame del 10-21% e Oracle valuta tagli per 30.000 posti</li>
+  <li>Isomorphic IsoDDE: +2,3x su antibody-antigen rispetto ad AlphaFold 3, ~20x su Boltz-2, meglio di FEP+ con un ordine di grandezza in meno di compute</li>
+</ul>
+<hr>
+<div class="brutal-card">
+  <h2>💻 ff.156.1 🦾 Corpi che rispondono a una frase detta a voce</h2>
+  <p>Standard Bots, che si presenta come il più grande produttore statunitense di robot industriali "AI-native", ha appena raccolto <mark class="note-highlight">200 milioni di dollari</mark> a una valutazione di 1 miliardo <a class="note-src" href="https://standardbots.com/?utm_source=substack&utm_medium=email">[#1631]</a>. Il capitale insegue i bracci robotici con la stessa fame con cui inseguiva i modelli di frontiera, e per una ragione precisa: la promessa è programmare una linea di montaggio parlandole in linguaggio naturale, spostando il valore dall'acciaio al software che la governa.</p><p>Lo stesso movimento avviene sul corpo umano. SleepFM è un foundation model addestrato su <mark class="note-highlight">585.000 ore</mark> di registrazioni del sonno, capace di prevedere 130 malattie da una singola notte <a class="note-src" href="https://x.com/i/status/2008576712695836685">[#1613]</a>. Un braccio che capisce un ordine detto a voce e un polso che anticipa una diagnosi condividono la stessa architettura concettuale: un sistema fisico diventa interrogabile come un database. Il giorno in cui l'orologio ti dice cosa hai prima del medico diventa una questione di ore di training accumulate.</p>
+  <div class="meta">
+    <div class="connections">Connections: <a href="https://fortissimo.substack.com/i/152438665/ff-figli-salute-e-anni-sprecati">ff.111.3 Figli, salute e anni sprecati</a></div>
+  </div>
+</div>
+
+
+<div class="brutal-card">
+  <h2>💻 ff.156.2 👁️ Occhi già installati, letti da capo</h2>
+  <p>Il Senseable Lab del MIT ha pubblicato su Nature Sustainability un modello che trasforma <mark class="note-highlight">milioni di telecamere urbane</mark> — dashcam, semafori, videocitofoni — in una rete diffusa di sensori ambientali <a class="note-src" href="https://senseable.mit.edu/papers/pdf/2020402_Hu-etal_UbiquitousData-Driven_NatureSustainability.pdf?utm_medium=email&utm_campaign=SCL%20NL%20May%202026%2012&utm_content=SCL%20NL%20May%202026%2012+CID_67287970c4e487c151261dd5494b3c28&utm_source=SCL%20Analytics&utm_term=Nature%20Sustainability">[#1623]</a>. Le città sono già ricoperte di occhi installati per la sorveglianza e il traffico; il paper li rilegge come strumenti di misura, e con essi la linea tra sensing utile e controllo pervasivo si assottiglia fino a sparire.</p><p>Sul versante domestico vale la stessa logica di riuso. Claude Code, nato per i programmatori, analizza i file di <mark class="note-highlight">DNA grezzo di un test di ancestry</mark> per isolare i geni di interesse clinico <a class="note-src" href="https://x.com/i/status/2007540021536993712">[#1610]</a>. Il confine tra app medica e file manager si dissolve quando lo strumento che scrive codice legge anche il tuo genoma. In entrambi i casi non serve costruire nuova infrastruttura: basta puntare un algoritmo su ciò che già esiste.</p>
+  <div class="meta">
+    <div class="connections">Connections: <a href="https://fortissimo.substack.com/i/193567489/ff-claude-mythos-non-per-tutti">ff.148.1 Claude Mythos: non per tutti</a></div>
+  </div>
+</div>
+
+
+<div class="brutal-card">
+  <h2>💻 ff.156.3 🌐 Il calcolo che si sparpaglia</h2>
+  <p>EpochAI ha messo un numero sulla direzione del vento: il training AI di frontiera cresce di <mark class="note-highlight">5 volte l'anno</mark>, mentre le run di addestramento decentralizzato su internet scalano a <mark class="note-highlight">20 volte l'anno</mark> <a class="note-src" href="https://epoch.ai/gradient-updates/how-far-can-decentralized-training-over-the-internet-scale?utm_source=substack&utm_medium=email">[#1621]</a>. Se il calcolo distribuito quadruplica il ritmo di crescita del super-cluster monolitico, il modello del datacenter unico e recintato ha una data di scadenza più vicina di quanto si racconti.</p><p>Mentre il calcolo si federa, cambia anche il modo di misurare l'intelligenza. ARC-AGI-3, in lancio a marzo 2026, abbandona i test statici e valuta il ragionamento interattivo: esplorare un ambiente, modellarlo, pianificare obiettivi senza ricevere istruzioni <a class="note-src" href="https://x.com/i/status/2004276612385108221">[#1608]</a>. Saturare ARC-AGI-1 e 2 non basta più; la domanda vera è quanto tempo resisterà anche questa frontiera prima di essere a sua volta saturata.</p>
+  <div class="meta">
+    <div class="connections">Connections: ff.125.4 L'alternativa alla Cina: Internet</div>
+  </div>
+</div>
+
+
+<div class="brutal-card">
+  <h2>💻 ff.156.4 ⚗️ L'alchimia rientra dalla porta sul retro</h2>
+  <p>Una startup di fusione promette di produrre <mark class="note-highlight">5 tonnellate d'oro l'anno</mark> insieme a 1 GW di energia, trasmutando mercurio dentro un reattore <a class="note-src" href="https://www.ft.com/content/06f91e0d-3007-40bd-b785-86fef4890809">[#1615]</a>. L'alchimia rientra dalla porta sul retro della fisica nucleare, con un dettaglio che rovina il sogno degli adepti: l'oro prodotto è radioattivo e va stoccato per <mark class="note-highlight">14-18 anni</mark> prima di poter essere toccato.</p><p>Resta la domanda economica: vale più il gigawatt che accendi oggi o i lingotti che non puoi vendere per quasi due decenni? La trasmutazione dei metalli, fantasia da manoscritti medievali, diventa un problema di logistica dello stoccaggio e di attualizzazione dei flussi di cassa.</p>
+  <div class="meta">
+    <div class="connections">Connections: ff.28.1 Intelligenza artificiale per la fusione nucleare</div>
+  </div>
+</div>
+
+
+<div class="brutal-card">
+  <h2>💻 ff.156.5 🧬 Le proteine hanno un ecosistema</h2>
+  <p>Dopo AlphaFold il design molecolare si sta popolando di attori. Boltz Lab ha rilasciato tre modelli — Boltz-1, Boltz-2 e BoltzGen — raccolto <mark class="note-highlight">28 milioni di dollari</mark> di seed e firmato una <mark class="note-highlight">partnership pluriennale con Pfizer</mark> per il design molecolare <a class="note-src" href="https://x.com/i/status/2009265928756760581">[#1614]</a>. L'ecosistema biomolecolare si moltiplica: gli strumenti per predire e generare strutture diventano il nuovo strato di base su cui tutti costruiscono.</p><p>La domanda che conta è chi incasserà: le startup AI che scrivono i modelli o i giganti farmaceutici che le finanziano e possiedono le pipeline cliniche. Una partnership pluriennale con Pfizer è insieme una benedizione e un guinzaglio — capitale e dati in cambio di dipendenza da chi, alla fine, porta davvero un farmaco sul mercato.</p>
+  <div class="meta">
+    <div class="connections">Connections: ff.4.1 La struttura delle proteine</div>
+  </div>
+</div>
+
+
+
+<div class="brutal-card">
+  <h2>💻 ff.156.6 🛏️ Sei gradi di altitudine in camera da letto</h2>
+  <p>Sei gradi di inclinazione del letto, testa in su, per cinque settimane: il volume ematico sale del <mark class="note-highlight">4,1%</mark>, una risposta emopoietica dello stesso tipo di quella che si va a cercare con un ciclo di allenamento in quota <a class="note-src" href="https://twitter.com/i/status/2060833281398997128">[#1640]</a>. Il rapporto fra costo dell'intervento e ampiezza dell'effetto è quasi imbarazzante: due cunei sotto le gambe di un letto contro settimane di trasferta in montagna.</p><p>La stessa logica — dose minima, leva biologica massima — sta arrivando in oncologia da tutt'altra direzione. Il vaccino mRNA di Moderna e Merck contro il melanoma riduce del <mark class="note-highlight">49%</mark> il rischio di morte o recidiva rispetto al solo Keytruda, su un follow-up a cinque anni della Phase 2b, e la piattaforma corre ora su 8 trial in fase 2/3 <a class="note-src" href="https://www.wsj.com/health/pharma/moderna-merck-report-positive-results-from-cancer-vaccine-study-73fb3b5f">[#1603]</a>. Gli mRNA escono dalla stagione pandemica e si presentano come istruzioni terapeutiche personalizzabili.</p><p>Messi accanto, il 4,1% e il 49% raccontano la stessa cosa da due scale diverse: la fisiologia umana ha ancora margini enormi lasciati sul tavolo, e alcuni si aprono con un angolo, altri con una sequenza. Il tempo che passiamo orizzontali resta il blocco più lungo e più ignorato della giornata, e per ora lo trattiamo come tempo morto.</p>
+  <div class="meta">
+    <div class="connections">Connections: ☑️ ff.44.1 La fallacia moderna del tempo a contenitori · 💎 ff.110.3 Le criptovalute contro obsolescenza statale</div>
+  </div>
+</div>
+
+<div class="brutal-card">
+  <h2>💻 ff.156.7 👟 Il fantasma che corre negli occhiali</h2>
+  <p>Un runner ha trasformato la propria uscita in una gara contro sé stesso: il ghost GPX di una sessione passata proiettato nel campo visivo dai <mark class="note-highlight">Meta Ray-Ban Display</mark>, due corpi sulla stessa strada e uno solo fisico <a class="note-src" href="https://twitter.com/i/status/2061160116167033329">[#1638]</a>. Il dato di allenamento esce dal grafico che si guarda a casa e prende posizione davanti agli occhi mentre la fatica accade.</p><p>Sull'altro fronte, il corpo che si costruisce da zero ha appena chiuso il suo problema più duro: <mark class="note-highlight">Figure 03 con Helix 02</mark> raggiunge la full-body autonomy, camminata e manipolazione dentro lo stesso ciclo di controllo invece che come due competenze separate da alternare <a class="note-src" href="https://www.figure.ai/news/helix-02">[#1600]</a>. Per anni l'equilibrio dinamico e la presa fine si rubavano a vicenda risorse; ora convivono.</p><p>Gli occhiali che sovrappongono un avversario immaginario a una strada vera e un umanoide che tiene insieme gambe e mani lavorano sullo stesso asse: la fusione di sensori, memoria e attuazione in un unico anello. In un caso l'anello si chiude su un umano, nell'altro su una macchina.</p>
+  <div class="meta">
+    <div class="connections">Connections: ff.129.2 Pi-greco, FigureAI e 1 ora "logistica"</div>
+  </div>
+</div>
+
+<div class="brutal-card">
+  <h2>💻 ff.156.8 ⚡ Il Texas che ascolta le balene</h2>
+  <p>Il report 2026 di Bloom Energy mette il carico elettrico dei datacenter statunitensi a <mark class="note-highlight">144 GW nel 2028</mark>, partendo dagli 80 GW del 2025: quasi un raddoppio in tre anni. Il Texas da solo arriva a 40 GW, circa il 30% del totale nazionale <a class="note-src" href="https://www.bloomenergy.com/2026-power-report/">[#1606]</a>. Il calcolo si comporta come un'industria pesante e sceglie la residenza guardando la rete, non il mercato del lavoro.</p><p>Su quella stessa infrastruttura gira roba come <mark class="note-highlight">Perch 2.0</mark> di DeepMind, foundation model bioacustico addestrato su vocalizzazioni di uccelli che, per transfer learning, classifica i canti complessi delle balene <a class="note-src" href="https://x.com/i/status/2020932617818996804">[#1598]</a>. Le regolarità del suono animale reggono il salto dal bosco agli abissi, e questo dice qualcosa sulla struttura della comunicazione biologica.</p><p>Vale la pena tenere insieme le due cifre: 40 GW concentrati in uno Stato servono anche a far emergere pattern che nessun biologo avrebbe potuto annotare a mano in una carriera intera. Il costo energetico dell'intelligenza artificiale si paga in centrali, il ritorno arriva in domini dove non avevamo nemmeno un vocabolario.</p>
+  <div class="meta">
+    <div class="connections">Connections: ff.50.4 Consumisti ma non di energia</div>
+  </div>
+</div>
+
+<div class="brutal-card">
+  <h2>💻 ff.156.9 🛰️ Cinquemila nodi sopra la testa</h2>
+  <p>La nuova costellazione annunciata prevede <mark class="note-highlight">5.280 satelliti in LEO</mark> in banda Q/V, capaci fino a 144 Gbps per singolo cliente, affiancati da 128 satelliti in MEO e da un backbone ottico da 6 Tbps, con deploy previsto nel Q4 2027 <a class="note-src" href="https://www.bloomenergy.com/2026-power-report/">[#1605]</a>. La banda satellitare consumer guadagna un ordine di grandezza in una generazione di hardware.</p><p>Il numero che pesa davvero è quello per utente: <mark class="note-highlight">144 Gbps</mark> su una singola utenza residenziale mettono in discussione la geografia del cavo, cioè l'idea che la connettività seria arrivi solo dove qualcuno ha scavato una trincea. Con un backbone ottico da 6 Tbps in orbita, il collo di bottiglia si sposta dal terreno all'antenna.</p>
+  <div class="meta">
+    
+  </div>
+</div>
+
+<div class="brutal-card">
+  <h2>💻 ff.156.10 🚁 Due milioni di atterraggi senza pilota</h2>
+  <p>Zipline ha chiuso un round da <mark class="note-highlight">600 milioni di dollari</mark> a una valutazione di 7,6 miliardi, e nel frattempo ha superato i 2 milioni di consegne via drone <a class="note-src" href="https://x.com/zipline/status/2014024831562285123">[#1604]</a>. La cifra che conta è la seconda: due milioni di drop reali sono un dataset operativo, con meteo, ostacoli, guasti e clienti veri dentro.</p><p>Una demo si giudica sul video, <mark class="note-highlight">2 milioni di consegne</mark> si giudicano sulla coda della distribuzione — i casi rari che decidono se un'autorità civile ti lascia volare sopra le case. È lì che la logistica aerea smette di essere una scommessa di capitale e comincia a essere una pratica burocratica, che è il modo in cui le tecnologie entrano davvero nelle città.</p>
+  <div class="meta">
+    
+  </div>
+</div>
+
+
+
+<div class="brutal-card">
+  <h2>💻 ff.156.11 🛰️ Un milione di tonnellate in orbita</h2>
+  <p>Elon Musk ha messo un numero sul tavolo, e il numero è di quelli che cambiano la categoria merceologica del discorso: <mark class="note-highlight">100 GW di compute AI all'anno</mark> costruiti in orbita, che in massa fanno circa un milione di tonnellate di hardware da portare fuori dall'atmosfera. Il conto operativo si legge da solo — uno Starship in volo ogni ora, 200 tonnellate a lancio, per anni di fila. Le ragioni tecniche sono tre e sono tutte fisiche: raffreddamento nel vuoto, solare senza notte e senza nuvole, latenza ottica fra i nodi <a class="note-src" href="https://youtu.be/BYXbuik3dgA">[#1597]</a>. Il datacenter entra così nel bilancio come voce di logistica spaziale.</p><p>All'altro capo della filiera, la stessa spinta si smaterializza in codice pubblico. Openclaw ha aggiunto alla propria pila la comprensione di spazio e tempo, fondendo <mark class="note-highlight">lidar, stereo e RGB</mark> in un unico stack percettivo, con demo su Unitree G1 e su droni, interamente open source <a class="note-src" href="https://x.com/stash_pomichter/status/2028645216505549168">[#1588]</a>. La percezione spazio-temporale, che fino a ieri era il fossato di ogni azienda di robotica, scivola verso lo stato di commodity, come è successo al sistema operativo dei droni.</p><p>Le due notizie stanno agli estremi opposti dello stesso movimento. Da una parte un milione di tonnellate di materia da spedire in orbita perché la Terra non basta più a smaltire il calore; dall'altra un repository che chiunque può clonare in un pomeriggio e montare su un G1. Il capitale si concentra dove serve massa, e si azzera dove serve solo software.</p>
+  <div class="meta">
+    <div class="connections">Connections: ff.144.1 OpenClaw e il pensionato dei PDF</div>
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>💻 ff.156.12 🐭 Neuroni di topo, gusci stampati</h2>
+  <p>L'Anduril AI Grand Prix metteva in palio <mark class="note-highlight">500.000 dollari e un posto di lavoro</mark> per chi pilotasse meglio un drone da corsa con software AI. Una squadra si è presentata con un computer biologico fatto di cellule cerebrali di topo <a class="note-src" href="https://x.com/i/status/2018152238368354564">[#1594]</a>. Il regolamento diceva software; nessuno aveva pensato di scrivere che il substrato dovesse essere silicio. La domanda resta aperta e diventerà regolamentare prima che filosofica: dove passa il confine, quando due materiali diversi fanno la stessa cosa e uno dei due è vivo.</p><p>Nello stesso registro, Colossal Biosciences ha fatto schiudere <mark class="note-highlight">26 pulcini sani</mark> da un uovo interamente artificiale — un guscio ovale stampato, rivestito da una membrana permeabile all'ossigeno <a class="note-src" href="https://twitter.com/i/status/2056708864096018584">[#1587]</a>. Un embrione può quindi svilupparsi dentro un contenitore progettato invece che dentro un guscio deposto, e la riproduzione diventa una piattaforma con specifiche, tolleranze e fornitori.</p><p>Messe in fila, le due notizie raccontano una biologia che entra nella catena di fornitura da entrambi i lati: come processore, con i neuroni che calcolano una traiettoria a 500.000 dollari di montepremi, e come prodotto, con 26 animali usciti da una linea di produzione. Chi decide quali specie diventano producibili è una domanda che oggi ha una risposta industriale e nessuna risposta istituzionale.</p>
+  <div class="meta">
+    
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>💻 ff.156.13 ⏱️ Sei ore di autonomia, un anno di ritardo</h2>
+  <p>METR ha misurato GPT-5.2 in modalità 'high' su task software e ha ottenuto un 50%-time-horizon di <mark class="note-highlight">6,6 ore</mark>, record assoluto, con un intervallo di confidenza largo che va da 3 ore e 20 a 17 ore e 30 <a class="note-src" href="https://x.com/i/status/2019169900317798857">[#1593]</a>. Tradotto: sulla metà dei compiti che a un umano competente costerebbero una giornata intera, il modello arriva in fondo da solo. La curva raddoppia ogni pochi mesi, e l'estrapolazione porta rapidamente all'agente che lavora una settimana senza che nessuno guardi.</p><p>Dentro questa dinamica il ritardo europeo cambia di significato. La Fed di St. Louis stima l'adozione AI nei grandi mercati UE — Francia, Germania, Spagna, Italia — <mark class="note-highlight">circa un anno indietro</mark> rispetto agli Stati Uniti <a class="note-src" href="https://www.stlouisfed.org/on-the-economy/2026/mar/mind-gap-ai-adoption-europe-us">[#1582]</a>. Su una tecnologia che si reinventa ogni sei mesi, dodici mesi valgono due generazioni di modello, cioè due raddoppi dell'orizzonte di autonomia: quando in Italia si adotta l'agente che regge sei ore, altrove si sta già misurando quello che ne regge molte di più.</p>
+  <div class="meta">
+    <div class="connections">Connections: ✒️ ff.31.4 Quattro riflessioni sul migliorarsi e raggiungere grandi obbiettivi · 🤖 ff.144.3 Agenti autonomi e Moltbook</div>
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>💻 ff.156.14 🎮 Un pomeriggio per riprezzare un settore</h2>
+  <p>Google ha presentato Genie, che trasforma un prompt in mondi giocabili, e il mercato ha risposto in poche ore: titoli videogame giù del <mark class="note-highlight">10-21%</mark>, con Oracle che nello stesso quadro valuta tagli fino a 30.000 posti <a class="note-src" href="https://www.reuters.com/business/videogame-stocks-slide-googles-ai-model-that-turns-prompts-into-playable-worlds-2026-01-30/">[#1592]</a>. Nessun gioco è stato ancora sostituito e nessun contratto è saltato, eppure l'aspettativa sul costo marginale di produrre un livello, un ambiente, un asset si è spostata di colpo.</p><p>La cosa interessante sta nella velocità della riprezzatura. Un modello dimostrativo ha spostato in un pomeriggio circa un quinto del valore di società che impiegano migliaia di persone e pubblicano da decenni, e <mark class="note-highlight">30.000 posti</mark> sono entrati in una slide di scenario prima ancora che esistesse un prodotto commerciale concorrente. Vale la pena farsi il conto per il proprio settore: quanti demo mancano perché qualcuno riprezzi il vostro margine mentre siete a pranzo.</p>
+  <div class="meta">
+    <div class="connections">Connections: ff.126.2 Non è la fine di Google</div>
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>💻 ff.156.15 🧬 Il farmaco diventa problema di scala</h2>
+  <p>Isomorphic Labs ha pubblicato i risultati di IsoDDE, il suo motore di drug design, e i margini sono ampi: <mark class="note-highlight">+2,3x su antibody-antigen</mark> rispetto ad AlphaFold 3, circa 20x rispetto a Boltz-2, e prestazioni superiori a FEP+ sulla binding affinity con un ordine di grandezza in meno di compute <a class="note-src" href="https://www.isomorphiclabs.com/articles/the-isomorphic-labs-drug-design-engine-unlocks-a-new-frontier">[#1590]</a>. I casi scelti sono i più difficili della disciplina, quelli dove la chimica computazionale classica tradizionalmente si arrende.</p><p>Il dettaglio che pesa di più è <mark class="note-highlight">l'ordine di grandezza di compute risparmiato</mark> contro FEP+, il riferimento industriale per l'affinità di legame. Battere lo stato dell'arte costando dieci volte meno sposta la progettazione molecolare dal regime artigianale a quello in cui si compra capacità di calcolo e si aumenta il numero di candidati esplorati. La spinout di Demis Hassabis sta di fatto dicendo che la scoperta di farmaci obbedisce alle stesse curve di scala che governano i modelli linguistici, e chi controlla i GW controlla la pipeline clinica.</p>
+  <div class="meta">
+    <div class="connections">Connections: 🌐 ff.42.4 Un nuovo ordine globale?</div>
+  </div>
+</div>
+
+
+<div class="cross-refs">
+  <h4>Fili che tirano indietro nel corpus</h4>
+  <ul>
+  <li>ff.144.1 OpenClaw e il pensionato dei PDF — quando la pila robotica diventa commodity</li>
+  <li>ff.144.3 Agenti autonomi e Moltbook — la prima misura di autonomia lunga</li>
+  <li>ff.126.2 Non è la fine di Google — riprezzature annunciate e riprezzature vere</li>
+  <li>ff.132.2 I benefici dei videogiochi — cosa resta del gioco quando il mondo è generato</li>
+  <li>ff.31.4 Quattro riflessioni sul migliorarsi — orizzonti temporali e obiettivi lunghi</li>
+  <li>ff.42.4 Un nuovo ordine globale? — chi possiede la capacità di calcolo possiede il resto</li>
+  </ul>
+</div>
+<hr>
+<div class="backlog">
+  📊 Backlog: ~36 tech · ~22 uomo · ~11 natura
+</div>
+<p style="color: var(--fg-muted); font-size: 0.8rem; text-align: center; margin-top: 2rem;">
+  DRAFT generato il 2026-07-30 · futuro fortissimo · note IDs: 1597, 1594, 1593, 1592, 1590, 1588, 1587, 1582
+</p>
+</body>
+</html>

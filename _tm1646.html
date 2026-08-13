@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+
+<html lang="en" class="no-js">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
+
+  
+  <meta name="author" content="Thinking Machines Lab">
+
+  
+  
+  <meta name="description" content="With expert-labeled data and fine-tuning on Tinker, a custom model outperforms frontier LLMs on financial information-filtering tasks at a fraction of the cost.">
+  
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+
+  
+  
+  
+  
+  
+  
+  
+  <link rel="preload" href="/fonts/iowan-old-style/iowan-old-style_regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" fetchpriority="high">
+  <link rel="preload" href="/fonts/iowan-old-style/iowan-old-style_bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/iowan-old-style/iowan-old-style_italic.woff2" as="font" type="font/woff2" crossorigin="anonymous" fetchpriority="high">
+  
+  
+  <link rel="preload" href="/fonts/gt-america/GT-America-Standard-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/gt-america/GT-America-Standard-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/gt-america/GT-America-Standard-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/chakra-petch/chakra-petch-v12-latin-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/chakra-petch/chakra-petch-v12-latin-500.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/chakra-petch/chakra-petch-v12-latin-600.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  
+
+  
+  
+  <meta name="keywords" content='thinky thinkingmachines machine learning deep learning ai'>
+  
+
+  
+  
+  
+  
+  
+  
+
+<script>
+  
+  (function() {
+    function pageHasMath() {
+      try {
+        const text = document.body ? document.body.textContent : '';
+        if (!text) return false;
+        
+        const block = /\$\$[\s\S]*?\$\$/;
+        const paren = /\\\([\s\S]*?\\\)/;
+        const bracket = /\\\[[\s\S]*?\\\]/;
+        const inline = /(^|\s)\$(?!\$)[^\n]+?\$(?=\s|[\.,;:!?)]|$)/;
+        return block.test(text) || paren.test(text) || bracket.test(text) || inline.test(text);
+      } catch (e) {
+        return true; 
+      }
+    }
+
+    function loadStyle(href) {
+      var preload = document.createElement('link');
+      preload.rel = 'preload';
+      preload.as = 'style';
+      preload.href = href;
+      document.head.appendChild(preload);
+
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = href;
+      link.media = 'print';
+      link.onload = function(){ this.media = 'all'; };
+      document.head.appendChild(link);
+
+      var noscript = document.createElement('noscript');
+      noscript.innerHTML = '<link rel="stylesheet" href="' + href + '">';
+      document.head.appendChild(noscript);
+    }
+
+    function loadScript(src) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = src;
+        s.defer = true;
+        s.onload = resolve;
+        s.onerror = reject;
+        document.head.appendChild(s);
+      });
+    }
+
+    function renderAllMath(root) {
+      if (!window.renderMathInElement) return;
+      window.renderMathInElement(root || document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false},
+          {left: '\\(', right: '\\)', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ],
+        throwOnError: false,
+        
+        ignoredTags: ['script','noscript','style','textarea','pre','code'],
+      });
+    }
+
+    function init() {
+      if (!pageHasMath()) return;
+      var base = '\/katex\/';
+      var cssHref = base + 'katex.min.css?v=1785543382';
+      var katexJs = base + 'katex.min.js?v=1785543382';
+      var autorenderJs = base + 'contrib/auto-render.min.js?v=1785543382';
+
+      loadStyle(cssHref);
+      loadScript(katexJs)
+        .then(function(){ return loadScript(autorenderJs); })
+        .then(function(){
+          
+          renderAllMath(document.body);
+          
+          setTimeout(function(){ renderAllMath(document.body); }, 0);
+          
+          try {
+            var observer = new MutationObserver(function(mutations){
+              for (var i=0; i<mutations.length; i++) {
+                var m = mutations[i];
+                if (m.addedNodes && m.addedNodes.length) {
+                  for (var j=0; j<m.addedNodes.length; j++) {
+                    var node = m.addedNodes[j];
+                    if (node.nodeType === 1) {
+                      renderAllMath(node);
+                    }
+                  }
+                }
+              }
+            });
+            observer.observe(document.body, { childList: true, subtree: true });
+          } catch (e) {   }
+        })
+        .catch(function(){   });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>
+
+
+  
+
+  
+  
+  
+  
+    
+  
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  
+    
+  
+
+  
+  
+  
+  
+  
+
+  
+  <link rel="canonical" href="https://thinkingmachines.ai/news/learning-to-replicate-expert-judgment-in-financial-tasks/">
+
+  
+  
+  
+  <meta itemprop="name" content="Learning to Replicate Expert Judgment in Financial Tasks">
+  <meta itemprop="description" content="With expert-labeled data and fine-tuning on Tinker, a custom model outperforms frontier LLMs on financial information-filtering tasks at a fraction of the cost.">
+  <meta itemprop="datePublished" content="2026-06-30T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-06-30T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1890">
+
+
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/common.css?v=1785543382" fetchpriority="high">
+  
+  <link rel="stylesheet" href="https://thinkingmachines.ai/css/ui.css?v=1785543382">
+  
+  <link rel="preload" as="style" href="/css/typography.css?v=1785543382">
+  <link rel="stylesheet" href="/css/typography.css?v=1785543382" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="/css/typography.css?v=1785543382"></noscript>
+  
+  <link rel="preload" as="style" href="/css/fonts.css?v=1785543382">
+  <link rel="stylesheet" href="/css/fonts.css?v=1785543382" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="/css/fonts.css?v=1785543382"></noscript>
+  <link rel="preload" as="style" href="/css/syntax.css?v=1785543382">
+  <link rel="stylesheet" href="/css/syntax.css?v=1785543382" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="/css/syntax.css?v=1785543382"></noscript>
+
+  
+  
+  <title>Learning to Replicate Expert Judgment in Financial Tasks - Thinking Machines Lab</title>
+  
+
+  
+  
+  
+  
+  
+  
+    
+    
+    
+      
+        
+          
+          
+          
+          
+        
+      
+    
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+  
+
+  
+  <meta property="og:title" content="Learning to Replicate Expert Judgment in Financial Tasks">
+  <meta property="og:description" content="With expert-labeled data and fine-tuning on Tinker, a custom model outperforms frontier LLMs on financial information-filtering tasks at a fraction of the cost.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://thinkingmachines.ai/news/learning-to-replicate-expert-judgment-in-financial-tasks/">
+  <meta property="og:site_name" content="Thinking Machines Lab">
+  <meta property="og:image" content="https://thinkingmachines.ai/news/learning-to-replicate-expert-judgment-in-financial-tasks/images/cover-social.png">
+  <meta property="og:image:width" content="1635">
+  <meta property="og:image:height" content="858">
+  <meta property="og:image:alt" content="Learning to Replicate Expert Judgment in Financial Tasks">
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Learning to Replicate Expert Judgment in Financial Tasks">
+  <meta name="twitter:description" content="With expert-labeled data and fine-tuning on Tinker, a custom model outperforms frontier LLMs on financial information-filtering tasks at a fraction of the cost.">
+  <meta name="twitter:image" content="https://thinkingmachines.ai/news/learning-to-replicate-expert-judgment-in-financial-tasks/images/cover-social.png">
+  <meta name="twitter:image:width" content="1635">
+  <meta name="twitter:image:height" content="858">
+  <meta name="twitter:image:alt" content="Learning to Replicate Expert Judgment in Financial Tasks">
+
+  
+
+
+
+
+
+
+
+<link rel="preload" as="style" href="/css/blog-post.9036704efe231b28132973e02fd94194.css">
+<link rel="stylesheet" href="/css/blog-post.9036704efe231b28132973e02fd94194.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="/css/blog-post.9036704efe231b28132973e02fd94194.css"></noscript>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+  <div id="wrapper">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header id="header">
+  
+  <div id="site-header" class="site-header">
+    
+    
+    <div class="navbar-logo">
+      <a href="/">THINKING MACHINES</a>
+    </div>
+    
+
+    
+    <div class="nav-group">
+      
+      <nav class="top-nav">
+        
+        <a href="/inkling/">Inkling</a>
+        
+        
+        <a href="/tinker/">Tinker</a>
+        
+        <a href="/blog/">Connectionism</a>
+        <a href="/news/">News</a>
+        <a href="/#join-us">Join us</a>
+      </nav>
+
+      
+      <button id="menu-toggle" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" type="button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </div>
+  
+  
+  <div id="mobile-menu" class="mobile-menu-overlay" aria-hidden="true" hidden>
+    <nav class="mobile-menu-nav" role="navigation" aria-label="Mobile">
+      <a href="/">Home</a>
+        
+        <a href="/inkling/">Inkling</a>
+        
+        
+        <a href="/tinker/">Tinker</a>
+        
+      <a href="/blog/">Connectionism</a>
+      <a href="/news/">News</a>
+      <a href="/#join-us">Join us</a>
+    </nav>
+  </div>
+  
+  
+</header>
+
+    
+
+
+
+
+
+
+  
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      
+        
+      
+      
+        
+      
+    
+  
+    
+  
+    
+  
+
+
+
+<main id="main" class="post news-post post-learning-to-replicate-expert-judgment-in-financial-tasks">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="post-heading news-post">
+    
+    
+    
+    
+    
+    <h1 class="post-title">Learning to Replicate Expert Judgment in Financial Tasks</h1>
+    
+    
+    
+    
+    
+    <div class="publish-metadata">
+      
+      
+      <span class="author">
+        
+        Sarah Su, Kevin Zhu, Emily Xiao, Rohan Alur, Daniel Kang (<a href="https://www.bridgewater.com/aia-labs" rel="noopener" target="_blank">Bridgewater AIA Labs</a>) in collaboration with Thinking Machines
+        
+      </span>
+      
+
+      
+      
+      <span>
+        Jun 30, 2026
+      </span>
+      
+
+      
+
+      
+
+      
+    </div>
+    
+  </div>
+
+  
+
+  
+  <div class="post-cover">
+    
+      
+      
+      <figure class="judgment-map-figure" aria-label="Animated field of model-like numeric weights becoming structured after fine-tuning.">
+  <div class="judgment-map" role="img" aria-label="A rectangular field of gray digits where random numbers move through low-value regions while higher-value regions hold organized numeric contour patterns, representing expert-labeled fine-tuning shaping a model's internal judgments.">
+    <img class="judgment-map-fallback" src="images/judgment-map-fallback.svg" alt="" aria-hidden="true" loading="eager" decoding="async">
+    <canvas class="judgment-map-canvas" aria-hidden="true"></canvas>
+  </div>
+  <script>
+    (() => {
+      const loadScript = () => {
+        if (window.__judgmentMapLoading) return;
+        window.__judgmentMapLoading = true;
+        const script = document.createElement('script');
+        script.src = 'js/judgment-map.js?v=20260629m';
+        script.async = true;
+        document.head.appendChild(script);
+      };
+
+      const figure = document.currentScript.closest('.judgment-map-figure');
+      if (!figure) return;
+
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          if (!entries.some((entry) => entry.isIntersecting)) return;
+          loadScript();
+          observer.disconnect();
+        }, { rootMargin: '220px 0px' });
+        observer.observe(figure);
+      } else {
+        loadScript();
+      }
+    })();
+  </script>
+</figure>
+
+    
+    
+  </div>
+  
+  
+
+  
+
+  <div class="post-content-shell">
+    
+    
+    <nav id="left-toc" class="left-toc" aria-label="Table of contents">
+      
+      
+      
+      <ul>
+    <li><a href="#judging-information">Judging information</a></li>
+    <li><a href="#frontier-model-performance">Frontier model performance</a></li>
+    <li><a href="#training-dataset-construction">Training dataset construction</a></li>
+    <li><a href="#training-recipe">Training recipe</a>
+      <ul>
+        <li><a href="#1-interleaved-batching">1. Interleaved batching</a></li>
+        <li><a href="#2-cispo-loss-with-asymmetric-clipping">2. CISPO loss with asymmetric clipping</a></li>
+        <li><a href="#3-on-policy-distillation-with-strong-teachers">3. On-policy distillation with strong teachers</a></li>
+      </ul>
+    </li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+    <li><a href="#citation">Citation</a></li>
+  </ul>
+    </nav>
+    
+    <article class="content ">
+      
+      <h2 id="judging-information">Judging information</h2>
+<p>Outperforming the market is hard. When every investor has access to the same sources of public information, alpha must come from unique insight built on taste and judgment. A strong investor’s judgment is difficult to articulate and teach directly to others, whether human or AI. It comes from experience.</p>
+<p>Even when we decompose an investor&rsquo;s job into its simplest constituent tasks, those tasks turn out to be surprisingly difficult for LLMs. In this post, we consider a simple special case: filtering and processing financial documents to surface information relevant to investment decisions.</p>
+<p>Investors are bombarded with information every day: news articles, research reports, company documents, emails, internal write-ups, and more. Reading is the easy part. The real work is the small, repeated judgments carried over it — filtering, interpreting, segmenting, and identifying where the useful signal lies. These judgments are embedded throughout an investor’s daily workflow and consume substantial time.</p>
+<p>We wanted to see if we could automate the information triage task: identifying what is relevant and interesting to read. This alone could greatly augment investors’ productivity, letting them spend their freed up attention on higher-level synthesis and decision making.</p>
+<p>Given that LLMs perform poorly on simple financial tasks, we asked: is it possible to teach LLMs financial judgement? We find that with <strong>high-quality human annotations</strong>, we can teach LLMs to interpret text with expert-level taste and judgement. <strong>Our proprietary model outperforms all frontier models we tested on information accuracy and recall, at a fraction of their cost.</strong></p>
+<p>We describe our training process and results on a subset of data cleared for public release. Based on our results, we further describe the seeds of a vision of <em>differentiated intelligence</em>, with models tuned for specific organizational needs.</p>
+<h2 id="frontier-model-performance">Frontier model performance</h2>
+<p>We evaluated models on six information filtering tasks drawn from investors’ daily workflows.  Beyond these tasks, we have many others internally that show similar patterns to these six tasks: frontier models we tested on underperform compared to our internally trained models.</p>
+<p>We measured accuracy — the percentage of documents that were correctly labeled according to our investors. For classification tasks, we also calculated the F1 score.<label for="sn-judging-1" class="sidenote-number"></label><input type="checkbox" id="sn-judging-1" class="margin-toggle"/><span class="sidenote"><a href="https://en.wikipedia.org/wiki/F-score" target="_blank" rel="noopener">F-score</a> (Wikipedia).</span></p>
+<figure id="fig:financial-tasks">
+<div class="judging-task-cards" role="list" aria-label="Six financial tasks evaluated in this post.">
+  <article class="judging-task-card" role="listitem">
+    <div class="judging-task-card-heading">
+      <span class="judging-task-card-number">01</span>
+      <p class="judging-task-card-title">Financial Article Relevancy</p>
+    </div>
+    <p class="judging-task-card-description">Given a financial article, classify whether it is relevant to a C-suite investment professional.</p>
+    <p class="judging-task-card-metrics-label">EVAL METRICS</p>
+    <p class="judging-task-card-metrics">F1 score, Accuracy</p>
+  </article>
+  <article class="judging-task-card" role="listitem">
+    <div class="judging-task-card-heading">
+      <span class="judging-task-card-number">02</span>
+      <p class="judging-task-card-title">Central Bank Document Relevancy</p>
+    </div>
+    <p class="judging-task-card-description">Given a central bank document, classify whether it signals the direction of future interest rate changes.</p>
+    <p class="judging-task-card-metrics-label">EVAL METRICS</p>
+    <p class="judging-task-card-metrics">F1 score, Accuracy</p>
+  </article>
+  <article class="judging-task-card" role="listitem">
+    <div class="judging-task-card-heading">
+      <span class="judging-task-card-number">03</span>
+      <p class="judging-task-card-title">Generic Document Relevancy</p>
+    </div>
+    <p class="judging-task-card-description">Given an investor's question and a research document, classify whether the document helps answer it.</p>
+    <p class="judging-task-card-metrics-label">EVAL METRICS</p>
+    <p class="judging-task-card-metrics">F1 score, Accuracy</p>
+  </article>
+  <article class="judging-task-card" role="listitem">
+    <div class="judging-task-card-heading">
+      <span class="judging-task-card-number">04</span>
+      <p class="judging-task-card-title">Ad Hoc Content Labeling</p>
+    </div>
+    <p class="judging-task-card-description">Research documents are either recurring (repeated boilerplate) or mixed (boilerplate plus one-off, issue-specific analysis). Classify which, and find the last page of issue-specific content.</p>
+    <p class="judging-task-card-metrics-label">EVAL METRICS</p>
+    <p class="judging-task-card-metrics">Accuracy</p>
+  </article>
+  <article class="judging-task-card" role="listitem">
+    <div class="judging-task-card-heading">
+      <span class="judging-task-card-number">05</span>
+      <p class="judging-task-card-title">Document Truncation</p>
+    </div>
+    <p class="judging-task-card-description">Identify where boilerplate content begins in a document.</p>
+    <p class="judging-task-card-metrics-label">EVAL METRICS</p>
+    <p class="judging-task-card-metrics">Exact Match Accuracy</p>
+  </article>
+  <article class="judging-task-card" role="listitem">
+    <div class="judging-task-card-heading">
+      <span class="judging-task-card-number">06</span>
+      <p class="judging-task-card-title">Email Truncation</p>
+    </div>
+    <p class="judging-task-card-description">Identify where boilerplate content begins in an email.</p>
+    <p class="judging-task-card-metrics-label">EVAL METRICS</p>
+    <p class="judging-task-card-metrics">Exact Match Accuracy</p>
+  </article>
+</div>
+<figcaption>The six financial tasks we evaluate in this blog post, each drawn from the routine work of an investor.</figcaption>
+</figure>
+<p>These tasks are trivial for investors, but they get stuck when articulating their decision process. Consider the following example of classifying a news article as relevant to an investment professional below:</p>
+<figure id="fig:article-relevance-example" class="ft-relevance-examples-figure">
+  <div class="ft-relevance-examples" role="group" aria-label="Two financial article examples classified by relevance.">
+    <article class="ft-relevance-example-card">
+      <p class="ft-relevance-example-label">Not relevant</p>
+      <div class="ft-relevance-example-paper">
+        <a class="ft-relevance-example-source" href="https://www.ft.com/content/e021f12b-d2a0-4637-ac0f-4e3dae5a8843" target="_blank" rel="noopener">ft.com</a>
+        <p class="ft-relevance-example-title">Trump insists Greenland is his</p>
+        <img src="images/ft-1.jpg" alt="Illustration from an article about Trump and Greenland." loading="lazy" decoding="async">
+        <p class="ft-relevance-example-deck">© Jeremy Banx</p>
+      </div>
+    </article>
+
+    <article class="ft-relevance-example-card">
+      <p class="ft-relevance-example-label">Relevant</p>
+      <div class="ft-relevance-example-paper">
+        <a class="ft-relevance-example-source" href="https://www.ft.com/content/b9ae2417-2e89-4b0a-bad5-d94f4e980ecc?syn-25a6b1a6=1" target="_blank" rel="noopener">ft.com</a>
+        <p class="ft-relevance-example-title">US stocks close sharply lower after Trump threatens new China tariffs</p>
+        <img src="images/ft-2.jpg" alt="Trader reacting on a market floor during a sharp S&amp;P 500 drop." loading="lazy" decoding="async">
+        <p class="ft-relevance-example-deck">Biggest one-day drop in S&amp;P 500 since April brings weeks long rally to a halt © AFP/Getty Images</p>
+      </div>
+    </article>
+  </div>
+  <figcaption>Example of judging the relevance of a financial article to US markets. Source: Financial Times.</figcaption>
+</figure>
+
+<p>The Greenland example is unlikely to be taken seriously given the context of the article, while the China tariffs are highly relevant. Yet both examples touch on geopolitics and finance.</p>
+<p>In contrast to our investors, frontier models we tested on perform surprisingly poorly. Variants of Gemini, Claude, and GPT averaged a mere ~50% accuracy when given a prompt that simply states each of the six tasks to perform.</p>
+<p>We first tried to improve LLM performance with stronger prompting. Our experts wrote instructions based on real task descriptions, and also suggested reframing certain tasks. For example, while an article about a small IPO is clearly financially relevant, it lacks the broad significance that would make it interesting to a macroeconomic investor at Bridgewater. LLM performance on the article classification task improved when they were asked to sort news stories into three labels: relevant and interesting, relevant but uninteresting, and irrelevant.</p>
+<p>These changes boosted their accuracy from a coin flip to the mid-70s. We saw no further gains in accuracy from automatic prompt-optimization methods. With our best prompts the frontier models we tested on still achieved less than 80% accuracy — the threshold investors expect from a system they could trust in their daily workflow.</p>
+<figure id="fig:frontier-model-performance" class="prompt-accuracy-bars-figure">
+  <div class="prompt-accuracy-bars" role="img" aria-label="Grouped bar chart comparing average accuracy across five frontier models with a naive prompt versus an expert-written prompt. Naive prompt accuracies range from 45.6 to 50.1 percent. Expert prompt accuracies range from 74.3 to 78.2 percent.">
+    <div class="prompt-accuracy-bars-legend" aria-hidden="true">
+      <span class="prompt-accuracy-bars-legend-item">
+        <span class="prompt-accuracy-bars-legend-swatch prompt-accuracy-bars-legend-swatch-naive"></span>
+        Naive prompt
+      </span>
+      <span class="prompt-accuracy-bars-legend-item">
+        <span class="prompt-accuracy-bars-legend-swatch prompt-accuracy-bars-legend-swatch-expert"></span>
+        Expert prompt
+      </span>
+    </div>
+
+    <div class="prompt-accuracy-bars-chart">
+      <p class="prompt-accuracy-bars-y-label" aria-hidden="true">Average accuracy</p>
+
+      <div class="prompt-accuracy-bars-plot">
+        <div class="prompt-accuracy-bars-y-axis" aria-hidden="true">
+          <span>100%</span>
+          <span>80%</span>
+          <span>60%</span>
+          <span>40%</span>
+          <span>20%</span>
+          <span>0%</span>
+        </div>
+
+        <div class="prompt-accuracy-bars-plot-area">
+          <div class="prompt-accuracy-bars-canvas">
+            <div class="prompt-accuracy-bars-grid" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <div class="prompt-accuracy-bars-groups">
+              <div class="prompt-accuracy-bars-group" data-model="Claude Opus 4.6" data-accuracy="77.2%" data-f1="85.4%" data-cost="$61.52">
+                <div class="prompt-accuracy-bars-pair">
+                  <div class="prompt-accuracy-bars-bar-track">
+                    <div class="prompt-accuracy-bars-bar prompt-accuracy-bars-bar-naive" style="--bar-value: 47.2;">
+                      <span class="prompt-accuracy-bars-bar-value">47.2</span>
+                    </div>
+                  </div>
+                  <div class="prompt-accuracy-bars-bar-track">
+                    <div class="prompt-accuracy-bars-bar prompt-accuracy-bars-bar-expert" style="--bar-value: 77.2;">
+                      <span class="prompt-accuracy-bars-bar-value">77.2</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="prompt-accuracy-bars-group" data-model="Gemini 3.1 Pro" data-accuracy="74.3%" data-f1="87.9%" data-cost="$31.77">
+                <div class="prompt-accuracy-bars-pair">
+                  <div class="prompt-accuracy-bars-bar-track">
+                    <div class="prompt-accuracy-bars-bar prompt-accuracy-bars-bar-naive" style="--bar-value: 50.1;">
+                      <span class="prompt-accuracy-bars-bar-value">50.1</span>
+                    </div>
+                  </div>
+                  <div class="prompt-accuracy-bars-bar-track">
+                    <div class="prompt-accuracy-bars-bar prompt-accuracy-bars-bar-expert" style="--bar-value: 74.3;">
+                      <span class="prompt-accuracy-bars-bar-value">74.3</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="prompt-accuracy-bars-group" data-model="GPT 5.4" data-accuracy="75.8%" data-f1="86.2%" data-cost="$28.50">
+                <div class="prompt-accuracy-bars-pair">
+                  <div class="prompt-accuracy-bars-bar-track">
+                    <div class="prompt-accuracy-bars-bar prompt-accuracy-bars-bar-naive" style="--bar-value: 47.2;">
+                      <span class="prompt-accuracy-bars-bar-value">47.2</span>
+                    </div>
+                  </div>
+                  <div class="prompt-accuracy-bars-bar-track">
+                    <div class="prompt-accuracy-bars-bar prompt-accuracy-bars-bar-expert" style="--bar-value: 75.8;">
+                      <span class="prompt-accuracy-bars-bar-value">75.8</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="prompt-accuracy-bars-group" data-model="GPT 5.5" data-accuracy="78.2%" data-f1="87.2%" data-cost="$65.06">
+                <div class="prompt-accuracy-bars-pair">
+                  <div class="prompt-accuracy-bars-bar-track">
+                    <div class="prompt-accuracy-bars-bar prompt-accuracy-bars-bar-naive" style="--bar-value: 48.5;">
+                      <span class="prompt-accuracy-bars-bar-value">48.5</span>
+                    </div>
+                  </div>
+                  <div class="prompt-accuracy-bars-bar-track">
+                    <div class="prompt-accuracy-bars-bar prompt-accuracy-bars-bar-expert" style="--bar-value: 78.2;">
+                      <span class="prompt-accuracy-bars-bar-value">78.2</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="prompt-accuracy-bars-group" data-model="Claude Opus 4.8" data-accuracy="78.0%" data-f1="88.3%" data-cost="$92.59">
+                <div class="prompt-accuracy-bars-pair">
+                  <div class="prompt-accuracy-bars-bar-track">
+                    <div class="prompt-accuracy-bars-bar prompt-accuracy-bars-bar-naive" style="--bar-value: 45.6;">
+                      <span class="prompt-accuracy-bars-bar-value">45.6</span>
+                    </div>
+                  </div>
+                  <div class="prompt-accuracy-bars-bar-track">
+                    <div class="prompt-accuracy-bars-bar prompt-accuracy-bars-bar-expert" style="--bar-value: 78;">
+                      <span class="prompt-accuracy-bars-bar-value">78.0</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="prompt-accuracy-bars-x-labels" aria-hidden="true">
+            <div class="prompt-accuracy-bars-x-label">
+              <strong>Opus 4.6</strong>
+              <span>Feb 5</span>
+            </div>
+            <div class="prompt-accuracy-bars-x-label">
+              <strong>Gemini 3.1 Pro</strong>
+              <span>Feb 19</span>
+            </div>
+            <div class="prompt-accuracy-bars-x-label">
+              <strong>GPT 5.4</strong>
+              <span>Mar 5</span>
+            </div>
+            <div class="prompt-accuracy-bars-x-label">
+              <strong>GPT 5.5</strong>
+              <span>Apr 23</span>
+            </div>
+            <div class="prompt-accuracy-bars-x-label">
+              <strong>Opus 4.8</strong>
+              <span>May 28</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <figcaption>Accuracy &amp; Positive Class F1 score of frontier models on our financial tasks after manual and automatic prompt engineering. F1 score is averaged across our 3 classification tasks, and accuracy is averaged across all 6 tasks.</figcaption>
+</figure>
+
+<p>Our results also suggest that newer models aren’t improving rapidly at this task, especially per dollar spent. GPT 5.4 costs 43% more than 5.2 but is only marginally more accurate.</p>
+<p>An explicit prompt can only convey the intuition an expert is able to put into words, while the judgments that matter most are often the hardest to articulate. Fine-tuning sidesteps this: rather than contorting the expert&rsquo;s intuition into a static prompt, the training process lets the model develop its own judgment. Could we train open-weight models to outperform frontier models we tested on these tasks?</p>
+<h2 id="training-dataset-construction">Training dataset construction</h2>
+<p>The first challenge of training a custom model was acquiring a dataset that reflects <strong>high-quality investor taste</strong>. In particular, much of the information is only useful when filtered through an investment professional’s judgment.</p>
+<p>We initially sourced a dataset from vendors providing non-expert labeling. Models trained on this dataset still performed poorly. After examining the reasoning traces of the model we realized that the labels in the dataset were often wrong. Since expert labelers are costly, we devised a verification scheme that routes only the contested examples to experts.</p>
+<p>The scheme worked as follows: we trained a model on the dataset from non-expert labelers, then evaluated it on the same data. Examples where the model’s answer differed from the labelers’ were sent to our experts for reevaluation — if a model couldn’t match an example from its own training set then either the example is genuinely difficult, or the original label was wrong. This procedure was used to clean the training set data; the final evaluation was done on a held out test set.</p>
+<h2 id="training-recipe">Training recipe</h2>
+<p>We trained our models on Tinker from Thinking Machines Lab.<label for="sn-judging-2" class="sidenote-number"></label><input type="checkbox" id="sn-judging-2" class="margin-toggle"/><span class="sidenote"><a href="https://thinkingmachines.ai/tinker/" target="_blank" rel="noopener">Tinker</a>.</span> Tinker allowed us to iterate quickly without worrying about GPU infrastructure.</p>
+<p>We chose Qwen3-235B as the base model as its fine-tuning performance is widely studied in the academic literature.</p>
+<p>We began with standard GRPO and importance-sampling loss as a simple, critic-free starting point. This baseline approach resulted in a massive jump in the model performance, but it still fell short of our desired 80% threshold.</p>
+<table border="1" style="border-collapse: collapse; text-align: center;">
+<thead>
+<tr>
+  <th style="text-align:left;">Model / Training</th>
+  <th style="text-align:center;">Average Accuracy</th>
+  <th style="text-align:center;">Average Pos F1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="text-align:left;">Qwen Base</td>
+  <td style="text-align:center;">44.8%</td>
+  <td style="text-align:center;">55.24%</td>
+</tr>
+<tr>
+  <td style="text-align:left;">Qwen + GRPO</td>
+  <td style="text-align:center;">73.48%</td>
+  <td style="text-align:center;">88.95%</td>
+</tr>
+</tbody>
+</table>
+<p>We make the following modifications to our training recipe to push performance farther:</p>
+<h3 id="1-interleaved-batching">1. Interleaved batching</h3>
+<p>For our multi-task training recipe, we compared three batching strategies: training each task sequentially, fully mixing tasks within a batch, and interleaving one batch per task in round-robin order. We found interleaving worked best, improving accuracy by 12.1% over fully mixed batches.</p>
+<h3 id="2-cispo-loss-with-asymmetric-clipping">2. CISPO loss with asymmetric clipping</h3>
+<p>We used CISPO loss with asymmetric clipping<label for="sn-judging-3" class="sidenote-number"></label><input type="checkbox" id="sn-judging-3" class="margin-toggle"/><span class="sidenote"><a href="https://arxiv.org/abs/2510.13786" target="_blank" rel="noopener">CISPO loss with asymmetric clipping</a> (arXiv).</span> to replace the standard importance-sampling loss. Across the loss functions and clipping schemes we tried, this performed best, improving accuracy by 10.1% over the importance-sampling baseline.</p>
+<h3 id="3-on-policy-distillation-with-strong-teachers">3. On-policy distillation with strong teachers</h3>
+<p>We train with on-policy distillation<label for="sn-judging-4" class="sidenote-number"></label><input type="checkbox" id="sn-judging-4" class="margin-toggle"/><span class="sidenote"><a href="https://thinkingmachines.ai/blog/on-policy-distillation/" target="_blank" rel="noopener">On-Policy Distillation</a>, Kevin Lu in collaboration with others (Thinking Machines).</span> (OPD), constructing the advantage as follows:</p>
+$$
+r = \text{reward} - \beta \cdot \operatorname{avg}(\text{student\_lp} - \text{teacher\_lp})
+$$$$
+\text{adv}_i = r_i - \operatorname{avg}(r)
+$$<p>The reward is penalized when the student drifts from the teacher&rsquo;s distribution, regularizing the policy while it learns the task.</p>
+<p>Every 20 steps, we promote the current checkpoint to the teacher — but only if validation accuracy has reached a new high, so we never distill toward a weaker model. This gave a further 3.1% gain over a frozen base-model teacher.</p>
+<h2 id="results">Results</h2>
+<p>Finding the optimal training recipe required several iterations of different approaches. Tinker’s accessibility allowed us to run fast experiments and refine our approach.</p>
+<figure class="accuracy-price-scatter-figure">
+  <div class="accuracy-price-scatter" role="img" aria-label="Scatter plot of average accuracy against cost per 1,000 tasks. Our trained model costs 4.72 dollars and reaches 84.66 percent accuracy, outperforming frontier models that cost between 19.96 and 92.59 dollars and reach between 74.3 and 78.2 percent accuracy.">
+    <svg viewBox="0 0 800 520" aria-hidden="true" focusable="false">
+      <g class="accuracy-price-scatter-legend">
+        <g class="accuracy-price-scatter-legend-item" transform="translate(52 34)">
+          <circle class="accuracy-price-scatter-trained-point" cx="0" cy="0" r="7"></circle>
+          <text x="15" y="4">Our trained model</text>
+        </g>
+        <g class="accuracy-price-scatter-legend-item" transform="translate(223 34)">
+          <circle class="accuracy-price-scatter-frontier-point" cx="0" cy="0" r="7"></circle>
+          <text x="15" y="4">Frontier models</text>
+        </g>
+      </g>
+
+      <g class="accuracy-price-scatter-grid">
+        <line x1="110" y1="70" x2="750" y2="70"></line>
+        <line x1="110" y1="117.9" x2="750" y2="117.9"></line>
+        <line x1="110" y1="165.7" x2="750" y2="165.7"></line>
+        <line x1="110" y1="213.6" x2="750" y2="213.6"></line>
+        <line x1="110" y1="261.4" x2="750" y2="261.4"></line>
+        <line x1="110" y1="309.3" x2="750" y2="309.3"></line>
+        <line x1="110" y1="357.1" x2="750" y2="357.1"></line>
+        <line x1="110" y1="405" x2="750" y2="405"></line>
+      </g>
+
+      <g class="accuracy-price-scatter-axes">
+        <line x1="110" y1="70" x2="110" y2="405"></line>
+        <line x1="110" y1="405" x2="750" y2="405"></line>
+      </g>
+
+      <g class="accuracy-price-scatter-y-ticks">
+        <text x="90" y="409">72%</text>
+        <text x="90" y="361.1">74%</text>
+        <text x="90" y="313.3">76%</text>
+        <text x="90" y="265.4">78%</text>
+        <text x="90" y="217.6">80%</text>
+        <text x="90" y="169.7">82%</text>
+        <text x="90" y="121.9">84%</text>
+        <text x="90" y="74">86%</text>
+      </g>
+
+      <g class="accuracy-price-scatter-x-ticks">
+        <text x="110" y="433">$0</text>
+        <text x="238" y="433">$20</text>
+        <text x="366" y="433">$40</text>
+        <text x="494" y="433">$60</text>
+        <text x="622" y="433">$80</text>
+        <text x="750" y="433">$100</text>
+      </g>
+
+      <text class="accuracy-price-scatter-y-label" x="41" y="237" transform="rotate(-90 41 237)">Average accuracy</text>
+      <text class="accuracy-price-scatter-x-label" x="430" y="480">Cost per 1,000 tasks (USD)</text>
+
+      <g class="accuracy-price-scatter-points">
+        <g class="accuracy-price-scatter-point" data-model="Gemini 3.1 Pro" data-accuracy="74.3%" data-f1="87.9%" data-cost="$31.77">
+          <circle class="accuracy-price-scatter-frontier-point" cx="313.3" cy="350" r="7"></circle>
+          <circle class="accuracy-price-scatter-hit-area" cx="313.3" cy="350" r="24"></circle>
+          <text class="accuracy-price-scatter-point-label accuracy-price-scatter-point-label-centered" x="313.3" y="377">Gemini 3.1 Pro</text>
+        </g>
+
+        <g class="accuracy-price-scatter-point" data-model="Claude Opus 4.6" data-accuracy="77.2%" data-f1="85.4%" data-cost="$61.52">
+          <circle class="accuracy-price-scatter-frontier-point" cx="503.7" cy="280.6" r="7"></circle>
+          <circle class="accuracy-price-scatter-hit-area" cx="503.7" cy="280.6" r="24"></circle>
+          <text class="accuracy-price-scatter-point-label accuracy-price-scatter-point-label-centered" x="503.7" y="307">Claude Opus 4.6</text>
+        </g>
+
+        <g class="accuracy-price-scatter-point" data-model="Claude Opus 4.8" data-accuracy="78.0%" data-f1="88.3%" data-cost="$92.59">
+          <circle class="accuracy-price-scatter-frontier-point" cx="702.6" cy="261.4" r="7"></circle>
+          <circle class="accuracy-price-scatter-hit-area" cx="702.6" cy="261.4" r="24"></circle>
+          <text class="accuracy-price-scatter-point-label" x="650" y="247">Claude Opus 4.8</text>
+        </g>
+
+        <g class="accuracy-price-scatter-point" data-model="GPT 5.2" data-accuracy="74.3%" data-f1="84.6%" data-cost="$19.96">
+          <circle class="accuracy-price-scatter-frontier-point" cx="237.7" cy="350" r="7"></circle>
+          <circle class="accuracy-price-scatter-hit-area" cx="237.7" cy="350" r="24"></circle>
+          <text class="accuracy-price-scatter-point-label" x="211" y="377">GPT 5.2</text>
+        </g>
+
+        <g class="accuracy-price-scatter-point" data-model="GPT 5.4" data-accuracy="75.8%" data-f1="86.2%" data-cost="$28.50">
+          <circle class="accuracy-price-scatter-frontier-point" cx="292.4" cy="314.1" r="7"></circle>
+          <circle class="accuracy-price-scatter-hit-area" cx="292.4" cy="314.1" r="24"></circle>
+          <text class="accuracy-price-scatter-point-label" x="270" y="299">GPT 5.4</text>
+        </g>
+
+        <g class="accuracy-price-scatter-point" data-model="GPT 5.5" data-accuracy="78.2%" data-f1="87.2%" data-cost="$65.06">
+          <circle class="accuracy-price-scatter-frontier-point" cx="526.4" cy="256.6" r="7"></circle>
+          <circle class="accuracy-price-scatter-hit-area" cx="526.4" cy="256.6" r="24"></circle>
+          <text class="accuracy-price-scatter-point-label accuracy-price-scatter-point-label-centered" x="526.4" y="244">GPT 5.5</text>
+        </g>
+
+        <g class="accuracy-price-scatter-point" data-model="Our trained model" data-accuracy="84.66%" data-f1="92.99%" data-cost="$4.72">
+          <circle class="accuracy-price-scatter-trained-point" cx="140.2" cy="102.8" r="7"></circle>
+          <circle class="accuracy-price-scatter-hit-area" cx="140.2" cy="102.8" r="24"></circle>
+          <text class="accuracy-price-scatter-trained-label" x="154" y="107">Our trained model</text>
+        </g>
+      </g>
+    </svg>
+  </div>
+  <script>
+    (() => {
+      const loadScript = () => {
+        if (window.__accuracyPriceScatterLoading) return;
+        window.__accuracyPriceScatterLoading = true;
+        const script = document.createElement('script');
+        script.src = 'js/accuracy-price-scatter.js?v=20260629';
+        script.async = true;
+        document.head.appendChild(script);
+      };
+
+      const figure = document.currentScript.closest('.accuracy-price-scatter-figure');
+      if (!figure) return;
+
+      figure.addEventListener('pointerenter', loadScript, { once: true });
+      figure.addEventListener('focusin', loadScript, { once: true });
+
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          if (!entries.some((entry) => entry.isIntersecting)) return;
+          loadScript();
+          observer.disconnect();
+        }, { rootMargin: '180px 0px' });
+        observer.observe(figure);
+      }
+    })();
+  </script>
+  <figcaption>Accuracy versus price for our trained model and frontier models. Our model outperforms frontier models on both dimensions across generations.</figcaption>
+</figure>
+
+<p>Our trained model improves average accuracy from 78.2% to 84.7%, meaning the trained model makes 29.8% fewer mistakes than the best frontier model we evaluated. We find this level of accuracy is sufficient for our daily work.</p>
+<p>Our trained model is also vastly cheaper due to its smaller size: a 13.8x reduction in inference costs per task. As we plan to rely on more models trained to help with specific tasks and to scale AI across the organization, cost is an important consideration.</p>
+<p>We ablated each part of our training recipe to show how each portion contributes to performance.</p>
+<figure id="fig:training-ablations">
+<table border="1" style="border-collapse: collapse; text-align: center;">
+<thead>
+<tr>
+  <th style="text-align:left;">Training Method Ablations</th>
+  <th style="text-align:center;">Average Accuracy</th>
+  <th style="text-align:center;">Avg Pos F1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="text-align:left;">Qwen + Final Recipe</td>
+  <td style="text-align:center;">84.66%</td>
+  <td style="text-align:center;">92.99%</td>
+</tr>
+<tr>
+  <td style="text-align:left;"><span class="judging-ablation-color-square red" tabindex="0" aria-label="Removed individually"></span>Interleaved Batching</td>
+  <td style="text-align:center;">72.18%</td>
+  <td style="text-align:center;">89.01%</td>
+</tr>
+<tr>
+  <td style="text-align:left;"><span class="judging-ablation-color-square red" tabindex="0" aria-label="Removed individually"></span>CISPO + Asymmetric Clips</td>
+  <td style="text-align:center;">74.56%</td>
+  <td style="text-align:center;">90.64%</td>
+</tr>
+<tr>
+  <td style="text-align:left;"><span class="judging-ablation-color-square red" tabindex="0" aria-label="Removed individually"></span>OPD</td>
+  <td style="text-align:center;">72.39%</td>
+  <td style="text-align:center;">87.93%</td>
+</tr>
+<tr>
+  <td style="text-align:left;"><span class="judging-ablation-color-square red" tabindex="0" aria-label="Removed individually"></span>OPD w/ Best Val Accuracy Teacher</td>
+  <td style="text-align:center;">81.55%</td>
+  <td style="text-align:center;">89.41%</td>
+</tr>
+</tbody>
+</table>
+<figcaption>Each row shows the final recipe with that single component removed (leave one out ablations)</figcaption>
+</figure>
+<h2 id="conclusion">Conclusion</h2>
+<p>Frontier models we tested on struggle with relatively simple financial tasks, and model advances don’t improve performance much. In contrast, we’ve shown that <strong>high-quality proprietary datasets</strong> labeled by expert investors and used for fine-tuning produce custom models that exceed frontier performance on our tasks. We have found that this outcome holds true well beyond the six tasks we’ve discussed in this post.</p>
+<p>Aside from higher accuracy, custom models are also substantially cheaper. We expect to see more productivity gains from custom model training in the future, especially with the availability of training infrastructure like Tinker that enables rapid experimentation.</p>
+<p>Our results show the possibility of a future of differentiated intelligence, where custom models tuned to specific organizational needs outperform frontier models.</p>
+<h2 id="citation">Citation</h2>
+<p>Please cite this work as:</p>
+<pre tabindex="0"><code>Su, Sarah; Zhu, Kevin; Xiao, Emily; Alur, Rohan; Kang, Daniel (Bridgewater AIA Labs), &#34;Learning to replicate expert judgment in financial tasks&#34;,
+Thinking Machines Lab: News, June 2026.
+</code></pre><p>Or use the BibTeX citation:</p>
+<pre tabindex="0"><code>@article{su2026expertjudgment,
+  author = {Sarah Su, Kevin Zhu, Emily Xiao, Rohan Alur, Daniel Kang (Bridgewater AIA Labs)},
+  title = {Learning to replicate expert judgment in financial tasks},
+  journal = {Thinking Machines Lab: News},
+  year = {2026},
+  note = {https://thinkingmachines.ai/news/learning-to-replicate-expert-judgment-in-financial-tasks/}
+}
+</code></pre>
+      
+    </article>
+  </div>
+
+  
+  <div class="paginator">
+    
+    <a id="post-prev-link" class="link" href="/news/interactivity-research-grants/" title="Announcing Interactivity Research Grants">prev</a>
+    
+
+    <a href="#" id="back-to-top" class="link" title="Go to top">back to top</a>
+
+    
+    <a id="post-next-link" class="link" href="/news/introducing-inkling/" title="Inkling: Our Open-Weights Model">next</a>
+    
+  </div>
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const prevLink = document.getElementById('post-prev-link');
+      const nextLink = document.getElementById('post-next-link');
+
+      const prevUrl = prevLink && prevLink.hasAttribute('href') ? prevLink.href : null;
+      const nextUrl = nextLink && nextLink.hasAttribute('href') ? nextLink.href : null;
+
+      
+      document.addEventListener('keydown', function(e) {
+        
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable) {
+          return;
+        }
+
+        
+        if (e.keyCode === 37 && !e.ctrlKey && !e.metaKey && prevUrl) {
+          e.preventDefault();
+          window.location.href = prevUrl;
+        }
+
+        
+        if (e.keyCode === 39 && !e.ctrlKey && !e.metaKey && nextUrl) {
+          e.preventDefault();
+          window.location.href = nextUrl;
+        }
+      });
+    });
+  </script>
+  
+
+  
+  
+
+  
+</main>
+
+
+<script type="module">
+  import mediumZoom from "https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.esm.min.js";
+
+  const getZoomContainer = () => ({
+    width: window.innerWidth,
+    height: window.innerHeight,
+    top: window.innerHeight * 0.15,
+    right: window.innerWidth * 0.15,
+    bottom: window.innerHeight * 0.15,
+    left: window.innerWidth * 0.15
+  });
+
+  const zoom = mediumZoom('[data-zoomable]', {
+    background: '#fff',
+    container: getZoomContainer(),
+    margin: 0
+  });
+
+  window.addEventListener('resize', () => {
+    zoom.update({ container: getZoomContainer() });
+  });
+</script>
+
+    <footer id="footer">
+  <div class="footer-columns">
+    <div class="footer-links">
+      <div class="footer-column">
+        <h4>Models</h4>
+        <ul>
+          <li><a href="/news/introducing-inkling/">Inkling</a></li>
+          <li><a href="/news/inkling-small/">Inkling-Small</a></li>
+          <li><a href="/blog/interaction-models/">Interaction</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Tinker</h4>
+        <ul>
+          <li><a href="/tinker/">Overview</a></li>
+          <li><a href="https://tinker-docs.thinkingmachines.ai/tinker/">Docs</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/blog/the-future-worth-building-is-human/">About</a></li>
+          <li><a href="/blog/">Connectionism</a></li>
+          <li><a href="/news/">News</a></li>
+          <li><a href="https://job-boards.greenhouse.io/thinkingmachines">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/legal/terms/">Terms of service</a></li>
+          <li><a href="/legal/privacy/">Privacy notice</a></li>
+        </ul>
+        <h4 class="footer-subheading">Security</h4>
+        <ul>
+          <li><a href="/security/disclosure-policy/">Disclosure policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://x.com/thinkymachines">X</a></li>
+          <li><a href="https://www.linkedin.com/company/thinkingmachinesai/">LinkedIn</a></li>
+          <li><a href="https://www.youtube.com/@thinkymachines">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <span>Thinking Machines Lab © 2026</span>
+  </div>
+</footer>
+
+  </div>
+
+  
+  
+  <script src="/js/script.min.8b74617187aa2204a50cd0092f264e2f2c8b882d59cc1f75f652897d6e3348fc.js" integrity="sha256-i3RhcYeqIgSlDNAJLyZOLyyLiC1ZzB919lKJfW4zSPw=" defer></script>
+
+  
+  
+
+  
+  
+
+  
+  
+
+</body>
+
+</html>

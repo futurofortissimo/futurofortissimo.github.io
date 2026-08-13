@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DRAFT ff.XXX — wafer, avatar e parità</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+  :root {
+    --bg: #0a0a0a; --fg: #e8e8e8; --fg-muted: #999;
+    --accent: #448aff; --accent-dim: #448aff33;
+    --card-bg: #111; --card-border: #448aff;
+    --link: #6ba3ff; --highlight-bg: #448aff22; --highlight-border: #448aff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.7; max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem; }
+  h1, h2, h3 { font-family: 'IBM Plex Mono', monospace; }
+  h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.3rem; color: var(--accent); }
+  .draft-badge { display: inline-block; background: var(--accent); color: #000; font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 2px; text-transform: uppercase; margin-bottom: 1rem; }
+  .subtitle { font-size: 1.1rem; color: var(--fg-muted); margin-bottom: 1.5rem; font-style: italic; }
+  .keypoints { list-style: none; margin-bottom: 2.5rem; padding: 1rem; border-left: 3px solid var(--accent); background: var(--accent-dim); }
+  .keypoints li { padding: 0.3rem 0; font-weight: 500; }
+  .keypoints li::before { content: '\25B8 '; color: var(--accent); font-weight: 700; }
+  .brutal-card { background: var(--card-bg); border-left: 4px solid var(--card-border); padding: 1.5rem; margin-bottom: 2rem; border-radius: 0 4px 4px 0; }
+  .brutal-card h2 { font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; color: var(--fg); }
+  .brutal-card p { margin-bottom: 0.8rem; color: #ccc; }
+  mark.note-highlight { background: var(--highlight-bg); border-bottom: 2px solid var(--highlight-border); color: var(--fg); padding: 1px 4px; border-radius: 2px; }
+  .meta { margin-top: 1rem; padding-top: 0.8rem; border-top: 1px solid #222; font-size: 0.85rem; color: var(--fg-muted); }
+  .meta a, .connections a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--link); }
+  .meta a:hover, .connections a:hover { border-bottom-style: solid; }
+  a.note-src { color: var(--accent); font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; text-decoration: none; border-bottom: 1px dotted var(--accent); }
+  .connections { margin-top: 0.5rem; font-size: 0.85rem; }
+  hr { border: none; border-top: 1px solid #222; margin: 2rem 0; }
+  .backlog { background: var(--card-bg); border: 1px solid #222; padding: 1.2rem; margin-top: 2.5rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.82rem; color: var(--fg-muted); }
+  .pullquote { border-left: 3px solid var(--accent); padding: 6px 0 6px 18px; margin: 18px 0; font-style: italic; color: #ccc; font-size: 1.05rem; }
+  .cross-refs { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid #222; }
+  .cross-refs h4 { font-size: 0.78rem; color: var(--fg-muted); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.7rem; }
+  .cross-refs ul { list-style: none; padding-left: 0; }
+  .cross-refs li { margin-bottom: 0.35rem; font-size: 0.9rem; color: #ccc; }
+  .cross-refs li::before { content: "↳ "; color: var(--accent); }
+  .cross-refs a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--link); }
+</style>
+</head>
+<body>
+<span class="draft-badge">Draft · ff.152</span>
+<h1>💻 Oggi parliamo di wafer, avatar e parità</h1>
+<p class="subtitle">OpenAI ha spedito un modello che gira su Cerebras invece che su NVIDIA, Jake Paul ha messo la propria faccia a reddito dentro Sora, e la base utenti di ChatGPT è passata da 80/20 maschile a 50/50 in tre anni. Quattro notizie che sembrano scollegate e invece raccontano la stessa cosa: l'infrastruttura, l'identità e il pubblico dell'AI stanno cambiando proprietario tutti insieme. Il pezzo tecnico corre a valle, sull'inferenza. Il pezzo umano corre in cucina, non in terminale.</p>
+<ul class="keypoints">
+  <li>GPT-5.3-Codex Spark è il primo modello OpenAI servito in inferenza su chip Cerebras, fuori dallo stack NVIDIA</li>
+  <li>Su SWE-Bench Pro, Spark su Cerebras risulta più veloce del Codex standard</li>
+  <li>Jake Paul si dichiara investitore OpenAI e advisor del team Sora</li>
+  <li>Jake Paul è il primo avatar pubblicamente consenziente su cui altri creator possono monetizzare</li>
+  <li>Al lancio, circa l'80% degli utenti ChatGPT aveva nomi tipicamente maschili</li>
+  <li>Nel 2026 la base utenti ChatGPT è 50/50 uomini-donne: tre anni per azzerare il gap</li>
+  <li>Dentro il 50/50: donne più attive su scrittura, salute e parenting; uomini concentrati su code e sviluppo</li>
+</ul>
+<hr>
+<div class="brutal-card">
+  <h2>💻 ff.152.1 ⚡ Il primo OpenAI che non parla NVIDIA</h2>
+  <p>OpenAI ha spedito <strong>GPT-5.3-Codex Spark</strong> su silicio Cerebras: <mark class="note-highlight">il primo modello OpenAI servito in inferenza fuori dallo stack NVIDIA</mark>, e sul benchmark SWE-Bench Pro il modello risulta <mark class="note-highlight">più veloce del Codex standard</mark> <a class="note-src" href="https://openai.com/index/introducing-gpt-5-3-codex-spark/">[#1589]</a>. Il wafer gigante ha finalmente trovato il carico di lavoro che lo giustifica, e non è quello per cui tutti guardavano il mercato.</p><p>Per tre anni la domanda "chi vince l'AI" ha coinciso con la domanda "chi compra più GPU". Spark la sposta a valle: un modello di coding vive di latenza, e sulla latenza un pezzo di silicio unico batte un rack pieno di schede che si parlano via cavo. Il monopolio sull'addestramento regge. Quello sulla risposta, con Spark, ha il suo primo caso pubblico di rottura firmato dal cliente più visibile del settore.</p>
+  <div class="meta">
+    <div class="connections">Connections: <a href="https://fortissimo.substack.com/i/43902526/ff21-un-modello-grande-come-new-york">ff.2.1 Un modello "grande" come New York</a></div>
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>💻 ff.152.2 🎭 Jake Paul affitta la propria faccia</h2>
+  <p>Jake Paul ha rivelato di essere <mark class="note-highlight">investitore di OpenAI e advisor del team Sora</mark>, e di aver accettato di diventare <mark class="note-highlight">il primo avatar pubblicamente consenziente</mark> su cui altri creator possono guadagnare <a class="note-src" href="https://x.com/jakepaul/status/1976411343025487977">[#1489]</a>. Il patto è secco: la faccia lavora, chi la usa produce, il proprietario incassa una quota su lavoro altrui.</p><p>Un creator ha sempre venduto tempo e presenza, due risorse che finiscono ogni sera. Un avatar concesso in licenza gira mentre il licenziante dorme, in mille clip che lui non ha girato e non vedrà mai. Il primo caso pubblico serve a fissare un prezzo di riferimento per tutti gli altri: da qui in avanti, la trattativa su un volto non parte più da zero, parte da quanto ha chiesto Jake Paul.</p>
+  <div class="meta">
+    
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>💻 ff.152.3 📊 Ottanta a venti, poi pari</h2>
+  <p>Al lancio di ChatGPT, <mark class="note-highlight">circa l'80% degli utenti aveva nomi tipicamente maschili</mark>. I dati OpenAI del 2026 danno la base utenti <mark class="note-highlight">50/50 tra uomini e donne</mark> <a class="note-src" href="https://twitter.com/i/status/2044481727738089548">[#1453]</a>. Da 80/20 a metà esatta in tre anni, cioè nel tempo di due o tre cicli di prodotto.</p><p>Per chi fa previsioni sul software consumer, il dato è più scomodo di quanto sembri. L'early adopter maschio, per decenni indicatore anticipatore affidabile di dove sarebbe andato il mercato, qui ha avuto un vantaggio di manciate di mesi prima che la coda lo raggiungesse. Una curva di diffusione che si comprime così toglie a chi arriva secondo l'unica cosa che gli restava: il tempo per copiare.</p>
+  <div class="meta">
+    <div class="connections">Connections: <a href="https://fortissimo.substack.com/i/162941285/ff-chatgpt-tuttofare">🤹 ff.124.4 ChatGPT tuttofare</a> · 🤖ff.88.2 ChatGPT controlla un robot</div>
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>💻 ff.152.4 ✍️ Chi scrive, chi cura, chi compila</h2>
+  <p>Il pareggio nasconde una divergenza netta nei comportamenti: dentro la base utenti <mark class="note-highlight">50/50</mark> del 2026, le donne risultano più attive su <mark class="note-highlight">scrittura, salute e parenting</mark>, mentre gli uomini si concentrano su codice e sviluppo <a class="note-src" href="https://x.com/i/status/2044481727738089548">[#1452]</a>. Stessa interfaccia, due mestieri diversi.</p><p>Il caso d'uso mediano di ChatGPT si è spostato dal terminale al tavolo di cucina, e questo cambia il profilo di rischio del prodotto. Un errore su una funzione in Python si manifesta subito: il codice non compila. Un errore su un sintomo o su un consiglio a un genitore attraversa indisturbato tutte le verifiche, perché nessuno le sta facendo. I tre domini dove la crescita è più forte sono esattamente i tre dove sbagliare costa di più e si nota di meno.</p>
+  <div class="meta">
+    <div class="connections">Connections: ff.124.4 ChatGPT tuttofare</div>
+  </div>
+</div>
+
+
+<div class="cross-refs">
+  <h4>Fili che tirano indietro nel corpus</h4>
+  <ul>
+  <li>ff.2.1 Un modello &quot;grande&quot; come New York — la scala come unico parametro</li>
+  <li>ff.138.1 La strada più veloce — quando l'ottimizzazione batte la potenza bruta</li>
+  <li>ff.124.4 ChatGPT tuttofare — il modello che esce dal dominio tecnico</li>
+  <li>ff.88.2 ChatGPT controlla un robot — l'assistente che tocca il mondo fisico</li>
+  <li>ff.145.4 Il cibo nuoce gravemente alla salute — domande di salute senza un medico davanti</li>
+  </ul>
+</div>
+<hr>
+<div class="backlog">
+  📊 Backlog: ~34 tech · ~14 uomo · ~11 natura
+</div>
+<p style="color: var(--fg-muted); font-size: 0.8rem; text-align: center; margin-top: 2rem;">
+  DRAFT generato il 2026-07-27 · futuro fortissimo · note IDs: 1589, 1489, 1453, 1452
+</p>
+</body>
+</html>

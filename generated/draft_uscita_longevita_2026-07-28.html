@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DRAFT ff.XXX — riavvolgere l'orologio biologico</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+  :root {
+    --bg: #0a0a0a; --fg: #e8e8e8; --fg-muted: #999;
+    --accent: #ff4d4d; --accent-dim: #ff4d4d33;
+    --card-bg: #111; --card-border: #ff4d4d;
+    --link: #ff6b6b; --highlight-bg: #ff4d4d22; --highlight-border: #ff4d4d;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.7; max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem; }
+  h1, h2, h3 { font-family: 'IBM Plex Mono', monospace; }
+  h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.3rem; color: var(--accent); }
+  .draft-badge { display: inline-block; background: var(--accent); color: #000; font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 2px; text-transform: uppercase; margin-bottom: 1rem; }
+  .subtitle { font-size: 1.1rem; color: var(--fg-muted); margin-bottom: 1.5rem; font-style: italic; }
+  .keypoints { list-style: none; margin-bottom: 2.5rem; padding: 1rem; border-left: 3px solid var(--accent); background: var(--accent-dim); }
+  .keypoints li { padding: 0.3rem 0; font-weight: 500; }
+  .keypoints li::before { content: '\25B8 '; color: var(--accent); font-weight: 700; }
+  .brutal-card { background: var(--card-bg); border-left: 4px solid var(--card-border); padding: 1.5rem; margin-bottom: 2rem; border-radius: 0 4px 4px 0; }
+  .brutal-card h2 { font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; color: var(--fg); }
+  .brutal-card p { margin-bottom: 0.8rem; color: #ccc; }
+  mark.note-highlight { background: var(--highlight-bg); border-bottom: 2px solid var(--highlight-border); color: var(--fg); padding: 1px 4px; border-radius: 2px; }
+  .meta { margin-top: 1rem; padding-top: 0.8rem; border-top: 1px solid #222; font-size: 0.85rem; color: var(--fg-muted); }
+  .meta a, .connections a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--link); }
+  .meta a:hover, .connections a:hover { border-bottom-style: solid; }
+  a.note-src { color: var(--accent); font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; text-decoration: none; border-bottom: 1px dotted var(--accent); }
+  .connections { margin-top: 0.5rem; font-size: 0.85rem; }
+  hr { border: none; border-top: 1px solid #222; margin: 2rem 0; }
+  .backlog { background: var(--card-bg); border: 1px solid #222; padding: 1.2rem; margin-top: 2.5rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.82rem; color: var(--fg-muted); }
+  .pullquote { border-left: 3px solid var(--accent); padding: 6px 0 6px 18px; margin: 18px 0; font-style: italic; color: #ccc; font-size: 1.05rem; }
+  .cross-refs { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid #222; }
+  .cross-refs h4 { font-size: 0.78rem; color: var(--fg-muted); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.7rem; }
+  .cross-refs ul { list-style: none; padding-left: 0; }
+  .cross-refs li { margin-bottom: 0.35rem; font-size: 0.9rem; color: #ccc; }
+  .cross-refs li::before { content: "↳ "; color: var(--accent); }
+  .cross-refs a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--link); }
+</style>
+</head>
+<body>
+<span class="draft-badge">Draft · ff.153</span>
+<h1>❤️ Oggi parliamo di riavvolgere l'orologio biologico</h1>
+<p class="subtitle">L'aorta comincia a cedere intorno ai trent'anni, e metà di quanto vivremo era già decisa alla nascita. Nel frattempo 435 milioni di dollari arrivati dal mondo cripto finanziano la riprogrammazione epigenetica, e la FDA firma il primo trial umano con tre dei quattro fattori di Yamanaka. Sottoterra, intanto, un roditore cieco che campa quarant'anni aveva già risolto il problema con quattro mutazioni puntiformi.</p>
+<ul class="keypoints">
+  <li>Stanford: l'aorta inizia a invecchiare a ~30 anni e raggiunge il picco a ~55, prima di qualunque altro organo</li>
+  <li>L'aderenza alla dieta mediterranea si associa a livelli più alti di Humanin e SHMOOSE, due microproteine codificate nel DNA mitocondriale</li>
+  <li>NewLimit, co-fondata dal CEO di Coinbase Brian Armstrong, chiude una Series C da 435 milioni di dollari sulla riprogrammazione epigenetica</li>
+  <li>La FDA autorizza ER-100 di Life Biosciences: prima Phase 1 umana di riprogrammazione epigenetica parziale con Oct4, Sox2 e Klf4, senza l'oncogene c-Myc</li>
+  <li>Science rivede l'ereditabilità della longevità al 50%, il doppio delle stime precedenti, rimuovendo la mortalità estrinseca e validando su gemelli</li>
+  <li>Nel naked mole rat, healthspan di ~40 anni, l'enzima cGAS porta 4 mutazioni missense che lo trasformano da pro-infiammatorio a pro-riparazione del DNA</li>
+  <li>Il caso cGAS chiude un mistero rimasto aperto per 30 anni</li>
+</ul>
+<hr>
+<div class="brutal-card">
+  <h2>❤️ ff.153.1 🫀 L'aorta cede a trent'anni</h2>
+  <p>Lo studio Stanford che ha misurato l'età dei singoli organi consegna un dato che sposta l'intero calendario della prevenzione: l'aorta comincia a invecchiare intorno ai <mark class="note-highlight">30 anni</mark> e tocca il picco verso i 55, in anticipo su ogni altro organo del corpo <a class="note-src" href="https://x.com/i/status/2042987541327216908">[#1471]</a>. La cardiologia preventiva si accende sui cinquantenni, cioè quando la curva ha già percorso venticinque anni di salita.</p><p>Sull'altro versante, l'aderenza alla dieta mediterranea si associa a livelli più alti di <mark class="note-highlight">due microproteine mitocondriali</mark>, Humanin e SHMOOSE, entrambe legate alla resistenza allo stress cellulare <a class="note-src" href="https://twitter.com/i/status/2064072709823156594">[#1634]</a>. Sono peptidi codificati nel DNA mitocondriale, il genoma parallelo da poche migliaia di basi che ci portiamo dietro per linea materna: il piatto smette di essere una questione di calorie e diventa un canale di segnalazione verso l'organello che produce energia.</p><p>Messe insieme, le due notizie disegnano una finestra: se il primo tessuto a degradarsi lo fa a trent'anni, la leva nutrizionale conta soprattutto nel decennio in cui nessuno si sente ancora a rischio.</p>
+  <div class="meta">
+    <div class="connections">Connections: <a href="https://fortissimo.substack.com/i/137958307/ff-un-organo-in-piu-il-microbioma">ff.92.2 Un organo in più: il microbioma</a></div>
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>❤️ ff.153.2 💰 Mezzo miliardo cripto scommette sulle cellule</h2>
+  <p>NewLimit ha chiuso una Series C da <mark class="note-highlight">435 milioni di dollari</mark> per lavorare sulla riprogrammazione epigenetica, con il CEO di Coinbase Brian Armstrong tra i co-fondatori <a class="note-src" href="https://www.corememory.com/p/can-you-reverse-decades-of-drinking-newlimit-jacob-kimmel?utm_source=substack&utm_medium=email&hide_intro_popup=true&open=false">[#1624]</a>. Il capitale accumulato sulle criptovalute cambia asset class e finisce dentro la biologia dell'invecchiamento.</p><p>Una <mark class="note-highlight">Series C</mark> di quella taglia è il momento in cui un'azienda dovrebbe avere qualcosa di ripetibile da scalare, e qui la scommessa è ancora sul ringiovanimento cellulare come categoria. È la differenza tra finanziare una scoperta e finanziare la costruzione di un'industria che quella scoperta ancora non ha del tutto in mano.</p>
+  <div class="meta">
+    
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>❤️ ff.153.3 🧬 Tre fattori su quattro, verso la clinica</h2>
+  <p>La FDA ha dato il via libera a ER-100 di Life Biosciences: il primo trial umano di riprogrammazione epigenetica parziale, con <mark class="note-highlight">Oct4, Sox2 e Klf4</mark> e l'esclusione deliberata di c-Myc <a class="note-src" href="https://endpoints.news/exclusive-fda-greenlights-gene-therapy-study-to-rewind-the-age-of-cells/">[#1602]</a>. Tre dei quattro fattori di Yamanaka entrano in corpo umano, il quarto resta fuori perché è l'oncogene del quartetto.</p><p>Il passaggio è quello che separa un risultato da laboratorio da un protocollo con pazienti reali: la <mark class="note-highlight">Phase 1</mark> misura sicurezza, non miracoli, e su una terapia genica che punta a riportare indietro l'età delle cellule la sicurezza è esattamente la domanda che pesa di più. Sinclair porta in clinica l'idea che lo stato epigenetico di una cellula si possa riscrivere senza cancellarne l'identità.</p>
+  <div class="meta">
+    
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>❤️ ff.153.4 🎲 Metà della vita è già scritta</h2>
+  <p>Uno studio su Science rivede l'ereditabilità della longevità al <mark class="note-highlight">50%</mark>, il doppio delle stime precedenti <a class="note-src" href="https://x.com/i/status/2016964969066086496">[#1591]</a>. Il salto arriva da una correzione metodologica: rimuovere la mortalità estrinseca — incidenti, violenza, eventi che con la biologia del singolo non c'entrano — e validare il risultato sui gemelli.</p><p>Il numero ridimensiona la narrativa del wellness in cui ogni anno di vita in più è merito di una scelta quotidiana. Con <mark class="note-highlight">metà della varianza</mark> assegnata ai geni, lo stile di vita governa l'altra metà, che resta enorme in termini assoluti e resta l'unica su cui si può agire. Cambia però il modo di leggere i casi limite: il centenario che fumava non è la prova che fumare vada bene.</p>
+  <div class="meta">
+    
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>❤️ ff.153.5 🐀 Quattro mutazioni sottoterra</h2>
+  <p>Un mistero aperto da <mark class="note-highlight">30 anni</mark> si chiude su Science: nel naked mole rat l'enzima cGAS porta 4 mutazioni missense che ne capovolgono la funzione, spingendolo a promuovere la riparazione del DNA e a sopprimere l'infiammazione <a class="note-src" href="https://www.science.org/doi/10.1126/science.adp5056">[#1488]</a>. Nello stesso enzima, negli altri mammiferi, il segno è opposto.</p><p>Il roditore che vive circa <mark class="note-highlight">40 anni</mark> ha quindi ottenuto il suo healthspan senza riscrivere il proprio genoma: quattro sostituzioni puntiformi su una proteina già esistente bastano a invertire il verso di una via infiammatoria. Il blueprint anti-aging che le biotech cercano con centinaia di milioni di capitale esiste in natura, sepolto sotto terra e scritto con un editing minimo.</p>
+  <div class="meta">
+    
+  </div>
+</div>
+
+
+<div class="cross-refs">
+  <h4>Fili che tirano indietro nel corpus</h4>
+  <ul>
+  <li><a href="https://fortissimo.substack.com/i/137958307/ff-un-organo-in-piu-il-microbioma">ff.92.2 Un organo in più: il microbioma</a></li>
+  <li>ff.123.4 Non solo Studio Ghibli</li>
+  </ul>
+</div>
+<hr>
+<div class="backlog">
+  📊 Backlog: ~36 tech · ~20 uomo · ~11 natura
+</div>
+<p style="color: var(--fg-muted); font-size: 0.8rem; text-align: center; margin-top: 2rem;">
+  DRAFT generato il 2026-07-28 · futuro fortissimo · note IDs: 1634, 1624, 1602, 1591, 1488, 1471
+</p>
+</body>
+</html>

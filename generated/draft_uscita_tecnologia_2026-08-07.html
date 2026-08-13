@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DRAFT ff.XXX — robot che superano l'esame</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+  :root {
+    --bg: #0a0a0a; --fg: #e8e8e8; --fg-muted: #999;
+    --accent: #448aff; --accent-dim: #448aff33;
+    --card-bg: #111; --card-border: #448aff;
+    --link: #6ba3ff; --highlight-bg: #448aff22; --highlight-border: #448aff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.7; max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem; }
+  h1, h2, h3 { font-family: 'IBM Plex Mono', monospace; }
+  h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.3rem; color: var(--accent); }
+  .draft-badge { display: inline-block; background: var(--accent); color: #000; font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 2px; text-transform: uppercase; margin-bottom: 1rem; }
+  .subtitle { font-size: 1.1rem; color: var(--fg-muted); margin-bottom: 1.5rem; font-style: italic; }
+  .keypoints { list-style: none; margin-bottom: 2.5rem; padding: 1rem; border-left: 3px solid var(--accent); background: var(--accent-dim); }
+  .keypoints li { padding: 0.3rem 0; font-weight: 500; }
+  .keypoints li::before { content: '\25B8 '; color: var(--accent); font-weight: 700; }
+  .brutal-card { background: var(--card-bg); border-left: 4px solid var(--card-border); padding: 1.5rem; margin-bottom: 2rem; border-radius: 0 4px 4px 0; }
+  .brutal-card h2 { font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; color: var(--fg); }
+  .brutal-card p { margin-bottom: 0.8rem; color: #ccc; }
+  mark.note-highlight { background: var(--highlight-bg); border-bottom: 2px solid var(--highlight-border); color: var(--fg); padding: 1px 4px; border-radius: 2px; }
+  .meta { margin-top: 1rem; padding-top: 0.8rem; border-top: 1px solid #222; font-size: 0.85rem; color: var(--fg-muted); }
+  .meta a, .connections a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--link); }
+  .meta a:hover, .connections a:hover { border-bottom-style: solid; }
+  a.note-src { color: var(--accent); font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; text-decoration: none; border-bottom: 1px dotted var(--accent); }
+  .connections { margin-top: 0.5rem; font-size: 0.85rem; }
+  hr { border: none; border-top: 1px solid #222; margin: 2rem 0; }
+  .backlog { background: var(--card-bg); border: 1px solid #222; padding: 1.2rem; margin-top: 2.5rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.82rem; color: var(--fg-muted); }
+  .pullquote { border-left: 3px solid var(--accent); padding: 6px 0 6px 18px; margin: 18px 0; font-style: italic; color: #ccc; font-size: 1.05rem; }
+  .cross-refs { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid #222; }
+  .cross-refs h4 { font-size: 0.78rem; color: var(--fg-muted); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.7rem; }
+  .cross-refs ul { list-style: none; padding-left: 0; }
+  .cross-refs li { margin-bottom: 0.35rem; font-size: 0.9rem; color: #ccc; }
+  .cross-refs li::before { content: "↳ "; color: var(--accent); }
+  .cross-refs a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--link); }
+</style>
+</head>
+<body>
+<span class="draft-badge">Draft · ff.159</span>
+<h1>💻 Oggi parliamo di robot che superano l'esame</h1>
+<p class="subtitle">Il pellicano in bicicletta è stato archiviato, e al suo posto arrivano 1000 parole mai pubblicate, un robot da ping pong finito su Nature, un cervello chiamato GENE-26.5 che promette mani di livello umano. Intanto State Grid firma un ordine da 8.500 macchine per 6,8 miliardi di RMB, e Pechino ferma i 2 miliardi di dollari con cui Meta voleva comprarsi Manus. Cinque note, un filo solo: la prova che conta si sposta dal linguaggio al corpo, e dal laboratorio all'ufficio acquisti. In mezzo, a Seul, un automa recita sutra e nessuno sa più chi stia meditando.</p>
+<ul class="keypoints">
+  <li>Il test informale dell'SVG "pellicano in bicicletta" ha esaurito la sua utilità: si passa a materiale mai indicizzato</li>
+  <li>Un benchmark privato — 1000 parole scritte a mano e mai pubblicate date in pasto al modello — è caduto</li>
+  <li>State Grid procura 8.500 robot di AI incarnata per 6,8 miliardi di RMB (~1 miliardo di dollari), su quattro contesti di impiego</li>
+  <li>Il prezzo implicito dell'ordine State Grid è di 800.000 RMB per unità, circa 118.000 dollari a macchina</li>
+  <li>GENE-26.5 viene presentata come il primo "cervello AI" con manipolazione fisica di livello umano</li>
+  <li>Sony AI pubblica su Nature il 22 aprile il lavoro su Ace, robot da tennistavolo competitivo con giocatori umani d'élite</li>
+  <li>In Corea del Sud un monaco buddhista robot recita sutra in un tempio</li>
+  <li>La Cina blocca l'acquisizione da ~2 miliardi di dollari con cui Meta aveva comprato Manus a dicembre: indagine multi-agenzia di NDRC e Ministero del Commercio</li>
+</ul>
+<hr>
+<div class="brutal-card">
+  <h2>💻 ff.159.1 🦩 Quando cade un benchmark segreto</h2>
+  <p>Per un paio d'anni il modo informale di pesare un modello è stato chiedergli l'SVG di un pellicano in bicicletta: abbastanza sciocco da non finire nei set di addestramento, abbastanza visivo da giudicarlo a occhio in due secondi. Quella soglia è stata superata, e la caccia si è spostata su materiale che nessun crawler ha mai toccato — per esempio dare a Opus 5 un frammento di partenza e guardare dove decide di portarlo <a class="note-src" href="https://twitter.com/i/status/2083749667410727319">[#1659]</a>.</p><p>La versione più severa di questa idea è privata per costruzione: <mark class="note-highlight">1000 parole scritte a mano e mai pubblicate</mark>, consegnate al modello con una richiesta secca e nessuna possibilità che le abbia già viste. Chi la usa tiene questi test nel cassetto e li rende pubblici solo nell'istante in cui smettono di discriminare. <mark class="note-highlight">Oggi ne è caduto uno</mark> <a class="note-src" href="https://x.com/i/status/2044962428547695007">[#1520]</a>.</p><p>Il risvolto scomodo sta tutto in quella regola di pubblicazione: un benchmark diventa notizia nel momento esatto in cui ha finito di funzionare. Ogni prova ancora valida resta per definizione una prova che nessuno ha descritto, che nessuno può replicare e che nessun laboratorio può ottimizzare. La valutazione dei modelli sta scivolando verso l'aneddoto controllato, con la fragilità metodologica che questo si porta dietro.</p>
+  <div class="meta">
+    
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>💻 ff.159.2 ⚡ Ottomilacinquecento robot per la rete elettrica</h2>
+  <p>State Grid, l'operatore della rete elettrica cinese, ha annunciato la procura di <mark class="note-highlight">8.500 robot di AI incarnata</mark> per un budget complessivo di <mark class="note-highlight">6,8 miliardi di RMB, circa 1 miliardo di dollari</mark>, da distribuire su quattro contesti di impiego <a class="note-src" href="https://x.com/cyberrobooo/status/2048222018974405096">[#1518]</a>. Fatta la divisione, l'ordine vale 800.000 RMB a macchina, sui 118.000 dollari l'una: cifre da macchinario industriale serio, non da prototipo di laboratorio.</p><p>Il punto interessante è chi firma. Un'utility che gestisce infrastruttura critica non compra per esplorare una tecnologia, compra perché ha 8.500 postazioni dove mettere qualcosa. Un singolo ordine di questa taglia fissa il pavimento della domanda per un intero settore, garantisce volumi ai fornitori prima ancora che il mercato civile esista, e trasforma l'ufficio acquisti in politica industriale. La robotica incarnata smette di misurarsi in demo su YouTube e comincia a misurarsi in ordini di acquisto.</p>
+  <div class="meta">
+    
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>💻 ff.159.3 🏓 Il collo di bottiglia era la mano</h2>
+  <p>Camminare è stato risolto per primo, e ha preso tutte le copertine. La manipolazione fine è rimasta lì, ferma, il vero collo di bottiglia della robotica. <mark class="note-highlight">GENE-26.5</mark> viene presentata come il primo "cervello AI" che porta i robot a capacità di manipolazione fisica di livello umano <a class="note-src" href="https://youtu.be/6K_bGH54ltI?is=KIaKw2XfOct_-HDI">[#1575]</a>. Se un modello foundation chiude davvero la distanza tra vedere un oggetto e afferrarlo con destrezza, la domanda smette di essere tecnica e diventa contabile: quanti mestieri manuali entrano di colpo nel raggio dell'automazione.</p><p>La conferma arriva da un dominio dove sbagliare di un centimetro significa perdere il punto. Il <mark class="note-highlight">22 aprile Nature ha pubblicato il lavoro di Sony AI su Ace</mark>, un robot da tennistavolo autonomo competitivo con giocatori umani d'élite <a class="note-src" href="https://www.nature.com/articles/s41586-026-10338-5?utm_source=substack&amp;utm_medium=email">[#1516]</a>. Percezione, previsione della traiettoria e controllo del gesto devono chiudersi in decine di millisecondi, contro un avversario che varia apposta.</p><p>Messi vicini, i due risultati raccontano la stessa cosa da due direzioni: un modello generalista che promette mani buone ovunque, e un sistema specializzato che dimostra quanto in alto si possa spingere la destrezza quando il compito è uno solo. Il pezzo che manca è la resa dell'uno sull'altro.</p>
+  <div class="meta">
+    
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>💻 ff.159.4 🛕 Un automa che recita i sutra</h2>
+  <p>In Corea del Sud, in un tempio di Seul, un monaco buddhista robot recita sutra davanti ai fedeli <a class="note-src" href="https://www.nytimes.com/2026/05/06/technology/robot-monk-buddhist-seoul.html">[#1569]</a>. Sotto la vernice tecnologica riaffiora una domanda molto più antica del silicio: la pratica spirituale sta nel gesto o nella coscienza che lo compie. Quando la macchina officia il rito correttamente, resta da stabilire chi stia effettivamente meditando — l'automa, il fedele, o nessuno dei due.</p><p>Il contrasto con il resto di questa uscita è il dato più eloquente. Nello stesso ecosistema industriale in cui una utility ordina <mark class="note-highlight">8.500 robot per circa 1 miliardo di dollari</mark> <a class="note-src" href="https://x.com/cyberrobooo/status/2048222018974405096">[#1518]</a> e in cui <mark class="note-highlight">GENE-26.5</mark> promette mani di livello umano <a class="note-src" href="https://youtu.be/6K_bGH54ltI?is=KIaKw2XfOct_-HDI">[#1575]</a>, la prima frontiera davvero contesa è simbolica. La destrezza si compra a 118.000 dollari l'unità; la legittimità del gesto rituale non ha listino, e sarà il terreno su cui questa tecnologia incontrerà la resistenza più dura.</p>
+  <div class="meta">
+    
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>💻 ff.159.5 🧱 Due miliardi fermati alla frontiera</h2>
+  <p>A dicembre Meta ha acquisito Manus, startup di agenti AI, per circa <mark class="note-highlight">2 miliardi di dollari</mark>. Poi NDRC e Ministero del Commercio hanno aperto un'indagine multi-agenzia sull'investimento estero, e la Cina ha bloccato l'acquisizione <a class="note-src" href="https://www.reuters.com/world/asia-pacific/china-blocks-foreign-acquisition-ai-startup-manus-2026-04-27/?utm_source=substack&amp;utm_medium=email">[#1530]</a>. Un'operazione annunciata, prezzata e chiusa che viene disfatta a mesi di distanza da un procedimento amministrativo.</p><p>Il precedente pesa più della cifra. Finora i controlli sul capitale AI si erano concentrati sui chip e sull'export verso l'esterno; qui il freno scatta in entrata, su una società di software che vende agenti, e arriva da <mark class="note-highlight">due agenzie distinte in coordinamento</mark>. Per chiunque valuti una startup di agenti in Asia, alla due diligence tecnica ed economica va aggiunta una terza voce: la probabilità che un ministero decida a posteriori che quella tecnologia non può cambiare bandiera. È il tipo di rischio che non compare in nessun modello di valutazione, e che da qui in avanti sposterà i prezzi.</p>
+  <div class="meta">
+    
+  </div>
+</div>
+
+<hr>
+<div class="backlog">
+  📊 Backlog: ~30 tech · ~22 uomo · ~15 natura
+</div>
+<p style="color: var(--fg-muted); font-size: 0.8rem; text-align: center; margin-top: 2rem;">
+  DRAFT generato il 2026-08-07 · futuro fortissimo · note IDs: 1659, 1652, 1575, 1569, 1530, 1520, 1518, 1516
+</p>
+</body>
+</html>

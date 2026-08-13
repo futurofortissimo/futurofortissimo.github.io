@@ -1,0 +1,12 @@
+const fs = require('fs');
+const src = fs.readFileSync('data.js', 'utf8');
+const mod = src.replace('export const rawData', 'const rawData') + '\nmodule.exports = rawData;';
+fs.writeFileSync('_dj_tmp3.cjs', mod);
+const data = require('./_dj_tmp3.cjs');
+const all = [];
+for (const p of data) for (const s of (p.subchapters || [])) all.push({p, s});
+console.log('TOTAL subchapters', all.length);
+const kw = /casa|case |abitat|immobil|affitt|mutuo|edilizi|urbanis|citt.|terreno|terra |suolo|cemento|costruzion|burocra|regolament|permess|vincol|zonizz|densit|metropol|quartier|palazz|grattaciel|rendita|fondiari/i;
+const hits = all.filter(x => kw.test((x.s.title||'') + ' ' + (x.s.content||'')));
+console.log('KEYWORD HITS', hits.length);
+for (const h of hits) console.log(h.s.title.replace(/\n/g,' | '));

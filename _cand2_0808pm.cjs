@@ -1,0 +1,10 @@
+const fs=require('fs');
+const notes=JSON.parse(fs.readFileSync('notes.json','utf8'));
+const arr=Array.isArray(notes)?notes:(notes.notes||[]);
+const used=new Set(fs.readFileSync('_used_union_0808pm.txt','utf8').split('\n').map(s=>s.trim()).filter(Boolean));
+const urls=new Set(fs.readFileSync('_used_urls_0808pm.txt','utf8').split('\n').map(s=>s.trim()).filter(Boolean));
+const out=arr.filter(n=>!used.has(String(n.id)) && n.url && !urls.has(n.url) && (n.title||'').length>40 && !(n.title||'').startsWith('NEW:'));
+out.sort((a,b)=>b.id-a.id);
+console.log('CANDS',out.length);
+fs.writeFileSync('_cand_0808pm.json',JSON.stringify(out.map(n=>({id:n.id,title:n.title,desc:n.description,url:n.url,tags:(n.tags||[]).join?.('')||n.tags})),null,1));
+for(const c of out.slice(0,60)) console.log(c.id,'|',((c.tags||[]).join?.('')||c.tags),'|',(c.title||'').slice(0,130));

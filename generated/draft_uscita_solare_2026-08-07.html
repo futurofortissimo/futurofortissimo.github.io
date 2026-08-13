@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DRAFT ff.XXX — sorpassi silenziosi nella rete</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+  :root {
+    --bg: #0a0a0a; --fg: #e8e8e8; --fg-muted: #999;
+    --accent: #00cc88; --accent-dim: #00cc8833;
+    --card-bg: #111; --card-border: #00cc88;
+    --link: #33ddaa; --highlight-bg: #00cc8822; --highlight-border: #00cc88;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.7; max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem; }
+  h1, h2, h3 { font-family: 'IBM Plex Mono', monospace; }
+  h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.3rem; color: var(--accent); }
+  .draft-badge { display: inline-block; background: var(--accent); color: #000; font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 2px; text-transform: uppercase; margin-bottom: 1rem; }
+  .subtitle { font-size: 1.1rem; color: var(--fg-muted); margin-bottom: 1.5rem; font-style: italic; }
+  .keypoints { list-style: none; margin-bottom: 2.5rem; padding: 1rem; border-left: 3px solid var(--accent); background: var(--accent-dim); }
+  .keypoints li { padding: 0.3rem 0; font-weight: 500; }
+  .keypoints li::before { content: '\25B8 '; color: var(--accent); font-weight: 700; }
+  .brutal-card { background: var(--card-bg); border-left: 4px solid var(--card-border); padding: 1.5rem; margin-bottom: 2rem; border-radius: 0 4px 4px 0; }
+  .brutal-card h2 { font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; color: var(--fg); }
+  .brutal-card p { margin-bottom: 0.8rem; color: #ccc; }
+  mark.note-highlight { background: var(--highlight-bg); border-bottom: 2px solid var(--highlight-border); color: var(--fg); padding: 1px 4px; border-radius: 2px; }
+  .meta { margin-top: 1rem; padding-top: 0.8rem; border-top: 1px solid #222; font-size: 0.85rem; color: var(--fg-muted); }
+  .meta a, .connections a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--link); }
+  .meta a:hover, .connections a:hover { border-bottom-style: solid; }
+  a.note-src { color: var(--accent); font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; text-decoration: none; border-bottom: 1px dotted var(--accent); }
+  .connections { margin-top: 0.5rem; font-size: 0.85rem; }
+  hr { border: none; border-top: 1px solid #222; margin: 2rem 0; }
+  .backlog { background: var(--card-bg); border: 1px solid #222; padding: 1.2rem; margin-top: 2.5rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.82rem; color: var(--fg-muted); }
+  .pullquote { border-left: 3px solid var(--accent); padding: 6px 0 6px 18px; margin: 18px 0; font-style: italic; color: #ccc; font-size: 1.05rem; }
+  .cross-refs { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid #222; }
+  .cross-refs h4 { font-size: 0.78rem; color: var(--fg-muted); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.7rem; }
+  .cross-refs ul { list-style: none; padding-left: 0; }
+  .cross-refs li { margin-bottom: 0.35rem; font-size: 0.9rem; color: #ccc; }
+  .cross-refs li::before { content: "↳ "; color: var(--accent); }
+  .cross-refs a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--link); }
+</style>
+</head>
+<body>
+<span class="draft-badge">Draft · ff.158</span>
+<h1>🍃 Oggi parliamo di sorpassi silenziosi nella rete</h1>
+<p class="subtitle">Un mese di consuntivo americano in cui il solare è passato davanti al carbone per la prima volta da quando si tiene il conto. Nello stesso anno l'Algeria ha moltiplicato per 33 le importazioni di pannelli, il Texas repubblicano ha aggiunto il 41% di generazione solare e la Spagna ha chiuso un ribaltamento cominciato nel 2000, quando il fotovoltaico e l'eolico insieme valevano il 2%. Quattro numeri, quattro geografie, una sola direzione — e nessuno di questi è una proiezione.</p>
+<ul class="keypoints">
+  <li>Ember: primo mese nella serie storica USA in cui il solare supera il carbone, con fotovoltaico al massimo e carbone al minimo</li>
+  <li>Algeria: importazioni di pannelli solari ×33 nei dodici mesi chiusi a giugno 2025</li>
+  <li>Zambia ×8 e Botswana ×7 nello stesso periodo: la curva africana corre su tre continenti di distanza dalla rete fossile</li>
+  <li>Texas: generazione solare +41% su base annua, in uno stato dove la politica non spinge sul clima</li>
+  <li>Spagna 2000: 56% elettricità fossile, 2% solare+eolico</li>
+  <li>Spagna 2026: 44% solare+eolico, 17% fossile — fattore 22 sulle rinnovabili in ventisei anni</li>
+  <li>Il fossile spagnolo è sceso a meno di un terzo del peso che aveva a inizio millennio</li>
+</ul>
+<hr>
+<div class="brutal-card">
+  <h2>🍃 ff.158.1 ☀️ Il mese in cui il carbone è scivolato secondo</h2>
+  <p>Ember ha chiuso i conti di un mese americano e il numero è un consuntivo: <mark class="note-highlight">per la prima volta nella serie storica il solare ha prodotto più elettricità del carbone negli Stati Uniti</mark>, con il fotovoltaico sul massimo e il carbone sul minimo mai registrati <a class="note-src" href="https://ember-energy.org/latest-updates/solar-overtakes-coal-in-us-electricity-for-the-first-month-on-record/">[#1630]</a>. Un mese solo, obiezione legittima. Però il conteggio delle volte in cui era già successo prima si ferma a <mark class="note-highlight">zero</mark>, e le soglie si attraversano una volta sola.</p><p>A muoversi è stato l'ordine di merito. Gli impianti entrano in rete secondo il costo marginale, e la fonte che non compra combustibile spinge il carbone in fondo alla lista per aritmetica, senza bisogno di una legge che lo imponga. Quello che resta da separare, adesso, è quanta della resistenza alla transizione sia una posizione politica e quanta sia il peso morto di asset già costruiti, già pagati, che continuano a girare perché spegnerli costa più che tenerli accesi.</p>
+  <div class="meta">
+    
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>🍃 ff.158.2 🌍 L'Africa salta il palo della luce</h2>
+  <p>Nei dodici mesi chiusi a giugno 2025 l'Algeria ha moltiplicato per <mark class="note-highlight">33 volte</mark> le importazioni di pannelli solari. Lo Zambia per 8, il Botswana per 7 <a class="note-src" href="https://x.com/i/status/1960239900545949854">[#1612]</a>. Sono tassi di crescita che nella storia industriale si vedono per prodotti di consumo, raramente per infrastruttura energetica, e succedono in paesi dove la rete di trasmissione capillare non è mai arrivata.</p><p>È il copione del mobile di vent'anni fa, riscritto sull'elettricità: la fase intermedia viene semplicemente saltata. Un continente che non ha ereditato migliaia di chilometri di linee costruite attorno a centrali fossili non ha nemmeno un investimento da difendere, e passa direttamente alla generazione distribuita. <mark class="note-highlight">Un fattore ×33 in un anno</mark> non descrive un mercato che matura per gradi; descrive una popolazione che compra energia come ha comprato SIM, un pezzo alla volta, senza aspettare che qualcuno posi il palo davanti a casa.</p>
+  <div class="meta">
+    <div class="connections">Connections: <a href="https://fortissimo.substack.com/i/136685190/ff-che-bomba-i-pannelli-solari">ff.70.3 Che bomba i pannelli solari!</a></div>
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>🍃 ff.158.3 🤠 Il Texas installa e non lo dice</h2>
+  <p>La generazione solare texana è cresciuta del <mark class="note-highlight">41% su base annua</mark> <a class="note-src" href="https://x.com/Noahpinion/status/2016220364658115056">[#1601]</a>, in uno stato che sul clima non ha mai voluto mettere la firma. Il mix locale sta scivolando verso solare più batterie con la stessa indifferenza per il colore dell'amministrazione con cui l'acqua trova la pendenza.</p><p>Questo rende il caso texano più informativo di qualsiasi mercato sussidiato: quando una tecnologia cresce del 41% in dodici mesi senza che nessuno la voglia raccontare come vittoria politica, il driver è il prezzo dell'energia consegnata. Le batterie chiudono il cerchio, coprendo le ore in cui il sole manca e trasformando una fonte intermittente in capacità dispacciabile. La transizione, in Texas, viene eseguita da chi in pubblico continua a dire che non lo sta facendo.</p>
+  <div class="meta">
+    <div class="connections">Connections: <a href="https://fortissimo.substack.com/i/173499753/ff-politica-tecnologica">ff.135.5 Politica tecnologica</a></div>
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>🍃 ff.158.4 🇪🇸 Venticinque anni per invertire una matrice</h2>
+  <p>Nel 2000 l'elettricità spagnola era per il <mark class="note-highlight">56% fossile e per il 2% solare ed eolica</mark>. Nel 2026 solare ed eolico valgono il 44% e i fossili si fermano al 17% <a class="note-src" href="https://twitter.com/i/status/2052402489278799958">[#1573]</a>. Due fotografie dello stesso paese, ventisei anni di distanza, e le due voci si sono scambiate di posto.</p><p>I rapporti dicono più delle percentuali: <mark class="note-highlight">le rinnovabili sono cresciute di un fattore 22</mark>, i fossili sono scesi a meno di un terzo del peso che avevano a inizio millennio. Un quarto di secolo è il tempo di una carriera lavorativa, di un mutuo, di due cicli di ammortamento industriale — una scala su cui le decisioni si prendono davvero. Il ribaltamento di una matrice elettrica nazionale sta dentro quella finestra. La domanda utile smette di essere se sia possibile e diventa quale sistema paese inizia a contare i suoi ventisei anni a partire da oggi.</p>
+  <div class="meta">
+    <div class="connections">Connections: 💣 ff.70.3 Che bomba i pannelli solari!</div>
+  </div>
+</div>
+
+
+<div class="cross-refs">
+  <h4>Fili che tirano indietro nel corpus</h4>
+  <ul>
+  <li>ff.70.3 Che bomba i pannelli solari! — la curva dei costi vista quando era ancora una promessa</li>
+  <li>ff.50.4 Consumisti ma non di energia — domanda elettrica e crescita disaccoppiate</li>
+  <li>ff.135.5 Politica tecnologica — quando il mercato decide prima del legislatore</li>
+  </ul>
+</div>
+<hr>
+<div class="backlog">
+  📊 Backlog: ~30 tech · ~22 uomo · ~15 natura
+</div>
+<p style="color: var(--fg-muted); font-size: 0.8rem; text-align: center; margin-top: 2rem;">
+  DRAFT generato il 2026-08-07 · futuro fortissimo · note IDs: 1630, 1612, 1601, 1573
+</p>
+</body>
+</html>

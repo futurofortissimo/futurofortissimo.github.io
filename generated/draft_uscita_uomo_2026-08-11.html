@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DRAFT ff.XXX — corpi che tengono il tempo</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+  :root {
+    --bg: #0a0a0a; --fg: #e8e8e8; --fg-muted: #999;
+    --accent: #ff4d4d; --accent-dim: #ff4d4d33;
+    --card-bg: #111; --card-border: #ff4d4d;
+    --link: #ff6b6b; --highlight-bg: #ff4d4d22; --highlight-border: #ff4d4d;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.7; max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem; }
+  h1, h2, h3 { font-family: 'IBM Plex Mono', monospace; }
+  h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.3rem; color: var(--accent); }
+  .draft-badge { display: inline-block; background: var(--accent); color: #000; font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 2px; text-transform: uppercase; margin-bottom: 1rem; }
+  .subtitle { font-size: 1.1rem; color: var(--fg-muted); margin-bottom: 1.5rem; font-style: italic; }
+  .keypoints { list-style: none; margin-bottom: 2.5rem; padding: 1rem; border-left: 3px solid var(--accent); background: var(--accent-dim); }
+  .keypoints li { padding: 0.3rem 0; font-weight: 500; }
+  .keypoints li::before { content: '\25B8 '; color: var(--accent); font-weight: 700; }
+  .brutal-card { background: var(--card-bg); border-left: 4px solid var(--card-border); padding: 1.5rem; margin-bottom: 2rem; border-radius: 0 4px 4px 0; }
+  .brutal-card h2 { font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; color: var(--fg); }
+  .brutal-card p { margin-bottom: 0.8rem; color: #ccc; }
+  mark.note-highlight { background: var(--highlight-bg); border-bottom: 2px solid var(--highlight-border); color: var(--fg); padding: 1px 4px; border-radius: 2px; }
+  .meta { margin-top: 1rem; padding-top: 0.8rem; border-top: 1px solid #222; font-size: 0.85rem; color: var(--fg-muted); }
+  .meta a, .connections a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--link); }
+  .meta a:hover, .connections a:hover { border-bottom-style: solid; }
+  a.note-src { color: var(--accent); font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; text-decoration: none; border-bottom: 1px dotted var(--accent); }
+  .connections { margin-top: 0.5rem; font-size: 0.85rem; }
+  hr { border: none; border-top: 1px solid #222; margin: 2rem 0; }
+  .backlog { background: var(--card-bg); border: 1px solid #222; padding: 1.2rem; margin-top: 2.5rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.82rem; color: var(--fg-muted); }
+  .pullquote { border-left: 3px solid var(--accent); padding: 6px 0 6px 18px; margin: 18px 0; font-style: italic; color: #ccc; font-size: 1.05rem; }
+  .cross-refs { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid #222; }
+  .cross-refs h4 { font-size: 0.78rem; color: var(--fg-muted); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.7rem; }
+  .cross-refs ul { list-style: none; padding-left: 0; }
+  .cross-refs li { margin-bottom: 0.35rem; font-size: 0.9rem; color: #ccc; }
+  .cross-refs li::before { content: "↳ "; color: var(--accent); }
+  .cross-refs a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--link); }
+</style>
+</head>
+<body>
+<span class="draft-badge">Draft · ff.163</span>
+<h1>❤️ Oggi parliamo di corpi che tengono il tempo</h1>
+<p class="subtitle">Cinque ore di aferesi per rieducare 1,27 miliardi di cellule immunitarie, mentre il resto di noi si muove cinque volte meno di cento anni fa senza accorgersene. In Svezia i centenari si sono quintuplicati, ma il 2% delle donne che arriva a 100 anni resta quattro volte il mezzo punto degli uomini, e nessuno sa spiegare perché. In mezzo: quindici smoothie di bollette e disinfettante in un frigo del 2014, e un tatuaggio grande un millimetro.</p>
+<ul class="keypoints">
+  <li>Aferesi da 5 ore, 12 litri di sangue processati, 1,27 miliardi di cellule immunitarie esposte a staminali da cordone</li>
+  <li>Uno studio Cornell registra un calo della spesa in cibo nei pazienti in terapia GLP-1: il farmaco come shock sul carrello</li>
+  <li>Ci muoviamo cinque volte meno di cento anni fa — la sedentarietà arriva di default con la giornata, non con la pigrizia</li>
+  <li>In Svezia i centenari sono quintuplicati dagli anni Novanta: 2% di probabilità per le donne, 0,5% per gli uomini</li>
+  <li>Nathan Yau ricostruisce la giornata americana del 2024 divisa per genere, ora per ora anziché in euro</li>
+  <li>I libri consigliati da Adam Grant per il 2026 convergono su quattro temi: confini personali, benessere, comunicazione, vita civica</li>
+  <li>Il progetto 1mm Tattoo di Hanae Sato riduce il segno sul corpo a un punto di un millimetro sul lobo dell'orecchio</li>
+</ul>
+<hr>
+<div class="brutal-card">
+  <h2>❤️ ff.163.1 ⏳ La giornata spaccata in due colonne</h2>
+  <p>Nathan Yau ha preso la giornata americana del <mark class="note-highlight">2024</mark> e l'ha divisa in due colonne, uomini e donne, ora per ora <a class="note-src" href="https://flowingdata.com/2025/11/04/spend-days-men-women-2024/">[#1672]</a>. Misurare la disuguaglianza in ore invece che in euro toglie di mezzo l'alibi del negoziato salariale. Il tempo è l'unica risorsa che nessuno riesce ad accumulare, e il modo in cui una popolazione lo spende racconta le sue priorità meglio di qualsiasi dichiarazione d'intenti.</p><p>Sull'altro versante della stessa questione, la lista di libri che Adam Grant consiglia per il <mark class="note-highlight">2026</mark> converge su quattro temi: confini personali, benessere, comunicazione, vita civica <a class="note-src" href="https://adamgrant.substack.com/p/the-new-books-to-refresh-your-thinking">[#1647]</a>. Nessuno dei quattro riguarda il produrre di più. Tutti e quattro riguardano il reggere il ritmo che ci siamo dati — che è una domanda diversa, e arriva sempre dopo.</p>
+  <div class="meta">
+    <div class="connections">Connections: <a href="https://fortissimo.substack.com/i/168408634/ff-una-lettura">📚 ff.131.1 Una lettura</a> · <a href="https://fortissimo.substack.com/i/133216439/ff-una-lettura">📚 ff.67.1 Una lettura</a></div>
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>❤️ ff.163.2 🩸 Dodici litri, rimessi in circolo</h2>
+  <p>Cinque ore attaccati a una macchina per aferesi, <mark class="note-highlight">12 litri di sangue</mark> processati, <mark class="note-highlight">1,27 miliardi di cellule immunitarie</mark> esposte a staminali da cordone e rimandate in circolo <a class="note-src" href="https://youtu.be/ZqbGWrN-GZA">[#1671]</a>. Il bersaglio sono monociti e macrofagi: l'invecchiamento trattato come un problema di istruzioni sbagliate più che di materiale consumato. È una scommessa forte, perché sposta il punto di attacco dai tessuti a chi li sorveglia.</p><p>Nel frattempo un'altra molecola sta riscrivendo la stessa biologia da un'altra porta. Uno studio Cornell rileva che i pazienti in terapia con GLP-1 riducono la spesa in cibo <a class="note-src" href="https://share.google/1TsVGyq3leswz7sU4">[#1574]</a>. Le cinque ore di aferesi restano una procedura da clinica; una ricetta GLP-1 sta in tasca, e il suo effetto arriva dritto ai bilanci di chi vende snack e ristorazione. Un farmaco che si comporta come uno shock macroeconomico.</p>
+  <div class="meta">
+    <div class="connections">Connections: ff.81.4 Terapie geniche</div>
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>❤️ ff.163.3 🥤 Quindici smoothie in un frigo</h2>
+  <p>Nel 2014 Josh Kline ha frullato bollette, kale chips e disinfettante e ha esposto il risultato in <mark class="note-highlight">quindici smoothie</mark> dentro un frigo commerciale <a class="note-src" href="https://www.instagram.com/p/DJrtW3ziNOJ/">[#1663]</a>. Tutto ciò che ci viene venduto come benessere ridotto allo stesso liquido colorato, illuminato dal neon di una vetrina. L'installazione tratta il consumo come una dieta, e il frigo è il piatto in cui viene servita.</p><p>Il dato che rende l'opera meno divertente arriva dalla fisiologia: ci muoviamo <mark class="note-highlight">cinque volte meno di cento anni fa</mark>, e gli stili di vita che ne derivano accelerano l'invecchiamento <a class="note-src" href="https://twitter.com/i/status/2051712226235736492">[#1562]</a>. La sedentarietà arriva compresa nella giornata, senza che nessuno la scelga. L'ora di corsa serale ripaga un debito contratto per default dalle altre ventitré.</p>
+  <div class="meta">
+    <div class="connections">Connections: 🖐️ ff.131.5 Cinque pezzi facili · 🤞 ff.31.5 Cinque suggerimenti per l’estate</div>
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>❤️ ff.163.4 👵 Il due per cento svedese</h2>
+  <p>In Svezia i centenari sono <mark class="note-highlight">quintuplicati dagli anni Novanta</mark> <a class="note-src" href="https://x.com/i/status/2003048579171230192">[#1657]</a>. Buona parte di quel guadagno viene dall'aver smesso di morire prima, il che rende la curva meno eroica di come la si racconta: si accumulano vecchi perché si perdono meno giovani e meno adulti lungo la strada.</p><p>Poi c'è il numero che nessuno ha ancora sciolto: <mark class="note-highlight">2% di probabilità per le donne di arrivare a 100 anni, 0,5% per gli uomini</mark>. Quattro volte di scarto, stabile mentre tutto il resto della demografia si muoveva. Nessuna terapia della longevità — nessun protocollo, nessuna molecola — ha finora spiegato perché quel fattore quattro resti lì.</p>
+  <div class="meta">
+    <div class="connections">Connections: ff.111.3 Figli, salute e anni sprecati</div>
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>❤️ ff.163.5 🔴 Un millimetro sul lobo</h2>
+  <p>Il progetto 1mm Tattoo di Hanae Sato porta il tatuaggio alla sua unità minima: <mark class="note-highlight">un punto di un millimetro</mark>, spesso un puntino rosa sul lobo dell'orecchio <a class="note-src" href="https://www.instagram.com/p/DRRbkGDEVmY/">[#1648]</a>. A quella scala la decorazione smette di funzionare — non c'è disegno da leggere, non c'è superficie da riempire — e resta soltanto il gesto di aver deciso di segnarsi.</p><p>Sato tiene insieme le due estremità: <mark class="note-highlight">1 mm</mark> è la cosa più individuale che si possa possedere e insieme la più universale, perché il segno sul corpo è una pratica che arriva fino alla pittura corporea dei Neanderthal. Cinquantamila anni di storia del corpo compressi in un punto che da mezzo metro di distanza non si vede.</p>
+  <div class="meta">
+    <div class="connections">Connections: 🔮 ff.40.2 Un futuro parallelo di design · 🗺️ ff.28.3 Google Maps riduce le emissioni</div>
+  </div>
+</div>
+
+
+<div class="cross-refs">
+  <h4>Fili che tirano indietro nel corpus</h4>
+  <ul>
+  <li>ff.131.1 Una lettura — i libri che dicono l'anno</li>
+  <li>ff.81.4 Terapie geniche — quando il bersaglio sono le istruzioni</li>
+  <li>ff.111.3 Figli, salute e anni sprecati — la contabilità degli anni buoni</li>
+  <li>ff.131.5 Cinque pezzi facili — manutenzione del corpo, edizione precedente</li>
+  <li>ff.40.2 Un futuro parallelo di design — il minimo che resta segno</li>
+  <li>ff.145.4 Il cibo nuoce gravemente alla salute — la dieta come variabile demografica</li>
+  </ul>
+</div>
+<hr>
+<div class="backlog">
+  📊 Backlog: ~34 tech · ~20 uomo · ~15 natura
+</div>
+<p style="color: var(--fg-muted); font-size: 0.8rem; text-align: center; margin-top: 2rem;">
+  DRAFT generato il 2026-08-11 · futuro fortissimo · note IDs: 1672, 1671, 1663, 1657, 1648, 1647, 1574, 1562
+</p>
+</body>
+</html>

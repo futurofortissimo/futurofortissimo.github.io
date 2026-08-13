@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DRAFT ff.XXX — intelligenze che prendono corpo</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+  :root {
+    --bg: #0a0a0a; --fg: #e8e8e8; --fg-muted: #999;
+    --accent: #448aff; --accent-dim: #448aff33;
+    --card-bg: #111; --card-border: #448aff;
+    --link: #6ba3ff; --highlight-bg: #448aff22; --highlight-border: #448aff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.7; max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem; }
+  h1, h2, h3 { font-family: 'IBM Plex Mono', monospace; }
+  h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.3rem; color: var(--accent); }
+  .draft-badge { display: inline-block; background: var(--accent); color: #000; font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 2px; text-transform: uppercase; margin-bottom: 1rem; }
+  .subtitle { font-size: 1.1rem; color: var(--fg-muted); margin-bottom: 1.5rem; font-style: italic; }
+  .keypoints { list-style: none; margin-bottom: 2.5rem; padding: 1rem; border-left: 3px solid var(--accent); background: var(--accent-dim); }
+  .keypoints li { padding: 0.3rem 0; font-weight: 500; }
+  .keypoints li::before { content: '\25B8 '; color: var(--accent); font-weight: 700; }
+  .brutal-card { background: var(--card-bg); border-left: 4px solid var(--card-border); padding: 1.5rem; margin-bottom: 2rem; border-radius: 0 4px 4px 0; }
+  .brutal-card h2 { font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; color: var(--fg); }
+  .brutal-card p { margin-bottom: 0.8rem; color: #ccc; }
+  mark.note-highlight { background: var(--highlight-bg); border-bottom: 2px solid var(--highlight-border); color: var(--fg); padding: 1px 4px; border-radius: 2px; }
+  .meta { margin-top: 1rem; padding-top: 0.8rem; border-top: 1px solid #222; font-size: 0.85rem; color: var(--fg-muted); }
+  .meta a, .connections a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--link); }
+  .meta a:hover, .connections a:hover { border-bottom-style: solid; }
+  a.note-src { color: var(--accent); font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; text-decoration: none; border-bottom: 1px dotted var(--accent); }
+  .connections { margin-top: 0.5rem; font-size: 0.85rem; }
+  hr { border: none; border-top: 1px solid #222; margin: 2rem 0; }
+  .backlog { background: var(--card-bg); border: 1px solid #222; padding: 1.2rem; margin-top: 2.5rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.82rem; color: var(--fg-muted); }
+  .pullquote { border-left: 3px solid var(--accent); padding: 6px 0 6px 18px; margin: 18px 0; font-style: italic; color: #ccc; font-size: 1.05rem; }
+  .cross-refs { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid #222; }
+  .cross-refs h4 { font-size: 0.78rem; color: var(--fg-muted); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.7rem; }
+  .cross-refs ul { list-style: none; padding-left: 0; }
+  .cross-refs li { margin-bottom: 0.35rem; font-size: 0.9rem; color: #ccc; }
+  .cross-refs li::before { content: "↳ "; color: var(--accent); }
+  .cross-refs a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--link); }
+</style>
+</head>
+<body>
+<span class="draft-badge">Draft · ff.160</span>
+<h1>💻 Oggi parliamo di intelligenze che prendono corpo</h1>
+<p class="subtitle">Il pellicano in bicicletta ha smesso di dirci qualcosa, e intanto un Unitree G1 impara parkour e wallflip da 8+ ore di motion capture ripulito. Un JEPA da 15 milioni di parametri si allena su una GPU sola in poche ore, mentre Gladstone Institutes e NVIDIA danno in pasto a MaxToki quasi mille miliardi di token genici per prevedere dove va una cellula. In mezzo: una conferenza con trailer hollywoodiano per nazioni che esistono solo online, un head-to-head fra modelli arrivato al sesto round su nove, e un oscillatore analogico impugnato come pennello. Il filo è sempre lo stesso — dove finisce la demo e comincia il corpo.</p>
+<ul class="keypoints">
+  <li>OmniRetarget genera 8+ ore di motion capture pulito per RL: un Unitree G1 esegue parkour, wallflip e loco-manipolazione long-horizon con reward semplici e domain randomization</li>
+  <li>Primo JEPA addestrato end-to-end da pixel grezzi: 15 milioni di parametri, una singola GPU, poche ore di training</li>
+  <li>MaxToki (Gladstone Institutes + NVIDIA): modello temporale su quasi mille miliardi di token genici, simula traiettorie di stato cellulare nell'organismo umano</li>
+  <li>Duke University usa il machine learning per accelerare il design di nanoparticelle drug-delivering nel corpo umano</li>
+  <li>Il confronto pubblico Opus 4.6 vs GPT-5.4 (High) è arrivato al sesto round su nove</li>
+  <li>Il test informale dell'SVG del pellicano in bicicletta viene dichiarato esaurito e generalizzato su Opus 5</li>
+  <li>Network State Conference 2025: trailer ufficiale del meeting annuale del movimento delle nazioni digitali fondate online</li>
+  <li>Ramin Rahni dipinge glitch art in tempo reale usando le formule di un sintetizzatore analogico come pennello</li>
+</ul>
+<hr>
+<div class="brutal-card">
+  <h2>💻 ff.160.1 🚴 Il pellicano in bicicletta è finito</h2>
+  <p>Per anni il modo informale di saggiare un modello linguistico è stato chiedergli un SVG di un pellicano in bicicletta. Chi quel test lo ha reso popolare adesso dichiara che stiamo uscendo dal territorio in cui aveva senso, e prova a generalizzarlo dando a <mark class="note-highlight">Opus 5</mark> un primo input di tipo diverso <a class="note-src" href="https://twitter.com/i/status/2083749667410727319">[#1661]</a>. Un benchmark informale muore nel momento esatto in cui tutti lo passano, e quel momento arriva sempre prima del previsto.</p><p>La valutazione si sposta quindi dove barare costa di più: il corpo. OmniRetarget genera <mark class="note-highlight">8+ ore di motion capture pulito</mark> destinato al reinforcement learning, abbastanza perché un Unitree G1 esegua parkour, wallflip e loco-manipolazione long-horizon con reward semplici e domain randomization <a class="note-src" href="https://x.com/lukas_m_ziegler/status/1977624416742732221">[#1491]</a>. La leva sta nella qualità del dato: foot-skating, compenetrazioni fra corpo e oggetti, assenza di interazione erano i tre artefatti che i vecchi metodi di retargeting lasciavano dentro i dataset, e che nessun reward complicato riusciva a compensare.</p><p>Vale la pena notare l'asimmetria fra i due test. Un pellicano disegnato male produce un'immagine buffa; un wallflip sbagliato produce un robot da 30 chili a terra. Nel primo caso il giudice è il gusto di chi guarda su X, nel secondo è la gravità — e la gravità non ha bisogno di una rubrica di valutazione.</p>
+  <div class="meta">
+    
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>💻 ff.160.2 🧩 Quindici milioni di parametri, una nazione</h2>
+  <p>Il gruppo che lavora sull'architettura JEPA ha rilasciato il primo modello di quella famiglia che si addestra davvero end-to-end dai pixel grezzi: <mark class="note-highlight">15 milioni di parametri</mark>, una singola GPU, poche ore di training <a class="note-src" href="https://x.com/i/status/2046371351016161745">[#1511]</a>. Nel decennio in cui il progresso si misura in cluster e in ordini d'acquisto, un risultato che sta su una scheda sola e in un pomeriggio è un'affermazione politica sul costo dell'ingresso, non solo un paper.</p><p>Una scala minuscola che diventa infrastruttura: la stessa traiettoria la si vede fuori dai laboratori. La <mark class="note-highlight">Network State Conference 2025</mark> ha pubblicato il trailer ufficiale del suo meeting annuale, con montaggio da blockbuster, e il movimento delle nazioni digitali fondate online passa così da libro di Balaji ad appuntamento ricorrente con un proprio calendario <a class="note-src" href="https://youtube.com/watch?v=ZLNYkftDP98">[#1490]</a>. Se la cittadinanza si organizza come una membership, il trailer è il vero atto costitutivo: prima si girano le immagini, poi arrivano i piani annuali.</p><p>Il parallelismo è più stretto di quanto sembri. In entrambi i casi qualcosa che richiedeva una scala statale — addestrare modelli visivi, fondare comunità con regole proprie — si comprime fino a stare in mano a un gruppo piccolo e finanziato male. La domanda che resta aperta riguarda cosa succede quando di quei gruppi ce ne sono diecimila.</p>
+  <div class="meta">
+    <div class="connections">Connections: <a href="https://fortissimo.substack.com/i/144388955/ff-la-sovranita-dei-network">ff.95.1 La sovranità dei network</a></div>
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>💻 ff.160.3 🧬 Mille miliardi di token per una cellula</h2>
+  <p>Gladstone Institutes e NVIDIA hanno presentato MaxToki, un modello temporale addestrato su <mark class="note-highlight">quasi mille miliardi di token genici</mark> che simula traiettorie di stato cellulare nel corpo umano <a class="note-src" href="https://x.com/i/status/2040127840038052180">[#1497]</a>. La parola chiave è temporale: la cellula viene trattata come una sequenza che evolve, con un prima e un dopo, invece che come una fotografia da classificare.</p><p>Sull'altro versante del problema — arrivarci, dentro quella cellula — Duke University ha sviluppato un sistema basato su machine learning per accelerare il design di nanoparticelle drug-delivering nell'organismo <a class="note-src" href="https://pubs.acs.org/doi/10.1021/acsnano.5c09066">[#1487]</a>. Prevedere quale particella attraversa quale tessuto sposta il collo di bottiglia dalla sintesi chimica al ciclo di iterazione: si progetta a schermo e si sintetizza solo quello che ha superato il vaglio.</p><p>Messi in fila, i due lavori descrivono un bersaglio mobile e un proiettile guidato. Con <mark class="note-highlight">Gladstone Institutes e NVIDIA</mark> a modellare dove la cellula sta andando e Duke a modellare cosa può raggiungerla, la farmacologia comincia ad assomigliare a un problema di intercettazione. Il rischio è quello di sempre nei modelli generativi: due simulazioni che si parlano benissimo fra loro e male con il tessuto vero.</p>
+  <div class="meta">
+    <div class="connections">Connections: <a href="https://fortissimo.substack.com/i/179548983/ff-svizzero-no-nvidia">ff.139.1 Svizzero? No, NVIDIA</a></div>
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>💻 ff.160.4 ⚔️ Sesto round su nove, in diretta</h2>
+  <p>Il confronto pubblico fra <mark class="note-highlight">Opus 4.6 e GPT-5.4 (High)</mark> è arrivato al <mark class="note-highlight">sesto episodio su nove</mark>, pubblicato a puntate come una serie <a class="note-src" href="https://x.com/developedbyed/status/2030616227710701809">[#1495]</a>. Nove prove decise da una persona sola, girate una alla volta, guardate da migliaia: è il formato di valutazione che ha vinto sul campo mentre i benchmark ufficiali litigavano sulla contaminazione dei dataset.</p><p>Il formato dice qualcosa sul mercato. Quando due modelli sono abbastanza vicini da richiedere nove round per essere separati, la scelta si sposta su latenza, prezzo e abitudine, e il duello seriale diventa il modo in cui quella differenza sottile viene resa guardabile. Un torneo a puntate produce engagement per sei settimane; una tabella di punteggi si legge in dieci secondi e si dimentica in cinque.</p>
+  <div class="meta">
+    
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>💻 ff.160.5 🎛️ Un oscillatore impugnato come pennello</h2>
+  <p>Ramin Rahni dipinge in tempo reale con un sintetizzatore analogico: le formule scientifiche che governano il synth diventano lo strumento visivo con cui costruisce glitch art, e la tensione di un oscillatore fa il lavoro che altrove farebbe un livello di Photoshop <a class="note-src" href="https://www.itsnicethat.com/articles/ramin-rahni-animation-discover-1601025">[#1493]</a>. La parte interessante è il <mark class="note-highlight">tempo reale</mark>: nessun render, nessuna coda, il gesto e l'immagine coincidono.</p><p>Il contrasto con il resto di questa uscita è netto e conviene tenerlo. Da un lato un modello visivo che si addestra con <mark class="note-highlight">15 milioni di parametri</mark> su una GPU sola <a class="note-src" href="https://x.com/i/status/2046371351016161745">[#1511]</a>, dall'altro un artista che rifiuta l'astrazione software e torna a un circuito fisico dove ogni manopola ha una funzione conoscibile. Entrambe le strade rispondono alla stessa insofferenza verso i sistemi troppo grandi per essere capiti da chi li usa, e arrivano a due conclusioni opposte su cosa vada rimpicciolito.</p>
+  <div class="meta">
+    
+  </div>
+</div>
+
+
+<div class="cross-refs">
+  <h4>Fili che tirano indietro nel corpus</h4>
+  <ul>
+  <li>ff.95.1 La sovranità dei network — quando la cittadinanza diventa membership</li>
+  <li>ff.47.2 Serpenti marini digitali — comunità che nascono online e restano</li>
+  <li>ff.139.1 Svizzero? No, NVIDIA — l'infrastruttura di calcolo che si infila ovunque</li>
+  <li>ff.40.2 Un futuro parallelo di design — progettare per iterazione invece che per sintesi</li>
+  </ul>
+</div>
+<hr>
+<div class="backlog">
+  📊 Backlog: ~23 tech · ~22 uomo · ~11 natura
+</div>
+<p style="color: var(--fg-muted); font-size: 0.8rem; text-align: center; margin-top: 2rem;">
+  DRAFT generato il 2026-08-09 · futuro fortissimo · note IDs: 1661, 1511, 1497, 1495, 1493, 1491, 1490, 1487
+</p>
+</body>
+</html>

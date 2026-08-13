@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DRAFT ff.XXX — colli di bottiglia che cedono</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+  :root {
+    --bg: #0a0a0a; --fg: #e8e8e8; --fg-muted: #999;
+    --accent: #448aff; --accent-dim: #448aff33;
+    --card-bg: #111; --card-border: #448aff;
+    --link: #6ba3ff; --highlight-bg: #448aff22; --highlight-border: #448aff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.7; max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem; }
+  h1, h2, h3 { font-family: 'IBM Plex Mono', monospace; }
+  h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.3rem; color: var(--accent); }
+  .draft-badge { display: inline-block; background: var(--accent); color: #000; font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 2px; text-transform: uppercase; margin-bottom: 1rem; }
+  .subtitle { font-size: 1.1rem; color: var(--fg-muted); margin-bottom: 1.5rem; font-style: italic; }
+  .keypoints { list-style: none; margin-bottom: 2.5rem; padding: 1rem; border-left: 3px solid var(--accent); background: var(--accent-dim); }
+  .keypoints li { padding: 0.3rem 0; font-weight: 500; }
+  .keypoints li::before { content: '\25B8 '; color: var(--accent); font-weight: 700; }
+  .brutal-card { background: var(--card-bg); border-left: 4px solid var(--card-border); padding: 1.5rem; margin-bottom: 2rem; border-radius: 0 4px 4px 0; }
+  .brutal-card h2 { font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; color: var(--fg); }
+  .brutal-card p { margin-bottom: 0.8rem; color: #ccc; }
+  mark.note-highlight { background: var(--highlight-bg); border-bottom: 2px solid var(--highlight-border); color: var(--fg); padding: 1px 4px; border-radius: 2px; }
+  .meta { margin-top: 1rem; padding-top: 0.8rem; border-top: 1px solid #222; font-size: 0.85rem; color: var(--fg-muted); }
+  .meta a, .connections a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--link); }
+  .meta a:hover, .connections a:hover { border-bottom-style: solid; }
+  a.note-src { color: var(--accent); font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; text-decoration: none; border-bottom: 1px dotted var(--accent); }
+  .connections { margin-top: 0.5rem; font-size: 0.85rem; }
+  hr { border: none; border-top: 1px solid #222; margin: 2rem 0; }
+  .backlog { background: var(--card-bg); border: 1px solid #222; padding: 1.2rem; margin-top: 2.5rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.82rem; color: var(--fg-muted); }
+  .pullquote { border-left: 3px solid var(--accent); padding: 6px 0 6px 18px; margin: 18px 0; font-style: italic; color: #ccc; font-size: 1.05rem; }
+  .cross-refs { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid #222; }
+  .cross-refs h4 { font-size: 0.78rem; color: var(--fg-muted); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.7rem; }
+  .cross-refs ul { list-style: none; padding-left: 0; }
+  .cross-refs li { margin-bottom: 0.35rem; font-size: 0.9rem; color: #ccc; }
+  .cross-refs li::before { content: "↳ "; color: var(--accent); }
+  .cross-refs a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--link); }
+</style>
+</head>
+<body>
+<span class="draft-badge">Draft · ff.164</span>
+<h1>💻 Oggi parliamo di colli di bottiglia che cedono</h1>
+<p class="subtitle">Un grafico del 2007 sui prezzi del pesce in Kerala e un prototipo litografico costruito a Shenzhen raccontano la stessa meccanica: un collo di bottiglia regge finché regge l'informazione che lo protegge. Nel mezzo, METR cronometra 4 ore e 49 minuti di autonomia per Claude Opus 4.5 con un intervallo che sale fino a 20 ore, Suno impagina un catalogo Spotify ogni due settimane, un modello a diffusione disegna catalizzatori partendo dalla proprietà desiderata e un robot infila un ago. E c'è chi, nel frattempo, vende 150-300 millisecondi di latenza come se fossero un cocktail.</p>
+<ul class="keypoints">
+  <li>Shenzhen: prototipo di macchina litografica di frontiera costruito con ex ingegneri ASML, il problema industriale più difficile del pianeta</li>
+  <li>Kerala 2007: l'arrivo della telefonia mobile azzera oscillazioni prima violentissime nei prezzi del pesce (Jensen)</li>
+  <li>METR: orizzonte temporale al 50% di 4 ore e 49 minuti per Claude Opus 4.5, con intervallo di confidenza da 1h49 a 20h25</li>
+  <li>Suno: musica pari a un intero catalogo Spotify ogni due settimane e 250 milioni di dollari raccolti</li>
+  <li>Inverse design: un modello a diffusione progetta al contrario catalizzatori bimetallici per la decomposizione dell'ammoniaca</li>
+  <li>Scott Anthony ricostruisce 11 innovazioni dirompenti, dalla polvere da sparo all'AI generativa</li>
+  <li>TARS: robot che infilano un ago con stack completo dalla percezione al controllo</li>
+  <li>Pharmaicy: moduli di codice a listino per simulare su ChatGPT alcol, cannabis, ketamina e ayahuasca, con 150-300 ms di latenza aggiunta</li>
+</ul>
+<hr>
+<div class="brutal-card">
+  <h2>💻 ff.164.1 📡 Il pesce di Kerala e la litografia di Shenzhen</h2>
+  <p>Nel <mark class="note-highlight">2007</mark> Robert Jensen pubblica il grafico più pulito mai prodotto sull'economia dell'informazione: quando la telefonia mobile arriva in Kerala, i prezzi del pesce si stabilizzano e le oscillazioni prima violentissime si appiattiscono da un giorno all'altro <a class="note-src" href="https://substack.com/redirect/c6174be9-052d-45f2-a738-8be6b3188659">[#1653]</a>. Il pescato è lo stesso, le barche sono le stesse, la fisica del mare non è cambiata. Cambia soltanto chi sa dove il pesce vale di più, e quella parte di volatilità che sembrava scarsità si scopre essere ignoranza logistica.</p><p>Diciotto anni dopo, in un laboratorio di Shenzhen, esiste il prototipo di una macchina litografica di frontiera, tirato su anche grazie a <mark class="note-highlight">ex ingegneri ASML</mark> <a class="note-src" href="https://www.reuters.com/world/china/how-china-built-its-manhattan-project-rival-west-ai-chips-2025-12-17/">[#1660]</a>. Replicare ASML resta il problema industriale più difficile del pianeta, e un prototipo non stampa ancora un wafer buono. Ma il solo fatto che esista sposta l'orizzonte temporale di tutti quelli che avevano messo a bilancio un collo di bottiglia stabile: chi progetta export control, chi compra capacità di fonderia, chi prezza il rischio geopolitico dentro un titolo.</p><p>Le due storie condividono la stessa meccanica. Un collo di bottiglia tiene finché l'informazione su come aggirarlo resta concentrata in un posto solo. In Kerala si è sciolto con un ripetitore e un mercato che finalmente si parlava; a Shenzhen lo stanno sciogliendo assumendo le persone che quella macchina l'avevano costruita. L'infrastruttura informativa è infrastruttura economica, e nel 2007 costava una tacca di segnale.</p>
+  <div class="meta">
+    <div class="connections">Connections: <a href="https://fortissimo.substack.com/i/179548983/ff-dove-la-mia-macchina-volante-in-gta">🍫ff.139.3 Dov’è la mia macchina volante (in GTA 6?)</a> · <a href="https://fortissimo.substack.com/i/141573875/ff-economia-e-robot-del-massaggio">🌐ff.97.4 Economia e robot del massaggio</a></div>
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>💻 ff.164.2 ⏱️ Quattro ore e quarantanove minuti di solitudine</h2>
+  <p>METR stima per Claude Opus 4.5 un orizzonte temporale al 50% di <mark class="note-highlight">4 ore e 49 minuti</mark>, il più alto mai pubblicato <a class="note-src" href="https://x.com/i/status/2002203627377574113">[#1658]</a>. È una metrica strana e onesta: misura per quanto tempo un modello regge un compito da solo, non quanto sa. Il dettaglio che vale più del titolo è l'intervallo di confidenza, che va da 1 ora e 49 minuti a 20 ore e 25 minuti. Un fattore undici tra l'estremo basso e quello alto significa che la misura è ancora più instabile della cosa misurata, e che ogni roadmap costruita su quel numero sta poggiando su sabbia bagnata.</p><p>Sull'altro versante dell'abbondanza, Suno genera ogni due settimane musica pari a un intero catalogo Spotify e ha raccolto <mark class="note-highlight">250 milioni di dollari</mark> <a class="note-src" href="https://www.billboard.com/pro/suno-creates-spotify-catalog-music-two-weeks-pitch-deck/">[#1651]</a>. Un catalogo era il bene difendibile per eccellenza: decenni di contratti, anticipi, sessioni. Quando produrne uno equivalente costa quattordici giorni di calcolo, il valore migra a valle, verso chi decide cosa viene ascoltato.</p><p>Messe insieme, le due cifre disegnano lo stesso spostamento. La scarsità si trasferisce dalla produzione alla selezione: dalle ore-uomo di un lavoro alle 4 ore e 49 in cui una macchina non ha bisogno di essere guardata, dai master di un'etichetta alle due settimane che bastano a replicarli. Chi controlla la scoperta controlla il mercato, e la scoperta è l'unica cosa che nessuno dei due sistemi produce in serie.</p>
+  <div class="meta">
+    <div class="connections">Connections: ff.148.1 Claude Mythos: non per tutti</div>
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>💻 ff.164.3 ⚗️ Progettare al contrario, undici volte</h2>
+  <p>Un modello a diffusione progetta al contrario <mark class="note-highlight">catalizzatori bimetallici</mark> per la decomposizione dell'ammoniaca <a class="note-src" href="https://x.com/i/status/2003075485039759388">[#1656]</a>. Il verso conta più del risultato: si parte dalla proprietà desiderata e si arriva alla coppia di metalli che la produce, invece di setacciare cataloghi di materiali disponibili sperando in un colpo di fortuna. La chimica dei materiali diventa una specifica da compilare, e l'ammoniaca — molecola noiosa, industriale, già prodotta in mezzo mondo — si candida a vettore di idrogeno credibile perché il pezzo che mancava era il catalizzatore.</p><p>Scott Anthony ha ricostruito <mark class="note-highlight">11 innovazioni</mark> che hanno riscritto le regole del gioco, dalla polvere da sparo all'AI generativa <a class="note-src" href="https://substack.com/redirect/fdd3769e-c538-43f5-a973-0f4e3e75831e">[#1650]</a>. Undici rotture separate da secoli che condividono un pattern, ed è un pattern che parla di potere più che di tecnica.</p><p>Applicato all'inverse design, quel pattern suggerisce la domanda giusta. Non quale materiale uscirà per primo dal modello a diffusione, ma quale rendita si sgretola quando la ricerca di un catalizzatore smette di essere una carriera e diventa una query. Delle 11 storie di Anthony, nessuna finisce con l'incumbent che ringrazia.</p>
+  <div class="meta">
+    <div class="connections">Connections: ‍💨 ff.87.1 Breve storia del respiro · ✳️ff.85.2 Convergenza generativa</div>
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>💻 ff.164.4 🪡 La cruna dell'ago è una specifica</h2>
+  <p>TARS mostra robot capaci di infilare <mark class="note-highlight">un ago</mark>, con uno stack completo dalla percezione al controllo <a class="note-src" href="https://x.com/i/status/2002618380319395926">[#1655]</a>. È un gesto che chiunque abbia più di quarant'anni ha visto fallire da un parente con la vista appannata, e che nessuna telecamera industriale gestiva senza una dima. La cruna perdona zero: o il filo passa, o il tentativo va rifatto da capo.</p><p>Il punto è dove si chiude la catena. Percezione e controllo sono i <mark class="note-highlight">due estremi</mark> che nella robotica sono sempre stati tenuti insieme da un umano o da un vincolo meccanico. Uno stack che li salda dentro un unico anello smette di essere una demo e diventa una specifica riusabile, e le specifiche non si applicano a un mestiere alla volta: la destrezza fine è la stessa nel cablaggio, nella sartoria, nella riparazione elettronica, nella sutura.</p>
+  <div class="meta">
+    <div class="connections">Connections: ff.88.2 ChatGPT controlla un robot</div>
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>💻 ff.164.5 🍸 Comprare a moduli l'ebbrezza di una macchina</h2>
+  <p>Pharmaicy vende moduli di codice che simulano su ChatGPT gli effetti di alcol, cannabis, ketamina e ayahuasca: <mark class="note-highlight">quattro sostanze a listino</mark>, ognuna con la sua scheda prodotto <a class="note-src" href="https://www.pharmaicy.store/product-page/alcohol-1">[#1654]</a>. Si paga per far barcollare un modello, ed è un mercato che qualcuno ha ritenuto abbastanza reale da metterci sopra un carrello e un prezzo.</p><p>La merce, guardata da vicino, è quasi comica: <mark class="note-highlight">150-300 millisecondi</mark> di latenza aggiunta e risposte che inciampano. Tutta l'industria brucia capitale per limare quei millisecondi, e qui vengono rivenduti come feature. L'ebbrezza simulata è un degrado prestazionale col packaging giusto.</p><p>Quello che si sposta è la categoria. Il jailbreak nasce come atto tecnico contro un guardrail, e in questi quattro prodotti diventa consumo culturale: lo stato alterato di una macchina si compra come si compra uno skin o un filtro. Chi progetta allineamento si è preparato all'avversario che vuole estrarre informazioni proibite, meno al cliente che paga 300 millisecondi per avere compagnia meno lucida.</p>
+  <div class="meta">
+    <div class="connections">Connections: 🤹 ff.124.4 ChatGPT tuttofare · 🤖ff.88.2 ChatGPT controlla un robot</div>
+  </div>
+</div>
+
+
+<div class="cross-refs">
+  <h4>Fili che tirano indietro nel corpus</h4>
+  <ul>
+  <li>ff.139.3 Dov'è la mia macchina volante (in GTA 6?)</li>
+  <li>ff.97.4 Economia e robot del massaggio</li>
+  <li>ff.148.1 Claude Mythos: non per tutti</li>
+  <li>ff.119.3 Longa Manus con gli agenti AI?</li>
+  <li>ff.85.2 Convergenza generativa</li>
+  <li>ff.88.2 ChatGPT controlla un robot</li>
+  <li>ff.124.4 ChatGPT tuttofare</li>
+  </ul>
+</div>
+<hr>
+<div class="backlog">
+  📊 Backlog: ~26 tech · ~12 uomo · ~15 natura
+</div>
+<p style="color: var(--fg-muted); font-size: 0.8rem; text-align: center; margin-top: 2rem;">
+  DRAFT generato il 2026-08-13 · futuro fortissimo · note IDs: 1660, 1658, 1656, 1655, 1654, 1653, 1651, 1650
+</p>
+</body>
+</html>

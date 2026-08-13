@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DRAFT ff.XXX — copie di riserva</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+  :root {
+    --bg: #0a0a0a; --fg: #e8e8e8; --fg-muted: #999;
+    --accent: #448aff; --accent-dim: #448aff33;
+    --card-bg: #111; --card-border: #448aff;
+    --link: #6ba3ff; --highlight-bg: #448aff22; --highlight-border: #448aff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.7; max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem; }
+  h1, h2, h3 { font-family: 'IBM Plex Mono', monospace; }
+  h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.3rem; color: var(--accent); }
+  .draft-badge { display: inline-block; background: var(--accent); color: #000; font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 2px; text-transform: uppercase; margin-bottom: 1rem; }
+  .subtitle { font-size: 1.1rem; color: var(--fg-muted); margin-bottom: 1.5rem; font-style: italic; }
+  .keypoints { list-style: none; margin-bottom: 2.5rem; padding: 1rem; border-left: 3px solid var(--accent); background: var(--accent-dim); }
+  .keypoints li { padding: 0.3rem 0; font-weight: 500; }
+  .keypoints li::before { content: '\25B8 '; color: var(--accent); font-weight: 700; }
+  .brutal-card { background: var(--card-bg); border-left: 4px solid var(--card-border); padding: 1.5rem; margin-bottom: 2rem; border-radius: 0 4px 4px 0; }
+  .brutal-card h2 { font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; color: var(--fg); }
+  .brutal-card p { margin-bottom: 0.8rem; color: #ccc; }
+  mark.note-highlight { background: var(--highlight-bg); border-bottom: 2px solid var(--highlight-border); color: var(--fg); padding: 1px 4px; border-radius: 2px; }
+  .meta { margin-top: 1rem; padding-top: 0.8rem; border-top: 1px solid #222; font-size: 0.85rem; color: var(--fg-muted); }
+  .meta a, .connections a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--link); }
+  .meta a:hover, .connections a:hover { border-bottom-style: solid; }
+  a.note-src { color: var(--accent); font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; text-decoration: none; border-bottom: 1px dotted var(--accent); }
+  .connections { margin-top: 0.5rem; font-size: 0.85rem; }
+  hr { border: none; border-top: 1px solid #222; margin: 2rem 0; }
+  .backlog { background: var(--card-bg); border: 1px solid #222; padding: 1.2rem; margin-top: 2.5rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.82rem; color: var(--fg-muted); }
+  .pullquote { border-left: 3px solid var(--accent); padding: 6px 0 6px 18px; margin: 18px 0; font-style: italic; color: #ccc; font-size: 1.05rem; }
+  .cross-refs { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid #222; }
+  .cross-refs h4 { font-size: 0.78rem; color: var(--fg-muted); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.7rem; }
+  .cross-refs ul { list-style: none; padding-left: 0; }
+  .cross-refs li { margin-bottom: 0.35rem; font-size: 0.9rem; color: #ccc; }
+  .cross-refs li::before { content: "↳ "; color: var(--accent); }
+  .cross-refs a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--link); }
+</style>
+</head>
+<body>
+<span class="draft-badge">Draft · ff.151</span>
+<h1>💻 Oggi parliamo di copie di riserva</h1>
+<p class="subtitle">Un umanoide che impila cuscinetti per sette ore filate senza mai staccare, un vaccino da ambulatorio che sembra tenere lontana la demenza, un cervello di mammifero vetrificato e poi riletto al microscopio con ultrastruttura intatta. Nel frattempo Waymo chiede a Genie 3 di inventare gli incidenti che nessuno vuole provare su strada vera. Quattro modi di tenere un backup: del lavoro manuale, della memoria, del tessuto, del disastro.</p>
+<ul class="keypoints">
+  <li>HMND 01 ha sostenuto un turno di 7 ore consecutive di bin picking su cuscinetti metallici, senza pause</li>
+  <li>Il bin picking resta il banco di prova classico della visione artificiale: pezzi alla rinfusa, orientamenti casuali, superfici metalliche riflettenti</li>
+  <li>Il vaccino contro l'herpes zoster riduce in modo netto l'esordio di demenza, con segnale replicato in più studi su larga scala</li>
+  <li>La prevenzione neurologica passa da uno strumento già disponibile al medico di base, non da un farmaco sperimentale</li>
+  <li>Preprint bioRxiv del 28 gennaio 2026: crioconservazione di cervelli di mammifero per vitrificazione con ultrastruttura e istologia preservate</li>
+  <li>Waymo usa Genie 3 di DeepMind per convertire world knowledge generativa in dati lidar e camera precisi</li>
+  <li>Gli scenari estremi — meteo avverso, guidatori spericolati — vengono generati su richiesta invece che raccolti su strada</li>
+</ul>
+<hr>
+<div class="brutal-card">
+  <h2>💻 ff.151.1 🦾 Sette ore senza fame né motivazione</h2>
+  <p>HMND 01 ha macinato <mark class="note-highlight">7 ore di turno senza una pausa</mark>, prelevando cuscinetti metallici da un cassone alla rinfusa, uno dopo l'altro <a class="note-src" href="https://x.com/i/status/2011456483477561601">[#1617]</a>. Il bin picking è il compito che la robotica industriale insegue da decenni: pezzi ammassati senza ordine, orientamenti casuali, superfici metalliche che riflettono la luce e mandano in confusione la visione artificiale. Farlo per dieci minuti è una demo da fiera. Farlo per sette ore di fila somiglia molto di più a una linea di produzione.</p><p>La parte che pesa è quello che il turno non contiene: nessuna pausa pranzo, nessun crollo di attenzione alla quarta ora, nessuna motivazione da tenere in piedi a fine giornata. <mark class="note-highlight">Zero interruzioni sull'intero turno</mark> significa che il confronto con l'operatore umano smette di riguardare la destrezza e inizia a riguardare la resistenza. E la domanda diventa scomoda: quando si tolgono fatica e noia dall'equazione, cosa resta di esclusivamente umano nel lavoro manuale ripetitivo?</p>
+  <div class="meta">
+    <div class="connections">Connections: <a href="https://fortissimo.substack.com/i/118479393/ff-il-lavoro-non-e-mai-stato-cosi-importante">ff.62.1 Il lavoro non è mai stato così importante</a></div>
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>💻 ff.151.2 💉 Una fiala banale che difende la memoria</h2>
+  <p>Il vaccino contro l'herpes zoster riduce in modo netto l'esordio di demenza, e il segnale si ripete <mark class="note-highlight">in più studi su larga scala</mark> <a class="note-src" href="https://x.com/i/status/1978086965657366533">[#1616]</a>. La cosa curiosa è la provenienza del risultato: arriva da una vaccinazione pensata per la pelle e per il dolore neuropatico, non da un programma di ricerca sulla neurodegenerazione. La protezione del cervello compare come effetto laterale di un gesto sanitario ordinario.</p><p>Il che sposta il baricentro della prevenzione neurologica. <mark class="note-highlight">Una singola fiala già disponibile nell'ambulatorio del medico di base</mark> pesa quanto un farmaco sperimentale, con la differenza che è già approvata, già distribuita e già rimborsata in buona parte dei sistemi sanitari. La ricerca sulla demenza ha bruciato decenni su molecole che non hanno retto le fasi cliniche, mentre uno degli interventi con effetto misurabile stava fermo nel frigorifero della farmacia.</p>
+  <div class="meta">
+    <div class="connections">Connections: <a href="https://fortissimo.substack.com/i/57501919/ff324-vaccini-meglio-dello-stock-market">ff.32.4 Vaccini meglio dello stock market</a> · ff.145.4 Il cibo nuoce gravemente alla salute</div>
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>💻 ff.151.3 🧊 Vetrificare un cervello e poi rileggerlo</h2>
+  <p>Un preprint depositato su bioRxiv il <mark class="note-highlight">28 gennaio 2026</mark> descrive la crioconservazione di cervelli di mammifero tramite vitrificazione, con <mark class="note-highlight">ultrastruttura e istologia preservate</mark> dopo il recupero <a class="note-src" href="https://www.biorxiv.org/content/10.64898/2026.01.28.702375v1">[#1596]</a>. La differenza rispetto al congelamento classico sta nel non formare cristalli: il tessuto passa allo stato vetroso, e le membrane, le sinapsi, la geometria fine delle connessioni restano dove erano. È un criterio verificabile al microscopio, non una promessa commerciale.</p><p>Il punto interessante è concettuale. Se il neuro-pattern conservato a livello ultrastrutturale è il substrato minimo di un ipotetico upload, allora la crionica smette di essere una scommessa sulla rianimazione e diventa una questione di archiviazione: quanto dell'informazione originale sopravvive al passaggio, e chi saprà rileggerla. La criobiologia inizia a somigliare all'archeologia del sé, con la stessa domanda di fondo di ogni scavo — quanto contesto è andato perso nel seppellimento.</p>
+  <div class="meta">
+    <div class="connections">Connections: ff.105.2 Rane, cervelli e c-anali ionici · ff.12.2 Cervelli in fuga</div>
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>💻 ff.151.4 🌧️ Genie 3 fabbrica gli incidenti che servono</h2>
+  <p>Waymo ha collegato <mark class="note-highlight">Genie 3</mark> di DeepMind alla propria pipeline di simulazione, usando la world knowledge del modello generativo per produrre <mark class="note-highlight">dati lidar e camera precisi</mark> anziché semplici video plausibili <a class="note-src" href="https://x.com/i/status/2019809201812545835">[#1595]</a>. La distinzione conta: un sistema di guida autonoma non guarda immagini, legge nuvole di punti e proiezioni geometriche. Se il mondo sintetico non è coerente a quel livello, il training peggiora invece di migliorare.</p><p>Quello che si guadagna è il catalogo degli scenari che nessuno può raccogliere di proposito: meteo avverso, guidatori spericolati, tutta la coda lunga del comportamento stradale che compare una volta ogni milione di chilometri. Il crash test diventa un prompt. Resta aperta la parte fastidiosa della faccenda — un modello generativo produce gli incidenti che ha imparato a immaginare, e la sicurezza di un veicolo si gioca proprio su quelli che nessuno ha mai visto.</p>
+  <div class="meta">
+    
+  </div>
+</div>
+
+
+<div class="cross-refs">
+  <h4>Fili che tirano indietro nel corpus</h4>
+  <ul>
+  <li>ff.62.1 Il lavoro non è mai stato così importante</li>
+  <li>ff.32.4 Vaccini meglio dello stock market</li>
+  <li>ff.145.4 Il cibo nuoce gravemente alla salute</li>
+  <li>ff.105.2 Rane, cervelli e c-anali ionici</li>
+  <li>ff.12.2 Cervelli in fuga</li>
+  </ul>
+</div>
+<hr>
+<div class="backlog">
+  📊 Backlog: ~34 tech · ~14 uomo · ~11 natura
+</div>
+<p style="color: var(--fg-muted); font-size: 0.8rem; text-align: center; margin-top: 2rem;">
+  DRAFT generato il 2026-07-27 · futuro fortissimo · note IDs: 1617, 1616, 1596, 1595
+</p>
+</body>
+</html>

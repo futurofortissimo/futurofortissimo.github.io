@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DRAFT ff.XXX — curve che si appiattiscono</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+  :root {
+    --bg: #0a0a0a; --fg: #e8e8e8; --fg-muted: #999;
+    --accent: #ff4d4d; --accent-dim: #ff4d4d33;
+    --card-bg: #111; --card-border: #ff4d4d;
+    --link: #ff6b6b; --highlight-bg: #ff4d4d22; --highlight-border: #ff4d4d;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.7; max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem; }
+  h1, h2, h3 { font-family: 'IBM Plex Mono', monospace; }
+  h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.3rem; color: var(--accent); }
+  .draft-badge { display: inline-block; background: var(--accent); color: #000; font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 2px; text-transform: uppercase; margin-bottom: 1rem; }
+  .subtitle { font-size: 1.1rem; color: var(--fg-muted); margin-bottom: 1.5rem; font-style: italic; }
+  .keypoints { list-style: none; margin-bottom: 2.5rem; padding: 1rem; border-left: 3px solid var(--accent); background: var(--accent-dim); }
+  .keypoints li { padding: 0.3rem 0; font-weight: 500; }
+  .keypoints li::before { content: '\25B8 '; color: var(--accent); font-weight: 700; }
+  .brutal-card { background: var(--card-bg); border-left: 4px solid var(--card-border); padding: 1.5rem; margin-bottom: 2rem; border-radius: 0 4px 4px 0; }
+  .brutal-card h2 { font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; color: var(--fg); }
+  .brutal-card p { margin-bottom: 0.8rem; color: #ccc; }
+  mark.note-highlight { background: var(--highlight-bg); border-bottom: 2px solid var(--highlight-border); color: var(--fg); padding: 1px 4px; border-radius: 2px; }
+  .meta { margin-top: 1rem; padding-top: 0.8rem; border-top: 1px solid #222; font-size: 0.85rem; color: var(--fg-muted); }
+  .meta a, .connections a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--link); }
+  .meta a:hover, .connections a:hover { border-bottom-style: solid; }
+  a.note-src { color: var(--accent); font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; text-decoration: none; border-bottom: 1px dotted var(--accent); }
+  .connections { margin-top: 0.5rem; font-size: 0.85rem; }
+  hr { border: none; border-top: 1px solid #222; margin: 2rem 0; }
+  .backlog { background: var(--card-bg); border: 1px solid #222; padding: 1.2rem; margin-top: 2.5rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.82rem; color: var(--fg-muted); }
+  .pullquote { border-left: 3px solid var(--accent); padding: 6px 0 6px 18px; margin: 18px 0; font-style: italic; color: #ccc; font-size: 1.05rem; }
+  .cross-refs { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid #222; }
+  .cross-refs h4 { font-size: 0.78rem; color: var(--fg-muted); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.7rem; }
+  .cross-refs ul { list-style: none; padding-left: 0; }
+  .cross-refs li { margin-bottom: 0.35rem; font-size: 0.9rem; color: #ccc; }
+  .cross-refs li::before { content: "↳ "; color: var(--accent); }
+  .cross-refs a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--link); }
+</style>
+</head>
+<body>
+<span class="draft-badge">Draft · ff.155</span>
+<h1>❤️ Oggi parliamo di curve che si appiattiscono</h1>
+<p class="subtitle">In oncologia la forma di un grafico è una prognosi. Il lorlatinib disegna una coda di sopravvivenza che nel polmone metastatico ALK-positivo resta in alto e si distende; il daraxonrasib porta il pancreas metastatico da 7,0 a 13,2 mesi con una compressa al giorno. Entrambi vincono perché hanno un bersaglio con un nome preciso — e intanto p53, mutato in circa metà di tutti i tumori, continua a essere il denominatore comune che nessuno sa ancora riaccendere. Il progresso arriva dove sappiamo nominare le cose, e le cose grandi restano senza nome.</p>
+<ul class="keypoints">
+  <li>Lorlatinib: nel tumore polmonare metastatico ALK-positivo — sottotipo frequente in chi non ha mai fumato — la curva di sopravvivenza si appiattisce a un'altezza raramente osservata (abstract ASCO)</li>
+  <li>Daraxonrasib (Revolution Medicines): pillola orale una volta al giorno, sopravvivenza mediana nel pancreas metastatico a 13,2 mesi, il doppio del precedente standard</li>
+  <li>Trial di fase 3 su circa 500 pazienti con pancreas metastatico già trattati con chemioterapia: 13,2 mesi contro 7,0 del comparatore, +6,2 mesi di mediana</li>
+  <li>Il bersaglio del daraxonrasib è RAS: una via orale al posto dell'infusione cambia la qualità dei mesi guadagnati, non solo il loro numero</li>
+  <li>p53, la proteina che protegge il genoma dai tumori, risulta mutata in circa metà dei casi: un farmaco 'omnibus' che la ripristini sarebbe la leva più trasversale dell'oncologia</li>
+  <li>Asimmetria di fondo: ALK e RAS sono funzioni da spegnere, p53 è una funzione perduta da riaccendere — e la farmacologia blocca meglio di quanto restituisca</li>
+  <li>Il pancreas metastatico resta tra i tumori più letali conosciuti: raddoppiare una mediana lì dentro pesa più che raddoppiarla altrove</li>
+</ul>
+<hr>
+<div class="brutal-card">
+  <h2>❤️ ff.155.1 🫁 La curva che si rifiuta di scendere</h2>
+  <p>Il lorlatinib lavora su un bersaglio stretto: il riarrangiamento ALK del tumore polmonare metastatico, un sottotipo che colpisce con particolare frequenza chi non ha mai fumato. La curva di sopravvivenza presentata negli abstract ASCO si appiattisce a un'altezza che in oncologia toracica si vede raramente <a class="note-src" href="https://www.asco.org/abstracts-presentations/259325?utm_source=substack&amp;utm_medium=email">[#1629]</a>. Per misurare quanto sia anomala basta prendere un metro di paragone da un altro reparto: nel pancreas metastatico il braccio di confronto di un trial di fase 3 chiude a <mark class="note-highlight">7,0 mesi</mark> di mediana <a class="note-src" href="https://ir.revmed.com/news-releases/news-release-details/daraxonrasib-demonstrates-unprecedented-overall-survival-benefit">[#1451]</a>. Lì il grafico scivola verso il basso; qui resta alto e si distende.</p><p>Il prezzo di quel plateau è la selettività. ALK identifica una fetta ben delimitata di pazienti, mentre p53 — il guardiano del genoma — risulta mutata in <mark class="note-highlight">circa metà</mark> di tutti i tumori <a class="note-src" href="https://www.nejm.org/doi/full/10.1056/NEJMoa2508820?utm_source=substack&amp;utm_medium=email">[#1557]</a>. La medicina di precisione trasforma in condizione cronica gestibile esattamente ciò che sa nominare con esattezza, e l'esattezza si paga in ampiezza. Resta la domanda che l'abstract non chiude: quanto a lungo tiene quella coda. Un plateau osservato per qualche anno dice molto su un farmaco e ancora poco su una vita.</p>
+  <div class="meta">
+    <div class="connections">Connections: <a href="https://fortissimo.substack.com/i/155426992/ff-tumore-vs-battiti-cardiaci">ff.120.5 Tumore vs battiti cardiaci?</a></div>
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>❤️ ff.155.2 💊 Il pancreas dentro una compressa</h2>
+  <p>Il daraxonrasib di Revolution Medicines si prende per bocca, <mark class="note-highlight">una volta al giorno</mark>, e porta la sopravvivenza mediana nel tumore pancreatico metastatico a <mark class="note-highlight">13,2 mesi</mark>, il doppio del riferimento precedente <a class="note-src" href="https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2024.1323198/full?utm_source=substack&amp;utm_medium=email">[#1576]</a>. Il pancreas metastatico rimane tra i tumori più letali che la clinica conosca: raddoppiare una mediana in quel territorio pesa più che raddoppiarla altrove, perché parte da una base bassissima.</p><p>La forma della somministrazione cambia il contenuto di quei mesi. Tredici mesi scanditi da una compressa a colazione hanno una texture diversa da tredici mesi scanditi dal calendario delle infusioni, dai cateteri, dai viaggi verso il day hospital. È la parte del beneficio che nessun endpoint di fase 3 misura direttamente, e che il paziente sente per primo. La medicina di precisione erode le fortezze oncologiche una per volta, e quando ci riesce si porta dietro anche la logistica della malattia.</p>
+  <div class="meta">
+    <div class="connections">Connections: <a href="https://fortissimo.substack.com/i/155426992/ff-tumore-vs-battiti-cardiaci">⚔️ ff.120.5 Tumore vs battiti cardiaci?</a></div>
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>❤️ ff.155.3 🧬 Il guardiano che sappiamo solo guardare</h2>
+  <p>p53 è la proteina più importante che il corpo schiera contro i tumori, e il suo gene risulta mutato in <mark class="note-highlight">circa metà</mark> dei casi <a class="note-src" href="https://www.nejm.org/doi/full/10.1056/NEJMoa2508820?utm_source=substack&amp;utm_medium=email">[#1557]</a>. Un farmaco «omnibus» capace di ripristinarlo avrebbe una leva che nessun'altra molecola in oncologia possiede: una singola strategia sul denominatore comune, al posto di un bersaglio per ogni sottotipo genetico.</p><p>La difficoltà è strutturale. ALK e RAS sono funzioni accese da spegnere, e la farmacologia moderna spegne bene: lo dimostrano il plateau del lorlatinib e i <mark class="note-highlight">13,2 mesi</mark> del daraxonrasib. p53 mutata è una funzione perduta da riaccendere, un compito di restituzione più che di blocco. Per questo il campo continua a moltiplicare vittorie di nicchia mentre il bersaglio che coprirebbe il 50% dei tumori resta scoperto.</p><p>Il paradosso vale come regola generale del settore: si avanza dove la biologia offre un interruttore, si resta fermi dove offre un'assenza. Se la metà dei tumori condivide lo stesso difetto e nessuno riesce a correggerlo, il problema riguarda meno l'investimento e più la grammatica delle molecole che sappiamo costruire.</p>
+  <div class="meta">
+    <div class="connections">Connections: 💎 ff.110.3 Le criptovalute contro obsolescenza statale · 🩵ff.97.3 Caressa e carezze contro lo stress</div>
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>❤️ ff.155.4 📉 Cinquecento pazienti dopo la chemio</h2>
+  <p>Il trial di fase 3 del daraxonrasib ha arruolato <mark class="note-highlight">circa 500 pazienti</mark> con cancro pancreatico metastatico già trattati con chemioterapia, la popolazione in cui i numeri di solito peggiorano invece di migliorare. Il risultato: <mark class="note-highlight">13,2 mesi contro 7,0</mark> del comparatore, con RAS come bersaglio <a class="note-src" href="https://ir.revmed.com/news-releases/news-release-details/daraxonrasib-demonstrates-unprecedented-overall-survival-benefit">[#1451]</a>. Sono 6,2 mesi di mediana guadagnati nella seconda linea di terapia, dove storicamente si guadagnano settimane.</p><p>Il vero test arriva dopo l'approvazione. Le mediane dei trial vivono in una popolazione selezionata, con protocolli seguiti e comorbidità sotto controllo; il mondo reale erode quasi sempre qualche punto percentuale. Se il dato tiene, il pancreas metastatico si sposta di categoria e le linee guida si riscrivono in fretta.</p><p>Vale però tenere la misura giusta: tredici mesi restano tredici mesi. Il salto da 7,0 a 13,2 riguarda la velocità con cui una malattia uccide, mentre la parola «gestibile» appartiene al plateau del lorlatinib e a curve che si appiattiscono per anni. Il pancreas ha appena guadagnato tempo, e il tempo guadagnato è la valuta con cui si compra la prossima molecola.</p>
+  <div class="meta">
+    <div class="connections">Connections: ff.53.1 Meno morti per il cancro</div>
+  </div>
+</div>
+
+
+<div class="cross-refs">
+  <h4>Fili che tirano indietro nel corpus</h4>
+  <ul>
+  <li>ff.53.1 Meno morti per il cancro — la mortalità che scendeva prima dei farmaci mirati</li>
+  <li>ff.53.3 Dal COVID al cancro — piattaforme terapeutiche riconvertite</li>
+  <li>ff.120.5 Tumore vs battiti cardiaci? — quando la biologia diventa contabilità</li>
+  <li>ff.97.3 Caressa e carezze contro lo stress — il corpo come variabile clinica</li>
+  </ul>
+</div>
+<hr>
+<div class="backlog">
+  📊 Backlog: ~36 tech · ~22 uomo · ~11 natura
+</div>
+<p style="color: var(--fg-muted); font-size: 0.8rem; text-align: center; margin-top: 2rem;">
+  DRAFT generato il 2026-07-30 · futuro fortissimo · note IDs: 1629, 1576, 1557, 1451
+</p>
+</body>
+</html>

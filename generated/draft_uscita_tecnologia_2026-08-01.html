@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DRAFT ff.XXX — calcolo fuori scala</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+  :root {
+    --bg: #0a0a0a; --fg: #e8e8e8; --fg-muted: #999;
+    --accent: #448aff; --accent-dim: #448aff33;
+    --card-bg: #111; --card-border: #448aff;
+    --link: #6ba3ff; --highlight-bg: #448aff22; --highlight-border: #448aff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.7; max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem; }
+  h1, h2, h3 { font-family: 'IBM Plex Mono', monospace; }
+  h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.3rem; color: var(--accent); }
+  .draft-badge { display: inline-block; background: var(--accent); color: #000; font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 2px; text-transform: uppercase; margin-bottom: 1rem; }
+  .subtitle { font-size: 1.1rem; color: var(--fg-muted); margin-bottom: 1.5rem; font-style: italic; }
+  .keypoints { list-style: none; margin-bottom: 2.5rem; padding: 1rem; border-left: 3px solid var(--accent); background: var(--accent-dim); }
+  .keypoints li { padding: 0.3rem 0; font-weight: 500; }
+  .keypoints li::before { content: '\25B8 '; color: var(--accent); font-weight: 700; }
+  .brutal-card { background: var(--card-bg); border-left: 4px solid var(--card-border); padding: 1.5rem; margin-bottom: 2rem; border-radius: 0 4px 4px 0; }
+  .brutal-card h2 { font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; color: var(--fg); }
+  .brutal-card p { margin-bottom: 0.8rem; color: #ccc; }
+  mark.note-highlight { background: var(--highlight-bg); border-bottom: 2px solid var(--highlight-border); color: var(--fg); padding: 1px 4px; border-radius: 2px; }
+  .meta { margin-top: 1rem; padding-top: 0.8rem; border-top: 1px solid #222; font-size: 0.85rem; color: var(--fg-muted); }
+  .meta a, .connections a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--link); }
+  .meta a:hover, .connections a:hover { border-bottom-style: solid; }
+  a.note-src { color: var(--accent); font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; text-decoration: none; border-bottom: 1px dotted var(--accent); }
+  .connections { margin-top: 0.5rem; font-size: 0.85rem; }
+  hr { border: none; border-top: 1px solid #222; margin: 2rem 0; }
+  .backlog { background: var(--card-bg); border: 1px solid #222; padding: 1.2rem; margin-top: 2.5rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.82rem; color: var(--fg-muted); }
+  .pullquote { border-left: 3px solid var(--accent); padding: 6px 0 6px 18px; margin: 18px 0; font-style: italic; color: #ccc; font-size: 1.05rem; }
+  .cross-refs { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid #222; }
+  .cross-refs h4 { font-size: 0.78rem; color: var(--fg-muted); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.7rem; }
+  .cross-refs ul { list-style: none; padding-left: 0; }
+  .cross-refs li { margin-bottom: 0.35rem; font-size: 0.9rem; color: #ccc; }
+  .cross-refs li::before { content: "↳ "; color: var(--accent); }
+  .cross-refs a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--link); }
+</style>
+</head>
+<body>
+<span class="draft-badge">Draft · ff.157</span>
+<h1>💻 Oggi parliamo di calcolo fuori scala</h1>
+<p class="subtitle">Novecento miliardi su un'azienda di pochi anni, quindici milioni di parametri su una sola GPU — il calcolo si allarga e si restringe nello stesso momento. Un wafer intero sputa token venti volte più veloce di Blackwell, 8.500 robot si arruolano nella rete elettrica cinese, i data center traslocano nei muri delle case nuove. E — sorpresa — un benchmark segreto da mille parole mai pubblicate è appena caduto.</p>
+<ul class="keypoints">
+  <li>Anthropic raccoglie 30 miliardi di dollari a una valutazione di 900 miliardi, sopra la capitalizzazione all'IPO di quasi ogni società venture-backed della storia</li>
+  <li>Il primo JEPA addestrato end-to-end dai pixel grezzi: 15 milioni di parametri, una singola GPU, poche ore di training</li>
+  <li>Cerebras genera token oltre 20 volte più veloce delle GPU Nvidia su alcuni modelli: chip wafer-scale e SRAM ad alta velocità, CS-3 contro DGX B200 Blackwell</li>
+  <li>State Grid ordina 8.500 robot embodied per la rete elettrica cinese: budget 6,8 miliardi di RMB (~1 miliardo di dollari), quattro scenari operativi</li>
+  <li>Nvidia, il costruttore PulteGroup e la startup Span installeranno mini data center nelle pareti delle case di nuova costruzione</li>
+  <li>Un benchmark segreto è caduto: 1.000 parole mai pubblicate bastano ora a un modello per riconoscere l'autore</li>
+  <li>Ethan Mollick mette a verbale: «Claude Mythos was indeed not marketing»</li>
+</ul>
+<hr>
+<div class="brutal-card">
+  <h2>💻 ff.157.1 💸 Novecento miliardi, quindici milioni di parametri</h2>
+  <p>Anthropic sta raccogliendo <mark class="note-highlight">30 miliardi di dollari a una valutazione di 900 miliardi</mark>, più della capitalizzazione all'IPO di quasi tutte le società venture-backed della storia. Chiamarla ancora «startup» suona come un errore di categoria: a questi prezzi il mercato sta comprando l'opzione su un'economia intera ricostruita attorno agli agenti, molto più che i ricavi di oggi. Il rischio abita quasi per intero in quella scommessa — e chi ricorda ff.1.2 sa quanto può essere breve il passo da 51 miliardi a zero. <a class="note-src" href="https://www.ft.com/content/9deae3c6-716d-4f4d-8b09-434d8519f847?syn-25a6b1a6=1">[#1581]</a></p><p>Sul fondo opposto della scala, nella stessa stagione, è arrivato il primo JEPA che si addestra end-to-end dai pixel grezzi: <mark class="note-highlight">15 milioni di parametri, una singola GPU, poche ore</mark>. Un'architettura che impara a rappresentare il mondo con un budget da hobbista, mentre il capitale prezza in centinaia di miliardi chi quel mondo vuole automatizzarlo. Se la frontiera tecnica si comprime così, la scommessa da 900 miliardi paga solo a condizione che il vantaggio stia altrove: nei dati, nella distribuzione, negli agenti già dentro i flussi di lavoro. <a class="note-src" href="https://twitter.com/i/status/2046371351016161745">[#1550]</a></p>
+  <div class="meta">
+    <div class="connections">Connections: <a href="https://fortissimo.substack.com/i/43851632/ff12-da-51-miliardi-a-0">ff.1.2 Da 51 miliardi a 0</a></div>
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>💻 ff.157.2 ⚡ Un wafer intero contro Blackwell</h2>
+  <p>Il chip extra-large e la SRAM ad alta velocità permettono al CS-3 di Cerebras di generare token <mark class="note-highlight">oltre 20 volte più veloce delle GPU Nvidia</mark> su alcuni modelli — il confronto diretto è con il DGX B200, il sistema Blackwell di punta. La partita competitiva si è spostata sulla latenza percepita: se l'esperienza agentica si gioca sui millisecondi per token, l'architettura wafer-scale attacca il monopolio Nvidia esattamente dove fa più male, la velocità che l'utente sente sotto le dita. <a class="note-src" href="https://newsletter.semianalysis.com/p/cerebras-faster-tokens-please">[#1579]</a> <a class="note-src" href="https://www.cerebras.ai/blog/cerebras-cs-3-vs-nvidia-dgx-b200-blackwell">[#1578]</a></p><p>Intanto la domanda di calcolo incarnato prende dimensioni da piano quinquennale: State Grid, il gestore della rete elettrica cinese, ha annunciato l'acquisto di <mark class="note-highlight">8.500 robot embodied con un budget di 6,8 miliardi di RMB</mark>, circa un miliardo di dollari, da schierare su quattro scenari operativi a partire dall'ispezione della rete. Quando una utility ordina robot come ordinerebbe trasformatori, i millisecondi per token entrano di diritto nei requisiti di infrastruttura. <a class="note-src" href="https://twitter.com/cyberrobooo/status/2048222018974405096">[#1547]</a></p>
+  <div class="meta">
+    <div class="connections">Connections: <a href="https://fortissimo.substack.com/i/179548983/ff-svizzero-no-nvidia">ff.139.1 Svizzero? No, NVIDIA</a> · ff.138.1 La strada più veloce</div>
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>💻 ff.157.3 🕵️ Mille parole mai pubblicate</h2>
+  <p>C'è chi tiene un mazzo di <mark class="note-highlight">benchmark segreti, rivelati solo quando cadono</mark>. Il test funziona così: consegnare al modello 1.000 parole scritte di proprio pugno e mai pubblicate, poi chiedere chi sia l'autore. Fino a ieri le risposte andavano a vuoto; questa settimana, per la prima volta, uno di quei benchmark è caduto. <a class="note-src" href="https://twitter.com/i/status/2044962428547695007">[#1544]</a></p><p>La caduta pesa per due ragioni. La prima riguarda la misura: i benchmark pubblici si saturano il giorno in cui finiscono nel training set, mentre quelli costruiti su testi che la rete ha mai visto restano l'ultima misura onesta — e anche quella ha appena ceduto. La seconda riguarda tutti gli altri: se <mark class="note-highlight">1.000 parole inedite</mark> bastano a riconoscere la mano di chi le ha scritte, lo stile è diventato un identificatore, con tutto quello che comporta per l'anonimato di chiunque abbia pubblicato abbastanza da farsi imparare.</p>
+  <div class="meta">
+    <div class="connections">Connections: 🍫ff.139.1 Svizzero? No, NVIDIA · 💸 ff.3.7 Tokens che costano come una Lamborghini</div>
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>💻 ff.157.4 🏠 Il data center trasloca nel muro</h2>
+  <p>Nvidia e il costruttore PulteGroup si sono alleati con la startup Span per installare <mark class="note-highlight">mini data center nelle pareti delle case di nuova costruzione</mark>. Tre firme molto diverse — un chipmaker, un homebuilder e una startup — sullo stesso progetto: il calcolo AI entra nel capitolato edilizio, accanto all'impianto elettrico e alla caldaia. <a class="note-src" href="https://twitter.com/i/status/2051697983197225029">[#1571]</a></p><p>La domanda giusta è già nella notizia: <mark class="note-highlight">chi possiede il calcolo, quando ogni casa nuova ne ospita una scheggia?</mark> Se la risposta è «chi possiede i muri», l'edilizia diventa infrastruttura computazionale e il capannone remoto perde il monopolio della vicinanza ai dati. È lo stesso movimento della scommessa da 900 miliardi vista sopra, osservato dal basso: il calcolo cerca casa, letteralmente.</p>
+  <div class="meta">
+    <div class="connections">Connections: ff.16.4 Quali startup monitorare?</div>
+  </div>
+</div>
+<div class="brutal-card">
+  <h2>💻 ff.157.5 🔮 «Claude Mythos non era marketing»</h2>
+  <p>Ethan Mollick l'ha scritto senza giri di parole: <mark class="note-highlight">«So Claude Mythos was indeed not marketing»</mark>. In quella frase la parola che pesa di più è «indeed»: registra un sospetto precedente — il riflesso condizionato di chi ha visto troppe demo gonfiate — che si scioglie davanti all'uso reale del modello. <a class="note-src" href="https://www.linkedin.com/posts/emollick_so-claude-mythos-was-indeed-not-marketing-ugcPost-7458285815656415232-q0N0?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAABIxLMUBRUppy-bOKJj9naMo0QXZnkUNfBE&utm_campaign=copy_link">[#1564]</a></p><p>Messo in fila con il resto dell'uscita, il post chiude il cerchio: il capitale prezza Anthropic <mark class="note-highlight">900 miliardi</mark>, i benchmark privati cadono uno dopo l'altro, e chi teneva il punto dello scetticismo mette a verbale la resa. Restano aperte tutte le domande su quanto valga davvero l'opzione sul futuro comprata a quel prezzo — ma il carico della prova, per la prima volta da anni, si è spostato sulle spalle di chi sostiene che sia solo hype.</p>
+  <div class="meta">
+    
+  </div>
+</div>
+
+
+<div class="cross-refs">
+  <h4>Fili che tirano indietro nel corpus</h4>
+  <ul>
+  <li>ff.1.2 Da 51 miliardi a 0 — quando le valutazioni evaporano</li>
+  <li>ff.139.1 Svizzero? No, NVIDIA — il monopolio dell'inferenza</li>
+  <li>ff.3.7 Tokens che costano come una Lamborghini — l'economia dei token</li>
+  <li>ff.138.1 La strada più veloce — la corsa alla latenza</li>
+  <li>ff.16.4 Quali startup monitorare? — la mappa delle scommesse</li>
+  </ul>
+</div>
+<hr>
+<div class="backlog">
+  📊 Backlog: ~34 tech · ~22 uomo · ~11 natura
+</div>
+<p style="color: var(--fg-muted); font-size: 0.8rem; text-align: center; margin-top: 2rem;">
+  DRAFT generato il 2026-08-01 · futuro fortissimo · note IDs: 1581, 1579, 1578, 1571, 1564, 1550, 1547, 1544
+</p>
+</body>
+</html>
