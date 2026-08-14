@@ -1,5 +1,244 @@
 export const rawData = [
     {
+        "url": "https://fortissimo.substack.com/p/ff153-e-tutto-un-token",
+        "title": "🎼 ff.153 E' tutto un token",
+        "subtitle": "Tra sagre estive e pipp* mentali di Claude",
+        "keypoints": [],
+        "subchapters": [
+            {
+                "title": "🪚 ff.153.1 Le seghe mentali di Claude",
+                "link": "https://fortissimo.substack.com/i/209629730/ff1531-le-seghe-mentali-di-claude",
+                "content": "L’economia del futuro si baserà sullo spremere gli LLMs per ottimizzare i loro token (che sono nelle risposte, ma sempre più nei “pensieri” per le risposte, ☕ ff.135.4 L’AGI avanza: il “caffè” cinese ). A riguardo, GPT 5.6 Terra pensa - a parità di risultato - 100 volte meno di Claude… E Kimi K3, il modello cinese * open source *, agentico, e delle prestazioni paragonabili a Opus 5, può tecnicamente girare sul vostro computer di casa. Anche se fattibile, “pensa” molto lentamente (32s per token). Mi viene in mente: \"Quarantadue!\" urlò Loonquawl. \"Questo è tutto ciò che sai dire dopo un lavoro di sette milioni e mezzo di anni?\" Douglas Adams, Guida galattica per gli autostoppisti PS. A quanto pare, siamo stati “allenati” con 20 miliardi di token, mentre Claude Opus 300 trilioni, ossia 15.000 volte “più letture” (minuto 27.01).",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/012e44a9-2612-4565-8805-34abb96d1452_624x701.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "Guida galattica per gli autostoppisti",
+                        "url": "https://amzn.to/4bCYgHI"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "☕ ff.135.4 L’AGI avanza: il “caffè” cinese",
+                        "url": "https://fortissimo.substack.com/i/176809376/ff1354-lagi-avanza-il-caffe-cinese"
+                    }
+                ]
+            },
+            {
+                "title": "🥛 ff.153.2 Latt(ato) alle ginocchia",
+                "link": "https://fortissimo.substack.com/i/209629730/ff1532-lattato-alle-ginocchia",
+                "content": "Vi ricordate quando parlavamo di acido lattico, performance e cancro ( 🥇 ff.53.2 Sportivi professionisti in nostro aiuto ) ? Dopo due anni di lavoro, Enervit ha rilasciato C2:1PRO LACTATE GEL MIX . Tra i collaboratori, il noto Iñigo San Millán anche collaboratore del team UAE. Ci spiega “lo shuttle del lattato” qui sotto. PS. Serve per lo più ai professionisti, o a gente che “consuma” talmente tanta energia che è limitata solo dall’ intake /assorbimento istantaneo. Noi comuni mortali possiamo continuare a mangiare torte. O gelati. O grasso sub-cutaneo.",
+                "images": [],
+                "references": [
+                    {
+                        "text": "Enervit ha rilasciato C2:1PRO LACTATE GEL MIX",
+                        "url": "https://www.runnersworld.com/it/alimentazione/integratori/a73331917/integratori-lattato-enervit-gel-sport-endurance-nutrizione-sportiva/"
+                    },
+                    {
+                        "text": "Iñigo San Millán",
+                        "url": "https://www.uaeteamemirates.com/rider/inigo-san-millan/"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "🥇 ff.53.2 Sportivi professionisti in nostro aiuto",
+                        "url": "https://fortissimo.substack.com/i/104014049/ff532-sportivi-professionisti-in-nostro-aiuto"
+                    }
+                ]
+            },
+            {
+                "title": "🌱 ff.153.3 Un terrario portatile",
+                "link": "https://fortissimo.substack.com/i/209629730/ff1533-un-terrario-portatile",
+                "content": "L’arte generativa non è per forza AI slop . Anzi. Permette di fare cose del tutto nuove, come “ rivedere i propri sogni al risveglio ”. Serve solo un po’ di gusto (e genio). Mur Mur di Oio , è un altro esempio: tecnicamente uno speaker, emette però suoni dell’ecosistema “esistente” al suo interno. Tamagochi?",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/a4999b1a-acd6-422c-a055-382b1a727adf_800x355.gif",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/7350fa7c-01f9-4fcf-bbdd-73f055aa01cf_1440x795.bin",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/4f87f4b9-abb2-4bfd-952b-8e253a9fdf1a_1440x688.bin",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "rivedere i propri sogni al risveglio",
+                        "url": "https://www.itsnicethat.com/articles/modem-dream-recorder-product-design-project-250625"
+                    },
+                    {
+                        "text": "Mur Mur",
+                        "url": "https://www.itsnicethat.com/articles/oio-mattering-mur-mur-product-design-animation-project-030826"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "🥣 ff.153.4 Porridge contro la plastica",
+                "link": "https://fortissimo.substack.com/i/209629730/ff1534-porridge-contro-la-plastica",
+                "content": "A quanto pare possiamo usare l’avena (micro/nano porosa) per catturare le molecole di plastica che ricircolano tra intestino e fegato. Il progetto si chiama neutraoat (probabilmente anche un beta-glucano non “modificato” può già aiutare, quindi continuate con i porridge!).",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/8c6ad03b-8c55-4dfa-adcb-b4d620b5e68f_931x529.png",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/1927c935-6b60-4d5c-aa68-1b8cc52c412f_1103x719.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "neutraoat",
+                        "url": "https://neutraoat.com/"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "🎨 ff.153.5 Sagre belle o brutte?",
+                "link": "https://fortissimo.substack.com/i/209629730/ff1535-sagre-belle-o-brutte",
+                "content": "Tornando alle sagre… L’AI ci ha tolto le sagre brutte? O ci ha migliorato la vita? Ai posteri l’ardua sentenza. Al prossimo 10, 20 o 30! Intanto, se vuoi:",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/9e70367c-1042-4a6c-9807-5aa827351925_436x587.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "L’AI ci ha tolto le sagre brutte?",
+                        "url": "https://www.ilpost.it/2026/07/26/ai-locandine-sagre/"
+                    },
+                    {
+                        "text": "supporta con un caffè",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    },
+                    {
+                        "text": "michele merelli",
+                        "url": "https://www.linkedin.com/in/michelemerelli/"
+                    }
+                ],
+                "connections": []
+            }
+        ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff152-un-nuovo-futuro",
+        "title": "🎼 ff.152 Un nuovo futuro (?)",
+        "subtitle": "Un nuovo futuro fortissimo, per altri tempi?",
+        "keypoints": [],
+        "subchapters": [
+            {
+                "title": "🧠 ff.152.1 Il pensiero di Claude (J-Space)",
+                "link": "https://fortissimo.substack.com/i/206037608/ff1521-il-pensiero-di-claude-j-space",
+                "content": "Anthropic studia gli LLMs come un cervello, vivisezionando l’attività dei “neuroni” : hanno scoperto il Jacobian Space. Uno spazio di parole “pensate”, mentre altre vengono “dette”. Quando applichiamo questa tecnica all’attività interna di Claude, otteniamo un elenco di parole – il contenuto dello spazio J in quel preciso istante – che possiamo semplicemente leggere. Claude elabora il testo attraverso una serie di fasi interne multiple, chiamate livelli, e applicando questa tecnica a diversi livelli, possiamo osservare l’evoluzione di queste parole silenziose nello spazio J, mentre il modello elabora ciò che deve dire. Ciò che appare nello spazio J va ben oltre il testo che Claude sta leggendo o scrivendo. Quando Claude legge del codice con un bug che nessuno ha segnalato, il suo spazio J contiene “ERRORE”. Quando legge le lettere grezze di una sequenza proteica, lo spazio J contiene la funzione biologica della proteina. E così si può controllare il pensiero di Claude:",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/eae34231-95de-4af0-a392-039eb219a346_1760x760.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "Anthropic studia gli LLMs come un cervello, vivisezionando l’attività dei “neuroni”",
+                        "url": "https://www.anthropic.com/research/global-workspace"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "🏋️‍♂️ ff.152.2 Un piano di allenamento, ma per la vita.",
+                "link": "https://fortissimo.substack.com/i/206037608/ff1522-un-piano-di-allenamento-ma-per-la-vita",
+                "content": "Chi non conosce un amico che di recente si è lanciato nella preparazione di un HYROX o di un IRONMAN? Giochi finiti (vedi sotto) che chiedono tabelle di allenamento e dedizione. Momentanee. Alan Couzens ci ricorda che stiamo “giocando” o “allenandoci”, sì, ma per la vita. PS: a 80 anni per mantenere un buon livello di fitness, dovremo allenarci 760 ore all’anno.",
+                "images": [],
+                "references": [],
+                "connections": []
+            },
+            {
+                "title": "🎮 ff.152.3 Giochi finiti e infiniti",
+                "link": "https://fortissimo.substack.com/i/206037608/ff1523-giochi-finiti-e-infiniti",
+                "content": "Sono un videogiocatore incallito, non solo davanti a uno schermo. Tutti forse lo siamo, e la realtà è sempre più simulata ( 🎼 ff.98 Giochi e simulazioni ). Non a caso, mi è stato regalato - per il 32esimo compleanno - questo bel libro . Volevo condividerlo.",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/db93ae54-0ace-45f0-bede-384da70730d5_311x466.jpeg",
+                        "caption": "Giochi finiti e infiniti, James P. Carse"
+                    },
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/3cd312f5-a4f8-489a-a243-74d68c61d397_2268x3291.jpeg",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "questo bel libro",
+                        "url": "https://amzn.to/3S3VQez"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "🎼 ff.98 Giochi e simulazioni",
+                        "url": "https://fortissimo.substack.com/p/ff98-giochi-e-simulazioni"
+                    }
+                ]
+            },
+            {
+                "title": "🤠 ff.152.4 Oliver, davvero?",
+                "link": "https://fortissimo.substack.com/i/206037608/ff1524-oliver-davvero",
+                "content": "Una canzone che forse non conoscevate, di un artista a cui tenevo che non c’è più - per un volo in elicottero andato male. After all, Life Goes On , I guess… Ci è rimasta la storia della sua fondazione, il cui dominio è un programma (maiuscole per facilitare la lettura)… https://www.DrOliverTreesExtremelyEpicArtGrantForBabyGeniuses.com/",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/419e3ea6-c4aa-448b-84a3-3c3ca825fd83_905x755.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [],
+                "connections": []
+            },
+            {
+                "title": "🚲 ff.152.5 Ho risparmiato 900€ andando al lavoro in bici",
+                "link": "https://fortissimo.substack.com/i/206037608/ff1525-ho-risparmiato-900-andando-al-lavoro-in-bici",
+                "content": "Ennesimo progetto costruito grazie all’AI (che però è esploso su LinkedIn con 200.000 visualizzazioni ): i miei bike-to-work visualizzati. Tutte le statistiche sul sito . Se andate in bici al lavoro (e usate Strava), potete vedere il vostro: https://bike2work.pages.dev/",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/41f728a9-9f44-4141-8885-ea16d93b6cda_435x807.png",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/fadf88ff-2054-481d-91f3-87bcb42cbfa9_440x440.gif",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "esploso su LinkedIn con 200.000 visualizzazioni",
+                        "url": "https://lnkd.in/p/dv72NSai"
+                    },
+                    {
+                        "text": "sul sito",
+                        "url": "https://micmer-git.github.io/bike-to-work/"
+                    },
+                    {
+                        "text": "supporta con un caffè",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    },
+                    {
+                        "text": "michele merelli",
+                        "url": "https://www.linkedin.com/in/michelemerelli/"
+                    }
+                ],
+                "connections": []
+            }
+        ]
+    },
+    {
         "url": "https://fortissimo.substack.com/p/ff151-immagina-puoi",
         "title": "🎼 ff.151 Immagina, puoi!",
         "subtitle": "Simulare odori, generare il web in live e altra Paprika",
