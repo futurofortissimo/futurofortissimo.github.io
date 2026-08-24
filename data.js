@@ -1,5 +1,627 @@
 export const rawData = [
     {
+        "url": "https://fortissimo.substack.com/p/ff154-viaggiare-da-fermi",
+        "title": "🎼 ff.154 Viaggiare, da fermi",
+        "subtitle": "Riflessioni sulla vacanza, in vacanza",
+        "keypoints": [],
+        "subchapters": [
+            {
+                "title": "🪑 ff.154.1 Viaggiare, fermi",
+                "link": "https://fortissimo.substack.com/i/210361320/ff1541-viaggiare-fermi",
+                "content": "Non sono solo le persone: è il viaggio stesso che è sparito: non viaggiamo attraverso lo spazio, ma in uno spazio. Dalla comoda poltrona di casa passiamo al sedile di una macchina, a quella di uno Starbucks identico in tutto il mondo, al sedile di un aereo per finire in un bar stile IKEA a Bali. Pensiamo di viaggiare, ma siamo sempre su una poltrona. Come a casa.",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/056144d4-907b-4062-9a31-876caf0f8a78_481x357.png",
+                        "caption": "Dal libro Giochi finiti e infiniti (le foto da boomer son quello che ci resta di “autenticità online?”)"
+                    }
+                ],
+                "references": [],
+                "connections": []
+            },
+            {
+                "title": "🚲 ff.154.2 Viaggiare (?) in bicicletta",
+                "link": "https://fortissimo.substack.com/i/210361320/ff1542-viaggiare-in-bicicletta",
+                "content": "Forse un po’ per questo, da qualche anno viaggio in bicicletta, attraverso lo spazio (freddo e piovoso, talvolta). Così che, al ritorno, la poltrona di casa avesse viaggiato con me: anch’essa diversa : più calda e asciutta, e decisamente più comoda di una sella.",
+                "images": [],
+                "references": [],
+                "connections": []
+            },
+            {
+                "title": "🧭 ff.154.3 Dov’è finita l’avventura?",
+                "link": "https://fortissimo.substack.com/i/210361320/ff1543-dove-finita-lavventura",
+                "content": "Fabio Genovesi - non a caso pure ciclo viaggiatore - si spinge però oltre. Anche viaggiare attraverso lo spazio non basta. Ci manca l’avventura. Intrecciando letteratura epica (non a caso l’ Odissea ) e tecnologia, scrive: Scrivo con la penna. Romanzi, racconti, ogni testo e queste righe stesse, li scrivo con la penna sulla carta. Mi sembra una cosa normalissima, come mangiare con la forchetta, pedalare con la bicicletta. Lo stupore che invece provoca, racconta quanto sono cambiate le cose, e quanto ci siamo lasciati cambiare noi. Badando a vantaggi immediati e miseri come il risparmio di tempo e fatica. Ma niente di buono viene dal risparmio, quando risparmiamo noi stessi. Al contrario, credo si tratti di una triste perdita. La penna, per poter tracciare qualcosa di leggibile, ci chiede un attimo in più del computer, e in quell'attimo succede una cosa enorme: le parole che volevi scrivere, nel tragitto tra te e la pagina cambiano, ruota la frase, muta il suono. Scrivere è disegnare, è suonare, è amare: quando si tratta di queste meraviglie, che senso ha cercare di sbrigarsi? Dobbiamo semmai farcele durare più che si può. […] Prendiamo tre capolavori della letteratura, nelle cui pagine sta infusa l'essenza dell'avventura umana: l'Odissea, I promessi sposi, Moby-Dick. Li separano millenni, eppure sono uniti dal fatto che oggi le loro vicende non starebbero più in piedi: un paio di messaggi su WhatsApp, un navigatore satellitare, un ecoscandaglio di quelli buoni, e le loro mille peripezie si risolverebbero in tre pagine. Non è un caso che nei romanzi, nei film e nelle serie di questi ultimi anni, perché possa accadere qualcosa di avventuroso deve mancare la rete telefonica, spaccarsi il cellulare o morire la batteria. Perché possa spuntare l'avventura, dobbiamo sopprimere la tecnologia. Che ci offre tante nuove possibilità ma ne cancella molte altre, dai libri, dagli schermi, dalla vita intera. Le nostre piccole vite, dove piccole occasioni d'avventura ce le offrono ogni tanto viaggi, gite e giretti. Anzi, ce le offrirebbero, ma prima di partire è già tutto valutato, deciso, prenotato. Sai che strada farai, quanto ci metterai, dove mangerai e dormirai. Sai se il parcheggio sarà gratuito e vicino, se sarà comodo il cuscino della camera dove hai previsto di passare una notte prevedibilmente triste. L'avventura invece, piccola o grande, sta nel non prevedere, nel non conoscere in anticipo e forse nemmeno dopo, affrontando l'oceano misterioso in cui si specchia la nostra naturale, profonda, benedetta ignoranza. E il racconto è la barchetta traballante con cui proviamo a muoverci su tutto quello che non sappiamo e non sapremo mai. Mio nonno diceva: «Dove non arrivo, ci tiro il cappello». Fabio Genovesi, la Lettura , 19 luglio 2026",
+                "images": [],
+                "references": [
+                    {
+                        "text": "la Lettura",
+                        "url": "https://www.corriere.it/cultura/la-lettura/26_luglio_17/dove-e-finita-l-avventura-indaga-la-lettura-in-edicola-solo-domenica-19-luglio-20b47119-76d8-4bea-8c41-dff0bbeb8xlk.shtml"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "🚧 ff.154.4 La mia piccola avventura",
+                "link": "https://fortissimo.substack.com/i/210361320/ff1544-la-mia-piccola-avventura",
+                "content": "Ora vi racconto di come ho capito tutto ciò sulla mia pelle. Con la promessa del “paradiso del gravel”, quest’anno ho pedalato su strade bianche alpine vicino a Cuneo, scoperte grazie al bellissimo alvento - destination . Effettivamente, era il paradiso: zero macchine, un sacco di natura. Eppure, era troppo bello, quel troppo “da cartolina” che non affascina più, anestetizzati al bello da migliaia di post a portata di mano (e di dito). Vi dico invece cosa mi ha toccato: la mia pausa a Elva, un paese di 100 persone, di sassi vecchi come le montagne attorno. Sedutomi su una sedia da sagra di plastica all’unico bar del paese, un anziano mi ha chiesto da dove venissi. Si è aperto così un piacevole scambio e ho ricambiato la curiosità chiedendo se vivessero lì per tutto l’anno. “Abbiamo la casa qui”, mi ha detto, ma poi subito: “Ma sai chi è il signore?” additando quello seduto al centro dei tre. Per un attimo ho scandagliato il mio piccolo database, con una query che filtrasse persone anziane, piemontesi. Mi ha però subito aiutato: “E’ il sindaco!”. Ho sorriso e ho continuato la mia visita. Dopo aver ammirato lo spettacolare affresco fiammingo di Hans Clemer (1493) , son tornato nei pressi del bar, pregustando la meritata discesa. Inconscio del fatto che viaggio era già mutato in avventura. Il terzo anziano, fino a quel momento silente, mi fissa e fa: “Adesso risali, vero?”. E io, un po’ divertito: “No, pensavo di scendere verso la Val Maira, preferirei non aggiungere altra salita al giro di oggi, devo scalare 3800 metri”. Lui, ancora, “Dovresti risalire, però” - lapidario - “la strada là sotto è chiusa”. L’avventura più grande di quest’estate è stata scendere comunque per il Vallone di Elva, superando frane e ostacoli, senza sapere se - sempre più in basso - ce ne sarebbe stato uno insormontabile, che avrebbe reso la salita ancora più beffarda e faticosa. Come fossero gironi d’inferno, più scendevo, più - potenzialmente - stavo tornando “indietro”. Mi ha illuminato. Diamo per scontato il viaggio. Diamo per scontato che ogni spostamento, più in generale ogni nostra azione e scelta di vita ci porti almeno dal punto A al punto B. Magari il punto B non è quello che vogliamo, ma almeno diverso da quello di partenza. L’avventura, l’Odissea non è così. Prevede che un viaggio non si possa continuare, se non a ritroso. Tornare a casa, Itaca, senza però passare dal “via”. L’incertezze del Vallone di Elva mi han fatto sentire vivo. Mi han fatto vivere finalmente un’avventura, un’esplorazione, mappando strade aperte, ma soprattutto strade chiuse. Al prossimo 10, 20 o 30! Intanto, se vuoi:",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/f8079679-52ab-439b-8d42-cce493561b5c_1424x811.png",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/fa388738-cf2e-4e24-b782-7334153a71db_657x585.png",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/dcb3ba57-6325-4e5e-9abd-16d4bd13f465_1028x913.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "alvento - destination",
+                        "url": "https://www.destinations.bike/"
+                    },
+                    {
+                        "text": "affresco fiammingo di Hans Clemer (1493)",
+                        "url": "https://it.wikipedia.org/wiki/Chiesa_di_Santa_Maria_Assunta_(Elva,_Italia)"
+                    },
+                    {
+                        "text": "supporta con un caffè",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    },
+                    {
+                        "text": "michele merelli",
+                        "url": "https://www.linkedin.com/in/michelemerelli/"
+                    }
+                ],
+                "connections": []
+            }
+        ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff153-e-tutto-un-token",
+        "title": "🎼 ff.153 E' tutto un token",
+        "subtitle": "Tra sagre estive e pipp* mentali di Claude",
+        "keypoints": [],
+        "subchapters": [
+            {
+                "title": "🪚 ff.153.1 Le seghe mentali di Claude",
+                "link": "https://fortissimo.substack.com/i/209629730/ff1531-le-seghe-mentali-di-claude",
+                "content": "L’economia del futuro si baserà sullo spremere gli LLMs per ottimizzare i loro token (che sono nelle risposte, ma sempre più nei “pensieri” per le risposte, ☕ ff.135.4 L’AGI avanza: il “caffè” cinese ). A riguardo, GPT 5.6 Terra pensa - a parità di risultato - 100 volte meno di Claude… E Kimi K3, il modello cinese * open source *, agentico, e delle prestazioni paragonabili a Opus 5, può tecnicamente girare sul vostro computer di casa. Anche se fattibile, “pensa” molto lentamente (32s per token). Mi viene in mente: \"Quarantadue!\" urlò Loonquawl. \"Questo è tutto ciò che sai dire dopo un lavoro di sette milioni e mezzo di anni?\" Douglas Adams, Guida galattica per gli autostoppisti PS. A quanto pare, siamo stati “allenati” con 20 miliardi di token, mentre Claude Opus 300 trilioni, ossia 15.000 volte “più letture” (minuto 27.01).",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/012e44a9-2612-4565-8805-34abb96d1452_624x701.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "Guida galattica per gli autostoppisti",
+                        "url": "https://amzn.to/4bCYgHI"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "☕ ff.135.4 L’AGI avanza: il “caffè” cinese",
+                        "url": "https://fortissimo.substack.com/i/176809376/ff1354-lagi-avanza-il-caffe-cinese"
+                    }
+                ]
+            },
+            {
+                "title": "🥛 ff.153.2 Latt(ato) alle ginocchia",
+                "link": "https://fortissimo.substack.com/i/209629730/ff1532-lattato-alle-ginocchia",
+                "content": "Vi ricordate quando parlavamo di acido lattico, performance e cancro ( 🥇 ff.53.2 Sportivi professionisti in nostro aiuto ) ? Dopo due anni di lavoro, Enervit ha rilasciato C2:1PRO LACTATE GEL MIX . Tra i collaboratori, il noto Iñigo San Millán anche collaboratore del team UAE. Ci spiega “lo shuttle del lattato” qui sotto. PS. Serve per lo più ai professionisti, o a gente che “consuma” talmente tanta energia che è limitata solo dall’ intake /assorbimento istantaneo. Noi comuni mortali possiamo continuare a mangiare torte. O gelati. O grasso sub-cutaneo.",
+                "images": [],
+                "references": [
+                    {
+                        "text": "Enervit ha rilasciato C2:1PRO LACTATE GEL MIX",
+                        "url": "https://www.runnersworld.com/it/alimentazione/integratori/a73331917/integratori-lattato-enervit-gel-sport-endurance-nutrizione-sportiva/"
+                    },
+                    {
+                        "text": "Iñigo San Millán",
+                        "url": "https://www.uaeteamemirates.com/rider/inigo-san-millan/"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "🥇 ff.53.2 Sportivi professionisti in nostro aiuto",
+                        "url": "https://fortissimo.substack.com/i/104014049/ff532-sportivi-professionisti-in-nostro-aiuto"
+                    }
+                ]
+            },
+            {
+                "title": "🌱 ff.153.3 Un terrario portatile",
+                "link": "https://fortissimo.substack.com/i/209629730/ff1533-un-terrario-portatile",
+                "content": "L’arte generativa non è per forza AI slop . Anzi. Permette di fare cose del tutto nuove, come “ rivedere i propri sogni al risveglio ”. Serve solo un po’ di gusto (e genio). Mur Mur di Oio , è un altro esempio: tecnicamente uno speaker, emette però suoni dell’ecosistema “esistente” al suo interno. Tamagochi?",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/a4999b1a-acd6-422c-a055-382b1a727adf_800x355.gif",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/7350fa7c-01f9-4fcf-bbdd-73f055aa01cf_1440x795.bin",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/4f87f4b9-abb2-4bfd-952b-8e253a9fdf1a_1440x688.bin",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "rivedere i propri sogni al risveglio",
+                        "url": "https://www.itsnicethat.com/articles/modem-dream-recorder-product-design-project-250625"
+                    },
+                    {
+                        "text": "Mur Mur",
+                        "url": "https://www.itsnicethat.com/articles/oio-mattering-mur-mur-product-design-animation-project-030826"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "🥣 ff.153.4 Porridge contro la plastica",
+                "link": "https://fortissimo.substack.com/i/209629730/ff1534-porridge-contro-la-plastica",
+                "content": "A quanto pare possiamo usare l’avena (micro/nano porosa) per catturare le molecole di plastica che ricircolano tra intestino e fegato. Il progetto si chiama neutraoat (probabilmente anche un beta-glucano non “modificato” può già aiutare, quindi continuate con i porridge!).",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/8c6ad03b-8c55-4dfa-adcb-b4d620b5e68f_931x529.png",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/1927c935-6b60-4d5c-aa68-1b8cc52c412f_1103x719.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "neutraoat",
+                        "url": "https://neutraoat.com/"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "🎨 ff.153.5 Sagre belle o brutte?",
+                "link": "https://fortissimo.substack.com/i/209629730/ff1535-sagre-belle-o-brutte",
+                "content": "Tornando alle sagre… L’AI ci ha tolto le sagre brutte? O ci ha migliorato la vita? Ai posteri l’ardua sentenza. Al prossimo 10, 20 o 30! Intanto, se vuoi:",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/9e70367c-1042-4a6c-9807-5aa827351925_436x587.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "L’AI ci ha tolto le sagre brutte?",
+                        "url": "https://www.ilpost.it/2026/07/26/ai-locandine-sagre/"
+                    },
+                    {
+                        "text": "supporta con un caffè",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    },
+                    {
+                        "text": "michele merelli",
+                        "url": "https://www.linkedin.com/in/michelemerelli/"
+                    }
+                ],
+                "connections": []
+            }
+        ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff152-un-nuovo-futuro",
+        "title": "🎼 ff.152 Un nuovo futuro (?)",
+        "subtitle": "Un nuovo futuro fortissimo, per altri tempi?",
+        "keypoints": [],
+        "subchapters": [
+            {
+                "title": "🧠 ff.152.1 Il pensiero di Claude (J-Space)",
+                "link": "https://fortissimo.substack.com/i/206037608/ff1521-il-pensiero-di-claude-j-space",
+                "content": "Anthropic studia gli LLMs come un cervello, vivisezionando l’attività dei “neuroni” : hanno scoperto il Jacobian Space. Uno spazio di parole “pensate”, mentre altre vengono “dette”. Quando applichiamo questa tecnica all’attività interna di Claude, otteniamo un elenco di parole – il contenuto dello spazio J in quel preciso istante – che possiamo semplicemente leggere. Claude elabora il testo attraverso una serie di fasi interne multiple, chiamate livelli, e applicando questa tecnica a diversi livelli, possiamo osservare l’evoluzione di queste parole silenziose nello spazio J, mentre il modello elabora ciò che deve dire. Ciò che appare nello spazio J va ben oltre il testo che Claude sta leggendo o scrivendo. Quando Claude legge del codice con un bug che nessuno ha segnalato, il suo spazio J contiene “ERRORE”. Quando legge le lettere grezze di una sequenza proteica, lo spazio J contiene la funzione biologica della proteina. E così si può controllare il pensiero di Claude:",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/eae34231-95de-4af0-a392-039eb219a346_1760x760.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "Anthropic studia gli LLMs come un cervello, vivisezionando l’attività dei “neuroni”",
+                        "url": "https://www.anthropic.com/research/global-workspace"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "🏋️‍♂️ ff.152.2 Un piano di allenamento, ma per la vita.",
+                "link": "https://fortissimo.substack.com/i/206037608/ff1522-un-piano-di-allenamento-ma-per-la-vita",
+                "content": "Chi non conosce un amico che di recente si è lanciato nella preparazione di un HYROX o di un IRONMAN? Giochi finiti (vedi sotto) che chiedono tabelle di allenamento e dedizione. Momentanee. Alan Couzens ci ricorda che stiamo “giocando” o “allenandoci”, sì, ma per la vita. PS: a 80 anni per mantenere un buon livello di fitness, dovremo allenarci 760 ore all’anno.",
+                "images": [],
+                "references": [],
+                "connections": []
+            },
+            {
+                "title": "🎮 ff.152.3 Giochi finiti e infiniti",
+                "link": "https://fortissimo.substack.com/i/206037608/ff1523-giochi-finiti-e-infiniti",
+                "content": "Sono un videogiocatore incallito, non solo davanti a uno schermo. Tutti forse lo siamo, e la realtà è sempre più simulata ( 🎼 ff.98 Giochi e simulazioni ). Non a caso, mi è stato regalato - per il 32esimo compleanno - questo bel libro . Volevo condividerlo.",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/db93ae54-0ace-45f0-bede-384da70730d5_311x466.jpeg",
+                        "caption": "Giochi finiti e infiniti, James P. Carse"
+                    },
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/3cd312f5-a4f8-489a-a243-74d68c61d397_2268x3291.jpeg",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "questo bel libro",
+                        "url": "https://amzn.to/3S3VQez"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "🎼 ff.98 Giochi e simulazioni",
+                        "url": "https://fortissimo.substack.com/p/ff98-giochi-e-simulazioni"
+                    }
+                ]
+            },
+            {
+                "title": "🤠 ff.152.4 Oliver, davvero?",
+                "link": "https://fortissimo.substack.com/i/206037608/ff1524-oliver-davvero",
+                "content": "Una canzone che forse non conoscevate, di un artista a cui tenevo che non c’è più - per un volo in elicottero andato male. After all, Life Goes On , I guess… Ci è rimasta la storia della sua fondazione, il cui dominio è un programma (maiuscole per facilitare la lettura)… https://www.DrOliverTreesExtremelyEpicArtGrantForBabyGeniuses.com/",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/419e3ea6-c4aa-448b-84a3-3c3ca825fd83_905x755.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [],
+                "connections": []
+            },
+            {
+                "title": "🚲 ff.152.5 Ho risparmiato 900€ andando al lavoro in bici",
+                "link": "https://fortissimo.substack.com/i/206037608/ff1525-ho-risparmiato-900-andando-al-lavoro-in-bici",
+                "content": "Ennesimo progetto costruito grazie all’AI (che però è esploso su LinkedIn con 200.000 visualizzazioni ): i miei bike-to-work visualizzati. Tutte le statistiche sul sito . Se andate in bici al lavoro (e usate Strava), potete vedere il vostro: https://bike2work.pages.dev/",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/41f728a9-9f44-4141-8885-ea16d93b6cda_435x807.png",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/fadf88ff-2054-481d-91f3-87bcb42cbfa9_440x440.gif",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "esploso su LinkedIn con 200.000 visualizzazioni",
+                        "url": "https://lnkd.in/p/dv72NSai"
+                    },
+                    {
+                        "text": "sul sito",
+                        "url": "https://micmer-git.github.io/bike-to-work/"
+                    },
+                    {
+                        "text": "supporta con un caffè",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    },
+                    {
+                        "text": "michele merelli",
+                        "url": "https://www.linkedin.com/in/michelemerelli/"
+                    }
+                ],
+                "connections": []
+            }
+        ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff151-immagina-puoi",
+        "title": "🎼 ff.151 Immagina, puoi!",
+        "subtitle": "Simulare odori, generare il web in live e altra Paprika",
+        "keypoints": [
+            "Prophetic: un caschetto che sa di DC Mini",
+            "Annusare i fiori di Minecraft ?",
+            "Flipbook: everything everywhere all at generated"
+        ],
+        "subchapters": [
+            {
+                "title": "🐸 ff.151.1 Rospi che mangiano cartone",
+                "link": "https://fortissimo.substack.com/i/195021734/ff1511-rospi-che-mangiano-cartone",
+                "content": "Alcune teorie neuroscientifiche dicono che la realtà là fuori è tutta una costruzione del cervello. D'altronde, se ci pensate, è un agglomerato di neuroni e acqua chiuso in una scatola cranica che cerca di dare un senso ai vari stimoli elettrici che gli sopraggiungono. Cerca di costruire una realtà che a volte va contro la realtà stessa: un rospo ( lupus in fabula , direi, 🤴 ff.105.1 Trasformare una rana in principe azzurro? ) non mangia una mosca se questa è paralizzata con cloroformio. Non muovendosi, non risulta “allungata” dal movimento delle ali, e quindi non è “vista” come cibo. Almeno, nella simulazione del cervello dell’animale. Riecco il sottile confine tra reale, immaginato, sognato e generato.",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/99f7fa55-0e45-459d-853d-8d7f26584ac3_554x316.png",
+                        "caption": "Un rospo che mangia cartone rettangolare (ma non mosche)"
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "Un rospo che mangia cartone rettangolare (ma non mosche)",
+                        "url": "https://worrydream.com/refs/Kay_2004_-_The_Center_of_Why.pdf"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "🤴 ff.105.1 Trasformare una rana in principe azzurro?",
+                        "url": "https://fortissimo.substack.com/i/141601434/ff1051-trasformare-una-rana-in-principe-azzurro"
+                    }
+                ]
+            },
+            {
+                "title": "🌶️ ff.151.2 Prophetic(a) Paprika",
+                "link": "https://fortissimo.substack.com/i/195021734/ff1512-prophetica-paprika",
+                "content": "E’ un tema che ci sta a cuore. I sogni, altre simulazioni mentali, alimentano questa confusione, come visto in 🎼 ff.118 Paprika e massaggi . Nel film Paprika , un dispositivo, il DC Mini, permetteva per la prima volta di controllare i sogni (o la realtà?) del paziente. La DC Mini è realtà, oggi: se già nel 2016 si era dimostrata la fattibilità tecnologica di un dispositivo simile ( paper Nature di stimolazione a ultrasuoni per far “vedere” un paziente ), oggi Prophetic lo commercializza. Dreams will never be the same , a meno di 500€. La DC Mini, comunque, era - agli albori di Internet, nel 2006, data di uscita del film - una metafora per le presto infinite realtà parallele generate online. Questo trend continua oggi con flipbook.page che genera un in live una qualsivoglia pagina web. Impreciso? Sì. Ma è la parola live che va sottolineata. Presto, potremo creare “a telecomando” un’interfaccia video personalizzata, se non una realtà completamente esplorabile. Vi ricorda qualcosa? Suggerimento: 🦊 ff.98.3 Sora luna, e il cantico delle creature a nove code .",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/a0eff7d8-87ce-43e5-a11d-6ab5fc73054c_1173x814.png",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/dcfa1479-395c-43f2-83f1-5029fcbc66cf_1153x877.png",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/d32030a2-dde5-4c9e-a180-c8dd6a62e452_1400x596.jpeg",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "paper Nature di stimolazione a ultrasuoni per far “vedere” un paziente",
+                        "url": "https://dash.harvard.edu/server/api/core/bitstreams/7312037e-0918-6bd4-e053-0100007fdf3b/content"
+                    },
+                    {
+                        "text": "Prophetic",
+                        "url": "https://www.prophetic.com/?utm_source=substack&utm_medium=email"
+                    },
+                    {
+                        "text": "flipbook.page",
+                        "url": "https://flipbook.page/"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "🎼 ff.118 Paprika e massaggi",
+                        "url": "https://fortissimo.substack.com/p/ff118-paprika-e-massaggi?utm_source=publication-search"
+                    },
+                    {
+                        "text": "🦊 ff.98.3 Sora luna, e il cantico delle creature a nove code",
+                        "url": "https://fortissimo.substack.com/i/145245800/ff983-sora-luna-e-il-cantico-delle-creature-a-nove-code"
+                    }
+                ]
+            },
+            {
+                "title": "👃 ff.151.3 Annusare Minecraft?",
+                "link": "https://fortissimo.substack.com/i/195021734/ff1513-annusare-minecraft",
+                "content": "Parlando di stimolazioni mentali (e illusioni), torniamo ai videogiochi per un triplo salto carpiato di reale/ricreato/fisico/digitale. La realtà (il COVID) era entrata nel digitale quando avevamo visto personaggi di Minecraft “con il fiatone”. Era un progetto per sensibilizzare sugli effetti del virus sui polmoni ( 🫁 ff.76.3 E gli effetti fisici ). Oggi, vediamo l’opposto: il profumo dei fiori finti di Minecraft ricreati con onde a ultrasoni: lo Smell Simulator del Caltech . BONUS. Parlando di olfatto, ma con uno studio più terra-a-terra, i cani annusano tumori . Almeno in India.",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/e122ad99-70c6-43f0-abf0-cd0525442d83_1074x1000.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "Smell Simulator del Caltech",
+                        "url": "https://x.com/i/status/2044631856830976231"
+                    },
+                    {
+                        "text": "i cani annusano tumori",
+                        "url": "https://ascopubs.org/doi/abs/10.1200/JCO-25-02310?utm_source=substack&utm_medium=email"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "🫁 ff.76.3 E gli effetti fisici",
+                        "url": "https://fortissimo.substack.com/i/135267240/ff763-e-gli-effetti-fisici"
+                    }
+                ]
+            },
+            {
+                "title": "🧠 ff.151.4 Altre aziende “mentali”",
+                "link": "https://fortissimo.substack.com/i/195021734/ff1514-altre-aziende-mentali",
+                "content": "Gli esempi di applicazioni, anche terapeutiche, non finiscono qui. Sabi , azienda con finanziamenti da Khosla e dal VP scientifico di OpenAI Kevin Weil, prova a leggere i pensieri sviluppando un ChatGPT di pattern neurali. E Motif Neurotech è una delle prime aziende ad aver l’ok dalla FDA per trial clinici della neurostimolazione per curare la depressione.",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/766a0764-44f1-4cac-a6a2-5707ce6d4dfd_1854x771.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "Sabi",
+                        "url": "https://x.com/i/status/2044781153559929199"
+                    },
+                    {
+                        "text": "Motif Neurotech",
+                        "url": "https://motifneuro.tech/"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "🍵 ff.151.5 (Digital) detox",
+                "link": "https://fortissimo.substack.com/i/195021734/ff1515-digital-detox",
+                "content": "Sì, lo so, lo state pensando anche voi: l’ennesima tecnologia che risolve un “problema” con l’approccio “a pillola”. Per risolvere la depressione moderna, basterebbe togliere i social, invece di massaggiare elettronicamente il cervello: studio Stanford su 35.000 persone riduce depressione togliendo Facebook e Instagram in 6 settimane . Per misurare il detox sul corpo, David Daines ha lanciato Year Unplagged, un anno senza schermo con tracciamento di cortisolo e altri parametri fisiologici . Insomma, il futuro sarà più flipbook e neurostimoli o natura e zero connessioni?",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/6a2261db-ca27-4eff-b6fa-9e1d4e9116a1_1080x1920.webp",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/35a4299c-1a93-4d78-989c-d4cf9c0792af_1440x1440.bin",
+                        "caption": "Jackson Green e la creatività contro l’ADHD (via futuro fortissimo)"
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "studio Stanford su 35.000 persone riduce depressione togliendo Facebook e Instagram in 6 settimane",
+                        "url": "https://x.com/i/status/2045314524962545861"
+                    },
+                    {
+                        "text": "un anno senza schermo con tracciamento di cortisolo e altri parametri fisiologici",
+                        "url": "https://yearunplugged.com/biomarkers"
+                    },
+                    {
+                        "text": "Jackson Green e la creatività contro l’ADHD (via futuro fortissimo)",
+                        "url": "https://www.itsnicethat.com/features/does-having-adhd-optimise-creativity-creative-industry-040522"
+                    },
+                    {
+                        "text": "supporta con un caffè",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    },
+                    {
+                        "text": "michele merelli",
+                        "url": "https://www.linkedin.com/in/michelemerelli/"
+                    }
+                ],
+                "connections": []
+            }
+        ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff150-yes-we-can",
+        "title": "🎼 ff.150 Yes we can?",
+        "subtitle": "Potere vs dovere e la negativit&#224; dell'Altro",
+        "keypoints": [
+            "La prossima pandemia: i neuroni? (altro che COVID)",
+            "Dal dovere al potere: Yes We Can (un po’ troppo)",
+            "Cosa sono Unselfing e We-tiredeness ?"
+        ],
+        "subchapters": [
+            {
+                "title": "🐺 ff.150.1 Lupi, virus e neuroni",
+                "link": "https://fortissimo.substack.com/i/194704648/ff1501-lupi-virus-e-neuroni",
+                "content": "Salute mentale e burnout riguardano il nostro futuro. Così, 🎼 ff torna anche sull’ ❤️ Uomo (oltre che 🍃 Natura e 🖥️ Tecnologia). Qualche tempo fa, avevamo visto 🎼 ff.62 Come evitare il burnout con Paul Millard che ha lascito McKinsey per trasferirsi a Taiwan. Non è un caso se Byung-Chul Han, importante pensatore contemporaneo già incontrato in 🍎 ff.64.2 Da Newton a Einstein ha scritto anche The Burnout Society : Il XX secolo era immunologico: confini, muri, l’Estraneo/Altro visto come minaccia. Poi, l’Altro è diventato sempre più subdolo: dal lupo al ratto, dall’insetto al virus. Nel XXI secolo, l’Altro è sparito. E il pericolo maggiore è diventato interno: i nostri neuroni. Bonus. In biologia, le malattie autoimmuni sono in aumento .",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/be74cbe3-9d1f-48d7-ba8a-dc15dd46e10b_1000x1428.jpeg",
+                        "caption": "La società della stanchezza (2015), Byung-Chul Han (via futuro fortissimo)"
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "The Burnout Society",
+                        "url": "https://www.sup.org/books/title/?id=20550"
+                    },
+                    {
+                        "text": "La società della stanchezza",
+                        "url": "https://amzn.to/4dXNRsa"
+                    },
+                    {
+                        "text": "le malattie autoimmuni sono in aumento",
+                        "url": "https://pubs.sciepub.com/ijcd/3/4/8/"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "🎼 ff.62 Come evitare il burnout",
+                        "url": "https://fortissimo.substack.com/p/ff61-come-evitare-il-burnout"
+                    },
+                    {
+                        "text": "🍎 ff.64.2 Da Newton a Einstein",
+                        "url": "https://fortissimo.substack.com/i/119334503/ff642-da-newton-a-einstein"
+                    }
+                ]
+            },
+            {
+                "title": "🛋️ ff.150.2 Freud nel cestino?",
+                "link": "https://fortissimo.substack.com/i/194704648/ff1502-freud-nel-cestino",
+                "content": "Depressione e burnout non sono quindi infezioni esterne ( negatività dell’Altro), ma esplosioni interne, di un io-potenziale che si moltiplica all’infinito. Come un tumore. Siamo lontani, quindi, dal Super-io di Freud, che frena pulsioni dell’Es in una società moralistica e religiosa: il Du sollst (Should, Devi) è stato rimpiazzato dal Du kannst (Can, Puoi).",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/0ad85a4f-6a4d-4889-ab01-96437c5705d3_1000x1000.jpeg",
+                        "caption": ""
+                    }
+                ],
+                "references": [],
+                "connections": []
+            },
+            {
+                "title": "♾️ ff.150.3 Possibilità (e vita) infinita?",
+                "link": "https://fortissimo.substack.com/i/194704648/ff1503-possibilita-e-vita-infinita",
+                "content": "Continua, Han, riflettendo sull’infinità dell’Ego: Se società e tessuto sociale stanno sparendo (l’Altro), all’Ego rimane il proprio corpo, da mantenere in salute a ogni costo. L’economia capitalista assolutizza la sopravvivenza. Si regge sull’illusione che più capitale produca più vita, intesa come una maggiore capacità di vivere. Viene in mente DON’T DIE di Bryan Johsnon ... Han chiama la nostra società Leistungsgesellschaft , la società degli achievement. Fonte di perenne (distr)-azione, tanto che non riusciamo più nemmeno ad incazzarci. La rabbia è stata sostituita dal fastidio: La distrazione generale che affligge la società contemporanea non permette all’energia e all’intensità della rabbia di emergere. Oggi, questa cede sempre più il passo all’offesa o al fastidio, all’avere ‘un conto in sospeso’ ( having a beef ), sentimenti che si rivelano incapaci di produrre un cambiamento decisivo. Sì, siamo infastiditi da tutto. Anche da una piccola incomprensione uscendo da un parcheggio. A proposito: è uscita la seconda stagione di Beef (titolo auto esplicativo).",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/d376d5cb-93eb-4d7f-9014-0021527dcc6a_452x678.jpeg",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "DON’T DIE di Bryan Johsnon",
+                        "url": "https://dontdie.bryanjohnson.com/"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "- ff.150.4 Io penso negativo?",
+                "link": "https://fortissimo.substack.com/i/194704648/ff1504-io-penso-negativo",
+                "content": "Mea culpa . Non nascondo che futuro fortissimo è innanzitutto positivismo ( 🎼 ff.59 L’ottimismo vola! ). Eppure la negatività (del clacson in coda a Paullo) dell’Altro sembra essere l’unica cura all’iperattività. Senza questo limite esterno, sprofondiamo nell’ I-tiredness di Peter Handke: una stanchezza muta e solitaria, alla ricerca dell’ennesimo PR in maratona, dell’ultima offerta di lavoro più remunerativa, dell’ennesimo IRONMAN. O uno, o l’altro. Di fronte all’infinito moderno, a un certo punto bisogna tagliare, de-cidere, recidere ( 🏠 ff.44.3 Stabilirsi stabilizza ). E’ difficile, lo so. E lo sapeva Kierkegaard nel 1843, con il suo libro Aut-Aut .",
+                "images": [],
+                "references": [
+                    {
+                        "text": "Kierkegaard nel 1843, con il suo libro",
+                        "url": "https://amzn.to/3QdDTcp"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "🎼 ff.59 L’ottimismo vola!",
+                        "url": "https://fortissimo.substack.com/p/ff59-lottimismo-vola?utm_source=publication-search"
+                    },
+                    {
+                        "text": "🏠 ff.44.3 Stabilirsi stabilizza",
+                        "url": "https://fortissimo.substack.com/i/82346421/ff-stabilirsi-stabilizza"
+                    }
+                ]
+            },
+            {
+                "title": "🌱 ff.150.5 Amarsi (e annoiarsi) un po’",
+                "link": "https://fortissimo.substack.com/i/194704648/ff1505-amarsi-e-annoiarsi-un-po",
+                "content": "Ma l’Altro non è per forza un camionista incazzato che suona il clacson. L’Altro è anzitutto amore: L’amore è l’estrema e difficile consapevolezza che qualcosa oltre a noi stessi è reale. Iris Murdoch, Esistenzialisti e mistici Il biologo cileno Humberto Maturana arriva allo stesso punto per via evolutiva: Senza amore, senza l'accettazione degli altri che vivono accanto a noi, non c'è alcun processo sociale e, di conseguenza, non c'è umanità. Humberto R. Maturana , L’albero della conoscenza Iris Murdoch e Peter Handke tornano quindi insieme. Serve meno Sé, Unselfing come suggerito dalla prima, per annoiarci - sì - ma insieme: la We-tiredness , come proposto dal secondo.",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/051eca33-1c68-4fe8-b372-2730f3947acc_956x640.png",
+                        "caption": "I LOVE NY: un’heatmap della parola love nelle strade di New York (ma anche del vostro nome)"
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "Esistenzialisti e mistici",
+                        "url": "https://amzn.to/4cZj2Cg"
+                    },
+                    {
+                        "text": "L’albero della conoscenza",
+                        "url": "https://amzn.to/4mJbGGp"
+                    },
+                    {
+                        "text": "la",
+                        "url": "https://the-haven.co/be-tired-with-me/"
+                    },
+                    {
+                        "text": "I LOVE NY: un’heatmap della parola love nelle strade di New York",
+                        "url": "https://alltext.nyc/map?q=love"
+                    },
+                    {
+                        "text": "supporta con un caffè",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    },
+                    {
+                        "text": "michele merelli",
+                        "url": "https://www.linkedin.com/in/michelemerelli/"
+                    }
+                ],
+                "connections": []
+            }
+        ]
+    },
+    {
         "url": "https://fortissimo.substack.com/p/ff149-come-essere-solari",
         "title": "🎼 ff.149 Come essere solari",
         "subtitle": "L'abbondanza è qui, basta mettere gli occhiali da sole",
