@@ -150,7 +150,7 @@ li[id^="fonte-"]:target{
         </ol>
       </nav>
       <h1 class="text-2xl sm:text-3xl font-bold">💻 2.3 &mdash; Prodotti di consumo</h1>
-      <div class="reading-time mt-2">44 refs &middot; ~17 min &middot; 4.1k parole</div>
+      <div class="reading-time mt-2">46 refs &middot; ~17 min &middot; 4.3k parole</div>
     </div>
   </header>
 
@@ -402,6 +402,25 @@ li[id^="fonte-"]:target{
 
     <p>Lo stesso vale per l'energia di accumulo: senza batterie pi&ugrave; economiche e dense, l'AI resta una promessa costosa. La traiettoria &egrave; chiara: catene industriali orientate a chimiche pi&ugrave; abbondanti e meno dipendenti da materiali critici, con il baricentro produttivo che si sposta verso soluzioni scalabili per rete elettrica, mobilit&agrave; e datacenter (<span class="fc">&#9935;&#65039; ff.42.1 Minerali preziosi?</span>). Per contestualizzare il consumo: <a id="ref-fonte-29"></a><a href="https://x.com/DrewPavlou/status/1941651240636866780" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;">un cheeseburger McDonald's equivale all'energia di <mark class="note-highlight">80.000 richieste ChatGPT</mark></a><sup><a href="#fonte-29" style="color:var(--accent);text-decoration:none;">[29]</a></sup>. La vera corsa, quindi, non &egrave; solo al modello migliore: &egrave; al <mark class="note-highlight">sistema integrato <em>chip + elettricit&agrave; + storage + interfaccia</em></mark>.</p>
 
+    <!-- ===== inject 2026-07-21 — note_id:1676+1672 — Extropic p-bit termodinamico + Starcloud datacenter in orbita ===== -->
+    <p>C'&egrave; chi al collo di bottiglia risponde scavando dentro il silicio. <a id="ref-fonte-41"></a><a href="https://x.com/Extropic_AI/status/1983261609398284718" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;">Extropic propone un'intelligenza &laquo;termodinamica&raquo;: al bit binario, 0 o 1, sostituisce il <mark class="note-highlight">p-bit probabilistico</mark>, che campiona il movimento casuale di atomi ed elettroni &mdash; il rumore termico</a><sup><a href="#fonte-41" style="color:var(--accent);text-decoration:none;">[41]</a></sup>. In ogni chip il calore &egrave; l'avversario da dissipare; un'architettura che lo usa come sorgente di calcolo mette in discussione l'astrazione digitale dal substrato fisico, lo stesso azzardo che anima i sistemi quantistici (<span class="fc">&#9883;&#65039; ff.98.4 Sistemi quantistici</span>). Chi guarda in alto sposta invece il problema fuori dall'atmosfera: <a id="ref-fonte-42"></a><a href="https://blogs.nvidia.com/blog/starcloud/" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;">Starcloud prepara capacit&agrave; di datacenter in orbita, con GPU NVIDIA H100 a energia solare e costi energetici stimati <mark class="note-highlight">dieci volte inferiori</mark></a><sup><a href="#fonte-42" style="color:var(--accent);text-decoration:none;">[42]</a></sup>. Lass&ugrave; il sole non tramonta mai e il raffreddamento diventa un problema di altra natura. Le due scommesse muovono dallo stesso vincolo &mdash; l'energia a terra &egrave; ormai il tetto dell'AI (<span class="fc">&#128184; ff.135.1 I costi dell'Intelligenza Artificiale</span>) &mdash; e lo aggrediscono in versi opposti: verso il basso, nel rumore atomico del chip; verso l'alto, nell'orbita a pannelli solari (<span class="fc">&#9851;&#65039; ff.42.2 Inquinano o spingono la transizione?</span>). Resta la domanda che entrambe si portano dietro: trasformare il calore in risorsa o spedire il calcolo in orbita risolve il limite fisico, o lo sposta soltanto?</p>
+
+    <figure class="ff-svg-figure" role="group" aria-label="Due vie d'uscita dal collo di bottiglia energetico dell'AI">
+      <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Mono',monospace">
+        <rect x="250" y="92" width="140" height="36" fill="none" stroke="#0a0a0a" stroke-width="3"/>
+        <text x="320" y="115" text-anchor="middle" font-size="13" font-weight="700" fill="#0a0a0a">LIMITE ENERGETICO</text>
+        <text x="320" y="18" text-anchor="middle" font-size="10" fill="#666">il tetto dell'AI: energia + calore a terra</text>
+        <line x1="320" y1="92" x2="320" y2="52" stroke="#4a90e2" stroke-width="3"/>
+        <polygon points="320,40 314,54 326,54" fill="#4a90e2"/>
+        <text x="320" y="72" text-anchor="middle" font-size="11" font-weight="700" fill="#4a90e2">&#8593; STARCLOUD &middot; orbita solare &middot; ~10&times; costo</text>
+        <line x1="320" y1="128" x2="320" y2="168" stroke="#4a90e2" stroke-width="3"/>
+        <polygon points="320,180 314,166 326,166" fill="#4a90e2"/>
+        <text x="320" y="152" text-anchor="middle" font-size="11" font-weight="700" fill="#4a90e2">&#8595; EXTROPIC &middot; p-bit &middot; rumore termico</text>
+        <text x="320" y="205" text-anchor="middle" font-size="10" fill="#666">soluzione o spostamento del problema fisico?</text>
+      </svg>
+      <figcaption>Due risposte opposte allo stesso vincolo: il calcolo esce dall'atmosfera (Starcloud) o rientra nel substrato termico del chip (Extropic). Fonti [41][42].</figcaption>
+    </figure>
+
     <!-- ===== NEW — Robot urbani e infrastruttura fisica ===== -->
     <p>Ma il collo di bottiglia non &egrave; solo energetico: &egrave; anche fisico, nel senso pi&ugrave; letterale. Le strade si rompono, i marciapiedi si sgretolano, i cantieri restano aperti per anni. Sidewalk AI, progetto del MIT Senseable Lab di Carlo Ratti, usa l'intelligenza artificiale per <mark class="note-highlight">mappare lo stato di salute dei marciapiedi</mark> in tempo reale &mdash; crepe, avvallamenti, accessibilit&agrave; &mdash; trasformando dati grezzi in priorit&agrave; di intervento. Il secondo tassello sono i robot da cantiere: Figure AI collabora con BMW per velocizzare le linee di produzione, ma lo stesso principio si applica alle infrastrutture urbane, dove un robot pu&ograve; operare di notte, senza straordinari e senza fermare il traffico. In attesa della rivoluzione robotica completa, c'&egrave; chi ha gi&agrave; trovato una via poetica: a Lione, lo street artist Ememem pratica il <em>flacking</em>, riempiendo le buche stradali con mosaici colorati secondo il principio giapponese del <mark class="note-highlight">kintsugi</mark> &mdash; l'arte di riparare con l'oro. La metafora funziona anche per la tecnologia: non nascondere le fratture, ma trasformarle in punti di forza
     (<span class="fc">&#129316; ff.110.4 Robot e AI: opportunit&agrave;</span>).</p>
@@ -529,6 +548,8 @@ Un cantiere infinito</span>).</p>
 <li id="fonte-38"><a href="https://x.com/demishassabis/status/1724452655454466489" target="_blank" rel="noopener" class="text-blue-700 hover:underline">DeepMind GraphCast &mdash; previsione del tempo via AI che batte i modelli fisici tradizionali a 10 giorni</a> &mdash; <span class="text-zinc-500">x.com</span> <a href="#ref-fonte-38" style="text-decoration:none;">&#8629;</a></li>
 <li id="fonte-39"><a href="https://www.nature.com/articles/s41586-025-09136-2" target="_blank" rel="noopener" class="text-blue-700 hover:underline">Enzimi progettati computazionalmente: tassi catalitici iniziali bassi, ottimizzazione sperimentale richiesta</a> &mdash; <span class="text-zinc-500">nature.com</span> <a href="#ref-fonte-39" style="text-decoration:none;">&#8629;</a></li>
 <li id="fonte-40"><a href="https://www.withings.com/it/en/u-scan" target="_blank" rel="noopener" class="text-blue-700 hover:underline">Withings U-Scan &mdash; sensore al CES che analizza ormone LH, idratazione e pH dell'urina</a> &mdash; <span class="text-zinc-500">withings.com</span> <a href="#ref-fonte-40" style="text-decoration:none;" aria-label="Torna al testo">&#8617;</a></li>
+<li id="fonte-41"><a href="https://x.com/Extropic_AI/status/1983261609398284718" target="_blank" rel="noopener" class="text-blue-700 hover:underline">Extropic: intelligenza termodinamica, dal bit binario al p-bit probabilistico che sfrutta il rumore termico</a> &mdash; <span class="text-zinc-500">x.com</span> <a href="#ref-fonte-41" style="text-decoration:none;" aria-label="Torna al testo">&#8617;</a></li>
+<li id="fonte-42"><a href="https://blogs.nvidia.com/blog/starcloud/" target="_blank" rel="noopener" class="text-blue-700 hover:underline">Starcloud: datacenter in orbita con GPU NVIDIA H100 a energia solare, costi energetici stimati 10&times; inferiori</a> &mdash; <span class="text-zinc-500">blogs.nvidia.com</span> <a href="#ref-fonte-42" style="text-decoration:none;" aria-label="Torna al testo">&#8617;</a></li>
       </ol>
     </section>
 
