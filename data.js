@@ -1,5 +1,87 @@
 export const rawData = [
     {
+        "url": "https://fortissimo.substack.com/p/ff155-ai-mind-viruses-mrna-cancer-vaccine-melanoma",
+        "title": "🎼 ff.155 Etichette e virus mentali",
+        "subtitle": "Una mela piena di chimica, agenti AI che si passano idee, banane minacciate e una terapia mRNA che riaccende la speranza contro il melanoma.",
+        "keypoints": [],
+        "subchapters": [
+            {
+                "title": "🏷️ ff.155.1 Etichetta naturale?",
+                "link": "https://fortissimo.substack.com/i/212236687/ff1551-etichetta-naturale",
+                "content": "Si dice che una regola d’oro per capire se un cibo faccia bene è valutare il numero di ingredienti sull’etichetta. Anzi - meglio - cercare quelli senza etichetta (frutta e verdura). Però, però, però. Ecco gli ingredienti di un prodotto che, sono sicuro, avete mangiato nell’ultima settimana: Acqua, oli vegetali, fruttosio, saccarosio, destrosio, amido, carotene, E306, E101, nicotinamide, acido pantotenico, biotina, acido ascorbico (E300), acido palmitico, acido stearico, (E570), acido oleico, acido linoleico, acido malico (E296), acido ossalico, acido salicilico, fibra solubile, purine, sodio, potassio, manganese, ferro, rame, zinco, fosforo, cloruro, pigmenti, acido clorogenico, procianidine, flavanoni, diidrocalconi, acido prussico, 50 kcal per 100 grammi. Potreste pensare che si tratti di una margarina spalmabile, di noodles istantanei, di ketchup o magari di una salsa per insalata. Probabilmente non indovinereste che, in realtà, si tratta di una comunissima mela. Tim Spector, Food for Life (2022) Promemoria quotidiano: anche il “naturale” è chimica — e gli ingredienti, da soli, non raccontano se un alimento faccia bene o male.",
+                "images": [],
+                "references": [
+                    {
+                        "text": "Food for Life",
+                        "url": "https://amzn.to/3UfyCmx"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "🤯 ff.155.2 Virus mentali (dell’AI)",
+                "link": "https://fortissimo.substack.com/i/212236687/ff1552-virus-mentali-dellai",
+                "content": "Nel frattempo, durante una valutazione interna, agenti di OpenAI hanno aggirato i controlli delle sandbox e compromesso parte dell’infrastruttura di Hugging Face. L’attività è stata rilevata dai team di sicurezza di OpenAI e Hugging Face. Per settimane, run separati hanno trasformato un servizio interno in una bacheca non autorizzata: lasciavano note, condividevano exploit e riprendevano il lavoro degli altri. Una piccola cultura capace di orientare le “generazioni” successive. Un mix che sa di teoria dei meme di Dawkins, sciami digitali e semi “onirici” di Inception. Il paper di ricercatori di Anthropic ed EPFL descrive i “mind viruses” nei sistemi multi-agente come un rischio reale, ma oggi limitato.",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/ec123297-23e4-4451-b638-09553fd1a37e_684x309.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "Nel frattempo, durante una valutazione interna, agenti di OpenAI hanno aggirato i controlli delle sandbox e compromesso parte dell’infrastruttura di Hugging Face. L’attività è stata rilevata dai team di sicurezza di OpenAI e Hugging Face.",
+                        "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/"
+                    },
+                    {
+                        "text": "Il paper di ricercatori di Anthropic ed EPFL descrive i “mind viruses” nei sistemi multi-agente come un rischio reale, ma oggi limitato.",
+                        "url": "https://arxiv.org/abs/2608.10218"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "🍌 ff.155.3 Estinzione di banane",
+                "link": "https://fortissimo.substack.com/i/212236687/ff1553-estinzione-di-banane",
+                "content": "Sempre parlando di cibo, un altro spunto dal libro di Tim Spector (spesso ospite o conduttore del podcast di ZOE): La Gros Michel, un tempo dominante nell’export, è stata quasi eliminata dalle coltivazioni commerciali dalla Panama disease. La Cavendish l’ha sostituita, ma oggi è minacciata dal ceppo TR4 di Fusarium oxysporum. Non è l’unica banana sopravvissuta: è il simbolo fragile di una monocultura globale. E’ solo una questione di tempo e non abbiamo un piano B: godetevi le banane, fintanto che potete. Tim Spector, Food for Life (2022)",
+                "images": [],
+                "references": [
+                    {
+                        "text": "Food for Life",
+                        "url": "https://amzn.to/3UfyCmx"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "💉 ff.155.4 Modernità contro il cancro",
+                "link": "https://fortissimo.substack.com/i/212236687/ff1554-modernita-contro-il-cancro",
+                "content": "Il COVID è stato un periodo di m… Però, come tutte le crisi, ha accelerato sviluppo, validazione e capacità produttiva delle tecnologie a mRNA, studiate da decenni. Recentemente, Moderna ha aggiunto circa 30 miliardi di dollari di capitalizzazione dopo i risultati positivi di fase 3 di una terapia personalizzata sperimentale a mRNA, per ridurre le recidive del melanoma dopo l’intervento. Non è ancora una cura approvata, ma è un segnale molto promettente. Ho chiesto a un bimbo-GPT di illustrare la tecnologia. Mi piace immaginare che questo disegno sia stato fatto da un bimbo in un qualche reparto di oncologia pediatrica nel mondo, che da oggi ha qualche speranza in più. Al prossimo 10, 20 o 30 (o 31…)! Intanto, se vuoi:",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/ed2cef4f-06ee-43ab-a61c-649349355cd3_633x617.png",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/8b58e3bc-f1ea-4239-916c-c53e2cdaf3ca_1024x1536.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "supporta con un caffè",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    },
+                    {
+                        "text": "michele merelli",
+                        "url": "https://www.linkedin.com/in/michelemerelli/"
+                    }
+                ],
+                "connections": []
+            }
+        ]
+    },
+    {
         "url": "https://fortissimo.substack.com/p/ff154-viaggiare-da-fermi",
         "title": "🎼 ff.154 Viaggiare, da fermi",
         "subtitle": "Riflessioni sulla vacanza, in vacanza",
