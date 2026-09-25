@@ -25,19 +25,42 @@ function processFile(filename){
   if (!artMatch) return {added:0,skipped:'no article'};
   let article = artMatch[1];
   let totalAdded = 0;
+  // Una fonte citata piu' volte nello stesso capitolo riceveva lo stesso id due
+  // volte: l'id duplicato e' HTML non valido. Dalla seconda occorrenza in poi
+  // l'id prende un suffisso, la freccia di ritorno resta sulla prima.
+  const SUFFIXES = 'bcdefgh';
+  const usedIds = new Set((article.match(/id="(ref-fonte-[0-9a-z-]+)"/g) || [])
+    .map(s => s.slice(4, -1)));
+  function nextId(n){
+    if (!usedIds.has(`ref-fonte-${n}`)) return `ref-fonte-${n}`;
+    for (const s of SUFFIXES){
+      if (!usedIds.has(`ref-fonte-${n}-${s}`)) return `ref-fonte-${n}-${s}`;
+    }
+    return null;
+  }
   for (const f of fontes){
     const escUrl = escRe(f.url);
     const linkRe = new RegExp(`<a href="${escUrl}"[^>]*>[\\s\\S]*?<\\/a>`,'g');
-    const matches = [...article.matchAll(linkRe)].reverse();
+    const matches = [...article.matchAll(linkRe)];
+    // Gli id si assegnano in ordine di documento (la prima citazione tiene
+    // l'id nudo), le sostituzioni si applicano al contrario per non spostare
+    // gli offset di quelle ancora da fare.
+    const planned = [];
     for (const match of matches){
       const offset = match.index;
       const matchStr = match[0];
       const before = article.substring(Math.max(0,offset-80), offset);
-      if (before.includes(`id="ref-fonte-${f.n}"`)) continue;
+      if (/id="ref-fonte-[0-9a-z-]+"/.test(before)) continue;
       const after = article.substring(offset+matchStr.length, offset+matchStr.length+100);
       if (after.match(new RegExp(`^\\s*<sup>\\s*<a href="#fonte-${f.n}"`))) continue;
-      const replacement = `<a id="ref-fonte-${f.n}"></a>${matchStr}<sup><a href="#fonte-${f.n}" style="color:var(--accent);text-decoration:none;">[${f.n}]</a></sup>`;
-      article = article.substring(0,offset) + replacement + article.substring(offset+matchStr.length);
+      const id = nextId(f.n);
+      if (!id) continue;
+      usedIds.add(id);
+      planned.push({offset, matchStr, id});
+    }
+    for (const p of planned.reverse()){
+      const replacement = `<a id="${p.id}"></a>${p.matchStr}<sup><a href="#fonte-${f.n}" style="color:var(--accent);text-decoration:none;">[${f.n}]</a></sup>`;
+      article = article.substring(0,p.offset) + replacement + article.substring(p.offset+p.matchStr.length);
       totalAdded++;
     }
   }
