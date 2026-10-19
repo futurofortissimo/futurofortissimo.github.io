@@ -3,7 +3,7 @@
  * build_epub.mjs
  * Converts the 5 enriched chapter HTML files into a single EPUB.
  */
-import { readFileSync, writeFileSync } from 'fs';
+import { readFileSync, writeFileSync, readdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { createRequire } from 'module';
@@ -129,11 +129,30 @@ async function buildEpub() {
     };
   });
 
+  // Data e numeri dell'edizione, contati dai capitoli: in prima pagina e nei metadati.
+  const oggi = new Date();
+  const dataIt = oggi.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
+  // Contati come book/index.html: le fonti sui capitoli interi, ff.x.y e note sulle sottopagine.
+  const fonti = chapters.reduce((n, ch) =>
+    n + (readFileSync(join(ROOT, ch.file), 'utf8').match(/<li id="fonte-\d+"/g) || []).length, 0);
+  const sotto = readdirSync(join(ROOT, 'book')).filter(f => /^chapter-0\d-\d-\d\.html$/.test(f))
+    .map(f => readFileSync(join(ROOT, 'book', f), 'utf8')).join('\n');
+  const ffxy = new Set(sotto.match(/ff\.\d+\.\d+/g) || []).size;
+  const note = new Set([...sotto.matchAll(/note_id[:\s]*([\d,\s]+)/g)]
+    .flatMap(m => m[1].split(/[,\s]+/).filter(Boolean))).size;
+  epubChapters.unshift({
+    title: 'Questa edizione',
+    content: `<p><strong>Aggiornato il ${dataIt}.</strong></p>
+<p>Tre macro temi (Natura, Tecnologia, Società) in nove capitoli: ${ffxy} sottocapitoli ff.x.y della newsletter, ${note} note e ${fonti} fonti esterne.</p>
+<p>La versione sempre aggiornata è su <a href="https://futurofortissimo.github.io/book/">futurofortissimo.github.io/book</a>.</p>`,
+  });
+
   const options = {
-    title: 'Futuro Fortissimo — Cinque Macro Temi',
+    title: 'Futuro Fortissimo — Tre Macro Temi',
     author: 'Michele Merelli',
     publisher: 'Futuro Fortissimo',
-    description: 'Natura, Tecnologia, Società, Letture e Note: cinque macro temi esplorati attraverso 140+ newsletter e 563 note dal corpus di Futuro Fortissimo.',
+    description: `Natura, Tecnologia, Società: tre macro temi attraverso ${ffxy} sottocapitoli della newsletter, ${note} note e ${fonti} fonti. Aggiornato il ${dataIt}.`,
+    date: oggi.toISOString(),
     lang: 'it',
     tocTitle: 'Indice',
     css: `
