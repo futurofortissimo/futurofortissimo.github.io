@@ -1,10 +1,10 @@
 /* sw.js — offline reading for Futuro Fortissimo.
    Pages: network-first (always fresh), cached copy when offline → every page you visited stays readable.
    Assets (css/js/json/icons/fonts/images): stale-while-revalidate. Old caches are dropped on activate. */
-const VERSION = 'ff-v2';
+const VERSION = 'ff-v3';
 const PAGES = `${VERSION}-pages`;
 const ASSETS = `${VERSION}-assets`;
-const PRECACHE = ['/assets/ff-app.css', '/assets/ff-app.js', '/assets/ff-archive.css', '/assets/icons/icon-192.png', '/manifest.webmanifest'];
+const PRECACHE = ['/assets/ff-app.css?v=3', '/assets/ff-app.js?v=3', '/assets/ff-fonts.css?v=3', '/assets/ff-tw.css?v=3', '/assets/fonts/bricolage.woff2', '/assets/fonts/newsreader.woff2', '/assets/fonts/plexmono-700.woff2', '/assets/ff-archive.css', '/assets/icons/icon-192.png', '/manifest.webmanifest'];
 const MAX_PAGES = 120;
 const MAX_ASSETS = 300;
 

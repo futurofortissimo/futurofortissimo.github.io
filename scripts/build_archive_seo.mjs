@@ -308,7 +308,8 @@ for (const lang of LANG_CODES) {
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="${L[lang].home}">${escapeHtml(s.crumbHome)}</a> /</li><li><a class="underline" href="${L[lang].archive}">${escapeHtml(s.crumbArchive)}</a> /</li><li aria-current="page"${metaLang}>${escapeHtml(cleanTitle(ch.title))}</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round">
+    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
+      ${orig.ffNum >= 0 ? `<div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>${orig.ffNum}</b><span class="ff-staff"></span></div>` : ''}
       <p class="ff-eyebrow text-black/70 mb-3">${escapeHtml(s.eyebrow)}</p>
       <h1 id="issue-title"${metaLang} class="text-2xl sm:text-3xl font-bold text-black">${escapeHtml(ch.title)}</h1>
       ${ch.subtitle ? `<p${metaLang} class="mt-3 text-base sm:text-lg text-black/80 font-medium">${escapeHtml(ch.subtitle)}</p>` : ''}

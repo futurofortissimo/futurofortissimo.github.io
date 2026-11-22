@@ -216,7 +216,7 @@
   ]
 }</script>
   <meta name="theme-color" content="#0a0a0a" />
-  <meta name="color-scheme" content="light" />
+  <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
@@ -226,7 +226,11 @@
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
   <link rel="manifest" href="/manifest.webmanifest" />
   <link rel="alternate" type="application/atom+xml" title="Futuro Fortissimo Feed" href="/feed.xml" />
-  <link rel="stylesheet" href="/assets/ff-app.css" />
+  <link rel="preconnect" href="https://substackcdn.com" />
+  <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
   <!-- /ff:seo -->
 <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NQ7MQR0VL8"></script>
@@ -238,13 +242,6 @@
     </script>
 
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
 
     <style>
       :root {
@@ -554,6 +551,7 @@
       .ff-lang-switch .ff-ln { text-transform:none; letter-spacing:0; font-weight:600; opacity:.85; }
       @media (max-width:640px) { .ff-lang-switch .ff-ln { display:none; } }
     </style>
+  <link rel="stylesheet" href="/assets/ff-tw.css?v=3" />
 </head>
   <body class="bg-white text-gray-900 antialiased selection:bg-gray-900 selection:text-white ff-has-tabbar">
   <!-- ff:chrome -->
@@ -570,6 +568,7 @@
       <div class="ff-actions">
         <button type="button" class="ff-search-btn" data-ff-search aria-label="Cerca (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Cerca</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="Lingua"><a href="/" hreflang="it" lang="it" title="Italiano" data-keep-state aria-current="page">IT</a><a href="/en/" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
+        <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="Tema scuro" title="Tema scuro"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         
         <details class="ff-more">
           <summary aria-label="Altro"><span aria-hidden="true">☰</span><span class="sr-only">Altro</span></summary>
@@ -588,7 +587,8 @@
   <!-- /ff:chrome -->
     <main id="main" class="ff-home max-w-6xl mx-auto px-4 md:px-8 pt-6 sm:pt-8 space-y-8">
     <!-- ff:home -->
-    <section class="ff-hero-card brutal-card mobile-unboxed accent-bar accent-blue no-round text-center space-y-4" aria-labelledby="ff-h1" style="background:url(&quot;data:image/svg+xml;utf8,%3Csvg%20width%3D%221200%22%20height%3D%22600%22%20viewBox%3D%220%200%201200%20600%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3Cpattern%20id%3D%22g%22%20width%3D%2226%22%20height%3D%2226%22%20patternUnits%3D%22userSpaceOnUse%22%3E%3Crect%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M26%200H0V26%22%20fill%3D%22none%22%20stroke%3D%22rgba(0%2C0%2C0%2C0.05)%22%20stroke-width%3D%221%22%2F%3E%3C%2Fpattern%3E%3ClinearGradient%20id%3D%22h%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%220%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23c8e6ff%22%20stop-opacity%3D%220.7%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23ffd6ec%22%20stop-opacity%3D%220.7%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%221200%22%20height%3D%22360%22%20fill%3D%22url(%23g)%22%2F%3E%3Crect%20y%3D%22360%22%20width%3D%221200%22%20height%3D%22240%22%20fill%3D%22url(%23h)%22%2F%3E%3Ccircle%20cx%3D%22240%22%20cy%3D%22220%22%20r%3D%22110%22%20fill%3D%22%23c8e6ff%22%20fill-opacity%3D%220.35%22%2F%3E%3Ccircle%20cx%3D%22820%22%20cy%3D%22160%22%20r%3D%22140%22%20fill%3D%22%23ffd6ec%22%20fill-opacity%3D%220.3%22%2F%3E%3Ccircle%20cx%3D%22620%22%20cy%3D%22440%22%20r%3D%22170%22%20fill%3D%22%23c8e6ff%22%20fill-opacity%3D%220.25%22%2F%3E%3Ccircle%20cx%3D%221040%22%20cy%3D%22420%22%20r%3D%22120%22%20fill%3D%22%23ffd6ec%22%20fill-opacity%3D%220.2%22%2F%3E%3C%2Fsvg%3E&quot;) center/cover no-repeat">
+    <section class="ff-hero-card brutal-card mobile-unboxed accent-bar accent-blue no-round text-center space-y-4" aria-labelledby="ff-h1">
+      <span class="ff-dyn" aria-hidden="true">ff</span>
       <h1 id="ff-h1" class="pixel-title ff-hero">FUTURO FORTISSIMO</h1>
       <p class="ff-body-sm text-black/80 max-w-2xl mx-auto">La newsletter di Michele Merelli su tecnologia, AI, natura e società. Sezioni brevi ff.x.y, ognuna con le sue fonti, ogni ~10 giorni.</p>
       <p><a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-cta inline-flex items-center justify-center min-h-[48px] px-6 py-3 border-3 border-black bg-[var(--ff-green)] text-black brutal-shadow ff-button">📩 Iscriviti gratis su Substack ↗</a></p>
@@ -598,7 +598,8 @@
       <div class="flex items-baseline justify-between gap-2"><h2 id="h-latest" class="ff-heading-md">Ultimi numeri</h2><a class="ff-button underline min-h-[44px] inline-flex items-center" href="/archivio/">Vedi tutti →</a></div>
       <ul class="ff-rail flex gap-4 overflow-x-auto snap-x snap-mandatory pb-3 -mx-4 px-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:overflow-visible">
         <li class="snap-start shrink-0 w-[78%] sm:w-auto"><a href="/archivio/ff-158.html" class="ff-card block h-full border-3 border-black bg-white brutal-shadow hover:-translate-y-0.5 transition-transform">
-          <img src="https://substackcdn.com/image/fetch/w_480,h_270,c_fill,f_auto,q_auto:good/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0bcfebd4-5673-44c5-afa6-682cbf2574f0_506x698.jpeg" alt="ff.158 Intelligenza microscopica" width="480" height="270" loading="lazy" decoding="async" class="ff-card-img w-full aspect-video object-cover border-b-2 border-black bg-gray-100" />
+          <span class="ff-card-mark" aria-hidden="true"><i>ff</i>158</span>
+          <img src="https://substackcdn.com/image/fetch/w_480,h_270,c_fill,f_auto,q_auto:good/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0bcfebd4-5673-44c5-afa6-682cbf2574f0_506x698.jpeg" alt="ff.158 Intelligenza microscopica" width="480" height="270" fetchpriority="high" decoding="async" class="ff-card-img w-full aspect-video object-cover border-b-2 border-black" />
           <span class="block p-3 space-y-1">
             <time datetime="2026-11-21" class="block text-xs font-mono text-black/70">2026-11-21</time>
             <span class="block font-bold leading-snug">ff.158 Intelligenza microscopica</span>
@@ -606,7 +607,8 @@
           </span>
         </a></li>
         <li class="snap-start shrink-0 w-[78%] sm:w-auto"><a href="/archivio/ff-157.html" class="ff-card block h-full border-3 border-black bg-white brutal-shadow hover:-translate-y-0.5 transition-transform">
-          <img src="https://substackcdn.com/image/fetch/w_480,h_270,c_fill,f_auto,q_auto:good/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F55c16c91-6b16-44c4-88b8-c4b3fc050480_1000x1437.jpeg" alt="ff.157 Noci / Gourmet" width="480" height="270" loading="lazy" decoding="async" class="ff-card-img w-full aspect-video object-cover border-b-2 border-black bg-gray-100" />
+          <span class="ff-card-mark" aria-hidden="true"><i>ff</i>157</span>
+          <img src="https://substackcdn.com/image/fetch/w_480,h_270,c_fill,f_auto,q_auto:good/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F55c16c91-6b16-44c4-88b8-c4b3fc050480_1000x1437.jpeg" alt="ff.157 Noci / Gourmet" width="480" height="270" loading="lazy" decoding="async" class="ff-card-img w-full aspect-video object-cover border-b-2 border-black" style="background-image:url('https://substackcdn.com/image/fetch/w_48,h_27,c_fill,f_auto,q_auto:good/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F55c16c91-6b16-44c4-88b8-c4b3fc050480_1000x1437.jpeg')" />
           <span class="block p-3 space-y-1">
             <time datetime="2026-11-10" class="block text-xs font-mono text-black/70">2026-11-10</time>
             <span class="block font-bold leading-snug">ff.157 Noci / Gourmet</span>
@@ -614,7 +616,8 @@
           </span>
         </a></li>
         <li class="snap-start shrink-0 w-[78%] sm:w-auto"><a href="/archivio/ff-156.html" class="ff-card block h-full border-3 border-black bg-white brutal-shadow hover:-translate-y-0.5 transition-transform">
-          <img src="https://substackcdn.com/image/fetch/w_480,h_270,c_fill,f_auto,q_auto:good/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3005a083-2c1d-45fc-85d8-d0347e90809a_1884x893.png" alt="ff.156 Aulin?" width="480" height="270" loading="lazy" decoding="async" class="ff-card-img w-full aspect-video object-cover border-b-2 border-black bg-gray-100" />
+          <span class="ff-card-mark" aria-hidden="true"><i>ff</i>156</span>
+          <img src="https://substackcdn.com/image/fetch/w_480,h_270,c_fill,f_auto,q_auto:good/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3005a083-2c1d-45fc-85d8-d0347e90809a_1884x893.png" alt="ff.156 Aulin?" width="480" height="270" loading="lazy" decoding="async" class="ff-card-img w-full aspect-video object-cover border-b-2 border-black" style="background-image:url('https://substackcdn.com/image/fetch/w_48,h_27,c_fill,f_auto,q_auto:good/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3005a083-2c1d-45fc-85d8-d0347e90809a_1884x893.png')" />
           <span class="block p-3 space-y-1">
             <time datetime="2026-10-30" class="block text-xs font-mono text-black/70">2026-10-30</time>
             <span class="block font-bold leading-snug">ff.156 Aulin?</span>
@@ -622,7 +625,8 @@
           </span>
         </a></li>
         <li class="snap-start shrink-0 w-[78%] sm:w-auto"><a href="/archivio/ff-155.html" class="ff-card block h-full border-3 border-black bg-white brutal-shadow hover:-translate-y-0.5 transition-transform">
-          <img src="https://substackcdn.com/image/fetch/w_480,h_270,c_fill,f_auto,q_auto:good/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fec123297-23e4-4451-b638-09553fd1a37e_684x309.png" alt="ff.155 Etichette e virus mentali" width="480" height="270" loading="lazy" decoding="async" class="ff-card-img w-full aspect-video object-cover border-b-2 border-black bg-gray-100" />
+          <span class="ff-card-mark" aria-hidden="true"><i>ff</i>155</span>
+          <img src="https://substackcdn.com/image/fetch/w_480,h_270,c_fill,f_auto,q_auto:good/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fec123297-23e4-4451-b638-09553fd1a37e_684x309.png" alt="ff.155 Etichette e virus mentali" width="480" height="270" loading="lazy" decoding="async" class="ff-card-img w-full aspect-video object-cover border-b-2 border-black" style="background-image:url('https://substackcdn.com/image/fetch/w_48,h_27,c_fill,f_auto,q_auto:good/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fec123297-23e4-4451-b638-09553fd1a37e_684x309.png')" />
           <span class="block p-3 space-y-1">
             <time datetime="2026-08-31" class="block text-xs font-mono text-black/70">2026-08-31</time>
             <span class="block font-bold leading-snug">ff.155 Etichette e virus mentali</span>
@@ -630,7 +634,8 @@
           </span>
         </a></li>
         <li class="snap-start shrink-0 w-[78%] sm:w-auto"><a href="/archivio/ff-154.html" class="ff-card block h-full border-3 border-black bg-white brutal-shadow hover:-translate-y-0.5 transition-transform">
-          <img src="https://substackcdn.com/image/fetch/w_480,h_270,c_fill,f_auto,q_auto:good/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F056144d4-907b-4062-9a31-876caf0f8a78_481x357.png" alt="ff.154 Viaggiare, da fermi" width="480" height="270" loading="lazy" decoding="async" class="ff-card-img w-full aspect-video object-cover border-b-2 border-black bg-gray-100" />
+          <span class="ff-card-mark" aria-hidden="true"><i>ff</i>154</span>
+          <img src="https://substackcdn.com/image/fetch/w_480,h_270,c_fill,f_auto,q_auto:good/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F056144d4-907b-4062-9a31-876caf0f8a78_481x357.png" alt="ff.154 Viaggiare, da fermi" width="480" height="270" loading="lazy" decoding="async" class="ff-card-img w-full aspect-video object-cover border-b-2 border-black" style="background-image:url('https://substackcdn.com/image/fetch/w_48,h_27,c_fill,f_auto,q_auto:good/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F056144d4-907b-4062-9a31-876caf0f8a78_481x357.png')" />
           <span class="block p-3 space-y-1">
             <time datetime="2026-08-20" class="block text-xs font-mono text-black/70">2026-08-20</time>
             <span class="block font-bold leading-snug">ff.154 Viaggiare, da fermi</span>
@@ -638,7 +643,8 @@
           </span>
         </a></li>
         <li class="snap-start shrink-0 w-[78%] sm:w-auto"><a href="/archivio/ff-153.html" class="ff-card block h-full border-3 border-black bg-white brutal-shadow hover:-translate-y-0.5 transition-transform">
-          <img src="https://substackcdn.com/image/fetch/w_480,h_270,c_fill,f_auto,q_auto:good/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F012e44a9-2612-4565-8805-34abb96d1452_624x701.png" alt="ff.153 E&#39; tutto un token" width="480" height="270" loading="lazy" decoding="async" class="ff-card-img w-full aspect-video object-cover border-b-2 border-black bg-gray-100" />
+          <span class="ff-card-mark" aria-hidden="true"><i>ff</i>153</span>
+          <img src="https://substackcdn.com/image/fetch/w_480,h_270,c_fill,f_auto,q_auto:good/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F012e44a9-2612-4565-8805-34abb96d1452_624x701.png" alt="ff.153 E&#39; tutto un token" width="480" height="270" loading="lazy" decoding="async" class="ff-card-img w-full aspect-video object-cover border-b-2 border-black" style="background-image:url('https://substackcdn.com/image/fetch/w_48,h_27,c_fill,f_auto,q_auto:good/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F012e44a9-2612-4565-8805-34abb96d1452_624x701.png')" />
           <span class="block p-3 space-y-1">
             <time datetime="2026-08-10" class="block text-xs font-mono text-black/70">2026-08-10</time>
             <span class="block font-bold leading-snug">ff.153 E&#39; tutto un token</span>
@@ -679,7 +685,8 @@
     <div id="root"></div>
     </main>
     <script type="module" src="./analytics.js"></script>
-    <script type="module" src="./index.js"></script>
+    <!-- interactive index: boot after the first frame so the static page paints before the 1.6 MB data module is parsed -->
+    <script type="module">requestAnimationFrame(() => setTimeout(() => import('/index.js')));</script>
   <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "24fb0c5b538b4448b1281261e5e329a0"}'></script><!-- End Cloudflare Web Analytics -->
   <!-- ff:chrome-end -->
   <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
@@ -729,7 +736,7 @@
     <ul id="ff-results" role="listbox" aria-label="Cerca"></ul>
     <div class="ff-s-foot"><a href="/archivio/" data-ff-all data-base="/archivio/">Tutti i risultati nell’archivio →</a><span>Premi / per cercare ovunque</span></div>
   </dialog>
-  <script src="/assets/ff-app.js" defer></script>
+  <script src="/assets/ff-app.js?v=3" defer></script>
   <!-- /ff:chrome-end -->
 </body>
 </html>
