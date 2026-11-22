@@ -16,7 +16,7 @@ const Sidebar = ({ selectedEmoji, onSelect, vertical = true }) => {
     : 'flex-row items-center gap-3 px-2 justify-start overflow-x-auto whitespace-nowrap no-scrollbar';
 
   const itemClasses =
-    'w-12 h-12 flex-shrink-0 flex items-center justify-center border-3 border-black text-black font-heading text-lg transition-all duration-150 shadow-[6px_6px_0_#000] hover:-translate-y-0.5';
+    'ff-topic w-12 h-12 flex-shrink-0 flex items-center justify-center text-black font-heading text-lg transition-all duration-150';
 
   return html`<nav className=${`flex ${containerClasses} ${vertical ? 'sticky top-8' : ''}`}>
     <button
@@ -24,16 +24,15 @@ const Sidebar = ({ selectedEmoji, onSelect, vertical = true }) => {
       title="All Topics"
       className=${`${itemClasses} ${
         selectedEmoji === null
-          ? 'bg-[var(--ff-blue)] text-black scale-105'
-          : 'bg-white text-gray-600'
+          ? 'is-on text-black'
+          : 'text-gray-600'
       }`}
     >
       <span className="text-lg">♾️</span>
     </button>
 
     ${topics.map(([key, emoji], index) => {
-      const palette = ['bg-blue-100', 'bg-green-100', 'bg-red-100'];
-      const backgroundClass = palette[index] || 'bg-white';
+      const backgroundClass = '';
 
       return html`<button
         key=${key}
@@ -41,7 +40,7 @@ const Sidebar = ({ selectedEmoji, onSelect, vertical = true }) => {
         title=${key.toLowerCase()}
         className=${`${itemClasses} ${backgroundClass} ${
           selectedEmoji === emoji
-            ? 'scale-105 shadow-[8px_8px_0_#000]'
+            ? 'is-on'
             : 'text-gray-700'
         }`}
       >

@@ -19,7 +19,7 @@ const IndexChapter = ({ chapter, highlight, showPreviews = false }) => {
 
   return html`<article className="chapter-card border-b border-black/15 pb-5 sm:pb-6 last:border-b-0 scroll-mt-6" id=${issueDomId}>
     <div className="flex items-start gap-2 sm:gap-3">
-      <span className="text-lg sm:text-xl select-none leading-none mt-0.5">${chapter.primaryEmoji || chapter.originalEmoji}</span>
+      <span className="ff-emo text-lg sm:text-xl select-none leading-none mt-0.5">${chapter.primaryEmoji || chapter.originalEmoji}</span>
       <div className="flex-1 min-w-0">
         <div className="flex flex-wrap items-start justify-between gap-2">
           <h2 className="font-heading ff-heading-lg text-black chapter-title">
@@ -32,7 +32,7 @@ const IndexChapter = ({ chapter, highlight, showPreviews = false }) => {
             ${archiveHref
               ? html`<a
                   href=${archiveHref}
-                  className="px-2 py-1 border-2 border-black bg-white ff-caption hover:bg-[var(--ff-yellow)] transition-colors"
+                  className="ff-qlink"
                 >
                   ${t('openIssuePage')} →
                 </a>`
@@ -41,7 +41,7 @@ const IndexChapter = ({ chapter, highlight, showPreviews = false }) => {
               href=${chapter.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-2 py-1 border-2 border-black bg-[var(--ff-yellow)] ff-caption hover:-translate-y-0.5 transition-transform"
+              className="ff-qlink"
             >
               ${t('substackLink')}
             </a>
@@ -74,7 +74,7 @@ const IndexChapter = ({ chapter, highlight, showPreviews = false }) => {
         const subArchiveHref = archiveHref && subAnchor ? `${archiveHref}#${subAnchor}` : archiveHref;
 
         return html`<div key=${idx} id=${subId} className="flex gap-2 items-start scroll-mt-6">
-          <span className="text-lg sm:text-xl leading-none mt-0.5">${sub.originalEmoji}</span>
+          <span className="ff-emo text-lg sm:text-xl leading-none mt-0.5">${sub.originalEmoji}</span>
           <div className="flex-1 min-w-0">
             <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
               ${sub.ffLabel ? html`<span className="ff-label ff-label-sub">${sub.ffLabel}</span>` : null}
@@ -99,17 +99,17 @@ const IndexChapter = ({ chapter, highlight, showPreviews = false }) => {
 
             ${citations.length
               ? html`<details className="mt-2">
-                  <summary className="links-toggle inline-flex items-center gap-2 border-3 border-black bg-white brutal-shadow ff-button px-3 py-1.5 cursor-pointer">
+                  <summary className="links-toggle ff-qlink cursor-pointer">
                     ${t('showCitations')} (${citations.length})
                   </summary>
-                  <div className="flex flex-wrap gap-2 mt-3">
+                  <div className="ff-refs-l mt-2">
                     ${citations.map((ref, refIdx) =>
                       html`<a
                         key=${refIdx}
                         href=${ref.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center bg-[var(--ff-yellow)] ff-caption px-2 py-1 text-black hover:underline decoration-2 brutal-shadow"
+                        className="ff-ref"
                       >
                         <${HighlightText} text=${ref.text} highlight=${highlight} />
                       </a>`
