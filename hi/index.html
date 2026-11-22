@@ -555,7 +555,7 @@
       .ff-lang-switch .ff-ln { text-transform:none; letter-spacing:0; font-weight:600; opacity:.85; }
       @media (max-width:640px) { .ff-lang-switch .ff-ln { display:none; } }
     </style>
-  <link rel="stylesheet" href="/assets/ff-tw.css?v=3" />
+  <link rel="stylesheet" href="/assets/ff-tw.css?v=4" />
 </head>
   <body class="bg-white text-gray-900 antialiased selection:bg-gray-900 selection:text-white ff-has-tabbar">
   <!-- ff:chrome -->
@@ -703,7 +703,7 @@
     </main>
     <script type="module" src="../analytics.js"></script>
     <!-- interactive index: boot after the first frame so the static page paints before the 1.6 MB data module is parsed -->
-    <script type="module">requestAnimationFrame(() => setTimeout(() => import('/index.js')));</script>
+    <script type="module">/* the interactive index (index.js + data.js) boots once the page has loaded, off the LCP path; a deep link (#ff-…) boots it at once */ const ffBoot = () => import('/index.js'); if (/^#ff-/.test(location.hash)) ffBoot(); else if (document.readyState === 'complete') (window.requestIdleCallback || setTimeout)(ffBoot, { timeout: 1200 }); else addEventListener('load', () => (window.requestIdleCallback || setTimeout)(ffBoot, { timeout: 1200 }), { once: true });</script>
   <!-- ff:chrome-end -->
   <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
