@@ -145,6 +145,39 @@
     Object.keys(map).forEach(function (id) { var el = d.getElementById(id); if (el) io.observe(el); });
   }
 
+  // ── light / dark theme: saved choice wins, otherwise follow the system; circular reveal where supported ──
+  var mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  function saved() { try { return localStorage.getItem('ff-theme'); } catch (e) { return null; } }
+  function applyTheme(t) {
+    html.setAttribute('data-ff-theme', t);
+    $$('meta[name="theme-color"]').forEach(function (m) { if (!m.media) m.content = t === 'dark' ? '#050506' : '#0a0a0a'; });
+    $$('[data-ff-theme-toggle]').forEach(function (b) { b.setAttribute('aria-pressed', t === 'dark' ? 'true' : 'false'); });
+  }
+  applyTheme(html.getAttribute('data-ff-theme') || (mq && mq.matches ? 'dark' : 'light'));
+  if (mq && mq.addEventListener) mq.addEventListener('change', function (e) { if (!saved()) applyTheme(e.matches ? 'dark' : 'light'); });
+  $$('[data-ff-theme-toggle]').forEach(function (b) {
+    b.addEventListener('click', function (e) {
+      var next = html.getAttribute('data-ff-theme') === 'dark' ? 'light' : 'dark';
+      try { localStorage.setItem('ff-theme', next); } catch (err) {}
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!d.startViewTransition || reduce) { applyTheme(next); return; }
+      var r = b.getBoundingClientRect();
+      html.style.setProperty('--ff-vt-x', Math.round(r.left + r.width / 2) + 'px');
+      html.style.setProperty('--ff-vt-y', Math.round(r.top + r.height / 2) + 'px');
+      html.classList.add('ff-theme-vt');
+      var vt = d.startViewTransition(function () { applyTheme(next); });
+      vt.finished.finally(function () { html.classList.remove('ff-theme-vt'); });
+    });
+  });
+
+  // ── cover images: fade in over their blurred placeholder once decoded ──
+  $$('img.ff-card-img').forEach(function (img) {
+    if (img.complete && img.naturalWidth) return;
+    img.classList.add('is-loading');
+    var done = function () { img.classList.remove('is-loading'); };
+    img.addEventListener('load', done); img.addEventListener('error', done);
+  });
+
   // ── offline reading of visited pages ──
   if ('serviceWorker' in navigator && location.protocol === 'https:') {
     window.addEventListener('load', function () { navigator.serviceWorker.register('/sw.js').catch(function () {}); });
