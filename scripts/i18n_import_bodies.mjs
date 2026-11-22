@@ -4,11 +4,12 @@
  *   ### <issue-id>/<section-index>
  *   <translated content, one paragraph>
  *   C<j>: <translated image caption j>   (optional)
+ *   R<k>: <translated anchor text of references[k]> (optional)
  * into i18n/<lang>.json with content hashes. Usage: node scripts/i18n_import_bodies.mjs <lang> <files...>
  */
 import fs from 'node:fs';
 import { rawData } from '../data.js';
-import { dedupe, issueSlugOf, sectionContentHash, loadTranslations, saveTranslations } from './i18n_lib.mjs';
+import { dedupe, issueSlugOf, sectionContentHash, refsHash, loadTranslations, saveTranslations } from './i18n_lib.mjs';
 
 const [lang, ...files] = process.argv.slice(2);
 const src = new Map(dedupe(rawData).map((ch, i) => [issueSlugOf(ch, i), ch]));
@@ -19,10 +20,13 @@ for (const f of files) {
   let cur = null;
   for (const line of fs.readFileSync(f, 'utf8').split('\n')) {
     const m = /^### (.+)\/(\d+)$/.exec(line);
-    if (m) { cur = { id: m[1], i: +m[2], content: [], caps: {} }; blocks.push(cur); continue; }
+    if (m) { cur = { id: m[1], i: +m[2], content: [], caps: {}, refs: {} }; blocks.push(cur); continue; }
     if (!cur || !line.trim()) continue;
     const c = /^C(\d+): (.*)$/.exec(line);
-    if (c) cur.caps[+c[1]] = c[2].trim(); else cur.content.push(line.trim());
+    const r = /^R(\d+): (.*)$/.exec(line);
+    if (c) cur.caps[+c[1]] = c[2].trim();
+    else if (r) cur.refs[+r[1]] = r[2].trim();
+    else cur.content.push(line.trim());
   }
 }
 for (const b of blocks) {
@@ -40,6 +44,9 @@ for (const b of blocks) {
   const sec = issue.sections[String(b.i)] || {};
   sec.ch = sectionContentHash(s); sec.content = content;
   if (srcCaps.some(Boolean)) sec.captions = srcCaps.map((c, j) => (c ? b.caps[j] ?? c : ''));
+  const nRefs = (s.references || []).length;
+  for (const k of Object.keys(b.refs)) if (+k >= nRefs) errors.push(`${b.id}/${b.i}: R${k} out of range (${nRefs} refs)`);
+  if (Object.keys(b.refs).length) { sec.refs = Object.fromEntries(Object.entries(b.refs).filter(([k]) => +k < nRefs)); sec.rh = refsHash(s); }
   issue.sections[String(b.i)] = sec; n++;
 }
 saveTranslations(lang, tr);

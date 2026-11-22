@@ -41,6 +41,48 @@ export function metaHash(ch) {
 export function sectionTitleHash(s) { return hash(s.title); }
 export function sectionContentHash(s) { return hash(s.content); }
 
+export const refsHash = (s) => hash(JSON.stringify((s.references || []).map((r) => r?.text || '')));
+const cleanAmz = (u = '') => u.trim().replace(/^(https:\/\/amzn\.to\/[A-Za-z0-9]+)\1+$/, '$1');
+
+/** Context for translating link anchors: Amazon book URL → original title, ff.x.y code → translated title */
+export function buildRefContext(rawData, tr) {
+  const ctx = { bookByUrl: new Map(), codeTitle: new Map() };
+  try {
+    const books = JSON.parse(fs.readFileSync(path.join(ROOT, 'libri', 'books_cited.json'), 'utf8')).books || [];
+    const titles = JSON.parse(fs.readFileSync(path.join(ROOT, 'i18n', 'books.json'), 'utf8')).titles || {};
+    for (const b of books) {
+      const t = titles[b.id];
+      if (!t) continue;
+      for (const u of [...(b.sourceUrls || []), b.amazonUrl, b.altAmazonUrl].filter(Boolean)) ctx.bookByUrl.set(cleanAmz(u), t);
+    }
+  } catch { /* books optional */ }
+  dedupe(rawData).forEach((ch, idx) => {
+    const id = issueSlugOf(ch, idx);
+    const t = tr.issues[id];
+    if (!t || t.h !== metaHash(ch)) return;
+    const m = /ff\.(\d+)/i.exec(ch.title || '');
+    if (m && t.title) ctx.codeTitle.set(`ff.${m[1]}`, t.title);
+    (ch.subchapters || []).forEach((s, i) => {
+      const ts = t.sections?.[String(i)];
+      const c = /ff\.(\d+)\.(\d+)/i.exec(s.title || '');
+      if (c && ts?.title && ts.th === sectionTitleHash(s)) ctx.codeTitle.set(`ff.${c[1]}.${c[2]}`, ts.title);
+    });
+  });
+  return ctx;
+}
+
+function localizeRef(ref, translated, lang, ctx) {
+  if (!ref) return ref;
+  const out = { ...ref, _src: ref.text, _lang: 'it' };
+  const book = ctx?.bookByUrl.get(cleanAmz(ref.url || ''));
+  if (book) return { ...out, text: book, _lang: lang };
+  const stripped = (ref.text || '').replace(/^[^\p{L}\p{N}]+/u, '');
+  const code = /^ff\.(\d+(?:\.\d+)?)/i.exec(stripped);
+  if (code && ctx?.codeTitle.has(`ff.${code[1]}`)) return { ...out, text: ctx.codeTitle.get(`ff.${code[1]}`), _lang: lang };
+  if (translated) return { ...out, text: translated, _lang: lang };
+  return out;
+}
+
 export function loadTranslations(lang) {
   const p = path.join(ROOT, 'i18n', `${lang}.json`);
   if (!fs.existsSync(p)) return { lang, issues: {} };
@@ -66,10 +108,14 @@ export function saveTranslations(lang, data) {
  *         'partial' (meta translated, some bodies still Italian),
  *         'none'.
  */
-export function localizeIssue(ch, idx, tr, idOverride) {
+export function localizeIssue(ch, idx, tr, idOverride, ctx) {
   const id = idOverride || issueSlugOf(ch, idx);
   const t = tr.issues[id];
-  const out = { ...ch, _id: id, _lang: 'it', subchapters: (ch.subchapters || []).map((s) => ({ ...s, _lang: 'it', _titleLang: 'it' })) };
+  const out = { ...ch, _id: id, _lang: 'it', subchapters: (ch.subchapters || []).map((s) => ({
+    ...s, _lang: 'it', _titleLang: 'it',
+    references: (s.references || []).map((r) => localizeRef(r, null, tr.lang, ctx)),
+    connections: (s.connections || []).map((r) => localizeRef(r, null, tr.lang, ctx)),
+  })) };
   if (!t || t.h !== metaHash(ch)) return { issue: out, status: 'none', id };
   out._lang = tr.lang;
   out.title = t.title || ch.title;
@@ -78,7 +124,10 @@ export function localizeIssue(ch, idx, tr, idOverride) {
   let bodies = 0;
   out.subchapters = (ch.subchapters || []).map((s, i) => {
     const ts = (t.sections || {})[String(i)];
-    const o = { ...s, _lang: 'it', _titleLang: 'it' };
+    const o = { ...out.subchapters[i] };
+    if (ts && ts.refs && ts.rh === refsHash(s)) {
+      o.references = (s.references || []).map((r, k) => localizeRef(r, ts.refs[String(k)], tr.lang, ctx));
+    }
     if (ts && ts.th === sectionTitleHash(s) && ts.title) { o.title = ts.title; o._titleLang = tr.lang; }
     if (ts && ts.ch === sectionContentHash(s) && ts.content) { o.content = ts.content; o._lang = tr.lang; bodies++; }
     if (ts && ts.ch === sectionContentHash(s) && Array.isArray(ts.captions) && ts.captions.length === (s.images || []).length) {
