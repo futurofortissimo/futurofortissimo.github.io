@@ -11,6 +11,24 @@ import { NavigationProvider, useNavigation } from './NavigationContext.js';
 import IndexChapter from './components/IndexChapter.js';
 import { t } from './i18n.js';
 
+const NON_BOOK_SHORTCODES = new Set([
+  '3yO5tEM',
+  '4dHBHjX',
+  '3Bjzz3x',
+  '3yWFOcZ',
+  '3UOT1N2',
+  '3sUMQMj',
+  '3Ggd13d'
+]);
+
+const ISSUE_RANGES = [
+  { id: 'all', label: null, min: -1, max: 9999 },
+  { id: '150+', label: 'ff.150+', min: 150, max: 9999 },
+  { id: '120-149', label: 'ff.120–149', min: 120, max: 149 },
+  { id: '90-119', label: 'ff.90–119', min: 90, max: 119 },
+  { id: '1-89', label: 'ff.1–89', min: 1, max: 89 }
+];
+
 const headerBackgroundDataUri =
   'data:image/svg+xml;utf8,' +
   encodeURIComponent(`
@@ -47,8 +65,12 @@ const extractBooksFromData = (chapters = []) => {
       const image = Array.isArray(sub.images) && sub.images.length > 0 ? sub.images[0].src : null;
 
       [...(sub.references || []), ...(sub.connections || [])].forEach((ref) => {
-        if (!ref?.url || !ref.url.includes('amzn.to')) return;
-        const key = ref.url;
+        const url = ref?.url || '';
+        if (!/amzn\.to|amazon\./i.test(url) || url.includes('link.amazon/')) return;
+        const sc = url.match(/amzn\.to\/([A-Za-z0-9]+)/i)?.[1];
+        if (sc && NON_BOOK_SHORTCODES.has(sc)) return;
+
+        const key = url;
         if (seen.has(key)) return;
         seen.add(key);
 
@@ -58,7 +80,7 @@ const extractBooksFromData = (chapters = []) => {
         books.push({
           id: key,
           title,
-          link: ref.url,
+          link: url,
           chapterTitle: chapter.cleanTitle,
           subTitle: sub.cleanTitle,
           image,
@@ -76,12 +98,22 @@ const extractBooksFromData = (chapters = []) => {
 const InnerApp = () => {
   const [processedData, setProcessedData] = React.useState([]);
   const [selectedEmoji, setSelectedEmoji] = React.useState(null);
+  const [selectedRange, setSelectedRange] = React.useState('all');
+  const [showPreviews, setShowPreviews] = React.useState(false);
   const [isMediaOpen, setIsMediaOpen] = React.useState(false);
   const [isBooksOpen, setIsBooksOpen] = React.useState(false);
   const [isSearchOverlayOpen, setIsSearchOverlayOpen] = React.useState(false);
-  const [hasManuallyClosedSearch, setHasManuallyClosedSearch] = React.useState(false);
   const [isFilterMenuOpen, setIsFilterMenuOpen] = React.useState(false);
+
   const { incrementInteraction, searchQuery, setSearchQuery, debouncedSearchQuery } = useNavigation();
+
+  React.useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const initialQ = params.get('q');
+      if (initialQ) setSearchQuery(initialQ);
+    }
+  }, []);
 
   React.useEffect(() => {
     const getIssueNumber = (chapter) => {
@@ -90,7 +122,15 @@ const InnerApp = () => {
       return match ? Number(match[1]) : -1;
     };
 
-    const processed = rawData
+    const seenUrls = new Set();
+    const deduped = rawData.filter((ch) => {
+      const u = (ch?.url || '').replace(/\/$/, '');
+      if (!u || seenUrls.has(u)) return false;
+      seenUrls.add(u);
+      return true;
+    });
+
+    const processed = deduped
       .map(processChapter)
       .filter(Boolean)
       .sort((a, b) => getIssueNumber(b) - getIssueNumber(a));
@@ -100,29 +140,28 @@ const InnerApp = () => {
 
   const bookSuggestions = React.useMemo(() => extractBooksFromData(processedData), [processedData]);
 
-  const doesSubchapterMatchSelection = React.useCallback(
-    (sub, emoji) => {
-      if (!emoji) return true;
-
-      const targetTheme = mapTopicToTheme(emoji);
-      if (targetTheme) {
-        return mapTopicToTheme(sub.secondaryEmoji) === targetTheme;
-      }
-
-      return sub.secondaryEmoji === emoji;
-    },
-    []
-  );
+  const doesSubchapterMatchSelection = React.useCallback((sub, emoji) => {
+    if (!emoji) return true;
+    const targetTheme = mapTopicToTheme(emoji);
+    if (targetTheme) {
+      return mapTopicToTheme(sub.secondaryEmoji) === targetTheme;
+    }
+    return sub.secondaryEmoji === emoji;
+  }, []);
 
   const filteredData = React.useMemo(() => {
-    if (!selectedEmoji) return processedData;
+    const rangeObj = ISSUE_RANGES.find((r) => r.id === selectedRange) || ISSUE_RANGES[0];
 
     return processedData
+      .filter((chapter) => {
+        if (selectedRange === 'all') return true;
+        return chapter.ffNum >= rangeObj.min && chapter.ffNum <= rangeObj.max;
+      })
       .map((chapter) => {
+        if (!selectedEmoji) return chapter;
         const matchingSubchapters = chapter.processedSubchapters.filter((sub) =>
           doesSubchapterMatchSelection(sub, selectedEmoji)
         );
-
         if (matchingSubchapters.length > 0) {
           return {
             ...chapter,
@@ -132,7 +171,7 @@ const InnerApp = () => {
         return null;
       })
       .filter(Boolean);
-  }, [processedData, selectedEmoji]);
+  }, [processedData, selectedEmoji, selectedRange, doesSubchapterMatchSelection]);
 
   const handleTopicSelect = (emoji) => {
     incrementInteraction();
@@ -146,29 +185,21 @@ const InnerApp = () => {
   };
 
   const handleSearchChange = (e) => {
-    setHasManuallyClosedSearch(false);
     setSearchQuery(e.target.value);
   };
 
-  React.useEffect(() => {
-    if (searchQuery.trim()) {
-      if (!hasManuallyClosedSearch) {
-        setIsSearchOverlayOpen(true);
-      }
-    } else {
-      setIsSearchOverlayOpen(false);
-      setHasManuallyClosedSearch(false);
+  const handleSearchKeyDown = (e) => {
+    if (e.key === 'Enter' && searchQuery.trim()) {
+      setIsSearchOverlayOpen(true);
     }
-  }, [searchQuery, hasManuallyClosedSearch]);
+  };
 
   const handleHideSearchOverlay = () => {
     setIsSearchOverlayOpen(false);
-    setHasManuallyClosedSearch(true);
   };
 
   const handleClearSearch = () => {
     setSearchQuery('');
-    setHasManuallyClosedSearch(false);
     setIsSearchOverlayOpen(false);
   };
 
@@ -189,7 +220,6 @@ const InnerApp = () => {
     }
   };
 
-
   const chaptersForIndex = React.useMemo(() => {
     const query = debouncedSearchQuery.trim().toLowerCase();
     const toLower = (value) => (typeof value === 'string' ? value.toLowerCase() : '');
@@ -200,6 +230,7 @@ const InnerApp = () => {
         const matchesChapterTitle =
           !query ||
           includesQuery(chapter.cleanTitle) ||
+          includesQuery(chapter.ffLabel) ||
           includesQuery(chapter.subtitle) ||
           (chapter.keypoints || []).some((point) => includesQuery(point));
 
@@ -207,6 +238,7 @@ const InnerApp = () => {
           if (!query) return true;
           return (
             includesQuery(sub.cleanTitle) ||
+            includesQuery(sub.ffLabel) ||
             includesQuery(sub.content) ||
             includesQuery(sub.summary)
           );
@@ -222,7 +254,25 @@ const InnerApp = () => {
       .filter(Boolean);
   }, [debouncedSearchQuery, filteredData]);
 
-  return html`<div className="min-h-screen text-black selection:bg-yellow-200 selection:text-black">
+  const totalVisibleSections = React.useMemo(
+    () => chaptersForIndex.reduce((acc, ch) => acc + (ch.processedSubchapters?.length || 0), 0),
+    [chaptersForIndex]
+  );
+
+  const handleJumpToIssue = (e) => {
+    const targetId = e.target.value;
+    if (!targetId) return;
+    setSelectedRange('all');
+    setSelectedEmoji(null);
+    setSearchQuery('');
+    setTimeout(() => {
+      const el = document.getElementById(targetId);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 60);
+    e.target.value = '';
+  };
+
+  return html`<div className="min-h-screen text-black selection:bg-yellow-200 selection:text-black overflow-x-hidden">
     <${SupportPopup} />
     <${SearchResultsModal}
       chapters=${processedData}
@@ -233,9 +283,9 @@ const InnerApp = () => {
     />
     <${BooksPopup} isOpen=${isBooksOpen} onClose=${handleCloseBooks} books=${bookSuggestions} />
 
-    <div className="max-w-6xl mx-auto px-4 md:px-8 py-8 space-y-8">
+    <div className="max-w-6xl mx-auto px-4 md:px-8 py-6 sm:py-8 space-y-6 sm:space-y-8">
       <header
-        className="brutal-card mobile-unboxed accent-bar accent-blue flex flex-col items-center justify-center gap-6 text-center no-round"
+        className="brutal-card mobile-unboxed accent-bar accent-blue flex flex-col items-center justify-center gap-5 text-center no-round"
         style=${{
           backgroundImage: `url(${headerBackgroundDataUri})`,
           backgroundSize: 'cover',
@@ -243,107 +293,223 @@ const InnerApp = () => {
           backgroundRepeat: 'no-repeat'
         }}
       >
-        <div className="w-full">
+        <div className="w-full space-y-3">
           <h1 className="pixel-title ff-hero text-center">FUTURO FORTISSIMO</h1>
+          <p className="ff-body-sm text-black/80 max-w-2xl mx-auto">${t('subscribeDesc')}</p>
+        </div>
+
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+          <a
+            href="https://fortissimo.substack.com/subscribe"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2.5 border-3 border-black bg-[var(--ff-green)] text-black brutal-shadow ff-button hover:-translate-y-0.5 transition-transform"
+          >
+            ${t('subscribeCta')} ↗
+          </a>
+          <a
+            href="/libri/"
+            className="px-4 py-2.5 border-3 border-black bg-[var(--ff-yellow)] text-black brutal-shadow ff-button hover:-translate-y-0.5 transition-transform"
+          >
+            ${t('books')}
+          </a>
+          <a
+            href="/archivio/"
+            className="px-4 py-2.5 border-3 border-black bg-white text-black brutal-shadow ff-button hover:-translate-y-0.5 transition-transform"
+          >
+            ${t('archiveSeo')}
+          </a>
+          <a
+            href="/book/"
+            className="px-4 py-2.5 border-3 border-black bg-white text-black brutal-shadow ff-button hover:-translate-y-0.5 transition-transform"
+          >
+            ${t('book')}
+          </a>
+          <a
+            href="/book/ffxy-index.html"
+            className="px-4 py-2.5 border-3 border-black bg-white text-black brutal-shadow ff-button hover:-translate-y-0.5 transition-transform"
+          >
+            ${t('ffxyNav')}
+          </a>
+          <a
+            href="/themes.html"
+            className="px-4 py-2.5 border-3 border-black bg-white text-black brutal-shadow ff-button hover:-translate-y-0.5 transition-transform"
+          >
+            ${t('themesNav')}
+          </a>
+          <a
+            href="/connections.html"
+            className="px-4 py-2.5 border-3 border-black bg-white text-black brutal-shadow ff-button hover:-translate-y-0.5 transition-transform"
+          >
+            ${t('connectionsNav')}
+          </a>
+          <a
+            href="/note.html"
+            className="px-4 py-2.5 border-3 border-black bg-white text-black brutal-shadow ff-button hover:-translate-y-0.5 transition-transform"
+          >
+            ${t('notesNav')}
+          </a>
         </div>
       </header>
 
-      <section className="brutal-card mobile-unboxed accent-bar accent-yellow no-round space-y-4 sm:space-y-6">
-        <div className="grid grid-cols-1 gap-4 sm:gap-6 items-start">
-          <div className="flex flex-col gap-3 sm:gap-4">
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
-              <div className="relative flex-1 min-w-[200px]">
-                <input
-                  type="text"
-                  value=${searchQuery}
-                  onInput=${handleSearchChange}
-                  placeholder=${t('searchPlaceholder')}
-                  className="w-full px-4 py-3 pr-20 bg-white border-3 border-black ff-input placeholder:text-gray-400 focus:outline-none focus:ring-0"
-                  aria-label=${t('searchLabel')}
-                />
-                <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-2">
-                  <button
+      <section className="brutal-card mobile-unboxed accent-bar accent-yellow no-round space-y-4">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+          <div className="relative flex-1 min-w-[200px]">
+            <input
+              type="text"
+              value=${searchQuery}
+              onInput=${handleSearchChange}
+              onKeyDown=${handleSearchKeyDown}
+              placeholder=${t('searchPlaceholder')}
+              className="w-full px-4 py-3 pr-20 bg-white border-3 border-black ff-input placeholder:text-gray-400 focus:outline-none focus:ring-0"
+              aria-label=${t('searchLabel')}
+            />
+            <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-2">
+              <button
+                type="button"
+                className="text-black text-lg lg:hidden"
+                aria-label=${t('openFilterMenu')}
+                onClick=${() => setIsFilterMenuOpen(true)}
+              >
+                🔍
+              </button>
+              ${searchQuery
+                ? html`<button
                     type="button"
                     className="text-black text-lg"
-                    aria-label=${t('openFilterMenu')}
-                    onClick=${() => setIsFilterMenuOpen(true)}
+                    aria-label=${t('clearSearch')}
+                    onClick=${handleClearSearch}
                   >
-                    🔍
-                  </button>
-                  ${searchQuery
-                    ? html`<button
-                        type="button"
-                        className="text-black text-lg"
-                        aria-label=${t('clearSearch')}
-                        onClick=${handleClearSearch}
-                      >
-                        ✕
-                      </button>`
-                    : null}
-                </div>
+                    ✕
+                  </button>`
+                : null}
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-2 justify-start sm:justify-end">
+            <button
+              type="button"
+              onClick=${handleOpenMedia}
+              className="px-4 py-3 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-1 transition-transform"
+            >
+              ${t('media')}
+            </button>
+            <button
+              type="button"
+              onClick=${handleOpenBooks}
+              disabled=${bookSuggestions.length === 0}
+              className="px-4 py-3 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-1 transition-transform disabled:opacity-60 disabled:cursor-not-allowed"
+            >
+              🎲 ${t('books')}
+            </button>
+            <a
+              href="https://www.paypal.com/paypalme/MicheleMerelli"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label=${t('supportLabel')}
+              className="px-4 py-3 border-3 border-black bg-[var(--ff-blue)] text-black brutal-shadow ff-button hover:-translate-y-1 transition-transform"
+            >
+              ☕
+            </a>
+            <a
+              href="https://micmer-git.github.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label=${t('projectsLabel')}
+              className="px-4 py-3 border-3 border-black bg-[var(--ff-blue)] text-black brutal-shadow ff-button hover:-translate-y-1 transition-transform"
+            >
+              M
+            </a>
+          </div>
+        </div>
+
+        ${searchQuery.trim()
+          ? html`<div className="flex flex-wrap items-center justify-between gap-2 px-3 py-2 border-2 border-black bg-amber-50">
+              <span className="ff-caption text-black font-bold">
+                ${chaptersForIndex.length} ${t('issuesUnit')} · ${totalVisibleSections} ${t('sectionsUnit')}
+              </span>
+              <div className="flex gap-2">
+                <button
+                  type="button"
+                  onClick=${() => setIsSearchOverlayOpen(true)}
+                  className="px-3 py-1 border-2 border-black bg-[var(--ff-yellow)] ff-button text-xs"
+                >
+                  ${t('quickModal')}
+                </button>
+                <button
+                  type="button"
+                  onClick=${handleClearSearch}
+                  className="px-3 py-1 border-2 border-black bg-white ff-button text-xs"
+                >
+                  ${t('clearSearch')}
+                </button>
               </div>
-            <div className="flex flex-wrap gap-2 justify-start sm:justify-end">
-              <button
-                type="button"
-                onClick=${handleOpenMedia}
-                className="px-4 py-3 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-1 transition-transform"
-              >
-                ${t('media')}
-              </button>
-              <button
-                type="button"
-                onClick=${handleOpenBooks}
-                disabled=${bookSuggestions.length === 0}
-                className="px-4 py-3 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-1 transition-transform disabled:opacity-60 disabled:cursor-not-allowed"
-              >
-                ${t('books')}
-              </button>
-              <a
-                href="./book/"
-                className="px-4 py-3 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-1 transition-transform"
-              >
-                ${t('book')}
-              </a>
-              <a
-                href="https://www.paypal.com/paypalme/MicheleMerelli"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label=${t('supportLabel')}
-                className="px-4 py-3 border-3 border-black bg-[var(--ff-blue)] text-black brutal-shadow ff-button hover:-translate-y-1 transition-transform"
-              >
-                ☕
-              </a>
-              <a
-                href="https://micmer-git.github.io/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label=${t('projectsLabel')}
-                className="px-4 py-3 border-3 border-black bg-[var(--ff-blue)] text-black brutal-shadow ff-button hover:-translate-y-1 transition-transform"
-              >
-                M
-              </a>
-            </div>
-          </div>
-          <div className="flex justify-center lg:hidden">
-              <${Sidebar} selectedEmoji=${selectedEmoji} onSelect=${handleTopicSelect} vertical=${false} />
-            </div>
-          </div>
+            </div>`
+          : null}
+
+        <div className="pt-1 overflow-x-auto pb-1">
+          <${Sidebar} selectedEmoji=${selectedEmoji} onSelect=${handleTopicSelect} vertical=${false} />
         </div>
       </section>
 
       <section id="indice" className="compact-index space-y-6">
-        <div className="flex flex-col gap-6">
-          <div className="flex items-center gap-2 flex-wrap">
-            <div className="ff-eyebrow-md text-black/80">${t('index')}</div>
-            <span aria-hidden="true" className="text-black/60">·</span>
-            ${selectedEmoji
-              ? html`<button
-                  className="ff-button border-3 border-black px-3 py-2 bg-[var(--ff-yellow)] brutal-shadow"
-                  onClick=${() => handleTopicSelect(null)}
-                >
-                  Clear ${selectedEmoji}
-                </button>`
-              : html`<span className="ff-eyebrow-md text-black/70">${t('allThemes')}</span>`}
+        <div className="flex flex-col gap-4">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div className="flex items-center gap-2 flex-wrap">
+              <div className="ff-eyebrow-md text-black/80">${t('index')}</div>
+              <span aria-hidden="true" className="text-black/60">·</span>
+              <span className="ff-caption px-2 py-1 border-2 border-black bg-white font-bold">
+                ${chaptersForIndex.length} ${t('issuesUnit')} · ${totalVisibleSections} ${t('sectionsUnit')}
+              </span>
+              ${selectedEmoji
+                ? html`<button
+                    className="ff-button border-2 border-black px-3 py-1 bg-[var(--ff-yellow)] brutal-shadow"
+                    onClick=${() => handleTopicSelect(null)}
+                  >
+                    ✕ ${selectedEmoji}
+                  </button>`
+                : html`<span className="ff-eyebrow-md text-black/70">${t('allThemes')}</span>`}
+            </div>
+
+            <div className="flex flex-wrap items-center gap-2">
+              <select
+                aria-label=${t('jumpToIssue')}
+                onChange=${handleJumpToIssue}
+                defaultValue=""
+                className="px-3 py-1.5 border-2 border-black bg-white ff-button text-xs"
+              >
+                <option value="">${t('jumpToIssue')}</option>
+                ${processedData.map((ch) => {
+                  const domId = ch.issueId || ch.issueSlug || ch.url;
+                  const label = `${ch.ffLabel ? ch.ffLabel + ' — ' : ''}${ch.cleanTitle}`.slice(0, 52);
+                  return html`<option key=${domId} value=${domId}>${label}</option>`;
+                })}
+              </select>
+
+              <button
+                type="button"
+                onClick=${() => setShowPreviews((v) => !v)}
+                className=${`px-3 py-1.5 border-2 border-black ff-button text-xs ${showPreviews ? 'bg-[var(--ff-yellow)]' : 'bg-white'}`}
+              >
+                ${showPreviews ? t('hidePreviews') : t('showPreviews')}
+              </button>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-2">
+            ${ISSUE_RANGES.map((range) => {
+              const active = selectedRange === range.id;
+              return html`<button
+                key=${range.id}
+                type="button"
+                onClick=${() => setSelectedRange(range.id)}
+                className=${`px-3 py-1.5 border-2 border-black ff-button text-xs transition-transform ${
+                  active ? 'bg-[var(--ff-yellow)] brutal-shadow' : 'bg-white hover:-translate-y-0.5'
+                }`}
+              >
+                ${range.label || t('rangeAll')}
+              </button>`;
+            })}
           </div>
 
           <div className="space-y-6">
@@ -353,18 +519,33 @@ const InnerApp = () => {
                     key=${`${chapter.url}-${index}`}
                     chapter=${chapter}
                     highlight=${debouncedSearchQuery}
+                    showPreviews=${showPreviews}
                   />`
                 )
-              : html`<div className="border-3 border-black p-10 text-center brutal-shadow">
+              : html`<div className="border-3 border-black p-10 text-center brutal-shadow bg-white">
                   <span className="text-5xl block mb-4">🔍</span>
                   <p className="ff-body mb-4">${t('noResults')}</p>
                   <button
-                    onClick=${() => handleTopicSelect(null)}
+                    onClick=${() => {
+                      handleTopicSelect(null);
+                      setSelectedRange('all');
+                      handleClearSearch();
+                    }}
                     className="px-4 py-3 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-1 transition-transform"
                   >
                     ${t('resetFilters')}
                   </button>
                 </div>`}
+          </div>
+
+          <div className="flex justify-center pt-4">
+            <button
+              type="button"
+              onClick=${() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="px-4 py-2.5 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-0.5 transition-transform"
+            >
+              ${t('backToTop')}
+            </button>
           </div>
         </div>
       </section>
@@ -387,8 +568,8 @@ const InnerApp = () => {
       : null}
 
     ${isFilterMenuOpen
-      ? html`<div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex justify-end lg:hidden">
-          <div className="w-72 max-w-full bg-white border-l-4 border-black p-4 flex flex-col gap-4">
+      ? html`<div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex justify-end lg:hidden" onClick=${() => setIsFilterMenuOpen(false)}>
+          <div className="w-72 max-w-full bg-white border-l-4 border-black p-4 flex flex-col gap-4" onClick=${(e) => e.stopPropagation()}>
             <div className="flex items-center justify-between">
               <div className="ff-eyebrow text-black/80">${t('filters')}</div>
               <button

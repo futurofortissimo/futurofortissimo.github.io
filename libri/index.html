@@ -1,607 +1,356 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <title>Futuro Fortissimo - Riepilogo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Import Montserrat font from Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <!-- Favicon -->
-    <link rel="icon" href="/index_files/ff.webp" type="image/webp">
-    <link rel="apple-touch-icon" href="/index_files/ff.webp">
-    <style>
-        /* Root variables */
-        :root {
-            --theme-color: #ADD8E6; /* Light blue */
-            --question-color: #B3E5FC; /* Lighter blue */
-            --data-color: #81D4FA; /* Medium blue */
-            --quote-color: #4FC3F7; /* Darker blue */
-            --progress-bar-color: #4CAF50; /* Green */
-            --button-hover-scale: 1.05; /* Scale factor for hover effect */
-            --button-transition: transform 0.2s ease-in-out;
-            --card-padding: 10px 15px; /* Reduced padding for compactness */
-            --card-margin: 10px; /* Reduced margin */
-            --book-title-color: #ADD8E6; /* Light blue for book title */
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Libri citati nelle newsletter — Futuro Fortissimo</title>
+  <meta name="description" content="Tutti i libri citati nei numeri di Futuro Fortissimo, con riferimenti ai sottocapitoli ff.x.y, estratti e link affiliati Amazon." />
+  <meta name="author" content="Michele Merelli" />
+  <meta name="keywords" content="futuro fortissimo, libri consigliati, bibliografia newsletter, AI, natura, società, lettura, link affiliati, Michele Merelli" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <link rel="canonical" href="https://futurofortissimo.github.io/libri/" />
+  <link rel="alternate" type="application/atom+xml" title="Futuro Fortissimo Feed" href="/feed.xml" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="/favicon.ico" />
 
-        /* Basic styles */
-        body {
-            margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            background-color: #fff;
-            color: #333;
-            overflow-y: auto; /* Allow vertical scrolling */
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+  <meta property="og:site_name" content="Futuro Fortissimo" />
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Libri citati — Futuro Fortissimo" />
+  <meta property="og:description" content="La biblioteca completa dei libri citati nei numeri di Futuro Fortissimo, con i collegamenti diretti alle sezioni ff.x.y e link affiliati Amazon." />
+  <meta property="og:url" content="https://futurofortissimo.github.io/libri/" />
+  <meta property="og:image" content="https://futurofortissimo.github.io/logo.png" />
 
-        /* App container */
-        .app-container {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-            overflow: hidden;
-            position: relative;
-            padding-bottom: 60px; /* Space for fixed footer */
-        }
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Libri citati — Futuro Fortissimo" />
+  <meta name="twitter:description" content="Tutti i libri citati nei numeri di Futuro Fortissimo con riferimenti ff.x.y." />
+  <meta name="twitter:image" content="https://futurofortissimo.github.io/logo.png" />
 
-        /* Header with logo and buttons */
-        .header {
-            display: flex;
-            align-items: center;
-            background-color: var(--theme-color);
-            padding: 10px 20px;
-            flex-shrink: 0;
-            flex-wrap: nowrap;
-            justify-content: space-between;
-        }
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Libri citati — Futuro Fortissimo",
+    "description": "Catalogo dei libri effettivamente citati nei numeri della newsletter Futuro Fortissimo.",
+    "url": "https://futurofortissimo.github.io/libri/",
+    "inLanguage": "it",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Futuro Fortissimo",
+      "url": "https://futurofortissimo.github.io/"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Michele Merelli",
+      "url": "https://fortissimo.substack.com/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://futurofortissimo.github.io/" },
+      { "@type": "ListItem", "position": 2, "name": "Libri", "item": "https://futurofortissimo.github.io/libri/" }
+    ]
+  }
+  </script>
 
-        .logo {
-            height: 40px;
-            cursor: pointer;
-            flex-shrink: 0;
-            margin-right: 20px;
-        }
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NQ7MQR0VL8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NQ7MQR0VL8');
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&family=Press+Start+2P&display=swap" rel="stylesheet" />
 
-        /* Title with emoji */
-        .header-title {
-            font-size: 18px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex-grow: 1;
-            margin-left: 10px;
-        }
-
-        /* Hide language-switch in header as it's moved to footer */
-        .language-switch {
-            display: none;
-        }
-
-        /* Buttons container inside header */
-        .buttons-container {
-            display: flex;
-            overflow-x: auto;
-            flex-grow: 1;
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* Internet Explorer 10+ */
-            position: relative;
-            padding: 0 20px; /* Add padding for fade effect */
-            gap: 10px;
-        }
-
-        .buttons-container::-webkit-scrollbar {
-            display: none; /* WebKit */
-        }
-
-        /* Buttons */
-        .button {
-            flex: 0 0 auto;
-            padding: 8px 12px;
-            background-color: #fff;
-            color: #333;
-            border: none;
-            border-radius: 20px;
-            text-align: center;
-            font-size: 14px;
-            cursor: pointer;
-            user-select: none;
-            white-space: nowrap;
-            font-family: 'Montserrat', sans-serif; /* Ensure same font */
-            transition: transform 0.2s ease-in-out; /* For hover animation */
-        }
-
-        .button.filter-pill {
-            background-color: #fff7e6;
-            border: 1px solid #f0c36d;
-            font-weight: 700;
-        }
-
-        .flag-button {
-            display: none;
-            align-items: center;
-            justify-content: center;
-            width: 44px;
-            padding: 8px;
-            font-size: 20px;
-        }
-
-        .button:hover {
-            transform: scale(var(--button-hover-scale));
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Progress bar */
-        .progress-bar {
-            height: 5px;
-            background-color: var(--progress-bar-color);
-            width: 0%;
-            transition: width 0.5s ease-in-out;
-            flex-shrink: 0;
-        }
-
-        @media (min-width: 768px) {
-            .flag-button {
-                display: inline-flex;
-            }
-        }
-
-        /* Cards container */
-        .cards-container {
-            flex: 1;
-            overflow: hidden; /* Hide scrollbars to enable sliding */
-            position: relative;
-            padding-top: 20px;
-            padding-bottom: 20px;
-        }
-
-        /* Cards wrapper for sliding effect */
-        .cards-wrapper {
-            display: flex;
-            height: 100%;
-            transition: transform 0.5s ease-in-out;
-            width: 100%;
-        }
-
-        /* Individual card */
-        .card {
-            flex: 0 0 100%;
-            height: 100%;
-            overflow: hidden;
-            background-color: #fff;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            padding: var(--card-padding);
-            margin: var(--card-margin) 0;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        /* Card content */
-        .card-content {
-            flex: 1;
-            overflow-y: auto;
-            box-sizing: border-box;
-            max-width: 450px;
-            margin: 0 auto;
-            cursor: pointer; /* Make card-content clickable */
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Center content horizontally */
-            background-color: #fff; /* White background */
-            padding: 10px; /* Adjusted padding */
-            border-radius: 10px;
-        }
-
-        /* Book Cover Image */
-        .card-content img {
-            width: 100%;
-            max-width: 200px; /* Adjust as needed */
-            border-radius: 10px;
-            margin-bottom: 10px; /* Reduced margin */
-            background-color: #fff; /* Ensure white background */
-        }
-
-        /* Book Title */
-        .section-title {
-            margin: 5px 0; /* Reduced margins */
-            font-size: 20px;
-            font-weight: bold;
-            color: var(--book-title-color); /* Light blue color */
-            text-align: center;
-        }
-
-        /* Content block */
-        .content-block {
-            margin-bottom: 8px; /* Reduced margin */
-            padding: 5px 10px; /* Reduced padding */
-            border-radius: 5px;
-            word-wrap: break-word; /* Prevent overflow of long words */
-            font-size: 14px; /* Reduced font size */
-            font-weight: bold;
-            width: 100%; /* Full width */
-            background-color: #e0f7fa; /* Light cyan */
-            text-align: center; /* Center text */
-        }
-
-        .paragraphs {
-            background-color: #e0f7fa; /* Light cyan */
-            font-weight: normal;
-        }
-
-        /* Hide scrollbars on card content */
-        .card-content::-webkit-scrollbar {
-            width: 0px;
-            background: transparent;
-        }
-
-        /* Action buttons styled like header buttons */
-        .action-button {
-            flex: 0 0 auto;
-            padding: 8px 12px;
-            background-color: #fff;
-            color: #333;
-            border: none;
-            border-radius: 20px;
-            text-align: center;
-            font-size: 14px;
-            cursor: pointer;
-            user-select: none;
-            white-space: nowrap;
-            font-family: 'Montserrat', sans-serif; /* Ensure same font */
-            transition: transform 0.2s ease-in-out; /* For hover animation */
-            margin: 5px 0; /* Spacing between buttons */
-            width: 100%; /* Full width for consistency */
-        }
-
-        .action-button:hover {
-            transform: scale(var(--button-hover-scale));
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            background-color: #f0f0f0; /* Slight background change on hover */
-        }
-
-        /* Footer */
-        footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: var(--theme-color);
-            padding: 10px 20px;
-            flex-shrink: 0;
-            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-            z-index: 1000; /* Ensure it stays on top */
-        }
-
-        .footer-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: nowrap; /* Prevent wrapping on small screens */
-            gap: 15px; /* Space between buttons */
-        }
-
-        .footer-content a,
-        .footer-content button {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: #333;
-            cursor: pointer;
-            background-color: #fff;
-            padding: 8px 12px;
-            border: none;
-            border-radius: 20px;
-            font-family: 'Montserrat', sans-serif;
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* For hover animation */
-            font-size: 14px;
-        }
-
-        .footer-content a img {
-            height: 24px;
-            width: auto;
-        }
-
-        /* Hover "pop-up" animation */
-        .footer-content a:hover,
-        .footer-content button:hover {
-            transform: scale(var(--button-hover-scale));
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        @media (min-width: 601px) {
-            footer {
-                display: flex;
-            }
-
-            .header {
-                position: relative; /* Reset positioning to default */
-            }
-
-            .cards-container {
-                padding-bottom: 0; /* Remove padding adjustment */
-            }
-        }
-    </style>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NQ7MQR0VL8"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-NQ7MQR0VL8');
-    </script>
-
+  <style>
+    :root {
+      --ff-blue: #4a90e2;
+      --ff-red: #d0021b;
+      --ff-yellow: #f5a623;
+      --ff-green: #2ecc71;
+      --ff-black: #0a0a0a;
+      --ff-grid: rgba(0, 0, 0, 0.03);
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fdfdfd;
+      color: var(--ff-black);
+      min-height: 100vh;
+      line-height: 1.65;
+      position: relative;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--ff-grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--ff-grid) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+      z-index: -1;
+    }
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'IBM Plex Mono', monospace;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    .brutal-card {
+      border: 4px solid var(--ff-black);
+      background: #ffffff;
+      box-shadow: 6px 6px 0 var(--ff-black);
+      padding: 24px;
+    }
+    .brutal-shadow { box-shadow: 4px 4px 0 var(--ff-black); }
+    .border-3 { border-width: 3px !important; }
+    .accent-bar { position: relative; }
+    .accent-bar::before {
+      content: '';
+      position: absolute;
+      top: -4px; left: -4px; right: -4px;
+      height: 10px;
+      background: var(--ff-yellow);
+    }
+    .accent-blue::before { background: var(--ff-blue); }
+    .accent-green::before { background: var(--ff-green); }
+    .ff-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .ff-button {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .ff-lang-bar {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      background: var(--ff-black);
+      color: #fff;
+    }
+    .ff-lang-bar a { color: rgba(255,255,255,0.65); text-decoration: none; padding: 6px 8px; }
+    .ff-lang-bar a:hover, .ff-lang-bar a[aria-current="page"] { color: #fff; }
+    .ff-lang-bar a[aria-current="page"] { border-bottom: 2px solid var(--ff-yellow); }
+    .no-round, .no-round * { border-radius: 0 !important; }
+    @media (max-width: 640px) {
+      .brutal-card { border-width: 2px; box-shadow: 3px 3px 0 var(--ff-black); padding: 16px; }
+    }
+  </style>
 </head>
-<body>
-    <div class="app-container">
-        <!-- Header with logo and buttons -->
-        <div class="header">
-
-            <div class="header-title" id="header-title">
-                <!-- Title with emoji will be inserted here dynamically -->
-            </div>
-            <!-- Buttons inside header -->
-            <div class="buttons-container" id="buttons-container">
-                <!-- Buttons will be dynamically inserted here -->
-            </div>
-            <button class="button flag-button" id="random-button" title="Nuova carta">🚩</button>
-            <!-- Hidden language switch in header -->
-            <button class="language-switch" id="language-switch" style="display:none;">🇬🇧</button>
-        </div>
-
-        <!-- Progress bar -->
-        <div class="progress-bar"></div>
-
-        <!-- Cards -->
-        <div class="cards-container">
-            <div class="cards-wrapper" id="cards-wrapper">
-                <!-- Cards will be dynamically inserted here -->
-            </div>
-        </div>
+<body class="bg-white text-black antialiased no-round">
+  <nav class="ff-lang-bar" aria-label="Language">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-2 px-4 py-1">
+      <a href="/" style="color:#fff;">FUTURO FORTISSIMO</a>
+      <div class="flex items-center gap-1">
+        <a href="https://futurofortissimo.github.io/libri/" aria-current="page">IT</a>
+        <span style="color:rgba(255,255,255,0.3);">/</span>
+        <a href="https://translate.google.com/translate?sl=it&tl=en&u=https://futurofortissimo.github.io/libri/" rel="noopener">EN</a>
+        <span style="color:rgba(255,255,255,0.3);">/</span>
+        <a href="https://translate.google.com/translate?sl=it&tl=hi&u=https://futurofortissimo.github.io/libri/" rel="noopener">HI</a>
+      </div>
     </div>
+  </nav>
 
-    <footer>
-        <div class="footer-content">
-          <a href="https://futurofortissimo.github.io/">
-              <img src="/index_files/ff.png" alt="Logo" class="logo">
-          </a>
-            <!-- Share Button as a link -->
-            <a href="https://api.whatsapp.com/send?text=https://futurofortissimo.github.io/" style="border-radius:20px" class="share-button">Share</a>
-            <!-- Support Button as a link -->
-            <a href="https://www.paypal.com/paypalme/michelemerelli" style="border-radius:20px" class="support-button">Support</a>
-            <!-- Language Switch Button -->
-            <button class="language-button" id="language-button" style="border-radius:20px">English</button>
-        </div>
-    </footer>
+  <header class="max-w-6xl mx-auto px-4 pt-6">
+    <nav aria-label="Navigazione principale" class="flex flex-wrap items-center gap-2 pb-4 border-b-3 border-black">
+      <a href="/" class="px-3 py-2 border-2 border-black bg-white text-black ff-button hover:-translate-y-0.5 transition-transform whitespace-nowrap">🏠 Home</a>
+      <a href="/archivio/" class="px-3 py-2 border-2 border-black bg-white text-black ff-button hover:-translate-y-0.5 transition-transform whitespace-nowrap">🗂 Archivio</a>
+      <a href="/libri/" aria-current="page" class="px-3 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button whitespace-nowrap">📚 Libri</a>
+      <a href="/book/" class="px-3 py-2 border-2 border-black bg-white text-black ff-button hover:-translate-y-0.5 transition-transform whitespace-nowrap">📖 Il Libro</a>
+      <a href="/book/ffxy-index.html" class="px-3 py-2 border-2 border-black bg-white text-black ff-button hover:-translate-y-0.5 transition-transform whitespace-nowrap">🔢 ff.x.y</a>
+      <a href="/themes.html" class="px-3 py-2 border-2 border-black bg-white text-black ff-button hover:-translate-y-0.5 transition-transform whitespace-nowrap">🧭 Temi</a>
+      <a href="/connections.html" class="px-3 py-2 border-2 border-black bg-white text-black ff-button hover:-translate-y-0.5 transition-transform whitespace-nowrap">🔗 Connessioni</a>
+      <a href="/note.html" class="px-3 py-2 border-2 border-black bg-white text-black ff-button hover:-translate-y-0.5 transition-transform whitespace-nowrap">📝 Note</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ml-auto px-3 py-2 border-2 border-black bg-[var(--ff-green)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">📩 Iscriviti</a>
+    </nav>
+  </header>
 
-    <script>
-    // Initialize variables
-    let currentLanguage = 'it';
-    const buttonsContainer = document.getElementById('buttons-container');
-    const headerTitle = document.getElementById('header-title');
-    const cardsWrapper = document.getElementById('cards-wrapper');
-    const progressBar = document.querySelector('.progress-bar');
-    const languageButton = document.getElementById('language-button');
-    const randomButton = document.getElementById('random-button');
+  <main class="max-w-6xl mx-auto px-4 py-8 space-y-6">
+    <section class="brutal-card accent-bar no-round space-y-4">
+      <div class="flex flex-wrap items-center justify-between gap-2">
+        <span class="ff-eyebrow text-black/75">Biblioteca Futuro Fortissimo</span>
+        <span id="statsBadge" class="px-2.5 py-1 border-2 border-black bg-gray-50 font-mono text-xs font-bold">Caricamento…</span>
+      </div>
+      <h1 class="text-2xl sm:text-3xl font-bold">Libri citati nelle newsletter</h1>
+      <p class="text-base text-black/85">
+        Solo i libri effettivamente citati nei numeri di Futuro Fortissimo, collegati alle rispettive sezioni <code>ff.x.y</code> dell'archivio.
+      </p>
+      <div class="border-3 border-black bg-amber-50 p-3 text-sm font-medium text-black">
+        <strong>Informativa link affiliati:</strong> i pulsanti Amazon di questa pagina utilizzano link affiliati (programma Amazon Affiliazione, tag <code class="font-mono font-bold">micmeramazon-21</code>). Acquistando tramite questi link sostieni Futuro Fortissimo senza alcun costo aggiuntivo per te.
+      </div>
 
-    let booksData = [];
-    let currentIndex = -1;
-    let collectionTitle = '';
+      <div class="flex flex-col md:flex-row gap-3 pt-1">
+        <input
+          id="bookSearch"
+          type="search"
+          placeholder="Cerca per titolo, autore, ff.x.y o parola chiave…"
+          aria-label="Cerca libri"
+          class="flex-1 px-4 py-2.5 border-3 border-black bg-white text-sm font-medium focus:outline-none"
+        />
+        <select id="bookSort" aria-label="Ordina libri" class="px-3 py-2.5 border-3 border-black bg-white ff-button text-xs">
+          <option value="recent">Ordina: più recenti (ff.N)</option>
+          <option value="cited">Ordina: più citati</option>
+          <option value="az">Ordina: titolo A–Z</option>
+        </select>
+      </div>
 
-    // Function to fetch JSON data based on language
-    async function fetchBooks() {
-        try {
-            const response = await fetch(`books_${currentLanguage}.json`); // Load based on language
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            const data = await response.json();
-            booksData = data.books;
-            collectionTitle = data.title || '';
-            createButtons();
-            selectRandomCard(true);
-        } catch (error) {
-            console.error('Error fetching books:', error);
-            buttonsContainer.innerHTML = '<p>Errore nel caricamento dei libri.</p>';
-        }
+      <div id="themePills" class="flex flex-wrap gap-2" role="group" aria-label="Filtra per tema">
+        <button data-theme="ALL" class="theme-pill px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] ff-button text-xs">Tutti</button>
+      </div>
+    </section>
+
+    <section id="booksGrid" class="grid grid-cols-1 md:grid-cols-2 gap-5" aria-live="polite">
+      <div class="brutal-card no-round text-sm font-mono">Caricamento libri…</div>
+    </section>
+
+    <section class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div>
+        <div class="ff-eyebrow text-black/80">Resta aggiornato</div>
+        <h2 class="text-lg font-bold mt-1">Nuovi libri e spunti ogni 10 giorni</h2>
+        <p class="text-sm text-black/80 mt-1">Iscriviti gratuitamente a Futuro Fortissimo su Substack.</p>
+      </div>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="px-5 py-3 border-3 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">📩 Iscriviti su Substack ↗</a>
+    </section>
+  </main>
+
+  <script>
+    const grid = document.getElementById('booksGrid');
+    const searchInput = document.getElementById('bookSearch');
+    const sortSelect = document.getElementById('bookSort');
+    const pillsEl = document.getElementById('themePills');
+    const statsBadge = document.getElementById('statsBadge');
+
+    let allBooks = [];
+    let activeTheme = 'ALL';
+
+    const esc = (s = '') => String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+
+    function renderBooks() {
+      const q = searchInput.value.trim().toLowerCase();
+      const sort = sortSelect.value;
+
+      let filtered = allBooks.filter((b) => {
+        if (activeTheme !== 'ALL' && b.theme !== activeTheme) return false;
+        if (!q) return true;
+        const blob = [
+          b.title,
+          b.author,
+          b.theme,
+          ...(b.citations || []).map((c) => `${c.ffCode} ${c.issueTitle} ${c.subTitle} ${c.excerpt}`)
+        ].join(' ').toLowerCase();
+        return blob.includes(q);
+      });
+
+      if (sort === 'cited') {
+        filtered = [...filtered].sort((a, b) => (b.citations?.length || 0) - (a.citations?.length || 0) || b.maxFfNum - a.maxFfNum);
+      } else if (sort === 'az') {
+        filtered = [...filtered].sort((a, b) => a.title.localeCompare(b.title, 'it'));
+      } else {
+        filtered = [...filtered].sort((a, b) => b.maxFfNum - a.maxFfNum || a.title.localeCompare(b.title, 'it'));
+      }
+
+      if (!filtered.length) {
+        grid.innerHTML = `<div class="brutal-card no-round md:col-span-2 text-center py-8">
+          <p class="font-mono font-bold">Nessun libro corrisponde alla ricerca.</p>
+        </div>`;
+        return;
+      }
+
+      grid.innerHTML = filtered.map((b) => {
+        const cites = (b.citations || []).map((c) => `
+          <div class="border-l-4 border-black pl-3 space-y-1">
+            <div class="flex flex-wrap items-center gap-2">
+              <a href="${esc(c.issueUrl)}" class="px-2 py-0.5 border-2 border-black bg-[var(--ff-blue)] text-black font-mono text-xs font-bold hover:underline">${esc(c.ffCode)}</a>
+              <a href="${esc(c.subLink)}" target="_blank" rel="noopener noreferrer" class="text-xs font-mono font-bold hover:underline">${esc(c.subTitle)} ↗</a>
+            </div>
+            ${c.excerpt ? `<p class="text-xs sm:text-sm text-black/80">${esc(c.excerpt)}</p>` : ''}
+          </div>
+        `).join('');
+
+        return `<article class="brutal-card no-round flex flex-col gap-4 h-full">
+          <div class="flex items-start justify-between gap-3">
+            <div class="space-y-1">
+              <span class="inline-block px-2 py-0.5 border border-black bg-gray-100 font-mono text-[11px] font-bold uppercase">${esc(b.theme || 'Libro')}</span>
+              <h2 class="text-lg sm:text-xl font-bold text-black leading-snug">${esc(b.title)}</h2>
+              ${b.author ? `<p class="text-sm font-mono font-semibold text-black/75">${esc(b.author)}</p>` : ''}
+            </div>
+            ${b.coverImage ? `<img src="${esc(b.coverImage)}" alt="${esc(b.title)}" loading="lazy" class="w-16 h-22 object-cover border-2 border-black flex-shrink-0" />` : ''}
+          </div>
+
+          <div class="space-y-3 flex-1">
+            ${cites}
+          </div>
+
+          <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
+            <a href="${esc(b.amazonUrl)}" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">
+              Amazon (link affiliato) ↗
+            </a>
+            ${b.altAmazonUrl ? `<a href="${esc(b.altAmazonUrl)}" target="_blank" rel="noopener noreferrer sponsored" class="px-3 py-2 border-2 border-black bg-white text-black ff-button hover:bg-gray-50">Altra edizione ↗</a>` : ''}
+            ${b.summaryPage ? `<a href="${esc(b.summaryPage)}" class="px-3 py-2 border-2 border-black bg-white text-black ff-button hover:bg-gray-50">Riassunto →</a>` : ''}
+          </div>
+        </article>`;
+      }).join('');
     }
 
-    // Function to create header buttons with emoji titles
-    function createButtons() {
-        buttonsContainer.innerHTML = ''; // Clear existing buttons
-        const filterText = collectionTitle || (currentLanguage === 'it' ? '📚 Libri citati' : '📚 Books mentioned');
-        const filterPill = document.createElement('div');
-        filterPill.className = 'button filter-pill';
-        filterPill.textContent = filterText;
-        buttonsContainer.appendChild(filterPill);
-        headerTitle.textContent = filterText;
-    }
+    fetch('./books_cited.json')
+      .then((r) => {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
+      .then((data) => {
+        allBooks = data.books || [];
+        const meta = data.meta || {};
+        statsBadge.textContent = `${meta.totalBooks || allBooks.length} libri · ${meta.totalCitations || allBooks.length} citazioni · ${meta.issuesScanned || ''} numeri`;
 
-    function renderCard(book) {
-        cardsWrapper.innerHTML = '';
+        const themes = Array.from(new Set(allBooks.map((b) => b.theme).filter(Boolean)));
+        themes.forEach((t) => {
+          const btn = document.createElement('button');
+          btn.dataset.theme = t;
+          btn.className = 'theme-pill px-3 py-1.5 border-2 border-black bg-white ff-button text-xs hover:-translate-y-0.5 transition-transform';
+          btn.textContent = t;
+          pillsEl.appendChild(btn);
+        });
 
-        const card = document.createElement('div');
-        card.className = 'card';
+        pillsEl.addEventListener('click', (e) => {
+          const btn = e.target.closest('.theme-pill');
+          if (!btn) return;
+          activeTheme = btn.dataset.theme;
+          pillsEl.querySelectorAll('.theme-pill').forEach((p) => {
+            p.classList.toggle('bg-[var(--ff-yellow)]', p === btn);
+            p.classList.toggle('bg-white', p !== btn);
+          });
+          renderBooks();
+        });
 
-        const cardContent = document.createElement('div');
-        cardContent.className = 'card-content';
-
-        const coverImage = document.createElement('img');
-        coverImage.src = book.coverImage;
-        coverImage.alt = currentLanguage === 'it' ? `Copertina di ${book.title}` : `Cover of ${book.title}`;
-        cardContent.appendChild(coverImage);
-
-        const title = document.createElement('h2');
-        title.className = 'section-title';
-        title.textContent = book.title;
-        cardContent.appendChild(title);
-
-        const author = document.createElement('div');
-        author.className = 'content-block paragraphs';
-        author.textContent = currentLanguage === 'it' ? `Autore: ${book.author}` : `Author: ${book.author}`;
-        cardContent.appendChild(author);
-
-        const year = document.createElement('div');
-        year.className = 'content-block paragraphs';
-        year.textContent = currentLanguage === 'it' ? `Anno di Pubblicazione: ${book.year}` : `Publication Year: ${book.year}`;
-        cardContent.appendChild(year);
-
-        const pages = document.createElement('div');
-        pages.className = 'content-block paragraphs';
-        pages.textContent = currentLanguage === 'it' ? `Pagine: ${book.pages}` : `Pages: ${book.pages}`;
-        cardContent.appendChild(pages);
-
-        const buyButton = document.createElement('button');
-        buyButton.className = 'action-button';
-        buyButton.textContent = currentLanguage === 'it' ? 'Acquista' : 'Buy';
-        buyButton.onclick = () => window.open(book.buyLink, '_blank');
-
-        const readMoreButton = document.createElement('button');
-        readMoreButton.className = 'action-button';
-        readMoreButton.textContent = currentLanguage === 'it' ? 'Leggi di più' : 'Read More';
-        readMoreButton.onclick = () => window.open(book.readMoreLink, '_blank');
-
-        cardContent.appendChild(buyButton);
-        cardContent.appendChild(readMoreButton);
-
-        card.appendChild(cardContent);
-        cardsWrapper.appendChild(card);
-    }
-
-    function updateProgress() {
-        const progress = booksData.length > 0 ? ((currentIndex + 1) / booksData.length) * 100 : 0;
-        progressBar.style.width = `${progress}%`;
-    }
-
-    function selectRandomCard(initial = false) {
-        if (!booksData.length) return;
-        let nextIndex = Math.floor(Math.random() * booksData.length);
-        if (!initial && booksData.length > 1) {
-            while (nextIndex === currentIndex) {
-                nextIndex = Math.floor(Math.random() * booksData.length);
-            }
-        }
-        currentIndex = nextIndex;
-        renderCard(booksData[currentIndex]);
-        updateProgress();
-    }
-
-    // Swipe functionality
-    let startX = 0;
-    let isDown = false;
-
-    const cardsContainer = document.querySelector('.cards-container');
-
-    function resetCardPosition() {
-        cardsWrapper.style.transition = 'transform 0.3s ease-in-out';
-        cardsWrapper.style.transform = 'translateX(0)';
-        setTimeout(() => {
-            cardsWrapper.style.transition = 'none';
-        }, 300);
-    }
-
-    function handleSwipe(deltaX) {
-        if (Math.abs(deltaX) > 50) {
-            selectRandomCard();
-        }
-        resetCardPosition();
-    }
-
-    // Touch events for mobile
-    cardsContainer.addEventListener('touchstart', touchStart, false);
-    cardsContainer.addEventListener('touchmove', touchMove, false);
-    cardsContainer.addEventListener('touchend', touchEnd, false);
-
-    function touchStart(evt) {
-        startX = evt.touches[0].clientX;
-        isDown = true;
-        cardsWrapper.style.transition = 'none';
-    }
-
-    function touchMove(evt) {
-        if (!isDown) return;
-        const x = evt.touches[0].clientX;
-        const deltaX = x - startX;
-        cardsWrapper.style.transform = `translateX(${deltaX}px)`;
-    }
-
-    function touchEnd(evt) {
-        if (!isDown) return;
-        isDown = false;
-        const endX = evt.changedTouches[0].clientX;
-        const deltaX = endX - startX;
-        handleSwipe(deltaX);
-    }
-
-    // Mouse events for desktop
-    cardsContainer.addEventListener('mousedown', mouseDown, false);
-    cardsContainer.addEventListener('mousemove', mouseMove, false);
-    cardsContainer.addEventListener('mouseup', mouseUp, false);
-    cardsContainer.addEventListener('mouseleave', mouseUp, false);
-
-    function mouseDown(evt) {
-        startX = evt.clientX;
-        isDown = true;
-        cardsWrapper.style.transition = 'none';
-    }
-
-    function mouseMove(evt) {
-        if (!isDown) return;
-        const x = evt.clientX;
-        const deltaX = x - startX;
-        cardsWrapper.style.transform = `translateX(${deltaX}px)`;
-    }
-
-    function mouseUp(evt) {
-        if (!isDown) return;
-        isDown = false;
-        const endX = evt.clientX;
-        const deltaX = endX - startX;
-        handleSwipe(deltaX);
-    }
-
-    // Random card button for desktop
-    randomButton.addEventListener('click', () => {
-        cardsWrapper.style.transition = 'transform 0.2s ease-in-out';
-        cardsWrapper.style.transform = 'translateX(-12px)';
-        setTimeout(() => handleSwipe(-60), 120);
-    });
-
-    // Language switch functionality
-    languageButton.addEventListener('click', () => {
-        currentLanguage = currentLanguage === 'it' ? 'en' : 'it';
-        // Update language button text
-        languageButton.textContent = currentLanguage === 'it' ? 'English' : 'Italiano';
-        // Fetch and reload books
-        fetchBooks();
-        // Update footer buttons' text
-        updateFooterButtons();
-    });
-
-    // Function to update footer buttons' text based on language
-    function updateFooterButtons() {
-        const shareButton = document.querySelector('.share-button');
-        const supportButton = document.querySelector('.support-button');
-
-        if (currentLanguage === 'it') {
-            shareButton.textContent = 'Condividi';
-            supportButton.textContent = 'Supporta';
-        } else {
-            shareButton.textContent = 'Share';
-            supportButton.textContent = 'Support';
-        }
-    }
-
-    // Initialize the app after the DOM is fully loaded
-    document.addEventListener('DOMContentLoaded', () => {
-        fetchBooks();
-        updateFooterButtons(); // Initialize footer buttons' text
-    });
-    </script>
+        searchInput.addEventListener('input', renderBooks);
+        sortSelect.addEventListener('change', renderBooks);
+        renderBooks();
+      })
+      .catch(() => {
+        statsBadge.textContent = 'Errore caricamento';
+        grid.innerHTML = `<div class="brutal-card no-round md:col-span-2">Impossibile caricare la lista dei libri.</div>`;
+      });
+  </script>
+  <script type="module" src="/analytics.js"></script>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "24fb0c5b538b4448b1281261e5e329a0"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

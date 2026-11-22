@@ -1,0 +1,71 @@
+name: Substack RSS Sync
+
+on:
+  schedule:
+    - cron: '0 7 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Python dependencies
+        run: python -m pip install --upgrade pip && pip install beautifulsoup4 lxml
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Sync Substack RSS into data.js
+        run: python scripts/rss_sync_data.py --apply
+
+      - name: Rebuild Libri, per-issue SEO pages, sitemap, and Atom feed
+        run: |
+          node scripts/build_libri_data.mjs
+          node scripts/build_archive_seo.mjs
+          node scripts/build_feed.mjs
+
+      - name: Validate syntax and generated outputs
+        run: |
+          node --check data.js
+          node --check App.js
+          node --check utils.js
+          python -c "import xml.etree.ElementTree as ET; ET.parse('sitemap.xml'); ET.parse('feed.xml'); print('XML valid')"
+
+      - name: Open or update PR with synced issues
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Archive already up to date — no PR needed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B bot/rss-sync
+          git add -A
+          git commit -m "chore(rss-sync): sync Substack issues, SEO pages, libri, feed & sitemap"
+          git push -f origin bot/rss-sync
+          OPEN_PR=$(gh pr list --head bot/rss-sync --state open --json number --jq '.[0].number // empty')
+          if [ -z "$OPEN_PR" ]; then
+            gh pr create \
+              --base main \
+              --head bot/rss-sync \
+              --title "chore(rss-sync): aggiornamento automatico archivio da Substack" \
+              --body "Sincronizzazione automatica da \`https://fortissimo.substack.com/feed\` via \`scripts/rss_sync_data.py\`, rigenerazione pagine SEO (\`archivio/\`), \`libri/books_cited.json\`, \`sitemap.xml\` e \`feed.xml\`."
+          else
+            echo "Updated existing PR #$OPEN_PR"
+          fi

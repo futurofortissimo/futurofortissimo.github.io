@@ -88,22 +88,28 @@ const BooksPopup = ({ isOpen, onClose, books }) => {
                 ? html`<p className="ff-body-sm text-black leading-relaxed">“${quoteText}”</p>`
                 : html`<p className="ff-body-sm text-black leading-relaxed">${t('discoverArchive')}</p>`}
 
-              <a
-                href=${current.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-3 border-3 border-black bg-[var(--ff-yellow)] text-black brutal-shadow ff-button w-fit hover:-translate-y-1 transition-transform"
-              >
-                ${t('buyAmazon')}
-              </a>
-              <a
-                href=${current.subLink || current.chapterUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-3 border-3 border-black bg-white text-black brutal-shadow ff-button w-fit hover:-translate-y-1 transition-transform"
-              >
-                ${chapterCode}
-              </a>
+              <div className="flex flex-wrap gap-2">
+                <a
+                  href=${current.link}
+                  target="_blank"
+                  rel="noopener noreferrer sponsored"
+                  className="px-4 py-3 border-3 border-black bg-[var(--ff-yellow)] text-black brutal-shadow ff-button w-fit hover:-translate-y-1 transition-transform"
+                >
+                  ${t('buyAmazon')}
+                </a>
+                <a
+                  href=${current.subLink || current.chapterUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-3 border-3 border-black bg-white text-black brutal-shadow ff-button w-fit hover:-translate-y-1 transition-transform"
+                >
+                  ${chapterCode}
+                </a>
+              </div>
+              <div className="pt-2 border-t border-black/15 flex flex-wrap items-center justify-between gap-2">
+                <span className="ff-caption text-black/60">${t('affiliateNote')}</span>
+                <a href="/libri/" className="ff-button text-xs underline">${t('allBooksLink')}</a>
+              </div>
             </div>
           </div>
         </div>
