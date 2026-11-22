@@ -560,3 +560,7 @@ html article.chapter-card .ff-refs-l { display:flex; flex-wrap:wrap; gap:2px 16p
 html article.chapter-card summary.ff-qlink { list-style:none; }
 html article.chapter-card summary.ff-qlink::before { content:'+'; font-weight:700; color:var(--ff-red); }
 html article.chapter-card details[open] > summary.ff-qlink::before { content:'−'; }
+/* flex links keep the space after a leading emoji */
+html .ff-toc a, .ff-tlink, .ff-ref { gap:.4em; }
+html .ff-toc a { justify-content:flex-start; }
+.ff-vox-burst { position:fixed; z-index:9999; pointer-events:none; image-rendering:pixelated; image-rendering:crisp-edges; }

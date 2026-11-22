@@ -254,7 +254,7 @@
     }
     ord.sort((a, b) => DZ[a] - DZ[b]);
     // soft contact shadow
-    if (ex < .5) { ctx.globalAlpha = .16 * (1 - ex * 2); ctx.fillStyle = '#000'; ctx.beginPath(); ctx.ellipse(cx, cy + md.rad * s * .78, md.rad * s * .6, md.rad * s * .13, 0, 0, 7); ctx.fill(); }
+    if (ex < .5 && !md.noShadow) { ctx.globalAlpha = .16 * (1 - ex * 2); ctx.fillStyle = '#000'; ctx.beginPath(); ctx.ellipse(cx, cy + md.rad * s * .78, md.rad * s * .6, md.rad * s * .13, 0, 0, 7); ctx.fill(); }
     ctx.globalAlpha = ex > .55 ? Math.max(0, 1 - (ex - .55) / .45) : 1;
     for (let k = 0; k < n; k++) {
       const i = ord[k], x = SX[i], y = SY[i], p = md.P[i];
@@ -323,7 +323,7 @@
     dlg.addEventListener('close', () => {
       document.body.classList.remove('ff-vs-lock');
       if (sheetIt) { live.delete(sheetIt); all.delete(sheetIt); sheetIt = null; }
-      if (curBtn) { curBtn.setAttribute('aria-expanded', 'false'); const it = inst.get(curBtn.querySelector('canvas')); if (it) explode(it, -1); curBtn.focus({ preventScroll: true }); }
+      if (curBtn) { curBtn.setAttribute('aria-expanded', 'false'); const it = inst.get(curBtn.querySelector('canvas')); if (it) { it.cv.style.visibility = ''; it.exV = 1; explode(it, -1); } curBtn.focus({ preventScroll: true }); }
     });
     dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
     document.body.appendChild(dlg);
@@ -364,7 +364,20 @@
       sheetIt.exV = 1; explode(sheetIt, -1);   // voxels fly in and re-assemble at the top of the sheet
       d.querySelector('.ff-vs-x').focus({ preventScroll: true });
     };
-    if (it && !RM) explode(it, 1, show); else show();
+    if (!it || RM) { show(); return; }
+    // burst: the object explodes on a larger transparent layer above the page, so the voxels really fly out
+    const r = btn.getBoundingClientRect(), size = Math.max(220, r.width * 3.2);
+    const px = r.width / it.W;
+    const cv = document.createElement('canvas');
+    cv.className = 'ff-vox-burst'; cv.setAttribute('aria-hidden', 'true');
+    cv.width = cv.height = Math.round(size / px);
+    Object.assign(cv.style, { left: `${r.left + r.width / 2 - size / 2}px`, top: `${r.top + r.height / 2 - size / 2}px`, width: `${size}px`, height: `${size}px` });
+    document.body.appendChild(cv);
+    const b = mount(cv, key, { pin: true, step: 1 / 60, th: it.th });
+    b.md = { ...b.md, rad: b.md.rad * (size / r.width), noShadow: 1 };   // same on-screen scale as the small object
+    it.cv.style.visibility = 'hidden'; it.exV = 1;
+    explode(b, 1, () => { live.delete(b); all.delete(b); cv.remove(); });
+    setTimeout(show, 330);
   }
 
   /* ── enhance placeholders ── */
