@@ -1,5 +1,5 @@
 import { React, html } from '../runtime.js';
-import { t } from '../i18n.js';
+import { t, paths } from '../i18n.js';
 
 const getQuote = (quote = '') => {
   if (!quote) return '';
@@ -108,7 +108,7 @@ const BooksPopup = ({ isOpen, onClose, books }) => {
               </div>
               <div className="pt-2 border-t border-black/15 flex flex-wrap items-center justify-between gap-2">
                 <span className="ff-caption text-black/60">${t('affiliateNote')}</span>
-                <a href="/libri/" className="ff-button text-xs underline">${t('allBooksLink')}</a>
+                <a href=${paths.books} className="ff-button text-xs underline">${t('allBooksLink')}</a>
               </div>
             </div>
           </div>
