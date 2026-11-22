@@ -42,9 +42,11 @@ jobs:
 
       - name: Rebuild Libri, trilingual SEO pages (it/en/hi), SPA data, sitemaps, and Atom feed
         run: |
+          node scripts/fetch_issue_meta.mjs
           node scripts/build_libri_data.mjs
           node scripts/build_i18n_data.mjs
           node scripts/build_archive_seo.mjs
+          node scripts/build_static_pages.mjs
           node scripts/build_feed.mjs
           node scripts/i18n_status.mjs
 
@@ -57,6 +59,7 @@ jobs:
           node --check data.hi.js
           python -c "import xml.etree.ElementTree as ET; [ET.parse(f) for f in ('sitemap.xml','sitemap-pages.xml','sitemap-archive.xml','feed.xml')]; print('XML valid')"
           python scripts/validate_i18n.py
+          python scripts/validate_seo.py --quiet
 
       - name: Open or update PR with synced issues
         env:

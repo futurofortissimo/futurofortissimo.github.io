@@ -2,8 +2,8 @@
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>64 books cited in Futuro Fortissimo — reading list with sources</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>64 books cited in Futuro Fortissimo: the reading list</title>
   <meta name="description" content="64 books cited across 69 sections of Futuro Fortissimo: science, technology, nature, food, society and mind. Each one linked to the issue that cites it." />
   <meta name="author" content="Michele Merelli" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
@@ -18,15 +18,21 @@
   <meta property="og:locale:alternate" content="it_IT" />
   <meta property="og:locale:alternate" content="hi_IN" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="64 books cited in Futuro Fortissimo — reading list with sources" />
+  <meta property="og:title" content="64 books cited in Futuro Fortissimo: the reading list" />
   <meta property="og:description" content="64 books cited across 69 sections of Futuro Fortissimo: science, technology, nature, food, society and mind. Each one linked to the issue that cites it." />
   <meta property="og:url" content="https://futurofortissimo.github.io/en/books/" />
-  <meta property="og:image" content="https://futurofortissimo.github.io/logo.png" />
-
+  <meta property="og:image" content="https://futurofortissimo.github.io/assets/og-default.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="64 books cited in Futuro Fortissimo: the reading list" />
+  
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="64 books cited in Futuro Fortissimo — reading list with sources" />
+  <meta name="twitter:site" content="@michele_merelli" />
+  <meta name="twitter:creator" content="@michele_merelli" />
+  <meta name="twitter:title" content="64 books cited in Futuro Fortissimo: the reading list" />
   <meta name="twitter:description" content="64 books cited across 69 sections of Futuro Fortissimo: science, technology, nature, food, society and mind. Each one linked to the issue that cites it." />
-  <meta name="twitter:image" content="https://futurofortissimo.github.io/logo.png" />
+  <meta name="twitter:image" content="https://futurofortissimo.github.io/assets/og-default.png" />
+  <meta name="twitter:image:alt" content="64 books cited in Futuro Fortissimo: the reading list" />
 
   <script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -903,13 +909,24 @@
   ]
 }</script>
   
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-  <link rel="apple-touch-icon" href="/favicon.ico" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="color-scheme" content="light" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Fortissimo" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
+  <link rel="manifest" href="/manifest.webmanifest" />
   <link rel="alternate" type="application/atom+xml" title="Futuro Fortissimo Feed" href="/feed.xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://substackcdn.com" crossorigin />
   <link rel="stylesheet" href="/assets/ff-archive.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:'Inter',sans-serif; background-color:#fdfdfd; color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -972,7 +989,7 @@
     </nav>
   </header>
 
-  <main class="max-w-6xl mx-auto px-4 py-8 space-y-6">
+  <main id="main" class="max-w-6xl mx-auto px-4 py-8 space-y-6">
     <section class="brutal-card accent-bar accent-yellow no-round space-y-4">
       <div class="ff-eyebrow text-black/70">Reading list · 64 books · 69 citations</div>
       <h1 class="text-2xl sm:text-3xl font-bold">Books cited in Futuro Fortissimo</h1>
@@ -2343,6 +2360,35 @@
       }));
     })();
   </script>
+  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+    <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
+      <div class="space-y-2">
+        <p class="ff-eyebrow">Futuro Fortissimo</p>
+        <p class="text-black/80">Futuro Fortissimo is Michele Merelli’s newsletter on technology, AI, nature and society: short ff.x.y sections, each with its sources.</p>
+      </div>
+      <nav aria-label="Explore" class="space-y-2">
+        <p class="ff-eyebrow">Explore</p>
+        <ul class="space-y-1 font-medium">
+          <li><a class="hover:underline" href="/en/archive/">All issues</a></li>
+          <li><a class="hover:underline" href="/en/themes.html">Themes</a></li>
+          <li><a class="hover:underline" href="/en/books/">Books</a></li>
+          <li><a class="hover:underline" href="/en/connections.html">Connections</a></li>
+          <li><a class="hover:underline" href="/en/note.html">Notes</a></li>
+          <li><a class="hover:underline" href="/book/">The Book (IT)</a></li>
+        </ul>
+      </nav>
+      <div class="space-y-2">
+        <p class="ff-eyebrow">Follow</p>
+        <ul class="space-y-1 font-medium">
+          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack ↗</a></li>
+          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
+          <li><a class="hover:underline" href="https://www.instagram.com/michele_merelli/" rel="me noopener" target="_blank">Instagram ↗</a></li>
+          <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
+  </footer>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>
