@@ -1,5 +1,264 @@
 export const rawData = [
     {
+        "url": "https://fortissimo.substack.com/p/ff158-intelligenza-microscopica",
+        "title": "🎼 ff.158 Intelligenza microscopica",
+        "subtitle": "Riemann e altre congetture",
+        "keypoints": [
+            "Siamo ufficialmente ignoranti",
+            "Da l’ autocomplete al “microscopio” dell’intelligenza?",
+            "L’ awe del pensiero?"
+        ],
+        "subchapters": [
+            {
+                "title": "🔢 ff.158.1 Numeri primi e come cercarli",
+                "link": "https://fortissimo.substack.com/i/225930727/ff1581-numeri-primi-e-come-cercarli",
+                "content": "Sì, lo so. Non è il 20. E futuro fortissimo non dovrebbe arrivarvi, oggi. E’ il 21. E 21 non è nemmeno primo, a voler guardare. Ma è 3 volte 7. E loro sì che sono primi. Anni fa, quando ho intrapreso la “via della scienza”, mia cugina - pure ingegnere - mi aveva regalato questo libro: Mai avrei pensato di postarlo in una newsletter, in un mondo parallelo, anni dopo. Perché parliamo dell’ Enigma dei numeri primi ? Perché ieri, che era il 20 e il giorno dopo la quotazione in Borsa di Anthropic e l’uscita di GTA, un ricercatore turco della medesima azienda (no, non Rockstar…), Levent Alpöge, ha pubblicato una nota di quattro pagine sul suo sito (dopo aver chiesto ad Amedei il permesso). A quanto per riportare che aveva risolto l’Ipotesi di Riemann: Credo di aver scoperto, lavorando con Claude, una dimostrazione dell’Ipotesi di Riemann. […] ciò che ho visto durante il percorso mi ha stupito a tal punto da farmi credere che sia l’alba, in tutta la scienza, di qualcosa di molto più grande. Formulata 150 anni fa, questa descrive una funzione per descrivere l’apparente “caos” nella distribuzione dei numeri primi. E’ stata risolta con l’equivalente di 250.000 pagine di codice (17 milioni di linee di testo…). La parte più spiazzante? Alpöge ammette di non aver ancora padroneggiato ciò che ha appena pubblicato: scrive che Claude “ha volato, danzato e scintillato vicino al traguardo”, e che gli servirà tempo per capire la dimostrazione. Non è un problema. Come non è un problema che non capiamo un aereo o un gru, in grado di arrivare a 900km/h o sollevare tonnellate. Ma è normale se vi si stringe un po’ lo stomaco: succede ancora anche a me, a volte, salendo su un aereo o passando sotto un carico sospeso.",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/0bcfebd4-5673-44c5-afa6-682cbf2574f0_506x698.jpeg",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "Levent Alpöge, ha pubblicato una nota di quattro pagine sul suo sito",
+                        "url": "https://alpo.ge/remark.pdf"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "🔭 ff.158.2 Microscopi “concettuali”",
+                "link": "https://fortissimo.substack.com/i/225930727/ff1582-microscopi-concettuali",
+                "content": "Comunque, usiamo da secoli la tecnologia per ampliare la nostra coscienza. ChatGPT non è nulla di particolarmente nuovo, in tal senso: siamo più coscienti grazie a microscopi, sensore a ultrasuoni, GPS, telescopio…). Stiamo solo scoprendo un nuovo “sensore”, ma per le parole. E’ sbalorditivo, più che altro, che proprio le parole possano “magnificare idee” ( 🧠 ff.83.3 Linguaggio e pensiero ).",
+                "images": [],
+                "references": [],
+                "connections": [
+                    {
+                        "text": "🧠 ff.83.3 Linguaggio e pensiero",
+                        "url": "https://fortissimo.substack.com/i/140010460/ff-linguaggio-e-pensiero"
+                    }
+                ]
+            },
+            {
+                "title": "😮 ff.158.3 Stupore spaventoso?",
+                "link": "https://fortissimo.substack.com/i/225930727/ff1583-stupore-spaventoso",
+                "content": "Lo so, tutto ciò è enigmatico. Pauroso. Meglio: è tutto awe , uno “wow” spaesante. Awe non ha un equivalente stretto in italiano (e pensavo di averne già parlato, dato che il libro di Keltner mi era piaciuto particolarmente ). Ma data questa mancanza, cerchiamo di capirlo: cosa vuol dire che “siamo in awe” ? E’ la sensazione di meraviglia inspiegabile che scaturire di fronte a un cielo stellato, una cattedrale enorme, ma anche sul letto di morte di un caro. Il percepire qualcosa che supera la nostra comprensione. Oggi, a questa lista, si aggiunge ricevere una risposta da Claude e simili: risolvere Rienmann è il primo awe che colpisce direttamente il cervello.",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/d98f4b17-6e40-4f18-8699-95456260b9d1_1000x1482.jpeg",
+                        "caption": "Il libro sull’ awe di Dacher Keltner (via futuro fortissimo)"
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "Il libro sull’ awe di Dacher Keltner",
+                        "url": "https://link.amazon/B03eWQDoQ"
+                    },
+                    {
+                        "text": "il libro di Keltner mi era piaciuto particolarmente",
+                        "url": "https://www.amazon.it/scienza-meraviglia-quotidiana-trasformare-nostra/dp/8842832693?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1R6BSDLY3GGOB&dib=eyJ2IjoiMSJ9.dXGDvKMrGNenw-znyE7NlGTBSAjLXY3J2WE_wh92M7b5_JFZ75Hhg6suyG2zYJh_D63dxu47zTEGfzAfvO8Xr_HINLGDPcL7tdOU41tdOU8H0I6QQxSJE1-_zcH7skmvwC_szmS0BVqqdRL8FQ2lou_OWCgsiu3D1GHKni_Wl2g_Em6_86lf9Pcgr4prSbbM2GnbNwgQnyqP7IhHipLbjEEuLHNdW7JnDb7_CAkVsF4.uQKj9H9jVsl54DtRJNgWMOSiwwEnV7KPv94BTHY6i4A&dib_tag=se&keywords=dacher%2Bkeltner&qid=1795279659&s=books&sprefix=dacher%2Bkeltner%2Cstripbooks%2C149&sr=1-1&th=1&linkCode=sl2&tag=micmeramazon-21&linkId=5ef2642ac00150fae34f6cd9f396ca50&gaOptInStatus=true&ref_=as_li_ss_tl&ascsubtag=srctok-5b8d5313f7bdeeb4&btn_type=ss&btn_ref=srctok-5b8d5313f7bdeeb4"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "❌ ff.158.4 Si sbagliano tutti",
+                "link": "https://fortissimo.substack.com/i/225930727/ff1584-si-sbagliano-tutti",
+                "content": "Questo stupore preoccupato aumenta se si pensa che nessuno - neanche le persone più intelligenti - sono riuscite a cogliere la velocità di tutto ciò: 2023: Stephen Wolfram (quello di Wolfram Alpha) che lamentava i ⚠️ ff.48.4 I limiti (matematici) di ChatGPT , 2026, marzo: Terence Tao (medaglia Fields 2006…) che difendeva i premi matematici perché, sosteneva, “per problemi come l’ipotesi di Riemann siamo piuttosto sicuri che vada creato un nuovo tipo di matematica” (confermando la sua visione poco più di un mese fa, su Numberphile ) D’altronde, nemmeno Galileo o Thomson (telescopio, elettrone) avrebbero potuto prevedere galassie e positroni (e tanto meno le relative tecnologie, come stazioni spaziali e tomografia a positroni). Non ho altre parole. Né numeri. Voglio solo invitarvi ad ammirare, in silenzio, accogliendo in modo incondizionato tutto l’infinito che sta in questo momento. Al prossimo 10, 20 o 30 (o 31…)! Intanto, se vuoi: ☕ supporta con un caffè ❤️ lascia un cuoricino © futuro fortissimo | michele merelli",
+                "images": [],
+                "references": [
+                    {
+                        "text": "Stephen Wolfram",
+                        "url": "https://writings.stephenwolfram.com/2023/01/wolframalpha-as-the-way-to-bring-computational-knowledge-superpowers-to-chatgpt/"
+                    },
+                    {
+                        "text": "Terence Tao (medaglia Fields 2006…)",
+                        "url": "https://x.com/dwarkesh_sp/status/2123966918688403756"
+                    },
+                    {
+                        "text": "Numberphile",
+                        "url": "https://exa.ai/library/podcast/xxdkp1h8dgc/episode/bb7jhws7l76"
+                    },
+                    {
+                        "text": "supporta con un caffè",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    },
+                    {
+                        "text": "michele merelli",
+                        "url": "https://www.linkedin.com/in/michelemerelli/"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "⚠️ ff.48.4 I limiti (matematici) di ChatGPT",
+                        "url": "https://fortissimo.substack.com/i/95768574/ff-i-limiti-matematici-di-chatgpt"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff157-noci-gourmet",
+        "title": "🎼 ff.157 Noci / Gourmet",
+        "subtitle": "L&#8217;universo in un guscio di noce. Tra stelle Michelin, attenzione, AI e slashiness.",
+        "keypoints": [
+            "Una noce vale più di 3 stelle Michelin?",
+            "Meditazione in bicicletta?",
+            "Come convivere con la nostra multi-dimensionalità?"
+        ],
+        "subchapters": [
+            {
+                "title": "🧠 ff.157.1 Il menu degustazione più piccolo del mondo",
+                "link": "https://fortissimo.substack.com/i/213109926/ff1571-il-menu-degustazione-piu-piccolo-del-mondo",
+                "content": "Distratti dal mix digitale social prima, AI poi, in questo perenne iper-stimolo l’unica soluzione per prestare attenzione alle cose è costringersi a spendere centinaia di euro. Ad esempio, per una cena Michelin. O no? Forse, no. Mi viene in mente quella volta in cui, durante una pratica di yoga con una nutrizionista, ci siamo messi ad assaporare una noce, chiedendoci di guardare con attenzione, per più minuti, le sue increspature. E così il mio cervello si era fermato a guardare un altro “cervello” (e volando pindaricamente verso uno dei libri preferiti della mia adolescenza: L’universo in un guscio di noce . Torna l’attenzione, quindi, in un filo che continua da molto tempo ( ⚠️ ff.83.2 Stai attento! ). Vediamo in quale altro campo potrebbe riemergere.",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/55c16c91-6b16-44c4-88b8-c4b3fc050480_1000x1437.jpeg",
+                        "caption": "Stephen Hawking, L’universo in un guscio di noce."
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "L’universo in un guscio di noce",
+                        "url": "https://amzn.to/4iAcRI1"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "⚠️ ff.83.2 Stai attento!",
+                        "url": "https://fortissimo.substack.com/i/140010460/ff-stai-attento"
+                    }
+                ]
+            },
+            {
+                "title": "🍽️ ff.157.2 Dalle stelle a GLP-1",
+                "link": "https://fortissimo.substack.com/i/213109926/ff1572-dalle-stelle-a-glp-1",
+                "content": "Torna anche il cibo, e forse non è un caso: ormai è una delle poche attività “reali” che compiamo, il cibarsi. E, nell’iperstimolazione visiva e sonora, solo il gusto (per ora) rimane un po’ più al sicuro. Non so voi, ma il pasto è per me ora un momento quasi religioso. In cui annullare ogni altro stimolo. In cui fermarmi e tirare anche un po’ il fiato. Baluardo di fisiologia. Bonus. Dato che stiamo parlando dell’intreccio del digitale (e AI) e fisico, reminder che quello che sta nel piatto (ma non nel giro vita, GLP-1 fattura più dell’AI.",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/2d5cc35f-1c17-41ef-a15b-414ea23d9cfc_1502x1116.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [],
+                "connections": []
+            },
+            {
+                "title": "🤹‍♀️ ff.157.3 Giocolare tra 3 lavori?",
+                "link": "https://fortissimo.substack.com/i/213109926/ff1573-giocolare-tra-3-lavori",
+                "content": "Già eravamo multi-tasking. Ora, con agenti che in poche righe possono trasformare, per esempio, le Orobie in Minecraft possiamo avere anche infiniti lavori. O almeno, 3, secondo ilovecreatives . Durante un episodio di Nicer Tuesdays a Los Angeles , Jennifer Puno propone di giocolare tra lavori che pagano, e lavori per cui si è appassionati. Superare l’ ikigai ( 🗾 ff.116.4 Sono giapponese! ): i l punto che più mi è piaciuto del talk è lo shift dalla domanda «Qual è la mia passione?» a «Cosa manca alla mia comunità? In cosa posso essere utile?»: così ha trovato il senso alla sua vita, nel dare e creare quello che aiuta gli altri ( 🔺ff.62.4 La piramide che c’è in tutti noi ) E vi lascia, e lascio, con un invito: imparare a convivere con la sensazione destabilizzante di essere uno, nessuno, centomila. Di convivere con la vostra “ slashiness” Firmato, Michele (ingegnere/scrittore/gamer/sportivo/coder/…). Al prossimo 10, 20 o 30! Intanto, se vuoi: ☕ supporta con un caffè ❤️ lascia un cuoricino © futuro fortissimo | michele merelli",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/355f097e-30a8-4d7b-8fdf-43d5c2e83e0b_749x573.png",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/0cd06c72-05d1-4c54-b0d5-db34e4819f47_916x478.png",
+                        "caption": ""
+                    },
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/c9f9332b-44de-4a52-999b-d1d1dd21c316_739x415.webp",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "le Orobie in Minecraft",
+                        "url": "https://via-mercatorum.com/orobie-craft/?view=drive"
+                    },
+                    {
+                        "text": "ilovecreatives",
+                        "url": "https://www.youtube.com/watch?v=XRBiOvTRPCc"
+                    },
+                    {
+                        "text": "Nicer Tuesdays a Los Angeles",
+                        "url": "https://nicertuesdays.itsnicethat.com/talks/ilovecreatives-22-september-2026"
+                    },
+                    {
+                        "text": "supporta con un caffè",
+                        "url": "https://paypal.com/paypalme/MicheleMerelli"
+                    },
+                    {
+                        "text": "michele merelli",
+                        "url": "https://linkedin.com/in/michelemerelli/"
+                    }
+                ],
+                "connections": [
+                    {
+                        "text": "🗾 ff.116.4 Sono giapponese!",
+                        "url": "https://fortissimo.substack.com/i/155829057/ff1164-sono-giapponese"
+                    },
+                    {
+                        "text": "🔺ff.62.4 La piramide che c’è in tutti noi",
+                        "url": "https://fortissimo.substack.com/i/118479393/ff624-la-piramide-che-ce-in-tutti-noi"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "url": "https://fortissimo.substack.com/p/ff156-aulin",
+        "title": "🎼 ff.156 Aulin?",
+        "subtitle": "Cosa fare quando la testa (e la zucca) esplode, ogni giorno?",
+        "keypoints": [],
+        "subchapters": [
+            {
+                "title": "👨‍🌾 ff.156.1 Dalle stelle alle stalle?",
+                "link": "https://fortissimo.substack.com/i/222754743/ff1561-dalle-stelle-alle-stalle",
+                "content": "Non scrivo, non schiaccio una tastiera, da troppo tempo. Mi mancava. Digitare sui tasti mi sembra sempre di più un nuovo sport di endurance : una risposta fisiologica a testi generati con un click, che non sono mai, però, esattamente quello che si aveva in mente. I pensieri ormai sono come i passi: da contare con lo smartwatch, ogni giorno. Pensare somiglia sempre più a muoversi: costringersi così a scrivere o correre sono la stessa cosa. A proposito di muoversi, di sport: sono stati mesi intensi. Dopo il fallimento dell’IRONMAN (cancellato per il cambiamento climatico e i 37° di Francoforte a giugno), ho dovuto ricaricare le pile. La motivazione dopo il duplice fallimento (a Cervia 2025 avevo forato in bici…) era ai minimi storici. O meglio, le energie mentali per un qualsiasi altro progetto. Inoltre, il fatto che due anni di lavoro fossero sfumati con un nulla di fatto, mi ha fatto riconsiderare molte routine. Tra queste, quella di scrivere futuro fortissimo. Non solo: c’è stata l’ennesima esplosione agentica. Come ad ogni miglioramento significativo dell’AI, ho voluto esplorare le nuove possibilità. Per due mesi mi sono buttato in un progetto, Mercatorum , pensando addirittura di creare una startup. NOTA. Mercatorum parte da una considerazione: facciamo un sacco di viaggi a vuoto, magari tra casa, lavoro e un hobby. Potremmo sfruttarli per portare la qualità di produttori locali (che non hanno una logistica a-la-Amazon) a colleghi, amici del calcetto o compaesani (membri, in Mercatorum, delle “Cerchie”). Potete provarla (e farmi sapere cosa migliorereste): https://app.via-mercatorum.com/ Magari un giorno esploderà, diventando una sorta di «BlaBlaCar dei prodotti». Intanto, continuo con altre distrazioni.",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/3005a083-2c1d-45fc-85d8-d0347e90809a_1884x893.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "Mercatorum",
+                        "url": "https://via-mercatorum.com/"
+                    }
+                ],
+                "connections": []
+            },
+            {
+                "title": "🧞‍♂️ ff.156.2 Il Genie fuori dalla lampada",
+                "link": "https://fortissimo.substack.com/i/222754743/ff1562-il-genie-fuori-dalla-lampada",
+                "content": "Non è facile capire quello che si vuole essere, mantenere saldi valori e progetti a lungo termine, quando ogni giorno il mondo sembra diverso da quello di ieri. Sempre più simulato, magari, da Genie. Ci stiamo passando tutti. Come racconta Nathaniel Drew nel suo ultimo video: Negli ultimi dodici mesi ho passato tantissimo tempo a leggere, ascoltare e sperimentare strumenti di intelligenza artificiale. Davvero tantissimo tempo. E tutto questo suscita in me una gamma incredibilmente ampia di emozioni. A volte paura, a volte stupore, altre volte gioia ed entusiasmo per le possibilità che si aprono. Insomma, provo emozioni molto diverse tra loro. E spesso prevale la preoccupazione. Mi ritrovo frequentemente in quello stato d’animo. Credo che dipenda in parte dal modo in cui la mia mente reagisce a ciò che sta accadendo, ma penso anche che sia qualcosa che sto osservando in molte altre persone. C’è tanta preoccupazione intorno a me. E quando non è l’intelligenza artificiale, con le sue innumerevoli applicazioni e le conseguenze che potrebbe avere nei diversi settori, allora è la guerra, il cambiamento climatico o qualche altro sviluppo che genera inquietudine. Quello che trovo davvero affascinante, però, è che non tutti reagiscono allo stesso modo. Anzi, è proprio questa una delle cose più belle che sto osservando: le persone possono reagire in modi profondamente diversi, arrivare a conclusioni completamente differenti e, in realtà, non esiste un’unica reazione giusta. … a proposito di eterni ritorni, btw , Nathaniel lo avevamo incontrato qualche secolo fa, in 🍄 ff.2.6 Psichedelia portami via (parte 2)",
+                "images": [],
+                "references": [],
+                "connections": [
+                    {
+                        "text": "🍄 ff.2.6 Psichedelia portami via (parte 2)",
+                        "url": "https://fortissimo.substack.com/i/43902526/ff26-psichedelia-portami-via-parte-2"
+                    }
+                ]
+            },
+            {
+                "title": "♾️ ff.156.3 L’eterno ritorno",
+                "link": "https://fortissimo.substack.com/i/222754743/ff1563-leterno-ritorno",
+                "content": "Comunque, tra Claude 5.5 e GPT Sol-Astra-Terra 6.1, tra un’ennesima maratona e l’altra, tra un’ennesima app e l’altra, ho ricevuto un messaggio. E ho capito che forse quanto fatto negli ultimi due anni, negli ultimi cinque anni, ha senso. E ha senso continuarlo a farlo. Questo messaggio di Giorgio, più della cifra della donazione PayPal che l’ha accompagnato, mi ha ricordato una cosa piuttosto semplice. Che forse quanto fatto negli ultimi due anni, negli ultimi cinque anni, ha senso. Anche senza un traguardo. Anche senza una startup. Anche senza sapere bene dove porterà. Arrivo a questa considerazione mentre guardo fuori dalla finestra di uno Starbucks che profuma di pumpkin spice latte : un fiorista sta sistemando le ultime zucche, pronte per essere intagliate all’indomani, “dì di festa”, un altro Sabato del Villaggio . Eppure, questo Aulin sa di qualcosa di diverso. Nella singolarità, ogni anno sembra un’altra vita e anche la ciclicità delle stagioni sembra venir meno. Forse è per questo che son tornato, come un’ostrica, ad aggrapparmi a questa QWERTY: per ritrovare il flow , per sentire un po’ di acido lattico, ma al cervello, per sentirmi un po’ umano di fronte a un futuro che forse è troppo fortissimo. Al prossimo 10, 20 o 30 (o 31…)! Intanto, se vuoi:",
+                "images": [
+                    {
+                        "src": "https://substack-post-media.s3.amazonaws.com/public/images/984986a1-269e-45b8-ae11-e16a98357a4e_1067x244.png",
+                        "caption": ""
+                    }
+                ],
+                "references": [
+                    {
+                        "text": "supporta con un caffè",
+                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
+                    },
+                    {
+                        "text": "michele merelli",
+                        "url": "https://www.linkedin.com/in/michelemerelli/"
+                    }
+                ],
+                "connections": []
+            }
+        ]
+    },
+    {
         "url": "https://fortissimo.substack.com/p/ff155-ai-mind-viruses-mrna-cancer-vaccine-melanoma",
         "title": "🎼 ff.155 Etichette e virus mentali",
         "subtitle": "Una mela piena di chimica, agenti AI che si passano idee, banane minacciate e una terapia mRNA che riaccende la speranza contro il melanoma.",
@@ -4639,146 +4898,6 @@ export const rawData = [
                     {
                         "text": "per microbioma",
                         "url": "https://fortissimo.substack.com/i/137958307/ff-un-organo-in-piu-il-microbioma"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "url": "https://fortissimo.substack.com/p/ff112-acqua-imprevedibile",
-        "title": "🎼 ff.112 Acqua imprevedibile",
-        "subtitle": "Ha senso fare previsioni di una realtà esponenziale?",
-        "keypoints": [
-            "Abbiamo 5 anni per guadagnare il più possibile?",
-            "L’imprevedibile podcast del mio anno di diario personale",
-            "Se il futuro è sempre più criptico, perché prevederlo?"
-        ],
-        "subchapters": [
-            {
-                "title": "💸 ff.112.1 5 anni per fare soldi",
-                "link": "https://fortissimo.substack.com/i/153969354/ff-anni-per-fare-soldi",
-                "content": "Inizio anno è nuovi propositi, previsioni. Entrambi destinati a sbriciolarsi contro il muro di una realtà sempre più imprevedibile.\nL’esplosione del COVID ci ha insegnato come la nostra mente lineare non capisca trend esponenziali, parola di Neil DeGrasse Tyson.\nUn esempio:o3, l’ultimo modello di OpenAI, ha raddoppiato la sua precisione (già sbalorditiva) in pochi mesi.\nDi fronte a queste accelerazioni, ha ragione Raoul Pal nel dire chetra 5 (6) anni l’attuale sistema socio-finanziario perderà completamente di senso/valore?\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!5m1f!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd8150c40-6f67-4dd7-99b9-332bb7e21d8b_596x387.png",
-                        "caption": ""
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "o3, l’ultimo modello di OpenAI",
-                        "url": "https://x.com/__nmca__/status/1870170098989674833"
-                    },
-                    {
-                        "text": "tra 5 (6) anni l’attuale sistema socio-finanziario perderà completamente di senso/valore",
-                        "url": "https://micmer.notion.site/You-Have-6-Years-to-Make-as-Much-Money-as-Possible-Raoul-Pal-11041b31f60e8002af94ef64171eb305"
-                    }
-                ],
-                "connections": []
-            },
-            {
-                "title": "🙅 ff.112.2 Non possiamo prevedere nulla",
-                "link": "https://fortissimo.substack.com/i/153969354/ff-non-possiamo-prevedere-nulla",
-                "content": "Metterci la faccia?Non capiamo la realtà, non solo quella futura, ma l’attuale: Hollywood è spaventata dall’arte generativa che ricrea attori, ma già oggi la metà degli incassi al cinema è legato a personaggi non-umani.\nAl posto di fare previsioni,Ved Sen ci invita a sostituire i “mai” con i “se”.\nEcco 5 miei personalissimi se:\nSe la popolazione di robot supererà quella umana?Se vivrò per 500 anni?Se non posso prevedere i prossimi 5 anni, come penso ai prossimi 100?Se uno sciame di droni autonomi si presentasse all’orizzonte?Se energia e soldi perderanno valore, la salute biologica (misurata im VO2max) sarà la nuova ricchezza?\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!6JqQ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F91bb432c-faaf-4975-bf9a-540197cf4ed2_700x274.png",
-                        "caption": "Dough Shapiro: incassi al box office di personaggi “senza faccia” (via futuro fortissimo)"
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "Ved Sen ci invita a sostituire i “mai” con i “se”",
-                        "url": "https://innovationex.substack.com/p/236-stop-saying-never-practice-saying?utm_campaign=email-half-post&r=bruig&utm_source=substack&utm_medium=email"
-                    }
-                ],
-                "connections": []
-            },
-            {
-                "title": "🏋️ ff.112.3 Possiamo solo prepararci al meglio",
-                "link": "https://fortissimo.substack.com/i/153969354/ff-possiamo-solo-prepararci-al-meglio",
-                "content": "Nell’incertezza del futuro, non possiamo che tornare con un focus sul presente, mantenendo buone abitudini e piccoli investimenti.\nDa 10 anni scrivo un diario personale. Pensavo sarebbe stato inutile, dato il mararma di testo che difficilmente avrei riletto. Quest’anno, grazie aNotebookLM di Googlel’ho convertito in una puntata di podcast sulla mia vita.\nSentire due “persone” commentare, non senza un po’ di ironia, le mie personalissime preoccupazioni mi ha fatto sorridere. Attendo ora con ansia di poter generare un intero film della mia vita.\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!wk2g!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb158d07a-ccd4-4b26-9441-9d1f51eb29b6_866x516.png",
-                        "caption": ""
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "NotebookLM di Google",
-                        "url": "https://notebooklm.google/"
-                    }
-                ],
-                "connections": []
-            },
-            {
-                "title": "🏞️ ff.112.4 Fiumi inattesi",
-                "link": "https://fortissimo.substack.com/i/153969354/ff-fiumi-inattesi",
-                "content": "Quello del diario personale è solo un esempio di come l’AI (presto parleremo diGoogle Deep Research) processi il marasma di informazioni che generiamo (♾️ ff.72.1 Infinito digitale).\nLe ricerche sulla correlazione tradurezza dell'acqua potabile e riduzione dei rischi cardiovascolariesistono dagli anni '60. Solo recentemente siamo riusciti a riscoprirle e comprenderle più approfonditamente.\nUn piccolo esempio: ho preso i dati suisali minerali dell’acqua di Bergamoe, con un semplice copia-incolla in ChatGPT, ho generato un report sui sali minerali nell’acqua di vari comuni della provincia, notando il primato della mia frazione per quantità di magnesio. Urrà!\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!Tego!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F110a02d9-ff2e-44de-b2e8-40dc9b365172_535x851.png",
-                        "caption": ""
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "Google Deep Research",
-                        "url": "https://blog.google/products/gemini/google-gemini-deep-research/"
-                    },
-                    {
-                        "text": "durezza dell'acqua potabile e riduzione dei rischi cardiovascolari",
-                        "url": "https://www.mdpi.com/2304-8158/12/17/3255"
-                    },
-                    {
-                        "text": "sali minerali dell’acqua di Bergamo",
-                        "url": "https://www.uniacque.bg.it/qualita-dellacqua/i-parametri-del-tuo-comune/"
-                    }
-                ],
-                "connections": [
-                    {
-                        "text": "♾️ ff.72.1 Infinito digitale",
-                        "url": "https://fortissimo.substack.com/i/134486468/ff-infinito-digitale"
-                    }
-                ]
-            },
-            {
-                "title": "💧 ff.112.5 Acqua da tutte le parti",
-                "link": "https://fortissimo.substack.com/i/153969354/ff-acqua-da-tutte-le-parti",
-                "content": "Il 2025 non è una tabula rasa, ma il proseguimento del fluire della vita. Torniamo quindi al recente invito a seguire il Tao, ad essere acqua (☯️ ff.108.3 Essere acqua).\nL’acqua che fluisce senza propositi e previsioni, ma con una direzione: il basso. Seguendo un’unica legge: la gravità.\nSenza sapere se finirà in un mare, in un lago, in un WC, in un frutto o nella vostra bocca.\n🎶archivio note fortissime\n☕caffè virtuale\n❤️cuoricino qui sotto?\n👋 A presto, damicmer\n©futuro fortissimo|michele merelli\n",
-                "images": [
-                    {
-                        "src": "https://substackcdn.com/image/fetch/$s_!snHR!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F73d69ea1-428c-49a9-a30c-2f21a79f1400_1440x566.bin",
-                        "caption": "New Day Coming, Calida Rawles (2020)"
-                    }
-                ],
-                "references": [
-                    {
-                        "text": "archivio note fortissime",
-                        "url": "https://futurofortissimo.github.io/note.html"
-                    },
-                    {
-                        "text": "caffè virtuale",
-                        "url": "https://www.paypal.com/paypalme/MicheleMerelli"
-                    },
-                    {
-                        "text": "micmer",
-                        "url": "https://linktr.ee/micmer"
-                    },
-                    {
-                        "text": "futuro fortissimo",
-                        "url": "https://futurofortissimo.github.io/"
-                    },
-                    {
-                        "text": "michele merelli",
-                        "url": "https://www.linkedin.com/in/michelemerelli/"
-                    }
-                ],
-                "connections": [
-                    {
-                        "text": "☯️ ff.108.3 Essere acqua",
-                        "url": "https://fortissimo.substack.com/i/148256057/ff-essere-acqua"
                     }
                 ]
             }

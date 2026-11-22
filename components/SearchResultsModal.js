@@ -31,29 +31,31 @@ const buildSearchResults = (chapters, query) => {
       const results = [];
       const chapterMatches =
         chapter.cleanTitle.toLowerCase().includes(lowerQuery) ||
+        (chapter.ffLabel && chapter.ffLabel.toLowerCase().includes(lowerQuery)) ||
         (chapter.subtitle && chapter.subtitle.toLowerCase().includes(lowerQuery)) ||
         (chapter.keypoints || []).some((point) => point.toLowerCase().includes(lowerQuery));
 
       if (chapterMatches) {
         results.push({
           type: 'chapter',
-          id: chapter.url,
+          id: chapter.issueId || chapter.issueSlug || chapter.url,
           emoji: chapter.primaryEmoji || chapter.originalEmoji,
-          title: chapter.cleanTitle,
+          title: `${chapter.ffLabel ? chapter.ffLabel + ' ' : ''}${chapter.cleanTitle}`,
           subtitle: chapter.subtitle
         });
       }
 
-      chapter.processedSubchapters.forEach((sub) => {
+      chapter.processedSubchapters.forEach((sub, idx) => {
         if (
           sub.cleanTitle.toLowerCase().includes(lowerQuery) ||
+          (sub.ffLabel && sub.ffLabel.toLowerCase().includes(lowerQuery)) ||
           sub.content.toLowerCase().includes(lowerQuery)
         ) {
           results.push({
             type: 'subchapter',
-            id: slugify(sub.cleanTitle),
+            id: slugify(sub.cleanTitle || sub.ffLabel || `sub-${idx}`),
             emoji: sub.originalEmoji,
-            title: sub.cleanTitle,
+            title: `${sub.ffLabel ? sub.ffLabel + ' ' : ''}${sub.cleanTitle}`,
             chapterTitle: chapter.cleanTitle,
             snippet: createSnippet(sub.content, query)
           });
@@ -92,23 +94,31 @@ const SearchResultsModal = ({ chapters, isOpen, onHide, onClear, onNavigate }) =
     }
   };
 
-  return html`<div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm overflow-y-auto p-4 sm:p-6">
-    <div className="max-w-4xl mx-auto bg-white border-4 border-black brutal-shadow no-round">
+  return html`<div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm overflow-y-auto p-4 sm:p-6" onClick=${onHide}>
+    <div className="max-w-4xl mx-auto bg-white border-4 border-black brutal-shadow no-round" onClick=${(e) => e.stopPropagation()}>
       <div className="p-4 sm:p-6 flex flex-col gap-4">
         <div className="flex flex-col gap-3">
           <div className="flex items-start justify-between gap-3">
             <div>
               <div className="ff-eyebrow text-black">${t('search')}</div>
-              <h3 className="ff-heading-xl font-heading text-black">${t('resultsFor')} "${searchQuery}"</h3>
+              <h3 className="ff-heading-xl font-heading text-black">${t('resultsFor')} "${searchQuery}" (${results.length})</h3>
               <p className="ff-body-sm text-black/70 max-w-2xl">${t('searchHint')}</p>
             </div>
-            <button
-              onClick=${handleClose}
-              className="px-3 py-2 border-3 border-black bg-white ff-button brutal-shadow hover:-translate-y-0.5 transition-transform"
-              aria-label=${t('closeAndClear')}
-            >
-              ✕
-            </button>
+            <div className="flex gap-2">
+              <button
+                onClick=${onHide}
+                className="px-3 py-2 border-3 border-black bg-white ff-button brutal-shadow hover:-translate-y-0.5 transition-transform"
+              >
+                ${t('close')}
+              </button>
+              <button
+                onClick=${handleClose}
+                className="px-3 py-2 border-3 border-black bg-[var(--ff-yellow)] ff-button brutal-shadow hover:-translate-y-0.5 transition-transform"
+                aria-label=${t('closeAndClear')}
+              >
+                ✕
+              </button>
+            </div>
           </div>
         </div>
 

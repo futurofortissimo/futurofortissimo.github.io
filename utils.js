@@ -206,7 +206,7 @@ const generateSummary = (content = '') => {
 const getTopicEmoji = (text) => {
   const lowerText = text.toLowerCase();
 
-  if (lowerText.match(/(amzn\.to|libro|libri|book|romanzo|saggio|autore|lettura)/)) return TopicEmoji.BOOK;
+  if (lowerText.match(/(amzn\.to|amazon\.it|amazon\.com|libro|libri|book|romanzo|saggio|autore|lettura)/)) return TopicEmoji.BOOK;
   if (lowerText.match(/(soldi|finanza|crypto|bitcoin|investimenti|mercato|economi|pil|dollaro|euro|bank|banca|inflazione|prezzo)/)) return TopicEmoji.MONEY;
   if (lowerText.match(/(sport|calcio|maratona|corsa|olimpiadi|allenamento|atleta|nuoto|bici|sci)/)) return TopicEmoji.SPORT;
   if (lowerText.match(/(cibo|mangiare|dieta|pizza|hamburger|vino|ristorante|ricetta|cucina|pasta|carne|vegan|nutrizione)/)) return TopicEmoji.FOOD;
@@ -308,14 +308,19 @@ export const processChapter = (chapter) => {
   const fallbackEmoji = emoji || '🎼';
 
   const issueNumberMatch = /ff\.(\d+)/i.exec(chapter.title || '');
+  const ffNum = issueNumberMatch ? Number(issueNumberMatch[1]) : -1;
   const issueId = issueNumberMatch ? `ff-${issueNumberMatch[1]}` : null;
+  const urlSlug = (chapter.url || '').replace(/\/$/, '').split('/').pop() || '';
+  const issueSlug = issueId || urlSlug;
 
   return {
     ...chapter,
     keypoints,
     cleanTitle,
     ffLabel,
+    ffNum,
     issueId,
+    issueSlug,
     originalEmoji: fallbackEmoji,
     primaryEmoji: determineChapterEmoji(chapter, processedSubchapters, fallbackEmoji),
     processedSubchapters

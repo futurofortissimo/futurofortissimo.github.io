@@ -131,13 +131,13 @@ def parse_post(title, link, subtitle, html):
 
     # Keypoints: the intro bullet list, before the first subchapter heading.
     keypoints = []
-    first_h = soup.find(["h3", "h4"])
-    for li in soup.find_all("li"):
-        if first_h and li.sourceline and first_h.sourceline and li.sourceline > first_h.sourceline:
-            continue
-        kp = clean(li.get_text(" "))
-        if kp and kp not in keypoints:
-            keypoints.append(kp)
+    for el in soup.find_all(["h3", "h4", "li"]):
+        if el.name in ("h3", "h4") and re.search(r"ff\.\d+\.\d+", clean(el.get_text(" "))):
+            break
+        if el.name == "li":
+            kp = clean(el.get_text(" "))
+            if kp and kp not in keypoints:
+                keypoints.append(kp)
 
     subchapters = []
     for h in soup.find_all(["h3", "h4"]):
@@ -146,7 +146,7 @@ def parse_post(title, link, subtitle, html):
             continue
 
         prose, images, references, connections = [], [], [], []
-        seen_ref, seen_conn, seen_img = set(), set(), set()
+        ref_by_url, seen_conn, seen_img = {}, set(), set()
 
         for node in h.next_siblings:
             if getattr(node, "name", None) in ("h3", "h4") and re.search(
@@ -180,9 +180,12 @@ def parse_post(title, link, subtitle, html):
                     if FF_CODE.search(text) and href not in seen_conn:
                         seen_conn.add(href)
                         connections.append({"text": text, "url": href})
-                elif href not in seen_ref:
-                    seen_ref.add(href)
-                    references.append({"text": text, "url": href})
+                elif href not in ref_by_url:
+                    entry = {"text": text, "url": href}
+                    ref_by_url[href] = entry
+                    references.append(entry)
+                elif text and text not in ref_by_url[href]["text"]:
+                    ref_by_url[href]["text"] = clean(ref_by_url[href]["text"] + " " + text)
 
             if node.name in ("p", "blockquote", "ul", "ol"):
                 txt = clean(node.get_text(" "))
@@ -267,8 +270,17 @@ def main():
             )
 
     if args.apply:
-        # data.js is newest-first.
-        data = sorted(missing, key=lambda e: chapter_of(e["title"]), reverse=True) + data
+        # data.js is newest-first; deduplicate by canonical URL while preserving order.
+        combined = sorted(missing, key=lambda e: chapter_of(e["title"]), reverse=True) + data
+        seen_urls, deduped = set(), []
+        for entry in combined:
+            u = (entry.get("url") or "").rstrip("/")
+            if u and u in seen_urls:
+                continue
+            if u:
+                seen_urls.add(u)
+            deduped.append(entry)
+        data = deduped
         dump_data(prefix, data)
         print(f"\napplied: {len(missing)} entries prepended to data.js ({len(data)} total)")
     else:
