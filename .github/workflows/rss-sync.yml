@@ -46,6 +46,7 @@ jobs:
           node scripts/build_libri_data.mjs
           node scripts/build_i18n_data.mjs
           node scripts/build_archive_seo.mjs
+          node scripts/build_covers.mjs || echo "covers: kept previous"
           node scripts/build_static_pages.mjs
           node scripts/build_feed.mjs
           node scripts/i18n_status.mjs

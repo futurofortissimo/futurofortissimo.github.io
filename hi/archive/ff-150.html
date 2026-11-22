@@ -147,12 +147,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -161,9 +161,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -216,18 +216,18 @@
         <a href="/hi/books/">किताबें</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="खोजें (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">खोजें</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="खोजें (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">खोजें</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="भाषा"><a href="/archivio/ff-150.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/archive/ff-150.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/archive/ff-150.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state aria-current="page">हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="डार्क थीम" title="डार्क थीम"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">सब्सक्राइब</a>
         <details class="ff-more">
-          <summary aria-label="और"><span aria-hidden="true">☰</span><span class="sr-only">और</span></summary>
+          <summary aria-label="और"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">और</span></summary>
           <nav class="ff-menu" aria-label="और">
-            <a href="/book/">📖 किताब (IT)</a>
-            <a href="/hi/connections.html">🔗 कनेक्शन</a>
-            <a href="/hi/note.html">📝 नोट्स</a>
+            <a href="/book/"><span class="ff-emo">📖</span> किताब (IT)</a>
+            <a href="/hi/connections.html"><span class="ff-emo">🔗</span> कनेक्शन</a>
+            <a href="/hi/note.html"><span class="ff-emo">📝</span> नोट्स</a>
             <hr />
-            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 सब्सक्राइब ↗</a>
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener"><span class="ff-emo">📩</span> सब्सक्राइब <span class="ff-emo">↗</span></a>
           </nav>
         </details>
       </div>
@@ -237,157 +237,157 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/hi/">होम</a> /</li><li><a class="underline" href="/hi/archive/">संग्रह</a> /</li><li aria-current="page">ff.150 Yes we can?</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>150</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>150</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="brain" data-ff-slug="ff-150" data-label="3D वस्तु और पूर्वावलोकन खोलें: ff.150"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Futuro Fortissimo संग्रह</p>
-      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.150 Yes we can?</h1>
+      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black"><span class="ff-emo">🎼</span> ff.150 Yes we can?</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">“कर सकना” बनाम “करना ही है”, और दूसरे की नकारात्मकता</p>
       <p class="mt-2 text-xs font-mono text-black/70">प्रकाशित <time datetime="2026-04-30T06:45:48.739Z">30 अप्रैल 2026</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/hi/archive/ff-150.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">↗</span> शेयर करें</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/hi/archive/ff-150.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">🔗</span> लिंक कॉपी करें</button>
-        <a href="https://fortissimo.substack.com/p/ff150-yes-we-can" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Substack पर इतालवी मूल पढ़ें ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/hi/archive/ff-150.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true"><span class="ff-emo">↗</span></span> शेयर करें</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/hi/archive/ff-150.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true"><span class="ff-emo">🔗</span></span> लिंक कॉपी करें</button>
+        <a href="https://fortissimo.substack.com/p/ff150-yes-we-can" target="_blank" rel="noopener noreferrer" class="ff-qlink">Substack पर इतालवी मूल पढ़ें <span class="ff-emo">↗</span></a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• अगली महामारी: न्यूरॉन? (COVID तो कुछ भी नहीं)</li>
-        <li>• “करना ही है” से “कर सकते हैं” तक: Yes We Can (थोड़ा ज़्यादा ही)</li>
-        <li>• Unselfing और We-tiredness क्या हैं?</li>
+      <ul class="ff-keypoints">
+        <li>अगली महामारी: न्यूरॉन? (COVID तो कुछ भी नहीं)</li>
+        <li>“करना ही है” से “कर सकते हैं” तक: Yes We Can (थोड़ा ज़्यादा ही)</li>
+        <li>Unselfing और We-tiredness क्या हैं?</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">थीम</span><a href="/hi/themes.html#salute" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🏃 स्वास्थ्य, खेल और शरीर</a><a href="/hi/themes.html#geo" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🏛 भू-राजनीति, अर्थव्यवस्था और समाज</a><a href="/hi/themes.html#cultura" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🎨 संस्कृति, किताबें और कला</a></p>
-      <nav aria-label="इस अंक के खंड" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">थीम</span><a href="/hi/themes.html#salute" class="ff-tlink"><span class="ff-emo">🏃</span> स्वास्थ्य, खेल और शरीर</a><a href="/hi/themes.html#geo" class="ff-tlink"><span class="ff-emo">🏛</span> भू-राजनीति, अर्थव्यवस्था और समाज</a><a href="/hi/themes.html#cultura" class="ff-tlink"><span class="ff-emo">🎨</span> संस्कृति, किताबें और कला</a></p>
+      <nav aria-label="इस अंक के खंड" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">इस अंक में</h2>
         <ol>
-          <li><a href="#ff-150-1">🐺 ff.150.1 भेड़िये, वायरस और न्यूरॉन</a></li>
-          <li><a href="#ff-150-2">🛋️ ff.150.2 Freud कूड़ेदान में?</a></li>
-          <li><a href="#ff-150-3">♾️ ff.150.3 अनंत संभावनाएँ (और अनंत जीवन)?</a></li>
+          <li><a href="#ff-150-1"><span class="ff-emo">🐺</span> ff.150.1 भेड़िये, वायरस और न्यूरॉन</a></li>
+          <li><a href="#ff-150-2"><span class="ff-emo">🛋️</span> ff.150.2 Freud कूड़ेदान में?</a></li>
+          <li><a href="#ff-150-3"><span class="ff-emo">♾️</span> ff.150.3 अनंत संभावनाएँ (और अनंत जीवन)?</a></li>
           <li><a href="#ff-150-4">- ff.150.4 क्या मैं नकारात्मक सोचता हूँ?</a></li>
-          <li><a href="#ff-150-5">🌱 ff.150.5 ख़ुद से थोड़ा प्यार (और थोड़ी ऊब)</a></li>
+          <li><a href="#ff-150-5"><span class="ff-emo">🌱</span> ff.150.5 ख़ुद से थोड़ा प्यार (और थोड़ी ऊब)</a></li>
         </ol>
       </nav>
     </header>
 
     
 
-    <section id="ff-150-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-150-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🐺 ff.150.1 भेड़िये, वायरस और न्यूरॉन</h2>
-        <a href="https://fortissimo.substack.com/i/194704648/ff1501-lupi-virus-e-neuroni" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.150.1 भेड़िये, वायरस और न्यूरॉन">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🐺</span> ff.150.1 भेड़िये, वायरस और न्यूरॉन</h2>
+        <a href="https://fortissimo.substack.com/i/194704648/ff1501-lupi-virus-e-neuroni" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.150.1 भेड़िये, वायरस और न्यूरॉन">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
-        <p class="text-base leading-relaxed text-black/90">मानसिक स्वास्थ्य और बर्नआउट हमारे भविष्य से जुड़े हैं। इसलिए 🎼 ff ❤️ इंसान पर भी लौटता है (🍃 प्रकृति और 🖥️ तकनीक के साथ)। कुछ समय पहले हमने 🎼 ff.62 बर्नआउट से कैसे बचें में Paul Millard को देखा था, जिन्होंने McKinsey छोड़कर ताइवान का रुख़ किया। यह संयोग नहीं कि Byung-Chul Han, एक अहम समकालीन विचारक जिनसे हम 🍎 ff.64.2 Newton से Einstein तक में मिल चुके हैं, ने The Burnout Society भी लिखी: 20वीं सदी प्रतिरक्षात्मक थी: सीमाएँ, दीवारें, अजनबी/दूसरा एक ख़तरे के रूप में। फिर दूसरा और ज़्यादा छलिया बनता गया: भेड़िये से चूहे तक, कीड़े से वायरस तक। 21वीं सदी में दूसरा ग़ायब हो गया है। और सबसे बड़ा ख़तरा भीतरी हो गया है: हमारे अपने न्यूरॉन। बोनस। जीव-विज्ञान में ऑटोइम्यून बीमारियाँ बढ़ रही हैं।</p>
+        <p class="text-base leading-relaxed text-black/90">मानसिक स्वास्थ्य और बर्नआउट हमारे भविष्य से जुड़े हैं। इसलिए <span class="ff-emo">🎼</span> ff <span class="ff-emo">❤️</span> इंसान पर भी लौटता है (<span class="ff-emo">🍃</span> प्रकृति और <span class="ff-emo">🖥️</span> तकनीक के साथ)। कुछ समय पहले हमने <span class="ff-emo">🎼</span> ff.62 बर्नआउट से कैसे बचें में Paul Millard को देखा था, जिन्होंने McKinsey छोड़कर ताइवान का रुख़ किया। यह संयोग नहीं कि Byung-Chul Han, एक अहम समकालीन विचारक जिनसे हम <span class="ff-emo">🍎</span> ff.64.2 Newton से Einstein तक में मिल चुके हैं, ने The Burnout Society भी लिखी: 20वीं सदी प्रतिरक्षात्मक थी: सीमाएँ, दीवारें, अजनबी/दूसरा एक ख़तरे के रूप में। फिर दूसरा और ज़्यादा छलिया बनता गया: भेड़िये से चूहे तक, कीड़े से वायरस तक। 21वीं सदी में दूसरा ग़ायब हो गया है। और सबसे बड़ा ख़तरा भीतरी हो गया है: हमारे अपने न्यूरॉन। बोनस। जीव-विज्ञान में ऑटोइम्यून बीमारियाँ बढ़ रही हैं।</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/w_960,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbe74cbe3-9d1f-48d7-ba8a-dc15dd46e10b_1000x1428.jpeg" srcset="https://substackcdn.com/image/fetch/w_480,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbe74cbe3-9d1f-48d7-ba8a-dc15dd46e10b_1000x1428.jpeg 480w, https://substackcdn.com/image/fetch/w_960,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbe74cbe3-9d1f-48d7-ba8a-dc15dd46e10b_1000x1428.jpeg 960w, https://substackcdn.com/image/fetch/w_1440,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbe74cbe3-9d1f-48d7-ba8a-dc15dd46e10b_1000x1428.jpeg 1440w" sizes="(max-width: 1024px) 100vw, 960px" width="1000" height="1428" alt="The Burnout Society (2015), Byung-Chul Han (Futuro Fortissimo के ज़रिए)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">The Burnout Society (2015), Byung-Chul Han (Futuro Fortissimo के ज़रिए)</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (5)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.sup.org/books/title/?id=20550" target="_blank" rel="noopener noreferrer" title="The Burnout Society" lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ sup.org</a>
-            <a href="https://amzn.to/4dXNRsa" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] text-xs font-mono font-bold hover:underline">📚 The Burnout Society</a>
-            <a href="https://pubs.sciepub.com/ijcd/3/4/8/" target="_blank" rel="noopener noreferrer" title="le malattie autoimmuni sono in aumento" lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ pubs.sciepub.com</a>
-            <a href="https://fortissimo.substack.com/p/ff61-come-evitare-il-burnout" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🎼 ff.62 बर्नआउट से कैसे बचें</a>
-            <a href="https://fortissimo.substack.com/i/119334503/ff642-da-newton-a-einstein" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🍎 ff.64.2 Newton से Einstein तक</a>
+          <div class="ff-refs-l">
+            <a href="https://www.sup.org/books/title/?id=20550" target="_blank" rel="noopener noreferrer" title="The Burnout Society" lang="it" class="ff-ref"><span class="ff-emo">↗</span> sup.org</a>
+            <a href="https://amzn.to/4dXNRsa" target="_blank" rel="noopener noreferrer sponsored" class="ff-ref is-book"><span class="ff-emo">📚</span> The Burnout Society</a>
+            <a href="https://pubs.sciepub.com/ijcd/3/4/8/" target="_blank" rel="noopener noreferrer" title="le malattie autoimmuni sono in aumento" lang="it" class="ff-ref"><span class="ff-emo">↗</span> pubs.sciepub.com</a>
+            <a href="https://fortissimo.substack.com/p/ff61-come-evitare-il-burnout" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> <span class="ff-emo">🎼</span> ff.62 बर्नआउट से कैसे बचें</a>
+            <a href="https://fortissimo.substack.com/i/119334503/ff642-da-newton-a-einstein" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> <span class="ff-emo">🍎</span> ff.64.2 Newton से Einstein तक</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-150-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-150-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🛋️ ff.150.2 Freud कूड़ेदान में?</h2>
-        <a href="https://fortissimo.substack.com/i/194704648/ff1502-freud-nel-cestino" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.150.2 Freud कूड़ेदान में?">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🛋️</span> ff.150.2 Freud कूड़ेदान में?</h2>
+        <a href="https://fortissimo.substack.com/i/194704648/ff1502-freud-nel-cestino" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.150.2 Freud कूड़ेदान में?">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">तो अवसाद और बर्नआउट बाहरी संक्रमण (दूसरे की नकारात्मकता) नहीं, बल्कि भीतरी विस्फोट हैं, एक संभावित-स्व के, जो अनंत गुना बढ़ता जाता है। एक ट्यूमर की तरह। इसलिए हम Freud के Super-ego से बहुत दूर हैं, जो एक नैतिकतावादी और धार्मिक समाज में Id की इच्छाओं पर लगाम लगाता है: Du sollst (Should, तुम्हें करना चाहिए) की जगह Du kannst (Can, तुम कर सकते हो) ने ले ली है।</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/w_960,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0ad85a4f-6a4d-4889-ab01-96437c5705d3_1000x1000.jpeg" srcset="https://substackcdn.com/image/fetch/w_480,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0ad85a4f-6a4d-4889-ab01-96437c5705d3_1000x1000.jpeg 480w, https://substackcdn.com/image/fetch/w_960,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0ad85a4f-6a4d-4889-ab01-96437c5705d3_1000x1000.jpeg 960w, https://substackcdn.com/image/fetch/w_1440,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0ad85a4f-6a4d-4889-ab01-96437c5705d3_1000x1000.jpeg 1440w" sizes="(max-width: 1024px) 100vw, 960px" width="1000" height="1000" alt="🛋️ ff.150.2 Freud कूड़ेदान में?" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
       
     </section>
 
-    <section id="ff-150-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-150-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">♾️ ff.150.3 अनंत संभावनाएँ (और अनंत जीवन)?</h2>
-        <a href="https://fortissimo.substack.com/i/194704648/ff1503-possibilita-e-vita-infinita" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.150.3 अनंत संभावनाएँ (और अनंत जीवन)?">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">♾️</span> ff.150.3 अनंत संभावनाएँ (और अनंत जीवन)?</h2>
+        <a href="https://fortissimo.substack.com/i/194704648/ff1503-possibilita-e-vita-infinita" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.150.3 अनंत संभावनाएँ (और अनंत जीवन)?">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Han आगे Ego की अनंतता पर सोचते हैं: अगर समाज और सामाजिक ताना-बाना (दूसरा) ग़ायब हो रहे हैं, तो Ego के पास अपना शरीर बचता है, जिसे हर क़ीमत पर स्वस्थ रखना है। पूँजीवादी अर्थव्यवस्था अस्तित्व को निरपेक्ष बना देती है। यह इस भ्रम पर टिकी है कि ज़्यादा पूँजी ज़्यादा जीवन पैदा करती है, जिसे जीने की ज़्यादा क्षमता समझा जाता है। Bryan Johnson का DON&#39;T DIE याद आता है... Han हमारे समाज को Leistungsgesellschaft कहते हैं, उपलब्धियों का समाज। निरंतर (भटकाव भरी) गतिविधि का स्रोत, इतना कि अब हम ठीक से ग़ुस्सा भी नहीं कर पाते। ग़ुस्से की जगह खीज ने ले ली है: समकालीन समाज को घेरे हुए सामान्य भटकाव, ग़ुस्से की ऊर्जा और तीव्रता को उभरने नहीं देता। आज यह और ज़्यादा अपमान या खीज को, ‘हिसाब बाक़ी होने’ (having a beef) को जगह देता है, ऐसी भावनाएँ जो कोई निर्णायक बदलाव लाने में अक्षम साबित होती हैं। हाँ, हम हर चीज़ से चिढ़े हुए हैं। पार्किंग से निकलते हुए छोटी-सी ग़लतफ़हमी से भी। वैसे: Beef का दूसरा सीज़न आ गया है (शीर्षक ख़ुद सब कह देता है)।</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/w_960,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd376d5cb-93eb-4d7f-9014-0021527dcc6a_452x678.jpeg" srcset="https://substackcdn.com/image/fetch/w_480,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd376d5cb-93eb-4d7f-9014-0021527dcc6a_452x678.jpeg 480w" sizes="(max-width: 1024px) 100vw, 960px" width="452" height="678" alt="♾️ ff.150.3 अनंत संभावनाएँ (और अनंत जीवन)?" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://dontdie.bryanjohnson.com/" target="_blank" rel="noopener noreferrer" title="DON’T DIE di Bryan Johsnon" lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ dontdie.bryanjohnson.com</a>
+          <div class="ff-refs-l">
+            <a href="https://dontdie.bryanjohnson.com/" target="_blank" rel="noopener noreferrer" title="DON’T DIE di Bryan Johsnon" lang="it" class="ff-ref"><span class="ff-emo">↗</span> dontdie.bryanjohnson.com</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-150-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-150-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">- ff.150.4 क्या मैं नकारात्मक सोचता हूँ?</h2>
-        <a href="https://fortissimo.substack.com/i/194704648/ff1504-io-penso-negativo" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.150.4 क्या मैं नकारात्मक सोचता हूँ?">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/194704648/ff1504-io-penso-negativo" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.150.4 क्या मैं नकारात्मक सोचता हूँ?">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
-        <p class="text-base leading-relaxed text-black/90">Mea culpa। मैं नहीं छिपाता कि Futuro Fortissimo सबसे पहले सकारात्मकता है ( 🎼 ff.59 आशावाद उड़ान भरता है! )। फिर भी दूसरे की नकारात्मकता (Paullo के जाम में बजता हॉर्न) अति-सक्रियता का एकमात्र इलाज लगती है। इस बाहरी सीमा के बिना, हम Peter Handke की I-tiredness में डूब जाते हैं: एक मूक और अकेली थकान, अगले मैराथन PR, सबसे ज़्यादा पैसे वाली अगली नौकरी, एक और IRONMAN की तलाश में। या यह, या वह। आधुनिक अनंतता के सामने, किसी बिंदु पर काटना, फ़ैसला करना, अलग करना पड़ता है ( 🏠 ff.44.3 ठहरना स्थिर करता है )। यह मुश्किल है, मुझे पता है। और Kierkegaard 1843 में अपनी किताब Either/Or के साथ यह जानते थे।</p>
+        <p class="text-base leading-relaxed text-black/90">Mea culpa। मैं नहीं छिपाता कि Futuro Fortissimo सबसे पहले सकारात्मकता है ( <span class="ff-emo">🎼</span> ff.59 आशावाद उड़ान भरता है! )। फिर भी दूसरे की नकारात्मकता (Paullo के जाम में बजता हॉर्न) अति-सक्रियता का एकमात्र इलाज लगती है। इस बाहरी सीमा के बिना, हम Peter Handke की I-tiredness में डूब जाते हैं: एक मूक और अकेली थकान, अगले मैराथन PR, सबसे ज़्यादा पैसे वाली अगली नौकरी, एक और IRONMAN की तलाश में। या यह, या वह। आधुनिक अनंतता के सामने, किसी बिंदु पर काटना, फ़ैसला करना, अलग करना पड़ता है ( <span class="ff-emo">🏠</span> ff.44.3 ठहरना स्थिर करता है )। यह मुश्किल है, मुझे पता है। और Kierkegaard 1843 में अपनी किताब Either/Or के साथ यह जानते थे।</p>
       </div>
       
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://amzn.to/3QdDTcp" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] text-xs font-mono font-bold hover:underline">📚 Either/Or</a>
-            <a href="https://fortissimo.substack.com/p/ff59-lottimismo-vola?utm_source=publication-search" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🎼 ff.59 आशावाद उड़ान भरता है!</a>
-            <a href="https://fortissimo.substack.com/i/82346421/ff-stabilirsi-stabilizza" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🏠 ff.44.3 ठहरना स्थिर करता है</a>
+          <div class="ff-refs-l">
+            <a href="https://amzn.to/3QdDTcp" target="_blank" rel="noopener noreferrer sponsored" class="ff-ref is-book"><span class="ff-emo">📚</span> Either/Or</a>
+            <a href="https://fortissimo.substack.com/p/ff59-lottimismo-vola?utm_source=publication-search" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> <span class="ff-emo">🎼</span> ff.59 आशावाद उड़ान भरता है!</a>
+            <a href="https://fortissimo.substack.com/i/82346421/ff-stabilirsi-stabilizza" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> <span class="ff-emo">🏠</span> ff.44.3 ठहरना स्थिर करता है</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-150-5" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-150-5" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🌱 ff.150.5 ख़ुद से थोड़ा प्यार (और थोड़ी ऊब)</h2>
-        <a href="https://fortissimo.substack.com/i/194704648/ff1505-amarsi-e-annoiarsi-un-po" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.150.5 ख़ुद से थोड़ा प्यार (और थोड़ी ऊब)">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🌱</span> ff.150.5 ख़ुद से थोड़ा प्यार (और थोड़ी ऊब)</h2>
+        <a href="https://fortissimo.substack.com/i/194704648/ff1505-amarsi-e-annoiarsi-un-po" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.150.5 ख़ुद से थोड़ा प्यार (और थोड़ी ऊब)">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">लेकिन दूसरा ज़रूरी नहीं कि हॉर्न बजाता कोई नाराज़ ट्रक ड्राइवर हो। दूसरा सबसे पहले प्रेम है: प्रेम यह अत्यंत कठिन बोध है कि अपने अलावा भी कुछ वास्तविक है। Iris Murdoch, Existentialists and Mystics चिली के जीवविज्ञानी Humberto Maturana विकास के रास्ते से इसी बिंदु पर पहुँचते हैं: प्रेम के बिना, अपने साथ रहने वाले दूसरों की स्वीकृति के बिना, कोई सामाजिक प्रक्रिया नहीं होती और, इसलिए, कोई मानवता नहीं। Humberto R. Maturana, The Tree of Knowledge तो Iris Murdoch और Peter Handke फिर साथ आ जाते हैं। हमें कम स्व चाहिए, Unselfing, जैसा पहली सुझाती हैं, ताकि हम ऊबें - हाँ - लेकिन साथ मिलकर: We-tiredness, जैसा दूसरे प्रस्तावित करते हैं।</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/w_960,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F051eca33-1c68-4fe8-b372-2730f3947acc_956x640.png" srcset="https://substackcdn.com/image/fetch/w_480,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F051eca33-1c68-4fe8-b372-2730f3947acc_956x640.png 480w, https://substackcdn.com/image/fetch/w_960,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F051eca33-1c68-4fe8-b372-2730f3947acc_956x640.png 960w" sizes="(max-width: 1024px) 100vw, 960px" width="956" height="640" alt="I LOVE NY: न्यूयॉर्क की सड़कों पर love शब्द का हीटमैप (और आपके नाम का भी)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">I LOVE NY: न्यूयॉर्क की सड़कों पर love शब्द का हीटमैप (और आपके नाम का भी)</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (5)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://amzn.to/4cZj2Cg" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] text-xs font-mono font-bold hover:underline">📚 Existentialists and Mystics</a>
-            <a href="https://amzn.to/4mJbGGp" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] text-xs font-mono font-bold hover:underline">📚 The Tree of Knowledge</a>
-            <a href="https://the-haven.co/be-tired-with-me/" target="_blank" rel="noopener noreferrer" title="la" lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ the-haven.co</a>
-            <a href="https://alltext.nyc/map?q=love" target="_blank" rel="noopener noreferrer" title="I LOVE NY: un’heatmap della parola love nelle strade di New York" lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ alltext.nyc</a>
-            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" title="michele merelli" lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ linkedin.com</a>
+          <div class="ff-refs-l">
+            <a href="https://amzn.to/4cZj2Cg" target="_blank" rel="noopener noreferrer sponsored" class="ff-ref is-book"><span class="ff-emo">📚</span> Existentialists and Mystics</a>
+            <a href="https://amzn.to/4mJbGGp" target="_blank" rel="noopener noreferrer sponsored" class="ff-ref is-book"><span class="ff-emo">📚</span> The Tree of Knowledge</a>
+            <a href="https://the-haven.co/be-tired-with-me/" target="_blank" rel="noopener noreferrer" title="la" lang="it" class="ff-ref"><span class="ff-emo">↗</span> the-haven.co</a>
+            <a href="https://alltext.nyc/map?q=love" target="_blank" rel="noopener noreferrer" title="I LOVE NY: un’heatmap della parola love nelle strade di New York" lang="it" class="ff-ref"><span class="ff-emo">↗</span> alltext.nyc</a>
+            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" title="michele merelli" lang="it" class="ff-ref"><span class="ff-emo">↗</span> linkedin.com</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">संबंधित अंक</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-59.html" class="font-bold hover:underline">ff.59 आशावाद उड़ान भरता है!</a><p class="text-sm text-black/75 mt-1">सकारात्मक भविष्य के लिए तकनीकी ठहराव (अगर है तो) से आगे बढ़ना</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-64.html" class="font-bold hover:underline">ff.64 मेटावर्स का तत्वमीमांसा</a><p class="text-sm text-black/75 mt-1">Matrix, फ़्यूचरिज़्म और ऑगमेंटेड रियलिटी का शून्य</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-44.html" class="font-bold hover:underline">ff.44 कितनी बेचैनी! (भाग 1)</a><p class="text-sm text-black/75 mt-1">भविष्य के बारे में कम सोचना कभी-कभी अच्छा क्यों होता है</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-62.html" class="font-bold hover:underline">ff.62 बर्नआउट से कैसे बचें</a><p class="text-sm text-black/75 mt-1">“9 से 5” दफ़्तरी नौकरी का एक विकल्प: The Pathless Path</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/hi/archive/ff-59.html" class="font-bold hover:underline">ff.59 आशावाद उड़ान भरता है!</a><p class="text-sm text-black/75 mt-1">सकारात्मक भविष्य के लिए तकनीकी ठहराव (अगर है तो) से आगे बढ़ना</p></li>
+        <li><a href="/hi/archive/ff-64.html" class="font-bold hover:underline">ff.64 मेटावर्स का तत्वमीमांसा</a><p class="text-sm text-black/75 mt-1">Matrix, फ़्यूचरिज़्म और ऑगमेंटेड रियलिटी का शून्य</p></li>
+        <li><a href="/hi/archive/ff-44.html" class="font-bold hover:underline">ff.44 कितनी बेचैनी! (भाग 1)</a><p class="text-sm text-black/75 mt-1">भविष्य के बारे में कम सोचना कभी-कभी अच्छा क्यों होता है</p></li>
+        <li><a href="/hi/archive/ff-62.html" class="font-bold hover:underline">ff.62 बर्नआउट से कैसे बचें</a><p class="text-sm text-black/75 mt-1">“9 से 5” दफ़्तरी नौकरी का एक विकल्प: The Pathless Path</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Futuro Fortissimo के नए अंक पाएँ</h2>
         <p class="text-sm text-black/80 mt-1">बर्गामो के मिकेले मेरेल्ली का मुफ़्त न्यूज़लेटर — तकनीक, AI, प्रकृति और समाज पर। इतालवी में लिखा गया, Substack से ईमेल पर।</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 मुफ़्त सब्सक्राइब करें ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary"><span class="ff-emo">📩</span> मुफ़्त सब्सक्राइब करें <span class="ff-emo">↗</span></a>
     </section>
 
     <nav aria-label="पिछला और अगला अंक" class="ff-pn">
@@ -396,7 +396,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -416,16 +416,16 @@
       <div class="space-y-2">
         <p class="ff-eyebrow">फ़ॉलो करें</p>
         <ul class="space-y-1 font-medium">
-          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack ↗</a></li>
-          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
-          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram ↗</a></li>
+          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram <span class="ff-emo">↗</span></a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
-          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">मुझे एक कॉफ़ी पिलाएँ ☕ ↗</a></li>
-          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">मिकेले के अन्य प्रोजेक्ट ↗</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">मुझे एक कॉफ़ी पिलाएँ <span class="ff-emo">☕</span> <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">मिकेले के अन्य प्रोजेक्ट <span class="ff-emo">↗</span></a></li>
         </ul>
       </div>
     </div>
-    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
+    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70"><span class="ff-emo">©</span> 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
   <aside class="ff-sticky-sub" aria-label="Newsletter">
     <p>पसंद आया? अगला अंक ईमेल पर पाएँ।</p>
@@ -433,11 +433,11 @@
     <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="बंद करें">✕</button>
   </aside>
   <nav class="ff-tabbar" aria-label="मुख्य नेविगेशन">
-    <a href="/hi/"><span class="ff-ti" aria-hidden="true">🏠</span>होम</a>
-    <a href="/hi/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>संग्रह</a>
-    <a href="/hi/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>थीम</a>
-    <a href="/hi/books/"><span class="ff-ti" aria-hidden="true">📚</span>किताबें</a>
-    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>खोजें</button>
+    <a href="/hi/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🏠</span></span>होम</a>
+    <a href="/hi/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🗂</span></span>संग्रह</a>
+    <a href="/hi/themes.html"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🧭</span></span>थीम</a>
+    <a href="/hi/books/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">📚</span></span>किताबें</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🔍</span></span>खोजें</button>
   </nav>
   <dialog id="ff-search" class="ff-search" aria-label="खोजें" data-empty="कोई परिणाम नहीं। कोई और शब्द आज़माएँ।">
     <form role="search">
@@ -448,7 +448,7 @@
     <ul id="ff-results" role="listbox" aria-label="खोजें"></ul>
     <div class="ff-s-foot"><a href="/hi/archive/" data-ff-all data-base="/hi/archive/">संग्रह में सभी परिणाम →</a><span>कहीं भी खोजने के लिए / दबाएँ</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

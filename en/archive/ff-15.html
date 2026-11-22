@@ -140,12 +140,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -154,9 +154,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -209,18 +209,18 @@
         <a href="/en/books/">Books</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="Language"><a href="/archivio/ff-15.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/archive/ff-15.html" hreflang="en" lang="en" title="English" data-keep-state aria-current="page">EN</a><a href="/hi/archive/ff-15.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="Dark theme" title="Dark theme"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Subscribe</a>
         <details class="ff-more">
-          <summary aria-label="More"><span aria-hidden="true">☰</span><span class="sr-only">More</span></summary>
+          <summary aria-label="More"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">More</span></summary>
           <nav class="ff-menu" aria-label="More">
-            <a href="/book/">📖 The Book (IT)</a>
-            <a href="/en/connections.html">🔗 Connections</a>
-            <a href="/en/note.html">📝 Notes</a>
+            <a href="/book/"><span class="ff-emo">📖</span> The Book (IT)</a>
+            <a href="/en/connections.html"><span class="ff-emo">🔗</span> Connections</a>
+            <a href="/en/note.html"><span class="ff-emo">📝</span> Notes</a>
             <hr />
-            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 Subscribe ↗</a>
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener"><span class="ff-emo">📩</span> Subscribe <span class="ff-emo">↗</span></a>
           </nav>
         </details>
       </div>
@@ -230,62 +230,62 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/en/">Home</a> /</li><li><a class="underline" href="/en/archive/">Archive</a> /</li><li aria-current="page">ff.15 A taste of the metaverse</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>15</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>15</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="eye" data-ff-slug="ff-15" data-label="Open the 3D object and preview of ff.15"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Futuro Fortissimo Archive</p>
-      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.15 A taste of the metaverse</h1>
+      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black"><span class="ff-emo">🎼</span> ff.15 A taste of the metaverse</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">More food for thought on the reality to come, from Off-White to Louis Vuitton</p>
       <p class="mt-2 text-xs font-mono text-black/70">Published <time datetime="2022-03-06T07:48:56.425Z">6 March 2022</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/en/archive/ff-15.html" data-done="Link copied"><span aria-hidden="true">↗</span> Share</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/en/archive/ff-15.html" data-done="Link copied"><span aria-hidden="true">🔗</span> Copy link</button>
-        <a href="https://fortissimo.substack.com/p/-ff11-assaggi-di-metaverso" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Read the Italian original on Substack ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/en/archive/ff-15.html" data-done="Link copied"><span aria-hidden="true"><span class="ff-emo">↗</span></span> Share</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/en/archive/ff-15.html" data-done="Link copied"><span aria-hidden="true"><span class="ff-emo">🔗</span></span> Copy link</button>
+        <a href="https://fortissimo.substack.com/p/-ff11-assaggi-di-metaverso" target="_blank" rel="noopener noreferrer" class="ff-qlink">Read the Italian original on Substack <span class="ff-emo">↗</span></a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• Will we buy Louis Vuitton bags on Fortnite?</li>
-        <li>• Will we digitally knock down the Louvre?</li>
-        <li>• Adidas or Nike? Who will win the digital drops?</li>
-        <li>• Why we&#39;ll all be smiling in the metaverse.</li>
+      <ul class="ff-keypoints">
+        <li>Will we buy Louis Vuitton bags on Fortnite?</li>
+        <li>Will we digitally knock down the Louvre?</li>
+        <li>Adidas or Nike? Who will win the digital drops?</li>
+        <li>Why we&#39;ll all be smiling in the metaverse.</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Themes</span><a href="/en/themes.html#crypto" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🪙 Crypto and metaverse</a></p>
-      <nav aria-label="Sections of this issue" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">Themes</span><a href="/en/themes.html#crypto" class="ff-tlink"><span class="ff-emo">🪙</span> Crypto and metaverse</a></p>
+      <nav aria-label="Sections of this issue" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">In this issue</h2>
         <ol>
-          <li><a href="#ff-15-1">🩸ff.15.1 First blood</a></li>
-          <li><a href="#ff-15-2">🛍️ff.15.2 Not just bags and shoes</a></li>
-          <li><a href="#ff-15-3">🥽ff.15.3 Digital events</a></li>
-          <li><a href="#ff-15-4">🔢ff.15.4 Let&#39;s crunch the numbers!</a></li>
-          <li><a href="#ff-15-5">🤍ff.15.5 Off-White versus the Louvre</a></li>
-          <li><a href="#ff-15-6">🎥ff.15.6 Gorgeous renderings</a></li>
+          <li><a href="#ff-15-1"><span class="ff-emo">🩸</span>ff.15.1 First blood</a></li>
+          <li><a href="#ff-15-2"><span class="ff-emo">🛍️</span>ff.15.2 Not just bags and shoes</a></li>
+          <li><a href="#ff-15-3"><span class="ff-emo">🥽</span>ff.15.3 Digital events</a></li>
+          <li><a href="#ff-15-4"><span class="ff-emo">🔢</span>ff.15.4 Let&#39;s crunch the numbers!</a></li>
+          <li><a href="#ff-15-5"><span class="ff-emo">🤍</span>ff.15.5 Off-White versus the Louvre</a></li>
+          <li><a href="#ff-15-6"><span class="ff-emo">🎥</span>ff.15.6 Gorgeous renderings</a></li>
         </ol>
       </nav>
     </header>
 
     
 
-    <section id="ff-15-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-15-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🩸ff.15.1 First blood</h2>
-        <a href="https://fortissimo.substack.com/i/44167135/ff151-la-prima-goccia-di-sangue" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.15.1 First blood">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🩸</span>ff.15.1 First blood</h2>
+        <a href="https://fortissimo.substack.com/i/44167135/ff151-la-prima-goccia-di-sangue" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.15.1 First blood">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Selling Pulp Fiction&#39;s direction: at the last NFT conference in New York (NFT.NYC), Tarantino announced he would put up for sale a digital copy of the (handwritten) screenplay of Pulp Fiction. The distribution studio he works with, Miramax, didn&#39;t take it too well.</p>
         <p class="text-base leading-relaxed text-black/90">Let&#39;s hope it doesn&#39;t end in a bloodbath.</p>
       </div>
       
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (2)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="http://nft.nyc/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ NFT.NYC</a>
-            <a href="https://www.nytimes.com/2021/11/17/business/miramax-tarantino-nft-pulp-fiction.html?utm_campaign=mb&amp;utm_medium=newsletter&amp;utm_source=morning_brew" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ didn&#39;t take it too well</a>
+          <div class="ff-refs-l">
+            <a href="http://nft.nyc/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> NFT.NYC</a>
+            <a href="https://www.nytimes.com/2021/11/17/business/miramax-tarantino-nft-pulp-fiction.html?utm_campaign=mb&amp;utm_medium=newsletter&amp;utm_source=morning_brew" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> didn&#39;t take it too well</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-15-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-15-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🛍️ff.15.2 Not just bags and shoes</h2>
-        <a href="https://fortissimo.substack.com/i/44167135/ff152-non-solo-borse-e-scarpe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.15.2 Not just bags and shoes">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🛍️</span>ff.15.2 Not just bags and shoes</h2>
+        <a href="https://fortissimo.substack.com/i/44167135/ff152-non-solo-borse-e-scarpe" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.15.2 Not just bags and shoes">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Always a pioneer in dialogue with the digital world (remember the collaboration with League of Legends?), Louis Vuitton launched a mobile game for its 200th anniversary. Playing as a Zelda decked out in flowers and LV, you have to collect as many candles, for the brand&#39;s birthday.</p>
@@ -293,30 +293,30 @@
         <p class="text-base leading-relaxed text-black/90">200 digital boxes interpreted by as many artists: this digital experimentalism isn&#39;t bad at all.</p>
         <p class="text-base leading-relaxed text-black/90">Nike and Adidas are also gearing up to charge into the digital world.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!BH83!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F1fb9799e-dac1-49be-a3b3-55a65bfa695b_1600x2000.jpeg" width="1600" height="2000" alt="🛍️ff.15.2 Not just bags and shoes" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!fjNq!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F8f70d490-055f-4995-a6b4-be588899978a_730x486.jpeg" width="730" height="486" alt="Work by RTFKT (read: artifact), the NFT studio acquired by Nike." loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Work by RTFKT (read: artifact), the NFT studio acquired by Nike.</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (5)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://eu.louisvuitton.com/eng-e1/magazine/articles/louis-vuitton-x-league-of-legends#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ remember the collaboration with League o</a>
-            <a href="https://www.highsnobiety.com/p/louis-vuitton-nft-game/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 30 NFTs</a>
-            <a href="https://uk.louisvuitton.com/eng-gb/stories/louis-200#!/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 200 digital boxes</a>
-            <a href="https://techcrunch.com/2021/12/13/nike-acquires-nft-collectibles-studio-rtfkt/?utm_medium=TCnewsletter&amp;tpcc=TCreviewnewsletter" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Nike</a>
-            <a href="https://twitter.com/adidasoriginals/status/1471909577658675204?t=Nl3EMza_grmRuY0su_Ex5g&amp;s=19" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Adidas</a>
+          <div class="ff-refs-l">
+            <a href="https://eu.louisvuitton.com/eng-e1/magazine/articles/louis-vuitton-x-league-of-legends#" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> remember the collaboration with League o</a>
+            <a href="https://www.highsnobiety.com/p/louis-vuitton-nft-game/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> 30 NFTs</a>
+            <a href="https://uk.louisvuitton.com/eng-gb/stories/louis-200#!/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> 200 digital boxes</a>
+            <a href="https://techcrunch.com/2021/12/13/nike-acquires-nft-collectibles-studio-rtfkt/?utm_medium=TCnewsletter&amp;tpcc=TCreviewnewsletter" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Nike</a>
+            <a href="https://twitter.com/adidasoriginals/status/1471909577658675204?t=Nl3EMza_grmRuY0su_Ex5g&amp;s=19" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Adidas</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-15-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-15-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🥽ff.15.3 Digital events</h2>
-        <a href="https://fortissimo.substack.com/i/44167135/ff153-eventi-digitali" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.15.3 Digital events">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🥽</span>ff.15.3 Digital events</h2>
+        <a href="https://fortissimo.substack.com/i/44167135/ff153-eventi-digitali" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.15.3 Digital events">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">The pandemic forced us into digital events (like Billie Eilish&#39;s session). But I find it more fascinating to use an already virtual world (like Fortnite) as the setting for an event that, until a few years ago, would only have happened in real life.</p>
@@ -326,104 +326,104 @@
       
     </section>
 
-    <section id="ff-15-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-15-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🔢ff.15.4 Let&#39;s crunch the numbers!</h2>
-        <a href="https://fortissimo.substack.com/i/44167135/ff154-diamo-i-numeri" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.15.4 Let&#39;s crunch the numbers!">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🔢</span>ff.15.4 Let&#39;s crunch the numbers!</h2>
+        <a href="https://fortissimo.substack.com/i/44167135/ff154-diamo-i-numeri" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.15.4 Let&#39;s crunch the numbers!">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">As you&#39;ll have figured out by now, I like throwing numbers around. Quantifying trends.</p>
         <p class="text-base leading-relaxed text-black/90">More time in the metaverse by 2030? That&#39;s what an ARK estimate of average global time spent online vs. offline seems to say. While in 2010 we were 90% in &quot;real life&quot;, it&#39;s estimated that by 2030 we&#39;ll spend more time online.</p>
         <p class="text-base leading-relaxed text-black/90">Revenues will consequently skyrocket. From 500 million in 2020 to 800 in 2024 (+13.1% a year). But if we count all the infrastructure needed, the metaverse could be a 2.5 trillion dollar business in 2030 (world GDP will be 150 trillion).</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!jsWx!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fba2b0d0a-2f9a-42cb-8775-4042d2e1b5f1_536x429.png" width="536" height="429" alt="🔢ff.15.4 Let&#39;s crunch the numbers!" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!6XLe!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fabd98de8-ced9-4a18-8b09-fdb22bce5312_1196x634.png" width="1196" height="634" alt="From RoundHill Investments" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">From RoundHill Investments</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://fortune.com/longform/global-gdp-growth-100-trillion-2022-inflation-china-worlds-largest-economy-2030/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ world GDP will be 150 trillion</a>
+          <div class="ff-refs-l">
+            <a href="https://fortune.com/longform/global-gdp-growth-100-trillion-2022-inflation-china-worlds-largest-economy-2030/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> world GDP will be 150 trillion</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-15-5" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-15-5" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🤍ff.15.5 Off-White versus the Louvre</h2>
-        <a href="https://fortissimo.substack.com/i/44167135/ff155-off-white-contro-il-louvre" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.15.5 Off-White versus the Louvre">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🤍</span>ff.15.5 Off-White versus the Louvre</h2>
+        <a href="https://fortissimo.substack.com/i/44167135/ff155-off-white-contro-il-louvre" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.15.5 Off-White versus the Louvre">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Virgil Abloh, the recently departed graphic designer and founder of Off-White, worked a lot on the intersection between the real and the digital.</p>
         <p class="text-base leading-relaxed text-black/90">In a detailed manifesto, Abloh lays out the steps for creating a &quot;Skyscraper&quot; (capable of taking down the Louvre), a digital place of avant-garde and artistic stimulation.</p>
         <p class="text-base leading-relaxed text-black/90">Thanks to an internal token, the work done and the &quot;decentralised participation&quot; in the project would be recognised transparently and easily for all artists.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!nopK!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Faf120599-d832-4668-b815-6ed7690f8bc9_1449x2048.png" width="1449" height="2048" alt="🤍ff.15.5 Off-White versus the Louvre" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!hQP_!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fceabdeaf-491e-4d8f-b692-4da3265eaacd_541x485.png" width="541" height="485" alt="🤍ff.15.5 Off-White versus the Louvre" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.dropbox.com/s/sgrtgh3zbhidpu5/%E2%80%9CSKYSCRAPER%E2%80%9D%20V2%2004.06.2021.pdf?dl=0" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ detailed mani</a>
+          <div class="ff-refs-l">
+            <a href="https://www.dropbox.com/s/sgrtgh3zbhidpu5/%E2%80%9CSKYSCRAPER%E2%80%9D%20V2%2004.06.2021.pdf?dl=0" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> detailed mani</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-15-6" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-15-6" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🎥ff.15.6 Gorgeous renderings</h2>
-        <a href="https://fortissimo.substack.com/i/44167135/ff156-rendering-bellissimi" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.15.6 Gorgeous renderings">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🎥</span>ff.15.6 Gorgeous renderings</h2>
+        <a href="https://fortissimo.substack.com/i/44167135/ff156-rendering-bellissimi" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.15.6 Gorgeous renderings">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">If the metaverse is going to be this important, meta-physical 3D renderings will be the order of the day. For immersive and completely &quot;new&quot; realities.</p>
         <p class="text-base leading-relaxed text-black/90">LHC Studio has some beautiful videos along these lines, tastes of possible metaverses. Imagine these strange shapes through an Oculus headset!</p>
-        <p class="text-base leading-relaxed text-black/90">👋 And that&#39;s all for this fortissimo week! 🔜 In the next ff we&#39;ll talk about the cost of the ecological transition (and how to fund it). See you soon, Michele</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">👋</span> And that&#39;s all for this fortissimo week! <span class="ff-emo">🔜</span> In the next ff we&#39;ll talk about the cost of the ecological transition (and how to fund it). See you soon, Michele</p>
         <p class="text-base leading-relaxed text-black/90">P.S. As I was telling you, in the metaverse we&#39;ll all be smiling:</p>
-        <p class="text-base leading-relaxed text-black/90">Steve Stewart-Williams@SteveStuWillAugmented-reality glasses put a smile on everyone&#39;s face... 😂11:22 PM ∙ Oct 14, 202110,283Likes1,973Retweets</p>
+        <p class="text-base leading-relaxed text-black/90">Steve Stewart-Williams@SteveStuWillAugmented-reality glasses put a smile on everyone&#39;s face... <span class="ff-emo">😂</span>11:22 PM ∙ Oct 14, 202110,283Likes1,973Retweets</p>
         <p class="text-base leading-relaxed text-black/90">Want to support this project? Subscribe to the newsletter and share it with a friend on WhatsApp</p>
-        <p class="text-base leading-relaxed text-black/90">👇🔥Subscribe</p>
-        <p class="text-base leading-relaxed text-black/90">Or buy me a coffee 😏</p>
-        <p class="text-base leading-relaxed text-black/90">☕</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">👇</span><span class="ff-emo">🔥</span>Subscribe</p>
+        <p class="text-base leading-relaxed text-black/90">Or buy me a coffee <span class="ff-emo">😏</span></p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">☕</span></p>
         <p class="text-base leading-relaxed text-black/90">And remember to leave a little heart below.</p>
-        <p class="text-base leading-relaxed text-black/90">❤️</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">❤️</span></p>
       </div>
       
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (2)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://lucyhardcastle.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ LHC Studio</a>
-            <a href="https://t.co/3pi2HAddOr&quot;&gt;pic.twitter.com/3pi2HAddOr&lt;/a&gt;&lt;/p&gt;&amp;mdash; Steve Stewart-Williams (@SteveStuWill) &lt;a href=&quot;https://twitter.com/SteveStuWill/status/1448791431619833869?ref_src=twsrc%5Etfw&quot;&gt;October" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Steve Stewart-Williams@SteveStuWillAugmented-reality glasses put a smile on everyone&#39;s face... 😂</a>
+          <div class="ff-refs-l">
+            <a href="https://lucyhardcastle.com/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> LHC Studio</a>
+            <a href="https://t.co/3pi2HAddOr&quot;&gt;pic.twitter.com/3pi2HAddOr&lt;/a&gt;&lt;/p&gt;&amp;mdash; Steve Stewart-Williams (@SteveStuWill) &lt;a href=&quot;https://twitter.com/SteveStuWill/status/1448791431619833869?ref_src=twsrc%5Etfw&quot;&gt;October" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Steve Stewart-Williams@SteveStuWillAugmented-reality glasses put a smile on everyone&#39;s face... <span class="ff-emo">😂</span></a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">Related issues</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-3.html" class="font-bold hover:underline">ff.3 Metaverse</a><p class="text-sm text-black/75 mt-1">Facebook becomes Meta, but will it manage to build the metaverse?</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-11.html" class="font-bold hover:underline">ff.11 Shooting in the metaverse</a><p class="text-sm text-black/75 mt-1">5 questions and answers, between Call of Duty and 69 billion</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-24.html" class="font-bold hover:underline">ff.24 Cryptic war</a><p class="text-sm text-black/75 mt-1">How the war may have sped up the adoption of cryptocurrencies</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-73.html" class="font-bold hover:underline">ff.73 Encrypted future</a><p class="text-sm text-black/75 mt-1">Cryptocurrencies, the Mona Lisa, Majin Buu and inflation</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/en/archive/ff-3.html" class="font-bold hover:underline">ff.3 Metaverse</a><p class="text-sm text-black/75 mt-1">Facebook becomes Meta, but will it manage to build the metaverse?</p></li>
+        <li><a href="/en/archive/ff-11.html" class="font-bold hover:underline">ff.11 Shooting in the metaverse</a><p class="text-sm text-black/75 mt-1">5 questions and answers, between Call of Duty and 69 billion</p></li>
+        <li><a href="/en/archive/ff-24.html" class="font-bold hover:underline">ff.24 Cryptic war</a><p class="text-sm text-black/75 mt-1">How the war may have sped up the adoption of cryptocurrencies</p></li>
+        <li><a href="/en/archive/ff-73.html" class="font-bold hover:underline">ff.73 Encrypted future</a><p class="text-sm text-black/75 mt-1">Cryptocurrencies, the Mona Lisa, Majin Buu and inflation</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Get new issues of Futuro Fortissimo</h2>
         <p class="text-sm text-black/80 mt-1">A free newsletter by Michele Merelli (Bergamo) on technology, AI, nature and society. Written in Italian, delivered by Substack.</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 Subscribe for free ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary"><span class="ff-emo">📩</span> Subscribe for free <span class="ff-emo">↗</span></a>
     </section>
 
     <nav aria-label="Adjacent issues" class="ff-pn">
@@ -432,7 +432,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -452,16 +452,16 @@
       <div class="space-y-2">
         <p class="ff-eyebrow">Follow</p>
         <ul class="space-y-1 font-medium">
-          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack ↗</a></li>
-          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
-          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram ↗</a></li>
+          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram <span class="ff-emo">↗</span></a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
-          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee ☕ ↗</a></li>
-          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects ↗</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee <span class="ff-emo">☕</span> <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects <span class="ff-emo">↗</span></a></li>
         </ul>
       </div>
     </div>
-    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
+    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70"><span class="ff-emo">©</span> 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
   <aside class="ff-sticky-sub" aria-label="Newsletter">
     <p>Enjoying it? Get the next issue by email.</p>
@@ -469,11 +469,11 @@
     <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="Dismiss">✕</button>
   </aside>
   <nav class="ff-tabbar" aria-label="Main navigation">
-    <a href="/en/"><span class="ff-ti" aria-hidden="true">🏠</span>Home</a>
-    <a href="/en/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>Archive</a>
-    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>Themes</a>
-    <a href="/en/books/"><span class="ff-ti" aria-hidden="true">📚</span>Books</a>
-    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>Search</button>
+    <a href="/en/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🏠</span></span>Home</a>
+    <a href="/en/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🗂</span></span>Archive</a>
+    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🧭</span></span>Themes</a>
+    <a href="/en/books/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">📚</span></span>Books</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🔍</span></span>Search</button>
   </nav>
   <dialog id="ff-search" class="ff-search" aria-label="Search" data-empty="No results. Try another word.">
     <form role="search">
@@ -484,7 +484,7 @@
     <ul id="ff-results" role="listbox" aria-label="Search"></ul>
     <div class="ff-s-foot"><a href="/en/archive/" data-ff-all data-base="/en/archive/">All results in the archive →</a><span>Press / to search anywhere</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

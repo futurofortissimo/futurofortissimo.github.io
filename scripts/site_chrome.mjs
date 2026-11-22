@@ -63,12 +63,12 @@ export function navHtml(lang, active, hrefs) {
         ${primary.map(([k, href, label]) => `<a href="${href}"${cur(k)}>${escapeHtml(label)}</a>`).join('\n        ')}
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="${escapeHtml(a.search)} (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">${escapeHtml(a.search)}</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="${escapeHtml(a.search)} (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">${escapeHtml(a.search)}</span><kbd aria-hidden="true">/</kbd></button>
         ${langSwitchHtml(lang, hrefs)}
         ${themeToggle(lang)}
         ${active === 'home' ? '' : `<a href="${SUBSTACK}/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">${escapeHtml(noEmoji(s.subscribe))}</a>`}
         <details class="ff-more">
-          <summary aria-label="${escapeHtml(a.more)}"><span aria-hidden="true">☰</span><span class="sr-only">${escapeHtml(a.more)}</span></summary>
+          <summary aria-label="${escapeHtml(a.more)}"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">${escapeHtml(a.more)}</span></summary>
           <nav class="ff-menu" aria-label="${escapeHtml(a.more)}">
             ${secondary.map(([k, href, label]) => `<a href="${href}"${cur(k)}>${escapeHtml(label)}</a>`).join('\n            ')}
             <hr />
@@ -102,7 +102,7 @@ export function chromeEnd(lang, active) {
   <script src="/assets/ff-app.js?v=${ASSET_V}" defer></script>`;
 }
 /** design-system version: bump to bust caches of ff-app.css / ff-app.js */
-export const ASSET_V = '3';
+export const ASSET_V = '4';
 /** theme bootstrap (runs before first paint: no flash), app stylesheet, self-hosted fonts (non-blocking) */
 export const chromeHead = (lang = 'it') => `<link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
@@ -128,7 +128,7 @@ export function headExtras(lang) {
 }
 
 
-export const subscribeCta = (lang) => `<section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+export const subscribeCta = (lang) => `<section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">${escapeHtml(S[lang].newsletterTitle)}</h2>
@@ -148,7 +148,7 @@ export function imgTag(src, alt, { sizes = '(max-width: 1024px) 100vw, 960px', c
 export const themesHref = (lang, key) => `${L[lang].themes}#${key}`;
 export function siteFooter(lang) {
   const s = S[lang]; const u = UI_SEO[lang];
-  return `<footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  return `<footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -189,3 +189,14 @@ export const stickySubscribe = (lang) => `<aside class="ff-sticky-sub" aria-labe
     <a href="${SUBSTACK}/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary ff-btn-sm">${escapeHtml(noEmoji(S[lang].subscribe))}</a>
     <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="${escapeHtml(UI_APP[lang].dismiss)}">✕</button>
   </aside>`;
+
+/** wrap emoji of the visible body text in <span class="ff-emo"> (skips <head>, tags, scripts, styles, <title>, <option>, <textarea>)
+ *  so dark-glyph emoji such as 🎼 get a light halo on the dark theme. Pure markup: the text is unchanged. */
+const EMO = /\p{Extended_Pictographic}(?:\uFE0F|\u200D\p{Extended_Pictographic}|\uFE0F\u20E3)*/gu;
+export function emojiSpans(html) {
+  const at = html.indexOf('<body');
+  if (at < 0) return html;
+  const head = html.slice(0, at);
+  const parts = html.slice(at).split(/(<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<title[\s\S]*?<\/title>|<option[\s\S]*?<\/option>|<textarea[\s\S]*?<\/textarea>|<span class="ff-emo">[^<]*<\/span>|<[^>]+>)/);
+  return head + parts.map((p, i) => (i % 2 || !p ? p : p.replace(EMO, (m) => `<span class="ff-emo">${m}</span>`))).join('');
+}

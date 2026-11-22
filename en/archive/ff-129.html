@@ -142,12 +142,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -156,9 +156,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -211,18 +211,18 @@
         <a href="/en/books/">Books</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="Language"><a href="/archivio/ff-129.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/archive/ff-129.html" hreflang="en" lang="en" title="English" data-keep-state aria-current="page">EN</a><a href="/hi/archive/ff-129.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="Dark theme" title="Dark theme"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Subscribe</a>
         <details class="ff-more">
-          <summary aria-label="More"><span aria-hidden="true">☰</span><span class="sr-only">More</span></summary>
+          <summary aria-label="More"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">More</span></summary>
           <nav class="ff-menu" aria-label="More">
-            <a href="/book/">📖 The Book (IT)</a>
-            <a href="/en/connections.html">🔗 Connections</a>
-            <a href="/en/note.html">📝 Notes</a>
+            <a href="/book/"><span class="ff-emo">📖</span> The Book (IT)</a>
+            <a href="/en/connections.html"><span class="ff-emo">🔗</span> Connections</a>
+            <a href="/en/note.html"><span class="ff-emo">📝</span> Notes</a>
             <hr />
-            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 Subscribe ↗</a>
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener"><span class="ff-emo">📩</span> Subscribe <span class="ff-emo">↗</span></a>
           </nav>
         </details>
       </div>
@@ -232,40 +232,40 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/en/">Home</a> /</li><li><a class="underline" href="/en/archive/">Archive</a> /</li><li aria-current="page">ff.129 Tesla&#39;s waltz</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>129</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>129</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="car" data-ff-slug="ff-129" data-label="Open the 3D object and preview of ff.129"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Futuro Fortissimo Archive</p>
-      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.129 Tesla&#39;s waltz</h1>
+      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black"><span class="ff-emo">🎼</span> ff.129 Tesla&#39;s waltz</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">Forget ChatGPT: physical artificial intelligence</p>
       <p class="mt-2 text-xs font-mono text-black/70">Published <time datetime="2025-07-10T06:15:20.093Z">10 July 2025</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/en/archive/ff-129.html" data-done="Link copied"><span aria-hidden="true">↗</span> Share</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/en/archive/ff-129.html" data-done="Link copied"><span aria-hidden="true">🔗</span> Copy link</button>
-        <a href="https://fortissimo.substack.com/p/ff129-il-valzer-di-tesla" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Read the Italian original on Substack ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/en/archive/ff-129.html" data-done="Link copied"><span aria-hidden="true"><span class="ff-emo">↗</span></span> Share</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/en/archive/ff-129.html" data-done="Link copied"><span aria-hidden="true"><span class="ff-emo">🔗</span></span> Copy link</button>
+        <a href="https://fortissimo.substack.com/p/ff129-il-valzer-di-tesla" target="_blank" rel="noopener noreferrer" class="ff-qlink">Read the Italian original on Substack <span class="ff-emo">↗</span></a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• Sam Altman: 2027 will be the year of robots</li>
-        <li>• Why is robotics having a renaissance?</li>
-        <li>• Will Mars be colonised by humanoids?</li>
+      <ul class="ff-keypoints">
+        <li>Sam Altman: 2027 will be the year of robots</li>
+        <li>Why is robotics having a renaissance?</li>
+        <li>Will Mars be colonised by humanoids?</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Themes</span><a href="/en/themes.html#ai" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🤖 AI, agents and models</a><a href="/en/themes.html#geo" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🏛 Geopolitics, economy and society</a></p>
-      <nav aria-label="Sections of this issue" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">Themes</span><a href="/en/themes.html#ai" class="ff-tlink"><span class="ff-emo">🤖</span> AI, agents and models</a><a href="/en/themes.html#geo" class="ff-tlink"><span class="ff-emo">🏛</span> Geopolitics, economy and society</a></p>
+      <nav aria-label="Sections of this issue" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">In this issue</h2>
         <ol>
-          <li><a href="#ff-129-1">🕳️ff.129.1 Altman&#39;s “gentle” singularity</a></li>
-          <li><a href="#ff-129-2">🥧ff.129.2 Pi, FigureAI and 1 hour of “logistics”?</a></li>
-          <li><a href="#ff-129-3">💃🏻ff.129.3 Tesla&#39;s waltz (with China)</a></li>
-          <li><a href="#ff-129-4">🪐ff.129.4 Colonising Mars</a></li>
+          <li><a href="#ff-129-1"><span class="ff-emo">🕳️</span>ff.129.1 Altman&#39;s “gentle” singularity</a></li>
+          <li><a href="#ff-129-2"><span class="ff-emo">🥧</span>ff.129.2 Pi, FigureAI and 1 hour of “logistics”?</a></li>
+          <li><a href="#ff-129-3"><span class="ff-emo">💃</span>🏻ff.129.3 Tesla&#39;s waltz (with China)</a></li>
+          <li><a href="#ff-129-4"><span class="ff-emo">🪐</span>ff.129.4 Colonising Mars</a></li>
         </ol>
       </nav>
     </header>
 
     
 
-    <section id="ff-129-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-129-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🕳️ff.129.1 Altman&#39;s “gentle” singularity</h2>
-        <a href="https://fortissimo.substack.com/i/162404080/ff-la-singolarita-gentile-di-altman" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.129.1 Altman&#39;s “gentle” singularity">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🕳️</span>ff.129.1 Altman&#39;s “gentle” singularity</h2>
+        <a href="https://fortissimo.substack.com/i/162404080/ff-la-singolarita-gentile-di-altman" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.129.1 Altman&#39;s “gentle” singularity">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">When Sam Altman publishes something on his blog, it&#39;s worth a read.</p>
@@ -275,18 +275,18 @@
         <p class="text-base leading-relaxed text-black/90">ChatGPT (150 times cheaper and greener in a single year) is an example of this acceleration. But the next technological leap will be in the real world.</p>
       </div>
       
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://blog.samaltman.com/the-gentle-singularity" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Sam Altman</a>
+          <div class="ff-refs-l">
+            <a href="https://blog.samaltman.com/the-gentle-singularity" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Sam Altman</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-129-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-129-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🥧ff.129.2 Pi, FigureAI and 1 hour of “logistics”?</h2>
-        <a href="https://fortissimo.substack.com/i/162404080/ff-pi-greco-figureai-e-ora-logistica" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.129.2 Pi, FigureAI and 1 hour of “logistics”?">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🥧</span>ff.129.2 Pi, FigureAI and 1 hour of “logistics”?</h2>
+        <a href="https://fortissimo.substack.com/i/162404080/ff-pi-greco-figureai-e-ora-logistica" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.129.2 Pi, FigureAI and 1 hour of “logistics”?">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">LLMs aren&#39;t just democratising software. They&#39;re the simplest interface we&#39;ve ever had for the physical world - for “talking to robots”.</p>
@@ -295,32 +295,32 @@
         <p class="text-base leading-relaxed text-black/90">Helix, by FigureAI, combines a “slow, semantic” brain (System 2) that understands complex sentences and new scenes with a “fast, motor” one (System 1) that acts.</p>
         <p class="text-base leading-relaxed text-black/90">Google&#39;s SAS Prompt translates the robot&#39;s x, y, z coordinates into movements described in words.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!g78b!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F576977e6-c2c3-4fc8-bec0-8cf5eedb0919_1072x155.png" width="1072" height="155" alt="🥧ff.129.2 Pi, FigureAI and 1 hour of “logistics”?" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!JEqJ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd8465ad4-7790-4127-82f3-e51e5501b3ad_1393x517.png" width="1393" height="517" alt="🥧ff.129.2 Pi, FigureAI and 1 hour of “logistics”?" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!d5UW!,w_1456,c_limit,f_auto,q_auto:good,fl_lossy/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0736195d-76c9-43f7-bbb5-b9714fdd40a6_800x450.gif" width="800" height="450" alt="Google teaches robots to play ping pong (via futuro fortissimo)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Google teaches robots to play ping pong (via futuro fortissimo)</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.physicalintelligence.company/blog/pi0" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ π0, by Physical Intelligence</a>
-            <a href="https://www.figure.ai/news/helix" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Helix, by FigureAI</a>
-            <a href="https://x.com/asurobot/status/1917618945617715392?t=bKQw7P9FJnKqRzSaiRSMMw&amp;s=19" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Google&#39;s SAS Prompt</a>
+          <div class="ff-refs-l">
+            <a href="https://www.physicalintelligence.company/blog/pi0" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> π0, by Physical Intelligence</a>
+            <a href="https://www.figure.ai/news/helix" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Helix, by FigureAI</a>
+            <a href="https://x.com/asurobot/status/1917618945617715392?t=bKQw7P9FJnKqRzSaiRSMMw&amp;s=19" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Google&#39;s SAS Prompt</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-129-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-129-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">💃🏻ff.129.3 Tesla&#39;s waltz (with China)</h2>
-        <a href="https://fortissimo.substack.com/i/162404080/ff-il-valzer-di-tesla-con-la-cina" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.129.3 Tesla&#39;s waltz (with China)">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">💃</span>🏻ff.129.3 Tesla&#39;s waltz (with China)</h2>
+        <a href="https://fortissimo.substack.com/i/162404080/ff-il-valzer-di-tesla-con-la-cina" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.129.3 Tesla&#39;s waltz (with China)">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Basic research aside, here are a few concrete examples.</p>
@@ -328,77 +328,77 @@
         <p class="text-base leading-relaxed text-black/90">Chinese robots spraying pesticides:</p>
         <p class="text-base leading-relaxed text-black/90">FigureAI&#39;s Helix sorting parcels for an hour (it improves within a few months: from 5 to 4s per parcel).</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!sEG_!,w_1456,c_limit,f_auto,q_auto:good,fl_lossy/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F759de3d3-19f9-4b2b-b5c0-f65764362fef_260x461.gif" width="260" height="461" alt="💃🏻ff.129.3 Tesla&#39;s waltz (with China)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!sMkS!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F680524bb-6ba8-4196-a099-02763e875e0f_590x639.png" width="590" height="639" alt="The Chinese robot that sprays pesticides (Peter Diamandis via futuro fortissimo)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">The Chinese robot that sprays pesticides (Peter Diamandis via futuro fortissimo)</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://x.com/Tesla_Optimus/status/1922456791549427867" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Tesla&#39;s Optimus dancing a waltz</a>
-            <a href="https://x.com/PeterDiamandis/status/1922502553071140882?t=Dc5PPLsPnzJ2YhFNptZtOA&amp;s=19" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Chinese robots spraying pesticides</a>
-            <a href="https://www.figure.ai/news/scaling-helix-logistics" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ it improves within a few months: from 5 to 4s per parcel</a>
+          <div class="ff-refs-l">
+            <a href="https://x.com/Tesla_Optimus/status/1922456791549427867" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Tesla&#39;s Optimus dancing a waltz</a>
+            <a href="https://x.com/PeterDiamandis/status/1922502553071140882?t=Dc5PPLsPnzJ2YhFNptZtOA&amp;s=19" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Chinese robots spraying pesticides</a>
+            <a href="https://www.figure.ai/news/scaling-helix-logistics" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> it improves within a few months: from 5 to 4s per parcel</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-129-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-129-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🪐ff.129.4 Colonising Mars</h2>
-        <a href="https://fortissimo.substack.com/i/162404080/ff-colonizzare-marte" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.129.4 Colonising Mars">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🪐</span>ff.129.4 Colonising Mars</h2>
+        <a href="https://fortissimo.substack.com/i/162404080/ff-colonizzare-marte" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.129.4 Colonising Mars">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Leveraging Tesla&#39;s know-how and production capacity (self-driving through the streets of Rome?), Musk wants to use robots precisely to colonise Mars (they don&#39;t suffer from cosmic rays or from boring interplanetary journeys lasting months).</p>
         <p class="text-base leading-relaxed text-black/90">So, by some interpretations, Guzzanti may have been right after all.</p>
         <p class="text-base leading-relaxed text-black/90">finally,</p>
-        <p class="text-base leading-relaxed text-black/90">before you go, remember to leave a little heart below ❤️</p>
-        <p class="text-base leading-relaxed text-black/90">👋 See you soon, from micmer</p>
-        <p class="text-base leading-relaxed text-black/90">© futuro fortissimo | michele merelli</p>
+        <p class="text-base leading-relaxed text-black/90">before you go, remember to leave a little heart below <span class="ff-emo">❤️</span></p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">👋</span> See you soon, from micmer</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">©</span> futuro fortissimo | michele merelli</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!EhcX!,w_1456,c_limit,f_auto,q_auto:good,fl_lossy/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3d37c623-05a8-45aa-b7c4-56595bceeb1e_480x270.gif" width="480" height="270" alt="Tesla&#39;s superhuman radar: it sees past the bus and pre-dicts that a pedestrian is there." loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Tesla&#39;s superhuman radar: it sees past the bus and pre-dicts that a pedestrian is there.</figcaption>
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!jNWs!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4ec168a1-70da-4994-8dc3-bf1c87ae20e1_620x323.png" width="620" height="323" alt="🪐ff.129.4 Colonising Mars" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!RQPs!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F03663aa4-673f-455f-9429-fd2a90320286_1570x811.png" width="1570" height="811" alt="AATB, Andrea Anner and Thibault Brevet: industrial robots in artistic explorations" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">AATB, Andrea Anner and Thibault Brevet: industrial robots in artistic explorations</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.linkedin.com/posts/brgndr_tesla-ha-rilasciato-un-footage-di-fsd-che-ugcPost-7329854505930375170-txYt?utm_source=share&amp;utm_medium=member_android&amp;rcm=ACoAABIxLMUBRUppy-bOKJj9naMo0QXZnkUNfBE" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ self-driving through the streets of Rome?</a>
-            <a href="https://futurofortissimo.github.io/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ futuro fortissimo</a>
-            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ michele merelli</a>
+          <div class="ff-refs-l">
+            <a href="https://www.linkedin.com/posts/brgndr_tesla-ha-rilasciato-un-footage-di-fsd-che-ugcPost-7329854505930375170-txYt?utm_source=share&amp;utm_medium=member_android&amp;rcm=ACoAABIxLMUBRUppy-bOKJj9naMo0QXZnkUNfBE" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> self-driving through the streets of Rome?</a>
+            <a href="https://futurofortissimo.github.io/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> futuro fortissimo</a>
+            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> michele merelli</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">Related issues</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-82.html" class="font-bold hover:underline">ff.82 A war fought with chips</a><p class="text-sm text-black/75 mt-1">Will GPUs be the trenches of the 21st century?</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-136.html" class="font-bold hover:underline">ff.136 Ka-me-ha-me-energy-waaave!</a><p class="text-sm text-black/75 mt-1">Against AI&#39;s astronomical consumption: Goku?</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-134.html" class="font-bold hover:underline">ff.134 Naming things</a><p class="text-sm text-black/75 mt-1">The value of words, between humanity and ChatGPT</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-131.html" class="font-bold hover:underline">ff.131 Summer is starting</a><p class="text-sm text-black/75 mt-1">How to spend August thinking about a fortissimo future</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/en/archive/ff-82.html" class="font-bold hover:underline">ff.82 A war fought with chips</a><p class="text-sm text-black/75 mt-1">Will GPUs be the trenches of the 21st century?</p></li>
+        <li><a href="/en/archive/ff-136.html" class="font-bold hover:underline">ff.136 Ka-me-ha-me-energy-waaave!</a><p class="text-sm text-black/75 mt-1">Against AI&#39;s astronomical consumption: Goku?</p></li>
+        <li><a href="/en/archive/ff-134.html" class="font-bold hover:underline">ff.134 Naming things</a><p class="text-sm text-black/75 mt-1">The value of words, between humanity and ChatGPT</p></li>
+        <li><a href="/en/archive/ff-131.html" class="font-bold hover:underline">ff.131 Summer is starting</a><p class="text-sm text-black/75 mt-1">How to spend August thinking about a fortissimo future</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Get new issues of Futuro Fortissimo</h2>
         <p class="text-sm text-black/80 mt-1">A free newsletter by Michele Merelli (Bergamo) on technology, AI, nature and society. Written in Italian, delivered by Substack.</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 Subscribe for free ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary"><span class="ff-emo">📩</span> Subscribe for free <span class="ff-emo">↗</span></a>
     </section>
 
     <nav aria-label="Adjacent issues" class="ff-pn">
@@ -407,7 +407,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -427,16 +427,16 @@
       <div class="space-y-2">
         <p class="ff-eyebrow">Follow</p>
         <ul class="space-y-1 font-medium">
-          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack ↗</a></li>
-          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
-          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram ↗</a></li>
+          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram <span class="ff-emo">↗</span></a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
-          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee ☕ ↗</a></li>
-          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects ↗</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee <span class="ff-emo">☕</span> <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects <span class="ff-emo">↗</span></a></li>
         </ul>
       </div>
     </div>
-    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
+    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70"><span class="ff-emo">©</span> 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
   <aside class="ff-sticky-sub" aria-label="Newsletter">
     <p>Enjoying it? Get the next issue by email.</p>
@@ -444,11 +444,11 @@
     <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="Dismiss">✕</button>
   </aside>
   <nav class="ff-tabbar" aria-label="Main navigation">
-    <a href="/en/"><span class="ff-ti" aria-hidden="true">🏠</span>Home</a>
-    <a href="/en/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>Archive</a>
-    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>Themes</a>
-    <a href="/en/books/"><span class="ff-ti" aria-hidden="true">📚</span>Books</a>
-    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>Search</button>
+    <a href="/en/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🏠</span></span>Home</a>
+    <a href="/en/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🗂</span></span>Archive</a>
+    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🧭</span></span>Themes</a>
+    <a href="/en/books/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">📚</span></span>Books</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🔍</span></span>Search</button>
   </nav>
   <dialog id="ff-search" class="ff-search" aria-label="Search" data-empty="No results. Try another word.">
     <form role="search">
@@ -459,7 +459,7 @@
     <ul id="ff-results" role="listbox" aria-label="Search"></ul>
     <div class="ff-s-foot"><a href="/en/archive/" data-ff-all data-base="/en/archive/">All results in the archive →</a><span>Press / to search anywhere</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

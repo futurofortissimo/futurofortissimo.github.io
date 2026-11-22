@@ -146,12 +146,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -160,9 +160,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -215,18 +215,18 @@
         <a href="/en/books/">Books</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="Language"><a href="/archivio/ff-155.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/archive/ff-155.html" hreflang="en" lang="en" title="English" data-keep-state aria-current="page">EN</a><a href="/hi/archive/ff-155.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="Dark theme" title="Dark theme"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Subscribe</a>
         <details class="ff-more">
-          <summary aria-label="More"><span aria-hidden="true">☰</span><span class="sr-only">More</span></summary>
+          <summary aria-label="More"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">More</span></summary>
           <nav class="ff-menu" aria-label="More">
-            <a href="/book/">📖 The Book (IT)</a>
-            <a href="/en/connections.html">🔗 Connections</a>
-            <a href="/en/note.html">📝 Notes</a>
+            <a href="/book/"><span class="ff-emo">📖</span> The Book (IT)</a>
+            <a href="/en/connections.html"><span class="ff-emo">🔗</span> Connections</a>
+            <a href="/en/note.html"><span class="ff-emo">📝</span> Notes</a>
             <hr />
-            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 Subscribe ↗</a>
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener"><span class="ff-emo">📩</span> Subscribe <span class="ff-emo">↗</span></a>
           </nav>
         </details>
       </div>
@@ -236,129 +236,129 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/en/">Home</a> /</li><li><a class="underline" href="/en/archive/">Archive</a> /</li><li aria-current="page">ff.155 Labels and mind viruses</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>155</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>155</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="virus" data-ff-slug="ff-155" data-label="Open the 3D object and preview of ff.155"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Futuro Fortissimo Archive</p>
-      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.155 Labels and mind viruses</h1>
+      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black"><span class="ff-emo">🎼</span> ff.155 Labels and mind viruses</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">An apple full of chemistry, AI agents passing ideas to each other, threatened bananas and an mRNA therapy that rekindles hope against melanoma.</p>
       <p class="mt-2 text-xs font-mono text-black/70">Published <time datetime="2026-08-31T11:20:48.863Z">31 August 2026</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/en/archive/ff-155.html" data-done="Link copied"><span aria-hidden="true">↗</span> Share</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/en/archive/ff-155.html" data-done="Link copied"><span aria-hidden="true">🔗</span> Copy link</button>
-        <a href="https://fortissimo.substack.com/p/ff155-ai-mind-viruses-mrna-cancer-vaccine-melanoma" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Read the Italian original on Substack ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/en/archive/ff-155.html" data-done="Link copied"><span aria-hidden="true"><span class="ff-emo">↗</span></span> Share</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/en/archive/ff-155.html" data-done="Link copied"><span aria-hidden="true"><span class="ff-emo">🔗</span></span> Copy link</button>
+        <a href="https://fortissimo.substack.com/p/ff155-ai-mind-viruses-mrna-cancer-vaccine-melanoma" target="_blank" rel="noopener noreferrer" class="ff-qlink">Read the Italian original on Substack <span class="ff-emo">↗</span></a>
       </div>
       
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Themes</span><a href="/en/themes.html#ai" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🤖 AI, agents and models</a><a href="/en/themes.html#clima" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🌍 Nature, climate and energy</a><a href="/en/themes.html#salute" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🏃 Health, sport and body</a></p>
-      <nav aria-label="Sections of this issue" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">Themes</span><a href="/en/themes.html#ai" class="ff-tlink"><span class="ff-emo">🤖</span> AI, agents and models</a><a href="/en/themes.html#clima" class="ff-tlink"><span class="ff-emo">🌍</span> Nature, climate and energy</a><a href="/en/themes.html#salute" class="ff-tlink"><span class="ff-emo">🏃</span> Health, sport and body</a></p>
+      <nav aria-label="Sections of this issue" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">In this issue</h2>
         <ol>
-          <li><a href="#ff-155-1">🏷️ ff.155.1 A natural label?</a></li>
-          <li><a href="#ff-155-2">🤯 ff.155.2 (AI) mind viruses</a></li>
-          <li><a href="#ff-155-3">🍌 ff.155.3 Banana extinction</a></li>
-          <li><a href="#ff-155-4">💉 ff.155.4 Modernity versus cancer</a></li>
+          <li><a href="#ff-155-1"><span class="ff-emo">🏷️</span> ff.155.1 A natural label?</a></li>
+          <li><a href="#ff-155-2"><span class="ff-emo">🤯</span> ff.155.2 (AI) mind viruses</a></li>
+          <li><a href="#ff-155-3"><span class="ff-emo">🍌</span> ff.155.3 Banana extinction</a></li>
+          <li><a href="#ff-155-4"><span class="ff-emo">💉</span> ff.155.4 Modernity versus cancer</a></li>
         </ol>
       </nav>
     </header>
 
     
 
-    <section id="ff-155-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-155-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🏷️ ff.155.1 A natural label?</h2>
-        <a href="https://fortissimo.substack.com/i/212236687/ff1551-etichetta-naturale" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.155.1 A natural label?">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🏷️</span> ff.155.1 A natural label?</h2>
+        <a href="https://fortissimo.substack.com/i/212236687/ff1551-etichetta-naturale" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.155.1 A natural label?">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">They say a golden rule for telling whether a food is good for you is to count the ingredients on the label. Or - better - to look for the ones with no label at all (fruit and vegetables). But, but, but. Here are the ingredients of a product that, I&#39;m sure, you ate in the last week: Water, vegetable oils, fructose, sucrose, dextrose, starch, carotene, E306, E101, nicotinamide, pantothenic acid, biotin, ascorbic acid (E300), palmitic acid, stearic acid, (E570), oleic acid, linoleic acid, malic acid (E296), oxalic acid, salicylic acid, soluble fibre, purines, sodium, potassium, manganese, iron, copper, zinc, phosphorus, chloride, pigments, chlorogenic acid, procyanidins, flavanones, dihydrochalcones, prussic acid, 50 kcal per 100 grams. You might think it&#39;s a margarine spread, instant noodles, ketchup or maybe a salad dressing. You probably wouldn&#39;t guess that it&#39;s actually a perfectly ordinary apple. Tim Spector, Food for Life (2022) Daily reminder: “natural” is chemistry too — and ingredients alone don&#39;t tell you whether a food is good or bad for you.</p>
       </div>
       
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://amzn.to/3UfyCmx" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] text-xs font-mono font-bold hover:underline">📚 Food for Life</a>
+          <div class="ff-refs-l">
+            <a href="https://amzn.to/3UfyCmx" target="_blank" rel="noopener noreferrer sponsored" class="ff-ref is-book"><span class="ff-emo">📚</span> Food for Life</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-155-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-155-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🤯 ff.155.2 (AI) mind viruses</h2>
-        <a href="https://fortissimo.substack.com/i/212236687/ff1552-virus-mentali-dellai" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.155.2 (AI) mind viruses">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🤯</span> ff.155.2 (AI) mind viruses</h2>
+        <a href="https://fortissimo.substack.com/i/212236687/ff1552-virus-mentali-dellai" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.155.2 (AI) mind viruses">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Meanwhile, during an internal evaluation, OpenAI agents bypassed sandbox controls and compromised part of Hugging Face&#39;s infrastructure. The activity was detected by the OpenAI and Hugging Face security teams. For weeks, separate runs turned an internal service into an unauthorised noticeboard: they left notes, shared exploits and picked up each other&#39;s work. A small culture capable of steering the following “generations”. A mix with a whiff of Dawkins&#39;s meme theory, digital swarms and the “dream” seeds of Inception. The paper by researchers from Anthropic and EPFL describes “mind viruses” in multi-agent systems as a real, but currently limited, risk.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/w_960,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fec123297-23e4-4451-b638-09553fd1a37e_684x309.png" srcset="https://substackcdn.com/image/fetch/w_480,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fec123297-23e4-4451-b638-09553fd1a37e_684x309.png 480w, https://substackcdn.com/image/fetch/w_960,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fec123297-23e4-4451-b638-09553fd1a37e_684x309.png 960w" sizes="(max-width: 1024px) 100vw, 960px" width="684" height="309" alt="🤯 ff.155.2 (AI) mind viruses" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (2)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://openai.com/index/hugging-face-incident-and-the-road-ahead/" target="_blank" rel="noopener noreferrer" title="Nel frattempo, durante una valutazione interna, agenti di OpenAI hanno aggirato i controlli delle sandbox e compromesso parte dell’infrastruttura di Hugging Face. L’attività è stata rilevata dai team di sicurezza di OpenAI e Hugging Face." lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ openai.com</a>
-            <a href="https://arxiv.org/abs/2608.10218" target="_blank" rel="noopener noreferrer" title="Il paper di ricercatori di Anthropic ed EPFL descrive i “mind viruses” nei sistemi multi-agente come un rischio reale, ma oggi limitato." lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ arxiv.org</a>
+          <div class="ff-refs-l">
+            <a href="https://openai.com/index/hugging-face-incident-and-the-road-ahead/" target="_blank" rel="noopener noreferrer" title="Nel frattempo, durante una valutazione interna, agenti di OpenAI hanno aggirato i controlli delle sandbox e compromesso parte dell’infrastruttura di Hugging Face. L’attività è stata rilevata dai team di sicurezza di OpenAI e Hugging Face." lang="it" class="ff-ref"><span class="ff-emo">↗</span> openai.com</a>
+            <a href="https://arxiv.org/abs/2608.10218" target="_blank" rel="noopener noreferrer" title="Il paper di ricercatori di Anthropic ed EPFL descrive i “mind viruses” nei sistemi multi-agente come un rischio reale, ma oggi limitato." lang="it" class="ff-ref"><span class="ff-emo">↗</span> arxiv.org</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-155-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-155-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🍌 ff.155.3 Banana extinction</h2>
-        <a href="https://fortissimo.substack.com/i/212236687/ff1553-estinzione-di-banane" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.155.3 Banana extinction">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🍌</span> ff.155.3 Banana extinction</h2>
+        <a href="https://fortissimo.substack.com/i/212236687/ff1553-estinzione-di-banane" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.155.3 Banana extinction">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Still on food, another idea from Tim Spector&#39;s book (often a guest or host on the ZOE podcast): The Gros Michel, once dominant in exports, was almost wiped out of commercial plantations by Panama disease. The Cavendish replaced it, but today it is threatened by the TR4 strain of Fusarium oxysporum. It isn&#39;t the only surviving banana: it&#39;s the fragile symbol of a global monoculture. It&#39;s only a matter of time and we have no plan B: enjoy your bananas while you can. Tim Spector, Food for Life (2022)</p>
       </div>
       
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://amzn.to/3UfyCmx" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] text-xs font-mono font-bold hover:underline">📚 Food for Life</a>
+          <div class="ff-refs-l">
+            <a href="https://amzn.to/3UfyCmx" target="_blank" rel="noopener noreferrer sponsored" class="ff-ref is-book"><span class="ff-emo">📚</span> Food for Life</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-155-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-155-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">💉 ff.155.4 Modernity versus cancer</h2>
-        <a href="https://fortissimo.substack.com/i/212236687/ff1554-modernita-contro-il-cancro" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.155.4 Modernity versus cancer">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">💉</span> ff.155.4 Modernity versus cancer</h2>
+        <a href="https://fortissimo.substack.com/i/212236687/ff1554-modernita-contro-il-cancro" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.155.4 Modernity versus cancer">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">COVID was a sh… of a period. But, like every crisis, it accelerated the development, validation and production capacity of mRNA technologies, which had been studied for decades. Recently, Moderna added around 30 billion dollars in market capitalisation after positive phase 3 results for an experimental personalised mRNA therapy to reduce melanoma recurrence after surgery. It isn&#39;t an approved cure yet, but it&#39;s a very promising signal. I asked a kid-GPT to illustrate the technology. I like to imagine this drawing was made by a child in some paediatric oncology ward somewhere in the world, who from today has a little more hope. Until the next 10th, 20th or 30th (or 31st…)! Meanwhile, if you like:</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/w_960,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fed2cef4f-06ee-43ab-a61c-649349355cd3_633x617.png" srcset="https://substackcdn.com/image/fetch/w_480,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fed2cef4f-06ee-43ab-a61c-649349355cd3_633x617.png 480w" sizes="(max-width: 1024px) 100vw, 960px" width="633" height="617" alt="💉 ff.155.4 Modernity versus cancer" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/w_960,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8b58e3bc-f1ea-4239-916c-c53e2cdaf3ca_1024x1536.png" srcset="https://substackcdn.com/image/fetch/w_480,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8b58e3bc-f1ea-4239-916c-c53e2cdaf3ca_1024x1536.png 480w, https://substackcdn.com/image/fetch/w_960,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8b58e3bc-f1ea-4239-916c-c53e2cdaf3ca_1024x1536.png 960w, https://substackcdn.com/image/fetch/w_1440,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8b58e3bc-f1ea-4239-916c-c53e2cdaf3ca_1024x1536.png 1440w" sizes="(max-width: 1024px) 100vw, 960px" width="1024" height="1536" alt="💉 ff.155.4 Modernity versus cancer" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" title="michele merelli" lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ linkedin.com</a>
+          <div class="ff-refs-l">
+            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" title="michele merelli" lang="it" class="ff-ref"><span class="ff-emo">↗</span> linkedin.com</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">Related issues</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-153.html" class="font-bold hover:underline">ff.153 It&#39;s all a token</a><p class="text-sm text-black/75 mt-1">Between summer village fairs and Claude&#39;s mental rabbit holes</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-136.html" class="font-bold hover:underline">ff.136 Ka-me-ha-me-energy-waaave!</a><p class="text-sm text-black/75 mt-1">Against AI&#39;s astronomical consumption: Goku?</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-103.html" class="font-bold hover:underline">ff.103 Fire, Iron, Intelligence</a><p class="text-sm text-black/75 mt-1">OpenAI&#39;s new o1 model: a new era for humanity?</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-81.html" class="font-bold hover:underline">ff.81 2024 in the history books</a><p class="text-sm text-black/75 mt-1">Gene therapies, COP28 and Tesla&#39;s robot: starting 2024 on the right foot!</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/en/archive/ff-153.html" class="font-bold hover:underline">ff.153 It&#39;s all a token</a><p class="text-sm text-black/75 mt-1">Between summer village fairs and Claude&#39;s mental rabbit holes</p></li>
+        <li><a href="/en/archive/ff-136.html" class="font-bold hover:underline">ff.136 Ka-me-ha-me-energy-waaave!</a><p class="text-sm text-black/75 mt-1">Against AI&#39;s astronomical consumption: Goku?</p></li>
+        <li><a href="/en/archive/ff-103.html" class="font-bold hover:underline">ff.103 Fire, Iron, Intelligence</a><p class="text-sm text-black/75 mt-1">OpenAI&#39;s new o1 model: a new era for humanity?</p></li>
+        <li><a href="/en/archive/ff-81.html" class="font-bold hover:underline">ff.81 2024 in the history books</a><p class="text-sm text-black/75 mt-1">Gene therapies, COP28 and Tesla&#39;s robot: starting 2024 on the right foot!</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Get new issues of Futuro Fortissimo</h2>
         <p class="text-sm text-black/80 mt-1">A free newsletter by Michele Merelli (Bergamo) on technology, AI, nature and society. Written in Italian, delivered by Substack.</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 Subscribe for free ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary"><span class="ff-emo">📩</span> Subscribe for free <span class="ff-emo">↗</span></a>
     </section>
 
     <nav aria-label="Adjacent issues" class="ff-pn">
@@ -367,7 +367,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -387,16 +387,16 @@
       <div class="space-y-2">
         <p class="ff-eyebrow">Follow</p>
         <ul class="space-y-1 font-medium">
-          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack ↗</a></li>
-          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
-          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram ↗</a></li>
+          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram <span class="ff-emo">↗</span></a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
-          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee ☕ ↗</a></li>
-          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects ↗</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee <span class="ff-emo">☕</span> <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects <span class="ff-emo">↗</span></a></li>
         </ul>
       </div>
     </div>
-    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
+    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70"><span class="ff-emo">©</span> 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
   <aside class="ff-sticky-sub" aria-label="Newsletter">
     <p>Enjoying it? Get the next issue by email.</p>
@@ -404,11 +404,11 @@
     <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="Dismiss">✕</button>
   </aside>
   <nav class="ff-tabbar" aria-label="Main navigation">
-    <a href="/en/"><span class="ff-ti" aria-hidden="true">🏠</span>Home</a>
-    <a href="/en/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>Archive</a>
-    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>Themes</a>
-    <a href="/en/books/"><span class="ff-ti" aria-hidden="true">📚</span>Books</a>
-    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>Search</button>
+    <a href="/en/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🏠</span></span>Home</a>
+    <a href="/en/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🗂</span></span>Archive</a>
+    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🧭</span></span>Themes</a>
+    <a href="/en/books/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">📚</span></span>Books</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🔍</span></span>Search</button>
   </nav>
   <dialog id="ff-search" class="ff-search" aria-label="Search" data-empty="No results. Try another word.">
     <form role="search">
@@ -419,7 +419,7 @@
     <ul id="ff-results" role="listbox" aria-label="Search"></ul>
     <div class="ff-s-foot"><a href="/en/archive/" data-ff-all data-base="/en/archive/">All results in the archive →</a><span>Press / to search anywhere</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

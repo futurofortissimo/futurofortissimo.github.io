@@ -142,12 +142,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -156,9 +156,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -211,18 +211,18 @@
         <a href="/en/books/">Books</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="Language"><a href="/archivio/ff-49.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/archive/ff-49.html" hreflang="en" lang="en" title="English" data-keep-state aria-current="page">EN</a><a href="/hi/archive/ff-49.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="Dark theme" title="Dark theme"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Subscribe</a>
         <details class="ff-more">
-          <summary aria-label="More"><span aria-hidden="true">☰</span><span class="sr-only">More</span></summary>
+          <summary aria-label="More"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">More</span></summary>
           <nav class="ff-menu" aria-label="More">
-            <a href="/book/">📖 The Book (IT)</a>
-            <a href="/en/connections.html">🔗 Connections</a>
-            <a href="/en/note.html">📝 Notes</a>
+            <a href="/book/"><span class="ff-emo">📖</span> The Book (IT)</a>
+            <a href="/en/connections.html"><span class="ff-emo">🔗</span> Connections</a>
+            <a href="/en/note.html"><span class="ff-emo">📝</span> Notes</a>
             <hr />
-            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 Subscribe ↗</a>
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener"><span class="ff-emo">📩</span> Subscribe <span class="ff-emo">↗</span></a>
           </nav>
         </details>
       </div>
@@ -232,92 +232,92 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/en/">Home</a> /</li><li><a class="underline" href="/en/archive/">Archive</a> /</li><li aria-current="page">ff.49 The pandemic of the 21st century</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>49</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>49</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="mushroom" data-ff-slug="ff-49" data-label="Open the 3D object and preview of ff.49"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Futuro Fortissimo Archive</p>
-      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.49 The pandemic of the 21st century</h1>
+      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black"><span class="ff-emo">🎼</span> ff.49 The pandemic of the 21st century</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">Why are we getting ever more obese? Doritos, physical activity or pollution?</p>
       <p class="mt-2 text-xs font-mono text-black/70">Published <time datetime="2023-02-08T09:36:12.715Z">8 February 2023</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/en/archive/ff-49.html" data-done="Link copied"><span aria-hidden="true">↗</span> Share</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/en/archive/ff-49.html" data-done="Link copied"><span aria-hidden="true">🔗</span> Copy link</button>
-        <a href="https://fortissimo.substack.com/p/ff49-la-pandemia-del-21esimo-secolo" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Read the Italian original on Substack ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/en/archive/ff-49.html" data-done="Link copied"><span aria-hidden="true"><span class="ff-emo">↗</span></span> Share</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/en/archive/ff-49.html" data-done="Link copied"><span aria-hidden="true"><span class="ff-emo">🔗</span></span> Copy link</button>
+        <a href="https://fortissimo.substack.com/p/ff49-la-pandemia-del-21esimo-secolo" target="_blank" rel="noopener noreferrer" class="ff-qlink">Read the Italian original on Substack <span class="ff-emo">↗</span></a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• Why are our pets getting fatter along with us?</li>
-        <li>• Alternative theories (still to be assessed scientifically)</li>
-        <li>• Forever 18 with 100+ pills a day</li>
+      <ul class="ff-keypoints">
+        <li>Why are our pets getting fatter along with us?</li>
+        <li>Alternative theories (still to be assessed scientifically)</li>
+        <li>Forever 18 with 100+ pills a day</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Themes</span><a href="/en/themes.html#nutrizione" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🥗 Nutrition and microbiome</a><a href="/en/themes.html#ai" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🤖 AI, agents and models</a></p>
-      <nav aria-label="Sections of this issue" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">Themes</span><a href="/en/themes.html#nutrizione" class="ff-tlink"><span class="ff-emo">🥗</span> Nutrition and microbiome</a><a href="/en/themes.html#ai" class="ff-tlink"><span class="ff-emo">🤖</span> AI, agents and models</a></p>
+      <nav aria-label="Sections of this issue" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">In this issue</h2>
         <ol>
-          <li><a href="#ff-49-1">⚽ ff.49.1 We&#39;re getting rounder</a></li>
-          <li><a href="#ff-49-2">👅 ff.49.2 BMI, BMR (they&#39;re not raspberries)</a></li>
-          <li><a href="#ff-49-3">🍔 ff.49.3 Diets and pollutants</a></li>
-          <li><a href="#ff-49-4">💊 ff.49.4 The superman who takes 100 pills a day</a></li>
+          <li><a href="#ff-49-1"><span class="ff-emo">⚽</span> ff.49.1 We&#39;re getting rounder</a></li>
+          <li><a href="#ff-49-2"><span class="ff-emo">👅</span> ff.49.2 BMI, BMR (they&#39;re not raspberries)</a></li>
+          <li><a href="#ff-49-3"><span class="ff-emo">🍔</span> ff.49.3 Diets and pollutants</a></li>
+          <li><a href="#ff-49-4"><span class="ff-emo">💊</span> ff.49.4 The superman who takes 100 pills a day</a></li>
         </ol>
       </nav>
     </header>
 
     
 
-    <section id="ff-49-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-49-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">⚽ ff.49.1 We&#39;re getting rounder</h2>
-        <a href="https://fortissimo.substack.com/i/95768941/ff-siamo-sempre-piu-tondi" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.49.1 We&#39;re getting rounder">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">⚽</span> ff.49.1 We&#39;re getting rounder</h2>
+        <a href="https://fortissimo.substack.com/i/95768941/ff-siamo-sempre-piu-tondi" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.49.1 We&#39;re getting rounder">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Nutrition and diet are a complex topic, hard to unpack in a newsletter, also given the non-trivial connections between:</p>
-        <p class="text-base leading-relaxed text-black/90">Genetics; Microbiome; Meal timing; Amount of fiber and micronutrients; Type of exercise / training level of each individual; Other aspects we&#39;ll try to throw into the pot in this 🎼ff.</p>
+        <p class="text-base leading-relaxed text-black/90">Genetics; Microbiome; Meal timing; Amount of fiber and micronutrients; Type of exercise / training level of each individual; Other aspects we&#39;ll try to throw into the pot in this <span class="ff-emo">🎼</span>ff.</p>
         <p class="text-base leading-relaxed text-black/90">Let&#39;s give it a go anyway. And let&#39;s do it with a number that sticks. After all, this is Futuro Fortissimo. Obesity mortality worldwide is rising:</p>
         <p class="text-base leading-relaxed text-black/90">5.3% (1990) | 8.5% (2019) | +3% in 30 years</p>
         <p class="text-base leading-relaxed text-black/90">The share of obese adults has also nearly doubled over the last 40 years. Give or take a country, the whole West is following a not exactly positive trend.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!gtmV!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbe24d4bc-a54c-4317-b312-4a1d87c6ed3c_443x461.png" width="443" height="461" alt="From 1975 to today, Italy went from 10 to 23 people (out of 100) with obesity problems. In the US, 37." loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">From 1975 to today, Italy went from 10 to 23 people (out of 100) with obesity problems. In the US, 37.</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.healthdata.org/gbd/2019" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Obesity mortality worldwide is rising:</a>
+          <div class="ff-refs-l">
+            <a href="https://www.healthdata.org/gbd/2019" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Obesity mortality worldwide is rising:</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-49-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-49-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">👅 ff.49.2 BMI, BMR (they&#39;re not raspberries)</h2>
-        <a href="https://fortissimo.substack.com/i/95768941/ff-bmi-bmr-non-sono-pernacchie" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.49.2 BMI, BMR (they&#39;re not raspberries)">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">👅</span> ff.49.2 BMI, BMR (they&#39;re not raspberries)</h2>
+        <a href="https://fortissimo.substack.com/i/95768941/ff-bmi-bmr-non-sono-pernacchie" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.49.2 BMI, BMR (they&#39;re not raspberries)">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">These charts, though on different scales, remind me terribly of those from February 2020. In a (post-)COVID era, can we talk about another, quieter and slower pandemic? If so, what is the “obesity virus”?</p>
         <p class="text-base leading-relaxed text-black/90">Let&#39;s start with the basics. With the PCR test.</p>
-        <p class="text-base leading-relaxed text-black/90">BMI, body mass index. The well-known index, a cold, hard number, tells us whether we&#39;re under/normal/overweight. On 🎼ff we give numbers a personal, “understandable” spin. So here&#39;s a range for various heights:Height ! 18 - 21 - 25 |————————————————————————150 cm  ! 41 - 47 - 56 |155 cm  ! 43 - 50 - 60 |160 cm  ! 46 - 52 - 64 |165 cm  ! 49 - 57 - 68 |170 cm  ! 52 - 61 - 72 |175 cm  ! 55 - 64 - 77 |180 cm  ! 58 - 68 - 81 |185 cm  ! 62 - 72 - 86 |190 cm  ! 65 - 76 - 90 |</p>
+        <p class="text-base leading-relaxed text-black/90">BMI, body mass index. The well-known index, a cold, hard number, tells us whether we&#39;re under/normal/overweight. On <span class="ff-emo">🎼</span>ff we give numbers a personal, “understandable” spin. So here&#39;s a range for various heights:Height ! 18 - 21 - 25 |————————————————————————150 cm  ! 41 - 47 - 56 |155 cm  ! 43 - 50 - 60 |160 cm  ! 46 - 52 - 64 |165 cm  ! 49 - 57 - 68 |170 cm  ! 52 - 61 - 72 |175 cm  ! 55 - 64 - 77 |180 cm  ! 58 - 68 - 81 |185 cm  ! 62 - 72 - 86 |190 cm  ! 65 - 76 - 90 |</p>
         <p class="text-base leading-relaxed text-black/90">BMR, basal metabolic rate. It&#39;s how much our body burns just to survive, at rest. Here&#39;s the first dose of variability: BMR can range from 1100 kcal up to 2500 kcal a day. 63% depends on how much muscle you have, 26% on unexplained individual factors (!).</p>
         <p class="text-base leading-relaxed text-black/90">It&#39;s also influenced by age, sex and (needless to say) BMI:</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!2gr3!,w_1456,c_limit,f_auto,q_auto:good,fl_lossy/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F94acd481-cd31-4d42-904e-17d8e10ef38a_440x363.gif" width="440" height="363" alt="The main factor correlating with BMR: your lean mass, i.e. muscle." loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">The main factor correlating with BMR: your lean mass, i.e. muscle.</figcaption>
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!gLHm!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6e343a7a-3996-42a5-992c-125b2785aaac_1050x697.jpeg" width="1050" height="697" alt="BMR by age and sex. Women are the circles, men the triangles. At 50, BMR is 10-15% (200-300 kcal) lower than at 20. Paper." loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">BMR by age and sex. Women are the circles, men the triangles. At 50, BMR is 10-15% (200-300 kcal) lower than at 20. Paper.</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://academic.oup.com/ajcn/article/82/5/941/4607670?login=false" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ BMR can range from 1100 kcal up to 2500 kcal a day</a>
+          <div class="ff-refs-l">
+            <a href="https://academic.oup.com/ajcn/article/82/5/941/4607670?login=false" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> BMR can range from 1100 kcal up to 2500 kcal a day</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-49-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-49-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🍔 ff.49.3 Diets and pollutants</h2>
-        <a href="https://fortissimo.substack.com/i/95768941/ff-diete-e-inquinanti" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.49.3 Diets and pollutants">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🍔</span> ff.49.3 Diets and pollutants</h2>
+        <a href="https://fortissimo.substack.com/i/95768941/ff-diete-e-inquinanti" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.49.3 Diets and pollutants">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">We&#39;ve seen the trends and laid the groundwork for measuring our bodies. Now let&#39;s try to understand why we&#39;re getting ever rounder.</p>
@@ -332,45 +332,45 @@
         <p class="text-base leading-relaxed text-black/90">Let&#39;s put more meat on the fire (but don&#39;t eat it!):</p>
         <p class="text-base leading-relaxed text-black/90">Eating 10,000 kcal a day leads to weight gain, obviously. Once the over-feeding period ends, though, people return to their original BMI. The potato diet, which makes you lose weight and the urge to eat. In Australia sugar intake has dropped by 20%, but obesity keeps rising. The inverse correlation between obesity and altitude above sea level. Processed foods are linked to a higher risk of premature death and even dementia, due to their low fiber content and the many added ingredients for long-term stabilisation. Fats and sugars make us release a whole lot more dopamine, after all.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!satx!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3c2f0277-4584-4fc6-b4a8-baf84836f912_640x378.png" width="640" height="378" alt="Breakdown of calories consumed by food type (American diet 1970 vs 2010). Flour-based products went from 400 to 600 kcal. Fats are rising too." loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Breakdown of calories consumed by food type (American diet 1970 vs 2010). Flour-based products went from 400 to 600 kcal. Fats are rising too.</figcaption>
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!Q9B_!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F64f96dc7-1c71-464a-bc45-bb2921b2c7c3_651x413.png" width="651" height="413" alt="Share of overweight or obese people vs daily calorie intake. The underlying linear trend is clear." loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Share of overweight or obese people vs daily calorie intake. The underlying linear trend is clear.</figcaption>
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!KEXK!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F341b0eff-d45f-4584-bce4-cd548890acc1_820x529.png" width="820" height="529" alt="🍔 ff.49.3 Diets and pollutants" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!tdXq!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fceb0545c-d27b-41cb-9cd8-7b6ebec7a56c_886x321.png" width="886" height="321" alt="🍔 ff.49.3 Diets and pollutants" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (12)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.pewresearch.org/fact-tank/2016/12/13/whats-on-your-table-how-americas-diet-has-changed-over-the-decades/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Pew Research collected the changes in the American diet over the last 40 years</a>
-            <a href="https://www.tandfonline.com/doi/figure/10.1080/07315724.2018.1552544?scroll=top&amp;needAccess=true&amp;role=tab" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ digesting food takes more or less energy depending on meal size, amount of fiber and macronutrients</a>
-            <a href="https://www.thelancet.com/journals/landia/article/PIIS2213-8587(15)00367-8/fulltext" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ no difference between a mostly fat-based diet and a carb-based one</a>
-            <a href="https://www.nature.com/articles/nutd20173" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Fiber, on the other hand, helps lower BMI</a>
-            <a href="http://achemicalhunger.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ A Chemical Hunger</a>
-            <a href="https://news.ycombinator.com/item?id=27916251" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ the discussion on Y Combinator</a>
-            <a href="https://academic.oup.com/ajcn/article/111/1/17/5601960?login=false" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Once the over-feeding period ends, though, people return to their original BMI</a>
-            <a href="https://slimemoldtimemold.com/2022/07/12/lose-10-6-pounds-in-four-weeks-with-this-one-weird-trick-discovered-by-local-slime-hive-mind-doctors-grudgingly-respect-them-hope-to-become-friends/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ potato diet, which makes you lose weight and the urge to eat</a>
-            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3257688/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ sugar intake has dropped by 20%, but obesity keeps rising</a>
-            <a href="https://slimemoldtimemold.com/2021/07/13/a-chemical-hunger-part-iii-environmental-contaminants/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ inverse correlation between obesity and altitude above sea level</a>
-            <a href="https://time.com/6245237/ultra-processed-foods-diet-bad/?utm_source=twitter&amp;utm_medium=social&amp;utm_campaign=editorial&amp;utm_term=health_diet/nutrition&amp;linkId=197781169" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Processed foods are linked to a higher risk of premature death and even dementia</a>
-            <a href="https://www.nationalgeographic.it/scienza/2023/01/come-influiscono-zuccheri-e-grassi-sul-nostro-cervello" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Fats and sugars make us release a whole lot more dopamine</a>
+          <div class="ff-refs-l">
+            <a href="https://www.pewresearch.org/fact-tank/2016/12/13/whats-on-your-table-how-americas-diet-has-changed-over-the-decades/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Pew Research collected the changes in the American diet over the last 40 years</a>
+            <a href="https://www.tandfonline.com/doi/figure/10.1080/07315724.2018.1552544?scroll=top&amp;needAccess=true&amp;role=tab" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> digesting food takes more or less energy depending on meal size, amount of fiber and macronutrients</a>
+            <a href="https://www.thelancet.com/journals/landia/article/PIIS2213-8587(15)00367-8/fulltext" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> no difference between a mostly fat-based diet and a carb-based one</a>
+            <a href="https://www.nature.com/articles/nutd20173" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Fiber, on the other hand, helps lower BMI</a>
+            <a href="http://achemicalhunger.com/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> A Chemical Hunger</a>
+            <a href="https://news.ycombinator.com/item?id=27916251" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> the discussion on Y Combinator</a>
+            <a href="https://academic.oup.com/ajcn/article/111/1/17/5601960?login=false" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Once the over-feeding period ends, though, people return to their original BMI</a>
+            <a href="https://slimemoldtimemold.com/2022/07/12/lose-10-6-pounds-in-four-weeks-with-this-one-weird-trick-discovered-by-local-slime-hive-mind-doctors-grudgingly-respect-them-hope-to-become-friends/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> potato diet, which makes you lose weight and the urge to eat</a>
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3257688/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> sugar intake has dropped by 20%, but obesity keeps rising</a>
+            <a href="https://slimemoldtimemold.com/2021/07/13/a-chemical-hunger-part-iii-environmental-contaminants/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> inverse correlation between obesity and altitude above sea level</a>
+            <a href="https://time.com/6245237/ultra-processed-foods-diet-bad/?utm_source=twitter&amp;utm_medium=social&amp;utm_campaign=editorial&amp;utm_term=health_diet/nutrition&amp;linkId=197781169" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Processed foods are linked to a higher risk of premature death and even dementia</a>
+            <a href="https://www.nationalgeographic.it/scienza/2023/01/come-influiscono-zuccheri-e-grassi-sul-nostro-cervello" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Fats and sugars make us release a whole lot more dopamine</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-49-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-49-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">💊 ff.49.4 The superman who takes 100 pills a day</h2>
-        <a href="https://fortissimo.substack.com/i/95768941/ff-il-superuomo-che-prende-pillole-al-giorno" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.49.4 The superman who takes 100 pills a day">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">💊</span> ff.49.4 The superman who takes 100 pills a day</h2>
+        <a href="https://fortissimo.substack.com/i/95768941/ff-il-superuomo-che-prende-pillole-al-giorno" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.49.4 The superman who takes 100 pills a day">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">The record for reversing epigenetic ageing (5 years). Some people have taken diet care to the extreme (ranking first in the Rejuvenation Olympics).</p>
@@ -378,55 +378,55 @@
         <p class="text-base leading-relaxed text-black/90">His diet stats | 1,977 calories | 24% caloric restriction | Vegan | 30 kg of vegetables a month | 100+ pills a day</p>
         <p class="text-base leading-relaxed text-black/90">Well, I&#39;d say we&#39;ve gone from one extreme to the other. All that&#39;s left is to close with a bit of (overused) philosophy (after so much physiology).</p>
         <p class="text-base leading-relaxed text-black/90">We are what we eat. Ludwig Feuerbach</p>
-        <p class="text-base leading-relaxed text-black/90">🎵 Final notes</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">🎵</span> Final notes</p>
         <p class="text-base leading-relaxed text-black/90">Coming soon: bio-sensors implanted in the mouth, gut and liver that will flag every little dietary slip. Positive or anxiety-inducing?</p>
-        <p class="text-base leading-relaxed text-black/90">In the next 🎼 ff we&#39;ll talk about 1970 (what happened?)! 👋 See you soon, from micmer</p>
+        <p class="text-base leading-relaxed text-black/90">In the next <span class="ff-emo">🎼</span> ff we&#39;ll talk about 1970 (what happened?)! <span class="ff-emo">👋</span> See you soon, from micmer</p>
         <p class="text-base leading-relaxed text-black/90">Want to support this project? Subscribe to the newsletter and share it with a friend on WhatsApp</p>
-        <p class="text-base leading-relaxed text-black/90">👇🔥Subscribe</p>
-        <p class="text-base leading-relaxed text-black/90">Or buy me a coffee 😏</p>
-        <p class="text-base leading-relaxed text-black/90">☕</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">👇</span><span class="ff-emo">🔥</span>Subscribe</p>
+        <p class="text-base leading-relaxed text-black/90">Or buy me a coffee <span class="ff-emo">😏</span></p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">☕</span></p>
         <p class="text-base leading-relaxed text-black/90">And remember to leave a little heart below.</p>
-        <p class="text-base leading-relaxed text-black/90">♥️</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">♥️</span></p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!OpzM!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe53e33c9-080b-4179-8b04-dc926875e652_2118x2643.png" width="2118" height="2643" alt="By analysing his DNA methylation, Bryan Johnson checks how fast he&#39;s ageing." loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">By analysing his DNA methylation, Bryan Johnson checks how fast he&#39;s ageing.</figcaption>
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!QWcX!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F264b6de6-151d-4c20-a9ce-d2fbf0e13f15_654x432.png" width="654" height="432" alt="Among millionaire Bryan Johnson&#39;s many check-up tests, measuring the quality of his skin." loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Among millionaire Bryan Johnson&#39;s many check-up tests, measuring the quality of his skin.</figcaption>
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!0OG2!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F25647564-38d5-4c71-b7d8-6cffce3e3067_641x437.png" width="641" height="437" alt="💊 ff.49.4 The superman who takes 100 pills a day" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (2)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://rejuvenationolympics.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Rejuvenation Olympics</a>
-            <a href="https://blueprint.bryanjohnson.co/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ the Blueprint method to slow down ageing</a>
+          <div class="ff-refs-l">
+            <a href="https://rejuvenationolympics.com/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Rejuvenation Olympics</a>
+            <a href="https://blueprint.bryanjohnson.co/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> the Blueprint method to slow down ageing</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">Related issues</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-145.html" class="font-bold hover:underline">ff.145 Sugar, bones and crème brûlée</a><p class="text-sm text-black/75 mt-1">Food design against “the new smoking”: food</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-4.html" class="font-bold hover:underline">ff.4 Resurrected mammoths</a><p class="text-sm text-black/75 mt-1">Proteins unveiled, bacteria, puzzle magazines and extinction.</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-120.html" class="font-bold hover:underline">ff.120 Sport and longevity</a><p class="text-sm text-black/75 mt-1">How moving lengthens life, between cancer and nutrition</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-113.html" class="font-bold hover:underline">ff.113 Chemical hunger</a><p class="text-sm text-black/75 mt-1">What “relationship” should we have with food?</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/en/archive/ff-145.html" class="font-bold hover:underline">ff.145 Sugar, bones and crème brûlée</a><p class="text-sm text-black/75 mt-1">Food design against “the new smoking”: food</p></li>
+        <li><a href="/en/archive/ff-4.html" class="font-bold hover:underline">ff.4 Resurrected mammoths</a><p class="text-sm text-black/75 mt-1">Proteins unveiled, bacteria, puzzle magazines and extinction.</p></li>
+        <li><a href="/en/archive/ff-120.html" class="font-bold hover:underline">ff.120 Sport and longevity</a><p class="text-sm text-black/75 mt-1">How moving lengthens life, between cancer and nutrition</p></li>
+        <li><a href="/en/archive/ff-113.html" class="font-bold hover:underline">ff.113 Chemical hunger</a><p class="text-sm text-black/75 mt-1">What “relationship” should we have with food?</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Get new issues of Futuro Fortissimo</h2>
         <p class="text-sm text-black/80 mt-1">A free newsletter by Michele Merelli (Bergamo) on technology, AI, nature and society. Written in Italian, delivered by Substack.</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 Subscribe for free ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary"><span class="ff-emo">📩</span> Subscribe for free <span class="ff-emo">↗</span></a>
     </section>
 
     <nav aria-label="Adjacent issues" class="ff-pn">
@@ -435,7 +435,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -455,16 +455,16 @@
       <div class="space-y-2">
         <p class="ff-eyebrow">Follow</p>
         <ul class="space-y-1 font-medium">
-          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack ↗</a></li>
-          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
-          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram ↗</a></li>
+          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram <span class="ff-emo">↗</span></a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
-          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee ☕ ↗</a></li>
-          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects ↗</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee <span class="ff-emo">☕</span> <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects <span class="ff-emo">↗</span></a></li>
         </ul>
       </div>
     </div>
-    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
+    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70"><span class="ff-emo">©</span> 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
   <aside class="ff-sticky-sub" aria-label="Newsletter">
     <p>Enjoying it? Get the next issue by email.</p>
@@ -472,11 +472,11 @@
     <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="Dismiss">✕</button>
   </aside>
   <nav class="ff-tabbar" aria-label="Main navigation">
-    <a href="/en/"><span class="ff-ti" aria-hidden="true">🏠</span>Home</a>
-    <a href="/en/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>Archive</a>
-    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>Themes</a>
-    <a href="/en/books/"><span class="ff-ti" aria-hidden="true">📚</span>Books</a>
-    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>Search</button>
+    <a href="/en/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🏠</span></span>Home</a>
+    <a href="/en/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🗂</span></span>Archive</a>
+    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🧭</span></span>Themes</a>
+    <a href="/en/books/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">📚</span></span>Books</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🔍</span></span>Search</button>
   </nav>
   <dialog id="ff-search" class="ff-search" aria-label="Search" data-empty="No results. Try another word.">
     <form role="search">
@@ -487,7 +487,7 @@
     <ul id="ff-results" role="listbox" aria-label="Search"></ul>
     <div class="ff-s-foot"><a href="/en/archive/" data-ff-all data-base="/en/archive/">All results in the archive →</a><span>Press / to search anywhere</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

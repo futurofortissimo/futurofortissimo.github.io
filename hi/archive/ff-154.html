@@ -146,12 +146,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -160,9 +160,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -215,18 +215,18 @@
         <a href="/hi/books/">किताबें</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="खोजें (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">खोजें</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="खोजें (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">खोजें</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="भाषा"><a href="/archivio/ff-154.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/archive/ff-154.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/archive/ff-154.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state aria-current="page">हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="डार्क थीम" title="डार्क थीम"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">सब्सक्राइब</a>
         <details class="ff-more">
-          <summary aria-label="और"><span aria-hidden="true">☰</span><span class="sr-only">और</span></summary>
+          <summary aria-label="और"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">और</span></summary>
           <nav class="ff-menu" aria-label="और">
-            <a href="/book/">📖 किताब (IT)</a>
-            <a href="/hi/connections.html">🔗 कनेक्शन</a>
-            <a href="/hi/note.html">📝 नोट्स</a>
+            <a href="/book/"><span class="ff-emo">📖</span> किताब (IT)</a>
+            <a href="/hi/connections.html"><span class="ff-emo">🔗</span> कनेक्शन</a>
+            <a href="/hi/note.html"><span class="ff-emo">📝</span> नोट्स</a>
             <hr />
-            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 सब्सक्राइब ↗</a>
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener"><span class="ff-emo">📩</span> सब्सक्राइब <span class="ff-emo">↗</span></a>
           </nav>
         </details>
       </div>
@@ -236,51 +236,51 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/hi/">होम</a> /</li><li><a class="underline" href="/hi/archive/">संग्रह</a> /</li><li aria-current="page">ff.154 एक जगह बैठे-बैठे यात्रा</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>154</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>154</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="bicycle" data-ff-slug="ff-154" data-label="3D वस्तु और पूर्वावलोकन खोलें: ff.154"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Futuro Fortissimo संग्रह</p>
-      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.154 एक जगह बैठे-बैठे यात्रा</h1>
+      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black"><span class="ff-emo">🎼</span> ff.154 एक जगह बैठे-बैठे यात्रा</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">छुट्टी पर, छुट्टी के बारे में कुछ विचार</p>
       <p class="mt-2 text-xs font-mono text-black/70">प्रकाशित <time datetime="2026-08-20T06:20:30.213Z">20 अगस्त 2026</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/hi/archive/ff-154.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">↗</span> शेयर करें</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/hi/archive/ff-154.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">🔗</span> लिंक कॉपी करें</button>
-        <a href="https://fortissimo.substack.com/p/ff154-viaggiare-da-fermi" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Substack पर इतालवी मूल पढ़ें ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/hi/archive/ff-154.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true"><span class="ff-emo">↗</span></span> शेयर करें</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/hi/archive/ff-154.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true"><span class="ff-emo">🔗</span></span> लिंक कॉपी करें</button>
+        <a href="https://fortissimo.substack.com/p/ff154-viaggiare-da-fermi" target="_blank" rel="noopener noreferrer" class="ff-qlink">Substack पर इतालवी मूल पढ़ें <span class="ff-emo">↗</span></a>
       </div>
       
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">थीम</span><a href="/hi/themes.html#clima" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🌍 प्रकृति, जलवायु और ऊर्जा</a><a href="/hi/themes.html#salute" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🏃 स्वास्थ्य, खेल और शरीर</a><a href="/hi/themes.html#cultura" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🎨 संस्कृति, किताबें और कला</a></p>
-      <nav aria-label="इस अंक के खंड" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">थीम</span><a href="/hi/themes.html#clima" class="ff-tlink"><span class="ff-emo">🌍</span> प्रकृति, जलवायु और ऊर्जा</a><a href="/hi/themes.html#salute" class="ff-tlink"><span class="ff-emo">🏃</span> स्वास्थ्य, खेल और शरीर</a><a href="/hi/themes.html#cultura" class="ff-tlink"><span class="ff-emo">🎨</span> संस्कृति, किताबें और कला</a></p>
+      <nav aria-label="इस अंक के खंड" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">इस अंक में</h2>
         <ol>
-          <li><a href="#ff-154-1">🪑 ff.154.1 बिना हिले यात्रा</a></li>
-          <li><a href="#ff-154-2">🚲 ff.154.2 साइकिल से यात्रा (?)</a></li>
-          <li><a href="#ff-154-3">🧭 ff.154.3 रोमांच कहाँ खो गया?</a></li>
-          <li><a href="#ff-154-4">🚧 ff.154.4 मेरा छोटा-सा रोमांच</a></li>
+          <li><a href="#ff-154-1"><span class="ff-emo">🪑</span> ff.154.1 बिना हिले यात्रा</a></li>
+          <li><a href="#ff-154-2"><span class="ff-emo">🚲</span> ff.154.2 साइकिल से यात्रा (?)</a></li>
+          <li><a href="#ff-154-3"><span class="ff-emo">🧭</span> ff.154.3 रोमांच कहाँ खो गया?</a></li>
+          <li><a href="#ff-154-4"><span class="ff-emo">🚧</span> ff.154.4 मेरा छोटा-सा रोमांच</a></li>
         </ol>
       </nav>
     </header>
 
     
 
-    <section id="ff-154-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-154-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🪑 ff.154.1 बिना हिले यात्रा</h2>
-        <a href="https://fortissimo.substack.com/i/210361320/ff1541-viaggiare-fermi" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.154.1 बिना हिले यात्रा">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🪑</span> ff.154.1 बिना हिले यात्रा</h2>
+        <a href="https://fortissimo.substack.com/i/210361320/ff1541-viaggiare-fermi" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.154.1 बिना हिले यात्रा">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">सिर्फ़ लोग ही नहीं: यात्रा ख़ुद ग़ायब हो गई है: हम स्पेस के आर-पार यात्रा नहीं करते, बल्कि एक स्पेस के भीतर। घर की आरामदेह कुर्सी से हम कार की सीट पर जाते हैं, फिर दुनिया भर में एक जैसे दिखने वाले Starbucks की सीट पर, फिर हवाई जहाज़ की सीट पर, और आख़िर में बाली के किसी IKEA-स्टाइल कैफ़े में। हमें लगता है कि हम यात्रा कर रहे हैं, लेकिन हम हमेशा एक कुर्सी पर होते हैं। बिल्कुल घर की तरह।</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/w_960,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F056144d4-907b-4062-9a31-876caf0f8a78_481x357.png" srcset="https://substackcdn.com/image/fetch/w_480,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F056144d4-907b-4062-9a31-876caf0f8a78_481x357.png 480w" sizes="(max-width: 1024px) 100vw, 960px" width="481" height="357" alt="Finite and Infinite Games किताब से (क्या boomer तस्वीरें ही “ऑनलाइन प्रामाणिकता” की बची हुई निशानी हैं?)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Finite and Infinite Games किताब से (क्या boomer तस्वीरें ही “ऑनलाइन प्रामाणिकता” की बची हुई निशानी हैं?)</figcaption>
         </figure>
       
     </section>
 
-    <section id="ff-154-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-154-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🚲 ff.154.2 साइकिल से यात्रा (?)</h2>
-        <a href="https://fortissimo.substack.com/i/210361320/ff1542-viaggiare-in-bicicletta" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.154.2 साइकिल से यात्रा (?)">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🚲</span> ff.154.2 साइकिल से यात्रा (?)</h2>
+        <a href="https://fortissimo.substack.com/i/210361320/ff1542-viaggiare-in-bicicletta" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.154.2 साइकिल से यात्रा (?)">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">शायद कुछ इसी वजह से, कुछ सालों से मैं साइकिल से यात्रा करता हूँ, स्पेस के आर-पार (कभी-कभी ठंडे और बरसाती)। ताकि लौटने पर घर की कुर्सी भी मेरे साथ यात्रा कर चुकी हो: वह भी बदली हुई: ज़्यादा गर्म और सूखी, और काठी से कहीं ज़्यादा आरामदेह।</p>
@@ -289,71 +289,71 @@
       
     </section>
 
-    <section id="ff-154-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-154-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🧭 ff.154.3 रोमांच कहाँ खो गया?</h2>
-        <a href="https://fortissimo.substack.com/i/210361320/ff1543-dove-finita-lavventura" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.154.3 रोमांच कहाँ खो गया?">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🧭</span> ff.154.3 रोमांच कहाँ खो गया?</h2>
+        <a href="https://fortissimo.substack.com/i/210361320/ff1543-dove-finita-lavventura" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.154.3 रोमांच कहाँ खो गया?">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Fabio Genovesi - जो संयोग से नहीं, ख़ुद भी साइकिल यात्री हैं - इससे भी आगे जाते हैं। स्पेस के आर-पार यात्रा करना भी काफ़ी नहीं। हमारे पास रोमांच की कमी है। महाकाव्य साहित्य (संयोग से नहीं, Odyssey) और तकनीक को बुनते हुए वे लिखते हैं: मैं क़लम से लिखता हूँ। उपन्यास, कहानियाँ, हर टेक्स्ट और ये पंक्तियाँ भी, मैं काग़ज़ पर क़लम से लिखता हूँ। मुझे यह बिल्कुल सामान्य बात लगती है, जैसे काँटे से खाना, साइकिल से पैडल मारना। लेकिन इससे जो हैरानी पैदा होती है, वह बताती है कि चीज़ें कितनी बदल गई हैं, और हमने ख़ुद को कितना बदलने दिया है। समय और मेहनत की बचत जैसे तात्कालिक और मामूली फ़ायदों के पीछे भागते हुए। लेकिन बचत से कुछ अच्छा नहीं निकलता, जब हम ख़ुद को बचाते हैं। इसके उलट, मुझे लगता है कि यह एक दुखद नुक़सान है। कुछ पढ़ने लायक लिखने के लिए क़लम हमसे कंप्यूटर की तुलना में एक पल ज़्यादा माँगती है, और उस पल में कुछ बहुत बड़ा घटता है: जो शब्द आप लिखना चाहते थे, वे आपसे पन्ने तक के सफ़र में बदल जाते हैं, वाक्य घूम जाता है, ध्वनि बदल जाती है। लिखना चित्र बनाना है, संगीत बजाना है, प्रेम करना है: जब बात इन अजूबों की हो, तो जल्दबाज़ी का क्या मतलब? बल्कि हमें इन्हें जितना हो सके उतना लंबा खींचना चाहिए। […] साहित्य की तीन महान कृतियाँ लीजिए, जिनके पन्नों में मानवीय रोमांच का सार घुला है: Odyssey, I promessi sposi (The Betrothed), Moby-Dick। उनके बीच सहस्राब्दियों का फ़ासला है, फिर भी वे इस बात से जुड़ी हैं कि आज उनकी कहानियाँ टिक नहीं पातीं: WhatsApp पर दो संदेश, एक सैटेलाइट नेविगेटर, एक अच्छा सोनार, और उनके हज़ार संकट तीन पन्नों में सुलझ जाते। यह संयोग नहीं कि हाल के सालों के उपन्यासों, फ़िल्मों और सीरीज़ में, कुछ रोमांचक होने के लिए मोबाइल नेटवर्क का ग़ायब होना, फ़ोन का टूटना या बैटरी का ख़त्म होना ज़रूरी है। रोमांच के उभरने के लिए हमें तकनीक को दबाना पड़ता है। जो हमें कितनी ही नई संभावनाएँ देती है, पर कई दूसरी मिटा देती है, किताबों से, स्क्रीन से, पूरी ज़िंदगी से। हमारी छोटी ज़िंदगियाँ, जहाँ कभी-कभार यात्राएँ, सैर और छोटे चक्कर हमें रोमांच के छोटे मौक़े देते हैं। बल्कि देते, लेकिन निकलने से पहले ही सब कुछ आँका, तय और बुक किया जा चुका होता है। आपको पता होता है कि कौन-सा रास्ता लेंगे, कितना समय लगेगा, कहाँ खाएँगे और सोएँगे। आपको पता होता है कि पार्किंग मुफ़्त और पास होगी या नहीं, उस कमरे का तकिया आरामदेह होगा या नहीं जहाँ आपने एक अनुमानित रूप से उदास रात बिताने की योजना बनाई है। रोमांच, छोटा हो या बड़ा, इसके उलट, पहले से अनुमान न लगाने में है, पहले से न जानने में और शायद बाद में भी नहीं, उस रहस्यमय समुद्र का सामना करते हुए जिसमें हमारा स्वाभाविक, गहरा, धन्य अज्ञान झलकता है। और कहानी वह डगमगाती छोटी नाव है जिससे हम उस सब पर चलने की कोशिश करते हैं जो हम नहीं जानते और कभी नहीं जानेंगे। मेरे दादा कहा करते थे: «जहाँ मैं नहीं पहुँचता, वहाँ अपनी टोपी फेंक देता हूँ»। Fabio Genovesi, la Lettura, 19 जुलाई 2026</p>
       </div>
       
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.corriere.it/cultura/la-lettura/26_luglio_17/dove-e-finita-l-avventura-indaga-la-lettura-in-edicola-solo-domenica-19-luglio-20b47119-76d8-4bea-8c41-dff0bbeb8xlk.shtml" target="_blank" rel="noopener noreferrer" title="la Lettura" lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ corriere.it</a>
+          <div class="ff-refs-l">
+            <a href="https://www.corriere.it/cultura/la-lettura/26_luglio_17/dove-e-finita-l-avventura-indaga-la-lettura-in-edicola-solo-domenica-19-luglio-20b47119-76d8-4bea-8c41-dff0bbeb8xlk.shtml" target="_blank" rel="noopener noreferrer" title="la Lettura" lang="it" class="ff-ref"><span class="ff-emo">↗</span> corriere.it</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-154-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-154-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🚧 ff.154.4 मेरा छोटा-सा रोमांच</h2>
-        <a href="https://fortissimo.substack.com/i/210361320/ff1544-la-mia-piccola-avventura" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.154.4 मेरा छोटा-सा रोमांच">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🚧</span> ff.154.4 मेरा छोटा-सा रोमांच</h2>
+        <a href="https://fortissimo.substack.com/i/210361320/ff1544-la-mia-piccola-avventura" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.154.4 मेरा छोटा-सा रोमांच">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">अब मैं आपको बताता हूँ कि मैंने यह सब अपनी ही खाल पर कैसे समझा। “ग्रेवल के स्वर्ग” के वादे पर, इस साल मैंने Cuneo के पास अल्पाइन कच्ची सड़कों पर साइकिल चलाई, जिन्हें मैंने ख़ूबसूरत alvento - destination की बदौलत खोजा। सच में, यह स्वर्ग था: शून्य कारें, ढेर सारी प्रकृति। फिर भी, यह कुछ ज़्यादा ही सुंदर था, वह ज़रूरत से ज़्यादा “पोस्टकार्ड” जैसी सुंदरता जो अब मोहित नहीं करती, क्योंकि हाथ (और उँगली) की पहुँच में हज़ारों पोस्टों ने हमें सुंदरता के प्रति सुन्न कर दिया है। इसके बजाय मैं आपको बताता हूँ कि मुझे किस चीज़ ने छुआ: Elva में मेरा पड़ाव, 100 लोगों का एक गाँव, आसपास के पहाड़ों जितने पुराने पत्थरों का। गाँव के इकलौते बार में मेले वाली प्लास्टिक की कुर्सी पर बैठते ही एक बुज़ुर्ग ने मुझसे पूछा कि मैं कहाँ से आया हूँ। इस तरह एक सुखद बातचीत शुरू हुई और मैंने भी जिज्ञासा लौटाते हुए पूछा कि क्या वे वहाँ पूरे साल रहते हैं। “हमारा घर यहीं है,” उन्होंने कहा, लेकिन फिर फ़ौरन: “पर क्या तुम जानते हो ये सज्जन कौन हैं?” तीनों में बीच में बैठे व्यक्ति की ओर इशारा करते हुए। एक पल के लिए मैंने अपने छोटे-से डेटाबेस को खंगाला, बुज़ुर्ग, पीडमॉन्ट के लोगों को फ़िल्टर करने वाली एक query से। लेकिन उन्होंने तुरंत मदद कर दी: “ये मेयर हैं!”। मैं मुस्कुराया और अपनी सैर जारी रखी। Hans Clemer (1493) की शानदार फ़्लेमिश भित्ति-चित्रकारी निहारने के बाद, मैं बार के पास लौटा, उस ढलान का स्वाद पहले से लेते हुए जिसका मैं हक़दार था। इस बात से अनजान कि यात्रा पहले ही रोमांच में बदल चुकी थी। तीसरे बुज़ुर्ग, जो अब तक चुप थे, मुझे घूरते हैं और कहते हैं: “अब तुम वापस ऊपर जाओगे, है ना?”। और मैं, थोड़ा मज़े लेते हुए: “नहीं, मैं Val Maira की तरफ़ नीचे जाने की सोच रहा था, आज के चक्कर में और चढ़ाई नहीं जोड़ना चाहता, मुझे 3800 मीटर चढ़ने हैं”। वे फिर से, “फिर भी तुम्हें वापस ऊपर जाना चाहिए” - दो टूक - “नीचे वाली सड़क बंद है”। इस गर्मी का सबसे बड़ा रोमांच था फिर भी Vallone di Elva से नीचे उतरना, भूस्खलनों और रुकावटों को पार करते हुए, यह जाने बिना कि - और नीचे - कोई ऐसी रुकावट होगी या नहीं जिसे पार न किया जा सके, जो वापसी की चढ़ाई को और भी चिढ़ाने वाला और थकाऊ बना देती। जैसे नरक के घेरे हों, मैं जितना नीचे जाता, उतना ही - संभावित रूप से - “पीछे” लौट रहा था। इसने मेरी आँखें खोल दीं। हम यात्रा को हल्के में लेते हैं। हम मान लेते हैं कि हर आवाजाही, और कुल मिलाकर हमारा हर काम और जीवन का हर चुनाव, हमें कम से कम बिंदु A से बिंदु B तक ले जाता है। शायद बिंदु B वह नहीं जो हम चाहते हैं, पर कम से कम शुरुआत से अलग तो है। रोमांच, Odyssey, ऐसा नहीं है। उसमें यह शामिल है कि यात्रा आगे न बढ़ सके, सिवाय उल्टी दिशा में। घर लौटना, इथाका, लेकिन “शुरुआत” से होकर गुज़रे बिना। Vallone di Elva की अनिश्चितताओं ने मुझे ज़िंदा महसूस कराया। उन्होंने आख़िरकार मुझे एक रोमांच जीने दिया, एक खोज, खुली सड़कों का नक़्शा बनाते हुए, पर सबसे बढ़कर बंद सड़कों का। अगली 10, 20 या 30 तारीख़ तक! तब तक, अगर चाहें:</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/w_960,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff8079679-52ab-439b-8d42-cce493561b5c_1424x811.png" srcset="https://substackcdn.com/image/fetch/w_480,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff8079679-52ab-439b-8d42-cce493561b5c_1424x811.png 480w, https://substackcdn.com/image/fetch/w_960,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff8079679-52ab-439b-8d42-cce493561b5c_1424x811.png 960w, https://substackcdn.com/image/fetch/w_1440,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff8079679-52ab-439b-8d42-cce493561b5c_1424x811.png 1440w" sizes="(max-width: 1024px) 100vw, 960px" width="1424" height="811" alt="🚧 ff.154.4 मेरा छोटा-सा रोमांच" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/w_960,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffa388738-cf2e-4e24-b782-7334153a71db_657x585.png" srcset="https://substackcdn.com/image/fetch/w_480,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffa388738-cf2e-4e24-b782-7334153a71db_657x585.png 480w, https://substackcdn.com/image/fetch/w_960,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffa388738-cf2e-4e24-b782-7334153a71db_657x585.png 960w" sizes="(max-width: 1024px) 100vw, 960px" width="657" height="585" alt="🚧 ff.154.4 मेरा छोटा-सा रोमांच" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/w_960,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdcb3ba57-6325-4e5e-9abd-16d4bd13f465_1028x913.png" srcset="https://substackcdn.com/image/fetch/w_480,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdcb3ba57-6325-4e5e-9abd-16d4bd13f465_1028x913.png 480w, https://substackcdn.com/image/fetch/w_960,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdcb3ba57-6325-4e5e-9abd-16d4bd13f465_1028x913.png 960w, https://substackcdn.com/image/fetch/w_1440,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdcb3ba57-6325-4e5e-9abd-16d4bd13f465_1028x913.png 1440w" sizes="(max-width: 1024px) 100vw, 960px" width="1028" height="913" alt="🚧 ff.154.4 मेरा छोटा-सा रोमांच" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.destinations.bike/" target="_blank" rel="noopener noreferrer" title="alvento - destination" lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ destinations.bike</a>
-            <a href="https://it.wikipedia.org/wiki/Chiesa_di_Santa_Maria_Assunta_(Elva,_Italia)" target="_blank" rel="noopener noreferrer" title="affresco fiammingo di Hans Clemer (1493)" lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ it.wikipedia.org</a>
-            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" title="michele merelli" lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ linkedin.com</a>
+          <div class="ff-refs-l">
+            <a href="https://www.destinations.bike/" target="_blank" rel="noopener noreferrer" title="alvento - destination" lang="it" class="ff-ref"><span class="ff-emo">↗</span> destinations.bike</a>
+            <a href="https://it.wikipedia.org/wiki/Chiesa_di_Santa_Maria_Assunta_(Elva,_Italia)" target="_blank" rel="noopener noreferrer" title="affresco fiammingo di Hans Clemer (1493)" lang="it" class="ff-ref"><span class="ff-emo">↗</span> it.wikipedia.org</a>
+            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" title="michele merelli" lang="it" class="ff-ref"><span class="ff-emo">↗</span> linkedin.com</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">संबंधित अंक</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-5.html" class="font-bold hover:underline">ff.5 बिजली जैसा रोमांच!</a><p class="text-sm text-black/75 mt-1">Tesla, VanMoof, Duracell? टिकाऊ आवाजाही की होड़ कौन जीतेगा?</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-149.html" class="font-bold hover:underline">ff.149 सौर कैसे बनें</a><p class="text-sm text-black/75 mt-1">प्रचुरता यहीं है, बस धूप का चश्मा पहन लीजिए</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-138.html" class="font-bold hover:underline">ff.138 बायोफ़िलिया, मुझे ले चलो</a><p class="text-sm text-black/75 mt-1">जंगल-स्नान और पतझड़ के फ़ायदे</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-87.html" class="font-bold hover:underline">ff.87 हम वही हैं जो हम साँस लेते हैं</a><p class="text-sm text-black/75 mt-1">बेचैनी, प्रदूषित हवा और एयर प्यूरीफ़ायर के बीच साँस</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/hi/archive/ff-5.html" class="font-bold hover:underline">ff.5 बिजली जैसा रोमांच!</a><p class="text-sm text-black/75 mt-1">Tesla, VanMoof, Duracell? टिकाऊ आवाजाही की होड़ कौन जीतेगा?</p></li>
+        <li><a href="/hi/archive/ff-149.html" class="font-bold hover:underline">ff.149 सौर कैसे बनें</a><p class="text-sm text-black/75 mt-1">प्रचुरता यहीं है, बस धूप का चश्मा पहन लीजिए</p></li>
+        <li><a href="/hi/archive/ff-138.html" class="font-bold hover:underline">ff.138 बायोफ़िलिया, मुझे ले चलो</a><p class="text-sm text-black/75 mt-1">जंगल-स्नान और पतझड़ के फ़ायदे</p></li>
+        <li><a href="/hi/archive/ff-87.html" class="font-bold hover:underline">ff.87 हम वही हैं जो हम साँस लेते हैं</a><p class="text-sm text-black/75 mt-1">बेचैनी, प्रदूषित हवा और एयर प्यूरीफ़ायर के बीच साँस</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Futuro Fortissimo के नए अंक पाएँ</h2>
         <p class="text-sm text-black/80 mt-1">बर्गामो के मिकेले मेरेल्ली का मुफ़्त न्यूज़लेटर — तकनीक, AI, प्रकृति और समाज पर। इतालवी में लिखा गया, Substack से ईमेल पर।</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 मुफ़्त सब्सक्राइब करें ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary"><span class="ff-emo">📩</span> मुफ़्त सब्सक्राइब करें <span class="ff-emo">↗</span></a>
     </section>
 
     <nav aria-label="पिछला और अगला अंक" class="ff-pn">
@@ -362,7 +362,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -382,16 +382,16 @@
       <div class="space-y-2">
         <p class="ff-eyebrow">फ़ॉलो करें</p>
         <ul class="space-y-1 font-medium">
-          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack ↗</a></li>
-          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
-          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram ↗</a></li>
+          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram <span class="ff-emo">↗</span></a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
-          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">मुझे एक कॉफ़ी पिलाएँ ☕ ↗</a></li>
-          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">मिकेले के अन्य प्रोजेक्ट ↗</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">मुझे एक कॉफ़ी पिलाएँ <span class="ff-emo">☕</span> <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">मिकेले के अन्य प्रोजेक्ट <span class="ff-emo">↗</span></a></li>
         </ul>
       </div>
     </div>
-    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
+    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70"><span class="ff-emo">©</span> 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
   <aside class="ff-sticky-sub" aria-label="Newsletter">
     <p>पसंद आया? अगला अंक ईमेल पर पाएँ।</p>
@@ -399,11 +399,11 @@
     <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="बंद करें">✕</button>
   </aside>
   <nav class="ff-tabbar" aria-label="मुख्य नेविगेशन">
-    <a href="/hi/"><span class="ff-ti" aria-hidden="true">🏠</span>होम</a>
-    <a href="/hi/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>संग्रह</a>
-    <a href="/hi/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>थीम</a>
-    <a href="/hi/books/"><span class="ff-ti" aria-hidden="true">📚</span>किताबें</a>
-    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>खोजें</button>
+    <a href="/hi/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🏠</span></span>होम</a>
+    <a href="/hi/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🗂</span></span>संग्रह</a>
+    <a href="/hi/themes.html"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🧭</span></span>थीम</a>
+    <a href="/hi/books/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">📚</span></span>किताबें</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🔍</span></span>खोजें</button>
   </nav>
   <dialog id="ff-search" class="ff-search" aria-label="खोजें" data-empty="कोई परिणाम नहीं। कोई और शब्द आज़माएँ।">
     <form role="search">
@@ -414,7 +414,7 @@
     <ul id="ff-results" role="listbox" aria-label="खोजें"></ul>
     <div class="ff-s-foot"><a href="/hi/archive/" data-ff-all data-base="/hi/archive/">संग्रह में सभी परिणाम →</a><span>कहीं भी खोजने के लिए / दबाएँ</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

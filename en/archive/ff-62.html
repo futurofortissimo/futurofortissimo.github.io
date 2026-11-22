@@ -139,12 +139,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -153,9 +153,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -208,18 +208,18 @@
         <a href="/en/books/">Books</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="Language"><a href="/archivio/ff-62.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/archive/ff-62.html" hreflang="en" lang="en" title="English" data-keep-state aria-current="page">EN</a><a href="/hi/archive/ff-62.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="Dark theme" title="Dark theme"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Subscribe</a>
         <details class="ff-more">
-          <summary aria-label="More"><span aria-hidden="true">☰</span><span class="sr-only">More</span></summary>
+          <summary aria-label="More"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">More</span></summary>
           <nav class="ff-menu" aria-label="More">
-            <a href="/book/">📖 The Book (IT)</a>
-            <a href="/en/connections.html">🔗 Connections</a>
-            <a href="/en/note.html">📝 Notes</a>
+            <a href="/book/"><span class="ff-emo">📖</span> The Book (IT)</a>
+            <a href="/en/connections.html"><span class="ff-emo">🔗</span> Connections</a>
+            <a href="/en/note.html"><span class="ff-emo">📝</span> Notes</a>
             <hr />
-            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 Subscribe ↗</a>
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener"><span class="ff-emo">📩</span> Subscribe <span class="ff-emo">↗</span></a>
           </nav>
         </details>
       </div>
@@ -229,66 +229,66 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/en/">Home</a> /</li><li><a class="underline" href="/en/archive/">Archive</a> /</li><li aria-current="page">ff.62 How to avoid burnout</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>62</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>62</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="house" data-ff-slug="ff-62" data-label="Open the 3D object and preview of ff.62"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Futuro Fortissimo Archive</p>
-      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.62 How to avoid burnout</h1>
+      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black"><span class="ff-emo">🎼</span> ff.62 How to avoid burnout</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">An alternative to the “9-to-5” office job: The Pathless Path</p>
       <p class="mt-2 text-xs font-mono text-black/70">Published <time datetime="2023-06-10T06:01:50.573Z">10 June 2023</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/en/archive/ff-62.html" data-done="Link copied"><span aria-hidden="true">↗</span> Share</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/en/archive/ff-62.html" data-done="Link copied"><span aria-hidden="true">🔗</span> Copy link</button>
-        <a href="https://fortissimo.substack.com/p/ff61-come-evitare-il-burnout" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Read the Italian original on Substack ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/en/archive/ff-62.html" data-done="Link copied"><span aria-hidden="true"><span class="ff-emo">↗</span></span> Share</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/en/archive/ff-62.html" data-done="Link copied"><span aria-hidden="true"><span class="ff-emo">🔗</span></span> Copy link</button>
+        <a href="https://fortissimo.substack.com/p/ff61-come-evitare-il-burnout" target="_blank" rel="noopener noreferrer" class="ff-qlink">Read the Italian original on Substack <span class="ff-emo">↗</span></a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• Work has never been so central to human life</li>
-        <li>• Why repeating what our parents did makes no sense</li>
-        <li>• From McKinsey New York to freedom in Taiwan: Paul Miller, 32</li>
+      <ul class="ff-keypoints">
+        <li>Work has never been so central to human life</li>
+        <li>Why repeating what our parents did makes no sense</li>
+        <li>From McKinsey New York to freedom in Taiwan: Paul Miller, 32</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Themes</span><a href="/en/themes.html#geo" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🏛 Geopolitics, economy and society</a></p>
-      <nav aria-label="Sections of this issue" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">Themes</span><a href="/en/themes.html#geo" class="ff-tlink"><span class="ff-emo">🏛</span> Geopolitics, economy and society</a></p>
+      <nav aria-label="Sections of this issue" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">In this issue</h2>
         <ol>
-          <li><a href="#ff-62-1">🔥 ff.62.1 Work has never been so important</a></li>
-          <li><a href="#ff-62-2">🥾 ff.62.2 Leaving the beaten path</a></li>
-          <li><a href="#ff-62-3">🧾 ff.62.3 Taxing misery</a></li>
-          <li><a href="#ff-62-4">🔺 ff.62.4 The pyramid inside all of us</a></li>
-          <li><a href="#ff-62-5">🕹️ ff.62.5 Independence and curiosity</a></li>
+          <li><a href="#ff-62-1"><span class="ff-emo">🔥</span> ff.62.1 Work has never been so important</a></li>
+          <li><a href="#ff-62-2"><span class="ff-emo">🥾</span> ff.62.2 Leaving the beaten path</a></li>
+          <li><a href="#ff-62-3"><span class="ff-emo">🧾</span> ff.62.3 Taxing misery</a></li>
+          <li><a href="#ff-62-4"><span class="ff-emo">🔺</span> ff.62.4 The pyramid inside all of us</a></li>
+          <li><a href="#ff-62-5"><span class="ff-emo">🕹️</span> ff.62.5 Independence and curiosity</a></li>
         </ol>
       </nav>
     </header>
 
     
 
-    <section id="ff-62-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-62-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🔥 ff.62.1 Work has never been so important</h2>
-        <a href="https://fortissimo.substack.com/i/118479393/ff-il-lavoro-non-e-mai-stato-cosi-importante" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.62.1 Work has never been so important">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🔥</span> ff.62.1 Work has never been so important</h2>
+        <a href="https://fortissimo.substack.com/i/118479393/ff-il-lavoro-non-e-mai-stato-cosi-importante" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.62.1 Work has never been so important">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">With the pandemic interruption breaking our habits, we also started questioning work (and its routine), perhaps realising how arbitrary certain paradigms are.</p>
         <p class="text-base leading-relaxed text-black/90">Only 40% of Americans. So 100 million people have a job taking up more than 35 hours a week. The “9-to-5” employee (if you&#39;re lucky) isn&#39;t the norm. It never was. For millennia, Weber&#39;s view of work prevailed: working to maintain the standard of living you&#39;ve reached.</p>
         <p class="text-base leading-relaxed text-black/90">Copy-paste of our parents. The growth of the last 70 years may be unrepeatable. The growth inherent to the economic boom forged a genuine religion of work (and I live in Bergamo).</p>
-        <p class="text-base leading-relaxed text-black/90">Everyone worked happily, in exchange for an ever better standard of living. Until today. Copy-pasting our parents, for social, demographic and economic reasons (🤖 ff.36.4 Are we already blended with AI?, a cost of living less sustainable for new generations), no longer seems to work.</p>
+        <p class="text-base leading-relaxed text-black/90">Everyone worked happily, in exchange for an ever better standard of living. Until today. Copy-pasting our parents, for social, demographic and economic reasons (<span class="ff-emo">🤖</span> ff.36.4 Are we already blended with AI?, a cost of living less sustainable for new generations), no longer seems to work.</p>
         <p class="text-base leading-relaxed text-black/90">study → work → marriage → house → kids</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!pMci!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F861f86cd-7d4f-4971-8b44-f6fcafb995da_1600x1100.jpeg" width="1600" height="1100" alt="🔥 ff.62.1 Work has never been so important" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (2)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.consumeraffairs.com/finance/comparing-the-costs-of-generations.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ a cost of living less sustainable for new generations</a>
-            <a href="https://fortissimo.substack.com/i/74061252/ff-siamo-gia-mischiati-con-lai" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🤖 ff.36.4 Are we already blended with AI?</a>
+          <div class="ff-refs-l">
+            <a href="https://www.consumeraffairs.com/finance/comparing-the-costs-of-generations.html" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> a cost of living less sustainable for new generations</a>
+            <a href="https://fortissimo.substack.com/i/74061252/ff-siamo-gia-mischiati-con-lai" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> <span class="ff-emo">🤖</span> ff.36.4 Are we already blended with AI?</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-62-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-62-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🥾 ff.62.2 Leaving the beaten path</h2>
-        <a href="https://fortissimo.substack.com/i/118479393/ff-uscire-dalla-via-maestra" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.62.2 Leaving the beaten path">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🥾</span> ff.62.2 Leaving the beaten path</h2>
+        <a href="https://fortissimo.substack.com/i/118479393/ff-uscire-dalla-via-maestra" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.62.2 Leaving the beaten path">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">In The Pathless Path, Paul Miller tells the story of his “escape” from the beaten path.</p>
@@ -297,22 +297,22 @@
         <p class="text-base leading-relaxed text-black/90">Tutto andava bene, anzi era in continuo miglioramento. Eppure, ogni mattina la mia motivazione di andare al lavoro diminuiva, in un andamento inverso alla mia crescita di carriera e di stipendio.</p>
         <p class="text-base leading-relaxed text-black/90">32, Taiwan and an unhoped-for marriage. So he decided to drop everything, embracing an uncertain future of occasional freelance gigs. He then moved to Taiwan, where he met his wife, even though by then he&#39;d written himself off as old, a hopeless single.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!DE6q!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F03d71e5e-a6e3-45e2-9bd4-6de088fabe09_1200x1805.jpeg" width="1200" height="1805" alt="🥾 ff.62.2 Leaving the beaten path" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://amzn.to/40LSU4A" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] text-xs font-mono font-bold hover:underline">📚 The Pathless Path</a>
+          <div class="ff-refs-l">
+            <a href="https://amzn.to/40LSU4A" target="_blank" rel="noopener noreferrer sponsored" class="ff-ref is-book"><span class="ff-emo">📚</span> The Pathless Path</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-62-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-62-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🧾 ff.62.3 Taxing misery</h2>
-        <a href="https://fortissimo.substack.com/i/118479393/ff-tassare-la-miseria" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.62.3 Taxing misery">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🧾</span> ff.62.3 Taxing misery</h2>
+        <a href="https://fortissimo.substack.com/i/118479393/ff-tassare-la-miseria" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.62.3 Taxing misery">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Money and success are the only paradigm to have survived the destruction of values of recent years.</p>
@@ -321,47 +321,47 @@
         <p class="text-base leading-relaxed text-black/90">Also interesting is the concept of the “arrival fallacy” put forward by Harvard professor Ben-Shahar: the idea that the next promotion, the next raise, the next job will absolutely be what finally makes us happy.</p>
         <p class="text-base leading-relaxed text-black/90">Having enough: Kurt Vonnegut&#39;s anecdote:</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!KKmc!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F75c3ed6e-7610-4fb0-a5ea-dc4e512dd9a3_625x544.png" width="625" height="544" alt="🧾 ff.62.3 Taxing misery" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (4)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://instagram.com/futuro_fortissimo_newsletter" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ futuro_fortissimo_newsletter</a>
-            <a href="https://thomasjbevan.substack.com/p/the-misery-tax#:~:text=If%20you%20don&#39;t%20like,This%20is%20the%20Misery%20Tax." target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ according to Thomas J. Bevan, unhappy workers have to pay to keep working</a>
-            <a href="https://www.amazon.it/Happier-Can-learn-Happy-Paperback/dp/0077123247/ref=sr_1_1?keywords=Happier%3A+Can+you+learn+to+be+Happy%3F+%28UK+Paperback%29%3A+Can+you+learn+to+be+Happy%3F+%28UK+PROFESSIONAL+GENERAL+REFERENCE+General+Reference%29&amp;linkCode=gg3&amp;linkId=00c4b57fbf187b947e0e351a111486a0&amp;qid=1684820346&amp;sr=8-1" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] text-xs font-mono font-bold hover:underline">📚 Happier: Can You Learn to Be Happy?</a>
-            <a href="https://www.themarginalian.org/2014/01/16/kurt-vonnegut-joe-heller-having-enough/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Kurt Vonnegut&#39;s anecdote</a>
+          <div class="ff-refs-l">
+            <a href="https://instagram.com/futuro_fortissimo_newsletter" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> futuro_fortissimo_newsletter</a>
+            <a href="https://thomasjbevan.substack.com/p/the-misery-tax#:~:text=If%20you%20don&#39;t%20like,This%20is%20the%20Misery%20Tax." target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> according to Thomas J. Bevan, unhappy workers have to pay to keep working</a>
+            <a href="https://www.amazon.it/Happier-Can-learn-Happy-Paperback/dp/0077123247/ref=sr_1_1?keywords=Happier%3A+Can+you+learn+to+be+Happy%3F+%28UK+Paperback%29%3A+Can+you+learn+to+be+Happy%3F+%28UK+PROFESSIONAL+GENERAL+REFERENCE+General+Reference%29&amp;linkCode=gg3&amp;linkId=00c4b57fbf187b947e0e351a111486a0&amp;qid=1684820346&amp;sr=8-1" target="_blank" rel="noopener noreferrer sponsored" class="ff-ref is-book"><span class="ff-emo">📚</span> Happier: Can You Learn to Be Happy?</a>
+            <a href="https://www.themarginalian.org/2014/01/16/kurt-vonnegut-joe-heller-having-enough/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Kurt Vonnegut&#39;s anecdote</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-62-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-62-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🔺 ff.62.4 The pyramid inside all of us</h2>
-        <a href="https://fortissimo.substack.com/i/118479393/ff-la-piramide-che-ce-in-tutti-noi" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.62.4 The pyramid inside all of us">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🔺</span> ff.62.4 The pyramid inside all of us</h2>
+        <a href="https://fortissimo.substack.com/i/118479393/ff-la-piramide-che-ce-in-tutti-noi" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.62.4 The pyramid inside all of us">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">La società moderna ha perfezionato l’arte di far sentire le persone non necessarie. Sebastian Junger,Tribù. Ritorno a casa e appartenenza</p>
         <p class="text-base leading-relaxed text-black/90">There&#39;s a problem with our scale of values. Maslow&#39;s hierarchy of needs reminds us of it.</p>
         <p class="text-base leading-relaxed text-black/90">The concept of Measured Discomfort discussed by Alex Lieberman is connected to all this.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!MFW6!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7319fa37-c0d8-499f-960c-21b3ccb7992a_600x450.png" width="600" height="450" alt="🔺 ff.62.4 The pyramid inside all of us" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://amzn.to/3npkxmo" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] text-xs font-mono font-bold hover:underline">📚 Tribe: On Homecoming and Belonging</a>
+          <div class="ff-refs-l">
+            <a href="https://amzn.to/3npkxmo" target="_blank" rel="noopener noreferrer sponsored" class="ff-ref is-book"><span class="ff-emo">📚</span> Tribe: On Homecoming and Belonging</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-62-5" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-62-5" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🕹️ ff.62.5 Independence and curiosity</h2>
-        <a href="https://fortissimo.substack.com/i/118479393/ff-indipendenza-e-curiosita" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.62.5 Independence and curiosity">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🕹️</span> ff.62.5 Independence and curiosity</h2>
+        <a href="https://fortissimo.substack.com/i/118479393/ff-indipendenza-e-curiosita" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.62.5 Independence and curiosity">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">What&#39;s the solution?</p>
@@ -369,45 +369,45 @@
         <p class="text-base leading-relaxed text-black/90">Miller proposes creativity: finding an enjoyable activity to do, regardless of everything. For him, writing. Did it bring him JK Rowling&#39;s money and success? No. But that&#39;s not the point.</p>
         <p class="text-base leading-relaxed text-black/90">By writing, Miller finds motivation and builds connections with his readers. Belonging, esteem, self-actualisation. There&#39;s Maslow&#39;s pyramid again.</p>
         <p class="text-base leading-relaxed text-black/90">futuro fortissimo is - perhaps - exactly this.</p>
-        <p class="text-base leading-relaxed text-black/90">Want to support this project? → Share it with a friend on WhatsApp → Buy me a coffee 😏 → Remember to leave a little heart below. 👋 See you soon, from micmer</p>
-        <p class="text-base leading-relaxed text-black/90">☕❤️</p>
+        <p class="text-base leading-relaxed text-black/90">Want to support this project? → Share it with a friend on WhatsApp → Buy me a coffee <span class="ff-emo">😏</span> → Remember to leave a little heart below. <span class="ff-emo">👋</span> See you soon, from micmer</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">☕</span><span class="ff-emo">❤️</span></p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!DCWp!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5959abb4-667d-40fb-8aae-83dc60d6c6fb_1833x792.png" width="1833" height="792" alt="🕹️ ff.62.5 Independence and curiosity" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!bhlH!,w_1456,c_limit,f_auto,q_auto:good,fl_lossy/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffe75f1ac-c67b-48fc-a28d-cbf6d3a00df4_480x270.gif" width="480" height="270" alt="🕹️ ff.62.5 Independence and curiosity" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://journals.sagepub.com/doi/10.1177/0019793918820008" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ freelancers and occasional jobs have grown from 10 to 15%</a>
-            <a href="https://www.wsj.com/articles/workers-job-satisfaction-survey-c42addba?mod=hp_lista_pos1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ the WSJ reports workers are happier</a>
-            <a href="https://www.wsj.com/articles/marijuana-tests-workplace-accidents-high-7c745453?mod=hp_lead_pos3" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ they smoke more marijuana?</a>
+          <div class="ff-refs-l">
+            <a href="https://journals.sagepub.com/doi/10.1177/0019793918820008" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> freelancers and occasional jobs have grown from 10 to 15%</a>
+            <a href="https://www.wsj.com/articles/workers-job-satisfaction-survey-c42addba?mod=hp_lista_pos1" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> the WSJ reports workers are happier</a>
+            <a href="https://www.wsj.com/articles/marijuana-tests-workplace-accidents-high-7c745453?mod=hp_lead_pos3" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> they smoke more marijuana?</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">Related issues</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-36.html" class="font-bold hover:underline">ff.36 Is the singularity near?</a><p class="text-sm text-black/75 mt-1">(Digital) superintelligence, and are humans already cyborgs?</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-74.html" class="font-bold hover:underline">ff.74 I&#39;m Japanese!</a><p class="text-sm text-black/75 mt-1">Japan: between childhood and the future</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-73.html" class="font-bold hover:underline">ff.73 Encrypted future</a><p class="text-sm text-black/75 mt-1">Cryptocurrencies, the Mona Lisa, Majin Buu and inflation</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-59.html" class="font-bold hover:underline">ff.59 Optimism takes flight!</a><p class="text-sm text-black/75 mt-1">Overcoming technological stagnation (if it exists) for a positive future</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/en/archive/ff-36.html" class="font-bold hover:underline">ff.36 Is the singularity near?</a><p class="text-sm text-black/75 mt-1">(Digital) superintelligence, and are humans already cyborgs?</p></li>
+        <li><a href="/en/archive/ff-74.html" class="font-bold hover:underline">ff.74 I&#39;m Japanese!</a><p class="text-sm text-black/75 mt-1">Japan: between childhood and the future</p></li>
+        <li><a href="/en/archive/ff-73.html" class="font-bold hover:underline">ff.73 Encrypted future</a><p class="text-sm text-black/75 mt-1">Cryptocurrencies, the Mona Lisa, Majin Buu and inflation</p></li>
+        <li><a href="/en/archive/ff-59.html" class="font-bold hover:underline">ff.59 Optimism takes flight!</a><p class="text-sm text-black/75 mt-1">Overcoming technological stagnation (if it exists) for a positive future</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Get new issues of Futuro Fortissimo</h2>
         <p class="text-sm text-black/80 mt-1">A free newsletter by Michele Merelli (Bergamo) on technology, AI, nature and society. Written in Italian, delivered by Substack.</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 Subscribe for free ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary"><span class="ff-emo">📩</span> Subscribe for free <span class="ff-emo">↗</span></a>
     </section>
 
     <nav aria-label="Adjacent issues" class="ff-pn">
@@ -416,7 +416,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -436,16 +436,16 @@
       <div class="space-y-2">
         <p class="ff-eyebrow">Follow</p>
         <ul class="space-y-1 font-medium">
-          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack ↗</a></li>
-          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
-          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram ↗</a></li>
+          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram <span class="ff-emo">↗</span></a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
-          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee ☕ ↗</a></li>
-          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects ↗</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee <span class="ff-emo">☕</span> <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects <span class="ff-emo">↗</span></a></li>
         </ul>
       </div>
     </div>
-    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
+    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70"><span class="ff-emo">©</span> 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
   <aside class="ff-sticky-sub" aria-label="Newsletter">
     <p>Enjoying it? Get the next issue by email.</p>
@@ -453,11 +453,11 @@
     <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="Dismiss">✕</button>
   </aside>
   <nav class="ff-tabbar" aria-label="Main navigation">
-    <a href="/en/"><span class="ff-ti" aria-hidden="true">🏠</span>Home</a>
-    <a href="/en/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>Archive</a>
-    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>Themes</a>
-    <a href="/en/books/"><span class="ff-ti" aria-hidden="true">📚</span>Books</a>
-    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>Search</button>
+    <a href="/en/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🏠</span></span>Home</a>
+    <a href="/en/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🗂</span></span>Archive</a>
+    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🧭</span></span>Themes</a>
+    <a href="/en/books/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">📚</span></span>Books</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🔍</span></span>Search</button>
   </nav>
   <dialog id="ff-search" class="ff-search" aria-label="Search" data-empty="No results. Try another word.">
     <form role="search">
@@ -468,7 +468,7 @@
     <ul id="ff-results" role="listbox" aria-label="Search"></ul>
     <div class="ff-s-foot"><a href="/en/archive/" data-ff-all data-base="/en/archive/">All results in the archive →</a><span>Press / to search anywhere</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

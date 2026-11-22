@@ -142,12 +142,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -156,9 +156,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -211,18 +211,18 @@
         <a href="/hi/books/">किताबें</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="खोजें (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">खोजें</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="खोजें (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">खोजें</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="भाषा"><a href="/archivio/ff-136.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/archive/ff-136.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/archive/ff-136.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state aria-current="page">हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="डार्क थीम" title="डार्क थीम"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">सब्सक्राइब</a>
         <details class="ff-more">
-          <summary aria-label="और"><span aria-hidden="true">☰</span><span class="sr-only">और</span></summary>
+          <summary aria-label="और"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">और</span></summary>
           <nav class="ff-menu" aria-label="और">
-            <a href="/book/">📖 किताब (IT)</a>
-            <a href="/hi/connections.html">🔗 कनेक्शन</a>
-            <a href="/hi/note.html">📝 नोट्स</a>
+            <a href="/book/"><span class="ff-emo">📖</span> किताब (IT)</a>
+            <a href="/hi/connections.html"><span class="ff-emo">🔗</span> कनेक्शन</a>
+            <a href="/hi/note.html"><span class="ff-emo">📝</span> नोट्स</a>
             <hr />
-            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 सब्सक्राइब ↗</a>
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener"><span class="ff-emo">📩</span> सब्सक्राइब <span class="ff-emo">↗</span></a>
           </nav>
         </details>
       </div>
@@ -232,40 +232,40 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/hi/">होम</a> /</li><li><a class="underline" href="/hi/archive/">संग्रह</a> /</li><li aria-current="page">ff.136 का-मे-हा-मे-ऊर्जा-लहर!</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>136</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>136</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="wave" data-ff-slug="ff-136" data-label="3D वस्तु और पूर्वावलोकन खोलें: ff.136"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Futuro Fortissimo संग्रह</p>
-      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.136 का-मे-हा-मे-ऊर्जा-लहर!</h1>
+      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black"><span class="ff-emo">🎼</span> ff.136 का-मे-हा-मे-ऊर्जा-लहर!</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">AI की खगोलीय ऊर्जा खपत के ख़िलाफ़: Goku?</p>
       <p class="mt-2 text-xs font-mono text-black/70">प्रकाशित <time datetime="2025-10-30T08:10:56.757Z">30 अक्टूबर 2025</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/hi/archive/ff-136.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">↗</span> शेयर करें</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/hi/archive/ff-136.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">🔗</span> लिंक कॉपी करें</button>
-        <a href="https://fortissimo.substack.com/p/ff136-on-da-e-ner-ge-ti-caaa" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Substack पर इतालवी मूल पढ़ें ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/hi/archive/ff-136.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true"><span class="ff-emo">↗</span></span> शेयर करें</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/hi/archive/ff-136.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true"><span class="ff-emo">🔗</span></span> लिंक कॉपी करें</button>
+        <a href="https://fortissimo.substack.com/p/ff136-on-da-e-ner-ge-ti-caaa" target="_blank" rel="noopener noreferrer" class="ff-qlink">Substack पर इतालवी मूल पढ़ें <span class="ff-emo">↗</span></a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• क्या ChatGPT की वजह से बिजली के बिल बढ़े?</li>
-        <li>• अमेरिकी GDP का 1/3: OpenAI के अनुमान में 2033 की ऊर्जा लागत</li>
-        <li>• चीन: प्रतिबंधों और कॉफ़ी (111!?!) का क्या संबंध?</li>
+      <ul class="ff-keypoints">
+        <li>क्या ChatGPT की वजह से बिजली के बिल बढ़े?</li>
+        <li>अमेरिकी GDP का 1/3: OpenAI के अनुमान में 2033 की ऊर्जा लागत</li>
+        <li>चीन: प्रतिबंधों और कॉफ़ी (111!?!) का क्या संबंध?</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">थीम</span><a href="/hi/themes.html#ai" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🤖 AI, एजेंट और मॉडल</a><a href="/hi/themes.html#clima" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🌍 प्रकृति, जलवायु और ऊर्जा</a></p>
-      <nav aria-label="इस अंक के खंड" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">थीम</span><a href="/hi/themes.html#ai" class="ff-tlink"><span class="ff-emo">🤖</span> AI, एजेंट और मॉडल</a><a href="/hi/themes.html#clima" class="ff-tlink"><span class="ff-emo">🌍</span> प्रकृति, जलवायु और ऊर्जा</a></p>
+      <nav aria-label="इस अंक के खंड" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">इस अंक में</h2>
         <ol>
-          <li><a href="#ff-135-1">💲 ff.135.1 कृत्रिम बुद्धिमत्ता की लागत</a></li>
-          <li><a href="#ff-135-2">🌊 ff.135.2 ऊर्जा की (बेक़ाबू) लहर</a></li>
-          <li><a href="#ff-135-3">♾️ ff.135.3 क्या हम सिंगुलैरिटी में हैं?</a></li>
-          <li><a href="#ff-135-4">☕ ff.135.4 AGI आगे बढ़ रहा है: चीनी “कॉफ़ी”</a></li>
+          <li><a href="#ff-135-1"><span class="ff-emo">💲</span> ff.135.1 कृत्रिम बुद्धिमत्ता की लागत</a></li>
+          <li><a href="#ff-135-2"><span class="ff-emo">🌊</span> ff.135.2 ऊर्जा की (बेक़ाबू) लहर</a></li>
+          <li><a href="#ff-135-3"><span class="ff-emo">♾️</span> ff.135.3 क्या हम सिंगुलैरिटी में हैं?</a></li>
+          <li><a href="#ff-135-4"><span class="ff-emo">☕</span> ff.135.4 AGI आगे बढ़ रहा है: चीनी “कॉफ़ी”</a></li>
         </ol>
       </nav>
     </header>
 
     
 
-    <section id="ff-135-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-135-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">💲 ff.135.1 कृत्रिम बुद्धिमत्ता की लागत</h2>
-        <a href="https://fortissimo.substack.com/i/176809376/ff-i-costi-dellintelligenza-artificiale" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.135.1 कृत्रिम बुद्धिमत्ता की लागत">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">💲</span> ff.135.1 कृत्रिम बुद्धिमत्ता की लागत</h2>
+        <a href="https://fortissimo.substack.com/i/176809376/ff-i-costi-dellintelligenza-artificiale" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.135.1 कृत्रिम बुद्धिमत्ता की लागत">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">कुछ लोगों के मुताबिक़, ChatGPT बिजली के बिल बढ़ा रहा है: Federal Reserve के आँकड़े 0.17 से 0.19 $/kWh की बढ़त दिखाते हैं (यूरोप में यह यूक्रेन युद्ध के कहीं ज़्यादा ठोस असर के आगे फीका पड़ जाता है)।</p>
@@ -273,32 +273,32 @@
         <p class="text-base leading-relaxed text-black/90">नर्ड कोना। AI की ऊर्जा खपत (Nature 2025):</p>
         <p class="text-base leading-relaxed text-black/90">0.5 Wh = एक इमेज की ऊर्जा 1000 Wh/20(h)/60(min) = 0.83 Wh, लैपटॉप के एक मिनट की ऊर्जा</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!8pnL!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9996796c-d5ab-48e2-b549-40e8de6862ad_1309x521.png" width="1309" height="521" alt="💲 ff.135.1 कृत्रिम बुद्धिमत्ता की लागत" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!lzxG!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F408fd7d4-a7b1-449f-aeaa-175d2aefe10d_864x1049.png" width="864" height="1049" alt="💲 ff.135.1 कृत्रिम बुद्धिमत्ता की लागत" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!XQhl!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbff2adb7-cb01-48dd-a417-c8b9fbc3f18c_751x628.png" width="751" height="628" alt="💲 ff.135.1 कृत्रिम बुद्धिमत्ता की लागत" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://fred.stlouisfed.org/series/APU000072610" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ ChatGPT बिजली के बिल बढ़ा रहा है: Federal Reserve के आँकड़े 0.17 से 0.19 $/kWh की बढ़त दिखाते हैं</a>
-            <a href="https://x.com/scaling01/status/1981642142050136104" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ जर्मनी और ब्रिटेन 40 साल पहले से कम बिजली बनाते हैं…</a>
-            <a href="https://www.nature.com/articles/d41586-025-00616-z" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ AI की ऊर्जा खपत (Nature 2025)</a>
+          <div class="ff-refs-l">
+            <a href="https://fred.stlouisfed.org/series/APU000072610" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> ChatGPT बिजली के बिल बढ़ा रहा है: Federal Reserve के आँकड़े 0.17 से 0.19 $/kWh की बढ़त दिखाते हैं</a>
+            <a href="https://x.com/scaling01/status/1981642142050136104" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> जर्मनी और ब्रिटेन 40 साल पहले से कम बिजली बनाते हैं…</a>
+            <a href="https://www.nature.com/articles/d41586-025-00616-z" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> AI की ऊर्जा खपत (Nature 2025)</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-135-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-135-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🌊 ff.135.2 ऊर्जा की (बेक़ाबू) लहर</h2>
-        <a href="https://fortissimo.substack.com/i/176809376/ff-onda-anomala-energetica" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.135.2 ऊर्जा की (बेक़ाबू) लहर">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🌊</span> ff.135.2 ऊर्जा की (बेक़ाबू) लहर</h2>
+        <a href="https://fortissimo.substack.com/i/176809376/ff-onda-anomala-energetica" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.135.2 ऊर्जा की (बेक़ाबू) लहर">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">भविष्य की योजनाओं के सामने यह सब कुछ भी नहीं:</p>
@@ -308,33 +308,33 @@
         <p class="text-base leading-relaxed text-black/90">सौभाग्य से एक हल सौर ऊर्जा है: सिर्फ़ 10 सालों में 0 से 2073 TWh (237 GW तात्कालिक शक्ति, यानी कुल उत्पादित ऊर्जा को साल के घंटों से भाग देकर)।</p>
         <p class="text-base leading-relaxed text-black/90">जान लीजिए। सौर ऊर्जा में निवेश ($500B) दूसरे विश्व युद्ध के दौरान विमानन में हुए निवेश ($400B, महँगाई के हिसाब से) से आगे निकल गया है।</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!LMb5!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcb3f80b7-aa5c-4f79-ae97-3faf86712ab9_586x228.png" width="586" height="228" alt="🌊 ff.135.2 ऊर्जा की (बेक़ाबू) लहर" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!cpW_!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb2fcbfba-94b8-441c-9b93-d2ad9d98abb8_1920x1519.jpeg" width="1920" height="1519" alt="2033 में OpenAI की ऊर्जा लागत: अमेरिका की मौजूदा GDP के 1/3 जितनी" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">2033 में OpenAI की ऊर्जा लागत: अमेरिका की मौजूदा GDP के 1/3 जितनी</figcaption>
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!sGeK!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff7ec363e-ec42-4f52-b9c9-f9ee02ace9f2_1600x1194.jpeg" width="1600" height="1194" alt="🌊 ff.135.2 ऊर्जा की (बेक़ाबू) लहर" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (4)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://x.com/EthanHe_42/status/1947711720665059595?s=33" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ अगले 5 सालों में 5 करोड़ H100 (35 GW सोखते हुए, यानी आज की वैश्विक बिजली खपत का 2%)</a>
-            <a href="https://blog.samaltman.com/abundant-intelligence" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Abundant Intelligence</a>
-            <a href="https://x.com/AssaadRazzouk/status/1965923547869790614/photo/1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ सिर्फ़ 10 सालों में 0 से 2073 TWh (237 GW तात्कालिक शक्ति, यानी कुल उत्पादित ऊर्जा को साल के घंटों से भाग देकर)</a>
-            <a href="https://x.com/patrickc/status/1698496805162353029?t=MfWXDBXWA0o8XMVm_0logQ&amp;s=33" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ सौर ऊर्जा में निवेश ($500B) दूसरे विश्व युद्ध के दौरान विमानन में हुए निवेश से आगे निकल गया है</a>
+          <div class="ff-refs-l">
+            <a href="https://x.com/EthanHe_42/status/1947711720665059595?s=33" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> अगले 5 सालों में 5 करोड़ H100 (35 GW सोखते हुए, यानी आज की वैश्विक बिजली खपत का 2%)</a>
+            <a href="https://blog.samaltman.com/abundant-intelligence" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Abundant Intelligence</a>
+            <a href="https://x.com/AssaadRazzouk/status/1965923547869790614/photo/1" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> सिर्फ़ 10 सालों में 0 से 2073 TWh (237 GW तात्कालिक शक्ति, यानी कुल उत्पादित ऊर्जा को साल के घंटों से भाग देकर)</a>
+            <a href="https://x.com/patrickc/status/1698496805162353029?t=MfWXDBXWA0o8XMVm_0logQ&amp;s=33" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> सौर ऊर्जा में निवेश ($500B) दूसरे विश्व युद्ध के दौरान विमानन में हुए निवेश से आगे निकल गया है</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-135-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-135-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">♾️ ff.135.3 क्या हम सिंगुलैरिटी में हैं?</h2>
-        <a href="https://fortissimo.substack.com/i/176809376/ff-siamo-nella-singolarita" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.135.3 क्या हम सिंगुलैरिटी में हैं?">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">♾️</span> ff.135.3 क्या हम सिंगुलैरिटी में हैं?</h2>
+        <a href="https://fortissimo.substack.com/i/176809376/ff-siamo-nella-singolarita" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.135.3 क्या हम सिंगुलैरिटी में हैं?">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">वैसे, यह सारी ऊर्जा किसी काम आती है (और पहले ही आ चुकी है)।</p>
@@ -343,72 +343,72 @@
         <p class="text-base leading-relaxed text-black/90">यह मोड़ बेहद अहम है: गणित पर ही, एक के बाद एक, भौतिकी, रसायन और — आख़िर में — जीवविज्ञान टिके हैं।</p>
         <p class="text-base leading-relaxed text-black/90">यह इतना हैरतअंगेज़ है कि Alex Wissner, एक सच्चे जीनियस बच्चे, कहते हैं कि हम सिंगुलैरिटी के भीतर हैं; वे इसे एक दृष्टि-भ्रम बताते हैं जो दूर से “ऊर्ध्वाधर asymptote” जैसा दिखता है, लेकिन “जब आप उसके बीच होते हैं... तो काफ़ी निरंतर लगता है”।</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!cxdR!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd30fc62b-8b26-4e8e-90a0-8380526a998c_1312x771.png" width="1312" height="771" alt="♾️ ff.135.3 क्या हम सिंगुलैरिटी में हैं?" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!EXPy!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3eb79ab9-93e2-49e7-be73-542b9f900bdb_1234x483.png" width="1234" height="483" alt="FrontierMath में Tier 4 कठिनाई वाली समस्या का एक उदाहरण" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">FrontierMath में Tier 4 कठिनाई वाली समस्या का एक उदाहरण</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.alexwg.org/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Alex Wissner, एक सच्चे जीनियस बच्चे</a>
+          <div class="ff-refs-l">
+            <a href="https://www.alexwg.org/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Alex Wissner, एक सच्चे जीनियस बच्चे</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-135-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-135-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">☕ ff.135.4 AGI आगे बढ़ रहा है: चीनी “कॉफ़ी”</h2>
-        <a href="https://fortissimo.substack.com/i/176809376/ff-lagi-avanza-il-caffe-cinese" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.135.4 AGI आगे बढ़ रहा है: चीनी “कॉफ़ी”">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">☕</span> ff.135.4 AGI आगे बढ़ रहा है: चीनी “कॉफ़ी”</h2>
+        <a href="https://fortissimo.substack.com/i/176809376/ff-lagi-avanza-il-caffe-cinese" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.135.4 AGI आगे बढ़ रहा है: चीनी “कॉफ़ी”">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">AGI और सिंगुलैरिटी तो बोनस हैं: Dave Blundin, उसी पॉडकास्ट में, बताते हैं कि अगर AI का विकास आज रुक भी जाए, तो उसके संभावित उपयोगों को पचाने, खोजने और लागू करने में सालों लगेंगे।</p>
         <p class="text-base leading-relaxed text-black/90">मौजूदा मॉडल पहले ही काफ़ी समझदार हैं, लेकिन उन्हें रोबोट, फ़ैक्ट्रियों और लॉजिस्टिक्स में फैलाना होगा, और उनकी खपत घटानी होगी।</p>
-        <p class="text-base leading-relaxed text-black/90">और यहीं — पूरे दम से — चीन लौटता है: सबसे ताक़तवर GPUs पर पाबंदी (🎼 ff.82 चिप्स से लड़ा जाने वाला युद्ध) के कारण उसे कम ताक़तवर “कॉफ़ी मशीनों” (= GPU) से “कॉफ़ी के दाने” (= bits) निचोड़ने पड़े (Ryan Cunningham की उपमा)।</p>
+        <p class="text-base leading-relaxed text-black/90">और यहीं — पूरे दम से — चीन लौटता है: सबसे ताक़तवर GPUs पर पाबंदी (<span class="ff-emo">🎼</span> ff.82 चिप्स से लड़ा जाने वाला युद्ध) के कारण उसे कम ताक़तवर “कॉफ़ी मशीनों” (= GPU) से “कॉफ़ी के दाने” (= bits) निचोड़ने पड़े (Ryan Cunningham की उपमा)।</p>
         <p class="text-base leading-relaxed text-black/90">संयोग नहीं कि शंघाई की हालिया AI Conference में प्रोफ़ेसर Wang Yu ने “watt-to-bit” गढ़ा — AI मॉडलों की दक्षता आँकने का पैमाना (Energy-Compute Theory)।</p>
         <p class="text-base leading-relaxed text-black/90">और संयोग नहीं कि ARC Prize की leaderboard में प्रति task लागत भी शामिल है (जो एक Pareto सीमा खींचती है, जिस पर फ़िलहाल OpenAI के o3 मॉडल हैं)।</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!iZ67!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6cc7004b-dc72-4393-809b-e4defbee5067_1206x703.png" width="1206" height="703" alt="☕ ff.135.4 AGI आगे बढ़ रहा है: चीनी “कॉफ़ी”" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!u7Cq!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdb703308-86b9-4763-ac6c-94a4030531a6_930x397.png" width="930" height="397" alt="जनरेटिव AI का नक़्शा (futuro fortissimo)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">जनरेटिव AI का नक़्शा (futuro fortissimo)</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (5)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://youtu.be/VfwNK9OVsrM?si=bVnXhAK-f4JqRizG&amp;t=1503" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ अगर AI का विकास आज रुक भी जाए, तो उसके संभावित उपयोगों को पचाने, खोजने और लागू करने में सालों लगेंगे</a>
-            <a href="https://open.substack.com/users/2295132-ryan-cunningham?utm_source=mentions" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Ryan Cunningham</a>
-            <a href="https://substack.com/home/post/p-170203312?utm_source=substack&amp;utm_medium=email" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ “watt-to-bit”, AI मॉडलों की दक्षता आँकने का पैमाना (Energy-Compute Theory)</a>
-            <a href="https://arcprize.org/leaderboard" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ ARC Prize की leaderboard में प्रति task लागत भी शामिल है</a>
-            <a href="https://fortissimo.substack.com/p/ff81-guerra-a-colpi-di-chip?utm_source=publication-search" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🎼 ff.82 चिप्स से लड़ा जाने वाला युद्ध</a>
+          <div class="ff-refs-l">
+            <a href="https://youtu.be/VfwNK9OVsrM?si=bVnXhAK-f4JqRizG&amp;t=1503" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> अगर AI का विकास आज रुक भी जाए, तो उसके संभावित उपयोगों को पचाने, खोजने और लागू करने में सालों लगेंगे</a>
+            <a href="https://open.substack.com/users/2295132-ryan-cunningham?utm_source=mentions" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Ryan Cunningham</a>
+            <a href="https://substack.com/home/post/p-170203312?utm_source=substack&amp;utm_medium=email" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> “watt-to-bit”, AI मॉडलों की दक्षता आँकने का पैमाना (Energy-Compute Theory)</a>
+            <a href="https://arcprize.org/leaderboard" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> ARC Prize की leaderboard में प्रति task लागत भी शामिल है</a>
+            <a href="https://fortissimo.substack.com/p/ff81-guerra-a-colpi-di-chip?utm_source=publication-search" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> <span class="ff-emo">🎼</span> ff.82 चिप्स से लड़ा जाने वाला युद्ध</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">संबंधित अंक</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-82.html" class="font-bold hover:underline">ff.82 चिप्स से लड़ा जाने वाला युद्ध</a><p class="text-sm text-black/75 mt-1">क्या GPU 21वीं सदी की खाइयाँ होंगी?</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-155.html" class="font-bold hover:underline">ff.155 लेबल और मानसिक वायरस</a><p class="text-sm text-black/75 mt-1">रसायनों से भरा एक सेब, आपस में विचार बाँटते AI एजेंट, ख़तरे में केले, और एक mRNA थेरेपी जो मेलानोमा के…</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-103.html" class="font-bold hover:underline">ff.103 आग, लोहा, बुद्धि</a><p class="text-sm text-black/75 mt-1">OpenAI का नया o1 मॉडल: मानवता के लिए नया युग?</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-81.html" class="font-bold hover:underline">ff.81 इतिहास की किताबों में 2024</a><p class="text-sm text-black/75 mt-1">जीन थेरेपी, COP28 और Tesla का रोबोट: 2024 की बेहतरीन शुरुआत!</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/hi/archive/ff-82.html" class="font-bold hover:underline">ff.82 चिप्स से लड़ा जाने वाला युद्ध</a><p class="text-sm text-black/75 mt-1">क्या GPU 21वीं सदी की खाइयाँ होंगी?</p></li>
+        <li><a href="/hi/archive/ff-155.html" class="font-bold hover:underline">ff.155 लेबल और मानसिक वायरस</a><p class="text-sm text-black/75 mt-1">रसायनों से भरा एक सेब, आपस में विचार बाँटते AI एजेंट, ख़तरे में केले, और एक mRNA थेरेपी जो मेलानोमा के…</p></li>
+        <li><a href="/hi/archive/ff-103.html" class="font-bold hover:underline">ff.103 आग, लोहा, बुद्धि</a><p class="text-sm text-black/75 mt-1">OpenAI का नया o1 मॉडल: मानवता के लिए नया युग?</p></li>
+        <li><a href="/hi/archive/ff-81.html" class="font-bold hover:underline">ff.81 इतिहास की किताबों में 2024</a><p class="text-sm text-black/75 mt-1">जीन थेरेपी, COP28 और Tesla का रोबोट: 2024 की बेहतरीन शुरुआत!</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Futuro Fortissimo के नए अंक पाएँ</h2>
         <p class="text-sm text-black/80 mt-1">बर्गामो के मिकेले मेरेल्ली का मुफ़्त न्यूज़लेटर — तकनीक, AI, प्रकृति और समाज पर। इतालवी में लिखा गया, Substack से ईमेल पर।</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 मुफ़्त सब्सक्राइब करें ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary"><span class="ff-emo">📩</span> मुफ़्त सब्सक्राइब करें <span class="ff-emo">↗</span></a>
     </section>
 
     <nav aria-label="पिछला और अगला अंक" class="ff-pn">
@@ -417,7 +417,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -437,16 +437,16 @@
       <div class="space-y-2">
         <p class="ff-eyebrow">फ़ॉलो करें</p>
         <ul class="space-y-1 font-medium">
-          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack ↗</a></li>
-          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
-          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram ↗</a></li>
+          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram <span class="ff-emo">↗</span></a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
-          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">मुझे एक कॉफ़ी पिलाएँ ☕ ↗</a></li>
-          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">मिकेले के अन्य प्रोजेक्ट ↗</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">मुझे एक कॉफ़ी पिलाएँ <span class="ff-emo">☕</span> <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">मिकेले के अन्य प्रोजेक्ट <span class="ff-emo">↗</span></a></li>
         </ul>
       </div>
     </div>
-    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
+    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70"><span class="ff-emo">©</span> 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
   <aside class="ff-sticky-sub" aria-label="Newsletter">
     <p>पसंद आया? अगला अंक ईमेल पर पाएँ।</p>
@@ -454,11 +454,11 @@
     <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="बंद करें">✕</button>
   </aside>
   <nav class="ff-tabbar" aria-label="मुख्य नेविगेशन">
-    <a href="/hi/"><span class="ff-ti" aria-hidden="true">🏠</span>होम</a>
-    <a href="/hi/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>संग्रह</a>
-    <a href="/hi/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>थीम</a>
-    <a href="/hi/books/"><span class="ff-ti" aria-hidden="true">📚</span>किताबें</a>
-    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>खोजें</button>
+    <a href="/hi/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🏠</span></span>होम</a>
+    <a href="/hi/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🗂</span></span>संग्रह</a>
+    <a href="/hi/themes.html"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🧭</span></span>थीम</a>
+    <a href="/hi/books/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">📚</span></span>किताबें</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🔍</span></span>खोजें</button>
   </nav>
   <dialog id="ff-search" class="ff-search" aria-label="खोजें" data-empty="कोई परिणाम नहीं। कोई और शब्द आज़माएँ।">
     <form role="search">
@@ -469,7 +469,7 @@
     <ul id="ff-results" role="listbox" aria-label="खोजें"></ul>
     <div class="ff-s-foot"><a href="/hi/archive/" data-ff-all data-base="/hi/archive/">संग्रह में सभी परिणाम →</a><span>कहीं भी खोजने के लिए / दबाएँ</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

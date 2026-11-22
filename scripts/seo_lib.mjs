@@ -148,12 +148,12 @@ export function metaBlock({ lang, title, desc, url, image = DEFAULT_OG, imageAlt
 }
 
 /** icons, manifest, theme colour, feed (shared by every page) */
-export const pwaHead = () => `<meta name="theme-color" content="#0a0a0a" />
+export const pwaHead = () => `<meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />

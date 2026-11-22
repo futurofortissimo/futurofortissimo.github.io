@@ -152,12 +152,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -166,9 +166,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -221,19 +221,19 @@
         <a href="/libri/">Libri</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="Cerca (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Cerca</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Cerca (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">Cerca</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="Lingua"><a href="/archivio/ff-38.html" hreflang="it" lang="it" title="Italiano" data-keep-state aria-current="page">IT</a><a href="/en/archive/ff-38.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/archive/ff-38.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="Tema scuro" title="Tema scuro"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Iscriviti</a>
         <details class="ff-more">
-          <summary aria-label="Altro"><span aria-hidden="true">☰</span><span class="sr-only">Altro</span></summary>
+          <summary aria-label="Altro"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">Altro</span></summary>
           <nav class="ff-menu" aria-label="Altro">
-            <a href="/book/">📖 Il Libro</a>
-            <a href="/book/ffxy-index.html">🔢 ff.x.y</a>
-            <a href="/connections.html">🔗 Connessioni</a>
-            <a href="/note.html">📝 Note</a>
+            <a href="/book/"><span class="ff-emo">📖</span> Il Libro</a>
+            <a href="/book/ffxy-index.html"><span class="ff-emo">🔢</span> ff.x.y</a>
+            <a href="/connections.html"><span class="ff-emo">🔗</span> Connessioni</a>
+            <a href="/note.html"><span class="ff-emo">📝</span> Note</a>
             <hr />
-            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 Iscriviti ↗</a>
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener"><span class="ff-emo">📩</span> Iscriviti <span class="ff-emo">↗</span></a>
           </nav>
         </details>
       </div>
@@ -243,42 +243,42 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/">Home</a> /</li><li><a class="underline" href="/archivio/">Archivio</a> /</li><li aria-current="page">ff.38 Soldi spartiti male</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>38</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>38</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="coin" data-ff-slug="ff-38" data-label="Apri l’oggetto 3D e l’anteprima di ff.38"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Archivio Futuro Fortissimo</p>
-      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.38 Soldi spartiti male</h1>
+      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black"><span class="ff-emo">🎼</span> ff.38 Soldi spartiti male</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">Tutti i soldi del mondo in pizza e disuguaglianza crescente</p>
       <p class="mt-2 text-xs font-mono text-black/70">Pubblicato il <time datetime="2022-11-06T14:30:48.159Z">6 novembre 2022</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/archivio/ff-38.html" data-done="Link copiato"><span aria-hidden="true">↗</span> Condividi</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/archivio/ff-38.html" data-done="Link copiato"><span aria-hidden="true">🔗</span> Copia link</button>
-        <a href="https://fortissimo.substack.com/p/ff38-soldi-spartiti-male" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Leggi originale su Substack ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/archivio/ff-38.html" data-done="Link copiato"><span aria-hidden="true"><span class="ff-emo">↗</span></span> Condividi</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/archivio/ff-38.html" data-done="Link copiato"><span aria-hidden="true"><span class="ff-emo">🔗</span></span> Copia link</button>
+        <a href="https://fortissimo.substack.com/p/ff38-soldi-spartiti-male" target="_blank" rel="noopener noreferrer" class="ff-qlink">Leggi originale su Substack <span class="ff-emo">↗</span></a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• Quanta pizza possiamo comprarci, con tutto il benessere (in $) che c’è al mondo?</li>
-        <li>• Perché le disuguaglianze sono aumentate dopo il COVID?</li>
-        <li>• La nostra retina ci darà accesso a un’economia più equa?</li>
+      <ul class="ff-keypoints">
+        <li>Quanta pizza possiamo comprarci, con tutto il benessere (in $) che c’è al mondo?</li>
+        <li>Perché le disuguaglianze sono aumentate dopo il COVID?</li>
+        <li>La nostra retina ci darà accesso a un’economia più equa?</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Temi</span><a href="/themes.html#geo" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🏛 Geopolitica, economia e società</a><a href="/themes.html#nutrizione" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🥗 Nutrizione e microbioma</a><a href="/themes.html#crypto" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🪙 Crypto e metaverso</a></p>
-      <nav aria-label="Sezioni del numero" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">Temi</span><a href="/themes.html#geo" class="ff-tlink"><span class="ff-emo">🏛</span> Geopolitica, economia e società</a><a href="/themes.html#nutrizione" class="ff-tlink"><span class="ff-emo">🥗</span> Nutrizione e microbioma</a><a href="/themes.html#crypto" class="ff-tlink"><span class="ff-emo">🪙</span> Crypto e metaverso</a></p>
+      <nav aria-label="Sezioni del numero" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">In questo numero</h2>
         <ol>
-          <li><a href="#ff-38-1">🍕 ff.38.1 Convertire tutti i soldi del mondo in pizza</a></li>
-          <li><a href="#ff-38-2">💰 ff.38.2 Il COVID e le disuguaglianze</a></li>
-          <li><a href="#ff-38-3">👁️ ff.38.3 La cripto valuta per ridurre le disuguaglianze</a></li>
+          <li><a href="#ff-38-1"><span class="ff-emo">🍕</span> ff.38.1 Convertire tutti i soldi del mondo in pizza</a></li>
+          <li><a href="#ff-38-2"><span class="ff-emo">💰</span> ff.38.2 Il COVID e le disuguaglianze</a></li>
+          <li><a href="#ff-38-3"><span class="ff-emo">👁️</span> ff.38.3 La cripto valuta per ridurre le disuguaglianze</a></li>
         </ol>
       </nav>
     </header>
 
     
 
-    <section id="ff-38-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-38-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🍕 ff.38.1 Convertire tutti i soldi del mondo in pizza</h2>
-        <a href="https://fortissimo.substack.com/i/76782307/ff-convertire-tutti-i-soldi-del-mondo-in-pizza" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.38.1 Convertire tutti i soldi del mondo in pizza">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🍕</span> ff.38.1 Convertire tutti i soldi del mondo in pizza</h2>
+        <a href="https://fortissimo.substack.com/i/76782307/ff-convertire-tutti-i-soldi-del-mondo-in-pizza" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.38.1 Convertire tutti i soldi del mondo in pizza">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
-        <p class="text-base leading-relaxed text-black/90">Abbiam già menzionato ilfolle Tim Urban in un precedentefuturofortissimo (🎼ff. 21 La magia dell&#39;insalata a domicilio). Sul suo blog raccoglie domande e risposte del tutto particolari.</p>
+        <p class="text-base leading-relaxed text-black/90">Abbiam già menzionato ilfolle Tim Urban in un precedentefuturofortissimo (<span class="ff-emo">🎼</span>ff. 21 La magia dell&#39;insalata a domicilio). Sul suo blog raccoglie domande e risposte del tutto particolari.</p>
         <p class="text-base leading-relaxed text-black/90">Nel 2014 è partito da un dato: 241trillionsuso l’inglese che ha più senso) di dollari (la somma del valore di tutti i soldi, di tutte le azioni in borsa, di tutte le costruzioni private e pubbliche presenti sulla Terra).</p>
         <p class="text-base leading-relaxed text-black/90">Come quantifichiamo 241 * 10^12 $? Ha provato a visualizzare questo numero trasformandolo in blocchi di oro, banconote da 100 $ oppure in un’immensa patata.</p>
         <p class="text-base leading-relaxed text-black/90">In banconote da 100$: avremmo una pila alta quasi come la Luna.</p>
@@ -287,37 +287,37 @@
         <p class="text-base leading-relaxed text-black/90">In pizza Domino’s: copriremmo tutta la Nigeria (tasso di conversione usato 19$ per una pizza da 14’’, corrispondente a 52 cm^2). Fortunatamente pizze Domino’s così grandi non ci sono, specie dopo lachiusura in Italia.</p>
         <p class="text-base leading-relaxed text-black/90">Se siete curiosi dei calcoli precisi, vi rimandoal divertentissimo articolo.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!_ztu!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F9e0f92a8-37a6-4fd8-8bee-807700b89781_1024x658.png" width="1024" height="658" alt="🍕 ff.38.1 Convertire tutti i soldi del mondo in pizza" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!ABJU!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F357a2b2e-4e8b-40bf-a3be-09e69dfb518e_1024x717.jpeg" width="1024" height="717" alt="🍕 ff.38.1 Convertire tutti i soldi del mondo in pizza" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!p20F!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F61943ce3-779d-4f95-84fb-8d2d96161546_1024x560.jpeg" width="1024" height="560" alt="🍕 ff.38.1 Convertire tutti i soldi del mondo in pizza" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!6JA0!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F2fbeef10-d88d-4e82-a30b-87f7c6d70429_1024x617.jpeg" width="1024" height="617" alt="🍕 ff.38.1 Convertire tutti i soldi del mondo in pizza" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (4)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://waitbutwhy.com/2014/03/combined-wealth-world.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Nel 2014 è partito da un dato</a>
-            <a href="https://www.ismeamercati.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/4847" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ se vi interessa qui trovate quanto costa un kg di patata in Italia</a>
-            <a href="https://www.wired.it/article/dominos-pizza-chiuso-italia/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ chiusura in Italia</a>
-            <a href="https://fortissimo.substack.com/p/-ff23-la-magia-dellinsalata-a-domicilio" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🎼</a>
+          <div class="ff-refs-l">
+            <a href="https://waitbutwhy.com/2014/03/combined-wealth-world.html" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Nel 2014 è partito da un dato</a>
+            <a href="https://www.ismeamercati.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/4847" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> se vi interessa qui trovate quanto costa un kg di patata in Italia</a>
+            <a href="https://www.wired.it/article/dominos-pizza-chiuso-italia/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> chiusura in Italia</a>
+            <a href="https://fortissimo.substack.com/p/-ff23-la-magia-dellinsalata-a-domicilio" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> <span class="ff-emo">🎼</span></a>
           </div>
         </div>
     </section>
 
-    <section id="ff-38-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-38-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">💰 ff.38.2 Il COVID e le disuguaglianze</h2>
-        <a href="https://fortissimo.substack.com/i/76782307/ff-il-covid-e-le-disuguaglianze" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.38.2 Il COVID e le disuguaglianze">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">💰</span> ff.38.2 Il COVID e le disuguaglianze</h2>
+        <a href="https://fortissimo.substack.com/i/76782307/ff-il-covid-e-le-disuguaglianze" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.38.2 Il COVID e le disuguaglianze">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Ma come è divisa la pizza? Se la dividiamo in 9fette e se 100 persone rappresentano tutta la popolazione della terra:</p>
@@ -327,75 +327,75 @@
         <p class="text-base leading-relaxed text-black/90">L’effetto Cantillon. Immaginate di ricevere un milione di euro in un villaggio sperduto. Li spendete e vifate una bella casa e mangiate cibo buonissimo, pagando gli altri abitanti del villaggio, che “risentiranno” dei soldi immessi nel sistema.</p>
         <p class="text-base leading-relaxed text-black/90">Spendendoli per primi, la quantità di “belle case e cibo buonissimo” non è un limite. Quando gli altri abitanti vogliono la loro parte, però, non ce n’è per tutti perché la produzione non si è adattata all’aumento di richiesta. Le “belle case e cibo buonissimo” costeranno di più, e il benessere accumulato sarà minore. Mi ricorda un po’ la crescente inflazione che c’è in giro.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!FMVZ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F007ad98b-871b-408e-8250-192786b575f0_676x450.png" width="676" height="450" alt="💰 ff.38.2 Il COVID e le disuguaglianze" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!N3v8!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F230ec183-7af6-4994-9baa-71d26df91948_1600x900.png" width="1600" height="900" alt="💰 ff.38.2 Il COVID e le disuguaglianze" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://inequality.org/great-divide/updates-billionaire-pandemic/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Inequality.org</a>
+          <div class="ff-refs-l">
+            <a href="https://inequality.org/great-divide/updates-billionaire-pandemic/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Inequality.org</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-38-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-38-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">👁️ ff.38.3 La cripto valuta per ridurre le disuguaglianze</h2>
-        <a href="https://fortissimo.substack.com/i/76782307/ff-la-cripto-valuta-per-ridurre-le-disuguaglianze" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.38.3 La cripto valuta per ridurre le disuguaglianze">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">👁️</span> ff.38.3 La cripto valuta per ridurre le disuguaglianze</h2>
+        <a href="https://fortissimo.substack.com/i/76782307/ff-la-cripto-valuta-per-ridurre-le-disuguaglianze" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.38.3 La cripto valuta per ridurre le disuguaglianze">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Gran parte del valore Meta, Google e Amazon è il loronetwork effect: Facebook ha senso perché crea e offre connessioni. Questo è valore intangibile, senza una contropartefisica come un macchinario avanzato o un chip potentissimo. Quindi non viene prodotto né genera una complementare economiafisica intorno ad esso. Viene solo integrato nel valore delle azioni dell’azienda, che però è posseduto dall’1-10% (spesso più ricca) della popolazione.</p>
         <p class="text-base leading-relaxed text-black/90">Retina comewallet. Per provare a ridistribuire parte del benessere connesso a questi network e a internet,Worldcoinpropone di integrare ogni cittadino della terra alla blockchain, scannerizzandone l’occhio e dandogli un passaporto economico univoco e pari opportunità di accesso alle tecnologie più basilari.</p>
         <p class="text-base leading-relaxed text-black/90">Di recente,importantifondi d’investimento hanno investito (100 M$) in questa tecnologia. Worldcoin stima di scannerizzare una media di 350-1400 persone a settimana (partendo da una base di 60 k utenti). Perfare un paragone,gli utenti “cripto” sono 400 M (da Crypto. com, 2021).</p>
-        <p class="text-base leading-relaxed text-black/90">👋 E con questo è tutto per questafortissima settimana!🔜 Nel prossimoffparleremo di vestiti e moda! A presto, Michele</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">👋</span> E con questo è tutto per questafortissima settimana!<span class="ff-emo">🔜</span> Nel prossimoffparleremo di vestiti e moda! A presto, Michele</p>
         <p class="text-base leading-relaxed text-black/90">Vuoi supportare questo progetto? Iscriviti alla newsletter e condividila con un amico suWhatsApp</p>
-        <p class="text-base leading-relaxed text-black/90">👇🔥Iscriviti</p>
-        <p class="text-base leading-relaxed text-black/90">Oppure, offrimi un caffè😏</p>
-        <p class="text-base leading-relaxed text-black/90">☕</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">👇</span><span class="ff-emo">🔥</span>Iscriviti</p>
+        <p class="text-base leading-relaxed text-black/90">Oppure, offrimi un caffè<span class="ff-emo">😏</span></p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">☕</span></p>
         <p class="text-base leading-relaxed text-black/90">E ricordati di mettere un cuoricino qua sotto.</p>
-        <p class="text-base leading-relaxed text-black/90">❤️</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">❤️</span></p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!i7Jt!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fac2c375a-6882-45f4-992c-cc0de2e99f75_2560x1233.jpeg" width="2560" height="1233" alt="👁️ ff.38.3 La cripto valuta per ridurre le disuguaglianze" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!PdaB!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fecf4afef-95d9-444f-9785-4d3ba3b1cda3_1133x635.png" width="1133" height="635" alt="👁️ ff.38.3 La cripto valuta per ridurre le disuguaglianze" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://worldcoin.org/introducing-worldcoin" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Worldcoin</a>
-            <a href="https://www.coindesk.com/business/2022/03/22/worldcoin-to-raise-100m-at-3b-token-valuation-report/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ importanti</a>
-            <a href="https://crypto.com/images/202107_DataReport_OnChain_Market_Sizing.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ gli utenti “cripto” sono 400 M (da Crypto.com, 2021)</a>
+          <div class="ff-refs-l">
+            <a href="https://worldcoin.org/introducing-worldcoin" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Worldcoin</a>
+            <a href="https://www.coindesk.com/business/2022/03/22/worldcoin-to-raise-100m-at-3b-token-valuation-report/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> importanti</a>
+            <a href="https://crypto.com/images/202107_DataReport_OnChain_Market_Sizing.pdf" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> gli utenti “cripto” sono 400 M (da Crypto.com, 2021)</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">Numeri correlati</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-21.html" class="font-bold hover:underline">ff.21 La magia dell&#39;insalata a domicilio</a><p class="text-sm text-black/75 mt-1">Perché meravigliarci, soprattutto oggi, della complessità del mondo che ci circonda.</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-24.html" class="font-bold hover:underline">ff.24 Guerra criptica</a><p class="text-sm text-black/75 mt-1">Come la guerra può aver accelerato l&#39;adozione delle criptovalute</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-14.html" class="font-bold hover:underline">ff.14 La guerra non è futuro</a><p class="text-sm text-black/75 mt-1">Una dovuta digressione sulla guerra, sull&#39;Ucraina e sul futuro che ne risulterà</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-50.html" class="font-bold hover:underline">ff.50 Cosa c**** è successo nel 1971?</a><p class="text-sm text-black/75 mt-1">La grande stagnazione tra oro, bitcoin, iPhone e un futuro più roseo</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/archivio/ff-21.html" class="font-bold hover:underline">ff.21 La magia dell&#39;insalata a domicilio</a><p class="text-sm text-black/75 mt-1">Perché meravigliarci, soprattutto oggi, della complessità del mondo che ci circonda.</p></li>
+        <li><a href="/archivio/ff-24.html" class="font-bold hover:underline">ff.24 Guerra criptica</a><p class="text-sm text-black/75 mt-1">Come la guerra può aver accelerato l&#39;adozione delle criptovalute</p></li>
+        <li><a href="/archivio/ff-14.html" class="font-bold hover:underline">ff.14 La guerra non è futuro</a><p class="text-sm text-black/75 mt-1">Una dovuta digressione sulla guerra, sull&#39;Ucraina e sul futuro che ne risulterà</p></li>
+        <li><a href="/archivio/ff-50.html" class="font-bold hover:underline">ff.50 Cosa c**** è successo nel 1971?</a><p class="text-sm text-black/75 mt-1">La grande stagnazione tra oro, bitcoin, iPhone e un futuro più roseo</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Ricevi i nuovi numeri di Futuro Fortissimo</h2>
         <p class="text-sm text-black/80 mt-1">Ogni uscita su tecnologia, AI, natura e società direttamente via email su Substack.</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 Iscriviti gratis ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary"><span class="ff-emo">📩</span> Iscriviti gratis <span class="ff-emo">↗</span></a>
     </section>
 
     <nav aria-label="Numeri adiacenti" class="ff-pn">
@@ -404,7 +404,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -424,16 +424,16 @@
       <div class="space-y-2">
         <p class="ff-eyebrow">Segui</p>
         <ul class="space-y-1 font-medium">
-          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack ↗</a></li>
-          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
-          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram ↗</a></li>
+          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram <span class="ff-emo">↗</span></a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
-          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Offrimi un caffè ☕ ↗</a></li>
-          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Altri progetti di Michele ↗</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Offrimi un caffè <span class="ff-emo">☕</span> <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Altri progetti di Michele <span class="ff-emo">↗</span></a></li>
         </ul>
       </div>
     </div>
-    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
+    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70"><span class="ff-emo">©</span> 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
   <aside class="ff-sticky-sub" aria-label="Newsletter">
     <p>Ti piace? Ricevi il prossimo numero via email.</p>
@@ -441,11 +441,11 @@
     <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="Chiudi invito">✕</button>
   </aside>
   <nav class="ff-tabbar" aria-label="Navigazione principale">
-    <a href="/"><span class="ff-ti" aria-hidden="true">🏠</span>Home</a>
-    <a href="/archivio/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>Archivio</a>
-    <a href="/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>Temi</a>
-    <a href="/libri/"><span class="ff-ti" aria-hidden="true">📚</span>Libri</a>
-    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>Cerca</button>
+    <a href="/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🏠</span></span>Home</a>
+    <a href="/archivio/" aria-current="page"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🗂</span></span>Archivio</a>
+    <a href="/themes.html"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🧭</span></span>Temi</a>
+    <a href="/libri/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">📚</span></span>Libri</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🔍</span></span>Cerca</button>
   </nav>
   <dialog id="ff-search" class="ff-search" aria-label="Cerca" data-empty="Nessun risultato. Prova un’altra parola.">
     <form role="search">
@@ -456,7 +456,7 @@
     <ul id="ff-results" role="listbox" aria-label="Cerca"></ul>
     <div class="ff-s-foot"><a href="/archivio/" data-ff-all data-base="/archivio/">Tutti i risultati nell’archivio →</a><span>Premi / per cercare ovunque</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

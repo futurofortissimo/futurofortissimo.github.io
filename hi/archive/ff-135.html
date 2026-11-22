@@ -143,12 +143,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -157,9 +157,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -212,18 +212,18 @@
         <a href="/hi/books/">किताबें</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="खोजें (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">खोजें</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="खोजें (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">खोजें</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="भाषा"><a href="/archivio/ff-135.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/archive/ff-135.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/archive/ff-135.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state aria-current="page">हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="डार्क थीम" title="डार्क थीम"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">सब्सक्राइब</a>
         <details class="ff-more">
-          <summary aria-label="और"><span aria-hidden="true">☰</span><span class="sr-only">और</span></summary>
+          <summary aria-label="और"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">और</span></summary>
           <nav class="ff-menu" aria-label="और">
-            <a href="/book/">📖 किताब (IT)</a>
-            <a href="/hi/connections.html">🔗 कनेक्शन</a>
-            <a href="/hi/note.html">📝 नोट्स</a>
+            <a href="/book/"><span class="ff-emo">📖</span> किताब (IT)</a>
+            <a href="/hi/connections.html"><span class="ff-emo">🔗</span> कनेक्शन</a>
+            <a href="/hi/note.html"><span class="ff-emo">📝</span> नोट्स</a>
             <hr />
-            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 सब्सक्राइब ↗</a>
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener"><span class="ff-emo">📩</span> सब्सक्राइब <span class="ff-emo">↗</span></a>
           </nav>
         </details>
       </div>
@@ -233,183 +233,183 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/hi/">होम</a> /</li><li><a class="underline" href="/hi/archive/">संग्रह</a> /</li><li aria-current="page">ff.135 Casino Royale</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>135</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>135</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="dice" data-ff-slug="ff-135" data-label="3D वस्तु और पूर्वावलोकन खोलें: ff.135"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Futuro Fortissimo संग्रह</p>
-      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.135 Casino Royale</h1>
+      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black"><span class="ff-emo">🎼</span> ff.135 Casino Royale</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">क्या राजनीति एक स्लॉट मशीन है?</p>
       <p class="mt-2 text-xs font-mono text-black/70">प्रकाशित <time datetime="2025-10-20T12:08:16.633Z">20 अक्टूबर 2025</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/hi/archive/ff-135.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">↗</span> शेयर करें</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/hi/archive/ff-135.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">🔗</span> लिंक कॉपी करें</button>
-        <a href="https://fortissimo.substack.com/p/ff135-casino-royale" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Substack पर इतालवी मूल पढ़ें ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/hi/archive/ff-135.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true"><span class="ff-emo">↗</span></span> शेयर करें</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/hi/archive/ff-135.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true"><span class="ff-emo">🔗</span></span> लिंक कॉपी करें</button>
+        <a href="https://fortissimo.substack.com/p/ff135-casino-royale" target="_blank" rel="noopener noreferrer" class="ff-qlink">Substack पर इतालवी मूल पढ़ें <span class="ff-emo">↗</span></a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• बाज़ारों से नोबेल पुरस्कार की भविष्यवाणी?</li>
-        <li>• अल्बानिया: पहला AI मंत्री</li>
-        <li>• क्रिप्टो से Trump के बेटे पर नियंत्रण?</li>
+      <ul class="ff-keypoints">
+        <li>बाज़ारों से नोबेल पुरस्कार की भविष्यवाणी?</li>
+        <li>अल्बानिया: पहला AI मंत्री</li>
+        <li>क्रिप्टो से Trump के बेटे पर नियंत्रण?</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">थीम</span><a href="/hi/themes.html#geo" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🏛 भू-राजनीति, अर्थव्यवस्था और समाज</a><a href="/hi/themes.html#ai" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🤖 AI, एजेंट और मॉडल</a></p>
-      <nav aria-label="इस अंक के खंड" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">थीम</span><a href="/hi/themes.html#geo" class="ff-tlink"><span class="ff-emo">🏛</span> भू-राजनीति, अर्थव्यवस्था और समाज</a><a href="/hi/themes.html#ai" class="ff-tlink"><span class="ff-emo">🤖</span> AI, एजेंट और मॉडल</a></p>
+      <nav aria-label="इस अंक के खंड" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">इस अंक में</h2>
         <ol>
-          <li><a href="#ff-135-1">🎭 ff.135.1 सब एक जुआघर है: हेरफेर</a></li>
-          <li><a href="#ff-135-2">⚜ ff.135.2 मध्ययुगीन नगर-राज्यों की वापसी?</a></li>
-          <li><a href="#ff-135-3">🎲 ff.135.3 नोबेल वाली बाज़ियाँ</a></li>
-          <li><a href="#ff-135-4">💳 ff.135.4 अमेरिका, नाइजीरिया और क्रिप्टोकरेंसी</a></li>
-          <li><a href="#ff-135-5">🏛️ ff.135.5 तकनीकी राजनीति</a></li>
+          <li><a href="#ff-135-1"><span class="ff-emo">🎭</span> ff.135.1 सब एक जुआघर है: हेरफेर</a></li>
+          <li><a href="#ff-135-2"><span class="ff-emo">⚜</span> ff.135.2 मध्ययुगीन नगर-राज्यों की वापसी?</a></li>
+          <li><a href="#ff-135-3"><span class="ff-emo">🎲</span> ff.135.3 नोबेल वाली बाज़ियाँ</a></li>
+          <li><a href="#ff-135-4"><span class="ff-emo">💳</span> ff.135.4 अमेरिका, नाइजीरिया और क्रिप्टोकरेंसी</a></li>
+          <li><a href="#ff-135-5"><span class="ff-emo">🏛️</span> ff.135.5 तकनीकी राजनीति</a></li>
         </ol>
       </nav>
     </header>
 
     
 
-    <section id="ff-135-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-135-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🎭 ff.135.1 सब एक जुआघर है: हेरफेर</h2>
-        <a href="https://fortissimo.substack.com/i/173499753/ff-e-tutto-un-casino-manipolazioni" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.135.1 सब एक जुआघर है: हेरफेर">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🎭</span> ff.135.1 सब एक जुआघर है: हेरफेर</h2>
+        <a href="https://fortissimo.substack.com/i/173499753/ff-e-tutto-un-casino-manipolazioni" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.135.1 सब एक जुआघर है: हेरफेर">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">हमारे सामने एक समस्या है: Trump। या बल्कि यह संभावना कि दुनिया एक ट्वीट से बदल जाए — किसी युद्ध, टैरिफ़ बढ़ोतरी या प्रवासन पर रोक के लिए।</p>
-        <p class="text-base leading-relaxed text-black/90">“अकेले नोड्स” की चहचहाहट, जो हमारे चारों ओर के अति-जुड़े समंदर में राक्षसी लहरें पैदा करती है। इतना कि टैरिफ़ की एक नई धमकी 30 मिनट में 8 करोड़ की हो सकती है (कम से कम किसी ऐसे के लिए जिसके पास गोपनीय जानकारी हो 😉 Barron Trump)।</p>
+        <p class="text-base leading-relaxed text-black/90">“अकेले नोड्स” की चहचहाहट, जो हमारे चारों ओर के अति-जुड़े समंदर में राक्षसी लहरें पैदा करती है। इतना कि टैरिफ़ की एक नई धमकी 30 मिनट में 8 करोड़ की हो सकती है (कम से कम किसी ऐसे के लिए जिसके पास गोपनीय जानकारी हो <span class="ff-emo">😉</span> Barron Trump)।</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!ch7c!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F98ef8bb4-3cfe-4853-b670-ede23b14bbd5_1356x2088.jpeg" width="1356" height="2088" alt="🎭 ff.135.1 सब एक जुआघर है: हेरफेर" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.binance.com/en/square/post/30920097507386" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 30 मिनट में 8 करोड़ (कम से कम किसी ऐसे के लिए जिसके पास गोपनीय जानकारी हो 😉 Barron Trump)।</a>
+          <div class="ff-refs-l">
+            <a href="https://www.binance.com/en/square/post/30920097507386" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> 30 मिनट में 8 करोड़ (कम से कम किसी ऐसे के लिए जिसके पास गोपनीय जानकारी हो <span class="ff-emo">😉</span> Barron Trump)।</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-135-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-135-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">⚜ ff.135.2 मध्ययुगीन नगर-राज्यों की वापसी?</h2>
-        <a href="https://fortissimo.substack.com/i/173499753/ff-ritorno-ai-comuni-medievali" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.135.2 मध्ययुगीन नगर-राज्यों की वापसी?">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">⚜</span> ff.135.2 मध्ययुगीन नगर-राज्यों की वापसी?</h2>
+        <a href="https://fortissimo.substack.com/i/173499753/ff-ritorno-ai-comuni-medievali" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.135.2 मध्ययुगीन नगर-राज्यों की वापसी?">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">हम अब जानकारी और फ़ैसलों को (बुरे ढंग से) केंद्रित करने का जोखिम नहीं उठा सकते: दक्षिण कोरिया में अभिलेखागार की आग, जिसने 8 साल का सरकारी काम जला दिया।</p>
-        <p class="text-base leading-relaxed text-black/90">इसीलिए 🎼 ff.52 गैराज में एक राष्ट्र की स्थापना का विचार जन्म लेता है; तकनीक से तेज़ होता नगर-राज्यों का एक 2.0 युग।</p>
+        <p class="text-base leading-relaxed text-black/90">इसीलिए <span class="ff-emo">🎼</span> ff.52 गैराज में एक राष्ट्र की स्थापना का विचार जन्म लेता है; तकनीक से तेज़ होता नगर-राज्यों का एक 2.0 युग।</p>
       </div>
       
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (2)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.macitynet.it/incendio-in-corea-del-sud-ha-distrutto-858-terabyte-di-dati-governativi/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ दक्षिण कोरिया में अभिलेखागार की आग, जिसने 8 साल का सरकारी काम जला दिया</a>
-            <a href="https://fortissimo.substack.com/p/ff52-fondare-una-nazione-in-garage?utm_source=publication-search" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🎼 ff.52 गैराज में एक राष्ट्र की स्थापना</a>
+          <div class="ff-refs-l">
+            <a href="https://www.macitynet.it/incendio-in-corea-del-sud-ha-distrutto-858-terabyte-di-dati-governativi/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> दक्षिण कोरिया में अभिलेखागार की आग, जिसने 8 साल का सरकारी काम जला दिया</a>
+            <a href="https://fortissimo.substack.com/p/ff52-fondare-una-nazione-in-garage?utm_source=publication-search" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> <span class="ff-emo">🎼</span> ff.52 गैराज में एक राष्ट्र की स्थापना</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-135-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-135-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🎲 ff.135.3 नोबेल वाली बाज़ियाँ</h2>
-        <a href="https://fortissimo.substack.com/i/173499753/ff-scommesse-da-nobel" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.135.3 नोबेल वाली बाज़ियाँ">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🎲</span> ff.135.3 नोबेल वाली बाज़ियाँ</h2>
+        <a href="https://fortissimo.substack.com/i/173499753/ff-scommesse-da-nobel" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.135.3 नोबेल वाली बाज़ियाँ">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">“अकेले नोड्स” (और अमेरिका) पर अविश्वास इस ग्राफ़ में साफ़ दिखता है: 1996 के बाद पहली बार केंद्रीय बैंक अमेरिकी सरकारी कर्ज़ से ज़्यादा सोना ख़रीद रहे हैं:</p>
         <p class="text-base leading-relaxed text-black/90">AI से तेज़ होता भविष्य एक नई महाशक्ति का है, इनके बीच:</p>
         <p class="text-base leading-relaxed text-black/90">चीन, अपने डेटा के केंद्रीकरण के साथ — जो कभी किसी भी नौकरशाही को डुबो देता, पर आज AI और LLMs सँभालते हैं। इंटरनेट, अपने विकेंद्रीकरण और बाज़ार की आज़ादी के साथ — जिसकी मिसाल हैं prediction market, जो घोषणा से 11 घंटे पहले शांति का नोबेल भाँप लेते हैं।</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!UQ3F!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faefc8c09-003a-4922-b6bc-c8650f180531_881x592.png" width="881" height="592" alt="🎲 ff.135.3 नोबेल वाली बाज़ियाँ" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!g-3Z!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb39fb10e-cd9c-451f-b3ba-e227c2b3dda2_570x839.png" width="570" height="839" alt="Polymarket ने 2025 का शांति नोबेल 11 घंटे पहले भाँप लिया" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Polymarket ने 2025 का शांति नोबेल 11 घंटे पहले भाँप लिया</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://x.com/CarOnPolymarket/status/1976580469492715841?t=nWreL6M7j-5hoeqMiYcDLQ&amp;s=33" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ घोषणा से 11 घंटे पहले शांति का नोबेल भाँप लेते हैं</a>
+          <div class="ff-refs-l">
+            <a href="https://x.com/CarOnPolymarket/status/1976580469492715841?t=nWreL6M7j-5hoeqMiYcDLQ&amp;s=33" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> घोषणा से 11 घंटे पहले शांति का नोबेल भाँप लेते हैं</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-135-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-135-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">💳 ff.135.4 अमेरिका, नाइजीरिया और क्रिप्टोकरेंसी</h2>
-        <a href="https://fortissimo.substack.com/i/173499753/ff-america-nigeria-e-criptovalute" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.135.4 अमेरिका, नाइजीरिया और क्रिप्टोकरेंसी">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">💳</span> ff.135.4 अमेरिका, नाइजीरिया और क्रिप्टोकरेंसी</h2>
+        <a href="https://fortissimo.substack.com/i/173499753/ff-america-nigeria-e-criptovalute" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.135.4 अमेरिका, नाइजीरिया और क्रिप्टोकरेंसी">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">अमेरिका के कर्ज़ पर लौटते हैं। और क्रिप्टोकरेंसी पर।</p>
         <p class="text-base leading-relaxed text-black/90">आँकड़ों की बात। 2011 में चीन और जापान के पास अमेरिकी कर्ज़ का 23% था। आज बस 6% से थोड़ा ज़्यादा। उनकी जगह किसने ली? शायद नाइजीरिया और अर्जेंटीना ने।</p>
-        <p class="text-base leading-relaxed text-black/90">वित्तीय आज़ादी की तलाश में (और महँगाई के ख़िलाफ़ एक स्थिर मुद्रा की, 👍ff.73.3 एक वित्तीय VPN), विकासशील देश USDT ख़रीद रहे हैं, ब्लॉकचेन पर “डिजिटल डॉलर”।</p>
+        <p class="text-base leading-relaxed text-black/90">वित्तीय आज़ादी की तलाश में (और महँगाई के ख़िलाफ़ एक स्थिर मुद्रा की, <span class="ff-emo">👍</span>ff.73.3 एक वित्तीय VPN), विकासशील देश USDT ख़रीद रहे हैं, ब्लॉकचेन पर “डिजिटल डॉलर”।</p>
         <p class="text-base leading-relaxed text-black/90">इस तरह अमेरिकी कर्ज़ डिजिटल और विकेंद्रित हो रहा है (ARK Invest की रिपोर्ट)।</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!LWyH!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffcd15414-3a93-4ec0-a40d-5fbcc26a0256_705x611.png" width="705" height="611" alt="💳 ff.135.4 अमेरिका, नाइजीरिया और क्रिप्टोकरेंसी" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!gxIx!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F96b32817-d867-457f-9bc3-5324ab774886_3968x2136.jpeg" width="3968" height="2136" alt="💳 ff.135.4 अमेरिका, नाइजीरिया और क्रिप्टोकरेंसी" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (2)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.ark-invest.com/articles/analyst-research/stablecoins-as-a-us-financial-ally" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ अमेरिकी कर्ज़ डिजिटल और विकेंद्रित हो रहा है (ARK Invest की रिपोर्ट)</a>
-            <a href="https://fortissimo.substack.com/i/115631636/ff-una-vpn-finanziaria" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 👍ff.73.3 एक वित्तीय VPN</a>
+          <div class="ff-refs-l">
+            <a href="https://www.ark-invest.com/articles/analyst-research/stablecoins-as-a-us-financial-ally" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> अमेरिकी कर्ज़ डिजिटल और विकेंद्रित हो रहा है (ARK Invest की रिपोर्ट)</a>
+            <a href="https://fortissimo.substack.com/i/115631636/ff-una-vpn-finanziaria" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> <span class="ff-emo">👍</span>ff.73.3 एक वित्तीय VPN</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-135-5" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-135-5" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🏛️ ff.135.5 तकनीकी राजनीति</h2>
-        <a href="https://fortissimo.substack.com/i/173499753/ff-politica-tecnologica" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.135.5 तकनीकी राजनीति">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🏛️</span> ff.135.5 तकनीकी राजनीति</h2>
+        <a href="https://fortissimo.substack.com/i/173499753/ff-politica-tecnologica" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.135.5 तकनीकी राजनीति">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">राजनीति में डिजिटलीकरण की और मिसालें:</p>
-        <p class="text-base leading-relaxed text-black/90">नेपाल ने Discord के ज़रिए प्रधानमंत्री चुना (👾 ff.3.5 Discord)।</p>
+        <p class="text-base leading-relaxed text-black/90">नेपाल ने Discord के ज़रिए प्रधानमंत्री चुना (<span class="ff-emo">👾</span> ff.3.5 Discord)।</p>
         <p class="text-base leading-relaxed text-black/90">अल्बानिया ने आर्टिफ़िशियल इंटेलिजेंस से बना एक मंत्री प्रस्तावित किया है। ऐसे देश में जहाँ 1/3 सरकारी पैसा भ्रष्टाचार में जल जाता है, वह एक निष्पक्ष और “भाई-भतीजावाद” से मुक्त कर्मचारी होगा।</p>
-        <p class="text-base leading-relaxed text-black/90">🎶 fortissimo नोट्स संग्रह</p>
-        <p class="text-base leading-relaxed text-black/90">👋 फिर मिलेंगे, micmer की ओर से</p>
-        <p class="text-base leading-relaxed text-black/90">© futuro fortissimo | michele merelli</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">🎶</span> fortissimo नोट्स संग्रह</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">👋</span> फिर मिलेंगे, micmer की ओर से</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">©</span> futuro fortissimo | michele merelli</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!IYdF!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F64e3d289-612c-4ecc-ad77-21a5c96e9ea8_592x130.png" width="592" height="130" alt="🏛️ ff.135.5 तकनीकी राजनीति" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!IiTs!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd6c47fc2-67e7-4ba2-a446-06506fd97e20_625x571.jpeg" width="625" height="571" alt="Casino Royale (2006) का ट्रेलर, via futuro fortissimo" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Casino Royale (2006) का ट्रेलर, via futuro fortissimo</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (6)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://x.com/Polymarket/status/1966398992922690046?t=kLwszKIBHHmtvoB8L4EA9Q&amp;s=19" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ नेपाल ने Discord के ज़रिए प्रधानमंत्री चुना</a>
-            <a href="https://www.politico.eu/article/albania-apppoints-worlds-first-virtual-minister-edi-rama-diella/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ अल्बानिया ने आर्टिफ़िशियल इंटेलिजेंस से बना एक मंत्री प्रस्तावित किया है</a>
-            <a href="https://futurofortissimo.github.io/note.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ fortissimo नोट्स संग्रह</a>
-            <a href="https://futurofortissimo.github.io/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ futuro fortissimo</a>
-            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ michele merelli</a>
-            <a href="https://fortissimo.substack.com/i/43912374/ff-discord" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 👾 ff.3.5 Discord</a>
+          <div class="ff-refs-l">
+            <a href="https://x.com/Polymarket/status/1966398992922690046?t=kLwszKIBHHmtvoB8L4EA9Q&amp;s=19" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> नेपाल ने Discord के ज़रिए प्रधानमंत्री चुना</a>
+            <a href="https://www.politico.eu/article/albania-apppoints-worlds-first-virtual-minister-edi-rama-diella/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> अल्बानिया ने आर्टिफ़िशियल इंटेलिजेंस से बना एक मंत्री प्रस्तावित किया है</a>
+            <a href="https://futurofortissimo.github.io/note.html" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> fortissimo नोट्स संग्रह</a>
+            <a href="https://futurofortissimo.github.io/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> futuro fortissimo</a>
+            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> michele merelli</a>
+            <a href="https://fortissimo.substack.com/i/43912374/ff-discord" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> <span class="ff-emo">👾</span> ff.3.5 Discord</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">संबंधित अंक</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-52.html" class="font-bold hover:underline">ff.52 गैराज में एक राष्ट्र की स्थापना</a><p class="text-sm text-black/75 mt-1">केंद्रीकरण या विकेंद्रीकरण? एक अस्थिर संतुलन</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-73.html" class="font-bold hover:underline">ff.73 एन्क्रिप्टेड भविष्य</a><p class="text-sm text-black/75 mt-1">क्रिप्टोकरेंसी, मोना लिसा, Majin Buu और महँगाई</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-125.html" class="font-bold hover:underline">ff.125 अमेरिका: एक साम्राज्य का पतन</a><p class="text-sm text-black/75 mt-1">अमेरिका की जगह कौन लेगा? चीन या इंटरनेट?</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-82.html" class="font-bold hover:underline">ff.82 चिप्स से लड़ा जाने वाला युद्ध</a><p class="text-sm text-black/75 mt-1">क्या GPU 21वीं सदी की खाइयाँ होंगी?</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/hi/archive/ff-52.html" class="font-bold hover:underline">ff.52 गैराज में एक राष्ट्र की स्थापना</a><p class="text-sm text-black/75 mt-1">केंद्रीकरण या विकेंद्रीकरण? एक अस्थिर संतुलन</p></li>
+        <li><a href="/hi/archive/ff-73.html" class="font-bold hover:underline">ff.73 एन्क्रिप्टेड भविष्य</a><p class="text-sm text-black/75 mt-1">क्रिप्टोकरेंसी, मोना लिसा, Majin Buu और महँगाई</p></li>
+        <li><a href="/hi/archive/ff-125.html" class="font-bold hover:underline">ff.125 अमेरिका: एक साम्राज्य का पतन</a><p class="text-sm text-black/75 mt-1">अमेरिका की जगह कौन लेगा? चीन या इंटरनेट?</p></li>
+        <li><a href="/hi/archive/ff-82.html" class="font-bold hover:underline">ff.82 चिप्स से लड़ा जाने वाला युद्ध</a><p class="text-sm text-black/75 mt-1">क्या GPU 21वीं सदी की खाइयाँ होंगी?</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Futuro Fortissimo के नए अंक पाएँ</h2>
         <p class="text-sm text-black/80 mt-1">बर्गामो के मिकेले मेरेल्ली का मुफ़्त न्यूज़लेटर — तकनीक, AI, प्रकृति और समाज पर। इतालवी में लिखा गया, Substack से ईमेल पर।</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 मुफ़्त सब्सक्राइब करें ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary"><span class="ff-emo">📩</span> मुफ़्त सब्सक्राइब करें <span class="ff-emo">↗</span></a>
     </section>
 
     <nav aria-label="पिछला और अगला अंक" class="ff-pn">
@@ -418,7 +418,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -438,16 +438,16 @@
       <div class="space-y-2">
         <p class="ff-eyebrow">फ़ॉलो करें</p>
         <ul class="space-y-1 font-medium">
-          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack ↗</a></li>
-          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
-          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram ↗</a></li>
+          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram <span class="ff-emo">↗</span></a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
-          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">मुझे एक कॉफ़ी पिलाएँ ☕ ↗</a></li>
-          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">मिकेले के अन्य प्रोजेक्ट ↗</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">मुझे एक कॉफ़ी पिलाएँ <span class="ff-emo">☕</span> <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">मिकेले के अन्य प्रोजेक्ट <span class="ff-emo">↗</span></a></li>
         </ul>
       </div>
     </div>
-    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
+    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70"><span class="ff-emo">©</span> 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
   <aside class="ff-sticky-sub" aria-label="Newsletter">
     <p>पसंद आया? अगला अंक ईमेल पर पाएँ।</p>
@@ -455,11 +455,11 @@
     <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="बंद करें">✕</button>
   </aside>
   <nav class="ff-tabbar" aria-label="मुख्य नेविगेशन">
-    <a href="/hi/"><span class="ff-ti" aria-hidden="true">🏠</span>होम</a>
-    <a href="/hi/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>संग्रह</a>
-    <a href="/hi/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>थीम</a>
-    <a href="/hi/books/"><span class="ff-ti" aria-hidden="true">📚</span>किताबें</a>
-    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>खोजें</button>
+    <a href="/hi/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🏠</span></span>होम</a>
+    <a href="/hi/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🗂</span></span>संग्रह</a>
+    <a href="/hi/themes.html"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🧭</span></span>थीम</a>
+    <a href="/hi/books/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">📚</span></span>किताबें</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🔍</span></span>खोजें</button>
   </nav>
   <dialog id="ff-search" class="ff-search" aria-label="खोजें" data-empty="कोई परिणाम नहीं। कोई और शब्द आज़माएँ।">
     <form role="search">
@@ -470,7 +470,7 @@
     <ul id="ff-results" role="listbox" aria-label="खोजें"></ul>
     <div class="ff-s-foot"><a href="/hi/archive/" data-ff-all data-base="/hi/archive/">संग्रह में सभी परिणाम →</a><span>कहीं भी खोजने के लिए / दबाएँ</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

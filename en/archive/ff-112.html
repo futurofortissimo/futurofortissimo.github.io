@@ -147,12 +147,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -161,9 +161,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -216,18 +216,18 @@
         <a href="/en/books/">Books</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="Language"><a href="/archivio/ff-112.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/archive/ff-112.html" hreflang="en" lang="en" title="English" data-keep-state aria-current="page">EN</a><a href="/hi/archive/ff-112.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="Dark theme" title="Dark theme"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Subscribe</a>
         <details class="ff-more">
-          <summary aria-label="More"><span aria-hidden="true">☰</span><span class="sr-only">More</span></summary>
+          <summary aria-label="More"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">More</span></summary>
           <nav class="ff-menu" aria-label="More">
-            <a href="/book/">📖 The Book (IT)</a>
-            <a href="/en/connections.html">🔗 Connections</a>
-            <a href="/en/note.html">📝 Notes</a>
+            <a href="/book/"><span class="ff-emo">📖</span> The Book (IT)</a>
+            <a href="/en/connections.html"><span class="ff-emo">🔗</span> Connections</a>
+            <a href="/en/note.html"><span class="ff-emo">📝</span> Notes</a>
             <hr />
-            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 Subscribe ↗</a>
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener"><span class="ff-emo">📩</span> Subscribe <span class="ff-emo">↗</span></a>
           </nav>
         </details>
       </div>
@@ -237,41 +237,41 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/en/">Home</a> /</li><li><a class="underline" href="/en/archive/">Archive</a> /</li><li aria-current="page">ff.112 Unpredictable water</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>112</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>112</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="wave" data-ff-slug="ff-112" data-label="Open the 3D object and preview of ff.112"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Futuro Fortissimo Archive</p>
-      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.112 Unpredictable water</h1>
+      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black"><span class="ff-emo">🎼</span> ff.112 Unpredictable water</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">Does it make sense to forecast an exponential reality?</p>
       <p class="mt-2 text-xs font-mono text-black/70">Published <time datetime="2025-01-10T08:40:34.268Z">10 January 2025</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/en/archive/ff-112.html" data-done="Link copied"><span aria-hidden="true">↗</span> Share</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/en/archive/ff-112.html" data-done="Link copied"><span aria-hidden="true">🔗</span> Copy link</button>
-        <a href="https://fortissimo.substack.com/p/ff112-acqua-imprevedibile" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Read the Italian original on Substack ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/en/archive/ff-112.html" data-done="Link copied"><span aria-hidden="true"><span class="ff-emo">↗</span></span> Share</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/en/archive/ff-112.html" data-done="Link copied"><span aria-hidden="true"><span class="ff-emo">🔗</span></span> Copy link</button>
+        <a href="https://fortissimo.substack.com/p/ff112-acqua-imprevedibile" target="_blank" rel="noopener noreferrer" class="ff-qlink">Read the Italian original on Substack <span class="ff-emo">↗</span></a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• Do we have 5 years to earn as much as possible?</li>
-        <li>• The unpredictable podcast of my year of journaling</li>
-        <li>• If the future is ever more cryptic, why predict it?</li>
+      <ul class="ff-keypoints">
+        <li>Do we have 5 years to earn as much as possible?</li>
+        <li>The unpredictable podcast of my year of journaling</li>
+        <li>If the future is ever more cryptic, why predict it?</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Themes</span><a href="/en/themes.html#ai" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🤖 AI, agents and models</a><a href="/en/themes.html#cultura" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🎨 Culture, books and art</a><a href="/en/themes.html#attenzione" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">📱 Attention, screens and habits</a></p>
-      <nav aria-label="Sections of this issue" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">Themes</span><a href="/en/themes.html#ai" class="ff-tlink"><span class="ff-emo">🤖</span> AI, agents and models</a><a href="/en/themes.html#cultura" class="ff-tlink"><span class="ff-emo">🎨</span> Culture, books and art</a><a href="/en/themes.html#attenzione" class="ff-tlink"><span class="ff-emo">📱</span> Attention, screens and habits</a></p>
+      <nav aria-label="Sections of this issue" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">In this issue</h2>
         <ol>
-          <li><a href="#ff-112-1">💸 ff.112.1 5 years to make money</a></li>
-          <li><a href="#ff-112-2">🙅 ff.112.2 We can&#39;t predict anything</a></li>
-          <li><a href="#ff-112-3">🏋️ ff.112.3 We can only prepare as well as possible</a></li>
-          <li><a href="#ff-112-4">🏞️ ff.112.4 Unexpected rivers</a></li>
-          <li><a href="#ff-112-5">💧 ff.112.5 Water everywhere</a></li>
+          <li><a href="#ff-112-1"><span class="ff-emo">💸</span> ff.112.1 5 years to make money</a></li>
+          <li><a href="#ff-112-2"><span class="ff-emo">🙅</span> ff.112.2 We can&#39;t predict anything</a></li>
+          <li><a href="#ff-112-3"><span class="ff-emo">🏋️</span> ff.112.3 We can only prepare as well as possible</a></li>
+          <li><a href="#ff-112-4"><span class="ff-emo">🏞️</span> ff.112.4 Unexpected rivers</a></li>
+          <li><a href="#ff-112-5"><span class="ff-emo">💧</span> ff.112.5 Water everywhere</a></li>
         </ol>
       </nav>
     </header>
 
     
 
-    <section id="ff-112-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-112-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">💸 ff.112.1 5 years to make money</h2>
-        <a href="https://fortissimo.substack.com/i/153969354/ff-anni-per-fare-soldi" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.112.1 5 years to make money">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">💸</span> ff.112.1 5 years to make money</h2>
+        <a href="https://fortissimo.substack.com/i/153969354/ff-anni-per-fare-soldi" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.112.1 5 years to make money">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">The start of the year means resolutions and predictions. Both doomed to crumble against the wall of an ever more unpredictable reality.</p>
@@ -279,23 +279,23 @@
         <p class="text-base leading-relaxed text-black/90">An example: o3, OpenAI&#39;s latest model, doubled its (already staggering) accuracy in a few months.</p>
         <p class="text-base leading-relaxed text-black/90">Faced with this acceleration, is Raoul Pal right to say that within 5 (6) years the current socio-financial system will completely lose its meaning/value?</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!5m1f!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd8150c40-6f67-4dd7-99b9-332bb7e21d8b_596x387.png" width="596" height="387" alt="💸 ff.112.1 5 years to make money" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (2)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://x.com/__nmca__/status/1870170098989674833" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ o3, OpenAI&#39;s latest model</a>
-            <a href="https://micmer.notion.site/You-Have-6-Years-to-Make-as-Much-Money-as-Possible-Raoul-Pal-11041b31f60e8002af94ef64171eb305" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ within 5 (6) years the current socio-financial system will completely lose its meaning/value</a>
+          <div class="ff-refs-l">
+            <a href="https://x.com/__nmca__/status/1870170098989674833" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> o3, OpenAI&#39;s latest model</a>
+            <a href="https://micmer.notion.site/You-Have-6-Years-to-Make-as-Much-Money-as-Possible-Raoul-Pal-11041b31f60e8002af94ef64171eb305" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> within 5 (6) years the current socio-financial system will completely lose its meaning/value</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-112-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-112-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🙅 ff.112.2 We can&#39;t predict anything</h2>
-        <a href="https://fortissimo.substack.com/i/153969354/ff-non-possiamo-prevedere-nulla" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.112.2 We can&#39;t predict anything">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🙅</span> ff.112.2 We can&#39;t predict anything</h2>
+        <a href="https://fortissimo.substack.com/i/153969354/ff-non-possiamo-prevedere-nulla" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.112.2 We can&#39;t predict anything">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Putting a face on it? We don&#39;t understand reality, not just the future one but the present: Hollywood is scared of generative art recreating actors, yet half of box-office takings are already tied to non-human characters.</p>
@@ -303,113 +303,113 @@
         <p class="text-base leading-relaxed text-black/90">Here are my 5 very personal what-ifs:</p>
         <p class="text-base leading-relaxed text-black/90">What if the robot population overtakes the human one? What if I live to 500? If I can&#39;t predict the next 5 years, how do I think about the next 100? What if a swarm of autonomous drones appeared on the horizon? If energy and money lose value, will biological health (measured in VO2max) be the new wealth?</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!6JqQ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F91bb432c-faaf-4975-bf9a-540197cf4ed2_700x274.png" width="700" height="274" alt="Doug Shapiro: box-office takings of “faceless” characters (via futuro fortissimo)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Doug Shapiro: box-office takings of “faceless” characters (via futuro fortissimo)</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://innovationex.substack.com/p/236-stop-saying-never-practice-saying?utm_campaign=email-half-post&amp;r=bruig&amp;utm_source=substack&amp;utm_medium=email" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Ved Sen invites us to replace “never” with “what if”</a>
+          <div class="ff-refs-l">
+            <a href="https://innovationex.substack.com/p/236-stop-saying-never-practice-saying?utm_campaign=email-half-post&amp;r=bruig&amp;utm_source=substack&amp;utm_medium=email" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Ved Sen invites us to replace “never” with “what if”</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-112-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-112-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🏋️ ff.112.3 We can only prepare as well as possible</h2>
-        <a href="https://fortissimo.substack.com/i/153969354/ff-possiamo-solo-prepararci-al-meglio" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.112.3 We can only prepare as well as possible">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🏋️</span> ff.112.3 We can only prepare as well as possible</h2>
+        <a href="https://fortissimo.substack.com/i/153969354/ff-possiamo-solo-prepararci-al-meglio" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.112.3 We can only prepare as well as possible">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Given an uncertain future, all we can do is refocus on the present, keeping good habits and making small investments.</p>
         <p class="text-base leading-relaxed text-black/90">I&#39;ve kept a personal diary for 10 years. I thought it would be useless, given the jumble of text I&#39;d hardly ever reread. This year, thanks to Google&#39;s NotebookLM, I turned it into a podcast episode about my life.</p>
         <p class="text-base leading-relaxed text-black/90">Hearing two “people” comment, not without some irony, on my very personal worries made me smile. Now I can&#39;t wait to generate a whole film of my life.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!wk2g!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb158d07a-ccd4-4b26-9441-9d1f51eb29b6_866x516.png" width="866" height="516" alt="🏋️ ff.112.3 We can only prepare as well as possible" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://notebooklm.google/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Google&#39;s NotebookLM</a>
+          <div class="ff-refs-l">
+            <a href="https://notebooklm.google/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Google&#39;s NotebookLM</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-112-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-112-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🏞️ ff.112.4 Unexpected rivers</h2>
-        <a href="https://fortissimo.substack.com/i/153969354/ff-fiumi-inattesi" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.112.4 Unexpected rivers">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🏞️</span> ff.112.4 Unexpected rivers</h2>
+        <a href="https://fortissimo.substack.com/i/153969354/ff-fiumi-inattesi" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.112.4 Unexpected rivers">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
-        <p class="text-base leading-relaxed text-black/90">The diary is just one example of how AI (we&#39;ll soon talk about Google Deep Research) processes the jumble of information we generate (♾️ ff.72.1 Digital infinity).</p>
+        <p class="text-base leading-relaxed text-black/90">The diary is just one example of how AI (we&#39;ll soon talk about Google Deep Research) processes the jumble of information we generate (<span class="ff-emo">♾️</span> ff.72.1 Digital infinity).</p>
         <p class="text-base leading-relaxed text-black/90">Research on the link between drinking-water hardness and lower cardiovascular risk has existed since the &#39;60s. Only recently have we managed to rediscover and understand it more deeply.</p>
         <p class="text-base leading-relaxed text-black/90">A small example: I took the data on the mineral salts in Bergamo&#39;s water and, with a simple copy-paste into ChatGPT, generated a report on mineral salts in the water of various towns in the province, noticing that my village tops the chart for magnesium. Hooray!</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!Tego!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F110a02d9-ff2e-44de-b2e8-40dc9b365172_535x851.png" width="535" height="851" alt="🏞️ ff.112.4 Unexpected rivers" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (4)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://blog.google/products/gemini/google-gemini-deep-research/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Google Deep Research</a>
-            <a href="https://www.mdpi.com/2304-8158/12/17/3255" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ drinking-water hardness and lower cardiovascular risk</a>
-            <a href="https://www.uniacque.bg.it/qualita-dellacqua/i-parametri-del-tuo-comune/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ mineral salts in Bergamo&#39;s water</a>
-            <a href="https://fortissimo.substack.com/i/134486468/ff-infinito-digitale" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ ♾️ ff.72.1 Digital infinity</a>
+          <div class="ff-refs-l">
+            <a href="https://blog.google/products/gemini/google-gemini-deep-research/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Google Deep Research</a>
+            <a href="https://www.mdpi.com/2304-8158/12/17/3255" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> drinking-water hardness and lower cardiovascular risk</a>
+            <a href="https://www.uniacque.bg.it/qualita-dellacqua/i-parametri-del-tuo-comune/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> mineral salts in Bergamo&#39;s water</a>
+            <a href="https://fortissimo.substack.com/i/134486468/ff-infinito-digitale" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> <span class="ff-emo">♾️</span> ff.72.1 Digital infinity</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-112-5" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-112-5" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">💧 ff.112.5 Water everywhere</h2>
-        <a href="https://fortissimo.substack.com/i/153969354/ff-acqua-da-tutte-le-parti" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.112.5 Water everywhere">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">💧</span> ff.112.5 Water everywhere</h2>
+        <a href="https://fortissimo.substack.com/i/153969354/ff-acqua-da-tutte-le-parti" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.112.5 Water everywhere">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
-        <p class="text-base leading-relaxed text-black/90">2025 isn&#39;t a blank slate, but the continuation of life&#39;s flow. So let&#39;s go back to the recent invitation to follow the Tao, to be water (☯️ ff.108.3 Be water).</p>
+        <p class="text-base leading-relaxed text-black/90">2025 isn&#39;t a blank slate, but the continuation of life&#39;s flow. So let&#39;s go back to the recent invitation to follow the Tao, to be water (<span class="ff-emo">☯️</span> ff.108.3 Be water).</p>
         <p class="text-base leading-relaxed text-black/90">Water that flows without resolutions or predictions, but with a direction: downwards. Following a single law: gravity.</p>
         <p class="text-base leading-relaxed text-black/90">Without knowing whether it&#39;ll end up in a sea, a lake, a toilet, a fruit or your mouth.</p>
-        <p class="text-base leading-relaxed text-black/90">🎶 fortissimo notes archive</p>
-        <p class="text-base leading-relaxed text-black/90">☕ virtual coffee</p>
-        <p class="text-base leading-relaxed text-black/90">❤️ a little heart below?</p>
-        <p class="text-base leading-relaxed text-black/90">👋 See you soon, from micmer</p>
-        <p class="text-base leading-relaxed text-black/90">© futuro fortissimo | michele merelli</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">🎶</span> fortissimo notes archive</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">☕</span> virtual coffee</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">❤️</span> a little heart below?</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">👋</span> See you soon, from micmer</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">©</span> futuro fortissimo | michele merelli</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!snHR!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F73d69ea1-428c-49a9-a30c-2f21a79f1400_1440x566.bin" alt="New Day Coming, Calida Rawles (2020)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">New Day Coming, Calida Rawles (2020)</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (4)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://futurofortissimo.github.io/note.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ fortissimo notes archive</a>
-            <a href="https://futurofortissimo.github.io/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ futuro fortissimo</a>
-            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ michele merelli</a>
-            <a href="https://fortissimo.substack.com/i/148256057/ff-essere-acqua" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ ☯️ ff.108.3 Be water</a>
+          <div class="ff-refs-l">
+            <a href="https://futurofortissimo.github.io/note.html" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> fortissimo notes archive</a>
+            <a href="https://futurofortissimo.github.io/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> futuro fortissimo</a>
+            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> michele merelli</a>
+            <a href="https://fortissimo.substack.com/i/148256057/ff-essere-acqua" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> <span class="ff-emo">☯️</span> ff.108.3 Be water</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">Related issues</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-108.html" class="font-bold hover:underline">ff.108 An ode to routine</a><p class="text-sm text-black/75 mt-1">Every day can be a “Perfect Day”</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-72.html" class="font-bold hover:underline">ff.72 Shall we play UNO?</a><p class="text-sm text-black/75 mt-1">Forcing yourself to do just one thing, against generative art and constant distraction</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-151.html" class="font-bold hover:underline">ff.151 Imagine, you can!</a><p class="text-sm text-black/75 mt-1">Simulating smells, generating the web live and other Paprika</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-123.html" class="font-bold hover:underline">ff.123 Diamond hunting</a><p class="text-sm text-black/75 mt-1">Is OpenAI o3 with a Swiss army knife AGI?</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/en/archive/ff-108.html" class="font-bold hover:underline">ff.108 An ode to routine</a><p class="text-sm text-black/75 mt-1">Every day can be a “Perfect Day”</p></li>
+        <li><a href="/en/archive/ff-72.html" class="font-bold hover:underline">ff.72 Shall we play UNO?</a><p class="text-sm text-black/75 mt-1">Forcing yourself to do just one thing, against generative art and constant distraction</p></li>
+        <li><a href="/en/archive/ff-151.html" class="font-bold hover:underline">ff.151 Imagine, you can!</a><p class="text-sm text-black/75 mt-1">Simulating smells, generating the web live and other Paprika</p></li>
+        <li><a href="/en/archive/ff-123.html" class="font-bold hover:underline">ff.123 Diamond hunting</a><p class="text-sm text-black/75 mt-1">Is OpenAI o3 with a Swiss army knife AGI?</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Get new issues of Futuro Fortissimo</h2>
         <p class="text-sm text-black/80 mt-1">A free newsletter by Michele Merelli (Bergamo) on technology, AI, nature and society. Written in Italian, delivered by Substack.</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 Subscribe for free ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary"><span class="ff-emo">📩</span> Subscribe for free <span class="ff-emo">↗</span></a>
     </section>
 
     <nav aria-label="Adjacent issues" class="ff-pn">
@@ -418,7 +418,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -438,16 +438,16 @@
       <div class="space-y-2">
         <p class="ff-eyebrow">Follow</p>
         <ul class="space-y-1 font-medium">
-          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack ↗</a></li>
-          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
-          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram ↗</a></li>
+          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram <span class="ff-emo">↗</span></a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
-          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee ☕ ↗</a></li>
-          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects ↗</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee <span class="ff-emo">☕</span> <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects <span class="ff-emo">↗</span></a></li>
         </ul>
       </div>
     </div>
-    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
+    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70"><span class="ff-emo">©</span> 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
   <aside class="ff-sticky-sub" aria-label="Newsletter">
     <p>Enjoying it? Get the next issue by email.</p>
@@ -455,11 +455,11 @@
     <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="Dismiss">✕</button>
   </aside>
   <nav class="ff-tabbar" aria-label="Main navigation">
-    <a href="/en/"><span class="ff-ti" aria-hidden="true">🏠</span>Home</a>
-    <a href="/en/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>Archive</a>
-    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>Themes</a>
-    <a href="/en/books/"><span class="ff-ti" aria-hidden="true">📚</span>Books</a>
-    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>Search</button>
+    <a href="/en/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🏠</span></span>Home</a>
+    <a href="/en/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🗂</span></span>Archive</a>
+    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🧭</span></span>Themes</a>
+    <a href="/en/books/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">📚</span></span>Books</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🔍</span></span>Search</button>
   </nav>
   <dialog id="ff-search" class="ff-search" aria-label="Search" data-empty="No results. Try another word.">
     <form role="search">
@@ -470,7 +470,7 @@
     <ul id="ff-results" role="listbox" aria-label="Search"></ul>
     <div class="ff-s-foot"><a href="/en/archive/" data-ff-all data-base="/en/archive/">All results in the archive →</a><span>Press / to search anywhere</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

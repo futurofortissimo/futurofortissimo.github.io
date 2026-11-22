@@ -147,12 +147,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -161,9 +161,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -216,18 +216,18 @@
         <a href="/en/books/">Books</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="Language"><a href="/archivio/ff-60.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/archive/ff-60.html" hreflang="en" lang="en" title="English" data-keep-state aria-current="page">EN</a><a href="/hi/archive/ff-60.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="Dark theme" title="Dark theme"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Subscribe</a>
         <details class="ff-more">
-          <summary aria-label="More"><span aria-hidden="true">☰</span><span class="sr-only">More</span></summary>
+          <summary aria-label="More"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">More</span></summary>
           <nav class="ff-menu" aria-label="More">
-            <a href="/book/">📖 The Book (IT)</a>
-            <a href="/en/connections.html">🔗 Connections</a>
-            <a href="/en/note.html">📝 Notes</a>
+            <a href="/book/"><span class="ff-emo">📖</span> The Book (IT)</a>
+            <a href="/en/connections.html"><span class="ff-emo">🔗</span> Connections</a>
+            <a href="/en/note.html"><span class="ff-emo">📝</span> Notes</a>
             <hr />
-            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 Subscribe ↗</a>
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener"><span class="ff-emo">📩</span> Subscribe <span class="ff-emo">↗</span></a>
           </nav>
         </details>
       </div>
@@ -237,196 +237,196 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/en/">Home</a> /</li><li><a class="underline" href="/en/archive/">Archive</a> /</li><li aria-current="page">ff.60 Self-driving is here!</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>60</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>60</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="car" data-ff-slug="ff-60" data-label="Open the 3D object and preview of ff.60"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Futuro Fortissimo Archive</p>
-      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.60 Self-driving is here!</h1>
+      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black"><span class="ff-emo">🎼</span> ff.60 Self-driving is here!</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">Who will win the robotaxi race? Elon Musk, or China with DriveGPT?</p>
       <p class="mt-2 text-xs font-mono text-black/70">Published <time datetime="2023-05-20T06:47:50.379Z">20 May 2023</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/en/archive/ff-60.html" data-done="Link copied"><span aria-hidden="true">↗</span> Share</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/en/archive/ff-60.html" data-done="Link copied"><span aria-hidden="true">🔗</span> Copy link</button>
-        <a href="https://fortissimo.substack.com/p/ff60-la-guida-autonoma-e-qui" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Read the Italian original on Substack ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/en/archive/ff-60.html" data-done="Link copied"><span aria-hidden="true"><span class="ff-emo">↗</span></span> Share</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/en/archive/ff-60.html" data-done="Link copied"><span aria-hidden="true"><span class="ff-emo">🔗</span></span> Copy link</button>
+        <a href="https://fortissimo.substack.com/p/ff60-la-guida-autonoma-e-qui" target="_blank" rel="noopener noreferrer" class="ff-qlink">Read the Italian original on Substack <span class="ff-emo">↗</span></a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• Are robotaxis finally here?</li>
-        <li>• Will road deaths go down?</li>
-        <li>• Why Tesla is both late and early.</li>
+      <ul class="ff-keypoints">
+        <li>Are robotaxis finally here?</li>
+        <li>Will road deaths go down?</li>
+        <li>Why Tesla is both late and early.</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Themes</span><a href="/en/themes.html#ai" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🤖 AI, agents and models</a><a href="/en/themes.html#geo" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🏛 Geopolitics, economy and society</a><a href="/en/themes.html#clima" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🌍 Nature, climate and energy</a></p>
-      <nav aria-label="Sections of this issue" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">Themes</span><a href="/en/themes.html#ai" class="ff-tlink"><span class="ff-emo">🤖</span> AI, agents and models</a><a href="/en/themes.html#geo" class="ff-tlink"><span class="ff-emo">🏛</span> Geopolitics, economy and society</a><a href="/en/themes.html#clima" class="ff-tlink"><span class="ff-emo">🌍</span> Nature, climate and energy</a></p>
+      <nav aria-label="Sections of this issue" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">In this issue</h2>
         <ol>
-          <li><a href="#ff-60-1">🤠 ff.60.1 The Westworld of self-driving: SF</a></li>
-          <li><a href="#ff-60-2">🆕 ff.60.2 Tesla&#39;s taxis</a></li>
-          <li><a href="#ff-60-3">⚡ ff.60.3 More money for taxis, less for carmakers</a></li>
+          <li><a href="#ff-60-1"><span class="ff-emo">🤠</span> ff.60.1 The Westworld of self-driving: SF</a></li>
+          <li><a href="#ff-60-2"><span class="ff-emo">🆕</span> ff.60.2 Tesla&#39;s taxis</a></li>
+          <li><a href="#ff-60-3"><span class="ff-emo">⚡</span> ff.60.3 More money for taxis, less for carmakers</a></li>
           <li><a href="#ff-60-4">🇨🇳 ff.60.4 DriveGPT</a></li>
-          <li><a href="#ff-60-5">💀 ff.60.5 Fewer deaths on the roads?</a></li>
+          <li><a href="#ff-60-5"><span class="ff-emo">💀</span> ff.60.5 Fewer deaths on the roads?</a></li>
         </ol>
       </nav>
     </header>
 
     
 
-    <section id="ff-60-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-60-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🤠 ff.60.1 The Westworld of self-driving: SF</h2>
-        <a href="https://fortissimo.substack.com/i/117901757/ff-westworld-della-guida-autonoma-sf" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.60.1 The Westworld of self-driving: SF">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🤠</span> ff.60.1 The Westworld of self-driving: SF</h2>
+        <a href="https://fortissimo.substack.com/i/117901757/ff-westworld-della-guida-autonoma-sf" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.60.1 The Westworld of self-driving: SF">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Are we there yet? Like many technological developments, self-driving has seemed ready to conquer the roads for years. Some trends start slowly, then become the norm in no time (see electric vehicles).</p>
         <p class="text-base leading-relaxed text-black/90">A child&#39;s dream is to go to San Francisco. Like Westworld in the HBO series, San Francisco is a parallel amusement park, a window onto the future. I wish some of these experiments happened closer to home. Instead, we get the Privacy Watchdog and the ChatGPT saga.</p>
         <p class="text-base leading-relaxed text-black/90">Cruise (General Motors&#39; self-driving unit) launched its plan for a 24/7 robotaxi service. Self-driving is here (with Baidu and Waymo too). But the numbers are insignificant. And since only Tesla has scaled production consistently, we&#39;re waiting on them for the big leap in adoption.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!K_mr!,w_1456,c_limit,f_auto,q_auto:good,fl_lossy/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd5e13981-0db6-4d4b-8917-92e696078fc9_400x225.gif" width="400" height="225" alt="🤠 ff.60.1 The Westworld of self-driving: SF" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!slCS!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4752aa04-7b5c-4ed0-a025-4589dc7e9cff_908x515.png" width="908" height="515" alt="A Cruise Robotaxi in SF" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">A Cruise Robotaxi in SF</figcaption>
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!Bpmf!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb809edfd-e67e-4470-9f3e-c441a6ab4922_1388x635.png" width="1388" height="635" alt="🤠 ff.60.1 The Westworld of self-driving: SF" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://twitter.com/kvogt/status/1650845475195559939?utm_source=substack&amp;utm_medium=email" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 24/7 robotaxi service</a>
+          <div class="ff-refs-l">
+            <a href="https://twitter.com/kvogt/status/1650845475195559939?utm_source=substack&amp;utm_medium=email" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> 24/7 robotaxi service</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-60-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-60-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🆕 ff.60.2 Tesla&#39;s taxis</h2>
-        <a href="https://fortissimo.substack.com/i/117901757/ff-i-taxi-di-tesla" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.60.2 Tesla&#39;s taxis">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🆕</span> ff.60.2 Tesla&#39;s taxis</h2>
+        <a href="https://fortissimo.substack.com/i/117901757/ff-i-taxi-di-tesla" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.60.2 Tesla&#39;s taxis">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Robotaxis. Tesla (at $182 today) is valued by ARK at $2,000 a share in 2027, with a final value equal to 3x today&#39;s Apple ($2.6T). Much of the market value is tied to robotaxi adoption ($613B in hypothetical revenue in 2027; Apple&#39;s revenue in 2022 was $394B).</p>
         <p class="text-base leading-relaxed text-black/90">Nerd corner. Below, a detailed breakdown of the model (with bear and bull estimates) put together by the financial research group.</p>
         <p class="text-base leading-relaxed text-black/90">Anyway, numbers aside, here&#39;s an Uber driver doing a dress rehearsal of his own replacement. Listen to the comments of the tourists who get in. A bit like riding the Blue Tornado for the first time.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!iVLC!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5dd3de87-e101-49d2-8b25-65698b4c6761_1280x720.jpeg" width="1280" height="720" alt="🆕 ff.60.2 Tesla&#39;s taxis" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!f4qa!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa32d28a4-580b-4391-9277-63100d3cb783_703x747.png" width="703" height="747" alt="🆕 ff.60.2 Tesla&#39;s taxis" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://ark-invest.com/articles/valuation-models/arks-tesla-price-target-2027/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Tesla (at $182 today) is valued by ARK at $2,000 a share in 2027</a>
+          <div class="ff-refs-l">
+            <a href="https://ark-invest.com/articles/valuation-models/arks-tesla-price-target-2027/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Tesla (at $182 today) is valued by ARK at $2,000 a share in 2027</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-60-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-60-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">⚡ ff.60.3 More money for taxis, less for carmakers</h2>
-        <a href="https://fortissimo.substack.com/i/117901757/ff-piu-soldi-ai-taxi-meno-ai-produttori" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.60.3 More money for taxis, less for carmakers">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">⚡</span> ff.60.3 More money for taxis, less for carmakers</h2>
+        <a href="https://fortissimo.substack.com/i/117901757/ff-piu-soldi-ai-taxi-meno-ai-produttori" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.60.3 More money for taxis, less for carmakers">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">There&#39;s a section on self-driving in ARK Big Ideas 2023 too (yes, despite the rejection after 5 interviews with them, I&#39;m particularly fond of Cathie).</p>
         <p class="text-base leading-relaxed text-black/90">Fewer vehicles sold, but used more. That&#39;s the trend ahead of us. It won&#39;t make sense to buy a car and leave it parked 96% of the time. So self-driving will make more money for the owners of the taxi service than for the companies building the vehicles.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!LXwp!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F02aff2c7-88a7-47fd-a39b-79bff05af566_1375x659.png" width="1375" height="659" alt="⚡ ff.60.3 More money for taxis, less for carmakers" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (2)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://research.ark-invest.com/hubfs/1_Download_Files_ARK-Invest/Big_Ideas/ARK%20Invest_013123_Presentation_Big%20Ideas%202023_Final.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ ARK Big Ideas 2023</a>
-            <a href="https://www.racfoundation.org/research/mobility/spaced-out-perspectives-on-parking" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ leave it parked 96% of the time</a>
+          <div class="ff-refs-l">
+            <a href="https://research.ark-invest.com/hubfs/1_Download_Files_ARK-Invest/Big_Ideas/ARK%20Invest_013123_Presentation_Big%20Ideas%202023_Final.pdf" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> ARK Big Ideas 2023</a>
+            <a href="https://www.racfoundation.org/research/mobility/spaced-out-perspectives-on-parking" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> leave it parked 96% of the time</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-60-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-60-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🇨🇳 ff.60.4 DriveGPT</h2>
-        <a href="https://fortissimo.substack.com/i/117901757/ff-drivegpt" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.60.4 DriveGPT">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/117901757/ff-drivegpt" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.60.4 DriveGPT">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Haomo.ai, a Chinese AI giant (a bit of culture on the non-US players driving progress), unveiled DriveGPT: the revolution of reinforcement learning from human feedback in self-driving (until now we knew RLHF only from ChatGPT and models that improved by chatting).</p>
         <p class="text-base leading-relaxed text-black/90">ByteDance (owner of TikTok) is working with Haomo.ai, funding the country&#39;s biggest data centre (and the “Chinese Fiat”, Great Wall Motor, is in on the project too)</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!LB-d!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9adc929c-9b90-4d7e-a396-c8ab0439bb0b_1200x900.png" width="1200" height="900" alt="🇨🇳 ff.60.4 DriveGPT" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://cnevpost.com/2023/04/11/haomo-self-driving-ambitions-launch-drivegpt/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ DriveGPT</a>
-            <a href="https://en.wikipedia.org/wiki/Reinforcement_learning_from_human_feedback" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ reinforcement learning from human feedback</a>
-            <a href="https://www.scmp.com/tech/big-tech/article/3205846/tiktok-owner-bytedance-start-haomoai-launch-new-infrastructure-boost-autonomous-driving-push-worlds" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ ByteDance (owner of TikTok) is working with Haomo.ai</a>
+          <div class="ff-refs-l">
+            <a href="https://cnevpost.com/2023/04/11/haomo-self-driving-ambitions-launch-drivegpt/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> DriveGPT</a>
+            <a href="https://en.wikipedia.org/wiki/Reinforcement_learning_from_human_feedback" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> reinforcement learning from human feedback</a>
+            <a href="https://www.scmp.com/tech/big-tech/article/3205846/tiktok-owner-bytedance-start-haomoai-launch-new-infrastructure-boost-autonomous-driving-push-worlds" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> ByteDance (owner of TikTok) is working with Haomo.ai</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-60-5" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-60-5" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">💀 ff.60.5 Fewer deaths on the roads?</h2>
-        <a href="https://fortissimo.substack.com/i/117901757/ff-meno-morti-sulle-strade" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.60.5 Fewer deaths on the roads?">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">💀</span> ff.60.5 Fewer deaths on the roads?</h2>
+        <a href="https://fortissimo.substack.com/i/117901757/ff-meno-morti-sulle-strade" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.60.5 Fewer deaths on the roads?">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
-        <p class="text-base leading-relaxed text-black/90">A road accident can pollute as much as 10 years of an average European&#39;s emissions (⛲ ff.58.3 Going to Niagara Falls (from New York)).</p>
+        <p class="text-base leading-relaxed text-black/90">A road accident can pollute as much as 10 years of an average European&#39;s emissions (<span class="ff-emo">⛲</span> ff.58.3 Going to Niagara Falls (from New York)).</p>
         <p class="text-base leading-relaxed text-black/90">But are accidents on the rise? Honestly, I thought so (distracted by smartphones; data below only goes up to 2015, though). But if we normalise deaths per million inhabitants or per miles driven, fewer people die on the road.</p>
         <p class="text-base leading-relaxed text-black/90">Here are deaths per 100,000 people (including motorcyclists, pedestrians and cyclists) for some developed countries.</p>
         <p class="text-base leading-relaxed text-black/90">Better autonomous? On Tesla&#39;s website there&#39;s a quarterly summary of miles driven before an accident. From 500k (US average) it goes up to 4-6M (a 10x improvement).</p>
         <p class="text-base leading-relaxed text-black/90">California collects all the accident reports involving self-driving cars (111 in 2021). On the streets of San Francisco, in the same year, 37 people died (drivers, pedestrians and cyclists) out of 13,000 accidents.</p>
-        <p class="text-base leading-relaxed text-black/90">🎵 Final notes</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">🎵</span> Final notes</p>
         <p class="text-base leading-relaxed text-black/90">In the future, digital nomads will work in a self-driving van, circling the globe again and again, like the train in Snowpiercer.</p>
-        <p class="text-base leading-relaxed text-black/90">In the next 🎼ff we&#39;ll talk about the climate cost of practically everything! 👋 See you soon, from micmer</p>
-        <p class="text-base leading-relaxed text-black/90">Want to support this project? → Share it with a friend on WhatsApp → Buy me a coffee 😏 → Remember to leave a little heart below.</p>
-        <p class="text-base leading-relaxed text-black/90">☕❤️</p>
+        <p class="text-base leading-relaxed text-black/90">In the next <span class="ff-emo">🎼</span>ff we&#39;ll talk about the climate cost of practically everything! <span class="ff-emo">👋</span> See you soon, from micmer</p>
+        <p class="text-base leading-relaxed text-black/90">Want to support this project? → Share it with a friend on WhatsApp → Buy me a coffee <span class="ff-emo">😏</span> → Remember to leave a little heart below.</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">☕</span><span class="ff-emo">❤️</span></p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!y4-A!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faaba5371-2666-4c24-8b2d-6cbb64365be0_1920x1169.png" width="1920" height="1169" alt="💀 ff.60.5 Fewer deaths on the roads?" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!Bgap!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8ba95f10-02f6-4d10-b753-d140920b9f59_900x587.png" width="900" height="587" alt="From Our World In Data." loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">From Our World In Data.</figcaption>
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!q2u4!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F308e4c43-3e88-48a3-bc97-c6f612e873e0_732x607.png" width="732" height="607" alt="💀 ff.60.5 Fewer deaths on the roads?" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (4)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.tesla.com/VehicleSafetyReport" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ On Tesla&#39;s website there&#39;s a quarterly summary of miles driven before an accident</a>
-            <a href="https://www.dmv.ca.gov/portal/vehicle-industry-services/autonomous-vehicles/autonomous-vehicle-collision-reports/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ California collects all the accident reports involving self-driving cars</a>
-            <a href="https://www.danroselaw.com/personal-injury-blog/posts/california-bay-area-car-accident-statistics/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ out of 13,000 accidents.</a>
-            <a href="https://fortissimo.substack.com/i/113015963/ff-andare-alle-cascate-del-niagara-da-new-york" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ ⛲ ff.58.3 Going to Niagara Falls (from New York)</a>
+          <div class="ff-refs-l">
+            <a href="https://www.tesla.com/VehicleSafetyReport" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> On Tesla&#39;s website there&#39;s a quarterly summary of miles driven before an accident</a>
+            <a href="https://www.dmv.ca.gov/portal/vehicle-industry-services/autonomous-vehicles/autonomous-vehicle-collision-reports/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> California collects all the accident reports involving self-driving cars</a>
+            <a href="https://www.danroselaw.com/personal-injury-blog/posts/california-bay-area-car-accident-statistics/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> out of 13,000 accidents.</a>
+            <a href="https://fortissimo.substack.com/i/113015963/ff-andare-alle-cascate-del-niagara-da-new-york" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> <span class="ff-emo">⛲</span> ff.58.3 Going to Niagara Falls (from New York)</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">Related issues</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-58.html" class="font-bold hover:underline">ff.58 Do bananas pollute too much?</a><p class="text-sm text-black/75 mt-1">How to cut and track the emissions of everyday activities</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-156.html" class="font-bold hover:underline">ff.156 Aulin?</a><p class="text-sm text-black/75 mt-1">What do you do when your head (and your pumpkin) explodes, every single day?</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-155.html" class="font-bold hover:underline">ff.155 Labels and mind viruses</a><p class="text-sm text-black/75 mt-1">An apple full of chemistry, AI agents passing ideas to each other, threatened bananas and an mRNA therapy…</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-149.html" class="font-bold hover:underline">ff.149 How to be solar</a><p class="text-sm text-black/75 mt-1">Abundance is here, just put on your sunglasses</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/en/archive/ff-58.html" class="font-bold hover:underline">ff.58 Do bananas pollute too much?</a><p class="text-sm text-black/75 mt-1">How to cut and track the emissions of everyday activities</p></li>
+        <li><a href="/en/archive/ff-156.html" class="font-bold hover:underline">ff.156 Aulin?</a><p class="text-sm text-black/75 mt-1">What do you do when your head (and your pumpkin) explodes, every single day?</p></li>
+        <li><a href="/en/archive/ff-155.html" class="font-bold hover:underline">ff.155 Labels and mind viruses</a><p class="text-sm text-black/75 mt-1">An apple full of chemistry, AI agents passing ideas to each other, threatened bananas and an mRNA therapy…</p></li>
+        <li><a href="/en/archive/ff-149.html" class="font-bold hover:underline">ff.149 How to be solar</a><p class="text-sm text-black/75 mt-1">Abundance is here, just put on your sunglasses</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Get new issues of Futuro Fortissimo</h2>
         <p class="text-sm text-black/80 mt-1">A free newsletter by Michele Merelli (Bergamo) on technology, AI, nature and society. Written in Italian, delivered by Substack.</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 Subscribe for free ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary"><span class="ff-emo">📩</span> Subscribe for free <span class="ff-emo">↗</span></a>
     </section>
 
     <nav aria-label="Adjacent issues" class="ff-pn">
@@ -435,7 +435,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -455,16 +455,16 @@
       <div class="space-y-2">
         <p class="ff-eyebrow">Follow</p>
         <ul class="space-y-1 font-medium">
-          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack ↗</a></li>
-          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
-          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram ↗</a></li>
+          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram <span class="ff-emo">↗</span></a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
-          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee ☕ ↗</a></li>
-          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects ↗</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee <span class="ff-emo">☕</span> <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects <span class="ff-emo">↗</span></a></li>
         </ul>
       </div>
     </div>
-    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
+    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70"><span class="ff-emo">©</span> 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
   <aside class="ff-sticky-sub" aria-label="Newsletter">
     <p>Enjoying it? Get the next issue by email.</p>
@@ -472,11 +472,11 @@
     <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="Dismiss">✕</button>
   </aside>
   <nav class="ff-tabbar" aria-label="Main navigation">
-    <a href="/en/"><span class="ff-ti" aria-hidden="true">🏠</span>Home</a>
-    <a href="/en/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>Archive</a>
-    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>Themes</a>
-    <a href="/en/books/"><span class="ff-ti" aria-hidden="true">📚</span>Books</a>
-    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>Search</button>
+    <a href="/en/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🏠</span></span>Home</a>
+    <a href="/en/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🗂</span></span>Archive</a>
+    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🧭</span></span>Themes</a>
+    <a href="/en/books/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">📚</span></span>Books</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🔍</span></span>Search</button>
   </nav>
   <dialog id="ff-search" class="ff-search" aria-label="Search" data-empty="No results. Try another word.">
     <form role="search">
@@ -487,7 +487,7 @@
     <ul id="ff-results" role="listbox" aria-label="Search"></ul>
     <div class="ff-s-foot"><a href="/en/archive/" data-ff-all data-base="/en/archive/">All results in the archive →</a><span>Press / to search anywhere</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

@@ -146,12 +146,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -160,9 +160,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -215,18 +215,18 @@
         <a href="/en/books/">Books</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="Language"><a href="/archivio/ff-74.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/archive/ff-74.html" hreflang="en" lang="en" title="English" data-keep-state aria-current="page">EN</a><a href="/hi/archive/ff-74.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="Dark theme" title="Dark theme"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Subscribe</a>
         <details class="ff-more">
-          <summary aria-label="More"><span aria-hidden="true">☰</span><span class="sr-only">More</span></summary>
+          <summary aria-label="More"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">More</span></summary>
           <nav class="ff-menu" aria-label="More">
-            <a href="/book/">📖 The Book (IT)</a>
-            <a href="/en/connections.html">🔗 Connections</a>
-            <a href="/en/note.html">📝 Notes</a>
+            <a href="/book/"><span class="ff-emo">📖</span> The Book (IT)</a>
+            <a href="/en/connections.html"><span class="ff-emo">🔗</span> Connections</a>
+            <a href="/en/note.html"><span class="ff-emo">📝</span> Notes</a>
             <hr />
-            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 Subscribe ↗</a>
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener"><span class="ff-emo">📩</span> Subscribe <span class="ff-emo">↗</span></a>
           </nav>
         </details>
       </div>
@@ -236,61 +236,61 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/en/">Home</a> /</li><li><a class="underline" href="/en/archive/">Archive</a> /</li><li aria-current="page">ff.74 I&#39;m Japanese!</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>74</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>74</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="globe" data-ff-slug="ff-74" data-label="Open the 3D object and preview of ff.74"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Futuro Fortissimo Archive</p>
-      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.74 I&#39;m Japanese!</h1>
+      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black"><span class="ff-emo">🎼</span> ff.74 I&#39;m Japanese!</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">Japan: between childhood and the future</p>
       <p class="mt-2 text-xs font-mono text-black/70">Published <time datetime="2023-10-30T14:01:13.391Z">30 October 2023</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/en/archive/ff-74.html" data-done="Link copied"><span aria-hidden="true">↗</span> Share</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/en/archive/ff-74.html" data-done="Link copied"><span aria-hidden="true">🔗</span> Copy link</button>
-        <a href="https://fortissimo.substack.com/p/ff74-made-in-japan" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Read the Italian original on Substack ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/en/archive/ff-74.html" data-done="Link copied"><span aria-hidden="true"><span class="ff-emo">↗</span></span> Share</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/en/archive/ff-74.html" data-done="Link copied"><span aria-hidden="true"><span class="ff-emo">🔗</span></span> Copy link</button>
+        <a href="https://fortissimo.substack.com/p/ff74-made-in-japan" target="_blank" rel="noopener noreferrer" class="ff-qlink">Read the Italian original on Substack <span class="ff-emo">↗</span></a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• Is its history our future?</li>
-        <li>• A childhood between Goku and Pikachu</li>
-        <li>• A short Japanese dictionary</li>
+      <ul class="ff-keypoints">
+        <li>Is its history our future?</li>
+        <li>A childhood between Goku and Pikachu</li>
+        <li>A short Japanese dictionary</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Themes</span><a href="/en/themes.html#geo" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🏛 Geopolitics, economy and society</a><a href="/en/themes.html#clima" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🌍 Nature, climate and energy</a><a href="/en/themes.html#cultura" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🎨 Culture, books and art</a></p>
-      <nav aria-label="Sections of this issue" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">Themes</span><a href="/en/themes.html#geo" class="ff-tlink"><span class="ff-emo">🏛</span> Geopolitics, economy and society</a><a href="/en/themes.html#clima" class="ff-tlink"><span class="ff-emo">🌍</span> Nature, climate and energy</a><a href="/en/themes.html#cultura" class="ff-tlink"><span class="ff-emo">🎨</span> Culture, books and art</a></p>
+      <nav aria-label="Sections of this issue" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">In this issue</h2>
         <ol>
-          <li><a href="#ff-74-1">🔮ff.74.1 Our future?</a></li>
-          <li><a href="#ff-74-2">📙ff.74.2 A short cultural dictionary</a></li>
-          <li><a href="#ff-74-3">🈵ff.74.3 I&#39;m Japanese!</a></li>
-          <li><a href="#ff-74-4">🧙ff.74.4 Magic as an escape from reality</a></li>
+          <li><a href="#ff-74-1"><span class="ff-emo">🔮</span>ff.74.1 Our future?</a></li>
+          <li><a href="#ff-74-2"><span class="ff-emo">📙</span>ff.74.2 A short cultural dictionary</a></li>
+          <li><a href="#ff-74-3"><span class="ff-emo">🈵</span>ff.74.3 I&#39;m Japanese!</a></li>
+          <li><a href="#ff-74-4"><span class="ff-emo">🧙</span>ff.74.4 Magic as an escape from reality</a></li>
         </ol>
       </nav>
     </header>
 
     
 
-    <section id="ff-74-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-74-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🔮ff.74.1 Our future?</h2>
-        <a href="https://fortissimo.substack.com/i/137321489/ff-il-nostro-futuro" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.74.1 Our future?">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🔮</span>ff.74.1 Our future?</h2>
+        <a href="https://fortissimo.substack.com/i/137321489/ff-il-nostro-futuro" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.74.1 Our future?">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">One step ahead. The financial/real-estate bubble of the &#39;90s, the hikikomori phenomenon (hermits who impose a COVID-style lockdown on themselves), the demographic crisis: Japan seems to be sketching out the future of Western democracies.</p>
         <p class="text-base leading-relaxed text-black/90">Age group | % Population (2023, 2050)00-14 | 11. 5 , 11. 115-64 | 58. 5 , 51. 465-79 | 30. 1 , 37. 580-99+| 10. 8 , 15. 6</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!uKGb!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd4119203-f9b6-476e-b4c5-c25f5dbc0efc_704x364.png" width="704" height="364" alt="🔮ff.74.1 Our future?" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.borsaitaliana.it/speciali/fisherinvestments/italia/perche-gli-investitori-non-devono-temere-la-giapponesizzazione-dell-europa.htm" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ financial/real-estate bubble of the &#39;90s</a>
+          <div class="ff-refs-l">
+            <a href="https://www.borsaitaliana.it/speciali/fisherinvestments/italia/perche-gli-investitori-non-devono-temere-la-giapponesizzazione-dell-europa.htm" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> financial/real-estate bubble of the &#39;90s</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-74-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-74-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">📙ff.74.2 A short cultural dictionary</h2>
-        <a href="https://fortissimo.substack.com/i/137321489/ff-breve-dizionario-culturale" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.74.2 A short cultural dictionary">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">📙</span>ff.74.2 A short cultural dictionary</h2>
+        <a href="https://fortissimo.substack.com/i/137321489/ff-breve-dizionario-culturale" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.74.2 A short cultural dictionary">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Ignorant. Because of the geo-graphical distance (of their alphabet) I didn&#39;t know much about what, in the &#39;70s - despite its defeat in the war - was the world&#39;s second-largest economy. Matt Alt comes to the rescue in Pop ポップ, with historical and cultural insights.</p>
@@ -299,28 +299,28 @@
         <p class="text-base leading-relaxed text-black/90">kawaii (可愛い), lit. cute; describes something charming, vulnerable, childlike or lovable. You often find it in cartoon illustrations with round, oversized heads (Hello Kitty, Pikachu).</p>
         <p class="text-base leading-relaxed text-black/90">otaku (おたく), a young person obsessed with a particular hobby or interest (esp. comics, cartoons, video games and computers). In Japan, though, it describes socially isolated people. A nerd shut away at home, running from reality.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!fGt2!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe32142c5-9392-45c1-a4aa-02d0f7faaa88_686x1000.jpeg" width="686" height="1000" alt="📙ff.74.2 A short cultural dictionary" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!8Bfp!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F06fcb55f-e4d0-4ddb-ba23-6cb546acc758_375x429.jpeg" width="375" height="429" alt="📙ff.74.2 A short cultural dictionary" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.wired.com/2011/03/0309incendiary-bombs-kill-100000-tokyo/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 9 March 1945, 100k dead</a>
-            <a href="https://unseen-japan.com/barbie-first-wardrobe-was-made-in-tokyo/#:~:text=Tokyo%3A%20The%20Original%20Barbie%20Land,production%20site%20for%20the%20doll." target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Mattel, after all, chose Japan to produce Barbie</a>
-            <a href="https://it.wikipedia.org/wiki/Emarginazione" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ socially isolated</a>
+          <div class="ff-refs-l">
+            <a href="https://www.wired.com/2011/03/0309incendiary-bombs-kill-100000-tokyo/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> 9 March 1945, 100k dead</a>
+            <a href="https://unseen-japan.com/barbie-first-wardrobe-was-made-in-tokyo/#:~:text=Tokyo%3A%20The%20Original%20Barbie%20Land,production%20site%20for%20the%20doll." target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Mattel, after all, chose Japan to produce Barbie</a>
+            <a href="https://it.wikipedia.org/wiki/Emarginazione" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> socially isolated</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-74-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-74-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🈵ff.74.3 I&#39;m Japanese!</h2>
-        <a href="https://fortissimo.substack.com/i/137321489/ff-sono-giapponese" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.74.3 I&#39;m Japanese!">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🈵</span>ff.74.3 I&#39;m Japanese!</h2>
+        <a href="https://fortissimo.substack.com/i/137321489/ff-sono-giapponese" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.74.3 I&#39;m Japanese!">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">The series The Man in the High Castle imagines a Second World War without nuclear bombs, after which the East prevails and the streets of San Francisco are dotted with kanji (漢字).</p>
@@ -328,101 +328,101 @@
         <p class="text-base leading-relaxed text-black/90">Millennials (and maybe Centennials and Screenagers too) grew up in front of a PlayStation, after lunch with Dragon Ball, Naruto, Detective Conan or One Piece. They communicate in emoji and live more and more on social networks (the story of 2chan), to escape a reality that feels ever tighter.</p>
         <p class="text-base leading-relaxed text-black/90">In short, Americans my foot. We&#39;re Japanese!</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!mNFz!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2909ca99-4b10-4358-a51b-b5699bd8d29f_1920x1080.jpeg" width="1920" height="1080" alt="🈵ff.74.3 I&#39;m Japanese!" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!TjNO!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd1eff9b5-dc67-4ac1-80ca-6f3fc451f314_700x700.png" width="700" height="700" alt="The graphic novel of The Man in the High Castle (1962) illustrated by Shan Jiang" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">The graphic novel of The Man in the High Castle (1962) illustrated by Shan Jiang</figcaption>
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!iGxn!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb366e721-7127-49c2-9f37-d0a438fb81ac_447x272.png" width="447" height="272" alt="🈵ff.74.3 I&#39;m Japanese!" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://borderonline.org/2017/06/30/gli-italiani-non-sono-piu-quelli-pier-paolo-pasolini/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Pasolini lamented an Americanisation of culture</a>
-            <a href="https://it.wikipedia.org/wiki/Generazione" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Millennials (and maybe Centennials and Screenagers too)</a>
-            <a href="https://en.wikipedia.org/wiki/2chan" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ the story of 2chan</a>
+          <div class="ff-refs-l">
+            <a href="https://borderonline.org/2017/06/30/gli-italiani-non-sono-piu-quelli-pier-paolo-pasolini/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Pasolini lamented an Americanisation of culture</a>
+            <a href="https://it.wikipedia.org/wiki/Generazione" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Millennials (and maybe Centennials and Screenagers too)</a>
+            <a href="https://en.wikipedia.org/wiki/2chan" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> the story of 2chan</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-74-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-74-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🧙ff.74.4 Magic as an escape from reality</h2>
-        <a href="https://fortissimo.substack.com/i/137321489/ff-la-magia-come-fuga-dalla-realta" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.74.4 Magic as an escape from reality">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🧙</span>ff.74.4 Magic as an escape from reality</h2>
+        <a href="https://fortissimo.substack.com/i/137321489/ff-la-magia-come-fuga-dalla-realta" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.74.4 Magic as an escape from reality">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Per essere sinceri l’intero Giappone è una pura invenzione. […] Il popolo giapponese, come ho appena detto, non è nient’altro che una forma, una particolare fantasia dell’Arte. Oscar Wilde,La decadenza del mentire(1891)</p>
-        <p class="text-base leading-relaxed text-black/90">Virtual nature. Since Japan loves nature (💚 ff.51.1 Storytelling for green), when it began to vanish with urbanisation, one way out was personifying animals (invariably kawaii, “cute”).</p>
+        <p class="text-base leading-relaxed text-black/90">Virtual nature. Since Japan loves nature (<span class="ff-emo">💚</span> ff.51.1 Storytelling for green), when it began to vanish with urbanisation, one way out was personifying animals (invariably kawaii, “cute”).</p>
         <p class="text-base leading-relaxed text-black/90">vangoghmuseumA post shared by@vangoghmuseum</p>
         <p class="text-base leading-relaxed text-black/90">Fantastic beasts (and where to find them). They run alongside the works of Studio Ghibli (The Boy and the Heron comes out in January) and Murakami&#39;s novels (Confessions of a Shinagawa Monkey). As urbanisation spread, certain themes resonated elsewhere. Zerocalcare&#39;s success with his talking armadillo is no coincidence.</p>
-        <p class="text-base leading-relaxed text-black/90">To close the loop, in perfect 🎼ff style, the NFT collection launched by Shan Jiang.</p>
+        <p class="text-base leading-relaxed text-black/90">To close the loop, in perfect <span class="ff-emo">🎼</span>ff style, the NFT collection launched by Shan Jiang.</p>
         <p class="text-base leading-relaxed text-black/90">Japanese version</p>
         <p class="text-base leading-relaxed text-black/90">🇯🇵 今日は主に日本について話します：</p>
         <p class="text-base leading-relaxed text-black/90">その歴史、私たちの未来は？GokuとPikachuとの幼少期日本語の簡単な辞書</p>
         <p class="text-base leading-relaxed text-black/90">これらの日々、ヨーロッパで販売しているソフトウェアの製造元を訪問するために東京に滞在しています。コードは粒子と流体をシミュレートします。</p>
-        <p class="text-base leading-relaxed text-black/90">そして、ゲームと仕事、幼少期と未来の間に🎼ffが生まれます。まるで日本のように。</p>
-        <p class="text-base leading-relaxed text-black/90">🔮 ff. 74. 1 私たちの未来は？</p>
+        <p class="text-base leading-relaxed text-black/90">そして、ゲームと仕事、幼少期と未来の間に<span class="ff-emo">🎼</span>ffが生まれます。まるで日本のように。</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">🔮</span> ff. 74. 1 私たちの未来は？</p>
         <p class="text-base leading-relaxed text-black/90">一歩前進。1990年代の金融/不動産バブル、ひきこもり現象（COVIDスタイルのロックダウンを自己課徴する隠遁者）、人口危機：日本は西洋の民主主義の未来を予測しているようです。</p>
         <p class="text-base leading-relaxed text-black/90">年齢層 |％ 人口（2023、2050）00-14 | 11. 5、11. 115-64 | 58. 5、51. 465-79 | 30. 1、37. 580-99+| 10. 8、15. 6</p>
-        <p class="text-base leading-relaxed text-black/90">📙 ff. 74. 2 簡単な文化辞典</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">📙</span> ff. 74. 2 簡単な文化辞典</p>
         <p class="text-base leading-relaxed text-black/90">無知。地理的な距離（彼らのアルファベットの）のため、1970年代にもかかわらず、戦争の敗北にもかかわらず、それは世界第2位の経済だったことについてあまり知りませんでした。Matt AltのPop ポップは、歴史的および文化的な洞察を提供します。</p>
         <p class="text-base leading-relaxed text-black/90">たとえば、史上最大の爆撃（1945年3月9日、10万人の死者）や、おもちゃの製造のために日本を選んだMattelによって牽引された信じられないほどの経済復活について語っています。</p>
         <p class="text-base leading-relaxed text-black/90">明暗。この本は、日本の魅力と矛盾を凝縮する2つの概念を示しています。</p>
         <p class="text-base leading-relaxed text-black/90">kawaii(可愛い)、リトル. 可愛らしい。魅力的で、かわいらしい、幼い、愛らしいものを表します。しばしば、丸い頭と不釣り合いな体つきのイラストに見られます（ハローキティ、ピカチュウ）。</p>
         <p class="text-base leading-relaxed text-black/90">otaku(おたく)、特定の趣味や関心（特にコミック、アニメ、ビデオゲーム、コンピューター）に執着する若者を指します。しかし、日本では社会的に孤立した人々を説明します。現実から逃れることを選ぶ引きこもりのような人。</p>
-        <p class="text-base leading-relaxed text-black/90">🈵 ff. 74. 3 私は日本人です！</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">🈵</span> ff. 74. 3 私は日本人です！</p>
         <p class="text-base leading-relaxed text-black/90">The Man in the High Castleシリーズは、原爆なしの第二次世界大戦を想像し、その結果、東洋が優勢となり、サンフランシスコの通りに漢字（漢字）が散在すると仮定しています。</p>
         <p class="text-base leading-relaxed text-black/90">静かな侵略。しかし、文化的には、そうではなかったのでしょうか？パゾリーニは、1960年代の経済ブームの後、文化のアメリカ化を嘆いていました。</p>
         <p class="text-base leading-relaxed text-black/90">ミレニアル世代（おそらくセンテニアル世代とスクリーンエイジャーも）は、ドラゴンボール、ナルト、名探偵コナン、ワンピースで昼食をとった後、プレイステーションの前で成長しました。彼らは絵文字を使ってコミュニケーションし、ソーシャルネットワークでますます生活しているかもしれません（2chanの物語）。現実がますます狭くなってきたためかもしれません。</p>
         <p class="text-base leading-relaxed text-black/90">つまり、アメリカンではなく、彼らは日本人です！</p>
-        <p class="text-base leading-relaxed text-black/90">🧙 ff. 74. 4 現実逃避としての魔法</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">🧙</span> ff. 74. 4 現実逃避としての魔法</p>
         <p class="text-base leading-relaxed text-black/90">正直に言うと、日本全体は純粋な創造物です。[...] 日本の人々は、私が言ったように、芸術の特定の幻想に過ぎません。オスカー・ワイルド、The Decay of Lying（1891）</p>
         <p class="text-base leading-relaxed text-black/90">バーチャルネイチャー。日本は自然を愛しているので、都市化が始まると、動物の擬人化が出てきました（不変にkawaii、「かわいい」です）。</p>
         <p class="text-base leading-relaxed text-black/90">ファンタスティック・ビースト（そして見つける場所）。これらはスタジオジブリの作品（1月には「少年と白鷺」が公開予定）や村上春樹の小説（品川のサルの告白）に隣接しています。都市化が進行するにつれ、特定のトピックは</p>
-        <p class="text-base leading-relaxed text-black/90">past issues | discord | instagram | linkedin | a coffee 🤫 psst! before you go, remember to leave a little heart below. ❤️</p>
+        <p class="text-base leading-relaxed text-black/90">past issues | discord | instagram | linkedin | a coffee <span class="ff-emo">🤫</span> psst! before you go, remember to leave a little heart below. <span class="ff-emo">❤️</span></p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!FnEv!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5fd047b5-6610-4cb5-9d14-5c4d2d884506_500x500.jpeg" width="500" height="500" alt="Kyoto Street Party, Shan Jiang" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Kyoto Street Party, Shan Jiang</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (8)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://instagram.com/vangoghmuseum" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ vangoghmuseum</a>
-            <a href="https://www.sempredirebanzai.it/tutti-i-riferimenti-al-giappone-e-agli-anime-di-strappare-lungo-i-bordi-di-zerocalcare/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Zerocalcare&#39;s success with his talking armadillo is no coincidence.</a>
-            <a href="https://www.shan-jiang.com/kyoto-street-party" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ the NFT collection launched by Shan Jiang</a>
-            <a href="https://www.notion.so/ff-futuro-fortissimo-f41e153b16654108991832eae044338c" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ past issues</a>
-            <a href="https://discord.gg/aecHyTZD" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ discord</a>
-            <a href="https://www.instagram.com/futuro_fortissimo_newsletter/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ instagram</a>
-            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ linkedin</a>
-            <a href="https://fortissimo.substack.com/i/88408587/ff-laffabulazione-per-il-verde" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 💚 ff.51.1 Storytelling for green</a>
+          <div class="ff-refs-l">
+            <a href="https://instagram.com/vangoghmuseum" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> vangoghmuseum</a>
+            <a href="https://www.sempredirebanzai.it/tutti-i-riferimenti-al-giappone-e-agli-anime-di-strappare-lungo-i-bordi-di-zerocalcare/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Zerocalcare&#39;s success with his talking armadillo is no coincidence.</a>
+            <a href="https://www.shan-jiang.com/kyoto-street-party" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> the NFT collection launched by Shan Jiang</a>
+            <a href="https://www.notion.so/ff-futuro-fortissimo-f41e153b16654108991832eae044338c" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> past issues</a>
+            <a href="https://discord.gg/aecHyTZD" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> discord</a>
+            <a href="https://www.instagram.com/futuro_fortissimo_newsletter/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> instagram</a>
+            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> linkedin</a>
+            <a href="https://fortissimo.substack.com/i/88408587/ff-laffabulazione-per-il-verde" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> <span class="ff-emo">💚</span> ff.51.1 Storytelling for green</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">Related issues</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-51.html" class="font-bold hover:underline">ff.51 The religion of the 21st century?</a><p class="text-sm text-black/75 mt-1">The fine balance between Greta, Greenpeace and hope in the future</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-52.html" class="font-bold hover:underline">ff.52 Founding a Nation in your garage</a><p class="text-sm text-black/75 mt-1">Centralisation or decentralisation? An unstable balance</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-50.html" class="font-bold hover:underline">ff.50 WTF happened in 1971?</a><p class="text-sm text-black/75 mt-1">The great stagnation between gold, bitcoin, iPhones and a rosier future</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-42.html" class="font-bold hover:underline">ff.42 Made in China (pt.1)</a><p class="text-sm text-black/75 mt-1">The Silk Road has never been so rough</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/en/archive/ff-51.html" class="font-bold hover:underline">ff.51 The religion of the 21st century?</a><p class="text-sm text-black/75 mt-1">The fine balance between Greta, Greenpeace and hope in the future</p></li>
+        <li><a href="/en/archive/ff-52.html" class="font-bold hover:underline">ff.52 Founding a Nation in your garage</a><p class="text-sm text-black/75 mt-1">Centralisation or decentralisation? An unstable balance</p></li>
+        <li><a href="/en/archive/ff-50.html" class="font-bold hover:underline">ff.50 WTF happened in 1971?</a><p class="text-sm text-black/75 mt-1">The great stagnation between gold, bitcoin, iPhones and a rosier future</p></li>
+        <li><a href="/en/archive/ff-42.html" class="font-bold hover:underline">ff.42 Made in China (pt.1)</a><p class="text-sm text-black/75 mt-1">The Silk Road has never been so rough</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Get new issues of Futuro Fortissimo</h2>
         <p class="text-sm text-black/80 mt-1">A free newsletter by Michele Merelli (Bergamo) on technology, AI, nature and society. Written in Italian, delivered by Substack.</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 Subscribe for free ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary"><span class="ff-emo">📩</span> Subscribe for free <span class="ff-emo">↗</span></a>
     </section>
 
     <nav aria-label="Adjacent issues" class="ff-pn">
@@ -431,7 +431,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -451,16 +451,16 @@
       <div class="space-y-2">
         <p class="ff-eyebrow">Follow</p>
         <ul class="space-y-1 font-medium">
-          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack ↗</a></li>
-          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
-          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram ↗</a></li>
+          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram <span class="ff-emo">↗</span></a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
-          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee ☕ ↗</a></li>
-          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects ↗</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee <span class="ff-emo">☕</span> <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects <span class="ff-emo">↗</span></a></li>
         </ul>
       </div>
     </div>
-    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
+    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70"><span class="ff-emo">©</span> 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
   <aside class="ff-sticky-sub" aria-label="Newsletter">
     <p>Enjoying it? Get the next issue by email.</p>
@@ -468,11 +468,11 @@
     <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="Dismiss">✕</button>
   </aside>
   <nav class="ff-tabbar" aria-label="Main navigation">
-    <a href="/en/"><span class="ff-ti" aria-hidden="true">🏠</span>Home</a>
-    <a href="/en/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>Archive</a>
-    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>Themes</a>
-    <a href="/en/books/"><span class="ff-ti" aria-hidden="true">📚</span>Books</a>
-    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>Search</button>
+    <a href="/en/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🏠</span></span>Home</a>
+    <a href="/en/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🗂</span></span>Archive</a>
+    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🧭</span></span>Themes</a>
+    <a href="/en/books/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">📚</span></span>Books</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🔍</span></span>Search</button>
   </nav>
   <dialog id="ff-search" class="ff-search" aria-label="Search" data-empty="No results. Try another word.">
     <form role="search">
@@ -483,7 +483,7 @@
     <ul id="ff-results" role="listbox" aria-label="Search"></ul>
     <div class="ff-s-foot"><a href="/en/archive/" data-ff-all data-base="/en/archive/">All results in the archive →</a><span>Press / to search anywhere</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

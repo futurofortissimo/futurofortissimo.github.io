@@ -146,12 +146,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -160,9 +160,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -215,18 +215,18 @@
         <a href="/en/books/">Books</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="Language"><a href="/archivio/ff-69.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/archive/ff-69.html" hreflang="en" lang="en" title="English" data-keep-state aria-current="page">EN</a><a href="/hi/archive/ff-69.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="Dark theme" title="Dark theme"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Subscribe</a>
         <details class="ff-more">
-          <summary aria-label="More"><span aria-hidden="true">☰</span><span class="sr-only">More</span></summary>
+          <summary aria-label="More"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">More</span></summary>
           <nav class="ff-menu" aria-label="More">
-            <a href="/book/">📖 The Book (IT)</a>
-            <a href="/en/connections.html">🔗 Connections</a>
-            <a href="/en/note.html">📝 Notes</a>
+            <a href="/book/"><span class="ff-emo">📖</span> The Book (IT)</a>
+            <a href="/en/connections.html"><span class="ff-emo">🔗</span> Connections</a>
+            <a href="/en/note.html"><span class="ff-emo">📝</span> Notes</a>
             <hr />
-            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 Subscribe ↗</a>
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener"><span class="ff-emo">📩</span> Subscribe <span class="ff-emo">↗</span></a>
           </nav>
         </details>
       </div>
@@ -236,40 +236,40 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/en/">Home</a> /</li><li><a class="underline" href="/en/archive/">Archive</a> /</li><li aria-current="page">ff.69 Quantum?</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>69</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>69</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="atom" data-ff-slug="ff-69" data-label="Open the 3D object and preview of ff.69"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Futuro Fortissimo Archive</p>
-      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.69 Quantum?</h1>
+      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black"><span class="ff-emo">🎼</span> ff.69 Quantum?</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">Quantum computers between dead cats, mazes and Bitcoin</p>
       <p class="mt-2 text-xs font-mono text-black/70">Published <time datetime="2023-09-10T13:48:09.033Z">10 September 2023</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/en/archive/ff-69.html" data-done="Link copied"><span aria-hidden="true">↗</span> Share</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/en/archive/ff-69.html" data-done="Link copied"><span aria-hidden="true">🔗</span> Copy link</button>
-        <a href="https://fortissimo.substack.com/p/ff69-quantico" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Read the Italian original on Substack ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/en/archive/ff-69.html" data-done="Link copied"><span aria-hidden="true"><span class="ff-emo">↗</span></span> Share</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/en/archive/ff-69.html" data-done="Link copied"><span aria-hidden="true"><span class="ff-emo">🔗</span></span> Copy link</button>
+        <a href="https://fortissimo.substack.com/p/ff69-quantico" target="_blank" rel="noopener noreferrer" class="ff-qlink">Read the Italian original on Substack <span class="ff-emo">↗</span></a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• What are qubits?</li>
-        <li>• Rigetti and other companies to watch</li>
-        <li>• What could they be used for?</li>
+      <ul class="ff-keypoints">
+        <li>What are qubits?</li>
+        <li>Rigetti and other companies to watch</li>
+        <li>What could they be used for?</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Themes</span><a href="/en/themes.html#ai" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🤖 AI, agents and models</a><a href="/en/themes.html#clima" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🌍 Nature, climate and energy</a><a href="/en/themes.html#crypto" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🪙 Crypto and metaverse</a></p>
-      <nav aria-label="Sections of this issue" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">Themes</span><a href="/en/themes.html#ai" class="ff-tlink"><span class="ff-emo">🤖</span> AI, agents and models</a><a href="/en/themes.html#clima" class="ff-tlink"><span class="ff-emo">🌍</span> Nature, climate and energy</a><a href="/en/themes.html#crypto" class="ff-tlink"><span class="ff-emo">🪙</span> Crypto and metaverse</a></p>
+      <nav aria-label="Sections of this issue" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">In this issue</h2>
         <ol>
-          <li><a href="#ff-69-1">🐱ff.69.1 From Schrödinger&#39;s cat to qubits</a></li>
-          <li><a href="#ff-69-2">🧼 ff.69.2 Quantum foam</a></li>
-          <li><a href="#ff-69-3">🍏 ff.69.3 The quantum Apple?</a></li>
-          <li><a href="#ff-69-4">🤔 ff.69.4 What uses and dangers?</a></li>
+          <li><a href="#ff-69-1"><span class="ff-emo">🐱</span>ff.69.1 From Schrödinger&#39;s cat to qubits</a></li>
+          <li><a href="#ff-69-2"><span class="ff-emo">🧼</span> ff.69.2 Quantum foam</a></li>
+          <li><a href="#ff-69-3"><span class="ff-emo">🍏</span> ff.69.3 The quantum Apple?</a></li>
+          <li><a href="#ff-69-4"><span class="ff-emo">🤔</span> ff.69.4 What uses and dangers?</a></li>
         </ol>
       </nav>
     </header>
 
     
 
-    <section id="ff-69-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-69-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🐱ff.69.1 From Schrödinger&#39;s cat to qubits</h2>
-        <a href="https://fortissimo.substack.com/i/134659141/ff-dal-gatto-di-schrodinger-ai-qu-bit" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.69.1 From Schrödinger&#39;s cat to qubits">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🐱</span>ff.69.1 From Schrödinger&#39;s cat to qubits</h2>
+        <a href="https://fortissimo.substack.com/i/134659141/ff-dal-gatto-di-schrodinger-ai-qu-bit" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.69.1 From Schrödinger&#39;s cat to qubits">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">The idea for this newsletter came from Google&#39;s recent article: Sycamore-70 beats Frontier.</p>
@@ -282,55 +282,55 @@
         <p class="text-base leading-relaxed text-black/90">Like the cat that is &lt;alive|dead&gt; before we open the box and check on it (disturbing the wave function with an experimental measurement).</p>
         <p class="text-base leading-relaxed text-black/90">Simplifying a lot. Since each qubit represents both-right-and-left at the same time (until we measure), we don&#39;t have to program every combination of &lt;right&gt;/&lt;left&gt; to find the way out. That&#39;s all (bit).</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!EWwN!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdc5dc9fd-6203-4f0b-a830-d790337c609f_1280x701.jpeg" width="1280" height="701" alt="🐱ff.69.1 From Schrödinger&#39;s cat to qubits" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!i3Hs!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1784d181-d5ea-48f3-b506-e2ff3ffc8c76_1200x809.png" width="1200" height="809" alt="🐱ff.69.1 From Schrödinger&#39;s cat to qubits" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!NPT4!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F94ac38bc-c200-4a5a-b27f-de629f9d9e8b_1129x765.png" width="1129" height="765" alt="🐱ff.69.1 From Schrödinger&#39;s cat to qubits" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://arxiv.org/pdf/2304.11119.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Google: Sycamore-70 beats Frontier.</a>
-            <a href="https://en.wikipedia.org/wiki/Frontier_(supercomputer)" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Frontier is the biggest “classical” supercomputer</a>
-            <a href="https://ig.ft.com/quantum-computing/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Financial Times illustrations</a>
+          <div class="ff-refs-l">
+            <a href="https://arxiv.org/pdf/2304.11119.pdf" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Google: Sycamore-70 beats Frontier.</a>
+            <a href="https://en.wikipedia.org/wiki/Frontier_(supercomputer)" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Frontier is the biggest “classical” supercomputer</a>
+            <a href="https://ig.ft.com/quantum-computing/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Financial Times illustrations</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-69-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-69-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🧼 ff.69.2 Quantum foam</h2>
-        <a href="https://fortissimo.substack.com/i/134659141/ff-schiuma-quantica" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.69.2 Quantum foam">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🧼</span> ff.69.2 Quantum foam</h2>
+        <a href="https://fortissimo.substack.com/i/134659141/ff-schiuma-quantica" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.69.2 Quantum foam">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
-        <p class="text-base leading-relaxed text-black/90">Another quantum consequence is, as we&#39;ve seen, that the void doesn&#39;t exist (🔦 ff.64.1 The exhibition on the void). In fact, if an area were completely empty, we could say there&#39;s no matter (or energy, E=mc2) there. But saying the energy is exactly zero goes against Heisenberg&#39;s uncertainty principle.</p>
-        <p class="text-base leading-relaxed text-black/90">The void is a quantum foam. As in On Space Time Foam by Tomás Saraceno (2013, Hangar Bicocca). A project between art, the Big Bang, string theory and human beings, just the way we like it on 🎼ff.</p>
+        <p class="text-base leading-relaxed text-black/90">Another quantum consequence is, as we&#39;ve seen, that the void doesn&#39;t exist (<span class="ff-emo">🔦</span> ff.64.1 The exhibition on the void). In fact, if an area were completely empty, we could say there&#39;s no matter (or energy, E=mc2) there. But saying the energy is exactly zero goes against Heisenberg&#39;s uncertainty principle.</p>
+        <p class="text-base leading-relaxed text-black/90">The void is a quantum foam. As in On Space Time Foam by Tomás Saraceno (2013, Hangar Bicocca). A project between art, the Big Bang, string theory and human beings, just the way we like it on <span class="ff-emo">🎼</span>ff.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!KMb5!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffa5314e1-8e1f-412c-b9fb-2d2e7c504e77_595x395.bin" alt="🧼 ff.69.2 Quantum foam" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://it.wikipedia.org/wiki/Schiuma_quantistica" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ quantum foam</a>
-            <a href="https://pirellihangarbicocca.org/mostra/tomas-saraceno-on-space-time-foam/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ On Space Time Foam</a>
-            <a href="https://fortissimo.substack.com/i/119334503/ff-la-mostra-sul-vuoto" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🔦 ff.64.1 The exhibition on the void</a>
+          <div class="ff-refs-l">
+            <a href="https://it.wikipedia.org/wiki/Schiuma_quantistica" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> quantum foam</a>
+            <a href="https://pirellihangarbicocca.org/mostra/tomas-saraceno-on-space-time-foam/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> On Space Time Foam</a>
+            <a href="https://fortissimo.substack.com/i/119334503/ff-la-mostra-sul-vuoto" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> <span class="ff-emo">🔦</span> ff.64.1 The exhibition on the void</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-69-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-69-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🍏 ff.69.3 The quantum Apple?</h2>
-        <a href="https://fortissimo.substack.com/i/134659141/ff-la-apple-quantistica" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.69.3 The quantum Apple?">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🍏</span> ff.69.3 The quantum Apple?</h2>
+        <a href="https://fortissimo.substack.com/i/134659141/ff-la-apple-quantistica" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.69.3 The quantum Apple?">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Rigetti Computing is trying to take quantum technology commercial (it recently went public on the Nasdaq, NASDAQ: RGTI -85% since trading began).</p>
@@ -339,33 +339,33 @@
         <p class="text-base leading-relaxed text-black/90">The 10 companies that received the most investment. Which will be the quantum NVIDIA?</p>
         <p class="text-base leading-relaxed text-black/90">As for public investment (projections and announcements), China is pushing hard (in billions): 🇨🇳| 15🇪🇺| 8. 4🇺🇸| 3. 7</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!ZyEi!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4ede6133-7bea-4367-8336-3a8dc8bdeffa_1742x709.png" width="1742" height="709" alt="🍏 ff.69.3 The quantum Apple?" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!G7EF!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4ea78442-bc82-461d-b9d9-2a5846150ec2_844x735.png" width="844" height="735" alt="🍏 ff.69.3 The quantum Apple?" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!vpMq!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffb9dec8d-1035-4ab3-8f6c-a25578057e56_1035x442.png" width="1035" height="442" alt="🍏 ff.69.3 The quantum Apple?" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (4)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://g.co/kgs/qFcCTU" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ NASDAQ: RGTI -85% since trading began</a>
-            <a href="https://g.co/kgs/xCoja4" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ TDOC, which offers remote medicine</a>
-            <a href="https://www.allvuesystems.com/resources/6-venture-capital-trends-to-watch-in-2023/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 2022 brought something of a return to earth</a>
-            <a href="https://www.mckinsey.com/~/media/mckinsey/business%20functions/mckinsey%20digital/our%20insights/quantum%20technology%20sees%20record%20investments%20progress%20on%20talent%20gap/quantum-technology-monitor-april-2023.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ McKinsey&#39;s Quantum Technology Monitor 2023</a>
+          <div class="ff-refs-l">
+            <a href="https://g.co/kgs/qFcCTU" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> NASDAQ: RGTI -85% since trading began</a>
+            <a href="https://g.co/kgs/xCoja4" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> TDOC, which offers remote medicine</a>
+            <a href="https://www.allvuesystems.com/resources/6-venture-capital-trends-to-watch-in-2023/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> 2022 brought something of a return to earth</a>
+            <a href="https://www.mckinsey.com/~/media/mckinsey/business%20functions/mckinsey%20digital/our%20insights/quantum%20technology%20sees%20record%20investments%20progress%20on%20talent%20gap/quantum-technology-monitor-april-2023.pdf" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> McKinsey&#39;s Quantum Technology Monitor 2023</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-69-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-69-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🤔 ff.69.4 What uses and dangers?</h2>
-        <a href="https://fortissimo.substack.com/i/134659141/ff-quali-utilizzi-e-pericoli" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.69.4 What uses and dangers?">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🤔</span> ff.69.4 What uses and dangers?</h2>
+        <a href="https://fortissimo.substack.com/i/134659141/ff-quali-utilizzi-e-pericoli" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.69.4 What uses and dangers?">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">But what are the applications of this technology, and the potential dangers?</p>
@@ -373,52 +373,52 @@
         <p class="text-base leading-relaxed text-black/90">Bitcoin and VISA in danger? Yes, because the cryptographic systems underpinning today&#39;s financial system (and Bitcoin, Elliptic Curve Cryptography) can be solved (like the maze) in a finite and ever shorter time (Shor&#39;s algorithm).</p>
         <p class="text-base leading-relaxed text-black/90">If computers that you build are quantum,Then spies of all factions will want &#39;em. Our codes will all fail,And they&#39;ll read our email,Till we&#39;ve crypto that&#39;s quantum, and daunt &#39;em. Peter Shor,Nobel per la Fisica 2023 proprio per studi su questi temi</p>
         <p class="text-base leading-relaxed text-black/90">And that&#39;s all for today. No, not true, let&#39;s keep going. No really, just kidding, it&#39;s over. I&#39;m collapsing the newsletter into the state &lt;finished&gt;.</p>
-        <p class="text-base leading-relaxed text-black/90">Want to support this project? → Share it with a friend on WhatsApp → Buy me a coffee 😏 → Remember to leave a little heart below.</p>
-        <p class="text-base leading-relaxed text-black/90">☕❤️</p>
-        <p class="text-base leading-relaxed text-black/90">👋 See you soon, from micmer</p>
+        <p class="text-base leading-relaxed text-black/90">Want to support this project? → Share it with a friend on WhatsApp → Buy me a coffee <span class="ff-emo">😏</span> → Remember to leave a little heart below.</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">☕</span><span class="ff-emo">❤️</span></p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">👋</span> See you soon, from micmer</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!3nBO!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff454699b-da0c-47ef-97fc-512fe0434c4e_1026x533.png" width="1026" height="533" alt="The sectors most at risk of disruption, by quantum application (optimisation, factorisation, quantum simulations, etc…)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">The sectors most at risk of disruption, by quantum application (optimisation, factorisation, quantum simulations, etc…)</figcaption>
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!so8_!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F615f9181-4944-4c2f-bc4e-ec136269f73d_1193x677.png" width="1193" height="677" alt="🤔 ff.69.4 What uses and dangers?" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!OcC2!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdec0d4c9-3c67-4ad4-b1e1-82f5ea527353_720x500.jpeg" width="720" height="500" alt="Victoria Vesna, Quantum Tunneling." loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Victoria Vesna, Quantum Tunneling.</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (5)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.linkedin.com/company/savantx" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ SavantX</a>
-            <a href="https://www.sandboxaq.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ SandboxAQ</a>
-            <a href="https://www.kraken.com/learn/how-do-cryptocurrencies-use-cryptography" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Elliptic Curve Cryptography</a>
-            <a href="https://it.wikipedia.org/wiki/Algoritmo_di_fattorizzazione_di_Shor" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Shor&#39;s algorithm</a>
-            <a href="https://news.mit.edu/2022/shor-spielman-breakthrough-prize-0922" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Nobel Prize in Physics 2023 precisely for his work on these topics</a>
+          <div class="ff-refs-l">
+            <a href="https://www.linkedin.com/company/savantx" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> SavantX</a>
+            <a href="https://www.sandboxaq.com/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> SandboxAQ</a>
+            <a href="https://www.kraken.com/learn/how-do-cryptocurrencies-use-cryptography" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Elliptic Curve Cryptography</a>
+            <a href="https://it.wikipedia.org/wiki/Algoritmo_di_fattorizzazione_di_Shor" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Shor&#39;s algorithm</a>
+            <a href="https://news.mit.edu/2022/shor-spielman-breakthrough-prize-0922" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Nobel Prize in Physics 2023 precisely for his work on these topics</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">Related issues</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-64.html" class="font-bold hover:underline">ff.64 The metaphysics of the metaverse</a><p class="text-sm text-black/75 mt-1">Matrix, Futurism and the void of augmented reality</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-45.html" class="font-bold hover:underline">ff.45 Straddling &#39;22 and &#39;23</a><p class="text-sm text-black/75 mt-1">What to remember from 2022 to predict 2023</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-81.html" class="font-bold hover:underline">ff.81 2024 in the history books</a><p class="text-sm text-black/75 mt-1">Gene therapies, COP28 and Tesla&#39;s robot: starting 2024 on the right foot!</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-80.html" class="font-bold hover:underline">ff.80 The best of ff.2023</a><p class="text-sm text-black/75 mt-1">Burnout, CO2, ChatGPT, cryptocurrencies and time</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/en/archive/ff-64.html" class="font-bold hover:underline">ff.64 The metaphysics of the metaverse</a><p class="text-sm text-black/75 mt-1">Matrix, Futurism and the void of augmented reality</p></li>
+        <li><a href="/en/archive/ff-45.html" class="font-bold hover:underline">ff.45 Straddling &#39;22 and &#39;23</a><p class="text-sm text-black/75 mt-1">What to remember from 2022 to predict 2023</p></li>
+        <li><a href="/en/archive/ff-81.html" class="font-bold hover:underline">ff.81 2024 in the history books</a><p class="text-sm text-black/75 mt-1">Gene therapies, COP28 and Tesla&#39;s robot: starting 2024 on the right foot!</p></li>
+        <li><a href="/en/archive/ff-80.html" class="font-bold hover:underline">ff.80 The best of ff.2023</a><p class="text-sm text-black/75 mt-1">Burnout, CO2, ChatGPT, cryptocurrencies and time</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Get new issues of Futuro Fortissimo</h2>
         <p class="text-sm text-black/80 mt-1">A free newsletter by Michele Merelli (Bergamo) on technology, AI, nature and society. Written in Italian, delivered by Substack.</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 Subscribe for free ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary"><span class="ff-emo">📩</span> Subscribe for free <span class="ff-emo">↗</span></a>
     </section>
 
     <nav aria-label="Adjacent issues" class="ff-pn">
@@ -427,7 +427,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -447,16 +447,16 @@
       <div class="space-y-2">
         <p class="ff-eyebrow">Follow</p>
         <ul class="space-y-1 font-medium">
-          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack ↗</a></li>
-          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
-          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram ↗</a></li>
+          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram <span class="ff-emo">↗</span></a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
-          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee ☕ ↗</a></li>
-          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects ↗</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee <span class="ff-emo">☕</span> <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects <span class="ff-emo">↗</span></a></li>
         </ul>
       </div>
     </div>
-    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
+    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70"><span class="ff-emo">©</span> 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
   <aside class="ff-sticky-sub" aria-label="Newsletter">
     <p>Enjoying it? Get the next issue by email.</p>
@@ -464,11 +464,11 @@
     <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="Dismiss">✕</button>
   </aside>
   <nav class="ff-tabbar" aria-label="Main navigation">
-    <a href="/en/"><span class="ff-ti" aria-hidden="true">🏠</span>Home</a>
-    <a href="/en/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>Archive</a>
-    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>Themes</a>
-    <a href="/en/books/"><span class="ff-ti" aria-hidden="true">📚</span>Books</a>
-    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>Search</button>
+    <a href="/en/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🏠</span></span>Home</a>
+    <a href="/en/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🗂</span></span>Archive</a>
+    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🧭</span></span>Themes</a>
+    <a href="/en/books/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">📚</span></span>Books</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🔍</span></span>Search</button>
   </nav>
   <dialog id="ff-search" class="ff-search" aria-label="Search" data-empty="No results. Try another word.">
     <form role="search">
@@ -479,7 +479,7 @@
     <ul id="ff-results" role="listbox" aria-label="Search"></ul>
     <div class="ff-s-foot"><a href="/en/archive/" data-ff-all data-base="/en/archive/">All results in the archive →</a><span>Press / to search anywhere</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

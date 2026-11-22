@@ -150,7 +150,7 @@
   function saved() { try { return localStorage.getItem('ff-theme'); } catch (e) { return null; } }
   function applyTheme(t) {
     html.setAttribute('data-ff-theme', t);
-    $$('meta[name="theme-color"]').forEach(function (m) { if (!m.media) m.content = t === 'dark' ? '#050506' : '#0a0a0a'; });
+    $$('meta[name="theme-color"]').forEach(function (m) { if (!m.media) m.content = t === 'dark' ? '#0f1013' : '#f8f6f1'; });
     $$('[data-ff-theme-toggle]').forEach(function (b) { b.setAttribute('aria-pressed', t === 'dark' ? 'true' : 'false'); });
   }
   applyTheme(html.getAttribute('data-ff-theme') || (mq && mq.matches ? 'dark' : 'light'));
@@ -177,6 +177,23 @@
     var done = function () { img.classList.remove('is-loading'); };
     img.addEventListener('load', done); img.addEventListener('error', done);
   });
+
+  // ── 3D voxel objects: the renderer loads only after the page is idle and one is near the viewport (never on the LCP path) ──
+  (function () {
+    var spots = d.querySelectorAll('.ff-vox[data-ff-vox]');
+    if (!spots.length) return;
+    var loaded = false;
+    var idle = window.requestIdleCallback || function (f) { return setTimeout(f, 300); };
+    function go() { if (loaded) return; loaded = true; var s = d.createElement('script'); s.src = '/assets/ff-voxel.js?v=4'; s.async = true; d.head.appendChild(s); }
+    function start() {
+      if (!('IntersectionObserver' in window)) { idle(go); return; }
+      var o = new IntersectionObserver(function (es) {
+        for (var i = 0; i < es.length; i++) if (es[i].isIntersecting) { o.disconnect(); idle(go, { timeout: 2000 }); return; }
+      }, { rootMargin: '300px' });
+      spots.forEach(function (s) { o.observe(s); });
+    }
+    if (d.readyState === 'complete') start(); else window.addEventListener('load', start);
+  })();
 
   // ── offline reading of visited pages ──
   if ('serviceWorker' in navigator && location.protocol === 'https:') {

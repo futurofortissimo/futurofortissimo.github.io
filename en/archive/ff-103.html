@@ -142,12 +142,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -156,9 +156,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -211,18 +211,18 @@
         <a href="/en/books/">Books</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="Language"><a href="/archivio/ff-103.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/archive/ff-103.html" hreflang="en" lang="en" title="English" data-keep-state aria-current="page">EN</a><a href="/hi/archive/ff-103.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="Dark theme" title="Dark theme"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Subscribe</a>
         <details class="ff-more">
-          <summary aria-label="More"><span aria-hidden="true">☰</span><span class="sr-only">More</span></summary>
+          <summary aria-label="More"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">More</span></summary>
           <nav class="ff-menu" aria-label="More">
-            <a href="/book/">📖 The Book (IT)</a>
-            <a href="/en/connections.html">🔗 Connections</a>
-            <a href="/en/note.html">📝 Notes</a>
+            <a href="/book/"><span class="ff-emo">📖</span> The Book (IT)</a>
+            <a href="/en/connections.html"><span class="ff-emo">🔗</span> Connections</a>
+            <a href="/en/note.html"><span class="ff-emo">📝</span> Notes</a>
             <hr />
-            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 Subscribe ↗</a>
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener"><span class="ff-emo">📩</span> Subscribe <span class="ff-emo">↗</span></a>
           </nav>
         </details>
       </div>
@@ -232,40 +232,40 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/en/">Home</a> /</li><li><a class="underline" href="/en/archive/">Archive</a> /</li><li aria-current="page">ff.103 Fire, Iron, Intelligence</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>103</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>103</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="flame" data-ff-slug="ff-103" data-label="Open the 3D object and preview of ff.103"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Futuro Fortissimo Archive</p>
-      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.103 Fire, Iron, Intelligence</h1>
+      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black"><span class="ff-emo">🎼</span> ff.103 Fire, Iron, Intelligence</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">OpenAI&#39;s new o1 model: a new era for humanity?</p>
       <p class="mt-2 text-xs font-mono text-black/70">Published <time datetime="2024-09-30T09:10:39.838Z">30 September 2024</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/en/archive/ff-103.html" data-done="Link copied"><span aria-hidden="true">↗</span> Share</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/en/archive/ff-103.html" data-done="Link copied"><span aria-hidden="true">🔗</span> Copy link</button>
-        <a href="https://fortissimo.substack.com/p/ff103-fuoco-ferro-intelligenza" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Read the Italian original on Substack ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/en/archive/ff-103.html" data-done="Link copied"><span aria-hidden="true"><span class="ff-emo">↗</span></span> Share</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/en/archive/ff-103.html" data-done="Link copied"><span aria-hidden="true"><span class="ff-emo">🔗</span></span> Copy link</button>
+        <a href="https://fortissimo.substack.com/p/ff103-fuoco-ferro-intelligenza" target="_blank" rel="noopener noreferrer" class="ff-qlink">Read the Italian original on Substack <span class="ff-emo">↗</span></a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• Does Artificial Intelligence think now?</li>
-        <li>• Analysing black holes in 5 minutes</li>
-        <li>• Are we living inside the film Her?</li>
+      <ul class="ff-keypoints">
+        <li>Does Artificial Intelligence think now?</li>
+        <li>Analysing black holes in 5 minutes</li>
+        <li>Are we living inside the film Her?</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Themes</span><a href="/en/themes.html#ai" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🤖 AI, agents and models</a><a href="/en/themes.html#clima" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🌍 Nature, climate and energy</a></p>
-      <nav aria-label="Sections of this issue" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">Themes</span><a href="/en/themes.html#ai" class="ff-tlink"><span class="ff-emo">🤖</span> AI, agents and models</a><a href="/en/themes.html#clima" class="ff-tlink"><span class="ff-emo">🌍</span> Nature, climate and energy</a></p>
+      <nav aria-label="Sections of this issue" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">In this issue</h2>
         <ol>
-          <li><a href="#ff-103-1">🍓 ff.103.1 Think before you speak</a></li>
-          <li><a href="#ff-103-2">🎓 ff.103.2 NASA, MENSA and IQ</a></li>
-          <li><a href="#ff-103-3">🆕 ff.103.3 The new Era of Intelligence</a></li>
-          <li><a href="#ff-103-4">👩 ff.103.4 Turing and Her</a></li>
+          <li><a href="#ff-103-1"><span class="ff-emo">🍓</span> ff.103.1 Think before you speak</a></li>
+          <li><a href="#ff-103-2"><span class="ff-emo">🎓</span> ff.103.2 NASA, MENSA and IQ</a></li>
+          <li><a href="#ff-103-3"><span class="ff-emo">🆕</span> ff.103.3 The new Era of Intelligence</a></li>
+          <li><a href="#ff-103-4"><span class="ff-emo">👩</span> ff.103.4 Turing and Her</a></li>
         </ol>
       </nav>
     </header>
 
     
 
-    <section id="ff-103-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-103-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🍓 ff.103.1 Think before you speak</h2>
-        <a href="https://fortissimo.substack.com/i/149504251/ff-prima-di-parlare-pensa" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.103.1 Think before you speak">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🍓</span> ff.103.1 Think before you speak</h2>
+        <a href="https://fortissimo.substack.com/i/149504251/ff-prima-di-parlare-pensa" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.103.1 Think before you speak">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">I know, we&#39;re tired of pairing “intelligence” with “artificial”. But OpenAI&#39;s new model, o1 (aka Project Strawberry), opens up a futuro fortissimo. I couldn&#39;t let it pass.</p>
@@ -277,34 +277,34 @@
         <p class="text-base leading-relaxed text-black/90">More parameters and data “during training” give better results. We knew that.</p>
         <p class="text-base leading-relaxed text-black/90">With o1, the breakthrough comes after “training”: by increasing the resources allocated to the answer, the model explores internal &quot;reasoning trees&quot; (chain of thought) more deeply. With better results.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!L6SL!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F11b04cc4-21ac-4b70-94c7-8602ac13b578_893x209.png" width="893" height="209" alt="🍓 ff.103.1 Think before you speak" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!tq69!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F83992539-d64f-4e8b-84e8-e0d57970c82d_1024x1024.jpeg" width="1024" height="1024" alt="🍓 ff.103.1 Think before you speak" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!6DHw!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdff1af35-8210-4256-89a7-a2da1d19c089_960x603.png" width="960" height="603" alt="🍓 ff.103.1 Think before you speak" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!Zzr_!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdc8a8778-b383-457b-8ef1-2631f1e7da54_679x419.png" width="679" height="419" alt="o1&#39;s accuracy as training (left) and inference/thinking time (right) increase (via futuro fortissimo)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">o1&#39;s accuracy as training (left) and inference/thinking time (right) increase (via futuro fortissimo)</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://openai.com/index/learning-to-reason-with-llms/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Learning to Reason with LLMs</a>
+          <div class="ff-refs-l">
+            <a href="https://openai.com/index/learning-to-reason-with-llms/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Learning to Reason with LLMs</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-103-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-103-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🎓 ff.103.2 NASA, MENSA and IQ</h2>
-        <a href="https://fortissimo.substack.com/i/149504251/ff-nasa-mensa-e-qi" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.103.2 NASA, MENSA and IQ">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🎓</span> ff.103.2 NASA, MENSA and IQ</h2>
+        <a href="https://fortissimo.substack.com/i/149504251/ff-nasa-mensa-e-qi" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.103.2 NASA, MENSA and IQ">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">The new model&#39;s abilities are astonishing, especially in fields with a single right answer (science, maths, coding).</p>
@@ -312,46 +312,46 @@
         <p class="text-base leading-relaxed text-black/90">@Maximlott gave o1 the MENSA test, using non-public questions to minimise the chance it had memorised them.</p>
         <p class="text-base leading-relaxed text-black/90">The result? o1 has the IQ of an “average” person, around 100. More than the number itself, what&#39;s striking is the IQ jump from the past (GPT-4 has an IQ of 60).</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!Tn50!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F83818c20-9f99-467e-95dd-05c491cbc8b8_1452x1038.jpeg" width="1452" height="1038" alt="The new o1 model takes an IQ test: much better than Claude 3.5 (via futuro fortissimo)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">The new o1 model takes an IQ test: much better than Claude 3.5 (via futuro fortissimo)</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://x.com/maximlott/status/1834652893229859212" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ @Maximlott gave o1 the MENSA test</a>
+          <div class="ff-refs-l">
+            <a href="https://x.com/maximlott/status/1834652893229859212" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> @Maximlott gave o1 the MENSA test</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-103-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-103-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🆕 ff.103.3 The new Era of Intelligence</h2>
-        <a href="https://fortissimo.substack.com/i/149504251/ff-la-nuova-era-dellintelligenza" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.103.3 The new Era of Intelligence">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🆕</span> ff.103.3 The new Era of Intelligence</h2>
+        <a href="https://fortissimo.substack.com/i/149504251/ff-la-nuova-era-dellintelligenza" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.103.3 The new Era of Intelligence">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
-        <p class="text-base leading-relaxed text-black/90">OpenAI applied deep learning (the same as AlphaGo, ♟️ ff.18.4 Artistic chess: the king of chess) to text generation. A new paradigm, so much so that OpenAI&#39;s CEO Sam Altman talks of an Age of Intelligence.</p>
+        <p class="text-base leading-relaxed text-black/90">OpenAI applied deep learning (the same as AlphaGo, <span class="ff-emo">♟️</span> ff.18.4 Artistic chess: the king of chess) to text generation. A new paradigm, so much so that OpenAI&#39;s CEO Sam Altman talks of an Age of Intelligence.</p>
         <p class="text-base leading-relaxed text-black/90">How did we get to the doorstep of the next leap in prosperity? In three words: deep learning worked. In 15 words: deep learning worked, got predictably better with scale, and we dedicated increasing resources to it. Sam Altman, The Intelligence Age</p>
         <p class="text-base leading-relaxed text-black/90">With the Ages of Fire and Iron we mastered energy and matter. Today we can combine them to generate knowledge.</p>
         <p class="text-base leading-relaxed text-black/90">Here is one narrow way to look at human history: after thousands of years of compounding scientific discovery and technological progress, we have figured out how to melt sand, add some impurities, arrange it with astonishing precision at extraordinarily tiny scale into computer chips, run energy through it, and end up with systems capable of creating increasingly capable artificial intelligence. Sam Altman, The Intelligence Age</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!YtCk!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9766e540-d0c0-4b74-90c2-d4767390df52_664x457.png" width="664" height="457" alt="🆕 ff.103.3 The new Era of Intelligence" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (2)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://ia.samaltman.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Sam Altman talks of an Age of Intelligence</a>
-            <a href="https://fortissimo.substack.com/i/49403403/ff-chessi-artistici-il-re-degli-scacchi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ ♟️ ff.18.4 Artistic chess: the king of chess</a>
+          <div class="ff-refs-l">
+            <a href="https://ia.samaltman.com/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Sam Altman talks of an Age of Intelligence</a>
+            <a href="https://fortissimo.substack.com/i/49403403/ff-chessi-artistici-il-re-degli-scacchi" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> <span class="ff-emo">♟️</span> ff.18.4 Artistic chess: the king of chess</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-103-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-103-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">👩 ff.103.4 Turing and Her</h2>
-        <a href="https://fortissimo.substack.com/i/149504251/ff-turing-e-her" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.103.4 Turing and Her">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">👩</span> ff.103.4 Turing and Her</h2>
+        <a href="https://fortissimo.substack.com/i/149504251/ff-turing-e-her" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.103.4 Turing and Her">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Alongside o1, OpenAI released an “advanced voice mode” for GPT-4:</p>
@@ -362,53 +362,53 @@
         <p class="text-base leading-relaxed text-black/90">2 examples of GPT-4 Advanced Voice:</p>
         <p class="text-base leading-relaxed text-black/90">@LinusEkenstam asked GPT to recite tongue twisters without breathing. GPT replied that - like every living being - it needs to breathe, then stressed the importance of pauses for separating words. Philosophical.</p>
         <p class="text-base leading-relaxed text-black/90">And then: real-time translation, sports-commentator emphasis, the sound of 10 cats in a room, and jokes from a melancholy Turkish comedian:</p>
-        <p class="text-base leading-relaxed text-black/90">🎶 fortissimo notes archive</p>
-        <p class="text-base leading-relaxed text-black/90">☕ virtual coffee</p>
-        <p class="text-base leading-relaxed text-black/90">❤️ a little heart below?</p>
-        <p class="text-base leading-relaxed text-black/90">👋 See you soon, from micmer</p>
-        <p class="text-base leading-relaxed text-black/90">© futuro fortissimo | michele merelli</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">🎶</span> fortissimo notes archive</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">☕</span> virtual coffee</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">❤️</span> a little heart below?</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">👋</span> See you soon, from micmer</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">©</span> futuro fortissimo | michele merelli</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!9c52!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8253a9f9-cc79-418f-a084-44ea29df3af1_592x532.png" width="592" height="532" alt="👩 ff.103.4 Turing and Her" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!Xdiq!,w_1456,c_limit,f_auto,q_auto:good,fl_lossy/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F318cbb1b-b791-40a4-a4ba-e21b872e0e0c_358x200.gif" width="358" height="200" alt="👩 ff.103.4 Turing and Her" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!zRqv!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbfafabdf-88c6-4f11-a9d2-de44a158f539_595x366.bin" alt="Champion Studio&#39;s visuals integrated into the film Her (via futuro fortissimo)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Champion Studio&#39;s visuals integrated into the film Her (via futuro fortissimo)</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (4)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://it.wikipedia.org/wiki/Test_di_Turing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ the Turing Test has probably been passed</a>
-            <a href="https://futurofortissimo.github.io/note.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ fortissimo notes archive</a>
-            <a href="https://futurofortissimo.github.io/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ futuro fortissimo</a>
-            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ michele merelli</a>
+          <div class="ff-refs-l">
+            <a href="https://it.wikipedia.org/wiki/Test_di_Turing" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> the Turing Test has probably been passed</a>
+            <a href="https://futurofortissimo.github.io/note.html" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> fortissimo notes archive</a>
+            <a href="https://futurofortissimo.github.io/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> futuro fortissimo</a>
+            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> michele merelli</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">Related issues</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-18.html" class="font-bold hover:underline">ff.18 Between digital art and AI</a><p class="text-sm text-black/75 mt-1">Why art matters, and how artificial intelligence can be more artistic than humans</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-155.html" class="font-bold hover:underline">ff.155 Labels and mind viruses</a><p class="text-sm text-black/75 mt-1">An apple full of chemistry, AI agents passing ideas to each other, threatened bananas and an mRNA therapy…</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-136.html" class="font-bold hover:underline">ff.136 Ka-me-ha-me-energy-waaave!</a><p class="text-sm text-black/75 mt-1">Against AI&#39;s astronomical consumption: Goku?</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-81.html" class="font-bold hover:underline">ff.81 2024 in the history books</a><p class="text-sm text-black/75 mt-1">Gene therapies, COP28 and Tesla&#39;s robot: starting 2024 on the right foot!</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/en/archive/ff-18.html" class="font-bold hover:underline">ff.18 Between digital art and AI</a><p class="text-sm text-black/75 mt-1">Why art matters, and how artificial intelligence can be more artistic than humans</p></li>
+        <li><a href="/en/archive/ff-155.html" class="font-bold hover:underline">ff.155 Labels and mind viruses</a><p class="text-sm text-black/75 mt-1">An apple full of chemistry, AI agents passing ideas to each other, threatened bananas and an mRNA therapy…</p></li>
+        <li><a href="/en/archive/ff-136.html" class="font-bold hover:underline">ff.136 Ka-me-ha-me-energy-waaave!</a><p class="text-sm text-black/75 mt-1">Against AI&#39;s astronomical consumption: Goku?</p></li>
+        <li><a href="/en/archive/ff-81.html" class="font-bold hover:underline">ff.81 2024 in the history books</a><p class="text-sm text-black/75 mt-1">Gene therapies, COP28 and Tesla&#39;s robot: starting 2024 on the right foot!</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Get new issues of Futuro Fortissimo</h2>
         <p class="text-sm text-black/80 mt-1">A free newsletter by Michele Merelli (Bergamo) on technology, AI, nature and society. Written in Italian, delivered by Substack.</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 Subscribe for free ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary"><span class="ff-emo">📩</span> Subscribe for free <span class="ff-emo">↗</span></a>
     </section>
 
     <nav aria-label="Adjacent issues" class="ff-pn">
@@ -417,7 +417,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -437,16 +437,16 @@
       <div class="space-y-2">
         <p class="ff-eyebrow">Follow</p>
         <ul class="space-y-1 font-medium">
-          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack ↗</a></li>
-          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
-          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram ↗</a></li>
+          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram <span class="ff-emo">↗</span></a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
-          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee ☕ ↗</a></li>
-          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects ↗</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee <span class="ff-emo">☕</span> <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects <span class="ff-emo">↗</span></a></li>
         </ul>
       </div>
     </div>
-    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
+    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70"><span class="ff-emo">©</span> 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
   <aside class="ff-sticky-sub" aria-label="Newsletter">
     <p>Enjoying it? Get the next issue by email.</p>
@@ -454,11 +454,11 @@
     <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="Dismiss">✕</button>
   </aside>
   <nav class="ff-tabbar" aria-label="Main navigation">
-    <a href="/en/"><span class="ff-ti" aria-hidden="true">🏠</span>Home</a>
-    <a href="/en/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>Archive</a>
-    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>Themes</a>
-    <a href="/en/books/"><span class="ff-ti" aria-hidden="true">📚</span>Books</a>
-    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>Search</button>
+    <a href="/en/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🏠</span></span>Home</a>
+    <a href="/en/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🗂</span></span>Archive</a>
+    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🧭</span></span>Themes</a>
+    <a href="/en/books/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">📚</span></span>Books</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🔍</span></span>Search</button>
   </nav>
   <dialog id="ff-search" class="ff-search" aria-label="Search" data-empty="No results. Try another word.">
     <form role="search">
@@ -469,7 +469,7 @@
     <ul id="ff-results" role="listbox" aria-label="Search"></ul>
     <div class="ff-s-foot"><a href="/en/archive/" data-ff-all data-base="/en/archive/">All results in the archive →</a><span>Press / to search anywhere</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

@@ -149,12 +149,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -163,9 +163,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -218,19 +218,19 @@
         <a href="/libri/">Libri</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="Cerca (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Cerca</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Cerca (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">Cerca</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="Lingua"><a href="/archivio/ff-113.html" hreflang="it" lang="it" title="Italiano" data-keep-state aria-current="page">IT</a><a href="/en/archive/ff-113.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/archive/ff-113.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="Tema scuro" title="Tema scuro"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Iscriviti</a>
         <details class="ff-more">
-          <summary aria-label="Altro"><span aria-hidden="true">☰</span><span class="sr-only">Altro</span></summary>
+          <summary aria-label="Altro"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">Altro</span></summary>
           <nav class="ff-menu" aria-label="Altro">
-            <a href="/book/">📖 Il Libro</a>
-            <a href="/book/ffxy-index.html">🔢 ff.x.y</a>
-            <a href="/connections.html">🔗 Connessioni</a>
-            <a href="/note.html">📝 Note</a>
+            <a href="/book/"><span class="ff-emo">📖</span> Il Libro</a>
+            <a href="/book/ffxy-index.html"><span class="ff-emo">🔢</span> ff.x.y</a>
+            <a href="/connections.html"><span class="ff-emo">🔗</span> Connessioni</a>
+            <a href="/note.html"><span class="ff-emo">📝</span> Note</a>
             <hr />
-            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 Iscriviti ↗</a>
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener"><span class="ff-emo">📩</span> Iscriviti <span class="ff-emo">↗</span></a>
           </nav>
         </details>
       </div>
@@ -240,40 +240,40 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/">Home</a> /</li><li><a class="underline" href="/archivio/">Archivio</a> /</li><li aria-current="page">ff.113 Fame chimica</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>113</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>113</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="apple" data-ff-slug="ff-113" data-label="Apri l’oggetto 3D e l’anteprima di ff.113"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Archivio Futuro Fortissimo</p>
-      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.113 Fame chimica</h1>
+      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black"><span class="ff-emo">🎼</span> ff.113 Fame chimica</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">Che &quot;rapporto&quot; avere col cibo?</p>
       <p class="mt-2 text-xs font-mono text-black/70">Pubblicato il <time datetime="2025-01-20T13:22:55.832Z">20 gennaio 2025</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/archivio/ff-113.html" data-done="Link copiato"><span aria-hidden="true">↗</span> Condividi</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/archivio/ff-113.html" data-done="Link copiato"><span aria-hidden="true">🔗</span> Copia link</button>
-        <a href="https://fortissimo.substack.com/p/ff113-fame-chimica" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Leggi originale su Substack ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/archivio/ff-113.html" data-done="Link copiato"><span aria-hidden="true"><span class="ff-emo">↗</span></span> Condividi</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/archivio/ff-113.html" data-done="Link copiato"><span aria-hidden="true"><span class="ff-emo">🔗</span></span> Copia link</button>
+        <a href="https://fortissimo.substack.com/p/ff113-fame-chimica" target="_blank" rel="noopener noreferrer" class="ff-qlink">Leggi originale su Substack <span class="ff-emo">↗</span></a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• Perché la bilancia è lo strumento sbagliato</li>
-        <li>• In che senso la dieta è questione di chimica?</li>
-        <li>• Superare distinzione proteine, carboidrati e grassi?</li>
+      <ul class="ff-keypoints">
+        <li>Perché la bilancia è lo strumento sbagliato</li>
+        <li>In che senso la dieta è questione di chimica?</li>
+        <li>Superare distinzione proteine, carboidrati e grassi?</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Temi</span><a href="/themes.html#nutrizione" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🥗 Nutrizione e microbioma</a><a href="/themes.html#salute" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🏃 Salute, sport e corpo</a></p>
-      <nav aria-label="Sezioni del numero" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">Temi</span><a href="/themes.html#nutrizione" class="ff-tlink"><span class="ff-emo">🥗</span> Nutrizione e microbioma</a><a href="/themes.html#salute" class="ff-tlink"><span class="ff-emo">🏃</span> Salute, sport e corpo</a></p>
+      <nav aria-label="Sezioni del numero" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">In questo numero</h2>
         <ol>
-          <li><a href="#ff-113-1">⚖️ ff.113.1 Buttiamo la bilancia?</a></li>
-          <li><a href="#ff-113-2">🥛 ff.113.2 L’inganno del latte proteico</a></li>
-          <li><a href="#ff-113-3">💎 ff.113.3 Una dieta mineraria?</a></li>
-          <li><a href="#ff-113-4">➗ ff.113.4 L’importanza dei rapporti</a></li>
+          <li><a href="#ff-113-1"><span class="ff-emo">⚖️</span> ff.113.1 Buttiamo la bilancia?</a></li>
+          <li><a href="#ff-113-2"><span class="ff-emo">🥛</span> ff.113.2 L’inganno del latte proteico</a></li>
+          <li><a href="#ff-113-3"><span class="ff-emo">💎</span> ff.113.3 Una dieta mineraria?</a></li>
+          <li><a href="#ff-113-4"><span class="ff-emo">➗</span> ff.113.4 L’importanza dei rapporti</a></li>
         </ol>
       </nav>
     </header>
 
     
 
-    <section id="ff-113-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-113-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">⚖️ ff.113.1 Buttiamo la bilancia?</h2>
-        <a href="https://fortissimo.substack.com/i/154401282/ff-buttiamo-la-bilancia" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.113.1 Buttiamo la bilancia?">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">⚖️</span> ff.113.1 Buttiamo la bilancia?</h2>
+        <a href="https://fortissimo.substack.com/i/154401282/ff-buttiamo-la-bilancia" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.113.1 Buttiamo la bilancia?">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Dieta, e tutti pensano al peso sulla bilancia (o meglio, alla massa, per essere scientificamente precisi).</p>
@@ -281,37 +281,37 @@
         <p class="text-base leading-relaxed text-black/90">ogni giorno laquantità di acqua nel nostro corpo può variare da 1 a 4 litrii muscoli pesano di più, a parità di volume, del grassopoche bilance (anche impedenziometriche) misurano beneil grasso viscerale(il più pericoloso)</p>
         <p class="text-base leading-relaxed text-black/90">InGood Energy, Casey Means parte della morte della madre per cambiare rotta: prestare attenzione al metabolismo. E alla “buona energia”.</p>
         <p class="text-base leading-relaxed text-black/90">Casey ha abbandonato la medicina contemporanea: spinge a specializzarsi e curare, invece che prevenire e vedere l’organismo nella sua interezza.</p>
-        <p class="text-base leading-relaxed text-black/90">Anche con Levels, propone così una medicina personalizzata (ad esempio con il continuo monitoraggio della glicemia🕛 ff.35.2 Smartwatch e non solo).</p>
+        <p class="text-base leading-relaxed text-black/90">Anche con Levels, propone così una medicina personalizzata (ad esempio con il continuo monitoraggio della glicemia<span class="ff-emo">🕛</span> ff.35.2 Smartwatch e non solo).</p>
         <p class="text-base leading-relaxed text-black/90">Indica, poi, nuovi parametri per capire se siamo veramente “in salute”:</p>
         <p class="text-base leading-relaxed text-black/90">Glucosio a stomaco vuoto:correlabile a nostra salute metabolica, ottimale sotto gli 85 mg/dLInsulina necessaria per tenere a bada gli zuccheri (HOMA-IR):il rapporto tra glucosio e insulina nel sangue,ottimale un valore sotto 2.Livello di zuccheri medi nel sangue (3 mesi, HbA1c): misura laglicazionedell&#39;emoglobina.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!xivE!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F39cd3b8b-ef69-4f3b-b0c7-f31463550bda_1800x630.jpeg" width="1800" height="630" alt="⚖️ ff.113.1 Buttiamo la bilancia?" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!Ykbt!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F35ae4b52-f5bb-412c-96ea-73ef3c0eaacb_1638x2250.png" width="1638" height="2250" alt="Good Energy: l’importanza del metabolismo per la salute (via futuro fortissimo)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Good Energy: l’importanza del metabolismo per la salute (via futuro fortissimo)</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (8)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9764345/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ quantità di acqua nel nostro corpo può variare da 1 a 4 litri</a>
-            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5092150/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ i muscoli pesano di più, a parità di volume, del grasso</a>
-            <a href="https://x.com/siimland/status/1835690540622389516" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ il grasso viscerale</a>
-            <a href="https://www.amazon.it/Good-Energy-Bestseller-groundbreaking-connection/dp/0008604282?_encoding=UTF8&amp;dib_tag=se&amp;dib=eyJ2IjoiMSJ9.CEzbSBCW2GAtqwxyoNYok1aYCm1UV1gAL8viyg5fq719T27CFpudFfdvnUknHoHb0WiL1AMccrMq4qbdur21NZGmpGSU0KHWMS4MkSHa-hxGhAokSphS7XFMoF4bJAoeItcYlLxNInFbSa9RKybRecZMIYEsm0q1-R_JNf1eo_E2IKo75NW19DepsWYdyN02ic2_7GBaNIWD_PoamYT07TZGfPGCoCb4Opr6oq07Z77ipxoISfq50JS1m2lkKu7Q0K7aeQ03cboihEJwlZepb4dZ_QXsFT4hJPF0j_9TgeDmIZU8YSWG5MJIsaEfXXKFI76bkaC5Vtei1OsYVd8qX_ZpOxc7GYzQt4TwlBGH68Fg1eep_ZWgCIG76xk74bKOL8fUIB_YFzsGxnQck683aoVziASsQat_SVQ3bR9721QIbB5YSequQF00MDH6vp5a.mMRE7QQJk35TFfFvW9CUF6_tVOW-U3q-97R0inugakU&amp;qid=1736572825&amp;sr=8-1&amp;linkCode=sl1&amp;tag=micmeramazon-21&amp;linkId=d4a4120506a5e3fc6dfb6fd657e58f64&amp;language=it_IT&amp;ref_=as_li_ss_tl" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] text-xs font-mono font-bold hover:underline">📚 Good Energy</a>
-            <a href="https://www.levels.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Anche con Levels</a>
-            <a href="https://www.mdcalc.com/calc/3120/homa-ir-homeostatic-model-assessment-insulin-resistance" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ HOMA-IR</a>
-            <a href="https://www.my-personaltrainer.it/salute/glicazione-cosa-e-conseguenze.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ glicazione</a>
-            <a href="https://fortissimo.substack.com/i/50745954/ff-smartwatch-e-non-solo" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🕛 ff.35.2 Smartwatch e non solo</a>
+          <div class="ff-refs-l">
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9764345/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> quantità di acqua nel nostro corpo può variare da 1 a 4 litri</a>
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5092150/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> i muscoli pesano di più, a parità di volume, del grasso</a>
+            <a href="https://x.com/siimland/status/1835690540622389516" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> il grasso viscerale</a>
+            <a href="https://www.amazon.it/Good-Energy-Bestseller-groundbreaking-connection/dp/0008604282?_encoding=UTF8&amp;dib_tag=se&amp;dib=eyJ2IjoiMSJ9.CEzbSBCW2GAtqwxyoNYok1aYCm1UV1gAL8viyg5fq719T27CFpudFfdvnUknHoHb0WiL1AMccrMq4qbdur21NZGmpGSU0KHWMS4MkSHa-hxGhAokSphS7XFMoF4bJAoeItcYlLxNInFbSa9RKybRecZMIYEsm0q1-R_JNf1eo_E2IKo75NW19DepsWYdyN02ic2_7GBaNIWD_PoamYT07TZGfPGCoCb4Opr6oq07Z77ipxoISfq50JS1m2lkKu7Q0K7aeQ03cboihEJwlZepb4dZ_QXsFT4hJPF0j_9TgeDmIZU8YSWG5MJIsaEfXXKFI76bkaC5Vtei1OsYVd8qX_ZpOxc7GYzQt4TwlBGH68Fg1eep_ZWgCIG76xk74bKOL8fUIB_YFzsGxnQck683aoVziASsQat_SVQ3bR9721QIbB5YSequQF00MDH6vp5a.mMRE7QQJk35TFfFvW9CUF6_tVOW-U3q-97R0inugakU&amp;qid=1736572825&amp;sr=8-1&amp;linkCode=sl1&amp;tag=micmeramazon-21&amp;linkId=d4a4120506a5e3fc6dfb6fd657e58f64&amp;language=it_IT&amp;ref_=as_li_ss_tl" target="_blank" rel="noopener noreferrer sponsored" class="ff-ref is-book"><span class="ff-emo">📚</span> Good Energy</a>
+            <a href="https://www.levels.com/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Anche con Levels</a>
+            <a href="https://www.mdcalc.com/calc/3120/homa-ir-homeostatic-model-assessment-insulin-resistance" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> HOMA-IR</a>
+            <a href="https://www.my-personaltrainer.it/salute/glicazione-cosa-e-conseguenze.html" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> glicazione</a>
+            <a href="https://fortissimo.substack.com/i/50745954/ff-smartwatch-e-non-solo" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> <span class="ff-emo">🕛</span> ff.35.2 Smartwatch e non solo</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-113-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-113-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🥛 ff.113.2 L’inganno del latte proteico</h2>
-        <a href="https://fortissimo.substack.com/i/154401282/ff-linganno-del-latte-proteico" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.113.2 L’inganno del latte proteico">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🥛</span> ff.113.2 L’inganno del latte proteico</h2>
+        <a href="https://fortissimo.substack.com/i/154401282/ff-linganno-del-latte-proteico" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.113.2 L’inganno del latte proteico">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Cibo come medicina.Bisogna però anche focalizzarsi sul cibo, sullagood energyappunto.</p>
@@ -319,31 +319,31 @@
         <p class="text-base leading-relaxed text-black/90">Due personali aneddoti a conferma di ciò.</p>
         <p class="text-base leading-relaxed text-black/90">Mi sono imbattuto in un “latte proteico” di soia, con “10g di proteine” stampato a caratteri cubitali sulla confezione.</p>
         <p class="text-base leading-relaxed text-black/90">Conoscendo i valori tipici di proteine nel latte, i 10g mi hanno intrigato. Ho così letto l’etichetta e fatto i giusti rapporti: per la stessa quantità di proteine,quello a sinistrarichiede il doppio di kcal diquello a destra(!).</p>
-        <p class="text-base leading-relaxed text-black/90">Analogamente, dopo che a un mio amico han suggerito di togliere dalla dieta le patate (che saziano di più🤰🏻 ff.22.4 I cibi che saziano di più) ma tenere la pasta, avevo creatobuonGPT.</p>
+        <p class="text-base leading-relaxed text-black/90">Analogamente, dopo che a un mio amico han suggerito di togliere dalla dieta le patate (che saziano di più<span class="ff-emo">🤰</span>🏻 ff.22.4 I cibi che saziano di più) ma tenere la pasta, avevo creatobuonGPT.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!6cCA!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Feb037dac-4d19-4c80-b769-18fcd5651e6b_934x905.png" width="934" height="905" alt="🥛 ff.113.2 L’inganno del latte proteico" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!DVp1!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fea950648-85c9-4532-9c10-62eedb815864_735x623.png" width="735" height="623" alt="Il confronto tra patate e pasta, per 100kcal, grazie a BuonGPT (via futuro fortissimo)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Il confronto tra patate e pasta, per 100kcal, grazie a BuonGPT (via futuro fortissimo)</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (4)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.abillion.com/products/high-protein-bevanda-alla-soia-con-cacao-10638542" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ quello a sinistra</a>
-            <a href="https://laspesaonline.eurospin.it/product/protein-plus-latte-scrslatuht-1l-pascoli-italiani" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ quello a destra</a>
-            <a href="https://chatgpt.com/g/g-90Y6rg4XK-buongpt" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ buonGPT</a>
-            <a href="https://fortissimo.substack.com/i/48651677/ff-i-cibi-che-saziano-di-piu" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🤰🏻 ff.22.4 I cibi che saziano di più</a>
+          <div class="ff-refs-l">
+            <a href="https://www.abillion.com/products/high-protein-bevanda-alla-soia-con-cacao-10638542" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> quello a sinistra</a>
+            <a href="https://laspesaonline.eurospin.it/product/protein-plus-latte-scrslatuht-1l-pascoli-italiani" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> quello a destra</a>
+            <a href="https://chatgpt.com/g/g-90Y6rg4XK-buongpt" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> buonGPT</a>
+            <a href="https://fortissimo.substack.com/i/48651677/ff-i-cibi-che-saziano-di-piu" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> <span class="ff-emo">🤰</span>🏻 ff.22.4 I cibi che saziano di più</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-113-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-113-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">💎 ff.113.3 Una dieta mineraria?</h2>
-        <a href="https://fortissimo.substack.com/i/154401282/ff-una-dieta-mineraria" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.113.3 Una dieta mineraria?">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">💎</span> ff.113.3 Una dieta mineraria?</h2>
+        <a href="https://fortissimo.substack.com/i/154401282/ff-una-dieta-mineraria" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.113.3 Una dieta mineraria?">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">La scelta di sostituire patate con pasta è opinabile, visto che le patate hanno 25x il potassio della pasta eraddoppiare il consumo di potassio (4300mg/giorno) abbassa il rischio di malattie cardiovascolari del 40%.</p>
@@ -352,29 +352,29 @@
         <p class="text-base leading-relaxed text-black/90">Spa (quella del circuito di Formula 1) in epoca romana era famosa per le sue acque termali. Acronimo diSalut Per Aqua,oggi le SPA prendono il nome dalla stessa.Troppo ferro può causare anemia, se non bilanciato da un adeguato quantitativo di rame (ci torniamo, su questo concetto “chimico” del creare “rapporti” e normalizzare).</p>
         <p class="text-base leading-relaxed text-black/90">Per assumere più rame dovremmo parzialmente sostituire la carne “muscolare” con fegato, cuore e unadieta vegetariana (che ha 2x la densità di rame di una onnivora).</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!u7ed!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F79fac557-7cdc-4193-bdd2-06526097c65a_1000x1411.jpeg" width="1000" height="1411" alt="Mineral Fix: l’importanza dei minerali per la nostra salute (via futuro fortissimo)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Mineral Fix: l’importanza dei minerali per la nostra salute (via futuro fortissimo)</figcaption>
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!cBFf!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F045cc00a-cfa0-41b9-8b1d-a0f7360623ab_641x581.png" width="641" height="581" alt="💎 ff.113.3 Una dieta mineraria?" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (4)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.ahajournals.org/doi/10.1161/01.CIR.98.12.1198" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ raddoppiare il consumo di potassio (4300mg/giorno) abbassa il rischio di malattie cardiovascolari del 40%</a>
-            <a href="https://amzn.to/4fYC5ec" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] text-xs font-mono font-bold hover:underline">📚 Mineral fix</a>
-            <a href="https://it.wikipedia.org/wiki/Spa_(Belgio)" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Spa (quella del circuito di Formula 1) in epoca romana era famosa per le sue acque termali</a>
-            <a href="https://www.sciencedirect.com/science/article/abs/pii/S000291652343211X" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ dieta vegetariana (che ha 2x la densità di rame di una onnivora)</a>
+          <div class="ff-refs-l">
+            <a href="https://www.ahajournals.org/doi/10.1161/01.CIR.98.12.1198" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> raddoppiare il consumo di potassio (4300mg/giorno) abbassa il rischio di malattie cardiovascolari del 40%</a>
+            <a href="https://amzn.to/4fYC5ec" target="_blank" rel="noopener noreferrer sponsored" class="ff-ref is-book"><span class="ff-emo">📚</span> Mineral fix</a>
+            <a href="https://it.wikipedia.org/wiki/Spa_(Belgio)" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Spa (quella del circuito di Formula 1) in epoca romana era famosa per le sue acque termali</a>
+            <a href="https://www.sciencedirect.com/science/article/abs/pii/S000291652343211X" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> dieta vegetariana (che ha 2x la densità di rame di una onnivora)</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-113-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-113-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">➗ ff.113.4 L’importanza dei rapporti</h2>
-        <a href="https://fortissimo.substack.com/i/154401282/ff-limportanza-dei-rapporti" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.113.4 L’importanza dei rapporti">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">➗</span> ff.113.4 L’importanza dei rapporti</h2>
+        <a href="https://fortissimo.substack.com/i/154401282/ff-limportanza-dei-rapporti" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.113.4 L’importanza dei rapporti">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Il rapporto ferro/rame (e BuonGPT) sono esempi della complessità del nostro organismo e della dieta, fatti intrinsecamente di reazioni chimiche.</p>
@@ -383,47 +383,47 @@
         <p class="text-base leading-relaxed text-black/90">I miei “rapporti” preferiti:</p>
         <p class="text-base leading-relaxed text-black/90">Proteine/kcal (per sazietà)Zuccheri/proteine (per abbassare picco glicemico)Fibre/100kcal (per microbioma)</p>
         <p class="text-base leading-relaxed text-black/90">E voi, che rapporto avete col cibo? Me lo scrivete nei commenti?</p>
-        <p class="text-base leading-relaxed text-black/90">🎶archivio note fortissime</p>
-        <p class="text-base leading-relaxed text-black/90">☕caffè virtuale</p>
-        <p class="text-base leading-relaxed text-black/90">❤️cuoricino qui sotto?</p>
-        <p class="text-base leading-relaxed text-black/90">👋 A presto, damicmer</p>
-        <p class="text-base leading-relaxed text-black/90">©futuro fortissimo|michele merelli</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">🎶</span>archivio note fortissime</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">☕</span>caffè virtuale</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">❤️</span>cuoricino qui sotto?</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">👋</span> A presto, damicmer</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">©</span>futuro fortissimo|michele merelli</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!2JpQ!,w_1456,c_limit,f_auto,q_auto:good,fl_lossy/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F137f8347-0d03-4697-8d8a-9fc6b066fb76_1300x703.gif" width="1300" height="703" alt="Terrorizzati dagli snack?Crunchdi Holly Hunter" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Terrorizzati dagli snack?Crunchdi Holly Hunter</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (6)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.sciencedirect.com/science/article/abs/pii/S0268005X1630340X?via%3Dihub" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ per sazietà</a>
-            <a href="https://diabetesjournals.org/care/article/7/5/465/30958/Effect-of-Protein-Ingestion-on-the-Glucose-and" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ per abbassare picco glicemico</a>
-            <a href="https://futurofortissimo.github.io/note.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ archivio note fortissime</a>
-            <a href="https://futurofortissimo.github.io/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ futuro fortissimo</a>
-            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ michele merelli</a>
-            <a href="https://fortissimo.substack.com/i/137958307/ff-un-organo-in-piu-il-microbioma" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ per microbioma</a>
+          <div class="ff-refs-l">
+            <a href="https://www.sciencedirect.com/science/article/abs/pii/S0268005X1630340X?via%3Dihub" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> per sazietà</a>
+            <a href="https://diabetesjournals.org/care/article/7/5/465/30958/Effect-of-Protein-Ingestion-on-the-Glucose-and" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> per abbassare picco glicemico</a>
+            <a href="https://futurofortissimo.github.io/note.html" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> archivio note fortissime</a>
+            <a href="https://futurofortissimo.github.io/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> futuro fortissimo</a>
+            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> michele merelli</a>
+            <a href="https://fortissimo.substack.com/i/137958307/ff-un-organo-in-piu-il-microbioma" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> per microbioma</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">Numeri correlati</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-22.html" class="font-bold hover:underline">ff.22 Mangiamo troppo?</a><p class="text-sm text-black/75 mt-1">Ritmi circadiani, kilo-calorie e topi che non ingrassano</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-92.html" class="font-bold hover:underline">ff.92 La dieta dei centenari?</a><p class="text-sm text-black/75 mt-1">Sfamare il microbioma con fagioli, tè e caffè</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-120.html" class="font-bold hover:underline">ff.120 Sport e longevità</a><p class="text-sm text-black/75 mt-1">Come muoversi allunga la vita, tra cancro e alimentazione</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-35.html" class="font-bold hover:underline">ff.35 Sto bene, sono Super Sapiens</a><p class="text-sm text-black/75 mt-1">Dallo smartwatch al sensore della glicemia, stiamo sempre meglio?</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/archivio/ff-22.html" class="font-bold hover:underline">ff.22 Mangiamo troppo?</a><p class="text-sm text-black/75 mt-1">Ritmi circadiani, kilo-calorie e topi che non ingrassano</p></li>
+        <li><a href="/archivio/ff-92.html" class="font-bold hover:underline">ff.92 La dieta dei centenari?</a><p class="text-sm text-black/75 mt-1">Sfamare il microbioma con fagioli, tè e caffè</p></li>
+        <li><a href="/archivio/ff-120.html" class="font-bold hover:underline">ff.120 Sport e longevità</a><p class="text-sm text-black/75 mt-1">Come muoversi allunga la vita, tra cancro e alimentazione</p></li>
+        <li><a href="/archivio/ff-35.html" class="font-bold hover:underline">ff.35 Sto bene, sono Super Sapiens</a><p class="text-sm text-black/75 mt-1">Dallo smartwatch al sensore della glicemia, stiamo sempre meglio?</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Ricevi i nuovi numeri di Futuro Fortissimo</h2>
         <p class="text-sm text-black/80 mt-1">Ogni uscita su tecnologia, AI, natura e società direttamente via email su Substack.</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 Iscriviti gratis ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary"><span class="ff-emo">📩</span> Iscriviti gratis <span class="ff-emo">↗</span></a>
     </section>
 
     <nav aria-label="Numeri adiacenti" class="ff-pn">
@@ -432,7 +432,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -452,16 +452,16 @@
       <div class="space-y-2">
         <p class="ff-eyebrow">Segui</p>
         <ul class="space-y-1 font-medium">
-          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack ↗</a></li>
-          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
-          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram ↗</a></li>
+          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram <span class="ff-emo">↗</span></a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
-          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Offrimi un caffè ☕ ↗</a></li>
-          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Altri progetti di Michele ↗</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Offrimi un caffè <span class="ff-emo">☕</span> <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Altri progetti di Michele <span class="ff-emo">↗</span></a></li>
         </ul>
       </div>
     </div>
-    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
+    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70"><span class="ff-emo">©</span> 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
   <aside class="ff-sticky-sub" aria-label="Newsletter">
     <p>Ti piace? Ricevi il prossimo numero via email.</p>
@@ -469,11 +469,11 @@
     <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="Chiudi invito">✕</button>
   </aside>
   <nav class="ff-tabbar" aria-label="Navigazione principale">
-    <a href="/"><span class="ff-ti" aria-hidden="true">🏠</span>Home</a>
-    <a href="/archivio/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>Archivio</a>
-    <a href="/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>Temi</a>
-    <a href="/libri/"><span class="ff-ti" aria-hidden="true">📚</span>Libri</a>
-    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>Cerca</button>
+    <a href="/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🏠</span></span>Home</a>
+    <a href="/archivio/" aria-current="page"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🗂</span></span>Archivio</a>
+    <a href="/themes.html"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🧭</span></span>Temi</a>
+    <a href="/libri/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">📚</span></span>Libri</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🔍</span></span>Cerca</button>
   </nav>
   <dialog id="ff-search" class="ff-search" aria-label="Cerca" data-empty="Nessun risultato. Prova un’altra parola.">
     <form role="search">
@@ -484,7 +484,7 @@
     <ul id="ff-results" role="listbox" aria-label="Cerca"></ul>
     <div class="ff-s-foot"><a href="/archivio/" data-ff-all data-base="/archivio/">Tutti i risultati nell’archivio →</a><span>Premi / per cercare ovunque</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

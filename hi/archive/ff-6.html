@@ -137,12 +137,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -151,9 +151,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -206,18 +206,18 @@
         <a href="/hi/books/">किताबें</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="खोजें (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">खोजें</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="खोजें (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">खोजें</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="भाषा"><a href="/archivio/ff-6.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/archive/ff-6.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/archive/ff-6.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state aria-current="page">हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="डार्क थीम" title="डार्क थीम"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">सब्सक्राइब</a>
         <details class="ff-more">
-          <summary aria-label="और"><span aria-hidden="true">☰</span><span class="sr-only">और</span></summary>
+          <summary aria-label="और"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">और</span></summary>
           <nav class="ff-menu" aria-label="और">
-            <a href="/book/">📖 किताब (IT)</a>
-            <a href="/hi/connections.html">🔗 कनेक्शन</a>
-            <a href="/hi/note.html">📝 नोट्स</a>
+            <a href="/book/"><span class="ff-emo">📖</span> किताब (IT)</a>
+            <a href="/hi/connections.html"><span class="ff-emo">🔗</span> कनेक्शन</a>
+            <a href="/hi/note.html"><span class="ff-emo">📝</span> नोट्स</a>
             <hr />
-            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 सब्सक्राइब ↗</a>
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener"><span class="ff-emo">📩</span> सब्सक्राइब <span class="ff-emo">↗</span></a>
           </nav>
         </details>
       </div>
@@ -227,35 +227,35 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/hi/">होम</a> /</li><li><a class="underline" href="/hi/archive/">संग्रह</a> /</li><li aria-current="page">ff.6 प्यारे सांता क्लॉज़</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>6</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>6</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="mushroom" data-ff-slug="ff-6" data-label="3D वस्तु और पूर्वावलोकन खोलें: ff.6"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Futuro Fortissimo संग्रह</p>
-      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.6 प्यारे सांता क्लॉज़</h1>
+      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black"><span class="ff-emo">🎼</span> ff.6 प्यारे सांता क्लॉज़</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">परफ़ेक्ट पास्ता, आसान स्तनपान और Amazon के एल्फ़</p>
       <p class="mt-2 text-xs font-mono text-black/70">प्रकाशित <time datetime="2021-12-22T07:00:42.718Z">22 दिसंबर 2021</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/hi/archive/ff-6.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">↗</span> शेयर करें</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/hi/archive/ff-6.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">🔗</span> लिंक कॉपी करें</button>
-        <a href="https://fortissimo.substack.com/p/-ff6-caro-babbo-natale" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Substack पर इतालवी मूल पढ़ें ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/hi/archive/ff-6.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true"><span class="ff-emo">↗</span></span> शेयर करें</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/hi/archive/ff-6.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true"><span class="ff-emo">🔗</span></span> लिंक कॉपी करें</button>
+        <a href="https://fortissimo.substack.com/p/-ff6-caro-babbo-natale" target="_blank" rel="noopener noreferrer" class="ff-qlink">Substack पर इतालवी मूल पढ़ें <span class="ff-emo">↗</span></a>
       </div>
       
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">थीम</span><a href="/hi/themes.html#nutrizione" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🥗 पोषण और माइक्रोबायोम</a></p>
-      <nav aria-label="इस अंक के खंड" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">थीम</span><a href="/hi/themes.html#nutrizione" class="ff-tlink"><span class="ff-emo">🥗</span> पोषण और माइक्रोबायोम</a></p>
+      <nav aria-label="इस अंक के खंड" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">इस अंक में</h2>
         <ol>
-          <li><a href="#ff-6-1100">🎁ff.6.1 पेड़ के नीचे रखने के लिए 100 तोहफ़े</a></li>
-          <li><a href="#ff-6-2">🧝ff.6.2 Amazon के एल्फ़</a></li>
-          <li><a href="#ff-6-3">🛒ff.6.3 दुनिया भर में ख़रीदारी का आगमन</a></li>
+          <li><a href="#ff-6-1100"><span class="ff-emo">🎁</span>ff.6.1 पेड़ के नीचे रखने के लिए 100 तोहफ़े</a></li>
+          <li><a href="#ff-6-2"><span class="ff-emo">🧝</span>ff.6.2 Amazon के एल्फ़</a></li>
+          <li><a href="#ff-6-3"><span class="ff-emo">🛒</span>ff.6.3 दुनिया भर में ख़रीदारी का आगमन</a></li>
         </ol>
       </nav>
     </header>
 
     
 
-    <section id="ff-6-1100" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-6-1100" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🎁ff.6.1 पेड़ के नीचे रखने के लिए 100 तोहफ़े</h2>
-        <a href="https://fortissimo.substack.com/i/44167769/ff61-100-regali-da-mettere-sotto-lalbero" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.6.1 पेड़ के नीचे रखने के लिए 100 तोहफ़े">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🎁</span>ff.6.1 पेड़ के नीचे रखने के लिए 100 तोहफ़े</h2>
+        <a href="https://fortissimo.substack.com/i/44167769/ff61-100-regali-da-mettere-sotto-lalbero" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.6.1 पेड़ के नीचे रखने के लिए 100 तोहफ़े">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">अगर आप अब भी सोच रहे हैं कि इस क्रिसमस पेड़ के नीचे क्या रखें, तो Time ने उस साल की 100 सबसे अच्छी खोजों की सूची प्रकाशित की है जो (सब कुछ के बावजूद) अभी बीता है।</p>
@@ -269,122 +269,122 @@
         <p class="text-base leading-relaxed text-black/90">Adidas और Allbirds ने एक ख़ास जूते के 100 जोड़े पहले से जारी किए: जो उत्पादन और शिपिंग के हर पहलू को गिनकर 2.94 kg CO2-समतुल्य उत्सर्जित करता है (मानक से 60% कम)। बशर्ते आप इस्तेमाल के दौरान उन्हें धोएँ नहीं*।</p>
         <p class="text-base leading-relaxed text-black/90">भविष्य इन 100 चीज़ों से होकर भी गुज़रता है।</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!_PAH!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F12428215-4fbc-4c35-acf2-78574f0449c6_800x1066.jpeg" width="800" height="1066" alt="🎁ff.6.1 पेड़ के नीचे रखने के लिए 100 तोहफ़े" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!aXZT!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fb9888115-64d3-46aa-a462-fcdd641bcb23_541x698.jpeg" width="541" height="698" alt="🎁ff.6.1 पेड़ के नीचे रखने के लिए 100 तोहफ़े" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!N77X!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F01578a14-a914-46c0-890a-624b99c6d838_1116x567.jpeg" width="1116" height="567" alt="🎁ff.6.1 पेड़ के नीचे रखने के लिए 100 तोहफ़े" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!QNSc!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fc00dd98e-b411-4de2-8cfc-6d9f0d18f205_800x800.png" width="800" height="800" alt="🎁ff.6.1 पेड़ के नीचे रखने के लिए 100 तोहफ़े" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!nYwF!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F25a728cf-b4e3-489f-954f-721e09fa29af_800x800.png" width="800" height="800" alt="🎁ff.6.1 पेड़ के नीचे रखने के लिए 100 तोहफ़े" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!qjXl!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F095b2d65-959f-4c6d-9d4d-ae5606e8f97d_616x789.png" width="616" height="789" alt="🎁ff.6.1 पेड़ के नीचे रखने के लिए 100 तोहफ़े" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!kSyd!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F6de39a3e-3aa3-4457-9c9d-0dcd2c2cc41e_1600x1067.jpeg" width="1600" height="1067" alt="🎁ff.6.1 पेड़ के नीचे रखने के लिए 100 तोहफ़े" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (5)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://time.com/collection/best-inventions-2021/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 100 सबसे अच्छी खोजों</a>
-            <a href="https://mobiluslabs.com/mobiwan/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Mobiliuslab</a>
-            <a href="https://www.computerworld.com/article/3632989/lenovos-thinkreality-a3-smart-glasses-look-to-the-future.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Lenovo</a>
-            <a href="https://www.elvie.com/shop/elvie-pump" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Elvie</a>
-            <a href="https://www.adidas.com/us/futurecraft-allbirds" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Adidas और Allbirds</a>
+          <div class="ff-refs-l">
+            <a href="https://time.com/collection/best-inventions-2021/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> 100 सबसे अच्छी खोजों</a>
+            <a href="https://mobiluslabs.com/mobiwan/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Mobiliuslab</a>
+            <a href="https://www.computerworld.com/article/3632989/lenovos-thinkreality-a3-smart-glasses-look-to-the-future.html" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Lenovo</a>
+            <a href="https://www.elvie.com/shop/elvie-pump" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Elvie</a>
+            <a href="https://www.adidas.com/us/futurecraft-allbirds" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Adidas और Allbirds</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-6-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-6-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🧝ff.6.2 Amazon के एल्फ़</h2>
-        <a href="https://fortissimo.substack.com/i/44167769/ff62-gli-elfi-di-amazon" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.6.2 Amazon के एल्फ़">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🧝</span>ff.6.2 Amazon के एल्फ़</h2>
+        <a href="https://fortissimo.substack.com/i/44167769/ff62-gli-elfi-di-amazon" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.6.2 Amazon के एल्फ़">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">ज़ाहिर है, यह पक्का करने के लिए कि हर पैकेट 25 तारीख़ तक अरबों लोगों के पेड़ के नीचे पहुँच जाए, सांता क्लॉज़ Amazon की मदद लेते हैं। जो ख़ुद त्योहारों में रखे गए 150 हज़ार मौसमी कर्मचारियों की मदद लेता है। लगभग Nike के कुल कर्मचारियों का दोगुना।</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!2pWs!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fe8e6bbc2-d668-4f71-bafb-3cec8dce392b_1198x1073.jpeg" width="1198" height="1073" alt="🧝ff.6.2 Amazon के एल्फ़" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
       
     </section>
 
-    <section id="ff-6-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-6-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🛒ff.6.3 दुनिया भर में ख़रीदारी का आगमन</h2>
-        <a href="https://fortissimo.substack.com/i/44167769/ff63-lavvento-delle-spese-nel-mondo" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.6.3 दुनिया भर में ख़रीदारी का आगमन">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🛒</span>ff.6.3 दुनिया भर में ख़रीदारी का आगमन</h2>
+        <a href="https://fortissimo.substack.com/i/44167769/ff63-lavvento-delle-spese-nel-mondo" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.6.3 दुनिया भर में ख़रीदारी का आगमन">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">हर त्योहार के अपने ख़र्चे होते हैं। और अगर त्योहार काफ़ी न हों, तो हम नए बना लेते हैं: Black Friday, Cyber Monday, साल की शुरुआत की सेल और, एशिया में Alibaba का बनाया, सिंगल्स डे (11 नवंबर, आह)।</p>
         <p class="text-base leading-relaxed text-black/90">भले ही क्रिसमस, अपने 1T (T = ट्रिलियन = हज़ार अरब) डॉलर के साथ, शायद सबसे ज़्यादा ख़र्च वाले दिन के रूप में पक्के तौर पर पहले नंबर पर है, यह समझना दिलचस्प है कि बाक़ी दिन कहाँ आते हैं।</p>
         <p class="text-base leading-relaxed text-black/90">उदास हैं? ख़रीदिए! (:व्यंग्य:) Cyber Monday (जो साल के सबसे उदास दिन, Blue Monday, के साथ पड़ता है) में पिछले सालों में अच्छी-ख़ासी बढ़ोतरी हुई है। लेकिन अपने 9.4 अरब के साथ, यह क्रिसमस के ख़र्च का सिर्फ़ 1% है।</p>
         <p class="text-base leading-relaxed text-black/90">एशिया में, लोग अकेलेपन से लड़ने के लिए ख़र्च करते हैं: 2019 में ख़र्च 38 अरब तक पहुँचा। 2021 में, 139 अरब।</p>
-        <p class="text-base leading-relaxed text-black/90">👋 और इस fortissimo हफ़्ते के लिए बस इतना ही! 🔜 अगले ff में हम बीते साल का हिसाब-किताब करेंगे। जल्द मिलते हैं, Michele</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">👋</span> और इस fortissimo हफ़्ते के लिए बस इतना ही! <span class="ff-emo">🔜</span> अगले ff में हम बीते साल का हिसाब-किताब करेंगे। जल्द मिलते हैं, Michele</p>
         <p class="text-base leading-relaxed text-black/90">इस प्रोजेक्ट का समर्थन करना चाहते हैं? न्यूज़लेटर की सदस्यता लें और WhatsApp पर किसी दोस्त के साथ साझा करें</p>
-        <p class="text-base leading-relaxed text-black/90">👇🔥सदस्यता लें</p>
-        <p class="text-base leading-relaxed text-black/90">या, मुझे एक कॉफ़ी पिलाएँ 😏</p>
-        <p class="text-base leading-relaxed text-black/90">☕</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">👇</span><span class="ff-emo">🔥</span>सदस्यता लें</p>
+        <p class="text-base leading-relaxed text-black/90">या, मुझे एक कॉफ़ी पिलाएँ <span class="ff-emo">😏</span></p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">☕</span></p>
         <p class="text-base leading-relaxed text-black/90">और नीचे एक दिल लगाना न भूलें।</p>
-        <p class="text-base leading-relaxed text-black/90">❤️</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">❤️</span></p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!eC_d!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F2adda161-73d6-40ca-b005-b8fb0a0278a0_466x504.png" width="466" height="504" alt="🛒ff.6.3 दुनिया भर में ख़रीदारी का आगमन" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!77Pe!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F76f10cc6-b8f2-4e58-b48a-600e06fa0701_455x513.png" width="455" height="513" alt="🛒ff.6.3 दुनिया भर में ख़रीदारी का आगमन" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!gHXV!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F216e3e98-d0a4-48c3-a09e-da33165b0aab_368x370.png" width="368" height="370" alt="🛒ff.6.3 दुनिया भर में ख़रीदारी का आगमन" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!u6ZT!,w_1456,c_limit,f_auto,q_auto:good,fl_lossy/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fcd7c76b4-8aaa-4b0c-8b39-9f3d57d7dd44_370x200.gif" width="370" height="200" alt="🛒ff.6.3 दुनिया भर में ख़रीदारी का आगमन" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (2)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.visualcapitalist.com/how-holiday-spending-compares-around-the-world/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ अपने ख़र्चे</a>
-            <a href="https://www.cnbc.com/2021/11/12/china-singles-day-2021-alibaba-jd-hit-record-139-billion-of-sales.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 139 अरब</a>
+          <div class="ff-refs-l">
+            <a href="https://www.visualcapitalist.com/how-holiday-spending-compares-around-the-world/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> अपने ख़र्चे</a>
+            <a href="https://www.cnbc.com/2021/11/12/china-singles-day-2021-alibaba-jd-hit-record-139-billion-of-sales.html" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> 139 अरब</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">संबंधित अंक</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-4.html" class="font-bold hover:underline">ff.4 फिर से ज़िंदा मैमथ</a><p class="text-sm text-black/75 mt-1">खुलते प्रोटीन, बैक्टीरिया, पहेलियों की पत्रिका और विलुप्ति।</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-145.html" class="font-bold hover:underline">ff.145 चीनी, हड्डियाँ और crème brûlée</a><p class="text-sm text-black/75 mt-1">“नए धूम्रपान” यानी खाने के ख़िलाफ़ फ़ूड डिज़ाइन</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-143.html" class="font-bold hover:underline">ff.143 Rolex वाले बंदर</a><p class="text-sm text-black/75 mt-1">असली पश्चिमी विलासिता? Rolex नहीं: धूप/हवा/पानी (जैविक प्रकृति)।</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-120.html" class="font-bold hover:underline">ff.120 खेल और लंबी उम्र</a><p class="text-sm text-black/75 mt-1">कैंसर और खान-पान के बीच, चलना-फिरना ज़िंदगी कैसे बढ़ाता है</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/hi/archive/ff-4.html" class="font-bold hover:underline">ff.4 फिर से ज़िंदा मैमथ</a><p class="text-sm text-black/75 mt-1">खुलते प्रोटीन, बैक्टीरिया, पहेलियों की पत्रिका और विलुप्ति।</p></li>
+        <li><a href="/hi/archive/ff-145.html" class="font-bold hover:underline">ff.145 चीनी, हड्डियाँ और crème brûlée</a><p class="text-sm text-black/75 mt-1">“नए धूम्रपान” यानी खाने के ख़िलाफ़ फ़ूड डिज़ाइन</p></li>
+        <li><a href="/hi/archive/ff-143.html" class="font-bold hover:underline">ff.143 Rolex वाले बंदर</a><p class="text-sm text-black/75 mt-1">असली पश्चिमी विलासिता? Rolex नहीं: धूप/हवा/पानी (जैविक प्रकृति)।</p></li>
+        <li><a href="/hi/archive/ff-120.html" class="font-bold hover:underline">ff.120 खेल और लंबी उम्र</a><p class="text-sm text-black/75 mt-1">कैंसर और खान-पान के बीच, चलना-फिरना ज़िंदगी कैसे बढ़ाता है</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Futuro Fortissimo के नए अंक पाएँ</h2>
         <p class="text-sm text-black/80 mt-1">बर्गामो के मिकेले मेरेल्ली का मुफ़्त न्यूज़लेटर — तकनीक, AI, प्रकृति और समाज पर। इतालवी में लिखा गया, Substack से ईमेल पर।</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 मुफ़्त सब्सक्राइब करें ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary"><span class="ff-emo">📩</span> मुफ़्त सब्सक्राइब करें <span class="ff-emo">↗</span></a>
     </section>
 
     <nav aria-label="पिछला और अगला अंक" class="ff-pn">
@@ -393,7 +393,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -413,16 +413,16 @@
       <div class="space-y-2">
         <p class="ff-eyebrow">फ़ॉलो करें</p>
         <ul class="space-y-1 font-medium">
-          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack ↗</a></li>
-          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
-          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram ↗</a></li>
+          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram <span class="ff-emo">↗</span></a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
-          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">मुझे एक कॉफ़ी पिलाएँ ☕ ↗</a></li>
-          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">मिकेले के अन्य प्रोजेक्ट ↗</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">मुझे एक कॉफ़ी पिलाएँ <span class="ff-emo">☕</span> <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">मिकेले के अन्य प्रोजेक्ट <span class="ff-emo">↗</span></a></li>
         </ul>
       </div>
     </div>
-    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
+    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70"><span class="ff-emo">©</span> 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
   <aside class="ff-sticky-sub" aria-label="Newsletter">
     <p>पसंद आया? अगला अंक ईमेल पर पाएँ।</p>
@@ -430,11 +430,11 @@
     <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="बंद करें">✕</button>
   </aside>
   <nav class="ff-tabbar" aria-label="मुख्य नेविगेशन">
-    <a href="/hi/"><span class="ff-ti" aria-hidden="true">🏠</span>होम</a>
-    <a href="/hi/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>संग्रह</a>
-    <a href="/hi/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>थीम</a>
-    <a href="/hi/books/"><span class="ff-ti" aria-hidden="true">📚</span>किताबें</a>
-    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>खोजें</button>
+    <a href="/hi/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🏠</span></span>होम</a>
+    <a href="/hi/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🗂</span></span>संग्रह</a>
+    <a href="/hi/themes.html"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🧭</span></span>थीम</a>
+    <a href="/hi/books/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">📚</span></span>किताबें</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🔍</span></span>खोजें</button>
   </nav>
   <dialog id="ff-search" class="ff-search" aria-label="खोजें" data-empty="कोई परिणाम नहीं। कोई और शब्द आज़माएँ।">
     <form role="search">
@@ -445,7 +445,7 @@
     <ul id="ff-results" role="listbox" aria-label="खोजें"></ul>
     <div class="ff-s-foot"><a href="/hi/archive/" data-ff-all data-base="/hi/archive/">संग्रह में सभी परिणाम →</a><span>कहीं भी खोजने के लिए / दबाएँ</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

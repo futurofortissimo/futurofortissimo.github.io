@@ -138,12 +138,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -152,9 +152,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -207,18 +207,18 @@
         <a href="/en/books/">Books</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="Language"><a href="/archivio/ff-126.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/archive/ff-126.html" hreflang="en" lang="en" title="English" data-keep-state aria-current="page">EN</a><a href="/hi/archive/ff-126.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="Dark theme" title="Dark theme"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Subscribe</a>
         <details class="ff-more">
-          <summary aria-label="More"><span aria-hidden="true">☰</span><span class="sr-only">More</span></summary>
+          <summary aria-label="More"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">More</span></summary>
           <nav class="ff-menu" aria-label="More">
-            <a href="/book/">📖 The Book (IT)</a>
-            <a href="/en/connections.html">🔗 Connections</a>
-            <a href="/en/note.html">📝 Notes</a>
+            <a href="/book/"><span class="ff-emo">📖</span> The Book (IT)</a>
+            <a href="/en/connections.html"><span class="ff-emo">🔗</span> Connections</a>
+            <a href="/en/note.html"><span class="ff-emo">📝</span> Notes</a>
             <hr />
-            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 Subscribe ↗</a>
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener"><span class="ff-emo">📩</span> Subscribe <span class="ff-emo">↗</span></a>
           </nav>
         </details>
       </div>
@@ -228,63 +228,63 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/en/">Home</a> /</li><li><a class="underline" href="/en/archive/">Archive</a> /</li><li aria-current="page">ff.126 Google: the end or a rebirth?</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>126</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>126</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="eye" data-ff-slug="ff-126" data-label="Open the 3D object and preview of ff.126"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Futuro Fortissimo Archive</p>
-      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.126 Google: the end or a rebirth?</h1>
+      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black"><span class="ff-emo">🎼</span> ff.126 Google: the end or a rebirth?</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">Why reinventing yourself matters, even when all is going well</p>
       <p class="mt-2 text-xs font-mono text-black/70">Published <time datetime="2025-05-30T06:30:36.603Z">30 May 2025</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/en/archive/ff-126.html" data-done="Link copied"><span aria-hidden="true">↗</span> Share</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/en/archive/ff-126.html" data-done="Link copied"><span aria-hidden="true">🔗</span> Copy link</button>
-        <a href="https://fortissimo.substack.com/p/ff126-google-fine-o-rinascita" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Read the Italian original on Substack ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/en/archive/ff-126.html" data-done="Link copied"><span aria-hidden="true"><span class="ff-emo">↗</span></span> Share</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/en/archive/ff-126.html" data-done="Link copied"><span aria-hidden="true"><span class="ff-emo">🔗</span></span> Copy link</button>
+        <a href="https://fortissimo.substack.com/p/ff126-google-fine-o-rinascita" target="_blank" rel="noopener noreferrer" class="ff-qlink">Read the Italian original on Substack <span class="ff-emo">↗</span></a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• From extermination camps to Intel: paranoia</li>
-        <li>• Veo 3: the end of Hollywood?</li>
-        <li>• Google and Nobel Prizes?</li>
+      <ul class="ff-keypoints">
+        <li>From extermination camps to Intel: paranoia</li>
+        <li>Veo 3: the end of Hollywood?</li>
+        <li>Google and Nobel Prizes?</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Themes</span><a href="/en/themes.html#ai" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🤖 AI, agents and models</a></p>
-      <nav aria-label="Sections of this issue" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">Themes</span><a href="/en/themes.html#ai" class="ff-tlink"><span class="ff-emo">🤖</span> AI, agents and models</a></p>
+      <nav aria-label="Sections of this issue" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">In this issue</h2>
         <ol>
-          <li><a href="#ff-126-1">🔯 ff.126.1 From extermination camps to Intel</a></li>
-          <li><a href="#ff-126-2">🐦 ff.126.2 It&#39;s not the end of Google</a></li>
-          <li><a href="#ff-126-3">❎ ff.126.3 Google&#39;s moonshot: X</a></li>
-          <li><a href="#ff-126-4">🅰️ ff.126.4 AlphaEvolve</a></li>
+          <li><a href="#ff-126-1"><span class="ff-emo">🔯</span> ff.126.1 From extermination camps to Intel</a></li>
+          <li><a href="#ff-126-2"><span class="ff-emo">🐦</span> ff.126.2 It&#39;s not the end of Google</a></li>
+          <li><a href="#ff-126-3"><span class="ff-emo">❎</span> ff.126.3 Google&#39;s moonshot: X</a></li>
+          <li><a href="#ff-126-4"><span class="ff-emo">🅰️</span> ff.126.4 AlphaEvolve</a></li>
         </ol>
       </nav>
     </header>
 
     
 
-    <section id="ff-126-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-126-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🔯 ff.126.1 From extermination camps to Intel</h2>
-        <a href="https://fortissimo.substack.com/i/164288050/ff-da-campi-di-sterminio-a-intel" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.126.1 From extermination camps to Intel">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🔯</span> ff.126.1 From extermination camps to Intel</h2>
+        <a href="https://fortissimo.substack.com/i/164288050/ff-da-campi-di-sterminio-a-intel" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.126.1 From extermination camps to Intel">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Andy Grove survived the Holocaust. Then, having emigrated to America from Hungary, he led Intel right from its birth (co-founded with Moore, the one with the law).</p>
         <p class="text-base leading-relaxed text-black/90">Despite his technical background, he reinvented himself as an operations manager, racking up so many successes that he was named Time Man of the Year 1997.</p>
         <p class="text-base leading-relaxed text-black/90">Paranormal activity. The same paranoia fuelled by a youth spent between war and Nazism saved Intel from Japanese competition: in 1985 Andy shifted the company&#39;s focus from memory (DRAM) to chips.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!EXsz!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5f7167e9-bd71-40e4-9818-ec52a648ee2d_971x1500.jpeg" width="971" height="1500" alt="Only the Paranoid Survive (via futuro fortissimo)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Only the Paranoid Survive (via futuro fortissimo)</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (2)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://en.wikipedia.org/wiki/Andrew_Grove" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Andy Grove survived the Holocaust</a>
-            <a href="https://time.com/4267150/andrew-grove-intel-survivor-biography-budapest/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Time Man of the Year 1997</a>
+          <div class="ff-refs-l">
+            <a href="https://en.wikipedia.org/wiki/Andrew_Grove" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Andy Grove survived the Holocaust</a>
+            <a href="https://time.com/4267150/andrew-grove-intel-survivor-biography-budapest/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Time Man of the Year 1997</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-126-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-126-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🐦 ff.126.2 It&#39;s not the end of Google</h2>
-        <a href="https://fortissimo.substack.com/i/164288050/ff-non-e-la-fine-di-google" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.126.2 It&#39;s not the end of Google">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🐦</span> ff.126.2 It&#39;s not the end of Google</h2>
+        <a href="https://fortissimo.substack.com/i/164288050/ff-non-e-la-fine-di-google" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.126.2 It&#39;s not the end of Google">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Exterminated by ChatGPT and Perplexity? Google today is in a similar situation. 50% of its business, Google Search ($200 billion a year), is under attack. On top of that, Apple is thinking of replacing it as the default on Safari (even though Google pays $20 billion for that privilege).</p>
@@ -292,92 +292,92 @@
         <p class="text-base leading-relaxed text-black/90">Veo 3, a text-to-video model with Hollywood-grade quality, consistent characters and integrated audio and dialogue. A coincidence that veo means “I see” in Spanish? Veo veo. ¿Qué ves? Una cosita. ¿Qué cosa es? Empieza por &quot;C&quot;. ¿Qué será qué será qué será?</p>
         <p class="text-base leading-relaxed text-black/90">Simultaneous audio translation in Google Meet (keeping voice and expressiveness). AI-powered smart glasses (Android XR Glasses) and screens that can create 3D avatars (Google Beam).</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!dWlP!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6a9509b3-f088-4081-8e33-765b672f034d_2160x2700.webp" width="2160" height="2700" alt="🐦 ff.126.2 It&#39;s not the end of Google" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.youtube.com/watch?v=hyXqcsWOONo" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Simultaneous audio translation in Google Meet</a>
-            <a href="https://blog.google/products/android/android-xr-gemini-glasses-headsets/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Android XR Glasses</a>
-            <a href="https://blog.google/technology/research/project-starline-google-beam-update/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Google Beam</a>
+          <div class="ff-refs-l">
+            <a href="https://www.youtube.com/watch?v=hyXqcsWOONo" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Simultaneous audio translation in Google Meet</a>
+            <a href="https://blog.google/products/android/android-xr-gemini-glasses-headsets/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Android XR Glasses</a>
+            <a href="https://blog.google/technology/research/project-starline-google-beam-update/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Google Beam</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-126-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-126-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">❎ ff.126.3 Google&#39;s moonshot: X</h2>
-        <a href="https://fortissimo.substack.com/i/164288050/ff-la-luna-di-google-x" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.126.3 Google&#39;s moonshot: X">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">❎</span> ff.126.3 Google&#39;s moonshot: X</h2>
+        <a href="https://fortissimo.substack.com/i/164288050/ff-la-luna-di-google-x" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.126.3 Google&#39;s moonshot: X">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Here are Google&#39;s advantages over OpenAI, Anthropic, Meta and Perplexity, according to its CEO Sundar Pichai:</p>
-        <p class="text-base leading-relaxed text-black/90">Products everyone uses. Gmail, YouTube, Cloud. Custom chips. In-house Tensor Processing Units (TPUs), now in their 7th generation, with Ironwood, 40+ exaflops. X, Alphabet&#39;s Moonshot Factory. A forge of research on self-driving (Waymo), quantum computers and biology (🎼 ff.28 Google researches the future). Nobel. A recognition rarely given to private companies, won by Demis Hassabis for Chemistry in 2024 (🧬 ff.4.1 The structure of proteins).</p>
+        <p class="text-base leading-relaxed text-black/90">Products everyone uses. Gmail, YouTube, Cloud. Custom chips. In-house Tensor Processing Units (TPUs), now in their 7th generation, with Ironwood, 40+ exaflops. X, Alphabet&#39;s Moonshot Factory. A forge of research on self-driving (Waymo), quantum computers and biology (<span class="ff-emo">🎼</span> ff.28 Google researches the future). Nobel. A recognition rarely given to private companies, won by Demis Hassabis for Chemistry in 2024 (<span class="ff-emo">🧬</span> ff.4.1 The structure of proteins).</p>
         <p class="text-base leading-relaxed text-black/90">In short, Google isn&#39;t just search.</p>
       </div>
       
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://en.wikipedia.org/wiki/Demis_Hassabis" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Demis Hassabis for Chemistry in 2024</a>
-            <a href="https://fortissimo.substack.com/p/-ff24-google-ricerca-il-nostro-benessere?utm_source=publication-search" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🎼 ff.28 Google researches the future</a>
-            <a href="https://fortissimo.substack.com/i/44077581/ff-la-struttura-delle-proteine" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🧬 ff.4.1 The structure of proteins</a>
+          <div class="ff-refs-l">
+            <a href="https://en.wikipedia.org/wiki/Demis_Hassabis" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Demis Hassabis for Chemistry in 2024</a>
+            <a href="https://fortissimo.substack.com/p/-ff24-google-ricerca-il-nostro-benessere?utm_source=publication-search" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> <span class="ff-emo">🎼</span> ff.28 Google researches the future</a>
+            <a href="https://fortissimo.substack.com/i/44077581/ff-la-struttura-delle-proteine" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> <span class="ff-emo">🧬</span> ff.4.1 The structure of proteins</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-126-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-126-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🅰️ ff.126.4 AlphaEvolve</h2>
-        <a href="https://fortissimo.substack.com/i/164288050/ff-alphaevolve" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.126.4 AlphaEvolve">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🅰️</span> ff.126.4 AlphaEvolve</h2>
+        <a href="https://fortissimo.substack.com/i/164288050/ff-alphaevolve" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.126.4 AlphaEvolve">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">The final gem. After AlphaGo and AlphaStar, Google/DeepMind recently unveiled AlphaEvolve. Not to win at video games, but to revolutionise mathematics.</p>
         <p class="text-base leading-relaxed text-black/90">While pushing the frontiers of maths (a new record of 593 spheres in the “kissing number problem” in 11 dimensions), it cuts data-centre consumption by 1% (by improving Strassen&#39;s algorithm, unbeaten since 1969).</p>
-        <p class="text-base leading-relaxed text-black/90">🎶 fortissimo notes archive</p>
-        <p class="text-base leading-relaxed text-black/90">👋 See you soon, from micmer</p>
-        <p class="text-base leading-relaxed text-black/90">© futuro fortissimo | michele merelli</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">🎶</span> fortissimo notes archive</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">👋</span> See you soon, from micmer</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">©</span> futuro fortissimo | michele merelli</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!jcqn!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5408e125-ab17-469e-989d-9664f362797c_1229x754.png" width="1229" height="754" alt="🅰️ ff.126.4 AlphaEvolve" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!5Wab!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbba776bb-3a49-4440-b198-54f4de01d8f8_1440x808.bin" alt="Isle of Any: Coinbase&#39;s ad for the 2025 NBA playoffs (It&#39;s Nice That, futuro fortissimo)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Isle of Any: Coinbase&#39;s ad for the 2025 NBA playoffs (It&#39;s Nice That, futuro fortissimo)</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (6)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/AlphaEvolve.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ AlphaEvolve</a>
-            <a href="http://en.wikipedia.org/wiki/Kissing_number" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ “kissing number problem” in 11 dimensions</a>
-            <a href="https://it.wikipedia.org/wiki/Algoritmo_di_Strassen" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Strassen&#39;s algorithm, unbeaten since 1969</a>
-            <a href="https://futurofortissimo.github.io/note.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ fortissimo notes archive</a>
-            <a href="https://futurofortissimo.github.io/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ futuro fortissimo</a>
-            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ michele merelli</a>
+          <div class="ff-refs-l">
+            <a href="https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/AlphaEvolve.pdf" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> AlphaEvolve</a>
+            <a href="http://en.wikipedia.org/wiki/Kissing_number" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> “kissing number problem” in 11 dimensions</a>
+            <a href="https://it.wikipedia.org/wiki/Algoritmo_di_Strassen" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Strassen&#39;s algorithm, unbeaten since 1969</a>
+            <a href="https://futurofortissimo.github.io/note.html" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> fortissimo notes archive</a>
+            <a href="https://futurofortissimo.github.io/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> futuro fortissimo</a>
+            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> michele merelli</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">Related issues</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-28.html" class="font-bold hover:underline">ff.28 Google researches the future</a><p class="text-sm text-black/75 mt-1">From search engine to research that will be the engine of future technologies.</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-136.html" class="font-bold hover:underline">ff.136 Ka-me-ha-me-energy-waaave!</a><p class="text-sm text-black/75 mt-1">Against AI&#39;s astronomical consumption: Goku?</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-134.html" class="font-bold hover:underline">ff.134 Naming things</a><p class="text-sm text-black/75 mt-1">The value of words, between humanity and ChatGPT</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-129.html" class="font-bold hover:underline">ff.129 Tesla&#39;s waltz</a><p class="text-sm text-black/75 mt-1">Forget ChatGPT: physical artificial intelligence</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/en/archive/ff-28.html" class="font-bold hover:underline">ff.28 Google researches the future</a><p class="text-sm text-black/75 mt-1">From search engine to research that will be the engine of future technologies.</p></li>
+        <li><a href="/en/archive/ff-136.html" class="font-bold hover:underline">ff.136 Ka-me-ha-me-energy-waaave!</a><p class="text-sm text-black/75 mt-1">Against AI&#39;s astronomical consumption: Goku?</p></li>
+        <li><a href="/en/archive/ff-134.html" class="font-bold hover:underline">ff.134 Naming things</a><p class="text-sm text-black/75 mt-1">The value of words, between humanity and ChatGPT</p></li>
+        <li><a href="/en/archive/ff-129.html" class="font-bold hover:underline">ff.129 Tesla&#39;s waltz</a><p class="text-sm text-black/75 mt-1">Forget ChatGPT: physical artificial intelligence</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Get new issues of Futuro Fortissimo</h2>
         <p class="text-sm text-black/80 mt-1">A free newsletter by Michele Merelli (Bergamo) on technology, AI, nature and society. Written in Italian, delivered by Substack.</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 Subscribe for free ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary"><span class="ff-emo">📩</span> Subscribe for free <span class="ff-emo">↗</span></a>
     </section>
 
     <nav aria-label="Adjacent issues" class="ff-pn">
@@ -386,7 +386,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -406,16 +406,16 @@
       <div class="space-y-2">
         <p class="ff-eyebrow">Follow</p>
         <ul class="space-y-1 font-medium">
-          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack ↗</a></li>
-          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
-          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram ↗</a></li>
+          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram <span class="ff-emo">↗</span></a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
-          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee ☕ ↗</a></li>
-          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects ↗</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee <span class="ff-emo">☕</span> <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects <span class="ff-emo">↗</span></a></li>
         </ul>
       </div>
     </div>
-    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
+    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70"><span class="ff-emo">©</span> 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
   <aside class="ff-sticky-sub" aria-label="Newsletter">
     <p>Enjoying it? Get the next issue by email.</p>
@@ -423,11 +423,11 @@
     <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="Dismiss">✕</button>
   </aside>
   <nav class="ff-tabbar" aria-label="Main navigation">
-    <a href="/en/"><span class="ff-ti" aria-hidden="true">🏠</span>Home</a>
-    <a href="/en/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>Archive</a>
-    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>Themes</a>
-    <a href="/en/books/"><span class="ff-ti" aria-hidden="true">📚</span>Books</a>
-    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>Search</button>
+    <a href="/en/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🏠</span></span>Home</a>
+    <a href="/en/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🗂</span></span>Archive</a>
+    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🧭</span></span>Themes</a>
+    <a href="/en/books/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">📚</span></span>Books</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🔍</span></span>Search</button>
   </nav>
   <dialog id="ff-search" class="ff-search" aria-label="Search" data-empty="No results. Try another word.">
     <form role="search">
@@ -438,7 +438,7 @@
     <ul id="ff-results" role="listbox" aria-label="Search"></ul>
     <div class="ff-s-foot"><a href="/en/archive/" data-ff-all data-base="/en/archive/">All results in the archive →</a><span>Press / to search anywhere</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

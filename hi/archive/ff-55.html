@@ -138,12 +138,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -152,9 +152,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -207,18 +207,18 @@
         <a href="/hi/books/">किताबें</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="खोजें (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">खोजें</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="खोजें (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">खोजें</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="भाषा"><a href="/archivio/ff-55.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/archive/ff-55.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/archive/ff-55.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state aria-current="page">हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="डार्क थीम" title="डार्क थीम"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">सब्सक्राइब</a>
         <details class="ff-more">
-          <summary aria-label="और"><span aria-hidden="true">☰</span><span class="sr-only">और</span></summary>
+          <summary aria-label="और"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">और</span></summary>
           <nav class="ff-menu" aria-label="और">
-            <a href="/book/">📖 किताब (IT)</a>
-            <a href="/hi/connections.html">🔗 कनेक्शन</a>
-            <a href="/hi/note.html">📝 नोट्स</a>
+            <a href="/book/"><span class="ff-emo">📖</span> किताब (IT)</a>
+            <a href="/hi/connections.html"><span class="ff-emo">🔗</span> कनेक्शन</a>
+            <a href="/hi/note.html"><span class="ff-emo">📝</span> नोट्स</a>
             <hr />
-            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 सब्सक्राइब ↗</a>
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener"><span class="ff-emo">📩</span> सब्सक्राइब <span class="ff-emo">↗</span></a>
           </nav>
         </details>
       </div>
@@ -228,40 +228,40 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/hi/">होम</a> /</li><li><a class="underline" href="/hi/archive/">संग्रह</a> /</li><li aria-current="page">ff.55 क्रांति में बचे रहना</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>55</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>55</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="bulb" data-ff-slug="ff-55" data-label="3D वस्तु और पूर्वावलोकन खोलें: ff.55"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Futuro Fortissimo संग्रह</p>
-      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.55 क्रांति में बचे रहना</h1>
+      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black"><span class="ff-emo">🎼</span> ff.55 क्रांति में बचे रहना</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">गिलोटिन, बेबसी और बर्बादी के बीच कृत्रिम बुद्धिमत्ता</p>
       <p class="mt-2 text-xs font-mono text-black/70">प्रकाशित <time datetime="2023-03-30T07:05:59.295Z">30 मार्च 2023</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/hi/archive/ff-55.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">↗</span> शेयर करें</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/hi/archive/ff-55.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">🔗</span> लिंक कॉपी करें</button>
-        <a href="https://fortissimo.substack.com/p/ff54-come-capire-una-rivoluzione" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Substack पर इतालवी मूल पढ़ें ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/hi/archive/ff-55.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true"><span class="ff-emo">↗</span></span> शेयर करें</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/hi/archive/ff-55.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true"><span class="ff-emo">🔗</span></span> लिंक कॉपी करें</button>
+        <a href="https://fortissimo.substack.com/p/ff54-come-capire-una-rivoluzione" target="_blank" rel="noopener noreferrer" class="ff-qlink">Substack पर इतालवी मूल पढ़ें <span class="ff-emo">↗</span></a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• एक मशीन जो न्यूरल गतिविधि स्कैन करके दोबारा बना देती है कि हम क्या देख रहे हैं (!)</li>
-        <li>• एक क्रांति के भीतर जीना कैसा होता है?</li>
-        <li>• हम भविष्य की भविष्यवाणी क्यों नहीं कर सकते (पर मैं कोशिश करता हूँ)</li>
+      <ul class="ff-keypoints">
+        <li>एक मशीन जो न्यूरल गतिविधि स्कैन करके दोबारा बना देती है कि हम क्या देख रहे हैं (!)</li>
+        <li>एक क्रांति के भीतर जीना कैसा होता है?</li>
+        <li>हम भविष्य की भविष्यवाणी क्यों नहीं कर सकते (पर मैं कोशिश करता हूँ)</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">थीम</span><a href="/hi/themes.html#ai" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🤖 AI, एजेंट और मॉडल</a></p>
-      <nav aria-label="इस अंक के खंड" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">थीम</span><a href="/hi/themes.html#ai" class="ff-tlink"><span class="ff-emo">🤖</span> AI, एजेंट और मॉडल</a></p>
+      <nav aria-label="इस अंक के खंड" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">इस अंक में</h2>
         <ol>
-          <li><a href="#ff-55-1">✊ ff.55.1 एक क्रांति के भीतर कैसा महसूस होता है?</a></li>
-          <li><a href="#ff-55-2">🌾 ff.55.2 जोतने लायक खेत (और वापस लेने लायक डेटा)</a></li>
-          <li><a href="#ff-55-3">👑 ff.55.3 Julius Caesar छोड़िए: नए सम्राट</a></li>
-          <li><a href="#ff-55-4">🆕 ff.55.4 पिछले अपडेट के बाद हुई कुछ अच्छी बातें</a></li>
+          <li><a href="#ff-55-1"><span class="ff-emo">✊</span> ff.55.1 एक क्रांति के भीतर कैसा महसूस होता है?</a></li>
+          <li><a href="#ff-55-2"><span class="ff-emo">🌾</span> ff.55.2 जोतने लायक खेत (और वापस लेने लायक डेटा)</a></li>
+          <li><a href="#ff-55-3"><span class="ff-emo">👑</span> ff.55.3 Julius Caesar छोड़िए: नए सम्राट</a></li>
+          <li><a href="#ff-55-4"><span class="ff-emo">🆕</span> ff.55.4 पिछले अपडेट के बाद हुई कुछ अच्छी बातें</a></li>
         </ol>
       </nav>
     </header>
 
     
 
-    <section id="ff-55-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-55-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">✊ ff.55.1 एक क्रांति के भीतर कैसा महसूस होता है?</h2>
-        <a href="https://fortissimo.substack.com/i/106257226/ff-come-ci-si-sente-dentro-una-rivoluzione" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.55.1 एक क्रांति के भीतर कैसा महसूस होता है?">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">✊</span> ff.55.1 एक क्रांति के भीतर कैसा महसूस होता है?</h2>
+        <a href="https://fortissimo.substack.com/i/106257226/ff-come-ci-si-sente-dentro-una-rivoluzione" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.55.1 एक क्रांति के भीतर कैसा महसूस होता है?">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">किसी भी और विचार से पहले, मैं आपको OpenAI के संस्थापक के साथ Lex Fridman का हमेशा सटीक पॉडकास्ट सुनने की सलाह देता हूँ।</p>
@@ -270,24 +270,24 @@
         <p class="text-base leading-relaxed text-black/90">ध्यान करो, लोगो, ध्यान करो! जिम और Ironman ज़्यादातर कामगारों के गतिहीन शरीर को सक्रिय करते हैं: किसी सामंत ने अल्ट्रा-ट्रेल या everesting करने का सपना भी नहीं देखा था। इसी तरह, माइंडफ़ुलनेस और ध्यान (जो संयोग से पहले ही बढ़ रहे हैं) और भी ज़्यादा अहम हो सकते हैं। शायद इंसान उस अटल चीज़ की ओर लौटेगा: अपनी चेतना।</p>
         <p class="text-base leading-relaxed text-black/90">लेकिन, लेकिन, लेकिन। चेतना को भी हल्के में न लें, क्योंकि कंप्यूटर पहले से ही वह पुनर्निर्मित कर रहे हैं जो हम देख रहे हैं।</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!F_6Q!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa573e176-c010-458c-9df5-a9095301650b_480x360.jpeg" width="480" height="360" alt="✊ ff.55.1 एक क्रांति के भीतर कैसा महसूस होता है?" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://arxiv.org/pdf/2302.06590.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ दुनिया की सबसे ज़्यादा वेतन वाली नौकरी की दक्षता रातोंरात 50% बढ़ जाए</a>
-            <a href="https://research.ark-invest.com/hubfs/1_Download_Files_ARK-Invest/Big_Ideas/ARK%20Invest_013123_Presentation_Big%20Ideas%202023_Final.pdf?utm_source=substack&amp;utm_medium=email" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ बढ़ता अभिसरण (ARK Invest की वार्षिक रिपोर्ट)</a>
-            <a href="https://sites.google.com/view/stablediffusion-with-brain/?utm_source=substack&amp;utm_medium=email" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ कंप्यूटर पहले से ही वह पुनर्निर्मित कर रहे हैं जो हम देख रहे हैं।</a>
+          <div class="ff-refs-l">
+            <a href="https://arxiv.org/pdf/2302.06590.pdf" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> दुनिया की सबसे ज़्यादा वेतन वाली नौकरी की दक्षता रातोंरात 50% बढ़ जाए</a>
+            <a href="https://research.ark-invest.com/hubfs/1_Download_Files_ARK-Invest/Big_Ideas/ARK%20Invest_013123_Presentation_Big%20Ideas%202023_Final.pdf?utm_source=substack&amp;utm_medium=email" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> बढ़ता अभिसरण (ARK Invest की वार्षिक रिपोर्ट)</a>
+            <a href="https://sites.google.com/view/stablediffusion-with-brain/?utm_source=substack&amp;utm_medium=email" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> कंप्यूटर पहले से ही वह पुनर्निर्मित कर रहे हैं जो हम देख रहे हैं।</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-55-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-55-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🌾 ff.55.2 जोतने लायक खेत (और वापस लेने लायक डेटा)</h2>
-        <a href="https://fortissimo.substack.com/i/106257226/ff-campi-da-arare-e-dati-da-reclamare" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.55.2 जोतने लायक खेत (और वापस लेने लायक डेटा)">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🌾</span> ff.55.2 जोतने लायक खेत (और वापस लेने लायक डेटा)</h2>
+        <a href="https://fortissimo.substack.com/i/106257226/ff-campi-da-arare-e-dati-da-reclamare" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.55.2 जोतने लायक खेत (और वापस लेने लायक डेटा)">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Ark Invest के Sam Korus बताते हैं कि हर क्रांति नए कच्चे माल को मूल्य देती है और नए आउटपुट पैदा करती है; वे Carlota Perez की किताब Technological Revolutions and Financial Capital का हवाला देते हैं।</p>
@@ -303,14 +303,14 @@
         <p class="text-base leading-relaxed text-black/90">कुकीज़ और Cambridge Analytica। व्यक्तिगत डेटा के स्वामित्व पर बहस पिछले वर्षों के घोटालों से पहले ही शुरू हो चुकी है। अब जब Stable Diffusion इंटरनेट की सार्वजनिक सामग्री से बिना श्रेय दिए “सीखकर” चित्र बनाता है, तो मुद्दा और भी गरमा गया है।</p>
         <p class="text-base leading-relaxed text-black/90">इसीलिए StableAttribution जैसी साइटें बनती हैं, जो पहचानती हैं कि किन चित्रों ने किसी DALL-E को प्रेरित किया, ताकि जिसका हक़ है उसे मिले।</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!0qop!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F22a91c43-0120-4226-8e73-5a9fdc5b3e79_733x739.png" width="733" height="739" alt="StableAttribution उन चित्रों की पहचान करता है जिन्होंने Midjourney के जनरेटिव आउटपुट को प्रेरित किया।" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">StableAttribution उन चित्रों की पहचान करता है जिन्होंने Midjourney के जनरेटिव आउटपुट को प्रेरित किया।</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://amzn.to/3ZFX3XZ" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] text-xs font-mono font-bold hover:underline">📚 Technological Revolutions and Financial Capital</a>
+          <div class="ff-refs-l">
+            <a href="https://amzn.to/3ZFX3XZ" target="_blank" rel="noopener noreferrer sponsored" class="ff-ref is-book"><span class="ff-emo">📚</span> Technological Revolutions and Financial Capital</a>
             <a href="https://twitter.com/skorusARK/status/1628801290301054981" target="_blank" rel="noopener noreferrer" title="Sam Korus@skorusARK1/From Carlota Perez&#39;s book:
 
 Each new technological revolution is associated with new inputs.
@@ -320,50 +320,50 @@ Each new technological revolution is associated with new inputs.
 -oil
 -microelectronics
 
-Is it finally time for data to take its place as the key input for the Age of AI revolution?" lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ twitter.com</a>
-            <a href="https://www.stableattribution.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ StableAttribution, जो पहचानती है कि किन चित्रों ने किसी DALL-E को प्रेरित किया</a>
+Is it finally time for data to take its place as the key input for the Age of AI revolution?" lang="it" class="ff-ref"><span class="ff-emo">↗</span> twitter.com</a>
+            <a href="https://www.stableattribution.com/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> StableAttribution, जो पहचानती है कि किन चित्रों ने किसी DALL-E को प्रेरित किया</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-55-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-55-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">👑 ff.55.3 Julius Caesar छोड़िए: नए सम्राट</h2>
-        <a href="https://fortissimo.substack.com/i/106257226/ff-altro-che-giulio-cesare-i-nuovi-imperatori" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.55.3 Julius Caesar छोड़िए: नए सम्राट">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">👑</span> ff.55.3 Julius Caesar छोड़िए: नए सम्राट</h2>
+        <a href="https://fortissimo.substack.com/i/106257226/ff-altro-che-giulio-cesare-i-nuovi-imperatori" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.55.3 Julius Caesar छोड़िए: नए सम्राट">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
-        <p class="text-base leading-relaxed text-black/90">🎼 ff.52 गैराज में एक राष्ट्र की स्थापना में हमने कुछ सेवाओं के बढ़ते केंद्रीकरण (और उससे जुड़ी समस्याओं) पर बात की थी। मुझे S&amp;P 500 कंपनियों में 1M राजस्व तक पहुँचने के लिए ज़रूरी कर्मचारियों की संख्या में भारी गिरावट के आँकड़े ने चौंकाया।</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">🎼</span> ff.52 गैराज में एक राष्ट्र की स्थापना में हमने कुछ सेवाओं के बढ़ते केंद्रीकरण (और उससे जुड़ी समस्याओं) पर बात की थी। मुझे S&amp;P 500 कंपनियों में 1M राजस्व तक पहुँचने के लिए ज़रूरी कर्मचारियों की संख्या में भारी गिरावट के आँकड़े ने चौंकाया।</p>
         <p class="text-base leading-relaxed text-black/90">जल्द ही हमारे पास 1T$ की ऐसी कंपनियाँ हो सकती हैं जिनमें सिर्फ़ एक कर्मचारी हो, जिसकी मदद सैकड़ों रोबोट/आर्टिफ़िशियल इंटेलिजेंस करें।</p>
         <p class="text-base leading-relaxed text-black/90">वैसे भी, AI से लैस इन्फ़्लुएंसर और नेटवर्क इफ़ेक्ट आज ही पर्सनल ब्रांड बना रहे हैं (Mr. Beast के बर्गर, Emily Ratajkowski के NFTs): यह उसका उदाहरण है जिसे Li Jin Passion Economy कहती हैं। लेकिन क्या वे जल्द ही पैदा होने वाली अनंत सामग्री के बीच टिक पाएँगे?</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!Rjqs!,w_1456,c_limit,f_auto,q_auto:good,fl_lossy/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdbc62a67-40bd-4e94-bd5f-e72b722143ab_238x160.gif" width="238" height="160" alt="👑 ff.55.3 Julius Caesar छोड़िए: नए सम्राट" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!rwFq!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8a312513-9c61-4972-8e0b-31a529b2f827_707x419.png" width="707" height="419" alt="1M बिक्री तक पहुँचने के लिए कर्मचारियों की संख्या, S&amp;P 500 औसत (1986-2020)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">1M बिक्री तक पहुँचने के लिए कर्मचारियों की संख्या, S&amp;P 500 औसत (1986-2020)</figcaption>
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!lU3g!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fee82465e-354c-47c1-8ac0-2fd4fbd51aa1_1615x645.png" width="1615" height="645" alt="👑 ff.55.3 Julius Caesar छोड़िए: नए सम्राट" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (5)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.isabelnet.com/sp-500-total-number-of-employees-to-total-revenues-ratio/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ S&amp;P 500 कंपनियों में 1M राजस्व तक पहुँचने के लिए ज़रूरी कर्मचारियों की संख्या में भारी गिरावट</a>
-            <a href="https://www.mrbeastburger.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Mr. Beast के बर्गर</a>
-            <a href="https://www.nytimes.com/2021/04/23/style/emily-ratajkowski-nft-christies.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Emily Ratajkowski के NFTs</a>
-            <a href="https://li-jin.co/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Li Jin Passion Economy कहती हैं</a>
-            <a href="https://fortissimo.substack.com/p/ff52-fondare-una-nazione-in-garage" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🎼 ff.52 गैराज में एक राष्ट्र की स्थापना</a>
+          <div class="ff-refs-l">
+            <a href="https://www.isabelnet.com/sp-500-total-number-of-employees-to-total-revenues-ratio/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> S&amp;P 500 कंपनियों में 1M राजस्व तक पहुँचने के लिए ज़रूरी कर्मचारियों की संख्या में भारी गिरावट</a>
+            <a href="https://www.mrbeastburger.com/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Mr. Beast के बर्गर</a>
+            <a href="https://www.nytimes.com/2021/04/23/style/emily-ratajkowski-nft-christies.html" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Emily Ratajkowski के NFTs</a>
+            <a href="https://li-jin.co/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Li Jin Passion Economy कहती हैं</a>
+            <a href="https://fortissimo.substack.com/p/ff52-fondare-una-nazione-in-garage" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> <span class="ff-emo">🎼</span> ff.52 गैराज में एक राष्ट्र की स्थापना</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-55-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-55-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🆕 ff.55.4 पिछले अपडेट के बाद हुई कुछ अच्छी बातें</h2>
-        <a href="https://fortissimo.substack.com/i/106257226/ff-un-po-di-cose-carine-successe-dallultimo-aggiornamento" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.55.4 पिछले अपडेट के बाद हुई कुछ अच्छी बातें">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🆕</span> ff.55.4 पिछले अपडेट के बाद हुई कुछ अच्छी बातें</h2>
+        <a href="https://fortissimo.substack.com/i/106257226/ff-un-po-di-cose-carine-successe-dallultimo-aggiornamento" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.55.4 पिछले अपडेट के बाद हुई कुछ अच्छी बातें">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">हाल ही में stable diffusion पद्धति ने GANs, Generative Adversarial Networks, को पीछे छोड़ दिया है। फिर भी, अगर हम टेक्स्ट प्रॉम्प्ट से बने एक चित्र से दूसरे पर जाना चाहें, तो GANs ज़्यादा सुसंगत वीडियो ट्रांज़िशन देते हैं।</p>
@@ -371,43 +371,43 @@ Is it finally time for data to take its place as the key input for the Age of AI
         <p class="text-base leading-relaxed text-black/90">life_imitates_ai_artA post shared by Life Imitates AI Art (@life_imitates_ai_art)</p>
         <p class="text-base leading-relaxed text-black/90">NeRFs (Neural Radiance Fields) के नवीनतम विकास शहरों और प्रसिद्ध स्मारकों के ऊपर से रेंडरिंग बनाते हैं, जो Google Maps से देखे जा सकते हैं।</p>
         <p class="text-base leading-relaxed text-black/90">Bilawal Sidhu@bilawalsidhu3D, AI, NeRFs and oh my! Immersive view is now rolling out to 5 cities, with 5 more to follow. Experience the best of all views, with helpful info layered on top, so you can decide when &amp; where to go. Proud to be part of the team-of-teams that made this maps milestone a reality! 4:36 PM ∙ Feb 8, 20231,968Likes291Retweets</p>
-        <p class="text-base leading-relaxed text-black/90">🎵 अंतिम नोट्स</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">🎵</span> अंतिम नोट्स</p>
         <p class="text-base leading-relaxed text-black/90">भविष्य में, पूरी तरह मानसिक प्रतियोगिताएँ होंगी: विचार की गति की 100 मीटर दौड़ और बिना भटके एक ही विचार पर सबसे लंबे समय तक ध्यान लगाने का रिकॉर्ड।</p>
-        <p class="text-base leading-relaxed text-black/90">अगले 🎼ff में हम बात करेंगे भू-अभियांत्रिकी की (नहीं, केमट्रेल्स नहीं)! 👋 जल्द मिलते हैं, micmer की ओर से</p>
-        <p class="text-base leading-relaxed text-black/90">इस प्रोजेक्ट का समर्थन करना चाहते हैं? → WhatsApp पर साझा करें → मुझे एक कॉफ़ी पिलाएँ 😏 → नीचे एक दिल लगाना न भूलें।</p>
-        <p class="text-base leading-relaxed text-black/90">☕❤️</p>
+        <p class="text-base leading-relaxed text-black/90">अगले <span class="ff-emo">🎼</span>ff में हम बात करेंगे भू-अभियांत्रिकी की (नहीं, केमट्रेल्स नहीं)! <span class="ff-emo">👋</span> जल्द मिलते हैं, micmer की ओर से</p>
+        <p class="text-base leading-relaxed text-black/90">इस प्रोजेक्ट का समर्थन करना चाहते हैं? → WhatsApp पर साझा करें → मुझे एक कॉफ़ी पिलाएँ <span class="ff-emo">😏</span> → नीचे एक दिल लगाना न भूलें।</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">☕</span><span class="ff-emo">❤️</span></p>
       </div>
       
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (5)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://sites.google.com/view/stylegan-t/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ GANs ज़्यादा सुसंगत वीडियो ट्रांज़िशन देते हैं</a>
-            <a href="https://www.instagram.com/life_imitates_ai_art/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ life_imitates_ai_art</a>
-            <a href="https://instagram.com/life_imitates_ai_art" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ life_imitates_ai_art</a>
-            <a href="https://www.matthewtancik.com/nerf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Neural Radiance Fields</a>
-            <a href="https://twitter.com/bilawalsidhu/status/1623360174974021633?s=20" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Bilawal Sidhu@bilawalsidhu3D, AI, NeRFs and oh my! Immersive view is now rolling out to 5 cities, with 5 more to follow. Experience the best of all views, with helpful info layered on top, so you can decide when &amp; where to go. Proud to be part of the team-of-teams that made this maps milestone a reality!</a>
+          <div class="ff-refs-l">
+            <a href="https://sites.google.com/view/stylegan-t/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> GANs ज़्यादा सुसंगत वीडियो ट्रांज़िशन देते हैं</a>
+            <a href="https://www.instagram.com/life_imitates_ai_art/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> life_imitates_ai_art</a>
+            <a href="https://instagram.com/life_imitates_ai_art" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> life_imitates_ai_art</a>
+            <a href="https://www.matthewtancik.com/nerf" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Neural Radiance Fields</a>
+            <a href="https://twitter.com/bilawalsidhu/status/1623360174974021633?s=20" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Bilawal Sidhu@bilawalsidhu3D, AI, NeRFs and oh my! Immersive view is now rolling out to 5 cities, with 5 more to follow. Experience the best of all views, with helpful info layered on top, so you can decide when &amp; where to go. Proud to be part of the team-of-teams that made this maps milestone a reality!</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">संबंधित अंक</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-52.html" class="font-bold hover:underline">ff.52 गैराज में एक राष्ट्र की स्थापना</a><p class="text-sm text-black/75 mt-1">केंद्रीकरण या विकेंद्रीकरण? एक अस्थिर संतुलन</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-63.html" class="font-bold hover:underline">ff.63 क्या सिनेमा है!</a><p class="text-sm text-black/75 mt-1">Pixar का बनाया (या स्टेरॉयड पर) Harry Potter और AI से बने गर्मियों के हिट गाने</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-54.html" class="font-bold hover:underline">ff.54 GPT-4 ने मुझे छोड़ दिया</a><p class="text-sm text-black/75 mt-1">Petrarca, Caressa और एक Python कोड: किसी से रिश्ता तोड़ने के 1001 तरीक़े</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-48.html" class="font-bold hover:underline">ff.48 अरस्तू को फिर से जीवित करना</a><p class="text-sm text-black/75 mt-1">Playboy, Steve Jobs, ईसा मसीह और ChatGPT में क्या समान है?</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/hi/archive/ff-52.html" class="font-bold hover:underline">ff.52 गैराज में एक राष्ट्र की स्थापना</a><p class="text-sm text-black/75 mt-1">केंद्रीकरण या विकेंद्रीकरण? एक अस्थिर संतुलन</p></li>
+        <li><a href="/hi/archive/ff-63.html" class="font-bold hover:underline">ff.63 क्या सिनेमा है!</a><p class="text-sm text-black/75 mt-1">Pixar का बनाया (या स्टेरॉयड पर) Harry Potter और AI से बने गर्मियों के हिट गाने</p></li>
+        <li><a href="/hi/archive/ff-54.html" class="font-bold hover:underline">ff.54 GPT-4 ने मुझे छोड़ दिया</a><p class="text-sm text-black/75 mt-1">Petrarca, Caressa और एक Python कोड: किसी से रिश्ता तोड़ने के 1001 तरीक़े</p></li>
+        <li><a href="/hi/archive/ff-48.html" class="font-bold hover:underline">ff.48 अरस्तू को फिर से जीवित करना</a><p class="text-sm text-black/75 mt-1">Playboy, Steve Jobs, ईसा मसीह और ChatGPT में क्या समान है?</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Futuro Fortissimo के नए अंक पाएँ</h2>
         <p class="text-sm text-black/80 mt-1">बर्गामो के मिकेले मेरेल्ली का मुफ़्त न्यूज़लेटर — तकनीक, AI, प्रकृति और समाज पर। इतालवी में लिखा गया, Substack से ईमेल पर।</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 मुफ़्त सब्सक्राइब करें ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary"><span class="ff-emo">📩</span> मुफ़्त सब्सक्राइब करें <span class="ff-emo">↗</span></a>
     </section>
 
     <nav aria-label="पिछला और अगला अंक" class="ff-pn">
@@ -416,7 +416,7 @@ Is it finally time for data to take its place as the key input for the Age of AI
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -436,16 +436,16 @@ Is it finally time for data to take its place as the key input for the Age of AI
       <div class="space-y-2">
         <p class="ff-eyebrow">फ़ॉलो करें</p>
         <ul class="space-y-1 font-medium">
-          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack ↗</a></li>
-          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
-          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram ↗</a></li>
+          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram <span class="ff-emo">↗</span></a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
-          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">मुझे एक कॉफ़ी पिलाएँ ☕ ↗</a></li>
-          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">मिकेले के अन्य प्रोजेक्ट ↗</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">मुझे एक कॉफ़ी पिलाएँ <span class="ff-emo">☕</span> <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">मिकेले के अन्य प्रोजेक्ट <span class="ff-emo">↗</span></a></li>
         </ul>
       </div>
     </div>
-    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
+    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70"><span class="ff-emo">©</span> 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
   <aside class="ff-sticky-sub" aria-label="Newsletter">
     <p>पसंद आया? अगला अंक ईमेल पर पाएँ।</p>
@@ -453,11 +453,11 @@ Is it finally time for data to take its place as the key input for the Age of AI
     <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="बंद करें">✕</button>
   </aside>
   <nav class="ff-tabbar" aria-label="मुख्य नेविगेशन">
-    <a href="/hi/"><span class="ff-ti" aria-hidden="true">🏠</span>होम</a>
-    <a href="/hi/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>संग्रह</a>
-    <a href="/hi/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>थीम</a>
-    <a href="/hi/books/"><span class="ff-ti" aria-hidden="true">📚</span>किताबें</a>
-    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>खोजें</button>
+    <a href="/hi/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🏠</span></span>होम</a>
+    <a href="/hi/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🗂</span></span>संग्रह</a>
+    <a href="/hi/themes.html"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🧭</span></span>थीम</a>
+    <a href="/hi/books/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">📚</span></span>किताबें</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🔍</span></span>खोजें</button>
   </nav>
   <dialog id="ff-search" class="ff-search" aria-label="खोजें" data-empty="कोई परिणाम नहीं। कोई और शब्द आज़माएँ।">
     <form role="search">
@@ -468,7 +468,7 @@ Is it finally time for data to take its place as the key input for the Age of AI
     <ul id="ff-results" role="listbox" aria-label="खोजें"></ul>
     <div class="ff-s-foot"><a href="/hi/archive/" data-ff-all data-base="/hi/archive/">संग्रह में सभी परिणाम →</a><span>कहीं भी खोजने के लिए / दबाएँ</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

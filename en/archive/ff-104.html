@@ -138,12 +138,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -152,9 +152,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -207,18 +207,18 @@
         <a href="/en/books/">Books</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="Language"><a href="/archivio/ff-104.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/archive/ff-104.html" hreflang="en" lang="en" title="English" data-keep-state aria-current="page">EN</a><a href="/hi/archive/ff-104.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="Dark theme" title="Dark theme"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Subscribe</a>
         <details class="ff-more">
-          <summary aria-label="More"><span aria-hidden="true">☰</span><span class="sr-only">More</span></summary>
+          <summary aria-label="More"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">More</span></summary>
           <nav class="ff-menu" aria-label="More">
-            <a href="/book/">📖 The Book (IT)</a>
-            <a href="/en/connections.html">🔗 Connections</a>
-            <a href="/en/note.html">📝 Notes</a>
+            <a href="/book/"><span class="ff-emo">📖</span> The Book (IT)</a>
+            <a href="/en/connections.html"><span class="ff-emo">🔗</span> Connections</a>
+            <a href="/en/note.html"><span class="ff-emo">📝</span> Notes</a>
             <hr />
-            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 Subscribe ↗</a>
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener"><span class="ff-emo">📩</span> Subscribe <span class="ff-emo">↗</span></a>
           </nav>
         </details>
       </div>
@@ -228,40 +228,40 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/en/">Home</a> /</li><li><a class="underline" href="/en/archive/">Archive</a> /</li><li aria-current="page">ff.104 Hacking the body</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>104</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>104</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="mushroom" data-ff-slug="ff-104" data-label="Open the 3D object and preview of ff.104"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Futuro Fortissimo Archive</p>
-      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.104 Hacking the body</h1>
+      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black"><span class="ff-emo">🎼</span> ff.104 Hacking the body</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">The Fantastic 4 foods to get more with less</p>
       <p class="mt-2 text-xs font-mono text-black/70">Published <time datetime="2024-10-10T08:10:33.043Z">10 October 2024</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/en/archive/ff-104.html" data-done="Link copied"><span aria-hidden="true">↗</span> Share</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/en/archive/ff-104.html" data-done="Link copied"><span aria-hidden="true">🔗</span> Copy link</button>
-        <a href="https://fortissimo.substack.com/p/ff104-hackerare-il-corpo" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Read the Italian original on Substack ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/en/archive/ff-104.html" data-done="Link copied"><span aria-hidden="true"><span class="ff-emo">↗</span></span> Share</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/en/archive/ff-104.html" data-done="Link copied"><span aria-hidden="true"><span class="ff-emo">🔗</span></span> Copy link</button>
+        <a href="https://fortissimo.substack.com/p/ff104-hackerare-il-corpo" target="_blank" rel="noopener noreferrer" class="ff-qlink">Read the Italian original on Substack <span class="ff-emo">↗</span></a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• Dave Asprey&#39;s controversial book</li>
-        <li>• 4 secret foods nobody tells you about (?)</li>
-        <li>• GPT as a personal dietitian. Sort of.</li>
+      <ul class="ff-keypoints">
+        <li>Dave Asprey&#39;s controversial book</li>
+        <li>4 secret foods nobody tells you about (?)</li>
+        <li>GPT as a personal dietitian. Sort of.</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Themes</span><a href="/en/themes.html#nutrizione" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🥗 Nutrition and microbiome</a></p>
-      <nav aria-label="Sections of this issue" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">Themes</span><a href="/en/themes.html#nutrizione" class="ff-tlink"><span class="ff-emo">🥗</span> Nutrition and microbiome</a></p>
+      <nav aria-label="Sections of this issue" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">In this issue</h2>
         <ol>
-          <li><a href="#ff-104-1">💊 ff.104.1 The body hacker</a></li>
-          <li><a href="#ff-104-2">🦸‍♂️ ff.104.2 The Fantastic 4</a></li>
-          <li><a href="#ff-104-3">🤮 ff.104.3 The Abominable 5</a></li>
-          <li><a href="#ff-104-4">👩🏻‍⚕️ ff.104.4 GoodGPT: my private nutritionist</a></li>
+          <li><a href="#ff-104-1"><span class="ff-emo">💊</span> ff.104.1 The body hacker</a></li>
+          <li><a href="#ff-104-2"><span class="ff-emo">🦸‍♂️</span> ff.104.2 The Fantastic 4</a></li>
+          <li><a href="#ff-104-3"><span class="ff-emo">🤮</span> ff.104.3 The Abominable 5</a></li>
+          <li><a href="#ff-104-4"><span class="ff-emo">👩</span>🏻‍<span class="ff-emo">⚕️</span> ff.104.4 GoodGPT: my private nutritionist</a></li>
         </ol>
       </nav>
     </header>
 
     
 
-    <section id="ff-104-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-104-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">💊 ff.104.1 The body hacker</h2>
-        <a href="https://fortissimo.substack.com/i/148256016/ff-lhacker-del-corpo" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.104.1 The body hacker">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">💊</span> ff.104.1 The body hacker</h2>
+        <a href="https://fortissimo.substack.com/i/148256016/ff-lhacker-del-corpo" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.104.1 The body hacker">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">We&#39;re seeing growing interest in longevity, supplements and diets. Or at least, the algorithms filtering my internet are.</p>
@@ -273,87 +273,87 @@
         <p class="text-base leading-relaxed text-black/90">And more. He gives the dosages. Crucial.</p>
         <p class="text-base leading-relaxed text-black/90">Nerd corner. A guide to increasing your mineral intake from food.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!yfEd!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc1b1aaff-1752-4c16-a751-74f0c34245c4_972x1500.jpeg" width="972" height="1500" alt="The book by biohacker Dave Asprey (via futuro fortissimo)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">The book by biohacker Dave Asprey (via futuro fortissimo)</figcaption>
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!nQje!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc88eb2b3-0bad-4bbe-ae8a-5b701a5f4310_1237x642.png" width="1237" height="642" alt="Magnesium deficiency is associated with a higher cancer risk (via futuro fortissimo)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Magnesium deficiency is associated with a higher cancer risk (via futuro fortissimo)</figcaption>
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!-hJe!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F63a9f629-9a1c-46c7-88a3-bc2fa96aef0c_1232x719.png" width="1232" height="719" alt="💊 ff.104.1 The body hacker" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!S5Aj!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa6ddbe1a-c470-47b6-96cc-2cdad4698c68_3155x1628.png" width="3155" height="1628" alt="💊 ff.104.1 The body hacker" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (2)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://en.wikipedia.org/wiki/Dave_Asprey" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Dave Asprey</a>
-            <a href="https://www.youtube.com/watch?v=_JkUeSotSvc" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 45% of Americans don&#39;t reach their daily magnesium</a>
+          <div class="ff-refs-l">
+            <a href="https://en.wikipedia.org/wiki/Dave_Asprey" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Dave Asprey</a>
+            <a href="https://www.youtube.com/watch?v=_JkUeSotSvc" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> 45% of Americans don&#39;t reach their daily magnesium</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-104-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-104-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🦸‍♂️ ff.104.2 The Fantastic 4</h2>
-        <a href="https://fortissimo.substack.com/i/148256016/ff-i-fantastici" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.104.2 The Fantastic 4">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🦸‍♂️</span> ff.104.2 The Fantastic 4</h2>
+        <a href="https://fortissimo.substack.com/i/148256016/ff-i-fantastici" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.104.2 The Fantastic 4">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">I know. We&#39;re stressed and in a rush, pushed by social compromises into less-than-ideal food choices too.</p>
         <p class="text-base leading-relaxed text-black/90">Here are my fantastic 4, super-supplements to correct course a little.</p>
-        <p class="text-base leading-relaxed text-black/90">Electrolytes Even eating well, hitting your magnesium and potassium needs isn&#39;t trivial. Especially in summer, when we sweat a bit more. And indeed Polase is on everyone&#39;s lips this season (and on Esselunga&#39;s shelves). The problem? As I said, the dosages. Let&#39;s look at an example: Soy strips Eating protein and fibre while minimising fat? Almost impossible. When I discovered texturized vegetable protein (the name is scary, but it&#39;s soy) I was amazed: €1.5 per 100g, delivering 50 g of protein, 15 g of fibre and only 7g of fat. Glycine Glycine supports longevity by aiding collagen turnover and boosting antioxidant defences (glutathione synthesis). We know that cutting a single protein, methionine (found in animal protein), promotes longevity. Glycine balances methionine&#39;s potential negative effects (for longevity). Siim Land, top 10 in the anti-ageing olympics, suggests a dose of 12-18 grams a day. Wheat germ In 🌶️ ff.99.2 Polenta and spermidine we discovered another molecule with a mystical name: spermidine extends life. 10 g of wheat germ (mixed into bread dough or morning porridge) is a good base. Then mango, soy and polenta!</p>
+        <p class="text-base leading-relaxed text-black/90">Electrolytes Even eating well, hitting your magnesium and potassium needs isn&#39;t trivial. Especially in summer, when we sweat a bit more. And indeed Polase is on everyone&#39;s lips this season (and on Esselunga&#39;s shelves). The problem? As I said, the dosages. Let&#39;s look at an example: Soy strips Eating protein and fibre while minimising fat? Almost impossible. When I discovered texturized vegetable protein (the name is scary, but it&#39;s soy) I was amazed: €1.5 per 100g, delivering 50 g of protein, 15 g of fibre and only 7g of fat. Glycine Glycine supports longevity by aiding collagen turnover and boosting antioxidant defences (glutathione synthesis). We know that cutting a single protein, methionine (found in animal protein), promotes longevity. Glycine balances methionine&#39;s potential negative effects (for longevity). Siim Land, top 10 in the anti-ageing olympics, suggests a dose of 12-18 grams a day. Wheat germ In <span class="ff-emo">🌶️</span> ff.99.2 Polenta and spermidine we discovered another molecule with a mystical name: spermidine extends life. 10 g of wheat germ (mixed into bread dough or morning porridge) is a good base. Then mango, soy and polenta!</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!bmMM!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F234ff685-5bb0-4b53-abaa-44f598fa8188_635x526.png" width="635" height="526" alt="🦸‍♂️ ff.104.2 The Fantastic 4" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (8)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://amzn.to/3yO5tEM" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] text-xs font-mono font-bold hover:underline">📚 Electrolytes</a>
-            <a href="https://amzn.to/4dHBHjX" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] text-xs font-mono font-bold hover:underline">📚 Soy strips</a>
-            <a href="https://amzn.to/3Bjzz3x" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] text-xs font-mono font-bold hover:underline">📚 Glycine</a>
-            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7911310/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ cutting a single protein, methionine (found in animal protein), promotes longevity</a>
-            <a href="https://www.rejuvenationolympics.com/dunedin-pace" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Siim Land, top 10 in the anti-ageing olympics</a>
-            <a href="https://amzn.to/3yWFOcZ" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] text-xs font-mono font-bold hover:underline">📚 Wheat germ</a>
-            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7930991/#B8-medsci-09-00008" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ spermidine extends life</a>
-            <a href="https://fortissimo.substack.com/i/145117230/ff-polenta-e-spermidina" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🌶️ ff.99.2 Polenta and spermidine</a>
+          <div class="ff-refs-l">
+            <a href="https://amzn.to/3yO5tEM" target="_blank" rel="noopener noreferrer sponsored" class="ff-ref is-book"><span class="ff-emo">📚</span> Electrolytes</a>
+            <a href="https://amzn.to/4dHBHjX" target="_blank" rel="noopener noreferrer sponsored" class="ff-ref is-book"><span class="ff-emo">📚</span> Soy strips</a>
+            <a href="https://amzn.to/3Bjzz3x" target="_blank" rel="noopener noreferrer sponsored" class="ff-ref is-book"><span class="ff-emo">📚</span> Glycine</a>
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7911310/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> cutting a single protein, methionine (found in animal protein), promotes longevity</a>
+            <a href="https://www.rejuvenationolympics.com/dunedin-pace" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Siim Land, top 10 in the anti-ageing olympics</a>
+            <a href="https://amzn.to/3yWFOcZ" target="_blank" rel="noopener noreferrer sponsored" class="ff-ref is-book"><span class="ff-emo">📚</span> Wheat germ</a>
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7930991/#B8-medsci-09-00008" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> spermidine extends life</a>
+            <a href="https://fortissimo.substack.com/i/145117230/ff-polenta-e-spermidina" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> <span class="ff-emo">🌶️</span> ff.99.2 Polenta and spermidine</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-104-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-104-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🤮 ff.104.3 The Abominable 5</h2>
-        <a href="https://fortissimo.substack.com/i/148256016/ff-gli-abominevoli" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.104.3 The Abominable 5">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🤮</span> ff.104.3 The Abominable 5</h2>
+        <a href="https://fortissimo.substack.com/i/148256016/ff-gli-abominevoli" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.104.3 The Abominable 5">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">The best thing about life? To improve, you don&#39;t necessarily have to do stratospheric things. You just have to not do the wrong ones.</p>
         <p class="text-base leading-relaxed text-black/90">So here are 5 foods or ingredients to avoid. Always.</p>
-        <p class="text-base leading-relaxed text-black/90">Margarine (trans fats) Of all fats, avoid trans fats above all: they raise the risk of heart disease and visceral inflammation by 30% (🍔ff.94.2 Good fats and bad fats). Processed puddings and yoghurts (polysorbate 80) This single emulsifier can reduce gut-barrier integrity by 50%, raising the risk of systemic inflammation. Jarred mayonnaise (oxidised seed oils on supermarket shelves) Commercial mayonnaise contains seed oils, which oxidise during their long stay in the jar. These oxidised seed oils increase inflammation and fat mass. Fizzy drinks (corn syrup) Consumption of high-fructose corn syrup is linked to a 20% drop in learning and memory abilities. Froot Loops (Red Dye 40) Here too, a single ingredient makes the difference: Red Dye 40 is associated with a 10% increase in ADHD (Attention Deficit Hyperactivity Disorder) in children and with markers of neuroinflammation in adults.</p>
+        <p class="text-base leading-relaxed text-black/90">Margarine (trans fats) Of all fats, avoid trans fats above all: they raise the risk of heart disease and visceral inflammation by 30% (<span class="ff-emo">🍔</span>ff.94.2 Good fats and bad fats). Processed puddings and yoghurts (polysorbate 80) This single emulsifier can reduce gut-barrier integrity by 50%, raising the risk of systemic inflammation. Jarred mayonnaise (oxidised seed oils on supermarket shelves) Commercial mayonnaise contains seed oils, which oxidise during their long stay in the jar. These oxidised seed oils increase inflammation and fat mass. Fizzy drinks (corn syrup) Consumption of high-fructose corn syrup is linked to a 20% drop in learning and memory abilities. Froot Loops (Red Dye 40) Here too, a single ingredient makes the difference: Red Dye 40 is associated with a 10% increase in ADHD (Attention Deficit Hyperactivity Disorder) in children and with markers of neuroinflammation in adults.</p>
       </div>
       
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (5)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://onlinelibrary.wiley.com/doi/10.1111/all.15825" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ reduce gut-barrier integrity by 50%</a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/30005920/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ oxidised seed oils increase inflammation and fat mass</a>
-            <a href="https://onlinelibrary.wiley.com/doi/10.1002/hipo.22368" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ fructose corn syrup is linked to a 20% drop in learning and memory abilities</a>
-            <a href="https://www.medicalnewstoday.com/articles/red-dye-40-adhd#sugar-food-dyes-and-adhd" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 10% increase in ADHD (Attention Deficit Hyperactivity Disorder) in children and with markers of neuroinflammation in adults</a>
-            <a href="https://fortissimo.substack.com/i/142232159/ff-grassi-buoni-e-cattivi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🍔ff.94.2 Good fats and bad fats</a>
+          <div class="ff-refs-l">
+            <a href="https://onlinelibrary.wiley.com/doi/10.1111/all.15825" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> reduce gut-barrier integrity by 50%</a>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/30005920/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> oxidised seed oils increase inflammation and fat mass</a>
+            <a href="https://onlinelibrary.wiley.com/doi/10.1002/hipo.22368" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> fructose corn syrup is linked to a 20% drop in learning and memory abilities</a>
+            <a href="https://www.medicalnewstoday.com/articles/red-dye-40-adhd#sugar-food-dyes-and-adhd" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> 10% increase in ADHD (Attention Deficit Hyperactivity Disorder) in children and with markers of neuroinflammation in adults</a>
+            <a href="https://fortissimo.substack.com/i/142232159/ff-grassi-buoni-e-cattivi" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> <span class="ff-emo">🍔</span>ff.94.2 Good fats and bad fats</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-104-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-104-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">👩🏻‍⚕️ ff.104.4 GoodGPT: my private nutritionist</h2>
-        <a href="https://fortissimo.substack.com/i/148256016/ff-buongpt-il-mio-nutrizionista-privato" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.104.4 GoodGPT: my private nutritionist">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">👩</span>🏻‍<span class="ff-emo">⚕️</span> ff.104.4 GoodGPT: my private nutritionist</h2>
+        <a href="https://fortissimo.substack.com/i/148256016/ff-buongpt-il-mio-nutrizionista-privato" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.104.4 GoodGPT: my private nutritionist">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Wait, wait, wait. You&#39;ll ask me: how can I know all this? You don&#39;t need to. Just follow the rule of simple, of less: fewer ingredients on the label, fewer processed foods, fewer chances of swallowing risky ingredients.</p>
@@ -361,49 +361,49 @@
         <p class="text-base leading-relaxed text-black/90">It&#39;s called BuonGPT (bon appétit!). It starts from the simple idea of ranking foods. Based on nutritional values (relative to the kcal they provide), it tells you how “dense” in good stuff a food is.</p>
         <p class="text-base leading-relaxed text-black/90">It can also compare two foods, calorie for calorie, to tell you which to prefer, and you can try it here.</p>
         <p class="text-base leading-relaxed text-black/90">Let me know in the comments how to improve it!</p>
-        <p class="text-base leading-relaxed text-black/90">🎶 fortissimo notes archive</p>
-        <p class="text-base leading-relaxed text-black/90">☕ virtual coffee</p>
-        <p class="text-base leading-relaxed text-black/90">❤️ a little heart below?</p>
-        <p class="text-base leading-relaxed text-black/90">👋 See you soon, from micmer</p>
-        <p class="text-base leading-relaxed text-black/90">© futuro fortissimo | michele merelli</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">🎶</span> fortissimo notes archive</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">☕</span> virtual coffee</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">❤️</span> a little heart below?</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">👋</span> See you soon, from micmer</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">©</span> futuro fortissimo | michele merelli</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!XPoJ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F695a8517-443b-452b-b76f-1edeac5c700a_728x614.png" width="728" height="614" alt="👩🏻‍⚕️ ff.104.4 GoodGPT: my private nutritionist" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!aMFa!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6cbcef56-18e8-473f-9b9b-32211ff52ce6_1556x833.png" width="1556" height="833" alt="Biohacking in art: Amy Karle&#39;s BIOFEEDBACK project (via futuro fortissimo)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Biohacking in art: Amy Karle&#39;s BIOFEEDBACK project (via futuro fortissimo)</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (4)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://chatgpt.com/share/94b89366-2cf2-41bc-b5ec-91430d94f122" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ BuonGPT</a>
-            <a href="https://futurofortissimo.github.io/note.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ fortissimo notes archive</a>
-            <a href="https://futurofortissimo.github.io/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ futuro fortissimo</a>
-            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ michele merelli</a>
+          <div class="ff-refs-l">
+            <a href="https://chatgpt.com/share/94b89366-2cf2-41bc-b5ec-91430d94f122" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> BuonGPT</a>
+            <a href="https://futurofortissimo.github.io/note.html" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> fortissimo notes archive</a>
+            <a href="https://futurofortissimo.github.io/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> futuro fortissimo</a>
+            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> michele merelli</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">Related issues</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-99.html" class="font-bold hover:underline">ff.99 Foods to stop ageing</a><p class="text-sm text-black/75 mt-1">Spermidine, purple potatoes and other superfoods?</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-94.html" class="font-bold hover:underline">ff.94 Is fat bad for you?</a><p class="text-sm text-black/75 mt-1">Pregnancies, omega-3 and other curves</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-113.html" class="font-bold hover:underline">ff.113 Chemical hunger</a><p class="text-sm text-black/75 mt-1">What “relationship” should we have with food?</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-92.html" class="font-bold hover:underline">ff.92 The centenarians&#39; diet?</a><p class="text-sm text-black/75 mt-1">Feeding the microbiome with beans, tea and coffee</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/en/archive/ff-99.html" class="font-bold hover:underline">ff.99 Foods to stop ageing</a><p class="text-sm text-black/75 mt-1">Spermidine, purple potatoes and other superfoods?</p></li>
+        <li><a href="/en/archive/ff-94.html" class="font-bold hover:underline">ff.94 Is fat bad for you?</a><p class="text-sm text-black/75 mt-1">Pregnancies, omega-3 and other curves</p></li>
+        <li><a href="/en/archive/ff-113.html" class="font-bold hover:underline">ff.113 Chemical hunger</a><p class="text-sm text-black/75 mt-1">What “relationship” should we have with food?</p></li>
+        <li><a href="/en/archive/ff-92.html" class="font-bold hover:underline">ff.92 The centenarians&#39; diet?</a><p class="text-sm text-black/75 mt-1">Feeding the microbiome with beans, tea and coffee</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Get new issues of Futuro Fortissimo</h2>
         <p class="text-sm text-black/80 mt-1">A free newsletter by Michele Merelli (Bergamo) on technology, AI, nature and society. Written in Italian, delivered by Substack.</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 Subscribe for free ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary"><span class="ff-emo">📩</span> Subscribe for free <span class="ff-emo">↗</span></a>
     </section>
 
     <nav aria-label="Adjacent issues" class="ff-pn">
@@ -412,7 +412,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -432,16 +432,16 @@
       <div class="space-y-2">
         <p class="ff-eyebrow">Follow</p>
         <ul class="space-y-1 font-medium">
-          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack ↗</a></li>
-          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
-          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram ↗</a></li>
+          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram <span class="ff-emo">↗</span></a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
-          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee ☕ ↗</a></li>
-          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects ↗</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee <span class="ff-emo">☕</span> <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects <span class="ff-emo">↗</span></a></li>
         </ul>
       </div>
     </div>
-    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
+    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70"><span class="ff-emo">©</span> 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
   <aside class="ff-sticky-sub" aria-label="Newsletter">
     <p>Enjoying it? Get the next issue by email.</p>
@@ -449,11 +449,11 @@
     <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="Dismiss">✕</button>
   </aside>
   <nav class="ff-tabbar" aria-label="Main navigation">
-    <a href="/en/"><span class="ff-ti" aria-hidden="true">🏠</span>Home</a>
-    <a href="/en/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>Archive</a>
-    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>Themes</a>
-    <a href="/en/books/"><span class="ff-ti" aria-hidden="true">📚</span>Books</a>
-    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>Search</button>
+    <a href="/en/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🏠</span></span>Home</a>
+    <a href="/en/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🗂</span></span>Archive</a>
+    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🧭</span></span>Themes</a>
+    <a href="/en/books/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">📚</span></span>Books</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🔍</span></span>Search</button>
   </nav>
   <dialog id="ff-search" class="ff-search" aria-label="Search" data-empty="No results. Try another word.">
     <form role="search">
@@ -464,7 +464,7 @@
     <ul id="ff-results" role="listbox" aria-label="Search"></ul>
     <div class="ff-s-foot"><a href="/en/archive/" data-ff-all data-base="/en/archive/">All results in the archive →</a><span>Press / to search anywhere</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

@@ -139,12 +139,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -153,9 +153,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -208,18 +208,18 @@
         <a href="/en/books/">Books</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="Language"><a href="/archivio/ff-56.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/archive/ff-56.html" hreflang="en" lang="en" title="English" data-keep-state aria-current="page">EN</a><a href="/hi/archive/ff-56.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="Dark theme" title="Dark theme"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Subscribe</a>
         <details class="ff-more">
-          <summary aria-label="More"><span aria-hidden="true">☰</span><span class="sr-only">More</span></summary>
+          <summary aria-label="More"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">More</span></summary>
           <nav class="ff-menu" aria-label="More">
-            <a href="/book/">📖 The Book (IT)</a>
-            <a href="/en/connections.html">🔗 Connections</a>
-            <a href="/en/note.html">📝 Notes</a>
+            <a href="/book/"><span class="ff-emo">📖</span> The Book (IT)</a>
+            <a href="/en/connections.html"><span class="ff-emo">🔗</span> Connections</a>
+            <a href="/en/note.html"><span class="ff-emo">📝</span> Notes</a>
             <hr />
-            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 Subscribe ↗</a>
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener"><span class="ff-emo">📩</span> Subscribe <span class="ff-emo">↗</span></a>
           </nav>
         </details>
       </div>
@@ -229,101 +229,101 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/en/">Home</a> /</li><li><a class="underline" href="/en/archive/">Archive</a> /</li><li aria-current="page">ff.56 The Earth&#39;s air conditioner</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>56</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>56</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="globe" data-ff-slug="ff-56" data-label="Open the 3D object and preview of ff.56"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Futuro Fortissimo Archive</p>
-      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.56 The Earth&#39;s air conditioner</h1>
+      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black"><span class="ff-emo">🎼</span> ff.56 The Earth&#39;s air conditioner</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">Geoengineering, non-chemical trails and other bogeymen to get past</p>
       <p class="mt-2 text-xs font-mono text-black/70">Published <time datetime="2023-04-10T14:05:52.039Z">10 April 2023</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/en/archive/ff-56.html" data-done="Link copied"><span aria-hidden="true">↗</span> Share</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/en/archive/ff-56.html" data-done="Link copied"><span aria-hidden="true">🔗</span> Copy link</button>
-        <a href="https://fortissimo.substack.com/p/ff54-il-condizionatore-terrestre" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Read the Italian original on Substack ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/en/archive/ff-56.html" data-done="Link copied"><span aria-hidden="true"><span class="ff-emo">↗</span></span> Share</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/en/archive/ff-56.html" data-done="Link copied"><span aria-hidden="true"><span class="ff-emo">🔗</span></span> Copy link</button>
+        <a href="https://fortissimo.substack.com/p/ff54-il-condizionatore-terrestre" target="_blank" rel="noopener noreferrer" class="ff-qlink">Read the Italian original on Substack <span class="ff-emo">↗</span></a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• Ozone, farming and industrialisation: are we already geoengineers?</li>
-        <li>• Why controlling the weather might be a smart choice</li>
-        <li>• Wars fought with droughts and floods?</li>
+      <ul class="ff-keypoints">
+        <li>Ozone, farming and industrialisation: are we already geoengineers?</li>
+        <li>Why controlling the weather might be a smart choice</li>
+        <li>Wars fought with droughts and floods?</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Themes</span><a href="/en/themes.html#clima" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🌍 Nature, climate and energy</a></p>
-      <nav aria-label="Sections of this issue" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">Themes</span><a href="/en/themes.html#clima" class="ff-tlink"><span class="ff-emo">🌍</span> Nature, climate and energy</a></p>
+      <nav aria-label="Sections of this issue" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">In this issue</h2>
         <ol>
-          <li><a href="#ff-56-1">🦣 ff.56.1 The last 22k years of the Earth&#39;s thermometer</a></li>
-          <li><a href="#ff-56-2">🕳️ ff.56.2 We are already geoengineers</a></li>
-          <li><a href="#ff-56-3">🌊 ff.56.3 A waterfall one kilometre high</a></li>
-          <li><a href="#ff-56-4">🌧️ ff.56.4 Controlling the rain</a></li>
-          <li><a href="#ff-56-5">💸 ff.56.5 Way beyond Venice&#39;s MOSE</a></li>
+          <li><a href="#ff-56-1"><span class="ff-emo">🦣</span> ff.56.1 The last 22k years of the Earth&#39;s thermometer</a></li>
+          <li><a href="#ff-56-2"><span class="ff-emo">🕳️</span> ff.56.2 We are already geoengineers</a></li>
+          <li><a href="#ff-56-3"><span class="ff-emo">🌊</span> ff.56.3 A waterfall one kilometre high</a></li>
+          <li><a href="#ff-56-4"><span class="ff-emo">🌧️</span> ff.56.4 Controlling the rain</a></li>
+          <li><a href="#ff-56-5"><span class="ff-emo">💸</span> ff.56.5 Way beyond Venice&#39;s MOSE</a></li>
         </ol>
       </nav>
     </header>
 
     
 
-    <section id="ff-56-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-56-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🦣 ff.56.1 The last 22k years of the Earth&#39;s thermometer</h2>
-        <a href="https://fortissimo.substack.com/i/105434036/ff-gli-ultimi-k-anni-di-termometro-terrestre" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.56.1 The last 22k years of the Earth&#39;s thermometer">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🦣</span> ff.56.1 The last 22k years of the Earth&#39;s thermometer</h2>
+        <a href="https://fortissimo.substack.com/i/105434036/ff-gli-ultimi-k-anni-di-termometro-terrestre" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.56.1 The last 22k years of the Earth&#39;s thermometer">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">When in doubt, zoom out. Let&#39;s start with history. With prehistory, actually. It&#39;s always good to put concepts and trends in perspective. Take the warming of our planet. Here are recent estimates for the last 22 thousand years. The end of the ice age brought +4°C.</p>
         <p class="text-base leading-relaxed text-black/90">ocean currents shift → CO2 rises → more plants → end of the ice age</p>
         <p class="text-base leading-relaxed text-black/90">Move over, Bolsonaro. 20k years ago there was half the vegetation there is today. Nature isn&#39;t always kind to itself. It&#39;s also worth remembering that a CO2-richer atmosphere increases photosynthesis efficiency (up to a plateau at 1000 ppm).</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!WuVu!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F54a7d1a1-81c9-4d5e-8b49-352f00d60a39_1280x1236.jpeg" width="1280" height="1236" alt="Earth&#39;s temperature anomaly over the last 22k years, with temperatures 4°C lower due to the last ice age." loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Earth&#39;s temperature anomaly over the last 22k years, with temperatures 4°C lower due to the last ice age.</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.canr.msu.edu/uploads/resources/pdfs/light-co2-and-temp.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ a CO2-richer atmosphere increases photosynthesis efficiency (up to a plateau at 1000 ppm).</a>
+          <div class="ff-refs-l">
+            <a href="https://www.canr.msu.edu/uploads/resources/pdfs/light-co2-and-temp.pdf" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> a CO2-richer atmosphere increases photosynthesis efficiency (up to a plateau at 1000 ppm).</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-56-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-56-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🕳️ ff.56.2 We are already geoengineers</h2>
-        <a href="https://fortissimo.substack.com/i/105434036/ff-siamo-gia-geo-ingegneri" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.56.2 We are already geoengineers">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🕳️</span> ff.56.2 We are already geoengineers</h2>
+        <a href="https://fortissimo.substack.com/i/105434036/ff-siamo-gia-geo-ingegneri" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.56.2 We are already geoengineers">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Agriculture raised atmospheric CO2 to 280ppm. Glacial cycles predicted 240ppm for pre-industrial levels. 6000 years ago the Earth&#39;s average temperature was 1 degree higher than in the 19th century and, without agriculture, Canada would have been covered in ice.</p>
         <p class="text-base leading-relaxed text-black/90">Containing the ozone hole is perhaps the textbook example of geoengineering. Its dangerous thinning was stopped by banning chlorofluorocarbons (and other ODS, Ozone Depleting Substances). NASA reminds us of the UV-blasted world we avoided thanks to the Montreal Protocol.</p>
         <p class="text-base leading-relaxed text-black/90">And smog? Our CO2 and sulphate emissions are already changing the climate (in an uncontrolled way). Very bad geoengineering, so much so that sulphites emitted in the Northern Hemisphere cause droughts in Africa.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!R3wo!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7dce1e32-68ef-400f-8c46-92ac0ff4d2b4_850x600.svg" alt="We stopped the very dangerous decline, but we&#39;re not at pre-DDT levels." loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">We stopped the very dangerous decline, but we&#39;re not at pre-DDT levels.</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.nature.com/articles/s41586-022-05536-w" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Agriculture raised atmospheric CO2 to 280ppm.</a>
-            <a href="https://earthobservatory.nasa.gov/features/WorldWithoutOzone/page2.php" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ NASA reminds us of the UV-blasted world we avoided</a>
-            <a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2018GL079970" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ sulphites emitted in the Northern Hemisphere cause droughts in Africa.</a>
+          <div class="ff-refs-l">
+            <a href="https://www.nature.com/articles/s41586-022-05536-w" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Agriculture raised atmospheric CO2 to 280ppm.</a>
+            <a href="https://earthobservatory.nasa.gov/features/WorldWithoutOzone/page2.php" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> NASA reminds us of the UV-blasted world we avoided</a>
+            <a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2018GL079970" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> sulphites emitted in the Northern Hemisphere cause droughts in Africa.</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-56-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-56-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🌊 ff.56.3 A waterfall one kilometre high</h2>
-        <a href="https://fortissimo.substack.com/i/105434036/ff-una-cascata-alta-un-chilometro" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.56.3 A waterfall one kilometre high">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🌊</span> ff.56.3 A waterfall one kilometre high</h2>
+        <a href="https://fortissimo.substack.com/i/105434036/ff-una-cascata-alta-un-chilometro" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.56.3 A waterfall one kilometre high">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Given the immense (solar) energy reaching the Earth, tiny variations (like the amount of reflected light) make geoengineering easy to implement. At the same time, they make the balance precarious.</p>
-        <p class="text-base leading-relaxed text-black/90">☀️ Solar radiation   | 170k TW      |☁️ Reflected radiation | 50k TW (30%) |🏭 World production | 15 TW (1/10k)|</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">☀️</span> Solar radiation   | 170k TW      |<span class="ff-emo">☁️</span> Reflected radiation | 50k TW (30%) |<span class="ff-emo">🏭</span> World production | 15 TW (1/10k)|</p>
         <p class="text-base leading-relaxed text-black/90">How much is 170k (thousand!) TW? A waterfall one kilometre high running along the entire equator.</p>
       </div>
       
       
     </section>
 
-    <section id="ff-56-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-56-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🌧️ ff.56.4 Controlling the rain</h2>
-        <a href="https://fortissimo.substack.com/i/105434036/ff-controllare-la-pioggia" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.56.4 Controlling the rain">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🌧️</span> ff.56.4 Controlling the rain</h2>
+        <a href="https://fortissimo.substack.com/i/105434036/ff-controllare-la-pioggia" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.56.4 Controlling the rain">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Oliver Morton, a senior editor at The Economist (no small fry), published The Planet Remade, an excellent book on the subject.</p>
@@ -334,62 +334,62 @@
         <p class="text-base leading-relaxed text-black/90">Controlling reflected radiation (a Nature article by Harvard scientists proposing sulphate aerosols); Fertilising the oceans with iron and urea to boost plankton (more controllable, but more expensive, 12 experiments already tried); Capturing CO2 from the atmosphere (Climeworks) or, better still, from ocean water.</p>
         <p class="text-base leading-relaxed text-black/90">Armand Domalewski@ArmandDomaThis is extremely coolnewatlas. com/environment/mi…5:25 PM ∙ Feb 18, 2023490Likes52Retweets</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!u72u!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F570bf0ad-6577-417e-89fe-fbb21831628c_1656x2500.jpeg" width="1656" height="2500" alt="🌧️ ff.56.4 Controlling the rain" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (7)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://amzn.to/3IXlMBb" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] text-xs font-mono font-bold hover:underline">📚 The Planet Remade</a>
-            <a href="https://www.researchgate.net/publication/328180082_Evaluation_of_the_Wyoming_Weather_Modification_Pilot_Project_WWMPP_Using_Two_Approaches_Traditional_Statistics_and_Ensemble_Modeling" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ In Wyoming, between 2008 and 2016, they tried to make rain.</a>
-            <a href="https://www.nature.com/articles/d41586-018-07533-4" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Controlling reflected radiation</a>
-            <a href="https://earthobservatory.nasa.gov/features/Martin/martin_5.php" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Fertilising the oceans with iron and urea to boost plankton</a>
-            <a href="https://climeworks.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Climeworks</a>
-            <a href="https://twitter.com/ArmandDoma/status/1626996397676572675?t=kzUptmzd3NMt3Cn4WUOI6A&amp;s=33" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Armand Domalewski@ArmandDoma</a>
-            <a href="https://newatlas.com/environment/mit-carbon-capture-seawater/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ newatlas.com/environment/mi…</a>
+          <div class="ff-refs-l">
+            <a href="https://amzn.to/3IXlMBb" target="_blank" rel="noopener noreferrer sponsored" class="ff-ref is-book"><span class="ff-emo">📚</span> The Planet Remade</a>
+            <a href="https://www.researchgate.net/publication/328180082_Evaluation_of_the_Wyoming_Weather_Modification_Pilot_Project_WWMPP_Using_Two_Approaches_Traditional_Statistics_and_Ensemble_Modeling" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> In Wyoming, between 2008 and 2016, they tried to make rain.</a>
+            <a href="https://www.nature.com/articles/d41586-018-07533-4" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Controlling reflected radiation</a>
+            <a href="https://earthobservatory.nasa.gov/features/Martin/martin_5.php" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Fertilising the oceans with iron and urea to boost plankton</a>
+            <a href="https://climeworks.com/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Climeworks</a>
+            <a href="https://twitter.com/ArmandDoma/status/1626996397676572675?t=kzUptmzd3NMt3Cn4WUOI6A&amp;s=33" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Armand Domalewski@ArmandDoma</a>
+            <a href="https://newatlas.com/environment/mit-carbon-capture-seawater/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> newatlas.com/environment/mi…</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-56-5" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-56-5" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">💸 ff.56.5 Way beyond Venice&#39;s MOSE</h2>
-        <a href="https://fortissimo.substack.com/i/105434036/ff-altro-che-il-mose-a-venezia" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.56.5 Way beyond Venice&#39;s MOSE">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">💸</span> ff.56.5 Way beyond Venice&#39;s MOSE</h2>
+        <a href="https://fortissimo.substack.com/i/105434036/ff-altro-che-il-mose-a-venezia" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.56.5 Way beyond Venice&#39;s MOSE">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Sure, but what about the costs? Direct air capture of CO2 is, for now, very complex and not very effective.</p>
         <p class="text-base leading-relaxed text-black/90">6.6 GJ (or 1.83 MWh) | energy/ton of CO2$300-1,000/ton      | $/ton (2030 estimates)$137/ton            | highest emissions tax (2022)</p>
         <p class="text-base leading-relaxed text-black/90">So why not use methods like sulphate aerosols, already available and cheap?</p>
         <p class="text-base leading-relaxed text-black/90">The cost of climate engineering (the whole planet, for a decade) could be lower than the 6 billion dollars the Italian government is spending to protect Venice from rising sea levels. David Keith, A case for climate engineering</p>
-        <p class="text-base leading-relaxed text-black/90">🎵 Final notes</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">🎵</span> Final notes</p>
         <p class="text-base leading-relaxed text-black/90">In the future, Switzerland will boost its ski season by locally increasing precipitation. Meanwhile the Dolomiti Superski area will see yet another season without snow.</p>
-        <p class="text-base leading-relaxed text-black/90">In the next 🎼ff we&#39;ll talk about marathons (and why they&#39;re good for you)! 👋 See you soon, from micmer</p>
-        <p class="text-base leading-relaxed text-black/90">Want to support this project? → Share it with a friend on WhatsApp → Buy me a coffee 😏 → Remember to leave a little heart below.</p>
-        <p class="text-base leading-relaxed text-black/90">☕❤️</p>
+        <p class="text-base leading-relaxed text-black/90">In the next <span class="ff-emo">🎼</span>ff we&#39;ll talk about marathons (and why they&#39;re good for you)! <span class="ff-emo">👋</span> See you soon, from micmer</p>
+        <p class="text-base leading-relaxed text-black/90">Want to support this project? → Share it with a friend on WhatsApp → Buy me a coffee <span class="ff-emo">😏</span> → Remember to leave a little heart below.</p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">☕</span><span class="ff-emo">❤️</span></p>
       </div>
       
       
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">Related issues</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-58.html" class="font-bold hover:underline">ff.58 Do bananas pollute too much?</a><p class="text-sm text-black/75 mt-1">How to cut and track the emissions of everyday activities</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-12.html" class="font-bold hover:underline">ff.12 Sun, heart and love</a><p class="text-sm text-black/75 mt-1">How renewable energy could win Festivalbar</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-1.html" class="font-bold hover:underline">ff.1 Climate</a><p class="text-sm text-black/75 mt-1">COP26, The Big Greta Is Watching You and strategies for net zero</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-149.html" class="font-bold hover:underline">ff.149 How to be solar</a><p class="text-sm text-black/75 mt-1">Abundance is here, just put on your sunglasses</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/en/archive/ff-58.html" class="font-bold hover:underline">ff.58 Do bananas pollute too much?</a><p class="text-sm text-black/75 mt-1">How to cut and track the emissions of everyday activities</p></li>
+        <li><a href="/en/archive/ff-12.html" class="font-bold hover:underline">ff.12 Sun, heart and love</a><p class="text-sm text-black/75 mt-1">How renewable energy could win Festivalbar</p></li>
+        <li><a href="/en/archive/ff-1.html" class="font-bold hover:underline">ff.1 Climate</a><p class="text-sm text-black/75 mt-1">COP26, The Big Greta Is Watching You and strategies for net zero</p></li>
+        <li><a href="/en/archive/ff-149.html" class="font-bold hover:underline">ff.149 How to be solar</a><p class="text-sm text-black/75 mt-1">Abundance is here, just put on your sunglasses</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Get new issues of Futuro Fortissimo</h2>
         <p class="text-sm text-black/80 mt-1">A free newsletter by Michele Merelli (Bergamo) on technology, AI, nature and society. Written in Italian, delivered by Substack.</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 Subscribe for free ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary"><span class="ff-emo">📩</span> Subscribe for free <span class="ff-emo">↗</span></a>
     </section>
 
     <nav aria-label="Adjacent issues" class="ff-pn">
@@ -398,7 +398,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -418,16 +418,16 @@
       <div class="space-y-2">
         <p class="ff-eyebrow">Follow</p>
         <ul class="space-y-1 font-medium">
-          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack ↗</a></li>
-          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
-          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram ↗</a></li>
+          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram <span class="ff-emo">↗</span></a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
-          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee ☕ ↗</a></li>
-          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects ↗</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee <span class="ff-emo">☕</span> <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects <span class="ff-emo">↗</span></a></li>
         </ul>
       </div>
     </div>
-    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
+    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70"><span class="ff-emo">©</span> 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
   <aside class="ff-sticky-sub" aria-label="Newsletter">
     <p>Enjoying it? Get the next issue by email.</p>
@@ -435,11 +435,11 @@
     <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="Dismiss">✕</button>
   </aside>
   <nav class="ff-tabbar" aria-label="Main navigation">
-    <a href="/en/"><span class="ff-ti" aria-hidden="true">🏠</span>Home</a>
-    <a href="/en/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>Archive</a>
-    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>Themes</a>
-    <a href="/en/books/"><span class="ff-ti" aria-hidden="true">📚</span>Books</a>
-    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>Search</button>
+    <a href="/en/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🏠</span></span>Home</a>
+    <a href="/en/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🗂</span></span>Archive</a>
+    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🧭</span></span>Themes</a>
+    <a href="/en/books/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">📚</span></span>Books</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🔍</span></span>Search</button>
   </nav>
   <dialog id="ff-search" class="ff-search" aria-label="Search" data-empty="No results. Try another word.">
     <form role="search">
@@ -450,7 +450,7 @@
     <ul id="ff-results" role="listbox" aria-label="Search"></ul>
     <div class="ff-s-foot"><a href="/en/archive/" data-ff-all data-base="/en/archive/">All results in the archive →</a><span>Press / to search anywhere</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

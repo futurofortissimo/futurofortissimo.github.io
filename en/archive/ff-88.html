@@ -139,12 +139,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -153,9 +153,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -208,18 +208,18 @@
         <a href="/en/books/">Books</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="Language"><a href="/archivio/ff-88.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/archive/ff-88.html" hreflang="en" lang="en" title="English" data-keep-state aria-current="page">EN</a><a href="/hi/archive/ff-88.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="Dark theme" title="Dark theme"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Subscribe</a>
         <details class="ff-more">
-          <summary aria-label="More"><span aria-hidden="true">☰</span><span class="sr-only">More</span></summary>
+          <summary aria-label="More"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">More</span></summary>
           <nav class="ff-menu" aria-label="More">
-            <a href="/book/">📖 The Book (IT)</a>
-            <a href="/en/connections.html">🔗 Connections</a>
-            <a href="/en/note.html">📝 Notes</a>
+            <a href="/book/"><span class="ff-emo">📖</span> The Book (IT)</a>
+            <a href="/en/connections.html"><span class="ff-emo">🔗</span> Connections</a>
+            <a href="/en/note.html"><span class="ff-emo">📝</span> Notes</a>
             <hr />
-            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 Subscribe ↗</a>
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener"><span class="ff-emo">📩</span> Subscribe <span class="ff-emo">↗</span></a>
           </nav>
         </details>
       </div>
@@ -229,69 +229,69 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/en/">Home</a> /</li><li><a class="underline" href="/en/archive/">Archive</a> /</li><li aria-current="page">ff.88 Singularity in 2029?</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>88</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>88</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="robot" data-ff-slug="ff-88" data-label="Open the 3D object and preview of ff.88"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Futuro Fortissimo Archive</p>
-      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.88 Singularity in 2029?</h1>
+      <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black"><span class="ff-emo">🎼</span> ff.88 Singularity in 2029?</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">The robotic acceleration powered by ChatGPT and FigureAI</p>
       <p class="mt-2 text-xs font-mono text-black/70">Published <time datetime="2024-03-20T08:01:49.182Z">20 March 2024</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/en/archive/ff-88.html" data-done="Link copied"><span aria-hidden="true">↗</span> Share</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/en/archive/ff-88.html" data-done="Link copied"><span aria-hidden="true">🔗</span> Copy link</button>
-        <a href="https://fortissimo.substack.com/p/ff88-singolarita-nel-2029" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Read the Italian original on Substack ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/en/archive/ff-88.html" data-done="Link copied"><span aria-hidden="true"><span class="ff-emo">↗</span></span> Share</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/en/archive/ff-88.html" data-done="Link copied"><span aria-hidden="true"><span class="ff-emo">🔗</span></span> Copy link</button>
+        <a href="https://fortissimo.substack.com/p/ff88-singolarita-nel-2029" target="_blank" rel="noopener noreferrer" class="ff-qlink">Read the Italian original on Substack <span class="ff-emo">↗</span></a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• Are we in a financial bubble with NVIDIA stock?</li>
-        <li>• Why will 2029 be the year of the singularity?</li>
-        <li>• Will robots fix Rome&#39;s potholes?</li>
+      <ul class="ff-keypoints">
+        <li>Are we in a financial bubble with NVIDIA stock?</li>
+        <li>Why will 2029 be the year of the singularity?</li>
+        <li>Will robots fix Rome&#39;s potholes?</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Themes</span><a href="/en/themes.html#ai" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🤖 AI, agents and models</a></p>
-      <nav aria-label="Sections of this issue" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">Themes</span><a href="/en/themes.html#ai" class="ff-tlink"><span class="ff-emo">🤖</span> AI, agents and models</a></p>
+      <nav aria-label="Sections of this issue" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">In this issue</h2>
         <ol>
-          <li><a href="#ff-88-1">🧩ff.88.1 A financial bubble?</a></li>
-          <li><a href="#ff-88-2">🤖ff.88.2 ChatGPT controls a robot</a></li>
-          <li><a href="#ff-88-3">👀ff.88.3 From words to deeds</a></li>
-          <li><a href="#ff-88-4">🔮ff.88.4 The Maya prophecy (or rather, of</a></li>
-          <li><a href="#ff-88-5">📈ff.88.5 A couple of examples of acceleration</a></li>
+          <li><a href="#ff-88-1"><span class="ff-emo">🧩</span>ff.88.1 A financial bubble?</a></li>
+          <li><a href="#ff-88-2"><span class="ff-emo">🤖</span>ff.88.2 ChatGPT controls a robot</a></li>
+          <li><a href="#ff-88-3"><span class="ff-emo">👀</span>ff.88.3 From words to deeds</a></li>
+          <li><a href="#ff-88-4"><span class="ff-emo">🔮</span>ff.88.4 The Maya prophecy (or rather, of</a></li>
+          <li><a href="#ff-88-5"><span class="ff-emo">📈</span>ff.88.5 A couple of examples of acceleration</a></li>
         </ol>
       </nav>
     </header>
 
     
 
-    <section id="ff-88-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-88-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🧩ff.88.1 A financial bubble?</h2>
-        <a href="https://fortissimo.substack.com/i/142632080/ff-una-bolla-finanziaria" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.88.1 A financial bubble?">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🧩</span>ff.88.1 A financial bubble?</h2>
+        <a href="https://fortissimo.substack.com/i/142632080/ff-una-bolla-finanziaria" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.88.1 A financial bubble?">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Chickens coming home to roost. Tell me something: has your hairdresser also asked you about investing in NVIDIA? When finance gets discussed this widely, it&#39;s usually time to sell. Or is it?</p>
-        <p class="text-base leading-relaxed text-black/90">NVIDIA&#39;s price seems to have taken off on an exponential trend, like CO2 emissions (🎼 ff.36 Is the singularity near?).</p>
+        <p class="text-base leading-relaxed text-black/90">NVIDIA&#39;s price seems to have taken off on an exponential trend, like CO2 emissions (<span class="ff-emo">🎼</span> ff.36 Is the singularity near?).</p>
         <p class="text-base leading-relaxed text-black/90">Behind all this, of course, is LLM training, powered by the American company&#39;s ever more powerful GPUs. First signs of the singularity?</p>
         <p class="text-base leading-relaxed text-black/90">Is this time different? Maybe yes. NVIDIA has grown impressively over the last three years, tripling its revenue in the last year alone.</p>
         <p class="text-base leading-relaxed text-black/90">Compared to the dot-com bubble of the 2000s, the tech sector is trading at a 50% discount.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!SN4v!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb19ceb49-694f-4cfa-bed0-d3ab5bf4e6ea_664x733.png" width="664" height="733" alt="🧩ff.88.1 A financial bubble?" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!Iq3d!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7732fa95-0f5c-427f-8319-47efefcafdb7_861x602.png" width="861" height="602" alt="The price-to-sales ratio of the US tech sector: still half of what it was in the dot-com bubble." loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">The price-to-sales ratio of the US tech sector: still half of what it was in the dot-com bubble.</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://fortissimo.substack.com/i/74061252/ff-il-super-librozzo-sulla-singolarita" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🎼 ff.36 Is the singularity near?</a>
+          <div class="ff-refs-l">
+            <a href="https://fortissimo.substack.com/i/74061252/ff-il-super-librozzo-sulla-singolarita" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> <span class="ff-emo">🎼</span> ff.36 Is the singularity near?</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-88-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-88-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🤖ff.88.2 ChatGPT controls a robot</h2>
-        <a href="https://fortissimo.substack.com/i/142632080/ff-chatgpt-controlla-un-robot" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.88.2 ChatGPT controls a robot">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🤖</span>ff.88.2 ChatGPT controls a robot</h2>
+        <a href="https://fortissimo.substack.com/i/142632080/ff-chatgpt-controlla-un-robot" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.88.2 ChatGPT controls a robot">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Why? The market looks to the future and sees it very optimistically. Partly thanks to the FigureAI video below.</p>
@@ -299,19 +299,19 @@
         <p class="text-base leading-relaxed text-black/90">What you see are not “hard-coded” actions. The spectacular jumps of Boston Dynamics&#39; dogs are finely scripted by programmers; here the robot moves autonomously. The robot learns these movements and links them to goals very quickly. The interface with the robot is voice-based (thanks to OpenAI and GPT)</p>
       </div>
       
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (2)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.figure.ai/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ FigureAI video</a>
-            <a href="https://www.youtube.com/watch?v=K1TOFzMpArs" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ jumps of Boston Dynamics&#39; dogs</a>
+          <div class="ff-refs-l">
+            <a href="https://www.figure.ai/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> FigureAI video</a>
+            <a href="https://www.youtube.com/watch?v=K1TOFzMpArs" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> jumps of Boston Dynamics&#39; dogs</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-88-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-88-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">👀ff.88.3 From words to deeds</h2>
-        <a href="https://fortissimo.substack.com/i/142632080/ff-dalle-parole-ai-fatti" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.88.3 From words to deeds">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">👀</span>ff.88.3 From words to deeds</h2>
+        <a href="https://fortissimo.substack.com/i/142632080/ff-dalle-parole-ai-fatti" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.88.3 From words to deeds">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Reading reality. Yann LeCun, head of AI at Meta, points out: when reading, a human takes in 12 bytes/s. ChatGPT was trained on 10^13 bytes (5,000 billion words, 100,000 years&#39; worth of days spent reading).</p>
@@ -319,23 +319,23 @@
         <p class="text-base leading-relaxed text-black/90">Has ChatGPT opened the road for robots to understand the world visually?</p>
         <p class="text-base leading-relaxed text-black/90">Given how much visual data there is compared to text, there&#39;s a whole world still to discover for artificial intelligence. It has only just been conceived.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!JOwq!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5edea8e1-7abc-4e7e-9da5-0dc7a1e5a3c9_1024x1024.webp" width="1024" height="1024" alt="Leonardo da Vinci&#39;s Annunciation, reinterpreted (badly) by ChatGPT for futuro fortissimo." loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Leonardo da Vinci&#39;s Annunciation, reinterpreted (badly) by ChatGPT for futuro fortissimo.</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (2)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://twitter.com/ylecun" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Yann LeCun, head of AI at Meta</a>
-            <a href="https://twitter.com/ylecun/status/1766498677751787723?s=20" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ a 4-year-old has seen 50x the data ChatGPT was trained on</a>
+          <div class="ff-refs-l">
+            <a href="https://twitter.com/ylecun" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Yann LeCun, head of AI at Meta</a>
+            <a href="https://twitter.com/ylecun/status/1766498677751787723?s=20" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> a 4-year-old has seen 50x the data ChatGPT was trained on</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-88-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-88-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">🔮ff.88.4 The Maya prophecy (or rather, of</h2>
-        <a href="https://fortissimo.substack.com/i/142632080/ff-la-profezia-maya-o-meglio-di" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.88.4 The Maya prophecy (or rather, of">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">🔮</span>ff.88.4 The Maya prophecy (or rather, of</h2>
+        <a href="https://fortissimo.substack.com/i/142632080/ff-la-profezia-maya-o-meglio-di" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.88.4 The Maya prophecy (or rather, of">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Ray Kurzweil, futurist with 21 honorary doctorates, stopped by Joe Rogan. Below, a 15-minute excerpt that&#39;s well worth a listen.</p>
@@ -345,72 +345,72 @@
         <p class="text-base leading-relaxed text-black/90">GDP growth will be dizzying. And everything will keep accelerating.</p>
         <p class="text-base leading-relaxed text-black/90">So see you in June for the update: The Singularity Is Nearer.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!VkX6!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbf45407e-3510-4774-bda3-ed662419cd71_993x1500.jpeg" width="993" height="1500" alt="The Singularity Is Nearer, Ray Kurzweil&#39;s book coming out in June" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">The Singularity Is Nearer, Ray Kurzweil&#39;s book coming out in June</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://en.wikipedia.org/wiki/Ray_Kurzweil" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Ray Kurzweil, futurist with 21 doctorates</a>
-            <a href="https://amzn.to/3TGxpC6" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] text-xs font-mono font-bold hover:underline">📚 The Singularity Is Near</a>
-            <a href="https://amzn.to/3IHjhlF" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] text-xs font-mono font-bold hover:underline">📚 The Singularity Is Nearer</a>
+          <div class="ff-refs-l">
+            <a href="https://en.wikipedia.org/wiki/Ray_Kurzweil" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Ray Kurzweil, futurist with 21 doctorates</a>
+            <a href="https://amzn.to/3TGxpC6" target="_blank" rel="noopener noreferrer sponsored" class="ff-ref is-book"><span class="ff-emo">📚</span> The Singularity Is Near</a>
+            <a href="https://amzn.to/3IHjhlF" target="_blank" rel="noopener noreferrer sponsored" class="ff-ref is-book"><span class="ff-emo">📚</span> The Singularity Is Nearer</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-88-5" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-88-5" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-bold text-black">📈ff.88.5 A couple of examples of acceleration</h2>
-        <a href="https://fortissimo.substack.com/i/142632080/ff-un-paio-di-esempi-di-accelerazione" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.88.5 A couple of examples of acceleration">Substack ↗</a>
+        <h2 class="text-lg sm:text-xl font-bold text-black"><span class="ff-emo">📈</span>ff.88.5 A couple of examples of acceleration</h2>
+        <a href="https://fortissimo.substack.com/i/142632080/ff-un-paio-di-esempi-di-accelerazione" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.88.5 A couple of examples of acceleration">Substack <span class="ff-emo">↗</span></a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Claude (Anthropic&#39;s GPT) was the only one to understand the scientific paper of Kevin Fischer, a PhD in quantum physics. Colleagues and other experts in the field couldn&#39;t. Cognition AI, with its team of 10 maths olympiad medallists and a list of heavyweight investors (a $21M Series A from Founders Fund, Peter Thiel&#39;s fund), unveiled Devin, the first fully AI software engineer.</p>
         <p class="text-base leading-relaxed text-black/90">1 in 6, 10 times better than GPT-4. That&#39;s how often, from an input like “write a program to find potholes in the road”, it manages to produce working code.</p>
         <p class="text-base leading-relaxed text-black/90">Speaking of potholes. Devin earned €500 in a few minutes, solving this request on UpWork.</p>
         <p class="text-base leading-relaxed text-black/90">Is it stealing jobs? That&#39;s one possible, pessimistic reading. My fortissimo one: it created €500 for humanity (by solving a task that maybe nobody would have done).</p>
-        <p class="text-base leading-relaxed text-black/90">a little heart below? ❤️</p>
-        <p class="text-base leading-relaxed text-black/90">🎼 futuro fortissimo is an idea by Michele Merelli</p>
+        <p class="text-base leading-relaxed text-black/90">a little heart below? <span class="ff-emo">❤️</span></p>
+        <p class="text-base leading-relaxed text-black/90"><span class="ff-emo">🎼</span> futuro fortissimo is an idea by Michele Merelli</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!evTT!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1d864419-1288-43a9-a0bd-0c772d6b1346_2000x1072.jpeg" width="2000" height="1072" alt="Devin&#39;s coding performance compared to other LLMs" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Devin&#39;s coding performance compared to other LLMs</figcaption>
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!Cz2q!,w_1456,c_limit,f_auto,q_auto:good,fl_lossy/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F299f5c63-89e6-426b-9375-fa3912831cb5_500x500.gif" width="500" height="500" alt="ItsNiceThat&#39;s survey on creativity and GPT" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">ItsNiceThat&#39;s survey on creativity and GPT</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (6)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://twitter.com/KevinAFischer/status/1764892031233765421/photo/1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Claude (Anthropic&#39;s GPT) was the only one to understand the scientific paper of Kevin Fischer</a>
-            <a href="https://www.cognition-labs.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Cognition AI</a>
-            <a href="https://www.cognition-labs.com/introducing-devin" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Devin, the first fully AI software engineer</a>
-            <a href="https://www.upwork.com/freelance-jobs/apply/Make-inferences-with-computer-vision-model_~01a76dcdba761c5057/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Devin earned €500 in a few minutes, solving this request on UpWork</a>
-            <a href="https://futurofortissimo.github.io/" target="_blank" rel="noopener noreferrer" title="🎼" lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ futurofortissimo.github.io</a>
-            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Michele Merelli</a>
+          <div class="ff-refs-l">
+            <a href="https://twitter.com/KevinAFischer/status/1764892031233765421/photo/1" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Claude (Anthropic&#39;s GPT) was the only one to understand the scientific paper of Kevin Fischer</a>
+            <a href="https://www.cognition-labs.com/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Cognition AI</a>
+            <a href="https://www.cognition-labs.com/introducing-devin" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Devin, the first fully AI software engineer</a>
+            <a href="https://www.upwork.com/freelance-jobs/apply/Make-inferences-with-computer-vision-model_~01a76dcdba761c5057/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Devin earned €500 in a few minutes, solving this request on UpWork</a>
+            <a href="https://futurofortissimo.github.io/" target="_blank" rel="noopener noreferrer" title="🎼" lang="it" class="ff-ref"><span class="ff-emo">↗</span> futurofortissimo.github.io</a>
+            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="ff-ref"><span class="ff-emo">↗</span> Michele Merelli</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">Related issues</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-83.html" class="font-bold hover:underline">ff.83 Learning from ChatGPT</a><p class="text-sm text-black/75 mt-1">The tangle of language and consciousness, lit up by GPT</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-36.html" class="font-bold hover:underline">ff.36 Is the singularity near?</a><p class="text-sm text-black/75 mt-1">(Digital) superintelligence, and are humans already cyborgs?</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-153.html" class="font-bold hover:underline">ff.153 It&#39;s all a token</a><p class="text-sm text-black/75 mt-1">Between summer village fairs and Claude&#39;s mental rabbit holes</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/en/archive/ff-148.html" class="font-bold hover:underline">ff.148 The AI “Myth”</a><p class="text-sm text-black/75 mt-1">Claude Mythos, autographs and world models</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/en/archive/ff-83.html" class="font-bold hover:underline">ff.83 Learning from ChatGPT</a><p class="text-sm text-black/75 mt-1">The tangle of language and consciousness, lit up by GPT</p></li>
+        <li><a href="/en/archive/ff-36.html" class="font-bold hover:underline">ff.36 Is the singularity near?</a><p class="text-sm text-black/75 mt-1">(Digital) superintelligence, and are humans already cyborgs?</p></li>
+        <li><a href="/en/archive/ff-153.html" class="font-bold hover:underline">ff.153 It&#39;s all a token</a><p class="text-sm text-black/75 mt-1">Between summer village fairs and Claude&#39;s mental rabbit holes</p></li>
+        <li><a href="/en/archive/ff-148.html" class="font-bold hover:underline">ff.148 The AI “Myth”</a><p class="text-sm text-black/75 mt-1">Claude Mythos, autographs and world models</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Get new issues of Futuro Fortissimo</h2>
         <p class="text-sm text-black/80 mt-1">A free newsletter by Michele Merelli (Bergamo) on technology, AI, nature and society. Written in Italian, delivered by Substack.</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 Subscribe for free ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary"><span class="ff-emo">📩</span> Subscribe for free <span class="ff-emo">↗</span></a>
     </section>
 
     <nav aria-label="Adjacent issues" class="ff-pn">
@@ -419,7 +419,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -439,16 +439,16 @@
       <div class="space-y-2">
         <p class="ff-eyebrow">Follow</p>
         <ul class="space-y-1 font-medium">
-          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack ↗</a></li>
-          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
-          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram ↗</a></li>
+          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://www.instagram.com/michelemerelli.ig/" rel="me noopener" target="_blank">Instagram <span class="ff-emo">↗</span></a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
-          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee ☕ ↗</a></li>
-          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects ↗</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee <span class="ff-emo">☕</span> <span class="ff-emo">↗</span></a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects <span class="ff-emo">↗</span></a></li>
         </ul>
       </div>
     </div>
-    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
+    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70"><span class="ff-emo">©</span> 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
   <aside class="ff-sticky-sub" aria-label="Newsletter">
     <p>Enjoying it? Get the next issue by email.</p>
@@ -456,11 +456,11 @@
     <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="Dismiss">✕</button>
   </aside>
   <nav class="ff-tabbar" aria-label="Main navigation">
-    <a href="/en/"><span class="ff-ti" aria-hidden="true">🏠</span>Home</a>
-    <a href="/en/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>Archive</a>
-    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>Themes</a>
-    <a href="/en/books/"><span class="ff-ti" aria-hidden="true">📚</span>Books</a>
-    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>Search</button>
+    <a href="/en/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🏠</span></span>Home</a>
+    <a href="/en/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🗂</span></span>Archive</a>
+    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🧭</span></span>Themes</a>
+    <a href="/en/books/"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">📚</span></span>Books</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true"><span class="ff-emo">🔍</span></span>Search</button>
   </nav>
   <dialog id="ff-search" class="ff-search" aria-label="Search" data-empty="No results. Try another word.">
     <form role="search">
@@ -471,7 +471,7 @@
     <ul id="ff-results" role="listbox" aria-label="Search"></ul>
     <div class="ff-s-foot"><a href="/en/archive/" data-ff-all data-base="/en/archive/">All results in the archive →</a><span>Press / to search anywhere</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>
