@@ -6,7 +6,7 @@ export const SOCIAL = {
   substack: 'https://fortissimo.substack.com',
   x: 'https://x.com/michele_merelli',
   xHandle: '@michele_merelli',
-  instagram: 'https://www.instagram.com/michele_merelli/',
+  instagram: 'https://www.instagram.com/michelemerelli.ig/',
 };
 
 export const PAGE_SEO = {
