@@ -20,11 +20,11 @@ import {
   PERSON, PUBLISHER, DEFAULT_OG, ROBOTS_INDEX, clip,
 } from './seo_lib.mjs';
 import { THEMES } from './site_themes.mjs';
-import { navHtml, headExtras, siteFooter, subscribeCta, chromeEnd, chromeHead } from './site_chrome.mjs';
+import { navHtml, headExtras, siteFooter, subscribeCta, chromeEnd, chromeHead, emojiSpans } from './site_chrome.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = (rel) => fs.readFileSync(path.join(ROOT, rel), 'utf-8');
-const write = (rel, s) => { fs.mkdirSync(path.dirname(path.join(ROOT, rel)), { recursive: true }); fs.writeFileSync(path.join(ROOT, rel), s, 'utf-8'); };
+const write = (rel, s) => { fs.mkdirSync(path.dirname(path.join(ROOT, rel)), { recursive: true }); fs.writeFileSync(path.join(ROOT, rel), rel.endsWith('.html') ? emojiSpans(s) : s, 'utf-8'); };
 const INDEX = Object.fromEntries(LANG_CODES.map((lg) => [lg, JSON.parse(read(`assets/site-index-${lg}.json`))]));
 // self-hosted covers of the latest issues (scripts/build_covers.mjs): the home LCP image no longer waits on a third-party CDN
 const COVERS = fs.existsSync(path.join(ROOT, 'assets/covers/covers.json')) ? JSON.parse(read('assets/covers/covers.json')) : {};

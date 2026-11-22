@@ -29,7 +29,7 @@ import {
 } from './seo_lib.mjs';
 import { issueMeta } from './issue_meta_lib.mjs';
 import { voxelTable } from './voxel_map.mjs';
-import { SHARED_STYLES, langSwitchHtml, navHtml, headExtras, subscribeCta, imgTag, themesHref, siteFooter, chromeEnd, readingTools, stickySubscribe } from './site_chrome.mjs';
+import { SHARED_STYLES, langSwitchHtml, navHtml, headExtras, subscribeCta, imgTag, themesHref, siteFooter, chromeEnd, readingTools, stickySubscribe, emojiSpans } from './site_chrome.mjs';
 import { THEMES, issueThemeMap, sectionThemes } from './site_themes.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -350,7 +350,7 @@ for (const lang of LANG_CODES) {
 </body>
 </html>
 `;
-    fs.writeFileSync(path.join(dirOf(lang), `${orig.slug}.html`), html, 'utf-8');
+    fs.writeFileSync(path.join(dirOf(lang), `${orig.slug}.html`), emojiSpans(html), 'utf-8');
     // preview for the 3D "explode/open" sheet (fetched on demand by assets/ff-voxel.js)
     const firstPara = (sub) => (sub.content || '').split(/\n+/).map((p) => p.trim()).find(Boolean) || '';
     const pv = {
@@ -499,7 +499,7 @@ for (const lang of LANG_CODES) {
 </body>
 </html>
 `;
-  fs.writeFileSync(path.join(dirOf(lang), 'index.html'), html, 'utf-8');
+  fs.writeFileSync(path.join(dirOf(lang), 'index.html'), emojiSpans(html), 'utf-8');
 }
 
 // ── 3. Books pages (en/hi) ──────────────────────────────────────────────────
@@ -662,7 +662,7 @@ for (const lang of ['en', 'hi']) {
 `;
   const dir = path.join(ROOT, L[lang].books.replace(/^\//, ''));
   fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(path.join(dir, 'index.html'), html, 'utf-8');
+  fs.writeFileSync(path.join(dir, 'index.html'), emojiSpans(html), 'utf-8');
 }
 
 // ── 4. Home pages (it/en/hi): SEO head + JSON-LD are written by build_static_pages.mjs ──

@@ -189,3 +189,14 @@ export const stickySubscribe = (lang) => `<aside class="ff-sticky-sub" aria-labe
     <a href="${SUBSTACK}/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary ff-btn-sm">${escapeHtml(noEmoji(S[lang].subscribe))}</a>
     <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="${escapeHtml(UI_APP[lang].dismiss)}">✕</button>
   </aside>`;
+
+/** wrap emoji of the visible body text in <span class="ff-emo"> (skips <head>, tags, scripts, styles, <title>, <option>, <textarea>)
+ *  so dark-glyph emoji such as 🎼 get a light halo on the dark theme. Pure markup: the text is unchanged. */
+const EMO = /\p{Extended_Pictographic}(?:\uFE0F|\u200D\p{Extended_Pictographic}|\uFE0F\u20E3)*/gu;
+export function emojiSpans(html) {
+  const at = html.indexOf('<body');
+  if (at < 0) return html;
+  const head = html.slice(0, at);
+  const parts = html.slice(at).split(/(<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<title[\s\S]*?<\/title>|<option[\s\S]*?<\/option>|<textarea[\s\S]*?<\/textarea>|<span class="ff-emo">[^<]*<\/span>|<[^>]+>)/);
+  return head + parts.map((p, i) => (i % 2 || !p ? p : p.replace(EMO, (m) => `<span class="ff-emo">${m}</span>`))).join('');
+}

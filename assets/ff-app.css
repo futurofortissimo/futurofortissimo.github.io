@@ -409,12 +409,14 @@ html .ff-footer { border-top:var(--ff-hair); background:transparent; }
 html .ff-progress span { box-shadow:none; height:2px; }
 
 /* ── home: the wordmark sits on the paper — no card, no art ── */
-html .ff-hero-card { background:none; padding-block:clamp(20px,5vw,48px) clamp(8px,2vw,16px); border:0; box-shadow:none; overflow:visible; }
+html .ff-hero-card { background:none; padding-block:clamp(20px,5vw,48px) clamp(8px,2vw,16px); border:0; box-shadow:none; overflow:clip; }
+html body main { overflow-x:clip; }
 html .ff-hero-card h1 { text-shadow:2px 2px 0 color-mix(in srgb, var(--ff-yellow) 70%, transparent); color:var(--ff-ink); }
 html .ff-hero-card .ff-dyn { opacity:.07; }
 html .ff-hero-card h1::before { --c:color-mix(in srgb, var(--ff-line-soft) 70%, transparent); }
 /* rail: image + text, borderless */
-html .ff-rail { gap:20px; }
+html .ff-rail { gap:20px; scroll-padding-inline:16px; }
+@media (min-width: 640px) { html .ff-rail { scroll-padding-inline:0; } }
 html .ff-rail-i { position:relative; }
 html .ff-card, html .ff-card:hover, html .ff-card:active { border:0; background:transparent; box-shadow:none; transform:none; overflow:visible; }
 html .ff-card .ff-card-img { border:0 !important; }
@@ -532,3 +534,6 @@ body.ff-vs-lock { overflow:hidden; }
 :root[data-ff-theme="dark"] body :is(.text-\[\#0a0a0a\], .text-\[\#111\], .text-\[\#222\]):not([class*="bg-[var(--ff-"]) { color:var(--ff-ink); }
 :root[data-ff-theme="dark"] .ff-brand img { filter:none; }
 :root[data-ff-theme="dark"] .ff-skip { border-color:var(--ff-yellow); }
+/* emoji with dark glyphs (🎼, 🕶️, 🎱…) get a light rim on the dark theme */
+:root[data-ff-theme="dark"] .ff-emo { filter:drop-shadow(0 0 .6px rgb(255 255 255 / .85)) drop-shadow(0 0 1.4px rgb(255 255 255 / .35)); }
+@media (prefers-color-scheme: dark) { :root:not([data-ff-theme]) .ff-emo { filter:drop-shadow(0 0 .6px rgb(255 255 255 / .85)) drop-shadow(0 0 1.4px rgb(255 255 255 / .35)); } }

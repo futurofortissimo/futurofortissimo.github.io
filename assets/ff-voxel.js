@@ -105,7 +105,7 @@
       for (const x of [8, 10, 12]) { b.set(x, 2, 5, '#c42a2a'); b.set(x, 2, 11, '#c42a2a'); } b.set(6, 6, 7, C.ink); b.set(6, 6, 9, C.ink);
     },
     watch(b) {
-      b.box(6, 0, 7, 10, 16, 8, C.ink); b.cylz(8, 8, 6, 9, 5, C.gold); b.cylz(8, 8, 10, 10, 4, C.wht);
+      b.box(6, 1, 6, 10, 15, 6, C.dgy); b.cylz(8, 8, 6, 9, 5, C.gold); b.cylz(8, 8, 10, 10, 4, C.wht);
       b.line([8, 8, 11], [8, 12, 11], C.ink); b.line([8, 8, 11], [11, 8, 11], C.red); b.set(13.5, 8, 8, C.gold);
       for (const [x, y] of [[8, 12], [12, 8], [8, 4], [4, 8]]) b.set(x, y, 11, C.dgy);
     },
@@ -163,8 +163,8 @@
       b.box(6, 9, 5, 9, 9, 10, C.grn);
     },
     clef(b) {
-      b.spr(['...BB..', '..B..B.', '..B..B.', '...B.B.', '....BB.', '...BB..', '..BB...', '.BB....', 'B..BBB.', 'B.B.B.B', 'B.B.B.B', '.B..B.B', '..BBBB.', '....B..', '.B..B..', '..BB...'],
-        { B: C.blue }, 6, 2, 4, 1); b.box(1, 4, 7, 13, 4, 7, C.gry); b.box(1, 8, 7, 13, 8, 7, C.gry); b.box(1, 12, 7, 13, 12, 7, C.gry);
+      b.ell(4, 3, 7, 2.6, 1.8, 2, C.blue); b.ell(13, 1.5, 7, 2.6, 1.8, 2, C.blue); b.box(6, 3, 6, 6, 14, 7, C.ink); b.box(15, 2, 6, 15, 13, 7, C.ink);
+      for (let x = 6; x <= 15; x++) { const y = Math.round(14 - (x - 6) / 9); b.box(x, y, 6, x, y + 1, 8, C.red); }
     },
     rocket(b) {
       b.cyl(7, 7, 3, 13, 2.6, C.wht); for (let y = 14; y <= 18; y++) b.cyl(7, 7, y, y, 2.6 - (y - 13) * .5, C.red); b.cylz(7, 10, 9, 10, 1.1, C.cya);
@@ -191,7 +191,10 @@
       b.box(2, 0, 3, 17, 3, 10, C.gry); b.ell(3, 2, 8, 3, 2, 3.4, C.gry); b.ell(16, 2, 8, 3, 2, 3.4, C.gry);
       b.box(4, 4, 5, 6, 4, 5, C.ink); b.box(5, 4, 4, 5, 4, 6, C.ink); [[13, 4, C.red], [15, 6, C.grn], [15, 4, C.blue], [17, 5, C.yel]].forEach(([x, z, c]) => b.set(x, 4, z, c)); b.box(9, 4, 6, 10, 4, 6, C.dgy);
     },
-    shell(b) { for (let i = 0; i < 70; i++) { const t = i * .18, r = .5 + t * .9; b.sph(8 + Math.cos(t) * r * .9, 1 + t * .25 + Math.sin(t) * r * .4, 8 + Math.sin(t) * r * .9, .6 + t * .18, i % 7 < 3 ? C.pnk : C.crm); } },
+    shell(b) {
+      for (let r = 0; r <= 9; r += .5) for (let a = -1.25; a <= 1.25; a += .06) { const x = 9 + r * Math.sin(a), y = 1 + r * Math.cos(a), rib = Math.round((a + 1.25) / .25) % 2; for (let z = 7 - Math.round(r * .25 * Math.cos(a * 1.2)); z <= 7; z++) b.set(x, y, z, rib ? C.pnk : C.crm); }
+      b.box(6, 0, 6, 12, 1, 8, C.pnk); b.set(7, 13, 4, C.wht);
+    },
     pill(b) { b.cylx(7, 7, 4, 9, 3, C.red); b.cylx(7, 7, 10, 15, 3, C.wht); b.sph(4, 7, 7, 3, C.red); b.sph(15, 7, 7, 3, C.wht); b.set(6, 10, 6, '#ff8a8a'); b.sph(8, 1, 14, 1.4, C.yel); b.sph(12, 1, 15, 1.2, C.blue); },
     lungs(b) { b.ell(4.5, 7, 7, 3.6, 6, 3, C.pnk); b.ell(12.5, 7, 7, 3.6, 6, 3, C.pnk); b.cyl(8.5, 7, 9, 16, 1, C.wht); b.line([8.5, 9, 7], [5, 7, 7], C.red); b.line([8.5, 9, 7], [12, 7, 7], C.red); },
   };
@@ -234,11 +237,14 @@
     const ct = Math.cos(th), st = Math.sin(th);
     const rot = (x, y, z) => { const x1 = x * ct + z * st, z1 = -x * st + z * ct; return [x1, y * CP - z1 * SP, y * SP + z1 * CP]; };
     // per frame: rotated face normals, visibility, shade, projected corner offsets
+    // dark theme: lift near-black voxels so nothing is dark-on-dark
+    const dk = document.documentElement.getAttribute('data-ff-theme') === 'dark';
+    const pal = dk ? md.pal.map((c) => (Math.max(...c) < 100 ? c.map((v) => v * .45 + 160 * .55) : c)) : md.pal;
     const vis = [];
     FACES.forEach((f, fi) => {
       const n = rot(...f); if (n[2] <= .02) return;
       const sh = .5 + .55 * Math.max(0, n[0] * LIGHT[0] + n[1] * LIGHT[1] + n[2] * LIGHT[2]);
-      vis.push({ off: CORN[fi].map((c) => { const r = rot(...c); return [r[0] * s, -r[1] * s]; }), cols: md.pal.map(([r, g, b]) => `rgb(${Math.min(255, r * sh) | 0},${Math.min(255, g * sh) | 0},${Math.min(255, b * sh) | 0})`) });
+      vis.push({ off: CORN[fi].map((c) => { const r = rot(...c); return [r[0] * s, -r[1] * s]; }), cols: pal.map(([r, g, b]) => `rgb(${Math.min(255, r * sh) | 0},${Math.min(255, g * sh) | 0},${Math.min(255, b * sh) | 0})`) });
     });
     const n = md.n, SX = new Float32Array(n), SY = new Float32Array(n), DZ = new Float32Array(n), ord = new Uint16Array(n);
     const e = ex * ex * 22;
@@ -326,7 +332,7 @@
         <button type="button" class="ff-vs-x" aria-label="${esc(S.close)}">×</button></div>
       ${d.st ? `<p class="ff-vs-st" style="--i:${i++}"${lg(d)}>${esc(d.st)}</p>` : ''}
       <ol class="ff-vs-secs" aria-label="${esc(`${d.sec.length} ${S.secs}`)}">${d.sec.map((x, k) => `<li style="--i:${i++}"${lg(x)}>
-        <span class="ff-vs-n">${d.n >= 0 ? `ff.${d.n}.${k + 1}` : k + 1}</span>
+        ${/^ff\.\d/.test(x.t) ? '' : `<span class="ff-vs-n">${d.n >= 0 ? `ff.${d.n}.${k + 1}` : k + 1}</span>`}
         <h3>${esc(x.t)}</h3>${x.p ? `<p>${esc(x.p)}</p>` : ''}
         <a href="${esc(d.u)}#${esc(x.a)}" aria-label="${esc(`${S.read}: ${x.t}`)}">${esc(S.read)} →</a></li>`).join('')}</ol>
       <div class="ff-vs-foot" style="--i:${i++}"><a class="ff-btn ff-btn-primary" href="${esc(d.u)}">${esc(S.issue)} →</a>${d.o ? `<a href="${esc(d.o)}" target="_blank" rel="noopener noreferrer">${esc(S.sub)}</a>` : ''}</div>

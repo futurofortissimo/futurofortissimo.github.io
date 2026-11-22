@@ -50,9 +50,16 @@ export const slugify = (text) => {
     .replace(/\-\-+/g, '-');
 };
 
+// emoji get their own span (.ff-emo) so dark-glyph emoji such as 🎼 stay legible on the dark theme
+const EMOJI_RE = /(\p{Extended_Pictographic}(?:\uFE0F|\u200D\p{Extended_Pictographic}|\uFE0F\u20E3)*)/u;
+const withEmoji = (str, key = 'e') => {
+  if (typeof str !== 'string' || !EMOJI_RE.test(str)) return str;
+  return str.split(EMOJI_RE).map((part, i) => (i % 2 ? React.createElement('span', { key: `${key}${i}`, className: 'ff-emo' }, part) : part));
+};
+
 export const HighlightText = ({ text, highlight }) => {
   if (!highlight || !highlight.trim()) {
-    return React.createElement(React.Fragment, null, text);
+    return React.createElement(React.Fragment, null, withEmoji(text));
   }
 
   try {
@@ -66,7 +73,7 @@ export const HighlightText = ({ text, highlight }) => {
       parts.map((part, i) =>
         regex.test(part)
           ? React.createElement('mark', { key: i, className: 'bg-yellow-200 text-black rounded-sm px-0.5 mx-0.5 font-medium' }, part)
-          : part
+          : withEmoji(part, `p${i}-`)
       )
     );
   } catch (e) {
