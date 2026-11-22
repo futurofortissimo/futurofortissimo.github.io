@@ -152,12 +152,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -166,9 +166,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -221,12 +221,12 @@
         <a href="/libri/">Libri</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="Cerca (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Cerca</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Cerca (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">Cerca</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="Lingua"><a href="/archivio/ff-52.html" hreflang="it" lang="it" title="Italiano" data-keep-state aria-current="page">IT</a><a href="/en/archive/ff-52.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/archive/ff-52.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="Tema scuro" title="Tema scuro"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Iscriviti</a>
         <details class="ff-more">
-          <summary aria-label="Altro"><span aria-hidden="true">☰</span><span class="sr-only">Altro</span></summary>
+          <summary aria-label="Altro"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">Altro</span></summary>
           <nav class="ff-menu" aria-label="Altro">
             <a href="/book/">📖 Il Libro</a>
             <a href="/book/ffxy-index.html">🔢 ff.x.y</a>
@@ -243,24 +243,24 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/">Home</a> /</li><li><a class="underline" href="/archivio/">Archivio</a> /</li><li aria-current="page">ff.52 Fondare una Nazione in garage</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>52</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>52</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="wave" data-ff-slug="ff-52" data-label="Apri l’oggetto 3D e l’anteprima di ff.52"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Archivio Futuro Fortissimo</p>
       <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.52 Fondare una Nazione in garage</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">Centralizzazione o decentralizzazione? Un equilibrio instabile</p>
       <p class="mt-2 text-xs font-mono text-black/70">Pubblicato il <time datetime="2023-03-07T07:41:06.159Z">7 marzo 2023</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/archivio/ff-52.html" data-done="Link copiato"><span aria-hidden="true">↗</span> Condividi</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/archivio/ff-52.html" data-done="Link copiato"><span aria-hidden="true">🔗</span> Copia link</button>
-        <a href="https://fortissimo.substack.com/p/ff52-fondare-una-nazione-in-garage" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Leggi originale su Substack ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/archivio/ff-52.html" data-done="Link copiato"><span aria-hidden="true">↗</span> Condividi</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/archivio/ff-52.html" data-done="Link copiato"><span aria-hidden="true">🔗</span> Copia link</button>
+        <a href="https://fortissimo.substack.com/p/ff52-fondare-una-nazione-in-garage" target="_blank" rel="noopener noreferrer" class="ff-qlink">Leggi originale su Substack ↗</a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• 3600 microregioni che generano metà del PIL mondiale</li>
-        <li>• Centralizzazione tecnologica / decentralizzazione istituzionale</li>
-        <li>• Il libro gratuito dell’ex-CTO di Coinbase</li>
+      <ul class="ff-keypoints">
+        <li>3600 microregioni che generano metà del PIL mondiale</li>
+        <li>Centralizzazione tecnologica / decentralizzazione istituzionale</li>
+        <li>Il libro gratuito dell’ex-CTO di Coinbase</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Temi</span><a href="/themes.html#geo" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🏛 Geopolitica, economia e società</a><a href="/themes.html#clima" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🌍 Natura, clima ed energia</a><a href="/themes.html#ai" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🤖 AI, agenti e modelli</a></p>
-      <nav aria-label="Sezioni del numero" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">Temi</span><a href="/themes.html#geo" class="ff-tlink">🏛 Geopolitica, economia e società</a><a href="/themes.html#clima" class="ff-tlink">🌍 Natura, clima ed energia</a><a href="/themes.html#ai" class="ff-tlink">🤖 AI, agenti e modelli</a></p>
+      <nav aria-label="Sezioni del numero" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">In questo numero</h2>
         <ol>
           <li><a href="#ff-52-1">🔒 ff.52.1 Un mondo criptico</a></li>
@@ -272,10 +272,10 @@
 
     
 
-    <section id="ff-52-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-52-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🔒 ff.52.1 Un mondo criptico</h2>
-        <a href="https://fortissimo.substack.com/i/83498036/ff-un-mondo-criptico" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.52.1 Un mondo criptico">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/83498036/ff-un-mondo-criptico" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.52.1 Un mondo criptico">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">La democrazia trema. Tanta la fragilità della democrazia e delle istituzioni moderne. Il terremoto in Turchia ha mostrato che alcuni stati nazionali non sono in grado nemmeno di contare persone, valutare lo stato edilizio o assegnare possedimenti.</p>
@@ -285,18 +285,18 @@
         <p class="text-base leading-relaxed text-black/90">Dare Obasanjo 🐀@Carnage4LifeThis video aged perfectly11:01 PM ∙ Nov 8, 20223,757Likes488Retweets</p>
       </div>
       
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://twitter.com/Carnage4Life/status/1590117424946647041?s=20&amp;t=NDAXU_XPMW0tl6zALm-urA" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Dare Obasanjo 🐀@Carnage4LifeThis video aged perfectly</a>
+          <div class="ff-refs-l">
+            <a href="https://twitter.com/Carnage4Life/status/1590117424946647041?s=20&amp;t=NDAXU_XPMW0tl6zALm-urA" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Dare Obasanjo 🐀@Carnage4LifeThis video aged perfectly</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-52-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-52-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🏙️ ff.52.2 Centralizzare conviene</h2>
-        <a href="https://fortissimo.substack.com/i/83498036/ff-centralizzare-conviene" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.52.2 Centralizzare conviene">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/83498036/ff-centralizzare-conviene" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.52.2 Centralizzare conviene">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Centralizzazione o decentralizzazione? Aggiungiamo un tassello al futuro fortissimo di oggi: le città. O meglio, la centralizzazione. McKinsey ci assiste anche a questo giro, facendo notare chemetà del PIL mondiale nel decennio 2010-2020 è stato generato in 3600 regioni(che coprono l’1% del pianeta).</p>
@@ -313,42 +313,42 @@
         <p class="text-base leading-relaxed text-black/90">Obviously we&#39;ll have software improvements for a while, but this significantly reduces... 8:57 AM ∙ Feb 23, 202327Likes1Retweet</p>
         <p class="text-base leading-relaxed text-black/90">Share</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!wLkD!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F26c8bc9e-4d11-4422-b22a-973273987cae_1536x976.png" width="1536" height="976" alt="🏙️ ff.52.2 Centralizzare conviene" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!iohs!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff8a20eaf-a75d-497d-87ee-7a9fb6e62891_1179x1609.jpeg" width="1179" height="1609" alt="🏙️ ff.52.2 Centralizzare conviene" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!H6aI!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2af73eab-72b7-42c8-ad9c-b381973ebbf4_844x315.png" width="844" height="315" alt="🏙️ ff.52.2 Centralizzare conviene" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (7)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.mckinsey.com/mgi/our-research/Pixels-of-progress-chapter-1?utm_source=substack&amp;utm_medium=email" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ metà del PIL mondiale nel decennio 2010-2020 è stato generato in 3600 regioni</a>
-            <a href="https://twitter.com/MattHaneySF/status/1602691188905091072/photo/1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ dato che sembra che inquinino meno</a>
-            <a href="https://replika.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Replika, il bot PEGI18 che vi invia (pagando) foto hot</a>
-            <a href="https://twitter.com/punk6529/status/1626299802156769280?s=20&amp;utm_source=substack&amp;utm_medium=email" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 6529@punk65291/ On Taxis
+          <div class="ff-refs-l">
+            <a href="https://www.mckinsey.com/mgi/our-research/Pixels-of-progress-chapter-1?utm_source=substack&amp;utm_medium=email" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ metà del PIL mondiale nel decennio 2010-2020 è stato generato in 3600 regioni</a>
+            <a href="https://twitter.com/MattHaneySF/status/1602691188905091072/photo/1" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ dato che sembra che inquinino meno</a>
+            <a href="https://replika.com/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Replika, il bot PEGI18 che vi invia (pagando) foto hot</a>
+            <a href="https://twitter.com/punk6529/status/1626299802156769280?s=20&amp;utm_source=substack&amp;utm_medium=email" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ 6529@punk65291/ On Taxis
 
 Or how the world is centralizing all around you, but why you, fellow citizen, have probably not thought about it at all.
 
 (NYC, 2007 below)</a>
-            <a href="https://www.technologyreview.com/2021/10/27/1037118/moores-law-computer-chips/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ ASML potrebbe fermare la legge di Moore</a>
-            <a href="https://twitter.com/RokoMijic/status/1628680426674954240?s=20&amp;utm_source=substack&amp;utm_medium=email" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Roko.Eth@RokoMijicFurther hardware improvements can be stopped since the supply chain for EUV photolithography relies on one company (ASML). A few key companies can be shut down and Moore&#39;s Law stops. 
+            <a href="https://www.technologyreview.com/2021/10/27/1037118/moores-law-computer-chips/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ ASML potrebbe fermare la legge di Moore</a>
+            <a href="https://twitter.com/RokoMijic/status/1628680426674954240?s=20&amp;utm_source=substack&amp;utm_medium=email" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Roko.Eth@RokoMijicFurther hardware improvements can be stopped since the supply chain for EUV photolithography relies on one company (ASML). A few key companies can be shut down and Moore&#39;s Law stops. 
 
 Obviously we&#39;ll have software improvements for a while, but this significantly reduces...</a>
-            <a href="https://fortissimo.substack.com/p/ff52-fondare-una-nazione-in-garage?utm_source=substack&amp;utm_medium=email&amp;utm_content=share&amp;action=share" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Share</a>
+            <a href="https://fortissimo.substack.com/p/ff52-fondare-una-nazione-in-garage?utm_source=substack&amp;utm_medium=email&amp;utm_content=share&amp;action=share" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Share</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-52-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-52-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🌐 ff.52.3 Fondare la propria nazione</h2>
-        <a href="https://fortissimo.substack.com/i/83498036/ff-fondare-la-propria-nazione" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.52.3 Fondare la propria nazione">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/83498036/ff-fondare-la-propria-nazione" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.52.3 Fondare la propria nazione">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Nazioni fatte in casa. Balaji Srinivasan (ex CTO di Coinbase e general partner aA16Z) propone una soluzione a questi problemi col suo recente libroThe Network State, gratuitamente accessibile online(tranquilli è anche riassunto con una frase, 1000 parole, un’immagine, o un breve saggio).</p>
@@ -366,35 +366,35 @@ Obviously we&#39;ll have software improvements for a while, but this significant
         <p class="text-base leading-relaxed text-black/90">E ricordati di mettere un cuoricino qua sotto.</p>
         <p class="text-base leading-relaxed text-black/90">❤️</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!rQP9!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3beb61bb-db40-49bf-abce-3b6acf3ccf90_376x500.jpeg" width="376" height="500" alt="🌐 ff.52.3 Fondare la propria nazione" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!RTdF!,w_1456,c_limit,f_auto,q_auto:good,fl_lossy/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F151f4795-1daf-4f30-ba71-f4c51f200edd_1200x600.gif" width="1200" height="600" alt="L’evoluzione di un possibile Network State." loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">L’evoluzione di un possibile Network State.</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (2)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://a16z.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ A16Z</a>
-            <a href="https://thenetworkstate.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ The Network State, gratuitamente accessibile online</a>
+          <div class="ff-refs-l">
+            <a href="https://a16z.com/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ A16Z</a>
+            <a href="https://thenetworkstate.com/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ The Network State, gratuitamente accessibile online</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">Numeri correlati</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-50.html" class="font-bold hover:underline">ff.50 Cosa c**** è successo nel 1971?</a><p class="text-sm text-black/75 mt-1">La grande stagnazione tra oro, bitcoin, iPhone e un futuro più roseo</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-42.html" class="font-bold hover:underline">ff.42 Made in China (pt.1)</a><p class="text-sm text-black/75 mt-1">La via della seta non è mai stata così impervia</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-60.html" class="font-bold hover:underline">ff.60 La guida autonoma è qui!</a><p class="text-sm text-black/75 mt-1">Chi vincerà la corsa verso i robo-taxi? Elon Musk o la Cina con DriveGPT?</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-59.html" class="font-bold hover:underline">ff.59 L&#39;ottimismo vola!</a><p class="text-sm text-black/75 mt-1">Superare la stagnazione tecnologica (se esiste) per un futuro positivo</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/archivio/ff-50.html" class="font-bold hover:underline">ff.50 Cosa c**** è successo nel 1971?</a><p class="text-sm text-black/75 mt-1">La grande stagnazione tra oro, bitcoin, iPhone e un futuro più roseo</p></li>
+        <li><a href="/archivio/ff-42.html" class="font-bold hover:underline">ff.42 Made in China (pt.1)</a><p class="text-sm text-black/75 mt-1">La via della seta non è mai stata così impervia</p></li>
+        <li><a href="/archivio/ff-60.html" class="font-bold hover:underline">ff.60 La guida autonoma è qui!</a><p class="text-sm text-black/75 mt-1">Chi vincerà la corsa verso i robo-taxi? Elon Musk o la Cina con DriveGPT?</p></li>
+        <li><a href="/archivio/ff-59.html" class="font-bold hover:underline">ff.59 L&#39;ottimismo vola!</a><p class="text-sm text-black/75 mt-1">Superare la stagnazione tecnologica (se esiste) per un futuro positivo</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Ricevi i nuovi numeri di Futuro Fortissimo</h2>
@@ -409,7 +409,7 @@ Obviously we&#39;ll have software improvements for a while, but this significant
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -461,7 +461,7 @@ Obviously we&#39;ll have software improvements for a while, but this significant
     <ul id="ff-results" role="listbox" aria-label="Cerca"></ul>
     <div class="ff-s-foot"><a href="/archivio/" data-ff-all data-base="/archivio/">Tutti i risultati nell’archivio →</a><span>Premi / per cercare ovunque</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

@@ -145,12 +145,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -159,9 +159,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -214,12 +214,12 @@
         <a href="/libri/">Libri</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="Cerca (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Cerca</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Cerca (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">Cerca</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="Lingua"><a href="/archivio/ff-55.html" hreflang="it" lang="it" title="Italiano" data-keep-state aria-current="page">IT</a><a href="/en/archive/ff-55.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/archive/ff-55.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="Tema scuro" title="Tema scuro"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Iscriviti</a>
         <details class="ff-more">
-          <summary aria-label="Altro"><span aria-hidden="true">☰</span><span class="sr-only">Altro</span></summary>
+          <summary aria-label="Altro"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">Altro</span></summary>
           <nav class="ff-menu" aria-label="Altro">
             <a href="/book/">📖 Il Libro</a>
             <a href="/book/ffxy-index.html">🔢 ff.x.y</a>
@@ -236,24 +236,24 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/">Home</a> /</li><li><a class="underline" href="/archivio/">Archivio</a> /</li><li aria-current="page">ff.55 Sopravvivere alla rivoluzione</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>55</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>55</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="bulb" data-ff-slug="ff-55" data-label="Apri l’oggetto 3D e l’anteprima di ff.55"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Archivio Futuro Fortissimo</p>
       <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.55 Sopravvivere alla rivoluzione</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">Intelligenza artificiale tra ghigliottine, impotenza e perdizione</p>
       <p class="mt-2 text-xs font-mono text-black/70">Pubblicato il <time datetime="2023-03-30T07:05:59.295Z">30 marzo 2023</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/archivio/ff-55.html" data-done="Link copiato"><span aria-hidden="true">↗</span> Condividi</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/archivio/ff-55.html" data-done="Link copiato"><span aria-hidden="true">🔗</span> Copia link</button>
-        <a href="https://fortissimo.substack.com/p/ff54-come-capire-una-rivoluzione" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Leggi originale su Substack ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/archivio/ff-55.html" data-done="Link copiato"><span aria-hidden="true">↗</span> Condividi</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/archivio/ff-55.html" data-done="Link copiato"><span aria-hidden="true">🔗</span> Copia link</button>
+        <a href="https://fortissimo.substack.com/p/ff54-come-capire-una-rivoluzione" target="_blank" rel="noopener noreferrer" class="ff-qlink">Leggi originale su Substack ↗</a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• Una macchina che scannerizza attività neurale e ricostruisce quello che stiamo vedendo (!)</li>
-        <li>• Com&#39;è vivere dentro una rivoluzione?</li>
-        <li>• Perché non possiamo prevedere il futuro (ma ci provo)</li>
+      <ul class="ff-keypoints">
+        <li>Una macchina che scannerizza attività neurale e ricostruisce quello che stiamo vedendo (!)</li>
+        <li>Com&#39;è vivere dentro una rivoluzione?</li>
+        <li>Perché non possiamo prevedere il futuro (ma ci provo)</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Temi</span><a href="/themes.html#ai" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🤖 AI, agenti e modelli</a></p>
-      <nav aria-label="Sezioni del numero" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">Temi</span><a href="/themes.html#ai" class="ff-tlink">🤖 AI, agenti e modelli</a></p>
+      <nav aria-label="Sezioni del numero" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">In questo numero</h2>
         <ol>
           <li><a href="#ff-55-1">✊ ff.55.1 Come ci si sente, dentro una rivoluzione?</a></li>
@@ -266,10 +266,10 @@
 
     
 
-    <section id="ff-55-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-55-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">✊ ff.55.1 Come ci si sente, dentro una rivoluzione?</h2>
-        <a href="https://fortissimo.substack.com/i/106257226/ff-come-ci-si-sente-dentro-una-rivoluzione" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.55.1 Come ci si sente, dentro una rivoluzione?">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/106257226/ff-come-ci-si-sente-dentro-una-rivoluzione" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.55.1 Come ci si sente, dentro una rivoluzione?">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Prima di affrontare ogni altra riflessione, vi suggerisco il sempre puntuale podcast di Lex Fridman con il fondatore di OpenAI.</p>
@@ -278,24 +278,24 @@
         <p class="text-base leading-relaxed text-black/90">Meditate gente, meditate! Palestre e Ironman stimolano il fisico sedentario di gran parte dei lavoratori: nessun feudatario si sognava di fare un ultra-trail o uneveresting. Allo stesso modo, mindfulness e meditazione (non a caso già in crescita) potrebbero essere sempre più importanti. Forse, l&#39;uomo ripiegherà su l’irriducibile, la sua coscienza.</p>
         <p class="text-base leading-relaxed text-black/90">Però, però, però. Non diamo per scontata nemmeno la coscienza, dato che icomputer già ricostruiscono quello che stiamo vedendo.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!F_6Q!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa573e176-c010-458c-9df5-a9095301650b_480x360.jpeg" width="480" height="360" alt="✊ ff.55.1 Come ci si sente, dentro una rivoluzione?" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://arxiv.org/pdf/2302.06590.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ l’efficienza del lavoro più pagato al mondo migliora del 50% dal giorno con la notte</a>
-            <a href="https://research.ark-invest.com/hubfs/1_Download_Files_ARK-Invest/Big_Ideas/ARK%20Invest_013123_Presentation_Big%20Ideas%202023_Final.pdf?utm_source=substack&amp;utm_medium=email" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ crescente convergenza (report annuale di ARK Invest)</a>
-            <a href="https://sites.google.com/view/stablediffusion-with-brain/?utm_source=substack&amp;utm_medium=email" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ computer già ricostruiscono quello che stiamo vedendo.</a>
+          <div class="ff-refs-l">
+            <a href="https://arxiv.org/pdf/2302.06590.pdf" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ l’efficienza del lavoro più pagato al mondo migliora del 50% dal giorno con la notte</a>
+            <a href="https://research.ark-invest.com/hubfs/1_Download_Files_ARK-Invest/Big_Ideas/ARK%20Invest_013123_Presentation_Big%20Ideas%202023_Final.pdf?utm_source=substack&amp;utm_medium=email" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ crescente convergenza (report annuale di ARK Invest)</a>
+            <a href="https://sites.google.com/view/stablediffusion-with-brain/?utm_source=substack&amp;utm_medium=email" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ computer già ricostruiscono quello che stiamo vedendo.</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-55-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-55-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🌾 ff.55.2 Campi da arare (e dati da reclamare)</h2>
-        <a href="https://fortissimo.substack.com/i/106257226/ff-campi-da-arare-e-dati-da-reclamare" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.55.2 Campi da arare (e dati da reclamare)">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/106257226/ff-campi-da-arare-e-dati-da-reclamare" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.55.2 Campi da arare (e dati da reclamare)">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Sam Korus di Ark Invest segnala come ogni rivoluzione dà valore a nuove materie prime e genera nuovi output, citando il libroTechnological Revolutions and Financial Capitaldi Carlota Perez.</p>
@@ -311,15 +311,15 @@
         <p class="text-base leading-relaxed text-black/90">Cookies e Cambridge Analytica. La riflessione sulla proprietà dei dati personali è già stata aperta dagli scandali degli ultimi anni. Ora che Stable Diffusion genera immagini “imparando” da contenuti pubblici su internet senza darne credito, la questione si è fatta più scottante.</p>
         <p class="text-base leading-relaxed text-black/90">Così nascono siti comeStableAttribution che identifica quali immagini abbiano ispirato il DALL-E di turuno, dando a Cesare quello che è di Cesare.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!0qop!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F22a91c43-0120-4226-8e73-5a9fdc5b3e79_733x739.png" width="733" height="739" alt="StableAttribution identifica le immagini che hanno ispirato l’output generativo di Midjourney." loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">StableAttribution identifica le immagini che hanno ispirato l’output generativo di Midjourney.</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://amzn.to/3ZFX3XZ" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] text-xs font-mono font-bold hover:underline">📚 Technological Revolutions and Financial Capital</a>
-            <a href="https://twitter.com/skorusARK/status/1628801290301054981" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Sam Korus@skorusARK1/From Carlota Perez&#39;s book:
+          <div class="ff-refs-l">
+            <a href="https://amzn.to/3ZFX3XZ" target="_blank" rel="noopener noreferrer sponsored" class="ff-ref is-book">📚 Technological Revolutions and Financial Capital</a>
+            <a href="https://twitter.com/skorusARK/status/1628801290301054981" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Sam Korus@skorusARK1/From Carlota Perez&#39;s book:
 
 Each new technological revolution is associated with new inputs.
 -iron
@@ -329,49 +329,49 @@ Each new technological revolution is associated with new inputs.
 -microelectronics
 
 Is it finally time for data to take its place as the key input for the Age of AI revolution?</a>
-            <a href="https://www.stableattribution.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ StableAttribution che identifica quali immagini abbiano ispirato il DALL-E di turuno</a>
+            <a href="https://www.stableattribution.com/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ StableAttribution che identifica quali immagini abbiano ispirato il DALL-E di turuno</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-55-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-55-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">👑 ff.55.3 Altro che Giulio Cesare: i nuovi imperatori</h2>
-        <a href="https://fortissimo.substack.com/i/106257226/ff-altro-che-giulio-cesare-i-nuovi-imperatori" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.55.3 Altro che Giulio Cesare: i nuovi imperatori">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/106257226/ff-altro-che-giulio-cesare-i-nuovi-imperatori" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.55.3 Altro che Giulio Cesare: i nuovi imperatori">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">In🎼 ff. 52 Fondare una Nazione in garageabbiamo parlato della crescente centralizzazione di alcuni servizi (e i problemi connessi ad essa). Mi ha colpito il dato relativo alcrollo del numero di dipendenti per raggiungere 1 M di revenue nelle aziende SP500.</p>
         <p class="text-base leading-relaxed text-black/90">Presto potremmo avere aziende da 1T$ composte da un solo dipendente assistito da centinaia di robot/intelligenza artificiale.</p>
         <p class="text-base leading-relaxed text-black/90">D’altronde, già oggi influencer potenziati da AI e network effect creano brand personali (hamburger di Mr. Beast,NFTs di Emily Ratajkowski): un esempio di quella cheLi Jin chiama Passion Economy. Ma sopravviveranno all’infinità di contenuti che verranno presto prodotti?</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!Rjqs!,w_1456,c_limit,f_auto,q_auto:good,fl_lossy/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdbc62a67-40bd-4e94-bd5f-e72b722143ab_238x160.gif" width="238" height="160" alt="👑 ff.55.3 Altro che Giulio Cesare: i nuovi imperatori" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!rwFq!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8a312513-9c61-4972-8e0b-31a529b2f827_707x419.png" width="707" height="419" alt="Numero di dipendenti per raggiungere 1M di vendite, media su SP500 (1986-2020)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Numero di dipendenti per raggiungere 1M di vendite, media su SP500 (1986-2020)</figcaption>
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!lU3g!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fee82465e-354c-47c1-8ac0-2fd4fbd51aa1_1615x645.png" width="1615" height="645" alt="👑 ff.55.3 Altro che Giulio Cesare: i nuovi imperatori" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (5)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.isabelnet.com/sp-500-total-number-of-employees-to-total-revenues-ratio/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ crollo del numero di dipendenti per raggiungere 1 M di revenue nelle aziende SP500</a>
-            <a href="https://www.mrbeastburger.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ hamburger di Mr. Beast</a>
-            <a href="https://www.nytimes.com/2021/04/23/style/emily-ratajkowski-nft-christies.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ NFTs di Emily Ratajkowski</a>
-            <a href="https://li-jin.co/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Li Jin chiama Passion Economy</a>
-            <a href="https://fortissimo.substack.com/p/ff52-fondare-una-nazione-in-garage" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🎼 ff.52 Fondare una Nazione in garage</a>
+          <div class="ff-refs-l">
+            <a href="https://www.isabelnet.com/sp-500-total-number-of-employees-to-total-revenues-ratio/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ crollo del numero di dipendenti per raggiungere 1 M di revenue nelle aziende SP500</a>
+            <a href="https://www.mrbeastburger.com/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ hamburger di Mr. Beast</a>
+            <a href="https://www.nytimes.com/2021/04/23/style/emily-ratajkowski-nft-christies.html" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ NFTs di Emily Ratajkowski</a>
+            <a href="https://li-jin.co/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Li Jin chiama Passion Economy</a>
+            <a href="https://fortissimo.substack.com/p/ff52-fondare-una-nazione-in-garage" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ 🎼 ff.52 Fondare una Nazione in garage</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-55-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-55-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🆕 ff.55.4 Un po’ di cose carine successe dall’ultimo aggiornamento</h2>
-        <a href="https://fortissimo.substack.com/i/106257226/ff-un-po-di-cose-carine-successe-dallultimo-aggiornamento" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.55.4 Un po’ di cose carine successe dall’ultimo aggiornamento">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/106257226/ff-un-po-di-cose-carine-successe-dallultimo-aggiornamento" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.55.4 Un po’ di cose carine successe dall’ultimo aggiornamento">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Recentemente il metodo stable diffusion ha surclassato i GANs,Generative Adversarial Networks. Eppure, se vogliamo passare da un’immagine generata con un prompt di testo ad un’altra,I GANs garantiscono transizioni video più consistenti.</p>
@@ -386,30 +386,30 @@ Is it finally time for data to take its place as the key input for the Age of AI
         <p class="text-base leading-relaxed text-black/90">☕❤️</p>
       </div>
       
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (5)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://sites.google.com/view/stylegan-t/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ I GANs garantiscono transizioni video più consistenti</a>
-            <a href="https://www.instagram.com/life_imitates_ai_art/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ life_imitates_ai_art</a>
-            <a href="https://instagram.com/life_imitates_ai_art" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ life_imitates_ai_art</a>
-            <a href="https://www.matthewtancik.com/nerf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Neural Radiance Fields</a>
-            <a href="https://twitter.com/bilawalsidhu/status/1623360174974021633?s=20" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Bilawal Sidhu@bilawalsidhu3D, AI, NeRFs and oh my! Immersive view is now rolling out to 5 cities, with 5 more to follow. Experience the best of all views, with helpful info layered on top, so you can decide when &amp; where to go. Proud to be part of the team-of-teams that made this maps milestone a reality!</a>
+          <div class="ff-refs-l">
+            <a href="https://sites.google.com/view/stylegan-t/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ I GANs garantiscono transizioni video più consistenti</a>
+            <a href="https://www.instagram.com/life_imitates_ai_art/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ life_imitates_ai_art</a>
+            <a href="https://instagram.com/life_imitates_ai_art" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ life_imitates_ai_art</a>
+            <a href="https://www.matthewtancik.com/nerf" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Neural Radiance Fields</a>
+            <a href="https://twitter.com/bilawalsidhu/status/1623360174974021633?s=20" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Bilawal Sidhu@bilawalsidhu3D, AI, NeRFs and oh my! Immersive view is now rolling out to 5 cities, with 5 more to follow. Experience the best of all views, with helpful info layered on top, so you can decide when &amp; where to go. Proud to be part of the team-of-teams that made this maps milestone a reality!</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">Numeri correlati</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-52.html" class="font-bold hover:underline">ff.52 Fondare una Nazione in garage</a><p class="text-sm text-black/75 mt-1">Centralizzazione o decentralizzazione? Un equilibrio instabile</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-63.html" class="font-bold hover:underline">ff.63 Che cinema!</a><p class="text-sm text-black/75 mt-1">Harry Potter fatto dalla Pixar (o sotto steroidi) e tormentoni estivi generati da Intelligenza Artificiale</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-54.html" class="font-bold hover:underline">ff.54 Sono stato lasciato da GPT-4</a><p class="text-sm text-black/75 mt-1">Petrarca, Caressa e un codice python: 1001 modi per scaricare una persona</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-48.html" class="font-bold hover:underline">ff.48 Risuscitare Aristotele</a><p class="text-sm text-black/75 mt-1">Cosa unisce Playboy, Steve Jobs, Gesù e ChatGPT?</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/archivio/ff-52.html" class="font-bold hover:underline">ff.52 Fondare una Nazione in garage</a><p class="text-sm text-black/75 mt-1">Centralizzazione o decentralizzazione? Un equilibrio instabile</p></li>
+        <li><a href="/archivio/ff-63.html" class="font-bold hover:underline">ff.63 Che cinema!</a><p class="text-sm text-black/75 mt-1">Harry Potter fatto dalla Pixar (o sotto steroidi) e tormentoni estivi generati da Intelligenza Artificiale</p></li>
+        <li><a href="/archivio/ff-54.html" class="font-bold hover:underline">ff.54 Sono stato lasciato da GPT-4</a><p class="text-sm text-black/75 mt-1">Petrarca, Caressa e un codice python: 1001 modi per scaricare una persona</p></li>
+        <li><a href="/archivio/ff-48.html" class="font-bold hover:underline">ff.48 Risuscitare Aristotele</a><p class="text-sm text-black/75 mt-1">Cosa unisce Playboy, Steve Jobs, Gesù e ChatGPT?</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Ricevi i nuovi numeri di Futuro Fortissimo</h2>
@@ -424,7 +424,7 @@ Is it finally time for data to take its place as the key input for the Age of AI
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -476,7 +476,7 @@ Is it finally time for data to take its place as the key input for the Age of AI
     <ul id="ff-results" role="listbox" aria-label="Cerca"></ul>
     <div class="ff-s-foot"><a href="/archivio/" data-ff-all data-base="/archivio/">Tutti i risultati nell’archivio →</a><span>Premi / per cercare ovunque</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

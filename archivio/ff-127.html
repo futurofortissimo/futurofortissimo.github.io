@@ -149,12 +149,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -163,9 +163,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -218,12 +218,12 @@
         <a href="/libri/">Libri</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="Cerca (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Cerca</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Cerca (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">Cerca</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="Lingua"><a href="/archivio/ff-127.html" hreflang="it" lang="it" title="Italiano" data-keep-state aria-current="page">IT</a><a href="/en/archive/ff-127.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/archive/ff-127.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="Tema scuro" title="Tema scuro"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Iscriviti</a>
         <details class="ff-more">
-          <summary aria-label="Altro"><span aria-hidden="true">☰</span><span class="sr-only">Altro</span></summary>
+          <summary aria-label="Altro"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">Altro</span></summary>
           <nav class="ff-menu" aria-label="Altro">
             <a href="/book/">📖 Il Libro</a>
             <a href="/book/ffxy-index.html">🔢 ff.x.y</a>
@@ -240,24 +240,24 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/">Home</a> /</li><li><a class="underline" href="/archivio/">Archivio</a> /</li><li aria-current="page">ff.127 Jazz con ChatGPT</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>127</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>127</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="clef" data-ff-slug="ff-127" data-label="Apri l’oggetto 3D e l’anteprima di ff.127"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Archivio Futuro Fortissimo</p>
       <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.127 Jazz con ChatGPT</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">Perché umanesimo e scienza devono tornare a parlarsi?</p>
       <p class="mt-2 text-xs font-mono text-black/70">Pubblicato il <time datetime="2025-06-20T06:00:47.398Z">20 giugno 2025</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/archivio/ff-127.html" data-done="Link copiato"><span aria-hidden="true">↗</span> Condividi</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/archivio/ff-127.html" data-done="Link copiato"><span aria-hidden="true">🔗</span> Copia link</button>
-        <a href="https://fortissimo.substack.com/p/ff127-jazz-con-chatgpt" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Leggi originale su Substack ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/archivio/ff-127.html" data-done="Link copiato"><span aria-hidden="true">↗</span> Condividi</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/archivio/ff-127.html" data-done="Link copiato"><span aria-hidden="true">🔗</span> Copia link</button>
+        <a href="https://fortissimo.substack.com/p/ff127-jazz-con-chatgpt" target="_blank" rel="noopener noreferrer" class="ff-qlink">Leggi originale su Substack ↗</a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• Rick Rubin: da Adele a Anthropic</li>
-        <li>• Ma cos’è ilvibe coding?</li>
-        <li>• Leopardi riscrive l’equazione di Schrödinger</li>
+      <ul class="ff-keypoints">
+        <li>Rick Rubin: da Adele a Anthropic</li>
+        <li>Ma cos’è ilvibe coding?</li>
+        <li>Leopardi riscrive l’equazione di Schrödinger</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Temi</span><a href="/themes.html#ai" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🤖 AI, agenti e modelli</a><a href="/themes.html#cultura" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🎨 Cultura, libri e arte</a></p>
-      <nav aria-label="Sezioni del numero" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">Temi</span><a href="/themes.html#ai" class="ff-tlink">🤖 AI, agenti e modelli</a><a href="/themes.html#cultura" class="ff-tlink">🎨 Cultura, libri e arte</a></p>
+      <nav aria-label="Sezioni del numero" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">In questo numero</h2>
         <ol>
           <li><a href="#ff-127-1">🛣️ ff.127.1 La terza vIA?</a></li>
@@ -270,10 +270,10 @@
 
     
 
-    <section id="ff-127-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-127-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🛣️ ff.127.1 La terza vIA?</h2>
-        <a href="https://fortissimo.substack.com/i/165079348/ff-la-terza-via" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.127.1 La terza vIA?">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/165079348/ff-la-terza-via" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.127.1 La terza vIA?">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Sin dal liceo, sono stato affascinato dall’intersezione tra umanesimo e sapere scientifico. Penso l’avrete capito anche da futuro fortissimo (🖼️ ff.18.3 L’arte, tra intelligenza artificiale e l’uomo,📜 ff.101.4 Web Poetico).</p>
@@ -283,24 +283,24 @@
         <p class="text-base leading-relaxed text-black/90">[…] ho chiesto ai presenti quanti di loro sapessero descrivere il Secondo Principio della Termodinamica. La risposta è stata negativa. Eppure stavo chiedendo l&#39;equivalente scientifico di: “hai letto un&#39;opera di Shakespeare?”C. P. Snow,Le due culture</p>
         <p class="text-base leading-relaxed text-black/90">L’Intelligenza Artificiale può abbattere questo “muro di Berlino”?</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!UuiF!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4594102c-46ac-47b2-b15a-bd97eaf3355f_880x324.png" width="880" height="324" alt="Varie interpretazioni e iterazioni “creative” della sinteticità tra poesia ed equazioni (micmer x o3)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Varie interpretazioni e iterazioni “creative” della sinteticità tra poesia ed equazioni (micmer x o3)</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://amzn.to/3SBldB7" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] text-xs font-mono font-bold hover:underline">📚 Le due culture</a>
-            <a href="https://fortissimo.substack.com/i/49403403/ff-larte-tra-intelligenza-artificiale-e-luomo" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🖼️ ff.18.3 L’arte, tra intelligenza artificiale e l’uomo</a>
-            <a href="https://fortissimo.substack.com/i/147431787/ff-web-poetico" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 📜 ff.101.4 Web Poetico</a>
+          <div class="ff-refs-l">
+            <a href="https://amzn.to/3SBldB7" target="_blank" rel="noopener noreferrer sponsored" class="ff-ref is-book">📚 Le due culture</a>
+            <a href="https://fortissimo.substack.com/i/49403403/ff-larte-tra-intelligenza-artificiale-e-luomo" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ 🖼️ ff.18.3 L’arte, tra intelligenza artificiale e l’uomo</a>
+            <a href="https://fortissimo.substack.com/i/147431787/ff-web-poetico" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ 📜 ff.101.4 Web Poetico</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-127-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-127-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🤘 ff.127.2 Rock ‘n’ roll e vibe coding</h2>
-        <a href="https://fortissimo.substack.com/i/165079348/ff-rock-n-roll-e-vibe-coding" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.127.2 Rock ‘n’ roll e vibe coding">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/165079348/ff-rock-n-roll-e-vibe-coding" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.127.2 Rock ‘n’ roll e vibe coding">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Secondo il mitico Rick Rubin (🎤 ff.101.1 Il manager di Adele), sì.</p>
@@ -309,24 +309,24 @@
         <p class="text-base leading-relaxed text-black/90">Però, però, però.L’AI non deve essere un semplice copia e incolla: la prima risposta, per la natura statistica degli LLMs, è  “comune”, banale, poco creativa.</p>
         <p class="text-base leading-relaxed text-black/90">Rick spiega come usa l’AI: lo fa in modo iterativo, con domande e commenti, allineando sempre più le risposte col suo gusto artistico. Lo stesso metodo che utilizzava nei primi lavori con Johnny Cash.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!5hJh!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcb6904cf-d041-48f1-9ecc-5e5831cf9dbb_878x445.png" width="878" height="445" alt="Il podcast di A16Z con Rick Rubin e il suo nuovo libro The Way of Code(futuro fortissimo)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Il podcast di A16Z con Rick Rubin e il suo nuovo libro The Way of Code(futuro fortissimo)</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.thewayofcode.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ The Way of Code</a>
-            <a href="https://fortissimo.substack.com/i/147431787/ff-il-manager-di-adele" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🎤 ff.101.1 Il manager di Adele</a>
-            <a href="https://fortissimo.substack.com/i/148256057/ff-essere-acqua" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ ☯️ ff.108.3 Essere acqua</a>
+          <div class="ff-refs-l">
+            <a href="https://www.thewayofcode.com/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ The Way of Code</a>
+            <a href="https://fortissimo.substack.com/i/147431787/ff-il-manager-di-adele" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ 🎤 ff.101.1 Il manager di Adele</a>
+            <a href="https://fortissimo.substack.com/i/148256057/ff-essere-acqua" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ ☯️ ff.108.3 Essere acqua</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-127-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-127-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🐆 ff.127.3 Leopardi e l’equazione di Schrödinger</h2>
-        <a href="https://fortissimo.substack.com/i/165079348/ff-leopardi-e-lequazione-di-schrodinger" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.127.3 Leopardi e l’equazione di Schrödinger">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/165079348/ff-leopardi-e-lequazione-di-schrodinger" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.127.3 Leopardi e l’equazione di Schrödinger">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Perché ora? Due anni fa, l’arte generativa dava scarsi risultati (🌳 ff.35.5 L&#39;infinito di Leopardi secondo l’AI). Oggi è tutta un’altra musica (remixata).</p>
@@ -335,22 +335,22 @@
         <p class="text-base leading-relaxed text-black/90">“l’operatore Laplaciano, arcano scalpello dell’infinito”“noi, larve d’atomi”“ħ, lieve cencio stellare”</p>
         <p class="text-base leading-relaxed text-black/90">Se non è poetico questo…</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!YnaO!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4de83c8a-71aa-4002-8b44-fb4f936ea7d6_181x44.svg" alt="L’Equazione di Schrödinger spiegata a un bambino di 5 anni con ChatGPT" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">L’Equazione di Schrödinger spiegata a un bambino di 5 anni con ChatGPT</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://fortissimo.substack.com/i/147431787/ff-web-poetico" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🌳 ff.35.5 L&#39;infinito di Leopardi secondo l’AI</a>
+          <div class="ff-refs-l">
+            <a href="https://fortissimo.substack.com/i/147431787/ff-web-poetico" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ 🌳 ff.35.5 L&#39;infinito di Leopardi secondo l’AI</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-127-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-127-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🚁 ff.127.4 E Palantir che c’entra?</h2>
-        <a href="https://fortissimo.substack.com/i/165079348/ff-e-palantir-che-centra" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.127.4 E Palantir che c’entra?">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/165079348/ff-e-palantir-che-centra" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.127.4 E Palantir che c’entra?">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">L’umanesimo è anche cura per venti di guerra.</p>
@@ -363,44 +363,44 @@
         <p class="text-base leading-relaxed text-black/90">👋 A presto, damicmer</p>
         <p class="text-base leading-relaxed text-black/90">©futuro fortissimo|michele merelli</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!TXy7!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F396d2ac9-8074-4acb-8a49-a482ccc4a4bd_864x458.png" width="864" height="458" alt="Il monito di 10 anni fa di naval sui droni come prossime bombe nucleari(futuro fortissimo)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Il monito di 10 anni fa di naval sui droni come prossime bombe nucleari(futuro fortissimo)</figcaption>
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!9aQF!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7988faa4-53e7-4847-aa17-efdb321655c4_975x1500.jpeg" width="975" height="1500" alt="Il libro del fondatore di Palantir, Alex Karp,The Technological Republic(futuro fortissimo)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Il libro del fondatore di Palantir, Alex Karp,The Technological Republic(futuro fortissimo)</figcaption>
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!YBN5!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9c773f73-70ef-431c-b15c-eb1365552df0_309x482.png" width="309" height="482" alt="Tra bellezza e guerra:Diaries of WarUcraina-Russia di Nora Krug(futuro fortissimo)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Tra bellezza e guerra:Diaries of WarUcraina-Russia di Nora Krug(futuro fortissimo)</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (7)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.amacad.org/humanities-indicators/higher-education/bachelors-degrees-humanities#31600" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ è passato dal 14 al 7% (179k) dal 1966 ad oggi</a>
-            <a href="https://www.reddit.com/r/dataisbeautiful/comments/ocpf0g/oc_us_computer_science_bachelors_degrees_awarded/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ ingegneria informatica è arrivato a 90k nel 2020</a>
-            <a href="https://amzn.to/4l5Sqks" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] text-xs font-mono font-bold hover:underline">📚 Lo Stato innovatore</a>
-            <a href="https://futurofortissimo.github.io/note.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ archivio note fortissime</a>
-            <a href="https://futurofortissimo.github.io/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ futuro fortissimo</a>
-            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ michele merelli</a>
-            <a href="https://fortissimo.substack.com/p/-ff14-la-guerra-non-e-futuro?utm_source=publication-search" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🎼 ff.14 La guerra non è futuro</a>
+          <div class="ff-refs-l">
+            <a href="https://www.amacad.org/humanities-indicators/higher-education/bachelors-degrees-humanities#31600" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ è passato dal 14 al 7% (179k) dal 1966 ad oggi</a>
+            <a href="https://www.reddit.com/r/dataisbeautiful/comments/ocpf0g/oc_us_computer_science_bachelors_degrees_awarded/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ ingegneria informatica è arrivato a 90k nel 2020</a>
+            <a href="https://amzn.to/4l5Sqks" target="_blank" rel="noopener noreferrer sponsored" class="ff-ref is-book">📚 Lo Stato innovatore</a>
+            <a href="https://futurofortissimo.github.io/note.html" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ archivio note fortissime</a>
+            <a href="https://futurofortissimo.github.io/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ futuro fortissimo</a>
+            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ michele merelli</a>
+            <a href="https://fortissimo.substack.com/p/-ff14-la-guerra-non-e-futuro?utm_source=publication-search" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ 🎼 ff.14 La guerra non è futuro</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">Numeri correlati</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-101.html" class="font-bold hover:underline">ff.101 Adele vs AI</a></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-18.html" class="font-bold hover:underline">ff.18 Tra arte digitale e AI</a><p class="text-sm text-black/75 mt-1">Perché l&#39;arte è importante e come l&#39;intelligenza artificiale può essere più artistica dell&#39;uomo</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-108.html" class="font-bold hover:underline">ff.108 Inno alla routine</a><p class="text-sm text-black/75 mt-1">Ogni giorno può essere un &quot;Perfect Day&quot;</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-146.html" class="font-bold hover:underline">ff.146 Cicatrici silenziose</a><p class="text-sm text-black/75 mt-1">Contro le infinite permutazioni dell&#39;AI, cicatrici e poesia?</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/archivio/ff-101.html" class="font-bold hover:underline">ff.101 Adele vs AI</a></li>
+        <li><a href="/archivio/ff-18.html" class="font-bold hover:underline">ff.18 Tra arte digitale e AI</a><p class="text-sm text-black/75 mt-1">Perché l&#39;arte è importante e come l&#39;intelligenza artificiale può essere più artistica dell&#39;uomo</p></li>
+        <li><a href="/archivio/ff-108.html" class="font-bold hover:underline">ff.108 Inno alla routine</a><p class="text-sm text-black/75 mt-1">Ogni giorno può essere un &quot;Perfect Day&quot;</p></li>
+        <li><a href="/archivio/ff-146.html" class="font-bold hover:underline">ff.146 Cicatrici silenziose</a><p class="text-sm text-black/75 mt-1">Contro le infinite permutazioni dell&#39;AI, cicatrici e poesia?</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Ricevi i nuovi numeri di Futuro Fortissimo</h2>
@@ -415,7 +415,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -467,7 +467,7 @@
     <ul id="ff-results" role="listbox" aria-label="Cerca"></ul>
     <div class="ff-s-foot"><a href="/archivio/" data-ff-all data-base="/archivio/">Tutti i risultati nell’archivio →</a><span>Premi / per cercare ovunque</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

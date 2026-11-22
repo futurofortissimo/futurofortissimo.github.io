@@ -153,12 +153,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -167,9 +167,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -222,12 +222,12 @@
         <a href="/libri/">Libri</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="Cerca (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Cerca</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Cerca (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">Cerca</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="Lingua"><a href="/archivio/ff-50.html" hreflang="it" lang="it" title="Italiano" data-keep-state aria-current="page">IT</a><a href="/en/archive/ff-50.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/archive/ff-50.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="Tema scuro" title="Tema scuro"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Iscriviti</a>
         <details class="ff-more">
-          <summary aria-label="Altro"><span aria-hidden="true">☰</span><span class="sr-only">Altro</span></summary>
+          <summary aria-label="Altro"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">Altro</span></summary>
           <nav class="ff-menu" aria-label="Altro">
             <a href="/book/">📖 Il Libro</a>
             <a href="/book/ffxy-index.html">🔢 ff.x.y</a>
@@ -244,24 +244,24 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/">Home</a> /</li><li><a class="underline" href="/archivio/">Archivio</a> /</li><li aria-current="page">ff.50 Cosa c**** è successo nel 1971?</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>50</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>50</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="coin" data-ff-slug="ff-50" data-label="Apri l’oggetto 3D e l’anteprima di ff.50"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Archivio Futuro Fortissimo</p>
       <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.50 Cosa c**** è successo nel 1971?</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">La grande stagnazione tra oro, bitcoin, iPhone e un futuro più roseo</p>
       <p class="mt-2 text-xs font-mono text-black/70">Pubblicato il <time datetime="2023-02-18T13:01:22.730Z">18 febbraio 2023</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/archivio/ff-50.html" data-done="Link copiato"><span aria-hidden="true">↗</span> Condividi</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/archivio/ff-50.html" data-done="Link copiato"><span aria-hidden="true">🔗</span> Copia link</button>
-        <a href="https://fortissimo.substack.com/p/ff50-cosa-c-e-successo-nel-1971" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Leggi originale su Substack ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/archivio/ff-50.html" data-done="Link copiato"><span aria-hidden="true">↗</span> Condividi</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/archivio/ff-50.html" data-done="Link copiato"><span aria-hidden="true">🔗</span> Copia link</button>
+        <a href="https://fortissimo.substack.com/p/ff50-cosa-c-e-successo-nel-1971" target="_blank" rel="noopener noreferrer" class="ff-qlink">Leggi originale su Substack ↗</a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• L’annus horribilis: 1971</li>
-        <li>• Quale intreccio tra oro, speranza nel futuro e Bitcoin?</li>
-        <li>• Perché abbiamo giga illimitati ma case scaldate col contagocce?</li>
+      <ul class="ff-keypoints">
+        <li>L’annus horribilis: 1971</li>
+        <li>Quale intreccio tra oro, speranza nel futuro e Bitcoin?</li>
+        <li>Perché abbiamo giga illimitati ma case scaldate col contagocce?</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Temi</span><a href="/themes.html#geo" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🏛 Geopolitica, economia e società</a><a href="/themes.html#crypto" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🪙 Crypto e metaverso</a><a href="/themes.html#ai" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🤖 AI, agenti e modelli</a></p>
-      <nav aria-label="Sezioni del numero" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">Temi</span><a href="/themes.html#geo" class="ff-tlink">🏛 Geopolitica, economia e società</a><a href="/themes.html#crypto" class="ff-tlink">🪙 Crypto e metaverso</a><a href="/themes.html#ai" class="ff-tlink">🤖 AI, agenti e modelli</a></p>
+      <nav aria-label="Sezioni del numero" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">In questo numero</h2>
         <ol>
           <li><a href="#ff-50-1">🤔 ff.50.1 La stranezza degli ultimi 50 anni</a></li>
@@ -274,10 +274,10 @@
 
     
 
-    <section id="ff-50-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-50-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🤔 ff.50.1 La stranezza degli ultimi 50 anni</h2>
-        <a href="https://fortissimo.substack.com/i/90181693/ff-la-stranezza-degli-ultimi-anni" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.50.1 La stranezza degli ultimi 50 anni">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/90181693/ff-la-stranezza-degli-ultimi-anni" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.50.1 La stranezza degli ultimi 50 anni">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Nel 2011 Tyler Cowen, economista professore della George Mason University ha pubblicato il famoso libroThe Great Stagnation,in cui sostiene che negli ultimi 50 anni vi sia stata una stasi tecno-economica. C’è poi un sito internet,WTF happened in 1971, che raccoglie grafici scombussolati dall’anno in questione. Ne prendo tre a caso.</p>
@@ -287,36 +287,36 @@
         <p class="text-base leading-relaxed text-black/90">Però, però, però. Gli ultimi 50 anni sono stati molto, molto particolari. Boom economico, diffusione dell’istruzione, esplosione demografica, mondo digitale e rivoluzione dei chip. E, più recentemente, la pandemia e i lockdown, la crisi subprime e quella “. com”.</p>
         <p class="text-base leading-relaxed text-black/90">Tanti, troppi i temi per trovare un’unica spiegazione. Ma vediamo una possibile con-causa: le politiche monetarie. I soldi stampati all’occorrenza.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!03Y5!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb8d6dc49-6e7d-4731-84de-100003bfb7f6_960x673.jpeg" width="960" height="673" alt="Tasso di inflazione (Consumer Price Index, CPI) negli stati uniti, dal 1770 ad oggi." loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Tasso di inflazione (Consumer Price Index, CPI) negli stati uniti, dal 1770 ad oggi.</figcaption>
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!tILo!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F93092f42-6ffa-4e34-8101-228765d4bb92_550x1024.jpeg" width="550" height="1024" alt="🤔 ff.50.1 La stranezza degli ultimi 50 anni" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!6U_S!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4b8ad737-5cd8-46d9-bb86-c0f37be003dd_750x713.png" width="750" height="713" alt="Prezzi delle case ad Amsterdam (1620-2020)." loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Prezzi delle case ad Amsterdam (1620-2020).</figcaption>
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!sj7C!,w_1456,c_limit,f_auto,q_auto:good,fl_lossy/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9f4d72bc-0603-4484-a071-ad6bb974bffa_640x362.gif" width="640" height="362" alt="🤔 ff.50.1 La stranezza degli ultimi 50 anni" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://amzn.to/3jAJKrZ" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] text-xs font-mono font-bold hover:underline">📚 The Great Stagnation</a>
-            <a href="https://wtfhappenedin1971.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ WTF happened in 1971</a>
-            <a href="https://www.usdebtclock.org/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Il debito pubblico degli Stati Uniti</a>
+          <div class="ff-refs-l">
+            <a href="https://amzn.to/3jAJKrZ" target="_blank" rel="noopener noreferrer sponsored" class="ff-ref is-book">📚 The Great Stagnation</a>
+            <a href="https://wtfhappenedin1971.com/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ WTF happened in 1971</a>
+            <a href="https://www.usdebtclock.org/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Il debito pubblico degli Stati Uniti</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-50-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-50-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🪙 ff.50.2 Oro, argento, mirra, birra e Bitcoin</h2>
-        <a href="https://fortissimo.substack.com/i/90181693/ff-oro-argento-mirra-birra-e-bitcoin" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.50.2 Oro, argento, mirra, birra e Bitcoin">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/90181693/ff-oro-argento-mirra-birra-e-bitcoin" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.50.2 Oro, argento, mirra, birra e Bitcoin">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">L’età dell’oro. L’economista della Columbia Saifedean Ammous inThe Bitcoin Standardfa notare che il progresso tecnologico del 20esimo secolo (simboleggiato dallabelle epoque) sia coinciso con l’implementazione del gold standard, il sistema monetario che garantiva la conversione della valuta di ogni paese ad un tasso ben preciso.</p>
@@ -325,22 +325,22 @@
         <p class="text-base leading-relaxed text-black/90">svalutazione moneta → meno fiducia nel futuro → meno investimenti → meno crescita → stagnazione</p>
         <p class="text-base leading-relaxed text-black/90">Per tornare a credere nel futuro, Ammous propone il Bitcoin come nuovo standard. La sua decentralizzazione e intrinseca limitazione in quantità (21 milioni) garantirebbero che nessuno manipoli le riserve, stabilizzando il valore di tutte le valute.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!yd4t!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa9189172-1dbe-4468-9c7c-c9ad2d58aded_600x339.png" width="600" height="339" alt="🪙 ff.50.2 Oro, argento, mirra, birra e Bitcoin" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://fred.stlouisfed.org/series/MABMM301USM189S#0" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Qui la situazione in US.</a>
+          <div class="ff-refs-l">
+            <a href="https://fred.stlouisfed.org/series/MABMM301USM189S#0" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Qui la situazione in US.</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-50-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-50-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">💻 ff.50.3 La stagnazione tecnologica</h2>
-        <a href="https://fortissimo.substack.com/i/90181693/ff-la-stagnazione-tecnologica" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.50.3 La stagnazione tecnologica">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/90181693/ff-la-stagnazione-tecnologica" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.50.3 La stagnazione tecnologica">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Negli ultimi 50 anni non è che non ci sia stato progresso. Anzi. Qui proviamo ad essere prima di tutto ottimisti e positivi. Però la stagnazione tecnologica in alcuni settori è innegabile.</p>
@@ -356,27 +356,27 @@
         <p class="text-base leading-relaxed text-black/90">La mia lettura:</p>
         <p class="text-base leading-relaxed text-black/90">Il discorso sulla tecnologia spaziale/nucleare è un po’ fuorviante. Ai tempi della guerra fredda (o della seconda guerra mondiale) l’accelerazione e la de-regolamentazione è stata talmente forte che alcune tecnologie sono arrivate “in anticipo”. La Legge di Moore (Wright applicata a chip) è la più famosa proprio perché i chip sono stati il primo esempio di scalabilità e loop positivo tra processo e risultato (computer migliori → chip migliori)Data la semplicità di raccolta dei frutti della Legge di Moore (e i notevoli vantaggi connessi), i soldi sono stati investiti lì. Oggi, i miglioramenti delle prestazioni dei PC sono sempre più piccoli (un esempio didiminishing marginal utility?) e la potenza computazionale favorisce loop positivi in altri ambiti (genetica, robotica, AI).</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!x9-7!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4a13dddb-2d86-429f-9872-e2fd668e0b60_851x651.png" width="851" height="651" alt="L’efficienza di conversione energetica da fonti termiche, Stati Uniti." loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">L’efficienza di conversione energetica da fonti termiche, Stati Uniti.</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (6)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://en.wikipedia.org/wiki/Eroom%27s_law" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Il costo dello sviluppo di farmaci raddoppia ogni anno</a>
-            <a href="https://www.nsf.gov/news/news_summ.jsp?cntn_id=244922" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ PhD (che però non sono in crescita come prima degli anni 70)</a>
-            <a href="https://amzn.to/3YU3xlX" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] text-xs font-mono font-bold hover:underline">📚 Growth: From Microorganisms to Megacities</a>
-            <a href="https://it.wikipedia.org/wiki/Equazione_logistica" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ grafici logistici</a>
-            <a href="https://instagram.com/futuro_fortissimo_newsletter" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ futuro_fortissimo_newsletter</a>
-            <a href="https://www.sciencedirect.com/topics/psychology/diminishing-marginal-utility" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ diminishing marginal utility?</a>
+          <div class="ff-refs-l">
+            <a href="https://en.wikipedia.org/wiki/Eroom%27s_law" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Il costo dello sviluppo di farmaci raddoppia ogni anno</a>
+            <a href="https://www.nsf.gov/news/news_summ.jsp?cntn_id=244922" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ PhD (che però non sono in crescita come prima degli anni 70)</a>
+            <a href="https://amzn.to/3YU3xlX" target="_blank" rel="noopener noreferrer sponsored" class="ff-ref is-book">📚 Growth: From Microorganisms to Megacities</a>
+            <a href="https://it.wikipedia.org/wiki/Equazione_logistica" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ grafici logistici</a>
+            <a href="https://instagram.com/futuro_fortissimo_newsletter" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ futuro_fortissimo_newsletter</a>
+            <a href="https://www.sciencedirect.com/topics/psychology/diminishing-marginal-utility" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ diminishing marginal utility?</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-50-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-50-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🌟 ff.50.4 Consumisti ma non di energia</h2>
-        <a href="https://fortissimo.substack.com/i/90181693/ff-consumisti-ma-non-di-energia" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.50.4 Consumisti ma non di energia">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/90181693/ff-consumisti-ma-non-di-energia" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.50.4 Consumisti ma non di energia">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Un altro aspetto che suggerisce una stagnazione è l’uso energetico. Il consumo pro capite di energia (sottolineo “pro capite” vista l’esplosione demografica dell’ultimo secolo e mezzo):</p>
@@ -394,7 +394,7 @@
         <p class="text-base leading-relaxed text-black/90">E ricordati di mettere un cuoricino qua sotto.</p>
         <p class="text-base leading-relaxed text-black/90">❤️</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!QCko!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8e526018-809a-4b9a-b158-878c1e679bbf_753x454.jpeg" width="753" height="454" alt="Consumo pro capite mondiale di energia (GJ/anno) negli ultimi 200 anni." loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Consumo pro capite mondiale di energia (GJ/anno) negli ultimi 200 anni.</figcaption>
         </figure>
@@ -402,17 +402,17 @@
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">Numeri correlati</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-52.html" class="font-bold hover:underline">ff.52 Fondare una Nazione in garage</a><p class="text-sm text-black/75 mt-1">Centralizzazione o decentralizzazione? Un equilibrio instabile</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-42.html" class="font-bold hover:underline">ff.42 Made in China (pt.1)</a><p class="text-sm text-black/75 mt-1">La via della seta non è mai stata così impervia</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-73.html" class="font-bold hover:underline">ff.73 Futuro criptato</a><p class="text-sm text-black/75 mt-1">Criptovalute, Monna Lisa, Majin Buu e l&#39;inflazione</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-24.html" class="font-bold hover:underline">ff.24 Guerra criptica</a><p class="text-sm text-black/75 mt-1">Come la guerra può aver accelerato l&#39;adozione delle criptovalute</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/archivio/ff-52.html" class="font-bold hover:underline">ff.52 Fondare una Nazione in garage</a><p class="text-sm text-black/75 mt-1">Centralizzazione o decentralizzazione? Un equilibrio instabile</p></li>
+        <li><a href="/archivio/ff-42.html" class="font-bold hover:underline">ff.42 Made in China (pt.1)</a><p class="text-sm text-black/75 mt-1">La via della seta non è mai stata così impervia</p></li>
+        <li><a href="/archivio/ff-73.html" class="font-bold hover:underline">ff.73 Futuro criptato</a><p class="text-sm text-black/75 mt-1">Criptovalute, Monna Lisa, Majin Buu e l&#39;inflazione</p></li>
+        <li><a href="/archivio/ff-24.html" class="font-bold hover:underline">ff.24 Guerra criptica</a><p class="text-sm text-black/75 mt-1">Come la guerra può aver accelerato l&#39;adozione delle criptovalute</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Ricevi i nuovi numeri di Futuro Fortissimo</h2>
@@ -427,7 +427,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -479,7 +479,7 @@
     <ul id="ff-results" role="listbox" aria-label="Cerca"></ul>
     <div class="ff-s-foot"><a href="/archivio/" data-ff-all data-base="/archivio/">Tutti i risultati nell’archivio →</a><span>Premi / per cercare ovunque</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

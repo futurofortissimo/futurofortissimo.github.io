@@ -149,12 +149,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -163,9 +163,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -218,12 +218,12 @@
         <a href="/libri/">Libri</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="Cerca (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Cerca</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Cerca (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">Cerca</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="Lingua"><a href="/archivio/ff-143.html" hreflang="it" lang="it" title="Italiano" data-keep-state aria-current="page">IT</a><a href="/en/archive/ff-143.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/archive/ff-143.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="Tema scuro" title="Tema scuro"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Iscriviti</a>
         <details class="ff-more">
-          <summary aria-label="Altro"><span aria-hidden="true">☰</span><span class="sr-only">Altro</span></summary>
+          <summary aria-label="Altro"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">Altro</span></summary>
           <nav class="ff-menu" aria-label="Altro">
             <a href="/book/">📖 Il Libro</a>
             <a href="/book/ffxy-index.html">🔢 ff.x.y</a>
@@ -240,24 +240,24 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/">Home</a> /</li><li><a class="underline" href="/archivio/">Archivio</a> /</li><li aria-current="page">ff.143 Scimmie col Rolex</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>143</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>143</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="watch" data-ff-slug="ff-143" data-label="Apri l’oggetto 3D e l’anteprima di ff.143"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Archivio Futuro Fortissimo</p>
       <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.143 Scimmie col Rolex</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">Il vero lusso occidentale? Non il Rolex: sole/aria/acqua (natura biologica).</p>
       <p class="mt-2 text-xs font-mono text-black/70">Pubblicato il <time datetime="2026-01-30T08:02:12.176Z">30 gennaio 2026</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/archivio/ff-143.html" data-done="Link copiato"><span aria-hidden="true">↗</span> Condividi</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/archivio/ff-143.html" data-done="Link copiato"><span aria-hidden="true">🔗</span> Copia link</button>
-        <a href="https://fortissimo.substack.com/p/ff143-scimmie-col-rolex" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Leggi originale su Substack ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/archivio/ff-143.html" data-done="Link copiato"><span aria-hidden="true">↗</span> Condividi</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/archivio/ff-143.html" data-done="Link copiato"><span aria-hidden="true">🔗</span> Copia link</button>
+        <a href="https://fortissimo.substack.com/p/ff143-scimmie-col-rolex" target="_blank" rel="noopener noreferrer" class="ff-qlink">Leggi originale su Substack ↗</a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• Darwinismo urbano</li>
-        <li>• Scimmie-ruba-gelato!</li>
-        <li>• Il fuoco tra Baku, Lucknow e Varanasi</li>
+      <ul class="ff-keypoints">
+        <li>Darwinismo urbano</li>
+        <li>Scimmie-ruba-gelato!</li>
+        <li>Il fuoco tra Baku, Lucknow e Varanasi</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Temi</span><a href="/themes.html#clima" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🌍 Natura, clima ed energia</a><a href="/themes.html#nutrizione" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🥗 Nutrizione e microbioma</a></p>
-      <nav aria-label="Sezioni del numero" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">Temi</span><a href="/themes.html#clima" class="ff-tlink">🌍 Natura, clima ed energia</a><a href="/themes.html#nutrizione" class="ff-tlink">🥗 Nutrizione e microbioma</a></p>
+      <nav aria-label="Sezioni del numero" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">In questo numero</h2>
         <ol>
           <li><a href="#ff-143-1">🌿 ff.143.1 Lusso naturale</a></li>
@@ -270,93 +270,93 @@
 
     
 
-    <section id="ff-143-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-143-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🌿 ff.143.1 Lusso naturale</h2>
-        <a href="https://fortissimo.substack.com/p/ff143-scimmie-col-rolex" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.143.1 Lusso naturale">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/p/ff143-scimmie-col-rolex" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.143.1 Lusso naturale">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Quando elettricità e servizi smettono di essere invisibili, capisci che la ricchezza è l’ecosistema: aria pulita, sole visibile, acqua usabile. Non la natura “hipster” da città: una natura chimica, elementare, sotto l’Io.</p>
       </div>
       
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://fortissimo.substack.com/i/88408587/ff511-laffabulazione-per-il-verde" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 💚 ff.51.1 L’affabulazione per il verde</a>
+          <div class="ff-refs-l">
+            <a href="https://fortissimo.substack.com/i/88408587/ff511-laffabulazione-per-il-verde" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ 💚 ff.51.1 L’affabulazione per il verde</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-143-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-143-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🐒 ff.143.2 Darwinismo urbano</h2>
-        <a href="https://fortissimo.substack.com/p/ff143-scimmie-col-rolex" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.143.2 Darwinismo urbano">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/p/ff143-scimmie-col-rolex" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.143.2 Darwinismo urbano">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Scimmie come bande organizzate che presidiano i gelati e attaccano bambini: reminder evoluzionistico. Varanasi: animali tra fumo e pire, cibo tra resti e città. Distopia biologica, non cyberpunk.</p>
       </div>
       
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.startmag.it/mondo/le-tre-umiliazioni-secondo-freud-inferte-dalla-scienza-moderna-al-narcisismo-del-genere-umano/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ la “seconda ferita narcisistica” di Freud</a>
-            <a href="https://fortissimo.substack.com/p/ff117-viviamo-in-una-simulazione" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🎼 ff.117 Viviamo in una simulazione</a>
-            <a href="https://fortissimo.substack.com/p/ff118-paprika-e-massaggi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🎼 ff.118 Paprika e massaggi</a>
+          <div class="ff-refs-l">
+            <a href="https://www.startmag.it/mondo/le-tre-umiliazioni-secondo-freud-inferte-dalla-scienza-moderna-al-narcisismo-del-genere-umano/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ la “seconda ferita narcisistica” di Freud</a>
+            <a href="https://fortissimo.substack.com/p/ff117-viviamo-in-una-simulazione" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ 🎼 ff.117 Viviamo in una simulazione</a>
+            <a href="https://fortissimo.substack.com/p/ff118-paprika-e-massaggi" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ 🎼 ff.118 Paprika e massaggi</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-143-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-143-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">☀️ ff.143.3 Sole e Asian Brown Cloud</h2>
-        <a href="https://fortissimo.substack.com/p/ff143-scimmie-col-rolex" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.143.3 Sole e Asian Brown Cloud">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/p/ff143-scimmie-col-rolex" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.143.3 Sole e Asian Brown Cloud">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Nebbia grigia permanente: non manca solo l’aria, manca il sole. Ironia della geoingegneria: sotto l’ABC (Asian Brown Cloud) il cielo è già “filtrato”.</p>
       </div>
       
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://youtu.be/0X_nRNlrPQs" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ heat training per vincere il Tour de France</a>
-            <a href="https://amzn.to/3LE4InR" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] text-xs font-mono font-bold hover:underline">📚 Il ministero per il futuro</a>
-            <a href="https://fortissimo.substack.com/p/ff56-il-condizionatore-terrestre" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🎼 ff.56 Il condizionatore terrestre</a>
+          <div class="ff-refs-l">
+            <a href="https://youtu.be/0X_nRNlrPQs" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ heat training per vincere il Tour de France</a>
+            <a href="https://amzn.to/3LE4InR" target="_blank" rel="noopener noreferrer sponsored" class="ff-ref is-book">📚 Il ministero per il futuro</a>
+            <a href="https://fortissimo.substack.com/p/ff56-il-condizionatore-terrestre" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ 🎼 ff.56 Il condizionatore terrestre</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-143-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-143-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🔥 ff.143.4 Fuoco (3 facce)</h2>
-        <a href="https://fortissimo.substack.com/p/ff143-scimmie-col-rolex" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.143.4 Fuoco (3 facce)">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/p/ff143-scimmie-col-rolex" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.143.4 Fuoco (3 facce)">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Sopravvivenza: falò di plastica e rifiuti per scaldarsi. Sussistenza: “terra del fuoco” (Azerbaijan) e le Flame Towers. Trascendenza: pire funerarie a Varanasi. Quando fuoco=plastica e aria=muro grigio, crollano i presupposti biologici.</p>
       </div>
       
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (4)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://en.wikipedia.org/wiki/The_Land_of_Fire" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Azerbaijan che vuol dire, letteralmente, “la terra del fuoco”</a>
-            <a href="https://subjektiv.art/artworks/2003?srsltid=AfmBOoqZw--jJ-uC0IZ_Tg6r4I5HUNwSl4HLJaNW4GAe0ugBCHHW8w-5" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Yanar Dagh</a>
-            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ michele merelli</a>
-            <a href="https://fortissimo.substack.com/p/ff142-caro-marziano" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🎼 ff.142 Caro Marziano...</a>
+          <div class="ff-refs-l">
+            <a href="https://en.wikipedia.org/wiki/The_Land_of_Fire" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Azerbaijan che vuol dire, letteralmente, “la terra del fuoco”</a>
+            <a href="https://subjektiv.art/artworks/2003?srsltid=AfmBOoqZw--jJ-uC0IZ_Tg6r4I5HUNwSl4HLJaNW4GAe0ugBCHHW8w-5" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Yanar Dagh</a>
+            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ michele merelli</a>
+            <a href="https://fortissimo.substack.com/p/ff142-caro-marziano" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ 🎼 ff.142 Caro Marziano...</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">Numeri correlati</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-51.html" class="font-bold hover:underline">ff.51 La religione del 21esimo secolo?</a><p class="text-sm text-black/75 mt-1">Il sottile equilibrio tra Greta, Greenpeace e speranza nel futuro</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-61.html" class="font-bold hover:underline">ff.61 La decrescita felice è impossibile?</a><p class="text-sm text-black/75 mt-1">I costi di ogni attività per un budget da 10 tonnellate di CO2 annue</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-32.html" class="font-bold hover:underline">ff.32 I numeri non mentono</a><p class="text-sm text-black/75 mt-1">Cellulari che inquinano come auto e polli più efficienti di mucche</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-149.html" class="font-bold hover:underline">ff.149 Come essere solari</a><p class="text-sm text-black/75 mt-1">L&#39;abbondanza è qui, basta mettere gli occhiali da sole</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/archivio/ff-51.html" class="font-bold hover:underline">ff.51 La religione del 21esimo secolo?</a><p class="text-sm text-black/75 mt-1">Il sottile equilibrio tra Greta, Greenpeace e speranza nel futuro</p></li>
+        <li><a href="/archivio/ff-61.html" class="font-bold hover:underline">ff.61 La decrescita felice è impossibile?</a><p class="text-sm text-black/75 mt-1">I costi di ogni attività per un budget da 10 tonnellate di CO2 annue</p></li>
+        <li><a href="/archivio/ff-32.html" class="font-bold hover:underline">ff.32 I numeri non mentono</a><p class="text-sm text-black/75 mt-1">Cellulari che inquinano come auto e polli più efficienti di mucche</p></li>
+        <li><a href="/archivio/ff-149.html" class="font-bold hover:underline">ff.149 Come essere solari</a><p class="text-sm text-black/75 mt-1">L&#39;abbondanza è qui, basta mettere gli occhiali da sole</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Ricevi i nuovi numeri di Futuro Fortissimo</h2>
@@ -371,7 +371,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -423,7 +423,7 @@
     <ul id="ff-results" role="listbox" aria-label="Cerca"></ul>
     <div class="ff-s-foot"><a href="/archivio/" data-ff-all data-base="/archivio/">Tutti i risultati nell’archivio →</a><span>Premi / per cercare ovunque</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

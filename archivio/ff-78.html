@@ -154,12 +154,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -168,9 +168,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -223,12 +223,12 @@
         <a href="/libri/">Libri</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="Cerca (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Cerca</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Cerca (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">Cerca</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="Lingua"><a href="/archivio/ff-78.html" hreflang="it" lang="it" title="Italiano" data-keep-state aria-current="page">IT</a><a href="/en/archive/ff-78.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/archive/ff-78.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="Tema scuro" title="Tema scuro"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Iscriviti</a>
         <details class="ff-more">
-          <summary aria-label="Altro"><span aria-hidden="true">☰</span><span class="sr-only">Altro</span></summary>
+          <summary aria-label="Altro"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">Altro</span></summary>
           <nav class="ff-menu" aria-label="Altro">
             <a href="/book/">📖 Il Libro</a>
             <a href="/book/ffxy-index.html">🔢 ff.x.y</a>
@@ -245,24 +245,24 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/">Home</a> /</li><li><a class="underline" href="/archivio/">Archivio</a> /</li><li aria-current="page">ff.78 Psicologo digitale</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>78</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>78</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="pill" data-ff-slug="ff-78" data-label="Apri l’oggetto 3D e l’anteprima di ff.78"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Archivio Futuro Fortissimo</p>
       <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.78 Psicologo digitale</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">Sanità mentale: libri, Netflix e finanza?</p>
       <p class="mt-2 text-xs font-mono text-black/70">Pubblicato il <time datetime="2023-12-10T07:00:41.580Z">10 dicembre 2023</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/archivio/ff-78.html" data-done="Link copiato"><span aria-hidden="true">↗</span> Condividi</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/archivio/ff-78.html" data-done="Link copiato"><span aria-hidden="true">🔗</span> Copia link</button>
-        <a href="https://fortissimo.substack.com/p/ff78-psicologo-digitale" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Leggi originale su Substack ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/archivio/ff-78.html" data-done="Link copiato"><span aria-hidden="true">↗</span> Condividi</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/archivio/ff-78.html" data-done="Link copiato"><span aria-hidden="true">🔗</span> Copia link</button>
+        <a href="https://fortissimo.substack.com/p/ff78-psicologo-digitale" target="_blank" rel="noopener noreferrer" class="ff-qlink">Leggi originale su Substack ↗</a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• La scuola dovrebbe prepararci meglio?</li>
-        <li>• Il documentario Netflix (e non è Sex Education)</li>
-        <li>• Da Eraclito ai giorni nostri: il continuo cambiamento</li>
+      <ul class="ff-keypoints">
+        <li>La scuola dovrebbe prepararci meglio?</li>
+        <li>Il documentario Netflix (e non è Sex Education)</li>
+        <li>Da Eraclito ai giorni nostri: il continuo cambiamento</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Temi</span><a href="/themes.html#cultura" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🎨 Cultura, libri e arte</a><a href="/themes.html#ai" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🤖 AI, agenti e modelli</a><a href="/themes.html#salute" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🏃 Salute, sport e corpo</a></p>
-      <nav aria-label="Sezioni del numero" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">Temi</span><a href="/themes.html#cultura" class="ff-tlink">🎨 Cultura, libri e arte</a><a href="/themes.html#ai" class="ff-tlink">🤖 AI, agenti e modelli</a><a href="/themes.html#salute" class="ff-tlink">🏃 Salute, sport e corpo</a></p>
+      <nav aria-label="Sezioni del numero" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">In questo numero</h2>
         <ol>
           <li><a href="#ff-78-1">👨‍🏫ff.78.1 Scuola di vita?</a></li>
@@ -276,10 +276,10 @@
 
     
 
-    <section id="ff-78-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-78-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">👨‍🏫ff.78.1 Scuola di vita?</h2>
-        <a href="https://fortissimo.substack.com/i/137958326/ff-scuola-di-vita" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.78.1 Scuola di vita?">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/137958326/ff-scuola-di-vita" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.78.1 Scuola di vita?">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Diciamocelo, i curriculum scolastici sono sempre più passato: anni a memorizzare nomi, date, poesie che ora recuperiamo con Google e AI. Non bastasse,gli studenti van sempre peggio in matematica e lettura,l’AI sempre meglio.</p>
@@ -288,28 +288,28 @@
         <p class="text-base leading-relaxed text-black/90">l’idea che i pensieri sbagliati si possano aggiustare pensando ad altro (quando sempre più sembra serva agire, rispondere col corpo)l’idea che il “sentire di sentire” le emozioni, la coscienza delle stesse sia punto di partenza per cambiarle (quando in realtà dobbiamo saperdar loro un nome)</p>
         <p class="text-base leading-relaxed text-black/90">Non a caso, psicologi digitali (anche su ChatGPT) e contenuti Netflix provano a colmare questo immenso vuoto emotivo che abbiamo dentro.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!83qh!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa1778f03-5a92-4c5b-82e1-a9c50c23ff19_1197x1198.jpeg" width="1197" height="1198" alt="👨‍🏫ff.78.1 Scuola di vita?" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!hnCn!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F53f3f337-6707-4615-a14f-f2d54ae6f0d4_1232x838.jpeg" width="1232" height="838" alt="👨‍🏫ff.78.1 Scuola di vita?" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://edition.cnn.com/2022/09/01/us/student-test-scores-drop/index.html?utm_source=chartr&amp;utm_medium=newsletter&amp;utm_campaign=chartr_20220902" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ gli studenti van sempre peggio in matematica e lettura</a>
-            <a href="https://www.linkedin.com/pulse/benchmarking-large-language-models-rajat-ghosh-ph-d/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ l’AI sempre meglio.</a>
-            <a href="http://www.depijnvoorbij.nl/wp-content/uploads/2020/06/Lieberman.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ dar loro un nome</a>
+          <div class="ff-refs-l">
+            <a href="https://edition.cnn.com/2022/09/01/us/student-test-scores-drop/index.html?utm_source=chartr&amp;utm_medium=newsletter&amp;utm_campaign=chartr_20220902" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ gli studenti van sempre peggio in matematica e lettura</a>
+            <a href="https://www.linkedin.com/pulse/benchmarking-large-language-models-rajat-ghosh-ph-d/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ l’AI sempre meglio.</a>
+            <a href="http://www.depijnvoorbij.nl/wp-content/uploads/2020/06/Lieberman.pdf" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ dar loro un nome</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-78-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-78-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">👥ff.78.2 L’ombra di Stutz</h2>
-        <a href="https://fortissimo.substack.com/i/137958326/ff-lombra-di-stutz" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.78.2 L’ombra di Stutz">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/137958326/ff-lombra-di-stutz" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.78.2 L’ombra di Stutz">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Rompendo più volte la “quarta parete teatrale”, il regista Jonah Hill ha portato su Netflix le sue sessioni con lo psicoterapeuta Phil Stutz.</p>
@@ -318,68 +318,68 @@
         <p class="text-base leading-relaxed text-black/90">Corpore sano → Mens sana. Tra questi disegni, la piramide delle forze vitali. Ha una base fisiologica, che parte dal benessere del corpo.</p>
         <p class="text-base leading-relaxed text-black/90">Infine, il concetto diombra: l’io del passato di cui ci vergogniamo e che nascondiamo agli altri. Stutz ci chiede di parlare con la nostra ombra, chiedendole scusa e riconoscendo la sua influenza su nostre presenti insicurezze.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!AF4E!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F618c1349-8269-4789-8535-2cde1ee29a4f_700x467.png" width="700" height="467" alt="👥ff.78.2 L’ombra di Stutz" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!boy7!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F45fefcd0-f221-4a5c-b7ee-3d09b320b685_700x467.png" width="700" height="467" alt="👥ff.78.2 L’ombra di Stutz" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!1yHk!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F19e6e120-e26e-40c4-b430-b2290a03167a_1126x549.png" width="1126" height="549" alt="👥ff.78.2 L’ombra di Stutz" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.netflix.com/tudum/videos/the-shadow-tools" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ ombra: l’io del passato di cui ci vergogniamo e che nascondiamo agli altri</a>
+          <div class="ff-refs-l">
+            <a href="https://www.netflix.com/tudum/videos/the-shadow-tools" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ ombra: l’io del passato di cui ci vergogniamo e che nascondiamo agli altri</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-78-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-78-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🏞️ff.78.3 Pánta rheî</h2>
-        <a href="https://fortissimo.substack.com/i/137958326/ff-panta-rhei" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.78.3 Pánta rheî">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/137958326/ff-panta-rhei" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.78.3 Pánta rheî">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Ad ogni modo, anche se la prendiamo con filosofia (di Eraclito), il cambiamento non ci piace. Intorno a noi, però, è sempre più frequente:</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!4BSo!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F04d90550-b6c4-4af9-8b77-55a208008710_926x410.png" width="926" height="410" alt="🏞️ff.78.3 Pánta rheî" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
       
     </section>
 
-    <section id="ff-78-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-78-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">📚ff.78.4 Leggere, leggeri</h2>
-        <a href="https://fortissimo.substack.com/i/137958326/ff-leggere-leggeri" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.78.4 Leggere, leggeri">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/137958326/ff-leggere-leggeri" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.78.4 Leggere, leggeri">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Come possiamo accettare il cambiamento? Con un libro di Brad Stulberg (incontrato in🎁 ff. 68. 4) forse? In fondo, anche la lettura può essere psicoterapia.</p>
         <p class="text-base leading-relaxed text-black/90">InMaster of Changeil concetto del fiume di Eraclito viene espanso:</p>
         <p class="text-base leading-relaxed text-black/90">Come le molecole d’acqua non si troveranno mai più nello stesso punto, anche le sponde del fiume sono erose e in continuo divenire. L’argine però rimanetendenzialmentequello. Allo stesso modo, noi tutti dobbiamo fissare un numero limitato  di valori (3-5) su cui basare una dinamica resistenza al cambiamento. Questi valori devono essere diversificati. Dobbiamo avere più facce, più interessi indipendenti. A seconda delle “stagioni” o delle “precipitazioni” di un certo periodo della vita, li dovremo attivare come fossero vari ruscelli. Identificandoci con quello in cui crediamo, più che quello che possediamo, siamo meno fragili rispetto agli eventi esterni (che ci possono togliere relazioni, salute, soldi).</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!X8UB!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1b78ef35-4c79-4510-8a26-317294f92fed_280x445.png" width="280" height="445" alt="📚ff.78.4 Leggere, leggeri" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (2)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://amzn.to/3QvJI2c" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] text-xs font-mono font-bold hover:underline">📚 Master of Change</a>
-            <a href="https://fortissimo.substack.com/i/134579785/ff-meno-ego-e-controllo-piu-flow-e-presente-la-cura-di-naval" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🎁 ff.68.4</a>
+          <div class="ff-refs-l">
+            <a href="https://amzn.to/3QvJI2c" target="_blank" rel="noopener noreferrer sponsored" class="ff-ref is-book">📚 Master of Change</a>
+            <a href="https://fortissimo.substack.com/i/134579785/ff-meno-ego-e-controllo-piu-flow-e-presente-la-cura-di-naval" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ 🎁 ff.68.4</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-78-5" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-78-5" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🗣️ff.78.5 La mia personale visione</h2>
-        <a href="https://fortissimo.substack.com/i/137958326/ff-la-mia-personale-visione" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.78.5 La mia personale visione">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/137958326/ff-la-mia-personale-visione" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.78.5 La mia personale visione">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Esempio concreto. Due miei valori sono sport e indipendenza finanziaria. Mi guidano nelle scelte di ogni giorno. Quando compio azioni che contribuiscono a questi valori, mi sento bene.</p>
@@ -388,34 +388,34 @@
         <p class="text-base leading-relaxed text-black/90">un cuoricino qua sotto fa bene alla mia sanità mentale❤️</p>
         <p class="text-base leading-relaxed text-black/90">uscite precedenti|discord|instagram|linkedin|un caffè</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!wwri!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9fc0029f-c5d5-4dbe-823c-2cb5fb4e18cd_1200x798.jpeg" width="1200" height="798" alt="In the Shadow of Freud’s Couch" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">In the Shadow of Freud’s Couch</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (5)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.investopedia.com/terms/b/blackswan.asp" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ black swan event</a>
-            <a href="https://www.notion.so/ff-futuro-fortissimo-f41e153b16654108991832eae044338c" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ uscite precedenti</a>
-            <a href="https://discord.gg/aecHyTZD" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ discord</a>
-            <a href="https://www.instagram.com/futuro_fortissimo_newsletter/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ instagram</a>
-            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ linkedin</a>
+          <div class="ff-refs-l">
+            <a href="https://www.investopedia.com/terms/b/blackswan.asp" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ black swan event</a>
+            <a href="https://www.notion.so/ff-futuro-fortissimo-f41e153b16654108991832eae044338c" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ uscite precedenti</a>
+            <a href="https://discord.gg/aecHyTZD" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ discord</a>
+            <a href="https://www.instagram.com/futuro_fortissimo_newsletter/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ instagram</a>
+            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ linkedin</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">Numeri correlati</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-146.html" class="font-bold hover:underline">ff.146 Cicatrici silenziose</a><p class="text-sm text-black/75 mt-1">Contro le infinite permutazioni dell&#39;AI, cicatrici e poesia?</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-130.html" class="font-bold hover:underline">ff.130 Microplastiche</a><p class="text-sm text-black/75 mt-1">tra diamanti, arte, sperma e carotide</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-117.html" class="font-bold hover:underline">ff.117 Viviamo in una simulazione</a><p class="text-sm text-black/75 mt-1">L&#39;ho capito in viaggio tra Hong Kong e Shenzhen</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-108.html" class="font-bold hover:underline">ff.108 Inno alla routine</a><p class="text-sm text-black/75 mt-1">Ogni giorno può essere un &quot;Perfect Day&quot;</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/archivio/ff-146.html" class="font-bold hover:underline">ff.146 Cicatrici silenziose</a><p class="text-sm text-black/75 mt-1">Contro le infinite permutazioni dell&#39;AI, cicatrici e poesia?</p></li>
+        <li><a href="/archivio/ff-130.html" class="font-bold hover:underline">ff.130 Microplastiche</a><p class="text-sm text-black/75 mt-1">tra diamanti, arte, sperma e carotide</p></li>
+        <li><a href="/archivio/ff-117.html" class="font-bold hover:underline">ff.117 Viviamo in una simulazione</a><p class="text-sm text-black/75 mt-1">L&#39;ho capito in viaggio tra Hong Kong e Shenzhen</p></li>
+        <li><a href="/archivio/ff-108.html" class="font-bold hover:underline">ff.108 Inno alla routine</a><p class="text-sm text-black/75 mt-1">Ogni giorno può essere un &quot;Perfect Day&quot;</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Ricevi i nuovi numeri di Futuro Fortissimo</h2>
@@ -430,7 +430,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -482,7 +482,7 @@
     <ul id="ff-results" role="listbox" aria-label="Cerca"></ul>
     <div class="ff-s-foot"><a href="/archivio/" data-ff-all data-base="/archivio/">Tutti i risultati nell’archivio →</a><span>Premi / per cercare ovunque</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

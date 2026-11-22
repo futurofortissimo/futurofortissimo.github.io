@@ -145,12 +145,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -159,9 +159,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -214,12 +214,12 @@
         <a href="/libri/">Libri</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="Cerca (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Cerca</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Cerca (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">Cerca</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="Lingua"><a href="/archivio/ff-29.html" hreflang="it" lang="it" title="Italiano" data-keep-state aria-current="page">IT</a><a href="/en/archive/ff-29.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/archive/ff-29.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="Tema scuro" title="Tema scuro"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Iscriviti</a>
         <details class="ff-more">
-          <summary aria-label="Altro"><span aria-hidden="true">☰</span><span class="sr-only">Altro</span></summary>
+          <summary aria-label="Altro"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">Altro</span></summary>
           <nav class="ff-menu" aria-label="Altro">
             <a href="/book/">📖 Il Libro</a>
             <a href="/book/ffxy-index.html">🔢 ff.x.y</a>
@@ -236,24 +236,24 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/">Home</a> /</li><li><a class="underline" href="/archivio/">Archivio</a> /</li><li aria-current="page">ff.29 Viva la mamma!</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>29</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>29</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="globe" data-ff-slug="ff-29" data-label="Apri l’oggetto 3D e l’anteprima di ff.29"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Archivio Futuro Fortissimo</p>
       <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.29 Viva la mamma!</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">Calo di popolazione, uteri in affitto e Grimes</p>
       <p class="mt-2 text-xs font-mono text-black/70">Pubblicato il <time datetime="2022-07-13T08:40:09.016Z">13 luglio 2022</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/archivio/ff-29.html" data-done="Link copiato"><span aria-hidden="true">↗</span> Condividi</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/archivio/ff-29.html" data-done="Link copiato"><span aria-hidden="true">🔗</span> Copia link</button>
-        <a href="https://fortissimo.substack.com/p/-ff28-viva-la-mamma" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Leggi originale su Substack ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/archivio/ff-29.html" data-done="Link copiato"><span aria-hidden="true">↗</span> Condividi</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/archivio/ff-29.html" data-done="Link copiato"><span aria-hidden="true">🔗</span> Copia link</button>
+        <a href="https://fortissimo.substack.com/p/-ff28-viva-la-mamma" target="_blank" rel="noopener noreferrer" class="ff-qlink">Leggi originale su Substack ↗</a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• L’umanità è destinata a scomparire, dato che non sifiglia più? Quali trend per il 2100?</li>
-        <li>• Quanto dovrebbero pagare perfare la mamma?</li>
-        <li>• Musk e l’ex-moglie Grimes e le loro visioni a riguardo.</li>
+      <ul class="ff-keypoints">
+        <li>L’umanità è destinata a scomparire, dato che non sifiglia più? Quali trend per il 2100?</li>
+        <li>Quanto dovrebbero pagare perfare la mamma?</li>
+        <li>Musk e l’ex-moglie Grimes e le loro visioni a riguardo.</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Temi</span><a href="/themes.html#geo" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🏛 Geopolitica, economia e società</a></p>
-      <nav aria-label="Sezioni del numero" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">Temi</span><a href="/themes.html#geo" class="ff-tlink">🏛 Geopolitica, economia e società</a></p>
+      <nav aria-label="Sezioni del numero" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">In questo numero</h2>
         <ol>
           <li><a href="#ff-29-1">👶 ff.29.1 Non figliamo più</a></li>
@@ -266,10 +266,10 @@
 
     
 
-    <section id="ff-29-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-29-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">👶 ff.29.1 Non figliamo più</h2>
-        <a href="https://fortissimo.substack.com/i/58664492/ff291-non-figliamo-piu" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.29.1 Non figliamo più">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/58664492/ff291-non-figliamo-piu" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.29.1 Non figliamo più">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">A quanto pare, nonostante in alcune zone del mondo la popolazione sia inforte espansione (ricordate🎼 ff. 13 Popolazioni e polluzioni?), Elon Musk è preoccupatissimo perché non si procrea.</p>
@@ -279,28 +279,28 @@
         <p class="text-base leading-relaxed text-black/90">E le proiezioni per il 2100 non sono rosee, con Cina e India sotto il miliardo di abitanti e paesi come il Giappone dimezzati. Tranquilli, perché in Nigeria invece “ci daranno ancora dentro”.</p>
         <p class="text-base leading-relaxed text-black/90">Perché sta succedendo questo? Cosa possiamofare per invertire il trend? Una giornalista del Washington Post, la cantante Grimes e un libro sui prossimi 500 anni ci danno qualche spunto a riguardo.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!wfXP!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F9f32dc29-cf18-4984-8a18-9ceb76fe7638_640x478.png" width="640" height="478" alt="👶 ff.29.1 Non figliamo più" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!R4Zu!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fc78ab6cf-09b3-443c-99d8-fa864ae31199_640x425.png" width="640" height="425" alt="👶 ff.29.1 Non figliamo più" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://twitter.com/elonmusk/status/1483484932961972227?s=20&amp;t=m8zPd7XuieNZac7YbKB4EQ" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Elon Musk@elonmuskWe should be much more worried about population collapse</a>
-            <a href="https://www.bbc.com/news/health-53409521.amp" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ è scesa da 4.5</a>
-            <a href="https://fortissimo.substack.com/p/-ff13-popolazioni-e-polluzioni?s=w" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🎼 ff.13 Popolazioni e polluzioni</a>
+          <div class="ff-refs-l">
+            <a href="https://twitter.com/elonmusk/status/1483484932961972227?s=20&amp;t=m8zPd7XuieNZac7YbKB4EQ" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Elon Musk@elonmuskWe should be much more worried about population collapse</a>
+            <a href="https://www.bbc.com/news/health-53409521.amp" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ è scesa da 4.5</a>
+            <a href="https://fortissimo.substack.com/p/-ff13-popolazioni-e-polluzioni?s=w" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ 🎼 ff.13 Popolazioni e polluzioni</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-29-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-29-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">👩‍💻 ff.29.2 Essere mamme è un lavoro!</h2>
-        <a href="https://fortissimo.substack.com/i/58664492/ff292-essere-mamme-e-un-lavoro" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.29.2 Essere mamme è un lavoro!">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/58664492/ff292-essere-mamme-e-un-lavoro" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.29.2 Essere mamme è un lavoro!">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Un tema cruciale sulla maternità è il costo connesso alla stessa. In un mondo sempre più individualistico, capitalistico e volto al profitto, anche la maternità viene quantificata.</p>
@@ -309,28 +309,28 @@
         <p class="text-base leading-relaxed text-black/90">Anche Vitalik Buterin, padre (lol) di Ethereum, si è espresso sulle asimmetrie di salario tra maschi efemmine, conseguenti al parto. Se i 13. 000 dollarifossero conteggiati, probabilmente queste sarebbero minori.</p>
         <p class="text-base leading-relaxed text-black/90">vitalik. eth@VitalikButerin@DeepCipher@shl@elonmuskDisparities in economic success between men and women are far larger once marriage+children enter the picture. Synthetic wombs would remove the high burden of pregnancy, significantly reducing the inequality. vox. comA stunning chart shows the true cause of the gender wage gapThe gender wage gap is really a child care penalty5:27 PM ∙ Jan 18, 20224,059Likes585Retweets</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!fVof!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F525b56ce-0267-46d5-8427-3343164dd349_1206x782.png" width="1206" height="782" alt="👩‍💻 ff.29.2 Essere mamme è un lavoro!" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!gwij!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fe190b541-50ac-4c56-90f9-7006ad66ea41_705x592.png" width="705" height="592" alt="👩‍💻 ff.29.2 Essere mamme è un lavoro!" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.washingtonpost.com/opinions/interactive/2022/breastfeeding-cost-time-money/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ ha monitorato tutte le sessioni di allattamento al seno</a>
-            <a href="https://t.co/Zpin8tTlR6&quot;&gt;https://t.co/Zpin8tTlR6&lt;/a&gt;&lt;/p&gt;&amp;mdash; vitalik.eth (@VitalikButerin) &lt;a href=&quot;https://twitter.com/VitalikButerin/status/1483491180906045440?ref_src=twsrc%5Etfw&quot;&gt;January" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ vitalik.eth@VitalikButerin@DeepCipher@shl@elonmuskDisparities in economic success between men and women are far larger once marriage+children enter the picture. Synthetic wombs would remove the high burden of pregnancy, significantly reducing the inequality.</a>
-            <a href="https://www.vox.com/2018/2/19/17018380/gender-wage-gap-childcare-penalty" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ vox.comA stunning chart shows the true cause of the gender wage gapThe gender wage gap is really a child care penalty</a>
+          <div class="ff-refs-l">
+            <a href="https://www.washingtonpost.com/opinions/interactive/2022/breastfeeding-cost-time-money/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ ha monitorato tutte le sessioni di allattamento al seno</a>
+            <a href="https://t.co/Zpin8tTlR6&quot;&gt;https://t.co/Zpin8tTlR6&lt;/a&gt;&lt;/p&gt;&amp;mdash; vitalik.eth (@VitalikButerin) &lt;a href=&quot;https://twitter.com/VitalikButerin/status/1483491180906045440?ref_src=twsrc%5Etfw&quot;&gt;January" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ vitalik.eth@VitalikButerin@DeepCipher@shl@elonmuskDisparities in economic success between men and women are far larger once marriage+children enter the picture. Synthetic wombs would remove the high burden of pregnancy, significantly reducing the inequality.</a>
+            <a href="https://www.vox.com/2018/2/19/17018380/gender-wage-gap-childcare-penalty" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ vox.comA stunning chart shows the true cause of the gender wage gapThe gender wage gap is really a child care penalty</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-29-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-29-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">💰 ff.29.3 La fidanzata di Elon Musk propone di pagare le mamme</h2>
-        <a href="https://fortissimo.substack.com/i/58664492/ff293-la-fidanzata-di-elon-musk-propone-di-pagare-le-mamme" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.29.3 La fidanzata di Elon Musk propone di pagare le mamme">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/58664492/ff293-la-fidanzata-di-elon-musk-propone-di-pagare-le-mamme" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.29.3 La fidanzata di Elon Musk propone di pagare le mamme">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Anche la ex-fidanzata di Elon Musk (madre delfamigerato essere umano X Æ A-Xii, dal nome più unico che raro) si è esposta sul problema. Ha proposto una MaternityDAO, ovvero unaDecentralized Autonomous Organizationper dare credito alle mamme di tutto il mondo.</p>
@@ -339,18 +339,18 @@
         <p class="text-base leading-relaxed text-black/90">Ovviamente il confine tra utopia e distopia è labile e sottile. Misurare l’impatto positivo di unfiglio o classificarne la crescita può virarefacilmente in sistemi poco democratici come la“classifica sociale” che troviamo in Cina. Ma è importante pensare a come migliorare il welfare con le nuove possibilità che la tecnologia ci dà.</p>
       </div>
       
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://en.wikipedia.org/wiki/Social_Credit_System" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ “classi</a>
+          <div class="ff-refs-l">
+            <a href="https://en.wikipedia.org/wiki/Social_Credit_System" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ “classi</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-29-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-29-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🧫 ff.29.4 Maternità non convenzionali: uteri “in vetro”</h2>
-        <a href="https://fortissimo.substack.com/i/58664492/ff294-maternita-non-convenzionali-uteri-in-vetro" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.29.4 Maternità non convenzionali: uteri “in vetro”">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/58664492/ff294-maternita-non-convenzionali-uteri-in-vetro" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.29.4 Maternità non convenzionali: uteri “in vetro”">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">In qualche senso, comunque, il mercato è già arrivato a “compensare” la maternità: nei casi di “utero in affitto” (odio questa definizione,to be honest), la madre surrogata che presta il suo servizio viene profumatamente compensata da una madre biologicamente nonfertile.</p>
@@ -367,36 +367,36 @@
         <p class="text-base leading-relaxed text-black/90">E ricordati di mettere un cuoricino qua sotto.</p>
         <p class="text-base leading-relaxed text-black/90">❤️</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!4rBr!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fc91b1792-dfeb-4e38-b5c9-b287b3dc2004_829x142.png" width="829" height="142" alt="🧫 ff.29.4 Maternità non convenzionali: uteri “in vetro”" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!jZ-m!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F562af3c2-72c2-4b60-8dd7-598c346b18ce_419x338.png" width="419" height="338" alt="🧫 ff.29.4 Maternità non convenzionali: uteri “in vetro”" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.cdc.gov/nchs/data/hestat/maternal-mortality/2020/maternal-mortality-rates-2020.htm#:~:text=In%202020%2C%20861%20women%20were,20.1%20in%202019%20(Table)." target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Quasi 1000 madri morte.</a>
-            <a href="https://www.nature.com/articles/s41586-021-03416-3" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 2021 su Nature</a>
-            <a href="https://www.piratewires.com/p/vanishing-people-the-population-crisis?s=r" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ c’è altro qui</a>
+          <div class="ff-refs-l">
+            <a href="https://www.cdc.gov/nchs/data/hestat/maternal-mortality/2020/maternal-mortality-rates-2020.htm#:~:text=In%202020%2C%20861%20women%20were,20.1%20in%202019%20(Table)." target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Quasi 1000 madri morte.</a>
+            <a href="https://www.nature.com/articles/s41586-021-03416-3" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ 2021 su Nature</a>
+            <a href="https://www.piratewires.com/p/vanishing-people-the-population-crisis?s=r" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ c’è altro qui</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">Numeri correlati</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-24.html" class="font-bold hover:underline">ff.24 Guerra criptica</a><p class="text-sm text-black/75 mt-1">Come la guerra può aver accelerato l&#39;adozione delle criptovalute</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-13.html" class="font-bold hover:underline">ff.13 Popolazioni e polluzioni</a><p class="text-sm text-black/75 mt-1">Trend di crescite demografiche e approcci alle relazioni (=sesso).</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-135.html" class="font-bold hover:underline">ff.135 Casino Royale</a><p class="text-sm text-black/75 mt-1">La politica è una slot machine?</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-125.html" class="font-bold hover:underline">ff.125 USA: crollo di un impero</a><p class="text-sm text-black/75 mt-1">Chi sostituirà l&#39;America? Cina o Internet?</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/archivio/ff-24.html" class="font-bold hover:underline">ff.24 Guerra criptica</a><p class="text-sm text-black/75 mt-1">Come la guerra può aver accelerato l&#39;adozione delle criptovalute</p></li>
+        <li><a href="/archivio/ff-13.html" class="font-bold hover:underline">ff.13 Popolazioni e polluzioni</a><p class="text-sm text-black/75 mt-1">Trend di crescite demografiche e approcci alle relazioni (=sesso).</p></li>
+        <li><a href="/archivio/ff-135.html" class="font-bold hover:underline">ff.135 Casino Royale</a><p class="text-sm text-black/75 mt-1">La politica è una slot machine?</p></li>
+        <li><a href="/archivio/ff-125.html" class="font-bold hover:underline">ff.125 USA: crollo di un impero</a><p class="text-sm text-black/75 mt-1">Chi sostituirà l&#39;America? Cina o Internet?</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Ricevi i nuovi numeri di Futuro Fortissimo</h2>
@@ -411,7 +411,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -463,7 +463,7 @@
     <ul id="ff-results" role="listbox" aria-label="Cerca"></ul>
     <div class="ff-s-foot"><a href="/archivio/" data-ff-all data-base="/archivio/">Tutti i risultati nell’archivio →</a><span>Premi / per cercare ovunque</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

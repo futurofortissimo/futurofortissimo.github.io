@@ -145,12 +145,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -159,9 +159,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -214,12 +214,12 @@
         <a href="/hi/books/">किताबें</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="खोजें (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">खोजें</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="खोजें (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">खोजें</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="भाषा"><a href="/archivio/ff-8.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/archive/ff-8.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/archive/ff-8.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state aria-current="page">हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="डार्क थीम" title="डार्क थीम"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">सब्सक्राइब</a>
         <details class="ff-more">
-          <summary aria-label="और"><span aria-hidden="true">☰</span><span class="sr-only">और</span></summary>
+          <summary aria-label="और"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">और</span></summary>
           <nav class="ff-menu" aria-label="और">
             <a href="/book/">📖 किताब (IT)</a>
             <a href="/hi/connections.html">🔗 कनेक्शन</a>
@@ -235,25 +235,25 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/hi/">होम</a> /</li><li><a class="underline" href="/hi/archive/">संग्रह</a> /</li><li aria-current="page">ff.8 ऊब से लड़ाई</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>8</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>8</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="watch" data-ff-slug="ff-8" data-label="3D वस्तु और पूर्वावलोकन खोलें: ff.8"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Futuro Fortissimo संग्रह</p>
       <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.8 ऊब से लड़ाई</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">समय काटने का कारोबार</p>
       <p class="mt-2 text-xs font-mono text-black/70">प्रकाशित <time datetime="2022-01-09T13:33:54.762Z">9 जनवरी 2022</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/hi/archive/ff-8.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">↗</span> शेयर करें</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/hi/archive/ff-8.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">🔗</span> लिंक कॉपी करें</button>
-        <a href="https://fortissimo.substack.com/p/-ff8-combattere-la-noia" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Substack पर इतालवी मूल पढ़ें ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/hi/archive/ff-8.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">↗</span> शेयर करें</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/hi/archive/ff-8.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">🔗</span> लिंक कॉपी करें</button>
+        <a href="https://fortissimo.substack.com/p/-ff8-combattere-la-noia" target="_blank" rel="noopener noreferrer" class="ff-qlink">Substack पर इतालवी मूल पढ़ें ↗</a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• युद्ध के बाद का संगीत,</li>
-        <li>• 50 के दशक में ड्रामा, फिर 80 के दशक में रोमांटिक ड्रामा,</li>
-        <li>• 60 के दशक में वेस्टर्न और 2000 के दशक में रियलिटी शो,</li>
-        <li>• टॉक शो और न्यूज़, जिनका आज बोलबाला लगता है (COVID के साथ तो और भी)।</li>
+      <ul class="ff-keypoints">
+        <li>युद्ध के बाद का संगीत,</li>
+        <li>50 के दशक में ड्रामा, फिर 80 के दशक में रोमांटिक ड्रामा,</li>
+        <li>60 के दशक में वेस्टर्न और 2000 के दशक में रियलिटी शो,</li>
+        <li>टॉक शो और न्यूज़, जिनका आज बोलबाला लगता है (COVID के साथ तो और भी)।</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">थीम</span><a href="/hi/themes.html#cultura" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🎨 संस्कृति, किताबें और कला</a><a href="/hi/themes.html#attenzione" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">📱 ध्यान, स्क्रीन और आदतें</a></p>
-      <nav aria-label="इस अंक के खंड" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">थीम</span><a href="/hi/themes.html#cultura" class="ff-tlink">🎨 संस्कृति, किताबें और कला</a><a href="/hi/themes.html#attenzione" class="ff-tlink">📱 ध्यान, स्क्रीन और आदतें</a></p>
+      <nav aria-label="इस अंक के खंड" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">इस अंक में</h2>
         <ol>
           <li><a href="#ff-8-1">📺  ff.8.1 आज रात क्या देखें?</a></li>
@@ -269,10 +269,10 @@
 
     
 
-    <section id="ff-8-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-8-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">📺  ff.8.1 आज रात क्या देखें?</h2>
-        <a href="https://fortissimo.substack.com/i/43943640/ff81-cosa-ci-guardiamo-stasera" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.8.1 आज रात क्या देखें?">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/43943640/ff81-cosa-ci-guardiamo-stasera" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.8.1 आज रात क्या देखें?">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">मनोरंजन का मुख्य साधन - ऐतिहासिक रूप से - TV है। मुझे IMDb कैटलॉग का एक विश्लेषण मिला जो पिछले 70 सालों में पेश किए गए कंटेंट के प्रकार दिखाता है।</p>
@@ -282,29 +282,29 @@
         <p class="text-base leading-relaxed text-black/90">Netflix Geeked@NetflixGeekedIt took more than 10 years for Hwang Dong-hyuk to get Squid Game made.</p>
         <p class="text-base leading-relaxed text-black/90">It only took 17 days and 111M global fans to become our biggest ever series at launch (and the first to surpass 100M when it premiered). 9:59 PM ∙ Oct 12, 20211,321Likes237Retweets</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!Sf0_!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F79e8fa6f-9037-4ee5-8427-ba5780ee5a07_1800x1213.jpeg" width="1800" height="1213" alt="📺  ff.8.1 आज रात क्या देखें?" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!J9W1!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F193867ac-a723-4293-9487-68c5aad89a6b_1130x704.png" width="1130" height="704" alt="📺  ff.8.1 आज रात क्या देखें?" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (2)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://flowingdata.com/2021/10/26/television-genres-over-time/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ एक विश्लेषण</a>
+          <div class="ff-refs-l">
+            <a href="https://flowingdata.com/2021/10/26/television-genres-over-time/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ एक विश्लेषण</a>
             <a href="https://twitter.com/NetflixGeeked/status/1448045572200534022?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1448045572200534022%7Ctwgr%5E%7Ctwcon%5Es1_c10&amp;ref_url=https%3A%2F%2Fwww.hdblog.it%2Fspettacolo%2Farticoli%2Fn545467%2Fsquid-game-serie-netflix-piu-vista-lancio%2F" target="_blank" rel="noopener noreferrer" title="Netflix Geeked@NetflixGeekedIt took more than 10 years for Hwang Dong-hyuk to get Squid Game made.
 
-It only took 17 days and 111M global fans to become our biggest ever series at launch (and the first to surpass 100M when it premiered)." lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ twitter.com</a>
+It only took 17 days and 111M global fans to become our biggest ever series at launch (and the first to surpass 100M when it premiered)." lang="it" class="ff-ref">↗ twitter.com</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-8-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-8-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🦑  ff.8.2 असली ज़िंदगी में Squid Game?</h2>
-        <a href="https://fortissimo.substack.com/i/43943640/ff82-squid-game-in-real-life" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.8.2 असली ज़िंदगी में Squid Game?">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/43943640/ff82-squid-game-in-real-life" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.8.2 असली ज़िंदगी में Squid Game?">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">वैसे, मुझे एक बंदा मिला जिसने इसे असल ज़िंदगी में दोबारा बनाया। अरे हाँ, एक दिन में इसे 42 मिलियन व्यूज़ मिले। Netflix शो से भी ज़्यादा।</p>
@@ -314,42 +314,42 @@ It only took 17 days and 111M global fans to become our biggest ever series at l
       
     </section>
 
-    <section id="ff-8-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-8-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">📱 ff.8.3 छोटी स्क्रीन</h2>
-        <a href="https://fortissimo.substack.com/i/43943640/ff83-schermi-piccoli" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.8.3 छोटी स्क्रीन">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/43943640/ff83-schermi-piccoli" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.8.3 छोटी स्क्रीन">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">(स्मार्ट)TV भले ही कंटेंट देखने का सबसे पारंपरिक और आरामदेह तरीक़ा हो, जो ज़्यादा से ज़्यादा ऑनलाइन प्लेटफ़ॉर्म्स से आता है। लेकिन, लेकिन, लेकिन…</p>
         <p class="text-base leading-relaxed text-black/90">आकार मायने नहीं रखता: स्मार्टफ़ोन TV और PC की बिक्री से कहीं ज़्यादा कमाई करते हैं। और स्मार्टफ़ोन एक्सेसरीज़ दूसरे टेक प्रोडक्ट्स, जैसे टैबलेट, wearable electronics, कंसोल वग़ैरह, से कहीं ज़्यादा बिकती हैं।</p>
         <p class="text-base leading-relaxed text-black/90">मल्टीवर्स फ़िलहाल एक बेहद छोटी स्क्रीन तक सीमित है।</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!XCYo!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F51ee6a77-42c9-4167-8dcb-24e2029afe37_725x571.png" width="725" height="571" alt="2020 में डिजिटल उपकरणों की बिक्री से कमाई, अरब डॉलर में। Deloitte से" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">2020 में डिजिटल उपकरणों की बिक्री से कमाई, अरब डॉलर में। Deloitte से</figcaption>
         </figure>
       
     </section>
 
-    <section id="ff-8-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-8-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">💰  ff.8.4 विज्ञापन की कमाई</h2>
-        <a href="https://fortissimo.substack.com/i/43943640/ff84-gli-introiti-pubblicitari" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.8.4 विज्ञापन की कमाई">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/43943640/ff84-gli-introiti-pubblicitari" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.8.4 विज्ञापन की कमाई">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">स्मार्टफ़ोन की तरफ़ ट्रेंड के सबूत के तौर पर, मोबाइल पर विज्ञापन की कमाई हाल में TV से आगे निकल गई है, पाँच साल से कम में 20.8% से 34% हिस्सेदारी तक। (&quot;lustro&quot;, यानी पाँच साल की अवधि, यह शब्द मैंने काफ़ी समय से, कम से कम पाँच साल से, इस्तेमाल नहीं किया था।)</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!oW1T!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F6a649edc-ddca-4362-9b59-044ab1d553d8_720x539.png" width="720" height="539" alt="caption..." loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">caption...</figcaption>
         </figure>
       
     </section>
 
-    <section id="ff-8-5" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-8-5" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🎮  ff.8.5 ऊब को मारना (इंसानों को नहीं)</h2>
-        <a href="https://fortissimo.substack.com/i/43943640/ff85-ammazzare-la-noia-e-non-esseri-umani" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.8.5 ऊब को मारना (इंसानों को नहीं)">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/43943640/ff85-ammazzare-la-noia-e-non-esseri-umani" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.8.5 ऊब को मारना (इंसानों को नहीं)">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">इस सबमें वीडियो गेम्स कहाँ हैं?</p>
@@ -360,37 +360,37 @@ It only took 17 days and 111M global fans to become our biggest ever series at l
         <p class="text-base leading-relaxed text-black/90">Ethan Mollick@emollickAn unexpected reason we need Grand Theft Auto 6: when a major GTA game is released, violence &amp; crime appear to actually drop, as people stay inside to play. This applies to other big violent shooters as well - maybe the annual CoD games are a better idea than reviewers think? 5:23 PM ∙ Nov 14, 2021298Likes68Retweets</p>
       </div>
       
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://twitter.com/benedictevans/status/1461413250076139523?t=RDkq1kW5IPrzieTOEC_f7A&amp;s=19" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Benedict Evans@benedictevansPlaystation has about 5bn hours of play a month, which happens to be almost exactly the same as the top 10 series and movies on Netflix in October</a>
-            <a href="https://journals.sagepub.com/doi/abs/10.1177/1477370817717070?journalCode=euca" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ एक लेख ने Grand Theft Auto V के रिलीज़ होने के बाद अपराधों और हिंसा की घटनाओं की</a>
-            <a href="https://twitter.com/emollick/status/1459935121579065346?t=eiFBpGJB6DXykgRM2ZzrYQ&amp;s=19" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Ethan Mollick@emollickAn unexpected reason we need Grand Theft Auto 6: when a major GTA game is released, violence &amp; crime appear to actually drop, as people stay inside to play. This applies to other big violent shooters as well - maybe the annual CoD games are a better idea than reviewers think?</a>
+          <div class="ff-refs-l">
+            <a href="https://twitter.com/benedictevans/status/1461413250076139523?t=RDkq1kW5IPrzieTOEC_f7A&amp;s=19" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Benedict Evans@benedictevansPlaystation has about 5bn hours of play a month, which happens to be almost exactly the same as the top 10 series and movies on Netflix in October</a>
+            <a href="https://journals.sagepub.com/doi/abs/10.1177/1477370817717070?journalCode=euca" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ एक लेख ने Grand Theft Auto V के रिलीज़ होने के बाद अपराधों और हिंसा की घटनाओं की</a>
+            <a href="https://twitter.com/emollick/status/1459935121579065346?t=eiFBpGJB6DXykgRM2ZzrYQ&amp;s=19" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Ethan Mollick@emollickAn unexpected reason we need Grand Theft Auto 6: when a major GTA game is released, violence &amp; crime appear to actually drop, as people stay inside to play. This applies to other big violent shooters as well - maybe the annual CoD games are a better idea than reviewers think?</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-8-6" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-8-6" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🍷 ff.8.6 पियो और भूल जाओ</h2>
-        <a href="https://fortissimo.substack.com/i/43943640/ff86-bere-e-dimenticare" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.8.6 पियो और भूल जाओ">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/43943640/ff86-bere-e-dimenticare" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.8.6 पियो और भूल जाओ">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">टेक की बातें बहुत हुईं। मन बहलाने का सबसे अच्छा तरीक़ा अब भी बीयर का एक मग है। अगर आप कोई बार ढूँढ रहे हैं, तो नीचे नक्शा छोड़ रहा हूँ।</p>
         <p class="text-base leading-relaxed text-black/90">पब/जगहों/बार का आबादी वाले इलाक़ों से रिश्ता मज़बूत है, लेकिन बिल्कुल एकतरफ़ा नहीं। उदाहरण के लिए देखिए:</p>
         <p class="text-base leading-relaxed text-black/90">बार से &quot;लाल&quot; पो घाटी (ख़ासकर अपने spritz के साथ वेनेतो); इंग्लैंड, साफ़ तौर पर &quot;जगमगाता&quot;; बेल्जियम में &quot;हरे धब्बे&quot; = पब का फैलाव; मॉस्को की ओर जाने वाली सड़कें।</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!z2dP!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fa2705018-16af-41c7-90ae-af4811a92f90_960x960.png" width="960" height="960" alt="r/DataIsBeautiful से" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">r/DataIsBeautiful से</figcaption>
         </figure>
       
     </section>
 
-    <section id="ff-8-7" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-8-7" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">⌛ ff.8.7 समय काटना</h2>
-        <a href="https://fortissimo.substack.com/i/43943640/ff87-ammazzare-il-tempo" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.8.7 समय काटना">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/43943640/ff87-ammazzare-il-tempo" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.8.7 समय काटना">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">बोरियत पर इस भटकाव को ख़त्म करने के लिए, समय काटने की ज़रूरत (या नहीं) पर एक विचार। पढ़ना भी ऐसा करने का एक हथियार है, है न?</p>
@@ -409,17 +409,17 @@ It only took 17 days and 111M global fans to become our biggest ever series at l
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">संबंधित अंक</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-117.html" class="font-bold hover:underline">ff.117 हम एक सिमुलेशन में जी रहे हैं</a><p class="text-sm text-black/75 mt-1">हांगकांग और शेनझेन के बीच यात्रा करते हुए मुझे यह समझ आया</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-72.html" class="font-bold hover:underline">ff.72 UNO खेलें?</a><p class="text-sm text-black/75 mt-1">जनरेटिव कला और लगातार भटकाव के ख़िलाफ़, ख़ुद को एक ही काम पर टिकाना</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-18.html" class="font-bold hover:underline">ff.18 डिजिटल कला और AI के बीच</a><p class="text-sm text-black/75 mt-1">कला क्यों ज़रूरी है और कृत्रिम बुद्धिमत्ता इंसान से ज़्यादा कलात्मक कैसे हो सकती है</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-146.html" class="font-bold hover:underline">ff.146 ख़ामोश ज़ख़्म</a><p class="text-sm text-black/75 mt-1">AI के अनगिनत क्रमचयों के ख़िलाफ़: ज़ख़्म और कविता?</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/hi/archive/ff-117.html" class="font-bold hover:underline">ff.117 हम एक सिमुलेशन में जी रहे हैं</a><p class="text-sm text-black/75 mt-1">हांगकांग और शेनझेन के बीच यात्रा करते हुए मुझे यह समझ आया</p></li>
+        <li><a href="/hi/archive/ff-72.html" class="font-bold hover:underline">ff.72 UNO खेलें?</a><p class="text-sm text-black/75 mt-1">जनरेटिव कला और लगातार भटकाव के ख़िलाफ़, ख़ुद को एक ही काम पर टिकाना</p></li>
+        <li><a href="/hi/archive/ff-18.html" class="font-bold hover:underline">ff.18 डिजिटल कला और AI के बीच</a><p class="text-sm text-black/75 mt-1">कला क्यों ज़रूरी है और कृत्रिम बुद्धिमत्ता इंसान से ज़्यादा कलात्मक कैसे हो सकती है</p></li>
+        <li><a href="/hi/archive/ff-146.html" class="font-bold hover:underline">ff.146 ख़ामोश ज़ख़्म</a><p class="text-sm text-black/75 mt-1">AI के अनगिनत क्रमचयों के ख़िलाफ़: ज़ख़्म और कविता?</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Futuro Fortissimo के नए अंक पाएँ</h2>
@@ -434,7 +434,7 @@ It only took 17 days and 111M global fans to become our biggest ever series at l
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -486,7 +486,7 @@ It only took 17 days and 111M global fans to become our biggest ever series at l
     <ul id="ff-results" role="listbox" aria-label="खोजें"></ul>
     <div class="ff-s-foot"><a href="/hi/archive/" data-ff-all data-base="/hi/archive/">संग्रह में सभी परिणाम →</a><span>कहीं भी खोजने के लिए / दबाएँ</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

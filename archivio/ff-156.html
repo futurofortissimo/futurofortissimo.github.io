@@ -148,12 +148,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -162,9 +162,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -217,12 +217,12 @@
         <a href="/libri/">Libri</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="Cerca (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Cerca</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Cerca (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">Cerca</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="Lingua"><a href="/archivio/ff-156.html" hreflang="it" lang="it" title="Italiano" data-keep-state aria-current="page">IT</a><a href="/en/archive/ff-156.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/archive/ff-156.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="Tema scuro" title="Tema scuro"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Iscriviti</a>
         <details class="ff-more">
-          <summary aria-label="Altro"><span aria-hidden="true">☰</span><span class="sr-only">Altro</span></summary>
+          <summary aria-label="Altro"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">Altro</span></summary>
           <nav class="ff-menu" aria-label="Altro">
             <a href="/book/">📖 Il Libro</a>
             <a href="/book/ffxy-index.html">🔢 ff.x.y</a>
@@ -239,20 +239,20 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/">Home</a> /</li><li><a class="underline" href="/archivio/">Archivio</a> /</li><li aria-current="page">ff.156 Aulin?</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>156</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>156</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="lamp" data-ff-slug="ff-156" data-label="Apri l’oggetto 3D e l’anteprima di ff.156"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Archivio Futuro Fortissimo</p>
       <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.156 Aulin?</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">Cosa fare quando la testa (e la zucca) esplode, ogni giorno?</p>
       <p class="mt-2 text-xs font-mono text-black/70">Pubblicato il <time datetime="2026-10-30T16:17:57.697Z">30 ottobre 2026</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/archivio/ff-156.html" data-done="Link copiato"><span aria-hidden="true">↗</span> Condividi</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/archivio/ff-156.html" data-done="Link copiato"><span aria-hidden="true">🔗</span> Copia link</button>
-        <a href="https://fortissimo.substack.com/p/ff156-aulin" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Leggi originale su Substack ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/archivio/ff-156.html" data-done="Link copiato"><span aria-hidden="true">↗</span> Condividi</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/archivio/ff-156.html" data-done="Link copiato"><span aria-hidden="true">🔗</span> Copia link</button>
+        <a href="https://fortissimo.substack.com/p/ff156-aulin" target="_blank" rel="noopener noreferrer" class="ff-qlink">Leggi originale su Substack ↗</a>
       </div>
       
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Temi</span><a href="/themes.html#ai" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🤖 AI, agenti e modelli</a><a href="/themes.html#geo" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🏛 Geopolitica, economia e società</a></p>
-      <nav aria-label="Sezioni del numero" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">Temi</span><a href="/themes.html#ai" class="ff-tlink">🤖 AI, agenti e modelli</a><a href="/themes.html#geo" class="ff-tlink">🏛 Geopolitica, economia e società</a></p>
+      <nav aria-label="Sezioni del numero" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">In questo numero</h2>
         <ol>
           <li><a href="#ff-156-1">👨‍🌾 ff.156.1 Dalle stelle alle stalle?</a></li>
@@ -264,75 +264,75 @@
 
     
 
-    <section id="ff-156-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-156-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">👨‍🌾 ff.156.1 Dalle stelle alle stalle?</h2>
-        <a href="https://fortissimo.substack.com/i/222754743/ff1561-dalle-stelle-alle-stalle" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.156.1 Dalle stelle alle stalle?">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/222754743/ff1561-dalle-stelle-alle-stalle" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.156.1 Dalle stelle alle stalle?">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Non scrivo, non schiaccio una tastiera, da troppo tempo. Mi mancava. Digitare sui tasti mi sembra sempre di più un nuovo sport di endurance : una risposta fisiologica a testi generati con un click, che non sono mai, però, esattamente quello che si aveva in mente. I pensieri ormai sono come i passi: da contare con lo smartwatch, ogni giorno. Pensare somiglia sempre più a muoversi: costringersi così a scrivere o correre sono la stessa cosa. A proposito di muoversi, di sport: sono stati mesi intensi. Dopo il fallimento dell’IRONMAN (cancellato per il cambiamento climatico e i 37° di Francoforte a giugno), ho dovuto ricaricare le pile. La motivazione dopo il duplice fallimento (a Cervia 2025 avevo forato in bici…) era ai minimi storici. O meglio, le energie mentali per un qualsiasi altro progetto. Inoltre, il fatto che due anni di lavoro fossero sfumati con un nulla di fatto, mi ha fatto riconsiderare molte routine. Tra queste, quella di scrivere futuro fortissimo. Non solo: c’è stata l’ennesima esplosione agentica. Come ad ogni miglioramento significativo dell’AI, ho voluto esplorare le nuove possibilità. Per due mesi mi sono buttato in un progetto, Mercatorum , pensando addirittura di creare una startup. NOTA. Mercatorum parte da una considerazione: facciamo un sacco di viaggi a vuoto, magari tra casa, lavoro e un hobby. Potremmo sfruttarli per portare la qualità di produttori locali (che non hanno una logistica a-la-Amazon) a colleghi, amici del calcetto o compaesani (membri, in Mercatorum, delle “Cerchie”). Potete provarla (e farmi sapere cosa migliorereste): https://app.via-mercatorum.com/ Magari un giorno esploderà, diventando una sorta di «BlaBlaCar dei prodotti». Intanto, continuo con altre distrazioni.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/w_960,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3005a083-2c1d-45fc-85d8-d0347e90809a_1884x893.png" srcset="https://substackcdn.com/image/fetch/w_480,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3005a083-2c1d-45fc-85d8-d0347e90809a_1884x893.png 480w, https://substackcdn.com/image/fetch/w_960,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3005a083-2c1d-45fc-85d8-d0347e90809a_1884x893.png 960w, https://substackcdn.com/image/fetch/w_1440,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3005a083-2c1d-45fc-85d8-d0347e90809a_1884x893.png 1440w" sizes="(max-width: 1024px) 100vw, 960px" width="1884" height="893" alt="👨‍🌾 ff.156.1 Dalle stelle alle stalle?" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://via-mercatorum.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Mercatorum</a>
+          <div class="ff-refs-l">
+            <a href="https://via-mercatorum.com/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Mercatorum</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-156-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-156-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🧞‍♂️ ff.156.2 Il Genie fuori dalla lampada</h2>
-        <a href="https://fortissimo.substack.com/i/222754743/ff1562-il-genie-fuori-dalla-lampada" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.156.2 Il Genie fuori dalla lampada">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/222754743/ff1562-il-genie-fuori-dalla-lampada" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.156.2 Il Genie fuori dalla lampada">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Non è facile capire quello che si vuole essere, mantenere saldi valori e progetti a lungo termine, quando ogni giorno il mondo sembra diverso da quello di ieri. Sempre più simulato, magari, da Genie. Ci stiamo passando tutti. Come racconta Nathaniel Drew nel suo ultimo video: Negli ultimi dodici mesi ho passato tantissimo tempo a leggere, ascoltare e sperimentare strumenti di intelligenza artificiale. Davvero tantissimo tempo. E tutto questo suscita in me una gamma incredibilmente ampia di emozioni. A volte paura, a volte stupore, altre volte gioia ed entusiasmo per le possibilità che si aprono. Insomma, provo emozioni molto diverse tra loro. E spesso prevale la preoccupazione. Mi ritrovo frequentemente in quello stato d’animo. Credo che dipenda in parte dal modo in cui la mia mente reagisce a ciò che sta accadendo, ma penso anche che sia qualcosa che sto osservando in molte altre persone. C’è tanta preoccupazione intorno a me. E quando non è l’intelligenza artificiale, con le sue innumerevoli applicazioni e le conseguenze che potrebbe avere nei diversi settori, allora è la guerra, il cambiamento climatico o qualche altro sviluppo che genera inquietudine. Quello che trovo davvero affascinante, però, è che non tutti reagiscono allo stesso modo. Anzi, è proprio questa una delle cose più belle che sto osservando: le persone possono reagire in modi profondamente diversi, arrivare a conclusioni completamente differenti e, in realtà, non esiste un’unica reazione giusta. … a proposito di eterni ritorni, btw , Nathaniel lo avevamo incontrato qualche secolo fa, in 🍄 ff.2.6 Psichedelia portami via (parte 2)</p>
       </div>
       
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://fortissimo.substack.com/i/43902526/ff26-psichedelia-portami-via-parte-2" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🍄 ff.2.6 Psichedelia portami via (parte 2)</a>
+          <div class="ff-refs-l">
+            <a href="https://fortissimo.substack.com/i/43902526/ff26-psichedelia-portami-via-parte-2" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ 🍄 ff.2.6 Psichedelia portami via (parte 2)</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-156-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-156-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">♾️ ff.156.3 L’eterno ritorno</h2>
-        <a href="https://fortissimo.substack.com/i/222754743/ff1563-leterno-ritorno" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.156.3 L’eterno ritorno">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/222754743/ff1563-leterno-ritorno" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.156.3 L’eterno ritorno">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Comunque, tra Claude 5.5 e GPT Sol-Astra-Terra 6.1, tra un’ennesima maratona e l’altra, tra un’ennesima app e l’altra, ho ricevuto un messaggio. E ho capito che forse quanto fatto negli ultimi due anni, negli ultimi cinque anni, ha senso. E ha senso continuarlo a farlo. Questo messaggio di Giorgio, più della cifra della donazione PayPal che l’ha accompagnato, mi ha ricordato una cosa piuttosto semplice. Che forse quanto fatto negli ultimi due anni, negli ultimi cinque anni, ha senso. Anche senza un traguardo. Anche senza una startup. Anche senza sapere bene dove porterà. Arrivo a questa considerazione mentre guardo fuori dalla finestra di uno Starbucks che profuma di pumpkin spice latte : un fiorista sta sistemando le ultime zucche, pronte per essere intagliate all’indomani, “dì di festa”, un altro Sabato del Villaggio . Eppure, questo Aulin sa di qualcosa di diverso. Nella singolarità, ogni anno sembra un’altra vita e anche la ciclicità delle stagioni sembra venir meno. Forse è per questo che son tornato, come un’ostrica, ad aggrapparmi a questa QWERTY: per ritrovare il flow , per sentire un po’ di acido lattico, ma al cervello, per sentirmi un po’ umano di fronte a un futuro che forse è troppo fortissimo. Al prossimo 10, 20 o 30 (o 31…)! Intanto, se vuoi:</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/w_960,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F984986a1-269e-45b8-ae11-e16a98357a4e_1067x244.png" srcset="https://substackcdn.com/image/fetch/w_480,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F984986a1-269e-45b8-ae11-e16a98357a4e_1067x244.png 480w, https://substackcdn.com/image/fetch/w_960,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F984986a1-269e-45b8-ae11-e16a98357a4e_1067x244.png 960w, https://substackcdn.com/image/fetch/w_1440,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F984986a1-269e-45b8-ae11-e16a98357a4e_1067x244.png 1440w" sizes="(max-width: 1024px) 100vw, 960px" width="1067" height="244" alt="♾️ ff.156.3 L’eterno ritorno" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ michele merelli</a>
+          <div class="ff-refs-l">
+            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ michele merelli</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">Numeri correlati</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-2.html" class="font-bold hover:underline">ff.2 Mente artificiale e psichedelia</a><p class="text-sm text-black/75 mt-1">Il costo dell&#39;intelligenza artificiale, il vostro cane in un&#39;opera d&#39;arte e funghetti speciali.</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-131.html" class="font-bold hover:underline">ff.131 L&#39;estate sta iniziando</a><p class="text-sm text-black/75 mt-1">Come passare agosto pensando a un futuro fortissimo</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-129.html" class="font-bold hover:underline">ff.129 Il valzer di Tesla</a><p class="text-sm text-black/75 mt-1">Altro che ChatGPT: l&#39;intelligenza artificiale fisica</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-82.html" class="font-bold hover:underline">ff.82 Guerra a colpi di chip</a><p class="text-sm text-black/75 mt-1">Le GPU saranno le trincee del 21esimo secolo?</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/archivio/ff-2.html" class="font-bold hover:underline">ff.2 Mente artificiale e psichedelia</a><p class="text-sm text-black/75 mt-1">Il costo dell&#39;intelligenza artificiale, il vostro cane in un&#39;opera d&#39;arte e funghetti speciali.</p></li>
+        <li><a href="/archivio/ff-131.html" class="font-bold hover:underline">ff.131 L&#39;estate sta iniziando</a><p class="text-sm text-black/75 mt-1">Come passare agosto pensando a un futuro fortissimo</p></li>
+        <li><a href="/archivio/ff-129.html" class="font-bold hover:underline">ff.129 Il valzer di Tesla</a><p class="text-sm text-black/75 mt-1">Altro che ChatGPT: l&#39;intelligenza artificiale fisica</p></li>
+        <li><a href="/archivio/ff-82.html" class="font-bold hover:underline">ff.82 Guerra a colpi di chip</a><p class="text-sm text-black/75 mt-1">Le GPU saranno le trincee del 21esimo secolo?</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Ricevi i nuovi numeri di Futuro Fortissimo</h2>
@@ -347,7 +347,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -399,7 +399,7 @@
     <ul id="ff-results" role="listbox" aria-label="Cerca"></ul>
     <div class="ff-s-foot"><a href="/archivio/" data-ff-all data-base="/archivio/">Tutti i risultati nell’archivio →</a><span>Premi / per cercare ovunque</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

@@ -149,12 +149,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -163,9 +163,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -218,12 +218,12 @@
         <a href="/libri/">Libri</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="Cerca (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Cerca</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Cerca (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">Cerca</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="Lingua"><a href="/archivio/ff-61.html" hreflang="it" lang="it" title="Italiano" data-keep-state aria-current="page">IT</a><a href="/en/archive/ff-61.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/archive/ff-61.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="Tema scuro" title="Tema scuro"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Iscriviti</a>
         <details class="ff-more">
-          <summary aria-label="Altro"><span aria-hidden="true">☰</span><span class="sr-only">Altro</span></summary>
+          <summary aria-label="Altro"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">Altro</span></summary>
           <nav class="ff-menu" aria-label="Altro">
             <a href="/book/">📖 Il Libro</a>
             <a href="/book/ffxy-index.html">🔢 ff.x.y</a>
@@ -240,24 +240,24 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/">Home</a> /</li><li><a class="underline" href="/archivio/">Archivio</a> /</li><li aria-current="page">ff.61 La decrescita felice è impossibile?</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>61</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>61</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="globe" data-ff-slug="ff-61" data-label="Apri l’oggetto 3D e l’anteprima di ff.61"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Archivio Futuro Fortissimo</p>
       <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.61 La decrescita felice è impossibile?</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">I costi di ogni attività per un budget da 10 tonnellate di CO2 annue</p>
       <p class="mt-2 text-xs font-mono text-black/70">Pubblicato il <time datetime="2023-05-30T07:00:59.067Z">30 maggio 2023</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/archivio/ff-61.html" data-done="Link copiato"><span aria-hidden="true">↗</span> Condividi</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/archivio/ff-61.html" data-done="Link copiato"><span aria-hidden="true">🔗</span> Copia link</button>
-        <a href="https://fortissimo.substack.com/p/ff61-la-decrescita-felice-e-impossibile" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Leggi originale su Substack ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/archivio/ff-61.html" data-done="Link copiato"><span aria-hidden="true">↗</span> Condividi</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/archivio/ff-61.html" data-done="Link copiato"><span aria-hidden="true">🔗</span> Copia link</button>
+        <a href="https://fortissimo.substack.com/p/ff61-la-decrescita-felice-e-impossibile" target="_blank" rel="noopener noreferrer" class="ff-qlink">Leggi originale su Substack ↗</a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• Stare nel budget di 10 tonnellate CO2 all’anno</li>
-        <li>• Hamburger che inquinano meno degli asparagi</li>
-        <li>• Un abbonamento, stile Spotify, per vivere il mondo</li>
+      <ul class="ff-keypoints">
+        <li>Stare nel budget di 10 tonnellate CO2 all’anno</li>
+        <li>Hamburger che inquinano meno degli asparagi</li>
+        <li>Un abbonamento, stile Spotify, per vivere il mondo</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Temi</span><a href="/themes.html#clima" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🌍 Natura, clima ed energia</a><a href="/themes.html#nutrizione" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🥗 Nutrizione e microbioma</a></p>
-      <nav aria-label="Sezioni del numero" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">Temi</span><a href="/themes.html#clima" class="ff-tlink">🌍 Natura, clima ed energia</a><a href="/themes.html#nutrizione" class="ff-tlink">🥗 Nutrizione e microbioma</a></p>
+      <nav aria-label="Sezioni del numero" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">In questo numero</h2>
         <ol>
           <li><a href="#ff-61-1">⚖️ ff.61.1 Misurare l’inquinamento in ore di vita</a></li>
@@ -270,10 +270,10 @@
 
     
 
-    <section id="ff-61-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-61-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">⚖️ ff.61.1 Misurare l’inquinamento in ore di vita</h2>
-        <a href="https://fortissimo.substack.com/i/115642846/ff-misurare-linquinamento-in-ore-di-vita" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.61.1 Misurare l’inquinamento in ore di vita">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/115642846/ff-misurare-linquinamento-in-ore-di-vita" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.61.1 Misurare l’inquinamento in ore di vita">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Abbiamo visto (🎼 ff. 58 Le banane inquinano troppo?) che Mike Berners-Lee propone 10 tonnellate di CO2 annue come obbiettivo pro capite globale (ossia una riduzione del 50% per un europeo medio).</p>
@@ -282,18 +282,18 @@
         <p class="text-base leading-relaxed text-black/90">1kg CO2/h. In pratica, se un’attività ci occupa per più tempo rispetto alla sua conversione CO2-tempo, è ecologica. Ad esempio, una banana è 4 minuti di inquinamento. E solitamente la mangio e mi sazia in un tempo più lungo.</p>
       </div>
       
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://fortissimo.substack.com/p/ff58-le-banane-inquinano-troppo" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🎼 ff.58 Le banane inquinano troppo?</a>
+          <div class="ff-refs-l">
+            <a href="https://fortissimo.substack.com/p/ff58-le-banane-inquinano-troppo" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ 🎼 ff.58 Le banane inquinano troppo?</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-61-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-61-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🕗 ff.61.2 Emissioni convertite in tempo</h2>
-        <a href="https://fortissimo.substack.com/i/115642846/ff-emissioni-convertite-in-tempo" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.61.2 Emissioni convertite in tempo">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/115642846/ff-emissioni-convertite-in-tempo" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.61.2 Emissioni convertite in tempo">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Dettagliata tabella con le emissioni di praticamente tutto(prese dal libro). Di seguito  10 esempi (in minuti/ore) delle conversioni di cui abbiamo appena parlato.</p>
@@ -301,23 +301,23 @@
         <p class="text-base leading-relaxed text-black/90">Se prendiamo questi numeri e consideriamo quantità e frequenza di una specifica attività, ne esceun’analisi cumulativa sull’anno.</p>
         <p class="text-base leading-relaxed text-black/90">Sopra, mancano un’infinità di altri contributi (consumi domestici, costruzione casa, mutuo, servizi sanitari, altro cibo). Insomma, lo spazio per la frugalità, a meno di rinunce quasi totali e non realistiche su larga scala, è poco.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!Pii5!,w_1456,c_limit,f_auto,q_auto:good,fl_lossy/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F772fb326-5e76-4fea-abab-3ef19550fc17_600x987.gif" width="600" height="987" alt="🕗 ff.61.2 Emissioni convertite in tempo" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (2)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="http://peopleschurch.net/wp-content/uploads/2020/03/Carbon-Emissions-by-Activity.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Dettagliata tabella con le emissioni di praticamente tutto</a>
-            <a href="https://ourworld.unu.edu/en/uncovering-the-carbon-footprint-of-everything" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ un’analisi cumulativa sull’anno.</a>
+          <div class="ff-refs-l">
+            <a href="http://peopleschurch.net/wp-content/uploads/2020/03/Carbon-Emissions-by-Activity.pdf" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Dettagliata tabella con le emissioni di praticamente tutto</a>
+            <a href="https://ourworld.unu.edu/en/uncovering-the-carbon-footprint-of-everything" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ un’analisi cumulativa sull’anno.</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-61-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-61-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🥩 ff.61.3 Carne o asparagi?</h2>
-        <a href="https://fortissimo.substack.com/i/115642846/ff-carne-o-asparagi" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.61.3 Carne o asparagi?">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/115642846/ff-carne-o-asparagi" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.61.3 Carne o asparagi?">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Essere vegani è rispettabile: sia per l’ambiente che per la salute di una persona (🍔 ff. 49. 3 Diete e inquinanti).</p>
@@ -326,23 +326,23 @@
         <p class="text-base leading-relaxed text-black/90">-65 km di macchina a settimana. Ridurre gli spostamenti di questo quantitativo ha lo stesso impatto di passare da una dieta parzialmente carnivora ad una totalmente vegana.</p>
         <p class="text-base leading-relaxed text-black/90">Ah, anchenella dieta vegana non mancano insidie: gli asparagi.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!rBjG!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fce138078-338f-4830-95c7-09c25d3afdb8_668x528.png" width="668" height="528" alt="🥩 ff.61.3 Carne o asparagi?" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (2)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.nationalgeographic.com/culture/article/the-surprisingly-big-carbon-shadow-cast-by-slender-asparagus" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ nella dieta vegana non mancano insidie: gli asparagi</a>
-            <a href="https://fortissimo.substack.com/i/95768941/ff-diete-e-inquinanti" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🍔 ff.49.3 Diete e inquinanti</a>
+          <div class="ff-refs-l">
+            <a href="https://www.nationalgeographic.com/culture/article/the-surprisingly-big-carbon-shadow-cast-by-slender-asparagus" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ nella dieta vegana non mancano insidie: gli asparagi</a>
+            <a href="https://fortissimo.substack.com/i/95768941/ff-diete-e-inquinanti" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ 🍔 ff.49.3 Diete e inquinanti</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-61-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-61-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🎶 ff.61.4 Un abbonamento stile Spotify per il mondo</h2>
-        <a href="https://fortissimo.substack.com/i/115642846/ff-un-abbonamento-stile-spotify-per-il-mondo" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.61.4 Un abbonamento stile Spotify per il mondo">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/115642846/ff-un-abbonamento-stile-spotify-per-il-mondo" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.61.4 Un abbonamento stile Spotify per il mondo">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Nonostante affascini con la sua narrazione bucolica-naturista,la decrescita felice non è compatibile con il primo mondo digitale.</p>
@@ -355,33 +355,33 @@
         <p class="text-base leading-relaxed text-black/90">☕❤️</p>
         <p class="text-base leading-relaxed text-black/90">👋 A presto, damicmer</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!njiI!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2a5ae5a1-0351-4847-87aa-b894488f5fad_1440x811.bin" alt="DaIt’s Nice That" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">DaIt’s Nice That</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (4)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.noahpinion.blog/p/degrowth-we-cant-let-it-happen-here?utm_source=post-email-title&amp;publication_id=35345&amp;post_id=123140587&amp;isFreemail=true&amp;utm_medium=email" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ la decrescita felice non è compatibile con il primo mondo digitale</a>
-            <a href="https://instagram.com/futuro fortissimo" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ futuro fortissimo</a>
-            <a href="https://co2.myclimate.org/en/portfolios?calculation_id=5727679&amp;localized_currency=EUR" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ MyClimate aiuta a compensare le nostre emissioni</a>
-            <a href="https://fortissimo.substack.com/i/113015963/ff-decrescita-felice-o-crescita-tech" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 📉 ff.58.5 Decrescita felice o crescita tech?</a>
+          <div class="ff-refs-l">
+            <a href="https://www.noahpinion.blog/p/degrowth-we-cant-let-it-happen-here?utm_source=post-email-title&amp;publication_id=35345&amp;post_id=123140587&amp;isFreemail=true&amp;utm_medium=email" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ la decrescita felice non è compatibile con il primo mondo digitale</a>
+            <a href="https://instagram.com/futuro fortissimo" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ futuro fortissimo</a>
+            <a href="https://co2.myclimate.org/en/portfolios?calculation_id=5727679&amp;localized_currency=EUR" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ MyClimate aiuta a compensare le nostre emissioni</a>
+            <a href="https://fortissimo.substack.com/i/113015963/ff-decrescita-felice-o-crescita-tech" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ 📉 ff.58.5 Decrescita felice o crescita tech?</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">Numeri correlati</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-58.html" class="font-bold hover:underline">ff.58 Le banane inquinano troppo?</a><p class="text-sm text-black/75 mt-1">Come diminuire e monitorare le emissioni delle attività di ogni giorno</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-49.html" class="font-bold hover:underline">ff.49 La pandemia del 21esimo secolo</a><p class="text-sm text-black/75 mt-1">Perché siamo sempre più obesi? Dorritos, attività fisica o inquinamento?</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-143.html" class="font-bold hover:underline">ff.143 Scimmie col Rolex</a><p class="text-sm text-black/75 mt-1">Il vero lusso occidentale? Non il Rolex: sole/aria/acqua (natura biologica).</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-32.html" class="font-bold hover:underline">ff.32 I numeri non mentono</a><p class="text-sm text-black/75 mt-1">Cellulari che inquinano come auto e polli più efficienti di mucche</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/archivio/ff-58.html" class="font-bold hover:underline">ff.58 Le banane inquinano troppo?</a><p class="text-sm text-black/75 mt-1">Come diminuire e monitorare le emissioni delle attività di ogni giorno</p></li>
+        <li><a href="/archivio/ff-49.html" class="font-bold hover:underline">ff.49 La pandemia del 21esimo secolo</a><p class="text-sm text-black/75 mt-1">Perché siamo sempre più obesi? Dorritos, attività fisica o inquinamento?</p></li>
+        <li><a href="/archivio/ff-143.html" class="font-bold hover:underline">ff.143 Scimmie col Rolex</a><p class="text-sm text-black/75 mt-1">Il vero lusso occidentale? Non il Rolex: sole/aria/acqua (natura biologica).</p></li>
+        <li><a href="/archivio/ff-32.html" class="font-bold hover:underline">ff.32 I numeri non mentono</a><p class="text-sm text-black/75 mt-1">Cellulari che inquinano come auto e polli più efficienti di mucche</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Ricevi i nuovi numeri di Futuro Fortissimo</h2>
@@ -396,7 +396,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -448,7 +448,7 @@
     <ul id="ff-results" role="listbox" aria-label="Cerca"></ul>
     <div class="ff-s-foot"><a href="/archivio/" data-ff-all data-base="/archivio/">Tutti i risultati nell’archivio →</a><span>Premi / per cercare ovunque</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

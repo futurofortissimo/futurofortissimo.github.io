@@ -146,12 +146,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -160,9 +160,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -215,12 +215,12 @@
         <a href="/hi/books/">किताबें</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="खोजें (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">खोजें</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="खोजें (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">खोजें</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="भाषा"><a href="/archivio/ff-121.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/archive/ff-121.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/archive/ff-121.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state aria-current="page">हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="डार्क थीम" title="डार्क थीम"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">सब्सक्राइब</a>
         <details class="ff-more">
-          <summary aria-label="और"><span aria-hidden="true">☰</span><span class="sr-only">और</span></summary>
+          <summary aria-label="और"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">और</span></summary>
           <nav class="ff-menu" aria-label="और">
             <a href="/book/">📖 किताब (IT)</a>
             <a href="/hi/connections.html">🔗 कनेक्शन</a>
@@ -236,24 +236,24 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/hi/">होम</a> /</li><li><a class="underline" href="/hi/archive/">संग्रह</a> /</li><li aria-current="page">ff.121 क्या flow आपको पंख देता है?</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>121</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>121</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="plane" data-ff-slug="ff-121" data-label="3D वस्तु और पूर्वावलोकन खोलें: ff.121"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Futuro Fortissimo संग्रह</p>
       <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.121 क्या flow आपको पंख देता है?</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">बिना मतलब (और बिना होश) के अलौकिक प्रदर्शन</p>
       <p class="mt-2 text-xs font-mono text-black/70">प्रकाशित <time datetime="2025-04-10T08:01:20.857Z">10 अप्रैल 2025</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/hi/archive/ff-121.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">↗</span> शेयर करें</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/hi/archive/ff-121.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">🔗</span> लिंक कॉपी करें</button>
-        <a href="https://fortissimo.substack.com/p/ff121-il-flow-ti-mette-le-ali" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Substack पर इतालवी मूल पढ़ें ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/hi/archive/ff-121.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">↗</span> शेयर करें</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/hi/archive/ff-121.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">🔗</span> लिंक कॉपी करें</button>
+        <a href="https://fortissimo.substack.com/p/ff121-il-flow-ti-mette-le-ali" target="_blank" rel="noopener noreferrer" class="ff-qlink">Substack पर इतालवी मूल पढ़ें ↗</a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• क्या असंभव को पाने के लिए यह ज़रूरी है?</li>
-        <li>• हम बार-बार अति की तलाश क्यों करते हैं?</li>
-        <li>• अमेरिकी सेना के स्नाइपरों के लिए Red Bull?</li>
+      <ul class="ff-keypoints">
+        <li>क्या असंभव को पाने के लिए यह ज़रूरी है?</li>
+        <li>हम बार-बार अति की तलाश क्यों करते हैं?</li>
+        <li>अमेरिकी सेना के स्नाइपरों के लिए Red Bull?</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">थीम</span><a href="/hi/themes.html#ai" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🤖 AI, एजेंट और मॉडल</a><a href="/hi/themes.html#attenzione" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">📱 ध्यान, स्क्रीन और आदतें</a><a href="/hi/themes.html#geo" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🏛 भू-राजनीति, अर्थव्यवस्था और समाज</a></p>
-      <nav aria-label="इस अंक के खंड" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">थीम</span><a href="/hi/themes.html#ai" class="ff-tlink">🤖 AI, एजेंट और मॉडल</a><a href="/hi/themes.html#attenzione" class="ff-tlink">📱 ध्यान, स्क्रीन और आदतें</a><a href="/hi/themes.html#geo" class="ff-tlink">🏛 भू-राजनीति, अर्थव्यवस्था और समाज</a></p>
+      <nav aria-label="इस अंक के खंड" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">इस अंक में</h2>
         <ol>
           <li><a href="#ff-121-1">🌊 ff.121.1 flow की बुनियादी बातें</a></li>
@@ -266,57 +266,57 @@
 
     
 
-    <section id="ff-121-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-121-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🌊 ff.121.1 flow की बुनियादी बातें</h2>
-        <a href="https://fortissimo.substack.com/i/159901694/ff-le-basi-del-flow" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.121.1 flow की बुनियादी बातें">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/159901694/ff-le-basi-del-flow" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.121.1 flow की बुनियादी बातें">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">flow के विचार से मेरी पहली मुलाक़ात कुछ साल पहले Mihaly Csikszentmihalyi को पढ़ते हुए हुई: यह किसी काम में पूरी तरह डूब जाने की वह मानसिक अवस्था है जिसमें हम अपने “स्व” और समय का बोध खो देते हैं।</p>
         <p class="text-base leading-relaxed text-black/90">flow को क्या बढ़ावा देता है? शारीरिक हलचल, जोखिम, किसी काम की जटिलता (लेकिन बहुत ज़्यादा नहीं: 4% का नियम), नयापन, ध्यान भटकाने वाली चीज़ों का न होना।</p>
         <p class="text-base leading-relaxed text-black/90">खेलते हुए हम अक्सर flow में पहुँच जाते हैं। संयोग नहीं कि इसे पहली बार शतरंज खिलाड़ियों में मापा गया, theta तरंगों में बढ़ोतरी और &quot;implicit system&quot; के सक्रिय होने के साथ।</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!i_4G!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff423c13e-6aa3-4b9e-9219-b366ac61cd11_977x1500.jpeg" width="977" height="1500" alt="🌊 ff.121.1 flow की बुनियादी बातें" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (2)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.flowperformancepsych.com/post/2018/04/25/increasing-challenge-to-improve-performance-the-4-rule" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ किसी काम की जटिलता (लेकिन बहुत ज़्यादा नहीं: 4% का नियम</a>
-            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7551835/#:~:text=Thereby%2C%20implicit%20systems%20are%20ultimately,the%20performer%20in%20the%20task." target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ शतरंज खिलाड़ियों में, theta तरंगों में बढ़ोतरी और &quot;implicit system&quot; के सक्रिय होने के साथ</a>
+          <div class="ff-refs-l">
+            <a href="https://www.flowperformancepsych.com/post/2018/04/25/increasing-challenge-to-improve-performance-the-4-rule" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ किसी काम की जटिलता (लेकिन बहुत ज़्यादा नहीं: 4% का नियम</a>
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7551835/#:~:text=Thereby%2C%20implicit%20systems%20are%20ultimately,the%20performer%20in%20the%20task." target="_blank" rel="noopener noreferrer" class="ff-ref">↗ शतरंज खिलाड़ियों में, theta तरंगों में बढ़ोतरी और &quot;implicit system&quot; के सक्रिय होने के साथ</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-121-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-121-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">💸 ff.121.2 flow आपको पंख देता है</h2>
-        <a href="https://fortissimo.substack.com/i/159901694/ff-il-flow-ti-mette-le-ali" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.121.2 flow आपको पंख देता है">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/159901694/ff-il-flow-ti-mette-le-ali" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.121.2 flow आपको पंख देता है">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">हमें ख़ुश करने के अलावा, यह हमारा प्रदर्शन भी बढ़ाता है, सामाजिक-आर्थिक असर के साथ:</p>
         <p class="text-base leading-relaxed text-black/90">McKinsey: flow में मैनेजर पाँच गुना ज़्यादा उत्पादक होते हैं। DARPA (अमेरिकी रक्षा एजेंसी): सैन्य स्नाइपर लक्ष्य 2 गुना तेज़ी से साधते हैं। Red Bull: Leslie Sherlin के नेतृत्व वाला North America&#39;s High-Performance Center</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!2e57!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc0529b5d-2b45-44ad-92bb-3e3dd8f31ad0_720x405.jpeg" width="720" height="405" alt="💸 ff.121.2 flow आपको पंख देता है" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (4)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/increasing-the-meaning-quotient-of-work" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ McKinsey: flow में मैनेजर पाँच गुना ज़्यादा उत्पादक होते हैं</a>
-            <a href="https://www.mendeley.com/catalogue/c5c0b0a7-fff0-3bfc-b106-5bf47ab775f1/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ सैन्य स्नाइपर लक्ष्य साधते हैं</a>
-            <a href="https://www.si.com/edge/2015/05/08/sweat-mecca-red-bull-high-performance-center" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Red Bull:</a>
-            <a href="https://www.fuller.edu/adjunct/leslie-sherlin/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Leslie Sherlin</a>
+          <div class="ff-refs-l">
+            <a href="https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/increasing-the-meaning-quotient-of-work" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ McKinsey: flow में मैनेजर पाँच गुना ज़्यादा उत्पादक होते हैं</a>
+            <a href="https://www.mendeley.com/catalogue/c5c0b0a7-fff0-3bfc-b106-5bf47ab775f1/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ सैन्य स्नाइपर लक्ष्य साधते हैं</a>
+            <a href="https://www.si.com/edge/2015/05/08/sweat-mecca-red-bull-high-performance-center" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Red Bull:</a>
+            <a href="https://www.fuller.edu/adjunct/leslie-sherlin/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Leslie Sherlin</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-122-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-122-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">♟️ ff.122.3 शतरंज से पैटागोनिया तक</h2>
-        <a href="https://fortissimo.substack.com/i/159901694/ff-dagli-scacchi-alla-patagonia" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.122.3 शतरंज से पैटागोनिया तक">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/159901694/ff-dagli-scacchi-alla-patagonia" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.122.3 शतरंज से पैटागोनिया तक">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">मुझे लगता था कि इसके फ़ायदे सिर्फ़ मानसिक हैं, इसलिए हैरानी हुई जब मैंने इसे एक्सट्रीम स्पोर्ट्स की व्याख्या के रूप में पाया।</p>
@@ -324,24 +324,24 @@
         <p class="text-base leading-relaxed text-black/90">और यह असंभव के दरवाज़े खोलता है:</p>
         <p class="text-base leading-relaxed text-black/90">Tony Hawk, स्केटबोर्ड, 900° घुमाव वाला ट्रिक। Tyler Bradt, कयाक, 58 मीटर की छलांग। Dean Potter, क्लाइम्बिंग, free solo का आविष्कार करते हुए (बाद में 2015 में BASE-jumping करते हुए उनकी मौत हो गई, RIP 🕊️), Fitz Roy को साढ़े छह घंटे में चढ़ते हुए। नया ChatGPT तस्वीरें बनाने में कमाल है (लेकिन अभी परफ़ेक्ट नहीं)</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!adMY!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcdda0582-aa91-46a4-ad14-f0cbc1c9590f_975x1500.jpeg" width="975" height="1500" alt="The Art of Impossible: असाधारण प्रदर्शन को क्या जगाता है (Steven Kotler 2021 futuro fortissimo)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">The Art of Impossible: असाधारण प्रदर्शन को क्या जगाता है (Steven Kotler 2021 futuro fortissimo)</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://amzn.to/3DVYHzh" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] text-xs font-mono font-bold hover:underline">📚 The Rise of Superman</a>
-            <a href="https://publications.americanalpineclub.org/articles/12200232103/Fitz-Roy-Supercanaleta-and-Californian-Roulette-Cerro-Torre-Compressor-Route-Free-Solos-and-Speed-Solos" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Dean Potter, क्लाइम्बिंग,</a>
-            <a href="https://en.wikipedia.org/wiki/Dean_Potter" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 2015 में BASE-jumping करते हुए उनकी मौत हो गई</a>
+          <div class="ff-refs-l">
+            <a href="https://amzn.to/3DVYHzh" target="_blank" rel="noopener noreferrer sponsored" class="ff-ref is-book">📚 The Rise of Superman</a>
+            <a href="https://publications.americanalpineclub.org/articles/12200232103/Fitz-Roy-Supercanaleta-and-Californian-Roulette-Cerro-Torre-Compressor-Route-Free-Solos-and-Speed-Solos" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Dean Potter, क्लाइम्बिंग,</a>
+            <a href="https://en.wikipedia.org/wiki/Dean_Potter" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ 2015 में BASE-jumping करते हुए उनकी मौत हो गई</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-122-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-122-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🔺 ff.122.4 4 मिनट में पिरामिड?</h2>
-        <a href="https://fortissimo.substack.com/i/159901694/ff-piramidi-in-minuti" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.122.4 4 मिनट में पिरामिड?">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/159901694/ff-piramidi-in-minuti" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.122.4 4 मिनट में पिरामिड?">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">अब तो Ironman भी काफ़ी नहीं: Mitchell Hutchcraft का Project Limitless, 12,000 किलोमीटर का ट्रायथलॉन (इंग्लिश चैनल में 34 km तैराकी, फ़्रांस से भारत तक 10,000 km साइकिल और आख़िर में नेपाल में Everest तक एक हल्का-सा ट्रेक)।</p>
@@ -356,48 +356,48 @@
         <p class="text-base leading-relaxed text-black/90">👋 फिर मिलेंगे, micmer की ओर से</p>
         <p class="text-base leading-relaxed text-black/90">© futuro fortissimo | michele merelli</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!sQun!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6e9b1e31-b121-47eb-86c3-85699ab71591_1200x949.jpeg" width="1200" height="949" alt="Roger Bannister, 1.609 km को 4 मिनट से कम में दौड़ने वाले पहले इंसान (via futuro fortissimo)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Roger Bannister, 1.609 km को 4 मिनट से कम में दौड़ने वाले पहले इंसान (via futuro fortissimo)</figcaption>
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!i8Th!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7d149ec3-7b07-41d1-9c4b-68ec2d0f7c3b_1250x635.png" width="1250" height="635" alt="🔺 ff.122.4 4 मिनट में पिरामिड?" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!PN-I!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8313b493-6089-4df1-9852-5c05820c2a90_891x548.png" width="891" height="548" alt="🔺 ff.122.4 4 मिनट में पिरामिड?" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!k7zs!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F85f59576-e42b-408c-8636-78154cea7a98_724x563.bin" alt="Flow Festival संगीत कार्यक्रम का टेक्स्ट (2018)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Flow Festival संगीत कार्यक्रम का टेक्स्ट (2018)</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (7)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.inov8.com/au/blog/post/project-limitless-meet-mitch-hutchcraft?srsltid=AfmBOopntUQT_S7evS2EYeuD8MYMM1_8L9bnSB51HoEOTFDA7qiNzX_M" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Mitchell Hutchcraft का Project Limitless</a>
-            <a href="https://instagram.com/runnersworldita" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ runnersworldita</a>
-            <a href="https://nuts.org.uk/sub-4/Sub-4%20register%206%20June%202022.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ उन धावकों का जो 4 मिनट में एक मील दौड़ सकते हैं (2022 में 1,755)।</a>
-            <a href="https://futurofortissimo.github.io/note.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ fortissimo नोट्स संग्रह</a>
-            <a href="https://futurofortissimo.github.io/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ futuro fortissimo</a>
-            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ michele merelli</a>
-            <a href="https://fortissimo.substack.com/i/118479393/ff-la-piramide-che-ce-in-tutti-noi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🔺 ff.62.4 हम सबके भीतर का पिरामिड</a>
+          <div class="ff-refs-l">
+            <a href="https://www.inov8.com/au/blog/post/project-limitless-meet-mitch-hutchcraft?srsltid=AfmBOopntUQT_S7evS2EYeuD8MYMM1_8L9bnSB51HoEOTFDA7qiNzX_M" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Mitchell Hutchcraft का Project Limitless</a>
+            <a href="https://instagram.com/runnersworldita" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ runnersworldita</a>
+            <a href="https://nuts.org.uk/sub-4/Sub-4%20register%206%20June%202022.pdf" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ उन धावकों का जो 4 मिनट में एक मील दौड़ सकते हैं (2022 में 1,755)।</a>
+            <a href="https://futurofortissimo.github.io/note.html" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ fortissimo नोट्स संग्रह</a>
+            <a href="https://futurofortissimo.github.io/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ futuro fortissimo</a>
+            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ michele merelli</a>
+            <a href="https://fortissimo.substack.com/i/118479393/ff-la-piramide-che-ce-in-tutti-noi" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ 🔺 ff.62.4 हम सबके भीतर का पिरामिड</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">संबंधित अंक</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-62.html" class="font-bold hover:underline">ff.62 बर्नआउट से कैसे बचें</a><p class="text-sm text-black/75 mt-1">“9 से 5” दफ़्तरी नौकरी का एक विकल्प: The Pathless Path</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-36.html" class="font-bold hover:underline">ff.36 क्या सिंगुलैरिटी क़रीब है?</a><p class="text-sm text-black/75 mt-1">(डिजिटल) महाबुद्धि, और क्या इंसान पहले से साइबॉर्ग हैं?</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-135.html" class="font-bold hover:underline">ff.135 Casino Royale</a><p class="text-sm text-black/75 mt-1">क्या राजनीति एक स्लॉट मशीन है?</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-132.html" class="font-bold hover:underline">ff.132 वीडियो गेम्स की स्तुति</a><p class="text-sm text-black/75 mt-1">गेमर्स के पास एक ज़िंदगी ज़्यादा क्यों होती है?</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/hi/archive/ff-62.html" class="font-bold hover:underline">ff.62 बर्नआउट से कैसे बचें</a><p class="text-sm text-black/75 mt-1">“9 से 5” दफ़्तरी नौकरी का एक विकल्प: The Pathless Path</p></li>
+        <li><a href="/hi/archive/ff-36.html" class="font-bold hover:underline">ff.36 क्या सिंगुलैरिटी क़रीब है?</a><p class="text-sm text-black/75 mt-1">(डिजिटल) महाबुद्धि, और क्या इंसान पहले से साइबॉर्ग हैं?</p></li>
+        <li><a href="/hi/archive/ff-135.html" class="font-bold hover:underline">ff.135 Casino Royale</a><p class="text-sm text-black/75 mt-1">क्या राजनीति एक स्लॉट मशीन है?</p></li>
+        <li><a href="/hi/archive/ff-132.html" class="font-bold hover:underline">ff.132 वीडियो गेम्स की स्तुति</a><p class="text-sm text-black/75 mt-1">गेमर्स के पास एक ज़िंदगी ज़्यादा क्यों होती है?</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Futuro Fortissimo के नए अंक पाएँ</h2>
@@ -412,7 +412,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -464,7 +464,7 @@
     <ul id="ff-results" role="listbox" aria-label="खोजें"></ul>
     <div class="ff-s-foot"><a href="/hi/archive/" data-ff-all data-base="/hi/archive/">संग्रह में सभी परिणाम →</a><span>कहीं भी खोजने के लिए / दबाएँ</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

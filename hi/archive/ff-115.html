@@ -145,12 +145,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -159,9 +159,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -214,12 +214,12 @@
         <a href="/hi/books/">किताबें</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="खोजें (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">खोजें</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="खोजें (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">खोजें</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="भाषा"><a href="/archivio/ff-115.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/archive/ff-115.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/archive/ff-115.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state aria-current="page">हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="डार्क थीम" title="डार्क थीम"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">सब्सक्राइब</a>
         <details class="ff-more">
-          <summary aria-label="और"><span aria-hidden="true">☰</span><span class="sr-only">और</span></summary>
+          <summary aria-label="और"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">और</span></summary>
           <nav class="ff-menu" aria-label="और">
             <a href="/book/">📖 किताब (IT)</a>
             <a href="/hi/connections.html">🔗 कनेक्शन</a>
@@ -235,24 +235,24 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/hi/">होम</a> /</li><li><a class="underline" href="/hi/archive/">संग्रह</a> /</li><li aria-current="page">ff.115 साँप का साल / 1</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>115</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>115</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="floppy" data-ff-slug="ff-115" data-label="3D वस्तु और पूर्वावलोकन खोलें: ff.115"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Futuro Fortissimo संग्रह</p>
       <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.115 साँप का साल / 1</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">बड़े होकर हम क्या करेंगे? अरबपतियों को भी नहीं पता।</p>
       <p class="mt-2 text-xs font-mono text-black/70">प्रकाशित <time datetime="2025-02-10T09:47:03.086Z">10 फ़रवरी 2025</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/hi/archive/ff-115.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">↗</span> शेयर करें</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/hi/archive/ff-115.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">🔗</span> लिंक कॉपी करें</button>
-        <a href="https://fortissimo.substack.com/p/ff115-lanno-del-serpente-1" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Substack पर इतालवी मूल पढ़ें ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/hi/archive/ff-115.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">↗</span> शेयर करें</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/hi/archive/ff-115.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">🔗</span> लिंक कॉपी करें</button>
+        <a href="https://fortissimo.substack.com/p/ff115-lanno-del-serpente-1" target="_blank" rel="noopener noreferrer" class="ff-qlink">Substack पर इतालवी मूल पढ़ें ↗</a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• दुनिया का 2378वाँ सबसे अमीर व्यक्ति भविष्य के बारे में क्या सिखाता है?</li>
-        <li>• बुद्धि और साँप: Snake और ज़हर</li>
-        <li>• वकील और प्रोग्रामर ऑटोमेट हो गए, तो हमारे लिए कौन-सा काम बचेगा?</li>
+      <ul class="ff-keypoints">
+        <li>दुनिया का 2378वाँ सबसे अमीर व्यक्ति भविष्य के बारे में क्या सिखाता है?</li>
+        <li>बुद्धि और साँप: Snake और ज़हर</li>
+        <li>वकील और प्रोग्रामर ऑटोमेट हो गए, तो हमारे लिए कौन-सा काम बचेगा?</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">थीम</span><a href="/hi/themes.html#ai" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🤖 AI, एजेंट और मॉडल</a><a href="/hi/themes.html#clima" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🌍 प्रकृति, जलवायु और ऊर्जा</a><a href="/hi/themes.html#geo" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🏛 भू-राजनीति, अर्थव्यवस्था और समाज</a></p>
-      <nav aria-label="इस अंक के खंड" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">थीम</span><a href="/hi/themes.html#ai" class="ff-tlink">🤖 AI, एजेंट और मॉडल</a><a href="/hi/themes.html#clima" class="ff-tlink">🌍 प्रकृति, जलवायु और ऊर्जा</a><a href="/hi/themes.html#geo" class="ff-tlink">🏛 भू-राजनीति, अर्थव्यवस्था और समाज</a></p>
+      <nav aria-label="इस अंक के खंड" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">इस अंक में</h2>
         <ol>
           <li><a href="#ff-115-1">👨🏻‍🏫 ff.115.1 एक अरबपति की क्लास में</a></li>
@@ -264,10 +264,10 @@
 
     
 
-    <section id="ff-115-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-115-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">👨🏻‍🏫 ff.115.1 एक अरबपति की क्लास में</h2>
-        <a href="https://fortissimo.substack.com/i/155700864/ff-a-lezione-con-un-miliardario" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.115.1 एक अरबपति की क्लास में">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/155700864/ff-a-lezione-con-un-miliardario" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.115.1 एक अरबपति की क्लास में">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">मैं इस वक़्त चीन में हूँ, और चीनी है DeepSeek, वह open source मॉडल जो मुफ़्त में वह देता है जो OpenAI €200/महीने में देता था (🍓 ff.103.1 बोलने से पहले सोचो)।</p>
@@ -276,31 +276,31 @@
         <p class="text-base leading-relaxed text-black/90">Carbon Engineering वातावरण से CO2 पकड़ती है और लागत को $100/टन तक लाने की कोशिश कर रही है, जो उत्सर्जन की सामाजिक लागत की भरपाई का निर्णायक स्तर है। Lilac Solutions खारे पानी से लिथियम निकालती है, मौजूदा तरीक़ों से 3x बेहतर तरीक़ों से। Solugen एंज़ाइम से शुगर को रसायनों में बदलती है (CNBC की 2024 की 50 सबसे disruptive कंपनियों में)।</p>
         <p class="text-base leading-relaxed text-black/90">हाल ही में वे Tim Ferriss के शो पर आए थे। देखें उन्होंने क्या बात की।</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!NU92!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7d8227ac-1c04-48e0-b1da-bad26bd6967c_484x468.png" width="484" height="468" alt="👨🏻‍🏫 ff.115.1 एक अरबपति की क्लास में" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!2u3I!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F42300746-243a-42e8-9528-f96f09291226_1337x695.png" width="1337" height="695" alt="Chris Sacca, Lowercarbon Capital के साथ, CO2 घटाने वाली कंपनियों का साथ देते हैं ताकि ग्रह को “unf**k” किया जा सके (via futuro fortissimo)।" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Chris Sacca, Lowercarbon Capital के साथ, CO2 घटाने वाली कंपनियों का साथ देते हैं ताकि ग्रह को “unf**k” किया जा सके (via futuro fortissimo)।</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (6)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.forbes.com/billionaires/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ दुनिया के 2378वें सबसे अमीर व्यक्ति</a>
-            <a href="https://lowercarboncapital.com/companies/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Lowercarbon Capital (पोर्टफ़ोलियो की कुछ कंपनियाँ)</a>
-            <a href="https://carbonherald.com/new-study-places-future-direct-air-capture-costs-230-540-range/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ $100/टन, जो उत्सर्जन की सामाजिक लागत की भरपाई का निर्णायक स्तर है</a>
-            <a href="https://news.stanford.edu/stories/2024/08/new-technology-extracts-lithium-from-brines-inexpensively-and-sustainably" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ खारे पानी से लिथियम निकालती है, मौजूदा तरीक़ों से 3x बेहतर तरीक़ों से</a>
-            <a href="https://www.cnbc.com/2024/05/14/these-are-the-2024-cnbc-disruptor-50-companies.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ CNBC की 2024 की 50 सबसे disruptive कंपनियों</a>
-            <a href="https://fortissimo.substack.com/i/149504251/ff-prima-di-parlare-pensa" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🍓 ff.103.1 बोलने से पहले सोचो</a>
+          <div class="ff-refs-l">
+            <a href="https://www.forbes.com/billionaires/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ दुनिया के 2378वें सबसे अमीर व्यक्ति</a>
+            <a href="https://lowercarboncapital.com/companies/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Lowercarbon Capital (पोर्टफ़ोलियो की कुछ कंपनियाँ)</a>
+            <a href="https://carbonherald.com/new-study-places-future-direct-air-capture-costs-230-540-range/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ $100/टन, जो उत्सर्जन की सामाजिक लागत की भरपाई का निर्णायक स्तर है</a>
+            <a href="https://news.stanford.edu/stories/2024/08/new-technology-extracts-lithium-from-brines-inexpensively-and-sustainably" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ खारे पानी से लिथियम निकालती है, मौजूदा तरीक़ों से 3x बेहतर तरीक़ों से</a>
+            <a href="https://www.cnbc.com/2024/05/14/these-are-the-2024-cnbc-disruptor-50-companies.html" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ CNBC की 2024 की 50 सबसे disruptive कंपनियों</a>
+            <a href="https://fortissimo.substack.com/i/149504251/ff-prima-di-parlare-pensa" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ 🍓 ff.103.1 बोलने से पहले सोचो</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-115-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-115-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">❔ ff.115.2 ChatGPT के दौर में क्या पढ़ें?</h2>
-        <a href="https://fortissimo.substack.com/i/155700864/ff-cosa-studiare-con-chatgpt" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.115.2 ChatGPT के दौर में क्या पढ़ें?">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/155700864/ff-cosa-studiare-con-chatgpt" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.115.2 ChatGPT के दौर में क्या पढ़ें?">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">एक अच्छे निवेशक की तरह Chris Sacca तकनीकी रुझानों पर क़रीबी नज़र रखते हैं। पॉडकास्ट से? नहीं। ChatGPT से घंटों बात करके (उससे Buckminster Fuller बनने को कहकर, 🎼 ff.48 अरस्तू को फिर से जीवित करना)।</p>
@@ -308,23 +308,23 @@
         <p class="text-base leading-relaxed text-black/90">आज - AI के ज़माने में - सबसे ज़्यादा कमाई वाली नौकरियाँ (अभिनेता, प्रोग्रामर और वकील) ही सबसे ज़्यादा ख़तरे में हैं (यह समझने के लिए McKinsey की ज़रूरत नहीं)।</p>
         <p class="text-base leading-relaxed text-black/90">हम इसके आदी हो चुके हैं, लेकिन कुछ समय पहले तक Snake गेम प्रोग्राम करने में बरसों की पढ़ाई लगती थी। आज DeepSeek 6 शब्दों से बिना बग के बना देता है: “write the snake game in python”।</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!az6v!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F876d6985-f0c4-4c0f-a49e-59b0d71c1d63_874x728.png" width="874" height="728" alt="काम पर AI के असर पर McKinsey की रिपोर्ट (2023)।" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">काम पर AI के असर पर McKinsey की रिपोर्ट (2023)।</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (2)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.mckinsey.com/mgi/our-research/generative-ai-and-the-future-of-work-in-america" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ सबसे ज़्यादा कमाई वाली नौकरियाँ (अभिनेता, प्रोग्रामर और वकील) ही सबसे ज़्यादा ख़तरे में हैं</a>
-            <a href="https://fortissimo.substack.com/p/ff48-resuscitare-aristotele?utm_source=publication-search" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🎼 ff.48 अरस्तू को फिर से जीवित करना</a>
+          <div class="ff-refs-l">
+            <a href="https://www.mckinsey.com/mgi/our-research/generative-ai-and-the-future-of-work-in-america" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ सबसे ज़्यादा कमाई वाली नौकरियाँ (अभिनेता, प्रोग्रामर और वकील) ही सबसे ज़्यादा ख़तरे में हैं</a>
+            <a href="https://fortissimo.substack.com/p/ff48-resuscitare-aristotele?utm_source=publication-search" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ 🎼 ff.48 अरस्तू को फिर से जीवित करना</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-115-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-115-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🐍 ff.115.3 घातांकीय ज़हर</h2>
-        <a href="https://fortissimo.substack.com/i/155700864/ff-veleni-esponenziali" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.115.3 घातांकीय ज़हर">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/155700864/ff-veleni-esponenziali" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.115.3 घातांकीय ज़हर">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">साँपों की बात चली है तो। आर्टिफ़िशियल इंटेलिजेंस चैटबॉट से रेंगकर व्यावहारिक इस्तेमालों में पहुँच रही है।</p>
@@ -338,44 +338,44 @@
         <p class="text-base leading-relaxed text-black/90">👋 फिर मिलेंगे, micmer की ओर से</p>
         <p class="text-base leading-relaxed text-black/90">© futuro fortissimo | michele merelli</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!dvU-!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fff7dc5f1-b430-4639-a324-864db9b87bb0_629x354.bin" alt="🐍 ff.115.3 घातांकीय ज़हर" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!v5Pn!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2a04439e-d6ef-4d8d-9272-d29ba624c471_701x592.png" width="701" height="592" alt="🐍 ff.115.3 घातांकीय ज़हर" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (11)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.science.org/doi/10.1126/science.add2187" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ ProteinMNPP</a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/38798548/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Nature में</a>
-            <a href="https://www.ark-invest.com/newsletters/issue-447" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ साँप के ज़हर का एंटीडोट महीनों के बजाय सेकंडों में कैसे खोजा जाए।</a>
-            <a href="https://waitbutwhy.com/2015/01/artificial-intelligence-revolution-1.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Tim Urban, जिन्होंने 2015 में आर्टिफ़िशियल इंटेलिजेंस क्रांति की बात की थी</a>
-            <a href="https://www.instagram.com/timferriss/reel/DFT4QsivW0l/chris-sacca-on-ai-fusion-exponential-curves-and-tim-urbans-waitbutwhy-incredible/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ उनका दावा है कि परमाणु संलयन (विखंडन नहीं!) रोज़ हासिल हो रहा है</a>
-            <a href="https://lowercarboncapital.com/2022/10/19/race-to-q1/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Q&gt;1 के साथ</a>
-            <a href="https://futurofortissimo.github.io/note.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ fortissimo नोट्स संग्रह</a>
-            <a href="https://futurofortissimo.github.io/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ futuro fortissimo</a>
-            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ michele merelli</a>
-            <a href="https://fortissimo.substack.com/i/145245800/ff-sistemi-quantistici" target="_blank" rel="noopener noreferrer" title="⚛️" lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ fortissimo.substack.com</a>
-            <a href="https://fortissimo.substack.com/i/50474519/ff-intelligenza-artificiale-per-la-fusione-nucleare" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ ☢️ ff.28.1 परमाणु संलयन के लिए कृत्रिम बुद्धिमत्ता</a>
+          <div class="ff-refs-l">
+            <a href="https://www.science.org/doi/10.1126/science.add2187" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ ProteinMNPP</a>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/38798548/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Nature में</a>
+            <a href="https://www.ark-invest.com/newsletters/issue-447" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ साँप के ज़हर का एंटीडोट महीनों के बजाय सेकंडों में कैसे खोजा जाए।</a>
+            <a href="https://waitbutwhy.com/2015/01/artificial-intelligence-revolution-1.html" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Tim Urban, जिन्होंने 2015 में आर्टिफ़िशियल इंटेलिजेंस क्रांति की बात की थी</a>
+            <a href="https://www.instagram.com/timferriss/reel/DFT4QsivW0l/chris-sacca-on-ai-fusion-exponential-curves-and-tim-urbans-waitbutwhy-incredible/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ उनका दावा है कि परमाणु संलयन (विखंडन नहीं!) रोज़ हासिल हो रहा है</a>
+            <a href="https://lowercarboncapital.com/2022/10/19/race-to-q1/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Q&gt;1 के साथ</a>
+            <a href="https://futurofortissimo.github.io/note.html" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ fortissimo नोट्स संग्रह</a>
+            <a href="https://futurofortissimo.github.io/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ futuro fortissimo</a>
+            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ michele merelli</a>
+            <a href="https://fortissimo.substack.com/i/145245800/ff-sistemi-quantistici" target="_blank" rel="noopener noreferrer" title="⚛️" lang="it" class="ff-ref">↗ fortissimo.substack.com</a>
+            <a href="https://fortissimo.substack.com/i/50474519/ff-intelligenza-artificiale-per-la-fusione-nucleare" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ ☢️ ff.28.1 परमाणु संलयन के लिए कृत्रिम बुद्धिमत्ता</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">संबंधित अंक</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-98.html" class="font-bold hover:underline">ff.98 खेल और सिमुलेशन</a><p class="text-sm text-black/75 mt-1">वीडियो गेम वास्तविकता को कैसे बेहतर बनाते हैं</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-103.html" class="font-bold hover:underline">ff.103 आग, लोहा, बुद्धि</a><p class="text-sm text-black/75 mt-1">OpenAI का नया o1 मॉडल: मानवता के लिए नया युग?</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-28.html" class="font-bold hover:underline">ff.28 Google भविष्य पर शोध करता है</a><p class="text-sm text-black/75 mt-1">सर्च इंजन से ऐसे शोध तक जो भविष्य की तकनीकों का इंजन बनेगा।</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-48.html" class="font-bold hover:underline">ff.48 अरस्तू को फिर से जीवित करना</a><p class="text-sm text-black/75 mt-1">Playboy, Steve Jobs, ईसा मसीह और ChatGPT में क्या समान है?</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/hi/archive/ff-98.html" class="font-bold hover:underline">ff.98 खेल और सिमुलेशन</a><p class="text-sm text-black/75 mt-1">वीडियो गेम वास्तविकता को कैसे बेहतर बनाते हैं</p></li>
+        <li><a href="/hi/archive/ff-103.html" class="font-bold hover:underline">ff.103 आग, लोहा, बुद्धि</a><p class="text-sm text-black/75 mt-1">OpenAI का नया o1 मॉडल: मानवता के लिए नया युग?</p></li>
+        <li><a href="/hi/archive/ff-28.html" class="font-bold hover:underline">ff.28 Google भविष्य पर शोध करता है</a><p class="text-sm text-black/75 mt-1">सर्च इंजन से ऐसे शोध तक जो भविष्य की तकनीकों का इंजन बनेगा।</p></li>
+        <li><a href="/hi/archive/ff-48.html" class="font-bold hover:underline">ff.48 अरस्तू को फिर से जीवित करना</a><p class="text-sm text-black/75 mt-1">Playboy, Steve Jobs, ईसा मसीह और ChatGPT में क्या समान है?</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Futuro Fortissimo के नए अंक पाएँ</h2>
@@ -390,7 +390,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -442,7 +442,7 @@
     <ul id="ff-results" role="listbox" aria-label="खोजें"></ul>
     <div class="ff-s-foot"><a href="/hi/archive/" data-ff-all data-base="/hi/archive/">संग्रह में सभी परिणाम →</a><span>कहीं भी खोजने के लिए / दबाएँ</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

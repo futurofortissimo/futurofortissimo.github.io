@@ -14,7 +14,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { SITE, SUBSTACK, L, S } from './i18n_strings.mjs';
-import { PAGE_SEO, UI_SEO, SOCIAL } from './seo_strings.mjs';
+import { PAGE_SEO, UI_SEO, UI_APP, SOCIAL } from './seo_strings.mjs';
 import {
   LANG_CODES, escapeHtml, safeJsonLd, metaBlock, pwaHead, groupAlternates, websiteLd, breadcrumbLd,
   PERSON, PUBLISHER, DEFAULT_OG, ROBOTS_INDEX, clip,
@@ -26,6 +26,8 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = (rel) => fs.readFileSync(path.join(ROOT, rel), 'utf-8');
 const write = (rel, s) => { fs.mkdirSync(path.dirname(path.join(ROOT, rel)), { recursive: true }); fs.writeFileSync(path.join(ROOT, rel), s, 'utf-8'); };
 const INDEX = Object.fromEntries(LANG_CODES.map((lg) => [lg, JSON.parse(read(`assets/site-index-${lg}.json`))]));
+// self-hosted covers of the latest issues (scripts/build_covers.mjs): the home LCP image no longer waits on a third-party CDN
+const COVERS = fs.existsSync(path.join(ROOT, 'assets/covers/covers.json')) ? JSON.parse(read('assets/covers/covers.json')) : {};
 const BOOKS = JSON.parse(read('libri/books_cited.json')).books || [];
 const BOOKS_I18N = JSON.parse(read('i18n/books.json'));
 const N = INDEX.it.length;
@@ -180,12 +182,17 @@ const HOME_S = {
   en: { tagline: 'Michele Merelli’s newsletter on technology, AI, nature and society. Short ff.x.y sections, each with its sources, every ~10 days.', subscribe: 'Subscribe free on Substack', archive: 'Archive', themes: 'Themes', books: 'Books', index: 'Interactive index' },
   hi: { tagline: 'तकनीक, AI, प्रकृति और समाज पर मिकेले मेरेल्ली का न्यूज़लेटर। छोटे ff.x.y खंड, हर एक अपने स्रोतों के साथ, हर ~10 दिन में।', subscribe: 'Substack पर मुफ़्त सब्सक्राइब करें', archive: 'संग्रह', themes: 'थीम', books: 'किताबें', index: 'इंटरैक्टिव सूची' },
 };
-const thumb = (src, alt, eager = false) => {
+const thumb = (src, alt, eager = false, slug = '') => {
+  const c = COVERS[slug];
+  if (c && c.src === src && fs.existsSync(path.join(ROOT, c.files[480].slice(1)))) {
+    const set = Object.entries(c.files).map(([w, u]) => `${u} ${w}w`).join(', ');
+    return `<img src="${c.files[480]}" srcset="${set}" sizes="(min-width: 1024px) 352px, (min-width: 640px) 46vw, 78vw" alt="${escapeHtml(alt)}" width="480" height="270" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async" class="ff-card-img w-full aspect-video object-cover"${!eager ? ` style="background-image:url('${c.lqip}')"` : ''} />`;
+  }
   const m = /_(\d{2,5})x(\d{2,5})\./.exec(src);
   const cdn = /^https:\/\/substack-post-media\.s3\.amazonaws\.com\//.test(src) ? `https://substackcdn.com/image/fetch/w_480,h_270,c_fill,f_auto,q_auto:good/${encodeURIComponent(src)}` : src;
   // blur-up: a 48×27 thumbnail (≈1 KB) paints first as the background, the real cover fades in sharp
   const lqip = cdn !== src && !eager ? cdn.replace('w_480,h_270,c_fill,f_auto,q_auto:good', 'w_48,h_27,c_fill,f_auto,q_auto:good') : '';
-  return `<img src="${escapeHtml(cdn)}" alt="${escapeHtml(alt)}" width="480" height="270" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async" class="ff-card-img w-full aspect-video object-cover border-b-2 border-black"${lqip ? ` style="background-image:url('${escapeHtml(lqip)}')"` : ''} />`;
+  return `<img src="${escapeHtml(cdn)}" alt="${escapeHtml(alt)}" width="480" height="270" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async" class="ff-card-img w-full aspect-video object-cover"${lqip ? ` style="background-image:url('${escapeHtml(lqip)}')"` : ''} />`;
 };
 const bookTitle = (b, lang) => (lang === 'it' ? b.title : BOOKS_I18N.titles?.[b.id] || b.title);
 function homeStatic(lang) {
@@ -194,39 +201,39 @@ function homeStatic(lang) {
   const stats = themeStats(lang);
   const books = [...BOOKS].sort((a, b) => (b.citations || []).length - (a.citations || []).length).slice(0, 6);
   const itLang = (r) => (r.it ? ' lang="it"' : '');
-  return `<section class="ff-hero-card brutal-card mobile-unboxed accent-bar accent-blue no-round text-center space-y-4" aria-labelledby="ff-h1">
+  return `<section class="ff-hero-card text-center space-y-4" aria-labelledby="ff-h1">
       <span class="ff-dyn" aria-hidden="true">ff</span>
       <h1 id="ff-h1" class="pixel-title ff-hero">FUTURO FORTISSIMO</h1>
       <p class="ff-body-sm text-black/80 max-w-2xl mx-auto">${escapeHtml(hs.tagline)}</p>
-      <p><a href="${SUBSTACK}/subscribe" target="_blank" rel="noopener" class="ff-cta inline-flex items-center justify-center min-h-[48px] px-6 py-3 border-3 border-black bg-[var(--ff-green)] text-black brutal-shadow ff-button">📩 ${escapeHtml(hs.subscribe)} ↗</a></p>
+      <p><a href="${SUBSTACK}/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary ff-cta-main">${escapeHtml(hs.subscribe)} ↗</a></p>
     </section>
 
     <section aria-labelledby="h-latest" class="space-y-3">
       <div class="flex items-baseline justify-between gap-2"><h2 id="h-latest" class="ff-heading-md">${escapeHtml(u.latest)}</h2><a class="ff-button underline min-h-[44px] inline-flex items-center" href="${L[lang].archive}">${escapeHtml(u.seeAll)} →</a></div>
       <ul class="ff-rail flex gap-4 overflow-x-auto snap-x snap-mandatory pb-3 -mx-4 px-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:overflow-visible">
-        ${latest.map((r, i) => `<li class="snap-start shrink-0 w-[78%] sm:w-auto"><a href="${r.u}" class="ff-card block h-full border-3 border-black bg-white brutal-shadow hover:-translate-y-0.5 transition-transform">
+        ${latest.map((r, i) => `<li class="ff-rail-i snap-start shrink-0 w-[78%] sm:w-auto"><a href="${r.u}" class="ff-card block h-full">
           ${r.n >= 0 && r.img ? `<span class="ff-card-mark" aria-hidden="true"><i>ff</i>${r.n}</span>` : ''}
-          ${r.img ? thumb(r.img, r.t, i === 0) : ''}
-          <span class="block p-3 space-y-1">
+          ${r.img ? thumb(r.img, r.t, i === 0, r.s) : ''}
+          <span class="block pt-3 space-y-1">
             ${r.d ? `<time datetime="${r.d}" class="block text-xs font-mono text-black/70">${r.d}</time>` : ''}
             <span class="block font-bold leading-snug"${itLang(r)}>${escapeHtml(r.t)}</span>
             ${r.st ? `<span class="block text-sm text-black/75"${itLang(r)}>${escapeHtml(clip(r.st, 100))}</span>` : ''}
           </span>
-        </a></li>`).join('\n        ')}
+        </a>${r.v ? `<span class="ff-vox ff-vox-card" data-ff-vox="${r.v}" data-ff-slug="${r.s}" data-label="${escapeHtml(`${UI_APP[lang].vox} ${r.n >= 0 ? `ff.${r.n}` : r.t}`)}"></span>` : ''}</li>`).join('\n        ')}
       </ul>
     </section>
 
     <section aria-labelledby="h-themes" class="space-y-3">
       <div class="flex items-baseline justify-between gap-2"><h2 id="h-themes" class="ff-heading-md">${escapeHtml(u.themes)}</h2><a class="ff-button underline min-h-[44px] inline-flex items-center" href="${L[lang].themes}">${escapeHtml(u.seeAll)} →</a></div>
-      <ul class="grid gap-3 grid-cols-2 lg:grid-cols-4">
-        ${stats.map(({ t, rows }) => `<li><a href="${L[lang].themes}#${t.key}" class="ff-card flex flex-col gap-1 h-full min-h-[88px] p-3 border-3 border-black bg-white brutal-shadow hover:-translate-y-0.5 transition-transform"><span class="text-2xl" aria-hidden="true">${t.emoji}</span><span class="font-bold leading-snug">${escapeHtml(t.name[lang])}</span><span class="text-xs font-mono text-black/70">${escapeHtml(u.issuesOfTheme(rows.length))}</span></a></li>`).join('\n        ')}
+      <ul class="ff-hlist grid grid-cols-2 lg:grid-cols-4">
+        ${stats.map(({ t, rows }) => `<li><a href="${L[lang].themes}#${t.key}" class="ff-hl flex flex-col gap-1 h-full"><span class="text-2xl" aria-hidden="true">${t.emoji}</span><span class="font-bold leading-snug">${escapeHtml(t.name[lang])}</span><span class="text-xs font-mono text-black/70">${escapeHtml(u.issuesOfTheme(rows.length))}</span></a></li>`).join('\n        ')}
       </ul>
     </section>
 
     <section aria-labelledby="h-books" class="space-y-3">
       <div class="flex items-baseline justify-between gap-2"><h2 id="h-books" class="ff-heading-md">${escapeHtml(u.popularBooks)}</h2><a class="ff-button underline min-h-[44px] inline-flex items-center" href="${L[lang].books}">${escapeHtml(u.seeAll)} →</a></div>
-      <ul class="grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-        ${books.map((b) => `<li><a href="${L[lang].books}" class="ff-card flex flex-col gap-1 h-full p-3 border-3 border-black bg-white brutal-shadow hover:-translate-y-0.5 transition-transform"><span class="font-bold leading-snug">📚 ${escapeHtml(bookTitle(b, lang))}</span>${b.author ? `<span class="text-sm font-mono text-black/75">${escapeHtml(b.author)}</span>` : ''}<span class="text-xs font-mono text-black/70">${escapeHtml(u.citations((b.citations || []).length))}</span></a></li>`).join('\n        ')}
+      <ul class="ff-hlist grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        ${books.map((b) => `<li><a href="${L[lang].books}" class="ff-hl flex flex-col gap-1 h-full"><span class="font-bold leading-snug">📚 ${escapeHtml(bookTitle(b, lang))}</span>${b.author ? `<span class="text-sm font-mono text-black/75">${escapeHtml(b.author)}</span>` : ''}<span class="text-xs font-mono text-black/70">${escapeHtml(u.citations((b.citations || []).length))}</span></a></li>`).join('\n        ')}
       </ul>
     </section>
 

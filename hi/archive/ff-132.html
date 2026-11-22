@@ -142,12 +142,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -156,9 +156,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -211,12 +211,12 @@
         <a href="/hi/books/">किताबें</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="खोजें (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">खोजें</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="खोजें (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">खोजें</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="भाषा"><a href="/archivio/ff-132.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/archive/ff-132.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/archive/ff-132.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state aria-current="page">हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="डार्क थीम" title="डार्क थीम"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">सब्सक्राइब</a>
         <details class="ff-more">
-          <summary aria-label="और"><span aria-hidden="true">☰</span><span class="sr-only">और</span></summary>
+          <summary aria-label="और"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">और</span></summary>
           <nav class="ff-menu" aria-label="और">
             <a href="/book/">📖 किताब (IT)</a>
             <a href="/hi/connections.html">🔗 कनेक्शन</a>
@@ -232,24 +232,24 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/hi/">होम</a> /</li><li><a class="underline" href="/hi/archive/">संग्रह</a> /</li><li aria-current="page">ff.132 वीडियो गेम्स की स्तुति</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>132</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>132</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="gamepad" data-ff-slug="ff-132" data-label="3D वस्तु और पूर्वावलोकन खोलें: ff.132"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Futuro Fortissimo संग्रह</p>
       <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.132 वीडियो गेम्स की स्तुति</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">गेमर्स के पास एक ज़िंदगी ज़्यादा क्यों होती है?</p>
       <p class="mt-2 text-xs font-mono text-black/70">प्रकाशित <time datetime="2025-09-10T06:30:33.722Z">10 सितंबर 2025</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/hi/archive/ff-132.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">↗</span> शेयर करें</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/hi/archive/ff-132.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">🔗</span> लिंक कॉपी करें</button>
-        <a href="https://fortissimo.substack.com/p/ff132-inno-ai-videogiochi" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Substack पर इतालवी मूल पढ़ें ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/hi/archive/ff-132.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">↗</span> शेयर करें</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/hi/archive/ff-132.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">🔗</span> लिंक कॉपी करें</button>
+        <a href="https://fortissimo.substack.com/p/ff132-inno-ai-videogiochi" target="_blank" rel="noopener noreferrer" class="ff-qlink">Substack पर इतालवी मूल पढ़ें ↗</a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• क्या दुनिया बनाना उन्हें खेलने से ज़्यादा मज़ेदार है?</li>
-        <li>• क्या Musk और Hassabis Tekken में भिड़ेंगे?</li>
-        <li>• क्या वीडियो गेम ध्यान का संकट पैदा करते हैं?</li>
+      <ul class="ff-keypoints">
+        <li>क्या दुनिया बनाना उन्हें खेलने से ज़्यादा मज़ेदार है?</li>
+        <li>क्या Musk और Hassabis Tekken में भिड़ेंगे?</li>
+        <li>क्या वीडियो गेम ध्यान का संकट पैदा करते हैं?</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">थीम</span><a href="/hi/themes.html#ai" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🤖 AI, एजेंट और मॉडल</a><a href="/hi/themes.html#attenzione" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">📱 ध्यान, स्क्रीन और आदतें</a></p>
-      <nav aria-label="इस अंक के खंड" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">थीम</span><a href="/hi/themes.html#ai" class="ff-tlink">🤖 AI, एजेंट और मॉडल</a><a href="/hi/themes.html#attenzione" class="ff-tlink">📱 ध्यान, स्क्रीन और आदतें</a></p>
+      <nav aria-label="इस अंक के खंड" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">इस अंक में</h2>
         <ol>
           <li><a href="#ff-132-1">🎯 ff.132.1 ध्यान का संकट?</a></li>
@@ -262,10 +262,10 @@
 
     
 
-    <section id="ff-132-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-132-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🎯 ff.132.1 ध्यान का संकट?</h2>
-        <a href="https://fortissimo.substack.com/i/170166035/ff-crisi-dellattenzione" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.132.1 ध्यान का संकट?">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/170166035/ff-crisi-dellattenzione" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.132.1 ध्यान का संकट?">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">एक गेमर और 50,000 सब्सक्राइबर्स वाले (पूर्व) YouTuber के तौर पर, वीडियो गेम मेरे दिल के क़रीब हैं।</p>
@@ -279,10 +279,10 @@
       
     </section>
 
-    <section id="ff-132-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-132-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🕹️ ff.132.2 वीडियो गेम्स के फ़ायदे</h2>
-        <a href="https://fortissimo.substack.com/i/170166035/ff-i-benefici-dei-videogiochi" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.132.2 वीडियो गेम्स के फ़ायदे">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/170166035/ff-i-benefici-dei-videogiochi" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.132.2 वीडियो गेम्स के फ़ायदे">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">और फिर, क्या “PlayStation खेलते हुए” बिताया समय सच में बर्बाद है?</p>
@@ -291,22 +291,22 @@
         <p class="text-base leading-relaxed text-black/90">Ash Brandin (Instagram पर The Gamer Educator) यह भी बताती हैं कि कुछ वीडियो गेम, जैसे Braid, Edith Finch और Untitled Goose Game, भावनात्मक सीख को बढ़ावा देते हैं।</p>
       </div>
       
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (5)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.psichi.org/page/173EyeSprSum13cCan2" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ हिंसा और वीडियो गेम का रिश्ता? शायद कोरी बकवास</a>
-            <a href="https://www.linkedin.com/in/kennandavison/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Kennan Davison, League of Legends में Top 200, अब Skio के CEO (YC S20)</a>
-            <a href="https://www.instagram.com/thegamereducator" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Ash Brandin (Instagram पर The Gamer Educator)</a>
-            <a href="https://www.ted.com/pages/surprising-effects-of-video-games--transcripthttps://www.ted.com/pages/surprising-effects-of-video-games--transcript" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Braid</a>
-            <a href="https://fortissimo.substack.com/i/43943640/ff-ammazzare-la-noia-e-non-esseri-umani" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🎮  ff.8.5 ऊब को मारना (इंसानों को नहीं)</a>
+          <div class="ff-refs-l">
+            <a href="https://www.psichi.org/page/173EyeSprSum13cCan2" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ हिंसा और वीडियो गेम का रिश्ता? शायद कोरी बकवास</a>
+            <a href="https://www.linkedin.com/in/kennandavison/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Kennan Davison, League of Legends में Top 200, अब Skio के CEO (YC S20)</a>
+            <a href="https://www.instagram.com/thegamereducator" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Ash Brandin (Instagram पर The Gamer Educator)</a>
+            <a href="https://www.ted.com/pages/surprising-effects-of-video-games--transcripthttps://www.ted.com/pages/surprising-effects-of-video-games--transcript" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Braid</a>
+            <a href="https://fortissimo.substack.com/i/43943640/ff-ammazzare-la-noia-e-non-esseri-umani" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ 🎮  ff.8.5 ऊब को मारना (इंसानों को नहीं)</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-132-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-132-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">📐 ff.132.3 दुनिया को मापना और मॉडल करना</h2>
-        <a href="https://fortissimo.substack.com/i/170166035/ff-misurare-e-modellare-il-mondo" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.132.3 दुनिया को मापना और मॉडल करना">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/170166035/ff-misurare-e-modellare-il-mondo" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.132.3 दुनिया को मापना और मॉडल करना">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">“भ्रम” रचने के लिए (in-ludere, लैटिन ludus यानी खेल से जुड़ा शब्द), वीडियो गेम को दुनिया का सुसंगत सिमुलेशन, मॉडल बनाना पड़ता है (🎼 ff.98 खेल और सिमुलेशन)।</p>
@@ -315,28 +315,28 @@
         <p class="text-base leading-relaxed text-black/90">और यह उपमा और भी सटीक है: Genie 3 रियल टाइम में, एक इमेज से भी, ऐसे इंटरैक्टिव वीडियो गेम बनाता है जो समय के साथ सुसंगत रहते हैं।</p>
         <p class="text-base leading-relaxed text-black/90">सिद्ध हुआ। SimCity तब जन्मा जब Will Wright ने महसूस किया कि अपने आर्केड शूटर की दुनिया बनाना उसे खेलने से ज़्यादा मज़ेदार है।</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!oKj7!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8d5ee1ef-a169-48cf-be35-cf8e9b6d4826_864x1306.png" width="864" height="1306" alt="📐 ff.132.3 दुनिया को मापना और मॉडल करना" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!1P0p!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc9c74ee3-a275-4ca5-aaff-28ab7986a20c_1536x1024.png" width="1536" height="1024" alt="📐 ff.132.3 दुनिया को मापना और मॉडल करना" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://deepmind.google/discover/blog/genie-3-a-new-frontier-for-world-models/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Genie 3 रियल टाइम में, एक इमेज से भी, ऐसे इंटरैक्टिव वीडियो गेम बनाता है जो समय के साथ सुसंगत रहते हैं</a>
-            <a href="https://it.wikipedia.org/wiki/Will_Wright_(informatico)" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Will Wright ने महसूस किया कि अपने आर्केड शूटर की दुनिया बनाना उसे खेलने से ज़्यादा मज़ेदार है।</a>
-            <a href="https://fortissimo.substack.com/p/ff98-giochi-e-simulazioni?utm_source=publication-search" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🎼 ff.98 खेल और सिमुलेशन</a>
+          <div class="ff-refs-l">
+            <a href="https://deepmind.google/discover/blog/genie-3-a-new-frontier-for-world-models/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Genie 3 रियल टाइम में, एक इमेज से भी, ऐसे इंटरैक्टिव वीडियो गेम बनाता है जो समय के साथ सुसंगत रहते हैं</a>
+            <a href="https://it.wikipedia.org/wiki/Will_Wright_(informatico)" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Will Wright ने महसूस किया कि अपने आर्केड शूटर की दुनिया बनाना उसे खेलने से ज़्यादा मज़ेदार है।</a>
+            <a href="https://fortissimo.substack.com/p/ff98-giochi-e-simulazioni?utm_source=publication-search" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ 🎼 ff.98 खेल और सिमुलेशन</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-132-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-132-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🛶 ff.132.4 “सब कुछ बहता है”, Skyrim भी</h2>
-        <a href="https://fortissimo.substack.com/i/170166035/ff-tutto-scorre-anche-skyrim" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.132.4 “सब कुछ बहता है”, Skyrim भी">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/170166035/ff-tutto-scorre-anche-skyrim" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.132.4 “सब कुछ बहता है”, Skyrim भी">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">वीडियो गेम की यथार्थता का घेरा पूरा करने के लिए, कुछ लोग पूछते हैं कि क्या Skyrim की जल-भूविज्ञान सही है, उसकी नदियों के पानी का स्रोत खोजते हुए।</p>
@@ -344,32 +344,32 @@
         <p class="text-base leading-relaxed text-black/90">👋 फिर मिलेंगे, micmer की ओर से</p>
         <p class="text-base leading-relaxed text-black/90">© futuro fortissimo | michele merelli</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!Tonj!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbc11123c-5aef-4109-b0ab-336ca7a50807_1440x1047.bin" alt="Luca Bjørnsten हमें यादों में ले जाते हैं, जब हम WWE में Hulk Hogan बनकर खेलते थे (via futuro fortissimo)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Luca Bjørnsten हमें यादों में ले जाते हैं, जब हम WWE में Hulk Hogan बनकर खेलते थे (via futuro fortissimo)</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://futurofortissimo.github.io/note.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ fortissimo नोट्स संग्रह</a>
-            <a href="https://futurofortissimo.github.io/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ futuro fortissimo</a>
-            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ michele merelli</a>
+          <div class="ff-refs-l">
+            <a href="https://futurofortissimo.github.io/note.html" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ fortissimo नोट्स संग्रह</a>
+            <a href="https://futurofortissimo.github.io/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ futuro fortissimo</a>
+            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ michele merelli</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">संबंधित अंक</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-98.html" class="font-bold hover:underline">ff.98 खेल और सिमुलेशन</a><p class="text-sm text-black/75 mt-1">वीडियो गेम वास्तविकता को कैसे बेहतर बनाते हैं</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-141.html" class="font-bold hover:underline">ff.141 एक फ़्लॉपी डिस्क पर 2025</a><p class="text-sm text-black/75 mt-1">सिंगुलैरिटी क़रीब लगती है: Gemini 3 कुछ ही प्रॉम्प्ट से कुछ भी बनाने देता है, पढ़ाई वाले ऐप से मल्टीप्लेयर…</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-8.html" class="font-bold hover:underline">ff.8 ऊब से लड़ाई</a><p class="text-sm text-black/75 mt-1">समय काटने का कारोबार</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-151.html" class="font-bold hover:underline">ff.151 कल्पना करो, तुम कर सकते हो!</a><p class="text-sm text-black/75 mt-1">गंध की नक़ल, लाइव बनता वेब और कुछ और Paprika</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/hi/archive/ff-98.html" class="font-bold hover:underline">ff.98 खेल और सिमुलेशन</a><p class="text-sm text-black/75 mt-1">वीडियो गेम वास्तविकता को कैसे बेहतर बनाते हैं</p></li>
+        <li><a href="/hi/archive/ff-141.html" class="font-bold hover:underline">ff.141 एक फ़्लॉपी डिस्क पर 2025</a><p class="text-sm text-black/75 mt-1">सिंगुलैरिटी क़रीब लगती है: Gemini 3 कुछ ही प्रॉम्प्ट से कुछ भी बनाने देता है, पढ़ाई वाले ऐप से मल्टीप्लेयर…</p></li>
+        <li><a href="/hi/archive/ff-8.html" class="font-bold hover:underline">ff.8 ऊब से लड़ाई</a><p class="text-sm text-black/75 mt-1">समय काटने का कारोबार</p></li>
+        <li><a href="/hi/archive/ff-151.html" class="font-bold hover:underline">ff.151 कल्पना करो, तुम कर सकते हो!</a><p class="text-sm text-black/75 mt-1">गंध की नक़ल, लाइव बनता वेब और कुछ और Paprika</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Futuro Fortissimo के नए अंक पाएँ</h2>
@@ -384,7 +384,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -436,7 +436,7 @@
     <ul id="ff-results" role="listbox" aria-label="खोजें"></ul>
     <div class="ff-s-foot"><a href="/hi/archive/" data-ff-all data-base="/hi/archive/">संग्रह में सभी परिणाम →</a><span>कहीं भी खोजने के लिए / दबाएँ</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

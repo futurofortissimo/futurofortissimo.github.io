@@ -147,12 +147,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -161,9 +161,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -216,12 +216,12 @@
         <a href="/hi/books/">किताबें</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="खोजें (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">खोजें</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="खोजें (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">खोजें</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="भाषा"><a href="/archivio/ff-31.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/archive/ff-31.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/archive/ff-31.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state aria-current="page">हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="डार्क थीम" title="डार्क थीम"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">सब्सक्राइब</a>
         <details class="ff-more">
-          <summary aria-label="और"><span aria-hidden="true">☰</span><span class="sr-only">और</span></summary>
+          <summary aria-label="और"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">और</span></summary>
           <nav class="ff-menu" aria-label="और">
             <a href="/book/">📖 किताब (IT)</a>
             <a href="/hi/connections.html">🔗 कनेक्शन</a>
@@ -237,20 +237,20 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/hi/">होम</a> /</li><li><a class="underline" href="/hi/archive/">संग्रह</a> /</li><li aria-current="page">ff.31 गर्मियाँ शुरू हो रही हैं</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>31</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>31</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="sun" data-ff-slug="ff-31" data-label="3D वस्तु और पूर्वावलोकन खोलें: ff.31"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Futuro Fortissimo संग्रह</p>
       <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.31 गर्मियाँ शुरू हो रही हैं</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">एक फ़ोर्तिस्सिमो भविष्य के बारे में सोचते हुए अगस्त कैसे बिताएँ</p>
       <p class="mt-2 text-xs font-mono text-black/70">प्रकाशित <time datetime="2022-08-03T07:50:03.249Z">3 अगस्त 2022</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/hi/archive/ff-31.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">↗</span> शेयर करें</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/hi/archive/ff-31.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">🔗</span> लिंक कॉपी करें</button>
-        <a href="https://fortissimo.substack.com/p/-ff31-lestate-sta-iniziando" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Substack पर इतालवी मूल पढ़ें ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/hi/archive/ff-31.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">↗</span> शेयर करें</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/hi/archive/ff-31.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">🔗</span> लिंक कॉपी करें</button>
+        <a href="https://fortissimo.substack.com/p/-ff31-lestate-sta-iniziando" target="_blank" rel="noopener noreferrer" class="ff-qlink">Substack पर इतालवी मूल पढ़ें ↗</a>
       </div>
       
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">थीम</span><a href="/hi/themes.html#attenzione" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">📱 ध्यान, स्क्रीन और आदतें</a><a href="/hi/themes.html#salute" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🏃 स्वास्थ्य, खेल और शरीर</a><a href="/hi/themes.html#clima" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🌍 प्रकृति, जलवायु और ऊर्जा</a></p>
-      <nav aria-label="इस अंक के खंड" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">थीम</span><a href="/hi/themes.html#attenzione" class="ff-tlink">📱 ध्यान, स्क्रीन और आदतें</a><a href="/hi/themes.html#salute" class="ff-tlink">🏃 स्वास्थ्य, खेल और शरीर</a><a href="/hi/themes.html#clima" class="ff-tlink">🌍 प्रकृति, जलवायु और ऊर्जा</a></p>
+      <nav aria-label="इस अंक के खंड" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">इस अंक में</h2>
         <ol>
           <li><a href="#ff-31-1">📚 ff.31.1 एक किताब</a></li>
@@ -264,58 +264,58 @@
 
     
 
-    <section id="ff-31-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-31-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">📚 ff.31.1 एक किताब</h2>
-        <a href="https://fortissimo.substack.com/i/63824931/ff311-una-lettura" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.31.1 एक किताब">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/63824931/ff311-una-lettura" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.31.1 एक किताब">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Catherine Price एक अमेरिकी पत्रकार और लेखिका हैं। मैंने उन्हें हाल ही में डिजिटल भूलभुलैया में खोए किसी पॉडकास्ट में खोजा।</p>
         <p class="text-base leading-relaxed text-black/90">डिटॉक्स का समय। उनकी किताब How to Break Up with Your Phone पढ़ना सुखद रहा। यह फ़ोन, सोशल मीडिया और उन चिंताओं के साथ हमारे रिश्ते पर सोचने की सामग्री देती है जो कनेक्टिविटी, हर बात से अपडेट रहने और लाइक की तलाश से पैदा होती हैं। साथ ही, यह नोटिफ़िकेशन और डोपामिन के उस चक्र से थोड़ा दूर होने के लिए 30 दिन की गाइड देती है, जो मनोवैज्ञानिक रूप से हम पर सचमुच गहरा असर छोड़ रहा है।</p>
         <p class="text-base leading-relaxed text-black/90">LOOKUP। एक प्यारे दोस्त का बनाया यह ऐप डिटॉक्स के दौर में आपकी मदद कर सकता है।</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!wdHd!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F7d5ef099-af0a-42fd-bf9a-9781bce7ca11_326x500.jpeg" width="326" height="500" alt="How to Break Up with Your Phone, डिजिटल डिटॉक्स पर एक किताब, futuro fortissimo के ज़रिए।" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">How to Break Up with Your Phone, डिजिटल डिटॉक्स पर एक किताब, futuro fortissimo के ज़रिए।</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="http://catherineprice.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Catherine Price</a>
-            <a href="https://amzn.to/4cdnAlA" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] text-xs font-mono font-bold hover:underline">📚 How to Break Up with Your Phone</a>
-            <a href="https://www.welookup.it/it" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ LOOKUP</a>
+          <div class="ff-refs-l">
+            <a href="http://catherineprice.com/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Catherine Price</a>
+            <a href="https://amzn.to/4cdnAlA" target="_blank" rel="noopener noreferrer sponsored" class="ff-ref is-book">📚 How to Break Up with Your Phone</a>
+            <a href="https://www.welookup.it/it" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ LOOKUP</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-31-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-31-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">📜 ff.31.2 दो लेख या रिपोर्ट</h2>
-        <a href="https://fortissimo.substack.com/i/63824931/ff312-due-articoli-o-report" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.31.2 दो लेख या रिपोर्ट">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/63824931/ff312-due-articoli-o-report" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.31.2 दो लेख या रिपोर्ट">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">फिर भविष्य (जलवायु और तकनीक) पर रिपोर्टों या पूर्वानुमानों के दो छोटे पाठ हैं जिन्हें साझा करना मुझे ज़रूरी लगता है।</p>
         <p class="text-base leading-relaxed text-black/90">हटो, Tolkien। IPCC (Intergovernmental Panel on Climate Change) ने 3000 से ज़्यादा पन्नों की जलवायु रिपोर्ट लिखी है। लेकिन 40 पन्नों का एक हल्का संस्करण भी है जो मुख्य बातें समेटता है।</p>
         <p class="text-base leading-relaxed text-black/90">ARK निवेश फ़ंड (लिखते समय YTD प्रदर्शन -53%, 😭) के पास भविष्य पर ढेर सारी अच्छी सामग्री है। मैं 2022 के मुख्य विचारों पर उनका विश्लेषण सुझाता हूँ, जिनमें ब्लॉकचेन, इलेक्ट्रिक और स्वायत्त वाहन, जीनोमिक्स, आर्टिफ़िशियल इंटेलिजेंस और रोबोटिक्स शामिल हैं। और उनका सकारात्मक आपसी जुड़ाव। सब कुछ इस लिंक पर मिलेगा: ARK 2022 Big Ideas</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!cLSu!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F4bba6fd4-7ef4-4ed1-ad5d-779ffdf8f275_947x1024.png" width="947" height="1024" alt="📜 ff.31.2 दो लेख या रिपोर्ट" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.ipcc.ch/report/ar6/wg2/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 3000 से ज़्यादा पन्नों की जलवायु रिपोर्ट</a>
-            <a href="https://www.ipcc.ch/sr15/chapter/spm/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 40 पन्नों</a>
-            <a href="https://drive.google.com/file/d/18V8SKGfUt6ua20rIDvST0TM3neKjiqiX/view" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ ARK 2022 Big Ideas</a>
+          <div class="ff-refs-l">
+            <a href="https://www.ipcc.ch/report/ar6/wg2/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ 3000 से ज़्यादा पन्नों की जलवायु रिपोर्ट</a>
+            <a href="https://www.ipcc.ch/sr15/chapter/spm/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ 40 पन्नों</a>
+            <a href="https://drive.google.com/file/d/18V8SKGfUt6ua20rIDvST0TM3neKjiqiX/view" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ ARK 2022 Big Ideas</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-31-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-31-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🎙️ ff.31.3 तीन पॉडकास्ट</h2>
-        <a href="https://fortissimo.substack.com/i/63824931/ff313-tre-podcast" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.31.3 तीन पॉडकास्ट">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/63824931/ff313-tre-podcast" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.31.3 तीन पॉडकास्ट">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">पढ़ना अच्छा है, लेकिन सुनना और भी अच्छा। आप में से कई लोगों की तरह, मुझे लगता है, पॉडकास्ट अब मेरी रोज़मर्रा की ज़िंदगी का हिस्सा हैं (ख़ासकर जब मैं साइकिल से काम पर जाता हूँ, उत्पादक और सेहतमंद समय को मिलाते हुए)।</p>
@@ -324,18 +324,18 @@
         <p class="text-base leading-relaxed text-black/90">अगर आप यह समझना चाहते हैं कि अपनी नींद के घंटों का सबसे अच्छा फ़ायदा कैसे उठाएँ, तो Andrew Huberman हैं।</p>
       </div>
       
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.amazon.com/Daily-Stoic-Meditations-Wisdom-Perseverance/dp/0735211736" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] text-xs font-mono font-bold hover:underline">📚 The Daily Stoic</a>
+          <div class="ff-refs-l">
+            <a href="https://www.amazon.com/Daily-Stoic-Meditations-Wisdom-Perseverance/dp/0735211736" target="_blank" rel="noopener noreferrer sponsored" class="ff-ref is-book">📚 The Daily Stoic</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-31-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-31-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">✒️ ff.31.4 ख़ुद को बेहतर बनाने और बड़े लक्ष्य पाने पर चार विचार</h2>
-        <a href="https://fortissimo.substack.com/i/63824931/ff314-quattro-riflessioni-sul-migliorarsi-e-raggiungere-grandi-obbiettivi" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.31.4 ख़ुद को बेहतर बनाने और बड़े लक्ष्य पाने पर चार विचार">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/63824931/ff314-quattro-riflessioni-sul-migliorarsi-e-raggiungere-grandi-obbiettivi" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.31.4 ख़ुद को बेहतर बनाने और बड़े लक्ष्य पाने पर चार विचार">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">और अब चार कुछ बिखरे, कुछ प्रेरक उद्धरण।</p>
@@ -348,10 +348,10 @@
       
     </section>
 
-    <section id="ff-31-5" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-31-5" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🤞 ff.31.5 गर्मियों के लिए पाँच सुझाव</h2>
-        <a href="https://fortissimo.substack.com/i/63824931/ff315-cinque-suggerimenti-per-lestate" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.31.5 गर्मियों के लिए पाँच सुझाव">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/63824931/ff315-cinque-suggerimenti-per-lestate" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.31.5 गर्मियों के लिए पाँच सुझाव">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">सनस्क्रीन लगाइए और धूप से मत जलिए। हर बार फ़ोन छूने पर सोचिए कि आप उसे क्यों छू रहे हैं; जिनसे बात करते हैं उनकी आँखों में ज़्यादा देखने की कोशिश कीजिए। कम से कम एक बार बर्गर को ना कहिए। कार से ज़्यादा साइकिल से चलिए। हरियाली में, ख़ामोशी में रहिए, हवा की सरसराहट सुनिए।</p>
@@ -368,17 +368,17 @@
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">संबंधित अंक</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-35.html" class="font-bold hover:underline">ff.35 मैं ठीक हूँ, मैं Super Sapiens हूँ</a><p class="text-sm text-black/75 mt-1">स्मार्टवॉच से ग्लूकोज़ सेंसर तक: क्या हम लगातार बेहतर हो रहे हैं?</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-44.html" class="font-bold hover:underline">ff.44 कितनी बेचैनी! (भाग 1)</a><p class="text-sm text-black/75 mt-1">भविष्य के बारे में कम सोचना कभी-कभी अच्छा क्यों होता है</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-33.html" class="font-bold hover:underline">ff.33 क्या पौधे हमें बचाएँगे?</a><p class="text-sm text-black/75 mt-1">एल्गोरिदम, CO2 कैप्चर और हल की जाने वाली समस्याओं के बीच पौधों की स्तुति</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-17.html" class="font-bold hover:underline">ff.17 खेल (और उसका मल)</a><p class="text-sm text-black/75 mt-1">अगले विश्व रिकॉर्ड तक पहुँचने के लिए Strava और टॉयलेट के आँकड़े</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/hi/archive/ff-35.html" class="font-bold hover:underline">ff.35 मैं ठीक हूँ, मैं Super Sapiens हूँ</a><p class="text-sm text-black/75 mt-1">स्मार्टवॉच से ग्लूकोज़ सेंसर तक: क्या हम लगातार बेहतर हो रहे हैं?</p></li>
+        <li><a href="/hi/archive/ff-44.html" class="font-bold hover:underline">ff.44 कितनी बेचैनी! (भाग 1)</a><p class="text-sm text-black/75 mt-1">भविष्य के बारे में कम सोचना कभी-कभी अच्छा क्यों होता है</p></li>
+        <li><a href="/hi/archive/ff-33.html" class="font-bold hover:underline">ff.33 क्या पौधे हमें बचाएँगे?</a><p class="text-sm text-black/75 mt-1">एल्गोरिदम, CO2 कैप्चर और हल की जाने वाली समस्याओं के बीच पौधों की स्तुति</p></li>
+        <li><a href="/hi/archive/ff-17.html" class="font-bold hover:underline">ff.17 खेल (और उसका मल)</a><p class="text-sm text-black/75 mt-1">अगले विश्व रिकॉर्ड तक पहुँचने के लिए Strava और टॉयलेट के आँकड़े</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Futuro Fortissimo के नए अंक पाएँ</h2>
@@ -393,7 +393,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -445,7 +445,7 @@
     <ul id="ff-results" role="listbox" aria-label="खोजें"></ul>
     <div class="ff-s-foot"><a href="/hi/archive/" data-ff-all data-base="/hi/archive/">संग्रह में सभी परिणाम →</a><span>कहीं भी खोजने के लिए / दबाएँ</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

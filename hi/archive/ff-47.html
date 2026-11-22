@@ -143,12 +143,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -157,9 +157,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -212,12 +212,12 @@
         <a href="/hi/books/">किताबें</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="खोजें (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">खोजें</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="खोजें (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">खोजें</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="भाषा"><a href="/archivio/ff-47.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/archive/ff-47.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/archive/ff-47.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state aria-current="page">हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="डार्क थीम" title="डार्क थीम"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">सब्सक्राइब</a>
         <details class="ff-more">
-          <summary aria-label="और"><span aria-hidden="true">☰</span><span class="sr-only">और</span></summary>
+          <summary aria-label="और"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">और</span></summary>
           <nav class="ff-menu" aria-label="और">
             <a href="/book/">📖 किताब (IT)</a>
             <a href="/hi/connections.html">🔗 कनेक्शन</a>
@@ -233,24 +233,24 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/hi/">होम</a> /</li><li><a class="underline" href="/hi/archive/">संग्रह</a> /</li><li aria-current="page">ff.47 टेक का हस्तशिल्प मेला (CES)</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>47</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>47</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="car" data-ff-slug="ff-47" data-label="3D वस्तु और पूर्वावलोकन खोलें: ff.47"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Futuro Fortissimo संग्रह</p>
       <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.47 टेक का हस्तशिल्प मेला (CES)</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">दो स्क्रीन वाले लैपटॉप, बिना बटन की कारें और पेशाब पर नज़र रखने वाले ऐप</p>
       <p class="mt-2 text-xs font-mono text-black/70">प्रकाशित <time datetime="2023-01-22T07:00:15.152Z">22 जनवरी 2023</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/hi/archive/ff-47.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">↗</span> शेयर करें</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/hi/archive/ff-47.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">🔗</span> लिंक कॉपी करें</button>
-        <a href="https://fortissimo.substack.com/p/ff47-la-fiera-dellartigianato-del" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Substack पर इतालवी मूल पढ़ें ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/hi/archive/ff-47.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">↗</span> शेयर करें</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/hi/archive/ff-47.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">🔗</span> लिंक कॉपी करें</button>
+        <a href="https://fortissimo.substack.com/p/ff47-la-fiera-dellartigianato-del" target="_blank" rel="noopener noreferrer" class="ff-qlink">Substack पर इतालवी मूल पढ़ें ↗</a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• एक तकिया जो खर्राटे रोके</li>
-        <li>• वॉशिंग मशीन के माइक्रोप्लास्टिक घटाना</li>
-        <li>• Need for Speed की याद दिलाने वाली BMW</li>
+      <ul class="ff-keypoints">
+        <li>एक तकिया जो खर्राटे रोके</li>
+        <li>वॉशिंग मशीन के माइक्रोप्लास्टिक घटाना</li>
+        <li>Need for Speed की याद दिलाने वाली BMW</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">थीम</span><a href="/hi/themes.html#ai" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🤖 AI, एजेंट और मॉडल</a><a href="/hi/themes.html#nutrizione" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🥗 पोषण और माइक्रोबायोम</a></p>
-      <nav aria-label="इस अंक के खंड" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">थीम</span><a href="/hi/themes.html#ai" class="ff-tlink">🤖 AI, एजेंट और मॉडल</a><a href="/hi/themes.html#nutrizione" class="ff-tlink">🥗 पोषण और माइक्रोबायोम</a></p>
+      <nav aria-label="इस अंक के खंड" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">इस अंक में</h2>
         <ol>
           <li><a href="#ff-47-1">😴 ff.47.1 खर्राटे? कोई बात नहीं!</a></li>
@@ -264,58 +264,58 @@
 
     
 
-    <section id="ff-47-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-47-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">😴 ff.47.1 खर्राटे? कोई बात नहीं!</h2>
-        <a href="https://fortissimo.substack.com/i/95003056/ff-russa-no-problem" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.47.1 खर्राटे? कोई बात नहीं!">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/95003056/ff-russa-no-problem" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.47.1 खर्राटे? कोई बात नहीं!">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">धमाकेदार शुरुआत करते हैं। CES के सबसे नवोन्मेषी गैजेट्स में से एक है Motion Pillow। बिल्ट-इन एयरबैग वाला तकिया जो ज़रूरत पड़ने पर फूल जाता है। ताकि आपको रात भर अपने जीवनसाथी को हल्की-हल्की कोहनियाँ न मारनी पड़ें।</p>
         <p class="text-base leading-relaxed text-black/90">Snorlax सावधान। समूह के बेहद विस्तृत शोध के अनुसार, “खर्राटों का समय” लगभग आधा हो जाता है।</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!WcXD!,w_1456,c_limit,f_auto,q_auto:good,fl_lossy/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b42b6df-8fc2-4a97-94e6-6c29a830fbed_1000x750.gif" width="1000" height="750" alt="😴 ff.47.1 खर्राटे? कोई बात नहीं!" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!s4jB!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F73b274ab-b72e-4d74-83c8-7dee6bf6952d_888x880.png" width="888" height="880" alt="Motion Pillow, एयरबैग वाला तकिया, “खर्राटों का समय” 44% घटाता है" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Motion Pillow, एयरबैग वाला तकिया, “खर्राटों का समय” 44% घटाता है</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="http://www.motionpillow.com/en/home.do" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Motion Pillow। बिल्ट-इन एयरबैग वाला तकिया</a>
+          <div class="ff-refs-l">
+            <a href="http://www.motionpillow.com/en/home.do" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Motion Pillow। बिल्ट-इन एयरबैग वाला तकिया</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-47-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-47-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🏆 ff.47.2 डिजिटल समुद्री साँप</h2>
-        <a href="https://fortissimo.substack.com/i/95003056/ff-serpenti-marini-digitali" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.47.2 डिजिटल समुद्री साँप">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/95003056/ff-serpenti-marini-digitali" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.47.2 डिजिटल समुद्री साँप">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">हर साल CES में प्रस्तुत सर्वश्रेष्ठ तकनीकों को पुरस्कार मिलते हैं। इस साल रोबोटों ने बाज़ी मार ली।</p>
         <p class="text-base leading-relaxed text-black/90">क्या हम 4 लीटर पानी से बने हैं? नहीं। लेकिन इतने लीटर पानी पाइपों के रिसाव में बर्बाद होता है (प्रति व्यक्ति का यह औसत ज़्यादा मायने नहीं रखता, देशों के बीच पानी की खपत में भारी अंतर को देखते हुए। वैसे तुर्कमेनिस्तान सबसे आगे है)।</p>
         <p class="text-base leading-relaxed text-black/90">ACWA Robotics ने एक रोबोटिक साँप पेश किया जो पानी के रिसाव ढूँढने और उसके प्रबंधन को बेहतर बनाने के लिए कोलो... स्कोपी जैसा काम कर सकता है।</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!kroM!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9f8703ac-84bd-4d6b-ac7f-0785895922f6_392x285.jpeg" width="392" height="285" alt="🏆 ff.47.2 डिजिटल समुद्री साँप" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (2)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.worldometers.info/water/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ देशों के बीच पानी की खपत में भारी अंतर को देखते हुए। वैसे तुर्कमेनिस्तान सबसे आगे है</a>
-            <a href="https://acesrobotics.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ ACWA Robotics ने एक रोबोटिक साँप पेश किया</a>
+          <div class="ff-refs-l">
+            <a href="https://www.worldometers.info/water/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ देशों के बीच पानी की खपत में भारी अंतर को देखते हुए। वैसे तुर्कमेनिस्तान सबसे आगे है</a>
+            <a href="https://acesrobotics.com/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ ACWA Robotics ने एक रोबोटिक साँप पेश किया</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-47-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-47-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🐧 ff.47.3 माइक्रोप्लास्टिक के ख़िलाफ़ वॉशिंग मशीन</h2>
-        <a href="https://fortissimo.substack.com/i/95003056/ff-lavatrici-contro-le-microplastiche" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.47.3 माइक्रोप्लास्टिक के ख़िलाफ़ वॉशिंग मशीन">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/95003056/ff-lavatrici-contro-le-microplastiche" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.47.3 माइक्रोप्लास्टिक के ख़िलाफ़ वॉशिंग मशीन">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">जैसा अब सब जानते हैं, पनेत्तोने (सूखे मेवों के साथ या बिना) के अलावा हम हर साल प्लास्टिक के ढेर सारे सूक्ष्म कण खाते हैं।</p>
@@ -325,29 +325,29 @@
         <p class="text-base leading-relaxed text-black/90">वॉशिंग मशीन के विभिन्न वॉश प्रकारों में माइक्रोप्लास्टिक के उत्सर्जन को मापने वाला एक अध्ययन और सुझाव देता है:</p>
         <p class="text-base leading-relaxed text-black/90">“Fast Fashion” को ना कहें; कम धोएँ, ठंडे पानी में, हल्के मोड पर (सिर्फ़ इससे 70% कमी); माइक्रोफ़ाइबर फ़िल्टर पर विचार करें</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!RSQ6!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F691949af-cd24-4966-b859-43a8640409f3_477x700.jpeg" width="477" height="700" alt="🐧 ff.47.3 माइक्रोप्लास्टिक के ख़िलाफ़ वॉशिंग मशीन" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!PZqg!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F47b657d6-5e33-41d5-a46b-48b902b87e82_715x587.png" width="715" height="587" alt="वॉशिंग मशीन की विभिन्न सेटिंग्स पर एक धुलाई में निकला प्लास्टिक (mg/kg) (Op. rate = स्पिन का समय)।" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">वॉशिंग मशीन की विभिन्न सेटिंग्स पर एक धुलाई में निकला प्लास्टिक (mg/kg) (Op. rate = स्पिन का समय)।</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (4)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://pubs.acs.org/doi/10.1021/acs.est.9b01517" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ हम हर साल प्लास्टिक के ढेर सारे सूक्ष्म कण खाते हैं</a>
-            <a href="https://www.europarl.europa.eu/news/en/headlines/society/20181116STO19217/microplastics-sources-effects-and-solutions" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ माइक्रोप्लास्टिक (35%) वॉशिंग मशीन में हमारे कपड़े धोने से आता है</a>
-            <a href="https://ocean.org/app/uploads/2022/12/OceanWise-WashingReport.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ वॉशिंग मशीन के विभिन्न वॉश प्रकारों में माइक्रोप्लास्टिक के उत्सर्जन को मापने वाला अध्ययन</a>
-            <a href="https://fortissimo.substack.com/p/ff39-come-ti-vesti" target="_blank" rel="noopener noreferrer" title="🎼 ff.39 Come ti vesti?" lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ fortissimo.substack.com</a>
+          <div class="ff-refs-l">
+            <a href="https://pubs.acs.org/doi/10.1021/acs.est.9b01517" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ हम हर साल प्लास्टिक के ढेर सारे सूक्ष्म कण खाते हैं</a>
+            <a href="https://www.europarl.europa.eu/news/en/headlines/society/20181116STO19217/microplastics-sources-effects-and-solutions" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ माइक्रोप्लास्टिक (35%) वॉशिंग मशीन में हमारे कपड़े धोने से आता है</a>
+            <a href="https://ocean.org/app/uploads/2022/12/OceanWise-WashingReport.pdf" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ वॉशिंग मशीन के विभिन्न वॉश प्रकारों में माइक्रोप्लास्टिक के उत्सर्जन को मापने वाला अध्ययन</a>
+            <a href="https://fortissimo.substack.com/p/ff39-come-ti-vesti" target="_blank" rel="noopener noreferrer" title="🎼 ff.39 Come ti vesti?" lang="it" class="ff-ref">↗ fortissimo.substack.com</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-47-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-47-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🧻 ff.47.4 स्मार्ट टॉयलेट</h2>
-        <a href="https://fortissimo.substack.com/i/95003056/ff-wc-smart" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.47.4 स्मार्ट टॉयलेट">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/95003056/ff-wc-smart" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.47.4 स्मार्ट टॉयलेट">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">पहेली: नीचे दिया यह यंत्र क्या है?</p>
@@ -355,23 +355,23 @@
         <p class="text-base leading-relaxed text-black/90">CES में स्मार्ट टॉयलेट तो होना ही था (हाँ, मूल इतालवी वाक्य में एक बारीक शब्द-खेल है)। Withings ने U-Scan पेश किया, पेशाब का एक सेंसर जो इन पर नज़र रखता है:</p>
         <p class="text-base leading-relaxed text-black/90">LH हार्मोन (Luteinizing Hormone), जो मासिक चक्र और ओव्यूलेशन से जुड़ा है; द्रव का विशिष्ट गुरुत्व, यानी उपयोगकर्ता के हाइड्रेशन का स्तर; pH, जो प्रोटीन/फ़ाइबर अनुपात से जुड़ा है</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!RDJq!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4607a4ef-7671-4441-b9ac-938b6af8dcd6_658x735.png" width="658" height="735" alt="Withings का U-Scan आपके मूत्र का भार या हार्मोन मापता है। ताकि आपको पता रहे कि पानी पीना है या आप प्रजनन क्षमता के शिखर पर हैं।" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Withings का U-Scan आपके मूत्र का भार या हार्मोन मापता है। ताकि आपको पता रहे कि पानी पीना है या आप प्रजनन क्षमता के शिखर पर हैं।</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (2)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.notion.so/micmer/ff-futuro-fortissimo-f41e153b16654108991832eae044338c" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ यह डिजिटल किताब सामग्री में राह दिखाने में मदद करती है</a>
-            <a href="https://www.withings.com/it/en/u-scan" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Withings ने U-Scan पेश किया, पेशाब का एक सेंसर</a>
+          <div class="ff-refs-l">
+            <a href="https://www.notion.so/micmer/ff-futuro-fortissimo-f41e153b16654108991832eae044338c" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ यह डिजिटल किताब सामग्री में राह दिखाने में मदद करती है</a>
+            <a href="https://www.withings.com/it/en/u-scan" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Withings ने U-Scan पेश किया, पेशाब का एक सेंसर</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-47-5" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-47-5" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">👍 ff.47.5 “सबसे फ़ोर्तिस्सिमो” टेक गैजेट</h2>
-        <a href="https://fortissimo.substack.com/i/95003056/ff-i-gadget-tech-piu-fortissimi" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.47.5 “सबसे फ़ोर्तिस्सिमो” टेक गैजेट">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/95003056/ff-i-gadget-tech-piu-fortissimi" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.47.5 “सबसे फ़ोर्तिस्सिमो” टेक गैजेट">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">हम सबकी सेहत के लिए इन ख़ास गैजेट्स के अलावा, CES में कुछ बेहद प्यारी छोटी-छोटी चीज़ें भी पेश की गईं।</p>
@@ -388,41 +388,41 @@
         <p class="text-base leading-relaxed text-black/90">और नीचे एक दिल लगाना न भूलें।</p>
         <p class="text-base leading-relaxed text-black/90">❤️</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!GRZY!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb7b3984c-5e2c-45bd-aace-ff4640428c8f_1200x675.jpeg" width="1200" height="675" alt="👍 ff.47.5 “सबसे फ़ोर्तिस्सिमो” टेक गैजेट" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!M62L!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff74fbfe6-21b9-4769-91a6-0740d3af3f45_640x340.png" width="640" height="340" alt="👍 ff.47.5 “सबसे फ़ोर्तिस्सिमो” टेक गैजेट" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!cpTz!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F57e4b276-7bda-4021-955a-8b6e8cfac24d_541x367.png" width="541" height="367" alt="👍 ff.47.5 “सबसे फ़ोर्तिस्सिमो” टेक गैजेट" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (4)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.lenovo.com/it/it/yoga/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Lenovo ने Yoga 9i पेश किया, दो स्क्रीन वाला लैपटॉप</a>
-            <a href="https://www.bmw.com/en/events/nextgen2023/dee-live-on-tape.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ BMW ने अपनी Dee के साथ</a>
-            <a href="https://twitter.com/BMW/status/1611346854012125184?s=20&amp;t=_tn6OHjjeH5zHGAskZUzLg" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ BMW@BMWWhich combo is the most YOU? Just let Dee know, and she’ll change in an instant. Experience digitalisation that is made to fit you#THEiVisionDee#TheUltimateCompanion@EInk</a>
-            <a href="https://semiconductor.samsung.com/security-solution/biometric-card/part-number/s3b512c/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Samsung ने बायोमेट्रिक कार्ड S3B512C पेश किया</a>
+          <div class="ff-refs-l">
+            <a href="https://www.lenovo.com/it/it/yoga/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Lenovo ने Yoga 9i पेश किया, दो स्क्रीन वाला लैपटॉप</a>
+            <a href="https://www.bmw.com/en/events/nextgen2023/dee-live-on-tape.html" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ BMW ने अपनी Dee के साथ</a>
+            <a href="https://twitter.com/BMW/status/1611346854012125184?s=20&amp;t=_tn6OHjjeH5zHGAskZUzLg" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ BMW@BMWWhich combo is the most YOU? Just let Dee know, and she’ll change in an instant. Experience digitalisation that is made to fit you#THEiVisionDee#TheUltimateCompanion@EInk</a>
+            <a href="https://semiconductor.samsung.com/security-solution/biometric-card/part-number/s3b512c/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Samsung ने बायोमेट्रिक कार्ड S3B512C पेश किया</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">संबंधित अंक</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-28.html" class="font-bold hover:underline">ff.28 Google भविष्य पर शोध करता है</a><p class="text-sm text-black/75 mt-1">सर्च इंजन से ऐसे शोध तक जो भविष्य की तकनीकों का इंजन बनेगा।</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-60.html" class="font-bold hover:underline">ff.60 सेल्फ़-ड्राइविंग आ चुकी है!</a><p class="text-sm text-black/75 mt-1">रोबोटैक्सी की दौड़ कौन जीतेगा? Elon Musk या DriveGPT के साथ चीन?</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-55.html" class="font-bold hover:underline">ff.55 क्रांति में बचे रहना</a><p class="text-sm text-black/75 mt-1">गिलोटिन, बेबसी और बर्बादी के बीच कृत्रिम बुद्धिमत्ता</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-54.html" class="font-bold hover:underline">ff.54 GPT-4 ने मुझे छोड़ दिया</a><p class="text-sm text-black/75 mt-1">Petrarca, Caressa और एक Python कोड: किसी से रिश्ता तोड़ने के 1001 तरीक़े</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/hi/archive/ff-28.html" class="font-bold hover:underline">ff.28 Google भविष्य पर शोध करता है</a><p class="text-sm text-black/75 mt-1">सर्च इंजन से ऐसे शोध तक जो भविष्य की तकनीकों का इंजन बनेगा।</p></li>
+        <li><a href="/hi/archive/ff-60.html" class="font-bold hover:underline">ff.60 सेल्फ़-ड्राइविंग आ चुकी है!</a><p class="text-sm text-black/75 mt-1">रोबोटैक्सी की दौड़ कौन जीतेगा? Elon Musk या DriveGPT के साथ चीन?</p></li>
+        <li><a href="/hi/archive/ff-55.html" class="font-bold hover:underline">ff.55 क्रांति में बचे रहना</a><p class="text-sm text-black/75 mt-1">गिलोटिन, बेबसी और बर्बादी के बीच कृत्रिम बुद्धिमत्ता</p></li>
+        <li><a href="/hi/archive/ff-54.html" class="font-bold hover:underline">ff.54 GPT-4 ने मुझे छोड़ दिया</a><p class="text-sm text-black/75 mt-1">Petrarca, Caressa और एक Python कोड: किसी से रिश्ता तोड़ने के 1001 तरीक़े</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Futuro Fortissimo के नए अंक पाएँ</h2>
@@ -437,7 +437,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -489,7 +489,7 @@
     <ul id="ff-results" role="listbox" aria-label="खोजें"></ul>
     <div class="ff-s-foot"><a href="/hi/archive/" data-ff-all data-base="/hi/archive/">संग्रह में सभी परिणाम →</a><span>कहीं भी खोजने के लिए / दबाएँ</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

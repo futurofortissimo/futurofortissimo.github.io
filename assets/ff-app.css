@@ -337,3 +337,198 @@ html main a.underline.decoration-black\/30:hover { text-decoration-color:var(--f
 :root[data-ff-theme="dark"] body [style*="color: #333"], :root[data-ff-theme="dark"] body [style*="color:#333"] { color:var(--ff-ink-2) !important; }
 html body .ff-eyebrow[style*="--ff-green"] { color:#167a42 !important; }
 :root[data-ff-theme="dark"] body .ff-eyebrow[style*="--ff-green"] { color:#4ade80 !important; }
+
+/* ══ 5. v2 "quiet paper" layer — fewer surfaces: whitespace, hairlines and type make the hierarchy.
+   One filled CTA (Iscriviti, green); everything else is text, icons or hairlines. Overrides the layers above. ══ */
+:root { --ff-hair:1px solid var(--ff-line-soft); --ff-hair-mid:1px solid var(--ff-line-mid); --ff-bar:var(--ff-paper); --ff-on-bar:var(--ff-ink); }
+:root[data-ff-theme="dark"] { --ff-bar:var(--ff-paper); }
+@media (prefers-color-scheme: dark) { :root:not([data-ff-theme]) { --ff-bar:var(--ff-paper); } }
+
+/* every legacy "brutal" box becomes an open block separated by a hairline */
+html body .brutal-card { border:0; border-top:var(--ff-hair); background:transparent; box-shadow:none; padding:28px 0 0; border-radius:0; }
+html body .brutal-shadow, html body .brutal-card .brutal-shadow { box-shadow:none; }
+html body .accent-bar::before { top:-1px; left:0; right:auto; width:40px; height:3px; }
+html body main :is(.border-3, .border-4, .border-2).border-black { border-width:1px !important; border-color:var(--ff-line-mid); }
+html body main :is(.border-black\/30, .border-black\/20, .border-black\/15, .border-black\/10) { border-color:var(--ff-line-soft); }
+html body main :is(input[type="search"], input[type="text"], input[type="email"], select, textarea) { border:1px solid var(--ff-ink-4) !important; background:var(--ff-surface); box-shadow:none; }
+html body a.border-2.border-black:hover { transform:none; box-shadow:none; }
+
+/* buttons: primary = the only filled one; the rest are quiet text buttons */
+html .ff-btn { border:0; box-shadow:none; background:transparent; color:var(--ff-ink); padding:0 10px; text-decoration:underline; text-decoration-color:var(--ff-line-mid); text-underline-offset:4px; text-decoration-thickness:1px; }
+html .ff-btn:hover, html .ff-btn:active { transform:none; box-shadow:none; background:transparent; text-decoration-color:currentColor; }
+html .ff-btn-primary, html .ff-btn-primary:hover { background:var(--ff-green); color:#0a0a0a; text-decoration:none; padding:0 18px; }
+html .ff-btn-primary:hover { background:#27b865; }
+html .ff-btn-ghost:hover { background:transparent; color:var(--ff-ink); }
+html .ff-btn[aria-pressed="true"], html .ff-btn.is-done { background:var(--ff-tint); color:var(--ff-ink); }
+html .ff-cta-main { min-height:48px; font-size:.78rem; }
+
+/* quiet action row on issue pages: Condividi · Copia link · Leggi su Substack */
+.ff-quiet-row { display:flex; flex-wrap:wrap; align-items:center; gap:2px 18px; margin-top:14px; }
+.ff-qlink { display:inline-flex; align-items:center; gap:.4em; min-height:32px; padding:0; border:0; background:none; color:var(--ff-ink-3); font:600 .74rem/1.2 var(--f-mono); letter-spacing:.06em; text-transform:uppercase; text-decoration:none; cursor:pointer; white-space:nowrap; }
+.ff-qlink:hover { color:var(--ff-ink); text-decoration:underline; text-underline-offset:4px; }
+.ff-qlink.is-done { color:var(--ff-ink); }
+.ff-qlink[data-ff-share]::before { content:''; width:15px; height:15px; background:currentColor; -webkit-mask:var(--ff-i-share) center/contain no-repeat; mask:var(--ff-i-share) center/contain no-repeat; }
+.ff-qlink[data-ff-copy]::before { content:''; width:15px; height:15px; background:currentColor; -webkit-mask:var(--ff-i-link) center/contain no-repeat; mask:var(--ff-i-link) center/contain no-repeat; }
+.ff-qlink[data-ff-share] > span[aria-hidden], .ff-qlink[data-ff-copy] > span[aria-hidden] { display:none; }
+:root { --ff-i-share:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.2'%3E%3Cpath d='M12 3v12M7 8l5-5 5 5M5 13v8h14v-8'/%3E%3C/svg%3E");
+  --ff-i-link:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.2'%3E%3Cpath d='M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1'/%3E%3C/svg%3E"); }
+
+/* ── top bar: paper + hairline, flat icons (no boxed buttons, no black slab) ── */
+html .ff-appbar { background:color-mix(in srgb, var(--ff-paper) 94%, transparent); -webkit-backdrop-filter:saturate(1.2) blur(10px); backdrop-filter:saturate(1.2) blur(10px); color:var(--ff-ink); border-bottom:var(--ff-hair); }
+html .ff-brand { color:var(--ff-ink); }
+html .ff-brand img { border:0; background:transparent; border-radius:0; }
+html .ff-primary a, html .ff-more > summary { color:var(--ff-ink-2); border-bottom:2px solid transparent; }
+html .ff-primary a:hover, html .ff-more > summary:hover { color:var(--ff-ink); background:transparent; }
+html .ff-primary a[aria-current="page"] { color:var(--ff-ink); border-bottom-color:var(--ff-red); }
+html .ff-search-btn { background:transparent; color:var(--ff-ink); border:0; min-height:44px; }
+html .ff-search-btn kbd { border:1px solid var(--ff-line-mid); color:var(--ff-ink-3); }
+@media (min-width: 900px) { html .ff-search-btn { border-bottom:var(--ff-hair-mid); color:var(--ff-ink-3); } html .ff-search-btn:hover { color:var(--ff-ink); } }
+html .ff-lang { border:0; gap:0; }
+html .ff-lang a { color:var(--ff-ink-3); border:0; min-width:32px; min-height:44px; padding:0 4px; font-weight:600; }
+html .ff-lang a:hover { background:transparent; color:var(--ff-ink); }
+html .ff-lang a[aria-current="page"] { background:transparent; color:var(--ff-ink); font-weight:800; text-decoration:underline; text-decoration-color:var(--ff-red); text-decoration-thickness:2px; text-underline-offset:6px; }
+html .ff-theme-btn, html .ff-more > summary { border:0; background:transparent; color:var(--ff-ink); min-height:44px; }
+html .ff-theme-btn:hover, html .ff-more[open] > summary, html .ff-more > summary:hover { background:var(--ff-surface-2); color:var(--ff-ink); }
+html .ff-appbar .ff-btn-primary { box-shadow:none; border:0; min-height:36px; }
+.ff-ico { width:20px; height:20px; flex:none; }
+html .ff-menu { border:var(--ff-hair); box-shadow:0 18px 48px rgb(0 0 0 / .18); }
+html .ff-menu .ff-menu-sub { border:0; }
+html .ff-menu a:hover, html .ff-menu a[aria-current="page"] { background:var(--ff-surface-2); color:var(--ff-ink); }
+
+/* tab bar + overlays: hairlines, soft depth */
+html .ff-tabbar { border-top:var(--ff-hair); }
+html .ff-tabbar [aria-current="page"] { background:transparent; color:var(--ff-ink); }
+html .ff-tabbar [aria-current="page"]::before { top:-1px; left:30%; right:30%; height:2px; background:var(--ff-red); }
+html .ff-search { border:var(--ff-hair); box-shadow:0 24px 64px rgb(0 0 0 / .28); }
+html .ff-search form { background:var(--ff-surface); border-bottom:var(--ff-hair); }
+html .ff-search input { border:1px solid var(--ff-ink-4); background:var(--ff-paper); color:var(--ff-ink); }
+html .ff-search li a:hover, html .ff-search li a[aria-selected="true"] { border-color:transparent; background:var(--ff-surface-2); }
+html .ff-sticky-sub { border:var(--ff-hair); box-shadow:0 12px 36px rgb(0 0 0 / .16); }
+html .ff-toast { border:0; }
+html .ff-footer { border-top:var(--ff-hair); background:transparent; }
+html .ff-progress span { box-shadow:none; height:2px; }
+
+/* ── home: the wordmark sits on the paper — no card, no art ── */
+html .ff-hero-card { background:none; padding-block:clamp(20px,5vw,48px) clamp(8px,2vw,16px); border:0; box-shadow:none; overflow:visible; }
+html .ff-hero-card h1 { text-shadow:2px 2px 0 color-mix(in srgb, var(--ff-yellow) 70%, transparent); color:var(--ff-ink); }
+html .ff-hero-card .ff-dyn { opacity:.07; }
+html .ff-hero-card h1::before { --c:color-mix(in srgb, var(--ff-line-soft) 70%, transparent); }
+/* rail: image + text, borderless */
+html .ff-rail { gap:20px; }
+html .ff-rail-i { position:relative; }
+html .ff-card, html .ff-card:hover, html .ff-card:active { border:0; background:transparent; box-shadow:none; transform:none; overflow:visible; }
+html .ff-card .ff-card-img { border:0 !important; }
+html .ff-card > .ff-card-img, html .ff-card:hover .ff-card-img { transform:none; }
+html .ff-card:hover .ff-card-img { filter:saturate(1.08) brightness(1.03); }
+html .ff-card-mark { background:var(--ff-paper); color:var(--ff-ink); border:0; box-shadow:none; top:8px; left:8px; padding:3px 7px; font-weight:600; }
+html .ff-card-mark i { color:var(--ff-red); }
+:root[data-ff-theme="dark"] .ff-card-mark i { color:#ff6b6b; }
+/* themes + books: hairline lists */
+html .ff-hlist { gap:0 24px; }
+html .ff-hlist > li { border-top:var(--ff-hair); }
+.ff-hl { padding:14px 0; color:var(--ff-ink); text-decoration:none; min-height:64px; }
+.ff-hl:hover .font-bold { text-decoration:underline; text-decoration-color:var(--ff-red); text-underline-offset:3px; }
+
+/* ── issue page ── */
+html .ff-issue-head { padding:4px 0 0; }
+.ff-issue-top { display:flex; align-items:center; gap:16px; }
+.ff-issue-top > .ff-issue-mark { flex:1; min-width:0; margin:0; }
+html .ff-issue-mark { opacity:.92; }
+html .ff-issue-mark b { -webkit-text-stroke:1.2px var(--ff-ink); }
+html .ff-issue-mark .ff-staff { height:13px; background:repeating-linear-gradient(to bottom,var(--ff-line-soft) 0 1px,transparent 1px 3px); }
+html .ff-issue-mark .ff-staff::after { background:var(--ff-ink-4); height:12px; }
+.ff-keypoints { margin:18px 0 0; padding:0; list-style:none; display:grid; gap:8px; font-weight:500; font-size:var(--t-sm); color:var(--ff-ink-2); }
+.ff-keypoints li { position:relative; padding-left:18px; }
+.ff-keypoints li::before { content:''; position:absolute; left:0; top:.62em; width:8px; height:2px; background:var(--ff-red); }
+.ff-tlinks { margin-top:16px; display:flex; flex-wrap:wrap; align-items:center; gap:4px 16px; font:600 .78rem var(--f-mono); }
+.ff-tlinks .ff-eyebrow { color:var(--ff-ink-3); font-size:.7rem; }
+.ff-tlink { display:inline-flex; align-items:center; min-height:32px; color:var(--ff-ink-2); text-decoration:none; }
+.ff-tlink:hover { color:var(--ff-ink); text-decoration:underline; text-underline-offset:4px; }
+html .ff-toc { margin-top:22px; }
+html .ff-toc h2 { color:var(--ff-ink-3); }
+html .ff-toc ol { gap:0; }
+html .ff-toc li { border-top:var(--ff-hair); }
+html .ff-toc ol li:last-child { border-bottom:var(--ff-hair); }
+html .ff-toc a, html .ff-toc a:hover, html .ff-toc a.is-active { border:0; background:transparent; box-shadow:none; transform:none; padding:8px 0; color:var(--ff-ink-2); font-weight:600; }
+html .ff-toc a:hover, html .ff-toc a.is-active { color:var(--ff-ink); text-decoration:underline; text-decoration-color:var(--ff-red); text-underline-offset:4px; }
+@media (min-width: 640px) { html .ff-toc ol { column-gap:28px; } html .ff-toc ol li:nth-last-child(2):nth-child(odd) { border-bottom:var(--ff-hair); } }
+html article[data-ff-article] > .ff-sec { position:relative; border-top:var(--ff-hair); padding-top:32px; margin-top:40px; }
+html article[data-ff-article] > .ff-sec > div > h2 { font-size:var(--t-lg); }
+.ff-fig { margin-inline:0; }
+.ff-fig img { background:var(--ff-surface-2); }
+html article[data-ff-article] .ff-fig figcaption { color:var(--ff-ink-3); }
+.ff-refs { padding-top:14px; }
+.ff-refs .ff-eyebrow { color:var(--ff-ink-3); }
+.ff-refs-l { display:flex; flex-wrap:wrap; gap:2px 18px; }
+.ff-ref { display:inline-flex; align-items:center; min-height:32px; color:var(--ff-link); font:600 .76rem/1.3 var(--f-mono); text-decoration:underline; text-decoration-color:var(--ff-line-mid); text-underline-offset:4px; }
+.ff-ref:hover { text-decoration-color:currentColor; }
+.ff-ref.is-book { color:var(--ff-ink); }
+.ff-note { border-left:3px solid var(--ff-yellow); padding:6px 0 6px 14px; }
+.ff-rel { border-top:var(--ff-hair); padding-top:28px; }
+.ff-rel-l { list-style:none; margin:0; padding:0; display:grid; gap:0 28px; }
+.ff-rel-l > li { padding:12px 0; border-bottom:var(--ff-hair); }
+.ff-rel-l p { color:var(--ff-ink-3); }
+@media (min-width: 640px) { .ff-rel-l { grid-template-columns:1fr 1fr; } }
+html .ff-endcta { border-top:var(--ff-hair); padding:28px 0 4px; }
+html .ff-endcta .ff-eyebrow { color:var(--ff-ink-3); }
+html .ff-pn a, html .ff-pn a:hover { border:0; border-top:var(--ff-hair); background:transparent; box-shadow:none; transform:none; padding:14px 0; }
+html .ff-pn a:hover .ff-pn-t { text-decoration:underline; text-decoration-color:var(--ff-red); text-underline-offset:4px; }
+/* archive list */
+html .ff-item { position:relative; border-top:var(--ff-hair); padding:20px 0 4px; }
+html .ff-item:has(.ff-vox) { padding-left:76px; min-height:96px; }
+html .ff-item > .ff-vox { position:absolute; left:0; top:18px; }
+.ff-subts { display:flex; flex-wrap:wrap; gap:2px 0; font:500 .74rem/1.5 var(--f-mono); color:var(--ff-ink-3); }
+.ff-subt + .ff-subt::before { content:'·'; margin:0 .5em; color:var(--ff-ink-4); }
+@supports (animation-timeline: view()) { @media (prefers-reduced-motion: no-preference) {
+  html article[data-ff-article] > .ff-sec, html main .ff-item, html .ff-rel { animation:ff-rise linear both; animation-timeline:view(); animation-range:entry 0% entry 45%; } } }
+
+/* ── 3D voxel objects (assets/ff-voxel.js): empty placeholders without JS, a button once enhanced ── */
+.ff-vox { display:inline-block; width:var(--vs,64px); height:var(--vs,64px); flex:none; }
+.ff-vox:empty { visibility:hidden; }
+.ff-vox-lg { --vs:clamp(84px,18vw,120px); }
+.ff-vox-sm { --vs:60px; }
+.ff-vox-card { --vs:76px; position:absolute; right:6px; top:calc((100% - 0px) * 0 + 6px); z-index:2; }
+.ff-vox-btn { all:unset; box-sizing:border-box; display:block; width:100%; height:100%; cursor:pointer; position:relative; border-radius:50%; -webkit-tap-highlight-color:transparent; }
+.ff-vox-btn canvas { width:100%; height:100%; display:block; image-rendering:pixelated; image-rendering:crisp-edges; transition:transform .25s var(--ease-spring); }
+.ff-vox-btn:hover canvas { transform:scale(1.08) translateY(-2px); }
+.ff-vox-btn:focus-visible { outline:3px solid var(--ff-blue); outline-offset:2px; }
+.ff-vox-card .ff-vox-btn { background:color-mix(in srgb, var(--ff-paper) 86%, transparent); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); }
+/* the sheet that unfolds when an object explodes */
+.ff-vsheet { width:min(680px, 100vw); max-width:100vw; max-height:min(92vh, 900px); margin:auto auto 0; padding:0; border:0; border-top:var(--ff-hair); background:var(--ff-paper); color:var(--ff-ink); box-shadow:0 -20px 60px rgb(0 0 0 / .25); overflow:auto; overscroll-behavior:contain; }
+@media (min-width: 720px) { .ff-vsheet { margin:auto; border:var(--ff-hair); max-height:min(86vh, 860px); } }
+.ff-vsheet::backdrop { background:rgb(10 10 10 / .45); -webkit-backdrop-filter:blur(3px); backdrop-filter:blur(3px); }
+.ff-vsheet[open] { animation:ff-sheet-in .42s var(--ease-out) both; }
+@keyframes ff-sheet-in { from { transform:translateY(24px); opacity:0; } to { transform:none; opacity:1; } }
+.ff-vs-in { padding:0 22px 26px; }
+.ff-vs-top { position:sticky; top:0; z-index:2; display:flex; align-items:center; gap:14px; padding:14px 0 10px; background:var(--ff-paper); border-bottom:var(--ff-hair); }
+.ff-vs-cv { width:96px; height:96px; flex:none; image-rendering:pixelated; image-rendering:crisp-edges; }
+.ff-vs-top h2 { margin:0; font-size:var(--t-lg); line-height:1.2; }
+.ff-vs-top .ff-eyebrow { color:var(--ff-ink-3); font-size:.68rem; }
+.ff-vs-x { margin-left:auto; align-self:flex-start; width:44px; height:44px; display:inline-flex; align-items:center; justify-content:center; border:0; background:transparent; color:var(--ff-ink); font-size:1.5rem; cursor:pointer; flex:none; }
+.ff-vs-x:hover { background:var(--ff-surface-2); }
+.ff-vs-st { margin:14px 0 4px; font:italic 500 var(--t-base)/1.45 var(--f-read); color:var(--ff-ink-2); }
+.ff-vs-secs { list-style:none; margin:10px 0 0; padding:0; }
+.ff-vs-secs li { padding:16px 0; border-bottom:var(--ff-hair); }
+.ff-vs-secs .ff-vs-n { font:700 .7rem var(--f-mono); letter-spacing:.08em; color:var(--ff-red); }
+:root[data-ff-theme="dark"] .ff-vs-secs .ff-vs-n { color:#ff6b6b; }
+.ff-vs-secs h3 { margin:2px 0 6px; font-size:1.06rem; line-height:1.3; }
+.ff-vs-secs p { margin:0; font:400 var(--t-base)/1.6 var(--f-read); color:var(--ff-ink-2); max-width:62ch; }
+.ff-vs-secs a { display:inline-flex; align-items:center; min-height:32px; margin-top:4px; color:var(--ff-link); font:600 .74rem var(--f-mono); letter-spacing:.05em; text-transform:uppercase; }
+.ff-vs-foot { display:flex; flex-wrap:wrap; gap:4px 18px; padding-top:16px; }
+.ff-vs-foot a { display:inline-flex; align-items:center; min-height:36px; color:var(--ff-ink); font:600 .76rem var(--f-mono); }
+.ff-vs-foot .ff-btn-primary { color:#0a0a0a; }
+.ff-vs-meta { margin-top:18px; font:500 .76rem/1.6 var(--f-mono); color:var(--ff-ink-3); }
+.ff-vs-meta a { color:var(--ff-ink-2); display:inline-block; padding-block:4px; }
+.ff-vs-meta b { font-weight:700; color:var(--ff-ink-3); margin-right:.5em; }
+.ff-vs-in > :not(.ff-vs-top), .ff-vs-secs > li { animation:ff-unfold .5s var(--ease-out) both; animation-delay:calc(var(--i, 0) * 55ms + 180ms); }
+@keyframes ff-unfold { from { opacity:0; transform:translateY(14px) scale(.98); } to { opacity:1; transform:none; } }
+.ff-vs-load { padding:24px 0; color:var(--ff-ink-3); font:600 .8rem var(--f-mono); }
+@media (prefers-reduced-motion: reduce) { .ff-vsheet[open], .ff-vs-in > *, .ff-vs-secs > li { animation:none; } .ff-vox-btn canvas { transition:none; } }
+body.ff-vs-lock { overflow:hidden; }
+
+/* ── dark readability: nothing near-black on the near-black paper ── */
+:root[data-ff-theme="dark"] body :is(.bg-black, .bg-\[\#0a0a0a\], .bg-\[var\(--ff-black\)\]):not(.ff-appbar) { background-color:var(--ff-surface-2); color:var(--ff-ink); }
+:root[data-ff-theme="dark"] body :is(.border-black, .border-\[\#0a0a0a\]) { border-color:var(--ff-line-mid); }
+:root[data-ff-theme="dark"] body :is(.text-\[\#0a0a0a\], .text-\[\#111\], .text-\[\#222\]):not([class*="bg-[var(--ff-"]) { color:var(--ff-ink); }
+:root[data-ff-theme="dark"] .ff-brand img { filter:none; }
+:root[data-ff-theme="dark"] .ff-skip { border-color:var(--ff-yellow); }

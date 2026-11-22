@@ -147,12 +147,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -161,9 +161,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -216,12 +216,12 @@
         <a href="/hi/books/">किताबें</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="खोजें (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">खोजें</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="खोजें (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">खोजें</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="भाषा"><a href="/archivio/ff-60.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/archive/ff-60.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/archive/ff-60.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state aria-current="page">हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="डार्क थीम" title="डार्क थीम"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">सब्सक्राइब</a>
         <details class="ff-more">
-          <summary aria-label="और"><span aria-hidden="true">☰</span><span class="sr-only">और</span></summary>
+          <summary aria-label="और"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">और</span></summary>
           <nav class="ff-menu" aria-label="और">
             <a href="/book/">📖 किताब (IT)</a>
             <a href="/hi/connections.html">🔗 कनेक्शन</a>
@@ -237,24 +237,24 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/hi/">होम</a> /</li><li><a class="underline" href="/hi/archive/">संग्रह</a> /</li><li aria-current="page">ff.60 सेल्फ़-ड्राइविंग आ चुकी है!</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>60</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>60</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="car" data-ff-slug="ff-60" data-label="3D वस्तु और पूर्वावलोकन खोलें: ff.60"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Futuro Fortissimo संग्रह</p>
       <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.60 सेल्फ़-ड्राइविंग आ चुकी है!</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">रोबोटैक्सी की दौड़ कौन जीतेगा? Elon Musk या DriveGPT के साथ चीन?</p>
       <p class="mt-2 text-xs font-mono text-black/70">प्रकाशित <time datetime="2023-05-20T06:47:50.379Z">20 मई 2023</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/hi/archive/ff-60.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">↗</span> शेयर करें</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/hi/archive/ff-60.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">🔗</span> लिंक कॉपी करें</button>
-        <a href="https://fortissimo.substack.com/p/ff60-la-guida-autonoma-e-qui" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Substack पर इतालवी मूल पढ़ें ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/hi/archive/ff-60.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">↗</span> शेयर करें</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/hi/archive/ff-60.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">🔗</span> लिंक कॉपी करें</button>
+        <a href="https://fortissimo.substack.com/p/ff60-la-guida-autonoma-e-qui" target="_blank" rel="noopener noreferrer" class="ff-qlink">Substack पर इतालवी मूल पढ़ें ↗</a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• क्या रोबोटैक्सी आख़िरकार आ गई हैं?</li>
-        <li>• क्या सड़क पर मौतें घटेंगी?</li>
-        <li>• Tesla देर से भी है और जल्दी भी, क्यों।</li>
+      <ul class="ff-keypoints">
+        <li>क्या रोबोटैक्सी आख़िरकार आ गई हैं?</li>
+        <li>क्या सड़क पर मौतें घटेंगी?</li>
+        <li>Tesla देर से भी है और जल्दी भी, क्यों।</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">थीम</span><a href="/hi/themes.html#ai" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🤖 AI, एजेंट और मॉडल</a><a href="/hi/themes.html#geo" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🏛 भू-राजनीति, अर्थव्यवस्था और समाज</a><a href="/hi/themes.html#clima" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🌍 प्रकृति, जलवायु और ऊर्जा</a></p>
-      <nav aria-label="इस अंक के खंड" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">थीम</span><a href="/hi/themes.html#ai" class="ff-tlink">🤖 AI, एजेंट और मॉडल</a><a href="/hi/themes.html#geo" class="ff-tlink">🏛 भू-राजनीति, अर्थव्यवस्था और समाज</a><a href="/hi/themes.html#clima" class="ff-tlink">🌍 प्रकृति, जलवायु और ऊर्जा</a></p>
+      <nav aria-label="इस अंक के खंड" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">इस अंक में</h2>
         <ol>
           <li><a href="#ff-60-1">🤠 ff.60.1 सेल्फ़-ड्राइविंग का Westworld: SF</a></li>
@@ -268,111 +268,111 @@
 
     
 
-    <section id="ff-60-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-60-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🤠 ff.60.1 सेल्फ़-ड्राइविंग का Westworld: SF</h2>
-        <a href="https://fortissimo.substack.com/i/117901757/ff-westworld-della-guida-autonoma-sf" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.60.1 सेल्फ़-ड्राइविंग का Westworld: SF">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/117901757/ff-westworld-della-guida-autonoma-sf" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.60.1 सेल्फ़-ड्राइविंग का Westworld: SF">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">क्या हम पहुँच गए? कई तकनीकी विकासों की तरह, सेल्फ़-ड्राइविंग सालों से सड़कों पर क़ब्ज़ा करने को तैयार लगती रही है। कुछ ट्रेंड धीरे शुरू होते हैं, फिर बहुत जल्दी सामान्य बन जाते हैं (देखिए इलेक्ट्रिक वाहन)।</p>
         <p class="text-base leading-relaxed text-black/90">एक बच्चे का सपना San Francisco जाना है। HBO सीरीज़ Westworld की तरह, San Francisco एक समानांतर मनोरंजन पार्क है, भविष्य की एक झलक। काश ऐसे कुछ प्रयोग हमारे क़रीब भी होते। इसकी जगह हमें Privacy Watchdog और ChatGPT वाला क़िस्सा मिलता है।</p>
         <p class="text-base leading-relaxed text-black/90">Cruise (General Motors की सेल्फ़-ड्राइविंग यूनिट) ने 24/7 रोबोटैक्सी सेवा की योजना लॉन्च की। सेल्फ़-ड्राइविंग आ चुकी है (Baidu और Waymo के साथ भी)। लेकिन आँकड़े नगण्य हैं। और चूँकि सिर्फ़ Tesla ने लगातार उत्पादन बढ़ाया है, अपनाव में बड़ी छलाँग के लिए हम उन्हीं का इंतज़ार कर रहे हैं।</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!K_mr!,w_1456,c_limit,f_auto,q_auto:good,fl_lossy/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd5e13981-0db6-4d4b-8917-92e696078fc9_400x225.gif" width="400" height="225" alt="🤠 ff.60.1 सेल्फ़-ड्राइविंग का Westworld: SF" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!slCS!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4752aa04-7b5c-4ed0-a025-4589dc7e9cff_908x515.png" width="908" height="515" alt="A Cruise Robotaxi in SF" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">A Cruise Robotaxi in SF</figcaption>
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!Bpmf!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb809edfd-e67e-4470-9f3e-c441a6ab4922_1388x635.png" width="1388" height="635" alt="🤠 ff.60.1 सेल्फ़-ड्राइविंग का Westworld: SF" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://twitter.com/kvogt/status/1650845475195559939?utm_source=substack&amp;utm_medium=email" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 24/7 रोबोटैक्सी सेवा</a>
+          <div class="ff-refs-l">
+            <a href="https://twitter.com/kvogt/status/1650845475195559939?utm_source=substack&amp;utm_medium=email" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ 24/7 रोबोटैक्सी सेवा</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-60-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-60-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🆕 ff.60.2 Tesla की टैक्सियाँ</h2>
-        <a href="https://fortissimo.substack.com/i/117901757/ff-i-taxi-di-tesla" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.60.2 Tesla की टैक्सियाँ">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/117901757/ff-i-taxi-di-tesla" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.60.2 Tesla की टैक्सियाँ">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">रोबो-टैक्सी। ARK, Tesla (आज $182 पर) को 2027 में $2000 प्रति शेयर आँकता है, जिसका अंतिम मूल्य आज के Apple ($2.6T) का 3 गुना होगा। बाज़ार मूल्य का बड़ा हिस्सा रोबो-टैक्सी के प्रसार से जुड़ा है (2027 में $613B का अनुमानित राजस्व; 2022 में Apple का राजस्व $394B था)।</p>
         <p class="text-base leading-relaxed text-black/90">Nerd कॉर्नर. नीचे वित्तीय शोध समूह द्वारा बनाए मॉडल का विस्तृत ब्योरा (कम और ज़्यादा अनुमानों के साथ)।</p>
         <p class="text-base leading-relaxed text-black/90">ख़ैर, आँकड़ों को छोड़िए, यह रहा एक Uber ड्राइवर जो अपनी जगह लिए जाने का पूर्वाभ्यास कर रहा है। सवार होने वाले पर्यटकों की टिप्पणियाँ सुनिए। कुछ-कुछ पहली बार Blue Tornado पर चढ़ने जैसा।</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!iVLC!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5dd3de87-e101-49d2-8b25-65698b4c6761_1280x720.jpeg" width="1280" height="720" alt="🆕 ff.60.2 Tesla की टैक्सियाँ" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!f4qa!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa32d28a4-580b-4391-9277-63100d3cb783_703x747.png" width="703" height="747" alt="🆕 ff.60.2 Tesla की टैक्सियाँ" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (1)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://ark-invest.com/articles/valuation-models/arks-tesla-price-target-2027/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ ARK, Tesla (आज $182 पर) को 2027 में $2000 प्रति शेयर आँकता है</a>
+          <div class="ff-refs-l">
+            <a href="https://ark-invest.com/articles/valuation-models/arks-tesla-price-target-2027/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ ARK, Tesla (आज $182 पर) को 2027 में $2000 प्रति शेयर आँकता है</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-60-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-60-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">⚡ ff.60.3 टैक्सियों को ज़्यादा पैसा, निर्माताओं को कम</h2>
-        <a href="https://fortissimo.substack.com/i/117901757/ff-piu-soldi-ai-taxi-meno-ai-produttori" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.60.3 टैक्सियों को ज़्यादा पैसा, निर्माताओं को कम">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/117901757/ff-piu-soldi-ai-taxi-meno-ai-produttori" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.60.3 टैक्सियों को ज़्यादा पैसा, निर्माताओं को कम">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">ARK Big Ideas 2023 में भी सेल्फ़-ड्राइविंग पर एक सेक्शन है (हाँ, उनके साथ 5 इंटरव्यू के बाद rejection के बावजूद, मुझे Cathie से ख़ास लगाव है)।</p>
         <p class="text-base leading-relaxed text-black/90">कम वाहन बिकेंगे, लेकिन ज़्यादा इस्तेमाल होंगे। यही ट्रेंड हमारे सामने है। कार ख़रीदकर उसे 96% समय पार्क करके रखने का कोई मतलब नहीं रहेगा। इसलिए सेल्फ़-ड्राइविंग से टैक्सी सेवा के मालिक वाहन बनाने वाली कंपनियों से ज़्यादा कमाएँगे।</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!LXwp!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F02aff2c7-88a7-47fd-a39b-79bff05af566_1375x659.png" width="1375" height="659" alt="⚡ ff.60.3 टैक्सियों को ज़्यादा पैसा, निर्माताओं को कम" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (2)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://research.ark-invest.com/hubfs/1_Download_Files_ARK-Invest/Big_Ideas/ARK%20Invest_013123_Presentation_Big%20Ideas%202023_Final.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ ARK Big Ideas 2023</a>
-            <a href="https://www.racfoundation.org/research/mobility/spaced-out-perspectives-on-parking" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ उसे 96% समय पार्क करके रखना</a>
+          <div class="ff-refs-l">
+            <a href="https://research.ark-invest.com/hubfs/1_Download_Files_ARK-Invest/Big_Ideas/ARK%20Invest_013123_Presentation_Big%20Ideas%202023_Final.pdf" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ ARK Big Ideas 2023</a>
+            <a href="https://www.racfoundation.org/research/mobility/spaced-out-perspectives-on-parking" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ उसे 96% समय पार्क करके रखना</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-60-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-60-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🇨🇳 ff.60.4 DriveGPT</h2>
-        <a href="https://fortissimo.substack.com/i/117901757/ff-drivegpt" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.60.4 DriveGPT">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/117901757/ff-drivegpt" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.60.4 DriveGPT">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">चीनी AI दिग्गज Haomo.ai (प्रगति को आगे बढ़ाने वाले ग़ैर-अमेरिकी खिलाड़ियों के बारे में थोड़ी जानकारी) ने DriveGPT पेश किया: सेल्फ़-ड्राइविंग में reinforcement learning from human feedback की क्रांति (अब तक हम RLHF को सिर्फ़ ChatGPT और बातचीत से बेहतर होने वाले मॉडलों से जानते थे)।</p>
         <p class="text-base leading-relaxed text-black/90">ByteDance (TikTok की मालिक) Haomo.ai के साथ मिलकर काम करती है और देश के सबसे बड़े डेटा सेंटर को फ़ंड करती है (और “चीनी Fiat”, Great Wall Motor, भी इस प्रोजेक्ट में है)</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!LB-d!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9adc929c-9b90-4d7e-a396-c8ab0439bb0b_1200x900.png" width="1200" height="900" alt="🇨🇳 ff.60.4 DriveGPT" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://cnevpost.com/2023/04/11/haomo-self-driving-ambitions-launch-drivegpt/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ DriveGPT</a>
-            <a href="https://en.wikipedia.org/wiki/Reinforcement_learning_from_human_feedback" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ reinforcement learning from human feedback</a>
-            <a href="https://www.scmp.com/tech/big-tech/article/3205846/tiktok-owner-bytedance-start-haomoai-launch-new-infrastructure-boost-autonomous-driving-push-worlds" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ ByteDance (TikTok की मालिक) Haomo.ai के साथ मिलकर काम करती है</a>
+          <div class="ff-refs-l">
+            <a href="https://cnevpost.com/2023/04/11/haomo-self-driving-ambitions-launch-drivegpt/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ DriveGPT</a>
+            <a href="https://en.wikipedia.org/wiki/Reinforcement_learning_from_human_feedback" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ reinforcement learning from human feedback</a>
+            <a href="https://www.scmp.com/tech/big-tech/article/3205846/tiktok-owner-bytedance-start-haomoai-launch-new-infrastructure-boost-autonomous-driving-push-worlds" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ ByteDance (TikTok की मालिक) Haomo.ai के साथ मिलकर काम करती है</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-60-5" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-60-5" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">💀 ff.60.5 सड़कों पर कम मौतें?</h2>
-        <a href="https://fortissimo.substack.com/i/117901757/ff-meno-morti-sulle-strade" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.60.5 सड़कों पर कम मौतें?">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/117901757/ff-meno-morti-sulle-strade" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.60.5 सड़कों पर कम मौतें?">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">एक सड़क दुर्घटना एक औसत यूरोपीय के 10 साल के उत्सर्जन जितना प्रदूषण कर सकती है (⛲ ff.58.3 (न्यूयॉर्क से) नियाग्रा फ़ॉल्स जाना)।</p>
@@ -386,41 +386,41 @@
         <p class="text-base leading-relaxed text-black/90">इस प्रोजेक्ट को सपोर्ट करना चाहते हैं? → WhatsApp पर किसी दोस्त के साथ शेयर करें → मुझे एक कॉफ़ी पिलाइए 😏 → नीचे एक छोटा सा दिल लगाना याद रखें।</p>
         <p class="text-base leading-relaxed text-black/90">☕❤️</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!y4-A!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faaba5371-2666-4c24-8b2d-6cbb64365be0_1920x1169.png" width="1920" height="1169" alt="💀 ff.60.5 सड़कों पर कम मौतें?" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!Bgap!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8ba95f10-02f6-4d10-b753-d140920b9f59_900x587.png" width="900" height="587" alt="Our World In Data से।" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Our World In Data से।</figcaption>
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!q2u4!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F308e4c43-3e88-48a3-bc97-c6f612e873e0_732x607.png" width="732" height="607" alt="💀 ff.60.5 सड़कों पर कम मौतें?" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (4)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.tesla.com/VehicleSafetyReport" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Tesla की वेबसाइट पर हर तिमाही का सार मिलता है कि दुर्घटना से पहले कितने मील चले</a>
-            <a href="https://www.dmv.ca.gov/portal/vehicle-industry-services/autonomous-vehicles/autonomous-vehicle-collision-reports/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ California सेल्फ़-ड्राइविंग कारों वाली सारी दुर्घटना रिपोर्टें जुटाता है</a>
-            <a href="https://www.danroselaw.com/personal-injury-blog/posts/california-bay-area-car-accident-statistics/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 13,000 दुर्घटनाओं में।</a>
-            <a href="https://fortissimo.substack.com/i/113015963/ff-andare-alle-cascate-del-niagara-da-new-york" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ ⛲ ff.58.3 (न्यूयॉर्क से) नियाग्रा फ़ॉल्स जाना</a>
+          <div class="ff-refs-l">
+            <a href="https://www.tesla.com/VehicleSafetyReport" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Tesla की वेबसाइट पर हर तिमाही का सार मिलता है कि दुर्घटना से पहले कितने मील चले</a>
+            <a href="https://www.dmv.ca.gov/portal/vehicle-industry-services/autonomous-vehicles/autonomous-vehicle-collision-reports/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ California सेल्फ़-ड्राइविंग कारों वाली सारी दुर्घटना रिपोर्टें जुटाता है</a>
+            <a href="https://www.danroselaw.com/personal-injury-blog/posts/california-bay-area-car-accident-statistics/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ 13,000 दुर्घटनाओं में।</a>
+            <a href="https://fortissimo.substack.com/i/113015963/ff-andare-alle-cascate-del-niagara-da-new-york" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ ⛲ ff.58.3 (न्यूयॉर्क से) नियाग्रा फ़ॉल्स जाना</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">संबंधित अंक</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-58.html" class="font-bold hover:underline">ff.58 क्या केले बहुत प्रदूषण करते हैं?</a><p class="text-sm text-black/75 mt-1">रोज़मर्रा की गतिविधियों के उत्सर्जन को कैसे घटाएँ और मापें</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-156.html" class="font-bold hover:underline">ff.156 Aulin?</a><p class="text-sm text-black/75 mt-1">जब हर दिन सिर (और कद्दू) फटने लगे, तब क्या करें?</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-155.html" class="font-bold hover:underline">ff.155 लेबल और मानसिक वायरस</a><p class="text-sm text-black/75 mt-1">रसायनों से भरा एक सेब, आपस में विचार बाँटते AI एजेंट, ख़तरे में केले, और एक mRNA थेरेपी जो मेलानोमा के…</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/hi/archive/ff-149.html" class="font-bold hover:underline">ff.149 सौर कैसे बनें</a><p class="text-sm text-black/75 mt-1">प्रचुरता यहीं है, बस धूप का चश्मा पहन लीजिए</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/hi/archive/ff-58.html" class="font-bold hover:underline">ff.58 क्या केले बहुत प्रदूषण करते हैं?</a><p class="text-sm text-black/75 mt-1">रोज़मर्रा की गतिविधियों के उत्सर्जन को कैसे घटाएँ और मापें</p></li>
+        <li><a href="/hi/archive/ff-156.html" class="font-bold hover:underline">ff.156 Aulin?</a><p class="text-sm text-black/75 mt-1">जब हर दिन सिर (और कद्दू) फटने लगे, तब क्या करें?</p></li>
+        <li><a href="/hi/archive/ff-155.html" class="font-bold hover:underline">ff.155 लेबल और मानसिक वायरस</a><p class="text-sm text-black/75 mt-1">रसायनों से भरा एक सेब, आपस में विचार बाँटते AI एजेंट, ख़तरे में केले, और एक mRNA थेरेपी जो मेलानोमा के…</p></li>
+        <li><a href="/hi/archive/ff-149.html" class="font-bold hover:underline">ff.149 सौर कैसे बनें</a><p class="text-sm text-black/75 mt-1">प्रचुरता यहीं है, बस धूप का चश्मा पहन लीजिए</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Futuro Fortissimo के नए अंक पाएँ</h2>
@@ -435,7 +435,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -487,7 +487,7 @@
     <ul id="ff-results" role="listbox" aria-label="खोजें"></ul>
     <div class="ff-s-foot"><a href="/hi/archive/" data-ff-all data-base="/hi/archive/">संग्रह में सभी परिणाम →</a><span>कहीं भी खोजने के लिए / दबाएँ</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

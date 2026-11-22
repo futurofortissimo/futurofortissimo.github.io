@@ -149,12 +149,12 @@
   ]
 }</script>
   
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f8f6f1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Fortissimo" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
@@ -163,9 +163,9 @@
   <link rel="stylesheet" href="/assets/ff-archive.css" />
   <link rel="preconnect" href="https://substackcdn.com" />
   <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
-  <link rel="stylesheet" href="/assets/ff-app.css?v=3" />
-  <link rel="stylesheet" href="/assets/ff-fonts.css?v=3" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=3" /></noscript>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=4" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=4" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=4" /></noscript>
   <style>
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
   body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
@@ -218,12 +218,12 @@
         <a href="/libri/">Libri</a>
       </nav>
       <div class="ff-actions">
-        <button type="button" class="ff-search-btn" data-ff-search aria-label="Cerca (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Cerca</span><kbd aria-hidden="true">/</kbd></button>
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Cerca (/)" aria-haspopup="dialog" aria-controls="ff-search"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="ff-l">Cerca</span><kbd aria-hidden="true">/</kbd></button>
         <div class="ff-lang" role="group" aria-label="Lingua"><a href="/archivio/ff-123.html" hreflang="it" lang="it" title="Italiano" data-keep-state aria-current="page">IT</a><a href="/en/archive/ff-123.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/archive/ff-123.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
         <button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="Tema scuro" title="Tema scuro"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
         <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Iscriviti</a>
         <details class="ff-more">
-          <summary aria-label="Altro"><span aria-hidden="true">☰</span><span class="sr-only">Altro</span></summary>
+          <summary aria-label="Altro"><svg class="ff-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr-only">Altro</span></summary>
           <nav class="ff-menu" aria-label="Altro">
             <a href="/book/">📖 Il Libro</a>
             <a href="/book/ffxy-index.html">🔢 ff.x.y</a>
@@ -240,24 +240,24 @@
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/">Home</a> /</li><li><a class="underline" href="/archivio/">Archivio</a> /</li><li aria-current="page">ff.123 A caccia di diamanti</li></ol></nav>
     <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
-    <header class="brutal-card accent-bar accent-blue no-round ff-issue-head">
-      <div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>123</b><span class="ff-staff"></span></div>
+    <header class="ff-issue-head">
+      <div class="ff-issue-top"><div class="ff-issue-mark" aria-hidden="true"><i>ff</i><b>123</b><span class="ff-staff"></span></div><span class="ff-vox ff-vox-lg" data-ff-vox="shell" data-ff-slug="ff-123" data-label="Apri l’oggetto 3D e l’anteprima di ff.123"></span></div>
       <p class="ff-eyebrow text-black/70 mb-3">Archivio Futuro Fortissimo</p>
       <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.123 A caccia di diamanti</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">OpenAI o3 con coltellino svizzero è AGI?</p>
       <p class="mt-2 text-xs font-mono text-black/70">Pubblicato il <time datetime="2025-04-30T07:09:24.175Z">30 aprile 2025</time> · Michele Merelli</p>
-      <div class="ff-btn-row mt-4">
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/archivio/ff-123.html" data-done="Link copiato"><span aria-hidden="true">↗</span> Condividi</button>
-        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/archivio/ff-123.html" data-done="Link copiato"><span aria-hidden="true">🔗</span> Copia link</button>
-        <a href="https://fortissimo.substack.com/p/ff123-a-caccia-di-diamanti" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Leggi originale su Substack ↗</a>
+      <div class="ff-quiet-row">
+        <button type="button" class="ff-qlink" data-ff-share data-url="https://futurofortissimo.github.io/archivio/ff-123.html" data-done="Link copiato"><span aria-hidden="true">↗</span> Condividi</button>
+        <button type="button" class="ff-qlink" data-ff-copy data-url="https://futurofortissimo.github.io/archivio/ff-123.html" data-done="Link copiato"><span aria-hidden="true">🔗</span> Copia link</button>
+        <a href="https://fortissimo.substack.com/p/ff123-a-caccia-di-diamanti" target="_blank" rel="noopener noreferrer" class="ff-qlink">Leggi originale su Substack ↗</a>
       </div>
-      <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
-        <li>• L’AI che trova diamanti su Minecraft (da sola)</li>
-        <li>• Il team di DeepMind: cos’è l’Era dell’Esperienza?</li>
-        <li>• Pokémon-filosofi e Harry Potter al rave: non solo Ghibli</li>
+      <ul class="ff-keypoints">
+        <li>L’AI che trova diamanti su Minecraft (da sola)</li>
+        <li>Il team di DeepMind: cos’è l’Era dell’Esperienza?</li>
+        <li>Pokémon-filosofi e Harry Potter al rave: non solo Ghibli</li>
       </ul>
-      <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Temi</span><a href="/themes.html#ai" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🤖 AI, agenti e modelli</a><a href="/themes.html#cultura" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🎨 Cultura, libri e arte</a></p>
-      <nav aria-label="Sezioni del numero" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+      <p class="ff-tlinks"><span class="ff-eyebrow">Temi</span><a href="/themes.html#ai" class="ff-tlink">🤖 AI, agenti e modelli</a><a href="/themes.html#cultura" class="ff-tlink">🎨 Cultura, libri e arte</a></p>
+      <nav aria-label="Sezioni del numero" class="ff-toc">
         <h2 class="ff-eyebrow text-black/70 mb-2">In questo numero</h2>
         <ol>
           <li><a href="#ff-123-1">🛠️ ff.123.1 L’AI con il coltellino svizzero</a></li>
@@ -270,10 +270,10 @@
 
     
 
-    <section id="ff-123-1" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-123-1" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🛠️ ff.123.1 L’AI con il coltellino svizzero</h2>
-        <a href="https://fortissimo.substack.com/i/161516506/ff-lai-con-il-coltellino-svizzero" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.123.1 L’AI con il coltellino svizzero">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/161516506/ff-lai-con-il-coltellino-svizzero" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.123.1 L’AI con il coltellino svizzero">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Se Tayler Coen (teorico della “grande stagnazione”,🤔 ff.50.1 La stranezza degli ultimi 50 anni),dice che il 16 aprile 2025 ha visto l’AGI (o un porno), bisogna fermarsi.</p>
@@ -282,29 +282,29 @@
         <p class="text-base leading-relaxed text-black/90">o3 combina nei suoi pensieri (chain of thought) vari “strumenti” (screenshots, navigazione web, lancio codici python), raggiungendo unIQ di 136 (1% popolazione umana, l’anno scorso il record era 94).</p>
         <p class="text-base leading-relaxed text-black/90">Per darvi un’idea,risolve un labirinto mostrando il percorso.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!X5co!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbc4995fd-8041-440a-9eba-d4cce2ef7463_672x415.png" width="672" height="415" alt="🛠️ ff.123.1 L’AI con il coltellino svizzero" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!71Cy!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F788b6354-831f-4498-b6c7-b039a362e914_378x375.png" width="378" height="375" alt="🛠️ ff.123.1 L’AI con il coltellino svizzero" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (4)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.maximumtruth.org/p/skyrocketing-ai-intelligence-chatgpts" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ IQ di 136 (1% popolazione umana, l’anno scorso il record era 94)</a>
-            <a href="https://openai.com/index/thinking-with-images/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ risolve un labirinto mostrando il percorso.</a>
-            <a href="https://fortissimo.substack.com/i/90181693/ff-la-stranezza-degli-ultimi-anni" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🤔 ff.50.1 La stranezza degli ultimi 50 anni</a>
-            <a href="https://fortissimo.substack.com/i/95768574/ff-i-limiti-matematici-di-chatgpt" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ ⚠️ ff.48.4 I limiti (matematici) di ChatGPT</a>
+          <div class="ff-refs-l">
+            <a href="https://www.maximumtruth.org/p/skyrocketing-ai-intelligence-chatgpts" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ IQ di 136 (1% popolazione umana, l’anno scorso il record era 94)</a>
+            <a href="https://openai.com/index/thinking-with-images/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ risolve un labirinto mostrando il percorso.</a>
+            <a href="https://fortissimo.substack.com/i/90181693/ff-la-stranezza-degli-ultimi-anni" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ 🤔 ff.50.1 La stranezza degli ultimi 50 anni</a>
+            <a href="https://fortissimo.substack.com/i/95768574/ff-i-limiti-matematici-di-chatgpt" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ ⚠️ ff.48.4 I limiti (matematici) di ChatGPT</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-123-2" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-123-2" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">💎 ff.123.2 Minecraft oltre l’uomo</h2>
-        <a href="https://fortissimo.substack.com/i/161516506/ff-minecraft-oltre-luomo" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.123.2 Minecraft oltre l’uomo">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/161516506/ff-minecraft-oltre-luomo" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.123.2 Minecraft oltre l’uomo">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">In tutto questo, l’uomo è sempre più limitante. Il collo di bottiglia.</p>
@@ -315,66 +315,66 @@
         <p class="text-base leading-relaxed text-black/90">Pur non avendo mai visto giocare Minecraft (e non coscendone le regole), in 100 milioni di passi ha imparato a rompere alberi, costruire bastoni e migliorare picconi. Fino ad arrivare al suo primo blocco di diamante.</p>
         <p class="text-base leading-relaxed text-black/90">Bevi fuori dal coro.Dan Hendrycks, direttore delCenter for AI Safetysostiene invece chelasciare evolvere l’AI in modo indipendente è la nostra fine.</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!pG-F!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F53b6d5f7-d0d8-4a7b-be9f-c24ce09e7211_794x455.png" width="794" height="455" alt="L’Era dell’Esperienza: il prossimo step verso l’AGI o l’estinzione umana?(via futuro fortissimo)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">L’Era dell’Esperienza: il prossimo step verso l’AGI o l’estinzione umana?(via futuro fortissimo)</figcaption>
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!_PPP!,w_1456,c_limit,f_auto,q_auto:good,fl_lossy/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9f85463c-9884-4883-a8fc-e5946a48f725_640x384.gif" width="640" height="384" alt="💎 ff.123.2 Minecraft oltre l’uomo" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!AK9k!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F18b51159-c4aa-44a1-87d5-72e6301ec4f1_728x369.png" width="728" height="369" alt="💎 ff.123.2 Minecraft oltre l’uomo" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (5)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ l’Era dell’Esperienza</a>
-            <a href="https://danijar.com/project/dreamerv3/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ DreamerV3 di Google/DeepMind3</a>
-            <a href="https://arxiv.org/abs/2303.16200" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ lasciare evolvere l’AI in modo indipendente è la nostra fine</a>
-            <a href="https://fortissimo.substack.com/i/49403403/ff-chessi-artistici-il-re-degli-scacchi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ ♟️ ff.18.4 Chess(i) artistici: il re degli scacchi</a>
-            <a href="https://fortissimo.substack.com/i/145245800/ff-sistemi-quantistici" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ ⚛️ ff.98.4 Sistemi quantistici</a>
+          <div class="ff-refs-l">
+            <a href="https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ l’Era dell’Esperienza</a>
+            <a href="https://danijar.com/project/dreamerv3/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ DreamerV3 di Google/DeepMind3</a>
+            <a href="https://arxiv.org/abs/2303.16200" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ lasciare evolvere l’AI in modo indipendente è la nostra fine</a>
+            <a href="https://fortissimo.substack.com/i/49403403/ff-chessi-artistici-il-re-degli-scacchi" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ ♟️ ff.18.4 Chess(i) artistici: il re degli scacchi</a>
+            <a href="https://fortissimo.substack.com/i/145245800/ff-sistemi-quantistici" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ ⚛️ ff.98.4 Sistemi quantistici</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-123-3" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-123-3" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🗺️ ff.123.3 Il nuovo campione di GeoGuessr: o3</h2>
-        <a href="https://fortissimo.substack.com/i/161516506/ff-il-nuovo-campione-di-geoguessr-o" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.123.3 Il nuovo campione di GeoGuessr: o3">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/161516506/ff-il-nuovo-campione-di-geoguessr-o" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.123.3 Il nuovo campione di GeoGuessr: o3">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Per mostrare l’abilità di combinare vari strumenti, tra cui le mappe, il sempre puntualeEthan Mollick ha fatto giocare o3 aGeoGuessr.</p>
         <p class="text-base leading-relaxed text-black/90">Io invece gli ho chiestoquando il sole sorgerà tra due monti che vedo fuori dalla finestra.</p>
         <p class="text-base leading-relaxed text-black/90">Ha identificato i monti, usato formule a me sconosciute e pure ipotizzato un margine di errore in base a dove mi posizioni per ammirare l’alba (se sul sagrato o nel parcheggio del cimitero).</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!GFlA!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa8e1d797-fc4d-4704-9036-228ee6336d3a_623x341.png" width="623" height="341" alt="🗺️ ff.123.3 Il nuovo campione di GeoGuessr: o3" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!uwSt!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F96e0c9fd-1e58-4697-8857-806e372e9f93_982x546.png" width="982" height="546" alt="🗺️ ff.123.3 Il nuovo campione di GeoGuessr: o3" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!G7bj!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb2230e0e-0951-4427-b9cd-7d86a52f8768_982x891.png" width="982" height="891" alt="🗺️ ff.123.3 Il nuovo campione di GeoGuessr: o3" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (3)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://www.linkedin.com/posts/emollick_the-geoguessing-power-of-o3-is-a-really-good-activity-7318492211841560576-RXrq?utm_source=social_share_send&amp;utm_medium=member_desktop_web&amp;rcm=ACoAABIxLMUBRUppy-bOKJj9naMo0QXZnkUNfBE" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Ethan Mollick ha fatto giocare o3 a</a>
-            <a href="https://www.geoguessr.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ GeoGuessr</a>
-            <a href="https://chatgpt.com/share/68009609-f5f8-8000-951b-ac4f21d7797c" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ quando il sole sorgerà tra due monti che vedo fuori dalla finestra</a>
+          <div class="ff-refs-l">
+            <a href="https://www.linkedin.com/posts/emollick_the-geoguessing-power-of-o3-is-a-really-good-activity-7318492211841560576-RXrq?utm_source=social_share_send&amp;utm_medium=member_desktop_web&amp;rcm=ACoAABIxLMUBRUppy-bOKJj9naMo0QXZnkUNfBE" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ Ethan Mollick ha fatto giocare o3 a</a>
+            <a href="https://www.geoguessr.com/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ GeoGuessr</a>
+            <a href="https://chatgpt.com/share/68009609-f5f8-8000-951b-ac4f21d7797c" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ quando il sole sorgerà tra due monti che vedo fuori dalla finestra</a>
           </div>
         </div>
     </section>
 
-    <section id="ff-123-4" class="brutal-card no-round space-y-3 scroll-mt-6">
+    <section id="ff-123-4" class="ff-sec space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🌊 ff.123.4 Non solo Studio Ghibli</h2>
-        <a href="https://fortissimo.substack.com/i/161516506/ff-non-solo-studio-ghibli" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.123.4 Non solo Studio Ghibli">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/161516506/ff-non-solo-studio-ghibli" target="_blank" rel="noopener noreferrer" class="ff-qlink" aria-label="Substack ↗ ff.123.4 Non solo Studio Ghibli">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Dato che stiamo parlando di AI, torniamo sul tormentoneGhibli.</p>
@@ -387,40 +387,40 @@
         <p class="text-base leading-relaxed text-black/90">👋 A presto, damicmer</p>
         <p class="text-base leading-relaxed text-black/90">©futuro fortissimo|michele merelli</p>
       </div>
-      <figure class="mt-4 border-3 border-black bg-white p-2">
+      <figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!nQ_1!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8e45a349-1fa8-48d7-8995-cef786d3d855_1024x1536.png" width="1024" height="1536" alt="🌊 ff.123.4 Non solo Studio Ghibli" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           
         </figure>
-<figure class="mt-4 border-3 border-black bg-white p-2">
+<figure class="ff-fig mt-4">
           <img src="https://substackcdn.com/image/fetch/$s_!Rhfl!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff335cd8e-89ae-4726-82a1-f0d4e3e1ad9c_1042x560.bin" alt="Il festival artistico Jupiter Artland di Edimburgo, ricreato durante il lockdown del 2020 in Minecraft(via futuro fortissimo)" loading="lazy" decoding="async" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
           <figcaption class="mt-2 text-xs font-mono text-black/70">Il festival artistico Jupiter Artland di Edimburgo, ricreato durante il lockdown del 2020 in Minecraft(via futuro fortissimo)</figcaption>
         </figure>
-      <div class="mt-4 pt-3 border-t-2 border-black/15">
+      <div class="ff-refs mt-4">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (7)</div>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://openai.com/index/introducing-4o-image-generation/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ nuovo modello di generazione immagini di OpenAI</a>
-            <a href="https://instagram.com/pabloprompt" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ pabloprompt</a>
-            <a href="https://futurofortissimo.github.io/note.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ archivio note fortissime</a>
-            <a href="https://futurofortissimo.github.io/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ futuro fortissimo</a>
-            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ michele merelli</a>
-            <a href="https://fortissimo.substack.com/i/79764207/ff-gotta-catch-em-all" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🦄 ff.40.1 Gotta catch ‘em all</a>
-            <a href="https://fortissimo.substack.com/i/115845572/ff-harry-potter-tra-pixar-steroidi-e-rave-estivi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🧙 ff.63.1 Harry Potter tra Pixar, steroidi e rave estivi</a>
+          <div class="ff-refs-l">
+            <a href="https://openai.com/index/introducing-4o-image-generation/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ nuovo modello di generazione immagini di OpenAI</a>
+            <a href="https://instagram.com/pabloprompt" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ pabloprompt</a>
+            <a href="https://futurofortissimo.github.io/note.html" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ archivio note fortissime</a>
+            <a href="https://futurofortissimo.github.io/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ futuro fortissimo</a>
+            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ michele merelli</a>
+            <a href="https://fortissimo.substack.com/i/79764207/ff-gotta-catch-em-all" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ 🦄 ff.40.1 Gotta catch ‘em all</a>
+            <a href="https://fortissimo.substack.com/i/115845572/ff-harry-potter-tra-pixar-steroidi-e-rave-estivi" target="_blank" rel="noopener noreferrer" class="ff-ref">↗ 🧙 ff.63.1 Harry Potter tra Pixar, steroidi e rave estivi</a>
           </div>
         </div>
     </section>
     </article>
 
-    <section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+    <section aria-labelledby="rel-h" class="ff-rel space-y-3">
       <h2 id="rel-h" class="text-lg font-bold">Numeri correlati</h2>
-      <ul class="grid gap-3 sm:grid-cols-2">
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-18.html" class="font-bold hover:underline">ff.18 Tra arte digitale e AI</a><p class="text-sm text-black/75 mt-1">Perché l&#39;arte è importante e come l&#39;intelligenza artificiale può essere più artistica dell&#39;uomo</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-63.html" class="font-bold hover:underline">ff.63 Che cinema!</a><p class="text-sm text-black/75 mt-1">Harry Potter fatto dalla Pixar (o sotto steroidi) e tormentoni estivi generati da Intelligenza Artificiale</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-48.html" class="font-bold hover:underline">ff.48 Risuscitare Aristotele</a><p class="text-sm text-black/75 mt-1">Cosa unisce Playboy, Steve Jobs, Gesù e ChatGPT?</p></li>
-        <li class="border-2 border-black p-3 bg-white"><a href="/archivio/ff-40.html" class="font-bold hover:underline">ff.40 5 applicazioni dell&#39;AI</a><p class="text-sm text-black/75 mt-1">Un Pokémon per ogni nazione e torte a tutti i gusti +1</p></li>
+      <ul class="ff-rel-l">
+        <li><a href="/archivio/ff-18.html" class="font-bold hover:underline">ff.18 Tra arte digitale e AI</a><p class="text-sm text-black/75 mt-1">Perché l&#39;arte è importante e come l&#39;intelligenza artificiale può essere più artistica dell&#39;uomo</p></li>
+        <li><a href="/archivio/ff-63.html" class="font-bold hover:underline">ff.63 Che cinema!</a><p class="text-sm text-black/75 mt-1">Harry Potter fatto dalla Pixar (o sotto steroidi) e tormentoni estivi generati da Intelligenza Artificiale</p></li>
+        <li><a href="/archivio/ff-48.html" class="font-bold hover:underline">ff.48 Risuscitare Aristotele</a><p class="text-sm text-black/75 mt-1">Cosa unisce Playboy, Steve Jobs, Gesù e ChatGPT?</p></li>
+        <li><a href="/archivio/ff-40.html" class="font-bold hover:underline">ff.40 5 applicazioni dell&#39;AI</a><p class="text-sm text-black/75 mt-1">Un Pokémon per ogni nazione e torte a tutti i gusti +1</p></li>
       </ul>
     </section>
 
-    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="ff-endcta flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Ricevi i nuovi numeri di Futuro Fortissimo</h2>
@@ -435,7 +435,7 @@
     </nav>
   </main>
 
-  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+  <footer class="ff-footer mt-12" role="contentinfo">
     <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
       <div class="space-y-2">
         <p class="ff-eyebrow">Futuro Fortissimo</p>
@@ -487,7 +487,7 @@
     <ul id="ff-results" role="listbox" aria-label="Cerca"></ul>
     <div class="ff-s-foot"><a href="/archivio/" data-ff-all data-base="/archivio/">Tutti i risultati nell’archivio →</a><span>Premi / per cercare ovunque</span></div>
   </dialog>
-  <script src="/assets/ff-app.js?v=3" defer></script>
+  <script src="/assets/ff-app.js?v=4" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>
