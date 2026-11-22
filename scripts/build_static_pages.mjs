@@ -202,7 +202,7 @@ function homeStatic(lang) {
   const books = [...BOOKS].sort((a, b) => (b.citations || []).length - (a.citations || []).length).slice(0, 6);
   const itLang = (r) => (r.it ? ' lang="it"' : '');
   return `<section class="ff-hero-card text-center space-y-4" aria-labelledby="ff-h1">
-      <span class="ff-dyn" aria-hidden="true">ff</span>
+      <span class="ff-dyn" aria-hidden="true"></span>
       <h1 id="ff-h1" class="pixel-title ff-hero">FUTURO FORTISSIMO</h1>
       <p class="ff-body-sm text-black/80 max-w-2xl mx-auto">${escapeHtml(hs.tagline)}</p>
       <p><a href="${SUBSTACK}/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary ff-cta-main">${escapeHtml(hs.subscribe)} ↗</a></p>
