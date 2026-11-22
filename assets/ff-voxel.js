@@ -282,7 +282,15 @@
   const easeEx = (v) => 1 - (1 - v) * (1 - v);
   const kick = () => { if (!raf && live.size && !RM) { last = 0; raf = requestAnimationFrame(tick); } };
   document.addEventListener('visibilitychange', kick);
-  const io = 'IntersectionObserver' in window ? new IntersectionObserver((es) => es.forEach((e) => { const it = inst.get(e.target); if (!it) return; if (e.isIntersecting) { live.add(it); kick(); } else if (!it.pin) live.delete(it); }), { rootMargin: '80px' }) : null;
+  const all = new Set();
+  const paint = (it) => { it.drawn = 1; draw(it.ctx, it.md, it.W, it.H, it.th, easeEx(it.exV)); };
+  // first paint happens only when an object comes near the viewport (161 objects on the archive page)
+  const io = 'IntersectionObserver' in window ? new IntersectionObserver((es) => es.forEach((e) => {
+    const it = inst.get(e.target); if (!it) return;
+    if (e.isIntersecting) { if (!it.drawn) paint(it); if (!RM) { live.add(it); kick(); } } else if (!it.pin) live.delete(it);
+  }), { rootMargin: '120px' }) : null;
+  // theme switch: repaint (the dark palette lifts near-black voxels)
+  new MutationObserver(() => all.forEach((it) => it.drawn && paint(it))).observe(document.documentElement, { attributes: true, attributeFilter: ['data-ff-theme'] });
 
   function makeCanvas(el, px) {
     const cv = document.createElement('canvas');
@@ -294,9 +302,8 @@
   function mount(cv, key, opts = {}) {
     const md = compile(key), ctx = cv.getContext('2d');
     const it = { cv, ctx, md, W: cv.width, H: cv.height, th: opts.th ?? -.7 + (hashN(cv.width, md.n, 3) - .5), acc: 1, step: opts.step || 1 / 12, seed: md.n % 7, ex: 0, exV: 0, hover: false, pin: !!opts.pin };
-    inst.set(cv, it);
-    draw(ctx, md, it.W, it.H, it.th);
-    if (!RM) { if (opts.pin) { live.add(it); kick(); } else if (io) io.observe(cv); }
+    inst.set(cv, it); all.add(it);
+    if (opts.pin || !io) { paint(it); if (!RM) { live.add(it); kick(); } } else io.observe(cv);
     return it;
   }
   function explode(it, dir, done) {
@@ -315,7 +322,7 @@
     dlg.className = 'ff-vsheet'; dlg.id = 'ff-vsheet'; dlg.setAttribute('aria-labelledby', 'ff-vs-t');
     dlg.addEventListener('close', () => {
       document.body.classList.remove('ff-vs-lock');
-      if (sheetIt) { live.delete(sheetIt); sheetIt = null; }
+      if (sheetIt) { live.delete(sheetIt); all.delete(sheetIt); sheetIt = null; }
       if (curBtn) { curBtn.setAttribute('aria-expanded', 'false'); const it = inst.get(curBtn.querySelector('canvas')); if (it) explode(it, -1); curBtn.focus({ preventScroll: true }); }
     });
     dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
@@ -378,9 +385,9 @@
     btn.addEventListener('focus', () => load(slug));
     btn.addEventListener('click', (e) => { e.preventDefault(); open(btn); });
   }
-  const all = () => document.querySelectorAll('.ff-vox[data-ff-vox]:not([data-on])').forEach(enhance);
-  all();
-  window.ffVoxEnhance = all;
+  const enhanceAll = () => { const els = document.querySelectorAll('.ff-vox[data-ff-vox]:not([data-on])'); if (els.length) sheet(); els.forEach(enhance); };
+  enhanceAll();
+  window.ffVoxEnhance = enhanceAll;
   window.ffVoxModels = Object.keys(MODELS);
   window.ffVoxDraw = (cv, key, th = -.7, ex = 0) => draw(cv.getContext('2d'), compile(key), cv.width, cv.height, th, ex);
 })();
