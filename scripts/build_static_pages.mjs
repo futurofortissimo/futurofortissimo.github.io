@@ -44,7 +44,7 @@ function seoBlock(lang, key, { title, desc, ld = [], type = 'website', image, ap
   ${metaBlock({ lang, title: t, desc: d, url, image: image || DEFAULT_OG, type, robots: ROBOTS_INDEX, alts: groupAlternates(paths) })}
   ${ld.map((x) => `<script type="application/ld+json">${safeJsonLd(x)}</script>`).join('\n  ')}
   ${pwaHead()}
-  ${app ? chromeHead() : ''}
+  ${app ? chromeHead(lang) : ''}
   <!-- /ff:seo -->`;
 }
 
@@ -180,11 +180,12 @@ const HOME_S = {
   en: { tagline: 'Michele Merelli’s newsletter on technology, AI, nature and society. Short ff.x.y sections, each with its sources, every ~10 days.', subscribe: 'Subscribe free on Substack', archive: 'Archive', themes: 'Themes', books: 'Books', index: 'Interactive index' },
   hi: { tagline: 'तकनीक, AI, प्रकृति और समाज पर मिकेले मेरेल्ली का न्यूज़लेटर। छोटे ff.x.y खंड, हर एक अपने स्रोतों के साथ, हर ~10 दिन में।', subscribe: 'Substack पर मुफ़्त सब्सक्राइब करें', archive: 'संग्रह', themes: 'थीम', books: 'किताबें', index: 'इंटरैक्टिव सूची' },
 };
-const HERO_BG = 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg width="1200" height="600" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="g" width="26" height="26" patternUnits="userSpaceOnUse"><rect width="26" height="26" fill="#ffffff"/><path d="M26 0H0V26" fill="none" stroke="rgba(0,0,0,0.05)" stroke-width="1"/></pattern><linearGradient id="h" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#c8e6ff" stop-opacity="0.7"/><stop offset="100%" stop-color="#ffd6ec" stop-opacity="0.7"/></linearGradient></defs><rect width="1200" height="360" fill="url(#g)"/><rect y="360" width="1200" height="240" fill="url(#h)"/><circle cx="240" cy="220" r="110" fill="#c8e6ff" fill-opacity="0.35"/><circle cx="820" cy="160" r="140" fill="#ffd6ec" fill-opacity="0.3"/><circle cx="620" cy="440" r="170" fill="#c8e6ff" fill-opacity="0.25"/><circle cx="1040" cy="420" r="120" fill="#ffd6ec" fill-opacity="0.2"/></svg>');
-const thumb = (src, alt) => {
+const thumb = (src, alt, eager = false) => {
   const m = /_(\d{2,5})x(\d{2,5})\./.exec(src);
   const cdn = /^https:\/\/substack-post-media\.s3\.amazonaws\.com\//.test(src) ? `https://substackcdn.com/image/fetch/w_480,h_270,c_fill,f_auto,q_auto:good/${encodeURIComponent(src)}` : src;
-  return `<img src="${escapeHtml(cdn)}" alt="${escapeHtml(alt)}" width="480" height="270" loading="lazy" decoding="async" class="ff-card-img w-full aspect-video object-cover border-b-2 border-black bg-gray-100"${m ? '' : ''} />`;
+  // blur-up: a 48×27 thumbnail (≈1 KB) paints first as the background, the real cover fades in sharp
+  const lqip = cdn !== src && !eager ? cdn.replace('w_480,h_270,c_fill,f_auto,q_auto:good', 'w_48,h_27,c_fill,f_auto,q_auto:good') : '';
+  return `<img src="${escapeHtml(cdn)}" alt="${escapeHtml(alt)}" width="480" height="270" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async" class="ff-card-img w-full aspect-video object-cover border-b-2 border-black"${lqip ? ` style="background-image:url('${escapeHtml(lqip)}')"` : ''} />`;
 };
 const bookTitle = (b, lang) => (lang === 'it' ? b.title : BOOKS_I18N.titles?.[b.id] || b.title);
 function homeStatic(lang) {
@@ -193,7 +194,8 @@ function homeStatic(lang) {
   const stats = themeStats(lang);
   const books = [...BOOKS].sort((a, b) => (b.citations || []).length - (a.citations || []).length).slice(0, 6);
   const itLang = (r) => (r.it ? ' lang="it"' : '');
-  return `<section class="ff-hero-card brutal-card mobile-unboxed accent-bar accent-blue no-round text-center space-y-4" aria-labelledby="ff-h1" style="background:url(&quot;${HERO_BG}&quot;) center/cover no-repeat">
+  return `<section class="ff-hero-card brutal-card mobile-unboxed accent-bar accent-blue no-round text-center space-y-4" aria-labelledby="ff-h1">
+      <span class="ff-dyn" aria-hidden="true">ff</span>
       <h1 id="ff-h1" class="pixel-title ff-hero">FUTURO FORTISSIMO</h1>
       <p class="ff-body-sm text-black/80 max-w-2xl mx-auto">${escapeHtml(hs.tagline)}</p>
       <p><a href="${SUBSTACK}/subscribe" target="_blank" rel="noopener" class="ff-cta inline-flex items-center justify-center min-h-[48px] px-6 py-3 border-3 border-black bg-[var(--ff-green)] text-black brutal-shadow ff-button">📩 ${escapeHtml(hs.subscribe)} ↗</a></p>
@@ -203,7 +205,8 @@ function homeStatic(lang) {
       <div class="flex items-baseline justify-between gap-2"><h2 id="h-latest" class="ff-heading-md">${escapeHtml(u.latest)}</h2><a class="ff-button underline min-h-[44px] inline-flex items-center" href="${L[lang].archive}">${escapeHtml(u.seeAll)} →</a></div>
       <ul class="ff-rail flex gap-4 overflow-x-auto snap-x snap-mandatory pb-3 -mx-4 px-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:overflow-visible">
         ${latest.map((r, i) => `<li class="snap-start shrink-0 w-[78%] sm:w-auto"><a href="${r.u}" class="ff-card block h-full border-3 border-black bg-white brutal-shadow hover:-translate-y-0.5 transition-transform">
-          ${r.img ? thumb(r.img, r.t) : ''}
+          ${r.n >= 0 && r.img ? `<span class="ff-card-mark" aria-hidden="true"><i>ff</i>${r.n}</span>` : ''}
+          ${r.img ? thumb(r.img, r.t, i === 0) : ''}
           <span class="block p-3 space-y-1">
             ${r.d ? `<time datetime="${r.d}" class="block text-xs font-mono text-black/70">${r.d}</time>` : ''}
             <span class="block font-bold leading-snug"${itLang(r)}>${escapeHtml(r.t)}</span>

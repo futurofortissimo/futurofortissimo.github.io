@@ -8,10 +8,10 @@ import { escapeHtml, imgDims, cdnImg, pwaHead, LANG_CODES } from './seo_lib.mjs'
 
 export const SHARED_STYLES = `
   :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
-  body { font-family:'Inter',sans-serif; background-color:#fdfdfd; color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
+  body { font-family:var(--f-text); background-color:var(--ff-paper); color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
   body::before { content:''; position:fixed; inset:0; background-image:linear-gradient(var(--ff-grid) 1px,transparent 1px),linear-gradient(90deg,var(--ff-grid) 1px,transparent 1px); background-size:32px 32px; pointer-events:none; z-index:-1; }
-  h1, h2, h3, h4, .font-heading { font-family:'IBM Plex Mono',monospace; letter-spacing:0.03em; text-transform:uppercase; }
-  .brutal-card { border:4px solid var(--ff-black); background:#fff; box-shadow:6px 6px 0 var(--ff-black); padding:24px; }
+  h1, h2, h3, h4, .font-heading { font-family:var(--f-display); }
+  .brutal-card { border:4px solid var(--ff-line); background:var(--ff-surface); box-shadow:6px 6px 0 var(--ff-black); padding:24px; }
   .brutal-shadow { box-shadow:4px 4px 0 var(--ff-black); }
   .border-3 { border-width:3px !important; }
   .accent-bar { position:relative; }
@@ -19,8 +19,8 @@ export const SHARED_STYLES = `
   .accent-yellow::before { background:var(--ff-yellow); }
   .accent-green::before { background:var(--ff-green); }
   .accent-red::before { background:var(--ff-red); }
-  .ff-eyebrow { font-family:'IBM Plex Mono',monospace; font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; font-weight:700; }
-  .ff-button { font-family:'IBM Plex Mono',monospace; font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:700; }
+  .ff-eyebrow { font-family:var(--f-mono); font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; font-weight:700; }
+  .ff-button { font-family:var(--f-mono); font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:700; }
   .ff-topbar { font-family:'IBM Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:700; background:var(--ff-black); color:#fff; }
   .ff-topbar .ff-brand { color:#fff; text-decoration:none; }
   .ff-lang-switch { display:inline-flex; border:2px solid #fff; box-shadow:3px 3px 0 var(--ff-yellow); margin:2px 3px 3px 0; }
@@ -31,10 +31,9 @@ export const SHARED_STYLES = `
   .ff-lang-switch .ff-ln { text-transform:none; letter-spacing:0; font-weight:600; opacity:.85; }
   @media (max-width:640px) { .ff-lang-switch .ff-ln { display:none; } .brutal-card { border-width:2px; box-shadow:3px 3px 0 var(--ff-black); padding:16px; } }
   .no-round, .no-round * { border-radius:0 !important; }
-  html[lang="hi"] body { font-family:'Noto Sans Devanagari','Inter',sans-serif; line-height:1.8; }
-  html[lang="hi"] h1, html[lang="hi"] h2, html[lang="hi"] h3, html[lang="hi"] h4,
-  html[lang="hi"] .ff-eyebrow, html[lang="hi"] .ff-button { font-family:'IBM Plex Mono','Noto Sans Devanagari',monospace; letter-spacing:0.02em; line-height:1.5; }
-  html[lang="hi"] [lang="it"], html[lang="hi"] [lang="en"] { font-family:'Inter',sans-serif; }
+  html[lang="hi"] body { line-height:1.8; }
+  html[lang="hi"] h1, html[lang="hi"] h2, html[lang="hi"] h3, html[lang="hi"] h4 { letter-spacing:0; line-height:1.4; }
+  html[lang="hi"] .ff-eyebrow, html[lang="hi"] .ff-button { letter-spacing:0.02em; line-height:1.5; }
   .ff-badge-full { background:var(--ff-green); }
   .ff-badge-partial { background:#f3f4f6; }
 `;
@@ -66,6 +65,7 @@ export function navHtml(lang, active, hrefs) {
       <div class="ff-actions">
         <button type="button" class="ff-search-btn" data-ff-search aria-label="${escapeHtml(a.search)} (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">${escapeHtml(a.search)}</span><kbd aria-hidden="true">/</kbd></button>
         ${langSwitchHtml(lang, hrefs)}
+        ${themeToggle(lang)}
         ${active === 'home' ? '' : `<a href="${SUBSTACK}/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">${escapeHtml(noEmoji(s.subscribe))}</a>`}
         <details class="ff-more">
           <summary aria-label="${escapeHtml(a.more)}"><span aria-hidden="true">☰</span><span class="sr-only">${escapeHtml(a.more)}</span></summary>
@@ -99,25 +99,24 @@ export function chromeEnd(lang, active) {
     <ul id="ff-results" role="listbox" aria-label="${escapeHtml(a.search)}"></ul>
     <div class="ff-s-foot"><a href="${L[lang].archive}" data-ff-all data-base="${L[lang].archive}">${escapeHtml(a.searchAll)}</a><span>${escapeHtml(a.hint)}</span></div>
   </dialog>
-  <script src="/assets/ff-app.js" defer></script>`;
+  <script src="/assets/ff-app.js?v=${ASSET_V}" defer></script>`;
 }
-export const chromeHead = () => '<link rel="stylesheet" href="/assets/ff-app.css" />';
+/** design-system version: bump to bust caches of ff-app.css / ff-app.js */
+export const ASSET_V = '3';
+/** theme bootstrap (runs before first paint: no flash), app stylesheet, self-hosted fonts (non-blocking) */
+export const chromeHead = (lang = 'it') => `<link rel="preconnect" href="https://substackcdn.com" />
+  <script>(function(){try{var t=localStorage.getItem('ff-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-ff-theme',t);}catch(e){}})();</script>
+  <link rel="stylesheet" href="/assets/ff-app.css?v=${ASSET_V}" />
+  <link rel="stylesheet" href="/assets/ff-fonts.css?v=${ASSET_V}" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/assets/ff-fonts.css?v=${ASSET_V}" /></noscript>`;
+const THEME_LABEL = { it: 'Tema scuro', en: 'Dark theme', hi: 'डार्क थीम' };
+const themeToggle = (lang) => `<button type="button" class="ff-theme-btn" data-ff-theme-toggle aria-pressed="false" aria-label="${THEME_LABEL[lang] || THEME_LABEL.en}" title="${THEME_LABEL[lang] || THEME_LABEL.en}"><svg class="ff-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><svg class="ff-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>`;
 
 export function headExtras(lang) {
-  const fonts = lang === 'hi'
-    ? 'family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700'
-    : 'family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700';
-  const fontUrl = `https://fonts.googleapis.com/css2?${fonts}&display=swap`;
   return `
   ${pwaHead()}
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://substackcdn.com" crossorigin />
   <link rel="stylesheet" href="/assets/ff-archive.css" />
-  ${chromeHead()}
-  <link rel="preload" as="style" href="${fontUrl}" />
-  <link rel="stylesheet" href="${fontUrl}" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="${fontUrl}" /></noscript>
+  ${chromeHead(lang)}
   <style>${SHARED_STYLES}</style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NQ7MQR0VL8"></script>
   <script>
