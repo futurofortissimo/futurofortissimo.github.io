@@ -168,6 +168,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://substackcdn.com" crossorigin />
   <link rel="stylesheet" href="/assets/ff-archive.css" />
+  <link rel="stylesheet" href="/assets/ff-app.css" />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" /></noscript>
@@ -211,49 +212,60 @@
     gtag('config', 'G-NQ7MQR0VL8');
   </script>
 </head>
-<body class="bg-white text-black antialiased no-round">
-  
-  <nav class="ff-topbar" aria-label="Lingua">
-    <div class="max-w-5xl mx-auto flex items-center justify-between gap-2 px-4 py-1">
-      <a href="/" class="ff-brand">FUTURO FORTISSIMO</a>
-      <div class="ff-lang-switch" role="group" aria-label="Lingua"><a href="/archivio/ff-154.html" hreflang="it" lang="it" title="Italiano" aria-current="page">IT<span class="ff-ln">Italiano</span></a><a href="/en/archive/ff-154.html" hreflang="en" lang="en" title="English">EN<span class="ff-ln">English</span></a><a href="/hi/archive/ff-154.html" hreflang="hi" lang="hi" title="हिन्दी">हिं<span class="ff-ln">हिन्दी</span></a></div>
+<body class="bg-white text-black antialiased no-round ff-has-tabbar">
+  <div class="ff-progress" aria-hidden="true"><span></span></div>
+  <a class="ff-skip" href="#main">Vai al contenuto</a>
+  <header class="ff-appbar">
+    <div class="ff-appbar-in">
+      <a href="/" class="ff-brand" aria-label="Futuro Fortissimo — Home"><img src="/assets/icons/icon-192.png" alt="" width="30" height="30" /><span>Fortissimo</span></a>
+      <nav class="ff-primary" aria-label="Navigazione principale">
+        <a href="/">Home</a>
+        <a href="/archivio/" aria-current="page">Archivio</a>
+        <a href="/themes.html">Temi</a>
+        <a href="/libri/">Libri</a>
+      </nav>
+      <div class="ff-actions">
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Cerca (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Cerca</span><kbd aria-hidden="true">/</kbd></button>
+        <div class="ff-lang" role="group" aria-label="Lingua"><a href="/archivio/ff-154.html" hreflang="it" lang="it" title="Italiano" data-keep-state aria-current="page">IT</a><a href="/en/archive/ff-154.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/archive/ff-154.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
+        <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Iscriviti</a>
+        <details class="ff-more">
+          <summary aria-label="Altro"><span aria-hidden="true">☰</span><span class="sr-only">Altro</span></summary>
+          <nav class="ff-menu" aria-label="Altro">
+            <a href="/book/">📖 Il Libro</a>
+            <a href="/book/ffxy-index.html">🔢 ff.x.y</a>
+            <a href="/connections.html">🔗 Connessioni</a>
+            <a href="/note.html">📝 Note</a>
+            <hr />
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 Iscriviti ↗</a>
+          </nav>
+        </details>
+      </div>
     </div>
-  </nav>
-  <header class="max-w-5xl mx-auto px-4 pt-6">
-    <nav aria-label="Navigazione principale" class="flex flex-wrap items-center gap-2 pb-4 border-b-3 border-black">
-      <a href="/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🏠 Home</a>
-      <a href="/archivio/" aria-current="page" class="px-3 py-2 border-2 border-black ff-button bg-[var(--ff-yellow)] text-black whitespace-nowrap">🗂 Archivio</a>
-      <a href="/libri/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📚 Libri</a>
-      <a href="/book/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📖 Il Libro</a>
-      <a href="/book/ffxy-index.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🔢 ff.x.y</a>
-      <a href="/themes.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🧭 Temi</a>
-      <a href="/connections.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🔗 Connessioni</a>
-      <a href="/note.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📝 Note</a>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ml-auto px-3 py-2 border-2 border-black bg-[var(--ff-green)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">📩 Iscriviti</a>
-    </nav>
   </header>
 
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/">Home</a> /</li><li><a class="underline" href="/archivio/">Archivio</a> /</li><li aria-current="page">ff.154 Viaggiare, da fermi</li></ol></nav>
-    <article class="space-y-6" aria-labelledby="issue-title">
+    <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
     <header class="brutal-card accent-bar accent-blue no-round">
-      <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-        <span class="ff-eyebrow text-black/70">Archivio Futuro Fortissimo</span>
-        <a href="https://fortissimo.substack.com/p/ff154-viaggiare-da-fermi" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] ff-button text-xs hover:-translate-y-0.5 transition-transform">Leggi originale su Substack ↗</a>
-      </div>
+      <p class="ff-eyebrow text-black/70 mb-3">Archivio Futuro Fortissimo</p>
       <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.154 Viaggiare, da fermi</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">Riflessioni sulla vacanza, in vacanza</p>
       <p class="mt-2 text-xs font-mono text-black/70">Pubblicato il <time datetime="2026-08-20T06:20:30.213Z">20 agosto 2026</time> · Michele Merelli</p>
+      <div class="ff-btn-row mt-4">
+        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/archivio/ff-154.html" data-done="Link copiato"><span aria-hidden="true">↗</span> Condividi</button>
+        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/archivio/ff-154.html" data-done="Link copiato"><span aria-hidden="true">🔗</span> Copia link</button>
+        <a href="https://fortissimo.substack.com/p/ff154-viaggiare-da-fermi" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Leggi originale su Substack ↗</a>
+      </div>
       
       <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Temi</span><a href="/themes.html#clima" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🌍 Natura, clima ed energia</a><a href="/themes.html#salute" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🏃 Salute, sport e corpo</a><a href="/themes.html#cultura" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🎨 Cultura, libri e arte</a></p>
-      <nav aria-label="Sezioni del numero" class="mt-5 pt-4 border-t-2 border-black/15">
-        <div class="ff-eyebrow text-black/70 mb-2">In questo numero</div>
-        <div class="flex flex-wrap gap-2">
-          <a href="#ff-154-1" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🪑 ff.154.1 Viaggiare, fermi</a>
-          <a href="#ff-154-2" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🚲 ff.154.2 Viaggiare (?) in bicicletta</a>
-          <a href="#ff-154-3" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🧭 ff.154.3 Dov’è finita l’avventura?</a>
-          <a href="#ff-154-4" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🚧 ff.154.4 La mia piccola avventura</a>
-        </div>
+      <nav aria-label="Sezioni del numero" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+        <h2 class="ff-eyebrow text-black/70 mb-2">In questo numero</h2>
+        <ol>
+          <li><a href="#ff-154-1">🪑 ff.154.1 Viaggiare, fermi</a></li>
+          <li><a href="#ff-154-2">🚲 ff.154.2 Viaggiare (?) in bicicletta</a></li>
+          <li><a href="#ff-154-3">🧭 ff.154.3 Dov’è finita l’avventura?</a></li>
+          <li><a href="#ff-154-4">🚧 ff.154.4 La mia piccola avventura</a></li>
+        </ol>
       </nav>
     </header>
 
@@ -262,7 +274,7 @@
     <section id="ff-154-1" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🪑 ff.154.1 Viaggiare, fermi</h2>
-        <a href="https://fortissimo.substack.com/i/210361320/ff1541-viaggiare-fermi" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/210361320/ff1541-viaggiare-fermi" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.154.1 Viaggiare, fermi">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Non sono solo le persone: è il viaggio stesso che è sparito: non viaggiamo attraverso lo spazio, ma in uno spazio. Dalla comoda poltrona di casa passiamo al sedile di una macchina, a quella di uno Starbucks identico in tutto il mondo, al sedile di un aereo per finire in un bar stile IKEA a Bali. Pensiamo di viaggiare, ma siamo sempre su una poltrona. Come a casa.</p>
@@ -277,7 +289,7 @@
     <section id="ff-154-2" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🚲 ff.154.2 Viaggiare (?) in bicicletta</h2>
-        <a href="https://fortissimo.substack.com/i/210361320/ff1542-viaggiare-in-bicicletta" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/210361320/ff1542-viaggiare-in-bicicletta" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.154.2 Viaggiare (?) in bicicletta">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Forse un po’ per questo, da qualche anno viaggio in bicicletta, attraverso lo spazio (freddo e piovoso, talvolta). Così che, al ritorno, la poltrona di casa avesse viaggiato con me: anch’essa diversa : più calda e asciutta, e decisamente più comoda di una sella.</p>
@@ -289,7 +301,7 @@
     <section id="ff-154-3" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🧭 ff.154.3 Dov’è finita l’avventura?</h2>
-        <a href="https://fortissimo.substack.com/i/210361320/ff1543-dove-finita-lavventura" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/210361320/ff1543-dove-finita-lavventura" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.154.3 Dov’è finita l’avventura?">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Fabio Genovesi - non a caso pure ciclo viaggiatore - si spinge però oltre. Anche viaggiare attraverso lo spazio non basta. Ci manca l’avventura. Intrecciando letteratura epica (non a caso l’ Odissea ) e tecnologia, scrive: Scrivo con la penna. Romanzi, racconti, ogni testo e queste righe stesse, li scrivo con la penna sulla carta. Mi sembra una cosa normalissima, come mangiare con la forchetta, pedalare con la bicicletta. Lo stupore che invece provoca, racconta quanto sono cambiate le cose, e quanto ci siamo lasciati cambiare noi. Badando a vantaggi immediati e miseri come il risparmio di tempo e fatica. Ma niente di buono viene dal risparmio, quando risparmiamo noi stessi. Al contrario, credo si tratti di una triste perdita. La penna, per poter tracciare qualcosa di leggibile, ci chiede un attimo in più del computer, e in quell&#39;attimo succede una cosa enorme: le parole che volevi scrivere, nel tragitto tra te e la pagina cambiano, ruota la frase, muta il suono. Scrivere è disegnare, è suonare, è amare: quando si tratta di queste meraviglie, che senso ha cercare di sbrigarsi? Dobbiamo semmai farcele durare più che si può. […] Prendiamo tre capolavori della letteratura, nelle cui pagine sta infusa l&#39;essenza dell&#39;avventura umana: l&#39;Odissea, I promessi sposi, Moby-Dick. Li separano millenni, eppure sono uniti dal fatto che oggi le loro vicende non starebbero più in piedi: un paio di messaggi su WhatsApp, un navigatore satellitare, un ecoscandaglio di quelli buoni, e le loro mille peripezie si risolverebbero in tre pagine. Non è un caso che nei romanzi, nei film e nelle serie di questi ultimi anni, perché possa accadere qualcosa di avventuroso deve mancare la rete telefonica, spaccarsi il cellulare o morire la batteria. Perché possa spuntare l&#39;avventura, dobbiamo sopprimere la tecnologia. Che ci offre tante nuove possibilità ma ne cancella molte altre, dai libri, dagli schermi, dalla vita intera. Le nostre piccole vite, dove piccole occasioni d&#39;avventura ce le offrono ogni tanto viaggi, gite e giretti. Anzi, ce le offrirebbero, ma prima di partire è già tutto valutato, deciso, prenotato. Sai che strada farai, quanto ci metterai, dove mangerai e dormirai. Sai se il parcheggio sarà gratuito e vicino, se sarà comodo il cuscino della camera dove hai previsto di passare una notte prevedibilmente triste. L&#39;avventura invece, piccola o grande, sta nel non prevedere, nel non conoscere in anticipo e forse nemmeno dopo, affrontando l&#39;oceano misterioso in cui si specchia la nostra naturale, profonda, benedetta ignoranza. E il racconto è la barchetta traballante con cui proviamo a muoverci su tutto quello che non sappiamo e non sapremo mai. Mio nonno diceva: «Dove non arrivo, ci tiro il cappello». Fabio Genovesi, la Lettura , 19 luglio 2026</p>
@@ -298,7 +310,7 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (1)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://www.corriere.it/cultura/la-lettura/26_luglio_17/dove-e-finita-l-avventura-indaga-la-lettura-in-edicola-solo-domenica-19-luglio-20b47119-76d8-4bea-8c41-dff0bbeb8xlk.shtml" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ la Lettura</a>
+            <a href="https://www.corriere.it/cultura/la-lettura/26_luglio_17/dove-e-finita-l-avventura-indaga-la-lettura-in-edicola-solo-domenica-19-luglio-20b47119-76d8-4bea-8c41-dff0bbeb8xlk.shtml" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ la Lettura</a>
           </div>
         </div>
     </section>
@@ -306,7 +318,7 @@
     <section id="ff-154-4" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🚧 ff.154.4 La mia piccola avventura</h2>
-        <a href="https://fortissimo.substack.com/i/210361320/ff1544-la-mia-piccola-avventura" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/210361320/ff1544-la-mia-piccola-avventura" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.154.4 La mia piccola avventura">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Ora vi racconto di come ho capito tutto ciò sulla mia pelle. Con la promessa del “paradiso del gravel”, quest’anno ho pedalato su strade bianche alpine vicino a Cuneo, scoperte grazie al bellissimo alvento - destination . Effettivamente, era il paradiso: zero macchine, un sacco di natura. Eppure, era troppo bello, quel troppo “da cartolina” che non affascina più, anestetizzati al bello da migliaia di post a portata di mano (e di dito). Vi dico invece cosa mi ha toccato: la mia pausa a Elva, un paese di 100 persone, di sassi vecchi come le montagne attorno. Sedutomi su una sedia da sagra di plastica all’unico bar del paese, un anziano mi ha chiesto da dove venissi. Si è aperto così un piacevole scambio e ho ricambiato la curiosità chiedendo se vivessero lì per tutto l’anno. “Abbiamo la casa qui”, mi ha detto, ma poi subito: “Ma sai chi è il signore?” additando quello seduto al centro dei tre. Per un attimo ho scandagliato il mio piccolo database, con una query che filtrasse persone anziane, piemontesi. Mi ha però subito aiutato: “E’ il sindaco!”. Ho sorriso e ho continuato la mia visita. Dopo aver ammirato lo spettacolare affresco fiammingo di Hans Clemer (1493) , son tornato nei pressi del bar, pregustando la meritata discesa. Inconscio del fatto che viaggio era già mutato in avventura. Il terzo anziano, fino a quel momento silente, mi fissa e fa: “Adesso risali, vero?”. E io, un po’ divertito: “No, pensavo di scendere verso la Val Maira, preferirei non aggiungere altra salita al giro di oggi, devo scalare 3800 metri”. Lui, ancora, “Dovresti risalire, però” - lapidario - “la strada là sotto è chiusa”. L’avventura più grande di quest’estate è stata scendere comunque per il Vallone di Elva, superando frane e ostacoli, senza sapere se - sempre più in basso - ce ne sarebbe stato uno insormontabile, che avrebbe reso la salita ancora più beffarda e faticosa. Come fossero gironi d’inferno, più scendevo, più - potenzialmente - stavo tornando “indietro”. Mi ha illuminato. Diamo per scontato il viaggio. Diamo per scontato che ogni spostamento, più in generale ogni nostra azione e scelta di vita ci porti almeno dal punto A al punto B. Magari il punto B non è quello che vogliamo, ma almeno diverso da quello di partenza. L’avventura, l’Odissea non è così. Prevede che un viaggio non si possa continuare, se non a ritroso. Tornare a casa, Itaca, senza però passare dal “via”. L’incertezze del Vallone di Elva mi han fatto sentire vivo. Mi han fatto vivere finalmente un’avventura, un’esplorazione, mappando strade aperte, ma soprattutto strade chiuse. Al prossimo 10, 20 o 30! Intanto, se vuoi:</p>
@@ -326,9 +338,9 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (3)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://www.destinations.bike/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ alvento - destination</a>
-            <a href="https://it.wikipedia.org/wiki/Chiesa_di_Santa_Maria_Assunta_(Elva,_Italia)" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ affresco fiammingo di Hans Clemer (1493)</a>
-            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ michele merelli</a>
+            <a href="https://www.destinations.bike/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ alvento - destination</a>
+            <a href="https://it.wikipedia.org/wiki/Chiesa_di_Santa_Maria_Assunta_(Elva,_Italia)" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ affresco fiammingo di Hans Clemer (1493)</a>
+            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ michele merelli</a>
           </div>
         </div>
     </section>
@@ -344,18 +356,18 @@
       </ul>
     </section>
 
-    <section class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Ricevi i nuovi numeri di Futuro Fortissimo</h2>
         <p class="text-sm text-black/80 mt-1">Ogni uscita su tecnologia, AI, natura e società direttamente via email su Substack.</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="px-5 py-3 border-3 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">📩 Iscriviti gratis ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 Iscriviti gratis ↗</a>
     </section>
 
-    <nav aria-label="Numeri adiacenti" class="flex flex-wrap items-center justify-between gap-3 pt-2">
-      <a href="/archivio/ff-153.html" rel="prev" class="px-4 py-2.5 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-0.5 transition-transform">← 🎼 ff.153 E&#39; tutto un token</a>
-      <a href="/archivio/ff-155.html" rel="next" class="px-4 py-2.5 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-0.5 transition-transform">🎼 ff.155 Etichette e virus mentali →</a>
+    <nav aria-label="Numeri adiacenti" class="ff-pn">
+      <a href="/archivio/ff-153.html" rel="prev"><span class="ff-pn-l">← Numero precedente</span><span class="ff-pn-t">ff.153 E&#39; tutto un token</span></a>
+      <a href="/archivio/ff-155.html" rel="next" class="ff-next"><span class="ff-pn-l">Numero successivo →</span><span class="ff-pn-t">ff.155 Etichette e virus mentali</span></a>
     </nav>
   </main>
 
@@ -383,11 +395,35 @@
           <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
           <li><a class="hover:underline" href="https://www.instagram.com/michele_merelli/" rel="me noopener" target="_blank">Instagram ↗</a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Offrimi un caffè ☕ ↗</a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Altri progetti di Michele ↗</a></li>
         </ul>
       </div>
     </div>
     <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
+  <aside class="ff-sticky-sub" aria-label="Newsletter">
+    <p>Ti piace? Ricevi il prossimo numero via email.</p>
+    <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary ff-btn-sm">Iscriviti</a>
+    <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="Chiudi invito">✕</button>
+  </aside>
+  <nav class="ff-tabbar" aria-label="Navigazione principale">
+    <a href="/"><span class="ff-ti" aria-hidden="true">🏠</span>Home</a>
+    <a href="/archivio/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>Archivio</a>
+    <a href="/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>Temi</a>
+    <a href="/libri/"><span class="ff-ti" aria-hidden="true">📚</span>Libri</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>Cerca</button>
+  </nav>
+  <dialog id="ff-search" class="ff-search" aria-label="Cerca" data-empty="Nessun risultato. Prova un’altra parola.">
+    <form role="search">
+      <label for="ff-q" class="sr-only">Cerca</label>
+      <input id="ff-q" type="search" autocomplete="off" placeholder="Cerca numeri, sezioni, temi…" aria-controls="ff-results" />
+      <button type="button" class="ff-btn ff-btn-icon" data-ff-close aria-label="Chiudi">✕</button>
+    </form>
+    <ul id="ff-results" role="listbox" aria-label="Cerca"></ul>
+    <div class="ff-s-foot"><a href="/archivio/" data-ff-all data-base="/archivio/">Tutti i risultati nell’archivio →</a><span>Premi / per cercare ovunque</span></div>
+  </dialog>
+  <script src="/assets/ff-app.js" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

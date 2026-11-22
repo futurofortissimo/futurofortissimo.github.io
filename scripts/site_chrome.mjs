@@ -3,7 +3,7 @@
  * footer, <head> extras, buttons). Used by build_archive_seo.mjs and build_static_pages.mjs.
  */
 import { SITE, SUBSTACK, L, S } from './i18n_strings.mjs';
-import { UI_SEO, SOCIAL } from './seo_strings.mjs';
+import { UI_SEO, UI_APP, SOCIAL } from './seo_strings.mjs';
 import { escapeHtml, imgDims, cdnImg, pwaHead, LANG_CODES } from './seo_lib.mjs';
 
 export const SHARED_STYLES = `
@@ -40,40 +40,68 @@ export const SHARED_STYLES = `
 `;
 
 export function langSwitchHtml(lang, hrefs) {
-  const items = LANG_CODES.map((lg) => {
-    const cur = lg === lang;
-    return `<a href="${escapeHtml(hrefs[lg])}" hreflang="${lg}" lang="${lg}" title="${escapeHtml(L[lg].name)}"${cur ? ' aria-current="page"' : ''}>${L[lg].label}<span class="ff-ln">${escapeHtml(L[lg].name)}</span></a>`;
-  }).join('');
-  return `<nav class="ff-topbar" aria-label="${escapeHtml(S[lang].langLabel)}">
-    <div class="max-w-5xl mx-auto flex items-center justify-between gap-2 px-4 py-1">
-      <a href="${L[lang].home}" class="ff-brand">FUTURO FORTISSIMO</a>
-      <div class="ff-lang-switch" role="group" aria-label="${escapeHtml(S[lang].langLabel)}">${items}</div>
-    </div>
-  </nav>`;
+  const items = LANG_CODES.map((lg) => `<a href="${escapeHtml(hrefs[lg])}" hreflang="${lg}" lang="${lg}" title="${escapeHtml(L[lg].name)}" data-keep-state${lg === lang ? ' aria-current="page"' : ''}>${L[lg].label}</a>`).join('');
+  return `<div class="ff-lang" role="group" aria-label="${escapeHtml(S[lang].langLabel)}">${items}</div>`;
 }
-
+const noEmoji = (s) => s.replace(/^\S+\s/, '');
+/**
+ * App shell: sticky top bar (brand · primary nav · search · language · subscribe · more menu),
+ * mobile bottom tab bar, global search dialog. `active`: home | archivio | themes | libri | connections | note | book
+ */
 export function navHtml(lang, active, hrefs) {
-  const s = S[lang];
-  const link = (href, label, key) => {
-    const isCurrent = active === key;
-    return `<a href="${href}"${isCurrent ? ' aria-current="page"' : ''} class="px-3 py-2 border-2 border-black ff-button ${isCurrent ? 'bg-[var(--ff-yellow)] text-black' : 'bg-white text-black hover:-translate-y-0.5 transition-transform'} whitespace-nowrap">${label}</a>`;
-  };
-  return `
-  ${langSwitchHtml(lang, hrefs)}
-  <header class="max-w-5xl mx-auto px-4 pt-6">
-    <nav aria-label="${escapeHtml(s.navLabel)}" class="flex flex-wrap items-center gap-2 pb-4 border-b-3 border-black">
-      ${link(L[lang].home, s.home, 'home')}
-      ${link(L[lang].archive, s.archive, 'archivio')}
-      ${link(L[lang].books, s.books, 'libri')}
-      ${link('/book/', s.book, 'book')}
-      ${lang === 'it' ? link('/book/ffxy-index.html', s.ffxy, 'ffxy') : ''}
-      ${link(L[lang].themes, s.themes, 'themes')}
-      ${link(L[lang].connections, s.connections, 'connections')}
-      ${link(L[lang].notes, s.notes, 'note')}
-      <a href="${SUBSTACK}/subscribe" target="_blank" rel="noopener noreferrer" class="ml-auto px-3 py-2 border-2 border-black bg-[var(--ff-green)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">${s.subscribe}</a>
-    </nav>
+  const s = S[lang]; const a = UI_APP[lang];
+  const cur = (k) => (active === k ? ' aria-current="page"' : '');
+  const primary = [['home', L[lang].home, a.tabHome], ['archivio', L[lang].archive, a.tabArchive], ['themes', L[lang].themes, a.tabThemes], ['libri', L[lang].books, a.tabBooks]];
+  const secondary = [
+    ['book', '/book/', s.book], ...(lang === 'it' ? [['ffxy', '/book/ffxy-index.html', s.ffxy]] : []),
+    ['connections', L[lang].connections, s.connections], ['note', L[lang].notes, s.notes],
+  ];
+  return `<a class="ff-skip" href="#main">${escapeHtml(a.skip)}</a>
+  <header class="ff-appbar">
+    <div class="ff-appbar-in">
+      <a href="${L[lang].home}" class="ff-brand" aria-label="Futuro Fortissimo — ${escapeHtml(a.tabHome)}"><img src="/assets/icons/icon-192.png" alt="" width="30" height="30" /><span>Fortissimo</span></a>
+      <nav class="ff-primary" aria-label="${escapeHtml(s.navLabel)}">
+        ${primary.map(([k, href, label]) => `<a href="${href}"${cur(k)}>${escapeHtml(label)}</a>`).join('\n        ')}
+      </nav>
+      <div class="ff-actions">
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="${escapeHtml(a.search)} (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">${escapeHtml(a.search)}</span><kbd aria-hidden="true">/</kbd></button>
+        ${langSwitchHtml(lang, hrefs)}
+        ${active === 'home' ? '' : `<a href="${SUBSTACK}/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">${escapeHtml(noEmoji(s.subscribe))}</a>`}
+        <details class="ff-more">
+          <summary aria-label="${escapeHtml(a.more)}"><span aria-hidden="true">☰</span><span class="sr-only">${escapeHtml(a.more)}</span></summary>
+          <nav class="ff-menu" aria-label="${escapeHtml(a.more)}">
+            ${secondary.map(([k, href, label]) => `<a href="${href}"${cur(k)}>${escapeHtml(label)}</a>`).join('\n            ')}
+            <hr />
+            <a class="ff-menu-sub" href="${SUBSTACK}/subscribe" target="_blank" rel="noopener">${escapeHtml(s.subscribe)} ↗</a>
+          </nav>
+        </details>
+      </div>
+    </div>
   </header>`;
 }
+/** mobile bottom tab bar + search dialog + app script (place right before </body>) */
+export function chromeEnd(lang, active) {
+  const a = UI_APP[lang];
+  const tab = (k, href, icon, label) => `<a href="${href}"${active === k ? ' aria-current="page"' : ''}><span class="ff-ti" aria-hidden="true">${icon}</span>${escapeHtml(label)}</a>`;
+  return `<nav class="ff-tabbar" aria-label="${escapeHtml(S[lang].navLabel)}">
+    ${tab('home', L[lang].home, '🏠', a.tabHome)}
+    ${tab('archivio', L[lang].archive, '🗂', a.tabArchive)}
+    ${tab('themes', L[lang].themes, '🧭', a.tabThemes)}
+    ${tab('libri', L[lang].books, '📚', a.tabBooks)}
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>${escapeHtml(a.tabSearch)}</button>
+  </nav>
+  <dialog id="ff-search" class="ff-search" aria-label="${escapeHtml(a.search)}" data-empty="${escapeHtml(a.searchEmpty)}">
+    <form role="search">
+      <label for="ff-q" class="sr-only">${escapeHtml(a.search)}</label>
+      <input id="ff-q" type="search" autocomplete="off" placeholder="${escapeHtml(a.searchPh)}" aria-controls="ff-results" />
+      <button type="button" class="ff-btn ff-btn-icon" data-ff-close aria-label="${escapeHtml(a.close)}">✕</button>
+    </form>
+    <ul id="ff-results" role="listbox" aria-label="${escapeHtml(a.search)}"></ul>
+    <div class="ff-s-foot"><a href="${L[lang].archive}" data-ff-all data-base="${L[lang].archive}">${escapeHtml(a.searchAll)}</a><span>${escapeHtml(a.hint)}</span></div>
+  </dialog>
+  <script src="/assets/ff-app.js" defer></script>`;
+}
+export const chromeHead = () => '<link rel="stylesheet" href="/assets/ff-app.css" />';
 
 export function headExtras(lang) {
   const fonts = lang === 'hi'
@@ -86,6 +114,7 @@ export function headExtras(lang) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://substackcdn.com" crossorigin />
   <link rel="stylesheet" href="/assets/ff-archive.css" />
+  ${chromeHead()}
   <link rel="preload" as="style" href="${fontUrl}" />
   <link rel="stylesheet" href="${fontUrl}" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="${fontUrl}" /></noscript>
@@ -100,13 +129,13 @@ export function headExtras(lang) {
 }
 
 
-export const subscribeCta = (lang) => `<section class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+export const subscribeCta = (lang) => `<section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">${escapeHtml(S[lang].newsletterTitle)}</h2>
         <p class="text-sm text-black/80 mt-1">${escapeHtml(S[lang].newsletterText)}</p>
       </div>
-      <a href="${SUBSTACK}/subscribe" target="_blank" rel="noopener noreferrer" class="px-5 py-3 border-3 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">${S[lang].subscribeFree}</a>
+      <a href="${SUBSTACK}/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">${S[lang].subscribeFree}</a>
     </section>`;
 
 /** responsive, lazy <img> with intrinsic size (no layout shift) */
@@ -144,6 +173,8 @@ export function siteFooter(lang) {
           <li><a class="hover:underline" href="${SOCIAL.x}" rel="me noopener" target="_blank">X ${SOCIAL.xHandle} ↗</a></li>
           <li><a class="hover:underline" href="${SOCIAL.instagram}" rel="me noopener" target="_blank">Instagram ↗</a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">${escapeHtml(UI_APP[lang].support)} ↗</a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">${escapeHtml(UI_APP[lang].projects)} ↗</a></li>
         </ul>
       </div>
     </div>
@@ -151,3 +182,11 @@ export function siteFooter(lang) {
   </footer>`;
 }
 
+
+/** issue pages: reading progress + sticky subscribe (mobile above the tab bar, desktop bottom-right) */
+export const readingTools = (lang) => `<div class="ff-progress" aria-hidden="true"><span></span></div>`;
+export const stickySubscribe = (lang) => `<aside class="ff-sticky-sub" aria-label="Newsletter">
+    <p>${escapeHtml(UI_APP[lang].stickySub)}</p>
+    <a href="${SUBSTACK}/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary ff-btn-sm">${escapeHtml(noEmoji(S[lang].subscribe))}</a>
+    <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="${escapeHtml(UI_APP[lang].dismiss)}">✕</button>
+  </aside>`;

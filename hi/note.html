@@ -85,6 +85,7 @@
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
   <link rel="manifest" href="/manifest.webmanifest" />
   <link rel="alternate" type="application/atom+xml" title="Futuro Fortissimo Feed" href="/feed.xml" />
+  <link rel="stylesheet" href="/assets/ff-app.css" />
   <!-- /ff:seo -->
 <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -168,16 +169,36 @@
         }
     </style>
 </head>
-<body class="no-round">
-
-<!-- Language Switcher Bar -->
-<div class="lang-bar bg-white text-center py-2" style="border-bottom:2px solid var(--ff-black)">
-    <a href="/">IT</a>
-    <span class="text-gray-400">|</span>
-    <a href="/en/">EN</a>
-    <span class="text-gray-400">|</span>
-    <a href="/hi/" class="active">HI</a>
-</div>
+<body class="no-round ff-has-tabbar">
+  <!-- ff:chrome -->
+  <a class="ff-skip" href="#main">सामग्री पर जाएँ</a>
+  <header class="ff-appbar">
+    <div class="ff-appbar-in">
+      <a href="/hi/" class="ff-brand" aria-label="Futuro Fortissimo — होम"><img src="/assets/icons/icon-192.png" alt="" width="30" height="30" /><span>Fortissimo</span></a>
+      <nav class="ff-primary" aria-label="मुख्य नेविगेशन">
+        <a href="/hi/">होम</a>
+        <a href="/hi/archive/">संग्रह</a>
+        <a href="/hi/themes.html">थीम</a>
+        <a href="/hi/books/">किताबें</a>
+      </nav>
+      <div class="ff-actions">
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="खोजें (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">खोजें</span><kbd aria-hidden="true">/</kbd></button>
+        <div class="ff-lang" role="group" aria-label="भाषा"><a href="/note.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/note.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/note.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state aria-current="page">हिं</a></div>
+        <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">सब्सक्राइब</a>
+        <details class="ff-more">
+          <summary aria-label="और"><span aria-hidden="true">☰</span><span class="sr-only">और</span></summary>
+          <nav class="ff-menu" aria-label="और">
+            <a href="/book/">📖 किताब (IT)</a>
+            <a href="/hi/connections.html">🔗 कनेक्शन</a>
+            <a href="/hi/note.html" aria-current="page">📝 नोट्स</a>
+            <hr />
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 सब्सक्राइब ↗</a>
+          </nav>
+        </details>
+      </div>
+    </div>
+  </header>
+  <!-- /ff:chrome -->
 
 <header class="bg-white" style="border-bottom:4px solid var(--ff-black)">
     <div class="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between gap-4">
@@ -185,11 +206,6 @@
             <div class="ff-eyebrow text-gray-500">Futuro Fortissimo — Notebook</div>
             <h1 class="text-2xl font-bold tracking-tight mt-1" style="font-size:clamp(1.4rem,1.1rem+1vw,2rem)">नोट्स</h1>
         </div>
-        <nav class="flex gap-4 flex-shrink-0">
-            <a class="ff-eyebrow text-gray-600 hover:text-black hover:underline" href="/hi/">होम</a>
-            <a class="ff-eyebrow text-gray-600 hover:text-black hover:underline" href="/hi/themes.html">विषय</a>
-            <a class="ff-eyebrow text-gray-600 hover:text-black hover:underline" href="/hi/note.html">नोट्स</a>
-        </nav>
     </div>
 </header>
 
@@ -371,5 +387,55 @@ document.addEventListener('DOMContentLoaded', () => {
     loadNotes();
 });
 </script>
+  <!-- ff:chrome-end -->
+  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+    <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
+      <div class="space-y-2">
+        <p class="ff-eyebrow">Futuro Fortissimo</p>
+        <p class="text-black/80">Futuro Fortissimo तकनीक, AI, प्रकृति और समाज पर मिकेले मेरेल्ली का न्यूज़लेटर है: छोटे ff.x.y खंड, हर एक अपने स्रोतों के साथ।</p>
+      </div>
+      <nav aria-label="देखें" class="space-y-2">
+        <p class="ff-eyebrow">देखें</p>
+        <ul class="space-y-1 font-medium">
+          <li><a class="hover:underline" href="/hi/archive/">सभी अंक</a></li>
+          <li><a class="hover:underline" href="/hi/themes.html">थीम</a></li>
+          <li><a class="hover:underline" href="/hi/books/">किताबें</a></li>
+          <li><a class="hover:underline" href="/hi/connections.html">कनेक्शन</a></li>
+          <li><a class="hover:underline" href="/hi/note.html">नोट्स</a></li>
+          <li><a class="hover:underline" href="/book/">किताब (IT)</a></li>
+        </ul>
+      </nav>
+      <div class="space-y-2">
+        <p class="ff-eyebrow">फ़ॉलो करें</p>
+        <ul class="space-y-1 font-medium">
+          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack ↗</a></li>
+          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
+          <li><a class="hover:underline" href="https://www.instagram.com/michele_merelli/" rel="me noopener" target="_blank">Instagram ↗</a></li>
+          <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">मुझे एक कॉफ़ी पिलाएँ ☕ ↗</a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">मिकेले के अन्य प्रोजेक्ट ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
+  </footer>
+  <nav class="ff-tabbar" aria-label="मुख्य नेविगेशन">
+    <a href="/hi/"><span class="ff-ti" aria-hidden="true">🏠</span>होम</a>
+    <a href="/hi/archive/"><span class="ff-ti" aria-hidden="true">🗂</span>संग्रह</a>
+    <a href="/hi/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>थीम</a>
+    <a href="/hi/books/"><span class="ff-ti" aria-hidden="true">📚</span>किताबें</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>खोजें</button>
+  </nav>
+  <dialog id="ff-search" class="ff-search" aria-label="खोजें" data-empty="कोई परिणाम नहीं। कोई और शब्द आज़माएँ।">
+    <form role="search">
+      <label for="ff-q" class="sr-only">खोजें</label>
+      <input id="ff-q" type="search" autocomplete="off" placeholder="अंक, खंड, थीम खोजें…" aria-controls="ff-results" />
+      <button type="button" class="ff-btn ff-btn-icon" data-ff-close aria-label="बंद करें">✕</button>
+    </form>
+    <ul id="ff-results" role="listbox" aria-label="खोजें"></ul>
+    <div class="ff-s-foot"><a href="/hi/archive/" data-ff-all data-base="/hi/archive/">संग्रह में सभी परिणाम →</a><span>कहीं भी खोजने के लिए / दबाएँ</span></div>
+  </dialog>
+  <script src="/assets/ff-app.js" defer></script>
+  <!-- /ff:chrome-end -->
 </body>
 </html>

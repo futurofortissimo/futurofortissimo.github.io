@@ -127,6 +127,7 @@
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
   <link rel="manifest" href="/manifest.webmanifest" />
   <link rel="alternate" type="application/atom+xml" title="Futuro Fortissimo Feed" href="/feed.xml" />
+  
   <!-- /ff:seo -->
   
   
@@ -134,6 +135,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://substackcdn.com" crossorigin />
   <link rel="stylesheet" href="/assets/ff-archive.css" />
+  <link rel="stylesheet" href="/assets/ff-app.css" />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" /></noscript>
@@ -177,26 +179,34 @@
     gtag('config', 'G-NQ7MQR0VL8');
   </script>
 </head>
-<body class="bg-white text-black antialiased no-round">
-  
-  <nav class="ff-topbar" aria-label="Lingua">
-    <div class="max-w-5xl mx-auto flex items-center justify-between gap-2 px-4 py-1">
-      <a href="/" class="ff-brand">FUTURO FORTISSIMO</a>
-      <div class="ff-lang-switch" role="group" aria-label="Lingua"><a href="/themes.html" hreflang="it" lang="it" title="Italiano" aria-current="page">IT<span class="ff-ln">Italiano</span></a><a href="/en/themes.html" hreflang="en" lang="en" title="English">EN<span class="ff-ln">English</span></a><a href="/hi/themes.html" hreflang="hi" lang="hi" title="हिन्दी">हिं<span class="ff-ln">हिन्दी</span></a></div>
+<body class="bg-white text-black antialiased no-round ff-has-tabbar">
+  <a class="ff-skip" href="#main">Vai al contenuto</a>
+  <header class="ff-appbar">
+    <div class="ff-appbar-in">
+      <a href="/" class="ff-brand" aria-label="Futuro Fortissimo — Home"><img src="/assets/icons/icon-192.png" alt="" width="30" height="30" /><span>Fortissimo</span></a>
+      <nav class="ff-primary" aria-label="Navigazione principale">
+        <a href="/">Home</a>
+        <a href="/archivio/">Archivio</a>
+        <a href="/themes.html" aria-current="page">Temi</a>
+        <a href="/libri/">Libri</a>
+      </nav>
+      <div class="ff-actions">
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Cerca (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Cerca</span><kbd aria-hidden="true">/</kbd></button>
+        <div class="ff-lang" role="group" aria-label="Lingua"><a href="/themes.html" hreflang="it" lang="it" title="Italiano" data-keep-state aria-current="page">IT</a><a href="/en/themes.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/themes.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
+        <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Iscriviti</a>
+        <details class="ff-more">
+          <summary aria-label="Altro"><span aria-hidden="true">☰</span><span class="sr-only">Altro</span></summary>
+          <nav class="ff-menu" aria-label="Altro">
+            <a href="/book/">📖 Il Libro</a>
+            <a href="/book/ffxy-index.html">🔢 ff.x.y</a>
+            <a href="/connections.html">🔗 Connessioni</a>
+            <a href="/note.html">📝 Note</a>
+            <hr />
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 Iscriviti ↗</a>
+          </nav>
+        </details>
+      </div>
     </div>
-  </nav>
-  <header class="max-w-5xl mx-auto px-4 pt-6">
-    <nav aria-label="Navigazione principale" class="flex flex-wrap items-center gap-2 pb-4 border-b-3 border-black">
-      <a href="/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🏠 Home</a>
-      <a href="/archivio/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🗂 Archivio</a>
-      <a href="/libri/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📚 Libri</a>
-      <a href="/book/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📖 Il Libro</a>
-      <a href="/book/ffxy-index.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🔢 ff.x.y</a>
-      <a href="/themes.html" aria-current="page" class="px-3 py-2 border-2 border-black ff-button bg-[var(--ff-yellow)] text-black whitespace-nowrap">🧭 Temi</a>
-      <a href="/connections.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🔗 Connessioni</a>
-      <a href="/note.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📝 Note</a>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ml-auto px-3 py-2 border-2 border-black bg-[var(--ff-green)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">📩 Iscriviti</a>
-    </nav>
   </header>
 
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
@@ -204,15 +214,15 @@
       <p class="ff-eyebrow text-black/70">Futuro Fortissimo · 161 numeri</p>
       <h1 class="text-2xl sm:text-3xl font-bold">I temi di Futuro Fortissimo</h1>
       <p class="text-base text-black/80">Otto macro-temi attraversano i numeri della newsletter. Per ogni tema trovi i numeri e le sezioni ff.x.y che ne parlano di più, con link diretti alle pagine dell’archivio.</p>
-      <nav aria-label="Vai al tema" class="flex flex-wrap gap-2">
-        <a href="#ai" class="px-3 py-2 min-h-[44px] inline-flex items-center border-2 border-black bg-white hover:bg-[var(--ff-yellow)] ff-button text-xs">🤖 AI, agenti e modelli</a>
-        <a href="#clima" class="px-3 py-2 min-h-[44px] inline-flex items-center border-2 border-black bg-white hover:bg-[var(--ff-yellow)] ff-button text-xs">🌍 Natura, clima ed energia</a>
-        <a href="#geo" class="px-3 py-2 min-h-[44px] inline-flex items-center border-2 border-black bg-white hover:bg-[var(--ff-yellow)] ff-button text-xs">🏛 Geopolitica, economia e società</a>
-        <a href="#salute" class="px-3 py-2 min-h-[44px] inline-flex items-center border-2 border-black bg-white hover:bg-[var(--ff-yellow)] ff-button text-xs">🏃 Salute, sport e corpo</a>
-        <a href="#attenzione" class="px-3 py-2 min-h-[44px] inline-flex items-center border-2 border-black bg-white hover:bg-[var(--ff-yellow)] ff-button text-xs">📱 Attenzione, schermi e abitudini</a>
-        <a href="#cultura" class="px-3 py-2 min-h-[44px] inline-flex items-center border-2 border-black bg-white hover:bg-[var(--ff-yellow)] ff-button text-xs">🎨 Cultura, libri e arte</a>
-        <a href="#nutrizione" class="px-3 py-2 min-h-[44px] inline-flex items-center border-2 border-black bg-white hover:bg-[var(--ff-yellow)] ff-button text-xs">🥗 Nutrizione e microbioma</a>
-        <a href="#crypto" class="px-3 py-2 min-h-[44px] inline-flex items-center border-2 border-black bg-white hover:bg-[var(--ff-yellow)] ff-button text-xs">🪙 Crypto e metaverso</a>
+      <nav aria-label="Vai al tema" class="flex gap-2 overflow-x-auto pb-1 -mx-1 px-1 sm:flex-wrap">
+        <a href="#ai" class="ff-btn ff-btn-ghost ff-btn-sm shrink-0">🤖 AI, agenti e modelli</a>
+        <a href="#clima" class="ff-btn ff-btn-ghost ff-btn-sm shrink-0">🌍 Natura, clima ed energia</a>
+        <a href="#geo" class="ff-btn ff-btn-ghost ff-btn-sm shrink-0">🏛 Geopolitica, economia e società</a>
+        <a href="#salute" class="ff-btn ff-btn-ghost ff-btn-sm shrink-0">🏃 Salute, sport e corpo</a>
+        <a href="#attenzione" class="ff-btn ff-btn-ghost ff-btn-sm shrink-0">📱 Attenzione, schermi e abitudini</a>
+        <a href="#cultura" class="ff-btn ff-btn-ghost ff-btn-sm shrink-0">🎨 Cultura, libri e arte</a>
+        <a href="#nutrizione" class="ff-btn ff-btn-ghost ff-btn-sm shrink-0">🥗 Nutrizione e microbioma</a>
+        <a href="#crypto" class="ff-btn ff-btn-ghost ff-btn-sm shrink-0">🪙 Crypto e metaverso</a>
       </nav>
     </header>
 
@@ -641,13 +651,13 @@
     </section>
 
     <p class="text-xs font-mono text-black/60">Classificazione automatica per parole chiave: serve per navigare, non è una tassonomia definitiva.</p>
-    <section class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Ricevi i nuovi numeri di Futuro Fortissimo</h2>
         <p class="text-sm text-black/80 mt-1">Ogni uscita su tecnologia, AI, natura e società direttamente via email su Substack.</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="px-5 py-3 border-3 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">📩 Iscriviti gratis ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 Iscriviti gratis ↗</a>
     </section>
   </main>
 
@@ -675,11 +685,30 @@
           <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
           <li><a class="hover:underline" href="https://www.instagram.com/michele_merelli/" rel="me noopener" target="_blank">Instagram ↗</a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Offrimi un caffè ☕ ↗</a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Altri progetti di Michele ↗</a></li>
         </ul>
       </div>
     </div>
     <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
+  <nav class="ff-tabbar" aria-label="Navigazione principale">
+    <a href="/"><span class="ff-ti" aria-hidden="true">🏠</span>Home</a>
+    <a href="/archivio/"><span class="ff-ti" aria-hidden="true">🗂</span>Archivio</a>
+    <a href="/themes.html" aria-current="page"><span class="ff-ti" aria-hidden="true">🧭</span>Temi</a>
+    <a href="/libri/"><span class="ff-ti" aria-hidden="true">📚</span>Libri</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>Cerca</button>
+  </nav>
+  <dialog id="ff-search" class="ff-search" aria-label="Cerca" data-empty="Nessun risultato. Prova un’altra parola.">
+    <form role="search">
+      <label for="ff-q" class="sr-only">Cerca</label>
+      <input id="ff-q" type="search" autocomplete="off" placeholder="Cerca numeri, sezioni, temi…" aria-controls="ff-results" />
+      <button type="button" class="ff-btn ff-btn-icon" data-ff-close aria-label="Chiudi">✕</button>
+    </form>
+    <ul id="ff-results" role="listbox" aria-label="Cerca"></ul>
+    <div class="ff-s-foot"><a href="/archivio/" data-ff-all data-base="/archivio/">Tutti i risultati nell’archivio →</a><span>Premi / per cercare ovunque</span></div>
+  </dialog>
+  <script src="/assets/ff-app.js" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

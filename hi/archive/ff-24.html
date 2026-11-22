@@ -162,6 +162,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://substackcdn.com" crossorigin />
   <link rel="stylesheet" href="/assets/ff-archive.css" />
+  <link rel="stylesheet" href="/assets/ff-app.css" />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" /></noscript>
@@ -205,54 +206,64 @@
     gtag('config', 'G-NQ7MQR0VL8');
   </script>
 </head>
-<body class="bg-white text-black antialiased no-round">
-  
-  <nav class="ff-topbar" aria-label="भाषा">
-    <div class="max-w-5xl mx-auto flex items-center justify-between gap-2 px-4 py-1">
-      <a href="/hi/" class="ff-brand">FUTURO FORTISSIMO</a>
-      <div class="ff-lang-switch" role="group" aria-label="भाषा"><a href="/archivio/ff-24.html" hreflang="it" lang="it" title="Italiano">IT<span class="ff-ln">Italiano</span></a><a href="/en/archive/ff-24.html" hreflang="en" lang="en" title="English">EN<span class="ff-ln">English</span></a><a href="/hi/archive/ff-24.html" hreflang="hi" lang="hi" title="हिन्दी" aria-current="page">हिं<span class="ff-ln">हिन्दी</span></a></div>
+<body class="bg-white text-black antialiased no-round ff-has-tabbar">
+  <div class="ff-progress" aria-hidden="true"><span></span></div>
+  <a class="ff-skip" href="#main">सामग्री पर जाएँ</a>
+  <header class="ff-appbar">
+    <div class="ff-appbar-in">
+      <a href="/hi/" class="ff-brand" aria-label="Futuro Fortissimo — होम"><img src="/assets/icons/icon-192.png" alt="" width="30" height="30" /><span>Fortissimo</span></a>
+      <nav class="ff-primary" aria-label="मुख्य नेविगेशन">
+        <a href="/hi/">होम</a>
+        <a href="/hi/archive/" aria-current="page">संग्रह</a>
+        <a href="/hi/themes.html">थीम</a>
+        <a href="/hi/books/">किताबें</a>
+      </nav>
+      <div class="ff-actions">
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="खोजें (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">खोजें</span><kbd aria-hidden="true">/</kbd></button>
+        <div class="ff-lang" role="group" aria-label="भाषा"><a href="/archivio/ff-24.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/archive/ff-24.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/archive/ff-24.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state aria-current="page">हिं</a></div>
+        <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">सब्सक्राइब</a>
+        <details class="ff-more">
+          <summary aria-label="और"><span aria-hidden="true">☰</span><span class="sr-only">और</span></summary>
+          <nav class="ff-menu" aria-label="और">
+            <a href="/book/">📖 किताब (IT)</a>
+            <a href="/hi/connections.html">🔗 कनेक्शन</a>
+            <a href="/hi/note.html">📝 नोट्स</a>
+            <hr />
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 सब्सक्राइब ↗</a>
+          </nav>
+        </details>
+      </div>
     </div>
-  </nav>
-  <header class="max-w-5xl mx-auto px-4 pt-6">
-    <nav aria-label="मुख्य नेविगेशन" class="flex flex-wrap items-center gap-2 pb-4 border-b-3 border-black">
-      <a href="/hi/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🏠 होम</a>
-      <a href="/hi/archive/" aria-current="page" class="px-3 py-2 border-2 border-black ff-button bg-[var(--ff-yellow)] text-black whitespace-nowrap">🗂 संग्रह</a>
-      <a href="/hi/books/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📚 किताबें</a>
-      <a href="/book/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📖 किताब (IT)</a>
-      
-      <a href="/hi/themes.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🧭 थीम</a>
-      <a href="/hi/connections.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🔗 कनेक्शन</a>
-      <a href="/hi/note.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📝 नोट्स</a>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ml-auto px-3 py-2 border-2 border-black bg-[var(--ff-green)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">📩 सब्सक्राइब</a>
-    </nav>
   </header>
 
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/hi/">होम</a> /</li><li><a class="underline" href="/hi/archive/">संग्रह</a> /</li><li aria-current="page">ff.24 गूढ़ युद्ध</li></ol></nav>
-    <article class="space-y-6" aria-labelledby="issue-title">
+    <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
     <header class="brutal-card accent-bar accent-blue no-round">
-      <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-        <span class="ff-eyebrow text-black/70">Futuro Fortissimo संग्रह</span>
-        <a href="https://fortissimo.substack.com/p/-ff26-guerra-criptica" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] ff-button text-xs hover:-translate-y-0.5 transition-transform">Substack पर इतालवी मूल पढ़ें ↗</a>
-      </div>
+      <p class="ff-eyebrow text-black/70 mb-3">Futuro Fortissimo संग्रह</p>
       <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.24 गूढ़ युद्ध</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">युद्ध ने क्रिप्टोकरेंसी अपनाने की रफ़्तार कैसे बढ़ाई होगी</p>
       <p class="mt-2 text-xs font-mono text-black/70">प्रकाशित <time datetime="2022-05-22T08:12:31.029Z">22 मई 2022</time> · Michele Merelli</p>
+      <div class="ff-btn-row mt-4">
+        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/hi/archive/ff-24.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">↗</span> शेयर करें</button>
+        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/hi/archive/ff-24.html" data-done="लिंक कॉपी हो गया"><span aria-hidden="true">🔗</span> लिंक कॉपी करें</button>
+        <a href="https://fortissimo.substack.com/p/-ff26-guerra-criptica" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Substack पर इतालवी मूल पढ़ें ↗</a>
+      </div>
       <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
         <li>• यूक्रेन में जो हुआ, उससे इनका इस्तेमाल तेज़ क्यों हो सकता है?</li>
         <li>• Putin के ख़िलाफ़ प्रतिरोध (और सच की रक्षा) के लिए डिजिटल संग्रहालय</li>
         <li>• क्या Exxon Mobil माइनिंग के लिए (निकाली गई) गैस जलाती है?</li>
       </ul>
       <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">थीम</span><a href="/hi/themes.html#geo" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🏛 भू-राजनीति, अर्थव्यवस्था और समाज</a><a href="/hi/themes.html#crypto" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🪙 क्रिप्टो और मेटावर्स</a><a href="/hi/themes.html#clima" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🌍 प्रकृति, जलवायु और ऊर्जा</a></p>
-      <nav aria-label="इस अंक के खंड" class="mt-5 pt-4 border-t-2 border-black/15">
-        <div class="ff-eyebrow text-black/70 mb-2">इस अंक में</div>
-        <div class="flex flex-wrap gap-2">
-          <a href="#ff-24-1" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🪙ff.24.1 युद्ध से क्रिप्टो की रफ़्तार</a>
-          <a href="#ff-24-2" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">💦ff.24.2 ये बॉन्ड हैं, NFT-बॉन्ड</a>
-          <a href="#ff-24-3" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">💦ff.24.3 तुर्की और ब्राज़ील अपनी संप्रभुता बचाते हैं</a>
-          <a href="#ff-24-4" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">💦ff.24.4 गैस से माइनिंग</a>
-          <a href="#ff-24-5" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">💦ff.24.5 व्यक्ति के लिए एक और अवसर</a>
-        </div>
+      <nav aria-label="इस अंक के खंड" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+        <h2 class="ff-eyebrow text-black/70 mb-2">इस अंक में</h2>
+        <ol>
+          <li><a href="#ff-24-1">🪙ff.24.1 युद्ध से क्रिप्टो की रफ़्तार</a></li>
+          <li><a href="#ff-24-2">💦ff.24.2 ये बॉन्ड हैं, NFT-बॉन्ड</a></li>
+          <li><a href="#ff-24-3">💦ff.24.3 तुर्की और ब्राज़ील अपनी संप्रभुता बचाते हैं</a></li>
+          <li><a href="#ff-24-4">💦ff.24.4 गैस से माइनिंग</a></li>
+          <li><a href="#ff-24-5">💦ff.24.5 व्यक्ति के लिए एक और अवसर</a></li>
+        </ol>
       </nav>
     </header>
 
@@ -261,7 +272,7 @@
     <section id="ff-24-1" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🪙ff.24.1 युद्ध से क्रिप्टो की रफ़्तार</h2>
-        <a href="https://fortissimo.substack.com/i/51218379/ff241-laccelerazione-della-guerra-sulle-cripto" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/51218379/ff241-laccelerazione-della-guerra-sulle-cripto" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.24.1 युद्ध से क्रिप्टो की रफ़्तार">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">क्रिप्टोकरेंसी, जो एक विकेंद्रीकृत नेटवर्क पर टिकी हैं और जिन्हें कोई एक संप्रभु सत्ता नियंत्रित नहीं कर सकती, रूसी आक्रमण के शुरुआती पलों में यूक्रेनी सरकार का समर्थन करने का सबसे आसान तरीक़ा थीं। यूक्रेन के डिजिटल परिवर्तन मंत्री ने इस मामले में बड़ी फुर्ती दिखाई और Bitcoin व Ethereum (दो सबसे प्रचलित क्रिप्टोकरेंसी) में दान के लिए एक वॉलेट तैयार किया।</p>
@@ -277,7 +288,7 @@
 
 BTC - 357a3So9CbsNfBBgFYACGvxxS6tMaDoa1P
 
-ETH and USDT (ERC-20) - 0x165CD37b4C644C2921454429E7F9358d18A45e14" lang="it" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ twitter.com</a>
+ETH and USDT (ERC-20) - 0x165CD37b4C644C2921454429E7F9358d18A45e14" lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ twitter.com</a>
           </div>
         </div>
     </section>
@@ -285,7 +296,7 @@ ETH and USDT (ERC-20) - 0x165CD37b4C644C2921454429E7F9358d18A45e14" lang="it" cl
     <section id="ff-24-2" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">💦ff.24.2 ये बॉन्ड हैं, NFT-बॉन्ड</h2>
-        <a href="https://fortissimo.substack.com/i/51218379/ff242-sono-bond-nft-bond" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/51218379/ff242-sono-bond-nft-bond" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.24.2 ये बॉन्ड हैं, NFT-बॉन्ड">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">इसी राह पर चलते हुए, उन्होंने फिर Meta History Museum of War लॉन्च किया। कमाल की चीज़!</p>
@@ -303,8 +314,8 @@ ETH and USDT (ERC-20) - 0x165CD37b4C644C2921454429E7F9358d18A45e14" lang="it" cl
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (2)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://metahistory.gallery/warline" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Meta History Museum o</a>
-            <a href="https://fortissimo.substack.com/p/-ff3-metaverso?s=w" target="_blank" rel="noopener noreferrer" title="ff" lang="it" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ fortissimo.substack.com</a>
+            <a href="https://metahistory.gallery/warline" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Meta History Museum o</a>
+            <a href="https://fortissimo.substack.com/p/-ff3-metaverso?s=w" target="_blank" rel="noopener noreferrer" title="ff" lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ fortissimo.substack.com</a>
           </div>
         </div>
     </section>
@@ -312,7 +323,7 @@ ETH and USDT (ERC-20) - 0x165CD37b4C644C2921454429E7F9358d18A45e14" lang="it" cl
     <section id="ff-24-3" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">💦ff.24.3 तुर्की और ब्राज़ील अपनी संप्रभुता बचाते हैं</h2>
-        <a href="https://fortissimo.substack.com/i/51218379/ff243-turchia-e-brasile-difendono-la-loro-sovranita" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/51218379/ff243-turchia-e-brasile-difendono-la-loro-sovranita" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.24.3 तुर्की और ब्राज़ील अपनी संप्रभुता बचाते हैं">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">किताब The Bitcoin Standard में, Saifedean Ammous मूल्य के लेन-देन का इतिहास बताते हैं, वस्तु-विनिमय से सीपियों तक; सोने से डॉलर तक (आज की वैश्विक रिज़र्व मुद्रा)। उनका तर्क है कि मुद्राओं को सोने या, आजकल, Bitcoin जैसी किसी स्थिर चीज़ से जोड़ने से एक ज़्यादा स्थिर मुद्रा बन सकती है, बजाय इसके कि उसे किसी देश का वित्त मंत्री बुरी तरह संभाले।</p>
@@ -328,9 +339,9 @@ ETH and USDT (ERC-20) - 0x165CD37b4C644C2921454429E7F9358d18A45e14" lang="it" cl
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (3)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://www.nasdaq.com/articles/money-printing-and-inflation%3A-covid-cryptocurrencies-and-more" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ इस ग्रह के 27% डॉलर पिछले दो साल में बनाए गए</a>
-            <a href="https://it.cointelegraph.com/news/bitcoin-flippens-russian-ruble-after-tesla-purchase" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Bitcoin नेटवर्क का मूल्य रूसी मुद्रा से आगे निकल गया</a>
-            <a href="https://ark-invest.com/white-papers/bitcoin-part-two/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ मौजूदा स्तर का 3.5 गुना हो जाएगा</a>
+            <a href="https://www.nasdaq.com/articles/money-printing-and-inflation%3A-covid-cryptocurrencies-and-more" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ इस ग्रह के 27% डॉलर पिछले दो साल में बनाए गए</a>
+            <a href="https://it.cointelegraph.com/news/bitcoin-flippens-russian-ruble-after-tesla-purchase" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Bitcoin नेटवर्क का मूल्य रूसी मुद्रा से आगे निकल गया</a>
+            <a href="https://ark-invest.com/white-papers/bitcoin-part-two/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ मौजूदा स्तर का 3.5 गुना हो जाएगा</a>
           </div>
         </div>
     </section>
@@ -338,7 +349,7 @@ ETH and USDT (ERC-20) - 0x165CD37b4C644C2921454429E7F9358d18A45e14" lang="it" cl
     <section id="ff-24-4" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">💦ff.24.4 गैस से माइनिंग</h2>
-        <a href="https://fortissimo.substack.com/i/51218379/ff244-minare-con-gas" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/51218379/ff244-minare-con-gas" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.24.4 गैस से माइनिंग">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Exxon Mobil ने घोषणा की है कि वह निकाली गई (लेकिन अतिरिक्त) गैस से बनी ऊर्जा का इस्तेमाल bitcoin माइन करने के लिए करेगी। यह गैस वैसे भी जलाई ही जाती है, क्योंकि इसे वितरण चैनलों में नहीं डाला जा सकता। अगर यह वातावरण में चली जाए, तो &quot;जली हुई&quot; हालत से भी ज़्यादा प्रदूषण करेगी।</p>
@@ -352,9 +363,9 @@ ETH and USDT (ERC-20) - 0x165CD37b4C644C2921454429E7F9358d18A45e14" lang="it" cl
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (3)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://www.cnbc.com/2022/03/26/exxon-mining-bitcoin-with-crusoe-energy-in-north-dakota-bakken-region.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ bitcoin माइन करने के लिए</a>
-            <a href="https://twitter.com/hashtag/Bitcoin?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#Bitcoin&lt;/a&gt; mining can benefit big time 👇 &lt;a href=&quot;https://t.co/GrKaJunRhf&quot;&gt;pic.twitter.com/GrKaJunRhf&lt;/a&gt;&lt;/p&gt;&amp;mdash; Mitch Klee⚡ (@MitchKlee_) &lt;a href=&quot;https://twitter.com/MitchKlee_/status/1502671220554272772?ref_src=twsrc%5Etfw&quot;&gt;March" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Mitch Klee⚡@MitchKlee_1/ Vented and flared natural gas has exploded in the last ten years in key states.#Bitcoinmining can benefit big time 👇</a>
-            <a href="https://news.ycombinator.com/item?id=21279076" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ दुनिया के सबसे बड़े सुपरकंप्यूटर से 500,000 गुना ज़्यादा</a>
+            <a href="https://www.cnbc.com/2022/03/26/exxon-mining-bitcoin-with-crusoe-energy-in-north-dakota-bakken-region.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ bitcoin माइन करने के लिए</a>
+            <a href="https://twitter.com/hashtag/Bitcoin?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#Bitcoin&lt;/a&gt; mining can benefit big time 👇 &lt;a href=&quot;https://t.co/GrKaJunRhf&quot;&gt;pic.twitter.com/GrKaJunRhf&lt;/a&gt;&lt;/p&gt;&amp;mdash; Mitch Klee⚡ (@MitchKlee_) &lt;a href=&quot;https://twitter.com/MitchKlee_/status/1502671220554272772?ref_src=twsrc%5Etfw&quot;&gt;March" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Mitch Klee⚡@MitchKlee_1/ Vented and flared natural gas has exploded in the last ten years in key states.#Bitcoinmining can benefit big time 👇</a>
+            <a href="https://news.ycombinator.com/item?id=21279076" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ दुनिया के सबसे बड़े सुपरकंप्यूटर से 500,000 गुना ज़्यादा</a>
           </div>
         </div>
     </section>
@@ -362,7 +373,7 @@ ETH and USDT (ERC-20) - 0x165CD37b4C644C2921454429E7F9358d18A45e14" lang="it" cl
     <section id="ff-24-5" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">💦ff.24.5 व्यक्ति के लिए एक और अवसर</h2>
-        <a href="https://fortissimo.substack.com/i/51218379/ff245-lulteriore-opportunita-dellindividuo" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/51218379/ff245-lulteriore-opportunita-dellindividuo" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.24.5 व्यक्ति के लिए एक और अवसर">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">हाल ही में @naval ने वित्तीय विकेंद्रीकरण की तुलना डिजिटल से पैदा हुए अवसरों से की। जैसे वीडियो, लेख और तस्वीरें प्रकाशित करने की आज़ादी ने इन्फ़्लुएंसर्स को ताक़त दी और अख़बारों व TV की ताक़त घटाई, वैसे ही वित्त का डिजिटलीकरण और विकेंद्रीकरण राष्ट्र-राज्यों को पुराना बना देगा (इस पर हम भविष्य में विस्तार से बात करेंगे)।</p>
@@ -385,7 +396,7 @@ ETH and USDT (ERC-20) - 0x165CD37b4C644C2921454429E7F9358d18A45e14" lang="it" cl
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">स्रोत और लिंक (2)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://nav.al/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ @naval</a>
+            <a href="https://nav.al/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ @naval</a>
             <a href="https://twitter.com/naval/status/1345564424770240513?lang=en" target="_blank" rel="noopener noreferrer" title="Naval@navalBitcoin is an exit from the Fed.
 
 DeFi is an exit from Wall Street.
@@ -398,7 +409,7 @@ Remote work is an exit from 9-5.
 
 Creator economy is an exit from employment.
 
-Individuals are leaving institutions." lang="it" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ twitter.com</a>
+Individuals are leaving institutions." lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ twitter.com</a>
           </div>
         </div>
     </section>
@@ -414,18 +425,18 @@ Individuals are leaving institutions." lang="it" class="inline-flex items-center
       </ul>
     </section>
 
-    <section class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Futuro Fortissimo के नए अंक पाएँ</h2>
         <p class="text-sm text-black/80 mt-1">बर्गामो के मिकेले मेरेल्ली का मुफ़्त न्यूज़लेटर — तकनीक, AI, प्रकृति और समाज पर। इतालवी में लिखा गया, Substack से ईमेल पर।</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="px-5 py-3 border-3 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">📩 मुफ़्त सब्सक्राइब करें ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 मुफ़्त सब्सक्राइब करें ↗</a>
     </section>
 
-    <nav aria-label="पिछला और अगला अंक" class="flex flex-wrap items-center justify-between gap-3 pt-2">
-      <a href="/hi/archive/ff-23.html" rel="prev" class="px-4 py-2.5 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-0.5 transition-transform">← 🎼 ff.23 निजीकृत शादियाँ</a>
-      <a href="/hi/archive/ff-25.html" rel="next" class="px-4 py-2.5 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-0.5 transition-transform">🎼 ff.25 पशुओं का फ़ार्म →</a>
+    <nav aria-label="पिछला और अगला अंक" class="ff-pn">
+      <a href="/hi/archive/ff-23.html" rel="prev"><span class="ff-pn-l">← पिछला अंक</span><span class="ff-pn-t">ff.23 निजीकृत शादियाँ</span></a>
+      <a href="/hi/archive/ff-25.html" rel="next" class="ff-next"><span class="ff-pn-l">अगला अंक →</span><span class="ff-pn-t">ff.25 पशुओं का फ़ार्म</span></a>
     </nav>
   </main>
 
@@ -453,11 +464,35 @@ Individuals are leaving institutions." lang="it" class="inline-flex items-center
           <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
           <li><a class="hover:underline" href="https://www.instagram.com/michele_merelli/" rel="me noopener" target="_blank">Instagram ↗</a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">मुझे एक कॉफ़ी पिलाएँ ☕ ↗</a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">मिकेले के अन्य प्रोजेक्ट ↗</a></li>
         </ul>
       </div>
     </div>
     <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
+  <aside class="ff-sticky-sub" aria-label="Newsletter">
+    <p>पसंद आया? अगला अंक ईमेल पर पाएँ।</p>
+    <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary ff-btn-sm">सब्सक्राइब</a>
+    <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="बंद करें">✕</button>
+  </aside>
+  <nav class="ff-tabbar" aria-label="मुख्य नेविगेशन">
+    <a href="/hi/"><span class="ff-ti" aria-hidden="true">🏠</span>होम</a>
+    <a href="/hi/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>संग्रह</a>
+    <a href="/hi/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>थीम</a>
+    <a href="/hi/books/"><span class="ff-ti" aria-hidden="true">📚</span>किताबें</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>खोजें</button>
+  </nav>
+  <dialog id="ff-search" class="ff-search" aria-label="खोजें" data-empty="कोई परिणाम नहीं। कोई और शब्द आज़माएँ।">
+    <form role="search">
+      <label for="ff-q" class="sr-only">खोजें</label>
+      <input id="ff-q" type="search" autocomplete="off" placeholder="अंक, खंड, थीम खोजें…" aria-controls="ff-results" />
+      <button type="button" class="ff-btn ff-btn-icon" data-ff-close aria-label="बंद करें">✕</button>
+    </form>
+    <ul id="ff-results" role="listbox" aria-label="खोजें"></ul>
+    <div class="ff-s-foot"><a href="/hi/archive/" data-ff-all data-base="/hi/archive/">संग्रह में सभी परिणाम →</a><span>कहीं भी खोजने के लिए / दबाएँ</span></div>
+  </dialog>
+  <script src="/assets/ff-app.js" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

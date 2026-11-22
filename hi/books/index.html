@@ -924,6 +924,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://substackcdn.com" crossorigin />
   <link rel="stylesheet" href="/assets/ff-archive.css" />
+  <link rel="stylesheet" href="/assets/ff-app.css" />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" /></noscript>
@@ -967,26 +968,33 @@
     gtag('config', 'G-NQ7MQR0VL8');
   </script>
 </head>
-<body class="bg-white text-black antialiased no-round">
-  
-  <nav class="ff-topbar" aria-label="भाषा">
-    <div class="max-w-5xl mx-auto flex items-center justify-between gap-2 px-4 py-1">
-      <a href="/hi/" class="ff-brand">FUTURO FORTISSIMO</a>
-      <div class="ff-lang-switch" role="group" aria-label="भाषा"><a href="/libri/" hreflang="it" lang="it" title="Italiano">IT<span class="ff-ln">Italiano</span></a><a href="/en/books/" hreflang="en" lang="en" title="English">EN<span class="ff-ln">English</span></a><a href="/hi/books/" hreflang="hi" lang="hi" title="हिन्दी" aria-current="page">हिं<span class="ff-ln">हिन्दी</span></a></div>
+<body class="bg-white text-black antialiased no-round ff-has-tabbar">
+  <a class="ff-skip" href="#main">सामग्री पर जाएँ</a>
+  <header class="ff-appbar">
+    <div class="ff-appbar-in">
+      <a href="/hi/" class="ff-brand" aria-label="Futuro Fortissimo — होम"><img src="/assets/icons/icon-192.png" alt="" width="30" height="30" /><span>Fortissimo</span></a>
+      <nav class="ff-primary" aria-label="मुख्य नेविगेशन">
+        <a href="/hi/">होम</a>
+        <a href="/hi/archive/">संग्रह</a>
+        <a href="/hi/themes.html">थीम</a>
+        <a href="/hi/books/" aria-current="page">किताबें</a>
+      </nav>
+      <div class="ff-actions">
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="खोजें (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">खोजें</span><kbd aria-hidden="true">/</kbd></button>
+        <div class="ff-lang" role="group" aria-label="भाषा"><a href="/libri/" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/books/" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/books/" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state aria-current="page">हिं</a></div>
+        <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">सब्सक्राइब</a>
+        <details class="ff-more">
+          <summary aria-label="और"><span aria-hidden="true">☰</span><span class="sr-only">और</span></summary>
+          <nav class="ff-menu" aria-label="और">
+            <a href="/book/">📖 किताब (IT)</a>
+            <a href="/hi/connections.html">🔗 कनेक्शन</a>
+            <a href="/hi/note.html">📝 नोट्स</a>
+            <hr />
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 सब्सक्राइब ↗</a>
+          </nav>
+        </details>
+      </div>
     </div>
-  </nav>
-  <header class="max-w-5xl mx-auto px-4 pt-6">
-    <nav aria-label="मुख्य नेविगेशन" class="flex flex-wrap items-center gap-2 pb-4 border-b-3 border-black">
-      <a href="/hi/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🏠 होम</a>
-      <a href="/hi/archive/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🗂 संग्रह</a>
-      <a href="/hi/books/" aria-current="page" class="px-3 py-2 border-2 border-black ff-button bg-[var(--ff-yellow)] text-black whitespace-nowrap">📚 किताबें</a>
-      <a href="/book/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📖 किताब (IT)</a>
-      
-      <a href="/hi/themes.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🧭 थीम</a>
-      <a href="/hi/connections.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🔗 कनेक्शन</a>
-      <a href="/hi/note.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📝 नोट्स</a>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ml-auto px-3 py-2 border-2 border-black bg-[var(--ff-green)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">📩 सब्सक्राइब</a>
-    </nav>
   </header>
 
   <main id="main" class="max-w-6xl mx-auto px-4 py-8 space-y-6">
@@ -995,12 +1003,13 @@
       <h1 class="text-2xl sm:text-3xl font-bold">Futuro Fortissimo में उद्धृत किताबें</h1>
       <p class="text-base text-black/80">मिकेले मेरेल्ली ने न्यूज़लेटर में जितनी किताबों का ज़िक्र किया है, सब यहाँ हैं — हर एक उसी ff.x.y खंड से जुड़ी जहाँ वह आती है। शीर्षक मूल या आधिकारिक अंग्रेज़ी संस्करण के अनुसार दिए गए हैं।</p>
       <p class="text-xs font-mono border-2 border-black bg-gray-50 px-3 py-2">एफ़िलिएट लिंक: Amazon एसोसिएट के रूप में Futuro Fortissimo को Amazon.it पर योग्य ख़रीद से कमीशन मिलता है (टैग micmeramazon-21)। आपको कुछ भी अतिरिक्त नहीं देना पड़ता और न्यूज़लेटर मुफ़्त रहता है।</p>
-      <input id="q" type="search" placeholder="शीर्षक, लेखक या ff.x.y से खोजें…" aria-label="शीर्षक, लेखक या ff.x.y से खोजें…" class="w-full px-4 py-2.5 border-3 border-black bg-white text-sm font-medium focus:outline-none" />
-      <div class="flex flex-wrap gap-2" role="group">
-        <button type="button" data-theme="ALL" class="theme-pill px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] ff-button text-xs">सभी</button>
-        <button type="button" data-theme="Società &amp; Mente" class="theme-pill px-3 py-1.5 border-2 border-black bg-white ff-button text-xs">समाज और मन</button>
-        <button type="button" data-theme="Scienza &amp; Tecnologia" class="theme-pill px-3 py-1.5 border-2 border-black bg-white ff-button text-xs">विज्ञान और तकनीक</button>
-        <button type="button" data-theme="Natura &amp; Cibo" class="theme-pill px-3 py-1.5 border-2 border-black bg-white ff-button text-xs">प्रकृति और भोजन</button>
+      <label for="q" class="sr-only">शीर्षक, लेखक या ff.x.y से खोजें…</label>
+      <input id="q" type="search" data-ff-local-search placeholder="शीर्षक, लेखक या ff.x.y से खोजें…" class="w-full min-h-[48px] px-4 border-3 border-black bg-white text-base font-medium" />
+      <div class="flex gap-2 overflow-x-auto pb-1 -mx-1 px-1" role="group" aria-label="थीम">
+        <button type="button" data-theme="ALL" aria-pressed="true" class="theme-pill ff-btn ff-btn-sm ff-btn-ghost bg-[var(--ff-yellow)]">सभी</button>
+        <button type="button" data-theme="Società &amp; Mente" aria-pressed="false" class="theme-pill ff-btn ff-btn-sm ff-btn-ghost bg-white">समाज और मन</button>
+        <button type="button" data-theme="Scienza &amp; Tecnologia" aria-pressed="false" class="theme-pill ff-btn ff-btn-sm ff-btn-ghost bg-white">विज्ञान और तकनीक</button>
+        <button type="button" data-theme="Natura &amp; Cibo" aria-pressed="false" class="theme-pill ff-btn ff-btn-sm ff-btn-ghost bg-white">प्रकृति और भोजन</button>
       </div>
     </section>
 
@@ -1022,7 +1031,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://www.amazon.it/dp/8842832693?tag=micmeramazon-21" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://www.amazon.it/dp/8842832693?tag=micmeramazon-21" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Scienza &amp; Tecnologia" data-search="the universe in a nutshell l&#39;universo in un guscio di noce stephen hawking विज्ञान और तकनीक ff.157.1">
@@ -1042,7 +1051,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/4iAcRI1" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/4iAcRI1" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Natura &amp; Cibo" data-search="food for life food for life tim spector प्रकृति और भोजन ff.155.1 ff.155.3">
@@ -1069,7 +1078,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/3UfyCmx" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/3UfyCmx" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Scienza &amp; Tecnologia" data-search="the hitchhiker&#39;s guide to the galaxy guida galattica per gli autostoppisti douglas adams विज्ञान और तकनीक ff.153.1">
@@ -1089,7 +1098,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/4bCYgHI" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/4bCYgHI" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Società &amp; Mente" data-search="finite and infinite games giochi finiti e infiniti james p. carse समाज और मन ff.152.3">
@@ -1109,7 +1118,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/3S3VQez" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/3S3VQez" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Società &amp; Mente" data-search="either/or aut-aut søren kierkegaard समाज और मन ff.150.4">
@@ -1129,7 +1138,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/3QdDTcp" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/3QdDTcp" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Società &amp; Mente" data-search="existentialists and mystics esistenzialisti e mistici iris murdoch समाज और मन ff.150.5">
@@ -1149,7 +1158,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/4cZj2Cg" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/4cZj2Cg" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Società &amp; Mente" data-search="the tree of knowledge l&#39;albero della conoscenza humberto maturana, francisco varela समाज और मन ff.150.5">
@@ -1169,7 +1178,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/4mJbGGp" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/4mJbGGp" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Società &amp; Mente" data-search="the burnout society la società della stanchezza byung-chul han समाज और मन ff.150.1">
@@ -1189,7 +1198,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/4dXNRsa" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/4dXNRsa" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Natura &amp; Cibo" data-search="food designing food designing martí guixé प्रकृति और भोजन ff.145.2">
@@ -1209,7 +1218,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/4cAr2Kf" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/4cAr2Kf" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Natura &amp; Cibo" data-search="glucose revolution glucose revolution jessie inchauspé प्रकृति और भोजन ff.145.3">
@@ -1229,7 +1238,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/4kHiJyw" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/4kHiJyw" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Natura &amp; Cibo" data-search="salt sugar fat grassi dolci e salati michael moss प्रकृति और भोजन ff.145.4">
@@ -1249,7 +1258,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/402meGh" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/402meGh" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Scienza &amp; Tecnologia" data-search="accelerando accelerando charles stross विज्ञान और तकनीक ff.144.2">
@@ -1269,7 +1278,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/4thTmqK" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/4thTmqK" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Natura &amp; Cibo" data-search="the ministry for the future il ministero per il futuro kim stanley robinson प्रकृति और भोजन ff.143.3">
@@ -1289,7 +1298,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/3LE4InR" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/3LE4InR" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Società &amp; Mente" data-search="factfulness factfulness hans rosling समाज और मन ff.142.1">
@@ -1309,7 +1318,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/3YKDgP8" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/3YKDgP8" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Società &amp; Mente" data-search="four thousand weeks four thousand weeks (come fare per avere più tempo) oliver burkeman समाज और मन ff.79.1 ff.141.3">
@@ -1336,7 +1345,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/3uFBCvr" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/3uFBCvr" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Società &amp; Mente" data-search="the lion tracker&#39;s guide to life the lion tracker&#39;s guide to life boyd varty समाज और मन ff.141.2">
@@ -1356,7 +1365,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/4s3luNB" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/4s3luNB" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Società &amp; Mente" data-search="how to do nothing: resisting the attention economy come non fare niente. resistere all’economia dell’attenzione jenny odell समाज और मन ff.140.1">
@@ -1376,7 +1385,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/4oE3TZG" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/4oE3TZG" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Natura &amp; Cibo" data-search="good nature: the new science of how nature improves our health la natura che cura kathy willis प्रकृति और भोजन ff.138.2">
@@ -1396,7 +1405,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/4ouHFKs" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/4ouHFKs" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Società &amp; Mente" data-search="dealing with feeling: harness your emotions to create the life you want dealing with feeling: harness your emotions to create the life you want marc brackett समाज और मन ff.134.2">
@@ -1416,7 +1425,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/4o4L7ej" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/4o4L7ej" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Società &amp; Mente" data-search="die with zero die with zero bill perkins समाज और मन ff.131.4">
@@ -1436,7 +1445,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://www.amazon.it/dp/0358567092?tag=micmeramazon-21" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://www.amazon.it/dp/0358567092?tag=micmeramazon-21" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Società &amp; Mente" data-search="change your thoughts – change your life: living the wisdom of the tao la saggezza del tao wayne w. dyer समाज और मन ff.131.1 ff.108.3">
@@ -1463,7 +1472,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://www.amazon.it/dp/8867008870?tag=micmeramazon-21" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://www.amazon.it/dp/8867008870?tag=micmeramazon-21" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Società &amp; Mente" data-search="tao te ching tao te ching lao tzu समाज और मन ff.131.1">
@@ -1483,7 +1492,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/4lHE7mQ" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/4lHE7mQ" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Società &amp; Mente" data-search="time and soul time and soul jacob needleman समाज और मन ff.131.4">
@@ -1503,7 +1512,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/459DBId" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/459DBId" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Scienza &amp; Tecnologia" data-search="the two cultures le due culture c.p. snow विज्ञान और तकनीक ff.127.1">
@@ -1523,7 +1532,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/3SBldB7" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/3SBldB7" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Scienza &amp; Tecnologia" data-search="the entrepreneurial state lo stato innovatore mariana mazzucato विज्ञान और तकनीक ff.127.4">
@@ -1543,7 +1552,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/4l5Sqks" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/4l5Sqks" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Società &amp; Mente" data-search="the rise of superman the rise of superman steven kotler समाज और मन ff.122.3">
@@ -1563,7 +1572,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/3DVYHzh" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/3DVYHzh" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Società &amp; Mente" data-search="brave new world brave new world (il mondo nuovo) aldous huxley समाज और मन ff.118.1">
@@ -1583,7 +1592,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://www.amazon.it/dp/8804735821?tag=micmeramazon-21" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://www.amazon.it/dp/8804735821?tag=micmeramazon-21" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Natura &amp; Cibo" data-search="good energy good energy casey means प्रकृति और भोजन ff.113.1">
@@ -1603,7 +1612,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://www.amazon.it/dp/0008604282?tag=micmeramazon-21" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://www.amazon.it/dp/0008604282?tag=micmeramazon-21" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Natura &amp; Cibo" data-search="the mineral fix the mineral fix james dinicolantonio, siim land प्रकृति और भोजन ff.113.3">
@@ -1623,7 +1632,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/4fYC5ec" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/4fYC5ec" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Scienza &amp; Tecnologia" data-search="nexus nexus yuval noah harari विज्ञान और तकनीक ff.106.3">
@@ -1643,7 +1652,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/3YjL7Mh" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/3YjL7Mh" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Natura &amp; Cibo" data-search="we are electric we are electric sally adee प्रकृति और भोजन ff.105.1">
@@ -1663,7 +1672,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/3SVM4sy" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/3SVM4sy" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Società &amp; Mente" data-search="out of touch out of touch michelle drouin समाज और मन ff.97.2">
@@ -1683,7 +1692,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/3R5XWXN" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/3R5XWXN" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Scienza &amp; Tecnologia" data-search="read write own read write own chris dixon विज्ञान और तकनीक ff.95.3 ff.95.5">
@@ -1710,7 +1719,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/4ajzk4k" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/4ajzk4k" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Natura &amp; Cibo" data-search="i contain multitudes contengo moltitudini ed yong प्रकृति और भोजन ff.92.2">
@@ -1730,7 +1739,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/47MBGrm" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/47MBGrm" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Natura &amp; Cibo" data-search="the blue zones the blue zones dan buettner प्रकृति और भोजन ff.92.1">
@@ -1750,7 +1759,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/3V3ybtM" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/3V3ybtM" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Scienza &amp; Tecnologia" data-search="the singularity is nearer la singolarità è più vicina (the singularity is nearer) ray kurzweil विज्ञान और तकनीक ff.88.4 ff.36.3">
@@ -1777,7 +1786,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/3IHjhlF" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/3IHjhlF" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Scienza &amp; Tecnologia" data-search="the singularity is near la singolarità è vicina ray kurzweil विज्ञान और तकनीक ff.88.4">
@@ -1797,7 +1806,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/3TGxpC6" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/3TGxpC6" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Società &amp; Mente" data-search="breath: the new science of a lost art l&#39;arte di respirare (breath) james nestor समाज और मन ff.87.1">
@@ -1817,7 +1826,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/3TaqBMP" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/3TaqBMP" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Società &amp; Mente" data-search="man&#39;s search for meaning l&#39;uomo in cerca di senso viktor e. frankl समाज और मन ff.83.1">
@@ -1837,7 +1846,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/48aph1t" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/48aph1t" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Scienza &amp; Tecnologia" data-search="chip war chip war chris miller विज्ञान और तकनीक ff.82.3">
@@ -1857,7 +1866,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/46RlgNG" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/46RlgNG" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Società &amp; Mente" data-search="subtract: the untapped science of less subtract leidy klotz समाज और मन ff.79.4">
@@ -1877,7 +1886,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/47OZDi9" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/47OZDi9" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Società &amp; Mente" data-search="master of change master of change brad stulberg समाज और मन ff.78.4">
@@ -1897,7 +1906,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/3QvJI2c" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/3QvJI2c" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Natura &amp; Cibo" data-search="down to earth: politics in the new climatic regime down to earth: politics in the new climatic regime bruno latour प्रकृति और भोजन ff.76.4">
@@ -1917,7 +1926,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://www.amazon.com/Down-Earth-Politics-Climatic-Regime/dp/1509530576" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://www.amazon.com/Down-Earth-Politics-Climatic-Regime/dp/1509530576" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Scienza &amp; Tecnologia" data-search="exponential exponential azeem azhar विज्ञान और तकनीक ff.75.4">
@@ -1937,7 +1946,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/49ssUAR" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/49ssUAR" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Società &amp; Mente" data-search="peak performance peak performance brad stulberg, steve magness समाज और मन ff.68.4">
@@ -1957,7 +1966,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/3M9DBhO" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/3M9DBhO" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Società &amp; Mente" data-search="non-things: upheaval in the lifeworld le non cose. come abbiamo smesso di vivere il reale byung-chul han समाज और मन ff.64.4">
@@ -1977,7 +1986,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://www.amazon.it/dp/8806251090?tag=micmeramazon-21" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://www.amazon.it/dp/8806251090?tag=micmeramazon-21" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Società &amp; Mente" data-search="happier: can you learn to be happy? happier: can you learn to be happy? tal ben-shahar समाज और मन ff.62.3">
@@ -1997,7 +2006,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://www.amazon.it/dp/0077123247?tag=micmeramazon-21" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://www.amazon.it/dp/0077123247?tag=micmeramazon-21" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Società &amp; Mente" data-search="the pathless path the pathless path paul millerd समाज और मन ff.62.2">
@@ -2017,7 +2026,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/40LSU4A" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/40LSU4A" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Società &amp; Mente" data-search="tribe: on homecoming and belonging tribù. ritorno a casa e appartenenza sebastian junger समाज और मन ff.62.4">
@@ -2037,7 +2046,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/3npkxmo" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/3npkxmo" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Scienza &amp; Tecnologia" data-search="come saremo come saremo telmo pievani, luca de biase विज्ञान और तकनीक ff.59.2">
@@ -2057,7 +2066,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://www.amazon.it/Come-saremo-Luca-Biase/dp/8875786208?tag=micmeramazon-21" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://www.amazon.it/Come-saremo-Luca-Biase/dp/8875786208?tag=micmeramazon-21" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Natura &amp; Cibo" data-search="how bad are bananas? how bad are bananas? mike berners-lee प्रकृति और भोजन ff.58.1">
@@ -2077,7 +2086,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/40SWtqq" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/40SWtqq" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Natura &amp; Cibo" data-search="the planet remade the planet remade oliver morton प्रकृति और भोजन ff.56.4">
@@ -2097,7 +2106,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/3IXlMBb" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/3IXlMBb" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Scienza &amp; Tecnologia" data-search="technological revolutions and financial capital technological revolutions and financial capital carlota perez विज्ञान और तकनीक ff.55.2">
@@ -2117,7 +2126,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/3ZFX3XZ" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/3ZFX3XZ" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Natura &amp; Cibo" data-search="dark green religion dark green religion bron taylor प्रकृति और भोजन ff.51.2">
@@ -2137,7 +2146,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/3VOylCt" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/3VOylCt" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Natura &amp; Cibo" data-search="false alarm false alarm bjørn lomborg प्रकृति और भोजन ff.51.3">
@@ -2157,7 +2166,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/3Ib7rQ8" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/3Ib7rQ8" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Natura &amp; Cibo" data-search="the eight mountains le otto montagne paolo cognetti प्रकृति और भोजन ff.51.1">
@@ -2177,7 +2186,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/3XnTRP1" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/3XnTRP1" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Scienza &amp; Tecnologia" data-search="growth: from microorganisms to megacities growth: from microorganisms to megacities vaclav smil विज्ञान और तकनीक ff.50.3">
@@ -2197,7 +2206,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/3YU3xlX" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/3YU3xlX" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Scienza &amp; Tecnologia" data-search="the great stagnation the great stagnation tyler cowen विज्ञान और तकनीक ff.50.1">
@@ -2217,7 +2226,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/3jAJKrZ" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/3jAJKrZ" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Scienza &amp; Tecnologia" data-search="numbers don&#39;t lie i numeri non mentono vaclav smil विज्ञान और तकनीक ff.45.1">
@@ -2237,7 +2246,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/3vi7qDR" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/3vi7qDR" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Società &amp; Mente" data-search="how to break up with your phone come disintossicarti dal tuo cellulare catherine price समाज और मन ff.31.1">
@@ -2257,7 +2266,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://amzn.to/4cdnAlA" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://amzn.to/4cdnAlA" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Società &amp; Mente" data-search="the daily stoic the daily stoic ryan holiday, stephen hanselman समाज और मन ff.31.3">
@@ -2277,7 +2286,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://www.amazon.com/Daily-Stoic-Meditations-Wisdom-Perseverance/dp/0735211736" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://www.amazon.com/Daily-Stoic-Meditations-Wisdom-Perseverance/dp/0735211736" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Società &amp; Mente" data-search="nudge nudge: la spinta gentile richard h. thaler, cass r. sunstein समाज और मन ff.23.2">
@@ -2297,7 +2306,7 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://www.amazon.it/dp/8807884437?tag=micmeramazon-21" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://www.amazon.it/dp/8807884437?tag=micmeramazon-21" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
         <article class="brutal-card no-round flex flex-col gap-4 h-full book-item" data-theme="Società &amp; Mente" data-search="principles for dealing with the changing world order il mutevole ordine del mondo ray dalio समाज और मन ff.14.2">
@@ -2317,19 +2326,19 @@
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="https://www.amazon.it/dp/8836000185?tag=micmeramazon-21" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">Amazon.it (एफ़िलिएट लिंक) ↗</a>
+            <a href="https://www.amazon.it/dp/8836000185?tag=micmeramazon-21" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">Amazon.it (एफ़िलिएट लिंक) ↗</a>
           </div>
         </article>
     </section>
     <p id="empty" class="hidden brutal-card no-round text-center font-mono font-bold">आपकी खोज से कोई किताब नहीं मिली।</p>
 
-    <section class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">हर ~10 दिन में नई किताबें और विचार</h2>
         <p class="text-sm text-black/80 mt-1">Substack पर Futuro Fortissimo को मुफ़्त सब्सक्राइब करें (इतालवी में लिखा गया)।</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="px-5 py-3 border-3 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow whitespace-nowrap">📩 मुफ़्त सब्सक्राइब करें ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 मुफ़्त सब्सक्राइब करें ↗</a>
     </section>
   </main>
 
@@ -2355,6 +2364,7 @@
         document.querySelectorAll('.theme-pill').forEach((x) => {
           x.classList.toggle('bg-[var(--ff-yellow)]', x === b);
           x.classList.toggle('bg-white', x !== b);
+          x.setAttribute('aria-pressed', x === b ? 'true' : 'false');
         });
         apply();
       }));
@@ -2384,11 +2394,30 @@
           <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
           <li><a class="hover:underline" href="https://www.instagram.com/michele_merelli/" rel="me noopener" target="_blank">Instagram ↗</a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">मुझे एक कॉफ़ी पिलाएँ ☕ ↗</a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">मिकेले के अन्य प्रोजेक्ट ↗</a></li>
         </ul>
       </div>
     </div>
     <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
+  <nav class="ff-tabbar" aria-label="मुख्य नेविगेशन">
+    <a href="/hi/"><span class="ff-ti" aria-hidden="true">🏠</span>होम</a>
+    <a href="/hi/archive/"><span class="ff-ti" aria-hidden="true">🗂</span>संग्रह</a>
+    <a href="/hi/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>थीम</a>
+    <a href="/hi/books/" aria-current="page"><span class="ff-ti" aria-hidden="true">📚</span>किताबें</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>खोजें</button>
+  </nav>
+  <dialog id="ff-search" class="ff-search" aria-label="खोजें" data-empty="कोई परिणाम नहीं। कोई और शब्द आज़माएँ।">
+    <form role="search">
+      <label for="ff-q" class="sr-only">खोजें</label>
+      <input id="ff-q" type="search" autocomplete="off" placeholder="अंक, खंड, थीम खोजें…" aria-controls="ff-results" />
+      <button type="button" class="ff-btn ff-btn-icon" data-ff-close aria-label="बंद करें">✕</button>
+    </form>
+    <ul id="ff-results" role="listbox" aria-label="खोजें"></ul>
+    <div class="ff-s-foot"><a href="/hi/archive/" data-ff-all data-base="/hi/archive/">संग्रह में सभी परिणाम →</a><span>कहीं भी खोजने के लिए / दबाएँ</span></div>
+  </dialog>
+  <script src="/assets/ff-app.js" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

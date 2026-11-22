@@ -20,7 +20,7 @@ import {
   PERSON, PUBLISHER, DEFAULT_OG, ROBOTS_INDEX, clip,
 } from './seo_lib.mjs';
 import { THEMES } from './site_themes.mjs';
-import { navHtml, headExtras, siteFooter, subscribeCta } from './site_chrome.mjs';
+import { navHtml, headExtras, siteFooter, subscribeCta, chromeEnd, chromeHead } from './site_chrome.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = (rel) => fs.readFileSync(path.join(ROOT, rel), 'utf-8');
@@ -34,7 +34,7 @@ const fileOf = (lang, key) => ({ home: { it: 'index.html', en: 'en/index.html', 
 const pathsOf = (key) => Object.fromEntries(LANG_CODES.map((lg) => [lg, L[lg][key]]));
 
 /** <head> SEO block for a page group */
-function seoBlock(lang, key, { title, desc, ld = [], type = 'website', image } = {}) {
+function seoBlock(lang, key, { title, desc, ld = [], type = 'website', image, app = true } = {}) {
   const seo = PAGE_SEO[key][lang];
   const t = title || (typeof seo.title === 'function' ? seo.title(N) : seo.title);
   const d = desc || (typeof seo.desc === 'function' ? seo.desc(N) : seo.desc);
@@ -44,6 +44,7 @@ function seoBlock(lang, key, { title, desc, ld = [], type = 'website', image } =
   ${metaBlock({ lang, title: t, desc: d, url, image: image || DEFAULT_OG, type, robots: ROBOTS_INDEX, alts: groupAlternates(paths) })}
   ${ld.map((x) => `<script type="application/ld+json">${safeJsonLd(x)}</script>`).join('\n  ')}
   ${pwaHead()}
+  ${app ? chromeHead() : ''}
   <!-- /ff:seo -->`;
 }
 
@@ -142,10 +143,10 @@ for (const lang of LANG_CODES) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  ${seoBlock(lang, 'themes', { ld })}
+  ${seoBlock(lang, 'themes', { ld, app: false })}
   ${headExtras(lang).replace(pwaHead(), '')}
 </head>
-<body class="bg-white text-black antialiased no-round">
+<body class="bg-white text-black antialiased no-round ff-has-tabbar">
   ${navHtml(lang, 'themes', pathsOf('themes'))}
 
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
@@ -153,8 +154,8 @@ for (const lang of LANG_CODES) {
       <p class="ff-eyebrow text-black/70">Futuro Fortissimo · ${N} ${lang === 'it' ? 'numeri' : lang === 'en' ? 'issues' : 'अंक'}</p>
       <h1 class="text-2xl sm:text-3xl font-bold">${escapeHtml(ts.h1)}</h1>
       <p class="text-base text-black/80">${escapeHtml(ts.intro)}</p>
-      <nav aria-label="${escapeHtml(ts.jump)}" class="flex flex-wrap gap-2">
-        ${stats.map(({ t }) => `<a href="#${t.key}" class="px-3 py-2 min-h-[44px] inline-flex items-center border-2 border-black bg-white hover:bg-[var(--ff-yellow)] ff-button text-xs">${t.emoji} ${escapeHtml(t.name[lang])}</a>`).join('\n        ')}
+      <nav aria-label="${escapeHtml(ts.jump)}" class="flex gap-2 overflow-x-auto pb-1 -mx-1 px-1 sm:flex-wrap">
+        ${stats.map(({ t }) => `<a href="#${t.key}" class="ff-btn ff-btn-ghost ff-btn-sm shrink-0">${t.emoji} ${escapeHtml(t.name[lang])}</a>`).join('\n        ')}
       </nav>
     </header>
 
@@ -165,6 +166,7 @@ for (const lang of LANG_CODES) {
   </main>
 
   ${siteFooter(lang)}
+  ${chromeEnd(lang, 'themes')}
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>
@@ -232,8 +234,6 @@ for (const lang of LANG_CODES) {
   patchHead(rel, seoBlock(lang, 'home', { ld: homeLd(lang) }));
   let h = read(rel);
   const blk = `<main id="main" class="ff-home max-w-6xl mx-auto px-4 md:px-8 pt-6 sm:pt-8 space-y-8">\n    <!-- ff:home -->\n    ${homeStatic(lang)}\n    <!-- /ff:home -->\n    <div id="root"></div>\n    </main>`;
-  const nav = `<!-- ff:langswitch -->\n    ${navHtml(lang, 'home', pathsOf('home'))}\n    <!-- /ff:langswitch -->`;
-  h = h.replace(/<!-- ff:langswitch -->[\s\S]*?<!-- \/ff:langswitch -->/, nav);
   if (h.includes('<!-- ff:home -->')) h = h.replace(/<main id="main" class="ff-home[\s\S]*?<div id="root"><\/div>\s*<\/main>/, blk);
   else h = h.replace('<div id="root"></div>', blk);
   write(rel, h);
@@ -254,6 +254,37 @@ for (const lang of LANG_CODES) {
   const ld = [{ ...collLd('it', 'books', 'Libri citati'), description: d }, crumbs('it', 'books', 'Libri')];
   patchHead('libri/index.html', seoBlock('it', 'books', { title: t, desc: d, ld }));
 }
+
+// ── 3b. App shell on hand-made pages (top bar, tab bar, search, footer) ─────
+function applyChrome(rel, lang, active, hrefs) {
+  let h = read(rel);
+  const legacy = [
+    /\s*<!-- Language Switcher -->\s*<div style="background:#0a0a0a[\s\S]*?<\/div>/,
+    /\s*<!-- Language Switcher Bar -->/,
+    /\s*<nav class="ff-lang-bar"[\s\S]*?<\/nav>/,
+    /\s*<div class="lang-bar[\s\S]*?<\/div>/,
+    /\s*<!-- ff:langswitch -->[\s\S]*?<!-- \/ff:langswitch -->/,
+    /\s*<header class="max-w-6xl mx-auto px-4 pt-6">\s*<nav aria-label="Navigazione principale"[\s\S]*?<\/nav>\s*<\/header>/,
+  ];
+  for (const rx of legacy) h = h.replace(rx, '');
+  // links row inside the old page headers (now in the app bar)
+  h = h.replace(/(<header class="bg-white"[\s\S]*?)\s*<nav class="flex gap-4[^"]*">[\s\S]*?<\/nav>/, '$1');
+  const top = `<!-- ff:chrome -->\n  ${navHtml(lang, active, hrefs)}\n  <!-- /ff:chrome -->`;
+  if (h.includes('<!-- ff:chrome -->')) h = h.replace(/<!-- ff:chrome -->[\s\S]*?<!-- \/ff:chrome -->/, top);
+  else h = h.replace(/(<body[^>]*>)/, `$1\n  ${top}`);
+  h = h.replace(/<body([^>]*?)class="([^"]*)"/, (m, pre, cls) => (cls.includes('ff-has-tabbar') ? m : `<body${pre}class="${cls} ff-has-tabbar"`));
+  if (!/<body[^>]*class=/.test(h)) h = h.replace('<body>', '<body class="ff-has-tabbar">');
+  const end = `<!-- ff:chrome-end -->\n  ${siteFooter(lang)}\n  ${chromeEnd(lang, active)}\n  <!-- /ff:chrome-end -->`;
+  if (h.includes('<!-- ff:chrome-end -->')) h = h.replace(/<!-- ff:chrome-end -->[\s\S]*?<!-- \/ff:chrome-end -->/, end);
+  else h = h.replace(/(\s*)<\/body>/, `\n  ${end}\n</body>`);
+  write(rel, h);
+}
+for (const lang of LANG_CODES) {
+  applyChrome(fileOf(lang, 'home'), lang, 'home', pathsOf('home'));
+  applyChrome(fileOf(lang, 'connections'), lang, 'connections', pathsOf('connections'));
+  applyChrome(fileOf(lang, 'notes'), lang, 'note', pathsOf('notes'));
+}
+applyChrome('libri/index.html', 'it', 'libri', pathsOf('books'));
 
 // ── 4. robots.txt, manifest.webmanifest, 404.html ───────────────────────────
 write('robots.txt', `# Futuro Fortissimo — multilingual archive: Italian (default), English (/en/), Hindi (/hi/)
@@ -297,7 +328,7 @@ write('404.html', `<!DOCTYPE html>
   ${pwaHead()}
   ${headExtras('it').replace(pwaHead(), '')}
 </head>
-<body class="bg-white text-black antialiased no-round">
+<body class="bg-white text-black antialiased no-round ff-has-tabbar">
   ${navHtml('it', '', pathsOf('home'))}
   <main id="main" class="max-w-3xl mx-auto px-4 py-10 space-y-6">
     <section class="brutal-card accent-bar accent-red no-round space-y-3">
@@ -321,6 +352,7 @@ write('404.html', `<!DOCTYPE html>
     </section>
   </main>
   ${siteFooter('it')}
+  ${chromeEnd('it', '')}
 </body>
 </html>
 `);

@@ -54,3 +54,7 @@ Manual translations: write `### ff-N/i` blocks and import with `node scripts/i18
 | `scripts/validate_seo.py` | title/description length, one h1, canonical, reciprocal hreflang + x-default, OG, JSON-LD, img alt. |
 
 After changing classes in the generators, rebuild `/assets/ff-archive.css` (command above).
+
+## App shell (UX)
+
+`scripts/site_chrome.mjs` renders the same shell on every page (generated pages directly, hand-made/SPA pages via `applyChrome` in `build_static_pages.mjs`, between `<!-- ff:chrome -->` / `<!-- ff:chrome-end -->`): sticky top bar (brand · Home/Archive/Themes/Books · search · IT/EN/हिं · Subscribe · ☰ more), mobile bottom tab bar (Home, Archive, Themes, Books, Search), global search dialog (`/` or Ctrl/⌘+K, data from `assets/site-index-<lang>.json`), footer. Styles: `assets/ff-app.css` (hand-written: `.ff-btn` primary/accent/ghost, 44px targets, focus states). Behaviour: `assets/ff-app.js` (search, menus, reading progress, share/copy link, sticky subscribe, active TOC, service worker `sw.js` for offline reading of visited pages).

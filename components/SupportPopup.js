@@ -29,7 +29,7 @@ const SupportPopup = () => {
               <h3 className="ff-heading-xl font-heading text-black">${t('supportTitle')}</h3>
               <p className="text-black mt-2 ff-body-sm max-w-xl">${t('supportText')}</p>
             </div>
-            <button onClick=${closeSupportPopup} className="h-12 w-12 border-3 border-black bg-white brutal-shadow hover:-translate-y-1 transition-transform">✕</button>
+            <button onClick=${closeSupportPopup} aria-label=${t('close')} className="h-12 w-12 border-3 border-black bg-white brutal-shadow hover:-translate-y-1 transition-transform">✕</button>
           </div>
 
           <a
