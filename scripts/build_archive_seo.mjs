@@ -19,7 +19,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { rawData } from '../data.js';
-import { loadTranslations, localizeIssue } from './i18n_lib.mjs';
+import { loadTranslations, localizeIssue, buildRefContext } from './i18n_lib.mjs';
 import { SITE, SUBSTACK, L, S, BOOKS_S } from './i18n_strings.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -100,12 +100,13 @@ issues.sort((a, b) => {
 });
 
 const TR = { en: loadTranslations('en'), hi: loadTranslations('hi') };
+const CTX = { en: buildRefContext(rawData, TR.en), hi: buildRefContext(rawData, TR.hi) };
 // LOC[lang][slug] = { issue, status }
 const LOC = { it: {}, en: {}, hi: {} };
 for (const ch of issues) {
   LOC.it[ch.slug] = { issue: ch, status: 'full' };
   for (const lg of ['en', 'hi']) {
-    const r = localizeIssue(ch, ch._idx, TR[lg], ch.slug);
+    const r = localizeIssue(ch, ch._idx, TR[lg], ch.slug, CTX[lg]);
     LOC[lg][ch.slug] = { issue: { ...r.issue, slug: ch.slug, ffNum: ch.ffNum }, status: r.status };
   }
 }
@@ -313,7 +314,7 @@ for (const lang of LANG_CODES) {
       const validRefs = [];
       const seenRef = new Set();
       [...(sub.references || []), ...(sub.connections || [])].forEach((ref) => {
-        if (!isLinkValid(ref?.text, ref?.url) || seenRef.has(ref.url)) return;
+        if (!isLinkValid(ref?._src ?? ref?.text, ref?.url) || seenRef.has(ref.url)) return;
         seenRef.add(ref.url);
         validRefs.push(ref);
       });
@@ -332,9 +333,10 @@ for (const lang of LANG_CODES) {
             ${validRefs.map((r) => {
               const isAmzn = /amzn\.|amazon\./i.test(r.url);
               // Italian anchor text on it pages; neutral host label on en/hi (no leftover Italian)
-              const label = lang === 'it' ? r.text : (isAmzn ? 'Amazon' : hostOf(r.url));
+              const tr = lang === 'it' || r._lang === lang;
+              const label = tr ? r.text : (isAmzn ? 'Amazon' : hostOf(r.url));
               const rel = isAmzn ? 'noopener noreferrer sponsored' : 'noopener noreferrer';
-              return `<a href="${escapeHtml(r.url)}" target="_blank" rel="${rel}"${lang !== 'it' ? ` title="${escapeHtml(r.text)}" lang="it"` : ''} class="inline-flex items-center px-2.5 py-1.5 border-2 border-black ${isAmzn ? 'bg-[var(--ff-yellow)]' : 'bg-white'} text-xs font-mono font-bold hover:underline">${isAmzn ? '📚 ' : '↗ '}${escapeHtml(label)}</a>`;
+              return `<a href="${escapeHtml(r.url)}" target="_blank" rel="${rel}"${lang !== 'it' && !tr ? ` title="${escapeHtml(r._src ?? r.text)}" lang="it"` : ''} class="inline-flex items-center px-2.5 py-1.5 border-2 border-black ${isAmzn ? 'bg-[var(--ff-yellow)]' : 'bg-white'} text-xs font-mono font-bold hover:underline">${isAmzn ? '📚 ' : '↗ '}${escapeHtml(label)}</a>`;
             }).join('\n            ')}
           </div>
         </div>` : '';

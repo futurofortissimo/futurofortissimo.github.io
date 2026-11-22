@@ -542,11 +542,13 @@ issues.forEach((ch, chIdx) => {
           coverImage: meta?.coverImage || null,
           maxFfNum: ffNum,
           citations: [],
+          sourceUrls: [],
           _citeKeys: new Set(),
         });
       }
 
       const book = booksMap.get(bookId);
+      if (!book.sourceUrls.includes(rawUrl)) book.sourceUrls.push(rawUrl);
       if (meta?.isAltEdition && book.amazonUrl !== amazonUrl) {
         book.altAmazonUrl = amazonUrl;
       } else if (!meta?.isAltEdition && !book.amazonUrl) {
