@@ -32,24 +32,38 @@ jobs:
       - name: Sync Substack RSS into data.js
         run: python scripts/rss_sync_data.py --apply
 
-      - name: Rebuild Libri, per-issue SEO pages, sitemap, and Atom feed
+      - name: Translate new/changed issues to English + Hindi (only if TRANSLATE_API_KEY secret is set)
+        env:
+          TRANSLATE_API_KEY: ${{ secrets.TRANSLATE_API_KEY }}
+          TRANSLATE_API_BASE: ${{ vars.TRANSLATE_API_BASE }}
+          TRANSLATE_MODEL: ${{ vars.TRANSLATE_MODEL }}
+          TRANSLATE_MAX_ISSUES: '3'
+        run: node scripts/translate_missing.mjs
+
+      - name: Rebuild Libri, trilingual SEO pages (it/en/hi), SPA data, sitemaps, and Atom feed
         run: |
           node scripts/build_libri_data.mjs
+          node scripts/build_i18n_data.mjs
           node scripts/build_archive_seo.mjs
           node scripts/build_feed.mjs
+          node scripts/i18n_status.mjs
 
       - name: Validate syntax and generated outputs
         run: |
           node --check data.js
           node --check App.js
           node --check utils.js
-          python -c "import xml.etree.ElementTree as ET; ET.parse('sitemap.xml'); ET.parse('feed.xml'); print('XML valid')"
+          node --check data.en.js
+          node --check data.hi.js
+          python -c "import xml.etree.ElementTree as ET; [ET.parse(f) for f in ('sitemap.xml','sitemap-pages.xml','sitemap-archive.xml','feed.xml')]; print('XML valid')"
+          python scripts/validate_i18n.py
 
       - name: Open or update PR with synced issues
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if [ -z "$(git status --porcelain)" ]; then
+          # only open a PR when content changed (not just lastmod dates)
+          if [ -z "$(git status --porcelain -- data.js i18n/en.json i18n/hi.json libri/books_cited.json)" ]; then
             echo "Archive already up to date — no PR needed."
             exit 0
           fi
@@ -65,7 +79,7 @@ jobs:
               --base main \
               --head bot/rss-sync \
               --title "chore(rss-sync): aggiornamento automatico archivio da Substack" \
-              --body "Sincronizzazione automatica da \`https://fortissimo.substack.com/feed\` via \`scripts/rss_sync_data.py\`, rigenerazione pagine SEO (\`archivio/\`), \`libri/books_cited.json\`, \`sitemap.xml\` e \`feed.xml\`."
+              --body "Sincronizzazione automatica da \`https://fortissimo.substack.com/feed\` via \`scripts/rss_sync_data.py\`, rigenerazione pagine SEO trilingue (\`archivio/\`, \`en/archive/\`, \`hi/archive/\`), traduzioni \`i18n/\`, \`libri/books_cited.json\`, \`sitemap.xml\` e \`feed.xml\`."
           else
             echo "Updated existing PR #$OPEN_PR"
           fi

@@ -1,6 +1,6 @@
 import { React, html } from '../runtime.js';
 import { HighlightText, isLinkValid, slugify } from '../utils.js';
-import { t } from '../i18n.js';
+import { t, paths } from '../i18n.js';
 
 const collectSubchapterCitations = (sub) => {
   const seen = new Set();
@@ -15,7 +15,7 @@ const collectSubchapterCitations = (sub) => {
 
 const IndexChapter = ({ chapter, highlight, showPreviews = false }) => {
   const issueDomId = chapter.issueId || chapter.issueSlug || chapter.url;
-  const archiveHref = chapter.issueSlug ? `/archivio/${chapter.issueSlug}.html` : null;
+  const archiveHref = chapter.issueSlug ? `${paths.archive}${chapter.issueSlug}.html` : null;
 
   return html`<article className="chapter-card border-b border-black/15 pb-5 sm:pb-6 last:border-b-0 scroll-mt-6" id=${issueDomId}>
     <div className="flex items-start gap-2 sm:gap-3">

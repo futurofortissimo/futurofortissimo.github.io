@@ -311,4 +311,13 @@ export const t = (key) => {
   return dict[key] || translations.it[key] || key;
 };
 
+// Localized static routes (archive pages, books page) for the current language
+const PATHS = {
+  it: { home: '/', archive: '/archivio/', books: '/libri/' },
+  en: { home: '/en/', archive: '/en/archive/', books: '/en/books/' },
+  hi: { home: '/hi/', archive: '/hi/archive/', books: '/hi/books/' },
+};
+export const LANG = PATHS[lang] ? lang : 'it';
+export const paths = PATHS[LANG];
+
 export default t;

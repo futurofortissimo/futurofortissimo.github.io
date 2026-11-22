@@ -9,7 +9,7 @@ import SearchResultsModal from './components/SearchResultsModal.js';
 import BooksPopup from './components/BooksPopup.js';
 import { NavigationProvider, useNavigation } from './NavigationContext.js';
 import IndexChapter from './components/IndexChapter.js';
-import { t } from './i18n.js';
+import { t, paths } from './i18n.js';
 
 const NON_BOOK_SHORTCODES = new Set([
   '3yO5tEM',
@@ -308,13 +308,13 @@ const InnerApp = () => {
             ${t('subscribeCta')} ↗
           </a>
           <a
-            href="/libri/"
+            href=${paths.books}
             className="px-4 py-2.5 border-3 border-black bg-[var(--ff-yellow)] text-black brutal-shadow ff-button hover:-translate-y-0.5 transition-transform"
           >
             ${t('books')}
           </a>
           <a
-            href="/archivio/"
+            href=${paths.archive}
             className="px-4 py-2.5 border-3 border-black bg-white text-black brutal-shadow ff-button hover:-translate-y-0.5 transition-transform"
           >
             ${t('archiveSeo')}

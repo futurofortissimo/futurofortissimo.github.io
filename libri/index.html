@@ -9,6 +9,12 @@
   <meta name="keywords" content="futuro fortissimo, libri consigliati, bibliografia newsletter, AI, natura, società, lettura, link affiliati, Michele Merelli" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
   <link rel="canonical" href="https://futurofortissimo.github.io/libri/" />
+  <!-- ff:hreflang -->
+  <link rel="alternate" hreflang="it" href="https://futurofortissimo.github.io/libri/" />
+  <link rel="alternate" hreflang="en" href="https://futurofortissimo.github.io/en/books/" />
+  <link rel="alternate" hreflang="hi" href="https://futurofortissimo.github.io/hi/books/" />
+  <link rel="alternate" hreflang="x-default" href="https://futurofortissimo.github.io/libri/" />
+  <!-- /ff:hreflang -->
   <link rel="alternate" type="application/atom+xml" title="Futuro Fortissimo Feed" href="/feed.xml" />
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   <link rel="apple-touch-icon" href="/favicon.ico" />
@@ -151,20 +157,25 @@
       .brutal-card { border-width: 2px; box-shadow: 3px 3px 0 var(--ff-black); padding: 16px; }
     }
   </style>
+  <style id="ff-lang-switch-css">  .ff-topbar { font-family:'IBM Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:700; background:var(--ff-black); color:#fff; }
+  .ff-topbar .ff-brand { color:#fff; text-decoration:none; }
+  .ff-lang-switch { display:inline-flex; border:2px solid #fff; box-shadow:3px 3px 0 var(--ff-yellow); margin:2px 3px 3px 0; }
+  .ff-lang-switch a { display:inline-flex; align-items:center; gap:0.4em; padding:3px 10px; color:#fff; text-decoration:none; border-left:2px solid #fff; transition:background .15s,color .15s; }
+  .ff-lang-switch a:first-child { border-left:0; }
+  .ff-lang-switch a:hover, .ff-lang-switch a:focus-visible { background:#fff; color:#000; outline:none; }
+  .ff-lang-switch a[aria-current="page"] { background:var(--ff-yellow); color:#000; }
+  .ff-lang-switch .ff-ln { text-transform:none; letter-spacing:0; font-weight:600; opacity:.85; }
+  @media (max-width:640px) { .ff-lang-switch .ff-ln { display:none; } .brutal-card { border-width:2px; box-shadow:3px 3px 0 var(--ff-black); padding:16px; } }</style>
 </head>
 <body class="bg-white text-black antialiased no-round">
-  <nav class="ff-lang-bar" aria-label="Language">
+  <!-- ff:langswitch -->
+  <nav class="ff-topbar" aria-label="Lingua">
     <div class="max-w-6xl mx-auto flex items-center justify-between gap-2 px-4 py-1">
-      <a href="/" style="color:#fff;">FUTURO FORTISSIMO</a>
-      <div class="flex items-center gap-1">
-        <a href="https://futurofortissimo.github.io/libri/" aria-current="page">IT</a>
-        <span style="color:rgba(255,255,255,0.3);">/</span>
-        <a href="https://translate.google.com/translate?sl=it&tl=en&u=https://futurofortissimo.github.io/libri/" rel="noopener">EN</a>
-        <span style="color:rgba(255,255,255,0.3);">/</span>
-        <a href="https://translate.google.com/translate?sl=it&tl=hi&u=https://futurofortissimo.github.io/libri/" rel="noopener">HI</a>
-      </div>
+      <a href="/" class="ff-brand">FUTURO FORTISSIMO</a>
+      <div class="ff-lang-switch" role="group" aria-label="Lingua"><a href="/libri/" hreflang="it" lang="it" title="Italiano" aria-current="page">IT<span class="ff-ln">Italiano</span></a><a href="/en/books/" hreflang="en" lang="en" title="English">EN<span class="ff-ln">English</span></a><a href="/hi/books/" hreflang="hi" lang="hi" title="हिन्दी">हिं<span class="ff-ln">हिन्दी</span></a></div>
     </div>
   </nav>
+  <!-- /ff:langswitch -->
 
   <header class="max-w-6xl mx-auto px-4 pt-6">
     <nav aria-label="Navigazione principale" class="flex flex-wrap items-center gap-2 pb-4 border-b-3 border-black">

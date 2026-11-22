@@ -12,7 +12,7 @@
     <link rel="alternate" hreflang="it" href="https://futurofortissimo.github.io/" />
     <link rel="alternate" hreflang="en" href="https://futurofortissimo.github.io/en/" />
     <link rel="alternate" hreflang="hi" href="https://futurofortissimo.github.io/hi/" />
-    <link rel="alternate" hreflang="x-default" href="https://futurofortissimo.github.io/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://futurofortissimo.github.io/" />
     <link rel="alternate" type="application/atom+xml" title="Futuro Fortissimo Feed" href="/feed.xml" />
 
     <meta name="author" content="Michele Merelli" />
@@ -563,18 +563,33 @@
         border-bottom: 2px solid var(--ff-yellow);
       }
     </style>
+    <style id="ff-lang-switch-css">
+      .ff-topbar { font-family:'IBM Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:700; background:#0a0a0a; color:#fff; }
+      .ff-topbar .ff-brand { color:#fff; text-decoration:none; }
+      .ff-lang-switch { display:inline-flex; border:2px solid #fff; box-shadow:3px 3px 0 #f5a623; margin:2px 3px 3px 0; }
+      .ff-lang-switch a { display:inline-flex; align-items:center; gap:0.4em; padding:3px 10px; color:#fff; text-decoration:none; border-left:2px solid #fff; transition:background .15s,color .15s; }
+      .ff-lang-switch a:first-child { border-left:0; }
+      .ff-lang-switch a:hover, .ff-lang-switch a:focus-visible { background:#fff; color:#000; outline:none; }
+      .ff-lang-switch a[aria-current="page"] { background:#f5a623; color:#000; }
+      .ff-lang-switch .ff-ln { text-transform:none; letter-spacing:0; font-weight:600; opacity:.85; }
+      @media (max-width:640px) { .ff-lang-switch .ff-ln { display:none; } }
+    </style>
 </head>
   <body class="bg-white text-gray-900 antialiased selection:bg-gray-900 selection:text-white">
-    <!-- Language switcher bar -->
-    <nav class="ff-lang-bar" aria-label="Language">
-      <div class="max-w-5xl mx-auto flex items-center justify-end gap-1 px-4 py-1">
-        <a href="https://futurofortissimo.github.io/" aria-current="page" title="Italiano">IT</a>
-        <span style="color:rgba(255,255,255,0.3);user-select:none;">/</span>
-        <a href="https://translate.google.com/translate?sl=it&tl=en&u=https://futurofortissimo.github.io/" title="English" rel="noopener">EN</a>
-        <span style="color:rgba(255,255,255,0.3);user-select:none;">/</span>
-        <a href="https://translate.google.com/translate?sl=it&tl=hi&u=https://futurofortissimo.github.io/" title="Hindi" rel="noopener">HI</a>
+    <!-- ff:langswitch -->
+    <nav class="ff-topbar" aria-label="Lingua">
+      <div class="max-w-5xl mx-auto flex items-center justify-between gap-2 px-4 py-1">
+        <a href="/" class="ff-brand">FUTURO FORTISSIMO</a>
+        <div class="ff-lang-switch" role="group" aria-label="Lingua"><a href="/" hreflang="it" lang="it" title="Italiano" data-keep-state aria-current="page">IT<span class="ff-ln">Italiano</span></a><a href="/en/" hreflang="en" lang="en" title="English" data-keep-state>EN<span class="ff-ln">English</span></a><a href="/hi/" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं<span class="ff-ln">हिन्दी</span></a></div>
       </div>
     </nav>
+    <script>
+      // keep search (?q=) and #anchor when switching language
+      document.querySelectorAll('.ff-lang-switch a[data-keep-state]').forEach(function (a) {
+        a.addEventListener('click', function () { a.href = a.getAttribute('href').split(/[?#]/)[0] + location.search + location.hash; });
+      });
+    </script>
+    <!-- /ff:langswitch -->
     <div id="root"></div>
     <script type="module" src="./analytics.js"></script>
     <script type="module" src="./index.js"></script>
