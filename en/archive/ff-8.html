@@ -160,6 +160,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://substackcdn.com" crossorigin />
   <link rel="stylesheet" href="/assets/ff-archive.css" />
+  <link rel="stylesheet" href="/assets/ff-app.css" />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" /></noscript>
@@ -203,39 +204,49 @@
     gtag('config', 'G-NQ7MQR0VL8');
   </script>
 </head>
-<body class="bg-white text-black antialiased no-round">
-  
-  <nav class="ff-topbar" aria-label="Language">
-    <div class="max-w-5xl mx-auto flex items-center justify-between gap-2 px-4 py-1">
-      <a href="/en/" class="ff-brand">FUTURO FORTISSIMO</a>
-      <div class="ff-lang-switch" role="group" aria-label="Language"><a href="/archivio/ff-8.html" hreflang="it" lang="it" title="Italiano">IT<span class="ff-ln">Italiano</span></a><a href="/en/archive/ff-8.html" hreflang="en" lang="en" title="English" aria-current="page">EN<span class="ff-ln">English</span></a><a href="/hi/archive/ff-8.html" hreflang="hi" lang="hi" title="हिन्दी">हिं<span class="ff-ln">हिन्दी</span></a></div>
+<body class="bg-white text-black antialiased no-round ff-has-tabbar">
+  <div class="ff-progress" aria-hidden="true"><span></span></div>
+  <a class="ff-skip" href="#main">Skip to content</a>
+  <header class="ff-appbar">
+    <div class="ff-appbar-in">
+      <a href="/en/" class="ff-brand" aria-label="Futuro Fortissimo — Home"><img src="/assets/icons/icon-192.png" alt="" width="30" height="30" /><span>Fortissimo</span></a>
+      <nav class="ff-primary" aria-label="Main navigation">
+        <a href="/en/">Home</a>
+        <a href="/en/archive/" aria-current="page">Archive</a>
+        <a href="/en/themes.html">Themes</a>
+        <a href="/en/books/">Books</a>
+      </nav>
+      <div class="ff-actions">
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
+        <div class="ff-lang" role="group" aria-label="Language"><a href="/archivio/ff-8.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/archive/ff-8.html" hreflang="en" lang="en" title="English" data-keep-state aria-current="page">EN</a><a href="/hi/archive/ff-8.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
+        <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Subscribe</a>
+        <details class="ff-more">
+          <summary aria-label="More"><span aria-hidden="true">☰</span><span class="sr-only">More</span></summary>
+          <nav class="ff-menu" aria-label="More">
+            <a href="/book/">📖 The Book (IT)</a>
+            <a href="/en/connections.html">🔗 Connections</a>
+            <a href="/en/note.html">📝 Notes</a>
+            <hr />
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 Subscribe ↗</a>
+          </nav>
+        </details>
+      </div>
     </div>
-  </nav>
-  <header class="max-w-5xl mx-auto px-4 pt-6">
-    <nav aria-label="Main navigation" class="flex flex-wrap items-center gap-2 pb-4 border-b-3 border-black">
-      <a href="/en/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🏠 Home</a>
-      <a href="/en/archive/" aria-current="page" class="px-3 py-2 border-2 border-black ff-button bg-[var(--ff-yellow)] text-black whitespace-nowrap">🗂 Archive</a>
-      <a href="/en/books/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📚 Books</a>
-      <a href="/book/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📖 The Book (IT)</a>
-      
-      <a href="/en/themes.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🧭 Themes</a>
-      <a href="/en/connections.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🔗 Connections</a>
-      <a href="/en/note.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📝 Notes</a>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ml-auto px-3 py-2 border-2 border-black bg-[var(--ff-green)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">📩 Subscribe</a>
-    </nav>
   </header>
 
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/en/">Home</a> /</li><li><a class="underline" href="/en/archive/">Archive</a> /</li><li aria-current="page">ff.8 Fighting boredom</li></ol></nav>
-    <article class="space-y-6" aria-labelledby="issue-title">
+    <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
     <header class="brutal-card accent-bar accent-blue no-round">
-      <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-        <span class="ff-eyebrow text-black/70">Futuro Fortissimo Archive</span>
-        <a href="https://fortissimo.substack.com/p/-ff8-combattere-la-noia" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] ff-button text-xs hover:-translate-y-0.5 transition-transform">Read the Italian original on Substack ↗</a>
-      </div>
+      <p class="ff-eyebrow text-black/70 mb-3">Futuro Fortissimo Archive</p>
       <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.8 Fighting boredom</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">The business of killing time</p>
       <p class="mt-2 text-xs font-mono text-black/70">Published <time datetime="2022-01-09T13:33:54.762Z">9 January 2022</time> · Michele Merelli</p>
+      <div class="ff-btn-row mt-4">
+        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/en/archive/ff-8.html" data-done="Link copied"><span aria-hidden="true">↗</span> Share</button>
+        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/en/archive/ff-8.html" data-done="Link copied"><span aria-hidden="true">🔗</span> Copy link</button>
+        <a href="https://fortissimo.substack.com/p/-ff8-combattere-la-noia" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Read the Italian original on Substack ↗</a>
+      </div>
       <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
         <li>• Music after the war,</li>
         <li>• Drama in the &#39;50s, followed by romantic drama in the &#39;80s,</li>
@@ -243,17 +254,17 @@
         <li>• Talk shows and news, which seem to have the upper hand today (let alone with COVID).</li>
       </ul>
       <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Themes</span><a href="/en/themes.html#cultura" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🎨 Culture, books and art</a><a href="/en/themes.html#attenzione" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">📱 Attention, screens and habits</a></p>
-      <nav aria-label="Sections of this issue" class="mt-5 pt-4 border-t-2 border-black/15">
-        <div class="ff-eyebrow text-black/70 mb-2">In this issue</div>
-        <div class="flex flex-wrap gap-2">
-          <a href="#ff-8-1" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">📺  ff.8.1 What shall we watch tonight?</a>
-          <a href="#ff-8-2" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🦑  ff.8.2 Squid Game in real life?</a>
-          <a href="#ff-8-3" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">📱 ff.8.3 Small screens</a>
-          <a href="#ff-8-4" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">💰  ff.8.4 Advertising revenue</a>
-          <a href="#ff-8-5" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🎮  ff.8.5 Killing boredom (and not human beings)</a>
-          <a href="#ff-8-6" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🍷 ff.8.6 Drink and forget</a>
-          <a href="#ff-8-7" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">⌛ ff.8.7 Killing time</a>
-        </div>
+      <nav aria-label="Sections of this issue" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+        <h2 class="ff-eyebrow text-black/70 mb-2">In this issue</h2>
+        <ol>
+          <li><a href="#ff-8-1">📺  ff.8.1 What shall we watch tonight?</a></li>
+          <li><a href="#ff-8-2">🦑  ff.8.2 Squid Game in real life?</a></li>
+          <li><a href="#ff-8-3">📱 ff.8.3 Small screens</a></li>
+          <li><a href="#ff-8-4">💰  ff.8.4 Advertising revenue</a></li>
+          <li><a href="#ff-8-5">🎮  ff.8.5 Killing boredom (and not human beings)</a></li>
+          <li><a href="#ff-8-6">🍷 ff.8.6 Drink and forget</a></li>
+          <li><a href="#ff-8-7">⌛ ff.8.7 Killing time</a></li>
+        </ol>
       </nav>
     </header>
 
@@ -262,7 +273,7 @@
     <section id="ff-8-1" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">📺  ff.8.1 What shall we watch tonight?</h2>
-        <a href="https://fortissimo.substack.com/i/43943640/ff81-cosa-ci-guardiamo-stasera" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/43943640/ff81-cosa-ci-guardiamo-stasera" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.8.1 What shall we watch tonight?">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">The main form of entertainment is - historically - TV. I found an analysis of the IMDb catalogue showing the types of content offered over the last 70 years.</p>
@@ -283,10 +294,10 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (2)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://flowingdata.com/2021/10/26/television-genres-over-time/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ an analysis</a>
+            <a href="https://flowingdata.com/2021/10/26/television-genres-over-time/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ an analysis</a>
             <a href="https://twitter.com/NetflixGeeked/status/1448045572200534022?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1448045572200534022%7Ctwgr%5E%7Ctwcon%5Es1_c10&amp;ref_url=https%3A%2F%2Fwww.hdblog.it%2Fspettacolo%2Farticoli%2Fn545467%2Fsquid-game-serie-netflix-piu-vista-lancio%2F" target="_blank" rel="noopener noreferrer" title="Netflix Geeked@NetflixGeekedIt took more than 10 years for Hwang Dong-hyuk to get Squid Game made.
 
-It only took 17 days and 111M global fans to become our biggest ever series at launch (and the first to surpass 100M when it premiered)." lang="it" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ twitter.com</a>
+It only took 17 days and 111M global fans to become our biggest ever series at launch (and the first to surpass 100M when it premiered)." lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ twitter.com</a>
           </div>
         </div>
     </section>
@@ -294,7 +305,7 @@ It only took 17 days and 111M global fans to become our biggest ever series at l
     <section id="ff-8-2" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🦑  ff.8.2 Squid Game in real life?</h2>
-        <a href="https://fortissimo.substack.com/i/43943640/ff82-squid-game-in-real-life" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/43943640/ff82-squid-game-in-real-life" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.8.2 Squid Game in real life?">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">By the way, I found a guy who recreated it in real life. Oh, and in one day it got 42 million views. More than the Netflix show.</p>
@@ -307,7 +318,7 @@ It only took 17 days and 111M global fans to become our biggest ever series at l
     <section id="ff-8-3" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">📱 ff.8.3 Small screens</h2>
-        <a href="https://fortissimo.substack.com/i/43943640/ff83-schermi-piccoli" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/43943640/ff83-schermi-piccoli" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.8.3 Small screens">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">(Smart) TV may well be the most traditional and comfortable way to enjoy content, which increasingly comes from online platforms. But, but, but…</p>
@@ -324,7 +335,7 @@ It only took 17 days and 111M global fans to become our biggest ever series at l
     <section id="ff-8-4" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">💰  ff.8.4 Advertising revenue</h2>
-        <a href="https://fortissimo.substack.com/i/43943640/ff84-gli-introiti-pubblicitari" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/43943640/ff84-gli-introiti-pubblicitari" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.8.4 Advertising revenue">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Testifying to the trend towards the smartphone, mobile advertising revenue has recently overtaken TV&#39;s, going from 20.8% to 34% share in less than a lustrum. I hadn&#39;t used that word in a while (at least five years).</p>
@@ -339,7 +350,7 @@ It only took 17 days and 111M global fans to become our biggest ever series at l
     <section id="ff-8-5" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🎮  ff.8.5 Killing boredom (and not human beings)</h2>
-        <a href="https://fortissimo.substack.com/i/43943640/ff85-ammazzare-la-noia-e-non-esseri-umani" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/43943640/ff85-ammazzare-la-noia-e-non-esseri-umani" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.8.5 Killing boredom (and not human beings)">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Where do video games fit into all this?</p>
@@ -353,9 +364,9 @@ It only took 17 days and 111M global fans to become our biggest ever series at l
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (3)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://twitter.com/benedictevans/status/1461413250076139523?t=RDkq1kW5IPrzieTOEC_f7A&amp;s=19" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Benedict Evans@benedictevansPlaystation has about 5bn hours of play a month, which happens to be almost exactly the same as the top 10 series and movies on Netflix in October</a>
-            <a href="https://journals.sagepub.com/doi/abs/10.1177/1477370817717070?journalCode=euca" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ An article tracked the</a>
-            <a href="https://twitter.com/emollick/status/1459935121579065346?t=eiFBpGJB6DXykgRM2ZzrYQ&amp;s=19" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Ethan Mollick@emollickAn unexpected reason we need Grand Theft Auto 6: when a major GTA game is released, violence &amp; crime appear to actually drop, as people stay inside to play. This applies to other big violent shooters as well - maybe the annual CoD games are a better idea than reviewers think?</a>
+            <a href="https://twitter.com/benedictevans/status/1461413250076139523?t=RDkq1kW5IPrzieTOEC_f7A&amp;s=19" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Benedict Evans@benedictevansPlaystation has about 5bn hours of play a month, which happens to be almost exactly the same as the top 10 series and movies on Netflix in October</a>
+            <a href="https://journals.sagepub.com/doi/abs/10.1177/1477370817717070?journalCode=euca" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ An article tracked the</a>
+            <a href="https://twitter.com/emollick/status/1459935121579065346?t=eiFBpGJB6DXykgRM2ZzrYQ&amp;s=19" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Ethan Mollick@emollickAn unexpected reason we need Grand Theft Auto 6: when a major GTA game is released, violence &amp; crime appear to actually drop, as people stay inside to play. This applies to other big violent shooters as well - maybe the annual CoD games are a better idea than reviewers think?</a>
           </div>
         </div>
     </section>
@@ -363,7 +374,7 @@ It only took 17 days and 111M global fans to become our biggest ever series at l
     <section id="ff-8-6" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🍷 ff.8.6 Drink and forget</h2>
-        <a href="https://fortissimo.substack.com/i/43943640/ff86-bere-e-dimenticare" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/43943640/ff86-bere-e-dimenticare" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.8.6 Drink and forget">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Enough tech talk. The best way to unwind is still a pint of beer. If you&#39;re looking for a bar, here&#39;s the map below.</p>
@@ -380,7 +391,7 @@ It only took 17 days and 111M global fans to become our biggest ever series at l
     <section id="ff-8-7" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">⌛ ff.8.7 Killing time</h2>
-        <a href="https://fortissimo.substack.com/i/43943640/ff87-ammazzare-il-tempo" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/43943640/ff87-ammazzare-il-tempo" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.8.7 Killing time">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">To wrap up this digression on boredom, a thought on the need (or not) to kill time. Reading is also a weapon we have to do it, right?</p>
@@ -409,18 +420,18 @@ It only took 17 days and 111M global fans to become our biggest ever series at l
       </ul>
     </section>
 
-    <section class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Get new issues of Futuro Fortissimo</h2>
         <p class="text-sm text-black/80 mt-1">A free newsletter by Michele Merelli (Bergamo) on technology, AI, nature and society. Written in Italian, delivered by Substack.</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="px-5 py-3 border-3 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">📩 Subscribe for free ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 Subscribe for free ↗</a>
     </section>
 
-    <nav aria-label="Adjacent issues" class="flex flex-wrap items-center justify-between gap-3 pt-2">
-      <a href="/en/archive/ff-7.html" rel="prev" class="px-4 py-2.5 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-0.5 transition-transform">← 🎼 ff.7 The year that was</a>
-      <a href="/en/archive/ff-9.html" rel="next" class="px-4 py-2.5 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-0.5 transition-transform">🎼 ff.9 Automation →</a>
+    <nav aria-label="Adjacent issues" class="ff-pn">
+      <a href="/en/archive/ff-7.html" rel="prev"><span class="ff-pn-l">← Previous issue</span><span class="ff-pn-t">ff.7 The year that was</span></a>
+      <a href="/en/archive/ff-9.html" rel="next" class="ff-next"><span class="ff-pn-l">Next issue →</span><span class="ff-pn-t">ff.9 Automation</span></a>
     </nav>
   </main>
 
@@ -448,11 +459,35 @@ It only took 17 days and 111M global fans to become our biggest ever series at l
           <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
           <li><a class="hover:underline" href="https://www.instagram.com/michele_merelli/" rel="me noopener" target="_blank">Instagram ↗</a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee ☕ ↗</a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects ↗</a></li>
         </ul>
       </div>
     </div>
     <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
+  <aside class="ff-sticky-sub" aria-label="Newsletter">
+    <p>Enjoying it? Get the next issue by email.</p>
+    <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary ff-btn-sm">Subscribe</a>
+    <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="Dismiss">✕</button>
+  </aside>
+  <nav class="ff-tabbar" aria-label="Main navigation">
+    <a href="/en/"><span class="ff-ti" aria-hidden="true">🏠</span>Home</a>
+    <a href="/en/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>Archive</a>
+    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>Themes</a>
+    <a href="/en/books/"><span class="ff-ti" aria-hidden="true">📚</span>Books</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>Search</button>
+  </nav>
+  <dialog id="ff-search" class="ff-search" aria-label="Search" data-empty="No results. Try another word.">
+    <form role="search">
+      <label for="ff-q" class="sr-only">Search</label>
+      <input id="ff-q" type="search" autocomplete="off" placeholder="Search issues, sections, themes…" aria-controls="ff-results" />
+      <button type="button" class="ff-btn ff-btn-icon" data-ff-close aria-label="Close">✕</button>
+    </form>
+    <ul id="ff-results" role="listbox" aria-label="Search"></ul>
+    <div class="ff-s-foot"><a href="/en/archive/" data-ff-all data-base="/en/archive/">All results in the archive →</a><span>Press / to search anywhere</span></div>
+  </dialog>
+  <script src="/assets/ff-app.js" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

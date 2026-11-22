@@ -168,6 +168,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://substackcdn.com" crossorigin />
   <link rel="stylesheet" href="/assets/ff-archive.css" />
+  <link rel="stylesheet" href="/assets/ff-app.css" />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" /></noscript>
@@ -211,53 +212,64 @@
     gtag('config', 'G-NQ7MQR0VL8');
   </script>
 </head>
-<body class="bg-white text-black antialiased no-round">
-  
-  <nav class="ff-topbar" aria-label="Lingua">
-    <div class="max-w-5xl mx-auto flex items-center justify-between gap-2 px-4 py-1">
-      <a href="/" class="ff-brand">FUTURO FORTISSIMO</a>
-      <div class="ff-lang-switch" role="group" aria-label="Lingua"><a href="/archivio/ff-97.html" hreflang="it" lang="it" title="Italiano" aria-current="page">IT<span class="ff-ln">Italiano</span></a><a href="/en/archive/ff-97.html" hreflang="en" lang="en" title="English">EN<span class="ff-ln">English</span></a><a href="/hi/archive/ff-97.html" hreflang="hi" lang="hi" title="हिन्दी">हिं<span class="ff-ln">हिन्दी</span></a></div>
+<body class="bg-white text-black antialiased no-round ff-has-tabbar">
+  <div class="ff-progress" aria-hidden="true"><span></span></div>
+  <a class="ff-skip" href="#main">Vai al contenuto</a>
+  <header class="ff-appbar">
+    <div class="ff-appbar-in">
+      <a href="/" class="ff-brand" aria-label="Futuro Fortissimo — Home"><img src="/assets/icons/icon-192.png" alt="" width="30" height="30" /><span>Fortissimo</span></a>
+      <nav class="ff-primary" aria-label="Navigazione principale">
+        <a href="/">Home</a>
+        <a href="/archivio/" aria-current="page">Archivio</a>
+        <a href="/themes.html">Temi</a>
+        <a href="/libri/">Libri</a>
+      </nav>
+      <div class="ff-actions">
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Cerca (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Cerca</span><kbd aria-hidden="true">/</kbd></button>
+        <div class="ff-lang" role="group" aria-label="Lingua"><a href="/archivio/ff-97.html" hreflang="it" lang="it" title="Italiano" data-keep-state aria-current="page">IT</a><a href="/en/archive/ff-97.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/archive/ff-97.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
+        <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Iscriviti</a>
+        <details class="ff-more">
+          <summary aria-label="Altro"><span aria-hidden="true">☰</span><span class="sr-only">Altro</span></summary>
+          <nav class="ff-menu" aria-label="Altro">
+            <a href="/book/">📖 Il Libro</a>
+            <a href="/book/ffxy-index.html">🔢 ff.x.y</a>
+            <a href="/connections.html">🔗 Connessioni</a>
+            <a href="/note.html">📝 Note</a>
+            <hr />
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 Iscriviti ↗</a>
+          </nav>
+        </details>
+      </div>
     </div>
-  </nav>
-  <header class="max-w-5xl mx-auto px-4 pt-6">
-    <nav aria-label="Navigazione principale" class="flex flex-wrap items-center gap-2 pb-4 border-b-3 border-black">
-      <a href="/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🏠 Home</a>
-      <a href="/archivio/" aria-current="page" class="px-3 py-2 border-2 border-black ff-button bg-[var(--ff-yellow)] text-black whitespace-nowrap">🗂 Archivio</a>
-      <a href="/libri/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📚 Libri</a>
-      <a href="/book/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📖 Il Libro</a>
-      <a href="/book/ffxy-index.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🔢 ff.x.y</a>
-      <a href="/themes.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🧭 Temi</a>
-      <a href="/connections.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🔗 Connessioni</a>
-      <a href="/note.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📝 Note</a>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ml-auto px-3 py-2 border-2 border-black bg-[var(--ff-green)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">📩 Iscriviti</a>
-    </nav>
   </header>
 
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/">Home</a> /</li><li><a class="underline" href="/archivio/">Archivio</a> /</li><li aria-current="page">ff.97 Tocchiamoci di più!</li></ol></nav>
-    <article class="space-y-6" aria-labelledby="issue-title">
+    <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
     <header class="brutal-card accent-bar accent-blue no-round">
-      <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-        <span class="ff-eyebrow text-black/70">Archivio Futuro Fortissimo</span>
-        <a href="https://fortissimo.substack.com/p/ff97-tocchiamoci-di-piu" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] ff-button text-xs hover:-translate-y-0.5 transition-transform">Leggi originale su Substack ↗</a>
-      </div>
+      <p class="ff-eyebrow text-black/70 mb-3">Archivio Futuro Fortissimo</p>
       <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.97 Tocchiamoci di più!</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">Sempre più insensibili, apatici e senza contatti?</p>
       <p class="mt-2 text-xs font-mono text-black/70">Pubblicato il <time datetime="2024-06-20T08:45:03.255Z">20 giugno 2024</time> · Michele Merelli</p>
+      <div class="ff-btn-row mt-4">
+        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/archivio/ff-97.html" data-done="Link copiato"><span aria-hidden="true">↗</span> Condividi</button>
+        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/archivio/ff-97.html" data-done="Link copiato"><span aria-hidden="true">🔗</span> Copia link</button>
+        <a href="https://fortissimo.substack.com/p/ff97-tocchiamoci-di-piu" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Leggi originale su Substack ↗</a>
+      </div>
       <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
         <li>• La scienza dei benefici di un abbraccio</li>
         <li>• Massaggiatori: il lavoro del futuro?</li>
         <li>• O un robot li sostituirà?</li>
       </ul>
       <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Temi</span><a href="/themes.html#salute" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🏃 Salute, sport e corpo</a><a href="/themes.html#attenzione" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">📱 Attenzione, schermi e abitudini</a><a href="/themes.html#ai" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🤖 AI, agenti e modelli</a></p>
-      <nav aria-label="Sezioni del numero" class="mt-5 pt-4 border-t-2 border-black/15">
-        <div class="ff-eyebrow text-black/70 mb-2">In questo numero</div>
-        <div class="flex flex-wrap gap-2">
-          <a href="#ff-97-1" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🌐ff.97.1 Sempre più soli</a>
-          <a href="#ff-97-2" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🫂ff.97.2 La carestia del contatto</a>
-          <a href="#ff-97-3" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🩵ff.97.3 Caressa e carezze contro lo stress</a>
-          <a href="#ff-97-4" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🌐ff.97.4 Economia e robot del massaggio</a>
-        </div>
+      <nav aria-label="Sezioni del numero" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+        <h2 class="ff-eyebrow text-black/70 mb-2">In questo numero</h2>
+        <ol>
+          <li><a href="#ff-97-1">🌐ff.97.1 Sempre più soli</a></li>
+          <li><a href="#ff-97-2">🫂ff.97.2 La carestia del contatto</a></li>
+          <li><a href="#ff-97-3">🩵ff.97.3 Caressa e carezze contro lo stress</a></li>
+          <li><a href="#ff-97-4">🌐ff.97.4 Economia e robot del massaggio</a></li>
+        </ol>
       </nav>
     </header>
 
@@ -266,7 +278,7 @@
     <section id="ff-97-1" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🌐ff.97.1 Sempre più soli</h2>
-        <a href="https://fortissimo.substack.com/i/141573875/ff-sempre-piu-soli" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/141573875/ff-sempre-piu-soli" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.97.1 Sempre più soli">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Vuoi per il COVID, per i social o perché pensiamo solo a noi stessi, ma non ci tocchiamo più (figuriamoci quindi i figli,👵🏻ff.77.1 La “famiglia tradizionale” è passato?).</p>
@@ -287,12 +299,12 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (6)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://www.cheerfulegg.com/2023/01/22/were-in-a-crisis-of-male-friendships/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Specialmente i maschietti non hanno amici stretti.</a>
-            <a href="https://www.artandhealing.org/steve-buscemi/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Steve Buscemi è sceso in campo, per guidare la 7° edizione del Festival UnLonely Films.</a>
-            <a href="https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ report 2023: L’epidemia di Solitudine</a>
-            <a href="https://news.gallup.com/poll/473057/loneliness-subsides-pandemic-high.aspx?utm_source=chartr&amp;utm_medium=newsletter&amp;utm_campaign=chartr_20230512" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ sondaggio Gallup fa però notare che la solitudine post-COVID sta diminuendo</a>
-            <a href="https://fortissimo.substack.com/i/137533647/ff-la-famiglia-tradizionale-e-passato" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 👵🏻</a>
-            <a href="https://fortissimo.substack.com/i/137321489/ff-breve-dizionario-culturale" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 📙</a>
+            <a href="https://www.cheerfulegg.com/2023/01/22/were-in-a-crisis-of-male-friendships/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Specialmente i maschietti non hanno amici stretti.</a>
+            <a href="https://www.artandhealing.org/steve-buscemi/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Steve Buscemi è sceso in campo, per guidare la 7° edizione del Festival UnLonely Films.</a>
+            <a href="https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ report 2023: L’epidemia di Solitudine</a>
+            <a href="https://news.gallup.com/poll/473057/loneliness-subsides-pandemic-high.aspx?utm_source=chartr&amp;utm_medium=newsletter&amp;utm_campaign=chartr_20230512" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ sondaggio Gallup fa però notare che la solitudine post-COVID sta diminuendo</a>
+            <a href="https://fortissimo.substack.com/i/137533647/ff-la-famiglia-tradizionale-e-passato" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 👵🏻</a>
+            <a href="https://fortissimo.substack.com/i/137321489/ff-breve-dizionario-culturale" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 📙</a>
           </div>
         </div>
     </section>
@@ -300,7 +312,7 @@
     <section id="ff-97-2" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🫂ff.97.2 La carestia del contatto</h2>
-        <a href="https://fortissimo.substack.com/i/141573875/ff-la-carestia-del-contatto" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/141573875/ff-la-carestia-del-contatto" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.97.2 La carestia del contatto">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Proprio la “carestia d’affetti” è al centro diOut of Touchdi Michelle Drouin, professoressa di psicologia dell’Indiana University.</p>
@@ -315,8 +327,8 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (2)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://amzn.to/3R5XWXN" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-[var(--ff-yellow)] text-xs font-mono font-bold hover:underline">📚 Out of Touch</a>
-            <a href="https://fortissimo.substack.com/i/141331290/ff-piramide-di-maslow" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🔺</a>
+            <a href="https://amzn.to/3R5XWXN" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] text-xs font-mono font-bold hover:underline">📚 Out of Touch</a>
+            <a href="https://fortissimo.substack.com/i/141331290/ff-piramide-di-maslow" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🔺</a>
           </div>
         </div>
     </section>
@@ -324,7 +336,7 @@
     <section id="ff-97-3" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🩵ff.97.3 Caressa e carezze contro lo stress</h2>
-        <a href="https://fortissimo.substack.com/i/141573875/ff-caressa-e-carezze-contro-lo-stress" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/141573875/ff-caressa-e-carezze-contro-lo-stress" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.97.3 Caressa e carezze contro lo stress">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Abbracciamoci forte e vogliamoci tanto bene.Fabio Caressa</p>
@@ -341,10 +353,10 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (4)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://pubmed.ncbi.nlm.nih.gov/34752649/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ stringiamo un essere umano tutti allo stesso modo</a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/17499441/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ calo di cortisolo dopo un abbraccio</a>
-            <a href="https://www.sciencedirect.com/science/article/pii/S2666497621000655" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ va bene anche farsi massaggi da soli</a>
-            <a href="https://fortissimo.substack.com/i/141914401/ff-scappare-da-un-leone-o-una-notifica" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🦁</a>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/34752649/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ stringiamo un essere umano tutti allo stesso modo</a>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/17499441/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ calo di cortisolo dopo un abbraccio</a>
+            <a href="https://www.sciencedirect.com/science/article/pii/S2666497621000655" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ va bene anche farsi massaggi da soli</a>
+            <a href="https://fortissimo.substack.com/i/141914401/ff-scappare-da-un-leone-o-una-notifica" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🦁</a>
           </div>
         </div>
     </section>
@@ -352,7 +364,7 @@
     <section id="ff-97-4" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🌐ff.97.4 Economia e robot del massaggio</h2>
-        <a href="https://fortissimo.substack.com/i/141573875/ff-economia-e-robot-del-massaggio" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/141573875/ff-economia-e-robot-del-massaggio" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.97.4 Economia e robot del massaggio">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Carestia di contatto, epidemia di stress, isolamento sociale e invecchiamento della popolazione: tutto fa presagire che i massaggiatori avranno un futuro fortissimo.</p>
@@ -382,10 +394,10 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (4)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://www.amtamassage.org/publications/consumer-views-use-of-massage-therapy/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 10 persone intervistate dall’ATMA</a>
-            <a href="https://app.aescape.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Aescape: il robot massaggiatore</a>
-            <a href="https://www.hansonrobotics.com/sophia/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Sophia, il robot di Hanson Robotics</a>
-            <a href="https://futurofortissimo.github.io/note.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ cerca tra link di futuro fortissimo</a>
+            <a href="https://www.amtamassage.org/publications/consumer-views-use-of-massage-therapy/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 10 persone intervistate dall’ATMA</a>
+            <a href="https://app.aescape.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Aescape: il robot massaggiatore</a>
+            <a href="https://www.hansonrobotics.com/sophia/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Sophia, il robot di Hanson Robotics</a>
+            <a href="https://futurofortissimo.github.io/note.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ cerca tra link di futuro fortissimo</a>
           </div>
         </div>
     </section>
@@ -401,18 +413,18 @@
       </ul>
     </section>
 
-    <section class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Ricevi i nuovi numeri di Futuro Fortissimo</h2>
         <p class="text-sm text-black/80 mt-1">Ogni uscita su tecnologia, AI, natura e società direttamente via email su Substack.</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="px-5 py-3 border-3 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">📩 Iscriviti gratis ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 Iscriviti gratis ↗</a>
     </section>
 
-    <nav aria-label="Numeri adiacenti" class="flex flex-wrap items-center justify-between gap-3 pt-2">
-      <a href="/archivio/ff-96.html" rel="prev" class="px-4 py-2.5 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-0.5 transition-transform">← 🎼 ff.96 Nostradamus del 2024</a>
-      <a href="/archivio/ff-98.html" rel="next" class="px-4 py-2.5 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-0.5 transition-transform">🎼 ff.98 Giochi e simulazioni →</a>
+    <nav aria-label="Numeri adiacenti" class="ff-pn">
+      <a href="/archivio/ff-96.html" rel="prev"><span class="ff-pn-l">← Numero precedente</span><span class="ff-pn-t">ff.96 Nostradamus del 2024</span></a>
+      <a href="/archivio/ff-98.html" rel="next" class="ff-next"><span class="ff-pn-l">Numero successivo →</span><span class="ff-pn-t">ff.98 Giochi e simulazioni</span></a>
     </nav>
   </main>
 
@@ -440,11 +452,35 @@
           <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
           <li><a class="hover:underline" href="https://www.instagram.com/michele_merelli/" rel="me noopener" target="_blank">Instagram ↗</a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Offrimi un caffè ☕ ↗</a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Altri progetti di Michele ↗</a></li>
         </ul>
       </div>
     </div>
     <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
+  <aside class="ff-sticky-sub" aria-label="Newsletter">
+    <p>Ti piace? Ricevi il prossimo numero via email.</p>
+    <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary ff-btn-sm">Iscriviti</a>
+    <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="Chiudi invito">✕</button>
+  </aside>
+  <nav class="ff-tabbar" aria-label="Navigazione principale">
+    <a href="/"><span class="ff-ti" aria-hidden="true">🏠</span>Home</a>
+    <a href="/archivio/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>Archivio</a>
+    <a href="/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>Temi</a>
+    <a href="/libri/"><span class="ff-ti" aria-hidden="true">📚</span>Libri</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>Cerca</button>
+  </nav>
+  <dialog id="ff-search" class="ff-search" aria-label="Cerca" data-empty="Nessun risultato. Prova un’altra parola.">
+    <form role="search">
+      <label for="ff-q" class="sr-only">Cerca</label>
+      <input id="ff-q" type="search" autocomplete="off" placeholder="Cerca numeri, sezioni, temi…" aria-controls="ff-results" />
+      <button type="button" class="ff-btn ff-btn-icon" data-ff-close aria-label="Chiudi">✕</button>
+    </form>
+    <ul id="ff-results" role="listbox" aria-label="Cerca"></ul>
+    <div class="ff-s-foot"><a href="/archivio/" data-ff-all data-base="/archivio/">Tutti i risultati nell’archivio →</a><span>Premi / per cercare ovunque</span></div>
+  </dialog>
+  <script src="/assets/ff-app.js" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

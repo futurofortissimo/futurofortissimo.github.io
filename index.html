@@ -226,6 +226,7 @@
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
   <link rel="manifest" href="/manifest.webmanifest" />
   <link rel="alternate" type="application/atom+xml" title="Futuro Fortissimo Feed" href="/feed.xml" />
+  <link rel="stylesheet" href="/assets/ff-app.css" />
   <!-- /ff:seo -->
 <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NQ7MQR0VL8"></script>
@@ -554,29 +555,37 @@
       @media (max-width:640px) { .ff-lang-switch .ff-ln { display:none; } }
     </style>
 </head>
-  <body class="bg-white text-gray-900 antialiased selection:bg-gray-900 selection:text-white">
-    <!-- ff:langswitch -->
-    
-  <nav class="ff-topbar" aria-label="Lingua">
-    <div class="max-w-5xl mx-auto flex items-center justify-between gap-2 px-4 py-1">
-      <a href="/" class="ff-brand">FUTURO FORTISSIMO</a>
-      <div class="ff-lang-switch" role="group" aria-label="Lingua"><a href="/" hreflang="it" lang="it" title="Italiano" aria-current="page">IT<span class="ff-ln">Italiano</span></a><a href="/en/" hreflang="en" lang="en" title="English">EN<span class="ff-ln">English</span></a><a href="/hi/" hreflang="hi" lang="hi" title="हिन्दी">हिं<span class="ff-ln">हिन्दी</span></a></div>
+  <body class="bg-white text-gray-900 antialiased selection:bg-gray-900 selection:text-white ff-has-tabbar">
+  <!-- ff:chrome -->
+  <a class="ff-skip" href="#main">Vai al contenuto</a>
+  <header class="ff-appbar">
+    <div class="ff-appbar-in">
+      <a href="/" class="ff-brand" aria-label="Futuro Fortissimo — Home"><img src="/assets/icons/icon-192.png" alt="" width="30" height="30" /><span>Fortissimo</span></a>
+      <nav class="ff-primary" aria-label="Navigazione principale">
+        <a href="/" aria-current="page">Home</a>
+        <a href="/archivio/">Archivio</a>
+        <a href="/themes.html">Temi</a>
+        <a href="/libri/">Libri</a>
+      </nav>
+      <div class="ff-actions">
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Cerca (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Cerca</span><kbd aria-hidden="true">/</kbd></button>
+        <div class="ff-lang" role="group" aria-label="Lingua"><a href="/" hreflang="it" lang="it" title="Italiano" data-keep-state aria-current="page">IT</a><a href="/en/" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
+        
+        <details class="ff-more">
+          <summary aria-label="Altro"><span aria-hidden="true">☰</span><span class="sr-only">Altro</span></summary>
+          <nav class="ff-menu" aria-label="Altro">
+            <a href="/book/">📖 Il Libro</a>
+            <a href="/book/ffxy-index.html">🔢 ff.x.y</a>
+            <a href="/connections.html">🔗 Connessioni</a>
+            <a href="/note.html">📝 Note</a>
+            <hr />
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 Iscriviti ↗</a>
+          </nav>
+        </details>
+      </div>
     </div>
-  </nav>
-  <header class="max-w-5xl mx-auto px-4 pt-6">
-    <nav aria-label="Navigazione principale" class="flex flex-wrap items-center gap-2 pb-4 border-b-3 border-black">
-      <a href="/" aria-current="page" class="px-3 py-2 border-2 border-black ff-button bg-[var(--ff-yellow)] text-black whitespace-nowrap">🏠 Home</a>
-      <a href="/archivio/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🗂 Archivio</a>
-      <a href="/libri/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📚 Libri</a>
-      <a href="/book/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📖 Il Libro</a>
-      <a href="/book/ffxy-index.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🔢 ff.x.y</a>
-      <a href="/themes.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🧭 Temi</a>
-      <a href="/connections.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🔗 Connessioni</a>
-      <a href="/note.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📝 Note</a>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ml-auto px-3 py-2 border-2 border-black bg-[var(--ff-green)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">📩 Iscriviti</a>
-    </nav>
   </header>
-    <!-- /ff:langswitch -->
+  <!-- /ff:chrome -->
     <main id="main" class="ff-home max-w-6xl mx-auto px-4 md:px-8 pt-6 sm:pt-8 space-y-8">
     <!-- ff:home -->
     <section class="ff-hero-card brutal-card mobile-unboxed accent-bar accent-blue no-round text-center space-y-4" aria-labelledby="ff-h1" style="background:url(&quot;data:image/svg+xml;utf8,%3Csvg%20width%3D%221200%22%20height%3D%22600%22%20viewBox%3D%220%200%201200%20600%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3Cpattern%20id%3D%22g%22%20width%3D%2226%22%20height%3D%2226%22%20patternUnits%3D%22userSpaceOnUse%22%3E%3Crect%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M26%200H0V26%22%20fill%3D%22none%22%20stroke%3D%22rgba(0%2C0%2C0%2C0.05)%22%20stroke-width%3D%221%22%2F%3E%3C%2Fpattern%3E%3ClinearGradient%20id%3D%22h%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%220%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23c8e6ff%22%20stop-opacity%3D%220.7%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23ffd6ec%22%20stop-opacity%3D%220.7%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%221200%22%20height%3D%22360%22%20fill%3D%22url(%23g)%22%2F%3E%3Crect%20y%3D%22360%22%20width%3D%221200%22%20height%3D%22240%22%20fill%3D%22url(%23h)%22%2F%3E%3Ccircle%20cx%3D%22240%22%20cy%3D%22220%22%20r%3D%22110%22%20fill%3D%22%23c8e6ff%22%20fill-opacity%3D%220.35%22%2F%3E%3Ccircle%20cx%3D%22820%22%20cy%3D%22160%22%20r%3D%22140%22%20fill%3D%22%23ffd6ec%22%20fill-opacity%3D%220.3%22%2F%3E%3Ccircle%20cx%3D%22620%22%20cy%3D%22440%22%20r%3D%22170%22%20fill%3D%22%23c8e6ff%22%20fill-opacity%3D%220.25%22%2F%3E%3Ccircle%20cx%3D%221040%22%20cy%3D%22420%22%20r%3D%22120%22%20fill%3D%22%23ffd6ec%22%20fill-opacity%3D%220.2%22%2F%3E%3C%2Fsvg%3E&quot;) center/cover no-repeat">
@@ -672,5 +681,55 @@
     <script type="module" src="./analytics.js"></script>
     <script type="module" src="./index.js"></script>
   <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "24fb0c5b538b4448b1281261e5e329a0"}'></script><!-- End Cloudflare Web Analytics -->
+  <!-- ff:chrome-end -->
+  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+    <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
+      <div class="space-y-2">
+        <p class="ff-eyebrow">Futuro Fortissimo</p>
+        <p class="text-black/80">Futuro Fortissimo è la newsletter di Michele Merelli su tecnologia, AI, natura e società: sezioni brevi ff.x.y, ognuna con le sue fonti.</p>
+      </div>
+      <nav aria-label="Esplora" class="space-y-2">
+        <p class="ff-eyebrow">Esplora</p>
+        <ul class="space-y-1 font-medium">
+          <li><a class="hover:underline" href="/archivio/">Tutti i numeri</a></li>
+          <li><a class="hover:underline" href="/themes.html">Temi</a></li>
+          <li><a class="hover:underline" href="/libri/">Libri</a></li>
+          <li><a class="hover:underline" href="/connections.html">Connessioni</a></li>
+          <li><a class="hover:underline" href="/note.html">Note</a></li>
+          <li><a class="hover:underline" href="/book/">Il Libro</a></li>
+        </ul>
+      </nav>
+      <div class="space-y-2">
+        <p class="ff-eyebrow">Segui</p>
+        <ul class="space-y-1 font-medium">
+          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack ↗</a></li>
+          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
+          <li><a class="hover:underline" href="https://www.instagram.com/michele_merelli/" rel="me noopener" target="_blank">Instagram ↗</a></li>
+          <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Offrimi un caffè ☕ ↗</a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Altri progetti di Michele ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
+  </footer>
+  <nav class="ff-tabbar" aria-label="Navigazione principale">
+    <a href="/" aria-current="page"><span class="ff-ti" aria-hidden="true">🏠</span>Home</a>
+    <a href="/archivio/"><span class="ff-ti" aria-hidden="true">🗂</span>Archivio</a>
+    <a href="/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>Temi</a>
+    <a href="/libri/"><span class="ff-ti" aria-hidden="true">📚</span>Libri</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>Cerca</button>
+  </nav>
+  <dialog id="ff-search" class="ff-search" aria-label="Cerca" data-empty="Nessun risultato. Prova un’altra parola.">
+    <form role="search">
+      <label for="ff-q" class="sr-only">Cerca</label>
+      <input id="ff-q" type="search" autocomplete="off" placeholder="Cerca numeri, sezioni, temi…" aria-controls="ff-results" />
+      <button type="button" class="ff-btn ff-btn-icon" data-ff-close aria-label="Chiudi">✕</button>
+    </form>
+    <ul id="ff-results" role="listbox" aria-label="Cerca"></ul>
+    <div class="ff-s-foot"><a href="/archivio/" data-ff-all data-base="/archivio/">Tutti i risultati nell’archivio →</a><span>Premi / per cercare ovunque</span></div>
+  </dialog>
+  <script src="/assets/ff-app.js" defer></script>
+  <!-- /ff:chrome-end -->
 </body>
 </html>

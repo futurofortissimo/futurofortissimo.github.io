@@ -168,6 +168,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://substackcdn.com" crossorigin />
   <link rel="stylesheet" href="/assets/ff-archive.css" />
+  <link rel="stylesheet" href="/assets/ff-app.css" />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" /></noscript>
@@ -211,53 +212,64 @@
     gtag('config', 'G-NQ7MQR0VL8');
   </script>
 </head>
-<body class="bg-white text-black antialiased no-round">
-  
-  <nav class="ff-topbar" aria-label="Lingua">
-    <div class="max-w-5xl mx-auto flex items-center justify-between gap-2 px-4 py-1">
-      <a href="/" class="ff-brand">FUTURO FORTISSIMO</a>
-      <div class="ff-lang-switch" role="group" aria-label="Lingua"><a href="/archivio/ff-43.html" hreflang="it" lang="it" title="Italiano" aria-current="page">IT<span class="ff-ln">Italiano</span></a><a href="/en/archive/ff-43.html" hreflang="en" lang="en" title="English">EN<span class="ff-ln">English</span></a><a href="/hi/archive/ff-43.html" hreflang="hi" lang="hi" title="हिन्दी">हिं<span class="ff-ln">हिन्दी</span></a></div>
+<body class="bg-white text-black antialiased no-round ff-has-tabbar">
+  <div class="ff-progress" aria-hidden="true"><span></span></div>
+  <a class="ff-skip" href="#main">Vai al contenuto</a>
+  <header class="ff-appbar">
+    <div class="ff-appbar-in">
+      <a href="/" class="ff-brand" aria-label="Futuro Fortissimo — Home"><img src="/assets/icons/icon-192.png" alt="" width="30" height="30" /><span>Fortissimo</span></a>
+      <nav class="ff-primary" aria-label="Navigazione principale">
+        <a href="/">Home</a>
+        <a href="/archivio/" aria-current="page">Archivio</a>
+        <a href="/themes.html">Temi</a>
+        <a href="/libri/">Libri</a>
+      </nav>
+      <div class="ff-actions">
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Cerca (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Cerca</span><kbd aria-hidden="true">/</kbd></button>
+        <div class="ff-lang" role="group" aria-label="Lingua"><a href="/archivio/ff-43.html" hreflang="it" lang="it" title="Italiano" data-keep-state aria-current="page">IT</a><a href="/en/archive/ff-43.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/archive/ff-43.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
+        <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Iscriviti</a>
+        <details class="ff-more">
+          <summary aria-label="Altro"><span aria-hidden="true">☰</span><span class="sr-only">Altro</span></summary>
+          <nav class="ff-menu" aria-label="Altro">
+            <a href="/book/">📖 Il Libro</a>
+            <a href="/book/ffxy-index.html">🔢 ff.x.y</a>
+            <a href="/connections.html">🔗 Connessioni</a>
+            <a href="/note.html">📝 Note</a>
+            <hr />
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 Iscriviti ↗</a>
+          </nav>
+        </details>
+      </div>
     </div>
-  </nav>
-  <header class="max-w-5xl mx-auto px-4 pt-6">
-    <nav aria-label="Navigazione principale" class="flex flex-wrap items-center gap-2 pb-4 border-b-3 border-black">
-      <a href="/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🏠 Home</a>
-      <a href="/archivio/" aria-current="page" class="px-3 py-2 border-2 border-black ff-button bg-[var(--ff-yellow)] text-black whitespace-nowrap">🗂 Archivio</a>
-      <a href="/libri/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📚 Libri</a>
-      <a href="/book/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📖 Il Libro</a>
-      <a href="/book/ffxy-index.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🔢 ff.x.y</a>
-      <a href="/themes.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🧭 Temi</a>
-      <a href="/connections.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🔗 Connessioni</a>
-      <a href="/note.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📝 Note</a>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ml-auto px-3 py-2 border-2 border-black bg-[var(--ff-green)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">📩 Iscriviti</a>
-    </nav>
   </header>
 
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/">Home</a> /</li><li><a class="underline" href="/archivio/">Archivio</a> /</li><li aria-current="page">ff.43 Settimana bianca e Natale</li></ol></nav>
-    <article class="space-y-6" aria-labelledby="issue-title">
+    <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
     <header class="brutal-card accent-bar accent-blue no-round">
-      <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-        <span class="ff-eyebrow text-black/70">Archivio Futuro Fortissimo</span>
-        <a href="https://fortissimo.substack.com/p/ff43-settimana-bianca-e-natale" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] ff-button text-xs hover:-translate-y-0.5 transition-transform">Leggi originale su Substack ↗</a>
-      </div>
+      <p class="ff-eyebrow text-black/70 mb-3">Archivio Futuro Fortissimo</p>
       <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.43 Settimana bianca e Natale</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">Settimane bianche, fidanzati trasformati in candele e la magia del Natale</p>
       <p class="mt-2 text-xs font-mono text-black/70">Pubblicato il <time datetime="2022-12-23T09:00:46.032Z">23 dicembre 2022</time> · Michele Merelli</p>
+      <div class="ff-btn-row mt-4">
+        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/archivio/ff-43.html" data-done="Link copiato"><span aria-hidden="true">↗</span> Condividi</button>
+        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/archivio/ff-43.html" data-done="Link copiato"><span aria-hidden="true">🔗</span> Copia link</button>
+        <a href="https://fortissimo.substack.com/p/ff43-settimana-bianca-e-natale" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Leggi originale su Substack ↗</a>
+      </div>
       <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
         <li>• Lo sci è passato di moda?</li>
         <li>• Regalarsi una candela per infiammarsi a vicenda i capelli</li>
         <li>• I migliori spot natalizi di quest’anno</li>
       </ul>
       <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Temi</span><a href="/themes.html#ai" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🤖 AI, agenti e modelli</a><a href="/themes.html#cultura" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🎨 Cultura, libri e arte</a><a href="/themes.html#clima" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🌍 Natura, clima ed energia</a></p>
-      <nav aria-label="Sezioni del numero" class="mt-5 pt-4 border-t-2 border-black/15">
-        <div class="ff-eyebrow text-black/70 mb-2">In questo numero</div>
-        <div class="flex flex-wrap gap-2">
-          <a href="#ff-43-1" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">⛷️ ff.43.1 Lo sci sta sparendo con la neve?</a>
-          <a href="#ff-43-2" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">❄️ ff.43.2 Neve, la neve!</a>
-          <a href="#ff-43-3" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🎁 ff.43.3 Idee regalo artistiche all’ultimo</a>
-          <a href="#ff-43-4" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🖥️ ff.43.4 I migliori spot natalizi di quest’anno</a>
-        </div>
+      <nav aria-label="Sezioni del numero" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+        <h2 class="ff-eyebrow text-black/70 mb-2">In questo numero</h2>
+        <ol>
+          <li><a href="#ff-43-1">⛷️ ff.43.1 Lo sci sta sparendo con la neve?</a></li>
+          <li><a href="#ff-43-2">❄️ ff.43.2 Neve, la neve!</a></li>
+          <li><a href="#ff-43-3">🎁 ff.43.3 Idee regalo artistiche all’ultimo</a></li>
+          <li><a href="#ff-43-4">🖥️ ff.43.4 I migliori spot natalizi di quest’anno</a></li>
+        </ol>
       </nav>
     </header>
 
@@ -266,7 +278,7 @@
     <section id="ff-43-1" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">⛷️ ff.43.1 Lo sci sta sparendo con la neve?</h2>
-        <a href="https://fortissimo.substack.com/i/92210994/ff-lo-sci-sta-sparendo-con-la-neve" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/92210994/ff-lo-sci-sta-sparendo-con-la-neve" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.43.1 Lo sci sta sparendo con la neve?">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Sono cresciuto circondato da sciatori, nel Nord d&#39;Italia. Per me inverno e Natale significano gare, sci ai piedi e odore di sciolina.</p>
@@ -296,7 +308,7 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (1)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://adamtooze.substack.com/p/chartbook-180-do-you-ski-the-political" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ si parla di neve e sci</a>
+            <a href="https://adamtooze.substack.com/p/chartbook-180-do-you-ski-the-political" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ si parla di neve e sci</a>
           </div>
         </div>
     </section>
@@ -304,7 +316,7 @@
     <section id="ff-43-2" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">❄️ ff.43.2 Neve, la neve!</h2>
-        <a href="https://fortissimo.substack.com/i/92210994/ff-neve-la-neve" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/92210994/ff-neve-la-neve" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.43.2 Neve, la neve!">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Si scia solo se c’è neve, ovviamente. Eccola nelle opere d’arte, The Cultural Tutor su Twitter ha proprio un thread per tutto.</p>
@@ -315,7 +327,7 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (1)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://twitter.com/culturaltutor/status/1605612578255798272?t=eCrvdHq1dT060XIF2pb3yw&amp;s=33" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ The Cultural Tutor@culturaltutorToday is the winter solstice - the first day of the season. So here is a thread of the most beautiful paintings of winter:
+            <a href="https://twitter.com/culturaltutor/status/1605612578255798272?t=eCrvdHq1dT060XIF2pb3yw&amp;s=33" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ The Cultural Tutor@culturaltutorToday is the winter solstice - the first day of the season. So here is a thread of the most beautiful paintings of winter:
 
 The Hunters in the Snow by Pieter Bruegel the Elder (1565)</a>
           </div>
@@ -325,7 +337,7 @@ The Hunters in the Snow by Pieter Bruegel the Elder (1565)</a>
     <section id="ff-43-3" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🎁 ff.43.3 Idee regalo artistiche all’ultimo</h2>
-        <a href="https://fortissimo.substack.com/i/92210994/ff-idee-regalo-artistiche-allultimo" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/92210994/ff-idee-regalo-artistiche-allultimo" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.43.3 Idee regalo artistiche all’ultimo">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Vediamo ora qualche regalo artistico e di design dell’ultimo minuto.</p>
@@ -352,10 +364,10 @@ The Hunters in the Snow by Pieter Bruegel the Elder (1565)</a>
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (4)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://it.wikipedia.org/wiki/David_Hockney" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ David Hockney</a>
-            <a href="https://www.lafeltrinelli.it/david-hockney-my-window-ediz-libro-vari/e/9783836593922?lgw_code=50948-B9783836593922&amp;awaid=9507&amp;gclid=CjwKCAiAnZCdBhBmEiwA8nDQxYRj3MdonGwVNPOOZWYXIGgDDkYev_Wc7aE58Zu5zKGaacTXmSifxxoCeP4QAvD_BwE&amp;awc=9507_1671743002_4fa8b38c121393079e83342333ef94d0" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ My Window</a>
-            <a href="https://janiekorn.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ crea candele personalizzate dei vostri cari</a>
-            <a href="https://www.canopyandstars.co.uk/wild-cards/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Wild Cards di Canopy and Stars</a>
+            <a href="https://it.wikipedia.org/wiki/David_Hockney" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ David Hockney</a>
+            <a href="https://www.lafeltrinelli.it/david-hockney-my-window-ediz-libro-vari/e/9783836593922?lgw_code=50948-B9783836593922&amp;awaid=9507&amp;gclid=CjwKCAiAnZCdBhBmEiwA8nDQxYRj3MdonGwVNPOOZWYXIGgDDkYev_Wc7aE58Zu5zKGaacTXmSifxxoCeP4QAvD_BwE&amp;awc=9507_1671743002_4fa8b38c121393079e83342333ef94d0" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ My Window</a>
+            <a href="https://janiekorn.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ crea candele personalizzate dei vostri cari</a>
+            <a href="https://www.canopyandstars.co.uk/wild-cards/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Wild Cards di Canopy and Stars</a>
           </div>
         </div>
     </section>
@@ -363,7 +375,7 @@ The Hunters in the Snow by Pieter Bruegel the Elder (1565)</a>
     <section id="ff-43-4" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🖥️ ff.43.4 I migliori spot natalizi di quest’anno</h2>
-        <a href="https://fortissimo.substack.com/i/92210994/ff-i-migliori-spot-natalizi-di-questanno" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/92210994/ff-i-migliori-spot-natalizi-di-questanno" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.43.4 I migliori spot natalizi di quest’anno">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">ItsNiceThat ha raccolto imigliori spot natalizidi quest’anno. Un classicone.</p>
@@ -381,7 +393,7 @@ The Hunters in the Snow by Pieter Bruegel the Elder (1565)</a>
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (1)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://www.itsnicethat.com/articles/five-christmas-adverts-resource-advertising-081222" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ migliori spot natalizi</a>
+            <a href="https://www.itsnicethat.com/articles/five-christmas-adverts-resource-advertising-081222" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ migliori spot natalizi</a>
           </div>
         </div>
     </section>
@@ -397,18 +409,18 @@ The Hunters in the Snow by Pieter Bruegel the Elder (1565)</a>
       </ul>
     </section>
 
-    <section class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Ricevi i nuovi numeri di Futuro Fortissimo</h2>
         <p class="text-sm text-black/80 mt-1">Ogni uscita su tecnologia, AI, natura e società direttamente via email su Substack.</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="px-5 py-3 border-3 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">📩 Iscriviti gratis ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 Iscriviti gratis ↗</a>
     </section>
 
-    <nav aria-label="Numeri adiacenti" class="flex flex-wrap items-center justify-between gap-3 pt-2">
-      <a href="/archivio/ff-42.html" rel="prev" class="px-4 py-2.5 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-0.5 transition-transform">← 🎼 ff.42 Made in China (pt.1)</a>
-      <a href="/archivio/ff-44.html" rel="next" class="px-4 py-2.5 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-0.5 transition-transform">🎼 ff.44 Che ansia! (pt. 1) →</a>
+    <nav aria-label="Numeri adiacenti" class="ff-pn">
+      <a href="/archivio/ff-42.html" rel="prev"><span class="ff-pn-l">← Numero precedente</span><span class="ff-pn-t">ff.42 Made in China (pt.1)</span></a>
+      <a href="/archivio/ff-44.html" rel="next" class="ff-next"><span class="ff-pn-l">Numero successivo →</span><span class="ff-pn-t">ff.44 Che ansia! (pt. 1)</span></a>
     </nav>
   </main>
 
@@ -436,11 +448,35 @@ The Hunters in the Snow by Pieter Bruegel the Elder (1565)</a>
           <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
           <li><a class="hover:underline" href="https://www.instagram.com/michele_merelli/" rel="me noopener" target="_blank">Instagram ↗</a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Offrimi un caffè ☕ ↗</a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Altri progetti di Michele ↗</a></li>
         </ul>
       </div>
     </div>
     <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
+  <aside class="ff-sticky-sub" aria-label="Newsletter">
+    <p>Ti piace? Ricevi il prossimo numero via email.</p>
+    <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary ff-btn-sm">Iscriviti</a>
+    <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="Chiudi invito">✕</button>
+  </aside>
+  <nav class="ff-tabbar" aria-label="Navigazione principale">
+    <a href="/"><span class="ff-ti" aria-hidden="true">🏠</span>Home</a>
+    <a href="/archivio/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>Archivio</a>
+    <a href="/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>Temi</a>
+    <a href="/libri/"><span class="ff-ti" aria-hidden="true">📚</span>Libri</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>Cerca</button>
+  </nav>
+  <dialog id="ff-search" class="ff-search" aria-label="Cerca" data-empty="Nessun risultato. Prova un’altra parola.">
+    <form role="search">
+      <label for="ff-q" class="sr-only">Cerca</label>
+      <input id="ff-q" type="search" autocomplete="off" placeholder="Cerca numeri, sezioni, temi…" aria-controls="ff-results" />
+      <button type="button" class="ff-btn ff-btn-icon" data-ff-close aria-label="Chiudi">✕</button>
+    </form>
+    <ul id="ff-results" role="listbox" aria-label="Cerca"></ul>
+    <div class="ff-s-foot"><a href="/archivio/" data-ff-all data-base="/archivio/">Tutti i risultati nell’archivio →</a><span>Premi / per cercare ovunque</span></div>
+  </dialog>
+  <script src="/assets/ff-app.js" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

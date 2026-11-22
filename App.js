@@ -81,7 +81,6 @@ const InnerApp = () => {
   const [isMediaOpen, setIsMediaOpen] = React.useState(false);
   const [isBooksOpen, setIsBooksOpen] = React.useState(false);
   const [isSearchOverlayOpen, setIsSearchOverlayOpen] = React.useState(false);
-  const [isFilterMenuOpen, setIsFilterMenuOpen] = React.useState(false);
 
   const { incrementInteraction, searchQuery, setSearchQuery, debouncedSearchQuery } = useNavigation();
 
@@ -272,22 +271,14 @@ const InnerApp = () => {
               onInput=${handleSearchChange}
               onKeyDown=${handleSearchKeyDown}
               placeholder=${t('searchPlaceholder')}
-              className="w-full px-4 py-3 pr-20 bg-white border-3 border-black ff-input placeholder:text-gray-400 focus:outline-none focus:ring-0"
+              className="w-full min-h-[48px] px-4 py-3 pr-14 bg-white border-3 border-black ff-input placeholder:text-gray-500"
               aria-label=${t('searchLabel')}
             />
-            <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-2">
-              <button
-                type="button"
-                className="text-black text-lg lg:hidden"
-                aria-label=${t('openFilterMenu')}
-                onClick=${() => setIsFilterMenuOpen(true)}
-              >
-                🔍
-              </button>
+            <div className="absolute right-1 top-1/2 -translate-y-1/2 flex items-center gap-2">
               ${searchQuery
                 ? html`<button
                     type="button"
-                    className="text-black text-lg"
+                    className="ff-btn ff-btn-ghost ff-btn-icon bg-white"
                     aria-label=${t('clearSearch')}
                     onClick=${handleClearSearch}
                   >
@@ -301,7 +292,7 @@ const InnerApp = () => {
             <button
               type="button"
               onClick=${handleOpenMedia}
-              className="px-4 py-3 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-1 transition-transform"
+              className="ff-btn"
             >
               ${t('media')}
             </button>
@@ -309,28 +300,11 @@ const InnerApp = () => {
               type="button"
               onClick=${handleOpenBooks}
               disabled=${bookSuggestions.length === 0}
-              className="px-4 py-3 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-1 transition-transform disabled:opacity-60 disabled:cursor-not-allowed"
+              className="ff-btn disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              🎲 ${t('books')}
+              🎲 ${t('randomBook')}
             </button>
-            <a
-              href="https://www.paypal.com/paypalme/MicheleMerelli"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label=${t('supportLabel')}
-              className="px-4 py-3 border-3 border-black bg-[var(--ff-blue)] text-black brutal-shadow ff-button hover:-translate-y-1 transition-transform"
-            >
-              ☕
-            </a>
-            <a
-              href="https://micmer-git.github.io/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label=${t('projectsLabel')}
-              className="px-4 py-3 border-3 border-black bg-[var(--ff-blue)] text-black brutal-shadow ff-button hover:-translate-y-1 transition-transform"
-            >
-              M
-            </a>
+
           </div>
         </div>
 
@@ -343,14 +317,14 @@ const InnerApp = () => {
                 <button
                   type="button"
                   onClick=${() => setIsSearchOverlayOpen(true)}
-                  className="px-3 py-1 border-2 border-black bg-[var(--ff-yellow)] ff-button text-xs"
+                  className="ff-btn ff-btn-sm ff-btn-accent"
                 >
                   ${t('quickModal')}
                 </button>
                 <button
                   type="button"
                   onClick=${handleClearSearch}
-                  className="px-3 py-1 border-2 border-black bg-white ff-button text-xs"
+                  className="ff-btn ff-btn-sm ff-btn-ghost"
                 >
                   ${t('clearSearch')}
                 </button>
@@ -387,7 +361,7 @@ const InnerApp = () => {
                 aria-label=${t('jumpToIssue')}
                 onChange=${handleJumpToIssue}
                 defaultValue=""
-                className="px-3 py-1.5 border-2 border-black bg-white ff-button text-xs"
+                className="min-h-[44px] px-3 border-2 border-black bg-white ff-button text-xs"
               >
                 <option value="">${t('jumpToIssue')}</option>
                 ${processedData.map((ch) => {
@@ -400,7 +374,8 @@ const InnerApp = () => {
               <button
                 type="button"
                 onClick=${() => setShowPreviews((v) => !v)}
-                className=${`px-3 py-1.5 border-2 border-black ff-button text-xs ${showPreviews ? 'bg-[var(--ff-yellow)]' : 'bg-white'}`}
+                aria-pressed=${showPreviews}
+                className=${`ff-btn ff-btn-sm ff-btn-ghost ${showPreviews ? 'bg-[var(--ff-yellow)]' : 'bg-white'}`}
               >
                 ${showPreviews ? t('hidePreviews') : t('showPreviews')}
               </button>
@@ -413,10 +388,9 @@ const InnerApp = () => {
               return html`<button
                 key=${range.id}
                 type="button"
+                aria-pressed=${active}
                 onClick=${() => setSelectedRange(range.id)}
-                className=${`px-3 py-1.5 border-2 border-black ff-button text-xs transition-transform ${
-                  active ? 'bg-[var(--ff-yellow)] brutal-shadow' : 'bg-white hover:-translate-y-0.5'
-                }`}
+                className=${`ff-btn ff-btn-sm ${active ? 'ff-btn-accent' : 'ff-btn-ghost bg-white'}`}
               >
                 ${range.label || t('rangeAll')}
               </button>`;
@@ -453,7 +427,7 @@ const InnerApp = () => {
             <button
               type="button"
               onClick=${() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="px-4 py-2.5 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-0.5 transition-transform"
+              className="ff-btn"
             >
               ${t('backToTop')}
             </button>
@@ -478,31 +452,6 @@ const InnerApp = () => {
         </div>`
       : null}
 
-    ${isFilterMenuOpen
-      ? html`<div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex justify-end lg:hidden" onClick=${() => setIsFilterMenuOpen(false)}>
-          <div className="w-72 max-w-full bg-white border-l-4 border-black p-4 flex flex-col gap-4" onClick=${(e) => e.stopPropagation()}>
-            <div className="flex items-center justify-between">
-              <div className="ff-eyebrow text-black/80">${t('filters')}</div>
-              <button
-                type="button"
-                aria-label=${t('closeFilters')}
-                className="text-lg font-bold"
-                onClick=${() => setIsFilterMenuOpen(false)}
-              >
-                ✕
-              </button>
-            </div>
-            <${Sidebar}
-              selectedEmoji=${selectedEmoji}
-              onSelect=${(emoji) => {
-                handleTopicSelect(emoji);
-                setIsFilterMenuOpen(false);
-              }}
-              vertical=${true}
-            />
-          </div>
-        </div>`
-      : null}
   </div>`;
 };
 

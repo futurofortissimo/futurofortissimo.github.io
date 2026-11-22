@@ -157,6 +157,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://substackcdn.com" crossorigin />
   <link rel="stylesheet" href="/assets/ff-archive.css" />
+  <link rel="stylesheet" href="/assets/ff-app.css" />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" /></noscript>
@@ -200,53 +201,63 @@
     gtag('config', 'G-NQ7MQR0VL8');
   </script>
 </head>
-<body class="bg-white text-black antialiased no-round">
-  
-  <nav class="ff-topbar" aria-label="Language">
-    <div class="max-w-5xl mx-auto flex items-center justify-between gap-2 px-4 py-1">
-      <a href="/en/" class="ff-brand">FUTURO FORTISSIMO</a>
-      <div class="ff-lang-switch" role="group" aria-label="Language"><a href="/archivio/ff-71.html" hreflang="it" lang="it" title="Italiano">IT<span class="ff-ln">Italiano</span></a><a href="/en/archive/ff-71.html" hreflang="en" lang="en" title="English" aria-current="page">EN<span class="ff-ln">English</span></a><a href="/hi/archive/ff-71.html" hreflang="hi" lang="hi" title="हिन्दी">हिं<span class="ff-ln">हिन्दी</span></a></div>
+<body class="bg-white text-black antialiased no-round ff-has-tabbar">
+  <div class="ff-progress" aria-hidden="true"><span></span></div>
+  <a class="ff-skip" href="#main">Skip to content</a>
+  <header class="ff-appbar">
+    <div class="ff-appbar-in">
+      <a href="/en/" class="ff-brand" aria-label="Futuro Fortissimo — Home"><img src="/assets/icons/icon-192.png" alt="" width="30" height="30" /><span>Fortissimo</span></a>
+      <nav class="ff-primary" aria-label="Main navigation">
+        <a href="/en/">Home</a>
+        <a href="/en/archive/" aria-current="page">Archive</a>
+        <a href="/en/themes.html">Themes</a>
+        <a href="/en/books/">Books</a>
+      </nav>
+      <div class="ff-actions">
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
+        <div class="ff-lang" role="group" aria-label="Language"><a href="/archivio/ff-71.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/archive/ff-71.html" hreflang="en" lang="en" title="English" data-keep-state aria-current="page">EN</a><a href="/hi/archive/ff-71.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
+        <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Subscribe</a>
+        <details class="ff-more">
+          <summary aria-label="More"><span aria-hidden="true">☰</span><span class="sr-only">More</span></summary>
+          <nav class="ff-menu" aria-label="More">
+            <a href="/book/">📖 The Book (IT)</a>
+            <a href="/en/connections.html">🔗 Connections</a>
+            <a href="/en/note.html">📝 Notes</a>
+            <hr />
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 Subscribe ↗</a>
+          </nav>
+        </details>
+      </div>
     </div>
-  </nav>
-  <header class="max-w-5xl mx-auto px-4 pt-6">
-    <nav aria-label="Main navigation" class="flex flex-wrap items-center gap-2 pb-4 border-b-3 border-black">
-      <a href="/en/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🏠 Home</a>
-      <a href="/en/archive/" aria-current="page" class="px-3 py-2 border-2 border-black ff-button bg-[var(--ff-yellow)] text-black whitespace-nowrap">🗂 Archive</a>
-      <a href="/en/books/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📚 Books</a>
-      <a href="/book/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📖 The Book (IT)</a>
-      
-      <a href="/en/themes.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🧭 Themes</a>
-      <a href="/en/connections.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🔗 Connections</a>
-      <a href="/en/note.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📝 Notes</a>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ml-auto px-3 py-2 border-2 border-black bg-[var(--ff-green)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">📩 Subscribe</a>
-    </nav>
   </header>
 
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/en/">Home</a> /</li><li><a class="underline" href="/en/archive/">Archive</a> /</li><li aria-current="page">ff.71 ChatGPT sees you</li></ol></nav>
-    <article class="space-y-6" aria-labelledby="issue-title">
+    <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
     <header class="brutal-card accent-bar accent-blue no-round">
-      <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-        <span class="ff-eyebrow text-black/70">Futuro Fortissimo Archive</span>
-        <a href="https://fortissimo.substack.com/p/ff71-chatgpt-ti-vede" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] ff-button text-xs hover:-translate-y-0.5 transition-transform">Read the Italian original on Substack ↗</a>
-      </div>
+      <p class="ff-eyebrow text-black/70 mb-3">Futuro Fortissimo Archive</p>
       <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.71 ChatGPT sees you</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">The first podcast in the metaverse and other fortissimo news</p>
       <p class="mt-2 text-xs font-mono text-black/70">Published <time datetime="2023-09-30T06:00:15.550Z">30 September 2023</time> · Michele Merelli</p>
+      <div class="ff-btn-row mt-4">
+        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/en/archive/ff-71.html" data-done="Link copied"><span aria-hidden="true">↗</span> Share</button>
+        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/en/archive/ff-71.html" data-done="Link copied"><span aria-hidden="true">🔗</span> Copy link</button>
+        <a href="https://fortissimo.substack.com/p/ff71-chatgpt-ti-vede" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Read the Italian original on Substack ↗</a>
+      </div>
       <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
         <li>• The first podcast in the metaverse, with Zuckerberg</li>
         <li>• Controlling your phone with your voice</li>
         <li>• ChatGPT finds Waldo</li>
       </ul>
       <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Themes</span><a href="/en/themes.html#ai" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🤖 AI, agents and models</a><a href="/en/themes.html#crypto" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🪙 Crypto and metaverse</a></p>
-      <nav aria-label="Sections of this issue" class="mt-5 pt-4 border-t-2 border-black/15">
-        <div class="ff-eyebrow text-black/70 mb-2">In this issue</div>
-        <div class="flex flex-wrap gap-2">
-          <a href="#ff-71-1" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🥽ff.71.1 The first podcast in the metaverse</a>
-          <a href="#ff-71-2" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🤖ff.71.2 ChatGPT sees (you)…</a>
-          <a href="#ff-71-3" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">📸ff.71.3 And snaps your picture!</a>
-          <a href="#ff-71-4" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🎀ff.71.4 Barbenheimer is real!</a>
-        </div>
+      <nav aria-label="Sections of this issue" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+        <h2 class="ff-eyebrow text-black/70 mb-2">In this issue</h2>
+        <ol>
+          <li><a href="#ff-71-1">🥽ff.71.1 The first podcast in the metaverse</a></li>
+          <li><a href="#ff-71-2">🤖ff.71.2 ChatGPT sees (you)…</a></li>
+          <li><a href="#ff-71-3">📸ff.71.3 And snaps your picture!</a></li>
+          <li><a href="#ff-71-4">🎀ff.71.4 Barbenheimer is real!</a></li>
+        </ol>
       </nav>
     </header>
 
@@ -255,7 +266,7 @@
     <section id="ff-71-1" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🥽ff.71.1 The first podcast in the metaverse</h2>
-        <a href="https://fortissimo.substack.com/i/137506402/ff-il-primo-podcast-nel-metaverso" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/137506402/ff-il-primo-podcast-nel-metaverso" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.71.1 The first podcast in the metaverse">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Zuckerberg is betting big on the metaverse (with losses of 13.7 billion in 2022). Recently Mark himself “went” on Lex Fridman for his third interview.</p>
@@ -273,8 +284,8 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (2)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://techcrunch.com/2023/02/03/metas-reality-labs-lost-13-7-billion-on-vr-and-ar-last-year/?guccounter=1&amp;guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&amp;guce_referrer_sig=AQAAAG6vzlr6xqA1CPoKzfRy0lyMsIUasIk8y9YG84NAPaoKDWPoNuc7pHgpwSTLgc26JNN3NvLFsWD77kO0vtoMHmnJQE9W08NRaUgvSHaJPUW_P4yTErsiWOii-W78jTjcoo3FyqBCPBXLsPYogBRiCp3T0-nMFxrcgQNHQW1Umtcb" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ with losses of 13.7 billion in 2022</a>
-            <a href="https://www.meta.com/it/en/quest/quest-3/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Quest 3, which costs €550</a>
+            <a href="https://techcrunch.com/2023/02/03/metas-reality-labs-lost-13-7-billion-on-vr-and-ar-last-year/?guccounter=1&amp;guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&amp;guce_referrer_sig=AQAAAG6vzlr6xqA1CPoKzfRy0lyMsIUasIk8y9YG84NAPaoKDWPoNuc7pHgpwSTLgc26JNN3NvLFsWD77kO0vtoMHmnJQE9W08NRaUgvSHaJPUW_P4yTErsiWOii-W78jTjcoo3FyqBCPBXLsPYogBRiCp3T0-nMFxrcgQNHQW1Umtcb" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ with losses of 13.7 billion in 2022</a>
+            <a href="https://www.meta.com/it/en/quest/quest-3/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Quest 3, which costs €550</a>
           </div>
         </div>
     </section>
@@ -282,7 +293,7 @@
     <section id="ff-71-2" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🤖ff.71.2 ChatGPT sees (you)…</h2>
-        <a href="https://fortissimo.substack.com/i/137506402/ff-chatgpt-ti-vede" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/137506402/ff-chatgpt-ti-vede" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.71.2 ChatGPT sees (you)…">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Imagination, life is your creationAqua,Barbie Girl</p>
@@ -310,7 +321,7 @@
     <section id="ff-71-3" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">📸ff.71.3 And snaps your picture!</h2>
-        <a href="https://fortissimo.substack.com/i/137506402/ff-e-ti-scatta-una-fotografia" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/137506402/ff-e-ti-scatta-una-fotografia" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.71.3 And snaps your picture!">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">hellokillian developed open-interpreter. Basically, a ChatGPT that runs scripts to control your PC (yes, this can have very unwanted effects, which is why it asks for confirmation before running each command).</p>
@@ -328,8 +339,8 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (2)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://twitter.com/hellokillian" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ hellokillian developed open-interpreter</a>
-            <a href="https://x.com/MikeBirdTech/status/1707108619529916820?s=20" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Without touching it, by voice control, it checks the battery status and takes a photo</a>
+            <a href="https://twitter.com/hellokillian" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ hellokillian developed open-interpreter</a>
+            <a href="https://x.com/MikeBirdTech/status/1707108619529916820?s=20" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Without touching it, by voice control, it checks the battery status and takes a photo</a>
           </div>
         </div>
     </section>
@@ -337,7 +348,7 @@
     <section id="ff-71-4" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🎀ff.71.4 Barbenheimer is real!</h2>
-        <a href="https://fortissimo.substack.com/i/137506402/ff-barbenheimer-e-realta" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/137506402/ff-barbenheimer-e-realta" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.71.4 Barbenheimer is real!">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Finally, the Barbenheimer trailer, the chimeric double release that broke box office records last summer. Here&#39;s the trailer made with MidJourney and other generative systems.</p>
@@ -351,11 +362,11 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (5)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://www.youtube.com/watch?v=ECiTlMeZ9h8" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Here&#39;s the trailer made with MidJourney and other generative systems</a>
-            <a href="https://www.notion.so/ff-futuro-fortissimo-f41e153b16654108991832eae044338c" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ past issues</a>
-            <a href="https://discord.gg/aecHyTZD" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ discord</a>
-            <a href="https://www.instagram.com/futuro_fortissimo_newsletter/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ instagram</a>
-            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ linkedin</a>
+            <a href="https://www.youtube.com/watch?v=ECiTlMeZ9h8" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Here&#39;s the trailer made with MidJourney and other generative systems</a>
+            <a href="https://www.notion.so/ff-futuro-fortissimo-f41e153b16654108991832eae044338c" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ past issues</a>
+            <a href="https://discord.gg/aecHyTZD" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ discord</a>
+            <a href="https://www.instagram.com/futuro_fortissimo_newsletter/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ instagram</a>
+            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ linkedin</a>
           </div>
         </div>
     </section>
@@ -371,18 +382,18 @@
       </ul>
     </section>
 
-    <section class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Get new issues of Futuro Fortissimo</h2>
         <p class="text-sm text-black/80 mt-1">A free newsletter by Michele Merelli (Bergamo) on technology, AI, nature and society. Written in Italian, delivered by Substack.</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="px-5 py-3 border-3 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">📩 Subscribe for free ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 Subscribe for free ↗</a>
     </section>
 
-    <nav aria-label="Adjacent issues" class="flex flex-wrap items-center justify-between gap-3 pt-2">
-      <a href="/en/archive/ff-70.html" rel="prev" class="px-4 py-2.5 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-0.5 transition-transform">← 🎼 ff.70 The sun: solution or death?</a>
-      <a href="/en/archive/ff-72.html" rel="next" class="px-4 py-2.5 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-0.5 transition-transform">🎼 ff.72 Shall we play UNO? →</a>
+    <nav aria-label="Adjacent issues" class="ff-pn">
+      <a href="/en/archive/ff-70.html" rel="prev"><span class="ff-pn-l">← Previous issue</span><span class="ff-pn-t">ff.70 The sun: solution or death?</span></a>
+      <a href="/en/archive/ff-72.html" rel="next" class="ff-next"><span class="ff-pn-l">Next issue →</span><span class="ff-pn-t">ff.72 Shall we play UNO?</span></a>
     </nav>
   </main>
 
@@ -410,11 +421,35 @@
           <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
           <li><a class="hover:underline" href="https://www.instagram.com/michele_merelli/" rel="me noopener" target="_blank">Instagram ↗</a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee ☕ ↗</a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects ↗</a></li>
         </ul>
       </div>
     </div>
     <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
+  <aside class="ff-sticky-sub" aria-label="Newsletter">
+    <p>Enjoying it? Get the next issue by email.</p>
+    <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary ff-btn-sm">Subscribe</a>
+    <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="Dismiss">✕</button>
+  </aside>
+  <nav class="ff-tabbar" aria-label="Main navigation">
+    <a href="/en/"><span class="ff-ti" aria-hidden="true">🏠</span>Home</a>
+    <a href="/en/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>Archive</a>
+    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>Themes</a>
+    <a href="/en/books/"><span class="ff-ti" aria-hidden="true">📚</span>Books</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>Search</button>
+  </nav>
+  <dialog id="ff-search" class="ff-search" aria-label="Search" data-empty="No results. Try another word.">
+    <form role="search">
+      <label for="ff-q" class="sr-only">Search</label>
+      <input id="ff-q" type="search" autocomplete="off" placeholder="Search issues, sections, themes…" aria-controls="ff-results" />
+      <button type="button" class="ff-btn ff-btn-icon" data-ff-close aria-label="Close">✕</button>
+    </form>
+    <ul id="ff-results" role="listbox" aria-label="Search"></ul>
+    <div class="ff-s-foot"><a href="/en/archive/" data-ff-all data-base="/en/archive/">All results in the archive →</a><span>Press / to search anywhere</span></div>
+  </dialog>
+  <script src="/assets/ff-app.js" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

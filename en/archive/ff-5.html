@@ -163,6 +163,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://substackcdn.com" crossorigin />
   <link rel="stylesheet" href="/assets/ff-archive.css" />
+  <link rel="stylesheet" href="/assets/ff-app.css" />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" /></noscript>
@@ -206,54 +207,64 @@
     gtag('config', 'G-NQ7MQR0VL8');
   </script>
 </head>
-<body class="bg-white text-black antialiased no-round">
-  
-  <nav class="ff-topbar" aria-label="Language">
-    <div class="max-w-5xl mx-auto flex items-center justify-between gap-2 px-4 py-1">
-      <a href="/en/" class="ff-brand">FUTURO FORTISSIMO</a>
-      <div class="ff-lang-switch" role="group" aria-label="Language"><a href="/archivio/ff-5.html" hreflang="it" lang="it" title="Italiano">IT<span class="ff-ln">Italiano</span></a><a href="/en/archive/ff-5.html" hreflang="en" lang="en" title="English" aria-current="page">EN<span class="ff-ln">English</span></a><a href="/hi/archive/ff-5.html" hreflang="hi" lang="hi" title="हिन्दी">हिं<span class="ff-ln">हिन्दी</span></a></div>
+<body class="bg-white text-black antialiased no-round ff-has-tabbar">
+  <div class="ff-progress" aria-hidden="true"><span></span></div>
+  <a class="ff-skip" href="#main">Skip to content</a>
+  <header class="ff-appbar">
+    <div class="ff-appbar-in">
+      <a href="/en/" class="ff-brand" aria-label="Futuro Fortissimo — Home"><img src="/assets/icons/icon-192.png" alt="" width="30" height="30" /><span>Fortissimo</span></a>
+      <nav class="ff-primary" aria-label="Main navigation">
+        <a href="/en/">Home</a>
+        <a href="/en/archive/" aria-current="page">Archive</a>
+        <a href="/en/themes.html">Themes</a>
+        <a href="/en/books/">Books</a>
+      </nav>
+      <div class="ff-actions">
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
+        <div class="ff-lang" role="group" aria-label="Language"><a href="/archivio/ff-5.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/archive/ff-5.html" hreflang="en" lang="en" title="English" data-keep-state aria-current="page">EN</a><a href="/hi/archive/ff-5.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
+        <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Subscribe</a>
+        <details class="ff-more">
+          <summary aria-label="More"><span aria-hidden="true">☰</span><span class="sr-only">More</span></summary>
+          <nav class="ff-menu" aria-label="More">
+            <a href="/book/">📖 The Book (IT)</a>
+            <a href="/en/connections.html">🔗 Connections</a>
+            <a href="/en/note.html">📝 Notes</a>
+            <hr />
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 Subscribe ↗</a>
+          </nav>
+        </details>
+      </div>
     </div>
-  </nav>
-  <header class="max-w-5xl mx-auto px-4 pt-6">
-    <nav aria-label="Main navigation" class="flex flex-wrap items-center gap-2 pb-4 border-b-3 border-black">
-      <a href="/en/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🏠 Home</a>
-      <a href="/en/archive/" aria-current="page" class="px-3 py-2 border-2 border-black ff-button bg-[var(--ff-yellow)] text-black whitespace-nowrap">🗂 Archive</a>
-      <a href="/en/books/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📚 Books</a>
-      <a href="/book/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📖 The Book (IT)</a>
-      
-      <a href="/en/themes.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🧭 Themes</a>
-      <a href="/en/connections.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🔗 Connections</a>
-      <a href="/en/note.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📝 Notes</a>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ml-auto px-3 py-2 border-2 border-black bg-[var(--ff-green)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">📩 Subscribe</a>
-    </nav>
   </header>
 
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/en/">Home</a> /</li><li><a class="underline" href="/en/archive/">Archive</a> /</li><li aria-current="page">ff.5 Electrifying!</li></ol></nav>
-    <article class="space-y-6" aria-labelledby="issue-title">
+    <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
     <header class="brutal-card accent-bar accent-blue no-round">
-      <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-        <span class="ff-eyebrow text-black/70">Futuro Fortissimo Archive</span>
-        <a href="https://fortissimo.substack.com/p/-ff5-elettrizzante" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] ff-button text-xs hover:-translate-y-0.5 transition-transform">Read the Italian original on Substack ↗</a>
-      </div>
+      <p class="ff-eyebrow text-black/70 mb-3">Futuro Fortissimo Archive</p>
       <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.5 Electrifying!</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">Tesla, VanMoof, Duracell? Who will win the sustainable-mobility race?</p>
       <p class="mt-2 text-xs font-mono text-black/70">Published <time datetime="2021-12-14T09:00:46.465Z">14 December 2021</time> · Michele Merelli</p>
+      <div class="ff-btn-row mt-4">
+        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/en/archive/ff-5.html" data-done="Link copied"><span aria-hidden="true">↗</span> Share</button>
+        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/en/archive/ff-5.html" data-done="Link copied"><span aria-hidden="true">🔗</span> Copy link</button>
+        <a href="https://fortissimo.substack.com/p/-ff5-elettrizzante" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Read the Italian original on Substack ↗</a>
+      </div>
       <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
         <li>• How Tesla led the way, a bit like Windows with PCs and Apple with smartphones.</li>
         <li>• Will micromobility do the same with cars?</li>
       </ul>
       <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Themes</span><a href="/en/themes.html#clima" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🌍 Nature, climate and energy</a><a href="/en/themes.html#salute" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🏃 Health, sport and body</a><a href="/en/themes.html#cultura" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🎨 Culture, books and art</a></p>
-      <nav aria-label="Sections of this issue" class="mt-5 pt-4 border-t-2 border-black/15">
-        <div class="ff-eyebrow text-black/70 mb-2">In this issue</div>
-        <div class="flex flex-wrap gap-2">
-          <a href="#ff-5-1" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">❓ ff.5.1 All that glitters is not green</a>
-          <a href="#ff-5-2" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🔋 ff.5.2 Duracell? No, Tesla</a>
-          <a href="#ff-5-3" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🚲 ff.5.3 Pedal assist</a>
-          <a href="#ff-5-4" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">😎ff.5.4 The Tesla of bicycles</a>
-          <a href="#ff-5-5" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🧱ff.5.5 Marchetti&#39;s wall</a>
-          <a href="#ff-5-6" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">⚰️ff.5.6 How dangerous traffic is, around the world</a>
-        </div>
+      <nav aria-label="Sections of this issue" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+        <h2 class="ff-eyebrow text-black/70 mb-2">In this issue</h2>
+        <ol>
+          <li><a href="#ff-5-1">❓ ff.5.1 All that glitters is not green</a></li>
+          <li><a href="#ff-5-2">🔋 ff.5.2 Duracell? No, Tesla</a></li>
+          <li><a href="#ff-5-3">🚲 ff.5.3 Pedal assist</a></li>
+          <li><a href="#ff-5-4">😎ff.5.4 The Tesla of bicycles</a></li>
+          <li><a href="#ff-5-5">🧱ff.5.5 Marchetti&#39;s wall</a></li>
+          <li><a href="#ff-5-6">⚰️ff.5.6 How dangerous traffic is, around the world</a></li>
+        </ol>
       </nav>
     </header>
 
@@ -262,7 +273,7 @@
     <section id="ff-5-1" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">❓ ff.5.1 All that glitters is not green</h2>
-        <a href="https://fortissimo.substack.com/i/44017566/ff51-non-e-tutto-verde-quello-che-luccica" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/44017566/ff51-non-e-tutto-verde-quello-che-luccica" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.5.1 All that glitters is not green">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">A petrol city car that pollutes less than a Tesla? A promising Dutch start-up, Lightyear One, shows that not all that glitters is gold, or green. In fact, small cars with traditional engines pollute less than a Tesla Model S over their entire life cycle.</p>
@@ -281,7 +292,7 @@
             <a href="https://t.co/vBb1jrERpf&quot;&gt;pic.twitter.com/vBb1jrERpf&lt;/a&gt;&lt;/p&gt;&amp;mdash; Sam Korus (@skorusARK) &lt;a href=&quot;https://twitter.com/skorusARK/status/1461816495718162432?ref_src=twsrc%5Etfw&quot;&gt;November" target="_blank" rel="noopener noreferrer" title="Sam Korus@skorusARKARK created an electric vehicle performance index that considers a vehicle’s range, implied drivetrain efficiency, and overall cost.
 
 1. The median EV in 2021 is in line with Tesla’s 2018 Model 3.
-2. EVs should continue to improve." lang="it" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ t.co</a>
+2. EVs should continue to improve." lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ t.co</a>
           </div>
         </div>
     </section>
@@ -289,7 +300,7 @@
     <section id="ff-5-2" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🔋 ff.5.2 Duracell? No, Tesla</h2>
-        <a href="https://fortissimo.substack.com/i/44017566/ff52-duracell-no-tesla" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/44017566/ff52-duracell-no-tesla" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.5.2 Duracell? No, Tesla">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Not just cars: with 3 GWh of capacity (25% of the total) Tesla controls a good chunk of the world&#39;s electricity storage potential. And they aim to reach 1,500 GWh (500x) by 2030.</p>
@@ -302,9 +313,9 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (3)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://www.tesla.com/ns_videos/2020-tesla-impact-report.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 25% of the total)</a>
-            <a href="https://www.morningbrew.com/emerging-tech/issues/meet-the-startups-attempting-to-make-more-room-in-space?utm_source=header_signup&amp;utm_medium=newsletter&amp;utm_campaign=etb&amp;mid=%7B%7Bmd5%28profile.email%29%7D%7D" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Last year, 17.6 GWh of electric batteries</a>
-            <a href="https://www.nature.com/articles/s41586-019-1682-5" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Roughly 200 Olympic swimming pools</a>
+            <a href="https://www.tesla.com/ns_videos/2020-tesla-impact-report.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 25% of the total)</a>
+            <a href="https://www.morningbrew.com/emerging-tech/issues/meet-the-startups-attempting-to-make-more-room-in-space?utm_source=header_signup&amp;utm_medium=newsletter&amp;utm_campaign=etb&amp;mid=%7B%7Bmd5%28profile.email%29%7D%7D" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Last year, 17.6 GWh of electric batteries</a>
+            <a href="https://www.nature.com/articles/s41586-019-1682-5" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Roughly 200 Olympic swimming pools</a>
           </div>
         </div>
     </section>
@@ -312,7 +323,7 @@
     <section id="ff-5-3" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🚲 ff.5.3 Pedal assist</h2>
-        <a href="https://fortissimo.substack.com/i/44017566/ff53-pedalata-assistita" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/44017566/ff53-pedalata-assistita" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.5.3 Pedal assist">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">During the pandemic, e-bikes outsold electric cars (500k bikes vs 250k cars in the United States).</p>
@@ -327,9 +338,9 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (3)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://www.nytimes.com/2021/11/08/business/e-bikes-urban-transit.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ outsold electric cars</a>
-            <a href="https://www2.deloitte.com/content/dam/insights/us/articles/722835_tmt-predictions-2020/DI_TMT-Prediction-2020.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ report</a>
-            <a href="https://www.sciencedirect.com/science/article/pii/S136192092030609X" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ rises from 19 to 50% if the bike is electric</a>
+            <a href="https://www.nytimes.com/2021/11/08/business/e-bikes-urban-transit.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ outsold electric cars</a>
+            <a href="https://www2.deloitte.com/content/dam/insights/us/articles/722835_tmt-predictions-2020/DI_TMT-Prediction-2020.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ report</a>
+            <a href="https://www.sciencedirect.com/science/article/pii/S136192092030609X" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ rises from 19 to 50% if the bike is electric</a>
           </div>
         </div>
     </section>
@@ -337,7 +348,7 @@
     <section id="ff-5-4" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">😎ff.5.4 The Tesla of bicycles</h2>
-        <a href="https://fortissimo.substack.com/i/44017566/ff54-la-tesla-delle-biciclette" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/44017566/ff54-la-tesla-delle-biciclette" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.5.4 The Tesla of bicycles">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">If e-bikes are the next frontier of mobility, VanMoof is the Tesla of two wheels. Below, the Model V, which will reach 50 km/h and cost €3500:</p>
@@ -349,7 +360,7 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (1)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://www.vanmoof.com/en-IT/vanmoof-v" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Model V</a>
+            <a href="https://www.vanmoof.com/en-IT/vanmoof-v" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Model V</a>
           </div>
         </div>
     </section>
@@ -357,7 +368,7 @@
     <section id="ff-5-5" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🧱ff.5.5 Marchetti&#39;s wall</h2>
-        <a href="https://fortissimo.substack.com/i/44017566/ff55-il-muro-di-marchetti" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/44017566/ff55-il-muro-di-marchetti" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.5.5 Marchetti&#39;s wall">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Have you watched Squid Game? No? If you spend at least 30 minutes a day getting to and from work, you could have watched it 15 times this year alone. Or watched 80 films. On average in the United States (but I don&#39;t think Milan is much different), commutes are actually longer: an hour (one year and two months of your life sitting in a car).</p>
@@ -367,7 +378,7 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (1)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://www.sciencedirect.com/science/article/abs/pii/0040162594900418" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ observed</a>
+            <a href="https://www.sciencedirect.com/science/article/abs/pii/0040162594900418" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ observed</a>
           </div>
         </div>
     </section>
@@ -375,7 +386,7 @@
     <section id="ff-5-6" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">⚰️ff.5.6 How dangerous traffic is, around the world</h2>
-        <a href="https://fortissimo.substack.com/i/44017566/ff56-la-pericolosita-del-traffico-nel-mondo" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/44017566/ff56-la-pericolosita-del-traffico-nel-mondo" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.5.6 How dangerous traffic is, around the world">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">And while you&#39;re stuck in traffic, keep your eyes on the road. Below, death rates broken down by world region. Apparently in Europe we drive really well (except for the guys wearing hats).</p>
@@ -409,7 +420,7 @@ Western Pacific 16.9
 Americas 15.6
 Europe 9.3
 
-World 18.2" lang="it" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ twitter.com</a>
+World 18.2" lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ twitter.com</a>
           </div>
         </div>
     </section>
@@ -425,18 +436,18 @@ World 18.2" lang="it" class="inline-flex items-center px-2.5 py-1.5 border-2 bor
       </ul>
     </section>
 
-    <section class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Get new issues of Futuro Fortissimo</h2>
         <p class="text-sm text-black/80 mt-1">A free newsletter by Michele Merelli (Bergamo) on technology, AI, nature and society. Written in Italian, delivered by Substack.</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="px-5 py-3 border-3 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">📩 Subscribe for free ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 Subscribe for free ↗</a>
     </section>
 
-    <nav aria-label="Adjacent issues" class="flex flex-wrap items-center justify-between gap-3 pt-2">
-      <a href="/en/archive/ff-4.html" rel="prev" class="px-4 py-2.5 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-0.5 transition-transform">← 🎼 ff.4 Resurrected mammoths</a>
-      <a href="/en/archive/ff-6.html" rel="next" class="px-4 py-2.5 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-0.5 transition-transform">🎼 ff.6 Dear Santa →</a>
+    <nav aria-label="Adjacent issues" class="ff-pn">
+      <a href="/en/archive/ff-4.html" rel="prev"><span class="ff-pn-l">← Previous issue</span><span class="ff-pn-t">ff.4 Resurrected mammoths</span></a>
+      <a href="/en/archive/ff-6.html" rel="next" class="ff-next"><span class="ff-pn-l">Next issue →</span><span class="ff-pn-t">ff.6 Dear Santa</span></a>
     </nav>
   </main>
 
@@ -464,11 +475,35 @@ World 18.2" lang="it" class="inline-flex items-center px-2.5 py-1.5 border-2 bor
           <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
           <li><a class="hover:underline" href="https://www.instagram.com/michele_merelli/" rel="me noopener" target="_blank">Instagram ↗</a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee ☕ ↗</a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects ↗</a></li>
         </ul>
       </div>
     </div>
     <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
+  <aside class="ff-sticky-sub" aria-label="Newsletter">
+    <p>Enjoying it? Get the next issue by email.</p>
+    <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary ff-btn-sm">Subscribe</a>
+    <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="Dismiss">✕</button>
+  </aside>
+  <nav class="ff-tabbar" aria-label="Main navigation">
+    <a href="/en/"><span class="ff-ti" aria-hidden="true">🏠</span>Home</a>
+    <a href="/en/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>Archive</a>
+    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>Themes</a>
+    <a href="/en/books/"><span class="ff-ti" aria-hidden="true">📚</span>Books</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>Search</button>
+  </nav>
+  <dialog id="ff-search" class="ff-search" aria-label="Search" data-empty="No results. Try another word.">
+    <form role="search">
+      <label for="ff-q" class="sr-only">Search</label>
+      <input id="ff-q" type="search" autocomplete="off" placeholder="Search issues, sections, themes…" aria-controls="ff-results" />
+      <button type="button" class="ff-btn ff-btn-icon" data-ff-close aria-label="Close">✕</button>
+    </form>
+    <ul id="ff-results" role="listbox" aria-label="Search"></ul>
+    <div class="ff-s-foot"><a href="/en/archive/" data-ff-all data-base="/en/archive/">All results in the archive →</a><span>Press / to search anywhere</span></div>
+  </dialog>
+  <script src="/assets/ff-app.js" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

@@ -154,6 +154,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://substackcdn.com" crossorigin />
   <link rel="stylesheet" href="/assets/ff-archive.css" />
+  <link rel="stylesheet" href="/assets/ff-app.css" />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" /></noscript>
@@ -197,54 +198,64 @@
     gtag('config', 'G-NQ7MQR0VL8');
   </script>
 </head>
-<body class="bg-white text-black antialiased no-round">
-  
-  <nav class="ff-topbar" aria-label="Language">
-    <div class="max-w-5xl mx-auto flex items-center justify-between gap-2 px-4 py-1">
-      <a href="/en/" class="ff-brand">FUTURO FORTISSIMO</a>
-      <div class="ff-lang-switch" role="group" aria-label="Language"><a href="/archivio/ff-56.html" hreflang="it" lang="it" title="Italiano">IT<span class="ff-ln">Italiano</span></a><a href="/en/archive/ff-56.html" hreflang="en" lang="en" title="English" aria-current="page">EN<span class="ff-ln">English</span></a><a href="/hi/archive/ff-56.html" hreflang="hi" lang="hi" title="हिन्दी">हिं<span class="ff-ln">हिन्दी</span></a></div>
+<body class="bg-white text-black antialiased no-round ff-has-tabbar">
+  <div class="ff-progress" aria-hidden="true"><span></span></div>
+  <a class="ff-skip" href="#main">Skip to content</a>
+  <header class="ff-appbar">
+    <div class="ff-appbar-in">
+      <a href="/en/" class="ff-brand" aria-label="Futuro Fortissimo — Home"><img src="/assets/icons/icon-192.png" alt="" width="30" height="30" /><span>Fortissimo</span></a>
+      <nav class="ff-primary" aria-label="Main navigation">
+        <a href="/en/">Home</a>
+        <a href="/en/archive/" aria-current="page">Archive</a>
+        <a href="/en/themes.html">Themes</a>
+        <a href="/en/books/">Books</a>
+      </nav>
+      <div class="ff-actions">
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
+        <div class="ff-lang" role="group" aria-label="Language"><a href="/archivio/ff-56.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/archive/ff-56.html" hreflang="en" lang="en" title="English" data-keep-state aria-current="page">EN</a><a href="/hi/archive/ff-56.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
+        <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Subscribe</a>
+        <details class="ff-more">
+          <summary aria-label="More"><span aria-hidden="true">☰</span><span class="sr-only">More</span></summary>
+          <nav class="ff-menu" aria-label="More">
+            <a href="/book/">📖 The Book (IT)</a>
+            <a href="/en/connections.html">🔗 Connections</a>
+            <a href="/en/note.html">📝 Notes</a>
+            <hr />
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 Subscribe ↗</a>
+          </nav>
+        </details>
+      </div>
     </div>
-  </nav>
-  <header class="max-w-5xl mx-auto px-4 pt-6">
-    <nav aria-label="Main navigation" class="flex flex-wrap items-center gap-2 pb-4 border-b-3 border-black">
-      <a href="/en/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🏠 Home</a>
-      <a href="/en/archive/" aria-current="page" class="px-3 py-2 border-2 border-black ff-button bg-[var(--ff-yellow)] text-black whitespace-nowrap">🗂 Archive</a>
-      <a href="/en/books/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📚 Books</a>
-      <a href="/book/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📖 The Book (IT)</a>
-      
-      <a href="/en/themes.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🧭 Themes</a>
-      <a href="/en/connections.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🔗 Connections</a>
-      <a href="/en/note.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📝 Notes</a>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ml-auto px-3 py-2 border-2 border-black bg-[var(--ff-green)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">📩 Subscribe</a>
-    </nav>
   </header>
 
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/en/">Home</a> /</li><li><a class="underline" href="/en/archive/">Archive</a> /</li><li aria-current="page">ff.56 The Earth&#39;s air conditioner</li></ol></nav>
-    <article class="space-y-6" aria-labelledby="issue-title">
+    <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
     <header class="brutal-card accent-bar accent-blue no-round">
-      <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-        <span class="ff-eyebrow text-black/70">Futuro Fortissimo Archive</span>
-        <a href="https://fortissimo.substack.com/p/ff54-il-condizionatore-terrestre" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] ff-button text-xs hover:-translate-y-0.5 transition-transform">Read the Italian original on Substack ↗</a>
-      </div>
+      <p class="ff-eyebrow text-black/70 mb-3">Futuro Fortissimo Archive</p>
       <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.56 The Earth&#39;s air conditioner</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">Geoengineering, non-chemical trails and other bogeymen to get past</p>
       <p class="mt-2 text-xs font-mono text-black/70">Published <time datetime="2023-04-10T14:05:52.039Z">10 April 2023</time> · Michele Merelli</p>
+      <div class="ff-btn-row mt-4">
+        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/en/archive/ff-56.html" data-done="Link copied"><span aria-hidden="true">↗</span> Share</button>
+        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/en/archive/ff-56.html" data-done="Link copied"><span aria-hidden="true">🔗</span> Copy link</button>
+        <a href="https://fortissimo.substack.com/p/ff54-il-condizionatore-terrestre" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Read the Italian original on Substack ↗</a>
+      </div>
       <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
         <li>• Ozone, farming and industrialisation: are we already geoengineers?</li>
         <li>• Why controlling the weather might be a smart choice</li>
         <li>• Wars fought with droughts and floods?</li>
       </ul>
       <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Themes</span><a href="/en/themes.html#clima" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🌍 Nature, climate and energy</a></p>
-      <nav aria-label="Sections of this issue" class="mt-5 pt-4 border-t-2 border-black/15">
-        <div class="ff-eyebrow text-black/70 mb-2">In this issue</div>
-        <div class="flex flex-wrap gap-2">
-          <a href="#ff-56-1" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🦣 ff.56.1 The last 22k years of the Earth&#39;s thermometer</a>
-          <a href="#ff-56-2" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🕳️ ff.56.2 We are already geoengineers</a>
-          <a href="#ff-56-3" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🌊 ff.56.3 A waterfall one kilometre high</a>
-          <a href="#ff-56-4" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🌧️ ff.56.4 Controlling the rain</a>
-          <a href="#ff-56-5" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">💸 ff.56.5 Way beyond Venice&#39;s MOSE</a>
-        </div>
+      <nav aria-label="Sections of this issue" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+        <h2 class="ff-eyebrow text-black/70 mb-2">In this issue</h2>
+        <ol>
+          <li><a href="#ff-56-1">🦣 ff.56.1 The last 22k years of the Earth&#39;s thermometer</a></li>
+          <li><a href="#ff-56-2">🕳️ ff.56.2 We are already geoengineers</a></li>
+          <li><a href="#ff-56-3">🌊 ff.56.3 A waterfall one kilometre high</a></li>
+          <li><a href="#ff-56-4">🌧️ ff.56.4 Controlling the rain</a></li>
+          <li><a href="#ff-56-5">💸 ff.56.5 Way beyond Venice&#39;s MOSE</a></li>
+        </ol>
       </nav>
     </header>
 
@@ -253,7 +264,7 @@
     <section id="ff-56-1" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🦣 ff.56.1 The last 22k years of the Earth&#39;s thermometer</h2>
-        <a href="https://fortissimo.substack.com/i/105434036/ff-gli-ultimi-k-anni-di-termometro-terrestre" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/105434036/ff-gli-ultimi-k-anni-di-termometro-terrestre" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.56.1 The last 22k years of the Earth&#39;s thermometer">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">When in doubt, zoom out. Let&#39;s start with history. With prehistory, actually. It&#39;s always good to put concepts and trends in perspective. Take the warming of our planet. Here are recent estimates for the last 22 thousand years. The end of the ice age brought +4°C.</p>
@@ -267,7 +278,7 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (1)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://www.canr.msu.edu/uploads/resources/pdfs/light-co2-and-temp.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ a CO2-richer atmosphere increases photosynthesis efficiency (up to a plateau at 1000 ppm).</a>
+            <a href="https://www.canr.msu.edu/uploads/resources/pdfs/light-co2-and-temp.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ a CO2-richer atmosphere increases photosynthesis efficiency (up to a plateau at 1000 ppm).</a>
           </div>
         </div>
     </section>
@@ -275,7 +286,7 @@
     <section id="ff-56-2" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🕳️ ff.56.2 We are already geoengineers</h2>
-        <a href="https://fortissimo.substack.com/i/105434036/ff-siamo-gia-geo-ingegneri" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/105434036/ff-siamo-gia-geo-ingegneri" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.56.2 We are already geoengineers">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Agriculture raised atmospheric CO2 to 280ppm. Glacial cycles predicted 240ppm for pre-industrial levels. 6000 years ago the Earth&#39;s average temperature was 1 degree higher than in the 19th century and, without agriculture, Canada would have been covered in ice.</p>
@@ -289,9 +300,9 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (3)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://www.nature.com/articles/s41586-022-05536-w" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Agriculture raised atmospheric CO2 to 280ppm.</a>
-            <a href="https://earthobservatory.nasa.gov/features/WorldWithoutOzone/page2.php" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ NASA reminds us of the UV-blasted world we avoided</a>
-            <a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2018GL079970" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ sulphites emitted in the Northern Hemisphere cause droughts in Africa.</a>
+            <a href="https://www.nature.com/articles/s41586-022-05536-w" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Agriculture raised atmospheric CO2 to 280ppm.</a>
+            <a href="https://earthobservatory.nasa.gov/features/WorldWithoutOzone/page2.php" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ NASA reminds us of the UV-blasted world we avoided</a>
+            <a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2018GL079970" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ sulphites emitted in the Northern Hemisphere cause droughts in Africa.</a>
           </div>
         </div>
     </section>
@@ -299,7 +310,7 @@
     <section id="ff-56-3" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🌊 ff.56.3 A waterfall one kilometre high</h2>
-        <a href="https://fortissimo.substack.com/i/105434036/ff-una-cascata-alta-un-chilometro" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/105434036/ff-una-cascata-alta-un-chilometro" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.56.3 A waterfall one kilometre high">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Given the immense (solar) energy reaching the Earth, tiny variations (like the amount of reflected light) make geoengineering easy to implement. At the same time, they make the balance precarious.</p>
@@ -313,7 +324,7 @@
     <section id="ff-56-4" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🌧️ ff.56.4 Controlling the rain</h2>
-        <a href="https://fortissimo.substack.com/i/105434036/ff-controllare-la-pioggia" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/105434036/ff-controllare-la-pioggia" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.56.4 Controlling the rain">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Oliver Morton, a senior editor at The Economist (no small fry), published The Planet Remade, an excellent book on the subject.</p>
@@ -331,13 +342,13 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (7)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://amzn.to/3IXlMBb" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-[var(--ff-yellow)] text-xs font-mono font-bold hover:underline">📚 The Planet Remade</a>
-            <a href="https://www.researchgate.net/publication/328180082_Evaluation_of_the_Wyoming_Weather_Modification_Pilot_Project_WWMPP_Using_Two_Approaches_Traditional_Statistics_and_Ensemble_Modeling" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ In Wyoming, between 2008 and 2016, they tried to make rain.</a>
-            <a href="https://www.nature.com/articles/d41586-018-07533-4" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Controlling reflected radiation</a>
-            <a href="https://earthobservatory.nasa.gov/features/Martin/martin_5.php" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Fertilising the oceans with iron and urea to boost plankton</a>
-            <a href="https://climeworks.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Climeworks</a>
-            <a href="https://twitter.com/ArmandDoma/status/1626996397676572675?t=kzUptmzd3NMt3Cn4WUOI6A&amp;s=33" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Armand Domalewski@ArmandDoma</a>
-            <a href="https://newatlas.com/environment/mit-carbon-capture-seawater/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ newatlas.com/environment/mi…</a>
+            <a href="https://amzn.to/3IXlMBb" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] text-xs font-mono font-bold hover:underline">📚 The Planet Remade</a>
+            <a href="https://www.researchgate.net/publication/328180082_Evaluation_of_the_Wyoming_Weather_Modification_Pilot_Project_WWMPP_Using_Two_Approaches_Traditional_Statistics_and_Ensemble_Modeling" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ In Wyoming, between 2008 and 2016, they tried to make rain.</a>
+            <a href="https://www.nature.com/articles/d41586-018-07533-4" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Controlling reflected radiation</a>
+            <a href="https://earthobservatory.nasa.gov/features/Martin/martin_5.php" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Fertilising the oceans with iron and urea to boost plankton</a>
+            <a href="https://climeworks.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Climeworks</a>
+            <a href="https://twitter.com/ArmandDoma/status/1626996397676572675?t=kzUptmzd3NMt3Cn4WUOI6A&amp;s=33" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Armand Domalewski@ArmandDoma</a>
+            <a href="https://newatlas.com/environment/mit-carbon-capture-seawater/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ newatlas.com/environment/mi…</a>
           </div>
         </div>
     </section>
@@ -345,7 +356,7 @@
     <section id="ff-56-5" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">💸 ff.56.5 Way beyond Venice&#39;s MOSE</h2>
-        <a href="https://fortissimo.substack.com/i/105434036/ff-altro-che-il-mose-a-venezia" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/105434036/ff-altro-che-il-mose-a-venezia" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.56.5 Way beyond Venice&#39;s MOSE">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Sure, but what about the costs? Direct air capture of CO2 is, for now, very complex and not very effective.</p>
@@ -373,18 +384,18 @@
       </ul>
     </section>
 
-    <section class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Get new issues of Futuro Fortissimo</h2>
         <p class="text-sm text-black/80 mt-1">A free newsletter by Michele Merelli (Bergamo) on technology, AI, nature and society. Written in Italian, delivered by Substack.</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="px-5 py-3 border-3 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">📩 Subscribe for free ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 Subscribe for free ↗</a>
     </section>
 
-    <nav aria-label="Adjacent issues" class="flex flex-wrap items-center justify-between gap-3 pt-2">
-      <a href="/en/archive/ff-55.html" rel="prev" class="px-4 py-2.5 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-0.5 transition-transform">← 🎼 ff.55 Surviving the revolution</a>
-      <a href="/en/archive/ff-57.html" rel="next" class="px-4 py-2.5 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-0.5 transition-transform">🎼 ff.57 My doctor prescribed a marathon →</a>
+    <nav aria-label="Adjacent issues" class="ff-pn">
+      <a href="/en/archive/ff-55.html" rel="prev"><span class="ff-pn-l">← Previous issue</span><span class="ff-pn-t">ff.55 Surviving the revolution</span></a>
+      <a href="/en/archive/ff-57.html" rel="next" class="ff-next"><span class="ff-pn-l">Next issue →</span><span class="ff-pn-t">ff.57 My doctor prescribed a marathon</span></a>
     </nav>
   </main>
 
@@ -412,11 +423,35 @@
           <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
           <li><a class="hover:underline" href="https://www.instagram.com/michele_merelli/" rel="me noopener" target="_blank">Instagram ↗</a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee ☕ ↗</a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects ↗</a></li>
         </ul>
       </div>
     </div>
     <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
+  <aside class="ff-sticky-sub" aria-label="Newsletter">
+    <p>Enjoying it? Get the next issue by email.</p>
+    <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary ff-btn-sm">Subscribe</a>
+    <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="Dismiss">✕</button>
+  </aside>
+  <nav class="ff-tabbar" aria-label="Main navigation">
+    <a href="/en/"><span class="ff-ti" aria-hidden="true">🏠</span>Home</a>
+    <a href="/en/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>Archive</a>
+    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>Themes</a>
+    <a href="/en/books/"><span class="ff-ti" aria-hidden="true">📚</span>Books</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>Search</button>
+  </nav>
+  <dialog id="ff-search" class="ff-search" aria-label="Search" data-empty="No results. Try another word.">
+    <form role="search">
+      <label for="ff-q" class="sr-only">Search</label>
+      <input id="ff-q" type="search" autocomplete="off" placeholder="Search issues, sections, themes…" aria-controls="ff-results" />
+      <button type="button" class="ff-btn ff-btn-icon" data-ff-close aria-label="Close">✕</button>
+    </form>
+    <ul id="ff-results" role="listbox" aria-label="Search"></ul>
+    <div class="ff-s-foot"><a href="/en/archive/" data-ff-all data-base="/en/archive/">All results in the archive →</a><span>Press / to search anywhere</span></div>
+  </dialog>
+  <script src="/assets/ff-app.js" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

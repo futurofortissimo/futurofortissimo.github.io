@@ -165,6 +165,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://substackcdn.com" crossorigin />
   <link rel="stylesheet" href="/assets/ff-archive.css" />
+  <link rel="stylesheet" href="/assets/ff-app.css" />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" /></noscript>
@@ -208,54 +209,65 @@
     gtag('config', 'G-NQ7MQR0VL8');
   </script>
 </head>
-<body class="bg-white text-black antialiased no-round">
-  
-  <nav class="ff-topbar" aria-label="Lingua">
-    <div class="max-w-5xl mx-auto flex items-center justify-between gap-2 px-4 py-1">
-      <a href="/" class="ff-brand">FUTURO FORTISSIMO</a>
-      <div class="ff-lang-switch" role="group" aria-label="Lingua"><a href="/archivio/ff-22.html" hreflang="it" lang="it" title="Italiano" aria-current="page">IT<span class="ff-ln">Italiano</span></a><a href="/en/archive/ff-22.html" hreflang="en" lang="en" title="English">EN<span class="ff-ln">English</span></a><a href="/hi/archive/ff-22.html" hreflang="hi" lang="hi" title="हिन्दी">हिं<span class="ff-ln">हिन्दी</span></a></div>
+<body class="bg-white text-black antialiased no-round ff-has-tabbar">
+  <div class="ff-progress" aria-hidden="true"><span></span></div>
+  <a class="ff-skip" href="#main">Vai al contenuto</a>
+  <header class="ff-appbar">
+    <div class="ff-appbar-in">
+      <a href="/" class="ff-brand" aria-label="Futuro Fortissimo — Home"><img src="/assets/icons/icon-192.png" alt="" width="30" height="30" /><span>Fortissimo</span></a>
+      <nav class="ff-primary" aria-label="Navigazione principale">
+        <a href="/">Home</a>
+        <a href="/archivio/" aria-current="page">Archivio</a>
+        <a href="/themes.html">Temi</a>
+        <a href="/libri/">Libri</a>
+      </nav>
+      <div class="ff-actions">
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Cerca (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Cerca</span><kbd aria-hidden="true">/</kbd></button>
+        <div class="ff-lang" role="group" aria-label="Lingua"><a href="/archivio/ff-22.html" hreflang="it" lang="it" title="Italiano" data-keep-state aria-current="page">IT</a><a href="/en/archive/ff-22.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/archive/ff-22.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
+        <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Iscriviti</a>
+        <details class="ff-more">
+          <summary aria-label="Altro"><span aria-hidden="true">☰</span><span class="sr-only">Altro</span></summary>
+          <nav class="ff-menu" aria-label="Altro">
+            <a href="/book/">📖 Il Libro</a>
+            <a href="/book/ffxy-index.html">🔢 ff.x.y</a>
+            <a href="/connections.html">🔗 Connessioni</a>
+            <a href="/note.html">📝 Note</a>
+            <hr />
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 Iscriviti ↗</a>
+          </nav>
+        </details>
+      </div>
     </div>
-  </nav>
-  <header class="max-w-5xl mx-auto px-4 pt-6">
-    <nav aria-label="Navigazione principale" class="flex flex-wrap items-center gap-2 pb-4 border-b-3 border-black">
-      <a href="/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🏠 Home</a>
-      <a href="/archivio/" aria-current="page" class="px-3 py-2 border-2 border-black ff-button bg-[var(--ff-yellow)] text-black whitespace-nowrap">🗂 Archivio</a>
-      <a href="/libri/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📚 Libri</a>
-      <a href="/book/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📖 Il Libro</a>
-      <a href="/book/ffxy-index.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🔢 ff.x.y</a>
-      <a href="/themes.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🧭 Temi</a>
-      <a href="/connections.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🔗 Connessioni</a>
-      <a href="/note.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📝 Note</a>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ml-auto px-3 py-2 border-2 border-black bg-[var(--ff-green)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">📩 Iscriviti</a>
-    </nav>
   </header>
 
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/">Home</a> /</li><li><a class="underline" href="/archivio/">Archivio</a> /</li><li aria-current="page">ff.22 Mangiamo troppo?</li></ol></nav>
-    <article class="space-y-6" aria-labelledby="issue-title">
+    <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
     <header class="brutal-card accent-bar accent-blue no-round">
-      <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-        <span class="ff-eyebrow text-black/70">Archivio Futuro Fortissimo</span>
-        <a href="https://fortissimo.substack.com/p/-ff22-mangiamo-troppo" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] ff-button text-xs hover:-translate-y-0.5 transition-transform">Leggi originale su Substack ↗</a>
-      </div>
+      <p class="ff-eyebrow text-black/70 mb-3">Archivio Futuro Fortissimo</p>
       <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.22 Mangiamo troppo?</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">Ritmi circadiani, kilo-calorie e topi che non ingrassano</p>
       <p class="mt-2 text-xs font-mono text-black/70">Pubblicato il <time datetime="2022-05-01T08:00:44.174Z">1 maggio 2022</time> · Michele Merelli</p>
+      <div class="ff-btn-row mt-4">
+        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/archivio/ff-22.html" data-done="Link copiato"><span aria-hidden="true">↗</span> Condividi</button>
+        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/archivio/ff-22.html" data-done="Link copiato"><span aria-hidden="true">🔗</span> Copia link</button>
+        <a href="https://fortissimo.substack.com/p/-ff22-mangiamo-troppo" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Leggi originale su Substack ↗</a>
+      </div>
       <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
         <li>• Possiamo mangiare qualunque cosa, se lofacciamo in unafinestra di 10 ore?</li>
         <li>• Mangiamo di più se in compagnia?</li>
         <li>• Davvero esiste una dieta con un solo pasto al giorno?Illustrazione di Rocío Egío, daItsNiceThat</li>
       </ul>
       <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Temi</span><a href="/themes.html#nutrizione" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🥗 Nutrizione e microbioma</a><a href="/themes.html#salute" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🏃 Salute, sport e corpo</a></p>
-      <nav aria-label="Sezioni del numero" class="mt-5 pt-4 border-t-2 border-black/15">
-        <div class="ff-eyebrow text-black/70 mb-2">In questo numero</div>
-        <div class="flex flex-wrap gap-2">
-          <a href="#ff-22-1" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🕐 ff.22.1 Dieta circadiana?</a>
-          <a href="#ff-22-2" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🪑 ff.22.2 Aggiungi un posto (e qualche kcal) a tavola</a>
-          <a href="#ff-22-3" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🥔 ff.22.3 Perché mangiare cibo non processato (e ricco di fibre)</a>
-          <a href="#ff-22-4" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🤰🏻 ff.22.4 I cibi che saziano di più</a>
-          <a href="#ff-22-5" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🍹 ff.22.5 Beviamoci su?</a>
-        </div>
+      <nav aria-label="Sezioni del numero" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+        <h2 class="ff-eyebrow text-black/70 mb-2">In questo numero</h2>
+        <ol>
+          <li><a href="#ff-22-1">🕐 ff.22.1 Dieta circadiana?</a></li>
+          <li><a href="#ff-22-2">🪑 ff.22.2 Aggiungi un posto (e qualche kcal) a tavola</a></li>
+          <li><a href="#ff-22-3">🥔 ff.22.3 Perché mangiare cibo non processato (e ricco di fibre)</a></li>
+          <li><a href="#ff-22-4">🤰🏻 ff.22.4 I cibi che saziano di più</a></li>
+          <li><a href="#ff-22-5">🍹 ff.22.5 Beviamoci su?</a></li>
+        </ol>
       </nav>
     </header>
 
@@ -264,7 +276,7 @@
     <section id="ff-22-1" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🕐 ff.22.1 Dieta circadiana?</h2>
-        <a href="https://fortissimo.substack.com/i/48651677/ff221-dieta-circadiana" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/48651677/ff221-dieta-circadiana" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.22.1 Dieta circadiana?">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Di recente ho letto un bel libro, si chiamaCircadian Codee parla di come il ritmo biologico circadiano sia importante per il benessere psico-fisico.</p>
@@ -287,10 +299,10 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (4)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://www.salk.edu/scientist/satchidananda-panda/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Satchin Panda</a>
-            <a href="https://www.nature.com/articles/s42255-021-00466-9" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ uno studio su</a>
-            <a href="https://www.frontiersin.org/articles/10.3389/fphys.2021.771944/full" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ recente studio</a>
-            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3179890/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ uno stato sostanzialmente di in</a>
+            <a href="https://www.salk.edu/scientist/satchidananda-panda/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Satchin Panda</a>
+            <a href="https://www.nature.com/articles/s42255-021-00466-9" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ uno studio su</a>
+            <a href="https://www.frontiersin.org/articles/10.3389/fphys.2021.771944/full" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ recente studio</a>
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3179890/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ uno stato sostanzialmente di in</a>
           </div>
         </div>
     </section>
@@ -298,7 +310,7 @@
     <section id="ff-22-2" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🪑 ff.22.2 Aggiungi un posto (e qualche kcal) a tavola</h2>
-        <a href="https://fortissimo.substack.com/i/48651677/ff222-aggiungi-un-posto-e-qualche-kcal-a-tavola" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/48651677/ff222-aggiungi-un-posto-e-qualche-kcal-a-tavola" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.22.2 Aggiungi un posto (e qualche kcal) a tavola">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Un altro aspetto che cifrega  sono i momenti conviviali. Se in compagnia, possiamo arrivare a mangiare il25%fino al 50% in più di quello chefaremmo sefossimo da soli.</p>
@@ -311,7 +323,7 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (1)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://academic.oup.com/ajcn/article/110/4/842/5552759" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 25%</a>
+            <a href="https://academic.oup.com/ajcn/article/110/4/842/5552759" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 25%</a>
           </div>
         </div>
     </section>
@@ -319,7 +331,7 @@
     <section id="ff-22-3" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🥔 ff.22.3 Perché mangiare cibo non processato (e ricco di fibre)</h2>
-        <a href="https://fortissimo.substack.com/i/48651677/ff223-perche-mangiare-cibo-non-processato-e-ricco-di-fibre" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/48651677/ff223-perche-mangiare-cibo-non-processato-e-ricco-di-fibre" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.22.3 Perché mangiare cibo non processato (e ricco di fibre)">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Alcuni suggerimenti dietetici, già che ci siamo, con i relativi studi. Innanzitutto, una regoletta semplice, per convertire kcal in “peso”:</p>
@@ -333,8 +345,8 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (2)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2897733/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ possiamo impiegare</a>
-            <a href="https://collections.nlm.nih.gov/catalog/nlm:nlmuid-101245119-pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 300 kcal al giorno negli ultimi 25 anni</a>
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2897733/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ possiamo impiegare</a>
+            <a href="https://collections.nlm.nih.gov/catalog/nlm:nlmuid-101245119-pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 300 kcal al giorno negli ultimi 25 anni</a>
           </div>
         </div>
     </section>
@@ -342,7 +354,7 @@
     <section id="ff-22-4" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🤰🏻 ff.22.4 I cibi che saziano di più</h2>
-        <a href="https://fortissimo.substack.com/i/48651677/ff224-i-cibi-che-saziano-di-piu" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/48651677/ff224-i-cibi-che-saziano-di-piu" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.22.4 I cibi che saziano di più">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Un altro aspetto per “contenere lafame” è l’indice di sazietà. Non tutti i cibi, a parità di kcal ingerite, riempiono allo stesso modo. C’è un bello studiodove si cerca di capire quali siano i cibi che saziano di più, a parità di calorie (240 kcal a porzione).</p>
@@ -356,7 +368,7 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (1)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://www.researchgate.net/publication/15701207_A_Satiety_Index_of_common_foods" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ C’è un bello studio</a>
+            <a href="https://www.researchgate.net/publication/15701207_A_Satiety_Index_of_common_foods" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ C’è un bello studio</a>
           </div>
         </div>
     </section>
@@ -364,7 +376,7 @@
     <section id="ff-22-5" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🍹 ff.22.5 Beviamoci su?</h2>
-        <a href="https://fortissimo.substack.com/i/48651677/ff225-beviamoci-su" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/48651677/ff225-beviamoci-su" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.22.5 Beviamoci su?">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Anchel’alcol è una bella bestia:</p>
@@ -394,7 +406,7 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (1)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://www.healthyperformance.co.uk/alcohol-and-calories/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ l’alcol è una bella bestia</a>
+            <a href="https://www.healthyperformance.co.uk/alcohol-and-calories/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ l’alcol è una bella bestia</a>
           </div>
         </div>
     </section>
@@ -410,18 +422,18 @@
       </ul>
     </section>
 
-    <section class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Ricevi i nuovi numeri di Futuro Fortissimo</h2>
         <p class="text-sm text-black/80 mt-1">Ogni uscita su tecnologia, AI, natura e società direttamente via email su Substack.</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="px-5 py-3 border-3 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">📩 Iscriviti gratis ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 Iscriviti gratis ↗</a>
     </section>
 
-    <nav aria-label="Numeri adiacenti" class="flex flex-wrap items-center justify-between gap-3 pt-2">
-      <a href="/archivio/ff-21.html" rel="prev" class="px-4 py-2.5 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-0.5 transition-transform">← 🎼 ff.21 La magia dell&#39;insalata a domicilio</a>
-      <a href="/archivio/ff-23.html" rel="next" class="px-4 py-2.5 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-0.5 transition-transform">🎼 ff.23 Matrimoni privatizzati →</a>
+    <nav aria-label="Numeri adiacenti" class="ff-pn">
+      <a href="/archivio/ff-21.html" rel="prev"><span class="ff-pn-l">← Numero precedente</span><span class="ff-pn-t">ff.21 La magia dell&#39;insalata a domicilio</span></a>
+      <a href="/archivio/ff-23.html" rel="next" class="ff-next"><span class="ff-pn-l">Numero successivo →</span><span class="ff-pn-t">ff.23 Matrimoni privatizzati</span></a>
     </nav>
   </main>
 
@@ -449,11 +461,35 @@
           <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
           <li><a class="hover:underline" href="https://www.instagram.com/michele_merelli/" rel="me noopener" target="_blank">Instagram ↗</a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Offrimi un caffè ☕ ↗</a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Altri progetti di Michele ↗</a></li>
         </ul>
       </div>
     </div>
     <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
+  <aside class="ff-sticky-sub" aria-label="Newsletter">
+    <p>Ti piace? Ricevi il prossimo numero via email.</p>
+    <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary ff-btn-sm">Iscriviti</a>
+    <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="Chiudi invito">✕</button>
+  </aside>
+  <nav class="ff-tabbar" aria-label="Navigazione principale">
+    <a href="/"><span class="ff-ti" aria-hidden="true">🏠</span>Home</a>
+    <a href="/archivio/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>Archivio</a>
+    <a href="/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>Temi</a>
+    <a href="/libri/"><span class="ff-ti" aria-hidden="true">📚</span>Libri</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>Cerca</button>
+  </nav>
+  <dialog id="ff-search" class="ff-search" aria-label="Cerca" data-empty="Nessun risultato. Prova un’altra parola.">
+    <form role="search">
+      <label for="ff-q" class="sr-only">Cerca</label>
+      <input id="ff-q" type="search" autocomplete="off" placeholder="Cerca numeri, sezioni, temi…" aria-controls="ff-results" />
+      <button type="button" class="ff-btn ff-btn-icon" data-ff-close aria-label="Chiudi">✕</button>
+    </form>
+    <ul id="ff-results" role="listbox" aria-label="Cerca"></ul>
+    <div class="ff-s-foot"><a href="/archivio/" data-ff-all data-base="/archivio/">Tutti i risultati nell’archivio →</a><span>Premi / per cercare ovunque</span></div>
+  </dialog>
+  <script src="/assets/ff-app.js" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

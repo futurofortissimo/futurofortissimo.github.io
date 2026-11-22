@@ -85,6 +85,7 @@
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
   <link rel="manifest" href="/manifest.webmanifest" />
   <link rel="alternate" type="application/atom+xml" title="Futuro Fortissimo Feed" href="/feed.xml" />
+  <link rel="stylesheet" href="/assets/ff-app.css" />
   <!-- /ff:seo -->
 <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NQ7MQR0VL8"></script>
@@ -204,18 +205,38 @@
     }
   </style>
 </head>
-<body class="antialiased selection:bg-gray-900 selection:text-white no-round">
+<body class="antialiased selection:bg-gray-900 selection:text-white no-round ff-has-tabbar">
+  <!-- ff:chrome -->
+  <a class="ff-skip" href="#main">Skip to content</a>
+  <header class="ff-appbar">
+    <div class="ff-appbar-in">
+      <a href="/en/" class="ff-brand" aria-label="Futuro Fortissimo — Home"><img src="/assets/icons/icon-192.png" alt="" width="30" height="30" /><span>Fortissimo</span></a>
+      <nav class="ff-primary" aria-label="Main navigation">
+        <a href="/en/">Home</a>
+        <a href="/en/archive/">Archive</a>
+        <a href="/en/themes.html">Themes</a>
+        <a href="/en/books/">Books</a>
+      </nav>
+      <div class="ff-actions">
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
+        <div class="ff-lang" role="group" aria-label="Language"><a href="/connections.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/connections.html" hreflang="en" lang="en" title="English" data-keep-state aria-current="page">EN</a><a href="/hi/connections.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
+        <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Subscribe</a>
+        <details class="ff-more">
+          <summary aria-label="More"><span aria-hidden="true">☰</span><span class="sr-only">More</span></summary>
+          <nav class="ff-menu" aria-label="More">
+            <a href="/book/">📖 The Book (IT)</a>
+            <a href="/en/connections.html" aria-current="page">🔗 Connections</a>
+            <a href="/en/note.html">📝 Notes</a>
+            <hr />
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 Subscribe ↗</a>
+          </nav>
+        </details>
+      </div>
+    </div>
+  </header>
+  <!-- /ff:chrome -->
 
   <!-- Language switcher -->
-  <nav class="ff-lang-bar" aria-label="Language">
-    <div class="max-w-5xl mx-auto flex items-center justify-end gap-1 px-4 py-1">
-      <a href="/connections.html" title="Italiano">IT</a>
-      <span class="text-gray-600 select-none">/</span>
-      <a href="/en/connections.html" aria-current="page" title="English">EN</a>
-      <span class="text-gray-600 select-none">/</span>
-      <a href="/hi/connections.html" title="Hindi">HI</a>
-    </div>
-  </nav>
 
   <header class="bg-white" style="border-bottom: 4px solid var(--ff-black);">
     <div class="max-w-5xl mx-auto px-4 py-5 flex items-center justify-between gap-4">
@@ -224,13 +245,6 @@
         <h1 class="ff-heading-xl mt-1">Strong Connections</h1>
         <p class="ff-body-sm mt-1" style="color: #555;">Most cited hubs and reading paths (from the "connections" graph in JSON).</p>
       </div>
-      <nav class="flex gap-4 flex-wrap justify-end">
-        <a class="ff-eyebrow hover:underline" href="/en/index.html">Home</a>
-        <a class="ff-eyebrow hover:underline" href="/book/">Book</a>
-        <a class="ff-eyebrow hover:underline" href="/en/themes.html">Themes</a>
-        <a class="ff-eyebrow hover:underline" href="/en/connections.html">Connections</a>
-        <a class="ff-eyebrow hover:underline" href="/en/note.html">Notes</a>
-      </nav>
     </div>
   </header>
 
@@ -359,5 +373,55 @@
       console.error(err);
     });
   </script>
+  <!-- ff:chrome-end -->
+  <footer class="ff-footer mt-12 border-t-4 border-black bg-white" role="contentinfo">
+    <div class="max-w-5xl mx-auto px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
+      <div class="space-y-2">
+        <p class="ff-eyebrow">Futuro Fortissimo</p>
+        <p class="text-black/80">Futuro Fortissimo is Michele Merelli’s newsletter on technology, AI, nature and society: short ff.x.y sections, each with its sources.</p>
+      </div>
+      <nav aria-label="Explore" class="space-y-2">
+        <p class="ff-eyebrow">Explore</p>
+        <ul class="space-y-1 font-medium">
+          <li><a class="hover:underline" href="/en/archive/">All issues</a></li>
+          <li><a class="hover:underline" href="/en/themes.html">Themes</a></li>
+          <li><a class="hover:underline" href="/en/books/">Books</a></li>
+          <li><a class="hover:underline" href="/en/connections.html">Connections</a></li>
+          <li><a class="hover:underline" href="/en/note.html">Notes</a></li>
+          <li><a class="hover:underline" href="/book/">The Book (IT)</a></li>
+        </ul>
+      </nav>
+      <div class="space-y-2">
+        <p class="ff-eyebrow">Follow</p>
+        <ul class="space-y-1 font-medium">
+          <li><a class="hover:underline" href="https://fortissimo.substack.com/" rel="me noopener" target="_blank">Substack ↗</a></li>
+          <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
+          <li><a class="hover:underline" href="https://www.instagram.com/michele_merelli/" rel="me noopener" target="_blank">Instagram ↗</a></li>
+          <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee ☕ ↗</a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
+  </footer>
+  <nav class="ff-tabbar" aria-label="Main navigation">
+    <a href="/en/"><span class="ff-ti" aria-hidden="true">🏠</span>Home</a>
+    <a href="/en/archive/"><span class="ff-ti" aria-hidden="true">🗂</span>Archive</a>
+    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>Themes</a>
+    <a href="/en/books/"><span class="ff-ti" aria-hidden="true">📚</span>Books</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>Search</button>
+  </nav>
+  <dialog id="ff-search" class="ff-search" aria-label="Search" data-empty="No results. Try another word.">
+    <form role="search">
+      <label for="ff-q" class="sr-only">Search</label>
+      <input id="ff-q" type="search" autocomplete="off" placeholder="Search issues, sections, themes…" aria-controls="ff-results" />
+      <button type="button" class="ff-btn ff-btn-icon" data-ff-close aria-label="Close">✕</button>
+    </form>
+    <ul id="ff-results" role="listbox" aria-label="Search"></ul>
+    <div class="ff-s-foot"><a href="/en/archive/" data-ff-all data-base="/en/archive/">All results in the archive →</a><span>Press / to search anywhere</span></div>
+  </dialog>
+  <script src="/assets/ff-app.js" defer></script>
+  <!-- /ff:chrome-end -->
 </body>
 </html>

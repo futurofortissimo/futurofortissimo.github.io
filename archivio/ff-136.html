@@ -164,6 +164,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://substackcdn.com" crossorigin />
   <link rel="stylesheet" href="/assets/ff-archive.css" />
+  <link rel="stylesheet" href="/assets/ff-app.css" />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" /></noscript>
@@ -207,53 +208,64 @@
     gtag('config', 'G-NQ7MQR0VL8');
   </script>
 </head>
-<body class="bg-white text-black antialiased no-round">
-  
-  <nav class="ff-topbar" aria-label="Lingua">
-    <div class="max-w-5xl mx-auto flex items-center justify-between gap-2 px-4 py-1">
-      <a href="/" class="ff-brand">FUTURO FORTISSIMO</a>
-      <div class="ff-lang-switch" role="group" aria-label="Lingua"><a href="/archivio/ff-136.html" hreflang="it" lang="it" title="Italiano" aria-current="page">IT<span class="ff-ln">Italiano</span></a><a href="/en/archive/ff-136.html" hreflang="en" lang="en" title="English">EN<span class="ff-ln">English</span></a><a href="/hi/archive/ff-136.html" hreflang="hi" lang="hi" title="हिन्दी">हिं<span class="ff-ln">हिन्दी</span></a></div>
+<body class="bg-white text-black antialiased no-round ff-has-tabbar">
+  <div class="ff-progress" aria-hidden="true"><span></span></div>
+  <a class="ff-skip" href="#main">Vai al contenuto</a>
+  <header class="ff-appbar">
+    <div class="ff-appbar-in">
+      <a href="/" class="ff-brand" aria-label="Futuro Fortissimo — Home"><img src="/assets/icons/icon-192.png" alt="" width="30" height="30" /><span>Fortissimo</span></a>
+      <nav class="ff-primary" aria-label="Navigazione principale">
+        <a href="/">Home</a>
+        <a href="/archivio/" aria-current="page">Archivio</a>
+        <a href="/themes.html">Temi</a>
+        <a href="/libri/">Libri</a>
+      </nav>
+      <div class="ff-actions">
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Cerca (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Cerca</span><kbd aria-hidden="true">/</kbd></button>
+        <div class="ff-lang" role="group" aria-label="Lingua"><a href="/archivio/ff-136.html" hreflang="it" lang="it" title="Italiano" data-keep-state aria-current="page">IT</a><a href="/en/archive/ff-136.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/archive/ff-136.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
+        <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Iscriviti</a>
+        <details class="ff-more">
+          <summary aria-label="Altro"><span aria-hidden="true">☰</span><span class="sr-only">Altro</span></summary>
+          <nav class="ff-menu" aria-label="Altro">
+            <a href="/book/">📖 Il Libro</a>
+            <a href="/book/ffxy-index.html">🔢 ff.x.y</a>
+            <a href="/connections.html">🔗 Connessioni</a>
+            <a href="/note.html">📝 Note</a>
+            <hr />
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 Iscriviti ↗</a>
+          </nav>
+        </details>
+      </div>
     </div>
-  </nav>
-  <header class="max-w-5xl mx-auto px-4 pt-6">
-    <nav aria-label="Navigazione principale" class="flex flex-wrap items-center gap-2 pb-4 border-b-3 border-black">
-      <a href="/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🏠 Home</a>
-      <a href="/archivio/" aria-current="page" class="px-3 py-2 border-2 border-black ff-button bg-[var(--ff-yellow)] text-black whitespace-nowrap">🗂 Archivio</a>
-      <a href="/libri/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📚 Libri</a>
-      <a href="/book/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📖 Il Libro</a>
-      <a href="/book/ffxy-index.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🔢 ff.x.y</a>
-      <a href="/themes.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🧭 Temi</a>
-      <a href="/connections.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🔗 Connessioni</a>
-      <a href="/note.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📝 Note</a>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ml-auto px-3 py-2 border-2 border-black bg-[var(--ff-green)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">📩 Iscriviti</a>
-    </nav>
   </header>
 
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/">Home</a> /</li><li><a class="underline" href="/archivio/">Archivio</a> /</li><li aria-current="page">ff.136 On-da e-ner-ge-ti-caaa!</li></ol></nav>
-    <article class="space-y-6" aria-labelledby="issue-title">
+    <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
     <header class="brutal-card accent-bar accent-blue no-round">
-      <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-        <span class="ff-eyebrow text-black/70">Archivio Futuro Fortissimo</span>
-        <a href="https://fortissimo.substack.com/p/ff136-on-da-e-ner-ge-ti-caaa" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] ff-button text-xs hover:-translate-y-0.5 transition-transform">Leggi originale su Substack ↗</a>
-      </div>
+      <p class="ff-eyebrow text-black/70 mb-3">Archivio Futuro Fortissimo</p>
       <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.136 On-da e-ner-ge-ti-caaa!</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">Contro il consumo astronomico dell&#39;AI, Goku?</p>
       <p class="mt-2 text-xs font-mono text-black/70">Pubblicato il <time datetime="2025-10-30T08:10:56.757Z">30 ottobre 2025</time> · Michele Merelli</p>
+      <div class="ff-btn-row mt-4">
+        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/archivio/ff-136.html" data-done="Link copiato"><span aria-hidden="true">↗</span> Condividi</button>
+        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/archivio/ff-136.html" data-done="Link copiato"><span aria-hidden="true">🔗</span> Copia link</button>
+        <a href="https://fortissimo.substack.com/p/ff136-on-da-e-ner-ge-ti-caaa" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Leggi originale su Substack ↗</a>
+      </div>
       <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
         <li>• Bollette aumentate da ChatGPT?</li>
         <li>• 1/3 del PIL americano: costo dell’energia previsto da OpenAI nel 2033</li>
         <li>• Cina: quale connessione tra sanzioni e caffè(111!?!)?</li>
       </ul>
       <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Temi</span><a href="/themes.html#ai" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🤖 AI, agenti e modelli</a><a href="/themes.html#clima" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🌍 Natura, clima ed energia</a></p>
-      <nav aria-label="Sezioni del numero" class="mt-5 pt-4 border-t-2 border-black/15">
-        <div class="ff-eyebrow text-black/70 mb-2">In questo numero</div>
-        <div class="flex flex-wrap gap-2">
-          <a href="#ff-135-1" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">💲 ff.135.1 I costi dell’Intelligenza Artificiale</a>
-          <a href="#ff-135-2" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🌊 ff.135.2 Onda (anomala) energetica</a>
-          <a href="#ff-135-3" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">♾️ ff.135.3 Siamo nella singolarità?</a>
-          <a href="#ff-135-4" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">☕ ff.135.4 L’AGI avanza: il “caffè” cinese</a>
-        </div>
+      <nav aria-label="Sezioni del numero" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+        <h2 class="ff-eyebrow text-black/70 mb-2">In questo numero</h2>
+        <ol>
+          <li><a href="#ff-135-1">💲 ff.135.1 I costi dell’Intelligenza Artificiale</a></li>
+          <li><a href="#ff-135-2">🌊 ff.135.2 Onda (anomala) energetica</a></li>
+          <li><a href="#ff-135-3">♾️ ff.135.3 Siamo nella singolarità?</a></li>
+          <li><a href="#ff-135-4">☕ ff.135.4 L’AGI avanza: il “caffè” cinese</a></li>
+        </ol>
       </nav>
     </header>
 
@@ -262,7 +274,7 @@
     <section id="ff-135-1" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">💲 ff.135.1 I costi dell’Intelligenza Artificiale</h2>
-        <a href="https://fortissimo.substack.com/i/176809376/ff-i-costi-dellintelligenza-artificiale" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/176809376/ff-i-costi-dellintelligenza-artificiale" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.135.1 I costi dell’Intelligenza Artificiale">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Secondo alcuni,ChatGPT sta facendo salire le bollette elettriche: dati Federal Reserve riportano un aumento da 0.17 a 0.19 $/kWh(in Europa eclissato dagli effetti ben più tangibili della guerra in Ucraina).</p>
@@ -285,9 +297,9 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (3)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://fred.stlouisfed.org/series/APU000072610" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ ChatGPT sta facendo salire le bollette elettriche: dati Federal Reserve riportano un aumento da 0.17 a 0.19 $/kWh</a>
-            <a href="https://x.com/scaling01/status/1981642142050136104" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Germania e Regno Unito producono meno energia elettrica di 40 anni fa…</a>
-            <a href="https://www.nature.com/articles/d41586-025-00616-z" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ I consumi dell’AI (Nature 2025)</a>
+            <a href="https://fred.stlouisfed.org/series/APU000072610" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ ChatGPT sta facendo salire le bollette elettriche: dati Federal Reserve riportano un aumento da 0.17 a 0.19 $/kWh</a>
+            <a href="https://x.com/scaling01/status/1981642142050136104" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Germania e Regno Unito producono meno energia elettrica di 40 anni fa…</a>
+            <a href="https://www.nature.com/articles/d41586-025-00616-z" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ I consumi dell’AI (Nature 2025)</a>
           </div>
         </div>
     </section>
@@ -295,7 +307,7 @@
     <section id="ff-135-2" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🌊 ff.135.2 Onda (anomala) energetica</h2>
-        <a href="https://fortissimo.substack.com/i/176809376/ff-onda-anomala-energetica" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/176809376/ff-onda-anomala-energetica" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.135.2 Onda (anomala) energetica">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Tutto ciò non è nulla rispetto ai piani per il futuro:</p>
@@ -320,10 +332,10 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (4)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://x.com/EthanHe_42/status/1947711720665059595?s=33" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 50 milioni di H100 nei prossimi 5 anni (assorbendo 35 GW, il 2% del consumo globale di elettricità oggi)</a>
-            <a href="https://blog.samaltman.com/abundant-intelligence" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Abundant Intelligence</a>
-            <a href="https://x.com/AssaadRazzouk/status/1965923547869790614/photo/1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ in soli 10 anni da 0 a 2073 TWh (237 GW potenza istantanea, totale energia prodotta diviso ore in un anno)</a>
-            <a href="https://x.com/patrickc/status/1698496805162353029?t=MfWXDBXWA0o8XMVm_0logQ&amp;s=33" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Gli investimenti nel solare ($500B) hanno superato quelli per l’aviazione durante la seconda guerra mondiale</a>
+            <a href="https://x.com/EthanHe_42/status/1947711720665059595?s=33" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 50 milioni di H100 nei prossimi 5 anni (assorbendo 35 GW, il 2% del consumo globale di elettricità oggi)</a>
+            <a href="https://blog.samaltman.com/abundant-intelligence" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Abundant Intelligence</a>
+            <a href="https://x.com/AssaadRazzouk/status/1965923547869790614/photo/1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ in soli 10 anni da 0 a 2073 TWh (237 GW potenza istantanea, totale energia prodotta diviso ore in un anno)</a>
+            <a href="https://x.com/patrickc/status/1698496805162353029?t=MfWXDBXWA0o8XMVm_0logQ&amp;s=33" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Gli investimenti nel solare ($500B) hanno superato quelli per l’aviazione durante la seconda guerra mondiale</a>
           </div>
         </div>
     </section>
@@ -331,7 +343,7 @@
     <section id="ff-135-3" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">♾️ ff.135.3 Siamo nella singolarità?</h2>
-        <a href="https://fortissimo.substack.com/i/176809376/ff-siamo-nella-singolarita" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/176809376/ff-siamo-nella-singolarita" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.135.3 Siamo nella singolarità?">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Tutta questa energia, comunque, serve (ed è già servita) a qualcosa.</p>
@@ -351,7 +363,7 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (1)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://www.alexwg.org/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Alex Wissner, un vero genietto</a>
+            <a href="https://www.alexwg.org/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Alex Wissner, un vero genietto</a>
           </div>
         </div>
     </section>
@@ -359,7 +371,7 @@
     <section id="ff-135-4" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">☕ ff.135.4 L’AGI avanza: il “caffè” cinese</h2>
-        <a href="https://fortissimo.substack.com/i/176809376/ff-lagi-avanza-il-caffe-cinese" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/176809376/ff-lagi-avanza-il-caffe-cinese" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.135.4 L’AGI avanza: il “caffè” cinese">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">AGI e singolarità sono unplus: Dave Blundin, sempre nello stesso podcast, fa notare chese anche lo sviluppo dell’AI si fermasse oggi, servirebbero anni per digerire, esplorare e implementare le sue potenziali applicazioni.</p>
@@ -379,11 +391,11 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (5)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://youtu.be/VfwNK9OVsrM?si=bVnXhAK-f4JqRizG&amp;t=1503" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ se anche lo sviluppo dell’AI si fermasse oggi, servirebbero anni per digerire, esplorare e implementare le sue potenziali applicazioni</a>
-            <a href="https://open.substack.com/users/2295132-ryan-cunningham?utm_source=mentions" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Ryan Cunningham</a>
-            <a href="https://substack.com/home/post/p-170203312?utm_source=substack&amp;utm_medium=email" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ “watt-to-bit”, parametro per classificare l’efficienza dei modelli-AI (Energy-Compute Theory)</a>
-            <a href="https://arcprize.org/leaderboard" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ leaderboard dell’ARC Prize include il costo per task</a>
-            <a href="https://fortissimo.substack.com/p/ff81-guerra-a-colpi-di-chip?utm_source=publication-search" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🎼 ff.82 Guerra a colpi di chip</a>
+            <a href="https://youtu.be/VfwNK9OVsrM?si=bVnXhAK-f4JqRizG&amp;t=1503" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ se anche lo sviluppo dell’AI si fermasse oggi, servirebbero anni per digerire, esplorare e implementare le sue potenziali applicazioni</a>
+            <a href="https://open.substack.com/users/2295132-ryan-cunningham?utm_source=mentions" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Ryan Cunningham</a>
+            <a href="https://substack.com/home/post/p-170203312?utm_source=substack&amp;utm_medium=email" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ “watt-to-bit”, parametro per classificare l’efficienza dei modelli-AI (Energy-Compute Theory)</a>
+            <a href="https://arcprize.org/leaderboard" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ leaderboard dell’ARC Prize include il costo per task</a>
+            <a href="https://fortissimo.substack.com/p/ff81-guerra-a-colpi-di-chip?utm_source=publication-search" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🎼 ff.82 Guerra a colpi di chip</a>
           </div>
         </div>
     </section>
@@ -399,18 +411,18 @@
       </ul>
     </section>
 
-    <section class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Ricevi i nuovi numeri di Futuro Fortissimo</h2>
         <p class="text-sm text-black/80 mt-1">Ogni uscita su tecnologia, AI, natura e società direttamente via email su Substack.</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="px-5 py-3 border-3 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">📩 Iscriviti gratis ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 Iscriviti gratis ↗</a>
     </section>
 
-    <nav aria-label="Numeri adiacenti" class="flex flex-wrap items-center justify-between gap-3 pt-2">
-      <a href="/archivio/ff-135.html" rel="prev" class="px-4 py-2.5 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-0.5 transition-transform">← 🎼 ff.135 Casino Royale</a>
-      <a href="/archivio/ff-137.html" rel="next" class="px-4 py-2.5 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-0.5 transition-transform">🎼 ff.137 Decrescita felice? →</a>
+    <nav aria-label="Numeri adiacenti" class="ff-pn">
+      <a href="/archivio/ff-135.html" rel="prev"><span class="ff-pn-l">← Numero precedente</span><span class="ff-pn-t">ff.135 Casino Royale</span></a>
+      <a href="/archivio/ff-137.html" rel="next" class="ff-next"><span class="ff-pn-l">Numero successivo →</span><span class="ff-pn-t">ff.137 Decrescita felice?</span></a>
     </nav>
   </main>
 
@@ -438,11 +450,35 @@
           <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
           <li><a class="hover:underline" href="https://www.instagram.com/michele_merelli/" rel="me noopener" target="_blank">Instagram ↗</a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Offrimi un caffè ☕ ↗</a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Altri progetti di Michele ↗</a></li>
         </ul>
       </div>
     </div>
     <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
+  <aside class="ff-sticky-sub" aria-label="Newsletter">
+    <p>Ti piace? Ricevi il prossimo numero via email.</p>
+    <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary ff-btn-sm">Iscriviti</a>
+    <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="Chiudi invito">✕</button>
+  </aside>
+  <nav class="ff-tabbar" aria-label="Navigazione principale">
+    <a href="/"><span class="ff-ti" aria-hidden="true">🏠</span>Home</a>
+    <a href="/archivio/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>Archivio</a>
+    <a href="/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>Temi</a>
+    <a href="/libri/"><span class="ff-ti" aria-hidden="true">📚</span>Libri</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>Cerca</button>
+  </nav>
+  <dialog id="ff-search" class="ff-search" aria-label="Cerca" data-empty="Nessun risultato. Prova un’altra parola.">
+    <form role="search">
+      <label for="ff-q" class="sr-only">Cerca</label>
+      <input id="ff-q" type="search" autocomplete="off" placeholder="Cerca numeri, sezioni, temi…" aria-controls="ff-results" />
+      <button type="button" class="ff-btn ff-btn-icon" data-ff-close aria-label="Chiudi">✕</button>
+    </form>
+    <ul id="ff-results" role="listbox" aria-label="Cerca"></ul>
+    <div class="ff-s-foot"><a href="/archivio/" data-ff-all data-base="/archivio/">Tutti i risultati nell’archivio →</a><span>Premi / per cercare ovunque</span></div>
+  </dialog>
+  <script src="/assets/ff-app.js" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

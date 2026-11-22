@@ -162,6 +162,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://substackcdn.com" crossorigin />
   <link rel="stylesheet" href="/assets/ff-archive.css" />
+  <link rel="stylesheet" href="/assets/ff-app.css" />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" /></noscript>
@@ -205,54 +206,64 @@
     gtag('config', 'G-NQ7MQR0VL8');
   </script>
 </head>
-<body class="bg-white text-black antialiased no-round">
-  
-  <nav class="ff-topbar" aria-label="Language">
-    <div class="max-w-5xl mx-auto flex items-center justify-between gap-2 px-4 py-1">
-      <a href="/en/" class="ff-brand">FUTURO FORTISSIMO</a>
-      <div class="ff-lang-switch" role="group" aria-label="Language"><a href="/archivio/ff-149.html" hreflang="it" lang="it" title="Italiano">IT<span class="ff-ln">Italiano</span></a><a href="/en/archive/ff-149.html" hreflang="en" lang="en" title="English" aria-current="page">EN<span class="ff-ln">English</span></a><a href="/hi/archive/ff-149.html" hreflang="hi" lang="hi" title="हिन्दी">हिं<span class="ff-ln">हिन्दी</span></a></div>
+<body class="bg-white text-black antialiased no-round ff-has-tabbar">
+  <div class="ff-progress" aria-hidden="true"><span></span></div>
+  <a class="ff-skip" href="#main">Skip to content</a>
+  <header class="ff-appbar">
+    <div class="ff-appbar-in">
+      <a href="/en/" class="ff-brand" aria-label="Futuro Fortissimo — Home"><img src="/assets/icons/icon-192.png" alt="" width="30" height="30" /><span>Fortissimo</span></a>
+      <nav class="ff-primary" aria-label="Main navigation">
+        <a href="/en/">Home</a>
+        <a href="/en/archive/" aria-current="page">Archive</a>
+        <a href="/en/themes.html">Themes</a>
+        <a href="/en/books/">Books</a>
+      </nav>
+      <div class="ff-actions">
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Search (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Search</span><kbd aria-hidden="true">/</kbd></button>
+        <div class="ff-lang" role="group" aria-label="Language"><a href="/archivio/ff-149.html" hreflang="it" lang="it" title="Italiano" data-keep-state>IT</a><a href="/en/archive/ff-149.html" hreflang="en" lang="en" title="English" data-keep-state aria-current="page">EN</a><a href="/hi/archive/ff-149.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
+        <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Subscribe</a>
+        <details class="ff-more">
+          <summary aria-label="More"><span aria-hidden="true">☰</span><span class="sr-only">More</span></summary>
+          <nav class="ff-menu" aria-label="More">
+            <a href="/book/">📖 The Book (IT)</a>
+            <a href="/en/connections.html">🔗 Connections</a>
+            <a href="/en/note.html">📝 Notes</a>
+            <hr />
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 Subscribe ↗</a>
+          </nav>
+        </details>
+      </div>
     </div>
-  </nav>
-  <header class="max-w-5xl mx-auto px-4 pt-6">
-    <nav aria-label="Main navigation" class="flex flex-wrap items-center gap-2 pb-4 border-b-3 border-black">
-      <a href="/en/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🏠 Home</a>
-      <a href="/en/archive/" aria-current="page" class="px-3 py-2 border-2 border-black ff-button bg-[var(--ff-yellow)] text-black whitespace-nowrap">🗂 Archive</a>
-      <a href="/en/books/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📚 Books</a>
-      <a href="/book/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📖 The Book (IT)</a>
-      
-      <a href="/en/themes.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🧭 Themes</a>
-      <a href="/en/connections.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🔗 Connections</a>
-      <a href="/en/note.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📝 Notes</a>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ml-auto px-3 py-2 border-2 border-black bg-[var(--ff-green)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">📩 Subscribe</a>
-    </nav>
   </header>
 
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/en/">Home</a> /</li><li><a class="underline" href="/en/archive/">Archive</a> /</li><li aria-current="page">ff.149 How to be solar</li></ol></nav>
-    <article class="space-y-6" aria-labelledby="issue-title">
+    <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
     <header class="brutal-card accent-bar accent-blue no-round">
-      <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-        <span class="ff-eyebrow text-black/70">Futuro Fortissimo Archive</span>
-        <a href="https://fortissimo.substack.com/p/ff149-come-essere-solari" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] ff-button text-xs hover:-translate-y-0.5 transition-transform">Read the Italian original on Substack ↗</a>
-      </div>
+      <p class="ff-eyebrow text-black/70 mb-3">Futuro Fortissimo Archive</p>
       <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.149 How to be solar</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">Abundance is here, just put on your sunglasses</p>
       <p class="mt-2 text-xs font-mono text-black/70">Published <time datetime="2026-04-20T06:01:41.612Z">20 April 2026</time> · Michele Merelli</p>
+      <div class="ff-btn-row mt-4">
+        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/en/archive/ff-149.html" data-done="Link copied"><span aria-hidden="true">↗</span> Share</button>
+        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/en/archive/ff-149.html" data-done="Link copied"><span aria-hidden="true">🔗</span> Copy link</button>
+        <a href="https://fortissimo.substack.com/p/ff149-come-essere-solari" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Read the Italian original on Substack ↗</a>
+      </div>
       <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
         <li>• If the Strait of Hormuz closes, does the North Sea (Norway) win?</li>
         <li>• Energy independence, but not from China?</li>
         <li>• Maximo: a robot that installs one panel per minute</li>
       </ul>
       <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Themes</span><a href="/en/themes.html#clima" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🌍 Nature, climate and energy</a><a href="/en/themes.html#ai" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🤖 AI, agents and models</a><a href="/en/themes.html#salute" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🏃 Health, sport and body</a></p>
-      <nav aria-label="Sections of this issue" class="mt-5 pt-4 border-t-2 border-black/15">
-        <div class="ff-eyebrow text-black/70 mb-2">In this issue</div>
-        <div class="flex flex-wrap gap-2">
-          <a href="#ff-149-1" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">3️⃣ ff.149.1 Give me three words…</a>
-          <a href="#ff-149-2" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🧮 ff.149.2 A matter of hours…</a>
-          <a href="#ff-149-3" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🃏 ff.149.3 Texas hold &#39;em</a>
-          <a href="#ff-149-4" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🤖 ff.149.4 Going to the Maximo</a>
-          <a href="#ff-149-5" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🗽 ff.149.5 Freedom (from gas and oil)</a>
-        </div>
+      <nav aria-label="Sections of this issue" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+        <h2 class="ff-eyebrow text-black/70 mb-2">In this issue</h2>
+        <ol>
+          <li><a href="#ff-149-1">3️⃣ ff.149.1 Give me three words…</a></li>
+          <li><a href="#ff-149-2">🧮 ff.149.2 A matter of hours…</a></li>
+          <li><a href="#ff-149-3">🃏 ff.149.3 Texas hold &#39;em</a></li>
+          <li><a href="#ff-149-4">🤖 ff.149.4 Going to the Maximo</a></li>
+          <li><a href="#ff-149-5">🗽 ff.149.5 Freedom (from gas and oil)</a></li>
+        </ol>
       </nav>
     </header>
 
@@ -261,7 +272,7 @@
     <section id="ff-149-1" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">3️⃣ ff.149.1 Give me three words…</h2>
-        <a href="https://fortissimo.substack.com/i/194269239/3-ff1491-dammi-tre-parole" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/194269239/3-ff1491-dammi-tre-parole" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ 3️⃣ ff.149.1 Give me three words…">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Futuro Fortissimo&#39;s first issue on climate and renewables went out on a cold March day four years ago ( 🎼 ff.12 Sun, heart and love ). Cold March, mind you, in Bergamo. In the south-western United States this year, a heatwave pushed temperatures to mid-June levels. In short, a sun (heart and love) that keeps warming our planet and our oceans more and more, partly because emissions are falling (of sulphites, to be precise 🕳️ ff.56.2 We are already geoengineers ). Stopping at what we “see” today is short-sighted (yes, that&#39;s meant to be funny): the future is a projection of today, not an interpolation of yesterday. In this issue I&#39;ll try to shed (solar) light on the latest developments that give us hope for a different future. A better one. But first…</p>
@@ -273,8 +284,8 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (2)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://fortissimo.substack.com/p/-ff12-sole-cuore-e-amore" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🎼 ff.12 Sun, heart and love</a>
-            <a href="https://fortissimo.substack.com/i/105434036/ff562-siamo-gia-geo-ingegneri" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🕳️ ff.56.2 We are already geoengineers</a>
+            <a href="https://fortissimo.substack.com/p/-ff12-sole-cuore-e-amore" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🎼 ff.12 Sun, heart and love</a>
+            <a href="https://fortissimo.substack.com/i/105434036/ff562-siamo-gia-geo-ingegneri" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🕳️ ff.56.2 We are already geoengineers</a>
           </div>
         </div>
     </section>
@@ -282,7 +293,7 @@
     <section id="ff-149-2" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🧮 ff.149.2 A matter of hours…</h2>
-        <a href="https://fortissimo.substack.com/i/194269239/ff1492-una-questione-di-ore" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/194269239/ff1492-una-questione-di-ore" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.149.2 A matter of hours…">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">… a quick energy guide, to put numbers and labels on things (after all, 🎼 ff.32 Numbers don&#39;t lie ). Un&#39;ora sola ti vorrei — just one hour, as the old Italian song goes. First, a reminder of the units for power (W, often GW) and for energy produced/consumed (often TWh). How they relate: 1 GW “producing” for a year (8,760 hours) = 8.76 TWh. And, putting energy in perspective: 1 GW = 450,000 Italian households 510 GW (added in 2025) = electricity output of India + Brazil 2,392 GW = total solar = 10% of the world&#39;s electricity Electricity = 20% of the world&#39;s energy</p>
@@ -291,7 +302,7 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (1)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://fortissimo.substack.com/p/-ff32-i-numeri-non-mentono" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🎼 ff.32 Numbers don&#39;t lie</a>
+            <a href="https://fortissimo.substack.com/p/-ff32-i-numeri-non-mentono" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 🎼 ff.32 Numbers don&#39;t lie</a>
           </div>
         </div>
     </section>
@@ -299,7 +310,7 @@
     <section id="ff-149-3" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🃏 ff.149.3 Texas hold &#39;em</h2>
-        <a href="https://fortissimo.substack.com/i/194269239/ff1493-texas-hold-em" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/194269239/ff1493-texas-hold-em" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.149.3 Texas hold &#39;em">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">With these “rulers” in hand, let&#39;s measure the latest developments. In Texas - forever the symbol of American oil - 2025 saw solar output rise by 40%, peaking at 7 TWh in August (~1 GW of energy produced, i.e. our famous 450,000 Italian households). Yes, the sun doesn&#39;t shine at night. So add 15 GW from wind too. So much so that in March 2026 renewables covered 70% of Texas&#39;s electricity . PS. As with many innovative technologies (batteries, solar panels, wind), China rules the roost: the top Chinese companies added +125 GW of wind (~25 GW outside China). Not just solar: wind is no joke either (via futuro fortissimo) And - where there&#39;s no shortage of sun, in Africa - an “Arab” revolution of sorts is under way too: Nigeria, Algeria, Congo and Mozambique lead the pack (1.5-0.4 GW of solar panels imported from China).</p>
@@ -315,8 +326,8 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (2)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://x.com/SimonMahan/status/2034634362029817987" target="_blank" rel="noopener noreferrer" title="a marzo 2026 le rinnovabili coprono il 70% dell’elettricità texana" lang="it" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ x.com</a>
-            <a href="https://www.semafor.com/newsletter/04/14/2026/semafor-energy-china-to-the-rescue?utm_source=newslettershare&amp;amp;utm_medium=net+zero&amp;amp;utm_campaign=flagshipnumbered2#d" target="_blank" rel="noopener noreferrer" title="Non solo solare: anche il vento non scherza" lang="it" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ semafor.com</a>
+            <a href="https://x.com/SimonMahan/status/2034634362029817987" target="_blank" rel="noopener noreferrer" title="a marzo 2026 le rinnovabili coprono il 70% dell’elettricità texana" lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ x.com</a>
+            <a href="https://www.semafor.com/newsletter/04/14/2026/semafor-energy-china-to-the-rescue?utm_source=newslettershare&amp;amp;utm_medium=net+zero&amp;amp;utm_campaign=flagshipnumbered2#d" target="_blank" rel="noopener noreferrer" title="Non solo solare: anche il vento non scherza" lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ semafor.com</a>
           </div>
         </div>
     </section>
@@ -324,7 +335,7 @@
     <section id="ff-149-4" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🤖 ff.149.4 Going to the Maximo</h2>
-        <a href="https://fortissimo.substack.com/i/194269239/ff1494-andare-al-maximo" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/194269239/ff1494-andare-al-maximo" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.149.4 Going to the Maximo">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Why the acceleration? By now, generating renewable electricity simply makes technological sense. One bottleneck is installation. But here another trend dear to futuro fortissimo comes to the rescue: robotics. Maximo (developed by AES, a company backed by NVIDIA) has just finished installing 100 MW of solar panels in California (the equivalent of 0.5% of Texas&#39;s output, installed in 7 months ). Maximo installs one panel a minute. So, every month, 2,500 Italian households: 480 panels a day (60 min x 8h) x 20 working days = 9,600 panels x output of one panel = 500 W = 4.8 MW</p>
@@ -333,8 +344,8 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (2)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://electrek.co/2026/03/29/this-friendly-robot-just-installed-100-mw-of-solar-power/" target="_blank" rel="noopener noreferrer" title="100 MW di pannelli solari in California" lang="it" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ electrek.co</a>
-            <a href="https://cleantechnica.com/2026/03/25/more-solar-power-2x-faster-with-maximo-robots/" target="_blank" rel="noopener noreferrer" title="dello 0.5% della produzione del Texas in 7 mesi" lang="it" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ cleantechnica.com</a>
+            <a href="https://electrek.co/2026/03/29/this-friendly-robot-just-installed-100-mw-of-solar-power/" target="_blank" rel="noopener noreferrer" title="100 MW di pannelli solari in California" lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ electrek.co</a>
+            <a href="https://cleantechnica.com/2026/03/25/more-solar-power-2x-faster-with-maximo-robots/" target="_blank" rel="noopener noreferrer" title="dello 0.5% della produzione del Texas in 7 mesi" lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ cleantechnica.com</a>
           </div>
         </div>
     </section>
@@ -342,7 +353,7 @@
     <section id="ff-149-5" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🗽 ff.149.5 Freedom (from gas and oil)</h2>
-        <a href="https://fortissimo.substack.com/i/194269239/ff1495-liberta-da-gas-e-petrolio" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/194269239/ff1495-liberta-da-gas-e-petrolio" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.149.5 Freedom (from gas and oil)">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Solar is also a chance to cut our dependence on gas (Russia) or oil (Iran). A dependence that - in times of war in Ukraine or with the Strait of Hormuz closed - hurts plenty of countries, Norway excepted, of course… From Prof G Media Egypt, for example, has seen its energy costs double in two months and could only be rescued by Chinese wind power . But China itself, to cut its reliance on imports, is considering blocking solar exports . So, who will win? Maximo or Trump? Posterity will be the judge. The Sun Day project , to fund a sun-powered planet (via futuro fortissimo) ☕</p>
@@ -358,12 +369,12 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Sources &amp; links (6)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://www.profgmedia.com/p/how-the-iran-war-is-reordering-global?utm_source=substack&amp;amp;publication_id=7157411&amp;amp;post_id=191066432&amp;amp;utm_medium=email&amp;amp;utm_content=share&amp;amp;utm_campaign=email-share&amp;amp;triggerShare=true&amp;amp;isFreemail=true&amp;amp;r=bruig&amp;amp;triedRedirect=true" target="_blank" rel="noopener noreferrer" title="Da Prof G Media" lang="it" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ profgmedia.com</a>
-            <a href="https://www.semafor.com/article/04/14/2026/the-iran-war-sent-energy-prices-soaring-china-is-stepping-in?utm_medium=net+zero&amp;amp;utm_campaign=flagshipnumbered2&amp;amp;utm_source=newslettercta" target="_blank" rel="noopener noreferrer" title="l’Egitto ha visto raddoppiare il costo dell’energia in due mesi e potrebbe salvarsi solo con l’eolico cinese" lang="it" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ semafor.com</a>
-            <a href="https://www.reuters.com/legal/litigation/china-weighs-curbs-exports-solar-manufacturing-equipment-us-2026-04-15/?utm_source=semafor" target="_blank" rel="noopener noreferrer" title="Cina, per ridurre la dipendenza da import esterni, sta pensando di bloccare gli export del solare" lang="it" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ reuters.com</a>
-            <a href="https://www.sunday.earth/" target="_blank" rel="noopener noreferrer" title="Il progetto Sun Day" lang="it" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ sunday.earth</a>
-            <a href="https://futurofortissimo.github.io/" target="_blank" rel="noopener noreferrer" title="futuro fortissimo" lang="it" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ futurofortissimo.github.io</a>
-            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" title="michele merelli" lang="it" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ linkedin.com</a>
+            <a href="https://www.profgmedia.com/p/how-the-iran-war-is-reordering-global?utm_source=substack&amp;amp;publication_id=7157411&amp;amp;post_id=191066432&amp;amp;utm_medium=email&amp;amp;utm_content=share&amp;amp;utm_campaign=email-share&amp;amp;triggerShare=true&amp;amp;isFreemail=true&amp;amp;r=bruig&amp;amp;triedRedirect=true" target="_blank" rel="noopener noreferrer" title="Da Prof G Media" lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ profgmedia.com</a>
+            <a href="https://www.semafor.com/article/04/14/2026/the-iran-war-sent-energy-prices-soaring-china-is-stepping-in?utm_medium=net+zero&amp;amp;utm_campaign=flagshipnumbered2&amp;amp;utm_source=newslettercta" target="_blank" rel="noopener noreferrer" title="l’Egitto ha visto raddoppiare il costo dell’energia in due mesi e potrebbe salvarsi solo con l’eolico cinese" lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ semafor.com</a>
+            <a href="https://www.reuters.com/legal/litigation/china-weighs-curbs-exports-solar-manufacturing-equipment-us-2026-04-15/?utm_source=semafor" target="_blank" rel="noopener noreferrer" title="Cina, per ridurre la dipendenza da import esterni, sta pensando di bloccare gli export del solare" lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ reuters.com</a>
+            <a href="https://www.sunday.earth/" target="_blank" rel="noopener noreferrer" title="Il progetto Sun Day" lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ sunday.earth</a>
+            <a href="https://futurofortissimo.github.io/" target="_blank" rel="noopener noreferrer" title="futuro fortissimo" lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ futurofortissimo.github.io</a>
+            <a href="https://www.linkedin.com/in/michelemerelli/" target="_blank" rel="noopener noreferrer" title="michele merelli" lang="it" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ linkedin.com</a>
           </div>
         </div>
     </section>
@@ -379,18 +390,18 @@
       </ul>
     </section>
 
-    <section class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Get new issues of Futuro Fortissimo</h2>
         <p class="text-sm text-black/80 mt-1">A free newsletter by Michele Merelli (Bergamo) on technology, AI, nature and society. Written in Italian, delivered by Substack.</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="px-5 py-3 border-3 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">📩 Subscribe for free ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 Subscribe for free ↗</a>
     </section>
 
-    <nav aria-label="Adjacent issues" class="flex flex-wrap items-center justify-between gap-3 pt-2">
-      <a href="/en/archive/ff-148.html" rel="prev" class="px-4 py-2.5 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-0.5 transition-transform">← 🎼 ff.148 The AI “Myth”</a>
-      <a href="/en/archive/ff-150.html" rel="next" class="px-4 py-2.5 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-0.5 transition-transform">🎼 ff.150 Yes we can? →</a>
+    <nav aria-label="Adjacent issues" class="ff-pn">
+      <a href="/en/archive/ff-148.html" rel="prev"><span class="ff-pn-l">← Previous issue</span><span class="ff-pn-t">ff.148 The AI “Myth”</span></a>
+      <a href="/en/archive/ff-150.html" rel="next" class="ff-next"><span class="ff-pn-l">Next issue →</span><span class="ff-pn-t">ff.150 Yes we can?</span></a>
     </nav>
   </main>
 
@@ -418,11 +429,35 @@
           <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
           <li><a class="hover:underline" href="https://www.instagram.com/michele_merelli/" rel="me noopener" target="_blank">Instagram ↗</a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Buy me a coffee ☕ ↗</a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Michele’s other projects ↗</a></li>
         </ul>
       </div>
     </div>
     <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
+  <aside class="ff-sticky-sub" aria-label="Newsletter">
+    <p>Enjoying it? Get the next issue by email.</p>
+    <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary ff-btn-sm">Subscribe</a>
+    <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="Dismiss">✕</button>
+  </aside>
+  <nav class="ff-tabbar" aria-label="Main navigation">
+    <a href="/en/"><span class="ff-ti" aria-hidden="true">🏠</span>Home</a>
+    <a href="/en/archive/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>Archive</a>
+    <a href="/en/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>Themes</a>
+    <a href="/en/books/"><span class="ff-ti" aria-hidden="true">📚</span>Books</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>Search</button>
+  </nav>
+  <dialog id="ff-search" class="ff-search" aria-label="Search" data-empty="No results. Try another word.">
+    <form role="search">
+      <label for="ff-q" class="sr-only">Search</label>
+      <input id="ff-q" type="search" autocomplete="off" placeholder="Search issues, sections, themes…" aria-controls="ff-results" />
+      <button type="button" class="ff-btn ff-btn-icon" data-ff-close aria-label="Close">✕</button>
+    </form>
+    <ul id="ff-results" role="listbox" aria-label="Search"></ul>
+    <div class="ff-s-foot"><a href="/en/archive/" data-ff-all data-base="/en/archive/">All results in the archive →</a><span>Press / to search anywhere</span></div>
+  </dialog>
+  <script src="/assets/ff-app.js" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>

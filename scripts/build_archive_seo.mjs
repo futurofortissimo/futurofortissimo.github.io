@@ -22,13 +22,13 @@ import { fileURLToPath } from 'node:url';
 import { rawData } from '../data.js';
 import { loadTranslations, localizeIssue, buildRefContext } from './i18n_lib.mjs';
 import { SITE, SUBSTACK, L, S, BOOKS_S } from './i18n_strings.mjs';
-import { PAGE_SEO, UI_SEO, SOCIAL } from './seo_strings.mjs';
+import { PAGE_SEO, UI_SEO, UI_APP, SOCIAL } from './seo_strings.mjs';
 import {
   escapeHtml, safeJsonLd, clip, decodeEntities, cleanTitle, fitTitle, fitDesc, imgDims, cdnImg, metaBlock, pwaHead,
   altLinksHtml, groupAlternates, websiteLd, breadcrumbLd, PERSON, PUBLISHER, DEFAULT_OG, ROBOTS_INDEX, ROBOTS_NOINDEX,
 } from './seo_lib.mjs';
 import { issueMeta } from './issue_meta_lib.mjs';
-import { SHARED_STYLES, langSwitchHtml, navHtml, headExtras, subscribeCta, imgTag, themesHref, siteFooter } from './site_chrome.mjs';
+import { SHARED_STYLES, langSwitchHtml, navHtml, headExtras, subscribeCta, imgTag, themesHref, siteFooter, chromeEnd, readingTools, stickySubscribe } from './site_chrome.mjs';
 import { THEMES, issueThemeMap, sectionThemes } from './site_themes.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -244,7 +244,7 @@ for (const lang of LANG_CODES) {
               const tr = lang === 'it' || r._lang === lang;
               const label = tr ? r.text : (isAmzn ? 'Amazon' : hostOf(r.url));
               const rel = isAmzn ? 'noopener noreferrer sponsored' : 'noopener noreferrer';
-              return `<a href="${escapeHtml(r.url)}" target="_blank" rel="${rel}"${lang !== 'it' && !tr ? ` title="${escapeHtml(r._src ?? r.text)}" lang="it"` : ''} class="inline-flex items-center px-2.5 py-1.5 border-2 border-black ${isAmzn ? 'bg-[var(--ff-yellow)]' : 'bg-white'} text-xs font-mono font-bold hover:underline">${isAmzn ? '📚 ' : '↗ '}${escapeHtml(label)}</a>`;
+              return `<a href="${escapeHtml(r.url)}" target="_blank" rel="${rel}"${lang !== 'it' && !tr ? ` title="${escapeHtml(r._src ?? r.text)}" lang="it"` : ''} class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black ${isAmzn ? 'bg-[var(--ff-yellow)]' : 'bg-white'} text-xs font-mono font-bold hover:underline">${isAmzn ? '📚 ' : '↗ '}${escapeHtml(label)}</a>`;
             }).join('\n            ')}
           </div>
         </div>` : '';
@@ -254,7 +254,7 @@ for (const lang of LANG_CODES) {
       return `<section id="${anchor}" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2${langAttr(titleLang)} class="text-lg sm:text-xl font-bold text-black">${escapeHtml(sub.title || `${s.section} ${sIdx + 1}`)}</h2>
-        ${sub.link ? `<a href="${escapeHtml(sub.link)}" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>` : ''}
+        ${sub.link ? `<a href="${escapeHtml(sub.link)}" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ${escapeHtml(cleanTitle(sub.title || ''))}">Substack ↗</a>` : ''}
       </div>
       <div class="space-y-3"${langAttr(bodyLang)}>
         ${paragraphs}
@@ -264,11 +264,11 @@ for (const lang of LANG_CODES) {
     </section>`;
     }).join('\n\n    ');
 
-    const tocHtml = (ch.subchapters || []).length > 1 ? `<nav aria-label="${escapeHtml(s.tocLabel)}" class="mt-5 pt-4 border-t-2 border-black/15">
-        <div class="ff-eyebrow text-black/70 mb-2">${escapeHtml(s.inThisIssue)}</div>
-        <div class="flex flex-wrap gap-2">
-          ${(ch.subchapters || []).map((sub, sIdx) => `<a href="#${anchorOf(orig.subchapters[sIdx] || sub, sIdx)}"${langAttr(lang === 'it' ? 'it' : sub._titleLang)} class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">${escapeHtml(sub.title)}</a>`).join('\n          ')}
-        </div>
+    const tocHtml = (ch.subchapters || []).length > 1 ? `<nav aria-label="${escapeHtml(s.tocLabel)}" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+        <h2 class="ff-eyebrow text-black/70 mb-2">${escapeHtml(s.inThisIssue)}</h2>
+        <ol>
+          ${(ch.subchapters || []).map((sub, sIdx) => `<li><a href="#${anchorOf(orig.subchapters[sIdx] || sub, sIdx)}"${langAttr(lang === 'it' ? 'it' : sub._titleLang)}>${escapeHtml(sub.title)}</a></li>`).join('\n          ')}
+        </ol>
       </nav>` : '';
 
     const partialNotice = lang !== 'it' && !isFull ? `<aside class="brutal-card accent-bar accent-yellow no-round flex flex-col sm:flex-row sm:items-center justify-between gap-3" role="note">
@@ -301,20 +301,23 @@ for (const lang of LANG_CODES) {
   <script type="application/ld+json">${safeJsonLd(breadcrumbJson)}</script>
   ${headExtras(lang)}
 </head>
-<body class="bg-white text-black antialiased no-round">
+<body class="bg-white text-black antialiased no-round ff-has-tabbar">
+  ${readingTools(lang)}
   ${navHtml(lang, 'archivio', hrefs)}
 
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="${L[lang].home}">${escapeHtml(s.crumbHome)}</a> /</li><li><a class="underline" href="${L[lang].archive}">${escapeHtml(s.crumbArchive)}</a> /</li><li aria-current="page"${metaLang}>${escapeHtml(cleanTitle(ch.title))}</li></ol></nav>
-    <article class="space-y-6" aria-labelledby="issue-title">
+    <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
     <header class="brutal-card accent-bar accent-blue no-round">
-      <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-        <span class="ff-eyebrow text-black/70">${escapeHtml(s.eyebrow)}</span>
-        <a href="${escapeHtml(ch.url)}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] ff-button text-xs hover:-translate-y-0.5 transition-transform">${escapeHtml(s.readOriginal)}</a>
-      </div>
+      <p class="ff-eyebrow text-black/70 mb-3">${escapeHtml(s.eyebrow)}</p>
       <h1 id="issue-title"${metaLang} class="text-2xl sm:text-3xl font-bold text-black">${escapeHtml(ch.title)}</h1>
       ${ch.subtitle ? `<p${metaLang} class="mt-3 text-base sm:text-lg text-black/80 font-medium">${escapeHtml(ch.subtitle)}</p>` : ''}
       ${dateHtml}
+      <div class="ff-btn-row mt-4">
+        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="${pageUrl}" data-done="${escapeHtml(UI_APP[lang].copied)}"><span aria-hidden="true">↗</span> ${escapeHtml(UI_APP[lang].share)}</button>
+        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="${pageUrl}" data-done="${escapeHtml(UI_APP[lang].copied)}"><span aria-hidden="true">🔗</span> ${escapeHtml(UI_APP[lang].copy)}</button>
+        <a href="${escapeHtml(ch.url)}" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">${escapeHtml(s.readOriginal)}</a>
+      </div>
       ${keypointsHtml}
       ${themeChips}
       ${tocHtml}
@@ -329,13 +332,15 @@ for (const lang of LANG_CODES) {
 
     ${subscribeCta(lang)}
 
-    <nav aria-label="${escapeHtml(s.adjacent)}" class="flex flex-wrap items-center justify-between gap-3 pt-2">
-      ${older ? `<a href="${issuePath(lang, older.slug)}" rel="prev" class="px-4 py-2.5 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-0.5 transition-transform">← ${escapeHtml(older.title)}</a>` : '<span></span>'}
-      ${newer ? `<a href="${issuePath(lang, newer.slug)}" rel="next" class="px-4 py-2.5 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-0.5 transition-transform">${escapeHtml(newer.title)} →</a>` : '<span></span>'}
+    <nav aria-label="${escapeHtml(s.adjacent)}" class="ff-pn">
+      ${older ? `<a href="${issuePath(lang, older.slug)}" rel="prev"><span class="ff-pn-l">← ${escapeHtml(UI_APP[lang].prev)}</span><span class="ff-pn-t">${escapeHtml(cleanTitle(older.title))}</span></a>` : '<span></span>'}
+      ${newer ? `<a href="${issuePath(lang, newer.slug)}" rel="next" class="ff-next"><span class="ff-pn-l">${escapeHtml(UI_APP[lang].next)} →</span><span class="ff-pn-t">${escapeHtml(cleanTitle(newer.title))}</span></a>` : '<span></span>'}
     </nav>
   </main>
 
   ${siteFooter(lang)}
+  ${stickySubscribe(lang)}
+  ${chromeEnd(lang, 'archivio')}
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>
@@ -376,14 +381,14 @@ for (const lang of LANG_CODES) {
       <div class="ff-eyebrow text-black/70">${escapeHtml(s.introKicker)}</div>
       <p class="text-base sm:text-lg font-medium">${escapeHtml(s.introText)}</p>
       <div class="flex flex-wrap gap-2">
-        <a href="${SUBSTACK}/subscribe" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 border-3 border-black bg-[var(--ff-green)] ff-button brutal-shadow">${s.subscribeFree}</a>
-        <a href="${L[lang].books}" class="px-4 py-2.5 border-3 border-black bg-white ff-button brutal-shadow">${s.books}</a>
+        <a href="${L[lang].books}" class="ff-btn">${s.books}</a>
+        <a href="${L[lang].themes}" class="ff-btn">${s.themes}</a>
       </div>
     </section>`;
   const fullCount = stats[lang].full;
   const filterPills = lang === 'it' ? '' : `<div class="flex flex-wrap gap-2" role="group">
-        <button type="button" data-f="all" class="ff-f px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] ff-button text-xs">${escapeHtml(s.filterAll)} · ${n}</button>
-        <button type="button" data-f="full" class="ff-f px-3 py-1.5 border-2 border-black bg-white ff-button text-xs">${escapeHtml(s.filterFull)} · ${fullCount}</button>
+        <button type="button" data-f="all" aria-pressed="true" class="ff-f ff-btn ff-btn-sm ff-btn-ghost bg-[var(--ff-yellow)]">${escapeHtml(s.filterAll)} · ${n}</button>
+        <button type="button" data-f="full" aria-pressed="false" class="ff-f ff-btn ff-btn-sm ff-btn-ghost bg-white">${escapeHtml(s.filterFull)} · ${fullCount}</button>
       </div>`;
   const items = issues.map((o) => {
     const { issue: ch, status } = LOC[lang][o.slug];
@@ -395,11 +400,8 @@ for (const lang of LANG_CODES) {
     const ml = lang !== 'it' && ch._lang !== lang ? ' lang="it"' : '';
     return `<article class="brutal-card no-round space-y-2 issue-item" data-status="${status}" data-search="${blob}">
           <div class="flex flex-wrap items-start justify-between gap-2">
-            <h2${ml} class="text-lg font-bold"><a href="${issuePath(lang, o.slug)}" class="hover:underline">${escapeHtml(ch.title)}</a></h2>
-            <div class="flex gap-2">
-              <a href="${issuePath(lang, o.slug)}" class="px-2.5 py-1 border-2 border-black bg-[var(--ff-yellow)] ff-button text-xs">${escapeHtml(s.idxOpen)}</a>
-              <a href="${escapeHtml(ch.url)}" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs">Substack ↗</a>
-            </div>
+            <h2${ml} class="text-lg font-bold"><a href="${issuePath(lang, o.slug)}" class="hover:underline inline-flex min-h-[44px] items-center">${escapeHtml(ch.title)}</a></h2>
+            <a href="${escapeHtml(ch.url)}" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ${escapeHtml(cleanTitle(ch.title))}">Substack ↗</a>
           </div>
           ${META[o.slug].date ? `<p class="text-xs font-mono text-black/70"><time datetime="${isoDate(META[o.slug].date)}">${escapeHtml(fmtDate(META[o.slug].date, lang))}</time></p>` : ''}
           ${badge}
@@ -421,7 +423,7 @@ for (const lang of LANG_CODES) {
   <script type="application/ld+json">${safeJsonLd(crumbs)}</script>
   ${headExtras(lang)}
 </head>
-<body class="bg-white text-black antialiased no-round">
+<body class="bg-white text-black antialiased no-round ff-has-tabbar">
   ${navHtml(lang, 'archivio', hrefs)}
 
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
@@ -430,9 +432,10 @@ for (const lang of LANG_CODES) {
       <div class="ff-eyebrow text-black/70">${escapeHtml(s.idxEyebrow(n))}</div>
       <h1 class="text-2xl sm:text-3xl font-bold">${escapeHtml(s.idxH1)}</h1>
       <p class="text-base text-black/80">${s.idxIntro}</p>
-      <div class="flex flex-col sm:flex-row gap-3">
-        <input id="q" type="search" placeholder="${escapeHtml(s.idxFilter)}" aria-label="${escapeHtml(s.idxFilter)}" class="flex-1 px-4 py-2.5 border-3 border-black bg-white text-sm font-medium focus:outline-none" />
-        <a href="${SUBSTACK}/subscribe" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 border-3 border-black bg-[var(--ff-yellow)] ff-button brutal-shadow text-center">${s.subscribeShort}</a>
+      <div role="search">
+        <label for="q" class="sr-only">${escapeHtml(s.idxFilter)}</label>
+        <input id="q" type="search" data-ff-local-search placeholder="${escapeHtml(s.idxFilter)}" class="w-full min-h-[48px] px-4 border-3 border-black bg-white text-base font-medium" />
+        <p id="q-count" class="mt-2 text-xs font-mono text-black/70" aria-live="polite"></p>
       </div>
       ${filterPills}
     </section>
@@ -449,11 +452,14 @@ for (const lang of LANG_CODES) {
       let mode = 'all';
       const apply = () => {
         const term = q.value.trim().toLowerCase();
+        let shown = 0;
         items.forEach((el) => {
           const okTerm = !term || el.dataset.search.includes(term);
           const okMode = mode === 'all' || el.dataset.status === 'full';
           el.style.display = okTerm && okMode ? '' : 'none';
+          if (okTerm && okMode) shown++;
         });
+        document.getElementById('q-count').textContent = shown + ' / ' + items.length;
       };
       const pre = new URLSearchParams(location.search).get('q');
       if (pre) q.value = pre;
@@ -463,6 +469,7 @@ for (const lang of LANG_CODES) {
         document.querySelectorAll('.ff-f').forEach((x) => {
           x.classList.toggle('bg-[var(--ff-yellow)]', x === b);
           x.classList.toggle('bg-white', x !== b);
+          x.setAttribute('aria-pressed', x === b ? 'true' : 'false');
         });
         apply();
       }));
@@ -470,6 +477,7 @@ for (const lang of LANG_CODES) {
     })();
   </script>
   ${siteFooter(lang)}
+  ${chromeEnd(lang, 'archivio')}
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>
@@ -525,7 +533,7 @@ for (const lang of ['en', 'hi']) {
             ${cites}
           </div>
           <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-black/15 mt-auto">
-            <a href="${escapeHtml(b.amazonUrl)}" target="_blank" rel="noopener noreferrer sponsored" class="px-3.5 py-2 border-2 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform">${escapeHtml(bs.buy)}</a>
+            <a href="${escapeHtml(b.amazonUrl)}" target="_blank" rel="noopener noreferrer sponsored" class="ff-btn ff-btn-accent ff-btn-sm">${escapeHtml(bs.buy)}</a>
           </div>
         </article>`;
   }).join('\n        ');
@@ -569,7 +577,7 @@ for (const lang of ['en', 'hi']) {
   <script type="application/ld+json">${safeJsonLd(crumbs)}</script>
   ${headExtras(lang)}
 </head>
-<body class="bg-white text-black antialiased no-round">
+<body class="bg-white text-black antialiased no-round ff-has-tabbar">
   ${navHtml(lang, 'libri', { ...BOOKS_PATHS })}
 
   <main id="main" class="max-w-6xl mx-auto px-4 py-8 space-y-6">
@@ -578,10 +586,11 @@ for (const lang of ['en', 'hi']) {
       <h1 class="text-2xl sm:text-3xl font-bold">${escapeHtml(bs.h1)}</h1>
       <p class="text-base text-black/80">${escapeHtml(bs.intro)}</p>
       <p class="text-xs font-mono border-2 border-black bg-gray-50 px-3 py-2">${escapeHtml(bs.disclosure)}</p>
-      <input id="q" type="search" placeholder="${escapeHtml(bs.filter)}" aria-label="${escapeHtml(bs.filter)}" class="w-full px-4 py-2.5 border-3 border-black bg-white text-sm font-medium focus:outline-none" />
-      <div class="flex flex-wrap gap-2" role="group">
-        <button type="button" data-theme="ALL" class="theme-pill px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] ff-button text-xs">${escapeHtml(bs.all)}</button>
-        ${themes.map((t) => `<button type="button" data-theme="${escapeHtml(t)}" class="theme-pill px-3 py-1.5 border-2 border-black bg-white ff-button text-xs">${escapeHtml(themeName(t))}</button>`).join('\n        ')}
+      <label for="q" class="sr-only">${escapeHtml(bs.filter)}</label>
+      <input id="q" type="search" data-ff-local-search placeholder="${escapeHtml(bs.filter)}" class="w-full min-h-[48px] px-4 border-3 border-black bg-white text-base font-medium" />
+      <div class="flex gap-2 overflow-x-auto pb-1 -mx-1 px-1" role="group" aria-label="${escapeHtml(UI_SEO[lang].themes)}">
+        <button type="button" data-theme="ALL" aria-pressed="true" class="theme-pill ff-btn ff-btn-sm ff-btn-ghost bg-[var(--ff-yellow)]">${escapeHtml(bs.all)}</button>
+        ${themes.map((t) => `<button type="button" data-theme="${escapeHtml(t)}" aria-pressed="false" class="theme-pill ff-btn ff-btn-sm ff-btn-ghost bg-white">${escapeHtml(themeName(t))}</button>`).join('\n        ')}
       </div>
     </section>
 
@@ -590,13 +599,13 @@ for (const lang of ['en', 'hi']) {
     </section>
     <p id="empty" class="hidden brutal-card no-round text-center font-mono font-bold">${escapeHtml(bs.empty)}</p>
 
-    <section class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">${escapeHtml(bs.ctaTitle)}</h2>
         <p class="text-sm text-black/80 mt-1">${escapeHtml(bs.ctaText)}</p>
       </div>
-      <a href="${SUBSTACK}/subscribe" target="_blank" rel="noopener noreferrer" class="px-5 py-3 border-3 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow whitespace-nowrap">${S[lang].subscribeFree}</a>
+      <a href="${SUBSTACK}/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">${S[lang].subscribeFree}</a>
     </section>
   </main>
 
@@ -622,12 +631,14 @@ for (const lang of ['en', 'hi']) {
         document.querySelectorAll('.theme-pill').forEach((x) => {
           x.classList.toggle('bg-[var(--ff-yellow)]', x === b);
           x.classList.toggle('bg-white', x !== b);
+          x.setAttribute('aria-pressed', x === b ? 'true' : 'false');
         });
         apply();
       }));
     })();
   </script>
   ${siteFooter(lang)}
+  ${chromeEnd(lang, 'libri')}
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>
@@ -639,20 +650,7 @@ for (const lang of ['en', 'hi']) {
 
 // ── 4. Home pages (it/en/hi): SEO head + JSON-LD are written by build_static_pages.mjs ──
 
-// ── 5. Italian /libri/: hreflang + real language switcher (idempotent) ──────
-function patchStatic(rel, lang, hrefs) {
-  const p = path.join(ROOT, rel);
-  if (!fs.existsSync(p)) return;
-  let h = fs.readFileSync(p, 'utf-8');
-  const sw = `<!-- ff:langswitch -->\n  ${langSwitchHtml(lang, hrefs).replace('max-w-5xl', 'max-w-6xl')}\n  <!-- /ff:langswitch -->`;
-  if (h.includes('<!-- ff:langswitch -->')) h = h.replace(/<!-- ff:langswitch -->[\s\S]*?<!-- \/ff:langswitch -->/, sw);
-  else h = h.replace(/<nav class="ff-lang-bar"[\s\S]*?<\/nav>/, sw);
-  const css = `<style id="ff-lang-switch-css">${SHARED_STYLES.split('\n').filter((x) => /ff-topbar|ff-lang-switch/.test(x)).join('\n')}</style>`;
-  if (h.includes('<style id="ff-lang-switch-css">')) h = h.replace(/<style id="ff-lang-switch-css">[\s\S]*?<\/style>/, css);
-  else h = h.replace('</head>', `  ${css}\n</head>`);
-  fs.writeFileSync(p, h, 'utf-8');
-}
-patchStatic('libri/index.html', 'it', { ...BOOKS_PATHS });
+// ── 5. /libri/ chrome + SEO head: build_static_pages.mjs ──
 
 // ── 6. Sitemaps: index + pages + archive (xhtml:link alternates) ───────────
 const LATEST_DAY = dayOf(LATEST_DATE);

@@ -168,6 +168,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://substackcdn.com" crossorigin />
   <link rel="stylesheet" href="/assets/ff-archive.css" />
+  <link rel="stylesheet" href="/assets/ff-app.css" />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" /></noscript>
@@ -211,53 +212,64 @@
     gtag('config', 'G-NQ7MQR0VL8');
   </script>
 </head>
-<body class="bg-white text-black antialiased no-round">
-  
-  <nav class="ff-topbar" aria-label="Lingua">
-    <div class="max-w-5xl mx-auto flex items-center justify-between gap-2 px-4 py-1">
-      <a href="/" class="ff-brand">FUTURO FORTISSIMO</a>
-      <div class="ff-lang-switch" role="group" aria-label="Lingua"><a href="/archivio/ff-42.html" hreflang="it" lang="it" title="Italiano" aria-current="page">IT<span class="ff-ln">Italiano</span></a><a href="/en/archive/ff-42.html" hreflang="en" lang="en" title="English">EN<span class="ff-ln">English</span></a><a href="/hi/archive/ff-42.html" hreflang="hi" lang="hi" title="हिन्दी">हिं<span class="ff-ln">हिन्दी</span></a></div>
+<body class="bg-white text-black antialiased no-round ff-has-tabbar">
+  <div class="ff-progress" aria-hidden="true"><span></span></div>
+  <a class="ff-skip" href="#main">Vai al contenuto</a>
+  <header class="ff-appbar">
+    <div class="ff-appbar-in">
+      <a href="/" class="ff-brand" aria-label="Futuro Fortissimo — Home"><img src="/assets/icons/icon-192.png" alt="" width="30" height="30" /><span>Fortissimo</span></a>
+      <nav class="ff-primary" aria-label="Navigazione principale">
+        <a href="/">Home</a>
+        <a href="/archivio/" aria-current="page">Archivio</a>
+        <a href="/themes.html">Temi</a>
+        <a href="/libri/">Libri</a>
+      </nav>
+      <div class="ff-actions">
+        <button type="button" class="ff-search-btn" data-ff-search aria-label="Cerca (/)" aria-haspopup="dialog" aria-controls="ff-search"><span aria-hidden="true">🔍</span><span class="ff-l">Cerca</span><kbd aria-hidden="true">/</kbd></button>
+        <div class="ff-lang" role="group" aria-label="Lingua"><a href="/archivio/ff-42.html" hreflang="it" lang="it" title="Italiano" data-keep-state aria-current="page">IT</a><a href="/en/archive/ff-42.html" hreflang="en" lang="en" title="English" data-keep-state>EN</a><a href="/hi/archive/ff-42.html" hreflang="hi" lang="hi" title="हिन्दी" data-keep-state>हिं</a></div>
+        <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary">Iscriviti</a>
+        <details class="ff-more">
+          <summary aria-label="Altro"><span aria-hidden="true">☰</span><span class="sr-only">Altro</span></summary>
+          <nav class="ff-menu" aria-label="Altro">
+            <a href="/book/">📖 Il Libro</a>
+            <a href="/book/ffxy-index.html">🔢 ff.x.y</a>
+            <a href="/connections.html">🔗 Connessioni</a>
+            <a href="/note.html">📝 Note</a>
+            <hr />
+            <a class="ff-menu-sub" href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener">📩 Iscriviti ↗</a>
+          </nav>
+        </details>
+      </div>
     </div>
-  </nav>
-  <header class="max-w-5xl mx-auto px-4 pt-6">
-    <nav aria-label="Navigazione principale" class="flex flex-wrap items-center gap-2 pb-4 border-b-3 border-black">
-      <a href="/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🏠 Home</a>
-      <a href="/archivio/" aria-current="page" class="px-3 py-2 border-2 border-black ff-button bg-[var(--ff-yellow)] text-black whitespace-nowrap">🗂 Archivio</a>
-      <a href="/libri/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📚 Libri</a>
-      <a href="/book/" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📖 Il Libro</a>
-      <a href="/book/ffxy-index.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🔢 ff.x.y</a>
-      <a href="/themes.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🧭 Temi</a>
-      <a href="/connections.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">🔗 Connessioni</a>
-      <a href="/note.html" class="px-3 py-2 border-2 border-black ff-button bg-white text-black hover:-translate-y-0.5 transition-transform whitespace-nowrap">📝 Note</a>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ml-auto px-3 py-2 border-2 border-black bg-[var(--ff-green)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">📩 Iscriviti</a>
-    </nav>
   </header>
 
   <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="/">Home</a> /</li><li><a class="underline" href="/archivio/">Archivio</a> /</li><li aria-current="page">ff.42 Made in China (pt.1)</li></ol></nav>
-    <article class="space-y-6" aria-labelledby="issue-title">
+    <article class="space-y-6" aria-labelledby="issue-title" data-ff-article>
     <header class="brutal-card accent-bar accent-blue no-round">
-      <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-        <span class="ff-eyebrow text-black/70">Archivio Futuro Fortissimo</span>
-        <a href="https://fortissimo.substack.com/p/ff41-made-in-china-pt1" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] ff-button text-xs hover:-translate-y-0.5 transition-transform">Leggi originale su Substack ↗</a>
-      </div>
+      <p class="ff-eyebrow text-black/70 mb-3">Archivio Futuro Fortissimo</p>
       <h1 id="issue-title" class="text-2xl sm:text-3xl font-bold text-black">🎼 ff.42 Made in China (pt.1)</h1>
       <p class="mt-3 text-base sm:text-lg text-black/80 font-medium">La via della seta non è mai stata così impervia</p>
       <p class="mt-2 text-xs font-mono text-black/70">Pubblicato il <time datetime="2022-12-18T07:55:55.703Z">18 dicembre 2022</time> · Michele Merelli</p>
+      <div class="ff-btn-row mt-4">
+        <button type="button" class="ff-btn ff-btn-sm" data-ff-share data-url="https://futurofortissimo.github.io/archivio/ff-42.html" data-done="Link copiato"><span aria-hidden="true">↗</span> Condividi</button>
+        <button type="button" class="ff-btn ff-btn-sm" data-ff-copy data-url="https://futurofortissimo.github.io/archivio/ff-42.html" data-done="Link copiato"><span aria-hidden="true">🔗</span> Copia link</button>
+        <a href="https://fortissimo.substack.com/p/ff41-made-in-china-pt1" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm">Leggi originale su Substack ↗</a>
+      </div>
       <ul class="mt-4 space-y-2 border-l-4 border-black pl-4 text-sm sm:text-base font-medium">
         <li>• Quanto dipendiamo da essa per la produzione di materiali preziosi?</li>
         <li>• Come si posiziona tra inquinamento e innovazione green?</li>
         <li>• Taiwan e la Pelosi: un nuovo ordine mondiale?</li>
       </ul>
       <p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">Temi</span><a href="/themes.html#geo" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🏛 Geopolitica, economia e società</a><a href="/themes.html#clima" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🌍 Natura, clima ed energia</a><a href="/themes.html#ai" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">🤖 AI, agenti e modelli</a></p>
-      <nav aria-label="Sezioni del numero" class="mt-5 pt-4 border-t-2 border-black/15">
-        <div class="ff-eyebrow text-black/70 mb-2">In questo numero</div>
-        <div class="flex flex-wrap gap-2">
-          <a href="#ff-42-1" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">⛏️ ff.42.1 Minerali preziosi?</a>
-          <a href="#ff-42-2" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">❓ ff.42.2 Inquinano o spingono la transizione?</a>
-          <a href="#ff-42-3" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🐌 ff.42.3 Bastoni tra le AI-ruote</a>
-          <a href="#ff-42-4" class="px-2.5 py-1 border-2 border-black bg-gray-50 hover:bg-[var(--ff-yellow)] text-xs font-mono font-bold">🌐 ff.42.4 Un nuovo ordine globale?</a>
-        </div>
+      <nav aria-label="Sezioni del numero" class="ff-toc mt-5 pt-4 border-t-2 border-black/15">
+        <h2 class="ff-eyebrow text-black/70 mb-2">In questo numero</h2>
+        <ol>
+          <li><a href="#ff-42-1">⛏️ ff.42.1 Minerali preziosi?</a></li>
+          <li><a href="#ff-42-2">❓ ff.42.2 Inquinano o spingono la transizione?</a></li>
+          <li><a href="#ff-42-3">🐌 ff.42.3 Bastoni tra le AI-ruote</a></li>
+          <li><a href="#ff-42-4">🌐 ff.42.4 Un nuovo ordine globale?</a></li>
+        </ol>
       </nav>
     </header>
 
@@ -266,7 +278,7 @@
     <section id="ff-42-1" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">⛏️ ff.42.1 Minerali preziosi?</h2>
-        <a href="https://fortissimo.substack.com/i/79523597/ff-minerali-preziosi" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/79523597/ff-minerali-preziosi" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.42.1 Minerali preziosi?">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Il magico 80%. Come con tante distribuzioni (Pareto rieccoci),la Cina controlla l’80% della produzione di pannelli solari e di estrazione/raffinamento di litio. L’Europa, per lo meno, sta migliorando.</p>
@@ -288,8 +300,8 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (2)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://about.bnef.com/blog/china-dominates-the-lithium-ion-battery-supply-chain-but-europe-is-on-the-rise/?ref=CTVC-newsletter#_ftnref1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ la Cina controlla l’80% della produzione di pannelli solari e di estrazione/ra</a>
-            <a href="https://www.startmag.it/energia/catl-batterie-mercato-primo-semestre-2022/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ classifica</a>
+            <a href="https://about.bnef.com/blog/china-dominates-the-lithium-ion-battery-supply-chain-but-europe-is-on-the-rise/?ref=CTVC-newsletter#_ftnref1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ la Cina controlla l’80% della produzione di pannelli solari e di estrazione/ra</a>
+            <a href="https://www.startmag.it/energia/catl-batterie-mercato-primo-semestre-2022/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ classifica</a>
           </div>
         </div>
     </section>
@@ -297,7 +309,7 @@
     <section id="ff-42-2" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">❓ ff.42.2 Inquinano o spingono la transizione?</h2>
-        <a href="https://fortissimo.substack.com/i/79523597/ff-inquinano-o-spingono-la-transizione" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/79523597/ff-inquinano-o-spingono-la-transizione" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.42.2 Inquinano o spingono la transizione?">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Fino a pochi annifa, la Cina era sinonimo di città nello smog. Con i dati su mobilità elettrica ed energia rinnovabile sembra che questa brutta reputazione sia un po’ migliorata.</p>
@@ -312,10 +324,10 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (4)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://www.newscientist.com/article/2317274-china-is-building-more-than-half-of-the-worlds-new-coal-power-plants/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ impianti a carbone</a>
-            <a href="https://about.bnef.com/blog/china-is-the-growth-engine-of-worlds-low-carbon-spending/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ transizione energetica</a>
-            <a href="https://www.ctvc.co/r/a6c176bc?m=1677f041-709e-4de9-89d4-433dd1f94e8c" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ $17T</a>
-            <a href="https://www.ctvc.co/r/c6e48d18?m=1677f041-709e-4de9-89d4-433dd1f94e8c" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 5x</a>
+            <a href="https://www.newscientist.com/article/2317274-china-is-building-more-than-half-of-the-worlds-new-coal-power-plants/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ impianti a carbone</a>
+            <a href="https://about.bnef.com/blog/china-is-the-growth-engine-of-worlds-low-carbon-spending/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ transizione energetica</a>
+            <a href="https://www.ctvc.co/r/a6c176bc?m=1677f041-709e-4de9-89d4-433dd1f94e8c" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ $17T</a>
+            <a href="https://www.ctvc.co/r/c6e48d18?m=1677f041-709e-4de9-89d4-433dd1f94e8c" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 5x</a>
           </div>
         </div>
     </section>
@@ -323,7 +335,7 @@
     <section id="ff-42-3" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🐌 ff.42.3 Bastoni tra le AI-ruote</h2>
-        <a href="https://fortissimo.substack.com/i/79523597/ff-bastoni-tra-le-ai-ruote" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/79523597/ff-bastoni-tra-le-ai-ruote" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.42.3 Bastoni tra le AI-ruote">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">La supremazia nell&#39;elettrificazionefapensare a unfuturo tutto cinese. Però, su temi quali l’intelligenza artificiale la situazione è un po’ diversa:</p>
@@ -335,10 +347,10 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (4)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://www.cnas.org/publications/reports/understanding-chinas-ai-strategy" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Lo sviluppo tecnologico (e militare) è connesso con l’intelligenza arti</a>
-            <a href="https://www.csis.org/analysis/choking-chinas-access-future-ai?utm_source=substack&amp;utm_medium=email" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ un vero e proprio embargo</a>
-            <a href="https://www.reuters.com/technology/taiwan-china-us-china-tensions-serious-challenge-chip-industry-tsmc-says-2022-10-19/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ succedendo con TSMC</a>
-            <a href="https://www.cnbc.com/2022/12/06/tsmc-to-up-arizona-investment-to-40-billion-with-second-semiconductor-chip-plant.html?utm_campaign=mb&amp;utm_medium=newsletter&amp;utm_source=morning_brew" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ $40B investiti in US dagli stessi, nell’ultimo anno</a>
+            <a href="https://www.cnas.org/publications/reports/understanding-chinas-ai-strategy" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Lo sviluppo tecnologico (e militare) è connesso con l’intelligenza arti</a>
+            <a href="https://www.csis.org/analysis/choking-chinas-access-future-ai?utm_source=substack&amp;utm_medium=email" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ un vero e proprio embargo</a>
+            <a href="https://www.reuters.com/technology/taiwan-china-us-china-tensions-serious-challenge-chip-industry-tsmc-says-2022-10-19/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ succedendo con TSMC</a>
+            <a href="https://www.cnbc.com/2022/12/06/tsmc-to-up-arizona-investment-to-40-billion-with-second-semiconductor-chip-plant.html?utm_campaign=mb&amp;utm_medium=newsletter&amp;utm_source=morning_brew" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ $40B investiti in US dagli stessi, nell’ultimo anno</a>
           </div>
         </div>
     </section>
@@ -346,7 +358,7 @@
     <section id="ff-42-4" class="brutal-card no-round space-y-3 scroll-mt-6">
       <div class="flex flex-wrap items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-bold text-black">🌐 ff.42.4 Un nuovo ordine globale?</h2>
-        <a href="https://fortissimo.substack.com/i/79523597/ff-un-nuovo-ordine-globale" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs hover:bg-[var(--ff-yellow)]">Substack ↗</a>
+        <a href="https://fortissimo.substack.com/i/79523597/ff-un-nuovo-ordine-globale" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-ghost ff-btn-sm" aria-label="Substack ↗ ff.42.4 Un nuovo ordine globale?">Substack ↗</a>
       </div>
       <div class="space-y-3">
         <p class="text-base leading-relaxed text-black/90">Tutte queste riflessioni aprono a una domanda: siamo di fronte a un nuovo ordine globale? Ray Dalio(già citato in📈ff. 14. 2 Nostradamus: Ray Dalio e l’ordine mondiale) pensa di sì.</p>
@@ -369,13 +381,13 @@
       <div class="mt-4 pt-3 border-t-2 border-black/15">
           <div class="ff-eyebrow text-black/70 mb-2">Fonti e link citati (5)</div>
           <div class="flex flex-wrap gap-2">
-            <a href="https://thedeepdive.ca/ray-dalio-says-a-new-world-order-is-coming-as-china-poised-to-become-an-economic-superpower/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Ray Dalio</a>
-            <a href="https://iari.site/2022/08/29/la-battaglia-del-lago-changjin-il-cinema-cinese-riscrive-la-storia/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ il</a>
-            <a href="https://twitter.com/balajis/status/1450933817745674240?s=20&amp;t=MoqXeWHX5siK1Lde8geUjQ" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Balaji@balajisJust saw The Battle at Lake Changjin. Through-the-looking-glass experience, where the good guys are the plucky underdog Chinese and the bad guys are the powerful Americans.
+            <a href="https://thedeepdive.ca/ray-dalio-says-a-new-world-order-is-coming-as-china-poised-to-become-an-economic-superpower/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Ray Dalio</a>
+            <a href="https://iari.site/2022/08/29/la-battaglia-del-lago-changjin-il-cinema-cinese-riscrive-la-storia/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ il</a>
+            <a href="https://twitter.com/balajis/status/1450933817745674240?s=20&amp;t=MoqXeWHX5siK1Lde8geUjQ" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ Balaji@balajisJust saw The Battle at Lake Changjin. Through-the-looking-glass experience, where the good guys are the plucky underdog Chinese and the bad guys are the powerful Americans.
 
 It’s the #1 movie in the world, and seemingly meant to prepare for conflict.</a>
-            <a href="https://youtu.be/1aHDj84CcsY" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ youtu.beThe Battle at Lake Changjin Official Trailer 3</a>
-            <a href="https://fortissimo.substack.com/i/49335079/ff-nostradamus-ray-dalio-e-lordine-mondiale" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2.5 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 📈</a>
+            <a href="https://youtu.be/1aHDj84CcsY" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ youtu.beThe Battle at Lake Changjin Official Trailer 3</a>
+            <a href="https://fortissimo.substack.com/i/49335079/ff-nostradamus-ray-dalio-e-lordine-mondiale" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-3 py-1.5 border-2 border-black bg-white text-xs font-mono font-bold hover:underline">↗ 📈</a>
           </div>
         </div>
     </section>
@@ -391,18 +403,18 @@ It’s the #1 movie in the world, and seemingly meant to prepare for conflict.</
       </ul>
     </section>
 
-    <section class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <section data-ff-end-cta class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <div class="ff-eyebrow text-black/80">Newsletter</div>
         <h2 class="text-lg font-bold mt-1">Ricevi i nuovi numeri di Futuro Fortissimo</h2>
         <p class="text-sm text-black/80 mt-1">Ogni uscita su tecnologia, AI, natura e società direttamente via email su Substack.</p>
       </div>
-      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="px-5 py-3 border-3 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">📩 Iscriviti gratis ↗</a>
+      <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="ff-btn ff-btn-primary">📩 Iscriviti gratis ↗</a>
     </section>
 
-    <nav aria-label="Numeri adiacenti" class="flex flex-wrap items-center justify-between gap-3 pt-2">
-      <a href="/archivio/ff-41.html" rel="prev" class="px-4 py-2.5 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-0.5 transition-transform">← 🎼 ff.41 Non ho parole</a>
-      <a href="/archivio/ff-43.html" rel="next" class="px-4 py-2.5 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-0.5 transition-transform">🎼 ff.43 Settimana bianca e Natale →</a>
+    <nav aria-label="Numeri adiacenti" class="ff-pn">
+      <a href="/archivio/ff-41.html" rel="prev"><span class="ff-pn-l">← Numero precedente</span><span class="ff-pn-t">ff.41 Non ho parole</span></a>
+      <a href="/archivio/ff-43.html" rel="next" class="ff-next"><span class="ff-pn-l">Numero successivo →</span><span class="ff-pn-t">ff.43 Settimana bianca e Natale</span></a>
     </nav>
   </main>
 
@@ -430,11 +442,35 @@ It’s the #1 movie in the world, and seemingly meant to prepare for conflict.</
           <li><a class="hover:underline" href="https://x.com/michele_merelli" rel="me noopener" target="_blank">X @michele_merelli ↗</a></li>
           <li><a class="hover:underline" href="https://www.instagram.com/michele_merelli/" rel="me noopener" target="_blank">Instagram ↗</a></li>
           <li><a class="hover:underline" href="/feed.xml">RSS / Atom</a></li>
+          <li><a class="hover:underline" href="https://www.paypal.com/paypalme/MicheleMerelli" rel="noopener" target="_blank">Offrimi un caffè ☕ ↗</a></li>
+          <li><a class="hover:underline" href="https://micmer-git.github.io/" rel="noopener" target="_blank">Altri progetti di Michele ↗</a></li>
         </ul>
       </div>
     </div>
     <p class="max-w-5xl mx-auto px-4 pb-8 text-xs font-mono text-black/70">© 2026 Michele Merelli · <a class="underline" href="/" hreflang="it" lang="it">Italiano</a> · <a class="underline" href="/en/" hreflang="en" lang="en">English</a> · <a class="underline" href="/hi/" hreflang="hi" lang="hi">हिन्दी</a></p>
   </footer>
+  <aside class="ff-sticky-sub" aria-label="Newsletter">
+    <p>Ti piace? Ricevi il prossimo numero via email.</p>
+    <a href="https://fortissimo.substack.com/subscribe" target="_blank" rel="noopener" class="ff-btn ff-btn-primary ff-btn-sm">Iscriviti</a>
+    <button type="button" class="ff-btn ff-btn-ghost ff-btn-icon" data-ff-dismiss aria-label="Chiudi invito">✕</button>
+  </aside>
+  <nav class="ff-tabbar" aria-label="Navigazione principale">
+    <a href="/"><span class="ff-ti" aria-hidden="true">🏠</span>Home</a>
+    <a href="/archivio/" aria-current="page"><span class="ff-ti" aria-hidden="true">🗂</span>Archivio</a>
+    <a href="/themes.html"><span class="ff-ti" aria-hidden="true">🧭</span>Temi</a>
+    <a href="/libri/"><span class="ff-ti" aria-hidden="true">📚</span>Libri</a>
+    <button type="button" data-ff-search aria-haspopup="dialog" aria-controls="ff-search"><span class="ff-ti" aria-hidden="true">🔍</span>Cerca</button>
+  </nav>
+  <dialog id="ff-search" class="ff-search" aria-label="Cerca" data-empty="Nessun risultato. Prova un’altra parola.">
+    <form role="search">
+      <label for="ff-q" class="sr-only">Cerca</label>
+      <input id="ff-q" type="search" autocomplete="off" placeholder="Cerca numeri, sezioni, temi…" aria-controls="ff-results" />
+      <button type="button" class="ff-btn ff-btn-icon" data-ff-close aria-label="Chiudi">✕</button>
+    </form>
+    <ul id="ff-results" role="listbox" aria-label="Cerca"></ul>
+    <div class="ff-s-foot"><a href="/archivio/" data-ff-all data-base="/archivio/">Tutti i risultati nell’archivio →</a><span>Premi / per cercare ovunque</span></div>
+  </dialog>
+  <script src="/assets/ff-app.js" defer></script>
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>
