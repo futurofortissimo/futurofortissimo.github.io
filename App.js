@@ -29,28 +29,6 @@ const ISSUE_RANGES = [
   { id: '1-89', label: 'ff.1–89', min: 1, max: 89 }
 ];
 
-const headerBackgroundDataUri =
-  'data:image/svg+xml;utf8,' +
-  encodeURIComponent(`
-    <svg width="1200" height="600" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <pattern id="headerGrid" width="26" height="26" patternUnits="userSpaceOnUse">
-          <rect width="26" height="26" fill="#ffffff"/>
-          <path d="M26 0H0V26" fill="none" stroke="rgba(0,0,0,0.05)" stroke-width="1"/>
-        </pattern>
-        <linearGradient id="bottomHue" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#c8e6ff" stop-opacity="0.7"/>
-          <stop offset="100%" stop-color="#ffd6ec" stop-opacity="0.7"/>
-        </linearGradient>
-      </defs>
-      <rect width="1200" height="360" fill="url(#headerGrid)"/>
-      <rect y="360" width="1200" height="240" fill="url(#bottomHue)"/>
-      <circle cx="240" cy="220" r="110" fill="#c8e6ff" fill-opacity="0.35"/>
-      <circle cx="820" cy="160" r="140" fill="#ffd6ec" fill-opacity="0.3"/>
-      <circle cx="620" cy="440" r="170" fill="#c8e6ff" fill-opacity="0.25"/>
-      <circle cx="1040" cy="420" r="120" fill="#ffd6ec" fill-opacity="0.2"/>
-    </svg>
-  `);
 
 const extractBooksFromData = (chapters = []) => {
   const seen = new Set();
@@ -283,74 +261,7 @@ const InnerApp = () => {
     />
     <${BooksPopup} isOpen=${isBooksOpen} onClose=${handleCloseBooks} books=${bookSuggestions} />
 
-    <div className="max-w-6xl mx-auto px-4 md:px-8 py-6 sm:py-8 space-y-6 sm:space-y-8">
-      <header
-        className="brutal-card mobile-unboxed accent-bar accent-blue flex flex-col items-center justify-center gap-5 text-center no-round"
-        style=${{
-          backgroundImage: `url(${headerBackgroundDataUri})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
-        <div className="w-full space-y-3">
-          <h1 className="pixel-title ff-hero text-center">FUTURO FORTISSIMO</h1>
-          <p className="ff-body-sm text-black/80 max-w-2xl mx-auto">${t('subscribeDesc')}</p>
-        </div>
-
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-          <a
-            href="https://fortissimo.substack.com/subscribe"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-4 py-2.5 border-3 border-black bg-[var(--ff-green)] text-black brutal-shadow ff-button hover:-translate-y-0.5 transition-transform"
-          >
-            ${t('subscribeCta')} ↗
-          </a>
-          <a
-            href=${paths.books}
-            className="px-4 py-2.5 border-3 border-black bg-[var(--ff-yellow)] text-black brutal-shadow ff-button hover:-translate-y-0.5 transition-transform"
-          >
-            ${t('books')}
-          </a>
-          <a
-            href=${paths.archive}
-            className="px-4 py-2.5 border-3 border-black bg-white text-black brutal-shadow ff-button hover:-translate-y-0.5 transition-transform"
-          >
-            ${t('archiveSeo')}
-          </a>
-          <a
-            href="/book/"
-            className="px-4 py-2.5 border-3 border-black bg-white text-black brutal-shadow ff-button hover:-translate-y-0.5 transition-transform"
-          >
-            ${t('book')}
-          </a>
-          <a
-            href="/book/ffxy-index.html"
-            className="px-4 py-2.5 border-3 border-black bg-white text-black brutal-shadow ff-button hover:-translate-y-0.5 transition-transform"
-          >
-            ${t('ffxyNav')}
-          </a>
-          <a
-            href="/themes.html"
-            className="px-4 py-2.5 border-3 border-black bg-white text-black brutal-shadow ff-button hover:-translate-y-0.5 transition-transform"
-          >
-            ${t('themesNav')}
-          </a>
-          <a
-            href="/connections.html"
-            className="px-4 py-2.5 border-3 border-black bg-white text-black brutal-shadow ff-button hover:-translate-y-0.5 transition-transform"
-          >
-            ${t('connectionsNav')}
-          </a>
-          <a
-            href="/note.html"
-            className="px-4 py-2.5 border-3 border-black bg-white text-black brutal-shadow ff-button hover:-translate-y-0.5 transition-transform"
-          >
-            ${t('notesNav')}
-          </a>
-        </div>
-      </header>
+    <div className="py-4 sm:py-6 space-y-6 sm:space-y-8">
 
       <section className="brutal-card mobile-unboxed accent-bar accent-yellow no-round space-y-4">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">

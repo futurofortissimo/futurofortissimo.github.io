@@ -42,3 +42,15 @@ Manual translations: write `### ff-N/i` blocks and import with `node scripts/i18
 
 `/assets/ff-archive.css` is a prebuilt Tailwind stylesheet for the static pages (no runtime Tailwind JS):
 `npx -y tailwindcss@3 -c tailwind.archive.config.cjs -i assets/ff-archive.src.css -o assets/ff-archive.css --minify`
+
+## Site-wide SEO (every page, it · en · hi)
+
+| Script | What |
+|---|---|
+| `scripts/fetch_issue_meta.mjs` | Substack archive API → `i18n/issue_meta.json` (publication date, cover). Non-fatal offline. |
+| `scripts/build_archive_seo.mjs` | issue/archive/books pages: 50–60 char titles, 140–160 char descriptions, BlogPosting JSON-LD (`datePublished`, author Person with `sameAs`, publisher, image), og:image = first image of the issue (else cover, else `/assets/og-default.png`), related issues + theme links, sitemaps with real `lastmod` + `image:image`, `assets/site-index-<lang>.json`. |
+| `scripts/build_static_pages.mjs` | static themes pages (it/en/hi), home pages (SEO head + static hero, latest issues, themes, most cited books), SEO head of connections/note/libri, `robots.txt`, `manifest.webmanifest`, `404.html`. Idempotent (`<!-- ff:seo -->`, `<!-- ff:home -->` markers). |
+| `scripts/seo_strings.mjs` / `seo_lib.mjs` / `site_chrome.mjs` / `site_themes.mjs` | page copy, SEO helpers, shared navigation/footer, theme classifier. |
+| `scripts/validate_seo.py` | title/description length, one h1, canonical, reciprocal hreflang + x-default, OG, JSON-LD, img alt. |
+
+After changing classes in the generators, rebuild `/assets/ff-archive.css` (command above).

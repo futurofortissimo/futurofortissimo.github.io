@@ -16,11 +16,20 @@
  * Italian (lang="it"), robots noindex,follow, excluded from sitemap + hreflang.
  */
 import fs from 'node:fs';
+import { execSync } from 'node:child_process';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { rawData } from '../data.js';
 import { loadTranslations, localizeIssue, buildRefContext } from './i18n_lib.mjs';
 import { SITE, SUBSTACK, L, S, BOOKS_S } from './i18n_strings.mjs';
+import { PAGE_SEO, UI_SEO, SOCIAL } from './seo_strings.mjs';
+import {
+  escapeHtml, safeJsonLd, clip, decodeEntities, cleanTitle, fitTitle, fitDesc, imgDims, cdnImg, metaBlock, pwaHead,
+  altLinksHtml, groupAlternates, websiteLd, breadcrumbLd, PERSON, PUBLISHER, DEFAULT_OG, ROBOTS_INDEX, ROBOTS_NOINDEX,
+} from './seo_lib.mjs';
+import { issueMeta } from './issue_meta_lib.mjs';
+import { SHARED_STYLES, langSwitchHtml, navHtml, headExtras, subscribeCta, imgTag, themesHref, siteFooter } from './site_chrome.mjs';
+import { THEMES, issueThemeMap, sectionThemes } from './site_themes.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -29,14 +38,8 @@ const LANG_CODES = ['it', 'en', 'hi'];
 const dirOf = (lang) => path.join(ROOT, L[lang].archive.replace(/^\//, ''));
 LANG_CODES.forEach((lg) => fs.mkdirSync(dirOf(lg), { recursive: true }));
 
-function escapeHtml(s = '') {
-  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
-}
 function escapeXml(s = '') {
   return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
-}
-function safeJsonLd(obj) {
-  return JSON.stringify(obj, null, 2).replace(/<\//g, '<\\/');
 }
 function isLinkValid(text = '', url = '') {
   const lt = (text || '').toLowerCase();
@@ -58,24 +61,21 @@ function issueNumOf(ch) {
   const m = /ff\.(\d+)/i.exec(ch.title || '');
   return m ? Number(m[1]) : -1;
 }
-const clip = (s, n = 158) => (s.length <= n ? s : s.slice(0, n - 3).replace(/\s+\S*$/, '') + '…');
 function makeDescription(ch, lang, bodyUsable) {
-  const base = (ch.subtitle || '').trim();
-  if (base.length >= 60) return clip(base);
-  let extra = '';
-  if (bodyUsable) {
-    extra = (ch.subchapters || []).map((s) => (s.content || '').replace(/\s+/g, ' ').trim()).find(Boolean) || '';
-  } else {
-    // never leak Italian body text into en/hi meta descriptions
-    extra = [...(ch.keypoints || []), ...(ch.subchapters || []).map((s) => s.title)].filter(Boolean).join(' · ');
-  }
-  const combined = [base, extra].filter(Boolean).join(' — ');
-  if (!combined) return S[lang].descFallback(ch.title || '');
-  return clip(combined);
+  const parts = [ch.subtitle];
+  if (bodyUsable) parts.push((ch.subchapters || []).map((x) => (x.content || '').replace(/\s+/g, ' ').trim()).find(Boolean) || '');
+  // never leak Italian body text into en/hi meta descriptions
+  else parts.push([...(ch.keypoints || []), ...(ch.subchapters || []).map((x) => cleanTitle(x.title))].filter(Boolean).join(' · '));
+  if (!ch.subtitle && !parts[1]) parts.push(S[lang].descFallback(cleanTitle(ch.title || '')));
+  return fitDesc(parts, lang);
 }
-function firstImageOf(ch) {
-  for (const sub of ch.subchapters || []) for (const img of sub.images || []) if (img?.src && /^https?:\/\//.test(img.src)) return img.src;
-  return `${SITE}/logo.png`;
+/** og:image of an issue: first image in the issue, else the Substack cover, else the site default */
+function issueImage(ch, meta = {}) {
+  for (const sub of ch.subchapters || []) for (const img of sub.images || []) {
+    if (img?.src && /^https?:\/\//.test(img.src)) return { url: img.src, ...(imgDims(img.src) || {}), caption: img.caption || '' };
+  }
+  if (meta.cover) return { url: meta.cover, ...(imgDims(meta.cover) || {}) };
+  return { ...DEFAULT_OG };
 }
 const hostOf = (u) => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch { return u; } };
 const anchorOf = (sub, sIdx) => {
@@ -104,12 +104,50 @@ const CTX = { en: buildRefContext(rawData, TR.en), hi: buildRefContext(rawData, 
 // LOC[lang][slug] = { issue, status }
 const LOC = { it: {}, en: {}, hi: {} };
 for (const ch of issues) {
-  LOC.it[ch.slug] = { issue: ch, status: 'full' };
+  // display copy: decode HTML entities leaking from the RSS (hashes in localizeIssue use the raw text)
+  LOC.it[ch.slug] = { issue: { ...ch, title: decodeEntities(ch.title), subtitle: decodeEntities(ch.subtitle || ''), keypoints: (ch.keypoints || []).map(decodeEntities) }, status: 'full' };
   for (const lg of ['en', 'hi']) {
     const r = localizeIssue(ch, ch._idx, TR[lg], ch.slug, CTX[lg]);
-    LOC[lg][ch.slug] = { issue: { ...r.issue, slug: ch.slug, ffNum: ch.ffNum }, status: r.status };
+    LOC[lg][ch.slug] = { issue: { ...r.issue, title: decodeEntities(r.issue.title), subtitle: decodeEntities(r.issue.subtitle || ''), keypoints: (r.issue.keypoints || []).map(decodeEntities), slug: ch.slug, ffNum: ch.ffNum }, status: r.status };
   }
 }
+// publication dates / covers (i18n/issue_meta.json) + theme weights + related issues
+const META = Object.fromEntries(issues.map((o) => [o.slug, issueMeta(o)]));
+const THEME_W = issueThemeMap(issues);
+const sectionThemesOf = (o, i) => sectionThemes(o, (o.subchapters || [])[i] || {});
+const themeName = (key, lang) => THEMES.find((t) => t.key === key)?.name[lang] || key;
+const topThemes = (slug, n = 3) => Object.entries(THEME_W[slug] || {}).sort((a, b) => b[1] - a[1]).slice(0, n).map(([k]) => k);
+// explicit cross-references: section connections pointing to other issues (by Substack post slug or /i/<id>/)
+const slugByPost = {};
+issues.forEach((o) => { slugByPost[(o.url || '').replace(/\/$/, '').split('/').pop()] = o.slug; if (META[o.slug].id) slugByPost[`i${META[o.slug].id}`] = o.slug; });
+function linkedIssues(o) {
+  const out = new Map();
+  (o.subchapters || []).forEach((sub) => [...(sub.connections || []), ...(sub.references || [])].forEach((r) => {
+    const u = r?.url || '';
+    const m = /fortissimo\.substack\.com\/(?:p\/([^/?#]+)|i\/(\d+))/.exec(u);
+    const target = m && (m[1] ? slugByPost[m[1]] : slugByPost[`i${m[2]}`]);
+    if (target && target !== o.slug) out.set(target, (out.get(target) || 0) + 3);
+  }));
+  return out;
+}
+const RELATED = {};
+for (const o of issues) {
+  const score = linkedIssues(o);
+  const mine = THEME_W[o.slug] || {};
+  for (const other of issues) {
+    if (other.slug === o.slug) continue;
+    const w = THEME_W[other.slug] || {};
+    let sc = 0;
+    for (const k of Object.keys(mine)) if (w[k]) sc += Math.min(mine[k], w[k]);
+    if (sc) score.set(other.slug, (score.get(other.slug) || 0) + sc + (Math.abs(other.ffNum - o.ffNum) < 15 ? 0.5 : 0));
+  }
+  RELATED[o.slug] = [...score.entries()].sort((a, b) => b[1] - a[1]).slice(0, 4).map(([k]) => k);
+}
+const isoDate = (d) => (d ? new Date(d).toISOString() : undefined);
+const dayOf = (d) => (d ? new Date(d).toISOString().slice(0, 10) : TODAY);
+const LATEST_DATE = issues.map((o) => META[o.slug].date).filter(Boolean).sort().pop();
+const fmtDate = (d, lang) => (d ? new Date(d).toLocaleDateString(lang === 'hi' ? 'hi-IN' : lang === 'en' ? 'en-GB' : 'it-IT', { day: 'numeric', month: 'long', year: 'numeric' }) : '');
+
 const issueUrl = (lang, slug) => `${SITE}${L[lang].archive}${slug}.html`;
 const issuePath = (lang, slug) => `${L[lang].archive}${slug}.html`;
 const indexable = (lang, slug) => lang === 'it' || LOC[lang][slug].status === 'full';
@@ -119,140 +157,10 @@ function issueAlternates(slug) {
   alts.push({ hreflang: 'x-default', href: issueUrl('it', slug) });
   return alts;
 }
-const groupAlternates = (paths) => [
-  ...LANG_CODES.map((lg) => ({ hreflang: lg, href: `${SITE}${paths[lg]}` })),
-  { hreflang: 'x-default', href: `${SITE}${paths.it}` },
-];
 const ARCHIVE_PATHS = { it: L.it.archive, en: L.en.archive, hi: L.hi.archive };
 const BOOKS_PATHS = { it: L.it.books, en: L.en.books, hi: L.hi.books };
-const altLinksHtml = (alts) => alts.map((a) => `<link rel="alternate" hreflang="${a.hreflang}" href="${escapeHtml(a.href)}" />`).join('\n  ');
 
-// ── Shared chrome ───────────────────────────────────────────────────────────
-const SHARED_STYLES = `
-  :root { --ff-blue:#4a90e2; --ff-red:#d0021b; --ff-yellow:#f5a623; --ff-green:#2ecc71; --ff-black:#0a0a0a; --ff-grid:rgba(0,0,0,0.03); }
-  body { font-family:'Inter',sans-serif; background-color:#fdfdfd; color:var(--ff-black); min-height:100vh; line-height:1.65; position:relative; }
-  body::before { content:''; position:fixed; inset:0; background-image:linear-gradient(var(--ff-grid) 1px,transparent 1px),linear-gradient(90deg,var(--ff-grid) 1px,transparent 1px); background-size:32px 32px; pointer-events:none; z-index:-1; }
-  h1, h2, h3, h4, .font-heading { font-family:'IBM Plex Mono',monospace; letter-spacing:0.03em; text-transform:uppercase; }
-  .brutal-card { border:4px solid var(--ff-black); background:#fff; box-shadow:6px 6px 0 var(--ff-black); padding:24px; }
-  .brutal-shadow { box-shadow:4px 4px 0 var(--ff-black); }
-  .border-3 { border-width:3px !important; }
-  .accent-bar { position:relative; }
-  .accent-bar::before { content:''; position:absolute; top:-4px; left:-4px; right:-4px; height:10px; background:var(--ff-blue); }
-  .accent-yellow::before { background:var(--ff-yellow); }
-  .accent-green::before { background:var(--ff-green); }
-  .accent-red::before { background:var(--ff-red); }
-  .ff-eyebrow { font-family:'IBM Plex Mono',monospace; font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; font-weight:700; }
-  .ff-button { font-family:'IBM Plex Mono',monospace; font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:700; }
-  .ff-topbar { font-family:'IBM Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:700; background:var(--ff-black); color:#fff; }
-  .ff-topbar .ff-brand { color:#fff; text-decoration:none; }
-  .ff-lang-switch { display:inline-flex; border:2px solid #fff; box-shadow:3px 3px 0 var(--ff-yellow); margin:2px 3px 3px 0; }
-  .ff-lang-switch a { display:inline-flex; align-items:center; gap:0.4em; padding:3px 10px; color:#fff; text-decoration:none; border-left:2px solid #fff; transition:background .15s,color .15s; }
-  .ff-lang-switch a:first-child { border-left:0; }
-  .ff-lang-switch a:hover, .ff-lang-switch a:focus-visible { background:#fff; color:#000; outline:none; }
-  .ff-lang-switch a[aria-current="page"] { background:var(--ff-yellow); color:#000; }
-  .ff-lang-switch .ff-ln { text-transform:none; letter-spacing:0; font-weight:600; opacity:.85; }
-  @media (max-width:640px) { .ff-lang-switch .ff-ln { display:none; } .brutal-card { border-width:2px; box-shadow:3px 3px 0 var(--ff-black); padding:16px; } }
-  .no-round, .no-round * { border-radius:0 !important; }
-  html[lang="hi"] body { font-family:'Noto Sans Devanagari','Inter',sans-serif; line-height:1.8; }
-  html[lang="hi"] h1, html[lang="hi"] h2, html[lang="hi"] h3, html[lang="hi"] h4,
-  html[lang="hi"] .ff-eyebrow, html[lang="hi"] .ff-button { font-family:'IBM Plex Mono','Noto Sans Devanagari',monospace; letter-spacing:0.02em; line-height:1.5; }
-  html[lang="hi"] [lang="it"], html[lang="hi"] [lang="en"] { font-family:'Inter',sans-serif; }
-  .ff-badge-full { background:var(--ff-green); }
-  .ff-badge-partial { background:#f3f4f6; }
-`;
-
-function langSwitchHtml(lang, hrefs) {
-  const items = LANG_CODES.map((lg) => {
-    const cur = lg === lang;
-    return `<a href="${escapeHtml(hrefs[lg])}" hreflang="${lg}" lang="${lg}" title="${escapeHtml(L[lg].name)}"${cur ? ' aria-current="page"' : ''}>${L[lg].label}<span class="ff-ln">${escapeHtml(L[lg].name)}</span></a>`;
-  }).join('');
-  return `<nav class="ff-topbar" aria-label="${escapeHtml(S[lang].langLabel)}">
-    <div class="max-w-5xl mx-auto flex items-center justify-between gap-2 px-4 py-1">
-      <a href="${L[lang].home}" class="ff-brand">FUTURO FORTISSIMO</a>
-      <div class="ff-lang-switch" role="group" aria-label="${escapeHtml(S[lang].langLabel)}">${items}</div>
-    </div>
-  </nav>`;
-}
-
-function navHtml(lang, active, hrefs) {
-  const s = S[lang];
-  const link = (href, label, key) => {
-    const isCurrent = active === key;
-    return `<a href="${href}"${isCurrent ? ' aria-current="page"' : ''} class="px-3 py-2 border-2 border-black ff-button ${isCurrent ? 'bg-[var(--ff-yellow)] text-black' : 'bg-white text-black hover:-translate-y-0.5 transition-transform'} whitespace-nowrap">${label}</a>`;
-  };
-  return `
-  ${langSwitchHtml(lang, hrefs)}
-  <header class="max-w-5xl mx-auto px-4 pt-6">
-    <nav aria-label="${escapeHtml(s.navLabel)}" class="flex flex-wrap items-center gap-2 pb-4 border-b-3 border-black">
-      ${link(L[lang].home, s.home, 'home')}
-      ${link(L[lang].archive, s.archive, 'archivio')}
-      ${link(L[lang].books, s.books, 'libri')}
-      ${link('/book/', s.book, 'book')}
-      ${lang === 'it' ? link('/book/ffxy-index.html', s.ffxy, 'ffxy') : ''}
-      ${link(L[lang].themes, s.themes, 'themes')}
-      ${link(L[lang].connections, s.connections, 'connections')}
-      ${link(L[lang].notes, s.notes, 'note')}
-      <a href="${SUBSTACK}/subscribe" target="_blank" rel="noopener noreferrer" class="ml-auto px-3 py-2 border-2 border-black bg-[var(--ff-green)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">${s.subscribe}</a>
-    </nav>
-  </header>`;
-}
-
-function headExtras(lang) {
-  const fonts = lang === 'hi'
-    ? 'family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700'
-    : 'family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700';
-  return `
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-  <link rel="apple-touch-icon" href="/favicon.ico" />
-  <link rel="alternate" type="application/atom+xml" title="Futuro Fortissimo Feed" href="/feed.xml" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="/assets/ff-archive.css" />
-  <link href="https://fonts.googleapis.com/css2?${fonts}&display=swap" rel="stylesheet" />
-  <style>${SHARED_STYLES}</style>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NQ7MQR0VL8"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-NQ7MQR0VL8');
-  </script>`;
-}
-
-function metaBlock({ lang, title, desc, url, image, type, robots, alts }) {
-  const others = LANG_CODES.filter((lg) => lg !== lang).map((lg) => `<meta property="og:locale:alternate" content="${L[lg].locale}" />`).join('\n  ');
-  return `<title>${escapeHtml(title)}</title>
-  <meta name="description" content="${escapeHtml(desc)}" />
-  <meta name="author" content="Michele Merelli" />
-  <meta name="robots" content="${robots}" />
-  <link rel="canonical" href="${escapeHtml(url)}" />
-  ${alts.length ? altLinksHtml(alts) : ''}
-
-  <meta property="og:site_name" content="Futuro Fortissimo" />
-  <meta property="og:locale" content="${L[lang].locale}" />
-  ${others}
-  <meta property="og:type" content="${type}" />
-  <meta property="og:title" content="${escapeHtml(title)}" />
-  <meta property="og:description" content="${escapeHtml(desc)}" />
-  <meta property="og:url" content="${escapeHtml(url)}" />
-  <meta property="og:image" content="${escapeHtml(image)}" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="${escapeHtml(title)}" />
-  <meta name="twitter:description" content="${escapeHtml(desc)}" />
-  <meta name="twitter:image" content="${escapeHtml(image)}" />`;
-}
-
-const ROBOTS_INDEX = 'index, follow, max-snippet:-1, max-image-preview:large';
-const ROBOTS_NOINDEX = 'noindex, follow';
-const subscribeCta = (lang) => `<section class="brutal-card accent-bar accent-green no-round flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-      <div>
-        <div class="ff-eyebrow text-black/80">Newsletter</div>
-        <h2 class="text-lg font-bold mt-1">${escapeHtml(S[lang].newsletterTitle)}</h2>
-        <p class="text-sm text-black/80 mt-1">${escapeHtml(S[lang].newsletterText)}</p>
-      </div>
-      <a href="${SUBSTACK}/subscribe" target="_blank" rel="noopener noreferrer" class="px-5 py-3 border-3 border-black bg-[var(--ff-yellow)] text-black ff-button brutal-shadow hover:-translate-y-0.5 transition-transform whitespace-nowrap">${S[lang].subscribeFree}</a>
-    </section>`;
+// ── Shared chrome: scripts/site_chrome.mjs ──────────────────────────────────
 
 // ── 1. Issue pages (it/en/hi) ───────────────────────────────────────────────
 const stats = { it: { full: 0, partial: 0 }, en: { full: 0, partial: 0 }, hi: { full: 0, partial: 0 } };
@@ -265,42 +173,42 @@ for (const lang of LANG_CODES) {
     const older = idx + 1 < issues.length ? LOC[lang][issues[idx + 1].slug].issue : null;
     const newer = idx - 1 >= 0 ? LOC[lang][issues[idx - 1].slug].issue : null;
     const pageUrl = issueUrl(lang, orig.slug);
-    const titleText = `${ch.title} — Futuro Fortissimo${lang === 'en' ? ' (English)' : lang === 'hi' ? ' (हिन्दी)' : ''}`;
+    const meta = META[orig.slug];
+    const titleText = fitTitle(ch.title, lang);
     const desc = makeDescription(ch, lang, lang === 'it' || isFull);
-    const ogImage = firstImageOf(ch);
+    const ogImage = issueImage(ch, meta);
+    const imageAlt = (lang === 'it' || isFull) && ogImage.caption ? ogImage.caption : cleanTitle(ch.title);
     const alts = isFull ? issueAlternates(orig.slug) : [];
     const hrefs = Object.fromEntries(LANG_CODES.map((lg) => [lg, issuePath(lg, orig.slug)]));
+    const published = isoDate(meta.date);
+    const modified = isoDate(meta.updated || meta.date);
+    const keyThemes = topThemes(orig.slug);
 
     const articleLd = {
       '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline: clip(ch.title, 110),
+      '@type': 'BlogPosting',
+      headline: clip(cleanTitle(ch.title), 110),
       description: desc,
-      image: [ogImage],
+      image: { '@type': 'ImageObject', url: ogImage.url, ...(ogImage.width ? { width: ogImage.width, height: ogImage.height } : {}) },
       inLanguage: lang,
+      ...(published ? { datePublished: published, dateModified: modified } : {}),
       isAccessibleForFree: true,
       mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
       url: pageUrl,
       sameAs: ch.url,
-      author: { '@type': 'Person', name: 'Michele Merelli', url: `${SUBSTACK}/` },
-      publisher: { '@type': 'Organization', name: 'Futuro Fortissimo', url: `${SITE}/`, logo: { '@type': 'ImageObject', url: `${SITE}/logo.png` } },
+      author: PERSON,
+      publisher: PUBLISHER,
       isPartOf: { '@type': 'Blog', name: s.blogName, url: `${SITE}${L[lang].archive}` },
+      ...(keyThemes.length ? { keywords: keyThemes.map((k) => themeName(k, lang)).join(', '), about: keyThemes.map((k) => ({ '@type': 'Thing', name: themeName(k, lang) })) } : {}),
+      articleSection: (ch.subchapters || []).map((x) => cleanTitle(x.title)).filter(Boolean).slice(0, 12),
     };
     if (lang === 'it') {
       const tr = ['en', 'hi'].filter((lg) => indexable(lg, orig.slug));
-      if (tr.length) articleLd.workTranslation = tr.map((lg) => ({ '@type': 'Article', '@id': issueUrl(lg, orig.slug), inLanguage: lg }));
+      if (tr.length) articleLd.workTranslation = tr.map((lg) => ({ '@type': 'BlogPosting', '@id': issueUrl(lg, orig.slug), inLanguage: lg }));
     } else {
-      articleLd.translationOfWork = { '@type': 'Article', '@id': issueUrl('it', orig.slug), inLanguage: 'it' };
+      articleLd.translationOfWork = { '@type': 'BlogPosting', '@id': issueUrl('it', orig.slug), inLanguage: 'it' };
     }
-    const breadcrumbLd = {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: s.crumbHome, item: `${SITE}${L[lang].home}` },
-        { '@type': 'ListItem', position: 2, name: s.crumbArchive, item: `${SITE}${L[lang].archive}` },
-        { '@type': 'ListItem', position: 3, name: ch.title, item: pageUrl },
-      ],
-    };
+    const breadcrumbJson = breadcrumbLd([[s.crumbHome, `${SITE}${L[lang].home}`], [s.crumbArchive, `${SITE}${L[lang].archive}`], [cleanTitle(ch.title), pageUrl]]);
 
     const metaLang = lang !== 'it' && ch._lang !== lang ? ' lang="it"' : '';
     const keypointsHtml = Array.isArray(ch.keypoints) && ch.keypoints.length
@@ -323,7 +231,7 @@ for (const lang of LANG_CODES) {
         const cap = img.caption || '';
         const alt = bodyLang === lang ? (cap || sub.title) : sub.title;
         return `<figure class="mt-4 border-3 border-black bg-white p-2">
-          <img src="${escapeHtml(img.src)}" alt="${escapeHtml(alt)}" loading="lazy" decoding="async" class="w-full max-h-[520px] object-contain mx-auto" />
+          ${imgTag(img.src, alt)}
           ${cap ? `<figcaption${langAttr(bodyLang)} class="mt-2 text-xs font-mono text-black/70">${escapeHtml(cap)}</figcaption>` : ''}
         </figure>`;
       }).join('\n');
@@ -368,44 +276,66 @@ for (const lang of LANG_CODES) {
       <a href="${issuePath('it', orig.slug)}" hreflang="it" class="px-3 py-1.5 border-2 border-black bg-white ff-button text-xs whitespace-nowrap">IT · Italiano →</a>
     </aside>` : '';
 
+    const u = UI_SEO[lang];
+    const relatedHtml = (RELATED[orig.slug] || []).length ? `<section aria-labelledby="rel-h" class="brutal-card no-round space-y-3">
+      <h2 id="rel-h" class="text-lg font-bold">${escapeHtml(u.related)}</h2>
+      <ul class="grid gap-3 sm:grid-cols-2">
+        ${RELATED[orig.slug].map((sl) => {
+          const r = LOC[lang][sl].issue;
+          const rl = lang !== 'it' && r._lang !== lang ? ' lang="it"' : '';
+          return `<li class="border-2 border-black p-3 bg-white"><a href="${issuePath(lang, sl)}" class="font-bold hover:underline"${rl}>${escapeHtml(cleanTitle(r.title))}</a>${r.subtitle ? `<p class="text-sm text-black/75 mt-1"${rl}>${escapeHtml(clip(r.subtitle, 110))}</p>` : ''}</li>`;
+        }).join('\n        ')}
+      </ul>
+    </section>` : '';
+    const themeChips = keyThemes.length ? `<p class="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono"><span class="ff-eyebrow text-black/70">${escapeHtml(u.themesOf)}</span>${keyThemes.map((k) => `<a href="${themesHref(lang, k)}" class="px-2 py-1 border-2 border-black bg-white hover:bg-[var(--ff-yellow)] font-bold">${THEMES.find((t) => t.key === k).emoji} ${escapeHtml(themeName(k, lang))}</a>`).join('')}</p>` : '';
+    const dateHtml = published ? `<p class="mt-2 text-xs font-mono text-black/70">${escapeHtml(u.published)} <time datetime="${published}">${escapeHtml(fmtDate(published, lang))}</time> · Michele Merelli</p>` : '';
+
     const html = `<!DOCTYPE html>
 <html lang="${lang}" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  ${metaBlock({ lang, title: titleText, desc, url: pageUrl, image: ogImage, type: 'article', robots: (lang === 'it' || isFull) ? ROBOTS_INDEX : ROBOTS_NOINDEX, alts })}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  ${metaBlock({ lang, title: titleText, desc, url: pageUrl, image: ogImage, imageAlt, type: 'article', robots: (lang === 'it' || isFull) ? ROBOTS_INDEX : ROBOTS_NOINDEX, alts, published, modified })}
 
   <script type="application/ld+json">${safeJsonLd(articleLd)}</script>
-  <script type="application/ld+json">${safeJsonLd(breadcrumbLd)}</script>
+  <script type="application/ld+json">${safeJsonLd(breadcrumbJson)}</script>
   ${headExtras(lang)}
 </head>
 <body class="bg-white text-black antialiased no-round">
   ${navHtml(lang, 'archivio', hrefs)}
 
-  <main class="max-w-5xl mx-auto px-4 py-8 space-y-6">
-    <article class="brutal-card accent-bar accent-blue no-round">
+  <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono"><ol class="flex flex-wrap gap-1"><li><a class="underline" href="${L[lang].home}">${escapeHtml(s.crumbHome)}</a> /</li><li><a class="underline" href="${L[lang].archive}">${escapeHtml(s.crumbArchive)}</a> /</li><li aria-current="page"${metaLang}>${escapeHtml(cleanTitle(ch.title))}</li></ol></nav>
+    <article class="space-y-6" aria-labelledby="issue-title">
+    <header class="brutal-card accent-bar accent-blue no-round">
       <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
         <span class="ff-eyebrow text-black/70">${escapeHtml(s.eyebrow)}</span>
         <a href="${escapeHtml(ch.url)}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 border-2 border-black bg-[var(--ff-yellow)] ff-button text-xs hover:-translate-y-0.5 transition-transform">${escapeHtml(s.readOriginal)}</a>
       </div>
-      <h1${metaLang} class="text-2xl sm:text-3xl font-bold text-black">${escapeHtml(ch.title)}</h1>
+      <h1 id="issue-title"${metaLang} class="text-2xl sm:text-3xl font-bold text-black">${escapeHtml(ch.title)}</h1>
       ${ch.subtitle ? `<p${metaLang} class="mt-3 text-base sm:text-lg text-black/80 font-medium">${escapeHtml(ch.subtitle)}</p>` : ''}
+      ${dateHtml}
       ${keypointsHtml}
+      ${themeChips}
       ${tocHtml}
-    </article>
+    </header>
 
     ${partialNotice}
 
     ${subchaptersHtml}
+    </article>
+
+    ${relatedHtml}
 
     ${subscribeCta(lang)}
 
     <nav aria-label="${escapeHtml(s.adjacent)}" class="flex flex-wrap items-center justify-between gap-3 pt-2">
-      ${older ? `<a href="${issuePath(lang, older.slug)}" class="px-4 py-2.5 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-0.5 transition-transform">← ${escapeHtml(older.title)}</a>` : '<span></span>'}
-      ${newer ? `<a href="${issuePath(lang, newer.slug)}" class="px-4 py-2.5 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-0.5 transition-transform">${escapeHtml(newer.title)} →</a>` : '<span></span>'}
+      ${older ? `<a href="${issuePath(lang, older.slug)}" rel="prev" class="px-4 py-2.5 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-0.5 transition-transform">← ${escapeHtml(older.title)}</a>` : '<span></span>'}
+      ${newer ? `<a href="${issuePath(lang, newer.slug)}" rel="next" class="px-4 py-2.5 border-3 border-black bg-white brutal-shadow ff-button hover:-translate-y-0.5 transition-transform">${escapeHtml(newer.title)} →</a>` : '<span></span>'}
     </nav>
   </main>
 
+  ${siteFooter(lang)}
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>
@@ -423,15 +353,15 @@ for (const lang of LANG_CODES) {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: s.idxOgTitle,
-    description: s.idxDesc(n),
+    description: PAGE_SEO.archive[lang].desc(n),
     url,
     inLanguage: lang,
     isPartOf: { '@type': 'WebSite', name: 'Futuro Fortissimo', url: `${SITE}/` },
-    author: { '@type': 'Person', name: 'Michele Merelli', url: `${SUBSTACK}/` },
+    author: PERSON,
     mainEntity: {
       '@type': 'ItemList',
       numberOfItems: n,
-      itemListElement: issues.slice(0, 30).map((o, i) => ({ '@type': 'ListItem', position: i + 1, url: issueUrl(lang, o.slug), name: LOC[lang][o.slug].issue.title })),
+      itemListElement: issues.slice(0, 30).map((o, i) => ({ '@type': 'ListItem', position: i + 1, url: issueUrl(lang, o.slug), name: cleanTitle(LOC[lang][o.slug].issue.title) })),
     },
   };
   const crumbs = {
@@ -471,6 +401,7 @@ for (const lang of LANG_CODES) {
               <a href="${escapeHtml(ch.url)}" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 border-2 border-black bg-white ff-button text-xs">Substack ↗</a>
             </div>
           </div>
+          ${META[o.slug].date ? `<p class="text-xs font-mono text-black/70"><time datetime="${isoDate(META[o.slug].date)}">${escapeHtml(fmtDate(META[o.slug].date, lang))}</time></p>` : ''}
           ${badge}
           ${ch.subtitle ? `<p${ml} class="text-sm text-black/80">${escapeHtml(ch.subtitle)}</p>` : ''}
           ${subLinks ? `<div class="flex flex-wrap gap-1.5 pt-1">${subLinks}</div>` : ''}
@@ -482,17 +413,18 @@ for (const lang of LANG_CODES) {
 <html lang="${lang}" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  ${metaBlock({ lang, title: s.idxTitle(n), desc: s.idxDesc(n), url, image: `${SITE}/logo.png`, type: 'website', robots: ROBOTS_INDEX, alts: groupAlternates(ARCHIVE_PATHS) })}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  ${metaBlock({ lang, title: PAGE_SEO.archive[lang].title(n), desc: PAGE_SEO.archive[lang].desc(n), url, type: 'website', robots: ROBOTS_INDEX, alts: groupAlternates(ARCHIVE_PATHS) })}
 
   <script type="application/ld+json">${safeJsonLd(ld)}</script>
+  <script type="application/ld+json">${safeJsonLd(websiteLd(lang))}</script>
   <script type="application/ld+json">${safeJsonLd(crumbs)}</script>
   ${headExtras(lang)}
 </head>
 <body class="bg-white text-black antialiased no-round">
   ${navHtml(lang, 'archivio', hrefs)}
 
-  <main class="max-w-5xl mx-auto px-4 py-8 space-y-6">
+  <main id="main" class="max-w-5xl mx-auto px-4 py-8 space-y-6">
     ${intro}
     <section class="brutal-card accent-bar accent-yellow no-round space-y-4">
       <div class="ff-eyebrow text-black/70">${escapeHtml(s.idxEyebrow(n))}</div>
@@ -537,6 +469,7 @@ for (const lang of LANG_CODES) {
       apply();
     })();
   </script>
+  ${siteFooter(lang)}
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>
@@ -603,7 +536,7 @@ for (const lang of ['en', 'hi']) {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: bs.ogTitle,
-    description: bs.desc(books.length, totalCites),
+    description: PAGE_SEO.books[lang].desc(books.length, totalCites),
     url,
     inLanguage: lang,
     isPartOf: { '@type': 'WebSite', name: 'Futuro Fortissimo', url: `${SITE}/` },
@@ -629,8 +562,8 @@ for (const lang of ['en', 'hi']) {
 <html lang="${lang}" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  ${metaBlock({ lang, title: bs.title(books.length), desc: bs.desc(books.length, totalCites), url, image: `${SITE}/logo.png`, type: 'website', robots: ROBOTS_INDEX, alts: groupAlternates(BOOKS_PATHS) })}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  ${metaBlock({ lang, title: PAGE_SEO.books[lang].title(books.length), desc: PAGE_SEO.books[lang].desc(books.length, totalCites), url, type: 'website', robots: ROBOTS_INDEX, alts: groupAlternates(BOOKS_PATHS) })}
 
   <script type="application/ld+json">${safeJsonLd(ld)}</script>
   <script type="application/ld+json">${safeJsonLd(crumbs)}</script>
@@ -639,7 +572,7 @@ for (const lang of ['en', 'hi']) {
 <body class="bg-white text-black antialiased no-round">
   ${navHtml(lang, 'libri', { ...BOOKS_PATHS })}
 
-  <main class="max-w-6xl mx-auto px-4 py-8 space-y-6">
+  <main id="main" class="max-w-6xl mx-auto px-4 py-8 space-y-6">
     <section class="brutal-card accent-bar accent-yellow no-round space-y-4">
       <div class="ff-eyebrow text-black/70">${escapeHtml(bs.eyebrow(books.length, totalCites))}</div>
       <h1 class="text-2xl sm:text-3xl font-bold">${escapeHtml(bs.h1)}</h1>
@@ -694,6 +627,7 @@ for (const lang of ['en', 'hi']) {
       }));
     })();
   </script>
+  ${siteFooter(lang)}
   <script type="module" src="/analytics.js"></script>
 </body>
 </html>
@@ -703,54 +637,13 @@ for (const lang of ['en', 'hi']) {
   fs.writeFileSync(path.join(dir, 'index.html'), html, 'utf-8');
 }
 
-// ── 4. Home JSON-LD (WebSite + Blog) ────────────────────────────────────────
-const indexPath = path.join(ROOT, 'index.html');
-let indexHtml = fs.readFileSync(indexPath, 'utf-8');
-const homeLd = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: 'Futuro Fortissimo',
-    alternateName: 'FF',
-    url: `${SITE}/`,
-    description: 'Archivio tipografico di Futuro Fortissimo: letture, note e percorsi su AI, attenzione, società, natura.',
-    inLanguage: ['it', 'en', 'hi'],
-    author: { '@type': 'Person', name: 'Michele Merelli', url: SUBSTACK },
-    publisher: { '@type': 'Person', name: 'Michele Merelli' },
-    potentialAction: { '@type': 'SearchAction', target: `${SITE}/?q={search_term_string}`, 'query-input': 'required name=search_term_string' },
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'Blog',
-    name: 'Futuro Fortissimo — Archivio Newsletter',
-    description: `Archivio completo dei ${issues.length} numeri della newsletter Futuro Fortissimo di Michele Merelli.`,
-    url: `${SITE}/archivio/`,
-    inLanguage: 'it',
-    author: { '@type': 'Person', name: 'Michele Merelli', url: SUBSTACK },
-    blogPost: issues.slice(0, 15).map((ch) => ({
-      '@type': 'BlogPosting',
-      headline: ch.title,
-      description: makeDescription(ch, 'it', true),
-      url: issueUrl('it', ch.slug),
-      sameAs: ch.url,
-      author: { '@type': 'Person', name: 'Michele Merelli' },
-    })),
-  },
-];
-const ldRegex = /<!-- JSON-LD Structured Data -->[\s\S]*?<\/script>(?:\s*<script type="application\/ld\+json">[\s\S]*?<\/script>)*/;
-if (ldRegex.test(indexHtml)) {
-  indexHtml = indexHtml.replace(ldRegex, `<!-- JSON-LD Structured Data -->\n    <script type="application/ld+json">\n    ${safeJsonLd(homeLd)}\n    </script>`);
-  fs.writeFileSync(indexPath, indexHtml, 'utf-8');
-}
+// ── 4. Home pages (it/en/hi): SEO head + JSON-LD are written by build_static_pages.mjs ──
 
 // ── 5. Italian /libri/: hreflang + real language switcher (idempotent) ──────
-function patchStatic(rel, lang, hrefs, alts) {
+function patchStatic(rel, lang, hrefs) {
   const p = path.join(ROOT, rel);
   if (!fs.existsSync(p)) return;
   let h = fs.readFileSync(p, 'utf-8');
-  const altBlock = `<!-- ff:hreflang -->\n  ${altLinksHtml(alts)}\n  <!-- /ff:hreflang -->`;
-  if (h.includes('<!-- ff:hreflang -->')) h = h.replace(/<!-- ff:hreflang -->[\s\S]*?<!-- \/ff:hreflang -->/, altBlock);
-  else h = h.replace(/(<link rel="canonical"[^>]*>)/, `$1\n  ${altBlock}`);
   const sw = `<!-- ff:langswitch -->\n  ${langSwitchHtml(lang, hrefs).replace('max-w-5xl', 'max-w-6xl')}\n  <!-- /ff:langswitch -->`;
   if (h.includes('<!-- ff:langswitch -->')) h = h.replace(/<!-- ff:langswitch -->[\s\S]*?<!-- \/ff:langswitch -->/, sw);
   else h = h.replace(/<nav class="ff-lang-bar"[\s\S]*?<\/nav>/, sw);
@@ -759,16 +652,21 @@ function patchStatic(rel, lang, hrefs, alts) {
   else h = h.replace('</head>', `  ${css}\n</head>`);
   fs.writeFileSync(p, h, 'utf-8');
 }
-patchStatic('libri/index.html', 'it', { ...BOOKS_PATHS }, groupAlternates(BOOKS_PATHS));
+patchStatic('libri/index.html', 'it', { ...BOOKS_PATHS });
 
 // ── 6. Sitemaps: index + pages + archive (xhtml:link alternates) ───────────
+const LATEST_DAY = dayOf(LATEST_DATE);
+function gitDay(rel) {
+  try { const d = execSync(`git log -1 --format=%cI -- "${rel}"`, { cwd: ROOT, stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim(); return d ? d.slice(0, 10) : LATEST_DAY; } catch { return LATEST_DAY; }
+}
 const bookFiles = fs.readdirSync(path.join(ROOT, 'book')).filter((f) => f.endsWith('.html') && f !== 'index.html').sort();
 const libriFiles = fs.readdirSync(path.join(ROOT, 'libri')).filter((f) => f.endsWith('.html') && f !== 'index.html').sort();
 const groupEntries = (paths, priority, changefreq) => LANG_CODES.map((lg) => ({
+  lastmod: LATEST_DAY,
   loc: `${SITE}${paths[lg]}`, priority: lg === 'it' ? priority : String((Number(priority) - 0.1).toFixed(1)), changefreq, alternates: groupAlternates(paths),
 }));
 const staticEntries = [
-  { loc: `${SITE}/`, priority: '1.0', changefreq: 'daily', alternates: [
+  { loc: `${SITE}/`, priority: '1.0', changefreq: 'daily', lastmod: LATEST_DAY, alternates: [
     { hreflang: 'it', href: `${SITE}/` },
     { hreflang: 'en', href: `${SITE}/en/` },
     { hreflang: 'hi', href: `${SITE}/hi/` },
@@ -792,28 +690,20 @@ const staticEntries = [
     { hreflang: 'hi', href: `${SITE}/hi/samaj/` },
     { hreflang: 'x-default', href: `${SITE}/en/society/` },
   ]},
-  { loc: `${SITE}/note.html`, priority: '0.7', changefreq: 'monthly' },
-  { loc: `${SITE}/themes.html`, priority: '0.7', changefreq: 'monthly' },
-  { loc: `${SITE}/connections.html`, priority: '0.7', changefreq: 'monthly' },
+  ...groupEntries({ it: L.it.notes, en: L.en.notes, hi: L.hi.notes }, '0.7', 'weekly'),
+  ...groupEntries({ it: L.it.themes, en: L.en.themes, hi: L.hi.themes }, '0.8', 'weekly'),
+  ...groupEntries({ it: L.it.connections, en: L.en.connections, hi: L.hi.connections }, '0.7', 'monthly'),
   { loc: `${SITE}/strumenti.html`, priority: '0.5', changefreq: 'monthly' },
   { loc: `${SITE}/book/`, priority: '0.9', changefreq: 'weekly' },
-  ...bookFiles.map((f) => ({ loc: `${SITE}/book/${f}`, priority: /^chapter-\d+\.html$/.test(f) ? '0.8' : '0.6', changefreq: 'monthly' })),
-  ...libriFiles.map((f) => ({ loc: `${SITE}/libri/${f}`, priority: '0.7', changefreq: 'monthly' })),
-  { loc: `${SITE}/en/`, priority: '0.7', changefreq: 'weekly' },
-  { loc: `${SITE}/en/note.html`, priority: '0.6', changefreq: 'monthly' },
-  { loc: `${SITE}/en/themes.html`, priority: '0.6', changefreq: 'monthly' },
-  { loc: `${SITE}/en/connections.html`, priority: '0.6', changefreq: 'monthly' },
+  ...bookFiles.map((f) => ({ loc: `${SITE}/book/${f}`, priority: /^chapter-\d+\.html$/.test(f) ? '0.8' : '0.6', changefreq: 'monthly', lastmod: gitDay(`book/${f}`) })),
+  ...libriFiles.map((f) => ({ loc: `${SITE}/libri/${f}`, priority: '0.7', changefreq: 'monthly', lastmod: gitDay(`libri/${f}`) })),
   { loc: `${SITE}/en/nature/`, priority: '0.6', changefreq: 'monthly' },
   { loc: `${SITE}/en/technology/`, priority: '0.6', changefreq: 'monthly' },
   { loc: `${SITE}/en/society/`, priority: '0.6', changefreq: 'monthly' },
-  { loc: `${SITE}/hi/`, priority: '0.6', changefreq: 'weekly' },
-  { loc: `${SITE}/hi/note.html`, priority: '0.5', changefreq: 'monthly' },
-  { loc: `${SITE}/hi/themes.html`, priority: '0.5', changefreq: 'monthly' },
-  { loc: `${SITE}/hi/connections.html`, priority: '0.5', changefreq: 'monthly' },
   { loc: `${SITE}/hi/prakriti/`, priority: '0.5', changefreq: 'monthly' },
   { loc: `${SITE}/hi/taknik/`, priority: '0.5', changefreq: 'monthly' },
   { loc: `${SITE}/hi/samaj/`, priority: '0.5', changefreq: 'monthly' },
-  { loc: `${SITE}/feed.xml`, priority: '0.5', changefreq: 'weekly' },
+  ...groupEntries({ it: L.it.home, en: L.en.home, hi: L.hi.home }, '1.0', 'daily').slice(1),
   ...groupEntries(ARCHIVE_PATHS, '0.9', 'daily'),
   ...groupEntries(BOOKS_PATHS, '0.9', 'weekly'),
 ];
@@ -831,20 +721,23 @@ for (const o of issues) {
       loc: issueUrl(lg, o.slug),
       priority: o.ffNum >= 150 ? (lg === 'it' ? '0.8' : '0.7') : (lg === 'it' ? '0.7' : '0.6'),
       changefreq: 'monthly',
+      lastmod: dayOf(META[o.slug].updated || META[o.slug].date),
+      image: issueImage(LOC[lg][o.slug].issue, META[o.slug]).url,
       alternates: issueAlternates(o.slug),
     });
   }
 }
 const urlset = (entries) => `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 ${entries.map((e) => {
   const alts = (e.alternates || []).map((a) => `    <xhtml:link rel="alternate" hreflang="${escapeXml(a.hreflang)}" href="${escapeXml(a.href)}" />`).join('\n');
   return `  <url>
     <loc>${escapeXml(e.loc)}</loc>
-    <lastmod>${TODAY}</lastmod>
+    <lastmod>${e.lastmod || LATEST_DAY}</lastmod>
     <changefreq>${e.changefreq}</changefreq>
-    <priority>${e.priority}</priority>${alts ? '\n' + alts : ''}
+    <priority>${e.priority}</priority>${e.image && e.image !== DEFAULT_OG.url ? `\n    <image:image><image:loc>${escapeXml(e.image)}</image:loc></image:image>` : ''}${alts ? '\n' + alts : ''}
   </url>`;
 }).join('\n')}
 </urlset>
@@ -853,10 +746,26 @@ fs.writeFileSync(path.join(ROOT, 'sitemap-pages.xml'), urlset(staticEntries), 'u
 fs.writeFileSync(path.join(ROOT, 'sitemap-archive.xml'), urlset(archiveEntries), 'utf-8');
 fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <sitemap><loc>${SITE}/sitemap-pages.xml</loc><lastmod>${TODAY}</lastmod></sitemap>
-  <sitemap><loc>${SITE}/sitemap-archive.xml</loc><lastmod>${TODAY}</lastmod></sitemap>
+  <sitemap><loc>${SITE}/sitemap-pages.xml</loc><lastmod>${LATEST_DAY}</lastmod></sitemap>
+  <sitemap><loc>${SITE}/sitemap-archive.xml</loc><lastmod>${LATEST_DAY}</lastmod></sitemap>
 </sitemapindex>
 `, 'utf-8');
+
+// ── 6b. Site index per language (search overlay, home cards, themes pages) ──
+fs.mkdirSync(path.join(ROOT, 'assets'), { recursive: true });
+for (const lang of LANG_CODES) {
+  const rows = issues.map((o) => {
+    const ch = LOC[lang][o.slug].issue;
+    const img = issueImage(ch, META[o.slug]);
+    return {
+      s: o.slug, n: o.ffNum, t: cleanTitle(ch.title), st: ch.subtitle || '', u: issuePath(lang, o.slug), d: dayOf(META[o.slug].date),
+      img: img.url === DEFAULT_OG.url ? '' : img.url, th: topThemes(o.slug),
+      sec: (ch.subchapters || []).map((x, i) => ({ t: cleanTitle(x.title), a: anchorOf(o.subchapters[i] || x, i), th: sectionThemesOf(o, i) })),
+      ...(lang !== 'it' && ch._lang !== lang ? { it: 1 } : {}),
+    };
+  });
+  fs.writeFileSync(path.join(ROOT, 'assets', `site-index-${lang}.json`), JSON.stringify(rows) + '\n');
+}
 
 // ── 7. Status for CI / docs ─────────────────────────────────────────────────
 const status = {
